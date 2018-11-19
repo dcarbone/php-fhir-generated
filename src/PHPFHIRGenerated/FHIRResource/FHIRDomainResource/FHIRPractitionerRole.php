@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -86,88 +86,88 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
     const FHIR_TYPE_NAME = 'PractitionerRole';
 
     /**
-     * Whether this practitioner role record is in active use.
+     * Whether this practitioner's record is in active use.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $active = null;
+    private $active = null;
 
     /**
      * A description of site availability exceptions, e.g. public holiday availability. Succinctly describing all possible exceptions to normal site availability as details in the available Times and not available Times.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $availabilityExceptions = null;
+    private $availabilityExceptions = null;
 
     /**
-     * A collection of times the practitioner is available or performing this role at the location and/or healthcareservice.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPractitionerRole\FHIRPractitionerRoleAvailableTime
+     * A collection of times that the Service Site is available.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPractitionerRole\FHIRPractitionerRoleAvailableTime[]
      */
-    public $availableTime = null;
+    private $availableTime = [];
 
     /**
      * Roles which this practitioner is authorized to perform for the organization.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $code = null;
+    private $code = [];
 
     /**
      * Technical endpoints providing access to services operated for the practitioner with this role.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $endpoint = null;
+    private $endpoint = [];
 
     /**
      * The list of healthcare services that this worker provides for this role's Organization/Location(s).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $healthcareService = null;
+    private $healthcareService = [];
 
     /**
      * Business Identifiers that are specific to a role/location.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = null;
+    private $identifier = [];
 
     /**
      * The location(s) at which this practitioner provides care.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $location = null;
+    private $location = [];
 
     /**
-     * The practitioner is not available or performing this role during this period of time due to the provided reason.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPractitionerRole\FHIRPractitionerRoleNotAvailable
+     * The HealthcareService is not available during this period of time due to the provided reason.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPractitionerRole\FHIRPractitionerRoleNotAvailable[]
      */
-    public $notAvailable = null;
+    private $notAvailable = [];
 
     /**
      * The organization where the Practitioner performs the roles associated.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $organization = null;
+    private $organization = null;
 
     /**
      * The period during which the person is authorized to act as a practitioner in these role(s) for the organization.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public $period = null;
+    private $period = null;
 
     /**
-     * Practitioner that is able to provide the defined services for the organization.
+     * Practitioner that is able to provide the defined services for the organation.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $practitioner = null;
+    private $practitioner = null;
 
     /**
      * Specific specialty of the practitioner.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $specialty = null;
+    private $specialty = [];
 
     /**
      * Contact details that are specific to the role/location/service.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactPoint
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactPoint[]
      */
-    public $telecom = null;
+    private $telecom = [];
 
     /**
      * FHIRPractitionerRole Constructor
@@ -176,49 +176,204 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['active'])) {
-                $this->setActive($data['active']);
+                $value = $data['active'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPractitionerRole::__construct - Property \"active\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setActive($value);
             }
             if (isset($data['availabilityExceptions'])) {
-                $this->setAvailabilityExceptions($data['availabilityExceptions']);
+                $value = $data['availabilityExceptions'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPractitionerRole::__construct - Property \"availabilityExceptions\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setAvailabilityExceptions($value);
             }
             if (isset($data['availableTime'])) {
-                $this->setAvailableTime($data['availableTime']);
+                $value = $data['availableTime'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRPractitionerRoleAvailableTime($v);
+                        } 
+                        if (!($v instanceof FHIRPractitionerRoleAvailableTime)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPractitionerRole::__construct - Collection field \"availableTime\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPractitionerRole\FHIRPractitionerRoleAvailableTime or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addAvailableTime($v);
+                    }
+                }
             }
             if (isset($data['code'])) {
-                $this->setCode($data['code']);
+                $value = $data['code'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPractitionerRole::__construct - Collection field \"code\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addCode($v);
+                    }
+                }
             }
             if (isset($data['endpoint'])) {
-                $this->setEndpoint($data['endpoint']);
+                $value = $data['endpoint'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPractitionerRole::__construct - Collection field \"endpoint\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addEndpoint($v);
+                    }
+                }
             }
             if (isset($data['healthcareService'])) {
-                $this->setHealthcareService($data['healthcareService']);
+                $value = $data['healthcareService'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPractitionerRole::__construct - Collection field \"healthcareService\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addHealthcareService($v);
+                    }
+                }
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRIdentifier($v);
+                        } 
+                        if (!($v instanceof FHIRIdentifier)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPractitionerRole::__construct - Collection field \"identifier\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addIdentifier($v);
+                    }
+                }
             }
             if (isset($data['location'])) {
-                $this->setLocation($data['location']);
+                $value = $data['location'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPractitionerRole::__construct - Collection field \"location\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addLocation($v);
+                    }
+                }
             }
             if (isset($data['notAvailable'])) {
-                $this->setNotAvailable($data['notAvailable']);
+                $value = $data['notAvailable'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRPractitionerRoleNotAvailable($v);
+                        } 
+                        if (!($v instanceof FHIRPractitionerRoleNotAvailable)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPractitionerRole::__construct - Collection field \"notAvailable\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPractitionerRole\FHIRPractitionerRoleNotAvailable or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addNotAvailable($v);
+                    }
+                }
             }
             if (isset($data['organization'])) {
-                $this->setOrganization($data['organization']);
+                $value = $data['organization'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPractitionerRole::__construct - Property \"organization\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setOrganization($value);
             }
             if (isset($data['period'])) {
-                $this->setPeriod($data['period']);
+                $value = $data['period'];
+                if (is_array($value)) {
+                    $value = new FHIRPeriod($value);
+                } 
+                if (!($value instanceof FHIRPeriod)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPractitionerRole::__construct - Property \"period\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPeriod or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setPeriod($value);
             }
             if (isset($data['practitioner'])) {
-                $this->setPractitioner($data['practitioner']);
+                $value = $data['practitioner'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPractitionerRole::__construct - Property \"practitioner\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setPractitioner($value);
             }
             if (isset($data['specialty'])) {
-                $this->setSpecialty($data['specialty']);
+                $value = $data['specialty'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPractitionerRole::__construct - Collection field \"specialty\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addSpecialty($v);
+                    }
+                }
             }
             if (isset($data['telecom'])) {
-                $this->setTelecom($data['telecom']);
+                $value = $data['telecom'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRContactPoint($v);
+                        } 
+                        if (!($v instanceof FHIRContactPoint)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPractitionerRole::__construct - Collection field \"telecom\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRContactPoint or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addTelecom($v);
+                    }
+                }
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -227,10 +382,11 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
-     * Whether this practitioner role record is in active use.
+     * Whether this practitioner's record is in active use.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      * @return $this
      */
@@ -253,14 +409,13 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * Whether this practitioner role record is in active use.
+     * Whether this practitioner's record is in active use.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getActive()
     {
         return $this->active;
     }
-
 
     /**
      * A description of site availability exceptions, e.g. public holiday availability. Succinctly describing all possible exceptions to normal site availability as details in the available Times and not available Times.
@@ -294,174 +449,166 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
         return $this->availabilityExceptions;
     }
 
-
     /**
-     * A collection of times the practitioner is available or performing this role at the location and/or healthcareservice.
+     * A collection of times that the Service Site is available.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPractitionerRole\FHIRPractitionerRoleAvailableTime
      * @return $this
      */
-    public function setAvailableTime(FHIRPractitionerRoleAvailableTime $availableTime = null)
+    public function addAvailableTime(FHIRPractitionerRoleAvailableTime $availableTime = null)
     {
         if (null === $availableTime) {
             return $this; 
         }
-        $this->availableTime = $availableTime;
+        $this->availableTime[] = $availableTime;
         return $this;
     }
 
     /**
-     * A collection of times the practitioner is available or performing this role at the location and/or healthcareservice.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPractitionerRole\FHIRPractitionerRoleAvailableTime
+     * A collection of times that the Service Site is available.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPractitionerRole\FHIRPractitionerRoleAvailableTime[]
      */
     public function getAvailableTime()
     {
         return $this->availableTime;
     }
 
-
     /**
      * Roles which this practitioner is authorized to perform for the organization.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setCode(FHIRCodeableConcept $code = null)
+    public function addCode(FHIRCodeableConcept $code = null)
     {
         if (null === $code) {
             return $this; 
         }
-        $this->code = $code;
+        $this->code[] = $code;
         return $this;
     }
 
     /**
      * Roles which this practitioner is authorized to perform for the organization.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getCode()
     {
         return $this->code;
     }
 
-
     /**
      * Technical endpoints providing access to services operated for the practitioner with this role.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setEndpoint(FHIRReference $endpoint = null)
+    public function addEndpoint(FHIRReference $endpoint = null)
     {
         if (null === $endpoint) {
             return $this; 
         }
-        $this->endpoint = $endpoint;
+        $this->endpoint[] = $endpoint;
         return $this;
     }
 
     /**
      * Technical endpoints providing access to services operated for the practitioner with this role.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getEndpoint()
     {
         return $this->endpoint;
     }
 
-
     /**
      * The list of healthcare services that this worker provides for this role's Organization/Location(s).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setHealthcareService(FHIRReference $healthcareService = null)
+    public function addHealthcareService(FHIRReference $healthcareService = null)
     {
         if (null === $healthcareService) {
             return $this; 
         }
-        $this->healthcareService = $healthcareService;
+        $this->healthcareService[] = $healthcareService;
         return $this;
     }
 
     /**
      * The list of healthcare services that this worker provides for this role's Organization/Location(s).
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getHealthcareService()
     {
         return $this->healthcareService;
     }
 
-
     /**
      * Business Identifiers that are specific to a role/location.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
-    public function setIdentifier(FHIRIdentifier $identifier = null)
+    public function addIdentifier(FHIRIdentifier $identifier = null)
     {
         if (null === $identifier) {
             return $this; 
         }
-        $this->identifier = $identifier;
+        $this->identifier[] = $identifier;
         return $this;
     }
 
     /**
      * Business Identifiers that are specific to a role/location.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
         return $this->identifier;
     }
 
-
     /**
      * The location(s) at which this practitioner provides care.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setLocation(FHIRReference $location = null)
+    public function addLocation(FHIRReference $location = null)
     {
         if (null === $location) {
             return $this; 
         }
-        $this->location = $location;
+        $this->location[] = $location;
         return $this;
     }
 
     /**
      * The location(s) at which this practitioner provides care.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getLocation()
     {
         return $this->location;
     }
 
-
     /**
-     * The practitioner is not available or performing this role during this period of time due to the provided reason.
+     * The HealthcareService is not available during this period of time due to the provided reason.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPractitionerRole\FHIRPractitionerRoleNotAvailable
      * @return $this
      */
-    public function setNotAvailable(FHIRPractitionerRoleNotAvailable $notAvailable = null)
+    public function addNotAvailable(FHIRPractitionerRoleNotAvailable $notAvailable = null)
     {
         if (null === $notAvailable) {
             return $this; 
         }
-        $this->notAvailable = $notAvailable;
+        $this->notAvailable[] = $notAvailable;
         return $this;
     }
 
     /**
-     * The practitioner is not available or performing this role during this period of time due to the provided reason.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPractitionerRole\FHIRPractitionerRoleNotAvailable
+     * The HealthcareService is not available during this period of time due to the provided reason.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPractitionerRole\FHIRPractitionerRoleNotAvailable[]
      */
     public function getNotAvailable()
     {
         return $this->notAvailable;
     }
-
 
     /**
      * The organization where the Practitioner performs the roles associated.
@@ -486,7 +633,6 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
         return $this->organization;
     }
 
-
     /**
      * The period during which the person is authorized to act as a practitioner in these role(s) for the organization.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
@@ -510,9 +656,8 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
         return $this->period;
     }
 
-
     /**
-     * Practitioner that is able to provide the defined services for the organization.
+     * Practitioner that is able to provide the defined services for the organation.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
@@ -526,7 +671,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * Practitioner that is able to provide the defined services for the organization.
+     * Practitioner that is able to provide the defined services for the organation.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getPractitioner()
@@ -534,54 +679,51 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
         return $this->practitioner;
     }
 
-
     /**
      * Specific specialty of the practitioner.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setSpecialty(FHIRCodeableConcept $specialty = null)
+    public function addSpecialty(FHIRCodeableConcept $specialty = null)
     {
         if (null === $specialty) {
             return $this; 
         }
-        $this->specialty = $specialty;
+        $this->specialty[] = $specialty;
         return $this;
     }
 
     /**
      * Specific specialty of the practitioner.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getSpecialty()
     {
         return $this->specialty;
     }
 
-
     /**
      * Contact details that are specific to the role/location/service.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContactPoint
      * @return $this
      */
-    public function setTelecom(FHIRContactPoint $telecom = null)
+    public function addTelecom(FHIRContactPoint $telecom = null)
     {
         if (null === $telecom) {
             return $this; 
         }
-        $this->telecom = $telecom;
+        $this->telecom[] = $telecom;
         return $this;
     }
 
     /**
      * Contact details that are specific to the role/location/service.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactPoint
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactPoint[]
      */
     public function getTelecom()
     {
         return $this->telecom;
     }
-
 
     /**
      * @return string
@@ -604,26 +746,82 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
         if (null !== ($v = $this->getAvailabilityExceptions())) {
             $a['availabilityExceptions'] = $v;
         }
-        if (null !== ($v = $this->getAvailableTime())) {
-            $a['availableTime'] = $v;
+        if (0 < count($values = $this->getAvailableTime())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['availableTime'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getCode())) {
-            $a['code'] = $v;
+        if (0 < count($values = $this->getCode())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['code'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getEndpoint())) {
-            $a['endpoint'] = $v;
+        if (0 < count($values = $this->getEndpoint())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['endpoint'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getHealthcareService())) {
-            $a['healthcareService'] = $v;
+        if (0 < count($values = $this->getHealthcareService())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['healthcareService'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getIdentifier())) {
-            $a['identifier'] = $v;
+        if (0 < count($values = $this->getIdentifier())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['identifier'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getLocation())) {
-            $a['location'] = $v;
+        if (0 < count($values = $this->getLocation())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['location'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getNotAvailable())) {
-            $a['notAvailable'] = $v;
+        if (0 < count($values = $this->getNotAvailable())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['notAvailable'] = $vs;
+            }
         }
         if (null !== ($v = $this->getOrganization())) {
             $a['organization'] = $v;
@@ -634,11 +832,27 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
         if (null !== ($v = $this->getPractitioner())) {
             $a['practitioner'] = $v;
         }
-        if (null !== ($v = $this->getSpecialty())) {
-            $a['specialty'] = $v;
+        if (0 < count($values = $this->getSpecialty())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['specialty'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getTelecom())) {
-            $a['telecom'] = $v;
+        if (0 < count($values = $this->getTelecom())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['telecom'] = $vs;
+            }
         }
         return $a;
     }
@@ -653,9 +867,84 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<PractitionerRole xmlns="http://hl7.org/fhir"></PractitionerRole>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getActive())) {
+            $v->xmlSerialize(true, $sxe->addChild('active'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getAvailabilityExceptions())) {
+            $v->xmlSerialize(true, $sxe->addChild('availabilityExceptions'));
+        }
+        if (0 < count($values = $this->getAvailableTime())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('availableTime'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getCode())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('code'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getEndpoint())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('endpoint'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getHealthcareService())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('healthcareService'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getIdentifier())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('identifier'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getLocation())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('location'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getNotAvailable())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('notAvailable'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getOrganization())) {
+            $v->xmlSerialize(true, $sxe->addChild('organization'));
+        }
+        if (null !== ($v = $this->getPeriod())) {
+            $v->xmlSerialize(true, $sxe->addChild('period'));
+        }
+        if (null !== ($v = $this->getPractitioner())) {
+            $v->xmlSerialize(true, $sxe->addChild('practitioner'));
+        }
+        if (0 < count($values = $this->getSpecialty())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('specialty'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getTelecom())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('telecom'));
+                }
+            }
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

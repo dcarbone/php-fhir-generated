@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRBundle;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRBundle;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -78,16 +78,16 @@ class FHIRBundleSearch extends FHIRBackboneElement implements \JsonSerializable
     const FHIR_TYPE_NAME = 'Bundle.Search';
 
     /**
-     * Why this entry is in the result set - whether it's included as a match or because of an _include requirement, or to convey information or warning information about the search process.
+     * Why this entry is in the result set - whether it's included as a match or because of an _include requirement.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRSearchEntryMode
      */
-    public $mode = null;
+    private $mode = null;
 
     /**
      * When searching, the server's search ranking score for the entry.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
-    public $score = null;
+    private $score = null;
 
     /**
      * FHIRBundleSearch Constructor
@@ -96,13 +96,30 @@ class FHIRBundleSearch extends FHIRBackboneElement implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['mode'])) {
-                $this->setMode($data['mode']);
+                $value = $data['mode'];
+                if (is_array($value)) {
+                    $value = new FHIRSearchEntryMode($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRSearchEntryMode($value);
+                }
+                if (!($value instanceof FHIRSearchEntryMode)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleSearch::__construct - Property \"mode\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRSearchEntryMode or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setMode($value);
             }
             if (isset($data['score'])) {
-                $this->setScore($data['score']);
+                $value = $data['score'];
+                if (is_array($value)) {
+                    $value = new FHIRDecimal($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDecimal($value);
+                }
+                if (!($value instanceof FHIRDecimal)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleSearch::__construct - Property \"score\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDecimal or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setScore($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -111,10 +128,11 @@ class FHIRBundleSearch extends FHIRBackboneElement implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
-     * Why this entry is in the result set - whether it's included as a match or because of an _include requirement, or to convey information or warning information about the search process.
+     * Why this entry is in the result set - whether it's included as a match or because of an _include requirement.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRSearchEntryMode
      * @return $this
      */
@@ -137,14 +155,13 @@ class FHIRBundleSearch extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * Why this entry is in the result set - whether it's included as a match or because of an _include requirement, or to convey information or warning information about the search process.
+     * Why this entry is in the result set - whether it's included as a match or because of an _include requirement.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRSearchEntryMode
      */
     public function getMode()
     {
         return $this->mode;
     }
-
 
     /**
      * When searching, the server's search ranking score for the entry.
@@ -177,7 +194,6 @@ class FHIRBundleSearch extends FHIRBackboneElement implements \JsonSerializable
     {
         return $this->score;
     }
-
 
     /**
      * @return string
@@ -212,9 +228,12 @@ class FHIRBundleSearch extends FHIRBackboneElement implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<BundleSearch xmlns="http://hl7.org/fhir"></BundleSearch>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getMode())) {
+            $v->xmlSerialize(true, $sxe->addChild('mode'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getScore())) {
+            $v->xmlSerialize(true, $sxe->addChild('score'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

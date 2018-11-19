@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -68,7 +68,7 @@ use PHPFHIRGenerated\FHIRElement\FHIRReference;
 use PHPFHIRGenerated\FHIRResource;
 
 /**
- * A resource that represents the data of a single raw artifact as digital content accessible in its native format.  A Binary resource can contain any content, whether text, image, pdf, zip archive, etc.
+ * A binary resource can contain any content, whether text, image, pdf, zip archive, etc.
  * If the element is present, it must have either a @value, an @id, or extensions
  *
  * Class FHIRBinary
@@ -80,22 +80,22 @@ class FHIRBinary extends FHIRResource implements \JsonSerializable
     const FHIR_TYPE_NAME = 'Binary';
 
     /**
-     * MimeType of the binary content represented as a standard MimeType (BCP 13).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
-     */
-    public $contentType = null;
-
-    /**
      * The actual content, base64 encoded.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
      */
-    public $data = null;
+    private $content = null;
 
     /**
-     * This element identifies another resource that can be used as a proxy of the security sensitivity to use when deciding and enforcing access control rules for the Binary resource. Given that the Binary resource contains very few elements that can be used to determine the sensitivity of the data and relationships to individuals, the referenced resource stands in as a proxy equivalent for this purpose. This referenced resource may be related to the Binary (e.g. Media, DocumentReference), or may be some non-related Resource purely as a security proxy. E.g. to identify that the binary resource relates to a patient, and access should only be granted to applications that have access to the patient.
+     * MimeType of the binary content represented as a standard MimeType (BCP 13).
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     */
+    private $contentType = null;
+
+    /**
+     * Treat this binary as if it was this other resource for access control purposes.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $securityContext = null;
+    private $securityContext = null;
 
     /**
      * FHIRBinary Constructor
@@ -104,16 +104,40 @@ class FHIRBinary extends FHIRResource implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
-            if (isset($data['contentType'])) {
-                $this->setContentType($data['contentType']);
+            if (isset($data['content'])) {
+                $value = $data['content'];
+                if (is_array($value)) {
+                    $value = new FHIRBase64Binary($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBase64Binary($value);
+                }
+                if (!($value instanceof FHIRBase64Binary)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRBinary::__construct - Property \"content\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary or data to construct type, saw ".gettype($value));
+                }
+                $this->setContent($value);
             }
-            if (isset($data['data'])) {
-                $this->setData($data['data']);
+            if (isset($data['contentType'])) {
+                $value = $data['contentType'];
+                if (is_array($value)) {
+                    $value = new FHIRCode($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRCode($value);
+                }
+                if (!($value instanceof FHIRCode)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRBinary::__construct - Property \"contentType\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or data to construct type, saw ".gettype($value));
+                }
+                $this->setContentType($value);
             }
             if (isset($data['securityContext'])) {
-                $this->setSecurityContext($data['securityContext']);
+                $value = $data['securityContext'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRBinary::__construct - Property \"securityContext\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setSecurityContext($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -122,6 +146,39 @@ class FHIRBinary extends FHIRResource implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
+    }
+
+    /**
+     * The actual content, base64 encoded.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
+     * @return $this
+     */
+    public function setContent($content)
+    {
+        if (null === $content) {
+            return $this; 
+        }
+        if (is_scalar($content)) {
+            $content = new FHIRBase64Binary($content);
+        }
+        if (!($content instanceof FHIRBase64Binary)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRBinary::setContent - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary or appropriate scalar value, %s seen.',
+                gettype($content)
+            ));
+        }
+        $this->content = $content;
+        return $this;
+    }
+
+    /**
+     * The actual content, base64 encoded.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
+     */
+    public function getContent()
+    {
+        return $this->content;
     }
 
     /**
@@ -156,42 +213,8 @@ class FHIRBinary extends FHIRResource implements \JsonSerializable
         return $this->contentType;
     }
 
-
     /**
-     * The actual content, base64 encoded.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
-     * @return $this
-     */
-    public function setData($data)
-    {
-        if (null === $data) {
-            return $this; 
-        }
-        if (is_scalar($data)) {
-            $data = new FHIRBase64Binary($data);
-        }
-        if (!($data instanceof FHIRBase64Binary)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRBinary::setData - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary or appropriate scalar value, %s seen.',
-                gettype($data)
-            ));
-        }
-        $this->data = $data;
-        return $this;
-    }
-
-    /**
-     * The actual content, base64 encoded.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
-     */
-    public function getData()
-    {
-        return $this->data;
-    }
-
-
-    /**
-     * This element identifies another resource that can be used as a proxy of the security sensitivity to use when deciding and enforcing access control rules for the Binary resource. Given that the Binary resource contains very few elements that can be used to determine the sensitivity of the data and relationships to individuals, the referenced resource stands in as a proxy equivalent for this purpose. This referenced resource may be related to the Binary (e.g. Media, DocumentReference), or may be some non-related Resource purely as a security proxy. E.g. to identify that the binary resource relates to a patient, and access should only be granted to applications that have access to the patient.
+     * Treat this binary as if it was this other resource for access control purposes.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
@@ -205,14 +228,13 @@ class FHIRBinary extends FHIRResource implements \JsonSerializable
     }
 
     /**
-     * This element identifies another resource that can be used as a proxy of the security sensitivity to use when deciding and enforcing access control rules for the Binary resource. Given that the Binary resource contains very few elements that can be used to determine the sensitivity of the data and relationships to individuals, the referenced resource stands in as a proxy equivalent for this purpose. This referenced resource may be related to the Binary (e.g. Media, DocumentReference), or may be some non-related Resource purely as a security proxy. E.g. to identify that the binary resource relates to a patient, and access should only be granted to applications that have access to the patient.
+     * Treat this binary as if it was this other resource for access control purposes.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getSecurityContext()
     {
         return $this->securityContext;
     }
-
 
     /**
      * @return string
@@ -229,11 +251,11 @@ class FHIRBinary extends FHIRResource implements \JsonSerializable
     {
         $a = parent::jsonSerialize();
         $a['resourceType'] = self::FHIR_TYPE_NAME;
+        if (null !== ($v = $this->getContent())) {
+            $a['content'] = $v;
+        }
         if (null !== ($v = $this->getContentType())) {
             $a['contentType'] = $v;
-        }
-        if (null !== ($v = $this->getData())) {
-            $a['data'] = $v;
         }
         if (null !== ($v = $this->getSecurityContext())) {
             $a['securityContext'] = $v;
@@ -251,9 +273,15 @@ class FHIRBinary extends FHIRResource implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Binary xmlns="http://hl7.org/fhir"></Binary>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getContent())) {
+            $v->xmlSerialize(true, $sxe->addChild('content'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getContentType())) {
+            $v->xmlSerialize(true, $sxe->addChild('contentType'));
+        }
+        if (null !== ($v = $this->getSecurityContext())) {
+            $v->xmlSerialize(true, $sxe->addChild('securityContext'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -64,7 +64,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent;
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 use PHPFHIRGenerated\FHIRElement\FHIRCoding;
-use PHPFHIRGenerated\FHIRElement\FHIRReference;
+use PHPFHIRGenerated\FHIRElement\FHIRIdentifier;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
 
 /**
@@ -80,21 +80,21 @@ class FHIRAuditEventSource extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Identifier of the source where the event was detected.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public $observer = null;
+    private $identifier = null;
 
     /**
      * Logical source location within the healthcare enterprise network.  For example, a hospital or other provider location within a multi-entity provider group.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $site = null;
+    private $site = null;
 
     /**
      * Code specifying the type of source where event originated.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
-    public $type = null;
+    private $type = [];
 
     /**
      * FHIRAuditEventSource Constructor
@@ -103,16 +103,44 @@ class FHIRAuditEventSource extends FHIRBackboneElement implements \JsonSerializa
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
-            if (isset($data['observer'])) {
-                $this->setObserver($data['observer']);
+            if (isset($data['identifier'])) {
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    $value = new FHIRIdentifier($value);
+                } 
+                if (!($value instanceof FHIRIdentifier)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventSource::__construct - Property \"identifier\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($value));
+                }
+                $this->setIdentifier($value);
             }
             if (isset($data['site'])) {
-                $this->setSite($data['site']);
+                $value = $data['site'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventSource::__construct - Property \"site\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setSite($value);
             }
             if (isset($data['type'])) {
-                $this->setType($data['type']);
+                $value = $data['type'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCoding($v);
+                        } 
+                        if (!($v instanceof FHIRCoding)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventSource::__construct - Collection field \"type\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCoding or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addType($v);
+                    }
+                }
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -121,31 +149,31 @@ class FHIRAuditEventSource extends FHIRBackboneElement implements \JsonSerializa
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
      * Identifier of the source where the event was detected.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
-    public function setObserver(FHIRReference $observer = null)
+    public function setIdentifier(FHIRIdentifier $identifier = null)
     {
-        if (null === $observer) {
+        if (null === $identifier) {
             return $this; 
         }
-        $this->observer = $observer;
+        $this->identifier = $identifier;
         return $this;
     }
 
     /**
      * Identifier of the source where the event was detected.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public function getObserver()
+    public function getIdentifier()
     {
-        return $this->observer;
+        return $this->identifier;
     }
-
 
     /**
      * Logical source location within the healthcare enterprise network.  For example, a hospital or other provider location within a multi-entity provider group.
@@ -179,30 +207,28 @@ class FHIRAuditEventSource extends FHIRBackboneElement implements \JsonSerializa
         return $this->site;
     }
 
-
     /**
      * Code specifying the type of source where event originated.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
      * @return $this
      */
-    public function setType(FHIRCoding $type = null)
+    public function addType(FHIRCoding $type = null)
     {
         if (null === $type) {
             return $this; 
         }
-        $this->type = $type;
+        $this->type[] = $type;
         return $this;
     }
 
     /**
      * Code specifying the type of source where event originated.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
     public function getType()
     {
         return $this->type;
     }
-
 
     /**
      * @return string
@@ -218,14 +244,22 @@ class FHIRAuditEventSource extends FHIRBackboneElement implements \JsonSerializa
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getObserver())) {
-            $a['observer'] = $v;
+        if (null !== ($v = $this->getIdentifier())) {
+            $a['identifier'] = $v;
         }
         if (null !== ($v = $this->getSite())) {
             $a['site'] = $v;
         }
-        if (null !== ($v = $this->getType())) {
-            $a['type'] = $v;
+        if (0 < count($values = $this->getType())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['type'] = $vs;
+            }
         }
         return $a;
     }
@@ -240,9 +274,19 @@ class FHIRAuditEventSource extends FHIRBackboneElement implements \JsonSerializa
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<AuditEventSource xmlns="http://hl7.org/fhir"></AuditEventSource>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getIdentifier())) {
+            $v->xmlSerialize(true, $sxe->addChild('identifier'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getSite())) {
+            $v->xmlSerialize(true, $sxe->addChild('site'));
+        }
+        if (0 < count($values = $this->getType())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('type'));
+                }
+            }
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

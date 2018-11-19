@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -64,7 +64,6 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
 use PHPFHIRGenerated\FHIRElement\FHIRAnnotation;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction;
-use PHPFHIRGenerated\FHIRElement\FHIRCanonical;
 use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
 use PHPFHIRGenerated\FHIRElement\FHIRDateTime;
 use PHPFHIRGenerated\FHIRElement\FHIRIdentifier;
@@ -72,7 +71,6 @@ use PHPFHIRGenerated\FHIRElement\FHIRReference;
 use PHPFHIRGenerated\FHIRElement\FHIRRequestIntent;
 use PHPFHIRGenerated\FHIRElement\FHIRRequestPriority;
 use PHPFHIRGenerated\FHIRElement\FHIRRequestStatus;
-use PHPFHIRGenerated\FHIRElement\FHIRUri;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
 /**
@@ -89,111 +87,99 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The actions, if any, produced by the evaluation of the artifact.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction[]
      */
-    public $action = null;
+    private $action = [];
 
     /**
      * Provides a reference to the author of the request group.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $author = null;
+    private $author = null;
 
     /**
      * Indicates when the request group was created.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $authoredOn = null;
+    private $authoredOn = null;
 
     /**
      * A plan, proposal or order that is fulfilled in whole or in part by this request.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $basedOn = null;
-
-    /**
-     * A code that identifies what the overall request group is.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public $code = null;
+    private $basedOn = [];
 
     /**
      * Describes the context of the request group, if any.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $context = null;
+    private $context = null;
+
+    /**
+     * A protocol, guideline, orderset or other definition that is adhered to in whole or in part by this request.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    private $definition = [];
 
     /**
      * A shared identifier common to all requests that were authorized more or less simultaneously by a single author, representing the identifier of the requisition, prescription or similar form.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public $groupIdentifier = null;
+    private $groupIdentifier = null;
 
     /**
      * Allows a service to provide a unique, business identifier for the request.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = null;
-
-    /**
-     * A canonical URL referencing a FHIR-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this request.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCanonical
-     */
-    public $instantiatesCanonical = null;
-
-    /**
-     * A URL referencing an externally defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this request.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
-     */
-    public $instantiatesUri = null;
+    private $identifier = [];
 
     /**
      * Indicates the level of authority/intentionality associated with the request and where the request fits into the workflow chain.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRequestIntent
      */
-    public $intent = null;
+    private $intent = null;
 
     /**
      * Provides a mechanism to communicate additional information about the response.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
-    public $note = null;
+    private $note = [];
 
     /**
      * Indicates how quickly the request should be addressed with respect to other requests.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRequestPriority
      */
-    public $priority = null;
+    private $priority = null;
 
     /**
-     * Describes the reason for the request group in coded or textual form.
+     * Indicates the reason the request group was created. This is typically provided as a parameter to the evaluation and echoed by the service, although for some use cases, such as subscription- or event-based scenarios, it may provide an indication of the cause for the response. (choose any one of reason*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $reasonCode = null;
+    private $reasonCodeableConcept = null;
 
     /**
-     * Indicates another resource whose existence justifies this request group.
+     * Indicates the reason the request group was created. This is typically provided as a parameter to the evaluation and echoed by the service, although for some use cases, such as subscription- or event-based scenarios, it may provide an indication of the cause for the response. (choose any one of reason*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $reasonReference = null;
+    private $reasonReference = null;
 
     /**
      * Completed or terminated request(s) whose function is taken by this new request.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $replaces = null;
+    private $replaces = [];
 
     /**
      * The current state of the request. For request groups, the status reflects the status of all the requests in the group.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRequestStatus
      */
-    public $status = null;
+    private $status = null;
 
     /**
      * The subject for which the request group was created.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $subject = null;
+    private $subject = null;
 
     /**
      * FHIRRequestGroup Constructor
@@ -202,61 +188,210 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['action'])) {
-                $this->setAction($data['action']);
+                $value = $data['action'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRRequestGroupAction($v);
+                        } 
+                        if (!($v instanceof FHIRRequestGroupAction)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRequestGroup::__construct - Collection field \"action\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addAction($v);
+                    }
+                }
             }
             if (isset($data['author'])) {
-                $this->setAuthor($data['author']);
+                $value = $data['author'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRequestGroup::__construct - Property \"author\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setAuthor($value);
             }
             if (isset($data['authoredOn'])) {
-                $this->setAuthoredOn($data['authoredOn']);
+                $value = $data['authoredOn'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRequestGroup::__construct - Property \"authoredOn\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value));
+                }
+                $this->setAuthoredOn($value);
             }
             if (isset($data['basedOn'])) {
-                $this->setBasedOn($data['basedOn']);
-            }
-            if (isset($data['code'])) {
-                $this->setCode($data['code']);
+                $value = $data['basedOn'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRequestGroup::__construct - Collection field \"basedOn\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addBasedOn($v);
+                    }
+                }
             }
             if (isset($data['context'])) {
-                $this->setContext($data['context']);
+                $value = $data['context'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRequestGroup::__construct - Property \"context\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setContext($value);
+            }
+            if (isset($data['definition'])) {
+                $value = $data['definition'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRequestGroup::__construct - Collection field \"definition\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addDefinition($v);
+                    }
+                }
             }
             if (isset($data['groupIdentifier'])) {
-                $this->setGroupIdentifier($data['groupIdentifier']);
+                $value = $data['groupIdentifier'];
+                if (is_array($value)) {
+                    $value = new FHIRIdentifier($value);
+                } 
+                if (!($value instanceof FHIRIdentifier)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRequestGroup::__construct - Property \"groupIdentifier\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($value));
+                }
+                $this->setGroupIdentifier($value);
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
-            }
-            if (isset($data['instantiatesCanonical'])) {
-                $this->setInstantiatesCanonical($data['instantiatesCanonical']);
-            }
-            if (isset($data['instantiatesUri'])) {
-                $this->setInstantiatesUri($data['instantiatesUri']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRIdentifier($v);
+                        } 
+                        if (!($v instanceof FHIRIdentifier)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRequestGroup::__construct - Collection field \"identifier\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addIdentifier($v);
+                    }
+                }
             }
             if (isset($data['intent'])) {
-                $this->setIntent($data['intent']);
+                $value = $data['intent'];
+                if (is_array($value)) {
+                    $value = new FHIRRequestIntent($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRRequestIntent($value);
+                }
+                if (!($value instanceof FHIRRequestIntent)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRequestGroup::__construct - Property \"intent\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRRequestIntent or data to construct type, saw ".gettype($value));
+                }
+                $this->setIntent($value);
             }
             if (isset($data['note'])) {
-                $this->setNote($data['note']);
+                $value = $data['note'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRAnnotation($v);
+                        } 
+                        if (!($v instanceof FHIRAnnotation)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRequestGroup::__construct - Collection field \"note\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAnnotation or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addNote($v);
+                    }
+                }
             }
             if (isset($data['priority'])) {
-                $this->setPriority($data['priority']);
+                $value = $data['priority'];
+                if (is_array($value)) {
+                    $value = new FHIRRequestPriority($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRRequestPriority($value);
+                }
+                if (!($value instanceof FHIRRequestPriority)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRequestGroup::__construct - Property \"priority\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRRequestPriority or data to construct type, saw ".gettype($value));
+                }
+                $this->setPriority($value);
             }
-            if (isset($data['reasonCode'])) {
-                $this->setReasonCode($data['reasonCode']);
+            if (isset($data['reasonCodeableConcept'])) {
+                $value = $data['reasonCodeableConcept'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRequestGroup::__construct - Property \"reasonCodeableConcept\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setReasonCodeableConcept($value);
             }
             if (isset($data['reasonReference'])) {
-                $this->setReasonReference($data['reasonReference']);
+                $value = $data['reasonReference'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRequestGroup::__construct - Property \"reasonReference\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setReasonReference($value);
             }
             if (isset($data['replaces'])) {
-                $this->setReplaces($data['replaces']);
+                $value = $data['replaces'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRequestGroup::__construct - Collection field \"replaces\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addReplaces($v);
+                    }
+                }
             }
             if (isset($data['status'])) {
-                $this->setStatus($data['status']);
+                $value = $data['status'];
+                if (is_array($value)) {
+                    $value = new FHIRRequestStatus($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRRequestStatus($value);
+                }
+                if (!($value instanceof FHIRRequestStatus)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRequestGroup::__construct - Property \"status\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRRequestStatus or data to construct type, saw ".gettype($value));
+                }
+                $this->setStatus($value);
             }
             if (isset($data['subject'])) {
-                $this->setSubject($data['subject']);
+                $value = $data['subject'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRequestGroup::__construct - Property \"subject\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setSubject($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -265,6 +400,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -272,24 +408,23 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction
      * @return $this
      */
-    public function setAction(FHIRRequestGroupAction $action = null)
+    public function addAction(FHIRRequestGroupAction $action = null)
     {
         if (null === $action) {
             return $this; 
         }
-        $this->action = $action;
+        $this->action[] = $action;
         return $this;
     }
 
     /**
      * The actions, if any, produced by the evaluation of the artifact.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction[]
      */
     public function getAction()
     {
         return $this->action;
     }
-
 
     /**
      * Provides a reference to the author of the request group.
@@ -313,7 +448,6 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
     {
         return $this->author;
     }
-
 
     /**
      * Indicates when the request group was created.
@@ -347,54 +481,28 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
         return $this->authoredOn;
     }
 
-
     /**
      * A plan, proposal or order that is fulfilled in whole or in part by this request.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setBasedOn(FHIRReference $basedOn = null)
+    public function addBasedOn(FHIRReference $basedOn = null)
     {
         if (null === $basedOn) {
             return $this; 
         }
-        $this->basedOn = $basedOn;
+        $this->basedOn[] = $basedOn;
         return $this;
     }
 
     /**
      * A plan, proposal or order that is fulfilled in whole or in part by this request.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getBasedOn()
     {
         return $this->basedOn;
     }
-
-
-    /**
-     * A code that identifies what the overall request group is.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     * @return $this
-     */
-    public function setCode(FHIRCodeableConcept $code = null)
-    {
-        if (null === $code) {
-            return $this; 
-        }
-        $this->code = $code;
-        return $this;
-    }
-
-    /**
-     * A code that identifies what the overall request group is.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public function getCode()
-    {
-        return $this->code;
-    }
-
 
     /**
      * Describes the context of the request group, if any.
@@ -419,6 +527,28 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
         return $this->context;
     }
 
+    /**
+     * A protocol, guideline, orderset or other definition that is adhered to in whole or in part by this request.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return $this
+     */
+    public function addDefinition(FHIRReference $definition = null)
+    {
+        if (null === $definition) {
+            return $this; 
+        }
+        $this->definition[] = $definition;
+        return $this;
+    }
+
+    /**
+     * A protocol, guideline, orderset or other definition that is adhered to in whole or in part by this request.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getDefinition()
+    {
+        return $this->definition;
+    }
 
     /**
      * A shared identifier common to all requests that were authorized more or less simultaneously by a single author, representing the identifier of the requisition, prescription or similar form.
@@ -443,96 +573,28 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
         return $this->groupIdentifier;
     }
 
-
     /**
      * Allows a service to provide a unique, business identifier for the request.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
-    public function setIdentifier(FHIRIdentifier $identifier = null)
+    public function addIdentifier(FHIRIdentifier $identifier = null)
     {
         if (null === $identifier) {
             return $this; 
         }
-        $this->identifier = $identifier;
+        $this->identifier[] = $identifier;
         return $this;
     }
 
     /**
      * Allows a service to provide a unique, business identifier for the request.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
         return $this->identifier;
     }
-
-
-    /**
-     * A canonical URL referencing a FHIR-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this request.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
-     * @return $this
-     */
-    public function setInstantiatesCanonical($instantiatesCanonical)
-    {
-        if (null === $instantiatesCanonical) {
-            return $this; 
-        }
-        if (is_scalar($instantiatesCanonical)) {
-            $instantiatesCanonical = new FHIRCanonical($instantiatesCanonical);
-        }
-        if (!($instantiatesCanonical instanceof FHIRCanonical)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRRequestGroup::setInstantiatesCanonical - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCanonical or appropriate scalar value, %s seen.',
-                gettype($instantiatesCanonical)
-            ));
-        }
-        $this->instantiatesCanonical = $instantiatesCanonical;
-        return $this;
-    }
-
-    /**
-     * A canonical URL referencing a FHIR-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this request.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
-     */
-    public function getInstantiatesCanonical()
-    {
-        return $this->instantiatesCanonical;
-    }
-
-
-    /**
-     * A URL referencing an externally defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this request.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
-     * @return $this
-     */
-    public function setInstantiatesUri($instantiatesUri)
-    {
-        if (null === $instantiatesUri) {
-            return $this; 
-        }
-        if (is_scalar($instantiatesUri)) {
-            $instantiatesUri = new FHIRUri($instantiatesUri);
-        }
-        if (!($instantiatesUri instanceof FHIRUri)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRRequestGroup::setInstantiatesUri - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or appropriate scalar value, %s seen.',
-                gettype($instantiatesUri)
-            ));
-        }
-        $this->instantiatesUri = $instantiatesUri;
-        return $this;
-    }
-
-    /**
-     * A URL referencing an externally defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this request.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
-     */
-    public function getInstantiatesUri()
-    {
-        return $this->instantiatesUri;
-    }
-
 
     /**
      * Indicates the level of authority/intentionality associated with the request and where the request fits into the workflow chain.
@@ -566,30 +628,28 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
         return $this->intent;
     }
 
-
     /**
      * Provides a mechanism to communicate additional information about the response.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation
      * @return $this
      */
-    public function setNote(FHIRAnnotation $note = null)
+    public function addNote(FHIRAnnotation $note = null)
     {
         if (null === $note) {
             return $this; 
         }
-        $this->note = $note;
+        $this->note[] = $note;
         return $this;
     }
 
     /**
      * Provides a mechanism to communicate additional information about the response.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
         return $this->note;
     }
-
 
     /**
      * Indicates how quickly the request should be addressed with respect to other requests.
@@ -623,33 +683,31 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
         return $this->priority;
     }
 
-
     /**
-     * Describes the reason for the request group in coded or textual form.
+     * Indicates the reason the request group was created. This is typically provided as a parameter to the evaluation and echoed by the service, although for some use cases, such as subscription- or event-based scenarios, it may provide an indication of the cause for the response. (choose any one of reason*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setReasonCode(FHIRCodeableConcept $reasonCode = null)
+    public function setReasonCodeableConcept(FHIRCodeableConcept $reasonCodeableConcept = null)
     {
-        if (null === $reasonCode) {
+        if (null === $reasonCodeableConcept) {
             return $this; 
         }
-        $this->reasonCode = $reasonCode;
+        $this->reasonCodeableConcept = $reasonCodeableConcept;
         return $this;
     }
 
     /**
-     * Describes the reason for the request group in coded or textual form.
+     * Indicates the reason the request group was created. This is typically provided as a parameter to the evaluation and echoed by the service, although for some use cases, such as subscription- or event-based scenarios, it may provide an indication of the cause for the response. (choose any one of reason*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getReasonCode()
+    public function getReasonCodeableConcept()
     {
-        return $this->reasonCode;
+        return $this->reasonCodeableConcept;
     }
 
-
     /**
-     * Indicates another resource whose existence justifies this request group.
+     * Indicates the reason the request group was created. This is typically provided as a parameter to the evaluation and echoed by the service, although for some use cases, such as subscription- or event-based scenarios, it may provide an indication of the cause for the response. (choose any one of reason*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
@@ -663,7 +721,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Indicates another resource whose existence justifies this request group.
+     * Indicates the reason the request group was created. This is typically provided as a parameter to the evaluation and echoed by the service, although for some use cases, such as subscription- or event-based scenarios, it may provide an indication of the cause for the response. (choose any one of reason*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getReasonReference()
@@ -671,30 +729,28 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
         return $this->reasonReference;
     }
 
-
     /**
      * Completed or terminated request(s) whose function is taken by this new request.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setReplaces(FHIRReference $replaces = null)
+    public function addReplaces(FHIRReference $replaces = null)
     {
         if (null === $replaces) {
             return $this; 
         }
-        $this->replaces = $replaces;
+        $this->replaces[] = $replaces;
         return $this;
     }
 
     /**
      * Completed or terminated request(s) whose function is taken by this new request.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getReplaces()
     {
         return $this->replaces;
     }
-
 
     /**
      * The current state of the request. For request groups, the status reflects the status of all the requests in the group.
@@ -728,7 +784,6 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
         return $this->status;
     }
 
-
     /**
      * The subject for which the request group was created.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -752,7 +807,6 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
         return $this->subject;
     }
 
-
     /**
      * @return string
      */
@@ -768,8 +822,16 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
     {
         $a = parent::jsonSerialize();
         $a['resourceType'] = self::FHIR_TYPE_NAME;
-        if (null !== ($v = $this->getAction())) {
-            $a['action'] = $v;
+        if (0 < count($values = $this->getAction())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['action'] = $vs;
+            }
         }
         if (null !== ($v = $this->getAuthor())) {
             $a['author'] = $v;
@@ -777,44 +839,78 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getAuthoredOn())) {
             $a['authoredOn'] = $v;
         }
-        if (null !== ($v = $this->getBasedOn())) {
-            $a['basedOn'] = $v;
-        }
-        if (null !== ($v = $this->getCode())) {
-            $a['code'] = $v;
+        if (0 < count($values = $this->getBasedOn())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['basedOn'] = $vs;
+            }
         }
         if (null !== ($v = $this->getContext())) {
             $a['context'] = $v;
         }
+        if (0 < count($values = $this->getDefinition())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['definition'] = $vs;
+            }
+        }
         if (null !== ($v = $this->getGroupIdentifier())) {
             $a['groupIdentifier'] = $v;
         }
-        if (null !== ($v = $this->getIdentifier())) {
-            $a['identifier'] = $v;
-        }
-        if (null !== ($v = $this->getInstantiatesCanonical())) {
-            $a['instantiatesCanonical'] = $v;
-        }
-        if (null !== ($v = $this->getInstantiatesUri())) {
-            $a['instantiatesUri'] = $v;
+        if (0 < count($values = $this->getIdentifier())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['identifier'] = $vs;
+            }
         }
         if (null !== ($v = $this->getIntent())) {
             $a['intent'] = $v;
         }
-        if (null !== ($v = $this->getNote())) {
-            $a['note'] = $v;
+        if (0 < count($values = $this->getNote())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['note'] = $vs;
+            }
         }
         if (null !== ($v = $this->getPriority())) {
             $a['priority'] = $v;
         }
-        if (null !== ($v = $this->getReasonCode())) {
-            $a['reasonCode'] = $v;
+        if (null !== ($v = $this->getReasonCodeableConcept())) {
+            $a['reasonCodeableConcept'] = $v;
         }
         if (null !== ($v = $this->getReasonReference())) {
             $a['reasonReference'] = $v;
         }
-        if (null !== ($v = $this->getReplaces())) {
-            $a['replaces'] = $v;
+        if (0 < count($values = $this->getReplaces())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['replaces'] = $vs;
+            }
         }
         if (null !== ($v = $this->getStatus())) {
             $a['status'] = $v;
@@ -835,9 +931,78 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<RequestGroup xmlns="http://hl7.org/fhir"></RequestGroup>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (0 < count($values = $this->getAction())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('action'));
+                }
+            }
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getAuthor())) {
+            $v->xmlSerialize(true, $sxe->addChild('author'));
+        }
+        if (null !== ($v = $this->getAuthoredOn())) {
+            $v->xmlSerialize(true, $sxe->addChild('authoredOn'));
+        }
+        if (0 < count($values = $this->getBasedOn())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('basedOn'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getContext())) {
+            $v->xmlSerialize(true, $sxe->addChild('context'));
+        }
+        if (0 < count($values = $this->getDefinition())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('definition'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getGroupIdentifier())) {
+            $v->xmlSerialize(true, $sxe->addChild('groupIdentifier'));
+        }
+        if (0 < count($values = $this->getIdentifier())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('identifier'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getIntent())) {
+            $v->xmlSerialize(true, $sxe->addChild('intent'));
+        }
+        if (0 < count($values = $this->getNote())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('note'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getPriority())) {
+            $v->xmlSerialize(true, $sxe->addChild('priority'));
+        }
+        if (null !== ($v = $this->getReasonCodeableConcept())) {
+            $v->xmlSerialize(true, $sxe->addChild('reasonCodeableConcept'));
+        }
+        if (null !== ($v = $this->getReasonReference())) {
+            $v->xmlSerialize(true, $sxe->addChild('reasonReference'));
+        }
+        if (0 < count($values = $this->getReplaces())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('replaces'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('status'));
+        }
+        if (null !== ($v = $this->getSubject())) {
+            $v->xmlSerialize(true, $sxe->addChild('subject'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

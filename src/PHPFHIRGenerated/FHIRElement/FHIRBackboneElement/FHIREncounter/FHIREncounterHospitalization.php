@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIREncounter;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIREncounter;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -82,55 +82,55 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements \JsonS
      * From where patient was admitted (physician referral, transfer).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $admitSource = null;
+    private $admitSource = null;
 
     /**
-     * Location/organization to which the patient is discharged.
+     * Location to which the patient is discharged.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $destination = null;
+    private $destination = null;
 
     /**
      * Diet preferences reported by the patient.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $dietPreference = null;
+    private $dietPreference = [];
 
     /**
      * Category or kind of location after discharge.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $dischargeDisposition = null;
+    private $dischargeDisposition = null;
 
     /**
-     * The location/organization from which the patient came before admission.
+     * The location from which the patient came before admission.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $origin = null;
+    private $origin = null;
 
     /**
      * Pre-admission identifier.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public $preAdmissionIdentifier = null;
+    private $preAdmissionIdentifier = null;
 
     /**
      * Whether this hospitalization is a readmission and why if known.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $reAdmission = null;
+    private $reAdmission = null;
 
     /**
      * Any special requests that have been made for this hospitalization encounter, such as the provision of specific equipment or other things.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $specialArrangement = null;
+    private $specialArrangement = [];
 
     /**
      * Special courtesies (VIP, board member).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $specialCourtesy = null;
+    private $specialCourtesy = [];
 
     /**
      * FHIREncounterHospitalization Constructor
@@ -139,34 +139,114 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements \JsonS
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['admitSource'])) {
-                $this->setAdmitSource($data['admitSource']);
+                $value = $data['admitSource'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterHospitalization::__construct - Property \"admitSource\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setAdmitSource($value);
             }
             if (isset($data['destination'])) {
-                $this->setDestination($data['destination']);
+                $value = $data['destination'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterHospitalization::__construct - Property \"destination\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setDestination($value);
             }
             if (isset($data['dietPreference'])) {
-                $this->setDietPreference($data['dietPreference']);
+                $value = $data['dietPreference'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterHospitalization::__construct - Collection field \"dietPreference\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addDietPreference($v);
+                    }
+                }
             }
             if (isset($data['dischargeDisposition'])) {
-                $this->setDischargeDisposition($data['dischargeDisposition']);
+                $value = $data['dischargeDisposition'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterHospitalization::__construct - Property \"dischargeDisposition\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setDischargeDisposition($value);
             }
             if (isset($data['origin'])) {
-                $this->setOrigin($data['origin']);
+                $value = $data['origin'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterHospitalization::__construct - Property \"origin\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setOrigin($value);
             }
             if (isset($data['preAdmissionIdentifier'])) {
-                $this->setPreAdmissionIdentifier($data['preAdmissionIdentifier']);
+                $value = $data['preAdmissionIdentifier'];
+                if (is_array($value)) {
+                    $value = new FHIRIdentifier($value);
+                } 
+                if (!($value instanceof FHIRIdentifier)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterHospitalization::__construct - Property \"preAdmissionIdentifier\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($value));
+                }
+                $this->setPreAdmissionIdentifier($value);
             }
             if (isset($data['reAdmission'])) {
-                $this->setReAdmission($data['reAdmission']);
+                $value = $data['reAdmission'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterHospitalization::__construct - Property \"reAdmission\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setReAdmission($value);
             }
             if (isset($data['specialArrangement'])) {
-                $this->setSpecialArrangement($data['specialArrangement']);
+                $value = $data['specialArrangement'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterHospitalization::__construct - Collection field \"specialArrangement\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addSpecialArrangement($v);
+                    }
+                }
             }
             if (isset($data['specialCourtesy'])) {
-                $this->setSpecialCourtesy($data['specialCourtesy']);
+                $value = $data['specialCourtesy'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterHospitalization::__construct - Collection field \"specialCourtesy\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addSpecialCourtesy($v);
+                    }
+                }
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -175,6 +255,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements \JsonS
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -200,9 +281,8 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements \JsonS
         return $this->admitSource;
     }
 
-
     /**
-     * Location/organization to which the patient is discharged.
+     * Location to which the patient is discharged.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
@@ -216,7 +296,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * Location/organization to which the patient is discharged.
+     * Location to which the patient is discharged.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getDestination()
@@ -224,30 +304,28 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements \JsonS
         return $this->destination;
     }
 
-
     /**
      * Diet preferences reported by the patient.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setDietPreference(FHIRCodeableConcept $dietPreference = null)
+    public function addDietPreference(FHIRCodeableConcept $dietPreference = null)
     {
         if (null === $dietPreference) {
             return $this; 
         }
-        $this->dietPreference = $dietPreference;
+        $this->dietPreference[] = $dietPreference;
         return $this;
     }
 
     /**
      * Diet preferences reported by the patient.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getDietPreference()
     {
         return $this->dietPreference;
     }
-
 
     /**
      * Category or kind of location after discharge.
@@ -272,9 +350,8 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements \JsonS
         return $this->dischargeDisposition;
     }
 
-
     /**
-     * The location/organization from which the patient came before admission.
+     * The location from which the patient came before admission.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
@@ -288,14 +365,13 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * The location/organization from which the patient came before admission.
+     * The location from which the patient came before admission.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getOrigin()
     {
         return $this->origin;
     }
-
 
     /**
      * Pre-admission identifier.
@@ -320,7 +396,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements \JsonS
         return $this->preAdmissionIdentifier;
     }
 
-
     /**
      * Whether this hospitalization is a readmission and why if known.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
@@ -344,54 +419,51 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements \JsonS
         return $this->reAdmission;
     }
 
-
     /**
      * Any special requests that have been made for this hospitalization encounter, such as the provision of specific equipment or other things.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setSpecialArrangement(FHIRCodeableConcept $specialArrangement = null)
+    public function addSpecialArrangement(FHIRCodeableConcept $specialArrangement = null)
     {
         if (null === $specialArrangement) {
             return $this; 
         }
-        $this->specialArrangement = $specialArrangement;
+        $this->specialArrangement[] = $specialArrangement;
         return $this;
     }
 
     /**
      * Any special requests that have been made for this hospitalization encounter, such as the provision of specific equipment or other things.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getSpecialArrangement()
     {
         return $this->specialArrangement;
     }
 
-
     /**
      * Special courtesies (VIP, board member).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setSpecialCourtesy(FHIRCodeableConcept $specialCourtesy = null)
+    public function addSpecialCourtesy(FHIRCodeableConcept $specialCourtesy = null)
     {
         if (null === $specialCourtesy) {
             return $this; 
         }
-        $this->specialCourtesy = $specialCourtesy;
+        $this->specialCourtesy[] = $specialCourtesy;
         return $this;
     }
 
     /**
      * Special courtesies (VIP, board member).
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getSpecialCourtesy()
     {
         return $this->specialCourtesy;
     }
-
 
     /**
      * @return string
@@ -413,8 +485,16 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements \JsonS
         if (null !== ($v = $this->getDestination())) {
             $a['destination'] = $v;
         }
-        if (null !== ($v = $this->getDietPreference())) {
-            $a['dietPreference'] = $v;
+        if (0 < count($values = $this->getDietPreference())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['dietPreference'] = $vs;
+            }
         }
         if (null !== ($v = $this->getDischargeDisposition())) {
             $a['dischargeDisposition'] = $v;
@@ -428,11 +508,27 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements \JsonS
         if (null !== ($v = $this->getReAdmission())) {
             $a['reAdmission'] = $v;
         }
-        if (null !== ($v = $this->getSpecialArrangement())) {
-            $a['specialArrangement'] = $v;
+        if (0 < count($values = $this->getSpecialArrangement())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['specialArrangement'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getSpecialCourtesy())) {
-            $a['specialCourtesy'] = $v;
+        if (0 < count($values = $this->getSpecialCourtesy())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['specialCourtesy'] = $vs;
+            }
         }
         return $a;
     }
@@ -447,9 +543,45 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements \JsonS
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<EncounterHospitalization xmlns="http://hl7.org/fhir"></EncounterHospitalization>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getAdmitSource())) {
+            $v->xmlSerialize(true, $sxe->addChild('admitSource'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getDestination())) {
+            $v->xmlSerialize(true, $sxe->addChild('destination'));
+        }
+        if (0 < count($values = $this->getDietPreference())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('dietPreference'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getDischargeDisposition())) {
+            $v->xmlSerialize(true, $sxe->addChild('dischargeDisposition'));
+        }
+        if (null !== ($v = $this->getOrigin())) {
+            $v->xmlSerialize(true, $sxe->addChild('origin'));
+        }
+        if (null !== ($v = $this->getPreAdmissionIdentifier())) {
+            $v->xmlSerialize(true, $sxe->addChild('preAdmissionIdentifier'));
+        }
+        if (null !== ($v = $this->getReAdmission())) {
+            $v->xmlSerialize(true, $sxe->addChild('reAdmission'));
+        }
+        if (0 < count($values = $this->getSpecialArrangement())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('specialArrangement'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getSpecialCourtesy())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('specialCourtesy'));
+                }
+            }
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

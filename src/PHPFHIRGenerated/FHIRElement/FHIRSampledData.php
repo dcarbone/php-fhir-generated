@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -80,43 +80,43 @@ class FHIRSampledData extends FHIRElement implements \JsonSerializable
      * A series of data points which are decimal values separated by a single space (character u20). The special values "E" (error), "L" (below detection limit) and "U" (above detection limit) can also be used in place of a decimal value.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRSampledDataDataType
      */
-    public $data = null;
+    private $data = null;
 
     /**
      * The number of sample points at each time point. If this value is greater than one, then the dimensions will be interlaced - all the sample points for a point in time will be recorded at once.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
-    public $dimensions = null;
+    private $dimensions = null;
 
     /**
      * A correction factor that is applied to the sampled data points before they are added to the origin.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
-    public $factor = null;
+    private $factor = null;
 
     /**
      * The lower limit of detection of the measured points. This is needed if any of the data points have the value "L" (lower than detection limit).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
-    public $lowerLimit = null;
+    private $lowerLimit = null;
 
     /**
      * The base quantity that a measured value of zero represents. In addition, this provides the units of the entire measurement series.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    public $origin = null;
+    private $origin = null;
 
     /**
      * The length of time between sampling times, measured in milliseconds.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
-    public $period = null;
+    private $period = null;
 
     /**
      * The upper limit of detection of the measured points. This is needed if any of the data points have the value "U" (higher than detection limit).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
-    public $upperLimit = null;
+    private $upperLimit = null;
 
     /**
      * FHIRSampledData Constructor
@@ -125,28 +125,88 @@ class FHIRSampledData extends FHIRElement implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['data'])) {
-                $this->setData($data['data']);
+                $value = $data['data'];
+                if (is_array($value)) {
+                    $value = new FHIRSampledDataDataType($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRSampledDataDataType($value);
+                }
+                if (!($value instanceof FHIRSampledDataDataType)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRSampledData::__construct - Property \"data\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRSampledDataDataType or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setData($value);
             }
             if (isset($data['dimensions'])) {
-                $this->setDimensions($data['dimensions']);
+                $value = $data['dimensions'];
+                if (is_array($value)) {
+                    $value = new FHIRPositiveInt($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRPositiveInt($value);
+                }
+                if (!($value instanceof FHIRPositiveInt)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRSampledData::__construct - Property \"dimensions\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDimensions($value);
             }
             if (isset($data['factor'])) {
-                $this->setFactor($data['factor']);
+                $value = $data['factor'];
+                if (is_array($value)) {
+                    $value = new FHIRDecimal($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDecimal($value);
+                }
+                if (!($value instanceof FHIRDecimal)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRSampledData::__construct - Property \"factor\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDecimal or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setFactor($value);
             }
             if (isset($data['lowerLimit'])) {
-                $this->setLowerLimit($data['lowerLimit']);
+                $value = $data['lowerLimit'];
+                if (is_array($value)) {
+                    $value = new FHIRDecimal($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDecimal($value);
+                }
+                if (!($value instanceof FHIRDecimal)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRSampledData::__construct - Property \"lowerLimit\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDecimal or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setLowerLimit($value);
             }
             if (isset($data['origin'])) {
-                $this->setOrigin($data['origin']);
+                $value = $data['origin'];
+                if (is_array($value)) {
+                    $value = new FHIRQuantity($value);
+                } 
+                if (!($value instanceof FHIRQuantity)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRSampledData::__construct - Property \"origin\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setOrigin($value);
             }
             if (isset($data['period'])) {
-                $this->setPeriod($data['period']);
+                $value = $data['period'];
+                if (is_array($value)) {
+                    $value = new FHIRDecimal($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDecimal($value);
+                }
+                if (!($value instanceof FHIRDecimal)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRSampledData::__construct - Property \"period\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDecimal or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setPeriod($value);
             }
             if (isset($data['upperLimit'])) {
-                $this->setUpperLimit($data['upperLimit']);
+                $value = $data['upperLimit'];
+                if (is_array($value)) {
+                    $value = new FHIRDecimal($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDecimal($value);
+                }
+                if (!($value instanceof FHIRDecimal)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRSampledData::__construct - Property \"upperLimit\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDecimal or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setUpperLimit($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -155,6 +215,7 @@ class FHIRSampledData extends FHIRElement implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -189,7 +250,6 @@ class FHIRSampledData extends FHIRElement implements \JsonSerializable
         return $this->data;
     }
 
-
     /**
      * The number of sample points at each time point. If this value is greater than one, then the dimensions will be interlaced - all the sample points for a point in time will be recorded at once.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
@@ -221,7 +281,6 @@ class FHIRSampledData extends FHIRElement implements \JsonSerializable
     {
         return $this->dimensions;
     }
-
 
     /**
      * A correction factor that is applied to the sampled data points before they are added to the origin.
@@ -255,7 +314,6 @@ class FHIRSampledData extends FHIRElement implements \JsonSerializable
         return $this->factor;
     }
 
-
     /**
      * The lower limit of detection of the measured points. This is needed if any of the data points have the value "L" (lower than detection limit).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDecimal
@@ -288,7 +346,6 @@ class FHIRSampledData extends FHIRElement implements \JsonSerializable
         return $this->lowerLimit;
     }
 
-
     /**
      * The base quantity that a measured value of zero represents. In addition, this provides the units of the entire measurement series.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity
@@ -311,7 +368,6 @@ class FHIRSampledData extends FHIRElement implements \JsonSerializable
     {
         return $this->origin;
     }
-
 
     /**
      * The length of time between sampling times, measured in milliseconds.
@@ -345,7 +401,6 @@ class FHIRSampledData extends FHIRElement implements \JsonSerializable
         return $this->period;
     }
 
-
     /**
      * The upper limit of detection of the measured points. This is needed if any of the data points have the value "U" (higher than detection limit).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDecimal
@@ -377,7 +432,6 @@ class FHIRSampledData extends FHIRElement implements \JsonSerializable
     {
         return $this->upperLimit;
     }
-
 
     /**
      * @return string
@@ -427,9 +481,27 @@ class FHIRSampledData extends FHIRElement implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<SampledData xmlns="http://hl7.org/fhir"></SampledData>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getData())) {
+            $v->xmlSerialize(true, $sxe->addChild('data'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getDimensions())) {
+            $v->xmlSerialize(true, $sxe->addChild('dimensions'));
+        }
+        if (null !== ($v = $this->getFactor())) {
+            $v->xmlSerialize(true, $sxe->addChild('factor'));
+        }
+        if (null !== ($v = $this->getLowerLimit())) {
+            $v->xmlSerialize(true, $sxe->addChild('lowerLimit'));
+        }
+        if (null !== ($v = $this->getOrigin())) {
+            $v->xmlSerialize(true, $sxe->addChild('origin'));
+        }
+        if (null !== ($v = $this->getPeriod())) {
+            $v->xmlSerialize(true, $sxe->addChild('period'));
+        }
+        if (null !== ($v = $this->getUpperLimit())) {
+            $v->xmlSerialize(true, $sxe->addChild('upperLimit'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

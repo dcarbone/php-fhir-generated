@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -65,7 +65,7 @@ namespace PHPFHIRGenerated\FHIRElement;
 use PHPFHIRGenerated\FHIRElement;
 
 /**
- * An identifier - identifies some entity uniquely and unambiguously. Typically this is used for business identifiers.
+ * A technical identifier - identifies some entity uniquely and unambiguously.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
  *
  * Class FHIRIdentifier
@@ -80,37 +80,37 @@ class FHIRIdentifier extends FHIRElement implements \JsonSerializable
      * Organization that issued/manages the identifier.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $assigner = null;
+    private $assigner = null;
 
     /**
      * Time period during which identifier is/was valid for use.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public $period = null;
+    private $period = null;
 
     /**
      * Establishes the namespace for the value - that is, a URL that describes a set values that are unique.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $system = null;
+    private $system = null;
 
     /**
      * A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $type = null;
+    private $type = null;
 
     /**
      * The purpose of this identifier.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifierUse
      */
-    public $use = null;
+    private $use = null;
 
     /**
      * The portion of the identifier typically relevant to the user and which is unique within the context of the system.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $value = null;
+    private $value = null;
 
     /**
      * FHIRIdentifier Constructor
@@ -119,25 +119,72 @@ class FHIRIdentifier extends FHIRElement implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['assigner'])) {
-                $this->setAssigner($data['assigner']);
+                $value = $data['assigner'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRIdentifier::__construct - Property \"assigner\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setAssigner($value);
             }
             if (isset($data['period'])) {
-                $this->setPeriod($data['period']);
+                $value = $data['period'];
+                if (is_array($value)) {
+                    $value = new FHIRPeriod($value);
+                } 
+                if (!($value instanceof FHIRPeriod)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRIdentifier::__construct - Property \"period\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPeriod or data to construct type, saw ".gettype($value));
+                }
+                $this->setPeriod($value);
             }
             if (isset($data['system'])) {
-                $this->setSystem($data['system']);
+                $value = $data['system'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRIdentifier::__construct - Property \"system\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value));
+                }
+                $this->setSystem($value);
             }
             if (isset($data['type'])) {
-                $this->setType($data['type']);
+                $value = $data['type'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRIdentifier::__construct - Property \"type\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setType($value);
             }
             if (isset($data['use'])) {
-                $this->setUse($data['use']);
+                $value = $data['use'];
+                if (is_array($value)) {
+                    $value = new FHIRIdentifierUse($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRIdentifierUse($value);
+                }
+                if (!($value instanceof FHIRIdentifierUse)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRIdentifier::__construct - Property \"use\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifierUse or data to construct type, saw ".gettype($value));
+                }
+                $this->setUse($value);
             }
             if (isset($data['value'])) {
-                $this->setValue($data['value']);
+                $value = $data['value'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRIdentifier::__construct - Property \"value\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setValue($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -146,6 +193,7 @@ class FHIRIdentifier extends FHIRElement implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -171,7 +219,6 @@ class FHIRIdentifier extends FHIRElement implements \JsonSerializable
         return $this->assigner;
     }
 
-
     /**
      * Time period during which identifier is/was valid for use.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
@@ -194,7 +241,6 @@ class FHIRIdentifier extends FHIRElement implements \JsonSerializable
     {
         return $this->period;
     }
-
 
     /**
      * Establishes the namespace for the value - that is, a URL that describes a set values that are unique.
@@ -228,7 +274,6 @@ class FHIRIdentifier extends FHIRElement implements \JsonSerializable
         return $this->system;
     }
 
-
     /**
      * A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
@@ -251,7 +296,6 @@ class FHIRIdentifier extends FHIRElement implements \JsonSerializable
     {
         return $this->type;
     }
-
 
     /**
      * The purpose of this identifier.
@@ -285,7 +329,6 @@ class FHIRIdentifier extends FHIRElement implements \JsonSerializable
         return $this->use;
     }
 
-
     /**
      * The portion of the identifier typically relevant to the user and which is unique within the context of the system.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -317,7 +360,6 @@ class FHIRIdentifier extends FHIRElement implements \JsonSerializable
     {
         return $this->value;
     }
-
 
     /**
      * @return string
@@ -364,9 +406,24 @@ class FHIRIdentifier extends FHIRElement implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Identifier xmlns="http://hl7.org/fhir"></Identifier>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getAssigner())) {
+            $v->xmlSerialize(true, $sxe->addChild('assigner'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getPeriod())) {
+            $v->xmlSerialize(true, $sxe->addChild('period'));
+        }
+        if (null !== ($v = $this->getSystem())) {
+            $v->xmlSerialize(true, $sxe->addChild('system'));
+        }
+        if (null !== ($v = $this->getType())) {
+            $v->xmlSerialize(true, $sxe->addChild('type'));
+        }
+        if (null !== ($v = $this->getUse())) {
+            $v->xmlSerialize(true, $sxe->addChild('use'));
+        }
+        if (null !== ($v = $this->getValue())) {
+            $v->xmlSerialize(true, $sxe->addChild('value'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

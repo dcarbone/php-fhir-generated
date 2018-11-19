@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -66,7 +66,6 @@ use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSyst
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemFilter;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemProperty;
 use PHPFHIRGenerated\FHIRElement\FHIRBoolean;
-use PHPFHIRGenerated\FHIRElement\FHIRCanonical;
 use PHPFHIRGenerated\FHIRElement\FHIRCodeSystemContentMode;
 use PHPFHIRGenerated\FHIRElement\FHIRCodeSystemHierarchyMeaning;
 use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
@@ -82,7 +81,7 @@ use PHPFHIRGenerated\FHIRElement\FHIRUsageContext;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
 /**
- * The CodeSystem resource is used to declare the existence of and describe a code system or code system supplement and its key properties, and optionally define a part or all of its content.
+ * A code system resource specifies a set of codes drawn from one or more code systems.
  * If the element is present, it must have either a @value, an @id, or extensions
  *
  * Class FHIRCodeSystem
@@ -97,157 +96,151 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
      * If code comparison is case sensitive when codes within this system are compared to each other.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $caseSensitive = null;
+    private $caseSensitive = null;
 
     /**
-     * The code system defines a compositional (post-coordination) grammar.
+     * True If code system defines a post-composition grammar.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $compositional = null;
+    private $compositional = null;
 
     /**
      * Concepts that are in the code system. The concept definitions are inherently hierarchical, but the definitions must be consulted to determine what the meaning of the hierarchical relationships are.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept[]
      */
-    public $concept = null;
+    private $concept = [];
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
-    public $contact = null;
+    private $contact = [];
 
     /**
-     * The extent of the content of the code system (the concepts and codes it defines) are represented in this resource instance.
+     * How much of the content of the code system - the concepts and codes it defines - are represented in this resource.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeSystemContentMode
      */
-    public $content = null;
+    private $content = null;
 
     /**
      * A copyright statement relating to the code system and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the code system.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public $copyright = null;
+    private $copyright = null;
 
     /**
-     * The total number of concepts defined by the code system. Where the code system has a compositional grammar, the basis of this count is defined by the system steward.
+     * The total number of concepts defined by the code system. Where the code system has a compositional grammar, the count refers to the number of base (primitive) concepts.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
-    public $count = null;
+    private $count = null;
 
     /**
-     * The date  (and optionally time) when the code system was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the code system changes.
+     * The date  (and optionally time) when the code system was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the code system changes.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $date = null;
+    private $date = null;
 
     /**
      * A free text natural language description of the code system from a consumer's perspective.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public $description = null;
+    private $description = null;
 
     /**
-     * A Boolean value to indicate that this code system is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this code system is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $experimental = null;
+    private $experimental = null;
 
     /**
      * A filter that can be used in a value set compose statement when selecting concepts using a filter.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemFilter
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemFilter[]
      */
-    public $filter = null;
+    private $filter = [];
 
     /**
-     * The meaning of the hierarchy of concepts as represnted in this resource.
+     * The meaning of the hierarchy of concepts.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeSystemHierarchyMeaning
      */
-    public $hierarchyMeaning = null;
+    private $hierarchyMeaning = null;
 
     /**
-     * A formal identifier that is used to identify this code system when it is represented in other formats, or referenced in a specification, model, design or an instance. (business identifier).
+     * A formal identifier that is used to identify this code system when it is represented in other formats, or referenced in a specification, model, design or an instance.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public $identifier = null;
+    private $identifier = null;
 
     /**
      * A legal or geographic region in which the code system is intended to be used.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $jurisdiction = null;
+    private $jurisdiction = [];
 
     /**
      * A natural language name identifying the code system. This name should be usable as an identifier for the module by machine processing applications such as code generation.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $name = null;
+    private $name = null;
 
     /**
      * A property defines an additional slot through which additional information can be provided about a concept.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemProperty
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemProperty[]
      */
-    public $property = null;
+    private $property = [];
 
     /**
-     * The name of the organization or individual that published the code system.
+     * The name of the individual or organization that published the code system.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $publisher = null;
+    private $publisher = null;
 
     /**
-     * Explanation of why this code system is needed and why it has been designed as it has.
+     * Explaination of why this code system is needed and why it has been designed as it has.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public $purpose = null;
+    private $purpose = null;
 
     /**
      * The status of this code system. Enables tracking the life-cycle of the content.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus
      */
-    public $status = null;
-
-    /**
-     * References the code system that this code system supplement is adding designations and properties to.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCanonical
-     */
-    public $supplements = null;
+    private $status = null;
 
     /**
      * A short, descriptive, user-friendly title for the code system.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $title = null;
+    private $title = null;
 
     /**
-     * An absolute URI that is used to identify this code system when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this code system is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the code system is stored on different servers. This is used in [Coding](datatypes.html#Coding).system.
+     * An absolute URI that is used to identify this code system when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this code system is (or will be) published. The URL SHOULD include the major version of the code system. For more information see [Technical and Business Versions](resource.html#versions). This is used in [Coding]{datatypes.html#Coding}.system.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $url = null;
+    private $url = null;
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate code system instances.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
-    public $useContext = null;
+    private $useContext = [];
 
     /**
      * Canonical URL of value set that contains the entire code system.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $valueSet = null;
+    private $valueSet = null;
 
     /**
-     * The identifier that is used to identify this version of the code system when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the code system author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. This is used in [Coding](datatypes.html#Coding).version.
+     * The identifier that is used to identify this version of the code system when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the code system author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. This is used in [Coding]{datatypes.html#Coding}.version.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $version = null;
+    private $version = null;
 
     /**
-     * This flag is used to signify that the code system does not commit to concept permanence across versions. If true, a version must be specified when referencing this code system.
+     * This flag is used to signify that the code system has not (or does not) maintain the definitions, and a version must be specified when referencing this code system.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $versionNeeded = null;
+    private $versionNeeded = null;
 
     /**
      * FHIRCodeSystem Constructor
@@ -256,85 +249,328 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['caseSensitive'])) {
-                $this->setCaseSensitive($data['caseSensitive']);
+                $value = $data['caseSensitive'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCodeSystem::__construct - Property \"caseSensitive\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setCaseSensitive($value);
             }
             if (isset($data['compositional'])) {
-                $this->setCompositional($data['compositional']);
+                $value = $data['compositional'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCodeSystem::__construct - Property \"compositional\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setCompositional($value);
             }
             if (isset($data['concept'])) {
-                $this->setConcept($data['concept']);
+                $value = $data['concept'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeSystemConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeSystemConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCodeSystem::__construct - Collection field \"concept\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addConcept($v);
+                    }
+                }
             }
             if (isset($data['contact'])) {
-                $this->setContact($data['contact']);
+                $value = $data['contact'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRContactDetail($v);
+                        } 
+                        if (!($v instanceof FHIRContactDetail)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCodeSystem::__construct - Collection field \"contact\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRContactDetail or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addContact($v);
+                    }
+                }
             }
             if (isset($data['content'])) {
-                $this->setContent($data['content']);
+                $value = $data['content'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeSystemContentMode($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRCodeSystemContentMode($value);
+                }
+                if (!($value instanceof FHIRCodeSystemContentMode)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCodeSystem::__construct - Property \"content\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeSystemContentMode or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setContent($value);
             }
             if (isset($data['copyright'])) {
-                $this->setCopyright($data['copyright']);
+                $value = $data['copyright'];
+                if (is_array($value)) {
+                    $value = new FHIRMarkdown($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRMarkdown($value);
+                }
+                if (!($value instanceof FHIRMarkdown)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCodeSystem::__construct - Property \"copyright\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRMarkdown or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setCopyright($value);
             }
             if (isset($data['count'])) {
-                $this->setCount($data['count']);
+                $value = $data['count'];
+                if (is_array($value)) {
+                    $value = new FHIRUnsignedInt($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUnsignedInt($value);
+                }
+                if (!($value instanceof FHIRUnsignedInt)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCodeSystem::__construct - Property \"count\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setCount($value);
             }
             if (isset($data['date'])) {
-                $this->setDate($data['date']);
+                $value = $data['date'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCodeSystem::__construct - Property \"date\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDate($value);
             }
             if (isset($data['description'])) {
-                $this->setDescription($data['description']);
+                $value = $data['description'];
+                if (is_array($value)) {
+                    $value = new FHIRMarkdown($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRMarkdown($value);
+                }
+                if (!($value instanceof FHIRMarkdown)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCodeSystem::__construct - Property \"description\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRMarkdown or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDescription($value);
             }
             if (isset($data['experimental'])) {
-                $this->setExperimental($data['experimental']);
+                $value = $data['experimental'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCodeSystem::__construct - Property \"experimental\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setExperimental($value);
             }
             if (isset($data['filter'])) {
-                $this->setFilter($data['filter']);
+                $value = $data['filter'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeSystemFilter($v);
+                        } 
+                        if (!($v instanceof FHIRCodeSystemFilter)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCodeSystem::__construct - Collection field \"filter\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemFilter or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addFilter($v);
+                    }
+                }
             }
             if (isset($data['hierarchyMeaning'])) {
-                $this->setHierarchyMeaning($data['hierarchyMeaning']);
+                $value = $data['hierarchyMeaning'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeSystemHierarchyMeaning($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRCodeSystemHierarchyMeaning($value);
+                }
+                if (!($value instanceof FHIRCodeSystemHierarchyMeaning)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCodeSystem::__construct - Property \"hierarchyMeaning\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeSystemHierarchyMeaning or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setHierarchyMeaning($value);
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    $value = new FHIRIdentifier($value);
+                } 
+                if (!($value instanceof FHIRIdentifier)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCodeSystem::__construct - Property \"identifier\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setIdentifier($value);
             }
             if (isset($data['jurisdiction'])) {
-                $this->setJurisdiction($data['jurisdiction']);
+                $value = $data['jurisdiction'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCodeSystem::__construct - Collection field \"jurisdiction\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addJurisdiction($v);
+                    }
+                }
             }
             if (isset($data['name'])) {
-                $this->setName($data['name']);
+                $value = $data['name'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCodeSystem::__construct - Property \"name\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setName($value);
             }
             if (isset($data['property'])) {
-                $this->setProperty($data['property']);
+                $value = $data['property'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeSystemProperty($v);
+                        } 
+                        if (!($v instanceof FHIRCodeSystemProperty)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCodeSystem::__construct - Collection field \"property\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemProperty or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addProperty($v);
+                    }
+                }
             }
             if (isset($data['publisher'])) {
-                $this->setPublisher($data['publisher']);
+                $value = $data['publisher'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCodeSystem::__construct - Property \"publisher\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setPublisher($value);
             }
             if (isset($data['purpose'])) {
-                $this->setPurpose($data['purpose']);
+                $value = $data['purpose'];
+                if (is_array($value)) {
+                    $value = new FHIRMarkdown($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRMarkdown($value);
+                }
+                if (!($value instanceof FHIRMarkdown)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCodeSystem::__construct - Property \"purpose\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRMarkdown or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setPurpose($value);
             }
             if (isset($data['status'])) {
-                $this->setStatus($data['status']);
-            }
-            if (isset($data['supplements'])) {
-                $this->setSupplements($data['supplements']);
+                $value = $data['status'];
+                if (is_array($value)) {
+                    $value = new FHIRPublicationStatus($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRPublicationStatus($value);
+                }
+                if (!($value instanceof FHIRPublicationStatus)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCodeSystem::__construct - Property \"status\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setStatus($value);
             }
             if (isset($data['title'])) {
-                $this->setTitle($data['title']);
+                $value = $data['title'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCodeSystem::__construct - Property \"title\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setTitle($value);
             }
             if (isset($data['url'])) {
-                $this->setUrl($data['url']);
+                $value = $data['url'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCodeSystem::__construct - Property \"url\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setUrl($value);
             }
             if (isset($data['useContext'])) {
-                $this->setUseContext($data['useContext']);
+                $value = $data['useContext'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRUsageContext($v);
+                        } 
+                        if (!($v instanceof FHIRUsageContext)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCodeSystem::__construct - Collection field \"useContext\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUsageContext or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addUseContext($v);
+                    }
+                }
             }
             if (isset($data['valueSet'])) {
-                $this->setValueSet($data['valueSet']);
+                $value = $data['valueSet'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCodeSystem::__construct - Property \"valueSet\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setValueSet($value);
             }
             if (isset($data['version'])) {
-                $this->setVersion($data['version']);
+                $value = $data['version'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCodeSystem::__construct - Property \"version\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setVersion($value);
             }
             if (isset($data['versionNeeded'])) {
-                $this->setVersionNeeded($data['versionNeeded']);
+                $value = $data['versionNeeded'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCodeSystem::__construct - Property \"versionNeeded\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setVersionNeeded($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -343,6 +579,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -377,9 +614,8 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
         return $this->caseSensitive;
     }
 
-
     /**
-     * The code system defines a compositional (post-coordination) grammar.
+     * True If code system defines a post-composition grammar.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      * @return $this
      */
@@ -402,7 +638,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The code system defines a compositional (post-coordination) grammar.
+     * True If code system defines a post-composition grammar.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getCompositional()
@@ -410,57 +646,54 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
         return $this->compositional;
     }
 
-
     /**
      * Concepts that are in the code system. The concept definitions are inherently hierarchical, but the definitions must be consulted to determine what the meaning of the hierarchical relationships are.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept
      * @return $this
      */
-    public function setConcept(FHIRCodeSystemConcept $concept = null)
+    public function addConcept(FHIRCodeSystemConcept $concept = null)
     {
         if (null === $concept) {
             return $this; 
         }
-        $this->concept = $concept;
+        $this->concept[] = $concept;
         return $this;
     }
 
     /**
      * Concepts that are in the code system. The concept definitions are inherently hierarchical, but the definitions must be consulted to determine what the meaning of the hierarchical relationships are.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept[]
      */
     public function getConcept()
     {
         return $this->concept;
     }
 
-
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail
      * @return $this
      */
-    public function setContact(FHIRContactDetail $contact = null)
+    public function addContact(FHIRContactDetail $contact = null)
     {
         if (null === $contact) {
             return $this; 
         }
-        $this->contact = $contact;
+        $this->contact[] = $contact;
         return $this;
     }
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
     public function getContact()
     {
         return $this->contact;
     }
 
-
     /**
-     * The extent of the content of the code system (the concepts and codes it defines) are represented in this resource instance.
+     * How much of the content of the code system - the concepts and codes it defines - are represented in this resource.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeSystemContentMode
      * @return $this
      */
@@ -483,14 +716,13 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The extent of the content of the code system (the concepts and codes it defines) are represented in this resource instance.
+     * How much of the content of the code system - the concepts and codes it defines - are represented in this resource.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeSystemContentMode
      */
     public function getContent()
     {
         return $this->content;
     }
-
 
     /**
      * A copyright statement relating to the code system and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the code system.
@@ -524,9 +756,8 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
         return $this->copyright;
     }
 
-
     /**
-     * The total number of concepts defined by the code system. Where the code system has a compositional grammar, the basis of this count is defined by the system steward.
+     * The total number of concepts defined by the code system. Where the code system has a compositional grammar, the count refers to the number of base (primitive) concepts.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      * @return $this
      */
@@ -549,7 +780,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The total number of concepts defined by the code system. Where the code system has a compositional grammar, the basis of this count is defined by the system steward.
+     * The total number of concepts defined by the code system. Where the code system has a compositional grammar, the count refers to the number of base (primitive) concepts.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
     public function getCount()
@@ -557,9 +788,8 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
         return $this->count;
     }
 
-
     /**
-     * The date  (and optionally time) when the code system was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the code system changes.
+     * The date  (and optionally time) when the code system was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the code system changes.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      * @return $this
      */
@@ -582,14 +812,13 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date  (and optionally time) when the code system was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the code system changes.
+     * The date  (and optionally time) when the code system was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the code system changes.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getDate()
     {
         return $this->date;
     }
-
 
     /**
      * A free text natural language description of the code system from a consumer's perspective.
@@ -623,9 +852,8 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
         return $this->description;
     }
 
-
     /**
-     * A Boolean value to indicate that this code system is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this code system is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      * @return $this
      */
@@ -648,7 +876,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A Boolean value to indicate that this code system is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this code system is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getExperimental()
@@ -656,33 +884,31 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
         return $this->experimental;
     }
 
-
     /**
      * A filter that can be used in a value set compose statement when selecting concepts using a filter.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemFilter
      * @return $this
      */
-    public function setFilter(FHIRCodeSystemFilter $filter = null)
+    public function addFilter(FHIRCodeSystemFilter $filter = null)
     {
         if (null === $filter) {
             return $this; 
         }
-        $this->filter = $filter;
+        $this->filter[] = $filter;
         return $this;
     }
 
     /**
      * A filter that can be used in a value set compose statement when selecting concepts using a filter.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemFilter
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemFilter[]
      */
     public function getFilter()
     {
         return $this->filter;
     }
 
-
     /**
-     * The meaning of the hierarchy of concepts as represnted in this resource.
+     * The meaning of the hierarchy of concepts.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeSystemHierarchyMeaning
      * @return $this
      */
@@ -705,7 +931,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The meaning of the hierarchy of concepts as represnted in this resource.
+     * The meaning of the hierarchy of concepts.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeSystemHierarchyMeaning
      */
     public function getHierarchyMeaning()
@@ -713,9 +939,8 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
         return $this->hierarchyMeaning;
     }
 
-
     /**
-     * A formal identifier that is used to identify this code system when it is represented in other formats, or referenced in a specification, model, design or an instance. (business identifier).
+     * A formal identifier that is used to identify this code system when it is represented in other formats, or referenced in a specification, model, design or an instance.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
@@ -729,7 +954,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A formal identifier that is used to identify this code system when it is represented in other formats, or referenced in a specification, model, design or an instance. (business identifier).
+     * A formal identifier that is used to identify this code system when it is represented in other formats, or referenced in a specification, model, design or an instance.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier()
@@ -737,30 +962,28 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
         return $this->identifier;
     }
 
-
     /**
      * A legal or geographic region in which the code system is intended to be used.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setJurisdiction(FHIRCodeableConcept $jurisdiction = null)
+    public function addJurisdiction(FHIRCodeableConcept $jurisdiction = null)
     {
         if (null === $jurisdiction) {
             return $this; 
         }
-        $this->jurisdiction = $jurisdiction;
+        $this->jurisdiction[] = $jurisdiction;
         return $this;
     }
 
     /**
      * A legal or geographic region in which the code system is intended to be used.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getJurisdiction()
     {
         return $this->jurisdiction;
     }
-
 
     /**
      * A natural language name identifying the code system. This name should be usable as an identifier for the module by machine processing applications such as code generation.
@@ -794,33 +1017,31 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
         return $this->name;
     }
 
-
     /**
      * A property defines an additional slot through which additional information can be provided about a concept.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemProperty
      * @return $this
      */
-    public function setProperty(FHIRCodeSystemProperty $property = null)
+    public function addProperty(FHIRCodeSystemProperty $property = null)
     {
         if (null === $property) {
             return $this; 
         }
-        $this->property = $property;
+        $this->property[] = $property;
         return $this;
     }
 
     /**
      * A property defines an additional slot through which additional information can be provided about a concept.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemProperty
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemProperty[]
      */
     public function getProperty()
     {
         return $this->property;
     }
 
-
     /**
-     * The name of the organization or individual that published the code system.
+     * The name of the individual or organization that published the code system.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
@@ -843,7 +1064,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The name of the organization or individual that published the code system.
+     * The name of the individual or organization that published the code system.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getPublisher()
@@ -851,9 +1072,8 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
         return $this->publisher;
     }
 
-
     /**
-     * Explanation of why this code system is needed and why it has been designed as it has.
+     * Explaination of why this code system is needed and why it has been designed as it has.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      * @return $this
      */
@@ -876,14 +1096,13 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Explanation of why this code system is needed and why it has been designed as it has.
+     * Explaination of why this code system is needed and why it has been designed as it has.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getPurpose()
     {
         return $this->purpose;
     }
-
 
     /**
      * The status of this code system. Enables tracking the life-cycle of the content.
@@ -917,40 +1136,6 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
         return $this->status;
     }
 
-
-    /**
-     * References the code system that this code system supplement is adding designations and properties to.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
-     * @return $this
-     */
-    public function setSupplements($supplements)
-    {
-        if (null === $supplements) {
-            return $this; 
-        }
-        if (is_scalar($supplements)) {
-            $supplements = new FHIRCanonical($supplements);
-        }
-        if (!($supplements instanceof FHIRCanonical)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRCodeSystem::setSupplements - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCanonical or appropriate scalar value, %s seen.',
-                gettype($supplements)
-            ));
-        }
-        $this->supplements = $supplements;
-        return $this;
-    }
-
-    /**
-     * References the code system that this code system supplement is adding designations and properties to.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
-     */
-    public function getSupplements()
-    {
-        return $this->supplements;
-    }
-
-
     /**
      * A short, descriptive, user-friendly title for the code system.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -983,9 +1168,8 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
         return $this->title;
     }
 
-
     /**
-     * An absolute URI that is used to identify this code system when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this code system is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the code system is stored on different servers. This is used in [Coding](datatypes.html#Coding).system.
+     * An absolute URI that is used to identify this code system when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this code system is (or will be) published. The URL SHOULD include the major version of the code system. For more information see [Technical and Business Versions](resource.html#versions). This is used in [Coding]{datatypes.html#Coding}.system.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
@@ -1008,7 +1192,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * An absolute URI that is used to identify this code system when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this code system is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the code system is stored on different servers. This is used in [Coding](datatypes.html#Coding).system.
+     * An absolute URI that is used to identify this code system when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this code system is (or will be) published. The URL SHOULD include the major version of the code system. For more information see [Technical and Business Versions](resource.html#versions). This is used in [Coding]{datatypes.html#Coding}.system.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getUrl()
@@ -1016,34 +1200,32 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
         return $this->url;
     }
 
-
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate code system instances.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUsageContext
      * @return $this
      */
-    public function setUseContext(FHIRUsageContext $useContext = null)
+    public function addUseContext(FHIRUsageContext $useContext = null)
     {
         if (null === $useContext) {
             return $this; 
         }
-        $this->useContext = $useContext;
+        $this->useContext[] = $useContext;
         return $this;
     }
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate code system instances.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUsageContext
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
     public function getUseContext()
     {
         return $this->useContext;
     }
 
-
     /**
      * Canonical URL of value set that contains the entire code system.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
     public function setValueSet($valueSet)
@@ -1052,11 +1234,11 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
             return $this; 
         }
         if (is_scalar($valueSet)) {
-            $valueSet = new FHIRCanonical($valueSet);
+            $valueSet = new FHIRUri($valueSet);
         }
-        if (!($valueSet instanceof FHIRCanonical)) {
+        if (!($valueSet instanceof FHIRUri)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRCodeSystem::setValueSet - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCanonical or appropriate scalar value, %s seen.',
+                'FHIRCodeSystem::setValueSet - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or appropriate scalar value, %s seen.',
                 gettype($valueSet)
             ));
         }
@@ -1066,16 +1248,15 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Canonical URL of value set that contains the entire code system.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getValueSet()
     {
         return $this->valueSet;
     }
 
-
     /**
-     * The identifier that is used to identify this version of the code system when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the code system author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. This is used in [Coding](datatypes.html#Coding).version.
+     * The identifier that is used to identify this version of the code system when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the code system author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. This is used in [Coding]{datatypes.html#Coding}.version.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
@@ -1098,7 +1279,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The identifier that is used to identify this version of the code system when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the code system author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. This is used in [Coding](datatypes.html#Coding).version.
+     * The identifier that is used to identify this version of the code system when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the code system author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. This is used in [Coding]{datatypes.html#Coding}.version.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getVersion()
@@ -1106,9 +1287,8 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
         return $this->version;
     }
 
-
     /**
-     * This flag is used to signify that the code system does not commit to concept permanence across versions. If true, a version must be specified when referencing this code system.
+     * This flag is used to signify that the code system has not (or does not) maintain the definitions, and a version must be specified when referencing this code system.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      * @return $this
      */
@@ -1131,14 +1311,13 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * This flag is used to signify that the code system does not commit to concept permanence across versions. If true, a version must be specified when referencing this code system.
+     * This flag is used to signify that the code system has not (or does not) maintain the definitions, and a version must be specified when referencing this code system.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getVersionNeeded()
     {
         return $this->versionNeeded;
     }
-
 
     /**
      * @return string
@@ -1161,11 +1340,27 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getCompositional())) {
             $a['compositional'] = $v;
         }
-        if (null !== ($v = $this->getConcept())) {
-            $a['concept'] = $v;
+        if (0 < count($values = $this->getConcept())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['concept'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getContact())) {
-            $a['contact'] = $v;
+        if (0 < count($values = $this->getContact())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['contact'] = $vs;
+            }
         }
         if (null !== ($v = $this->getContent())) {
             $a['content'] = $v;
@@ -1185,8 +1380,16 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getExperimental())) {
             $a['experimental'] = $v;
         }
-        if (null !== ($v = $this->getFilter())) {
-            $a['filter'] = $v;
+        if (0 < count($values = $this->getFilter())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['filter'] = $vs;
+            }
         }
         if (null !== ($v = $this->getHierarchyMeaning())) {
             $a['hierarchyMeaning'] = $v;
@@ -1194,14 +1397,30 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getIdentifier())) {
             $a['identifier'] = $v;
         }
-        if (null !== ($v = $this->getJurisdiction())) {
-            $a['jurisdiction'] = $v;
+        if (0 < count($values = $this->getJurisdiction())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['jurisdiction'] = $vs;
+            }
         }
         if (null !== ($v = $this->getName())) {
             $a['name'] = $v;
         }
-        if (null !== ($v = $this->getProperty())) {
-            $a['property'] = $v;
+        if (0 < count($values = $this->getProperty())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['property'] = $vs;
+            }
         }
         if (null !== ($v = $this->getPublisher())) {
             $a['publisher'] = $v;
@@ -1212,17 +1431,22 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getStatus())) {
             $a['status'] = $v;
         }
-        if (null !== ($v = $this->getSupplements())) {
-            $a['supplements'] = $v;
-        }
         if (null !== ($v = $this->getTitle())) {
             $a['title'] = $v;
         }
         if (null !== ($v = $this->getUrl())) {
             $a['url'] = $v;
         }
-        if (null !== ($v = $this->getUseContext())) {
-            $a['useContext'] = $v;
+        if (0 < count($values = $this->getUseContext())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['useContext'] = $vs;
+            }
         }
         if (null !== ($v = $this->getValueSet())) {
             $a['valueSet'] = $v;
@@ -1246,9 +1470,105 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<CodeSystem xmlns="http://hl7.org/fhir"></CodeSystem>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getCaseSensitive())) {
+            $v->xmlSerialize(true, $sxe->addChild('caseSensitive'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getCompositional())) {
+            $v->xmlSerialize(true, $sxe->addChild('compositional'));
+        }
+        if (0 < count($values = $this->getConcept())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('concept'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getContact())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('contact'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getContent())) {
+            $v->xmlSerialize(true, $sxe->addChild('content'));
+        }
+        if (null !== ($v = $this->getCopyright())) {
+            $v->xmlSerialize(true, $sxe->addChild('copyright'));
+        }
+        if (null !== ($v = $this->getCount())) {
+            $v->xmlSerialize(true, $sxe->addChild('count'));
+        }
+        if (null !== ($v = $this->getDate())) {
+            $v->xmlSerialize(true, $sxe->addChild('date'));
+        }
+        if (null !== ($v = $this->getDescription())) {
+            $v->xmlSerialize(true, $sxe->addChild('description'));
+        }
+        if (null !== ($v = $this->getExperimental())) {
+            $v->xmlSerialize(true, $sxe->addChild('experimental'));
+        }
+        if (0 < count($values = $this->getFilter())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('filter'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getHierarchyMeaning())) {
+            $v->xmlSerialize(true, $sxe->addChild('hierarchyMeaning'));
+        }
+        if (null !== ($v = $this->getIdentifier())) {
+            $v->xmlSerialize(true, $sxe->addChild('identifier'));
+        }
+        if (0 < count($values = $this->getJurisdiction())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('jurisdiction'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getName())) {
+            $v->xmlSerialize(true, $sxe->addChild('name'));
+        }
+        if (0 < count($values = $this->getProperty())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('property'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getPublisher())) {
+            $v->xmlSerialize(true, $sxe->addChild('publisher'));
+        }
+        if (null !== ($v = $this->getPurpose())) {
+            $v->xmlSerialize(true, $sxe->addChild('purpose'));
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('status'));
+        }
+        if (null !== ($v = $this->getTitle())) {
+            $v->xmlSerialize(true, $sxe->addChild('title'));
+        }
+        if (null !== ($v = $this->getUrl())) {
+            $v->xmlSerialize(true, $sxe->addChild('url'));
+        }
+        if (0 < count($values = $this->getUseContext())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('useContext'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getValueSet())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueSet'));
+        }
+        if (null !== ($v = $this->getVersion())) {
+            $v->xmlSerialize(true, $sxe->addChild('version'));
+        }
+        if (null !== ($v = $this->getVersionNeeded())) {
+            $v->xmlSerialize(true, $sxe->addChild('versionNeeded'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

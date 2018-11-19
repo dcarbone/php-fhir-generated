@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMeasureReport;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMeasureReport;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,10 +63,10 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMeasureReport;
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
+use PHPFHIRGenerated\FHIRElement\FHIRIdentifier;
 
 /**
- * The MeasureReport resource contains the results of the calculation of a measure; and optionally a reference to the resources involved in that calculation.
+ * The MeasureReport resource contains the results of evaluating a measure.
  *
  * Class FHIRMeasureReportStratifier
  * @package PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMeasureReport
@@ -77,16 +77,16 @@ class FHIRMeasureReportStratifier extends FHIRBackboneElement implements \JsonSe
     const FHIR_TYPE_NAME = 'MeasureReport.Stratifier';
 
     /**
-     * The meaning of this stratifier, as defined in the measure definition.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * The identifier of this stratifier, as defined in the measure definition.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public $code = null;
+    private $identifier = null;
 
     /**
      * This element contains the results for a single stratum within the stratifier. For example, when stratifying on administrative gender, there will be four strata, one for each possible gender value.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratum
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratum[]
      */
-    public $stratum = null;
+    private $stratum = [];
 
     /**
      * FHIRMeasureReportStratifier Constructor
@@ -95,13 +95,32 @@ class FHIRMeasureReportStratifier extends FHIRBackboneElement implements \JsonSe
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
-            if (isset($data['code'])) {
-                $this->setCode($data['code']);
+            if (isset($data['identifier'])) {
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    $value = new FHIRIdentifier($value);
+                } 
+                if (!($value instanceof FHIRIdentifier)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratifier::__construct - Property \"identifier\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setIdentifier($value);
             }
             if (isset($data['stratum'])) {
-                $this->setStratum($data['stratum']);
+                $value = $data['stratum'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRMeasureReportStratum($v);
+                        } 
+                        if (!($v instanceof FHIRMeasureReportStratum)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratifier::__construct - Collection field \"stratum\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratum or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addStratum($v);
+                    }
+                }
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -110,55 +129,54 @@ class FHIRMeasureReportStratifier extends FHIRBackboneElement implements \JsonSe
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
-     * The meaning of this stratifier, as defined in the measure definition.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * The identifier of this stratifier, as defined in the measure definition.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
-    public function setCode(FHIRCodeableConcept $code = null)
+    public function setIdentifier(FHIRIdentifier $identifier = null)
     {
-        if (null === $code) {
+        if (null === $identifier) {
             return $this; 
         }
-        $this->code = $code;
+        $this->identifier = $identifier;
         return $this;
     }
 
     /**
-     * The meaning of this stratifier, as defined in the measure definition.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * The identifier of this stratifier, as defined in the measure definition.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public function getCode()
+    public function getIdentifier()
     {
-        return $this->code;
+        return $this->identifier;
     }
-
 
     /**
      * This element contains the results for a single stratum within the stratifier. For example, when stratifying on administrative gender, there will be four strata, one for each possible gender value.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratum
      * @return $this
      */
-    public function setStratum(FHIRMeasureReportStratum $stratum = null)
+    public function addStratum(FHIRMeasureReportStratum $stratum = null)
     {
         if (null === $stratum) {
             return $this; 
         }
-        $this->stratum = $stratum;
+        $this->stratum[] = $stratum;
         return $this;
     }
 
     /**
      * This element contains the results for a single stratum within the stratifier. For example, when stratifying on administrative gender, there will be four strata, one for each possible gender value.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratum
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratum[]
      */
     public function getStratum()
     {
         return $this->stratum;
     }
-
 
     /**
      * @return string
@@ -174,11 +192,19 @@ class FHIRMeasureReportStratifier extends FHIRBackboneElement implements \JsonSe
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getCode())) {
-            $a['code'] = $v;
+        if (null !== ($v = $this->getIdentifier())) {
+            $a['identifier'] = $v;
         }
-        if (null !== ($v = $this->getStratum())) {
-            $a['stratum'] = $v;
+        if (0 < count($values = $this->getStratum())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['stratum'] = $vs;
+            }
         }
         return $a;
     }
@@ -193,9 +219,16 @@ class FHIRMeasureReportStratifier extends FHIRBackboneElement implements \JsonSe
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<MeasureReportStratifier xmlns="http://hl7.org/fhir"></MeasureReportStratifier>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getIdentifier())) {
+            $v->xmlSerialize(true, $sxe->addChild('identifier'));
         }
-        return $sxe->saveXML();
+        if (0 < count($values = $this->getStratum())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('stratum'));
+                }
+            }
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

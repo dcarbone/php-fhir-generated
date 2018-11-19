@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -81,19 +81,13 @@ class FHIRAuditEventDetail extends FHIRBackboneElement implements \JsonSerializa
      * The type of extra detail provided in the value.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $type = null;
+    private $type = null;
 
     /**
-     * The  value of the extra detail.
+     * The details, base64 encoded. Used to carry bulk information.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
      */
-    public $valueBase64Binary = null;
-
-    /**
-     * The  value of the extra detail.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public $valueString = null;
+    private $value = null;
 
     /**
      * FHIRAuditEventDetail Constructor
@@ -102,16 +96,30 @@ class FHIRAuditEventDetail extends FHIRBackboneElement implements \JsonSerializa
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['type'])) {
-                $this->setType($data['type']);
+                $value = $data['type'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventDetail::__construct - Property \"type\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setType($value);
             }
-            if (isset($data['valueBase64Binary'])) {
-                $this->setValueBase64Binary($data['valueBase64Binary']);
-            }
-            if (isset($data['valueString'])) {
-                $this->setValueString($data['valueString']);
+            if (isset($data['value'])) {
+                $value = $data['value'];
+                if (is_array($value)) {
+                    $value = new FHIRBase64Binary($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBase64Binary($value);
+                }
+                if (!($value instanceof FHIRBase64Binary)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventDetail::__construct - Property \"value\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary or data to construct type, saw ".gettype($value));
+                }
+                $this->setValue($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -120,6 +128,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement implements \JsonSerializa
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -154,72 +163,37 @@ class FHIRAuditEventDetail extends FHIRBackboneElement implements \JsonSerializa
         return $this->type;
     }
 
-
     /**
-     * The  value of the extra detail.
+     * The details, base64 encoded. Used to carry bulk information.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
      * @return $this
      */
-    public function setValueBase64Binary($valueBase64Binary)
+    public function setValue($value)
     {
-        if (null === $valueBase64Binary) {
+        if (null === $value) {
             return $this; 
         }
-        if (is_scalar($valueBase64Binary)) {
-            $valueBase64Binary = new FHIRBase64Binary($valueBase64Binary);
+        if (is_scalar($value)) {
+            $value = new FHIRBase64Binary($value);
         }
-        if (!($valueBase64Binary instanceof FHIRBase64Binary)) {
+        if (!($value instanceof FHIRBase64Binary)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRAuditEventDetail::setValueBase64Binary - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary or appropriate scalar value, %s seen.',
-                gettype($valueBase64Binary)
+                'FHIRAuditEventDetail::setValue - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary or appropriate scalar value, %s seen.',
+                gettype($value)
             ));
         }
-        $this->valueBase64Binary = $valueBase64Binary;
+        $this->value = $value;
         return $this;
     }
 
     /**
-     * The  value of the extra detail.
+     * The details, base64 encoded. Used to carry bulk information.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
      */
-    public function getValueBase64Binary()
+    public function getValue()
     {
-        return $this->valueBase64Binary;
+        return $this->value;
     }
-
-
-    /**
-     * The  value of the extra detail.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
-     * @return $this
-     */
-    public function setValueString($valueString)
-    {
-        if (null === $valueString) {
-            return $this; 
-        }
-        if (is_scalar($valueString)) {
-            $valueString = new FHIRString($valueString);
-        }
-        if (!($valueString instanceof FHIRString)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRAuditEventDetail::setValueString - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
-                gettype($valueString)
-            ));
-        }
-        $this->valueString = $valueString;
-        return $this;
-    }
-
-    /**
-     * The  value of the extra detail.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public function getValueString()
-    {
-        return $this->valueString;
-    }
-
 
     /**
      * @return string
@@ -238,11 +212,8 @@ class FHIRAuditEventDetail extends FHIRBackboneElement implements \JsonSerializa
         if (null !== ($v = $this->getType())) {
             $a['type'] = $v;
         }
-        if (null !== ($v = $this->getValueBase64Binary())) {
-            $a['valueBase64Binary'] = $v;
-        }
-        if (null !== ($v = $this->getValueString())) {
-            $a['valueString'] = $v;
+        if (null !== ($v = $this->getValue())) {
+            $a['value'] = $v;
         }
         return $a;
     }
@@ -257,9 +228,12 @@ class FHIRAuditEventDetail extends FHIRBackboneElement implements \JsonSerializa
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<AuditEventDetail xmlns="http://hl7.org/fhir"></AuditEventDetail>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getType())) {
+            $v->xmlSerialize(true, $sxe->addChild('type'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getValue())) {
+            $v->xmlSerialize(true, $sxe->addChild('value'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

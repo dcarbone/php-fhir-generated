@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -67,7 +67,6 @@ use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
 use PHPFHIRGenerated\FHIRElement\FHIRDateTime;
 use PHPFHIRGenerated\FHIRElement\FHIRFinancialResourceStatusCodes;
 use PHPFHIRGenerated\FHIRElement\FHIRIdentifier;
-use PHPFHIRGenerated\FHIRElement\FHIRProcessOutcomeCodes;
 use PHPFHIRGenerated\FHIRElement\FHIRReference;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
@@ -86,75 +85,81 @@ class FHIRProcessResponse extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * Request for additional supporting or authorizing information, such as: documents, images or resources.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $communicationRequest = null;
+    private $communicationRequest = [];
 
     /**
      * The date when the enclosed suite of services were performed or completed.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $created = null;
+    private $created = null;
 
     /**
      * A description of the status of the adjudication or processing.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $disposition = null;
+    private $disposition = null;
 
     /**
      * Processing errors.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $error = null;
+    private $error = [];
 
     /**
      * The form to be used for printing the content.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $form = null;
+    private $form = null;
 
     /**
      * The Response business identifier.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = null;
+    private $identifier = [];
 
     /**
      * The organization who produced this adjudicated response.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $organization = null;
+    private $organization = null;
 
     /**
      * Transaction status: error, complete, held.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRProcessOutcomeCodes
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $outcome = null;
+    private $outcome = null;
 
     /**
      * Suite of processing notes or additional requirements if the processing has been held.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProcessResponse\FHIRProcessResponseProcessNote
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProcessResponse\FHIRProcessResponseProcessNote[]
      */
-    public $processNote = null;
+    private $processNote = [];
 
     /**
      * Original request resource reference.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $request = null;
+    private $request = null;
+
+    /**
+     * The organization which is responsible for the services rendered to the patient.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    private $requestOrganization = null;
 
     /**
      * The practitioner who is responsible for the services rendered to the patient.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $requestProvider = null;
+    private $requestProvider = null;
 
     /**
      * The status of the resource instance.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRFinancialResourceStatusCodes
      */
-    public $status = null;
+    private $status = null;
 
     /**
      * FHIRProcessResponse Constructor
@@ -163,43 +168,166 @@ class FHIRProcessResponse extends FHIRDomainResource implements \JsonSerializabl
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['communicationRequest'])) {
-                $this->setCommunicationRequest($data['communicationRequest']);
+                $value = $data['communicationRequest'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcessResponse::__construct - Collection field \"communicationRequest\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addCommunicationRequest($v);
+                    }
+                }
             }
             if (isset($data['created'])) {
-                $this->setCreated($data['created']);
+                $value = $data['created'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcessResponse::__construct - Property \"created\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setCreated($value);
             }
             if (isset($data['disposition'])) {
-                $this->setDisposition($data['disposition']);
+                $value = $data['disposition'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcessResponse::__construct - Property \"disposition\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDisposition($value);
             }
             if (isset($data['error'])) {
-                $this->setError($data['error']);
+                $value = $data['error'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcessResponse::__construct - Collection field \"error\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addError($v);
+                    }
+                }
             }
             if (isset($data['form'])) {
-                $this->setForm($data['form']);
+                $value = $data['form'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcessResponse::__construct - Property \"form\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setForm($value);
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRIdentifier($v);
+                        } 
+                        if (!($v instanceof FHIRIdentifier)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcessResponse::__construct - Collection field \"identifier\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addIdentifier($v);
+                    }
+                }
             }
             if (isset($data['organization'])) {
-                $this->setOrganization($data['organization']);
+                $value = $data['organization'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcessResponse::__construct - Property \"organization\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setOrganization($value);
             }
             if (isset($data['outcome'])) {
-                $this->setOutcome($data['outcome']);
+                $value = $data['outcome'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcessResponse::__construct - Property \"outcome\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setOutcome($value);
             }
             if (isset($data['processNote'])) {
-                $this->setProcessNote($data['processNote']);
+                $value = $data['processNote'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRProcessResponseProcessNote($v);
+                        } 
+                        if (!($v instanceof FHIRProcessResponseProcessNote)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcessResponse::__construct - Collection field \"processNote\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProcessResponse\FHIRProcessResponseProcessNote or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addProcessNote($v);
+                    }
+                }
             }
             if (isset($data['request'])) {
-                $this->setRequest($data['request']);
+                $value = $data['request'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcessResponse::__construct - Property \"request\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setRequest($value);
+            }
+            if (isset($data['requestOrganization'])) {
+                $value = $data['requestOrganization'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcessResponse::__construct - Property \"requestOrganization\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setRequestOrganization($value);
             }
             if (isset($data['requestProvider'])) {
-                $this->setRequestProvider($data['requestProvider']);
+                $value = $data['requestProvider'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcessResponse::__construct - Property \"requestProvider\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setRequestProvider($value);
             }
             if (isset($data['status'])) {
-                $this->setStatus($data['status']);
+                $value = $data['status'];
+                if (is_array($value)) {
+                    $value = new FHIRFinancialResourceStatusCodes($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRFinancialResourceStatusCodes($value);
+                }
+                if (!($value instanceof FHIRFinancialResourceStatusCodes)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcessResponse::__construct - Property \"status\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRFinancialResourceStatusCodes or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setStatus($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -208,6 +336,7 @@ class FHIRProcessResponse extends FHIRDomainResource implements \JsonSerializabl
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -215,24 +344,23 @@ class FHIRProcessResponse extends FHIRDomainResource implements \JsonSerializabl
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setCommunicationRequest(FHIRReference $communicationRequest = null)
+    public function addCommunicationRequest(FHIRReference $communicationRequest = null)
     {
         if (null === $communicationRequest) {
             return $this; 
         }
-        $this->communicationRequest = $communicationRequest;
+        $this->communicationRequest[] = $communicationRequest;
         return $this;
     }
 
     /**
      * Request for additional supporting or authorizing information, such as: documents, images or resources.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getCommunicationRequest()
     {
         return $this->communicationRequest;
     }
-
 
     /**
      * The date when the enclosed suite of services were performed or completed.
@@ -266,7 +394,6 @@ class FHIRProcessResponse extends FHIRDomainResource implements \JsonSerializabl
         return $this->created;
     }
 
-
     /**
      * A description of the status of the adjudication or processing.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -299,30 +426,28 @@ class FHIRProcessResponse extends FHIRDomainResource implements \JsonSerializabl
         return $this->disposition;
     }
 
-
     /**
      * Processing errors.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setError(FHIRCodeableConcept $error = null)
+    public function addError(FHIRCodeableConcept $error = null)
     {
         if (null === $error) {
             return $this; 
         }
-        $this->error = $error;
+        $this->error[] = $error;
         return $this;
     }
 
     /**
      * Processing errors.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getError()
     {
         return $this->error;
     }
-
 
     /**
      * The form to be used for printing the content.
@@ -347,30 +472,28 @@ class FHIRProcessResponse extends FHIRDomainResource implements \JsonSerializabl
         return $this->form;
     }
 
-
     /**
      * The Response business identifier.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
-    public function setIdentifier(FHIRIdentifier $identifier = null)
+    public function addIdentifier(FHIRIdentifier $identifier = null)
     {
         if (null === $identifier) {
             return $this; 
         }
-        $this->identifier = $identifier;
+        $this->identifier[] = $identifier;
         return $this;
     }
 
     /**
      * The Response business identifier.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
         return $this->identifier;
     }
-
 
     /**
      * The organization who produced this adjudicated response.
@@ -395,25 +518,15 @@ class FHIRProcessResponse extends FHIRDomainResource implements \JsonSerializabl
         return $this->organization;
     }
 
-
     /**
      * Transaction status: error, complete, held.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRProcessOutcomeCodes
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setOutcome($outcome)
+    public function setOutcome(FHIRCodeableConcept $outcome = null)
     {
         if (null === $outcome) {
             return $this; 
-        }
-        if (is_scalar($outcome)) {
-            $outcome = new FHIRProcessOutcomeCodes($outcome);
-        }
-        if (!($outcome instanceof FHIRProcessOutcomeCodes)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRProcessResponse::setOutcome - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRProcessOutcomeCodes or appropriate scalar value, %s seen.',
-                gettype($outcome)
-            ));
         }
         $this->outcome = $outcome;
         return $this;
@@ -421,37 +534,35 @@ class FHIRProcessResponse extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * Transaction status: error, complete, held.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRProcessOutcomeCodes
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getOutcome()
     {
         return $this->outcome;
     }
 
-
     /**
      * Suite of processing notes or additional requirements if the processing has been held.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProcessResponse\FHIRProcessResponseProcessNote
      * @return $this
      */
-    public function setProcessNote(FHIRProcessResponseProcessNote $processNote = null)
+    public function addProcessNote(FHIRProcessResponseProcessNote $processNote = null)
     {
         if (null === $processNote) {
             return $this; 
         }
-        $this->processNote = $processNote;
+        $this->processNote[] = $processNote;
         return $this;
     }
 
     /**
      * Suite of processing notes or additional requirements if the processing has been held.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProcessResponse\FHIRProcessResponseProcessNote
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProcessResponse\FHIRProcessResponseProcessNote[]
      */
     public function getProcessNote()
     {
         return $this->processNote;
     }
-
 
     /**
      * Original request resource reference.
@@ -476,6 +587,28 @@ class FHIRProcessResponse extends FHIRDomainResource implements \JsonSerializabl
         return $this->request;
     }
 
+    /**
+     * The organization which is responsible for the services rendered to the patient.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return $this
+     */
+    public function setRequestOrganization(FHIRReference $requestOrganization = null)
+    {
+        if (null === $requestOrganization) {
+            return $this; 
+        }
+        $this->requestOrganization = $requestOrganization;
+        return $this;
+    }
+
+    /**
+     * The organization which is responsible for the services rendered to the patient.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getRequestOrganization()
+    {
+        return $this->requestOrganization;
+    }
 
     /**
      * The practitioner who is responsible for the services rendered to the patient.
@@ -499,7 +632,6 @@ class FHIRProcessResponse extends FHIRDomainResource implements \JsonSerializabl
     {
         return $this->requestProvider;
     }
-
 
     /**
      * The status of the resource instance.
@@ -533,7 +665,6 @@ class FHIRProcessResponse extends FHIRDomainResource implements \JsonSerializabl
         return $this->status;
     }
 
-
     /**
      * @return string
      */
@@ -549,8 +680,16 @@ class FHIRProcessResponse extends FHIRDomainResource implements \JsonSerializabl
     {
         $a = parent::jsonSerialize();
         $a['resourceType'] = self::FHIR_TYPE_NAME;
-        if (null !== ($v = $this->getCommunicationRequest())) {
-            $a['communicationRequest'] = $v;
+        if (0 < count($values = $this->getCommunicationRequest())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['communicationRequest'] = $vs;
+            }
         }
         if (null !== ($v = $this->getCreated())) {
             $a['created'] = $v;
@@ -558,14 +697,30 @@ class FHIRProcessResponse extends FHIRDomainResource implements \JsonSerializabl
         if (null !== ($v = $this->getDisposition())) {
             $a['disposition'] = $v;
         }
-        if (null !== ($v = $this->getError())) {
-            $a['error'] = $v;
+        if (0 < count($values = $this->getError())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['error'] = $vs;
+            }
         }
         if (null !== ($v = $this->getForm())) {
             $a['form'] = $v;
         }
-        if (null !== ($v = $this->getIdentifier())) {
-            $a['identifier'] = $v;
+        if (0 < count($values = $this->getIdentifier())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['identifier'] = $vs;
+            }
         }
         if (null !== ($v = $this->getOrganization())) {
             $a['organization'] = $v;
@@ -573,11 +728,22 @@ class FHIRProcessResponse extends FHIRDomainResource implements \JsonSerializabl
         if (null !== ($v = $this->getOutcome())) {
             $a['outcome'] = $v;
         }
-        if (null !== ($v = $this->getProcessNote())) {
-            $a['processNote'] = $v;
+        if (0 < count($values = $this->getProcessNote())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['processNote'] = $vs;
+            }
         }
         if (null !== ($v = $this->getRequest())) {
             $a['request'] = $v;
+        }
+        if (null !== ($v = $this->getRequestOrganization())) {
+            $a['requestOrganization'] = $v;
         }
         if (null !== ($v = $this->getRequestProvider())) {
             $a['requestProvider'] = $v;
@@ -598,9 +764,61 @@ class FHIRProcessResponse extends FHIRDomainResource implements \JsonSerializabl
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ProcessResponse xmlns="http://hl7.org/fhir"></ProcessResponse>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (0 < count($values = $this->getCommunicationRequest())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('communicationRequest'));
+                }
+            }
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getCreated())) {
+            $v->xmlSerialize(true, $sxe->addChild('created'));
+        }
+        if (null !== ($v = $this->getDisposition())) {
+            $v->xmlSerialize(true, $sxe->addChild('disposition'));
+        }
+        if (0 < count($values = $this->getError())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('error'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getForm())) {
+            $v->xmlSerialize(true, $sxe->addChild('form'));
+        }
+        if (0 < count($values = $this->getIdentifier())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('identifier'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getOrganization())) {
+            $v->xmlSerialize(true, $sxe->addChild('organization'));
+        }
+        if (null !== ($v = $this->getOutcome())) {
+            $v->xmlSerialize(true, $sxe->addChild('outcome'));
+        }
+        if (0 < count($values = $this->getProcessNote())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('processNote'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getRequest())) {
+            $v->xmlSerialize(true, $sxe->addChild('request'));
+        }
+        if (null !== ($v = $this->getRequestOrganization())) {
+            $v->xmlSerialize(true, $sxe->addChild('requestOrganization'));
+        }
+        if (null !== ($v = $this->getRequestProvider())) {
+            $v->xmlSerialize(true, $sxe->addChild('requestProvider'));
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('status'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

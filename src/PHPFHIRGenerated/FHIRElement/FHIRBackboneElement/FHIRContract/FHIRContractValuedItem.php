@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRContract;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRContract;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -67,14 +67,12 @@ use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
 use PHPFHIRGenerated\FHIRElement\FHIRDateTime;
 use PHPFHIRGenerated\FHIRElement\FHIRDecimal;
 use PHPFHIRGenerated\FHIRElement\FHIRIdentifier;
-use PHPFHIRGenerated\FHIRElement\FHIRMoney;
 use PHPFHIRGenerated\FHIRElement\FHIRQuantity;
+use PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney;
 use PHPFHIRGenerated\FHIRElement\FHIRReference;
-use PHPFHIRGenerated\FHIRElement\FHIRString;
-use PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt;
 
 /**
- * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a policy or agreement.
+ * A formal agreement between parties regarding the conduct of business, exchange of information or other matters.
  *
  * Class FHIRContractValuedItem
  * @package PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRContract
@@ -88,91 +86,55 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
      * Indicates the time during which this Contract ValuedItem information is effective.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $effectiveTime = null;
+    private $effectiveTime = null;
 
     /**
-     * Specific type of Contract Valued Item that may be priced.
+     * Specific type of Contract Valued Item that may be priced. (choose any one of entity*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $entityCodeableConcept = null;
+    private $entityCodeableConcept = null;
 
     /**
-     * Specific type of Contract Valued Item that may be priced.
+     * Specific type of Contract Valued Item that may be priced. (choose any one of entity*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $entityReference = null;
+    private $entityReference = null;
 
     /**
      * A real number that represents a multiplier used in determining the overall value of the Contract Valued Item delivered. The concept of a Factor allows for a discount or surcharge multiplier to be applied to a monetary amount.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
-    public $factor = null;
+    private $factor = null;
 
     /**
      * Identifies a Contract Valued Item instance.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public $identifier = null;
-
-    /**
-     * Id  of the clause or question text related to the context of this valuedItem in the referenced form or QuestionnaireResponse.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public $linkId = null;
+    private $identifier = null;
 
     /**
      * Expresses the product of the Contract Valued Item unitQuantity and the unitPriceAmt. For example, the formula: unit Quantity * unit Price (Cost per Point) * factor Number  * points = net Amount. Quantity, factor and points are assumed to be 1 if not supplied.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRMoney
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
-    public $net = null;
-
-    /**
-     * Terms of valuation.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public $payment = null;
-
-    /**
-     * When payment is due.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public $paymentDate = null;
+    private $net = null;
 
     /**
      * An amount that expresses the weighting (based on difficulty, cost and/or resource intensiveness) associated with the Contract Valued Item delivered. The concept of Points allows for assignment of point values for a Contract Valued Item, such that a monetary amount can be assigned to each point.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
-    public $points = null;
+    private $points = null;
 
     /**
      * Specifies the units by which the Contract Valued Item is measured or counted, and quantifies the countable or measurable Contract Valued Item instances.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    public $quantity = null;
-
-    /**
-     * Who will receive payment.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $recipient = null;
-
-    /**
-     * Who will make payment.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $responsible = null;
-
-    /**
-     * A set of security labels that define which terms are controlled by this condition.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
-     */
-    public $securityLabelNumber = null;
+    private $quantity = null;
 
     /**
      * A Contract Valued Item unit valuation measure.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRMoney
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
-    public $unitPrice = null;
+    private $unitPrice = null;
 
     /**
      * FHIRContractValuedItem Constructor
@@ -181,52 +143,102 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['effectiveTime'])) {
-                $this->setEffectiveTime($data['effectiveTime']);
+                $value = $data['effectiveTime'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractValuedItem::__construct - Property \"effectiveTime\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value));
+                }
+                $this->setEffectiveTime($value);
             }
             if (isset($data['entityCodeableConcept'])) {
-                $this->setEntityCodeableConcept($data['entityCodeableConcept']);
+                $value = $data['entityCodeableConcept'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractValuedItem::__construct - Property \"entityCodeableConcept\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setEntityCodeableConcept($value);
             }
             if (isset($data['entityReference'])) {
-                $this->setEntityReference($data['entityReference']);
+                $value = $data['entityReference'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractValuedItem::__construct - Property \"entityReference\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setEntityReference($value);
             }
             if (isset($data['factor'])) {
-                $this->setFactor($data['factor']);
+                $value = $data['factor'];
+                if (is_array($value)) {
+                    $value = new FHIRDecimal($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDecimal($value);
+                }
+                if (!($value instanceof FHIRDecimal)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractValuedItem::__construct - Property \"factor\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDecimal or data to construct type, saw ".gettype($value));
+                }
+                $this->setFactor($value);
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
-            }
-            if (isset($data['linkId'])) {
-                $this->setLinkId($data['linkId']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    $value = new FHIRIdentifier($value);
+                } 
+                if (!($value instanceof FHIRIdentifier)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractValuedItem::__construct - Property \"identifier\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($value));
+                }
+                $this->setIdentifier($value);
             }
             if (isset($data['net'])) {
-                $this->setNet($data['net']);
-            }
-            if (isset($data['payment'])) {
-                $this->setPayment($data['payment']);
-            }
-            if (isset($data['paymentDate'])) {
-                $this->setPaymentDate($data['paymentDate']);
+                $value = $data['net'];
+                if (is_array($value)) {
+                    $value = new FHIRMoney($value);
+                } 
+                if (!($value instanceof FHIRMoney)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractValuedItem::__construct - Property \"net\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney or data to construct type, saw ".gettype($value));
+                }
+                $this->setNet($value);
             }
             if (isset($data['points'])) {
-                $this->setPoints($data['points']);
+                $value = $data['points'];
+                if (is_array($value)) {
+                    $value = new FHIRDecimal($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDecimal($value);
+                }
+                if (!($value instanceof FHIRDecimal)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractValuedItem::__construct - Property \"points\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDecimal or data to construct type, saw ".gettype($value));
+                }
+                $this->setPoints($value);
             }
             if (isset($data['quantity'])) {
-                $this->setQuantity($data['quantity']);
-            }
-            if (isset($data['recipient'])) {
-                $this->setRecipient($data['recipient']);
-            }
-            if (isset($data['responsible'])) {
-                $this->setResponsible($data['responsible']);
-            }
-            if (isset($data['securityLabelNumber'])) {
-                $this->setSecurityLabelNumber($data['securityLabelNumber']);
+                $value = $data['quantity'];
+                if (is_array($value)) {
+                    $value = new FHIRQuantity($value);
+                } 
+                if (!($value instanceof FHIRQuantity)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractValuedItem::__construct - Property \"quantity\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity or data to construct type, saw ".gettype($value));
+                }
+                $this->setQuantity($value);
             }
             if (isset($data['unitPrice'])) {
-                $this->setUnitPrice($data['unitPrice']);
+                $value = $data['unitPrice'];
+                if (is_array($value)) {
+                    $value = new FHIRMoney($value);
+                } 
+                if (!($value instanceof FHIRMoney)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractValuedItem::__construct - Property \"unitPrice\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney or data to construct type, saw ".gettype($value));
+                }
+                $this->setUnitPrice($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -235,6 +247,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -269,9 +282,8 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
         return $this->effectiveTime;
     }
 
-
     /**
-     * Specific type of Contract Valued Item that may be priced.
+     * Specific type of Contract Valued Item that may be priced. (choose any one of entity*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
@@ -285,7 +297,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * Specific type of Contract Valued Item that may be priced.
+     * Specific type of Contract Valued Item that may be priced. (choose any one of entity*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getEntityCodeableConcept()
@@ -293,9 +305,8 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
         return $this->entityCodeableConcept;
     }
 
-
     /**
-     * Specific type of Contract Valued Item that may be priced.
+     * Specific type of Contract Valued Item that may be priced. (choose any one of entity*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
@@ -309,14 +320,13 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * Specific type of Contract Valued Item that may be priced.
+     * Specific type of Contract Valued Item that may be priced. (choose any one of entity*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getEntityReference()
     {
         return $this->entityReference;
     }
-
 
     /**
      * A real number that represents a multiplier used in determining the overall value of the Contract Valued Item delivered. The concept of a Factor allows for a discount or surcharge multiplier to be applied to a monetary amount.
@@ -350,7 +360,6 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
         return $this->factor;
     }
 
-
     /**
      * Identifies a Contract Valued Item instance.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
@@ -374,43 +383,9 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
         return $this->identifier;
     }
 
-
-    /**
-     * Id  of the clause or question text related to the context of this valuedItem in the referenced form or QuestionnaireResponse.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
-     * @return $this
-     */
-    public function setLinkId($linkId)
-    {
-        if (null === $linkId) {
-            return $this; 
-        }
-        if (is_scalar($linkId)) {
-            $linkId = new FHIRString($linkId);
-        }
-        if (!($linkId instanceof FHIRString)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRContractValuedItem::setLinkId - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
-                gettype($linkId)
-            ));
-        }
-        $this->linkId = $linkId;
-        return $this;
-    }
-
-    /**
-     * Id  of the clause or question text related to the context of this valuedItem in the referenced form or QuestionnaireResponse.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public function getLinkId()
-    {
-        return $this->linkId;
-    }
-
-
     /**
      * Expresses the product of the Contract Valued Item unitQuantity and the unitPriceAmt. For example, the formula: unit Quantity * unit Price (Cost per Point) * factor Number  * points = net Amount. Quantity, factor and points are assumed to be 1 if not supplied.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRMoney
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      * @return $this
      */
     public function setNet(FHIRMoney $net = null)
@@ -424,79 +399,12 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Expresses the product of the Contract Valued Item unitQuantity and the unitPriceAmt. For example, the formula: unit Quantity * unit Price (Cost per Point) * factor Number  * points = net Amount. Quantity, factor and points are assumed to be 1 if not supplied.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRMoney
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public function getNet()
     {
         return $this->net;
     }
-
-
-    /**
-     * Terms of valuation.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
-     * @return $this
-     */
-    public function setPayment($payment)
-    {
-        if (null === $payment) {
-            return $this; 
-        }
-        if (is_scalar($payment)) {
-            $payment = new FHIRString($payment);
-        }
-        if (!($payment instanceof FHIRString)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRContractValuedItem::setPayment - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
-                gettype($payment)
-            ));
-        }
-        $this->payment = $payment;
-        return $this;
-    }
-
-    /**
-     * Terms of valuation.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public function getPayment()
-    {
-        return $this->payment;
-    }
-
-
-    /**
-     * When payment is due.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     * @return $this
-     */
-    public function setPaymentDate($paymentDate)
-    {
-        if (null === $paymentDate) {
-            return $this; 
-        }
-        if (is_scalar($paymentDate)) {
-            $paymentDate = new FHIRDateTime($paymentDate);
-        }
-        if (!($paymentDate instanceof FHIRDateTime)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRContractValuedItem::setPaymentDate - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or appropriate scalar value, %s seen.',
-                gettype($paymentDate)
-            ));
-        }
-        $this->paymentDate = $paymentDate;
-        return $this;
-    }
-
-    /**
-     * When payment is due.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public function getPaymentDate()
-    {
-        return $this->paymentDate;
-    }
-
 
     /**
      * An amount that expresses the weighting (based on difficulty, cost and/or resource intensiveness) associated with the Contract Valued Item delivered. The concept of Points allows for assignment of point values for a Contract Valued Item, such that a monetary amount can be assigned to each point.
@@ -530,7 +438,6 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
         return $this->points;
     }
 
-
     /**
      * Specifies the units by which the Contract Valued Item is measured or counted, and quantifies the countable or measurable Contract Valued Item instances.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity
@@ -554,91 +461,9 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
         return $this->quantity;
     }
 
-
-    /**
-     * Who will receive payment.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     * @return $this
-     */
-    public function setRecipient(FHIRReference $recipient = null)
-    {
-        if (null === $recipient) {
-            return $this; 
-        }
-        $this->recipient = $recipient;
-        return $this;
-    }
-
-    /**
-     * Who will receive payment.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getRecipient()
-    {
-        return $this->recipient;
-    }
-
-
-    /**
-     * Who will make payment.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     * @return $this
-     */
-    public function setResponsible(FHIRReference $responsible = null)
-    {
-        if (null === $responsible) {
-            return $this; 
-        }
-        $this->responsible = $responsible;
-        return $this;
-    }
-
-    /**
-     * Who will make payment.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getResponsible()
-    {
-        return $this->responsible;
-    }
-
-
-    /**
-     * A set of security labels that define which terms are controlled by this condition.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
-     * @return $this
-     */
-    public function setSecurityLabelNumber($securityLabelNumber)
-    {
-        if (null === $securityLabelNumber) {
-            return $this; 
-        }
-        if (is_scalar($securityLabelNumber)) {
-            $securityLabelNumber = new FHIRUnsignedInt($securityLabelNumber);
-        }
-        if (!($securityLabelNumber instanceof FHIRUnsignedInt)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRContractValuedItem::setSecurityLabelNumber - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt or appropriate scalar value, %s seen.',
-                gettype($securityLabelNumber)
-            ));
-        }
-        $this->securityLabelNumber = $securityLabelNumber;
-        return $this;
-    }
-
-    /**
-     * A set of security labels that define which terms are controlled by this condition.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
-     */
-    public function getSecurityLabelNumber()
-    {
-        return $this->securityLabelNumber;
-    }
-
-
     /**
      * A Contract Valued Item unit valuation measure.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRMoney
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      * @return $this
      */
     public function setUnitPrice(FHIRMoney $unitPrice = null)
@@ -652,13 +477,12 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * A Contract Valued Item unit valuation measure.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRMoney
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public function getUnitPrice()
     {
         return $this->unitPrice;
     }
-
 
     /**
      * @return string
@@ -689,32 +513,14 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
         if (null !== ($v = $this->getIdentifier())) {
             $a['identifier'] = $v;
         }
-        if (null !== ($v = $this->getLinkId())) {
-            $a['linkId'] = $v;
-        }
         if (null !== ($v = $this->getNet())) {
             $a['net'] = $v;
-        }
-        if (null !== ($v = $this->getPayment())) {
-            $a['payment'] = $v;
-        }
-        if (null !== ($v = $this->getPaymentDate())) {
-            $a['paymentDate'] = $v;
         }
         if (null !== ($v = $this->getPoints())) {
             $a['points'] = $v;
         }
         if (null !== ($v = $this->getQuantity())) {
             $a['quantity'] = $v;
-        }
-        if (null !== ($v = $this->getRecipient())) {
-            $a['recipient'] = $v;
-        }
-        if (null !== ($v = $this->getResponsible())) {
-            $a['responsible'] = $v;
-        }
-        if (null !== ($v = $this->getSecurityLabelNumber())) {
-            $a['securityLabelNumber'] = $v;
         }
         if (null !== ($v = $this->getUnitPrice())) {
             $a['unitPrice'] = $v;
@@ -732,9 +538,33 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ContractValuedItem xmlns="http://hl7.org/fhir"></ContractValuedItem>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getEffectiveTime())) {
+            $v->xmlSerialize(true, $sxe->addChild('effectiveTime'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getEntityCodeableConcept())) {
+            $v->xmlSerialize(true, $sxe->addChild('entityCodeableConcept'));
+        }
+        if (null !== ($v = $this->getEntityReference())) {
+            $v->xmlSerialize(true, $sxe->addChild('entityReference'));
+        }
+        if (null !== ($v = $this->getFactor())) {
+            $v->xmlSerialize(true, $sxe->addChild('factor'));
+        }
+        if (null !== ($v = $this->getIdentifier())) {
+            $v->xmlSerialize(true, $sxe->addChild('identifier'));
+        }
+        if (null !== ($v = $this->getNet())) {
+            $v->xmlSerialize(true, $sxe->addChild('net'));
+        }
+        if (null !== ($v = $this->getPoints())) {
+            $v->xmlSerialize(true, $sxe->addChild('points'));
+        }
+        if (null !== ($v = $this->getQuantity())) {
+            $v->xmlSerialize(true, $sxe->addChild('quantity'));
+        }
+        if (null !== ($v = $this->getUnitPrice())) {
+            $v->xmlSerialize(true, $sxe->addChild('unitPrice'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -64,13 +64,13 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSearchParameter\FHIRSearchParameterComponent;
 use PHPFHIRGenerated\FHIRElement\FHIRBoolean;
-use PHPFHIRGenerated\FHIRElement\FHIRCanonical;
 use PHPFHIRGenerated\FHIRElement\FHIRCode;
 use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
 use PHPFHIRGenerated\FHIRElement\FHIRContactDetail;
 use PHPFHIRGenerated\FHIRElement\FHIRDateTime;
 use PHPFHIRGenerated\FHIRElement\FHIRMarkdown;
 use PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus;
+use PHPFHIRGenerated\FHIRElement\FHIRResourceType;
 use PHPFHIRGenerated\FHIRElement\FHIRSearchComparator;
 use PHPFHIRGenerated\FHIRElement\FHIRSearchModifierCode;
 use PHPFHIRGenerated\FHIRElement\FHIRSearchParamType;
@@ -94,159 +94,147 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The base resource type(s) that this search parameter can be used against.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRResourceType[]
      */
-    public $base = null;
+    private $base = [];
 
     /**
-     * Contains the names of any search parameters which may be chained to the containing search parameter. Chained parameters may be added to search parameters of type reference and specify that resources will only be returned if they contain a reference to a resource which matches the chained parameter value. Values for this field should be drawn from SearchParameter.code for a parameter on the target resource type.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     * Contains the names of any search parameters which may be chained to the containing search parameter. Chained parameters may be added to search parameters of type reference, and specify that resources will only be returned if they contain a reference to a resource which matches the chained parameter value. Values for this field should be drawn from SearchParameter.code for a parameter on the target resource type.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public $chain = null;
+    private $chain = [];
 
     /**
      * The code used in the URL or the parameter name in a parameters resource for this search parameter.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public $code = null;
+    private $code = null;
 
     /**
      * Comparators supported for the search parameter.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRSearchComparator
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRSearchComparator[]
      */
-    public $comparator = null;
+    private $comparator = [];
 
     /**
      * Used to define the parts of a composite search parameter.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSearchParameter\FHIRSearchParameterComponent
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSearchParameter\FHIRSearchParameterComponent[]
      */
-    public $component = null;
+    private $component = [];
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
-    public $contact = null;
+    private $contact = [];
 
     /**
-     * The date  (and optionally time) when the search parameter was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the search parameter changes.
+     * The date  (and optionally time) when the search parameter was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the search parameter changes.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $date = null;
+    private $date = null;
 
     /**
-     * Where this search parameter is originally defined. If a derivedFrom is provided, then the details in the search parameter must be consistent with the definition from which it is defined. i.e. the parameter should have the same meaning, and (usually) the functionality should be a proper subset of the underlying search parameter.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * Where this search parameter is originally defined. If a derivedFrom is provided, then the details in the search parameter must be consistent with the definition from which it is defined. I.e. the parameter should have the same meaning, and (usually) the functionality should be a proper subset of the underlying search parameter.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $derivedFrom = null;
+    private $derivedFrom = null;
 
     /**
      * A free text natural language description of the search parameter from a consumer's perspective. and how it used.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public $description = null;
+    private $description = null;
 
     /**
-     * A Boolean value to indicate that this search parameter is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this search parameter is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $experimental = null;
+    private $experimental = null;
 
     /**
      * A FHIRPath expression that returns a set of elements for the search parameter.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $expression = null;
+    private $expression = null;
 
     /**
      * A legal or geographic region in which the search parameter is intended to be used.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $jurisdiction = null;
+    private $jurisdiction = [];
 
     /**
      * A modifier supported for the search parameter.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRSearchModifierCode
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRSearchModifierCode[]
      */
-    public $modifier = null;
-
-    /**
-     * Whether multiple parameters are allowed - e.g. more than one parameter with the same name. The search matches if all the parameters match.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
-     */
-    public $multipleAnd = null;
-
-    /**
-     * Whether multiple values are allowed for each time the parameter exists. Values are separated by commas, and the parameter matches if any of the values match.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
-     */
-    public $multipleOr = null;
+    private $modifier = [];
 
     /**
      * A natural language name identifying the search parameter. This name should be usable as an identifier for the module by machine processing applications such as code generation.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $name = null;
+    private $name = null;
 
     /**
-     * The name of the organization or individual that published the search parameter.
+     * The name of the individual or organization that published the search parameter.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $publisher = null;
+    private $publisher = null;
 
     /**
-     * Explanation of why this search parameter is needed and why it has been designed as it has.
+     * Explaination of why this search parameter is needed and why it has been designed as it has.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public $purpose = null;
+    private $purpose = null;
 
     /**
      * The status of this search parameter. Enables tracking the life-cycle of the content.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus
      */
-    public $status = null;
+    private $status = null;
 
     /**
      * Types of resource (if a resource is referenced).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRResourceType[]
      */
-    public $target = null;
+    private $target = [];
 
     /**
-     * The type of value that a search parameter may contain, and how the content is interpreted.
+     * The type of value a search parameter refers to, and how the content is interpreted.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRSearchParamType
      */
-    public $type = null;
+    private $type = null;
 
     /**
-     * An absolute URI that is used to identify this search parameter when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this search parameter is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the search parameter is stored on different servers.
+     * An absolute URI that is used to identify this search parameter when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this search parameter is (or will be) published. The URL SHOULD include the major version of the search parameter. For more information see [Technical and Business Versions](resource.html#versions).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $url = null;
+    private $url = null;
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate search parameter instances.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
-    public $useContext = null;
+    private $useContext = [];
 
     /**
      * The identifier that is used to identify this version of the search parameter when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the search parameter author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $version = null;
+    private $version = null;
 
     /**
      * An XPath expression that returns a set of elements for the search parameter.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $xpath = null;
+    private $xpath = null;
 
     /**
      * How the search parameter relates to the set of elements returned by evaluating the xpath query.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRXPathUsageType
      */
-    public $xpathUsage = null;
+    private $xpathUsage = null;
 
     /**
      * FHIRSearchParameter Constructor
@@ -255,85 +243,340 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['base'])) {
-                $this->setBase($data['base']);
+                $value = $data['base'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRResourceType($v);
+                        }  elseif (is_scalar($v)) {
+                            $v = new FHIRResourceType($v);
+                        }
+                        if (!($v instanceof FHIRResourceType)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSearchParameter::__construct - Collection field \"base\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRResourceType or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addBase($v);
+                    }
+                }
             }
             if (isset($data['chain'])) {
-                $this->setChain($data['chain']);
+                $value = $data['chain'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRString($v);
+                        }  elseif (is_scalar($v)) {
+                            $v = new FHIRString($v);
+                        }
+                        if (!($v instanceof FHIRString)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSearchParameter::__construct - Collection field \"chain\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addChain($v);
+                    }
+                }
             }
             if (isset($data['code'])) {
-                $this->setCode($data['code']);
+                $value = $data['code'];
+                if (is_array($value)) {
+                    $value = new FHIRCode($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRCode($value);
+                }
+                if (!($value instanceof FHIRCode)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSearchParameter::__construct - Property \"code\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setCode($value);
             }
             if (isset($data['comparator'])) {
-                $this->setComparator($data['comparator']);
+                $value = $data['comparator'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRSearchComparator($v);
+                        }  elseif (is_scalar($v)) {
+                            $v = new FHIRSearchComparator($v);
+                        }
+                        if (!($v instanceof FHIRSearchComparator)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSearchParameter::__construct - Collection field \"comparator\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRSearchComparator or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addComparator($v);
+                    }
+                }
             }
             if (isset($data['component'])) {
-                $this->setComponent($data['component']);
+                $value = $data['component'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRSearchParameterComponent($v);
+                        } 
+                        if (!($v instanceof FHIRSearchParameterComponent)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSearchParameter::__construct - Collection field \"component\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSearchParameter\FHIRSearchParameterComponent or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addComponent($v);
+                    }
+                }
             }
             if (isset($data['contact'])) {
-                $this->setContact($data['contact']);
+                $value = $data['contact'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRContactDetail($v);
+                        } 
+                        if (!($v instanceof FHIRContactDetail)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSearchParameter::__construct - Collection field \"contact\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRContactDetail or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addContact($v);
+                    }
+                }
             }
             if (isset($data['date'])) {
-                $this->setDate($data['date']);
+                $value = $data['date'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSearchParameter::__construct - Property \"date\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDate($value);
             }
             if (isset($data['derivedFrom'])) {
-                $this->setDerivedFrom($data['derivedFrom']);
+                $value = $data['derivedFrom'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSearchParameter::__construct - Property \"derivedFrom\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDerivedFrom($value);
             }
             if (isset($data['description'])) {
-                $this->setDescription($data['description']);
+                $value = $data['description'];
+                if (is_array($value)) {
+                    $value = new FHIRMarkdown($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRMarkdown($value);
+                }
+                if (!($value instanceof FHIRMarkdown)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSearchParameter::__construct - Property \"description\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRMarkdown or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDescription($value);
             }
             if (isset($data['experimental'])) {
-                $this->setExperimental($data['experimental']);
+                $value = $data['experimental'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSearchParameter::__construct - Property \"experimental\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setExperimental($value);
             }
             if (isset($data['expression'])) {
-                $this->setExpression($data['expression']);
+                $value = $data['expression'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSearchParameter::__construct - Property \"expression\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setExpression($value);
             }
             if (isset($data['jurisdiction'])) {
-                $this->setJurisdiction($data['jurisdiction']);
+                $value = $data['jurisdiction'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSearchParameter::__construct - Collection field \"jurisdiction\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addJurisdiction($v);
+                    }
+                }
             }
             if (isset($data['modifier'])) {
-                $this->setModifier($data['modifier']);
-            }
-            if (isset($data['multipleAnd'])) {
-                $this->setMultipleAnd($data['multipleAnd']);
-            }
-            if (isset($data['multipleOr'])) {
-                $this->setMultipleOr($data['multipleOr']);
+                $value = $data['modifier'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRSearchModifierCode($v);
+                        }  elseif (is_scalar($v)) {
+                            $v = new FHIRSearchModifierCode($v);
+                        }
+                        if (!($v instanceof FHIRSearchModifierCode)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSearchParameter::__construct - Collection field \"modifier\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRSearchModifierCode or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addModifier($v);
+                    }
+                }
             }
             if (isset($data['name'])) {
-                $this->setName($data['name']);
+                $value = $data['name'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSearchParameter::__construct - Property \"name\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setName($value);
             }
             if (isset($data['publisher'])) {
-                $this->setPublisher($data['publisher']);
+                $value = $data['publisher'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSearchParameter::__construct - Property \"publisher\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setPublisher($value);
             }
             if (isset($data['purpose'])) {
-                $this->setPurpose($data['purpose']);
+                $value = $data['purpose'];
+                if (is_array($value)) {
+                    $value = new FHIRMarkdown($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRMarkdown($value);
+                }
+                if (!($value instanceof FHIRMarkdown)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSearchParameter::__construct - Property \"purpose\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRMarkdown or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setPurpose($value);
             }
             if (isset($data['status'])) {
-                $this->setStatus($data['status']);
+                $value = $data['status'];
+                if (is_array($value)) {
+                    $value = new FHIRPublicationStatus($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRPublicationStatus($value);
+                }
+                if (!($value instanceof FHIRPublicationStatus)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSearchParameter::__construct - Property \"status\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setStatus($value);
             }
             if (isset($data['target'])) {
-                $this->setTarget($data['target']);
+                $value = $data['target'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRResourceType($v);
+                        }  elseif (is_scalar($v)) {
+                            $v = new FHIRResourceType($v);
+                        }
+                        if (!($v instanceof FHIRResourceType)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSearchParameter::__construct - Collection field \"target\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRResourceType or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addTarget($v);
+                    }
+                }
             }
             if (isset($data['type'])) {
-                $this->setType($data['type']);
+                $value = $data['type'];
+                if (is_array($value)) {
+                    $value = new FHIRSearchParamType($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRSearchParamType($value);
+                }
+                if (!($value instanceof FHIRSearchParamType)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSearchParameter::__construct - Property \"type\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRSearchParamType or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setType($value);
             }
             if (isset($data['url'])) {
-                $this->setUrl($data['url']);
+                $value = $data['url'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSearchParameter::__construct - Property \"url\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setUrl($value);
             }
             if (isset($data['useContext'])) {
-                $this->setUseContext($data['useContext']);
+                $value = $data['useContext'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRUsageContext($v);
+                        } 
+                        if (!($v instanceof FHIRUsageContext)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSearchParameter::__construct - Collection field \"useContext\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUsageContext or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addUseContext($v);
+                    }
+                }
             }
             if (isset($data['version'])) {
-                $this->setVersion($data['version']);
+                $value = $data['version'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSearchParameter::__construct - Property \"version\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setVersion($value);
             }
             if (isset($data['xpath'])) {
-                $this->setXpath($data['xpath']);
+                $value = $data['xpath'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSearchParameter::__construct - Property \"xpath\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setXpath($value);
             }
             if (isset($data['xpathUsage'])) {
-                $this->setXpathUsage($data['xpathUsage']);
+                $value = $data['xpathUsage'];
+                if (is_array($value)) {
+                    $value = new FHIRXPathUsageType($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRXPathUsageType($value);
+                }
+                if (!($value instanceof FHIRXPathUsageType)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSearchParameter::__construct - Property \"xpathUsage\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRXPathUsageType or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setXpathUsage($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -342,47 +585,47 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
      * The base resource type(s) that this search parameter can be used against.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRResourceType
      * @return $this
      */
-    public function setBase($base)
+    public function addBase($base)
     {
         if (null === $base) {
             return $this; 
         }
         if (is_scalar($base)) {
-            $base = new FHIRCode($base);
+            $base = new FHIRResourceType($base);
         }
-        if (!($base instanceof FHIRCode)) {
+        if (!($base instanceof FHIRResourceType)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRSearchParameter::setBase - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or appropriate scalar value, %s seen.',
+                'FHIRSearchParameter::addBase - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRResourceType or appropriate scalar value, %s seen.',
                 gettype($base)
             ));
         }
-        $this->base = $base;
+        $this->base[] = $base;
         return $this;
     }
 
     /**
      * The base resource type(s) that this search parameter can be used against.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRResourceType[]
      */
     public function getBase()
     {
         return $this->base;
     }
 
-
     /**
-     * Contains the names of any search parameters which may be chained to the containing search parameter. Chained parameters may be added to search parameters of type reference and specify that resources will only be returned if they contain a reference to a resource which matches the chained parameter value. Values for this field should be drawn from SearchParameter.code for a parameter on the target resource type.
+     * Contains the names of any search parameters which may be chained to the containing search parameter. Chained parameters may be added to search parameters of type reference, and specify that resources will only be returned if they contain a reference to a resource which matches the chained parameter value. Values for this field should be drawn from SearchParameter.code for a parameter on the target resource type.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
-    public function setChain($chain)
+    public function addChain($chain)
     {
         if (null === $chain) {
             return $this; 
@@ -392,23 +635,22 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
         }
         if (!($chain instanceof FHIRString)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRSearchParameter::setChain - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                'FHIRSearchParameter::addChain - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
                 gettype($chain)
             ));
         }
-        $this->chain = $chain;
+        $this->chain[] = $chain;
         return $this;
     }
 
     /**
-     * Contains the names of any search parameters which may be chained to the containing search parameter. Chained parameters may be added to search parameters of type reference and specify that resources will only be returned if they contain a reference to a resource which matches the chained parameter value. Values for this field should be drawn from SearchParameter.code for a parameter on the target resource type.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     * Contains the names of any search parameters which may be chained to the containing search parameter. Chained parameters may be added to search parameters of type reference, and specify that resources will only be returned if they contain a reference to a resource which matches the chained parameter value. Values for this field should be drawn from SearchParameter.code for a parameter on the target resource type.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
     public function getChain()
     {
         return $this->chain;
     }
-
 
     /**
      * The code used in the URL or the parameter name in a parameters resource for this search parameter.
@@ -442,13 +684,12 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
         return $this->code;
     }
 
-
     /**
      * Comparators supported for the search parameter.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRSearchComparator
      * @return $this
      */
-    public function setComparator($comparator)
+    public function addComparator($comparator)
     {
         if (null === $comparator) {
             return $this; 
@@ -458,74 +699,71 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
         }
         if (!($comparator instanceof FHIRSearchComparator)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRSearchParameter::setComparator - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRSearchComparator or appropriate scalar value, %s seen.',
+                'FHIRSearchParameter::addComparator - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRSearchComparator or appropriate scalar value, %s seen.',
                 gettype($comparator)
             ));
         }
-        $this->comparator = $comparator;
+        $this->comparator[] = $comparator;
         return $this;
     }
 
     /**
      * Comparators supported for the search parameter.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRSearchComparator
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRSearchComparator[]
      */
     public function getComparator()
     {
         return $this->comparator;
     }
 
-
     /**
      * Used to define the parts of a composite search parameter.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSearchParameter\FHIRSearchParameterComponent
      * @return $this
      */
-    public function setComponent(FHIRSearchParameterComponent $component = null)
+    public function addComponent(FHIRSearchParameterComponent $component = null)
     {
         if (null === $component) {
             return $this; 
         }
-        $this->component = $component;
+        $this->component[] = $component;
         return $this;
     }
 
     /**
      * Used to define the parts of a composite search parameter.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSearchParameter\FHIRSearchParameterComponent
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSearchParameter\FHIRSearchParameterComponent[]
      */
     public function getComponent()
     {
         return $this->component;
     }
 
-
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail
      * @return $this
      */
-    public function setContact(FHIRContactDetail $contact = null)
+    public function addContact(FHIRContactDetail $contact = null)
     {
         if (null === $contact) {
             return $this; 
         }
-        $this->contact = $contact;
+        $this->contact[] = $contact;
         return $this;
     }
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
     public function getContact()
     {
         return $this->contact;
     }
 
-
     /**
-     * The date  (and optionally time) when the search parameter was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the search parameter changes.
+     * The date  (and optionally time) when the search parameter was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the search parameter changes.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      * @return $this
      */
@@ -548,7 +786,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * The date  (and optionally time) when the search parameter was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the search parameter changes.
+     * The date  (and optionally time) when the search parameter was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the search parameter changes.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getDate()
@@ -556,10 +794,9 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
         return $this->date;
     }
 
-
     /**
-     * Where this search parameter is originally defined. If a derivedFrom is provided, then the details in the search parameter must be consistent with the definition from which it is defined. i.e. the parameter should have the same meaning, and (usually) the functionality should be a proper subset of the underlying search parameter.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * Where this search parameter is originally defined. If a derivedFrom is provided, then the details in the search parameter must be consistent with the definition from which it is defined. I.e. the parameter should have the same meaning, and (usually) the functionality should be a proper subset of the underlying search parameter.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
     public function setDerivedFrom($derivedFrom)
@@ -568,11 +805,11 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
             return $this; 
         }
         if (is_scalar($derivedFrom)) {
-            $derivedFrom = new FHIRCanonical($derivedFrom);
+            $derivedFrom = new FHIRUri($derivedFrom);
         }
-        if (!($derivedFrom instanceof FHIRCanonical)) {
+        if (!($derivedFrom instanceof FHIRUri)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRSearchParameter::setDerivedFrom - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCanonical or appropriate scalar value, %s seen.',
+                'FHIRSearchParameter::setDerivedFrom - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or appropriate scalar value, %s seen.',
                 gettype($derivedFrom)
             ));
         }
@@ -581,14 +818,13 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * Where this search parameter is originally defined. If a derivedFrom is provided, then the details in the search parameter must be consistent with the definition from which it is defined. i.e. the parameter should have the same meaning, and (usually) the functionality should be a proper subset of the underlying search parameter.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * Where this search parameter is originally defined. If a derivedFrom is provided, then the details in the search parameter must be consistent with the definition from which it is defined. I.e. the parameter should have the same meaning, and (usually) the functionality should be a proper subset of the underlying search parameter.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getDerivedFrom()
     {
         return $this->derivedFrom;
     }
-
 
     /**
      * A free text natural language description of the search parameter from a consumer's perspective. and how it used.
@@ -622,9 +858,8 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
         return $this->description;
     }
 
-
     /**
-     * A Boolean value to indicate that this search parameter is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this search parameter is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      * @return $this
      */
@@ -647,14 +882,13 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * A Boolean value to indicate that this search parameter is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this search parameter is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getExperimental()
     {
         return $this->experimental;
     }
-
 
     /**
      * A FHIRPath expression that returns a set of elements for the search parameter.
@@ -688,37 +922,35 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
         return $this->expression;
     }
 
-
     /**
      * A legal or geographic region in which the search parameter is intended to be used.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setJurisdiction(FHIRCodeableConcept $jurisdiction = null)
+    public function addJurisdiction(FHIRCodeableConcept $jurisdiction = null)
     {
         if (null === $jurisdiction) {
             return $this; 
         }
-        $this->jurisdiction = $jurisdiction;
+        $this->jurisdiction[] = $jurisdiction;
         return $this;
     }
 
     /**
      * A legal or geographic region in which the search parameter is intended to be used.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getJurisdiction()
     {
         return $this->jurisdiction;
     }
 
-
     /**
      * A modifier supported for the search parameter.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRSearchModifierCode
      * @return $this
      */
-    public function setModifier($modifier)
+    public function addModifier($modifier)
     {
         if (null === $modifier) {
             return $this; 
@@ -728,89 +960,22 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
         }
         if (!($modifier instanceof FHIRSearchModifierCode)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRSearchParameter::setModifier - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRSearchModifierCode or appropriate scalar value, %s seen.',
+                'FHIRSearchParameter::addModifier - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRSearchModifierCode or appropriate scalar value, %s seen.',
                 gettype($modifier)
             ));
         }
-        $this->modifier = $modifier;
+        $this->modifier[] = $modifier;
         return $this;
     }
 
     /**
      * A modifier supported for the search parameter.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRSearchModifierCode
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRSearchModifierCode[]
      */
     public function getModifier()
     {
         return $this->modifier;
     }
-
-
-    /**
-     * Whether multiple parameters are allowed - e.g. more than one parameter with the same name. The search matches if all the parameters match.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
-     * @return $this
-     */
-    public function setMultipleAnd($multipleAnd)
-    {
-        if (null === $multipleAnd) {
-            return $this; 
-        }
-        if (is_scalar($multipleAnd)) {
-            $multipleAnd = new FHIRBoolean($multipleAnd);
-        }
-        if (!($multipleAnd instanceof FHIRBoolean)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRSearchParameter::setMultipleAnd - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or appropriate scalar value, %s seen.',
-                gettype($multipleAnd)
-            ));
-        }
-        $this->multipleAnd = $multipleAnd;
-        return $this;
-    }
-
-    /**
-     * Whether multiple parameters are allowed - e.g. more than one parameter with the same name. The search matches if all the parameters match.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
-     */
-    public function getMultipleAnd()
-    {
-        return $this->multipleAnd;
-    }
-
-
-    /**
-     * Whether multiple values are allowed for each time the parameter exists. Values are separated by commas, and the parameter matches if any of the values match.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
-     * @return $this
-     */
-    public function setMultipleOr($multipleOr)
-    {
-        if (null === $multipleOr) {
-            return $this; 
-        }
-        if (is_scalar($multipleOr)) {
-            $multipleOr = new FHIRBoolean($multipleOr);
-        }
-        if (!($multipleOr instanceof FHIRBoolean)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRSearchParameter::setMultipleOr - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or appropriate scalar value, %s seen.',
-                gettype($multipleOr)
-            ));
-        }
-        $this->multipleOr = $multipleOr;
-        return $this;
-    }
-
-    /**
-     * Whether multiple values are allowed for each time the parameter exists. Values are separated by commas, and the parameter matches if any of the values match.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
-     */
-    public function getMultipleOr()
-    {
-        return $this->multipleOr;
-    }
-
 
     /**
      * A natural language name identifying the search parameter. This name should be usable as an identifier for the module by machine processing applications such as code generation.
@@ -844,9 +1009,8 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
         return $this->name;
     }
 
-
     /**
-     * The name of the organization or individual that published the search parameter.
+     * The name of the individual or organization that published the search parameter.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
@@ -869,7 +1033,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * The name of the organization or individual that published the search parameter.
+     * The name of the individual or organization that published the search parameter.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getPublisher()
@@ -877,9 +1041,8 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
         return $this->publisher;
     }
 
-
     /**
-     * Explanation of why this search parameter is needed and why it has been designed as it has.
+     * Explaination of why this search parameter is needed and why it has been designed as it has.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      * @return $this
      */
@@ -902,14 +1065,13 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * Explanation of why this search parameter is needed and why it has been designed as it has.
+     * Explaination of why this search parameter is needed and why it has been designed as it has.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getPurpose()
     {
         return $this->purpose;
     }
-
 
     /**
      * The status of this search parameter. Enables tracking the life-cycle of the content.
@@ -943,42 +1105,40 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
         return $this->status;
     }
 
-
     /**
      * Types of resource (if a resource is referenced).
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRResourceType
      * @return $this
      */
-    public function setTarget($target)
+    public function addTarget($target)
     {
         if (null === $target) {
             return $this; 
         }
         if (is_scalar($target)) {
-            $target = new FHIRCode($target);
+            $target = new FHIRResourceType($target);
         }
-        if (!($target instanceof FHIRCode)) {
+        if (!($target instanceof FHIRResourceType)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRSearchParameter::setTarget - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or appropriate scalar value, %s seen.',
+                'FHIRSearchParameter::addTarget - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRResourceType or appropriate scalar value, %s seen.',
                 gettype($target)
             ));
         }
-        $this->target = $target;
+        $this->target[] = $target;
         return $this;
     }
 
     /**
      * Types of resource (if a resource is referenced).
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRResourceType[]
      */
     public function getTarget()
     {
         return $this->target;
     }
 
-
     /**
-     * The type of value that a search parameter may contain, and how the content is interpreted.
+     * The type of value a search parameter refers to, and how the content is interpreted.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRSearchParamType
      * @return $this
      */
@@ -1001,7 +1161,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * The type of value that a search parameter may contain, and how the content is interpreted.
+     * The type of value a search parameter refers to, and how the content is interpreted.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRSearchParamType
      */
     public function getType()
@@ -1009,9 +1169,8 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
         return $this->type;
     }
 
-
     /**
-     * An absolute URI that is used to identify this search parameter when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this search parameter is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the search parameter is stored on different servers.
+     * An absolute URI that is used to identify this search parameter when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this search parameter is (or will be) published. The URL SHOULD include the major version of the search parameter. For more information see [Technical and Business Versions](resource.html#versions).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
@@ -1034,7 +1193,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * An absolute URI that is used to identify this search parameter when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this search parameter is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the search parameter is stored on different servers.
+     * An absolute URI that is used to identify this search parameter when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this search parameter is (or will be) published. The URL SHOULD include the major version of the search parameter. For more information see [Technical and Business Versions](resource.html#versions).
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getUrl()
@@ -1042,30 +1201,28 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
         return $this->url;
     }
 
-
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate search parameter instances.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUsageContext
      * @return $this
      */
-    public function setUseContext(FHIRUsageContext $useContext = null)
+    public function addUseContext(FHIRUsageContext $useContext = null)
     {
         if (null === $useContext) {
             return $this; 
         }
-        $this->useContext = $useContext;
+        $this->useContext[] = $useContext;
         return $this;
     }
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate search parameter instances.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUsageContext
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
     public function getUseContext()
     {
         return $this->useContext;
     }
-
 
     /**
      * The identifier that is used to identify this version of the search parameter when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the search parameter author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
@@ -1099,7 +1256,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
         return $this->version;
     }
 
-
     /**
      * An XPath expression that returns a set of elements for the search parameter.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -1131,7 +1287,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
     {
         return $this->xpath;
     }
-
 
     /**
      * How the search parameter relates to the set of elements returned by evaluating the xpath query.
@@ -1165,7 +1320,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
         return $this->xpathUsage;
     }
 
-
     /**
      * @return string
      */
@@ -1181,23 +1335,63 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
     {
         $a = parent::jsonSerialize();
         $a['resourceType'] = self::FHIR_TYPE_NAME;
-        if (null !== ($v = $this->getBase())) {
-            $a['base'] = $v;
+        if (0 < count($values = $this->getBase())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['base'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getChain())) {
-            $a['chain'] = $v;
+        if (0 < count($values = $this->getChain())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['chain'] = $vs;
+            }
         }
         if (null !== ($v = $this->getCode())) {
             $a['code'] = $v;
         }
-        if (null !== ($v = $this->getComparator())) {
-            $a['comparator'] = $v;
+        if (0 < count($values = $this->getComparator())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['comparator'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getComponent())) {
-            $a['component'] = $v;
+        if (0 < count($values = $this->getComponent())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['component'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getContact())) {
-            $a['contact'] = $v;
+        if (0 < count($values = $this->getContact())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['contact'] = $vs;
+            }
         }
         if (null !== ($v = $this->getDate())) {
             $a['date'] = $v;
@@ -1214,17 +1408,27 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
         if (null !== ($v = $this->getExpression())) {
             $a['expression'] = $v;
         }
-        if (null !== ($v = $this->getJurisdiction())) {
-            $a['jurisdiction'] = $v;
+        if (0 < count($values = $this->getJurisdiction())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['jurisdiction'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getModifier())) {
-            $a['modifier'] = $v;
-        }
-        if (null !== ($v = $this->getMultipleAnd())) {
-            $a['multipleAnd'] = $v;
-        }
-        if (null !== ($v = $this->getMultipleOr())) {
-            $a['multipleOr'] = $v;
+        if (0 < count($values = $this->getModifier())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['modifier'] = $vs;
+            }
         }
         if (null !== ($v = $this->getName())) {
             $a['name'] = $v;
@@ -1238,8 +1442,16 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
         if (null !== ($v = $this->getStatus())) {
             $a['status'] = $v;
         }
-        if (null !== ($v = $this->getTarget())) {
-            $a['target'] = $v;
+        if (0 < count($values = $this->getTarget())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['target'] = $vs;
+            }
         }
         if (null !== ($v = $this->getType())) {
             $a['type'] = $v;
@@ -1247,8 +1459,16 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
         if (null !== ($v = $this->getUrl())) {
             $a['url'] = $v;
         }
-        if (null !== ($v = $this->getUseContext())) {
-            $a['useContext'] = $v;
+        if (0 < count($values = $this->getUseContext())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['useContext'] = $vs;
+            }
         }
         if (null !== ($v = $this->getVersion())) {
             $a['version'] = $v;
@@ -1272,9 +1492,114 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<SearchParameter xmlns="http://hl7.org/fhir"></SearchParameter>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (0 < count($values = $this->getBase())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('base'));
+                }
+            }
         }
-        return $sxe->saveXML();
+        if (0 < count($values = $this->getChain())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('chain'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getCode())) {
+            $v->xmlSerialize(true, $sxe->addChild('code'));
+        }
+        if (0 < count($values = $this->getComparator())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('comparator'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getComponent())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('component'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getContact())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('contact'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getDate())) {
+            $v->xmlSerialize(true, $sxe->addChild('date'));
+        }
+        if (null !== ($v = $this->getDerivedFrom())) {
+            $v->xmlSerialize(true, $sxe->addChild('derivedFrom'));
+        }
+        if (null !== ($v = $this->getDescription())) {
+            $v->xmlSerialize(true, $sxe->addChild('description'));
+        }
+        if (null !== ($v = $this->getExperimental())) {
+            $v->xmlSerialize(true, $sxe->addChild('experimental'));
+        }
+        if (null !== ($v = $this->getExpression())) {
+            $v->xmlSerialize(true, $sxe->addChild('expression'));
+        }
+        if (0 < count($values = $this->getJurisdiction())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('jurisdiction'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getModifier())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('modifier'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getName())) {
+            $v->xmlSerialize(true, $sxe->addChild('name'));
+        }
+        if (null !== ($v = $this->getPublisher())) {
+            $v->xmlSerialize(true, $sxe->addChild('publisher'));
+        }
+        if (null !== ($v = $this->getPurpose())) {
+            $v->xmlSerialize(true, $sxe->addChild('purpose'));
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('status'));
+        }
+        if (0 < count($values = $this->getTarget())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('target'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getType())) {
+            $v->xmlSerialize(true, $sxe->addChild('type'));
+        }
+        if (null !== ($v = $this->getUrl())) {
+            $v->xmlSerialize(true, $sxe->addChild('url'));
+        }
+        if (0 < count($values = $this->getUseContext())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('useContext'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getVersion())) {
+            $v->xmlSerialize(true, $sxe->addChild('version'));
+        }
+        if (null !== ($v = $this->getXpath())) {
+            $v->xmlSerialize(true, $sxe->addChild('xpath'));
+        }
+        if (null !== ($v = $this->getXpathUsage())) {
+            $v->xmlSerialize(true, $sxe->addChild('xpathUsage'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

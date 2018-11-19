@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCondition;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCondition;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -79,21 +79,15 @@ class FHIRConditionStage extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Reference to a formal record of the evidence on which the staging assessment is based.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $assessment = null;
+    private $assessment = [];
 
     /**
      * A simple summary of the stage such as "Stage 3". The determination of the stage is disease-specific.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $summary = null;
-
-    /**
-     * The kind of staging, such as pathological or clinical staging.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public $type = null;
+    private $summary = null;
 
     /**
      * FHIRConditionStage Constructor
@@ -102,16 +96,32 @@ class FHIRConditionStage extends FHIRBackboneElement implements \JsonSerializabl
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['assessment'])) {
-                $this->setAssessment($data['assessment']);
+                $value = $data['assessment'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCondition\FHIRConditionStage::__construct - Collection field \"assessment\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addAssessment($v);
+                    }
+                }
             }
             if (isset($data['summary'])) {
-                $this->setSummary($data['summary']);
-            }
-            if (isset($data['type'])) {
-                $this->setType($data['type']);
+                $value = $data['summary'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCondition\FHIRConditionStage::__construct - Property \"summary\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setSummary($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -120,6 +130,7 @@ class FHIRConditionStage extends FHIRBackboneElement implements \JsonSerializabl
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -127,24 +138,23 @@ class FHIRConditionStage extends FHIRBackboneElement implements \JsonSerializabl
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setAssessment(FHIRReference $assessment = null)
+    public function addAssessment(FHIRReference $assessment = null)
     {
         if (null === $assessment) {
             return $this; 
         }
-        $this->assessment = $assessment;
+        $this->assessment[] = $assessment;
         return $this;
     }
 
     /**
      * Reference to a formal record of the evidence on which the staging assessment is based.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getAssessment()
     {
         return $this->assessment;
     }
-
 
     /**
      * A simple summary of the stage such as "Stage 3". The determination of the stage is disease-specific.
@@ -169,31 +179,6 @@ class FHIRConditionStage extends FHIRBackboneElement implements \JsonSerializabl
         return $this->summary;
     }
 
-
-    /**
-     * The kind of staging, such as pathological or clinical staging.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     * @return $this
-     */
-    public function setType(FHIRCodeableConcept $type = null)
-    {
-        if (null === $type) {
-            return $this; 
-        }
-        $this->type = $type;
-        return $this;
-    }
-
-    /**
-     * The kind of staging, such as pathological or clinical staging.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-
     /**
      * @return string
      */
@@ -208,14 +193,19 @@ class FHIRConditionStage extends FHIRBackboneElement implements \JsonSerializabl
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getAssessment())) {
-            $a['assessment'] = $v;
+        if (0 < count($values = $this->getAssessment())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['assessment'] = $vs;
+            }
         }
         if (null !== ($v = $this->getSummary())) {
             $a['summary'] = $v;
-        }
-        if (null !== ($v = $this->getType())) {
-            $a['type'] = $v;
         }
         return $a;
     }
@@ -230,9 +220,16 @@ class FHIRConditionStage extends FHIRBackboneElement implements \JsonSerializabl
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ConditionStage xmlns="http://hl7.org/fhir"></ConditionStage>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (0 < count($values = $this->getAssessment())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('assessment'));
+                }
+            }
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getSummary())) {
+            $v->xmlSerialize(true, $sxe->addChild('summary'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

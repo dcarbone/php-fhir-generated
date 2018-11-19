@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStateme
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStateme
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -64,7 +64,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStateme
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 use PHPFHIRGenerated\FHIRElement\FHIRCoding;
-use PHPFHIRGenerated\FHIRElement\FHIRUrl;
+use PHPFHIRGenerated\FHIRElement\FHIRUri;
 
 /**
  * A Capability Statement documents a set of capabilities (behaviors) of a FHIR Server that may be used as a statement of actual server functionality or a statement of required or desired server implementation.
@@ -78,16 +78,16 @@ class FHIRCapabilityStatementEndpoint extends FHIRBackboneElement implements \Js
     const FHIR_TYPE_NAME = 'CapabilityStatement.Endpoint';
 
     /**
-     * The network address of the endpoint. For solutions that do not use network addresses for routing, it can be just an identifier.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUrl
+     * The network address of the end-point. For solutions that do not use network addresses for routing, it can be just an identifier.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $address = null;
+    private $address = null;
 
     /**
      * A list of the messaging transport protocol(s) identifiers, supported by this endpoint.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
-    public $protocol = null;
+    private $protocol = null;
 
     /**
      * FHIRCapabilityStatementEndpoint Constructor
@@ -96,13 +96,28 @@ class FHIRCapabilityStatementEndpoint extends FHIRBackboneElement implements \Js
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['address'])) {
-                $this->setAddress($data['address']);
+                $value = $data['address'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementEndpoint::__construct - Property \"address\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value));
+                }
+                $this->setAddress($value);
             }
             if (isset($data['protocol'])) {
-                $this->setProtocol($data['protocol']);
+                $value = $data['protocol'];
+                if (is_array($value)) {
+                    $value = new FHIRCoding($value);
+                } 
+                if (!($value instanceof FHIRCoding)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementEndpoint::__construct - Property \"protocol\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCoding or data to construct type, saw ".gettype($value));
+                }
+                $this->setProtocol($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -111,11 +126,12 @@ class FHIRCapabilityStatementEndpoint extends FHIRBackboneElement implements \Js
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
-     * The network address of the endpoint. For solutions that do not use network addresses for routing, it can be just an identifier.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUrl
+     * The network address of the end-point. For solutions that do not use network addresses for routing, it can be just an identifier.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
     public function setAddress($address)
@@ -124,11 +140,11 @@ class FHIRCapabilityStatementEndpoint extends FHIRBackboneElement implements \Js
             return $this; 
         }
         if (is_scalar($address)) {
-            $address = new FHIRUrl($address);
+            $address = new FHIRUri($address);
         }
-        if (!($address instanceof FHIRUrl)) {
+        if (!($address instanceof FHIRUri)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRCapabilityStatementEndpoint::setAddress - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUrl or appropriate scalar value, %s seen.',
+                'FHIRCapabilityStatementEndpoint::setAddress - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or appropriate scalar value, %s seen.',
                 gettype($address)
             ));
         }
@@ -137,14 +153,13 @@ class FHIRCapabilityStatementEndpoint extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * The network address of the endpoint. For solutions that do not use network addresses for routing, it can be just an identifier.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUrl
+     * The network address of the end-point. For solutions that do not use network addresses for routing, it can be just an identifier.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getAddress()
     {
         return $this->address;
     }
-
 
     /**
      * A list of the messaging transport protocol(s) identifiers, supported by this endpoint.
@@ -168,7 +183,6 @@ class FHIRCapabilityStatementEndpoint extends FHIRBackboneElement implements \Js
     {
         return $this->protocol;
     }
-
 
     /**
      * @return string
@@ -203,9 +217,12 @@ class FHIRCapabilityStatementEndpoint extends FHIRBackboneElement implements \Js
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<CapabilityStatementEndpoint xmlns="http://hl7.org/fhir"></CapabilityStatementEndpoint>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getAddress())) {
+            $v->xmlSerialize(true, $sxe->addChild('address'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getProtocol())) {
+            $v->xmlSerialize(true, $sxe->addChild('protocol'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

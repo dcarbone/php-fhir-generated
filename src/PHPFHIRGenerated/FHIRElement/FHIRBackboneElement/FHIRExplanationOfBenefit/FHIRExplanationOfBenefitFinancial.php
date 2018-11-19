@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBene
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBene
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -64,7 +64,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBene
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
-use PHPFHIRGenerated\FHIRElement\FHIRMoney;
+use PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
 use PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt;
 
@@ -80,40 +80,40 @@ class FHIRExplanationOfBenefitFinancial extends FHIRBackboneElement implements \
     const FHIR_TYPE_NAME = 'ExplanationOfBenefit.Financial';
 
     /**
-     * Benefits allowed.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRMoney
+     * Benefits allowed. (choose any one of allowed*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
-    public $allowedMoney = null;
+    private $allowedMoney = null;
 
     /**
-     * Benefits allowed.
+     * Benefits allowed. (choose any one of allowed*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $allowedString = null;
+    private $allowedString = null;
 
     /**
-     * Benefits allowed.
+     * Benefits allowed. (choose any one of allowed*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
-    public $allowedUnsignedInt = null;
+    private $allowedUnsignedInt = null;
 
     /**
      * Deductable, visits, benefit amount.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $type = null;
+    private $type = null;
 
     /**
-     * Benefits used.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRMoney
+     * Benefits used. (choose any one of used*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
-    public $usedMoney = null;
+    private $usedMoney = null;
 
     /**
-     * Benefits used.
+     * Benefits used. (choose any one of used*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
-    public $usedUnsignedInt = null;
+    private $usedUnsignedInt = null;
 
     /**
      * FHIRExplanationOfBenefitFinancial Constructor
@@ -122,25 +122,72 @@ class FHIRExplanationOfBenefitFinancial extends FHIRBackboneElement implements \
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['allowedMoney'])) {
-                $this->setAllowedMoney($data['allowedMoney']);
+                $value = $data['allowedMoney'];
+                if (is_array($value)) {
+                    $value = new FHIRMoney($value);
+                } 
+                if (!($value instanceof FHIRMoney)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitFinancial::__construct - Property \"allowedMoney\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney or data to construct type, saw ".gettype($value));
+                }
+                $this->setAllowedMoney($value);
             }
             if (isset($data['allowedString'])) {
-                $this->setAllowedString($data['allowedString']);
+                $value = $data['allowedString'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitFinancial::__construct - Property \"allowedString\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setAllowedString($value);
             }
             if (isset($data['allowedUnsignedInt'])) {
-                $this->setAllowedUnsignedInt($data['allowedUnsignedInt']);
+                $value = $data['allowedUnsignedInt'];
+                if (is_array($value)) {
+                    $value = new FHIRUnsignedInt($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUnsignedInt($value);
+                }
+                if (!($value instanceof FHIRUnsignedInt)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitFinancial::__construct - Property \"allowedUnsignedInt\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt or data to construct type, saw ".gettype($value));
+                }
+                $this->setAllowedUnsignedInt($value);
             }
             if (isset($data['type'])) {
-                $this->setType($data['type']);
+                $value = $data['type'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitFinancial::__construct - Property \"type\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setType($value);
             }
             if (isset($data['usedMoney'])) {
-                $this->setUsedMoney($data['usedMoney']);
+                $value = $data['usedMoney'];
+                if (is_array($value)) {
+                    $value = new FHIRMoney($value);
+                } 
+                if (!($value instanceof FHIRMoney)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitFinancial::__construct - Property \"usedMoney\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney or data to construct type, saw ".gettype($value));
+                }
+                $this->setUsedMoney($value);
             }
             if (isset($data['usedUnsignedInt'])) {
-                $this->setUsedUnsignedInt($data['usedUnsignedInt']);
+                $value = $data['usedUnsignedInt'];
+                if (is_array($value)) {
+                    $value = new FHIRUnsignedInt($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUnsignedInt($value);
+                }
+                if (!($value instanceof FHIRUnsignedInt)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitFinancial::__construct - Property \"usedUnsignedInt\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt or data to construct type, saw ".gettype($value));
+                }
+                $this->setUsedUnsignedInt($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -149,11 +196,12 @@ class FHIRExplanationOfBenefitFinancial extends FHIRBackboneElement implements \
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
-     * Benefits allowed.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRMoney
+     * Benefits allowed. (choose any one of allowed*, but only one)
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      * @return $this
      */
     public function setAllowedMoney(FHIRMoney $allowedMoney = null)
@@ -166,17 +214,16 @@ class FHIRExplanationOfBenefitFinancial extends FHIRBackboneElement implements \
     }
 
     /**
-     * Benefits allowed.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRMoney
+     * Benefits allowed. (choose any one of allowed*, but only one)
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public function getAllowedMoney()
     {
         return $this->allowedMoney;
     }
 
-
     /**
-     * Benefits allowed.
+     * Benefits allowed. (choose any one of allowed*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
@@ -199,7 +246,7 @@ class FHIRExplanationOfBenefitFinancial extends FHIRBackboneElement implements \
     }
 
     /**
-     * Benefits allowed.
+     * Benefits allowed. (choose any one of allowed*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getAllowedString()
@@ -207,9 +254,8 @@ class FHIRExplanationOfBenefitFinancial extends FHIRBackboneElement implements \
         return $this->allowedString;
     }
 
-
     /**
-     * Benefits allowed.
+     * Benefits allowed. (choose any one of allowed*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      * @return $this
      */
@@ -232,14 +278,13 @@ class FHIRExplanationOfBenefitFinancial extends FHIRBackboneElement implements \
     }
 
     /**
-     * Benefits allowed.
+     * Benefits allowed. (choose any one of allowed*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
     public function getAllowedUnsignedInt()
     {
         return $this->allowedUnsignedInt;
     }
-
 
     /**
      * Deductable, visits, benefit amount.
@@ -264,10 +309,9 @@ class FHIRExplanationOfBenefitFinancial extends FHIRBackboneElement implements \
         return $this->type;
     }
 
-
     /**
-     * Benefits used.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRMoney
+     * Benefits used. (choose any one of used*, but only one)
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      * @return $this
      */
     public function setUsedMoney(FHIRMoney $usedMoney = null)
@@ -280,17 +324,16 @@ class FHIRExplanationOfBenefitFinancial extends FHIRBackboneElement implements \
     }
 
     /**
-     * Benefits used.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRMoney
+     * Benefits used. (choose any one of used*, but only one)
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public function getUsedMoney()
     {
         return $this->usedMoney;
     }
 
-
     /**
-     * Benefits used.
+     * Benefits used. (choose any one of used*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      * @return $this
      */
@@ -313,14 +356,13 @@ class FHIRExplanationOfBenefitFinancial extends FHIRBackboneElement implements \
     }
 
     /**
-     * Benefits used.
+     * Benefits used. (choose any one of used*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
     public function getUsedUnsignedInt()
     {
         return $this->usedUnsignedInt;
     }
-
 
     /**
      * @return string
@@ -367,9 +409,24 @@ class FHIRExplanationOfBenefitFinancial extends FHIRBackboneElement implements \
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ExplanationOfBenefitFinancial xmlns="http://hl7.org/fhir"></ExplanationOfBenefitFinancial>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getAllowedMoney())) {
+            $v->xmlSerialize(true, $sxe->addChild('allowedMoney'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getAllowedString())) {
+            $v->xmlSerialize(true, $sxe->addChild('allowedString'));
+        }
+        if (null !== ($v = $this->getAllowedUnsignedInt())) {
+            $v->xmlSerialize(true, $sxe->addChild('allowedUnsignedInt'));
+        }
+        if (null !== ($v = $this->getType())) {
+            $v->xmlSerialize(true, $sxe->addChild('type'));
+        }
+        if (null !== ($v = $this->getUsedMoney())) {
+            $v->xmlSerialize(true, $sxe->addChild('usedMoney'));
+        }
+        if (null !== ($v = $this->getUsedUnsignedInt())) {
+            $v->xmlSerialize(true, $sxe->addChild('usedUnsignedInt'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

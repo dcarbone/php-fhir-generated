@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -62,16 +62,10 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse;
  * 
  */
 
-use PHPFHIRGenerated\FHIRElement\FHIRAddress;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
-use PHPFHIRGenerated\FHIRElement\FHIRDate;
-use PHPFHIRGenerated\FHIRElement\FHIRDecimal;
-use PHPFHIRGenerated\FHIRElement\FHIRMoney;
-use PHPFHIRGenerated\FHIRElement\FHIRPeriod;
 use PHPFHIRGenerated\FHIRElement\FHIRPositiveInt;
-use PHPFHIRGenerated\FHIRElement\FHIRQuantity;
-use PHPFHIRGenerated\FHIRElement\FHIRReference;
+use PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney;
 
 /**
  * This resource provides the adjudication details from the processing of a Claim resource.
@@ -85,130 +79,58 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement implements \JsonSeria
     const FHIR_TYPE_NAME = 'ClaimResponse.AddItem';
 
     /**
-     * The adjudication results.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication
+     * The adjudications results.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication[]
      */
-    public $adjudication = null;
+    private $adjudication = [];
+
+    /**
+     * Health Care Service Type Codes  to identify the classification of service or benefits.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    private $category = null;
+
+    /**
+     * The second tier service adjudications for payor added services.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseDetail1[]
+     */
+    private $detail = [];
+
+    /**
+     * The fee charged for the professional service or product..
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
+     */
+    private $fee = null;
+
+    /**
+     * Item typification or modifiers codes, eg for Oral whether the treatment is cosmetic or associated with TMJ, or for medical whether the treatment was outside the clinic or out of office hours.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    private $modifier = [];
+
+    /**
+     * A list of note references to the notes provided below.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt[]
+     */
+    private $noteNumber = [];
+
+    /**
+     * The type of reveneu or cost center providing the product and/or service.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    private $revenue = null;
+
+    /**
+     * List of input service items which this service line is intended to replace.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt[]
+     */
+    private $sequenceLinkId = [];
 
     /**
      * A code to indicate the Professional Service or Product supplied.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $billcode = null;
-
-    /**
-     * Physical service site on the patient (limb, tooth, etc.).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public $bodySite = null;
-
-    /**
-     * The second-tier service adjudications for payor added services.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseDetail1
-     */
-    public $detail = null;
-
-    /**
-     * The sequence number of the addition within the line item submitted which contains the error. This value is omitted when the error is not related to an Addition.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
-     */
-    public $detailSequence = null;
-
-    /**
-     * A real number that represents a multiplier used in determining the overall value of services delivered and/or goods received. The concept of a Factor allows for a discount or surcharge multiplier to be applied to a monetary amount.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
-     */
-    public $factor = null;
-
-    /**
-     * List of input service items which this service line is intended to replace.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
-     */
-    public $itemSequence = null;
-
-    /**
-     * Where the service was provided.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRAddress
-     */
-    public $locationAddress = null;
-
-    /**
-     * Where the service was provided.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public $locationCodeableConcept = null;
-
-    /**
-     * Where the service was provided.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $locationReference = null;
-
-    /**
-     * Item typification or modifiers codes, e.g. for Oral whether the treatment is cosmetic or associated with TMJ, or for medical whether the treatment was outside the clinic or out of office hours.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public $modifier = null;
-
-    /**
-     * The quantity times the unit price for an additional service or product or charge. For example, the formula: unit Quantity * unit Price (Cost per Point) * factor Number  * points = net Amount. Quantity, factor and points are assumed to be 1 if not supplied.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRMoney
-     */
-    public $net = null;
-
-    /**
-     * A list of note references to the notes provided below.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
-     */
-    public $noteNumber = null;
-
-    /**
-     * For programs which require reason codes for the inclusion or covering of this billed item under the program or sub-program.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public $programCode = null;
-
-    /**
-     * The providers who are authorized for the services rendered to the patient.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $provider = null;
-
-    /**
-     * The number of repetitions of a service or product.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
-     */
-    public $quantity = null;
-
-    /**
-     * The date or dates when the service or product was supplied, performed or completed.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
-     */
-    public $servicedDate = null;
-
-    /**
-     * The date or dates when the service or product was supplied, performed or completed.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
-     */
-    public $servicedPeriod = null;
-
-    /**
-     * A region or surface of the site, e.g. limb region or tooth surface(s).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public $subSite = null;
-
-    /**
-     * The sequence number of the addition within the line item submitted which contains the error. This value is omitted when the error is not related to an Addition.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
-     */
-    public $subdetailSequence = null;
-
-    /**
-     * If the item is a node then this is the fee for the product or service, otherwise this is the total of the fees for the children of the group.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRMoney
-     */
-    public $unitPrice = null;
+    private $service = null;
 
     /**
      * FHIRClaimResponseAddItem Constructor
@@ -217,70 +139,130 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement implements \JsonSeria
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['adjudication'])) {
-                $this->setAdjudication($data['adjudication']);
+                $value = $data['adjudication'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRClaimResponseAdjudication($v);
+                        } 
+                        if (!($v instanceof FHIRClaimResponseAdjudication)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAddItem::__construct - Collection field \"adjudication\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addAdjudication($v);
+                    }
+                }
             }
-            if (isset($data['billcode'])) {
-                $this->setBillcode($data['billcode']);
-            }
-            if (isset($data['bodySite'])) {
-                $this->setBodySite($data['bodySite']);
+            if (isset($data['category'])) {
+                $value = $data['category'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAddItem::__construct - Property \"category\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setCategory($value);
             }
             if (isset($data['detail'])) {
-                $this->setDetail($data['detail']);
+                $value = $data['detail'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRClaimResponseDetail1($v);
+                        } 
+                        if (!($v instanceof FHIRClaimResponseDetail1)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAddItem::__construct - Collection field \"detail\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseDetail1 or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addDetail($v);
+                    }
+                }
             }
-            if (isset($data['detailSequence'])) {
-                $this->setDetailSequence($data['detailSequence']);
-            }
-            if (isset($data['factor'])) {
-                $this->setFactor($data['factor']);
-            }
-            if (isset($data['itemSequence'])) {
-                $this->setItemSequence($data['itemSequence']);
-            }
-            if (isset($data['locationAddress'])) {
-                $this->setLocationAddress($data['locationAddress']);
-            }
-            if (isset($data['locationCodeableConcept'])) {
-                $this->setLocationCodeableConcept($data['locationCodeableConcept']);
-            }
-            if (isset($data['locationReference'])) {
-                $this->setLocationReference($data['locationReference']);
+            if (isset($data['fee'])) {
+                $value = $data['fee'];
+                if (is_array($value)) {
+                    $value = new FHIRMoney($value);
+                } 
+                if (!($value instanceof FHIRMoney)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAddItem::__construct - Property \"fee\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney or data to construct type, saw ".gettype($value));
+                }
+                $this->setFee($value);
             }
             if (isset($data['modifier'])) {
-                $this->setModifier($data['modifier']);
-            }
-            if (isset($data['net'])) {
-                $this->setNet($data['net']);
+                $value = $data['modifier'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAddItem::__construct - Collection field \"modifier\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addModifier($v);
+                    }
+                }
             }
             if (isset($data['noteNumber'])) {
-                $this->setNoteNumber($data['noteNumber']);
+                $value = $data['noteNumber'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRPositiveInt($v);
+                        }  elseif (is_scalar($v)) {
+                            $v = new FHIRPositiveInt($v);
+                        }
+                        if (!($v instanceof FHIRPositiveInt)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAddItem::__construct - Collection field \"noteNumber\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addNoteNumber($v);
+                    }
+                }
             }
-            if (isset($data['programCode'])) {
-                $this->setProgramCode($data['programCode']);
+            if (isset($data['revenue'])) {
+                $value = $data['revenue'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAddItem::__construct - Property \"revenue\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setRevenue($value);
             }
-            if (isset($data['provider'])) {
-                $this->setProvider($data['provider']);
+            if (isset($data['sequenceLinkId'])) {
+                $value = $data['sequenceLinkId'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRPositiveInt($v);
+                        }  elseif (is_scalar($v)) {
+                            $v = new FHIRPositiveInt($v);
+                        }
+                        if (!($v instanceof FHIRPositiveInt)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAddItem::__construct - Collection field \"sequenceLinkId\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addSequenceLinkId($v);
+                    }
+                }
             }
-            if (isset($data['quantity'])) {
-                $this->setQuantity($data['quantity']);
-            }
-            if (isset($data['servicedDate'])) {
-                $this->setServicedDate($data['servicedDate']);
-            }
-            if (isset($data['servicedPeriod'])) {
-                $this->setServicedPeriod($data['servicedPeriod']);
-            }
-            if (isset($data['subSite'])) {
-                $this->setSubSite($data['subSite']);
-            }
-            if (isset($data['subdetailSequence'])) {
-                $this->setSubdetailSequence($data['subdetailSequence']);
-            }
-            if (isset($data['unitPrice'])) {
-                $this->setUnitPrice($data['unitPrice']);
+            if (isset($data['service'])) {
+                $value = $data['service'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAddItem::__construct - Property \"service\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setService($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -289,329 +271,130 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement implements \JsonSeria
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
-     * The adjudication results.
+     * The adjudications results.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication
      * @return $this
      */
-    public function setAdjudication(FHIRClaimResponseAdjudication $adjudication = null)
+    public function addAdjudication(FHIRClaimResponseAdjudication $adjudication = null)
     {
         if (null === $adjudication) {
             return $this; 
         }
-        $this->adjudication = $adjudication;
+        $this->adjudication[] = $adjudication;
         return $this;
     }
 
     /**
-     * The adjudication results.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication
+     * The adjudications results.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication[]
      */
     public function getAdjudication()
     {
         return $this->adjudication;
     }
 
-
     /**
-     * A code to indicate the Professional Service or Product supplied.
+     * Health Care Service Type Codes  to identify the classification of service or benefits.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setBillcode(FHIRCodeableConcept $billcode = null)
+    public function setCategory(FHIRCodeableConcept $category = null)
     {
-        if (null === $billcode) {
+        if (null === $category) {
             return $this; 
         }
-        $this->billcode = $billcode;
+        $this->category = $category;
         return $this;
     }
 
     /**
-     * A code to indicate the Professional Service or Product supplied.
+     * Health Care Service Type Codes  to identify the classification of service or benefits.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getBillcode()
+    public function getCategory()
     {
-        return $this->billcode;
-    }
-
-
-    /**
-     * Physical service site on the patient (limb, tooth, etc.).
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     * @return $this
-     */
-    public function setBodySite(FHIRCodeableConcept $bodySite = null)
-    {
-        if (null === $bodySite) {
-            return $this; 
-        }
-        $this->bodySite = $bodySite;
-        return $this;
+        return $this->category;
     }
 
     /**
-     * Physical service site on the patient (limb, tooth, etc.).
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public function getBodySite()
-    {
-        return $this->bodySite;
-    }
-
-
-    /**
-     * The second-tier service adjudications for payor added services.
+     * The second tier service adjudications for payor added services.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseDetail1
      * @return $this
      */
-    public function setDetail(FHIRClaimResponseDetail1 $detail = null)
+    public function addDetail(FHIRClaimResponseDetail1 $detail = null)
     {
         if (null === $detail) {
             return $this; 
         }
-        $this->detail = $detail;
+        $this->detail[] = $detail;
         return $this;
     }
 
     /**
-     * The second-tier service adjudications for payor added services.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseDetail1
+     * The second tier service adjudications for payor added services.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseDetail1[]
      */
     public function getDetail()
     {
         return $this->detail;
     }
 
-
     /**
-     * The sequence number of the addition within the line item submitted which contains the error. This value is omitted when the error is not related to an Addition.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
+     * The fee charged for the professional service or product..
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      * @return $this
      */
-    public function setDetailSequence($detailSequence)
+    public function setFee(FHIRMoney $fee = null)
     {
-        if (null === $detailSequence) {
+        if (null === $fee) {
             return $this; 
         }
-        if (is_scalar($detailSequence)) {
-            $detailSequence = new FHIRPositiveInt($detailSequence);
-        }
-        if (!($detailSequence instanceof FHIRPositiveInt)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRClaimResponseAddItem::setDetailSequence - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt or appropriate scalar value, %s seen.',
-                gettype($detailSequence)
-            ));
-        }
-        $this->detailSequence = $detailSequence;
+        $this->fee = $fee;
         return $this;
     }
 
     /**
-     * The sequence number of the addition within the line item submitted which contains the error. This value is omitted when the error is not related to an Addition.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
+     * The fee charged for the professional service or product..
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
-    public function getDetailSequence()
+    public function getFee()
     {
-        return $this->detailSequence;
-    }
-
-
-    /**
-     * A real number that represents a multiplier used in determining the overall value of services delivered and/or goods received. The concept of a Factor allows for a discount or surcharge multiplier to be applied to a monetary amount.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDecimal
-     * @return $this
-     */
-    public function setFactor($factor)
-    {
-        if (null === $factor) {
-            return $this; 
-        }
-        if (is_scalar($factor)) {
-            $factor = new FHIRDecimal($factor);
-        }
-        if (!($factor instanceof FHIRDecimal)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRClaimResponseAddItem::setFactor - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRDecimal or appropriate scalar value, %s seen.',
-                gettype($factor)
-            ));
-        }
-        $this->factor = $factor;
-        return $this;
+        return $this->fee;
     }
 
     /**
-     * A real number that represents a multiplier used in determining the overall value of services delivered and/or goods received. The concept of a Factor allows for a discount or surcharge multiplier to be applied to a monetary amount.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDecimal
-     */
-    public function getFactor()
-    {
-        return $this->factor;
-    }
-
-
-    /**
-     * List of input service items which this service line is intended to replace.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
-     * @return $this
-     */
-    public function setItemSequence($itemSequence)
-    {
-        if (null === $itemSequence) {
-            return $this; 
-        }
-        if (is_scalar($itemSequence)) {
-            $itemSequence = new FHIRPositiveInt($itemSequence);
-        }
-        if (!($itemSequence instanceof FHIRPositiveInt)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRClaimResponseAddItem::setItemSequence - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt or appropriate scalar value, %s seen.',
-                gettype($itemSequence)
-            ));
-        }
-        $this->itemSequence = $itemSequence;
-        return $this;
-    }
-
-    /**
-     * List of input service items which this service line is intended to replace.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
-     */
-    public function getItemSequence()
-    {
-        return $this->itemSequence;
-    }
-
-
-    /**
-     * Where the service was provided.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRAddress
-     * @return $this
-     */
-    public function setLocationAddress(FHIRAddress $locationAddress = null)
-    {
-        if (null === $locationAddress) {
-            return $this; 
-        }
-        $this->locationAddress = $locationAddress;
-        return $this;
-    }
-
-    /**
-     * Where the service was provided.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAddress
-     */
-    public function getLocationAddress()
-    {
-        return $this->locationAddress;
-    }
-
-
-    /**
-     * Where the service was provided.
+     * Item typification or modifiers codes, eg for Oral whether the treatment is cosmetic or associated with TMJ, or for medical whether the treatment was outside the clinic or out of office hours.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setLocationCodeableConcept(FHIRCodeableConcept $locationCodeableConcept = null)
-    {
-        if (null === $locationCodeableConcept) {
-            return $this; 
-        }
-        $this->locationCodeableConcept = $locationCodeableConcept;
-        return $this;
-    }
-
-    /**
-     * Where the service was provided.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public function getLocationCodeableConcept()
-    {
-        return $this->locationCodeableConcept;
-    }
-
-
-    /**
-     * Where the service was provided.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     * @return $this
-     */
-    public function setLocationReference(FHIRReference $locationReference = null)
-    {
-        if (null === $locationReference) {
-            return $this; 
-        }
-        $this->locationReference = $locationReference;
-        return $this;
-    }
-
-    /**
-     * Where the service was provided.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getLocationReference()
-    {
-        return $this->locationReference;
-    }
-
-
-    /**
-     * Item typification or modifiers codes, e.g. for Oral whether the treatment is cosmetic or associated with TMJ, or for medical whether the treatment was outside the clinic or out of office hours.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     * @return $this
-     */
-    public function setModifier(FHIRCodeableConcept $modifier = null)
+    public function addModifier(FHIRCodeableConcept $modifier = null)
     {
         if (null === $modifier) {
             return $this; 
         }
-        $this->modifier = $modifier;
+        $this->modifier[] = $modifier;
         return $this;
     }
 
     /**
-     * Item typification or modifiers codes, e.g. for Oral whether the treatment is cosmetic or associated with TMJ, or for medical whether the treatment was outside the clinic or out of office hours.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * Item typification or modifiers codes, eg for Oral whether the treatment is cosmetic or associated with TMJ, or for medical whether the treatment was outside the clinic or out of office hours.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getModifier()
     {
         return $this->modifier;
     }
 
-
-    /**
-     * The quantity times the unit price for an additional service or product or charge. For example, the formula: unit Quantity * unit Price (Cost per Point) * factor Number  * points = net Amount. Quantity, factor and points are assumed to be 1 if not supplied.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRMoney
-     * @return $this
-     */
-    public function setNet(FHIRMoney $net = null)
-    {
-        if (null === $net) {
-            return $this; 
-        }
-        $this->net = $net;
-        return $this;
-    }
-
-    /**
-     * The quantity times the unit price for an additional service or product or charge. For example, the formula: unit Quantity * unit Price (Cost per Point) * factor Number  * points = net Amount. Quantity, factor and points are assumed to be 1 if not supplied.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRMoney
-     */
-    public function getNet()
-    {
-        return $this->net;
-    }
-
-
     /**
      * A list of note references to the notes provided below.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      * @return $this
      */
-    public function setNoteNumber($noteNumber)
+    public function addNoteNumber($noteNumber)
     {
         if (null === $noteNumber) {
             return $this; 
@@ -621,233 +404,100 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement implements \JsonSeria
         }
         if (!($noteNumber instanceof FHIRPositiveInt)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRClaimResponseAddItem::setNoteNumber - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt or appropriate scalar value, %s seen.',
+                'FHIRClaimResponseAddItem::addNoteNumber - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt or appropriate scalar value, %s seen.',
                 gettype($noteNumber)
             ));
         }
-        $this->noteNumber = $noteNumber;
+        $this->noteNumber[] = $noteNumber;
         return $this;
     }
 
     /**
      * A list of note references to the notes provided below.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRPositiveInt[]
      */
     public function getNoteNumber()
     {
         return $this->noteNumber;
     }
 
-
     /**
-     * For programs which require reason codes for the inclusion or covering of this billed item under the program or sub-program.
+     * The type of reveneu or cost center providing the product and/or service.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setProgramCode(FHIRCodeableConcept $programCode = null)
+    public function setRevenue(FHIRCodeableConcept $revenue = null)
     {
-        if (null === $programCode) {
+        if (null === $revenue) {
             return $this; 
         }
-        $this->programCode = $programCode;
+        $this->revenue = $revenue;
         return $this;
     }
 
     /**
-     * For programs which require reason codes for the inclusion or covering of this billed item under the program or sub-program.
+     * The type of reveneu or cost center providing the product and/or service.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getProgramCode()
+    public function getRevenue()
     {
-        return $this->programCode;
-    }
-
-
-    /**
-     * The providers who are authorized for the services rendered to the patient.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     * @return $this
-     */
-    public function setProvider(FHIRReference $provider = null)
-    {
-        if (null === $provider) {
-            return $this; 
-        }
-        $this->provider = $provider;
-        return $this;
+        return $this->revenue;
     }
 
     /**
-     * The providers who are authorized for the services rendered to the patient.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getProvider()
-    {
-        return $this->provider;
-    }
-
-
-    /**
-     * The number of repetitions of a service or product.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity
-     * @return $this
-     */
-    public function setQuantity(FHIRQuantity $quantity = null)
-    {
-        if (null === $quantity) {
-            return $this; 
-        }
-        $this->quantity = $quantity;
-        return $this;
-    }
-
-    /**
-     * The number of repetitions of a service or product.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity
-     */
-    public function getQuantity()
-    {
-        return $this->quantity;
-    }
-
-
-    /**
-     * The date or dates when the service or product was supplied, performed or completed.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDate
-     * @return $this
-     */
-    public function setServicedDate($servicedDate)
-    {
-        if (null === $servicedDate) {
-            return $this; 
-        }
-        if (is_scalar($servicedDate)) {
-            $servicedDate = new FHIRDate($servicedDate);
-        }
-        if (!($servicedDate instanceof FHIRDate)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRClaimResponseAddItem::setServicedDate - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRDate or appropriate scalar value, %s seen.',
-                gettype($servicedDate)
-            ));
-        }
-        $this->servicedDate = $servicedDate;
-        return $this;
-    }
-
-    /**
-     * The date or dates when the service or product was supplied, performed or completed.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDate
-     */
-    public function getServicedDate()
-    {
-        return $this->servicedDate;
-    }
-
-
-    /**
-     * The date or dates when the service or product was supplied, performed or completed.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
-     * @return $this
-     */
-    public function setServicedPeriod(FHIRPeriod $servicedPeriod = null)
-    {
-        if (null === $servicedPeriod) {
-            return $this; 
-        }
-        $this->servicedPeriod = $servicedPeriod;
-        return $this;
-    }
-
-    /**
-     * The date or dates when the service or product was supplied, performed or completed.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
-     */
-    public function getServicedPeriod()
-    {
-        return $this->servicedPeriod;
-    }
-
-
-    /**
-     * A region or surface of the site, e.g. limb region or tooth surface(s).
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     * @return $this
-     */
-    public function setSubSite(FHIRCodeableConcept $subSite = null)
-    {
-        if (null === $subSite) {
-            return $this; 
-        }
-        $this->subSite = $subSite;
-        return $this;
-    }
-
-    /**
-     * A region or surface of the site, e.g. limb region or tooth surface(s).
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public function getSubSite()
-    {
-        return $this->subSite;
-    }
-
-
-    /**
-     * The sequence number of the addition within the line item submitted which contains the error. This value is omitted when the error is not related to an Addition.
+     * List of input service items which this service line is intended to replace.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      * @return $this
      */
-    public function setSubdetailSequence($subdetailSequence)
+    public function addSequenceLinkId($sequenceLinkId)
     {
-        if (null === $subdetailSequence) {
+        if (null === $sequenceLinkId) {
             return $this; 
         }
-        if (is_scalar($subdetailSequence)) {
-            $subdetailSequence = new FHIRPositiveInt($subdetailSequence);
+        if (is_scalar($sequenceLinkId)) {
+            $sequenceLinkId = new FHIRPositiveInt($sequenceLinkId);
         }
-        if (!($subdetailSequence instanceof FHIRPositiveInt)) {
+        if (!($sequenceLinkId instanceof FHIRPositiveInt)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRClaimResponseAddItem::setSubdetailSequence - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt or appropriate scalar value, %s seen.',
-                gettype($subdetailSequence)
+                'FHIRClaimResponseAddItem::addSequenceLinkId - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt or appropriate scalar value, %s seen.',
+                gettype($sequenceLinkId)
             ));
         }
-        $this->subdetailSequence = $subdetailSequence;
+        $this->sequenceLinkId[] = $sequenceLinkId;
         return $this;
     }
 
     /**
-     * The sequence number of the addition within the line item submitted which contains the error. This value is omitted when the error is not related to an Addition.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
+     * List of input service items which this service line is intended to replace.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRPositiveInt[]
      */
-    public function getSubdetailSequence()
+    public function getSequenceLinkId()
     {
-        return $this->subdetailSequence;
+        return $this->sequenceLinkId;
     }
 
-
     /**
-     * If the item is a node then this is the fee for the product or service, otherwise this is the total of the fees for the children of the group.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRMoney
+     * A code to indicate the Professional Service or Product supplied.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setUnitPrice(FHIRMoney $unitPrice = null)
+    public function setService(FHIRCodeableConcept $service = null)
     {
-        if (null === $unitPrice) {
+        if (null === $service) {
             return $this; 
         }
-        $this->unitPrice = $unitPrice;
+        $this->service = $service;
         return $this;
     }
 
     /**
-     * If the item is a node then this is the fee for the product or service, otherwise this is the total of the fees for the children of the group.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRMoney
+     * A code to indicate the Professional Service or Product supplied.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getUnitPrice()
+    public function getService()
     {
-        return $this->unitPrice;
+        return $this->service;
     }
-
 
     /**
      * @return string
@@ -863,68 +513,72 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement implements \JsonSeria
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getAdjudication())) {
-            $a['adjudication'] = $v;
+        if (0 < count($values = $this->getAdjudication())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['adjudication'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getBillcode())) {
-            $a['billcode'] = $v;
+        if (null !== ($v = $this->getCategory())) {
+            $a['category'] = $v;
         }
-        if (null !== ($v = $this->getBodySite())) {
-            $a['bodySite'] = $v;
+        if (0 < count($values = $this->getDetail())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['detail'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getDetail())) {
-            $a['detail'] = $v;
+        if (null !== ($v = $this->getFee())) {
+            $a['fee'] = $v;
         }
-        if (null !== ($v = $this->getDetailSequence())) {
-            $a['detailSequence'] = $v;
+        if (0 < count($values = $this->getModifier())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['modifier'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getFactor())) {
-            $a['factor'] = $v;
+        if (0 < count($values = $this->getNoteNumber())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['noteNumber'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getItemSequence())) {
-            $a['itemSequence'] = $v;
+        if (null !== ($v = $this->getRevenue())) {
+            $a['revenue'] = $v;
         }
-        if (null !== ($v = $this->getLocationAddress())) {
-            $a['locationAddress'] = $v;
+        if (0 < count($values = $this->getSequenceLinkId())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['sequenceLinkId'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getLocationCodeableConcept())) {
-            $a['locationCodeableConcept'] = $v;
-        }
-        if (null !== ($v = $this->getLocationReference())) {
-            $a['locationReference'] = $v;
-        }
-        if (null !== ($v = $this->getModifier())) {
-            $a['modifier'] = $v;
-        }
-        if (null !== ($v = $this->getNet())) {
-            $a['net'] = $v;
-        }
-        if (null !== ($v = $this->getNoteNumber())) {
-            $a['noteNumber'] = $v;
-        }
-        if (null !== ($v = $this->getProgramCode())) {
-            $a['programCode'] = $v;
-        }
-        if (null !== ($v = $this->getProvider())) {
-            $a['provider'] = $v;
-        }
-        if (null !== ($v = $this->getQuantity())) {
-            $a['quantity'] = $v;
-        }
-        if (null !== ($v = $this->getServicedDate())) {
-            $a['servicedDate'] = $v;
-        }
-        if (null !== ($v = $this->getServicedPeriod())) {
-            $a['servicedPeriod'] = $v;
-        }
-        if (null !== ($v = $this->getSubSite())) {
-            $a['subSite'] = $v;
-        }
-        if (null !== ($v = $this->getSubdetailSequence())) {
-            $a['subdetailSequence'] = $v;
-        }
-        if (null !== ($v = $this->getUnitPrice())) {
-            $a['unitPrice'] = $v;
+        if (null !== ($v = $this->getService())) {
+            $a['service'] = $v;
         }
         return $a;
     }
@@ -939,9 +593,53 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement implements \JsonSeria
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ClaimResponseAddItem xmlns="http://hl7.org/fhir"></ClaimResponseAddItem>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (0 < count($values = $this->getAdjudication())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('adjudication'));
+                }
+            }
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getCategory())) {
+            $v->xmlSerialize(true, $sxe->addChild('category'));
+        }
+        if (0 < count($values = $this->getDetail())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('detail'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getFee())) {
+            $v->xmlSerialize(true, $sxe->addChild('fee'));
+        }
+        if (0 < count($values = $this->getModifier())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('modifier'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getNoteNumber())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('noteNumber'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getRevenue())) {
+            $v->xmlSerialize(true, $sxe->addChild('revenue'));
+        }
+        if (0 < count($values = $this->getSequenceLinkId())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('sequenceLinkId'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getService())) {
+            $v->xmlSerialize(true, $sxe->addChild('service'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

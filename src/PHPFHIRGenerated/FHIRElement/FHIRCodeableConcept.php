@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -78,15 +78,15 @@ class FHIRCodeableConcept extends FHIRElement implements \JsonSerializable
 
     /**
      * A reference to a code defined by a terminology system.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
-    public $coding = null;
+    private $coding = [];
 
     /**
      * A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $text = null;
+    private $text = null;
 
     /**
      * FHIRCodeableConcept Constructor
@@ -95,13 +95,34 @@ class FHIRCodeableConcept extends FHIRElement implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['coding'])) {
-                $this->setCoding($data['coding']);
+                $value = $data['coding'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCoding($v);
+                        } 
+                        if (!($v instanceof FHIRCoding)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept::__construct - Collection field \"coding\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCoding or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addCoding($v);
+                    }
+                }
             }
             if (isset($data['text'])) {
-                $this->setText($data['text']);
+                $value = $data['text'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept::__construct - Property \"text\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setText($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -110,6 +131,7 @@ class FHIRCodeableConcept extends FHIRElement implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -117,24 +139,23 @@ class FHIRCodeableConcept extends FHIRElement implements \JsonSerializable
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
      * @return $this
      */
-    public function setCoding(FHIRCoding $coding = null)
+    public function addCoding(FHIRCoding $coding = null)
     {
         if (null === $coding) {
             return $this; 
         }
-        $this->coding = $coding;
+        $this->coding[] = $coding;
         return $this;
     }
 
     /**
      * A reference to a code defined by a terminology system.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
     public function getCoding()
     {
         return $this->coding;
     }
-
 
     /**
      * A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.
@@ -168,7 +189,6 @@ class FHIRCodeableConcept extends FHIRElement implements \JsonSerializable
         return $this->text;
     }
 
-
     /**
      * @return string
      */
@@ -183,8 +203,16 @@ class FHIRCodeableConcept extends FHIRElement implements \JsonSerializable
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getCoding())) {
-            $a['coding'] = $v;
+        if (0 < count($values = $this->getCoding())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['coding'] = $vs;
+            }
         }
         if (null !== ($v = $this->getText())) {
             $a['text'] = $v;
@@ -202,9 +230,16 @@ class FHIRCodeableConcept extends FHIRElement implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<CodeableConcept xmlns="http://hl7.org/fhir"></CodeableConcept>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (0 < count($values = $this->getCoding())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('coding'));
+                }
+            }
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getText())) {
+            $v->xmlSerialize(true, $sxe->addChild('text'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

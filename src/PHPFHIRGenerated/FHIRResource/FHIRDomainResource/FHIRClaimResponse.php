@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -68,16 +68,14 @@ use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaim
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseItem;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponsePayment;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseProcessNote;
-use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseTotal;
-use PHPFHIRGenerated\FHIRElement\FHIRClaimProcessingCodes;
 use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
 use PHPFHIRGenerated\FHIRElement\FHIRCoding;
 use PHPFHIRGenerated\FHIRElement\FHIRDateTime;
 use PHPFHIRGenerated\FHIRElement\FHIRFinancialResourceStatusCodes;
 use PHPFHIRGenerated\FHIRElement\FHIRIdentifier;
+use PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney;
 use PHPFHIRGenerated\FHIRElement\FHIRReference;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
-use PHPFHIRGenerated\FHIRElement\FHIRUse;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
 /**
@@ -93,148 +91,142 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
     const FHIR_TYPE_NAME = 'ClaimResponse';
 
     /**
-     * The first-tier service adjudications for payor added services.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAddItem
+     * The first tier service adjudications for payor added services.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAddItem[]
      */
-    public $addItem = null;
+    private $addItem = [];
 
     /**
      * Request for additional supporting or authorizing information, such as: documents, images or resources.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $communicationRequest = null;
+    private $communicationRequest = [];
 
     /**
-     * The date when this resource was created.
+     * The date when the enclosed suite of services were performed or completed.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $created = null;
+    private $created = null;
 
     /**
      * A description of the status of the adjudication.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $disposition = null;
+    private $disposition = null;
 
     /**
      * Mutually exclusive with Services Provided (Item).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseError
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseError[]
      */
-    public $error = null;
+    private $error = [];
 
     /**
      * The form to be used for printing the content.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $form = null;
+    private $form = null;
 
     /**
-     * The response business identifier.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * The Response business identifier.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = null;
+    private $identifier = [];
 
     /**
      * Financial instrument by which payment information for health care.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseInsurance
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseInsurance[]
      */
-    public $insurance = null;
+    private $insurance = [];
 
     /**
      * The Insurer who produced this adjudicated response.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $insurer = null;
+    private $insurer = null;
 
     /**
-     * The first-tier service adjudications for submitted services.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseItem
+     * The first tier service adjudications for submitted services.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseItem[]
      */
-    public $item = null;
+    private $item = [];
 
     /**
-     * Transaction: error, complete, partial processing.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRClaimProcessingCodes
+     * Processing outcome errror, partial or complete processing.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $outcome = null;
+    private $outcome = null;
 
     /**
      * Patient Resource.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $patient = null;
+    private $patient = null;
 
     /**
      * Party to be reimbursed: Subscriber, provider, other.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $payeeType = null;
+    private $payeeType = null;
 
     /**
      * Payment details for the claim if the claim has been paid.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponsePayment
      */
-    public $payment = null;
-
-    /**
-     * A list of references from the Insurer to which these services pertain.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public $preAuthRef = null;
+    private $payment = null;
 
     /**
      * Note text.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseProcessNote
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseProcessNote[]
      */
-    public $processNote = null;
+    private $processNote = [];
 
     /**
-     * Original request resource reference.
+     * Original request resource referrence.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $request = null;
+    private $request = null;
+
+    /**
+     * The organization which is responsible for the services rendered to the patient.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    private $requestOrganization = null;
 
     /**
      * The practitioner who is responsible for the services rendered to the patient.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $requestProvider = null;
+    private $requestProvider = null;
 
     /**
      * Status of funds reservation (For provider, for Patient, None).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
-    public $reserved = null;
+    private $reserved = null;
 
     /**
      * The status of the resource instance.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRFinancialResourceStatusCodes
      */
-    public $status = null;
+    private $status = null;
 
     /**
-     * A finer grained suite of claim subtype codes which may convey Inpatient vs Outpatient and/or a specialty service. In the US the CMS Bill Type.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * Total amount of benefit payable (Equal to sum of the Benefit amounts from all detail lines and additions less the Unallocated Deductible).
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
-    public $subType = null;
+    private $totalBenefit = null;
 
     /**
-     * Totals for amounts submitted, co-pays, benefits payable etc.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseTotal
+     * The total cost of the services reported.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
-    public $total = null;
+    private $totalCost = null;
 
     /**
-     * The category of claim, e.g, oral, pharmacy, vision, institutional, professional.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * The amount of deductible applied which was not allocated to any particular service line.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
-    public $type = null;
-
-    /**
-     * A claim, a list of completed goods and services; a preauthorization, a list or proposed goods and services; or a predetermination, a set of goods and services being considered, for which insurer adjudication is sought.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUse
-     */
-    public $use = null;
+    private $unallocDeductable = null;
 
     /**
      * FHIRClaimResponse Constructor
@@ -243,79 +235,284 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['addItem'])) {
-                $this->setAddItem($data['addItem']);
+                $value = $data['addItem'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRClaimResponseAddItem($v);
+                        } 
+                        if (!($v instanceof FHIRClaimResponseAddItem)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClaimResponse::__construct - Collection field \"addItem\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAddItem or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addAddItem($v);
+                    }
+                }
             }
             if (isset($data['communicationRequest'])) {
-                $this->setCommunicationRequest($data['communicationRequest']);
+                $value = $data['communicationRequest'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClaimResponse::__construct - Collection field \"communicationRequest\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addCommunicationRequest($v);
+                    }
+                }
             }
             if (isset($data['created'])) {
-                $this->setCreated($data['created']);
+                $value = $data['created'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClaimResponse::__construct - Property \"created\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value));
+                }
+                $this->setCreated($value);
             }
             if (isset($data['disposition'])) {
-                $this->setDisposition($data['disposition']);
+                $value = $data['disposition'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClaimResponse::__construct - Property \"disposition\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setDisposition($value);
             }
             if (isset($data['error'])) {
-                $this->setError($data['error']);
+                $value = $data['error'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRClaimResponseError($v);
+                        } 
+                        if (!($v instanceof FHIRClaimResponseError)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClaimResponse::__construct - Collection field \"error\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseError or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addError($v);
+                    }
+                }
             }
             if (isset($data['form'])) {
-                $this->setForm($data['form']);
+                $value = $data['form'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClaimResponse::__construct - Property \"form\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setForm($value);
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRIdentifier($v);
+                        } 
+                        if (!($v instanceof FHIRIdentifier)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClaimResponse::__construct - Collection field \"identifier\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addIdentifier($v);
+                    }
+                }
             }
             if (isset($data['insurance'])) {
-                $this->setInsurance($data['insurance']);
+                $value = $data['insurance'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRClaimResponseInsurance($v);
+                        } 
+                        if (!($v instanceof FHIRClaimResponseInsurance)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClaimResponse::__construct - Collection field \"insurance\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseInsurance or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addInsurance($v);
+                    }
+                }
             }
             if (isset($data['insurer'])) {
-                $this->setInsurer($data['insurer']);
+                $value = $data['insurer'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClaimResponse::__construct - Property \"insurer\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setInsurer($value);
             }
             if (isset($data['item'])) {
-                $this->setItem($data['item']);
+                $value = $data['item'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRClaimResponseItem($v);
+                        } 
+                        if (!($v instanceof FHIRClaimResponseItem)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClaimResponse::__construct - Collection field \"item\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseItem or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addItem($v);
+                    }
+                }
             }
             if (isset($data['outcome'])) {
-                $this->setOutcome($data['outcome']);
+                $value = $data['outcome'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClaimResponse::__construct - Property \"outcome\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setOutcome($value);
             }
             if (isset($data['patient'])) {
-                $this->setPatient($data['patient']);
+                $value = $data['patient'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClaimResponse::__construct - Property \"patient\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setPatient($value);
             }
             if (isset($data['payeeType'])) {
-                $this->setPayeeType($data['payeeType']);
+                $value = $data['payeeType'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClaimResponse::__construct - Property \"payeeType\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setPayeeType($value);
             }
             if (isset($data['payment'])) {
-                $this->setPayment($data['payment']);
-            }
-            if (isset($data['preAuthRef'])) {
-                $this->setPreAuthRef($data['preAuthRef']);
+                $value = $data['payment'];
+                if (is_array($value)) {
+                    $value = new FHIRClaimResponsePayment($value);
+                } 
+                if (!($value instanceof FHIRClaimResponsePayment)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClaimResponse::__construct - Property \"payment\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponsePayment or data to construct type, saw ".gettype($value));
+                }
+                $this->setPayment($value);
             }
             if (isset($data['processNote'])) {
-                $this->setProcessNote($data['processNote']);
+                $value = $data['processNote'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRClaimResponseProcessNote($v);
+                        } 
+                        if (!($v instanceof FHIRClaimResponseProcessNote)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClaimResponse::__construct - Collection field \"processNote\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseProcessNote or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addProcessNote($v);
+                    }
+                }
             }
             if (isset($data['request'])) {
-                $this->setRequest($data['request']);
+                $value = $data['request'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClaimResponse::__construct - Property \"request\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setRequest($value);
+            }
+            if (isset($data['requestOrganization'])) {
+                $value = $data['requestOrganization'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClaimResponse::__construct - Property \"requestOrganization\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setRequestOrganization($value);
             }
             if (isset($data['requestProvider'])) {
-                $this->setRequestProvider($data['requestProvider']);
+                $value = $data['requestProvider'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClaimResponse::__construct - Property \"requestProvider\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setRequestProvider($value);
             }
             if (isset($data['reserved'])) {
-                $this->setReserved($data['reserved']);
+                $value = $data['reserved'];
+                if (is_array($value)) {
+                    $value = new FHIRCoding($value);
+                } 
+                if (!($value instanceof FHIRCoding)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClaimResponse::__construct - Property \"reserved\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCoding or data to construct type, saw ".gettype($value));
+                }
+                $this->setReserved($value);
             }
             if (isset($data['status'])) {
-                $this->setStatus($data['status']);
+                $value = $data['status'];
+                if (is_array($value)) {
+                    $value = new FHIRFinancialResourceStatusCodes($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRFinancialResourceStatusCodes($value);
+                }
+                if (!($value instanceof FHIRFinancialResourceStatusCodes)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClaimResponse::__construct - Property \"status\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRFinancialResourceStatusCodes or data to construct type, saw ".gettype($value));
+                }
+                $this->setStatus($value);
             }
-            if (isset($data['subType'])) {
-                $this->setSubType($data['subType']);
+            if (isset($data['totalBenefit'])) {
+                $value = $data['totalBenefit'];
+                if (is_array($value)) {
+                    $value = new FHIRMoney($value);
+                } 
+                if (!($value instanceof FHIRMoney)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClaimResponse::__construct - Property \"totalBenefit\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney or data to construct type, saw ".gettype($value));
+                }
+                $this->setTotalBenefit($value);
             }
-            if (isset($data['total'])) {
-                $this->setTotal($data['total']);
+            if (isset($data['totalCost'])) {
+                $value = $data['totalCost'];
+                if (is_array($value)) {
+                    $value = new FHIRMoney($value);
+                } 
+                if (!($value instanceof FHIRMoney)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClaimResponse::__construct - Property \"totalCost\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney or data to construct type, saw ".gettype($value));
+                }
+                $this->setTotalCost($value);
             }
-            if (isset($data['type'])) {
-                $this->setType($data['type']);
-            }
-            if (isset($data['use'])) {
-                $this->setUse($data['use']);
+            if (isset($data['unallocDeductable'])) {
+                $value = $data['unallocDeductable'];
+                if (is_array($value)) {
+                    $value = new FHIRMoney($value);
+                } 
+                if (!($value instanceof FHIRMoney)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClaimResponse::__construct - Property \"unallocDeductable\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney or data to construct type, saw ".gettype($value));
+                }
+                $this->setUnallocDeductable($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -324,58 +521,57 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
-     * The first-tier service adjudications for payor added services.
+     * The first tier service adjudications for payor added services.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAddItem
      * @return $this
      */
-    public function setAddItem(FHIRClaimResponseAddItem $addItem = null)
+    public function addAddItem(FHIRClaimResponseAddItem $addItem = null)
     {
         if (null === $addItem) {
             return $this; 
         }
-        $this->addItem = $addItem;
+        $this->addItem[] = $addItem;
         return $this;
     }
 
     /**
-     * The first-tier service adjudications for payor added services.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAddItem
+     * The first tier service adjudications for payor added services.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAddItem[]
      */
     public function getAddItem()
     {
         return $this->addItem;
     }
 
-
     /**
      * Request for additional supporting or authorizing information, such as: documents, images or resources.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setCommunicationRequest(FHIRReference $communicationRequest = null)
+    public function addCommunicationRequest(FHIRReference $communicationRequest = null)
     {
         if (null === $communicationRequest) {
             return $this; 
         }
-        $this->communicationRequest = $communicationRequest;
+        $this->communicationRequest[] = $communicationRequest;
         return $this;
     }
 
     /**
      * Request for additional supporting or authorizing information, such as: documents, images or resources.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getCommunicationRequest()
     {
         return $this->communicationRequest;
     }
 
-
     /**
-     * The date when this resource was created.
+     * The date when the enclosed suite of services were performed or completed.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      * @return $this
      */
@@ -398,14 +594,13 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date when this resource was created.
+     * The date when the enclosed suite of services were performed or completed.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getCreated()
     {
         return $this->created;
     }
-
 
     /**
      * A description of the status of the adjudication.
@@ -439,30 +634,28 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
         return $this->disposition;
     }
 
-
     /**
      * Mutually exclusive with Services Provided (Item).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseError
      * @return $this
      */
-    public function setError(FHIRClaimResponseError $error = null)
+    public function addError(FHIRClaimResponseError $error = null)
     {
         if (null === $error) {
             return $this; 
         }
-        $this->error = $error;
+        $this->error[] = $error;
         return $this;
     }
 
     /**
      * Mutually exclusive with Services Provided (Item).
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseError
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseError[]
      */
     public function getError()
     {
         return $this->error;
     }
-
 
     /**
      * The form to be used for printing the content.
@@ -487,54 +680,51 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
         return $this->form;
     }
 
-
     /**
-     * The response business identifier.
+     * The Response business identifier.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
-    public function setIdentifier(FHIRIdentifier $identifier = null)
+    public function addIdentifier(FHIRIdentifier $identifier = null)
     {
         if (null === $identifier) {
             return $this; 
         }
-        $this->identifier = $identifier;
+        $this->identifier[] = $identifier;
         return $this;
     }
 
     /**
-     * The response business identifier.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * The Response business identifier.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
         return $this->identifier;
     }
 
-
     /**
      * Financial instrument by which payment information for health care.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseInsurance
      * @return $this
      */
-    public function setInsurance(FHIRClaimResponseInsurance $insurance = null)
+    public function addInsurance(FHIRClaimResponseInsurance $insurance = null)
     {
         if (null === $insurance) {
             return $this; 
         }
-        $this->insurance = $insurance;
+        $this->insurance[] = $insurance;
         return $this;
     }
 
     /**
      * Financial instrument by which payment information for health care.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseInsurance
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseInsurance[]
      */
     public function getInsurance()
     {
         return $this->insurance;
     }
-
 
     /**
      * The Insurer who produced this adjudicated response.
@@ -559,63 +749,51 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
         return $this->insurer;
     }
 
-
     /**
-     * The first-tier service adjudications for submitted services.
+     * The first tier service adjudications for submitted services.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseItem
      * @return $this
      */
-    public function setItem(FHIRClaimResponseItem $item = null)
+    public function addItem(FHIRClaimResponseItem $item = null)
     {
         if (null === $item) {
             return $this; 
         }
-        $this->item = $item;
+        $this->item[] = $item;
         return $this;
     }
 
     /**
-     * The first-tier service adjudications for submitted services.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseItem
+     * The first tier service adjudications for submitted services.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseItem[]
      */
     public function getItem()
     {
         return $this->item;
     }
 
-
     /**
-     * Transaction: error, complete, partial processing.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRClaimProcessingCodes
+     * Processing outcome errror, partial or complete processing.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setOutcome($outcome)
+    public function setOutcome(FHIRCodeableConcept $outcome = null)
     {
         if (null === $outcome) {
             return $this; 
-        }
-        if (is_scalar($outcome)) {
-            $outcome = new FHIRClaimProcessingCodes($outcome);
-        }
-        if (!($outcome instanceof FHIRClaimProcessingCodes)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRClaimResponse::setOutcome - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRClaimProcessingCodes or appropriate scalar value, %s seen.',
-                gettype($outcome)
-            ));
         }
         $this->outcome = $outcome;
         return $this;
     }
 
     /**
-     * Transaction: error, complete, partial processing.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRClaimProcessingCodes
+     * Processing outcome errror, partial or complete processing.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getOutcome()
     {
         return $this->outcome;
     }
-
 
     /**
      * Patient Resource.
@@ -640,7 +818,6 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
         return $this->patient;
     }
 
-
     /**
      * Party to be reimbursed: Subscriber, provider, other.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
@@ -663,7 +840,6 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
     {
         return $this->payeeType;
     }
-
 
     /**
      * Payment details for the claim if the claim has been paid.
@@ -688,66 +864,31 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
         return $this->payment;
     }
 
-
-    /**
-     * A list of references from the Insurer to which these services pertain.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
-     * @return $this
-     */
-    public function setPreAuthRef($preAuthRef)
-    {
-        if (null === $preAuthRef) {
-            return $this; 
-        }
-        if (is_scalar($preAuthRef)) {
-            $preAuthRef = new FHIRString($preAuthRef);
-        }
-        if (!($preAuthRef instanceof FHIRString)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRClaimResponse::setPreAuthRef - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
-                gettype($preAuthRef)
-            ));
-        }
-        $this->preAuthRef = $preAuthRef;
-        return $this;
-    }
-
-    /**
-     * A list of references from the Insurer to which these services pertain.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public function getPreAuthRef()
-    {
-        return $this->preAuthRef;
-    }
-
-
     /**
      * Note text.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseProcessNote
      * @return $this
      */
-    public function setProcessNote(FHIRClaimResponseProcessNote $processNote = null)
+    public function addProcessNote(FHIRClaimResponseProcessNote $processNote = null)
     {
         if (null === $processNote) {
             return $this; 
         }
-        $this->processNote = $processNote;
+        $this->processNote[] = $processNote;
         return $this;
     }
 
     /**
      * Note text.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseProcessNote
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseProcessNote[]
      */
     public function getProcessNote()
     {
         return $this->processNote;
     }
 
-
     /**
-     * Original request resource reference.
+     * Original request resource referrence.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
@@ -761,7 +902,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Original request resource reference.
+     * Original request resource referrence.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getRequest()
@@ -769,6 +910,28 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
         return $this->request;
     }
 
+    /**
+     * The organization which is responsible for the services rendered to the patient.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return $this
+     */
+    public function setRequestOrganization(FHIRReference $requestOrganization = null)
+    {
+        if (null === $requestOrganization) {
+            return $this; 
+        }
+        $this->requestOrganization = $requestOrganization;
+        return $this;
+    }
+
+    /**
+     * The organization which is responsible for the services rendered to the patient.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getRequestOrganization()
+    {
+        return $this->requestOrganization;
+    }
 
     /**
      * The practitioner who is responsible for the services rendered to the patient.
@@ -793,7 +956,6 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
         return $this->requestProvider;
     }
 
-
     /**
      * Status of funds reservation (For provider, for Patient, None).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
@@ -816,7 +978,6 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
     {
         return $this->reserved;
     }
-
 
     /**
      * The status of the resource instance.
@@ -850,111 +1011,74 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
         return $this->status;
     }
 
-
     /**
-     * A finer grained suite of claim subtype codes which may convey Inpatient vs Outpatient and/or a specialty service. In the US the CMS Bill Type.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * Total amount of benefit payable (Equal to sum of the Benefit amounts from all detail lines and additions less the Unallocated Deductible).
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      * @return $this
      */
-    public function setSubType(FHIRCodeableConcept $subType = null)
+    public function setTotalBenefit(FHIRMoney $totalBenefit = null)
     {
-        if (null === $subType) {
+        if (null === $totalBenefit) {
             return $this; 
         }
-        $this->subType = $subType;
+        $this->totalBenefit = $totalBenefit;
         return $this;
     }
 
     /**
-     * A finer grained suite of claim subtype codes which may convey Inpatient vs Outpatient and/or a specialty service. In the US the CMS Bill Type.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * Total amount of benefit payable (Equal to sum of the Benefit amounts from all detail lines and additions less the Unallocated Deductible).
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
-    public function getSubType()
+    public function getTotalBenefit()
     {
-        return $this->subType;
+        return $this->totalBenefit;
     }
 
-
     /**
-     * Totals for amounts submitted, co-pays, benefits payable etc.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseTotal
+     * The total cost of the services reported.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      * @return $this
      */
-    public function setTotal(FHIRClaimResponseTotal $total = null)
+    public function setTotalCost(FHIRMoney $totalCost = null)
     {
-        if (null === $total) {
+        if (null === $totalCost) {
             return $this; 
         }
-        $this->total = $total;
+        $this->totalCost = $totalCost;
         return $this;
     }
 
     /**
-     * Totals for amounts submitted, co-pays, benefits payable etc.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseTotal
+     * The total cost of the services reported.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
-    public function getTotal()
+    public function getTotalCost()
     {
-        return $this->total;
+        return $this->totalCost;
     }
 
-
     /**
-     * The category of claim, e.g, oral, pharmacy, vision, institutional, professional.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * The amount of deductible applied which was not allocated to any particular service line.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      * @return $this
      */
-    public function setType(FHIRCodeableConcept $type = null)
+    public function setUnallocDeductable(FHIRMoney $unallocDeductable = null)
     {
-        if (null === $type) {
+        if (null === $unallocDeductable) {
             return $this; 
         }
-        $this->type = $type;
+        $this->unallocDeductable = $unallocDeductable;
         return $this;
     }
 
     /**
-     * The category of claim, e.g, oral, pharmacy, vision, institutional, professional.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * The amount of deductible applied which was not allocated to any particular service line.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
-    public function getType()
+    public function getUnallocDeductable()
     {
-        return $this->type;
+        return $this->unallocDeductable;
     }
-
-
-    /**
-     * A claim, a list of completed goods and services; a preauthorization, a list or proposed goods and services; or a predetermination, a set of goods and services being considered, for which insurer adjudication is sought.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUse
-     * @return $this
-     */
-    public function setUse($use)
-    {
-        if (null === $use) {
-            return $this; 
-        }
-        if (is_scalar($use)) {
-            $use = new FHIRUse($use);
-        }
-        if (!($use instanceof FHIRUse)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRClaimResponse::setUse - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUse or appropriate scalar value, %s seen.',
-                gettype($use)
-            ));
-        }
-        $this->use = $use;
-        return $this;
-    }
-
-    /**
-     * A claim, a list of completed goods and services; a preauthorization, a list or proposed goods and services; or a predetermination, a set of goods and services being considered, for which insurer adjudication is sought.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUse
-     */
-    public function getUse()
-    {
-        return $this->use;
-    }
-
 
     /**
      * @return string
@@ -971,11 +1095,27 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
     {
         $a = parent::jsonSerialize();
         $a['resourceType'] = self::FHIR_TYPE_NAME;
-        if (null !== ($v = $this->getAddItem())) {
-            $a['addItem'] = $v;
+        if (0 < count($values = $this->getAddItem())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['addItem'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getCommunicationRequest())) {
-            $a['communicationRequest'] = $v;
+        if (0 < count($values = $this->getCommunicationRequest())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['communicationRequest'] = $vs;
+            }
         }
         if (null !== ($v = $this->getCreated())) {
             $a['created'] = $v;
@@ -983,23 +1123,55 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getDisposition())) {
             $a['disposition'] = $v;
         }
-        if (null !== ($v = $this->getError())) {
-            $a['error'] = $v;
+        if (0 < count($values = $this->getError())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['error'] = $vs;
+            }
         }
         if (null !== ($v = $this->getForm())) {
             $a['form'] = $v;
         }
-        if (null !== ($v = $this->getIdentifier())) {
-            $a['identifier'] = $v;
+        if (0 < count($values = $this->getIdentifier())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['identifier'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getInsurance())) {
-            $a['insurance'] = $v;
+        if (0 < count($values = $this->getInsurance())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['insurance'] = $vs;
+            }
         }
         if (null !== ($v = $this->getInsurer())) {
             $a['insurer'] = $v;
         }
-        if (null !== ($v = $this->getItem())) {
-            $a['item'] = $v;
+        if (0 < count($values = $this->getItem())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['item'] = $vs;
+            }
         }
         if (null !== ($v = $this->getOutcome())) {
             $a['outcome'] = $v;
@@ -1013,14 +1185,22 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getPayment())) {
             $a['payment'] = $v;
         }
-        if (null !== ($v = $this->getPreAuthRef())) {
-            $a['preAuthRef'] = $v;
-        }
-        if (null !== ($v = $this->getProcessNote())) {
-            $a['processNote'] = $v;
+        if (0 < count($values = $this->getProcessNote())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['processNote'] = $vs;
+            }
         }
         if (null !== ($v = $this->getRequest())) {
             $a['request'] = $v;
+        }
+        if (null !== ($v = $this->getRequestOrganization())) {
+            $a['requestOrganization'] = $v;
         }
         if (null !== ($v = $this->getRequestProvider())) {
             $a['requestProvider'] = $v;
@@ -1031,17 +1211,14 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getStatus())) {
             $a['status'] = $v;
         }
-        if (null !== ($v = $this->getSubType())) {
-            $a['subType'] = $v;
+        if (null !== ($v = $this->getTotalBenefit())) {
+            $a['totalBenefit'] = $v;
         }
-        if (null !== ($v = $this->getTotal())) {
-            $a['total'] = $v;
+        if (null !== ($v = $this->getTotalCost())) {
+            $a['totalCost'] = $v;
         }
-        if (null !== ($v = $this->getType())) {
-            $a['type'] = $v;
-        }
-        if (null !== ($v = $this->getUse())) {
-            $a['use'] = $v;
+        if (null !== ($v = $this->getUnallocDeductable())) {
+            $a['unallocDeductable'] = $v;
         }
         return $a;
     }
@@ -1056,9 +1233,103 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ClaimResponse xmlns="http://hl7.org/fhir"></ClaimResponse>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (0 < count($values = $this->getAddItem())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('addItem'));
+                }
+            }
         }
-        return $sxe->saveXML();
+        if (0 < count($values = $this->getCommunicationRequest())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('communicationRequest'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getCreated())) {
+            $v->xmlSerialize(true, $sxe->addChild('created'));
+        }
+        if (null !== ($v = $this->getDisposition())) {
+            $v->xmlSerialize(true, $sxe->addChild('disposition'));
+        }
+        if (0 < count($values = $this->getError())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('error'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getForm())) {
+            $v->xmlSerialize(true, $sxe->addChild('form'));
+        }
+        if (0 < count($values = $this->getIdentifier())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('identifier'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getInsurance())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('insurance'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getInsurer())) {
+            $v->xmlSerialize(true, $sxe->addChild('insurer'));
+        }
+        if (0 < count($values = $this->getItem())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('item'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getOutcome())) {
+            $v->xmlSerialize(true, $sxe->addChild('outcome'));
+        }
+        if (null !== ($v = $this->getPatient())) {
+            $v->xmlSerialize(true, $sxe->addChild('patient'));
+        }
+        if (null !== ($v = $this->getPayeeType())) {
+            $v->xmlSerialize(true, $sxe->addChild('payeeType'));
+        }
+        if (null !== ($v = $this->getPayment())) {
+            $v->xmlSerialize(true, $sxe->addChild('payment'));
+        }
+        if (0 < count($values = $this->getProcessNote())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('processNote'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getRequest())) {
+            $v->xmlSerialize(true, $sxe->addChild('request'));
+        }
+        if (null !== ($v = $this->getRequestOrganization())) {
+            $v->xmlSerialize(true, $sxe->addChild('requestOrganization'));
+        }
+        if (null !== ($v = $this->getRequestProvider())) {
+            $v->xmlSerialize(true, $sxe->addChild('requestProvider'));
+        }
+        if (null !== ($v = $this->getReserved())) {
+            $v->xmlSerialize(true, $sxe->addChild('reserved'));
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('status'));
+        }
+        if (null !== ($v = $this->getTotalBenefit())) {
+            $v->xmlSerialize(true, $sxe->addChild('totalBenefit'));
+        }
+        if (null !== ($v = $this->getTotalCost())) {
+            $v->xmlSerialize(true, $sxe->addChild('totalCost'));
+        }
+        if (null !== ($v = $this->getUnallocDeductable())) {
+            $v->xmlSerialize(true, $sxe->addChild('unallocDeductable'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

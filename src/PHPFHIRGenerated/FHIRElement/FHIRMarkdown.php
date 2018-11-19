@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -66,8 +66,8 @@ use PHPFHIRGenerated\FHIRElement;
 use PHPFHIRGenerated\FHIRMarkdownPrimitive;
 
 /**
- * A string that may contain Github Flavored Markdown syntax for optional processing by a mark down presentation engine
- * Systems are not required to have markdown support, so the text should be readable without markdown processing. The markdown syntax is GFM - see https://github.github.com/gfm/
+ * A string that may contain markdown syntax for optional processing by a mark down presentation engine
+ * Systems are not required to have markdown support, and there is considerable variation in markdown syntax, so the text should be readable without markdown processing. The preferred markdown syntax is described here: http://daringfireball.net/projects/markdown/syntax (and tests here: http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
  * If the element is present, it must have either a @value, an @id referenced from the Narrative, or extensions
  *
  * Class FHIRMarkdown
@@ -81,7 +81,7 @@ class FHIRMarkdown extends FHIRElement implements \JsonSerializable
     /**
      * @var \PHPFHIRGenerated\FHIRMarkdownPrimitive
      */
-    public $value = null;
+    private $value = null;
 
     /**
      * FHIRMarkdown Constructor
@@ -94,10 +94,18 @@ class FHIRMarkdown extends FHIRElement implements \JsonSerializable
             $this->setValue($data);
             return;
         }
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['value'])) {
-                $this->setValue($data['value']);
+                $value = $data['value'];
+                if (is_array($value)) {
+                    $value = new FHIRMarkdownPrimitive($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRMarkdownPrimitive($value);
+                }
+                if (!($value instanceof FHIRMarkdownPrimitive)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRMarkdown::__construct - Property \"value\" must either be instance of \PHPFHIRGenerated\FHIRMarkdownPrimitive or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setValue($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -106,6 +114,7 @@ class FHIRMarkdown extends FHIRElement implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -169,11 +178,10 @@ class FHIRMarkdown extends FHIRElement implements \JsonSerializable
     public function xmlSerialize($returnSXE = false, \SimpleXMLElement $sxe = null)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<markdown xmlns="http://hl7.org/fhir"></markdown>');
+            $sxe = new \SimpleXMLElement('<markdown xmlns="http://hl7.org/fhir" value="'.(string)$this.'">'.(string)$this.'</markdown>');
+        } else {
+            $sxe->addAttribute('value', (string)$this);
         }
-        if ($returnSXE) {
-            return $sxe;
-        }
-        return $sxe->saveXML();
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

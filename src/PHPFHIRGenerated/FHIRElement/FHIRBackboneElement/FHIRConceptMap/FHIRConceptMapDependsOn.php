@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,12 +63,11 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap;
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\FHIRElement\FHIRCanonical;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
 use PHPFHIRGenerated\FHIRElement\FHIRUri;
 
 /**
- * A statement of relationships from one set of concepts to one or more other concepts - either concepts in code systems, or data element/data element concepts, or classes in class models.
+ * A statement of relationships from one set of concepts to one or more other concepts - either code systems or data elements, or classes in class models.
  *
  * Class FHIRConceptMapDependsOn
  * @package PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap
@@ -79,28 +78,28 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement implements \JsonSerial
     const FHIR_TYPE_NAME = 'ConceptMap.DependsOn';
 
     /**
+     * Identity (code or path) or the element/item/ValueSet that the map depends on / refers to.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    private $code = null;
+
+    /**
      * The display for the code. The display is only provided to help editors when editing the concept map.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $display = null;
+    private $display = null;
 
     /**
-     * A reference to an element that holds a coded value that corresponds to a code system property. The idea is that the information model carries an element somewhere that is labeled to correspond with a code system property.
+     * A reference to an element that holds a coded value that corresponds to a code system property. The idea is that the information model carries an element somwhere that is labeled to correspond with a code system property.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $property = null;
+    private $property = null;
 
     /**
      * An absolute URI that identifies the code system of the dependency code (if the source/dependency is a value set that crosses code systems).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $system = null;
-
-    /**
-     * Identity (code or path) or the element/item/ValueSet/text that the map depends on / refers to.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public $value = null;
+    private $system = null;
 
     /**
      * FHIRConceptMapDependsOn Constructor
@@ -109,19 +108,54 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement implements \JsonSerial
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
+            if (isset($data['code'])) {
+                $value = $data['code'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn::__construct - Property \"code\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setCode($value);
+            }
             if (isset($data['display'])) {
-                $this->setDisplay($data['display']);
+                $value = $data['display'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn::__construct - Property \"display\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDisplay($value);
             }
             if (isset($data['property'])) {
-                $this->setProperty($data['property']);
+                $value = $data['property'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn::__construct - Property \"property\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setProperty($value);
             }
             if (isset($data['system'])) {
-                $this->setSystem($data['system']);
-            }
-            if (isset($data['value'])) {
-                $this->setValue($data['value']);
+                $value = $data['system'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn::__construct - Property \"system\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setSystem($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -130,6 +164,39 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement implements \JsonSerial
                 ' seen.'
             );
         }
+        parent::__construct($data);
+    }
+
+    /**
+     * Identity (code or path) or the element/item/ValueSet that the map depends on / refers to.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     * @return $this
+     */
+    public function setCode($code)
+    {
+        if (null === $code) {
+            return $this; 
+        }
+        if (is_scalar($code)) {
+            $code = new FHIRString($code);
+        }
+        if (!($code instanceof FHIRString)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRConceptMapDependsOn::setCode - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                gettype($code)
+            ));
+        }
+        $this->code = $code;
+        return $this;
+    }
+
+    /**
+     * Identity (code or path) or the element/item/ValueSet that the map depends on / refers to.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getCode()
+    {
+        return $this->code;
     }
 
     /**
@@ -164,9 +231,8 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement implements \JsonSerial
         return $this->display;
     }
 
-
     /**
-     * A reference to an element that holds a coded value that corresponds to a code system property. The idea is that the information model carries an element somewhere that is labeled to correspond with a code system property.
+     * A reference to an element that holds a coded value that corresponds to a code system property. The idea is that the information model carries an element somwhere that is labeled to correspond with a code system property.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
@@ -189,7 +255,7 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * A reference to an element that holds a coded value that corresponds to a code system property. The idea is that the information model carries an element somewhere that is labeled to correspond with a code system property.
+     * A reference to an element that holds a coded value that corresponds to a code system property. The idea is that the information model carries an element somwhere that is labeled to correspond with a code system property.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getProperty()
@@ -197,10 +263,9 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement implements \JsonSerial
         return $this->property;
     }
 
-
     /**
      * An absolute URI that identifies the code system of the dependency code (if the source/dependency is a value set that crosses code systems).
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
     public function setSystem($system)
@@ -209,11 +274,11 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement implements \JsonSerial
             return $this; 
         }
         if (is_scalar($system)) {
-            $system = new FHIRCanonical($system);
+            $system = new FHIRUri($system);
         }
-        if (!($system instanceof FHIRCanonical)) {
+        if (!($system instanceof FHIRUri)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRConceptMapDependsOn::setSystem - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCanonical or appropriate scalar value, %s seen.',
+                'FHIRConceptMapDependsOn::setSystem - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or appropriate scalar value, %s seen.',
                 gettype($system)
             ));
         }
@@ -223,46 +288,12 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * An absolute URI that identifies the code system of the dependency code (if the source/dependency is a value set that crosses code systems).
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getSystem()
     {
         return $this->system;
     }
-
-
-    /**
-     * Identity (code or path) or the element/item/ValueSet/text that the map depends on / refers to.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
-     * @return $this
-     */
-    public function setValue($value)
-    {
-        if (null === $value) {
-            return $this; 
-        }
-        if (is_scalar($value)) {
-            $value = new FHIRString($value);
-        }
-        if (!($value instanceof FHIRString)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRConceptMapDependsOn::setValue - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
-                gettype($value)
-            ));
-        }
-        $this->value = $value;
-        return $this;
-    }
-
-    /**
-     * Identity (code or path) or the element/item/ValueSet/text that the map depends on / refers to.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public function getValue()
-    {
-        return $this->value;
-    }
-
 
     /**
      * @return string
@@ -278,6 +309,9 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement implements \JsonSerial
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
+        if (null !== ($v = $this->getCode())) {
+            $a['code'] = $v;
+        }
         if (null !== ($v = $this->getDisplay())) {
             $a['display'] = $v;
         }
@@ -286,9 +320,6 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement implements \JsonSerial
         }
         if (null !== ($v = $this->getSystem())) {
             $a['system'] = $v;
-        }
-        if (null !== ($v = $this->getValue())) {
-            $a['value'] = $v;
         }
         return $a;
     }
@@ -303,9 +334,18 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement implements \JsonSerial
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ConceptMapDependsOn xmlns="http://hl7.org/fhir"></ConceptMapDependsOn>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getCode())) {
+            $v->xmlSerialize(true, $sxe->addChild('code'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getDisplay())) {
+            $v->xmlSerialize(true, $sxe->addChild('display'));
+        }
+        if (null !== ($v = $this->getProperty())) {
+            $v->xmlSerialize(true, $sxe->addChild('property'));
+        }
+        if (null !== ($v = $this->getSystem())) {
+            $v->xmlSerialize(true, $sxe->addChild('system'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

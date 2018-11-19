@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,12 +63,11 @@ namespace PHPFHIRGenerated\FHIRElement;
  */
 
 use PHPFHIRGenerated\FHIRElement;
-use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDosage;
-use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTiming;
 use PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge;
 use PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRCount;
 use PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDistance;
 use PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration;
+use PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney;
 use PHPFHIRGenerated\FHIRUriPrimitive;
 
 /**
@@ -86,301 +85,235 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
     /**
      * @var \PHPFHIRGenerated\FHIRUriPrimitive
      */
-    public $url = null;
+    private $url = null;
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAddress
      */
-    public $valueAddress = null;
+    private $valueAddress = null;
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
      */
-    public $valueAge = null;
+    private $valueAge = null;
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation
      */
-    public $valueAnnotation = null;
+    private $valueAnnotation = null;
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
-    public $valueAttachment = null;
+    private $valueAttachment = null;
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
      */
-    public $valueBase64Binary = null;
+    private $valueBase64Binary = null;
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $valueBoolean = null;
+    private $valueBoolean = null;
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCanonical
-     */
-    public $valueCanonical = null;
-
-    /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public $valueCode = null;
+    private $valueCode = null;
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $valueCodeableConcept = null;
+    private $valueCodeableConcept = null;
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
-    public $valueCoding = null;
+    private $valueCoding = null;
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail
-     */
-    public $valueContactDetail = null;
-
-    /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRContactPoint
      */
-    public $valueContactPoint = null;
+    private $valueContactPoint = null;
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRContributor
-     */
-    public $valueContributor = null;
-
-    /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRCount
      */
-    public $valueCount = null;
+    private $valueCount = null;
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDataRequirement
-     */
-    public $valueDataRequirement = null;
-
-    /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
-    public $valueDate = null;
+    private $valueDate = null;
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $valueDateTime = null;
+    private $valueDateTime = null;
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
-    public $valueDecimal = null;
+    private $valueDecimal = null;
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDistance
      */
-    public $valueDistance = null;
+    private $valueDistance = null;
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDosage
-     */
-    public $valueDosage = null;
-
-    /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration
      */
-    public $valueDuration = null;
+    private $valueDuration = null;
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRExpression
-     */
-    public $valueExpression = null;
-
-    /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRHumanName
      */
-    public $valueHumanName = null;
+    private $valueHumanName = null;
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRId
      */
-    public $valueId = null;
+    private $valueId = null;
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public $valueIdentifier = null;
+    private $valueIdentifier = null;
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInstant
      */
-    public $valueInstant = null;
+    private $valueInstant = null;
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
-    public $valueInteger = null;
+    private $valueInteger = null;
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public $valueMarkdown = null;
+    private $valueMarkdown = null;
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRMoney
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRMeta
      */
-    public $valueMoney = null;
+    private $valueMeta = null;
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
+     */
+    private $valueMoney = null;
+
+    /**
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIROid
      */
-    public $valueOid = null;
+    private $valueOid = null;
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRParameterDefinition
-     */
-    public $valueParameterDefinition = null;
-
-    /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public $valuePeriod = null;
+    private $valuePeriod = null;
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
-    public $valuePositiveInt = null;
+    private $valuePositiveInt = null;
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    public $valueQuantity = null;
+    private $valueQuantity = null;
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
-    public $valueRange = null;
+    private $valueRange = null;
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
-    public $valueRatio = null;
+    private $valueRatio = null;
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $valueReference = null;
+    private $valueReference = null;
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact
-     */
-    public $valueRelatedArtifact = null;
-
-    /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRSampledData
      */
-    public $valueSampledData = null;
+    private $valueSampledData = null;
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRSignature
      */
-    public $valueSignature = null;
+    private $valueSignature = null;
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $valueString = null;
+    private $valueString = null;
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
-    public $valueTime = null;
+    private $valueTime = null;
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTiming
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
-    public $valueTiming = null;
+    private $valueTiming = null;
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRTriggerDefinition
-     */
-    public $valueTriggerDefinition = null;
-
-    /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
-    public $valueUnsignedInt = null;
+    private $valueUnsignedInt = null;
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $valueUri = null;
-
-    /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUrl
-     */
-    public $valueUrl = null;
-
-    /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext
-     */
-    public $valueUsageContext = null;
-
-    /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUuid
-     */
-    public $valueUuid = null;
+    private $valueUri = null;
 
     /**
      * FHIRExtension Constructor
@@ -389,157 +322,430 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['url'])) {
-                $this->setUrl($data['url']);
+                $value = $data['url'];
+                if (is_array($value)) {
+                    $value = new FHIRUriPrimitive($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUriPrimitive($value);
+                }
+                if (!($value instanceof FHIRUriPrimitive)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRExtension::__construct - Property \"url\" must either be instance of \PHPFHIRGenerated\FHIRUriPrimitive or data to construct type, saw ".gettype($value));
+                }
+                $this->setUrl($value);
             }
             if (isset($data['valueAddress'])) {
-                $this->setValueAddress($data['valueAddress']);
+                $value = $data['valueAddress'];
+                if (is_array($value)) {
+                    $value = new FHIRAddress($value);
+                } 
+                if (!($value instanceof FHIRAddress)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRExtension::__construct - Property \"valueAddress\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAddress or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueAddress($value);
             }
             if (isset($data['valueAge'])) {
-                $this->setValueAge($data['valueAge']);
+                $value = $data['valueAge'];
+                if (is_array($value)) {
+                    $value = new FHIRAge($value);
+                } 
+                if (!($value instanceof FHIRAge)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRExtension::__construct - Property \"valueAge\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueAge($value);
             }
             if (isset($data['valueAnnotation'])) {
-                $this->setValueAnnotation($data['valueAnnotation']);
+                $value = $data['valueAnnotation'];
+                if (is_array($value)) {
+                    $value = new FHIRAnnotation($value);
+                } 
+                if (!($value instanceof FHIRAnnotation)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRExtension::__construct - Property \"valueAnnotation\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAnnotation or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueAnnotation($value);
             }
             if (isset($data['valueAttachment'])) {
-                $this->setValueAttachment($data['valueAttachment']);
+                $value = $data['valueAttachment'];
+                if (is_array($value)) {
+                    $value = new FHIRAttachment($value);
+                } 
+                if (!($value instanceof FHIRAttachment)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRExtension::__construct - Property \"valueAttachment\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAttachment or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueAttachment($value);
             }
             if (isset($data['valueBase64Binary'])) {
-                $this->setValueBase64Binary($data['valueBase64Binary']);
+                $value = $data['valueBase64Binary'];
+                if (is_array($value)) {
+                    $value = new FHIRBase64Binary($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBase64Binary($value);
+                }
+                if (!($value instanceof FHIRBase64Binary)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRExtension::__construct - Property \"valueBase64Binary\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueBase64Binary($value);
             }
             if (isset($data['valueBoolean'])) {
-                $this->setValueBoolean($data['valueBoolean']);
-            }
-            if (isset($data['valueCanonical'])) {
-                $this->setValueCanonical($data['valueCanonical']);
+                $value = $data['valueBoolean'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRExtension::__construct - Property \"valueBoolean\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueBoolean($value);
             }
             if (isset($data['valueCode'])) {
-                $this->setValueCode($data['valueCode']);
+                $value = $data['valueCode'];
+                if (is_array($value)) {
+                    $value = new FHIRCode($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRCode($value);
+                }
+                if (!($value instanceof FHIRCode)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRExtension::__construct - Property \"valueCode\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueCode($value);
             }
             if (isset($data['valueCodeableConcept'])) {
-                $this->setValueCodeableConcept($data['valueCodeableConcept']);
+                $value = $data['valueCodeableConcept'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRExtension::__construct - Property \"valueCodeableConcept\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueCodeableConcept($value);
             }
             if (isset($data['valueCoding'])) {
-                $this->setValueCoding($data['valueCoding']);
-            }
-            if (isset($data['valueContactDetail'])) {
-                $this->setValueContactDetail($data['valueContactDetail']);
+                $value = $data['valueCoding'];
+                if (is_array($value)) {
+                    $value = new FHIRCoding($value);
+                } 
+                if (!($value instanceof FHIRCoding)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRExtension::__construct - Property \"valueCoding\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCoding or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueCoding($value);
             }
             if (isset($data['valueContactPoint'])) {
-                $this->setValueContactPoint($data['valueContactPoint']);
-            }
-            if (isset($data['valueContributor'])) {
-                $this->setValueContributor($data['valueContributor']);
+                $value = $data['valueContactPoint'];
+                if (is_array($value)) {
+                    $value = new FHIRContactPoint($value);
+                } 
+                if (!($value instanceof FHIRContactPoint)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRExtension::__construct - Property \"valueContactPoint\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRContactPoint or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueContactPoint($value);
             }
             if (isset($data['valueCount'])) {
-                $this->setValueCount($data['valueCount']);
-            }
-            if (isset($data['valueDataRequirement'])) {
-                $this->setValueDataRequirement($data['valueDataRequirement']);
+                $value = $data['valueCount'];
+                if (is_array($value)) {
+                    $value = new FHIRCount($value);
+                } 
+                if (!($value instanceof FHIRCount)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRExtension::__construct - Property \"valueCount\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRCount or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueCount($value);
             }
             if (isset($data['valueDate'])) {
-                $this->setValueDate($data['valueDate']);
+                $value = $data['valueDate'];
+                if (is_array($value)) {
+                    $value = new FHIRDate($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDate($value);
+                }
+                if (!($value instanceof FHIRDate)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRExtension::__construct - Property \"valueDate\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDate or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueDate($value);
             }
             if (isset($data['valueDateTime'])) {
-                $this->setValueDateTime($data['valueDateTime']);
+                $value = $data['valueDateTime'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRExtension::__construct - Property \"valueDateTime\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueDateTime($value);
             }
             if (isset($data['valueDecimal'])) {
-                $this->setValueDecimal($data['valueDecimal']);
+                $value = $data['valueDecimal'];
+                if (is_array($value)) {
+                    $value = new FHIRDecimal($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDecimal($value);
+                }
+                if (!($value instanceof FHIRDecimal)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRExtension::__construct - Property \"valueDecimal\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDecimal or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueDecimal($value);
             }
             if (isset($data['valueDistance'])) {
-                $this->setValueDistance($data['valueDistance']);
-            }
-            if (isset($data['valueDosage'])) {
-                $this->setValueDosage($data['valueDosage']);
+                $value = $data['valueDistance'];
+                if (is_array($value)) {
+                    $value = new FHIRDistance($value);
+                } 
+                if (!($value instanceof FHIRDistance)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRExtension::__construct - Property \"valueDistance\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDistance or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueDistance($value);
             }
             if (isset($data['valueDuration'])) {
-                $this->setValueDuration($data['valueDuration']);
-            }
-            if (isset($data['valueExpression'])) {
-                $this->setValueExpression($data['valueExpression']);
+                $value = $data['valueDuration'];
+                if (is_array($value)) {
+                    $value = new FHIRDuration($value);
+                } 
+                if (!($value instanceof FHIRDuration)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRExtension::__construct - Property \"valueDuration\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueDuration($value);
             }
             if (isset($data['valueHumanName'])) {
-                $this->setValueHumanName($data['valueHumanName']);
+                $value = $data['valueHumanName'];
+                if (is_array($value)) {
+                    $value = new FHIRHumanName($value);
+                } 
+                if (!($value instanceof FHIRHumanName)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRExtension::__construct - Property \"valueHumanName\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRHumanName or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueHumanName($value);
             }
             if (isset($data['valueId'])) {
-                $this->setValueId($data['valueId']);
+                $value = $data['valueId'];
+                if (is_array($value)) {
+                    $value = new FHIRId($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRId($value);
+                }
+                if (!($value instanceof FHIRId)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRExtension::__construct - Property \"valueId\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRId or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueId($value);
             }
             if (isset($data['valueIdentifier'])) {
-                $this->setValueIdentifier($data['valueIdentifier']);
+                $value = $data['valueIdentifier'];
+                if (is_array($value)) {
+                    $value = new FHIRIdentifier($value);
+                } 
+                if (!($value instanceof FHIRIdentifier)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRExtension::__construct - Property \"valueIdentifier\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueIdentifier($value);
             }
             if (isset($data['valueInstant'])) {
-                $this->setValueInstant($data['valueInstant']);
+                $value = $data['valueInstant'];
+                if (is_array($value)) {
+                    $value = new FHIRInstant($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRInstant($value);
+                }
+                if (!($value instanceof FHIRInstant)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRExtension::__construct - Property \"valueInstant\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRInstant or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueInstant($value);
             }
             if (isset($data['valueInteger'])) {
-                $this->setValueInteger($data['valueInteger']);
+                $value = $data['valueInteger'];
+                if (is_array($value)) {
+                    $value = new FHIRInteger($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRInteger($value);
+                }
+                if (!($value instanceof FHIRInteger)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRExtension::__construct - Property \"valueInteger\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRInteger or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueInteger($value);
             }
             if (isset($data['valueMarkdown'])) {
-                $this->setValueMarkdown($data['valueMarkdown']);
+                $value = $data['valueMarkdown'];
+                if (is_array($value)) {
+                    $value = new FHIRMarkdown($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRMarkdown($value);
+                }
+                if (!($value instanceof FHIRMarkdown)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRExtension::__construct - Property \"valueMarkdown\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRMarkdown or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueMarkdown($value);
+            }
+            if (isset($data['valueMeta'])) {
+                $value = $data['valueMeta'];
+                if (is_array($value)) {
+                    $value = new FHIRMeta($value);
+                } 
+                if (!($value instanceof FHIRMeta)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRExtension::__construct - Property \"valueMeta\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRMeta or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueMeta($value);
             }
             if (isset($data['valueMoney'])) {
-                $this->setValueMoney($data['valueMoney']);
+                $value = $data['valueMoney'];
+                if (is_array($value)) {
+                    $value = new FHIRMoney($value);
+                } 
+                if (!($value instanceof FHIRMoney)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRExtension::__construct - Property \"valueMoney\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueMoney($value);
             }
             if (isset($data['valueOid'])) {
-                $this->setValueOid($data['valueOid']);
-            }
-            if (isset($data['valueParameterDefinition'])) {
-                $this->setValueParameterDefinition($data['valueParameterDefinition']);
+                $value = $data['valueOid'];
+                if (is_array($value)) {
+                    $value = new FHIROid($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIROid($value);
+                }
+                if (!($value instanceof FHIROid)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRExtension::__construct - Property \"valueOid\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIROid or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueOid($value);
             }
             if (isset($data['valuePeriod'])) {
-                $this->setValuePeriod($data['valuePeriod']);
+                $value = $data['valuePeriod'];
+                if (is_array($value)) {
+                    $value = new FHIRPeriod($value);
+                } 
+                if (!($value instanceof FHIRPeriod)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRExtension::__construct - Property \"valuePeriod\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPeriod or data to construct type, saw ".gettype($value));
+                }
+                $this->setValuePeriod($value);
             }
             if (isset($data['valuePositiveInt'])) {
-                $this->setValuePositiveInt($data['valuePositiveInt']);
+                $value = $data['valuePositiveInt'];
+                if (is_array($value)) {
+                    $value = new FHIRPositiveInt($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRPositiveInt($value);
+                }
+                if (!($value instanceof FHIRPositiveInt)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRExtension::__construct - Property \"valuePositiveInt\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt or data to construct type, saw ".gettype($value));
+                }
+                $this->setValuePositiveInt($value);
             }
             if (isset($data['valueQuantity'])) {
-                $this->setValueQuantity($data['valueQuantity']);
+                $value = $data['valueQuantity'];
+                if (is_array($value)) {
+                    $value = new FHIRQuantity($value);
+                } 
+                if (!($value instanceof FHIRQuantity)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRExtension::__construct - Property \"valueQuantity\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueQuantity($value);
             }
             if (isset($data['valueRange'])) {
-                $this->setValueRange($data['valueRange']);
+                $value = $data['valueRange'];
+                if (is_array($value)) {
+                    $value = new FHIRRange($value);
+                } 
+                if (!($value instanceof FHIRRange)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRExtension::__construct - Property \"valueRange\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRRange or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueRange($value);
             }
             if (isset($data['valueRatio'])) {
-                $this->setValueRatio($data['valueRatio']);
+                $value = $data['valueRatio'];
+                if (is_array($value)) {
+                    $value = new FHIRRatio($value);
+                } 
+                if (!($value instanceof FHIRRatio)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRExtension::__construct - Property \"valueRatio\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRRatio or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueRatio($value);
             }
             if (isset($data['valueReference'])) {
-                $this->setValueReference($data['valueReference']);
-            }
-            if (isset($data['valueRelatedArtifact'])) {
-                $this->setValueRelatedArtifact($data['valueRelatedArtifact']);
+                $value = $data['valueReference'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRExtension::__construct - Property \"valueReference\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueReference($value);
             }
             if (isset($data['valueSampledData'])) {
-                $this->setValueSampledData($data['valueSampledData']);
+                $value = $data['valueSampledData'];
+                if (is_array($value)) {
+                    $value = new FHIRSampledData($value);
+                } 
+                if (!($value instanceof FHIRSampledData)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRExtension::__construct - Property \"valueSampledData\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRSampledData or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueSampledData($value);
             }
             if (isset($data['valueSignature'])) {
-                $this->setValueSignature($data['valueSignature']);
+                $value = $data['valueSignature'];
+                if (is_array($value)) {
+                    $value = new FHIRSignature($value);
+                } 
+                if (!($value instanceof FHIRSignature)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRExtension::__construct - Property \"valueSignature\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRSignature or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueSignature($value);
             }
             if (isset($data['valueString'])) {
-                $this->setValueString($data['valueString']);
+                $value = $data['valueString'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRExtension::__construct - Property \"valueString\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueString($value);
             }
             if (isset($data['valueTime'])) {
-                $this->setValueTime($data['valueTime']);
+                $value = $data['valueTime'];
+                if (is_array($value)) {
+                    $value = new FHIRTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRTime($value);
+                }
+                if (!($value instanceof FHIRTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRExtension::__construct - Property \"valueTime\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRTime or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueTime($value);
             }
             if (isset($data['valueTiming'])) {
-                $this->setValueTiming($data['valueTiming']);
-            }
-            if (isset($data['valueTriggerDefinition'])) {
-                $this->setValueTriggerDefinition($data['valueTriggerDefinition']);
+                $value = $data['valueTiming'];
+                if (is_array($value)) {
+                    $value = new FHIRTiming($value);
+                } 
+                if (!($value instanceof FHIRTiming)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRExtension::__construct - Property \"valueTiming\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRTiming or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueTiming($value);
             }
             if (isset($data['valueUnsignedInt'])) {
-                $this->setValueUnsignedInt($data['valueUnsignedInt']);
+                $value = $data['valueUnsignedInt'];
+                if (is_array($value)) {
+                    $value = new FHIRUnsignedInt($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUnsignedInt($value);
+                }
+                if (!($value instanceof FHIRUnsignedInt)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRExtension::__construct - Property \"valueUnsignedInt\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueUnsignedInt($value);
             }
             if (isset($data['valueUri'])) {
-                $this->setValueUri($data['valueUri']);
-            }
-            if (isset($data['valueUrl'])) {
-                $this->setValueUrl($data['valueUrl']);
-            }
-            if (isset($data['valueUsageContext'])) {
-                $this->setValueUsageContext($data['valueUsageContext']);
-            }
-            if (isset($data['valueUuid'])) {
-                $this->setValueUuid($data['valueUuid']);
+                $value = $data['valueUri'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRExtension::__construct - Property \"valueUri\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueUri($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -548,6 +754,7 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -580,9 +787,8 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
         return $this->url;
     }
 
-
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRAddress
      * @return $this
      */
@@ -596,7 +802,7 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAddress
      */
     public function getValueAddress()
@@ -604,9 +810,8 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
         return $this->valueAddress;
     }
 
-
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
      * @return $this
      */
@@ -620,7 +825,7 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
      */
     public function getValueAge()
@@ -628,9 +833,8 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
         return $this->valueAge;
     }
 
-
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation
      * @return $this
      */
@@ -644,7 +848,7 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation
      */
     public function getValueAnnotation()
@@ -652,9 +856,8 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
         return $this->valueAnnotation;
     }
 
-
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRAttachment
      * @return $this
      */
@@ -668,7 +871,7 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public function getValueAttachment()
@@ -676,9 +879,8 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
         return $this->valueAttachment;
     }
 
-
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
      * @return $this
      */
@@ -701,7 +903,7 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
      */
     public function getValueBase64Binary()
@@ -709,9 +911,8 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
         return $this->valueBase64Binary;
     }
 
-
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      * @return $this
      */
@@ -734,7 +935,7 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getValueBoolean()
@@ -742,42 +943,8 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
         return $this->valueBoolean;
     }
 
-
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
-     * @return $this
-     */
-    public function setValueCanonical($valueCanonical)
-    {
-        if (null === $valueCanonical) {
-            return $this; 
-        }
-        if (is_scalar($valueCanonical)) {
-            $valueCanonical = new FHIRCanonical($valueCanonical);
-        }
-        if (!($valueCanonical instanceof FHIRCanonical)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRExtension::setValueCanonical - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCanonical or appropriate scalar value, %s seen.',
-                gettype($valueCanonical)
-            ));
-        }
-        $this->valueCanonical = $valueCanonical;
-        return $this;
-    }
-
-    /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
-     */
-    public function getValueCanonical()
-    {
-        return $this->valueCanonical;
-    }
-
-
-    /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCode
      * @return $this
      */
@@ -800,7 +967,7 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCode
      */
     public function getValueCode()
@@ -808,9 +975,8 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
         return $this->valueCode;
     }
 
-
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
@@ -824,7 +990,7 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getValueCodeableConcept()
@@ -832,9 +998,8 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
         return $this->valueCodeableConcept;
     }
 
-
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
      * @return $this
      */
@@ -848,7 +1013,7 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public function getValueCoding()
@@ -856,33 +1021,8 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
         return $this->valueCoding;
     }
 
-
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail
-     * @return $this
-     */
-    public function setValueContactDetail(FHIRContactDetail $valueContactDetail = null)
-    {
-        if (null === $valueContactDetail) {
-            return $this; 
-        }
-        $this->valueContactDetail = $valueContactDetail;
-        return $this;
-    }
-
-    /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail
-     */
-    public function getValueContactDetail()
-    {
-        return $this->valueContactDetail;
-    }
-
-
-    /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContactPoint
      * @return $this
      */
@@ -896,7 +1036,7 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactPoint
      */
     public function getValueContactPoint()
@@ -904,33 +1044,8 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
         return $this->valueContactPoint;
     }
 
-
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContributor
-     * @return $this
-     */
-    public function setValueContributor(FHIRContributor $valueContributor = null)
-    {
-        if (null === $valueContributor) {
-            return $this; 
-        }
-        $this->valueContributor = $valueContributor;
-        return $this;
-    }
-
-    /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContributor
-     */
-    public function getValueContributor()
-    {
-        return $this->valueContributor;
-    }
-
-
-    /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRCount
      * @return $this
      */
@@ -944,7 +1059,7 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRCount
      */
     public function getValueCount()
@@ -952,33 +1067,8 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
         return $this->valueCount;
     }
 
-
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDataRequirement
-     * @return $this
-     */
-    public function setValueDataRequirement(FHIRDataRequirement $valueDataRequirement = null)
-    {
-        if (null === $valueDataRequirement) {
-            return $this; 
-        }
-        $this->valueDataRequirement = $valueDataRequirement;
-        return $this;
-    }
-
-    /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDataRequirement
-     */
-    public function getValueDataRequirement()
-    {
-        return $this->valueDataRequirement;
-    }
-
-
-    /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDate
      * @return $this
      */
@@ -1001,7 +1091,7 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public function getValueDate()
@@ -1009,9 +1099,8 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
         return $this->valueDate;
     }
 
-
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      * @return $this
      */
@@ -1034,7 +1123,7 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getValueDateTime()
@@ -1042,9 +1131,8 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
         return $this->valueDateTime;
     }
 
-
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDecimal
      * @return $this
      */
@@ -1067,7 +1155,7 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
     public function getValueDecimal()
@@ -1075,9 +1163,8 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
         return $this->valueDecimal;
     }
 
-
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDistance
      * @return $this
      */
@@ -1091,7 +1178,7 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDistance
      */
     public function getValueDistance()
@@ -1099,33 +1186,8 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
         return $this->valueDistance;
     }
 
-
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDosage
-     * @return $this
-     */
-    public function setValueDosage(FHIRDosage $valueDosage = null)
-    {
-        if (null === $valueDosage) {
-            return $this; 
-        }
-        $this->valueDosage = $valueDosage;
-        return $this;
-    }
-
-    /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDosage
-     */
-    public function getValueDosage()
-    {
-        return $this->valueDosage;
-    }
-
-
-    /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration
      * @return $this
      */
@@ -1139,7 +1201,7 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getValueDuration()
@@ -1147,33 +1209,8 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
         return $this->valueDuration;
     }
 
-
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRExpression
-     * @return $this
-     */
-    public function setValueExpression(FHIRExpression $valueExpression = null)
-    {
-        if (null === $valueExpression) {
-            return $this; 
-        }
-        $this->valueExpression = $valueExpression;
-        return $this;
-    }
-
-    /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRExpression
-     */
-    public function getValueExpression()
-    {
-        return $this->valueExpression;
-    }
-
-
-    /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRHumanName
      * @return $this
      */
@@ -1187,7 +1224,7 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRHumanName
      */
     public function getValueHumanName()
@@ -1195,9 +1232,8 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
         return $this->valueHumanName;
     }
 
-
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRId
      * @return $this
      */
@@ -1220,7 +1256,7 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRId
      */
     public function getValueId()
@@ -1228,9 +1264,8 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
         return $this->valueId;
     }
 
-
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
@@ -1244,7 +1279,7 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
     public function getValueIdentifier()
@@ -1252,9 +1287,8 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
         return $this->valueIdentifier;
     }
 
-
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRInstant
      * @return $this
      */
@@ -1277,7 +1311,7 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRInstant
      */
     public function getValueInstant()
@@ -1285,9 +1319,8 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
         return $this->valueInstant;
     }
 
-
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRInteger
      * @return $this
      */
@@ -1310,7 +1343,7 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public function getValueInteger()
@@ -1318,9 +1351,8 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
         return $this->valueInteger;
     }
 
-
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      * @return $this
      */
@@ -1343,7 +1375,7 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getValueMarkdown()
@@ -1351,10 +1383,32 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
         return $this->valueMarkdown;
     }
 
+    /**
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRMeta
+     * @return $this
+     */
+    public function setValueMeta(FHIRMeta $valueMeta = null)
+    {
+        if (null === $valueMeta) {
+            return $this; 
+        }
+        $this->valueMeta = $valueMeta;
+        return $this;
+    }
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRMoney
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRMeta
+     */
+    public function getValueMeta()
+    {
+        return $this->valueMeta;
+    }
+
+    /**
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      * @return $this
      */
     public function setValueMoney(FHIRMoney $valueMoney = null)
@@ -1367,17 +1421,16 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRMoney
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public function getValueMoney()
     {
         return $this->valueMoney;
     }
 
-
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIROid
      * @return $this
      */
@@ -1400,7 +1453,7 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIROid
      */
     public function getValueOid()
@@ -1408,33 +1461,8 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
         return $this->valueOid;
     }
 
-
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRParameterDefinition
-     * @return $this
-     */
-    public function setValueParameterDefinition(FHIRParameterDefinition $valueParameterDefinition = null)
-    {
-        if (null === $valueParameterDefinition) {
-            return $this; 
-        }
-        $this->valueParameterDefinition = $valueParameterDefinition;
-        return $this;
-    }
-
-    /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRParameterDefinition
-     */
-    public function getValueParameterDefinition()
-    {
-        return $this->valueParameterDefinition;
-    }
-
-
-    /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
      * @return $this
      */
@@ -1448,7 +1476,7 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getValuePeriod()
@@ -1456,9 +1484,8 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
         return $this->valuePeriod;
     }
 
-
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      * @return $this
      */
@@ -1481,7 +1508,7 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
     public function getValuePositiveInt()
@@ -1489,9 +1516,8 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
         return $this->valuePositiveInt;
     }
 
-
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity
      * @return $this
      */
@@ -1505,7 +1531,7 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public function getValueQuantity()
@@ -1513,9 +1539,8 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
         return $this->valueQuantity;
     }
 
-
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRRange
      * @return $this
      */
@@ -1529,7 +1554,7 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public function getValueRange()
@@ -1537,9 +1562,8 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
         return $this->valueRange;
     }
 
-
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRRatio
      * @return $this
      */
@@ -1553,7 +1577,7 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
     public function getValueRatio()
@@ -1561,9 +1585,8 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
         return $this->valueRatio;
     }
 
-
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
@@ -1577,7 +1600,7 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getValueReference()
@@ -1585,33 +1608,8 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
         return $this->valueReference;
     }
 
-
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact
-     * @return $this
-     */
-    public function setValueRelatedArtifact(FHIRRelatedArtifact $valueRelatedArtifact = null)
-    {
-        if (null === $valueRelatedArtifact) {
-            return $this; 
-        }
-        $this->valueRelatedArtifact = $valueRelatedArtifact;
-        return $this;
-    }
-
-    /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact
-     */
-    public function getValueRelatedArtifact()
-    {
-        return $this->valueRelatedArtifact;
-    }
-
-
-    /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRSampledData
      * @return $this
      */
@@ -1625,7 +1623,7 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRSampledData
      */
     public function getValueSampledData()
@@ -1633,9 +1631,8 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
         return $this->valueSampledData;
     }
 
-
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRSignature
      * @return $this
      */
@@ -1649,7 +1646,7 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRSignature
      */
     public function getValueSignature()
@@ -1657,9 +1654,8 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
         return $this->valueSignature;
     }
 
-
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
@@ -1682,7 +1678,7 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getValueString()
@@ -1690,9 +1686,8 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
         return $this->valueString;
     }
 
-
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRTime
      * @return $this
      */
@@ -1715,7 +1710,7 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRTime
      */
     public function getValueTime()
@@ -1723,10 +1718,9 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
         return $this->valueTime;
     }
 
-
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTiming
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRTiming
      * @return $this
      */
     public function setValueTiming(FHIRTiming $valueTiming = null)
@@ -1739,41 +1733,16 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTiming
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public function getValueTiming()
     {
         return $this->valueTiming;
     }
 
-
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRTriggerDefinition
-     * @return $this
-     */
-    public function setValueTriggerDefinition(FHIRTriggerDefinition $valueTriggerDefinition = null)
-    {
-        if (null === $valueTriggerDefinition) {
-            return $this; 
-        }
-        $this->valueTriggerDefinition = $valueTriggerDefinition;
-        return $this;
-    }
-
-    /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRTriggerDefinition
-     */
-    public function getValueTriggerDefinition()
-    {
-        return $this->valueTriggerDefinition;
-    }
-
-
-    /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      * @return $this
      */
@@ -1796,7 +1765,7 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
     public function getValueUnsignedInt()
@@ -1804,9 +1773,8 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
         return $this->valueUnsignedInt;
     }
 
-
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
@@ -1829,104 +1797,13 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
+     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list). (choose any one of the elements, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getValueUri()
     {
         return $this->valueUri;
     }
-
-
-    /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUrl
-     * @return $this
-     */
-    public function setValueUrl($valueUrl)
-    {
-        if (null === $valueUrl) {
-            return $this; 
-        }
-        if (is_scalar($valueUrl)) {
-            $valueUrl = new FHIRUrl($valueUrl);
-        }
-        if (!($valueUrl instanceof FHIRUrl)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRExtension::setValueUrl - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUrl or appropriate scalar value, %s seen.',
-                gettype($valueUrl)
-            ));
-        }
-        $this->valueUrl = $valueUrl;
-        return $this;
-    }
-
-    /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUrl
-     */
-    public function getValueUrl()
-    {
-        return $this->valueUrl;
-    }
-
-
-    /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUsageContext
-     * @return $this
-     */
-    public function setValueUsageContext(FHIRUsageContext $valueUsageContext = null)
-    {
-        if (null === $valueUsageContext) {
-            return $this; 
-        }
-        $this->valueUsageContext = $valueUsageContext;
-        return $this;
-    }
-
-    /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUsageContext
-     */
-    public function getValueUsageContext()
-    {
-        return $this->valueUsageContext;
-    }
-
-
-    /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUuid
-     * @return $this
-     */
-    public function setValueUuid($valueUuid)
-    {
-        if (null === $valueUuid) {
-            return $this; 
-        }
-        if (is_scalar($valueUuid)) {
-            $valueUuid = new FHIRUuid($valueUuid);
-        }
-        if (!($valueUuid instanceof FHIRUuid)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRExtension::setValueUuid - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUuid or appropriate scalar value, %s seen.',
-                gettype($valueUuid)
-            ));
-        }
-        $this->valueUuid = $valueUuid;
-        return $this;
-    }
-
-    /**
-     * Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUuid
-     */
-    public function getValueUuid()
-    {
-        return $this->valueUuid;
-    }
-
 
     /**
      * @return string
@@ -1963,9 +1840,6 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
         if (null !== ($v = $this->getValueBoolean())) {
             $a['valueBoolean'] = $v;
         }
-        if (null !== ($v = $this->getValueCanonical())) {
-            $a['valueCanonical'] = $v;
-        }
         if (null !== ($v = $this->getValueCode())) {
             $a['valueCode'] = $v;
         }
@@ -1975,20 +1849,11 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
         if (null !== ($v = $this->getValueCoding())) {
             $a['valueCoding'] = $v;
         }
-        if (null !== ($v = $this->getValueContactDetail())) {
-            $a['valueContactDetail'] = $v;
-        }
         if (null !== ($v = $this->getValueContactPoint())) {
             $a['valueContactPoint'] = $v;
         }
-        if (null !== ($v = $this->getValueContributor())) {
-            $a['valueContributor'] = $v;
-        }
         if (null !== ($v = $this->getValueCount())) {
             $a['valueCount'] = $v;
-        }
-        if (null !== ($v = $this->getValueDataRequirement())) {
-            $a['valueDataRequirement'] = $v;
         }
         if (null !== ($v = $this->getValueDate())) {
             $a['valueDate'] = $v;
@@ -2002,14 +1867,8 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
         if (null !== ($v = $this->getValueDistance())) {
             $a['valueDistance'] = $v;
         }
-        if (null !== ($v = $this->getValueDosage())) {
-            $a['valueDosage'] = $v;
-        }
         if (null !== ($v = $this->getValueDuration())) {
             $a['valueDuration'] = $v;
-        }
-        if (null !== ($v = $this->getValueExpression())) {
-            $a['valueExpression'] = $v;
         }
         if (null !== ($v = $this->getValueHumanName())) {
             $a['valueHumanName'] = $v;
@@ -2029,14 +1888,14 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
         if (null !== ($v = $this->getValueMarkdown())) {
             $a['valueMarkdown'] = $v;
         }
+        if (null !== ($v = $this->getValueMeta())) {
+            $a['valueMeta'] = $v;
+        }
         if (null !== ($v = $this->getValueMoney())) {
             $a['valueMoney'] = $v;
         }
         if (null !== ($v = $this->getValueOid())) {
             $a['valueOid'] = $v;
-        }
-        if (null !== ($v = $this->getValueParameterDefinition())) {
-            $a['valueParameterDefinition'] = $v;
         }
         if (null !== ($v = $this->getValuePeriod())) {
             $a['valuePeriod'] = $v;
@@ -2056,9 +1915,6 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
         if (null !== ($v = $this->getValueReference())) {
             $a['valueReference'] = $v;
         }
-        if (null !== ($v = $this->getValueRelatedArtifact())) {
-            $a['valueRelatedArtifact'] = $v;
-        }
         if (null !== ($v = $this->getValueSampledData())) {
             $a['valueSampledData'] = $v;
         }
@@ -2074,23 +1930,11 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
         if (null !== ($v = $this->getValueTiming())) {
             $a['valueTiming'] = $v;
         }
-        if (null !== ($v = $this->getValueTriggerDefinition())) {
-            $a['valueTriggerDefinition'] = $v;
-        }
         if (null !== ($v = $this->getValueUnsignedInt())) {
             $a['valueUnsignedInt'] = $v;
         }
         if (null !== ($v = $this->getValueUri())) {
             $a['valueUri'] = $v;
-        }
-        if (null !== ($v = $this->getValueUrl())) {
-            $a['valueUrl'] = $v;
-        }
-        if (null !== ($v = $this->getValueUsageContext())) {
-            $a['valueUsageContext'] = $v;
-        }
-        if (null !== ($v = $this->getValueUuid())) {
-            $a['valueUuid'] = $v;
         }
         return $a;
     }
@@ -2105,9 +1949,123 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Extension xmlns="http://hl7.org/fhir"></Extension>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getUrl())) {
+            $v->xmlSerialize(true, $sxe->addChild('url'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getValueAddress())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueAddress'));
+        }
+        if (null !== ($v = $this->getValueAge())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueAge'));
+        }
+        if (null !== ($v = $this->getValueAnnotation())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueAnnotation'));
+        }
+        if (null !== ($v = $this->getValueAttachment())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueAttachment'));
+        }
+        if (null !== ($v = $this->getValueBase64Binary())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueBase64Binary'));
+        }
+        if (null !== ($v = $this->getValueBoolean())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueBoolean'));
+        }
+        if (null !== ($v = $this->getValueCode())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueCode'));
+        }
+        if (null !== ($v = $this->getValueCodeableConcept())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueCodeableConcept'));
+        }
+        if (null !== ($v = $this->getValueCoding())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueCoding'));
+        }
+        if (null !== ($v = $this->getValueContactPoint())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueContactPoint'));
+        }
+        if (null !== ($v = $this->getValueCount())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueCount'));
+        }
+        if (null !== ($v = $this->getValueDate())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueDate'));
+        }
+        if (null !== ($v = $this->getValueDateTime())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueDateTime'));
+        }
+        if (null !== ($v = $this->getValueDecimal())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueDecimal'));
+        }
+        if (null !== ($v = $this->getValueDistance())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueDistance'));
+        }
+        if (null !== ($v = $this->getValueDuration())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueDuration'));
+        }
+        if (null !== ($v = $this->getValueHumanName())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueHumanName'));
+        }
+        if (null !== ($v = $this->getValueId())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueId'));
+        }
+        if (null !== ($v = $this->getValueIdentifier())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueIdentifier'));
+        }
+        if (null !== ($v = $this->getValueInstant())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueInstant'));
+        }
+        if (null !== ($v = $this->getValueInteger())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueInteger'));
+        }
+        if (null !== ($v = $this->getValueMarkdown())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueMarkdown'));
+        }
+        if (null !== ($v = $this->getValueMeta())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueMeta'));
+        }
+        if (null !== ($v = $this->getValueMoney())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueMoney'));
+        }
+        if (null !== ($v = $this->getValueOid())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueOid'));
+        }
+        if (null !== ($v = $this->getValuePeriod())) {
+            $v->xmlSerialize(true, $sxe->addChild('valuePeriod'));
+        }
+        if (null !== ($v = $this->getValuePositiveInt())) {
+            $v->xmlSerialize(true, $sxe->addChild('valuePositiveInt'));
+        }
+        if (null !== ($v = $this->getValueQuantity())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueQuantity'));
+        }
+        if (null !== ($v = $this->getValueRange())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueRange'));
+        }
+        if (null !== ($v = $this->getValueRatio())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueRatio'));
+        }
+        if (null !== ($v = $this->getValueReference())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueReference'));
+        }
+        if (null !== ($v = $this->getValueSampledData())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueSampledData'));
+        }
+        if (null !== ($v = $this->getValueSignature())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueSignature'));
+        }
+        if (null !== ($v = $this->getValueString())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueString'));
+        }
+        if (null !== ($v = $this->getValueTime())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueTime'));
+        }
+        if (null !== ($v = $this->getValueTiming())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueTiming'));
+        }
+        if (null !== ($v = $this->getValueUnsignedInt())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueUnsignedInt'));
+        }
+        if (null !== ($v = $this->getValueUri())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueUri'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

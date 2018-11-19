@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBene
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBene
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -82,49 +82,55 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement impleme
      * Dental, Vision, Medical, Pharmacy, Rehab etc.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $category = null;
+    private $category = null;
 
     /**
      * A richer description of the benefit, for example 'DENT2 covers 100% of basic, 50% of major but exclused Ortho, Implants and Costmetic services'.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $description = null;
+    private $description = null;
 
     /**
      * True if the indicated class of service is excluded from the plan, missing or False indicated the service is included in the coverage.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $excluded = null;
+    private $excluded = null;
 
     /**
      * Benefits Used to date.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitFinancial
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitFinancial[]
      */
-    public $financial = null;
+    private $financial = [];
 
     /**
      * A short name or tag for the benefit, for example MED01, or DENT2.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $name = null;
+    private $name = null;
 
     /**
      * Network designation.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $network = null;
+    private $network = null;
+
+    /**
+     * Dental: basic, major, ortho; Vision exam, glasses, contacts; etc.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    private $subCategory = null;
 
     /**
      * The term or period of the values such as 'maximum lifetime benefit' or 'maximum annual vistis'.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $term = null;
+    private $term = null;
 
     /**
      * Unit designation: individual or family.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $unit = null;
+    private $unit = null;
 
     /**
      * FHIRExplanationOfBenefitBenefitBalance Constructor
@@ -133,31 +139,108 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement impleme
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['category'])) {
-                $this->setCategory($data['category']);
+                $value = $data['category'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitBenefitBalance::__construct - Property \"category\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setCategory($value);
             }
             if (isset($data['description'])) {
-                $this->setDescription($data['description']);
+                $value = $data['description'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitBenefitBalance::__construct - Property \"description\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDescription($value);
             }
             if (isset($data['excluded'])) {
-                $this->setExcluded($data['excluded']);
+                $value = $data['excluded'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitBenefitBalance::__construct - Property \"excluded\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setExcluded($value);
             }
             if (isset($data['financial'])) {
-                $this->setFinancial($data['financial']);
+                $value = $data['financial'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRExplanationOfBenefitFinancial($v);
+                        } 
+                        if (!($v instanceof FHIRExplanationOfBenefitFinancial)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitBenefitBalance::__construct - Collection field \"financial\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitFinancial or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addFinancial($v);
+                    }
+                }
             }
             if (isset($data['name'])) {
-                $this->setName($data['name']);
+                $value = $data['name'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitBenefitBalance::__construct - Property \"name\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setName($value);
             }
             if (isset($data['network'])) {
-                $this->setNetwork($data['network']);
+                $value = $data['network'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitBenefitBalance::__construct - Property \"network\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setNetwork($value);
+            }
+            if (isset($data['subCategory'])) {
+                $value = $data['subCategory'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitBenefitBalance::__construct - Property \"subCategory\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setSubCategory($value);
             }
             if (isset($data['term'])) {
-                $this->setTerm($data['term']);
+                $value = $data['term'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitBenefitBalance::__construct - Property \"term\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setTerm($value);
             }
             if (isset($data['unit'])) {
-                $this->setUnit($data['unit']);
+                $value = $data['unit'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitBenefitBalance::__construct - Property \"unit\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setUnit($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -166,6 +249,7 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement impleme
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -190,7 +274,6 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement impleme
     {
         return $this->category;
     }
-
 
     /**
      * A richer description of the benefit, for example 'DENT2 covers 100% of basic, 50% of major but exclused Ortho, Implants and Costmetic services'.
@@ -224,7 +307,6 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement impleme
         return $this->description;
     }
 
-
     /**
      * True if the indicated class of service is excluded from the plan, missing or False indicated the service is included in the coverage.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
@@ -257,30 +339,28 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement impleme
         return $this->excluded;
     }
 
-
     /**
      * Benefits Used to date.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitFinancial
      * @return $this
      */
-    public function setFinancial(FHIRExplanationOfBenefitFinancial $financial = null)
+    public function addFinancial(FHIRExplanationOfBenefitFinancial $financial = null)
     {
         if (null === $financial) {
             return $this; 
         }
-        $this->financial = $financial;
+        $this->financial[] = $financial;
         return $this;
     }
 
     /**
      * Benefits Used to date.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitFinancial
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitFinancial[]
      */
     public function getFinancial()
     {
         return $this->financial;
     }
-
 
     /**
      * A short name or tag for the benefit, for example MED01, or DENT2.
@@ -314,7 +394,6 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement impleme
         return $this->name;
     }
 
-
     /**
      * Network designation.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
@@ -338,6 +417,28 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement impleme
         return $this->network;
     }
 
+    /**
+     * Dental: basic, major, ortho; Vision exam, glasses, contacts; etc.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return $this
+     */
+    public function setSubCategory(FHIRCodeableConcept $subCategory = null)
+    {
+        if (null === $subCategory) {
+            return $this; 
+        }
+        $this->subCategory = $subCategory;
+        return $this;
+    }
+
+    /**
+     * Dental: basic, major, ortho; Vision exam, glasses, contacts; etc.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public function getSubCategory()
+    {
+        return $this->subCategory;
+    }
 
     /**
      * The term or period of the values such as 'maximum lifetime benefit' or 'maximum annual vistis'.
@@ -362,7 +463,6 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement impleme
         return $this->term;
     }
 
-
     /**
      * Unit designation: individual or family.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
@@ -385,7 +485,6 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement impleme
     {
         return $this->unit;
     }
-
 
     /**
      * @return string
@@ -410,14 +509,25 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement impleme
         if (null !== ($v = $this->getExcluded())) {
             $a['excluded'] = $v;
         }
-        if (null !== ($v = $this->getFinancial())) {
-            $a['financial'] = $v;
+        if (0 < count($values = $this->getFinancial())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['financial'] = $vs;
+            }
         }
         if (null !== ($v = $this->getName())) {
             $a['name'] = $v;
         }
         if (null !== ($v = $this->getNetwork())) {
             $a['network'] = $v;
+        }
+        if (null !== ($v = $this->getSubCategory())) {
+            $a['subCategory'] = $v;
         }
         if (null !== ($v = $this->getTerm())) {
             $a['term'] = $v;
@@ -438,9 +548,37 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement impleme
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ExplanationOfBenefitBenefitBalance xmlns="http://hl7.org/fhir"></ExplanationOfBenefitBenefitBalance>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getCategory())) {
+            $v->xmlSerialize(true, $sxe->addChild('category'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getDescription())) {
+            $v->xmlSerialize(true, $sxe->addChild('description'));
+        }
+        if (null !== ($v = $this->getExcluded())) {
+            $v->xmlSerialize(true, $sxe->addChild('excluded'));
+        }
+        if (0 < count($values = $this->getFinancial())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('financial'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getName())) {
+            $v->xmlSerialize(true, $sxe->addChild('name'));
+        }
+        if (null !== ($v = $this->getNetwork())) {
+            $v->xmlSerialize(true, $sxe->addChild('network'));
+        }
+        if (null !== ($v = $this->getSubCategory())) {
+            $v->xmlSerialize(true, $sxe->addChild('subCategory'));
+        }
+        if (null !== ($v = $this->getTerm())) {
+            $v->xmlSerialize(true, $sxe->addChild('term'));
+        }
+        if (null !== ($v = $this->getUnit())) {
+            $v->xmlSerialize(true, $sxe->addChild('unit'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

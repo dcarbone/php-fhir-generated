@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -64,20 +64,20 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapGroup;
 use PHPFHIRGenerated\FHIRElement\FHIRBoolean;
-use PHPFHIRGenerated\FHIRElement\FHIRCanonical;
 use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
 use PHPFHIRGenerated\FHIRElement\FHIRContactDetail;
 use PHPFHIRGenerated\FHIRElement\FHIRDateTime;
 use PHPFHIRGenerated\FHIRElement\FHIRIdentifier;
 use PHPFHIRGenerated\FHIRElement\FHIRMarkdown;
 use PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus;
+use PHPFHIRGenerated\FHIRElement\FHIRReference;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
 use PHPFHIRGenerated\FHIRElement\FHIRUri;
 use PHPFHIRGenerated\FHIRElement\FHIRUsageContext;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
 /**
- * A statement of relationships from one set of concepts to one or more other concepts - either concepts in code systems, or data element/data element concepts, or classes in class models.
+ * A statement of relationships from one set of concepts to one or more other concepts - either code systems or data elements, or classes in class models.
  * If the element is present, it must have either a @value, an @id, or extensions
  *
  * Class FHIRConceptMap
@@ -90,123 +90,123 @@ class FHIRConceptMap extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
-    public $contact = null;
+    private $contact = [];
 
     /**
      * A copyright statement relating to the concept map and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the concept map.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public $copyright = null;
+    private $copyright = null;
 
     /**
-     * The date  (and optionally time) when the concept map was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the concept map changes.
+     * The date  (and optionally time) when the concept map was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the concept map changes.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $date = null;
+    private $date = null;
 
     /**
      * A free text natural language description of the concept map from a consumer's perspective.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public $description = null;
+    private $description = null;
 
     /**
-     * A Boolean value to indicate that this concept map is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this concept map is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $experimental = null;
+    private $experimental = null;
 
     /**
      * A group of mappings that all have the same source and target system.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapGroup
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapGroup[]
      */
-    public $group = null;
+    private $group = [];
 
     /**
      * A formal identifier that is used to identify this concept map when it is represented in other formats, or referenced in a specification, model, design or an instance.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public $identifier = null;
+    private $identifier = null;
 
     /**
      * A legal or geographic region in which the concept map is intended to be used.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $jurisdiction = null;
+    private $jurisdiction = [];
 
     /**
      * A natural language name identifying the concept map. This name should be usable as an identifier for the module by machine processing applications such as code generation.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $name = null;
+    private $name = null;
 
     /**
-     * The name of the organization or individual that published the concept map.
+     * The name of the individual or organization that published the concept map.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $publisher = null;
+    private $publisher = null;
 
     /**
-     * Explanation of why this concept map is needed and why it has been designed as it has.
+     * Explaination of why this concept map is needed and why it has been designed as it has.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public $purpose = null;
+    private $purpose = null;
 
     /**
-     * Identifier for the source value set that contains the concepts that are being mapped and provides context for the mappings.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * The source value set that specifies the concepts that are being mapped. (choose any one of source*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $sourceCanonical = null;
+    private $sourceReference = null;
 
     /**
-     * Identifier for the source value set that contains the concepts that are being mapped and provides context for the mappings.
+     * The source value set that specifies the concepts that are being mapped. (choose any one of source*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $sourceUri = null;
+    private $sourceUri = null;
 
     /**
      * The status of this concept map. Enables tracking the life-cycle of the content.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus
      */
-    public $status = null;
+    private $status = null;
 
     /**
-     * The target value set provides context for the mappings. Note that the mapping is made between concepts, not between value sets, but the value set provides important context about how the concept mapping choices are made.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * The target value set provides context to the mappings. Note that the mapping is made between concepts, not between value sets, but the value set provides important context about how the concept mapping choices are made. (choose any one of target*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $targetCanonical = null;
+    private $targetReference = null;
 
     /**
-     * The target value set provides context for the mappings. Note that the mapping is made between concepts, not between value sets, but the value set provides important context about how the concept mapping choices are made.
+     * The target value set provides context to the mappings. Note that the mapping is made between concepts, not between value sets, but the value set provides important context about how the concept mapping choices are made. (choose any one of target*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $targetUri = null;
+    private $targetUri = null;
 
     /**
      * A short, descriptive, user-friendly title for the concept map.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $title = null;
+    private $title = null;
 
     /**
-     * An absolute URI that is used to identify this concept map when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this concept map is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the concept map is stored on different servers.
+     * An absolute URI that is used to identify this concept map when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this concept map is (or will be) published. The URL SHOULD include the major version of the concept map. For more information see [Technical and Business Versions](resource.html#versions).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $url = null;
+    private $url = null;
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate concept map instances.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
-    public $useContext = null;
+    private $useContext = [];
 
     /**
      * The identifier that is used to identify this version of the concept map when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the concept map author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $version = null;
+    private $version = null;
 
     /**
      * FHIRConceptMap Constructor
@@ -215,67 +215,256 @@ class FHIRConceptMap extends FHIRDomainResource implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['contact'])) {
-                $this->setContact($data['contact']);
+                $value = $data['contact'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRContactDetail($v);
+                        } 
+                        if (!($v instanceof FHIRContactDetail)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRConceptMap::__construct - Collection field \"contact\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRContactDetail or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addContact($v);
+                    }
+                }
             }
             if (isset($data['copyright'])) {
-                $this->setCopyright($data['copyright']);
+                $value = $data['copyright'];
+                if (is_array($value)) {
+                    $value = new FHIRMarkdown($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRMarkdown($value);
+                }
+                if (!($value instanceof FHIRMarkdown)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRConceptMap::__construct - Property \"copyright\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRMarkdown or data to construct type, saw ".gettype($value));
+                }
+                $this->setCopyright($value);
             }
             if (isset($data['date'])) {
-                $this->setDate($data['date']);
+                $value = $data['date'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRConceptMap::__construct - Property \"date\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value));
+                }
+                $this->setDate($value);
             }
             if (isset($data['description'])) {
-                $this->setDescription($data['description']);
+                $value = $data['description'];
+                if (is_array($value)) {
+                    $value = new FHIRMarkdown($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRMarkdown($value);
+                }
+                if (!($value instanceof FHIRMarkdown)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRConceptMap::__construct - Property \"description\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRMarkdown or data to construct type, saw ".gettype($value));
+                }
+                $this->setDescription($value);
             }
             if (isset($data['experimental'])) {
-                $this->setExperimental($data['experimental']);
+                $value = $data['experimental'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRConceptMap::__construct - Property \"experimental\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value));
+                }
+                $this->setExperimental($value);
             }
             if (isset($data['group'])) {
-                $this->setGroup($data['group']);
+                $value = $data['group'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRConceptMapGroup($v);
+                        } 
+                        if (!($v instanceof FHIRConceptMapGroup)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRConceptMap::__construct - Collection field \"group\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapGroup or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addGroup($v);
+                    }
+                }
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    $value = new FHIRIdentifier($value);
+                } 
+                if (!($value instanceof FHIRIdentifier)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRConceptMap::__construct - Property \"identifier\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($value));
+                }
+                $this->setIdentifier($value);
             }
             if (isset($data['jurisdiction'])) {
-                $this->setJurisdiction($data['jurisdiction']);
+                $value = $data['jurisdiction'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRConceptMap::__construct - Collection field \"jurisdiction\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addJurisdiction($v);
+                    }
+                }
             }
             if (isset($data['name'])) {
-                $this->setName($data['name']);
+                $value = $data['name'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRConceptMap::__construct - Property \"name\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setName($value);
             }
             if (isset($data['publisher'])) {
-                $this->setPublisher($data['publisher']);
+                $value = $data['publisher'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRConceptMap::__construct - Property \"publisher\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setPublisher($value);
             }
             if (isset($data['purpose'])) {
-                $this->setPurpose($data['purpose']);
+                $value = $data['purpose'];
+                if (is_array($value)) {
+                    $value = new FHIRMarkdown($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRMarkdown($value);
+                }
+                if (!($value instanceof FHIRMarkdown)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRConceptMap::__construct - Property \"purpose\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRMarkdown or data to construct type, saw ".gettype($value));
+                }
+                $this->setPurpose($value);
             }
-            if (isset($data['sourceCanonical'])) {
-                $this->setSourceCanonical($data['sourceCanonical']);
+            if (isset($data['sourceReference'])) {
+                $value = $data['sourceReference'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRConceptMap::__construct - Property \"sourceReference\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setSourceReference($value);
             }
             if (isset($data['sourceUri'])) {
-                $this->setSourceUri($data['sourceUri']);
+                $value = $data['sourceUri'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRConceptMap::__construct - Property \"sourceUri\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value));
+                }
+                $this->setSourceUri($value);
             }
             if (isset($data['status'])) {
-                $this->setStatus($data['status']);
+                $value = $data['status'];
+                if (is_array($value)) {
+                    $value = new FHIRPublicationStatus($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRPublicationStatus($value);
+                }
+                if (!($value instanceof FHIRPublicationStatus)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRConceptMap::__construct - Property \"status\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus or data to construct type, saw ".gettype($value));
+                }
+                $this->setStatus($value);
             }
-            if (isset($data['targetCanonical'])) {
-                $this->setTargetCanonical($data['targetCanonical']);
+            if (isset($data['targetReference'])) {
+                $value = $data['targetReference'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRConceptMap::__construct - Property \"targetReference\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setTargetReference($value);
             }
             if (isset($data['targetUri'])) {
-                $this->setTargetUri($data['targetUri']);
+                $value = $data['targetUri'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRConceptMap::__construct - Property \"targetUri\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value));
+                }
+                $this->setTargetUri($value);
             }
             if (isset($data['title'])) {
-                $this->setTitle($data['title']);
+                $value = $data['title'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRConceptMap::__construct - Property \"title\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setTitle($value);
             }
             if (isset($data['url'])) {
-                $this->setUrl($data['url']);
+                $value = $data['url'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRConceptMap::__construct - Property \"url\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value));
+                }
+                $this->setUrl($value);
             }
             if (isset($data['useContext'])) {
-                $this->setUseContext($data['useContext']);
+                $value = $data['useContext'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRUsageContext($v);
+                        } 
+                        if (!($v instanceof FHIRUsageContext)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRConceptMap::__construct - Collection field \"useContext\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUsageContext or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addUseContext($v);
+                    }
+                }
             }
             if (isset($data['version'])) {
-                $this->setVersion($data['version']);
+                $value = $data['version'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRConceptMap::__construct - Property \"version\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setVersion($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -284,6 +473,7 @@ class FHIRConceptMap extends FHIRDomainResource implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -291,24 +481,23 @@ class FHIRConceptMap extends FHIRDomainResource implements \JsonSerializable
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail
      * @return $this
      */
-    public function setContact(FHIRContactDetail $contact = null)
+    public function addContact(FHIRContactDetail $contact = null)
     {
         if (null === $contact) {
             return $this; 
         }
-        $this->contact = $contact;
+        $this->contact[] = $contact;
         return $this;
     }
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
     public function getContact()
     {
         return $this->contact;
     }
-
 
     /**
      * A copyright statement relating to the concept map and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the concept map.
@@ -342,9 +531,8 @@ class FHIRConceptMap extends FHIRDomainResource implements \JsonSerializable
         return $this->copyright;
     }
 
-
     /**
-     * The date  (and optionally time) when the concept map was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the concept map changes.
+     * The date  (and optionally time) when the concept map was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the concept map changes.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      * @return $this
      */
@@ -367,14 +555,13 @@ class FHIRConceptMap extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date  (and optionally time) when the concept map was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the concept map changes.
+     * The date  (and optionally time) when the concept map was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the concept map changes.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getDate()
     {
         return $this->date;
     }
-
 
     /**
      * A free text natural language description of the concept map from a consumer's perspective.
@@ -408,9 +595,8 @@ class FHIRConceptMap extends FHIRDomainResource implements \JsonSerializable
         return $this->description;
     }
 
-
     /**
-     * A Boolean value to indicate that this concept map is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this concept map is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      * @return $this
      */
@@ -433,7 +619,7 @@ class FHIRConceptMap extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A Boolean value to indicate that this concept map is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this concept map is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getExperimental()
@@ -441,30 +627,28 @@ class FHIRConceptMap extends FHIRDomainResource implements \JsonSerializable
         return $this->experimental;
     }
 
-
     /**
      * A group of mappings that all have the same source and target system.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapGroup
      * @return $this
      */
-    public function setGroup(FHIRConceptMapGroup $group = null)
+    public function addGroup(FHIRConceptMapGroup $group = null)
     {
         if (null === $group) {
             return $this; 
         }
-        $this->group = $group;
+        $this->group[] = $group;
         return $this;
     }
 
     /**
      * A group of mappings that all have the same source and target system.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapGroup
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapGroup[]
      */
     public function getGroup()
     {
         return $this->group;
     }
-
 
     /**
      * A formal identifier that is used to identify this concept map when it is represented in other formats, or referenced in a specification, model, design or an instance.
@@ -489,30 +673,28 @@ class FHIRConceptMap extends FHIRDomainResource implements \JsonSerializable
         return $this->identifier;
     }
 
-
     /**
      * A legal or geographic region in which the concept map is intended to be used.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setJurisdiction(FHIRCodeableConcept $jurisdiction = null)
+    public function addJurisdiction(FHIRCodeableConcept $jurisdiction = null)
     {
         if (null === $jurisdiction) {
             return $this; 
         }
-        $this->jurisdiction = $jurisdiction;
+        $this->jurisdiction[] = $jurisdiction;
         return $this;
     }
 
     /**
      * A legal or geographic region in which the concept map is intended to be used.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getJurisdiction()
     {
         return $this->jurisdiction;
     }
-
 
     /**
      * A natural language name identifying the concept map. This name should be usable as an identifier for the module by machine processing applications such as code generation.
@@ -546,9 +728,8 @@ class FHIRConceptMap extends FHIRDomainResource implements \JsonSerializable
         return $this->name;
     }
 
-
     /**
-     * The name of the organization or individual that published the concept map.
+     * The name of the individual or organization that published the concept map.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
@@ -571,7 +752,7 @@ class FHIRConceptMap extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The name of the organization or individual that published the concept map.
+     * The name of the individual or organization that published the concept map.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getPublisher()
@@ -579,9 +760,8 @@ class FHIRConceptMap extends FHIRDomainResource implements \JsonSerializable
         return $this->publisher;
     }
 
-
     /**
-     * Explanation of why this concept map is needed and why it has been designed as it has.
+     * Explaination of why this concept map is needed and why it has been designed as it has.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      * @return $this
      */
@@ -604,7 +784,7 @@ class FHIRConceptMap extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Explanation of why this concept map is needed and why it has been designed as it has.
+     * Explaination of why this concept map is needed and why it has been designed as it has.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getPurpose()
@@ -612,42 +792,31 @@ class FHIRConceptMap extends FHIRDomainResource implements \JsonSerializable
         return $this->purpose;
     }
 
-
     /**
-     * Identifier for the source value set that contains the concepts that are being mapped and provides context for the mappings.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * The source value set that specifies the concepts that are being mapped. (choose any one of source*, but only one)
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setSourceCanonical($sourceCanonical)
+    public function setSourceReference(FHIRReference $sourceReference = null)
     {
-        if (null === $sourceCanonical) {
+        if (null === $sourceReference) {
             return $this; 
         }
-        if (is_scalar($sourceCanonical)) {
-            $sourceCanonical = new FHIRCanonical($sourceCanonical);
-        }
-        if (!($sourceCanonical instanceof FHIRCanonical)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRConceptMap::setSourceCanonical - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCanonical or appropriate scalar value, %s seen.',
-                gettype($sourceCanonical)
-            ));
-        }
-        $this->sourceCanonical = $sourceCanonical;
+        $this->sourceReference = $sourceReference;
         return $this;
     }
 
     /**
-     * Identifier for the source value set that contains the concepts that are being mapped and provides context for the mappings.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * The source value set that specifies the concepts that are being mapped. (choose any one of source*, but only one)
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getSourceCanonical()
+    public function getSourceReference()
     {
-        return $this->sourceCanonical;
+        return $this->sourceReference;
     }
 
-
     /**
-     * Identifier for the source value set that contains the concepts that are being mapped and provides context for the mappings.
+     * The source value set that specifies the concepts that are being mapped. (choose any one of source*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
@@ -670,14 +839,13 @@ class FHIRConceptMap extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Identifier for the source value set that contains the concepts that are being mapped and provides context for the mappings.
+     * The source value set that specifies the concepts that are being mapped. (choose any one of source*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getSourceUri()
     {
         return $this->sourceUri;
     }
-
 
     /**
      * The status of this concept map. Enables tracking the life-cycle of the content.
@@ -711,42 +879,31 @@ class FHIRConceptMap extends FHIRDomainResource implements \JsonSerializable
         return $this->status;
     }
 
-
     /**
-     * The target value set provides context for the mappings. Note that the mapping is made between concepts, not between value sets, but the value set provides important context about how the concept mapping choices are made.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * The target value set provides context to the mappings. Note that the mapping is made between concepts, not between value sets, but the value set provides important context about how the concept mapping choices are made. (choose any one of target*, but only one)
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setTargetCanonical($targetCanonical)
+    public function setTargetReference(FHIRReference $targetReference = null)
     {
-        if (null === $targetCanonical) {
+        if (null === $targetReference) {
             return $this; 
         }
-        if (is_scalar($targetCanonical)) {
-            $targetCanonical = new FHIRCanonical($targetCanonical);
-        }
-        if (!($targetCanonical instanceof FHIRCanonical)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRConceptMap::setTargetCanonical - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCanonical or appropriate scalar value, %s seen.',
-                gettype($targetCanonical)
-            ));
-        }
-        $this->targetCanonical = $targetCanonical;
+        $this->targetReference = $targetReference;
         return $this;
     }
 
     /**
-     * The target value set provides context for the mappings. Note that the mapping is made between concepts, not between value sets, but the value set provides important context about how the concept mapping choices are made.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * The target value set provides context to the mappings. Note that the mapping is made between concepts, not between value sets, but the value set provides important context about how the concept mapping choices are made. (choose any one of target*, but only one)
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getTargetCanonical()
+    public function getTargetReference()
     {
-        return $this->targetCanonical;
+        return $this->targetReference;
     }
 
-
     /**
-     * The target value set provides context for the mappings. Note that the mapping is made between concepts, not between value sets, but the value set provides important context about how the concept mapping choices are made.
+     * The target value set provides context to the mappings. Note that the mapping is made between concepts, not between value sets, but the value set provides important context about how the concept mapping choices are made. (choose any one of target*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
@@ -769,14 +926,13 @@ class FHIRConceptMap extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The target value set provides context for the mappings. Note that the mapping is made between concepts, not between value sets, but the value set provides important context about how the concept mapping choices are made.
+     * The target value set provides context to the mappings. Note that the mapping is made between concepts, not between value sets, but the value set provides important context about how the concept mapping choices are made. (choose any one of target*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getTargetUri()
     {
         return $this->targetUri;
     }
-
 
     /**
      * A short, descriptive, user-friendly title for the concept map.
@@ -810,9 +966,8 @@ class FHIRConceptMap extends FHIRDomainResource implements \JsonSerializable
         return $this->title;
     }
 
-
     /**
-     * An absolute URI that is used to identify this concept map when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this concept map is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the concept map is stored on different servers.
+     * An absolute URI that is used to identify this concept map when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this concept map is (or will be) published. The URL SHOULD include the major version of the concept map. For more information see [Technical and Business Versions](resource.html#versions).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
@@ -835,7 +990,7 @@ class FHIRConceptMap extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * An absolute URI that is used to identify this concept map when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this concept map is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the concept map is stored on different servers.
+     * An absolute URI that is used to identify this concept map when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this concept map is (or will be) published. The URL SHOULD include the major version of the concept map. For more information see [Technical and Business Versions](resource.html#versions).
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getUrl()
@@ -843,30 +998,28 @@ class FHIRConceptMap extends FHIRDomainResource implements \JsonSerializable
         return $this->url;
     }
 
-
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate concept map instances.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUsageContext
      * @return $this
      */
-    public function setUseContext(FHIRUsageContext $useContext = null)
+    public function addUseContext(FHIRUsageContext $useContext = null)
     {
         if (null === $useContext) {
             return $this; 
         }
-        $this->useContext = $useContext;
+        $this->useContext[] = $useContext;
         return $this;
     }
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate concept map instances.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUsageContext
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
     public function getUseContext()
     {
         return $this->useContext;
     }
-
 
     /**
      * The identifier that is used to identify this version of the concept map when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the concept map author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
@@ -900,7 +1053,6 @@ class FHIRConceptMap extends FHIRDomainResource implements \JsonSerializable
         return $this->version;
     }
 
-
     /**
      * @return string
      */
@@ -916,8 +1068,16 @@ class FHIRConceptMap extends FHIRDomainResource implements \JsonSerializable
     {
         $a = parent::jsonSerialize();
         $a['resourceType'] = self::FHIR_TYPE_NAME;
-        if (null !== ($v = $this->getContact())) {
-            $a['contact'] = $v;
+        if (0 < count($values = $this->getContact())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['contact'] = $vs;
+            }
         }
         if (null !== ($v = $this->getCopyright())) {
             $a['copyright'] = $v;
@@ -931,14 +1091,30 @@ class FHIRConceptMap extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getExperimental())) {
             $a['experimental'] = $v;
         }
-        if (null !== ($v = $this->getGroup())) {
-            $a['group'] = $v;
+        if (0 < count($values = $this->getGroup())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['group'] = $vs;
+            }
         }
         if (null !== ($v = $this->getIdentifier())) {
             $a['identifier'] = $v;
         }
-        if (null !== ($v = $this->getJurisdiction())) {
-            $a['jurisdiction'] = $v;
+        if (0 < count($values = $this->getJurisdiction())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['jurisdiction'] = $vs;
+            }
         }
         if (null !== ($v = $this->getName())) {
             $a['name'] = $v;
@@ -949,8 +1125,8 @@ class FHIRConceptMap extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getPurpose())) {
             $a['purpose'] = $v;
         }
-        if (null !== ($v = $this->getSourceCanonical())) {
-            $a['sourceCanonical'] = $v;
+        if (null !== ($v = $this->getSourceReference())) {
+            $a['sourceReference'] = $v;
         }
         if (null !== ($v = $this->getSourceUri())) {
             $a['sourceUri'] = $v;
@@ -958,8 +1134,8 @@ class FHIRConceptMap extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getStatus())) {
             $a['status'] = $v;
         }
-        if (null !== ($v = $this->getTargetCanonical())) {
-            $a['targetCanonical'] = $v;
+        if (null !== ($v = $this->getTargetReference())) {
+            $a['targetReference'] = $v;
         }
         if (null !== ($v = $this->getTargetUri())) {
             $a['targetUri'] = $v;
@@ -970,8 +1146,16 @@ class FHIRConceptMap extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getUrl())) {
             $a['url'] = $v;
         }
-        if (null !== ($v = $this->getUseContext())) {
-            $a['useContext'] = $v;
+        if (0 < count($values = $this->getUseContext())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['useContext'] = $vs;
+            }
         }
         if (null !== ($v = $this->getVersion())) {
             $a['version'] = $v;
@@ -989,9 +1173,82 @@ class FHIRConceptMap extends FHIRDomainResource implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ConceptMap xmlns="http://hl7.org/fhir"></ConceptMap>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (0 < count($values = $this->getContact())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('contact'));
+                }
+            }
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getCopyright())) {
+            $v->xmlSerialize(true, $sxe->addChild('copyright'));
+        }
+        if (null !== ($v = $this->getDate())) {
+            $v->xmlSerialize(true, $sxe->addChild('date'));
+        }
+        if (null !== ($v = $this->getDescription())) {
+            $v->xmlSerialize(true, $sxe->addChild('description'));
+        }
+        if (null !== ($v = $this->getExperimental())) {
+            $v->xmlSerialize(true, $sxe->addChild('experimental'));
+        }
+        if (0 < count($values = $this->getGroup())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('group'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getIdentifier())) {
+            $v->xmlSerialize(true, $sxe->addChild('identifier'));
+        }
+        if (0 < count($values = $this->getJurisdiction())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('jurisdiction'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getName())) {
+            $v->xmlSerialize(true, $sxe->addChild('name'));
+        }
+        if (null !== ($v = $this->getPublisher())) {
+            $v->xmlSerialize(true, $sxe->addChild('publisher'));
+        }
+        if (null !== ($v = $this->getPurpose())) {
+            $v->xmlSerialize(true, $sxe->addChild('purpose'));
+        }
+        if (null !== ($v = $this->getSourceReference())) {
+            $v->xmlSerialize(true, $sxe->addChild('sourceReference'));
+        }
+        if (null !== ($v = $this->getSourceUri())) {
+            $v->xmlSerialize(true, $sxe->addChild('sourceUri'));
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('status'));
+        }
+        if (null !== ($v = $this->getTargetReference())) {
+            $v->xmlSerialize(true, $sxe->addChild('targetReference'));
+        }
+        if (null !== ($v = $this->getTargetUri())) {
+            $v->xmlSerialize(true, $sxe->addChild('targetUri'));
+        }
+        if (null !== ($v = $this->getTitle())) {
+            $v->xmlSerialize(true, $sxe->addChild('title'));
+        }
+        if (null !== ($v = $this->getUrl())) {
+            $v->xmlSerialize(true, $sxe->addChild('url'));
+        }
+        if (0 < count($values = $this->getUseContext())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('useContext'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getVersion())) {
+            $v->xmlSerialize(true, $sxe->addChild('version'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

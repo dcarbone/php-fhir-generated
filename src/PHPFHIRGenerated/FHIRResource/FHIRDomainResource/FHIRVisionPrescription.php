@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -86,55 +86,55 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
      * The date (and perhaps time) when the prescription was written.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $dateWritten = null;
+    private $dateWritten = null;
 
     /**
      * Deals with details of the dispense part of the supply specification.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionDispense
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionDispense[]
      */
-    public $dispense = null;
+    private $dispense = [];
 
     /**
      * A link to a resource that identifies the particular occurrence of contact between patient and health care provider.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $encounter = null;
+    private $encounter = null;
 
     /**
      * Business identifier which may be used by other parties to reference or identify the prescription.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = null;
+    private $identifier = [];
 
     /**
      * A link to a resource representing the person to whom the vision products will be supplied.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $patient = null;
+    private $patient = null;
 
     /**
      * The healthcare professional responsible for authorizing the prescription.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $prescriber = null;
+    private $prescriber = null;
 
     /**
-     * Can be the reason or the indication for writing the prescription.
+     * Can be the reason or the indication for writing the prescription. (choose any one of reason*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $reasonCodeableConcept = null;
+    private $reasonCodeableConcept = null;
 
     /**
-     * Can be the reason or the indication for writing the prescription.
+     * Can be the reason or the indication for writing the prescription. (choose any one of reason*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $reasonReference = null;
+    private $reasonReference = null;
 
     /**
      * The status of the resource instance.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRFinancialResourceStatusCodes
      */
-    public $status = null;
+    private $status = null;
 
     /**
      * FHIRVisionPrescription Constructor
@@ -143,34 +143,112 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['dateWritten'])) {
-                $this->setDateWritten($data['dateWritten']);
+                $value = $data['dateWritten'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRVisionPrescription::__construct - Property \"dateWritten\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value));
+                }
+                $this->setDateWritten($value);
             }
             if (isset($data['dispense'])) {
-                $this->setDispense($data['dispense']);
+                $value = $data['dispense'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRVisionPrescriptionDispense($v);
+                        } 
+                        if (!($v instanceof FHIRVisionPrescriptionDispense)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRVisionPrescription::__construct - Collection field \"dispense\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionDispense or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addDispense($v);
+                    }
+                }
             }
             if (isset($data['encounter'])) {
-                $this->setEncounter($data['encounter']);
+                $value = $data['encounter'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRVisionPrescription::__construct - Property \"encounter\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setEncounter($value);
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRIdentifier($v);
+                        } 
+                        if (!($v instanceof FHIRIdentifier)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRVisionPrescription::__construct - Collection field \"identifier\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addIdentifier($v);
+                    }
+                }
             }
             if (isset($data['patient'])) {
-                $this->setPatient($data['patient']);
+                $value = $data['patient'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRVisionPrescription::__construct - Property \"patient\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setPatient($value);
             }
             if (isset($data['prescriber'])) {
-                $this->setPrescriber($data['prescriber']);
+                $value = $data['prescriber'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRVisionPrescription::__construct - Property \"prescriber\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setPrescriber($value);
             }
             if (isset($data['reasonCodeableConcept'])) {
-                $this->setReasonCodeableConcept($data['reasonCodeableConcept']);
+                $value = $data['reasonCodeableConcept'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRVisionPrescription::__construct - Property \"reasonCodeableConcept\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setReasonCodeableConcept($value);
             }
             if (isset($data['reasonReference'])) {
-                $this->setReasonReference($data['reasonReference']);
+                $value = $data['reasonReference'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRVisionPrescription::__construct - Property \"reasonReference\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setReasonReference($value);
             }
             if (isset($data['status'])) {
-                $this->setStatus($data['status']);
+                $value = $data['status'];
+                if (is_array($value)) {
+                    $value = new FHIRFinancialResourceStatusCodes($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRFinancialResourceStatusCodes($value);
+                }
+                if (!($value instanceof FHIRFinancialResourceStatusCodes)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRVisionPrescription::__construct - Property \"status\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRFinancialResourceStatusCodes or data to construct type, saw ".gettype($value));
+                }
+                $this->setStatus($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -179,6 +257,7 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -213,30 +292,28 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
         return $this->dateWritten;
     }
 
-
     /**
      * Deals with details of the dispense part of the supply specification.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionDispense
      * @return $this
      */
-    public function setDispense(FHIRVisionPrescriptionDispense $dispense = null)
+    public function addDispense(FHIRVisionPrescriptionDispense $dispense = null)
     {
         if (null === $dispense) {
             return $this; 
         }
-        $this->dispense = $dispense;
+        $this->dispense[] = $dispense;
         return $this;
     }
 
     /**
      * Deals with details of the dispense part of the supply specification.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionDispense
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionDispense[]
      */
     public function getDispense()
     {
         return $this->dispense;
     }
-
 
     /**
      * A link to a resource that identifies the particular occurrence of contact between patient and health care provider.
@@ -261,30 +338,28 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
         return $this->encounter;
     }
 
-
     /**
      * Business identifier which may be used by other parties to reference or identify the prescription.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
-    public function setIdentifier(FHIRIdentifier $identifier = null)
+    public function addIdentifier(FHIRIdentifier $identifier = null)
     {
         if (null === $identifier) {
             return $this; 
         }
-        $this->identifier = $identifier;
+        $this->identifier[] = $identifier;
         return $this;
     }
 
     /**
      * Business identifier which may be used by other parties to reference or identify the prescription.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
         return $this->identifier;
     }
-
 
     /**
      * A link to a resource representing the person to whom the vision products will be supplied.
@@ -309,7 +384,6 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
         return $this->patient;
     }
 
-
     /**
      * The healthcare professional responsible for authorizing the prescription.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -333,9 +407,8 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
         return $this->prescriber;
     }
 
-
     /**
-     * Can be the reason or the indication for writing the prescription.
+     * Can be the reason or the indication for writing the prescription. (choose any one of reason*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
@@ -349,7 +422,7 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * Can be the reason or the indication for writing the prescription.
+     * Can be the reason or the indication for writing the prescription. (choose any one of reason*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getReasonCodeableConcept()
@@ -357,9 +430,8 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
         return $this->reasonCodeableConcept;
     }
 
-
     /**
-     * Can be the reason or the indication for writing the prescription.
+     * Can be the reason or the indication for writing the prescription. (choose any one of reason*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
@@ -373,14 +445,13 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * Can be the reason or the indication for writing the prescription.
+     * Can be the reason or the indication for writing the prescription. (choose any one of reason*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getReasonReference()
     {
         return $this->reasonReference;
     }
-
 
     /**
      * The status of the resource instance.
@@ -414,7 +485,6 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
         return $this->status;
     }
 
-
     /**
      * @return string
      */
@@ -433,14 +503,30 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
         if (null !== ($v = $this->getDateWritten())) {
             $a['dateWritten'] = $v;
         }
-        if (null !== ($v = $this->getDispense())) {
-            $a['dispense'] = $v;
+        if (0 < count($values = $this->getDispense())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['dispense'] = $vs;
+            }
         }
         if (null !== ($v = $this->getEncounter())) {
             $a['encounter'] = $v;
         }
-        if (null !== ($v = $this->getIdentifier())) {
-            $a['identifier'] = $v;
+        if (0 < count($values = $this->getIdentifier())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['identifier'] = $vs;
+            }
         }
         if (null !== ($v = $this->getPatient())) {
             $a['patient'] = $v;
@@ -470,9 +556,41 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<VisionPrescription xmlns="http://hl7.org/fhir"></VisionPrescription>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getDateWritten())) {
+            $v->xmlSerialize(true, $sxe->addChild('dateWritten'));
         }
-        return $sxe->saveXML();
+        if (0 < count($values = $this->getDispense())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('dispense'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getEncounter())) {
+            $v->xmlSerialize(true, $sxe->addChild('encounter'));
+        }
+        if (0 < count($values = $this->getIdentifier())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('identifier'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getPatient())) {
+            $v->xmlSerialize(true, $sxe->addChild('patient'));
+        }
+        if (null !== ($v = $this->getPrescriber())) {
+            $v->xmlSerialize(true, $sxe->addChild('prescriber'));
+        }
+        if (null !== ($v = $this->getReasonCodeableConcept())) {
+            $v->xmlSerialize(true, $sxe->addChild('reasonCodeableConcept'));
+        }
+        if (null !== ($v = $this->getReasonReference())) {
+            $v->xmlSerialize(true, $sxe->addChild('reasonReference'));
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('status'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

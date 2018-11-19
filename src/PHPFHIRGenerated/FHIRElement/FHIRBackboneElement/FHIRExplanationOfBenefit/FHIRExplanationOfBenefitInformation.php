@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBene
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBene
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -64,7 +64,6 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBene
 
 use PHPFHIRGenerated\FHIRElement\FHIRAttachment;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\FHIRElement\FHIRBoolean;
 use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
 use PHPFHIRGenerated\FHIRElement\FHIRCoding;
 use PHPFHIRGenerated\FHIRElement\FHIRDate;
@@ -89,67 +88,61 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement implements
      * The general class of the information supplied: information; exception; accident, employment; onset, etc.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $category = null;
+    private $category = null;
 
     /**
      * System and code pertaining to the specific information regarding special conditions relating to the setting, treatment or patient  for which care is sought which may influence the adjudication.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $code = null;
+    private $code = null;
 
     /**
      * For example, provides the reason for: the additional stay, or missing tooth or any other situation where a reason code is required in addition to the content.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
-    public $reason = null;
+    private $reason = null;
 
     /**
      * Sequence of the information element which serves to provide a link.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
-    public $sequence = null;
+    private $sequence = null;
 
     /**
-     * The date when or period to which this information refers.
+     * The date when or period to which this information refers. (choose any one of timing*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
-    public $timingDate = null;
+    private $timingDate = null;
 
     /**
-     * The date when or period to which this information refers.
+     * The date when or period to which this information refers. (choose any one of timing*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public $timingPeriod = null;
+    private $timingPeriod = null;
 
     /**
-     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data.
+     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
-    public $valueAttachment = null;
+    private $valueAttachment = null;
 
     /**
-     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
-     */
-    public $valueBoolean = null;
-
-    /**
-     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data.
+     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    public $valueQuantity = null;
+    private $valueQuantity = null;
 
     /**
-     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data.
+     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $valueReference = null;
+    private $valueReference = null;
 
     /**
-     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data.
+     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $valueString = null;
+    private $valueString = null;
 
     /**
      * FHIRExplanationOfBenefitInformation Constructor
@@ -158,40 +151,112 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement implements
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['category'])) {
-                $this->setCategory($data['category']);
+                $value = $data['category'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitInformation::__construct - Property \"category\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setCategory($value);
             }
             if (isset($data['code'])) {
-                $this->setCode($data['code']);
+                $value = $data['code'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitInformation::__construct - Property \"code\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setCode($value);
             }
             if (isset($data['reason'])) {
-                $this->setReason($data['reason']);
+                $value = $data['reason'];
+                if (is_array($value)) {
+                    $value = new FHIRCoding($value);
+                } 
+                if (!($value instanceof FHIRCoding)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitInformation::__construct - Property \"reason\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCoding or data to construct type, saw ".gettype($value));
+                }
+                $this->setReason($value);
             }
             if (isset($data['sequence'])) {
-                $this->setSequence($data['sequence']);
+                $value = $data['sequence'];
+                if (is_array($value)) {
+                    $value = new FHIRPositiveInt($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRPositiveInt($value);
+                }
+                if (!($value instanceof FHIRPositiveInt)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitInformation::__construct - Property \"sequence\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt or data to construct type, saw ".gettype($value));
+                }
+                $this->setSequence($value);
             }
             if (isset($data['timingDate'])) {
-                $this->setTimingDate($data['timingDate']);
+                $value = $data['timingDate'];
+                if (is_array($value)) {
+                    $value = new FHIRDate($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDate($value);
+                }
+                if (!($value instanceof FHIRDate)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitInformation::__construct - Property \"timingDate\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDate or data to construct type, saw ".gettype($value));
+                }
+                $this->setTimingDate($value);
             }
             if (isset($data['timingPeriod'])) {
-                $this->setTimingPeriod($data['timingPeriod']);
+                $value = $data['timingPeriod'];
+                if (is_array($value)) {
+                    $value = new FHIRPeriod($value);
+                } 
+                if (!($value instanceof FHIRPeriod)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitInformation::__construct - Property \"timingPeriod\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPeriod or data to construct type, saw ".gettype($value));
+                }
+                $this->setTimingPeriod($value);
             }
             if (isset($data['valueAttachment'])) {
-                $this->setValueAttachment($data['valueAttachment']);
-            }
-            if (isset($data['valueBoolean'])) {
-                $this->setValueBoolean($data['valueBoolean']);
+                $value = $data['valueAttachment'];
+                if (is_array($value)) {
+                    $value = new FHIRAttachment($value);
+                } 
+                if (!($value instanceof FHIRAttachment)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitInformation::__construct - Property \"valueAttachment\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAttachment or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueAttachment($value);
             }
             if (isset($data['valueQuantity'])) {
-                $this->setValueQuantity($data['valueQuantity']);
+                $value = $data['valueQuantity'];
+                if (is_array($value)) {
+                    $value = new FHIRQuantity($value);
+                } 
+                if (!($value instanceof FHIRQuantity)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitInformation::__construct - Property \"valueQuantity\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueQuantity($value);
             }
             if (isset($data['valueReference'])) {
-                $this->setValueReference($data['valueReference']);
+                $value = $data['valueReference'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitInformation::__construct - Property \"valueReference\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueReference($value);
             }
             if (isset($data['valueString'])) {
-                $this->setValueString($data['valueString']);
+                $value = $data['valueString'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitInformation::__construct - Property \"valueString\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueString($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -200,6 +265,7 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement implements
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -225,7 +291,6 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement implements
         return $this->category;
     }
 
-
     /**
      * System and code pertaining to the specific information regarding special conditions relating to the setting, treatment or patient  for which care is sought which may influence the adjudication.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
@@ -249,7 +314,6 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement implements
         return $this->code;
     }
 
-
     /**
      * For example, provides the reason for: the additional stay, or missing tooth or any other situation where a reason code is required in addition to the content.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
@@ -272,7 +336,6 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement implements
     {
         return $this->reason;
     }
-
 
     /**
      * Sequence of the information element which serves to provide a link.
@@ -306,9 +369,8 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement implements
         return $this->sequence;
     }
 
-
     /**
-     * The date when or period to which this information refers.
+     * The date when or period to which this information refers. (choose any one of timing*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDate
      * @return $this
      */
@@ -331,7 +393,7 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement implements
     }
 
     /**
-     * The date when or period to which this information refers.
+     * The date when or period to which this information refers. (choose any one of timing*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public function getTimingDate()
@@ -339,9 +401,8 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement implements
         return $this->timingDate;
     }
 
-
     /**
-     * The date when or period to which this information refers.
+     * The date when or period to which this information refers. (choose any one of timing*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
      * @return $this
      */
@@ -355,7 +416,7 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement implements
     }
 
     /**
-     * The date when or period to which this information refers.
+     * The date when or period to which this information refers. (choose any one of timing*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getTimingPeriod()
@@ -363,9 +424,8 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement implements
         return $this->timingPeriod;
     }
 
-
     /**
-     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data.
+     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRAttachment
      * @return $this
      */
@@ -379,7 +439,7 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement implements
     }
 
     /**
-     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data.
+     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public function getValueAttachment()
@@ -387,42 +447,8 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement implements
         return $this->valueAttachment;
     }
 
-
     /**
-     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
-     * @return $this
-     */
-    public function setValueBoolean($valueBoolean)
-    {
-        if (null === $valueBoolean) {
-            return $this; 
-        }
-        if (is_scalar($valueBoolean)) {
-            $valueBoolean = new FHIRBoolean($valueBoolean);
-        }
-        if (!($valueBoolean instanceof FHIRBoolean)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRExplanationOfBenefitInformation::setValueBoolean - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or appropriate scalar value, %s seen.',
-                gettype($valueBoolean)
-            ));
-        }
-        $this->valueBoolean = $valueBoolean;
-        return $this;
-    }
-
-    /**
-     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
-     */
-    public function getValueBoolean()
-    {
-        return $this->valueBoolean;
-    }
-
-
-    /**
-     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data.
+     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity
      * @return $this
      */
@@ -436,7 +462,7 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement implements
     }
 
     /**
-     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data.
+     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public function getValueQuantity()
@@ -444,9 +470,8 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement implements
         return $this->valueQuantity;
     }
 
-
     /**
-     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data.
+     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
@@ -460,7 +485,7 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement implements
     }
 
     /**
-     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data.
+     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getValueReference()
@@ -468,9 +493,8 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement implements
         return $this->valueReference;
     }
 
-
     /**
-     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data.
+     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
@@ -493,14 +517,13 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement implements
     }
 
     /**
-     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data.
+     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getValueString()
     {
         return $this->valueString;
     }
-
 
     /**
      * @return string
@@ -537,9 +560,6 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement implements
         if (null !== ($v = $this->getValueAttachment())) {
             $a['valueAttachment'] = $v;
         }
-        if (null !== ($v = $this->getValueBoolean())) {
-            $a['valueBoolean'] = $v;
-        }
         if (null !== ($v = $this->getValueQuantity())) {
             $a['valueQuantity'] = $v;
         }
@@ -562,9 +582,36 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement implements
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ExplanationOfBenefitInformation xmlns="http://hl7.org/fhir"></ExplanationOfBenefitInformation>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getCategory())) {
+            $v->xmlSerialize(true, $sxe->addChild('category'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getCode())) {
+            $v->xmlSerialize(true, $sxe->addChild('code'));
+        }
+        if (null !== ($v = $this->getReason())) {
+            $v->xmlSerialize(true, $sxe->addChild('reason'));
+        }
+        if (null !== ($v = $this->getSequence())) {
+            $v->xmlSerialize(true, $sxe->addChild('sequence'));
+        }
+        if (null !== ($v = $this->getTimingDate())) {
+            $v->xmlSerialize(true, $sxe->addChild('timingDate'));
+        }
+        if (null !== ($v = $this->getTimingPeriod())) {
+            $v->xmlSerialize(true, $sxe->addChild('timingPeriod'));
+        }
+        if (null !== ($v = $this->getValueAttachment())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueAttachment'));
+        }
+        if (null !== ($v = $this->getValueQuantity())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueQuantity'));
+        }
+        if (null !== ($v = $this->getValueReference())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueReference'));
+        }
+        if (null !== ($v = $this->getValueString())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueString'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

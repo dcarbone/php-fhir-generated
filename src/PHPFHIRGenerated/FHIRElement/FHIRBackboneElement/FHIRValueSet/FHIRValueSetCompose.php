@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -67,7 +67,7 @@ use PHPFHIRGenerated\FHIRElement\FHIRBoolean;
 use PHPFHIRGenerated\FHIRElement\FHIRDate;
 
 /**
- * A ValueSet resource instances specifies a set of codes drawn from one or more code systems, intended for use in a particular context. Value sets link between [[[CodeSystem]]] definitions and their use in [coded elements](terminologies.html).
+ * A value set specifies a set of codes drawn from one or more code systems.
  *
  * Class FHIRValueSetCompose
  * @package PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet
@@ -79,27 +79,27 @@ class FHIRValueSetCompose extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Exclude one or more codes from the value set based on code system filters and/or other value sets.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude[]
      */
-    public $exclude = null;
+    private $exclude = [];
 
     /**
-     * Whether inactive codes - codes that are not approved for current use - are in the value set. If inactive = true, inactive codes are to be included in the expansion, if inactive = false, the inactive codes will not be included in the expansion. If absent, the behavior is determined by the implementation, or by the applicable $expand parameters (but generally, inactive codes would be expected to be included).
+     * Whether inactive codes - codes that are not approved for current use - are in the value set. If inactive = true, inactive codes are to be included in the expansion, if inactive = false, the inactive codes will not be included in the expansion. If absent, the behavior is determined by the implementation, or by the applicable ExpansionProfile (but generally, inactive codes would be expected to be included).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $inactive = null;
+    private $inactive = null;
 
     /**
      * Include one or more codes from a code system or other value set(s).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude[]
      */
-    public $include = null;
+    private $include = [];
 
     /**
      * If a locked date is defined, then the Content Logical Definition must be evaluated using the current version as of the locked date for referenced code system(s) and value set instances where ValueSet.compose.include.version is not defined.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
-    public $lockedDate = null;
+    private $lockedDate = null;
 
     /**
      * FHIRValueSetCompose Constructor
@@ -108,19 +108,62 @@ class FHIRValueSetCompose extends FHIRBackboneElement implements \JsonSerializab
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['exclude'])) {
-                $this->setExclude($data['exclude']);
+                $value = $data['exclude'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRValueSetInclude($v);
+                        } 
+                        if (!($v instanceof FHIRValueSetInclude)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCompose::__construct - Collection field \"exclude\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addExclude($v);
+                    }
+                }
             }
             if (isset($data['inactive'])) {
-                $this->setInactive($data['inactive']);
+                $value = $data['inactive'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCompose::__construct - Property \"inactive\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setInactive($value);
             }
             if (isset($data['include'])) {
-                $this->setInclude($data['include']);
+                $value = $data['include'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRValueSetInclude($v);
+                        } 
+                        if (!($v instanceof FHIRValueSetInclude)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCompose::__construct - Collection field \"include\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addInclude($v);
+                    }
+                }
             }
             if (isset($data['lockedDate'])) {
-                $this->setLockedDate($data['lockedDate']);
+                $value = $data['lockedDate'];
+                if (is_array($value)) {
+                    $value = new FHIRDate($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDate($value);
+                }
+                if (!($value instanceof FHIRDate)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCompose::__construct - Property \"lockedDate\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDate or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setLockedDate($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -129,6 +172,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement implements \JsonSerializab
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -136,27 +180,26 @@ class FHIRValueSetCompose extends FHIRBackboneElement implements \JsonSerializab
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude
      * @return $this
      */
-    public function setExclude(FHIRValueSetInclude $exclude = null)
+    public function addExclude(FHIRValueSetInclude $exclude = null)
     {
         if (null === $exclude) {
             return $this; 
         }
-        $this->exclude = $exclude;
+        $this->exclude[] = $exclude;
         return $this;
     }
 
     /**
      * Exclude one or more codes from the value set based on code system filters and/or other value sets.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude[]
      */
     public function getExclude()
     {
         return $this->exclude;
     }
 
-
     /**
-     * Whether inactive codes - codes that are not approved for current use - are in the value set. If inactive = true, inactive codes are to be included in the expansion, if inactive = false, the inactive codes will not be included in the expansion. If absent, the behavior is determined by the implementation, or by the applicable $expand parameters (but generally, inactive codes would be expected to be included).
+     * Whether inactive codes - codes that are not approved for current use - are in the value set. If inactive = true, inactive codes are to be included in the expansion, if inactive = false, the inactive codes will not be included in the expansion. If absent, the behavior is determined by the implementation, or by the applicable ExpansionProfile (but generally, inactive codes would be expected to be included).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      * @return $this
      */
@@ -179,7 +222,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement implements \JsonSerializab
     }
 
     /**
-     * Whether inactive codes - codes that are not approved for current use - are in the value set. If inactive = true, inactive codes are to be included in the expansion, if inactive = false, the inactive codes will not be included in the expansion. If absent, the behavior is determined by the implementation, or by the applicable $expand parameters (but generally, inactive codes would be expected to be included).
+     * Whether inactive codes - codes that are not approved for current use - are in the value set. If inactive = true, inactive codes are to be included in the expansion, if inactive = false, the inactive codes will not be included in the expansion. If absent, the behavior is determined by the implementation, or by the applicable ExpansionProfile (but generally, inactive codes would be expected to be included).
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getInactive()
@@ -187,30 +230,28 @@ class FHIRValueSetCompose extends FHIRBackboneElement implements \JsonSerializab
         return $this->inactive;
     }
 
-
     /**
      * Include one or more codes from a code system or other value set(s).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude
      * @return $this
      */
-    public function setInclude(FHIRValueSetInclude $include = null)
+    public function addInclude(FHIRValueSetInclude $include = null)
     {
         if (null === $include) {
             return $this; 
         }
-        $this->include = $include;
+        $this->include[] = $include;
         return $this;
     }
 
     /**
      * Include one or more codes from a code system or other value set(s).
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude[]
      */
     public function getInclude()
     {
         return $this->include;
     }
-
 
     /**
      * If a locked date is defined, then the Content Logical Definition must be evaluated using the current version as of the locked date for referenced code system(s) and value set instances where ValueSet.compose.include.version is not defined.
@@ -244,7 +285,6 @@ class FHIRValueSetCompose extends FHIRBackboneElement implements \JsonSerializab
         return $this->lockedDate;
     }
 
-
     /**
      * @return string
      */
@@ -259,14 +299,30 @@ class FHIRValueSetCompose extends FHIRBackboneElement implements \JsonSerializab
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getExclude())) {
-            $a['exclude'] = $v;
+        if (0 < count($values = $this->getExclude())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['exclude'] = $vs;
+            }
         }
         if (null !== ($v = $this->getInactive())) {
             $a['inactive'] = $v;
         }
-        if (null !== ($v = $this->getInclude())) {
-            $a['include'] = $v;
+        if (0 < count($values = $this->getInclude())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['include'] = $vs;
+            }
         }
         if (null !== ($v = $this->getLockedDate())) {
             $a['lockedDate'] = $v;
@@ -284,9 +340,26 @@ class FHIRValueSetCompose extends FHIRBackboneElement implements \JsonSerializab
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ValueSetCompose xmlns="http://hl7.org/fhir"></ValueSetCompose>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (0 < count($values = $this->getExclude())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('exclude'));
+                }
+            }
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getInactive())) {
+            $v->xmlSerialize(true, $sxe->addChild('inactive'));
+        }
+        if (0 < count($values = $this->getInclude())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('include'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getLockedDate())) {
+            $v->xmlSerialize(true, $sxe->addChild('lockedDate'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -91,73 +91,73 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
      * Identifier for the TestScript assigned for external purposes outside the context of FHIR.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public $identifier = null;
+    private $identifier = null;
 
     /**
      * When the TestScript was executed and this TestReport was generated.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $issued = null;
+    private $issued = null;
 
     /**
      * A free text natural language name identifying the executed TestScript.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $name = null;
+    private $name = null;
 
     /**
      * A participant in the test execution, either the execution engine, a client, or a server.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportParticipant
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportParticipant[]
      */
-    public $participant = null;
+    private $participant = [];
 
     /**
      * The overall result from the execution of the TestScript.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTestReportResult
      */
-    public $result = null;
+    private $result = null;
 
     /**
      * The final score (percentage of tests passed) resulting from the execution of the TestScript.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
-    public $score = null;
+    private $score = null;
 
     /**
      * The results of the series of required setup operations before the tests were executed.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportSetup
      */
-    public $setup = null;
+    private $setup = null;
 
     /**
      * The current state of this test report.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTestReportStatus
      */
-    public $status = null;
+    private $status = null;
 
     /**
-     * The results of the series of operations required to clean up after all the tests were executed (successfully or otherwise).
+     * The results of the series of operations required to clean up after the all the tests were executed (successfully or otherwise).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportTeardown
      */
-    public $teardown = null;
+    private $teardown = null;
 
     /**
      * A test executed from the test script.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportTest
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportTest[]
      */
-    public $test = null;
+    private $test = [];
 
     /**
      * Ideally this is an absolute URL that is used to identify the version-specific TestScript that was executed, matching the `TestScript.url`.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $testScript = null;
+    private $testScript = null;
 
     /**
      * Name of the tester producing this report (Organization or individual).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $tester = null;
+    private $tester = null;
 
     /**
      * FHIRTestReport Constructor
@@ -166,43 +166,150 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    $value = new FHIRIdentifier($value);
+                } 
+                if (!($value instanceof FHIRIdentifier)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTestReport::__construct - Property \"identifier\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($value));
+                }
+                $this->setIdentifier($value);
             }
             if (isset($data['issued'])) {
-                $this->setIssued($data['issued']);
+                $value = $data['issued'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTestReport::__construct - Property \"issued\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value));
+                }
+                $this->setIssued($value);
             }
             if (isset($data['name'])) {
-                $this->setName($data['name']);
+                $value = $data['name'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTestReport::__construct - Property \"name\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setName($value);
             }
             if (isset($data['participant'])) {
-                $this->setParticipant($data['participant']);
+                $value = $data['participant'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRTestReportParticipant($v);
+                        } 
+                        if (!($v instanceof FHIRTestReportParticipant)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTestReport::__construct - Collection field \"participant\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportParticipant or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addParticipant($v);
+                    }
+                }
             }
             if (isset($data['result'])) {
-                $this->setResult($data['result']);
+                $value = $data['result'];
+                if (is_array($value)) {
+                    $value = new FHIRTestReportResult($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRTestReportResult($value);
+                }
+                if (!($value instanceof FHIRTestReportResult)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTestReport::__construct - Property \"result\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRTestReportResult or data to construct type, saw ".gettype($value));
+                }
+                $this->setResult($value);
             }
             if (isset($data['score'])) {
-                $this->setScore($data['score']);
+                $value = $data['score'];
+                if (is_array($value)) {
+                    $value = new FHIRDecimal($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDecimal($value);
+                }
+                if (!($value instanceof FHIRDecimal)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTestReport::__construct - Property \"score\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDecimal or data to construct type, saw ".gettype($value));
+                }
+                $this->setScore($value);
             }
             if (isset($data['setup'])) {
-                $this->setSetup($data['setup']);
+                $value = $data['setup'];
+                if (is_array($value)) {
+                    $value = new FHIRTestReportSetup($value);
+                } 
+                if (!($value instanceof FHIRTestReportSetup)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTestReport::__construct - Property \"setup\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportSetup or data to construct type, saw ".gettype($value));
+                }
+                $this->setSetup($value);
             }
             if (isset($data['status'])) {
-                $this->setStatus($data['status']);
+                $value = $data['status'];
+                if (is_array($value)) {
+                    $value = new FHIRTestReportStatus($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRTestReportStatus($value);
+                }
+                if (!($value instanceof FHIRTestReportStatus)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTestReport::__construct - Property \"status\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRTestReportStatus or data to construct type, saw ".gettype($value));
+                }
+                $this->setStatus($value);
             }
             if (isset($data['teardown'])) {
-                $this->setTeardown($data['teardown']);
+                $value = $data['teardown'];
+                if (is_array($value)) {
+                    $value = new FHIRTestReportTeardown($value);
+                } 
+                if (!($value instanceof FHIRTestReportTeardown)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTestReport::__construct - Property \"teardown\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportTeardown or data to construct type, saw ".gettype($value));
+                }
+                $this->setTeardown($value);
             }
             if (isset($data['test'])) {
-                $this->setTest($data['test']);
+                $value = $data['test'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRTestReportTest($v);
+                        } 
+                        if (!($v instanceof FHIRTestReportTest)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTestReport::__construct - Collection field \"test\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportTest or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addTest($v);
+                    }
+                }
             }
             if (isset($data['testScript'])) {
-                $this->setTestScript($data['testScript']);
+                $value = $data['testScript'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTestReport::__construct - Property \"testScript\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setTestScript($value);
             }
             if (isset($data['tester'])) {
-                $this->setTester($data['tester']);
+                $value = $data['tester'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTestReport::__construct - Property \"tester\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setTester($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -211,6 +318,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -235,7 +343,6 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
     {
         return $this->identifier;
     }
-
 
     /**
      * When the TestScript was executed and this TestReport was generated.
@@ -269,7 +376,6 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
         return $this->issued;
     }
 
-
     /**
      * A free text natural language name identifying the executed TestScript.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -302,30 +408,28 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
         return $this->name;
     }
 
-
     /**
      * A participant in the test execution, either the execution engine, a client, or a server.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportParticipant
      * @return $this
      */
-    public function setParticipant(FHIRTestReportParticipant $participant = null)
+    public function addParticipant(FHIRTestReportParticipant $participant = null)
     {
         if (null === $participant) {
             return $this; 
         }
-        $this->participant = $participant;
+        $this->participant[] = $participant;
         return $this;
     }
 
     /**
      * A participant in the test execution, either the execution engine, a client, or a server.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportParticipant
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportParticipant[]
      */
     public function getParticipant()
     {
         return $this->participant;
     }
-
 
     /**
      * The overall result from the execution of the TestScript.
@@ -359,7 +463,6 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
         return $this->result;
     }
 
-
     /**
      * The final score (percentage of tests passed) resulting from the execution of the TestScript.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDecimal
@@ -392,7 +495,6 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
         return $this->score;
     }
 
-
     /**
      * The results of the series of required setup operations before the tests were executed.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportSetup
@@ -415,7 +517,6 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
     {
         return $this->setup;
     }
-
 
     /**
      * The current state of this test report.
@@ -449,9 +550,8 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
         return $this->status;
     }
 
-
     /**
-     * The results of the series of operations required to clean up after all the tests were executed (successfully or otherwise).
+     * The results of the series of operations required to clean up after the all the tests were executed (successfully or otherwise).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportTeardown
      * @return $this
      */
@@ -465,7 +565,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The results of the series of operations required to clean up after all the tests were executed (successfully or otherwise).
+     * The results of the series of operations required to clean up after the all the tests were executed (successfully or otherwise).
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportTeardown
      */
     public function getTeardown()
@@ -473,30 +573,28 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
         return $this->teardown;
     }
 
-
     /**
      * A test executed from the test script.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportTest
      * @return $this
      */
-    public function setTest(FHIRTestReportTest $test = null)
+    public function addTest(FHIRTestReportTest $test = null)
     {
         if (null === $test) {
             return $this; 
         }
-        $this->test = $test;
+        $this->test[] = $test;
         return $this;
     }
 
     /**
      * A test executed from the test script.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportTest
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportTest[]
      */
     public function getTest()
     {
         return $this->test;
     }
-
 
     /**
      * Ideally this is an absolute URL that is used to identify the version-specific TestScript that was executed, matching the `TestScript.url`.
@@ -520,7 +618,6 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
     {
         return $this->testScript;
     }
-
 
     /**
      * Name of the tester producing this report (Organization or individual).
@@ -554,7 +651,6 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
         return $this->tester;
     }
 
-
     /**
      * @return string
      */
@@ -579,8 +675,16 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getName())) {
             $a['name'] = $v;
         }
-        if (null !== ($v = $this->getParticipant())) {
-            $a['participant'] = $v;
+        if (0 < count($values = $this->getParticipant())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['participant'] = $vs;
+            }
         }
         if (null !== ($v = $this->getResult())) {
             $a['result'] = $v;
@@ -597,8 +701,16 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getTeardown())) {
             $a['teardown'] = $v;
         }
-        if (null !== ($v = $this->getTest())) {
-            $a['test'] = $v;
+        if (0 < count($values = $this->getTest())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['test'] = $vs;
+            }
         }
         if (null !== ($v = $this->getTestScript())) {
             $a['testScript'] = $v;
@@ -619,9 +731,50 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<TestReport xmlns="http://hl7.org/fhir"></TestReport>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getIdentifier())) {
+            $v->xmlSerialize(true, $sxe->addChild('identifier'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getIssued())) {
+            $v->xmlSerialize(true, $sxe->addChild('issued'));
+        }
+        if (null !== ($v = $this->getName())) {
+            $v->xmlSerialize(true, $sxe->addChild('name'));
+        }
+        if (0 < count($values = $this->getParticipant())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('participant'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getResult())) {
+            $v->xmlSerialize(true, $sxe->addChild('result'));
+        }
+        if (null !== ($v = $this->getScore())) {
+            $v->xmlSerialize(true, $sxe->addChild('score'));
+        }
+        if (null !== ($v = $this->getSetup())) {
+            $v->xmlSerialize(true, $sxe->addChild('setup'));
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('status'));
+        }
+        if (null !== ($v = $this->getTeardown())) {
+            $v->xmlSerialize(true, $sxe->addChild('teardown'));
+        }
+        if (0 < count($values = $this->getTest())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('test'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getTestScript())) {
+            $v->xmlSerialize(true, $sxe->addChild('testScript'));
+        }
+        if (null !== ($v = $this->getTester())) {
+            $v->xmlSerialize(true, $sxe->addChild('tester'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefiniti
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefiniti
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -64,7 +64,8 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefiniti
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 use PHPFHIRGenerated\FHIRElement\FHIRBindingStrength;
-use PHPFHIRGenerated\FHIRElement\FHIRCanonical;
+use PHPFHIRGenerated\FHIRElement\FHIRReference;
+use PHPFHIRGenerated\FHIRElement\FHIRUri;
 
 /**
  * A formal computable definition of an operation (on the RESTful interface) or a named query (using the search interaction).
@@ -81,13 +82,19 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement implements \Jso
      * Indicates the degree of conformance expectations associated with this binding - that is, the degree to which the provided value set must be adhered to in the instances.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBindingStrength
      */
-    public $strength = null;
+    private $strength = null;
 
     /**
-     * Points to the value set or external definition (e.g. implicit value set) that identifies the set of codes to be used.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * Points to the value set or external definition (e.g. implicit value set) that identifies the set of codes to be used. (choose any one of valueSet*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $valueSet = null;
+    private $valueSetReference = null;
+
+    /**
+     * Points to the value set or external definition (e.g. implicit value set) that identifies the set of codes to be used. (choose any one of valueSet*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
+     */
+    private $valueSetUri = null;
 
     /**
      * FHIROperationDefinitionBinding Constructor
@@ -96,13 +103,40 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement implements \Jso
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['strength'])) {
-                $this->setStrength($data['strength']);
+                $value = $data['strength'];
+                if (is_array($value)) {
+                    $value = new FHIRBindingStrength($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBindingStrength($value);
+                }
+                if (!($value instanceof FHIRBindingStrength)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionBinding::__construct - Property \"strength\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBindingStrength or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setStrength($value);
             }
-            if (isset($data['valueSet'])) {
-                $this->setValueSet($data['valueSet']);
+            if (isset($data['valueSetReference'])) {
+                $value = $data['valueSetReference'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionBinding::__construct - Property \"valueSetReference\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setValueSetReference($value);
+            }
+            if (isset($data['valueSetUri'])) {
+                $value = $data['valueSetUri'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionBinding::__construct - Property \"valueSetUri\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setValueSetUri($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -111,6 +145,7 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement implements \Jso
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -145,39 +180,60 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement implements \Jso
         return $this->strength;
     }
 
-
     /**
-     * Points to the value set or external definition (e.g. implicit value set) that identifies the set of codes to be used.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * Points to the value set or external definition (e.g. implicit value set) that identifies the set of codes to be used. (choose any one of valueSet*, but only one)
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setValueSet($valueSet)
+    public function setValueSetReference(FHIRReference $valueSetReference = null)
     {
-        if (null === $valueSet) {
+        if (null === $valueSetReference) {
             return $this; 
         }
-        if (is_scalar($valueSet)) {
-            $valueSet = new FHIRCanonical($valueSet);
-        }
-        if (!($valueSet instanceof FHIRCanonical)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIROperationDefinitionBinding::setValueSet - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCanonical or appropriate scalar value, %s seen.',
-                gettype($valueSet)
-            ));
-        }
-        $this->valueSet = $valueSet;
+        $this->valueSetReference = $valueSetReference;
         return $this;
     }
 
     /**
-     * Points to the value set or external definition (e.g. implicit value set) that identifies the set of codes to be used.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * Points to the value set or external definition (e.g. implicit value set) that identifies the set of codes to be used. (choose any one of valueSet*, but only one)
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getValueSet()
+    public function getValueSetReference()
     {
-        return $this->valueSet;
+        return $this->valueSetReference;
     }
 
+    /**
+     * Points to the value set or external definition (e.g. implicit value set) that identifies the set of codes to be used. (choose any one of valueSet*, but only one)
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
+     * @return $this
+     */
+    public function setValueSetUri($valueSetUri)
+    {
+        if (null === $valueSetUri) {
+            return $this; 
+        }
+        if (is_scalar($valueSetUri)) {
+            $valueSetUri = new FHIRUri($valueSetUri);
+        }
+        if (!($valueSetUri instanceof FHIRUri)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIROperationDefinitionBinding::setValueSetUri - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or appropriate scalar value, %s seen.',
+                gettype($valueSetUri)
+            ));
+        }
+        $this->valueSetUri = $valueSetUri;
+        return $this;
+    }
+
+    /**
+     * Points to the value set or external definition (e.g. implicit value set) that identifies the set of codes to be used. (choose any one of valueSet*, but only one)
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
+     */
+    public function getValueSetUri()
+    {
+        return $this->valueSetUri;
+    }
 
     /**
      * @return string
@@ -196,8 +252,11 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement implements \Jso
         if (null !== ($v = $this->getStrength())) {
             $a['strength'] = $v;
         }
-        if (null !== ($v = $this->getValueSet())) {
-            $a['valueSet'] = $v;
+        if (null !== ($v = $this->getValueSetReference())) {
+            $a['valueSetReference'] = $v;
+        }
+        if (null !== ($v = $this->getValueSetUri())) {
+            $a['valueSetUri'] = $v;
         }
         return $a;
     }
@@ -212,9 +271,15 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement implements \Jso
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<OperationDefinitionBinding xmlns="http://hl7.org/fhir"></OperationDefinitionBinding>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getStrength())) {
+            $v->xmlSerialize(true, $sxe->addChild('strength'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getValueSetReference())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueSetReference'));
+        }
+        if (null !== ($v = $this->getValueSetUri())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueSetUri'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

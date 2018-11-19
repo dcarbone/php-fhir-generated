@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -86,99 +86,99 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The identified conditions and other health record elements that are intended to be addressed by the goal.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $addresses = null;
+    private $addresses = [];
 
     /**
      * Indicates a category the goal falls within.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $category = null;
+    private $category = [];
 
     /**
      * Human-readable and/or coded description of a specific desired objective of care, such as "control blood pressure" or "negotiate an obstacle course" or "dance with child at wedding".
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $description = null;
+    private $description = null;
 
     /**
      * Indicates whose goal this is - patient goal, practitioner goal, etc.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $expressedBy = null;
+    private $expressedBy = null;
 
     /**
-     * Business identifiers assigned to this goal by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * This records identifiers associated with this care plan that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = null;
+    private $identifier = [];
 
     /**
      * Any comments related to the goal.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
-    public $note = null;
+    private $note = [];
 
     /**
      * Identifies the change (or lack of change) at the point when the status of the goal is assessed.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $outcomeCode = null;
+    private $outcomeCode = [];
 
     /**
      * Details of what's changed (or not changed).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $outcomeReference = null;
+    private $outcomeReference = [];
 
     /**
      * Identifies the mutually agreed level of importance associated with reaching/sustaining the goal.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $priority = null;
+    private $priority = null;
 
     /**
-     * The date or event after which the goal should begin being pursued.
+     * The date or event after which the goal should begin being pursued. (choose any one of start*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $startCodeableConcept = null;
+    private $startCodeableConcept = null;
 
     /**
-     * The date or event after which the goal should begin being pursued.
+     * The date or event after which the goal should begin being pursued. (choose any one of start*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
-    public $startDate = null;
+    private $startDate = null;
 
     /**
      * Indicates whether the goal has been reached and is still considered relevant.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRGoalStatus
      */
-    public $status = null;
+    private $status = null;
 
     /**
      * Identifies when the current status.  I.e. When initially created, when achieved, when cancelled, etc.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
-    public $statusDate = null;
+    private $statusDate = null;
 
     /**
      * Captures the reason for the current status.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $statusReason = null;
+    private $statusReason = null;
 
     /**
      * Identifies the patient, group or organization for whom the goal is being established.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $subject = null;
+    private $subject = null;
 
     /**
      * Indicates what should be done by when.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGoal\FHIRGoalTarget
      */
-    public $target = null;
+    private $target = null;
 
     /**
      * FHIRGoal Constructor
@@ -187,55 +187,210 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['addresses'])) {
-                $this->setAddresses($data['addresses']);
+                $value = $data['addresses'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRGoal::__construct - Collection field \"addresses\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addAddresses($v);
+                    }
+                }
             }
             if (isset($data['category'])) {
-                $this->setCategory($data['category']);
+                $value = $data['category'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRGoal::__construct - Collection field \"category\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addCategory($v);
+                    }
+                }
             }
             if (isset($data['description'])) {
-                $this->setDescription($data['description']);
+                $value = $data['description'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRGoal::__construct - Property \"description\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDescription($value);
             }
             if (isset($data['expressedBy'])) {
-                $this->setExpressedBy($data['expressedBy']);
+                $value = $data['expressedBy'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRGoal::__construct - Property \"expressedBy\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setExpressedBy($value);
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRIdentifier($v);
+                        } 
+                        if (!($v instanceof FHIRIdentifier)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRGoal::__construct - Collection field \"identifier\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addIdentifier($v);
+                    }
+                }
             }
             if (isset($data['note'])) {
-                $this->setNote($data['note']);
+                $value = $data['note'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRAnnotation($v);
+                        } 
+                        if (!($v instanceof FHIRAnnotation)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRGoal::__construct - Collection field \"note\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAnnotation or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addNote($v);
+                    }
+                }
             }
             if (isset($data['outcomeCode'])) {
-                $this->setOutcomeCode($data['outcomeCode']);
+                $value = $data['outcomeCode'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRGoal::__construct - Collection field \"outcomeCode\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addOutcomeCode($v);
+                    }
+                }
             }
             if (isset($data['outcomeReference'])) {
-                $this->setOutcomeReference($data['outcomeReference']);
+                $value = $data['outcomeReference'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRGoal::__construct - Collection field \"outcomeReference\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addOutcomeReference($v);
+                    }
+                }
             }
             if (isset($data['priority'])) {
-                $this->setPriority($data['priority']);
+                $value = $data['priority'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRGoal::__construct - Property \"priority\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setPriority($value);
             }
             if (isset($data['startCodeableConcept'])) {
-                $this->setStartCodeableConcept($data['startCodeableConcept']);
+                $value = $data['startCodeableConcept'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRGoal::__construct - Property \"startCodeableConcept\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setStartCodeableConcept($value);
             }
             if (isset($data['startDate'])) {
-                $this->setStartDate($data['startDate']);
+                $value = $data['startDate'];
+                if (is_array($value)) {
+                    $value = new FHIRDate($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDate($value);
+                }
+                if (!($value instanceof FHIRDate)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRGoal::__construct - Property \"startDate\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDate or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setStartDate($value);
             }
             if (isset($data['status'])) {
-                $this->setStatus($data['status']);
+                $value = $data['status'];
+                if (is_array($value)) {
+                    $value = new FHIRGoalStatus($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRGoalStatus($value);
+                }
+                if (!($value instanceof FHIRGoalStatus)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRGoal::__construct - Property \"status\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRGoalStatus or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setStatus($value);
             }
             if (isset($data['statusDate'])) {
-                $this->setStatusDate($data['statusDate']);
+                $value = $data['statusDate'];
+                if (is_array($value)) {
+                    $value = new FHIRDate($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDate($value);
+                }
+                if (!($value instanceof FHIRDate)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRGoal::__construct - Property \"statusDate\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDate or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setStatusDate($value);
             }
             if (isset($data['statusReason'])) {
-                $this->setStatusReason($data['statusReason']);
+                $value = $data['statusReason'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRGoal::__construct - Property \"statusReason\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setStatusReason($value);
             }
             if (isset($data['subject'])) {
-                $this->setSubject($data['subject']);
+                $value = $data['subject'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRGoal::__construct - Property \"subject\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setSubject($value);
             }
             if (isset($data['target'])) {
-                $this->setTarget($data['target']);
+                $value = $data['target'];
+                if (is_array($value)) {
+                    $value = new FHIRGoalTarget($value);
+                } 
+                if (!($value instanceof FHIRGoalTarget)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRGoal::__construct - Property \"target\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGoal\FHIRGoalTarget or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setTarget($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -244,6 +399,7 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -251,48 +407,46 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setAddresses(FHIRReference $addresses = null)
+    public function addAddresses(FHIRReference $addresses = null)
     {
         if (null === $addresses) {
             return $this; 
         }
-        $this->addresses = $addresses;
+        $this->addresses[] = $addresses;
         return $this;
     }
 
     /**
      * The identified conditions and other health record elements that are intended to be addressed by the goal.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getAddresses()
     {
         return $this->addresses;
     }
 
-
     /**
      * Indicates a category the goal falls within.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setCategory(FHIRCodeableConcept $category = null)
+    public function addCategory(FHIRCodeableConcept $category = null)
     {
         if (null === $category) {
             return $this; 
         }
-        $this->category = $category;
+        $this->category[] = $category;
         return $this;
     }
 
     /**
      * Indicates a category the goal falls within.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getCategory()
     {
         return $this->category;
     }
-
 
     /**
      * Human-readable and/or coded description of a specific desired objective of care, such as "control blood pressure" or "negotiate an obstacle course" or "dance with child at wedding".
@@ -317,7 +471,6 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
         return $this->description;
     }
 
-
     /**
      * Indicates whose goal this is - patient goal, practitioner goal, etc.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -341,102 +494,97 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
         return $this->expressedBy;
     }
 
-
     /**
-     * Business identifiers assigned to this goal by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
+     * This records identifiers associated with this care plan that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
-    public function setIdentifier(FHIRIdentifier $identifier = null)
+    public function addIdentifier(FHIRIdentifier $identifier = null)
     {
         if (null === $identifier) {
             return $this; 
         }
-        $this->identifier = $identifier;
+        $this->identifier[] = $identifier;
         return $this;
     }
 
     /**
-     * Business identifiers assigned to this goal by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * This records identifiers associated with this care plan that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
         return $this->identifier;
     }
 
-
     /**
      * Any comments related to the goal.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation
      * @return $this
      */
-    public function setNote(FHIRAnnotation $note = null)
+    public function addNote(FHIRAnnotation $note = null)
     {
         if (null === $note) {
             return $this; 
         }
-        $this->note = $note;
+        $this->note[] = $note;
         return $this;
     }
 
     /**
      * Any comments related to the goal.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
         return $this->note;
     }
 
-
     /**
      * Identifies the change (or lack of change) at the point when the status of the goal is assessed.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setOutcomeCode(FHIRCodeableConcept $outcomeCode = null)
+    public function addOutcomeCode(FHIRCodeableConcept $outcomeCode = null)
     {
         if (null === $outcomeCode) {
             return $this; 
         }
-        $this->outcomeCode = $outcomeCode;
+        $this->outcomeCode[] = $outcomeCode;
         return $this;
     }
 
     /**
      * Identifies the change (or lack of change) at the point when the status of the goal is assessed.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getOutcomeCode()
     {
         return $this->outcomeCode;
     }
 
-
     /**
      * Details of what's changed (or not changed).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setOutcomeReference(FHIRReference $outcomeReference = null)
+    public function addOutcomeReference(FHIRReference $outcomeReference = null)
     {
         if (null === $outcomeReference) {
             return $this; 
         }
-        $this->outcomeReference = $outcomeReference;
+        $this->outcomeReference[] = $outcomeReference;
         return $this;
     }
 
     /**
      * Details of what's changed (or not changed).
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getOutcomeReference()
     {
         return $this->outcomeReference;
     }
-
 
     /**
      * Identifies the mutually agreed level of importance associated with reaching/sustaining the goal.
@@ -461,9 +609,8 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
         return $this->priority;
     }
 
-
     /**
-     * The date or event after which the goal should begin being pursued.
+     * The date or event after which the goal should begin being pursued. (choose any one of start*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
@@ -477,7 +624,7 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date or event after which the goal should begin being pursued.
+     * The date or event after which the goal should begin being pursued. (choose any one of start*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getStartCodeableConcept()
@@ -485,9 +632,8 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
         return $this->startCodeableConcept;
     }
 
-
     /**
-     * The date or event after which the goal should begin being pursued.
+     * The date or event after which the goal should begin being pursued. (choose any one of start*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDate
      * @return $this
      */
@@ -510,14 +656,13 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date or event after which the goal should begin being pursued.
+     * The date or event after which the goal should begin being pursued. (choose any one of start*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public function getStartDate()
     {
         return $this->startDate;
     }
-
 
     /**
      * Indicates whether the goal has been reached and is still considered relevant.
@@ -551,7 +696,6 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
         return $this->status;
     }
 
-
     /**
      * Identifies when the current status.  I.e. When initially created, when achieved, when cancelled, etc.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDate
@@ -583,7 +727,6 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
     {
         return $this->statusDate;
     }
-
 
     /**
      * Captures the reason for the current status.
@@ -617,7 +760,6 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
         return $this->statusReason;
     }
 
-
     /**
      * Identifies the patient, group or organization for whom the goal is being established.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -640,7 +782,6 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
     {
         return $this->subject;
     }
-
 
     /**
      * Indicates what should be done by when.
@@ -665,7 +806,6 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
         return $this->target;
     }
 
-
     /**
      * @return string
      */
@@ -681,11 +821,27 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
     {
         $a = parent::jsonSerialize();
         $a['resourceType'] = self::FHIR_TYPE_NAME;
-        if (null !== ($v = $this->getAddresses())) {
-            $a['addresses'] = $v;
+        if (0 < count($values = $this->getAddresses())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['addresses'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getCategory())) {
-            $a['category'] = $v;
+        if (0 < count($values = $this->getCategory())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['category'] = $vs;
+            }
         }
         if (null !== ($v = $this->getDescription())) {
             $a['description'] = $v;
@@ -693,17 +849,49 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getExpressedBy())) {
             $a['expressedBy'] = $v;
         }
-        if (null !== ($v = $this->getIdentifier())) {
-            $a['identifier'] = $v;
+        if (0 < count($values = $this->getIdentifier())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['identifier'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getNote())) {
-            $a['note'] = $v;
+        if (0 < count($values = $this->getNote())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['note'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getOutcomeCode())) {
-            $a['outcomeCode'] = $v;
+        if (0 < count($values = $this->getOutcomeCode())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['outcomeCode'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getOutcomeReference())) {
-            $a['outcomeReference'] = $v;
+        if (0 < count($values = $this->getOutcomeReference())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['outcomeReference'] = $vs;
+            }
         }
         if (null !== ($v = $this->getPriority())) {
             $a['priority'] = $v;
@@ -742,9 +930,78 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Goal xmlns="http://hl7.org/fhir"></Goal>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (0 < count($values = $this->getAddresses())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('addresses'));
+                }
+            }
         }
-        return $sxe->saveXML();
+        if (0 < count($values = $this->getCategory())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('category'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getDescription())) {
+            $v->xmlSerialize(true, $sxe->addChild('description'));
+        }
+        if (null !== ($v = $this->getExpressedBy())) {
+            $v->xmlSerialize(true, $sxe->addChild('expressedBy'));
+        }
+        if (0 < count($values = $this->getIdentifier())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('identifier'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getNote())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('note'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getOutcomeCode())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('outcomeCode'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getOutcomeReference())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('outcomeReference'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getPriority())) {
+            $v->xmlSerialize(true, $sxe->addChild('priority'));
+        }
+        if (null !== ($v = $this->getStartCodeableConcept())) {
+            $v->xmlSerialize(true, $sxe->addChild('startCodeableConcept'));
+        }
+        if (null !== ($v = $this->getStartDate())) {
+            $v->xmlSerialize(true, $sxe->addChild('startDate'));
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('status'));
+        }
+        if (null !== ($v = $this->getStatusDate())) {
+            $v->xmlSerialize(true, $sxe->addChild('statusDate'));
+        }
+        if (null !== ($v = $this->getStatusReason())) {
+            $v->xmlSerialize(true, $sxe->addChild('statusReason'));
+        }
+        if (null !== ($v = $this->getSubject())) {
+            $v->xmlSerialize(true, $sxe->addChild('subject'));
+        }
+        if (null !== ($v = $this->getTarget())) {
+            $v->xmlSerialize(true, $sxe->addChild('target'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -62,16 +62,16 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * 
  */
 
-use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSupplyRequest\FHIRSupplyRequestParameter;
-use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTiming;
+use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSupplyRequest\FHIRSupplyRequestOrderedItem;
+use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSupplyRequest\FHIRSupplyRequestRequester;
 use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
 use PHPFHIRGenerated\FHIRElement\FHIRDateTime;
 use PHPFHIRGenerated\FHIRElement\FHIRIdentifier;
 use PHPFHIRGenerated\FHIRElement\FHIRPeriod;
-use PHPFHIRGenerated\FHIRElement\FHIRQuantity;
 use PHPFHIRGenerated\FHIRElement\FHIRReference;
 use PHPFHIRGenerated\FHIRElement\FHIRRequestPriority;
 use PHPFHIRGenerated\FHIRElement\FHIRSupplyRequestStatus;
+use PHPFHIRGenerated\FHIRElement\FHIRTiming;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
 /**
@@ -90,109 +90,91 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
      * When the request was made.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $authoredOn = null;
+    private $authoredOn = null;
 
     /**
      * Category of supply, e.g.  central, non-stock, etc. This is used to support work flows associated with the supply process.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $category = null;
+    private $category = null;
 
     /**
      * Where the supply is expected to come from.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $deliverFrom = null;
+    private $deliverFrom = null;
 
     /**
      * Where the supply is destined to go.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $deliverTo = null;
+    private $deliverTo = null;
 
     /**
      * Unique identifier for this supply request.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public $identifier = null;
+    private $identifier = null;
 
     /**
-     * The item that is requested to be supplied. This is either a link to a resource representing the details of the item or a code that identifies the item from a known list.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public $itemCodeableConcept = null;
-
-    /**
-     * The item that is requested to be supplied. This is either a link to a resource representing the details of the item or a code that identifies the item from a known list.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $itemReference = null;
-
-    /**
-     * When the request should be fulfilled.
+     * When the request should be fulfilled. (choose any one of occurrence*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $occurrenceDateTime = null;
+    private $occurrenceDateTime = null;
 
     /**
-     * When the request should be fulfilled.
+     * When the request should be fulfilled. (choose any one of occurrence*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public $occurrencePeriod = null;
+    private $occurrencePeriod = null;
 
     /**
-     * When the request should be fulfilled.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTiming
+     * When the request should be fulfilled. (choose any one of occurrence*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
-    public $occurrenceTiming = null;
+    private $occurrenceTiming = null;
 
     /**
-     * Specific parameters for the ordered item.  For example, the size of the indicated item.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSupplyRequest\FHIRSupplyRequestParameter
+     * The item being requested.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSupplyRequest\FHIRSupplyRequestOrderedItem
      */
-    public $parameter = null;
+    private $orderedItem = null;
 
     /**
      * Indicates how quickly this SupplyRequest should be addressed with respect to other requests.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRequestPriority
      */
-    public $priority = null;
+    private $priority = null;
 
     /**
-     * The amount that is being ordered of the indicated item.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
-     */
-    public $quantity = null;
-
-    /**
-     * The reason why the supply item was requested.
+     * Why the supply item was requested. (choose any one of reason*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $reasonCode = null;
+    private $reasonCodeableConcept = null;
 
     /**
-     * The reason why the supply item was requested.
+     * Why the supply item was requested. (choose any one of reason*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $reasonReference = null;
+    private $reasonReference = null;
 
     /**
-     * The device, practitioner, etc. who initiated the request.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * The individual who initiated the request and has responsibility for its activation.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSupplyRequest\FHIRSupplyRequestRequester
      */
-    public $requester = null;
+    private $requester = null;
 
     /**
      * Status of the supply request.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRSupplyRequestStatus
      */
-    public $status = null;
+    private $status = null;
 
     /**
      * Who is intended to fulfill the request.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $supplier = null;
+    private $supplier = [];
 
     /**
      * FHIRSupplyRequest Constructor
@@ -201,61 +183,170 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['authoredOn'])) {
-                $this->setAuthoredOn($data['authoredOn']);
+                $value = $data['authoredOn'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSupplyRequest::__construct - Property \"authoredOn\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value));
+                }
+                $this->setAuthoredOn($value);
             }
             if (isset($data['category'])) {
-                $this->setCategory($data['category']);
+                $value = $data['category'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSupplyRequest::__construct - Property \"category\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setCategory($value);
             }
             if (isset($data['deliverFrom'])) {
-                $this->setDeliverFrom($data['deliverFrom']);
+                $value = $data['deliverFrom'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSupplyRequest::__construct - Property \"deliverFrom\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setDeliverFrom($value);
             }
             if (isset($data['deliverTo'])) {
-                $this->setDeliverTo($data['deliverTo']);
+                $value = $data['deliverTo'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSupplyRequest::__construct - Property \"deliverTo\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setDeliverTo($value);
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
-            }
-            if (isset($data['itemCodeableConcept'])) {
-                $this->setItemCodeableConcept($data['itemCodeableConcept']);
-            }
-            if (isset($data['itemReference'])) {
-                $this->setItemReference($data['itemReference']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    $value = new FHIRIdentifier($value);
+                } 
+                if (!($value instanceof FHIRIdentifier)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSupplyRequest::__construct - Property \"identifier\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($value));
+                }
+                $this->setIdentifier($value);
             }
             if (isset($data['occurrenceDateTime'])) {
-                $this->setOccurrenceDateTime($data['occurrenceDateTime']);
+                $value = $data['occurrenceDateTime'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSupplyRequest::__construct - Property \"occurrenceDateTime\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value));
+                }
+                $this->setOccurrenceDateTime($value);
             }
             if (isset($data['occurrencePeriod'])) {
-                $this->setOccurrencePeriod($data['occurrencePeriod']);
+                $value = $data['occurrencePeriod'];
+                if (is_array($value)) {
+                    $value = new FHIRPeriod($value);
+                } 
+                if (!($value instanceof FHIRPeriod)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSupplyRequest::__construct - Property \"occurrencePeriod\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPeriod or data to construct type, saw ".gettype($value));
+                }
+                $this->setOccurrencePeriod($value);
             }
             if (isset($data['occurrenceTiming'])) {
-                $this->setOccurrenceTiming($data['occurrenceTiming']);
+                $value = $data['occurrenceTiming'];
+                if (is_array($value)) {
+                    $value = new FHIRTiming($value);
+                } 
+                if (!($value instanceof FHIRTiming)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSupplyRequest::__construct - Property \"occurrenceTiming\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRTiming or data to construct type, saw ".gettype($value));
+                }
+                $this->setOccurrenceTiming($value);
             }
-            if (isset($data['parameter'])) {
-                $this->setParameter($data['parameter']);
+            if (isset($data['orderedItem'])) {
+                $value = $data['orderedItem'];
+                if (is_array($value)) {
+                    $value = new FHIRSupplyRequestOrderedItem($value);
+                } 
+                if (!($value instanceof FHIRSupplyRequestOrderedItem)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSupplyRequest::__construct - Property \"orderedItem\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSupplyRequest\FHIRSupplyRequestOrderedItem or data to construct type, saw ".gettype($value));
+                }
+                $this->setOrderedItem($value);
             }
             if (isset($data['priority'])) {
-                $this->setPriority($data['priority']);
+                $value = $data['priority'];
+                if (is_array($value)) {
+                    $value = new FHIRRequestPriority($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRRequestPriority($value);
+                }
+                if (!($value instanceof FHIRRequestPriority)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSupplyRequest::__construct - Property \"priority\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRRequestPriority or data to construct type, saw ".gettype($value));
+                }
+                $this->setPriority($value);
             }
-            if (isset($data['quantity'])) {
-                $this->setQuantity($data['quantity']);
-            }
-            if (isset($data['reasonCode'])) {
-                $this->setReasonCode($data['reasonCode']);
+            if (isset($data['reasonCodeableConcept'])) {
+                $value = $data['reasonCodeableConcept'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSupplyRequest::__construct - Property \"reasonCodeableConcept\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setReasonCodeableConcept($value);
             }
             if (isset($data['reasonReference'])) {
-                $this->setReasonReference($data['reasonReference']);
+                $value = $data['reasonReference'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSupplyRequest::__construct - Property \"reasonReference\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setReasonReference($value);
             }
             if (isset($data['requester'])) {
-                $this->setRequester($data['requester']);
+                $value = $data['requester'];
+                if (is_array($value)) {
+                    $value = new FHIRSupplyRequestRequester($value);
+                } 
+                if (!($value instanceof FHIRSupplyRequestRequester)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSupplyRequest::__construct - Property \"requester\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSupplyRequest\FHIRSupplyRequestRequester or data to construct type, saw ".gettype($value));
+                }
+                $this->setRequester($value);
             }
             if (isset($data['status'])) {
-                $this->setStatus($data['status']);
+                $value = $data['status'];
+                if (is_array($value)) {
+                    $value = new FHIRSupplyRequestStatus($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRSupplyRequestStatus($value);
+                }
+                if (!($value instanceof FHIRSupplyRequestStatus)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSupplyRequest::__construct - Property \"status\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRSupplyRequestStatus or data to construct type, saw ".gettype($value));
+                }
+                $this->setStatus($value);
             }
             if (isset($data['supplier'])) {
-                $this->setSupplier($data['supplier']);
+                $value = $data['supplier'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSupplyRequest::__construct - Collection field \"supplier\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addSupplier($v);
+                    }
+                }
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -264,6 +355,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -298,7 +390,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
         return $this->authoredOn;
     }
 
-
     /**
      * Category of supply, e.g.  central, non-stock, etc. This is used to support work flows associated with the supply process.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
@@ -321,7 +412,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
     {
         return $this->category;
     }
-
 
     /**
      * Where the supply is expected to come from.
@@ -346,7 +436,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
         return $this->deliverFrom;
     }
 
-
     /**
      * Where the supply is destined to go.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -369,7 +458,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
     {
         return $this->deliverTo;
     }
-
 
     /**
      * Unique identifier for this supply request.
@@ -394,57 +482,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
         return $this->identifier;
     }
 
-
     /**
-     * The item that is requested to be supplied. This is either a link to a resource representing the details of the item or a code that identifies the item from a known list.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     * @return $this
-     */
-    public function setItemCodeableConcept(FHIRCodeableConcept $itemCodeableConcept = null)
-    {
-        if (null === $itemCodeableConcept) {
-            return $this; 
-        }
-        $this->itemCodeableConcept = $itemCodeableConcept;
-        return $this;
-    }
-
-    /**
-     * The item that is requested to be supplied. This is either a link to a resource representing the details of the item or a code that identifies the item from a known list.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public function getItemCodeableConcept()
-    {
-        return $this->itemCodeableConcept;
-    }
-
-
-    /**
-     * The item that is requested to be supplied. This is either a link to a resource representing the details of the item or a code that identifies the item from a known list.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     * @return $this
-     */
-    public function setItemReference(FHIRReference $itemReference = null)
-    {
-        if (null === $itemReference) {
-            return $this; 
-        }
-        $this->itemReference = $itemReference;
-        return $this;
-    }
-
-    /**
-     * The item that is requested to be supplied. This is either a link to a resource representing the details of the item or a code that identifies the item from a known list.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getItemReference()
-    {
-        return $this->itemReference;
-    }
-
-
-    /**
-     * When the request should be fulfilled.
+     * When the request should be fulfilled. (choose any one of occurrence*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      * @return $this
      */
@@ -467,7 +506,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * When the request should be fulfilled.
+     * When the request should be fulfilled. (choose any one of occurrence*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getOccurrenceDateTime()
@@ -475,9 +514,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
         return $this->occurrenceDateTime;
     }
 
-
     /**
-     * When the request should be fulfilled.
+     * When the request should be fulfilled. (choose any one of occurrence*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
      * @return $this
      */
@@ -491,7 +529,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * When the request should be fulfilled.
+     * When the request should be fulfilled. (choose any one of occurrence*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getOccurrencePeriod()
@@ -499,10 +537,9 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
         return $this->occurrencePeriod;
     }
 
-
     /**
-     * When the request should be fulfilled.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTiming
+     * When the request should be fulfilled. (choose any one of occurrence*, but only one)
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRTiming
      * @return $this
      */
     public function setOccurrenceTiming(FHIRTiming $occurrenceTiming = null)
@@ -515,38 +552,36 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * When the request should be fulfilled.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTiming
+     * When the request should be fulfilled. (choose any one of occurrence*, but only one)
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public function getOccurrenceTiming()
     {
         return $this->occurrenceTiming;
     }
 
-
     /**
-     * Specific parameters for the ordered item.  For example, the size of the indicated item.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSupplyRequest\FHIRSupplyRequestParameter
+     * The item being requested.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSupplyRequest\FHIRSupplyRequestOrderedItem
      * @return $this
      */
-    public function setParameter(FHIRSupplyRequestParameter $parameter = null)
+    public function setOrderedItem(FHIRSupplyRequestOrderedItem $orderedItem = null)
     {
-        if (null === $parameter) {
+        if (null === $orderedItem) {
             return $this; 
         }
-        $this->parameter = $parameter;
+        $this->orderedItem = $orderedItem;
         return $this;
     }
 
     /**
-     * Specific parameters for the ordered item.  For example, the size of the indicated item.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSupplyRequest\FHIRSupplyRequestParameter
+     * The item being requested.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSupplyRequest\FHIRSupplyRequestOrderedItem
      */
-    public function getParameter()
+    public function getOrderedItem()
     {
-        return $this->parameter;
+        return $this->orderedItem;
     }
-
 
     /**
      * Indicates how quickly this SupplyRequest should be addressed with respect to other requests.
@@ -580,57 +615,31 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
         return $this->priority;
     }
 
-
     /**
-     * The amount that is being ordered of the indicated item.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity
-     * @return $this
-     */
-    public function setQuantity(FHIRQuantity $quantity = null)
-    {
-        if (null === $quantity) {
-            return $this; 
-        }
-        $this->quantity = $quantity;
-        return $this;
-    }
-
-    /**
-     * The amount that is being ordered of the indicated item.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity
-     */
-    public function getQuantity()
-    {
-        return $this->quantity;
-    }
-
-
-    /**
-     * The reason why the supply item was requested.
+     * Why the supply item was requested. (choose any one of reason*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setReasonCode(FHIRCodeableConcept $reasonCode = null)
+    public function setReasonCodeableConcept(FHIRCodeableConcept $reasonCodeableConcept = null)
     {
-        if (null === $reasonCode) {
+        if (null === $reasonCodeableConcept) {
             return $this; 
         }
-        $this->reasonCode = $reasonCode;
+        $this->reasonCodeableConcept = $reasonCodeableConcept;
         return $this;
     }
 
     /**
-     * The reason why the supply item was requested.
+     * Why the supply item was requested. (choose any one of reason*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getReasonCode()
+    public function getReasonCodeableConcept()
     {
-        return $this->reasonCode;
+        return $this->reasonCodeableConcept;
     }
 
-
     /**
-     * The reason why the supply item was requested.
+     * Why the supply item was requested. (choose any one of reason*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
@@ -644,7 +653,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The reason why the supply item was requested.
+     * Why the supply item was requested. (choose any one of reason*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getReasonReference()
@@ -652,13 +661,12 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
         return $this->reasonReference;
     }
 
-
     /**
-     * The device, practitioner, etc. who initiated the request.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * The individual who initiated the request and has responsibility for its activation.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSupplyRequest\FHIRSupplyRequestRequester
      * @return $this
      */
-    public function setRequester(FHIRReference $requester = null)
+    public function setRequester(FHIRSupplyRequestRequester $requester = null)
     {
         if (null === $requester) {
             return $this; 
@@ -668,14 +676,13 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The device, practitioner, etc. who initiated the request.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * The individual who initiated the request and has responsibility for its activation.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSupplyRequest\FHIRSupplyRequestRequester
      */
     public function getRequester()
     {
         return $this->requester;
     }
-
 
     /**
      * Status of the supply request.
@@ -709,30 +716,28 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
         return $this->status;
     }
 
-
     /**
      * Who is intended to fulfill the request.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setSupplier(FHIRReference $supplier = null)
+    public function addSupplier(FHIRReference $supplier = null)
     {
         if (null === $supplier) {
             return $this; 
         }
-        $this->supplier = $supplier;
+        $this->supplier[] = $supplier;
         return $this;
     }
 
     /**
      * Who is intended to fulfill the request.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getSupplier()
     {
         return $this->supplier;
     }
-
 
     /**
      * @return string
@@ -764,12 +769,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getIdentifier())) {
             $a['identifier'] = $v;
         }
-        if (null !== ($v = $this->getItemCodeableConcept())) {
-            $a['itemCodeableConcept'] = $v;
-        }
-        if (null !== ($v = $this->getItemReference())) {
-            $a['itemReference'] = $v;
-        }
         if (null !== ($v = $this->getOccurrenceDateTime())) {
             $a['occurrenceDateTime'] = $v;
         }
@@ -779,17 +778,14 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getOccurrenceTiming())) {
             $a['occurrenceTiming'] = $v;
         }
-        if (null !== ($v = $this->getParameter())) {
-            $a['parameter'] = $v;
+        if (null !== ($v = $this->getOrderedItem())) {
+            $a['orderedItem'] = $v;
         }
         if (null !== ($v = $this->getPriority())) {
             $a['priority'] = $v;
         }
-        if (null !== ($v = $this->getQuantity())) {
-            $a['quantity'] = $v;
-        }
-        if (null !== ($v = $this->getReasonCode())) {
-            $a['reasonCode'] = $v;
+        if (null !== ($v = $this->getReasonCodeableConcept())) {
+            $a['reasonCodeableConcept'] = $v;
         }
         if (null !== ($v = $this->getReasonReference())) {
             $a['reasonReference'] = $v;
@@ -800,8 +796,16 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getStatus())) {
             $a['status'] = $v;
         }
-        if (null !== ($v = $this->getSupplier())) {
-            $a['supplier'] = $v;
+        if (0 < count($values = $this->getSupplier())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['supplier'] = $vs;
+            }
         }
         return $a;
     }
@@ -816,9 +820,55 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<SupplyRequest xmlns="http://hl7.org/fhir"></SupplyRequest>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getAuthoredOn())) {
+            $v->xmlSerialize(true, $sxe->addChild('authoredOn'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getCategory())) {
+            $v->xmlSerialize(true, $sxe->addChild('category'));
+        }
+        if (null !== ($v = $this->getDeliverFrom())) {
+            $v->xmlSerialize(true, $sxe->addChild('deliverFrom'));
+        }
+        if (null !== ($v = $this->getDeliverTo())) {
+            $v->xmlSerialize(true, $sxe->addChild('deliverTo'));
+        }
+        if (null !== ($v = $this->getIdentifier())) {
+            $v->xmlSerialize(true, $sxe->addChild('identifier'));
+        }
+        if (null !== ($v = $this->getOccurrenceDateTime())) {
+            $v->xmlSerialize(true, $sxe->addChild('occurrenceDateTime'));
+        }
+        if (null !== ($v = $this->getOccurrencePeriod())) {
+            $v->xmlSerialize(true, $sxe->addChild('occurrencePeriod'));
+        }
+        if (null !== ($v = $this->getOccurrenceTiming())) {
+            $v->xmlSerialize(true, $sxe->addChild('occurrenceTiming'));
+        }
+        if (null !== ($v = $this->getOrderedItem())) {
+            $v->xmlSerialize(true, $sxe->addChild('orderedItem'));
+        }
+        if (null !== ($v = $this->getPriority())) {
+            $v->xmlSerialize(true, $sxe->addChild('priority'));
+        }
+        if (null !== ($v = $this->getReasonCodeableConcept())) {
+            $v->xmlSerialize(true, $sxe->addChild('reasonCodeableConcept'));
+        }
+        if (null !== ($v = $this->getReasonReference())) {
+            $v->xmlSerialize(true, $sxe->addChild('reasonReference'));
+        }
+        if (null !== ($v = $this->getRequester())) {
+            $v->xmlSerialize(true, $sxe->addChild('requester'));
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('status'));
+        }
+        if (0 < count($values = $this->getSupplier())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('supplier'));
+                }
+            }
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

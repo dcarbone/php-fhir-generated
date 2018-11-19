@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -64,8 +64,6 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem;
 use PHPFHIRGenerated\FHIRElement\FHIRBoolean;
-use PHPFHIRGenerated\FHIRElement\FHIRCanonical;
-use PHPFHIRGenerated\FHIRElement\FHIRCode;
 use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
 use PHPFHIRGenerated\FHIRElement\FHIRCoding;
 use PHPFHIRGenerated\FHIRElement\FHIRContactDetail;
@@ -75,6 +73,7 @@ use PHPFHIRGenerated\FHIRElement\FHIRIdentifier;
 use PHPFHIRGenerated\FHIRElement\FHIRMarkdown;
 use PHPFHIRGenerated\FHIRElement\FHIRPeriod;
 use PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus;
+use PHPFHIRGenerated\FHIRElement\FHIRResourceType;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
 use PHPFHIRGenerated\FHIRElement\FHIRUri;
 use PHPFHIRGenerated\FHIRElement\FHIRUsageContext;
@@ -96,133 +95,127 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
      * The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
-    public $approvalDate = null;
+    private $approvalDate = null;
 
     /**
      * An identifier for this question or group of questions in a particular terminology such as LOINC.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
-    public $code = null;
+    private $code = [];
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
-    public $contact = null;
+    private $contact = [];
 
     /**
      * A copyright statement relating to the questionnaire and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the questionnaire.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public $copyright = null;
+    private $copyright = null;
 
     /**
-     * The date  (and optionally time) when the questionnaire was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the questionnaire changes.
+     * The date  (and optionally time) when the questionnaire was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the questionnaire changes.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $date = null;
-
-    /**
-     * The URL of a Questionnaire that this Questionnaire is based on.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCanonical
-     */
-    public $derivedFrom = null;
+    private $date = null;
 
     /**
      * A free text natural language description of the questionnaire from a consumer's perspective.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public $description = null;
+    private $description = null;
 
     /**
      * The period during which the questionnaire content was or is planned to be in active use.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public $effectivePeriod = null;
+    private $effectivePeriod = null;
 
     /**
-     * A Boolean value to indicate that this questionnaire is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this questionnaire is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $experimental = null;
+    private $experimental = null;
 
     /**
      * A formal identifier that is used to identify this questionnaire when it is represented in other formats, or referenced in a specification, model, design or an instance.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = null;
+    private $identifier = [];
 
     /**
      * A particular question, question grouping or display text that is part of the questionnaire.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem[]
      */
-    public $item = null;
+    private $item = [];
 
     /**
      * A legal or geographic region in which the questionnaire is intended to be used.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $jurisdiction = null;
+    private $jurisdiction = [];
 
     /**
-     * The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date.
+     * The date on which the resource content was last reviewed. Review happens periodically after approval, but doesn't change the original approval date.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
-    public $lastReviewDate = null;
+    private $lastReviewDate = null;
 
     /**
      * A natural language name identifying the questionnaire. This name should be usable as an identifier for the module by machine processing applications such as code generation.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $name = null;
+    private $name = null;
 
     /**
-     * The name of the organization or individual that published the questionnaire.
+     * The name of the individual or organization that published the questionnaire.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $publisher = null;
+    private $publisher = null;
 
     /**
-     * Explanation of why this questionnaire is needed and why it has been designed as it has.
+     * Explaination of why this questionnaire is needed and why it has been designed as it has.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public $purpose = null;
+    private $purpose = null;
 
     /**
      * The status of this questionnaire. Enables tracking the life-cycle of the content.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus
      */
-    public $status = null;
+    private $status = null;
 
     /**
      * The types of subjects that can be the subject of responses created for the questionnaire.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRResourceType[]
      */
-    public $subjectType = null;
+    private $subjectType = [];
 
     /**
      * A short, descriptive, user-friendly title for the questionnaire.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $title = null;
+    private $title = null;
 
     /**
-     * An absolute URI that is used to identify this questionnaire when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this questionnaire is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the questionnaire is stored on different servers.
+     * An absolute URI that is used to identify this questionnaire when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this questionnaire is (or will be) published. The URL SHOULD include the major version of the questionnaire. For more information see [Technical and Business Versions](resource.html#versions).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $url = null;
+    private $url = null;
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate questionnaire instances.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
-    public $useContext = null;
+    private $useContext = [];
 
     /**
      * The identifier that is used to identify this version of the questionnaire when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the questionnaire author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $version = null;
+    private $version = null;
 
     /**
      * FHIRQuestionnaire Constructor
@@ -231,73 +224,286 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['approvalDate'])) {
-                $this->setApprovalDate($data['approvalDate']);
+                $value = $data['approvalDate'];
+                if (is_array($value)) {
+                    $value = new FHIRDate($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDate($value);
+                }
+                if (!($value instanceof FHIRDate)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRQuestionnaire::__construct - Property \"approvalDate\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDate or data to construct type, saw ".gettype($value));
+                }
+                $this->setApprovalDate($value);
             }
             if (isset($data['code'])) {
-                $this->setCode($data['code']);
+                $value = $data['code'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCoding($v);
+                        } 
+                        if (!($v instanceof FHIRCoding)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRQuestionnaire::__construct - Collection field \"code\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCoding or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addCode($v);
+                    }
+                }
             }
             if (isset($data['contact'])) {
-                $this->setContact($data['contact']);
+                $value = $data['contact'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRContactDetail($v);
+                        } 
+                        if (!($v instanceof FHIRContactDetail)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRQuestionnaire::__construct - Collection field \"contact\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRContactDetail or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addContact($v);
+                    }
+                }
             }
             if (isset($data['copyright'])) {
-                $this->setCopyright($data['copyright']);
+                $value = $data['copyright'];
+                if (is_array($value)) {
+                    $value = new FHIRMarkdown($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRMarkdown($value);
+                }
+                if (!($value instanceof FHIRMarkdown)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRQuestionnaire::__construct - Property \"copyright\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRMarkdown or data to construct type, saw ".gettype($value));
+                }
+                $this->setCopyright($value);
             }
             if (isset($data['date'])) {
-                $this->setDate($data['date']);
-            }
-            if (isset($data['derivedFrom'])) {
-                $this->setDerivedFrom($data['derivedFrom']);
+                $value = $data['date'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRQuestionnaire::__construct - Property \"date\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value));
+                }
+                $this->setDate($value);
             }
             if (isset($data['description'])) {
-                $this->setDescription($data['description']);
+                $value = $data['description'];
+                if (is_array($value)) {
+                    $value = new FHIRMarkdown($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRMarkdown($value);
+                }
+                if (!($value instanceof FHIRMarkdown)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRQuestionnaire::__construct - Property \"description\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRMarkdown or data to construct type, saw ".gettype($value));
+                }
+                $this->setDescription($value);
             }
             if (isset($data['effectivePeriod'])) {
-                $this->setEffectivePeriod($data['effectivePeriod']);
+                $value = $data['effectivePeriod'];
+                if (is_array($value)) {
+                    $value = new FHIRPeriod($value);
+                } 
+                if (!($value instanceof FHIRPeriod)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRQuestionnaire::__construct - Property \"effectivePeriod\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPeriod or data to construct type, saw ".gettype($value));
+                }
+                $this->setEffectivePeriod($value);
             }
             if (isset($data['experimental'])) {
-                $this->setExperimental($data['experimental']);
+                $value = $data['experimental'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRQuestionnaire::__construct - Property \"experimental\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value));
+                }
+                $this->setExperimental($value);
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRIdentifier($v);
+                        } 
+                        if (!($v instanceof FHIRIdentifier)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRQuestionnaire::__construct - Collection field \"identifier\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addIdentifier($v);
+                    }
+                }
             }
             if (isset($data['item'])) {
-                $this->setItem($data['item']);
+                $value = $data['item'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRQuestionnaireItem($v);
+                        } 
+                        if (!($v instanceof FHIRQuestionnaireItem)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRQuestionnaire::__construct - Collection field \"item\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addItem($v);
+                    }
+                }
             }
             if (isset($data['jurisdiction'])) {
-                $this->setJurisdiction($data['jurisdiction']);
+                $value = $data['jurisdiction'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRQuestionnaire::__construct - Collection field \"jurisdiction\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addJurisdiction($v);
+                    }
+                }
             }
             if (isset($data['lastReviewDate'])) {
-                $this->setLastReviewDate($data['lastReviewDate']);
+                $value = $data['lastReviewDate'];
+                if (is_array($value)) {
+                    $value = new FHIRDate($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDate($value);
+                }
+                if (!($value instanceof FHIRDate)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRQuestionnaire::__construct - Property \"lastReviewDate\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDate or data to construct type, saw ".gettype($value));
+                }
+                $this->setLastReviewDate($value);
             }
             if (isset($data['name'])) {
-                $this->setName($data['name']);
+                $value = $data['name'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRQuestionnaire::__construct - Property \"name\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setName($value);
             }
             if (isset($data['publisher'])) {
-                $this->setPublisher($data['publisher']);
+                $value = $data['publisher'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRQuestionnaire::__construct - Property \"publisher\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setPublisher($value);
             }
             if (isset($data['purpose'])) {
-                $this->setPurpose($data['purpose']);
+                $value = $data['purpose'];
+                if (is_array($value)) {
+                    $value = new FHIRMarkdown($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRMarkdown($value);
+                }
+                if (!($value instanceof FHIRMarkdown)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRQuestionnaire::__construct - Property \"purpose\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRMarkdown or data to construct type, saw ".gettype($value));
+                }
+                $this->setPurpose($value);
             }
             if (isset($data['status'])) {
-                $this->setStatus($data['status']);
+                $value = $data['status'];
+                if (is_array($value)) {
+                    $value = new FHIRPublicationStatus($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRPublicationStatus($value);
+                }
+                if (!($value instanceof FHIRPublicationStatus)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRQuestionnaire::__construct - Property \"status\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus or data to construct type, saw ".gettype($value));
+                }
+                $this->setStatus($value);
             }
             if (isset($data['subjectType'])) {
-                $this->setSubjectType($data['subjectType']);
+                $value = $data['subjectType'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRResourceType($v);
+                        }  elseif (is_scalar($v)) {
+                            $v = new FHIRResourceType($v);
+                        }
+                        if (!($v instanceof FHIRResourceType)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRQuestionnaire::__construct - Collection field \"subjectType\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRResourceType or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addSubjectType($v);
+                    }
+                }
             }
             if (isset($data['title'])) {
-                $this->setTitle($data['title']);
+                $value = $data['title'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRQuestionnaire::__construct - Property \"title\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setTitle($value);
             }
             if (isset($data['url'])) {
-                $this->setUrl($data['url']);
+                $value = $data['url'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRQuestionnaire::__construct - Property \"url\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value));
+                }
+                $this->setUrl($value);
             }
             if (isset($data['useContext'])) {
-                $this->setUseContext($data['useContext']);
+                $value = $data['useContext'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRUsageContext($v);
+                        } 
+                        if (!($v instanceof FHIRUsageContext)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRQuestionnaire::__construct - Collection field \"useContext\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUsageContext or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addUseContext($v);
+                    }
+                }
             }
             if (isset($data['version'])) {
-                $this->setVersion($data['version']);
+                $value = $data['version'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRQuestionnaire::__construct - Property \"version\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setVersion($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -306,6 +512,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -340,54 +547,51 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
         return $this->approvalDate;
     }
 
-
     /**
      * An identifier for this question or group of questions in a particular terminology such as LOINC.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
      * @return $this
      */
-    public function setCode(FHIRCoding $code = null)
+    public function addCode(FHIRCoding $code = null)
     {
         if (null === $code) {
             return $this; 
         }
-        $this->code = $code;
+        $this->code[] = $code;
         return $this;
     }
 
     /**
      * An identifier for this question or group of questions in a particular terminology such as LOINC.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
     public function getCode()
     {
         return $this->code;
     }
 
-
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail
      * @return $this
      */
-    public function setContact(FHIRContactDetail $contact = null)
+    public function addContact(FHIRContactDetail $contact = null)
     {
         if (null === $contact) {
             return $this; 
         }
-        $this->contact = $contact;
+        $this->contact[] = $contact;
         return $this;
     }
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
     public function getContact()
     {
         return $this->contact;
     }
-
 
     /**
      * A copyright statement relating to the questionnaire and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the questionnaire.
@@ -421,9 +625,8 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
         return $this->copyright;
     }
 
-
     /**
-     * The date  (and optionally time) when the questionnaire was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the questionnaire changes.
+     * The date  (and optionally time) when the questionnaire was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the questionnaire changes.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      * @return $this
      */
@@ -446,47 +649,13 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date  (and optionally time) when the questionnaire was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the questionnaire changes.
+     * The date  (and optionally time) when the questionnaire was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the questionnaire changes.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getDate()
     {
         return $this->date;
     }
-
-
-    /**
-     * The URL of a Questionnaire that this Questionnaire is based on.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
-     * @return $this
-     */
-    public function setDerivedFrom($derivedFrom)
-    {
-        if (null === $derivedFrom) {
-            return $this; 
-        }
-        if (is_scalar($derivedFrom)) {
-            $derivedFrom = new FHIRCanonical($derivedFrom);
-        }
-        if (!($derivedFrom instanceof FHIRCanonical)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRQuestionnaire::setDerivedFrom - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCanonical or appropriate scalar value, %s seen.',
-                gettype($derivedFrom)
-            ));
-        }
-        $this->derivedFrom = $derivedFrom;
-        return $this;
-    }
-
-    /**
-     * The URL of a Questionnaire that this Questionnaire is based on.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
-     */
-    public function getDerivedFrom()
-    {
-        return $this->derivedFrom;
-    }
-
 
     /**
      * A free text natural language description of the questionnaire from a consumer's perspective.
@@ -520,7 +689,6 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
         return $this->description;
     }
 
-
     /**
      * The period during which the questionnaire content was or is planned to be in active use.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
@@ -544,9 +712,8 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
         return $this->effectivePeriod;
     }
 
-
     /**
-     * A Boolean value to indicate that this questionnaire is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this questionnaire is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      * @return $this
      */
@@ -569,7 +736,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A Boolean value to indicate that this questionnaire is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this questionnaire is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getExperimental()
@@ -577,81 +744,77 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
         return $this->experimental;
     }
 
-
     /**
      * A formal identifier that is used to identify this questionnaire when it is represented in other formats, or referenced in a specification, model, design or an instance.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
-    public function setIdentifier(FHIRIdentifier $identifier = null)
+    public function addIdentifier(FHIRIdentifier $identifier = null)
     {
         if (null === $identifier) {
             return $this; 
         }
-        $this->identifier = $identifier;
+        $this->identifier[] = $identifier;
         return $this;
     }
 
     /**
      * A formal identifier that is used to identify this questionnaire when it is represented in other formats, or referenced in a specification, model, design or an instance.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
         return $this->identifier;
     }
 
-
     /**
      * A particular question, question grouping or display text that is part of the questionnaire.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem
      * @return $this
      */
-    public function setItem(FHIRQuestionnaireItem $item = null)
+    public function addItem(FHIRQuestionnaireItem $item = null)
     {
         if (null === $item) {
             return $this; 
         }
-        $this->item = $item;
+        $this->item[] = $item;
         return $this;
     }
 
     /**
      * A particular question, question grouping or display text that is part of the questionnaire.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem[]
      */
     public function getItem()
     {
         return $this->item;
     }
 
-
     /**
      * A legal or geographic region in which the questionnaire is intended to be used.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setJurisdiction(FHIRCodeableConcept $jurisdiction = null)
+    public function addJurisdiction(FHIRCodeableConcept $jurisdiction = null)
     {
         if (null === $jurisdiction) {
             return $this; 
         }
-        $this->jurisdiction = $jurisdiction;
+        $this->jurisdiction[] = $jurisdiction;
         return $this;
     }
 
     /**
      * A legal or geographic region in which the questionnaire is intended to be used.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getJurisdiction()
     {
         return $this->jurisdiction;
     }
 
-
     /**
-     * The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date.
+     * The date on which the resource content was last reviewed. Review happens periodically after approval, but doesn't change the original approval date.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDate
      * @return $this
      */
@@ -674,14 +837,13 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date.
+     * The date on which the resource content was last reviewed. Review happens periodically after approval, but doesn't change the original approval date.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public function getLastReviewDate()
     {
         return $this->lastReviewDate;
     }
-
 
     /**
      * A natural language name identifying the questionnaire. This name should be usable as an identifier for the module by machine processing applications such as code generation.
@@ -715,9 +877,8 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
         return $this->name;
     }
 
-
     /**
-     * The name of the organization or individual that published the questionnaire.
+     * The name of the individual or organization that published the questionnaire.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
@@ -740,7 +901,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The name of the organization or individual that published the questionnaire.
+     * The name of the individual or organization that published the questionnaire.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getPublisher()
@@ -748,9 +909,8 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
         return $this->publisher;
     }
 
-
     /**
-     * Explanation of why this questionnaire is needed and why it has been designed as it has.
+     * Explaination of why this questionnaire is needed and why it has been designed as it has.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      * @return $this
      */
@@ -773,14 +933,13 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Explanation of why this questionnaire is needed and why it has been designed as it has.
+     * Explaination of why this questionnaire is needed and why it has been designed as it has.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getPurpose()
     {
         return $this->purpose;
     }
-
 
     /**
      * The status of this questionnaire. Enables tracking the life-cycle of the content.
@@ -814,39 +973,37 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
         return $this->status;
     }
 
-
     /**
      * The types of subjects that can be the subject of responses created for the questionnaire.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRResourceType
      * @return $this
      */
-    public function setSubjectType($subjectType)
+    public function addSubjectType($subjectType)
     {
         if (null === $subjectType) {
             return $this; 
         }
         if (is_scalar($subjectType)) {
-            $subjectType = new FHIRCode($subjectType);
+            $subjectType = new FHIRResourceType($subjectType);
         }
-        if (!($subjectType instanceof FHIRCode)) {
+        if (!($subjectType instanceof FHIRResourceType)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRQuestionnaire::setSubjectType - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or appropriate scalar value, %s seen.',
+                'FHIRQuestionnaire::addSubjectType - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRResourceType or appropriate scalar value, %s seen.',
                 gettype($subjectType)
             ));
         }
-        $this->subjectType = $subjectType;
+        $this->subjectType[] = $subjectType;
         return $this;
     }
 
     /**
      * The types of subjects that can be the subject of responses created for the questionnaire.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRResourceType[]
      */
     public function getSubjectType()
     {
         return $this->subjectType;
     }
-
 
     /**
      * A short, descriptive, user-friendly title for the questionnaire.
@@ -880,9 +1037,8 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
         return $this->title;
     }
 
-
     /**
-     * An absolute URI that is used to identify this questionnaire when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this questionnaire is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the questionnaire is stored on different servers.
+     * An absolute URI that is used to identify this questionnaire when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this questionnaire is (or will be) published. The URL SHOULD include the major version of the questionnaire. For more information see [Technical and Business Versions](resource.html#versions).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
@@ -905,7 +1061,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * An absolute URI that is used to identify this questionnaire when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this questionnaire is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the questionnaire is stored on different servers.
+     * An absolute URI that is used to identify this questionnaire when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this questionnaire is (or will be) published. The URL SHOULD include the major version of the questionnaire. For more information see [Technical and Business Versions](resource.html#versions).
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getUrl()
@@ -913,30 +1069,28 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
         return $this->url;
     }
 
-
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate questionnaire instances.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUsageContext
      * @return $this
      */
-    public function setUseContext(FHIRUsageContext $useContext = null)
+    public function addUseContext(FHIRUsageContext $useContext = null)
     {
         if (null === $useContext) {
             return $this; 
         }
-        $this->useContext = $useContext;
+        $this->useContext[] = $useContext;
         return $this;
     }
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate questionnaire instances.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUsageContext
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
     public function getUseContext()
     {
         return $this->useContext;
     }
-
 
     /**
      * The identifier that is used to identify this version of the questionnaire when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the questionnaire author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
@@ -970,7 +1124,6 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
         return $this->version;
     }
 
-
     /**
      * @return string
      */
@@ -989,20 +1142,33 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getApprovalDate())) {
             $a['approvalDate'] = $v;
         }
-        if (null !== ($v = $this->getCode())) {
-            $a['code'] = $v;
+        if (0 < count($values = $this->getCode())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['code'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getContact())) {
-            $a['contact'] = $v;
+        if (0 < count($values = $this->getContact())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['contact'] = $vs;
+            }
         }
         if (null !== ($v = $this->getCopyright())) {
             $a['copyright'] = $v;
         }
         if (null !== ($v = $this->getDate())) {
             $a['date'] = $v;
-        }
-        if (null !== ($v = $this->getDerivedFrom())) {
-            $a['derivedFrom'] = $v;
         }
         if (null !== ($v = $this->getDescription())) {
             $a['description'] = $v;
@@ -1013,14 +1179,38 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getExperimental())) {
             $a['experimental'] = $v;
         }
-        if (null !== ($v = $this->getIdentifier())) {
-            $a['identifier'] = $v;
+        if (0 < count($values = $this->getIdentifier())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['identifier'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getItem())) {
-            $a['item'] = $v;
+        if (0 < count($values = $this->getItem())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['item'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getJurisdiction())) {
-            $a['jurisdiction'] = $v;
+        if (0 < count($values = $this->getJurisdiction())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['jurisdiction'] = $vs;
+            }
         }
         if (null !== ($v = $this->getLastReviewDate())) {
             $a['lastReviewDate'] = $v;
@@ -1037,8 +1227,16 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getStatus())) {
             $a['status'] = $v;
         }
-        if (null !== ($v = $this->getSubjectType())) {
-            $a['subjectType'] = $v;
+        if (0 < count($values = $this->getSubjectType())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['subjectType'] = $vs;
+            }
         }
         if (null !== ($v = $this->getTitle())) {
             $a['title'] = $v;
@@ -1046,8 +1244,16 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getUrl())) {
             $a['url'] = $v;
         }
-        if (null !== ($v = $this->getUseContext())) {
-            $a['useContext'] = $v;
+        if (0 < count($values = $this->getUseContext())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['useContext'] = $vs;
+            }
         }
         if (null !== ($v = $this->getVersion())) {
             $a['version'] = $v;
@@ -1065,9 +1271,97 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Questionnaire xmlns="http://hl7.org/fhir"></Questionnaire>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getApprovalDate())) {
+            $v->xmlSerialize(true, $sxe->addChild('approvalDate'));
         }
-        return $sxe->saveXML();
+        if (0 < count($values = $this->getCode())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('code'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getContact())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('contact'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getCopyright())) {
+            $v->xmlSerialize(true, $sxe->addChild('copyright'));
+        }
+        if (null !== ($v = $this->getDate())) {
+            $v->xmlSerialize(true, $sxe->addChild('date'));
+        }
+        if (null !== ($v = $this->getDescription())) {
+            $v->xmlSerialize(true, $sxe->addChild('description'));
+        }
+        if (null !== ($v = $this->getEffectivePeriod())) {
+            $v->xmlSerialize(true, $sxe->addChild('effectivePeriod'));
+        }
+        if (null !== ($v = $this->getExperimental())) {
+            $v->xmlSerialize(true, $sxe->addChild('experimental'));
+        }
+        if (0 < count($values = $this->getIdentifier())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('identifier'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getItem())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('item'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getJurisdiction())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('jurisdiction'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getLastReviewDate())) {
+            $v->xmlSerialize(true, $sxe->addChild('lastReviewDate'));
+        }
+        if (null !== ($v = $this->getName())) {
+            $v->xmlSerialize(true, $sxe->addChild('name'));
+        }
+        if (null !== ($v = $this->getPublisher())) {
+            $v->xmlSerialize(true, $sxe->addChild('publisher'));
+        }
+        if (null !== ($v = $this->getPurpose())) {
+            $v->xmlSerialize(true, $sxe->addChild('purpose'));
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('status'));
+        }
+        if (0 < count($values = $this->getSubjectType())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('subjectType'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getTitle())) {
+            $v->xmlSerialize(true, $sxe->addChild('title'));
+        }
+        if (null !== ($v = $this->getUrl())) {
+            $v->xmlSerialize(true, $sxe->addChild('url'));
+        }
+        if (0 < count($values = $this->getUseContext())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('useContext'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getVersion())) {
+            $v->xmlSerialize(true, $sxe->addChild('version'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

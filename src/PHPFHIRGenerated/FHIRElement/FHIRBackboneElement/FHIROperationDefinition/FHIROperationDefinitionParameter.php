@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefiniti
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefiniti
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,10 +63,11 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefiniti
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\FHIRElement\FHIRCanonical;
 use PHPFHIRGenerated\FHIRElement\FHIRCode;
+use PHPFHIRGenerated\FHIRElement\FHIRFHIRAllTypes;
 use PHPFHIRGenerated\FHIRElement\FHIRInteger;
 use PHPFHIRGenerated\FHIRElement\FHIROperationParameterUse;
+use PHPFHIRGenerated\FHIRElement\FHIRReference;
 use PHPFHIRGenerated\FHIRElement\FHIRSearchParamType;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
 
@@ -85,67 +86,61 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
      * Binds to a value set if this parameter is coded (code, Coding, CodeableConcept).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionBinding
      */
-    public $binding = null;
+    private $binding = null;
 
     /**
      * Describes the meaning or use of this parameter.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $documentation = null;
+    private $documentation = null;
 
     /**
      * The maximum number of times this element is permitted to appear in the request or response.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $max = null;
+    private $max = null;
 
     /**
      * The minimum number of times this parameter SHALL appear in the request or response.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
-    public $min = null;
+    private $min = null;
 
     /**
      * The name of used to identify the parameter.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public $name = null;
+    private $name = null;
 
     /**
      * The parts of a nested Parameter.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter[]
      */
-    public $part = null;
+    private $part = [];
 
     /**
-     * Identifies other resource parameters within the operation invocation that are expected to resolve to this resource.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionReferencedFrom
+     * A profile the specifies the rules that this parameter must conform to.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $referencedFrom = null;
+    private $profile = null;
 
     /**
      * How the parameter is understood as a search parameter. This is only used if the parameter type is 'string'.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRSearchParamType
      */
-    public $searchType = null;
-
-    /**
-     * Used when the type is "Reference" or "canonical", and identifies a profile structure or implementation Guide that applies to the target of the reference this parameter refers to. If any profiles are specified, then the content must conform to at least one of them. The URL can be a local reference - to a contained StructureDefinition, or a reference to another StructureDefinition or Implementation Guide by a canonical URL. When an implementation guide is specified, the target resource SHALL conform to at least one profile defined in the implementation guide.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCanonical
-     */
-    public $targetProfile = null;
+    private $searchType = null;
 
     /**
      * The type for this parameter.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRFHIRAllTypes
      */
-    public $type = null;
+    private $type = null;
 
     /**
      * Whether this is an input or an output parameter.
      * @var \PHPFHIRGenerated\FHIRElement\FHIROperationParameterUse
      */
-    public $use = null;
+    private $use = null;
 
     /**
      * FHIROperationDefinitionParameter Constructor
@@ -154,40 +149,126 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['binding'])) {
-                $this->setBinding($data['binding']);
+                $value = $data['binding'];
+                if (is_array($value)) {
+                    $value = new FHIROperationDefinitionBinding($value);
+                } 
+                if (!($value instanceof FHIROperationDefinitionBinding)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter::__construct - Property \"binding\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionBinding or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setBinding($value);
             }
             if (isset($data['documentation'])) {
-                $this->setDocumentation($data['documentation']);
+                $value = $data['documentation'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter::__construct - Property \"documentation\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDocumentation($value);
             }
             if (isset($data['max'])) {
-                $this->setMax($data['max']);
+                $value = $data['max'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter::__construct - Property \"max\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setMax($value);
             }
             if (isset($data['min'])) {
-                $this->setMin($data['min']);
+                $value = $data['min'];
+                if (is_array($value)) {
+                    $value = new FHIRInteger($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRInteger($value);
+                }
+                if (!($value instanceof FHIRInteger)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter::__construct - Property \"min\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRInteger or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setMin($value);
             }
             if (isset($data['name'])) {
-                $this->setName($data['name']);
+                $value = $data['name'];
+                if (is_array($value)) {
+                    $value = new FHIRCode($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRCode($value);
+                }
+                if (!($value instanceof FHIRCode)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter::__construct - Property \"name\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setName($value);
             }
             if (isset($data['part'])) {
-                $this->setPart($data['part']);
+                $value = $data['part'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIROperationDefinitionParameter($v);
+                        } 
+                        if (!($v instanceof FHIROperationDefinitionParameter)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter::__construct - Collection field \"part\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addPart($v);
+                    }
+                }
             }
-            if (isset($data['referencedFrom'])) {
-                $this->setReferencedFrom($data['referencedFrom']);
+            if (isset($data['profile'])) {
+                $value = $data['profile'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter::__construct - Property \"profile\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setProfile($value);
             }
             if (isset($data['searchType'])) {
-                $this->setSearchType($data['searchType']);
-            }
-            if (isset($data['targetProfile'])) {
-                $this->setTargetProfile($data['targetProfile']);
+                $value = $data['searchType'];
+                if (is_array($value)) {
+                    $value = new FHIRSearchParamType($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRSearchParamType($value);
+                }
+                if (!($value instanceof FHIRSearchParamType)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter::__construct - Property \"searchType\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRSearchParamType or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setSearchType($value);
             }
             if (isset($data['type'])) {
-                $this->setType($data['type']);
+                $value = $data['type'];
+                if (is_array($value)) {
+                    $value = new FHIRFHIRAllTypes($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRFHIRAllTypes($value);
+                }
+                if (!($value instanceof FHIRFHIRAllTypes)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter::__construct - Property \"type\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRFHIRAllTypes or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setType($value);
             }
             if (isset($data['use'])) {
-                $this->setUse($data['use']);
+                $value = $data['use'];
+                if (is_array($value)) {
+                    $value = new FHIROperationParameterUse($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIROperationParameterUse($value);
+                }
+                if (!($value instanceof FHIROperationParameterUse)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter::__construct - Property \"use\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIROperationParameterUse or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setUse($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -196,6 +277,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -220,7 +302,6 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
     {
         return $this->binding;
     }
-
 
     /**
      * Describes the meaning or use of this parameter.
@@ -254,7 +335,6 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
         return $this->documentation;
     }
 
-
     /**
      * The maximum number of times this element is permitted to appear in the request or response.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -286,7 +366,6 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
     {
         return $this->max;
     }
-
 
     /**
      * The minimum number of times this parameter SHALL appear in the request or response.
@@ -320,7 +399,6 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
         return $this->min;
     }
 
-
     /**
      * The name of used to identify the parameter.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCode
@@ -353,54 +431,51 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
         return $this->name;
     }
 
-
     /**
      * The parts of a nested Parameter.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter
      * @return $this
      */
-    public function setPart(FHIROperationDefinitionParameter $part = null)
+    public function addPart(FHIROperationDefinitionParameter $part = null)
     {
         if (null === $part) {
             return $this; 
         }
-        $this->part = $part;
+        $this->part[] = $part;
         return $this;
     }
 
     /**
      * The parts of a nested Parameter.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter[]
      */
     public function getPart()
     {
         return $this->part;
     }
 
-
     /**
-     * Identifies other resource parameters within the operation invocation that are expected to resolve to this resource.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionReferencedFrom
+     * A profile the specifies the rules that this parameter must conform to.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setReferencedFrom(FHIROperationDefinitionReferencedFrom $referencedFrom = null)
+    public function setProfile(FHIRReference $profile = null)
     {
-        if (null === $referencedFrom) {
+        if (null === $profile) {
             return $this; 
         }
-        $this->referencedFrom = $referencedFrom;
+        $this->profile = $profile;
         return $this;
     }
 
     /**
-     * Identifies other resource parameters within the operation invocation that are expected to resolve to this resource.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionReferencedFrom
+     * A profile the specifies the rules that this parameter must conform to.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getReferencedFrom()
+    public function getProfile()
     {
-        return $this->referencedFrom;
+        return $this->profile;
     }
-
 
     /**
      * How the parameter is understood as a search parameter. This is only used if the parameter type is 'string'.
@@ -434,43 +509,9 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
         return $this->searchType;
     }
 
-
-    /**
-     * Used when the type is "Reference" or "canonical", and identifies a profile structure or implementation Guide that applies to the target of the reference this parameter refers to. If any profiles are specified, then the content must conform to at least one of them. The URL can be a local reference - to a contained StructureDefinition, or a reference to another StructureDefinition or Implementation Guide by a canonical URL. When an implementation guide is specified, the target resource SHALL conform to at least one profile defined in the implementation guide.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
-     * @return $this
-     */
-    public function setTargetProfile($targetProfile)
-    {
-        if (null === $targetProfile) {
-            return $this; 
-        }
-        if (is_scalar($targetProfile)) {
-            $targetProfile = new FHIRCanonical($targetProfile);
-        }
-        if (!($targetProfile instanceof FHIRCanonical)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIROperationDefinitionParameter::setTargetProfile - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCanonical or appropriate scalar value, %s seen.',
-                gettype($targetProfile)
-            ));
-        }
-        $this->targetProfile = $targetProfile;
-        return $this;
-    }
-
-    /**
-     * Used when the type is "Reference" or "canonical", and identifies a profile structure or implementation Guide that applies to the target of the reference this parameter refers to. If any profiles are specified, then the content must conform to at least one of them. The URL can be a local reference - to a contained StructureDefinition, or a reference to another StructureDefinition or Implementation Guide by a canonical URL. When an implementation guide is specified, the target resource SHALL conform to at least one profile defined in the implementation guide.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
-     */
-    public function getTargetProfile()
-    {
-        return $this->targetProfile;
-    }
-
-
     /**
      * The type for this parameter.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRFHIRAllTypes
      * @return $this
      */
     public function setType($type)
@@ -479,11 +520,11 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
             return $this; 
         }
         if (is_scalar($type)) {
-            $type = new FHIRCode($type);
+            $type = new FHIRFHIRAllTypes($type);
         }
-        if (!($type instanceof FHIRCode)) {
+        if (!($type instanceof FHIRFHIRAllTypes)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIROperationDefinitionParameter::setType - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or appropriate scalar value, %s seen.',
+                'FHIROperationDefinitionParameter::setType - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRFHIRAllTypes or appropriate scalar value, %s seen.',
                 gettype($type)
             ));
         }
@@ -493,13 +534,12 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
 
     /**
      * The type for this parameter.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRFHIRAllTypes
      */
     public function getType()
     {
         return $this->type;
     }
-
 
     /**
      * Whether this is an input or an output parameter.
@@ -533,7 +573,6 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
         return $this->use;
     }
 
-
     /**
      * @return string
      */
@@ -563,17 +602,22 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
         if (null !== ($v = $this->getName())) {
             $a['name'] = $v;
         }
-        if (null !== ($v = $this->getPart())) {
-            $a['part'] = $v;
+        if (0 < count($values = $this->getPart())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['part'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getReferencedFrom())) {
-            $a['referencedFrom'] = $v;
+        if (null !== ($v = $this->getProfile())) {
+            $a['profile'] = $v;
         }
         if (null !== ($v = $this->getSearchType())) {
             $a['searchType'] = $v;
-        }
-        if (null !== ($v = $this->getTargetProfile())) {
-            $a['targetProfile'] = $v;
         }
         if (null !== ($v = $this->getType())) {
             $a['type'] = $v;
@@ -594,9 +638,40 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<OperationDefinitionParameter xmlns="http://hl7.org/fhir"></OperationDefinitionParameter>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getBinding())) {
+            $v->xmlSerialize(true, $sxe->addChild('binding'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getDocumentation())) {
+            $v->xmlSerialize(true, $sxe->addChild('documentation'));
+        }
+        if (null !== ($v = $this->getMax())) {
+            $v->xmlSerialize(true, $sxe->addChild('max'));
+        }
+        if (null !== ($v = $this->getMin())) {
+            $v->xmlSerialize(true, $sxe->addChild('min'));
+        }
+        if (null !== ($v = $this->getName())) {
+            $v->xmlSerialize(true, $sxe->addChild('name'));
+        }
+        if (0 < count($values = $this->getPart())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('part'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getProfile())) {
+            $v->xmlSerialize(true, $sxe->addChild('profile'));
+        }
+        if (null !== ($v = $this->getSearchType())) {
+            $v->xmlSerialize(true, $sxe->addChild('searchType'));
+        }
+        if (null !== ($v = $this->getType())) {
+            $v->xmlSerialize(true, $sxe->addChild('type'));
+        }
+        if (null !== ($v = $this->getUse())) {
+            $v->xmlSerialize(true, $sxe->addChild('use'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

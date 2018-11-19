@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSequence;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSequence;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -65,9 +65,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSequence;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
 use PHPFHIRGenerated\FHIRElement\FHIRInteger;
-use PHPFHIRGenerated\FHIRElement\FHIROrientationType;
 use PHPFHIRGenerated\FHIRElement\FHIRReference;
-use PHPFHIRGenerated\FHIRElement\FHIRStrandType;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
 
 /**
@@ -85,55 +83,49 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement implements \JsonSeria
      * Structural unit composed of a nucleic acid molecule which controls its own replication through the interaction of specific proteins at one or more origins of replication ([SO:0000340](http://www.sequenceontology.org/browser/current_svn/term/SO:0000340)).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $chromosome = null;
+    private $chromosome = null;
 
     /**
      * The Genome Build used for reference, following GRCh build versions e.g. 'GRCh 37'.  Version number must be included if a versioned release of a primary build was used.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $genomeBuild = null;
-
-    /**
-     * A relative reference to a DNA strand based on gene orientation. The strand that contains the open reading frame of the gene is the "sense" strand, and the opposite complementary strand is the "antisense" strand.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIROrientationType
-     */
-    public $orientation = null;
+    private $genomeBuild = null;
 
     /**
      * Reference identifier of reference sequence submitted to NCBI. It must match the type in the Sequence.type field. For example, the prefix, “NG_” identifies reference sequence for genes, “NM_” for messenger RNA transcripts, and “NP_” for amino acid sequences.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $referenceSeqId = null;
+    private $referenceSeqId = null;
 
     /**
      * A Pointer to another Sequence entity as reference sequence.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $referenceSeqPointer = null;
+    private $referenceSeqPointer = null;
 
     /**
      * A string like "ACGT".
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $referenceSeqString = null;
+    private $referenceSeqString = null;
 
     /**
-     * An absolute reference to a strand. The Watson strand is the strand whose 5'-end is on the short arm of the chromosome, and the Crick strand as the one whose 5'-end is on the long arm.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRStrandType
+     * Directionality of DNA sequence. Available values are "1" for the plus strand (5' to 3')/Watson/Sense/positive  and "-1" for the minus strand(3' to 5')/Crick/Antisense/negative.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
-    public $strand = null;
+    private $strand = null;
 
     /**
      * End position of the window on the reference sequence. If the coordinate system is 0-based then end is is exclusive and does not include the last position. If the coordinate system is 1-base, then end is inclusive and includes the last position.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
-    public $windowEnd = null;
+    private $windowEnd = null;
 
     /**
      * Start position of the window on the reference sequence. If the coordinate system is either 0-based or 1-based, then start position is inclusive.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
-    public $windowStart = null;
+    private $windowStart = null;
 
     /**
      * FHIRSequenceReferenceSeq Constructor
@@ -142,34 +134,96 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement implements \JsonSeria
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['chromosome'])) {
-                $this->setChromosome($data['chromosome']);
+                $value = $data['chromosome'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceReferenceSeq::__construct - Property \"chromosome\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setChromosome($value);
             }
             if (isset($data['genomeBuild'])) {
-                $this->setGenomeBuild($data['genomeBuild']);
-            }
-            if (isset($data['orientation'])) {
-                $this->setOrientation($data['orientation']);
+                $value = $data['genomeBuild'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceReferenceSeq::__construct - Property \"genomeBuild\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setGenomeBuild($value);
             }
             if (isset($data['referenceSeqId'])) {
-                $this->setReferenceSeqId($data['referenceSeqId']);
+                $value = $data['referenceSeqId'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceReferenceSeq::__construct - Property \"referenceSeqId\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setReferenceSeqId($value);
             }
             if (isset($data['referenceSeqPointer'])) {
-                $this->setReferenceSeqPointer($data['referenceSeqPointer']);
+                $value = $data['referenceSeqPointer'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceReferenceSeq::__construct - Property \"referenceSeqPointer\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setReferenceSeqPointer($value);
             }
             if (isset($data['referenceSeqString'])) {
-                $this->setReferenceSeqString($data['referenceSeqString']);
+                $value = $data['referenceSeqString'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceReferenceSeq::__construct - Property \"referenceSeqString\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setReferenceSeqString($value);
             }
             if (isset($data['strand'])) {
-                $this->setStrand($data['strand']);
+                $value = $data['strand'];
+                if (is_array($value)) {
+                    $value = new FHIRInteger($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRInteger($value);
+                }
+                if (!($value instanceof FHIRInteger)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceReferenceSeq::__construct - Property \"strand\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRInteger or data to construct type, saw ".gettype($value));
+                }
+                $this->setStrand($value);
             }
             if (isset($data['windowEnd'])) {
-                $this->setWindowEnd($data['windowEnd']);
+                $value = $data['windowEnd'];
+                if (is_array($value)) {
+                    $value = new FHIRInteger($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRInteger($value);
+                }
+                if (!($value instanceof FHIRInteger)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceReferenceSeq::__construct - Property \"windowEnd\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRInteger or data to construct type, saw ".gettype($value));
+                }
+                $this->setWindowEnd($value);
             }
             if (isset($data['windowStart'])) {
-                $this->setWindowStart($data['windowStart']);
+                $value = $data['windowStart'];
+                if (is_array($value)) {
+                    $value = new FHIRInteger($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRInteger($value);
+                }
+                if (!($value instanceof FHIRInteger)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceReferenceSeq::__construct - Property \"windowStart\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRInteger or data to construct type, saw ".gettype($value));
+                }
+                $this->setWindowStart($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -178,6 +232,7 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement implements \JsonSeria
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -202,7 +257,6 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement implements \JsonSeria
     {
         return $this->chromosome;
     }
-
 
     /**
      * The Genome Build used for reference, following GRCh build versions e.g. 'GRCh 37'.  Version number must be included if a versioned release of a primary build was used.
@@ -236,40 +290,6 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement implements \JsonSeria
         return $this->genomeBuild;
     }
 
-
-    /**
-     * A relative reference to a DNA strand based on gene orientation. The strand that contains the open reading frame of the gene is the "sense" strand, and the opposite complementary strand is the "antisense" strand.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIROrientationType
-     * @return $this
-     */
-    public function setOrientation($orientation)
-    {
-        if (null === $orientation) {
-            return $this; 
-        }
-        if (is_scalar($orientation)) {
-            $orientation = new FHIROrientationType($orientation);
-        }
-        if (!($orientation instanceof FHIROrientationType)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRSequenceReferenceSeq::setOrientation - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIROrientationType or appropriate scalar value, %s seen.',
-                gettype($orientation)
-            ));
-        }
-        $this->orientation = $orientation;
-        return $this;
-    }
-
-    /**
-     * A relative reference to a DNA strand based on gene orientation. The strand that contains the open reading frame of the gene is the "sense" strand, and the opposite complementary strand is the "antisense" strand.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIROrientationType
-     */
-    public function getOrientation()
-    {
-        return $this->orientation;
-    }
-
-
     /**
      * Reference identifier of reference sequence submitted to NCBI. It must match the type in the Sequence.type field. For example, the prefix, “NG_” identifies reference sequence for genes, “NM_” for messenger RNA transcripts, and “NP_” for amino acid sequences.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
@@ -293,7 +313,6 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement implements \JsonSeria
         return $this->referenceSeqId;
     }
 
-
     /**
      * A Pointer to another Sequence entity as reference sequence.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -316,7 +335,6 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement implements \JsonSeria
     {
         return $this->referenceSeqPointer;
     }
-
 
     /**
      * A string like "ACGT".
@@ -350,10 +368,9 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement implements \JsonSeria
         return $this->referenceSeqString;
     }
 
-
     /**
-     * An absolute reference to a strand. The Watson strand is the strand whose 5'-end is on the short arm of the chromosome, and the Crick strand as the one whose 5'-end is on the long arm.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRStrandType
+     * Directionality of DNA sequence. Available values are "1" for the plus strand (5' to 3')/Watson/Sense/positive  and "-1" for the minus strand(3' to 5')/Crick/Antisense/negative.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRInteger
      * @return $this
      */
     public function setStrand($strand)
@@ -362,11 +379,11 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement implements \JsonSeria
             return $this; 
         }
         if (is_scalar($strand)) {
-            $strand = new FHIRStrandType($strand);
+            $strand = new FHIRInteger($strand);
         }
-        if (!($strand instanceof FHIRStrandType)) {
+        if (!($strand instanceof FHIRInteger)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRSequenceReferenceSeq::setStrand - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRStrandType or appropriate scalar value, %s seen.',
+                'FHIRSequenceReferenceSeq::setStrand - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRInteger or appropriate scalar value, %s seen.',
                 gettype($strand)
             ));
         }
@@ -375,14 +392,13 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * An absolute reference to a strand. The Watson strand is the strand whose 5'-end is on the short arm of the chromosome, and the Crick strand as the one whose 5'-end is on the long arm.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRStrandType
+     * Directionality of DNA sequence. Available values are "1" for the plus strand (5' to 3')/Watson/Sense/positive  and "-1" for the minus strand(3' to 5')/Crick/Antisense/negative.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public function getStrand()
     {
         return $this->strand;
     }
-
 
     /**
      * End position of the window on the reference sequence. If the coordinate system is 0-based then end is is exclusive and does not include the last position. If the coordinate system is 1-base, then end is inclusive and includes the last position.
@@ -416,7 +432,6 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement implements \JsonSeria
         return $this->windowEnd;
     }
 
-
     /**
      * Start position of the window on the reference sequence. If the coordinate system is either 0-based or 1-based, then start position is inclusive.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRInteger
@@ -449,7 +464,6 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement implements \JsonSeria
         return $this->windowStart;
     }
 
-
     /**
      * @return string
      */
@@ -469,9 +483,6 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement implements \JsonSeria
         }
         if (null !== ($v = $this->getGenomeBuild())) {
             $a['genomeBuild'] = $v;
-        }
-        if (null !== ($v = $this->getOrientation())) {
-            $a['orientation'] = $v;
         }
         if (null !== ($v = $this->getReferenceSeqId())) {
             $a['referenceSeqId'] = $v;
@@ -504,9 +515,30 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement implements \JsonSeria
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<SequenceReferenceSeq xmlns="http://hl7.org/fhir"></SequenceReferenceSeq>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getChromosome())) {
+            $v->xmlSerialize(true, $sxe->addChild('chromosome'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getGenomeBuild())) {
+            $v->xmlSerialize(true, $sxe->addChild('genomeBuild'));
+        }
+        if (null !== ($v = $this->getReferenceSeqId())) {
+            $v->xmlSerialize(true, $sxe->addChild('referenceSeqId'));
+        }
+        if (null !== ($v = $this->getReferenceSeqPointer())) {
+            $v->xmlSerialize(true, $sxe->addChild('referenceSeqPointer'));
+        }
+        if (null !== ($v = $this->getReferenceSeqString())) {
+            $v->xmlSerialize(true, $sxe->addChild('referenceSeqString'));
+        }
+        if (null !== ($v = $this->getStrand())) {
+            $v->xmlSerialize(true, $sxe->addChild('strand'));
+        }
+        if (null !== ($v = $this->getWindowEnd())) {
+            $v->xmlSerialize(true, $sxe->addChild('windowEnd'));
+        }
+        if (null !== ($v = $this->getWindowStart())) {
+            $v->xmlSerialize(true, $sxe->addChild('windowStart'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

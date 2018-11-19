@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIREncounter;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIREncounter;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -82,19 +82,19 @@ class FHIREncounterParticipant extends FHIRBackboneElement implements \JsonSeria
      * Persons involved in the encounter other than the patient.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $individual = null;
+    private $individual = null;
 
     /**
      * The period of time that the specified participant participated in the encounter. These can overlap or be sub-sets of the overall encounter's period.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public $period = null;
+    private $period = null;
 
     /**
      * Role of participant in encounter.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $type = null;
+    private $type = [];
 
     /**
      * FHIREncounterParticipant Constructor
@@ -103,16 +103,42 @@ class FHIREncounterParticipant extends FHIRBackboneElement implements \JsonSeria
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['individual'])) {
-                $this->setIndividual($data['individual']);
+                $value = $data['individual'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterParticipant::__construct - Property \"individual\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setIndividual($value);
             }
             if (isset($data['period'])) {
-                $this->setPeriod($data['period']);
+                $value = $data['period'];
+                if (is_array($value)) {
+                    $value = new FHIRPeriod($value);
+                } 
+                if (!($value instanceof FHIRPeriod)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterParticipant::__construct - Property \"period\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPeriod or data to construct type, saw ".gettype($value));
+                }
+                $this->setPeriod($value);
             }
             if (isset($data['type'])) {
-                $this->setType($data['type']);
+                $value = $data['type'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterParticipant::__construct - Collection field \"type\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addType($v);
+                    }
+                }
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -121,6 +147,7 @@ class FHIREncounterParticipant extends FHIRBackboneElement implements \JsonSeria
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -146,7 +173,6 @@ class FHIREncounterParticipant extends FHIRBackboneElement implements \JsonSeria
         return $this->individual;
     }
 
-
     /**
      * The period of time that the specified participant participated in the encounter. These can overlap or be sub-sets of the overall encounter's period.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
@@ -170,30 +196,28 @@ class FHIREncounterParticipant extends FHIRBackboneElement implements \JsonSeria
         return $this->period;
     }
 
-
     /**
      * Role of participant in encounter.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setType(FHIRCodeableConcept $type = null)
+    public function addType(FHIRCodeableConcept $type = null)
     {
         if (null === $type) {
             return $this; 
         }
-        $this->type = $type;
+        $this->type[] = $type;
         return $this;
     }
 
     /**
      * Role of participant in encounter.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getType()
     {
         return $this->type;
     }
-
 
     /**
      * @return string
@@ -215,8 +239,16 @@ class FHIREncounterParticipant extends FHIRBackboneElement implements \JsonSeria
         if (null !== ($v = $this->getPeriod())) {
             $a['period'] = $v;
         }
-        if (null !== ($v = $this->getType())) {
-            $a['type'] = $v;
+        if (0 < count($values = $this->getType())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['type'] = $vs;
+            }
         }
         return $a;
     }
@@ -231,9 +263,19 @@ class FHIREncounterParticipant extends FHIRBackboneElement implements \JsonSeria
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<EncounterParticipant xmlns="http://hl7.org/fhir"></EncounterParticipant>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getIndividual())) {
+            $v->xmlSerialize(true, $sxe->addChild('individual'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getPeriod())) {
+            $v->xmlSerialize(true, $sxe->addChild('period'));
+        }
+        if (0 < count($values = $this->getType())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('type'));
+                }
+            }
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

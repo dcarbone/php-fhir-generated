@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -68,6 +68,7 @@ use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountGuar
 use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
 use PHPFHIRGenerated\FHIRElement\FHIRIdentifier;
 use PHPFHIRGenerated\FHIRElement\FHIRPeriod;
+use PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney;
 use PHPFHIRGenerated\FHIRElement\FHIRReference;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
@@ -85,70 +86,77 @@ class FHIRAccount extends FHIRDomainResource implements \JsonSerializable
     const FHIR_TYPE_NAME = 'Account';
 
     /**
-     * The party(s) that are responsible for covering the payment of this account, and what order should they be applied to the account.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountCoverage
+     * Indicates the period of time over which the account is allowed to have transactions posted to it.
+This period may be different to the coveragePeriod which is the duration of time that services may occur.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public $coverage = null;
+    private $active = null;
+
+    /**
+     * Represents the sum of all credits less all debits associated with the account.  Might be positive, zero or negative.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
+     */
+    private $balance = null;
+
+    /**
+     * The party(s) that are responsible for covering the payment of this account, and what order should they be applied to the account.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountCoverage[]
+     */
+    private $coverage = [];
 
     /**
      * Provides additional information about what the account tracks and how it is used.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $description = null;
+    private $description = null;
 
     /**
      * Parties financially responsible for the account.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountGuarantor
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountGuarantor[]
      */
-    public $guarantor = null;
+    private $guarantor = [];
 
     /**
-     * Unique identifier used to reference the account.  Might or might not be intended for human use (e.g. credit card number).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * Unique identifier used to reference the account.  May or may not be intended for human use (e.g. credit card number).
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = null;
+    private $identifier = [];
 
     /**
      * Name used for the account when displaying it to humans in reports, etc.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $name = null;
+    private $name = null;
 
     /**
      * Indicates the organization, department, etc. with responsibility for the account.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $owner = null;
+    private $owner = null;
 
     /**
-     * Reference to a parent Account.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $partOf = null;
-
-    /**
-     * The date range of services associated with this account.
+     * Identifies the period of time the account applies to; e.g. accounts created per fiscal year, quarter, etc.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public $servicePeriod = null;
+    private $period = null;
 
     /**
      * Indicates whether the account is presently used/usable or not.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAccountStatus
      */
-    public $status = null;
+    private $status = null;
 
     /**
      * Identifies the patient, device, practitioner, location or other object the account is associated with.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $subject = null;
+    private $subject = null;
 
     /**
      * Categorizes the account for reporting and searching purposes.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $type = null;
+    private $type = null;
 
     /**
      * FHIRAccount Constructor
@@ -157,40 +165,150 @@ class FHIRAccount extends FHIRDomainResource implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
+            if (isset($data['active'])) {
+                $value = $data['active'];
+                if (is_array($value)) {
+                    $value = new FHIRPeriod($value);
+                } 
+                if (!($value instanceof FHIRPeriod)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAccount::__construct - Property \"active\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPeriod or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setActive($value);
+            }
+            if (isset($data['balance'])) {
+                $value = $data['balance'];
+                if (is_array($value)) {
+                    $value = new FHIRMoney($value);
+                } 
+                if (!($value instanceof FHIRMoney)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAccount::__construct - Property \"balance\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setBalance($value);
+            }
             if (isset($data['coverage'])) {
-                $this->setCoverage($data['coverage']);
+                $value = $data['coverage'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRAccountCoverage($v);
+                        } 
+                        if (!($v instanceof FHIRAccountCoverage)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAccount::__construct - Collection field \"coverage\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountCoverage or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addCoverage($v);
+                    }
+                }
             }
             if (isset($data['description'])) {
-                $this->setDescription($data['description']);
+                $value = $data['description'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAccount::__construct - Property \"description\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDescription($value);
             }
             if (isset($data['guarantor'])) {
-                $this->setGuarantor($data['guarantor']);
+                $value = $data['guarantor'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRAccountGuarantor($v);
+                        } 
+                        if (!($v instanceof FHIRAccountGuarantor)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAccount::__construct - Collection field \"guarantor\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountGuarantor or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addGuarantor($v);
+                    }
+                }
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRIdentifier($v);
+                        } 
+                        if (!($v instanceof FHIRIdentifier)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAccount::__construct - Collection field \"identifier\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addIdentifier($v);
+                    }
+                }
             }
             if (isset($data['name'])) {
-                $this->setName($data['name']);
+                $value = $data['name'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAccount::__construct - Property \"name\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setName($value);
             }
             if (isset($data['owner'])) {
-                $this->setOwner($data['owner']);
+                $value = $data['owner'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAccount::__construct - Property \"owner\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setOwner($value);
             }
-            if (isset($data['partOf'])) {
-                $this->setPartOf($data['partOf']);
-            }
-            if (isset($data['servicePeriod'])) {
-                $this->setServicePeriod($data['servicePeriod']);
+            if (isset($data['period'])) {
+                $value = $data['period'];
+                if (is_array($value)) {
+                    $value = new FHIRPeriod($value);
+                } 
+                if (!($value instanceof FHIRPeriod)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAccount::__construct - Property \"period\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPeriod or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setPeriod($value);
             }
             if (isset($data['status'])) {
-                $this->setStatus($data['status']);
+                $value = $data['status'];
+                if (is_array($value)) {
+                    $value = new FHIRAccountStatus($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRAccountStatus($value);
+                }
+                if (!($value instanceof FHIRAccountStatus)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAccount::__construct - Property \"status\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAccountStatus or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setStatus($value);
             }
             if (isset($data['subject'])) {
-                $this->setSubject($data['subject']);
+                $value = $data['subject'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAccount::__construct - Property \"subject\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setSubject($value);
             }
             if (isset($data['type'])) {
-                $this->setType($data['type']);
+                $value = $data['type'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAccount::__construct - Property \"type\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setType($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -199,6 +317,55 @@ class FHIRAccount extends FHIRDomainResource implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
+    }
+
+    /**
+     * Indicates the period of time over which the account is allowed to have transactions posted to it.
+This period may be different to the coveragePeriod which is the duration of time that services may occur.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
+     * @return $this
+     */
+    public function setActive(FHIRPeriod $active = null)
+    {
+        if (null === $active) {
+            return $this; 
+        }
+        $this->active = $active;
+        return $this;
+    }
+
+    /**
+     * Indicates the period of time over which the account is allowed to have transactions posted to it.
+This period may be different to the coveragePeriod which is the duration of time that services may occur.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
+     */
+    public function getActive()
+    {
+        return $this->active;
+    }
+
+    /**
+     * Represents the sum of all credits less all debits associated with the account.  Might be positive, zero or negative.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
+     * @return $this
+     */
+    public function setBalance(FHIRMoney $balance = null)
+    {
+        if (null === $balance) {
+            return $this; 
+        }
+        $this->balance = $balance;
+        return $this;
+    }
+
+    /**
+     * Represents the sum of all credits less all debits associated with the account.  Might be positive, zero or negative.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
+     */
+    public function getBalance()
+    {
+        return $this->balance;
     }
 
     /**
@@ -206,24 +373,23 @@ class FHIRAccount extends FHIRDomainResource implements \JsonSerializable
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountCoverage
      * @return $this
      */
-    public function setCoverage(FHIRAccountCoverage $coverage = null)
+    public function addCoverage(FHIRAccountCoverage $coverage = null)
     {
         if (null === $coverage) {
             return $this; 
         }
-        $this->coverage = $coverage;
+        $this->coverage[] = $coverage;
         return $this;
     }
 
     /**
      * The party(s) that are responsible for covering the payment of this account, and what order should they be applied to the account.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountCoverage
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountCoverage[]
      */
     public function getCoverage()
     {
         return $this->coverage;
     }
-
 
     /**
      * Provides additional information about what the account tracks and how it is used.
@@ -257,54 +423,51 @@ class FHIRAccount extends FHIRDomainResource implements \JsonSerializable
         return $this->description;
     }
 
-
     /**
      * Parties financially responsible for the account.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountGuarantor
      * @return $this
      */
-    public function setGuarantor(FHIRAccountGuarantor $guarantor = null)
+    public function addGuarantor(FHIRAccountGuarantor $guarantor = null)
     {
         if (null === $guarantor) {
             return $this; 
         }
-        $this->guarantor = $guarantor;
+        $this->guarantor[] = $guarantor;
         return $this;
     }
 
     /**
      * Parties financially responsible for the account.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountGuarantor
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountGuarantor[]
      */
     public function getGuarantor()
     {
         return $this->guarantor;
     }
 
-
     /**
-     * Unique identifier used to reference the account.  Might or might not be intended for human use (e.g. credit card number).
+     * Unique identifier used to reference the account.  May or may not be intended for human use (e.g. credit card number).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
-    public function setIdentifier(FHIRIdentifier $identifier = null)
+    public function addIdentifier(FHIRIdentifier $identifier = null)
     {
         if (null === $identifier) {
             return $this; 
         }
-        $this->identifier = $identifier;
+        $this->identifier[] = $identifier;
         return $this;
     }
 
     /**
-     * Unique identifier used to reference the account.  Might or might not be intended for human use (e.g. credit card number).
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * Unique identifier used to reference the account.  May or may not be intended for human use (e.g. credit card number).
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
         return $this->identifier;
     }
-
 
     /**
      * Name used for the account when displaying it to humans in reports, etc.
@@ -338,7 +501,6 @@ class FHIRAccount extends FHIRDomainResource implements \JsonSerializable
         return $this->name;
     }
 
-
     /**
      * Indicates the organization, department, etc. with responsibility for the account.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -362,54 +524,28 @@ class FHIRAccount extends FHIRDomainResource implements \JsonSerializable
         return $this->owner;
     }
 
-
     /**
-     * Reference to a parent Account.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     * @return $this
-     */
-    public function setPartOf(FHIRReference $partOf = null)
-    {
-        if (null === $partOf) {
-            return $this; 
-        }
-        $this->partOf = $partOf;
-        return $this;
-    }
-
-    /**
-     * Reference to a parent Account.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getPartOf()
-    {
-        return $this->partOf;
-    }
-
-
-    /**
-     * The date range of services associated with this account.
+     * Identifies the period of time the account applies to; e.g. accounts created per fiscal year, quarter, etc.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
      * @return $this
      */
-    public function setServicePeriod(FHIRPeriod $servicePeriod = null)
+    public function setPeriod(FHIRPeriod $period = null)
     {
-        if (null === $servicePeriod) {
+        if (null === $period) {
             return $this; 
         }
-        $this->servicePeriod = $servicePeriod;
+        $this->period = $period;
         return $this;
     }
 
     /**
-     * The date range of services associated with this account.
+     * Identifies the period of time the account applies to; e.g. accounts created per fiscal year, quarter, etc.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public function getServicePeriod()
+    public function getPeriod()
     {
-        return $this->servicePeriod;
+        return $this->period;
     }
-
 
     /**
      * Indicates whether the account is presently used/usable or not.
@@ -443,7 +579,6 @@ class FHIRAccount extends FHIRDomainResource implements \JsonSerializable
         return $this->status;
     }
 
-
     /**
      * Identifies the patient, device, practitioner, location or other object the account is associated with.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -466,7 +601,6 @@ class FHIRAccount extends FHIRDomainResource implements \JsonSerializable
     {
         return $this->subject;
     }
-
 
     /**
      * Categorizes the account for reporting and searching purposes.
@@ -491,7 +625,6 @@ class FHIRAccount extends FHIRDomainResource implements \JsonSerializable
         return $this->type;
     }
 
-
     /**
      * @return string
      */
@@ -507,17 +640,47 @@ class FHIRAccount extends FHIRDomainResource implements \JsonSerializable
     {
         $a = parent::jsonSerialize();
         $a['resourceType'] = self::FHIR_TYPE_NAME;
-        if (null !== ($v = $this->getCoverage())) {
-            $a['coverage'] = $v;
+        if (null !== ($v = $this->getActive())) {
+            $a['active'] = $v;
+        }
+        if (null !== ($v = $this->getBalance())) {
+            $a['balance'] = $v;
+        }
+        if (0 < count($values = $this->getCoverage())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['coverage'] = $vs;
+            }
         }
         if (null !== ($v = $this->getDescription())) {
             $a['description'] = $v;
         }
-        if (null !== ($v = $this->getGuarantor())) {
-            $a['guarantor'] = $v;
+        if (0 < count($values = $this->getGuarantor())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['guarantor'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getIdentifier())) {
-            $a['identifier'] = $v;
+        if (0 < count($values = $this->getIdentifier())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['identifier'] = $vs;
+            }
         }
         if (null !== ($v = $this->getName())) {
             $a['name'] = $v;
@@ -525,11 +688,8 @@ class FHIRAccount extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getOwner())) {
             $a['owner'] = $v;
         }
-        if (null !== ($v = $this->getPartOf())) {
-            $a['partOf'] = $v;
-        }
-        if (null !== ($v = $this->getServicePeriod())) {
-            $a['servicePeriod'] = $v;
+        if (null !== ($v = $this->getPeriod())) {
+            $a['period'] = $v;
         }
         if (null !== ($v = $this->getStatus())) {
             $a['status'] = $v;
@@ -553,9 +713,54 @@ class FHIRAccount extends FHIRDomainResource implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Account xmlns="http://hl7.org/fhir"></Account>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getActive())) {
+            $v->xmlSerialize(true, $sxe->addChild('active'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getBalance())) {
+            $v->xmlSerialize(true, $sxe->addChild('balance'));
+        }
+        if (0 < count($values = $this->getCoverage())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('coverage'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getDescription())) {
+            $v->xmlSerialize(true, $sxe->addChild('description'));
+        }
+        if (0 < count($values = $this->getGuarantor())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('guarantor'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getIdentifier())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('identifier'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getName())) {
+            $v->xmlSerialize(true, $sxe->addChild('name'));
+        }
+        if (null !== ($v = $this->getOwner())) {
+            $v->xmlSerialize(true, $sxe->addChild('owner'));
+        }
+        if (null !== ($v = $this->getPeriod())) {
+            $v->xmlSerialize(true, $sxe->addChild('period'));
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('status'));
+        }
+        if (null !== ($v = $this->getSubject())) {
+            $v->xmlSerialize(true, $sxe->addChild('subject'));
+        }
+        if (null !== ($v = $this->getType())) {
+            $v->xmlSerialize(true, $sxe->addChild('type'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

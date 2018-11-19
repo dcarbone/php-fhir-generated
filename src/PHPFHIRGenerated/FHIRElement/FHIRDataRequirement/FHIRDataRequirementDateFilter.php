@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRDataRequirement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRDataRequirement;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -81,34 +81,28 @@ class FHIRDataRequirementDateFilter extends FHIRElement implements \JsonSerializ
     const FHIR_TYPE_NAME = 'DataRequirement.DateFilter';
 
     /**
-     * The date-valued attribute of the filter. The specified path SHALL be a FHIRPath resolveable on the specified type of the DataRequirement, and SHALL consist only of identifiers, constant indexers, and .resolve(). The path is allowed to contain qualifiers (.) to traverse sub-elements, as well as indexers ([x]) to traverse multiple-cardinality sub-elements (see the [Simple FHIRPath Profile](fhirpath.html#simple) for full details). Note that the index must be an integer constant. The path must resolve to an element of type date, dateTime, Period, Schedule, or Timing.
+     * The date-valued attribute of the filter. The specified path must be resolvable from the type of the required data. The path is allowed to contain qualifiers (.) to traverse sub-elements, as well as indexers ([x]) to traverse multiple-cardinality sub-elements. Note that the index must be an integer constant. The path must resolve to an element of type dateTime, Period, Schedule, or Timing.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $path = null;
+    private $path = null;
 
     /**
-     * A date parameter that refers to a search parameter defined on the specified type of the DataRequirement, and which searches on elements of type date, dateTime, Period, Schedule, or Timing.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public $searchParam = null;
-
-    /**
-     * The value of the filter. If period is specified, the filter will return only those data items that fall within the bounds determined by the Period, inclusive of the period boundaries. If dateTime is specified, the filter will return only those data items that are equal to the specified dateTime. If a Duration is specified, the filter will return only those data items that fall within Duration before now.
+     * The value of the filter. If period is specified, the filter will return only those data items that fall within the bounds determined by the Period, inclusive of the period boundaries. If dateTime is specified, the filter will return only those data items that are equal to the specified dateTime. If a Duration is specified, the filter will return only those data items that fall within Duration from now. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $valueDateTime = null;
+    private $valueDateTime = null;
 
     /**
-     * The value of the filter. If period is specified, the filter will return only those data items that fall within the bounds determined by the Period, inclusive of the period boundaries. If dateTime is specified, the filter will return only those data items that are equal to the specified dateTime. If a Duration is specified, the filter will return only those data items that fall within Duration before now.
+     * The value of the filter. If period is specified, the filter will return only those data items that fall within the bounds determined by the Period, inclusive of the period boundaries. If dateTime is specified, the filter will return only those data items that are equal to the specified dateTime. If a Duration is specified, the filter will return only those data items that fall within Duration from now. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration
      */
-    public $valueDuration = null;
+    private $valueDuration = null;
 
     /**
-     * The value of the filter. If period is specified, the filter will return only those data items that fall within the bounds determined by the Period, inclusive of the period boundaries. If dateTime is specified, the filter will return only those data items that are equal to the specified dateTime. If a Duration is specified, the filter will return only those data items that fall within Duration before now.
+     * The value of the filter. If period is specified, the filter will return only those data items that fall within the bounds determined by the Period, inclusive of the period boundaries. If dateTime is specified, the filter will return only those data items that are equal to the specified dateTime. If a Duration is specified, the filter will return only those data items that fall within Duration from now. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public $valuePeriod = null;
+    private $valuePeriod = null;
 
     /**
      * FHIRDataRequirementDateFilter Constructor
@@ -117,22 +111,50 @@ class FHIRDataRequirementDateFilter extends FHIRElement implements \JsonSerializ
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['path'])) {
-                $this->setPath($data['path']);
-            }
-            if (isset($data['searchParam'])) {
-                $this->setSearchParam($data['searchParam']);
+                $value = $data['path'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRDataRequirement\FHIRDataRequirementDateFilter::__construct - Property \"path\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setPath($value);
             }
             if (isset($data['valueDateTime'])) {
-                $this->setValueDateTime($data['valueDateTime']);
+                $value = $data['valueDateTime'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRDataRequirement\FHIRDataRequirementDateFilter::__construct - Property \"valueDateTime\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setValueDateTime($value);
             }
             if (isset($data['valueDuration'])) {
-                $this->setValueDuration($data['valueDuration']);
+                $value = $data['valueDuration'];
+                if (is_array($value)) {
+                    $value = new FHIRDuration($value);
+                } 
+                if (!($value instanceof FHIRDuration)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRDataRequirement\FHIRDataRequirementDateFilter::__construct - Property \"valueDuration\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setValueDuration($value);
             }
             if (isset($data['valuePeriod'])) {
-                $this->setValuePeriod($data['valuePeriod']);
+                $value = $data['valuePeriod'];
+                if (is_array($value)) {
+                    $value = new FHIRPeriod($value);
+                } 
+                if (!($value instanceof FHIRPeriod)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRDataRequirement\FHIRDataRequirementDateFilter::__construct - Property \"valuePeriod\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPeriod or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setValuePeriod($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -141,10 +163,11 @@ class FHIRDataRequirementDateFilter extends FHIRElement implements \JsonSerializ
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
-     * The date-valued attribute of the filter. The specified path SHALL be a FHIRPath resolveable on the specified type of the DataRequirement, and SHALL consist only of identifiers, constant indexers, and .resolve(). The path is allowed to contain qualifiers (.) to traverse sub-elements, as well as indexers ([x]) to traverse multiple-cardinality sub-elements (see the [Simple FHIRPath Profile](fhirpath.html#simple) for full details). Note that the index must be an integer constant. The path must resolve to an element of type date, dateTime, Period, Schedule, or Timing.
+     * The date-valued attribute of the filter. The specified path must be resolvable from the type of the required data. The path is allowed to contain qualifiers (.) to traverse sub-elements, as well as indexers ([x]) to traverse multiple-cardinality sub-elements. Note that the index must be an integer constant. The path must resolve to an element of type dateTime, Period, Schedule, or Timing.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
@@ -167,7 +190,7 @@ class FHIRDataRequirementDateFilter extends FHIRElement implements \JsonSerializ
     }
 
     /**
-     * The date-valued attribute of the filter. The specified path SHALL be a FHIRPath resolveable on the specified type of the DataRequirement, and SHALL consist only of identifiers, constant indexers, and .resolve(). The path is allowed to contain qualifiers (.) to traverse sub-elements, as well as indexers ([x]) to traverse multiple-cardinality sub-elements (see the [Simple FHIRPath Profile](fhirpath.html#simple) for full details). Note that the index must be an integer constant. The path must resolve to an element of type date, dateTime, Period, Schedule, or Timing.
+     * The date-valued attribute of the filter. The specified path must be resolvable from the type of the required data. The path is allowed to contain qualifiers (.) to traverse sub-elements, as well as indexers ([x]) to traverse multiple-cardinality sub-elements. Note that the index must be an integer constant. The path must resolve to an element of type dateTime, Period, Schedule, or Timing.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getPath()
@@ -175,42 +198,8 @@ class FHIRDataRequirementDateFilter extends FHIRElement implements \JsonSerializ
         return $this->path;
     }
 
-
     /**
-     * A date parameter that refers to a search parameter defined on the specified type of the DataRequirement, and which searches on elements of type date, dateTime, Period, Schedule, or Timing.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
-     * @return $this
-     */
-    public function setSearchParam($searchParam)
-    {
-        if (null === $searchParam) {
-            return $this; 
-        }
-        if (is_scalar($searchParam)) {
-            $searchParam = new FHIRString($searchParam);
-        }
-        if (!($searchParam instanceof FHIRString)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRDataRequirementDateFilter::setSearchParam - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
-                gettype($searchParam)
-            ));
-        }
-        $this->searchParam = $searchParam;
-        return $this;
-    }
-
-    /**
-     * A date parameter that refers to a search parameter defined on the specified type of the DataRequirement, and which searches on elements of type date, dateTime, Period, Schedule, or Timing.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public function getSearchParam()
-    {
-        return $this->searchParam;
-    }
-
-
-    /**
-     * The value of the filter. If period is specified, the filter will return only those data items that fall within the bounds determined by the Period, inclusive of the period boundaries. If dateTime is specified, the filter will return only those data items that are equal to the specified dateTime. If a Duration is specified, the filter will return only those data items that fall within Duration before now.
+     * The value of the filter. If period is specified, the filter will return only those data items that fall within the bounds determined by the Period, inclusive of the period boundaries. If dateTime is specified, the filter will return only those data items that are equal to the specified dateTime. If a Duration is specified, the filter will return only those data items that fall within Duration from now. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      * @return $this
      */
@@ -233,7 +222,7 @@ class FHIRDataRequirementDateFilter extends FHIRElement implements \JsonSerializ
     }
 
     /**
-     * The value of the filter. If period is specified, the filter will return only those data items that fall within the bounds determined by the Period, inclusive of the period boundaries. If dateTime is specified, the filter will return only those data items that are equal to the specified dateTime. If a Duration is specified, the filter will return only those data items that fall within Duration before now.
+     * The value of the filter. If period is specified, the filter will return only those data items that fall within the bounds determined by the Period, inclusive of the period boundaries. If dateTime is specified, the filter will return only those data items that are equal to the specified dateTime. If a Duration is specified, the filter will return only those data items that fall within Duration from now. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getValueDateTime()
@@ -241,9 +230,8 @@ class FHIRDataRequirementDateFilter extends FHIRElement implements \JsonSerializ
         return $this->valueDateTime;
     }
 
-
     /**
-     * The value of the filter. If period is specified, the filter will return only those data items that fall within the bounds determined by the Period, inclusive of the period boundaries. If dateTime is specified, the filter will return only those data items that are equal to the specified dateTime. If a Duration is specified, the filter will return only those data items that fall within Duration before now.
+     * The value of the filter. If period is specified, the filter will return only those data items that fall within the bounds determined by the Period, inclusive of the period boundaries. If dateTime is specified, the filter will return only those data items that are equal to the specified dateTime. If a Duration is specified, the filter will return only those data items that fall within Duration from now. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration
      * @return $this
      */
@@ -257,7 +245,7 @@ class FHIRDataRequirementDateFilter extends FHIRElement implements \JsonSerializ
     }
 
     /**
-     * The value of the filter. If period is specified, the filter will return only those data items that fall within the bounds determined by the Period, inclusive of the period boundaries. If dateTime is specified, the filter will return only those data items that are equal to the specified dateTime. If a Duration is specified, the filter will return only those data items that fall within Duration before now.
+     * The value of the filter. If period is specified, the filter will return only those data items that fall within the bounds determined by the Period, inclusive of the period boundaries. If dateTime is specified, the filter will return only those data items that are equal to the specified dateTime. If a Duration is specified, the filter will return only those data items that fall within Duration from now. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getValueDuration()
@@ -265,9 +253,8 @@ class FHIRDataRequirementDateFilter extends FHIRElement implements \JsonSerializ
         return $this->valueDuration;
     }
 
-
     /**
-     * The value of the filter. If period is specified, the filter will return only those data items that fall within the bounds determined by the Period, inclusive of the period boundaries. If dateTime is specified, the filter will return only those data items that are equal to the specified dateTime. If a Duration is specified, the filter will return only those data items that fall within Duration before now.
+     * The value of the filter. If period is specified, the filter will return only those data items that fall within the bounds determined by the Period, inclusive of the period boundaries. If dateTime is specified, the filter will return only those data items that are equal to the specified dateTime. If a Duration is specified, the filter will return only those data items that fall within Duration from now. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
      * @return $this
      */
@@ -281,14 +268,13 @@ class FHIRDataRequirementDateFilter extends FHIRElement implements \JsonSerializ
     }
 
     /**
-     * The value of the filter. If period is specified, the filter will return only those data items that fall within the bounds determined by the Period, inclusive of the period boundaries. If dateTime is specified, the filter will return only those data items that are equal to the specified dateTime. If a Duration is specified, the filter will return only those data items that fall within Duration before now.
+     * The value of the filter. If period is specified, the filter will return only those data items that fall within the bounds determined by the Period, inclusive of the period boundaries. If dateTime is specified, the filter will return only those data items that are equal to the specified dateTime. If a Duration is specified, the filter will return only those data items that fall within Duration from now. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getValuePeriod()
     {
         return $this->valuePeriod;
     }
-
 
     /**
      * @return string
@@ -306,9 +292,6 @@ class FHIRDataRequirementDateFilter extends FHIRElement implements \JsonSerializ
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getPath())) {
             $a['path'] = $v;
-        }
-        if (null !== ($v = $this->getSearchParam())) {
-            $a['searchParam'] = $v;
         }
         if (null !== ($v = $this->getValueDateTime())) {
             $a['valueDateTime'] = $v;
@@ -332,9 +315,18 @@ class FHIRDataRequirementDateFilter extends FHIRElement implements \JsonSerializ
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<DataRequirementDateFilter xmlns="http://hl7.org/fhir"></DataRequirementDateFilter>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getPath())) {
+            $v->xmlSerialize(true, $sxe->addChild('path'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getValueDateTime())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueDateTime'));
+        }
+        if (null !== ($v = $this->getValueDuration())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueDuration'));
+        }
+        if (null !== ($v = $this->getValuePeriod())) {
+            $v->xmlSerialize(true, $sxe->addChild('valuePeriod'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

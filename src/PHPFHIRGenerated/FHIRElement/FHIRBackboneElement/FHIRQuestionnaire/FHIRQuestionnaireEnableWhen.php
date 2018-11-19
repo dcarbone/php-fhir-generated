@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -62,6 +62,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire;
  * 
  */
 
+use PHPFHIRGenerated\FHIRElement\FHIRAttachment;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 use PHPFHIRGenerated\FHIRElement\FHIRBoolean;
 use PHPFHIRGenerated\FHIRElement\FHIRCoding;
@@ -70,10 +71,10 @@ use PHPFHIRGenerated\FHIRElement\FHIRDateTime;
 use PHPFHIRGenerated\FHIRElement\FHIRDecimal;
 use PHPFHIRGenerated\FHIRElement\FHIRInteger;
 use PHPFHIRGenerated\FHIRElement\FHIRQuantity;
-use PHPFHIRGenerated\FHIRElement\FHIRQuestionnaireItemOperator;
 use PHPFHIRGenerated\FHIRElement\FHIRReference;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
 use PHPFHIRGenerated\FHIRElement\FHIRTime;
+use PHPFHIRGenerated\FHIRElement\FHIRUri;
 
 /**
  * A structured set of questions intended to guide the collection of answers from end-users. Questionnaires provide detailed control over order, presentation, phraseology and grouping to allow coherent, consistent data collection.
@@ -87,76 +88,88 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     const FHIR_TYPE_NAME = 'Questionnaire.EnableWhen';
 
     /**
-     * A value that the referenced question is tested using the specified operator in order for the item to be enabled.
+     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment
+     */
+    private $answerAttachment = null;
+
+    /**
+     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $answerBoolean = null;
+    private $answerBoolean = null;
 
     /**
-     * A value that the referenced question is tested using the specified operator in order for the item to be enabled.
+     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
-    public $answerCoding = null;
+    private $answerCoding = null;
 
     /**
-     * A value that the referenced question is tested using the specified operator in order for the item to be enabled.
+     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
-    public $answerDate = null;
+    private $answerDate = null;
 
     /**
-     * A value that the referenced question is tested using the specified operator in order for the item to be enabled.
+     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $answerDateTime = null;
+    private $answerDateTime = null;
 
     /**
-     * A value that the referenced question is tested using the specified operator in order for the item to be enabled.
+     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
-    public $answerDecimal = null;
+    private $answerDecimal = null;
 
     /**
-     * A value that the referenced question is tested using the specified operator in order for the item to be enabled.
+     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
-    public $answerInteger = null;
+    private $answerInteger = null;
 
     /**
-     * A value that the referenced question is tested using the specified operator in order for the item to be enabled.
+     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    public $answerQuantity = null;
+    private $answerQuantity = null;
 
     /**
-     * A value that the referenced question is tested using the specified operator in order for the item to be enabled.
+     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $answerReference = null;
+    private $answerReference = null;
 
     /**
-     * A value that the referenced question is tested using the specified operator in order for the item to be enabled.
+     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $answerString = null;
+    private $answerString = null;
 
     /**
-     * A value that the referenced question is tested using the specified operator in order for the item to be enabled.
+     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
-    public $answerTime = null;
+    private $answerTime = null;
 
     /**
-     * Specifies the criteria by which the question is enabled.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuestionnaireItemOperator
+     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $operator = null;
+    private $answerUri = null;
+
+    /**
+     * An indication that this item should be enabled only if the specified question is answered (hasAnswer=true) or not answered (hasAnswer=false).
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     */
+    private $hasAnswer = null;
 
     /**
      * The linkId for the question whose answer (or lack of answer) governs whether this item is enabled.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $question = null;
+    private $question = null;
 
     /**
      * FHIRQuestionnaireEnableWhen Constructor
@@ -165,43 +178,166 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
+            if (isset($data['answerAttachment'])) {
+                $value = $data['answerAttachment'];
+                if (is_array($value)) {
+                    $value = new FHIRAttachment($value);
+                } 
+                if (!($value instanceof FHIRAttachment)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen::__construct - Property \"answerAttachment\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAttachment or data to construct type, saw ".gettype($value));
+                }
+                $this->setAnswerAttachment($value);
+            }
             if (isset($data['answerBoolean'])) {
-                $this->setAnswerBoolean($data['answerBoolean']);
+                $value = $data['answerBoolean'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen::__construct - Property \"answerBoolean\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value));
+                }
+                $this->setAnswerBoolean($value);
             }
             if (isset($data['answerCoding'])) {
-                $this->setAnswerCoding($data['answerCoding']);
+                $value = $data['answerCoding'];
+                if (is_array($value)) {
+                    $value = new FHIRCoding($value);
+                } 
+                if (!($value instanceof FHIRCoding)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen::__construct - Property \"answerCoding\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCoding or data to construct type, saw ".gettype($value));
+                }
+                $this->setAnswerCoding($value);
             }
             if (isset($data['answerDate'])) {
-                $this->setAnswerDate($data['answerDate']);
+                $value = $data['answerDate'];
+                if (is_array($value)) {
+                    $value = new FHIRDate($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDate($value);
+                }
+                if (!($value instanceof FHIRDate)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen::__construct - Property \"answerDate\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDate or data to construct type, saw ".gettype($value));
+                }
+                $this->setAnswerDate($value);
             }
             if (isset($data['answerDateTime'])) {
-                $this->setAnswerDateTime($data['answerDateTime']);
+                $value = $data['answerDateTime'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen::__construct - Property \"answerDateTime\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value));
+                }
+                $this->setAnswerDateTime($value);
             }
             if (isset($data['answerDecimal'])) {
-                $this->setAnswerDecimal($data['answerDecimal']);
+                $value = $data['answerDecimal'];
+                if (is_array($value)) {
+                    $value = new FHIRDecimal($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDecimal($value);
+                }
+                if (!($value instanceof FHIRDecimal)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen::__construct - Property \"answerDecimal\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDecimal or data to construct type, saw ".gettype($value));
+                }
+                $this->setAnswerDecimal($value);
             }
             if (isset($data['answerInteger'])) {
-                $this->setAnswerInteger($data['answerInteger']);
+                $value = $data['answerInteger'];
+                if (is_array($value)) {
+                    $value = new FHIRInteger($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRInteger($value);
+                }
+                if (!($value instanceof FHIRInteger)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen::__construct - Property \"answerInteger\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRInteger or data to construct type, saw ".gettype($value));
+                }
+                $this->setAnswerInteger($value);
             }
             if (isset($data['answerQuantity'])) {
-                $this->setAnswerQuantity($data['answerQuantity']);
+                $value = $data['answerQuantity'];
+                if (is_array($value)) {
+                    $value = new FHIRQuantity($value);
+                } 
+                if (!($value instanceof FHIRQuantity)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen::__construct - Property \"answerQuantity\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity or data to construct type, saw ".gettype($value));
+                }
+                $this->setAnswerQuantity($value);
             }
             if (isset($data['answerReference'])) {
-                $this->setAnswerReference($data['answerReference']);
+                $value = $data['answerReference'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen::__construct - Property \"answerReference\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setAnswerReference($value);
             }
             if (isset($data['answerString'])) {
-                $this->setAnswerString($data['answerString']);
+                $value = $data['answerString'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen::__construct - Property \"answerString\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setAnswerString($value);
             }
             if (isset($data['answerTime'])) {
-                $this->setAnswerTime($data['answerTime']);
+                $value = $data['answerTime'];
+                if (is_array($value)) {
+                    $value = new FHIRTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRTime($value);
+                }
+                if (!($value instanceof FHIRTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen::__construct - Property \"answerTime\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRTime or data to construct type, saw ".gettype($value));
+                }
+                $this->setAnswerTime($value);
             }
-            if (isset($data['operator'])) {
-                $this->setOperator($data['operator']);
+            if (isset($data['answerUri'])) {
+                $value = $data['answerUri'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen::__construct - Property \"answerUri\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value));
+                }
+                $this->setAnswerUri($value);
+            }
+            if (isset($data['hasAnswer'])) {
+                $value = $data['hasAnswer'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen::__construct - Property \"hasAnswer\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value));
+                }
+                $this->setHasAnswer($value);
             }
             if (isset($data['question'])) {
-                $this->setQuestion($data['question']);
+                $value = $data['question'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen::__construct - Property \"question\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setQuestion($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -210,10 +346,34 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
-     * A value that the referenced question is tested using the specified operator in order for the item to be enabled.
+     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRAttachment
+     * @return $this
+     */
+    public function setAnswerAttachment(FHIRAttachment $answerAttachment = null)
+    {
+        if (null === $answerAttachment) {
+            return $this; 
+        }
+        $this->answerAttachment = $answerAttachment;
+        return $this;
+    }
+
+    /**
+     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAttachment
+     */
+    public function getAnswerAttachment()
+    {
+        return $this->answerAttachment;
+    }
+
+    /**
+     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      * @return $this
      */
@@ -236,7 +396,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * A value that the referenced question is tested using the specified operator in order for the item to be enabled.
+     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getAnswerBoolean()
@@ -244,9 +404,8 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
         return $this->answerBoolean;
     }
 
-
     /**
-     * A value that the referenced question is tested using the specified operator in order for the item to be enabled.
+     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
      * @return $this
      */
@@ -260,7 +419,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * A value that the referenced question is tested using the specified operator in order for the item to be enabled.
+     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public function getAnswerCoding()
@@ -268,9 +427,8 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
         return $this->answerCoding;
     }
 
-
     /**
-     * A value that the referenced question is tested using the specified operator in order for the item to be enabled.
+     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDate
      * @return $this
      */
@@ -293,7 +451,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * A value that the referenced question is tested using the specified operator in order for the item to be enabled.
+     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public function getAnswerDate()
@@ -301,9 +459,8 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
         return $this->answerDate;
     }
 
-
     /**
-     * A value that the referenced question is tested using the specified operator in order for the item to be enabled.
+     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      * @return $this
      */
@@ -326,7 +483,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * A value that the referenced question is tested using the specified operator in order for the item to be enabled.
+     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getAnswerDateTime()
@@ -334,9 +491,8 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
         return $this->answerDateTime;
     }
 
-
     /**
-     * A value that the referenced question is tested using the specified operator in order for the item to be enabled.
+     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDecimal
      * @return $this
      */
@@ -359,7 +515,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * A value that the referenced question is tested using the specified operator in order for the item to be enabled.
+     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
     public function getAnswerDecimal()
@@ -367,9 +523,8 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
         return $this->answerDecimal;
     }
 
-
     /**
-     * A value that the referenced question is tested using the specified operator in order for the item to be enabled.
+     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRInteger
      * @return $this
      */
@@ -392,7 +547,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * A value that the referenced question is tested using the specified operator in order for the item to be enabled.
+     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public function getAnswerInteger()
@@ -400,9 +555,8 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
         return $this->answerInteger;
     }
 
-
     /**
-     * A value that the referenced question is tested using the specified operator in order for the item to be enabled.
+     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity
      * @return $this
      */
@@ -416,7 +570,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * A value that the referenced question is tested using the specified operator in order for the item to be enabled.
+     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public function getAnswerQuantity()
@@ -424,9 +578,8 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
         return $this->answerQuantity;
     }
 
-
     /**
-     * A value that the referenced question is tested using the specified operator in order for the item to be enabled.
+     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
@@ -440,7 +593,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * A value that the referenced question is tested using the specified operator in order for the item to be enabled.
+     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getAnswerReference()
@@ -448,9 +601,8 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
         return $this->answerReference;
     }
 
-
     /**
-     * A value that the referenced question is tested using the specified operator in order for the item to be enabled.
+     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
@@ -473,7 +625,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * A value that the referenced question is tested using the specified operator in order for the item to be enabled.
+     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getAnswerString()
@@ -481,9 +633,8 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
         return $this->answerString;
     }
 
-
     /**
-     * A value that the referenced question is tested using the specified operator in order for the item to be enabled.
+     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRTime
      * @return $this
      */
@@ -506,7 +657,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * A value that the referenced question is tested using the specified operator in order for the item to be enabled.
+     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRTime
      */
     public function getAnswerTime()
@@ -514,39 +665,69 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
         return $this->answerTime;
     }
 
-
     /**
-     * Specifies the criteria by which the question is enabled.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuestionnaireItemOperator
+     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
-    public function setOperator($operator)
+    public function setAnswerUri($answerUri)
     {
-        if (null === $operator) {
+        if (null === $answerUri) {
             return $this; 
         }
-        if (is_scalar($operator)) {
-            $operator = new FHIRQuestionnaireItemOperator($operator);
+        if (is_scalar($answerUri)) {
+            $answerUri = new FHIRUri($answerUri);
         }
-        if (!($operator instanceof FHIRQuestionnaireItemOperator)) {
+        if (!($answerUri instanceof FHIRUri)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRQuestionnaireEnableWhen::setOperator - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuestionnaireItemOperator or appropriate scalar value, %s seen.',
-                gettype($operator)
+                'FHIRQuestionnaireEnableWhen::setAnswerUri - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or appropriate scalar value, %s seen.',
+                gettype($answerUri)
             ));
         }
-        $this->operator = $operator;
+        $this->answerUri = $answerUri;
         return $this;
     }
 
     /**
-     * Specifies the criteria by which the question is enabled.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuestionnaireItemOperator
+     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public function getOperator()
+    public function getAnswerUri()
     {
-        return $this->operator;
+        return $this->answerUri;
     }
 
+    /**
+     * An indication that this item should be enabled only if the specified question is answered (hasAnswer=true) or not answered (hasAnswer=false).
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     * @return $this
+     */
+    public function setHasAnswer($hasAnswer)
+    {
+        if (null === $hasAnswer) {
+            return $this; 
+        }
+        if (is_scalar($hasAnswer)) {
+            $hasAnswer = new FHIRBoolean($hasAnswer);
+        }
+        if (!($hasAnswer instanceof FHIRBoolean)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRQuestionnaireEnableWhen::setHasAnswer - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or appropriate scalar value, %s seen.',
+                gettype($hasAnswer)
+            ));
+        }
+        $this->hasAnswer = $hasAnswer;
+        return $this;
+    }
+
+    /**
+     * An indication that this item should be enabled only if the specified question is answered (hasAnswer=true) or not answered (hasAnswer=false).
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     */
+    public function getHasAnswer()
+    {
+        return $this->hasAnswer;
+    }
 
     /**
      * The linkId for the question whose answer (or lack of answer) governs whether this item is enabled.
@@ -580,7 +761,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
         return $this->question;
     }
 
-
     /**
      * @return string
      */
@@ -595,6 +775,9 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
+        if (null !== ($v = $this->getAnswerAttachment())) {
+            $a['answerAttachment'] = $v;
+        }
         if (null !== ($v = $this->getAnswerBoolean())) {
             $a['answerBoolean'] = $v;
         }
@@ -625,8 +808,11 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
         if (null !== ($v = $this->getAnswerTime())) {
             $a['answerTime'] = $v;
         }
-        if (null !== ($v = $this->getOperator())) {
-            $a['operator'] = $v;
+        if (null !== ($v = $this->getAnswerUri())) {
+            $a['answerUri'] = $v;
+        }
+        if (null !== ($v = $this->getHasAnswer())) {
+            $a['hasAnswer'] = $v;
         }
         if (null !== ($v = $this->getQuestion())) {
             $a['question'] = $v;
@@ -644,9 +830,48 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<QuestionnaireEnableWhen xmlns="http://hl7.org/fhir"></QuestionnaireEnableWhen>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getAnswerAttachment())) {
+            $v->xmlSerialize(true, $sxe->addChild('answerAttachment'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getAnswerBoolean())) {
+            $v->xmlSerialize(true, $sxe->addChild('answerBoolean'));
+        }
+        if (null !== ($v = $this->getAnswerCoding())) {
+            $v->xmlSerialize(true, $sxe->addChild('answerCoding'));
+        }
+        if (null !== ($v = $this->getAnswerDate())) {
+            $v->xmlSerialize(true, $sxe->addChild('answerDate'));
+        }
+        if (null !== ($v = $this->getAnswerDateTime())) {
+            $v->xmlSerialize(true, $sxe->addChild('answerDateTime'));
+        }
+        if (null !== ($v = $this->getAnswerDecimal())) {
+            $v->xmlSerialize(true, $sxe->addChild('answerDecimal'));
+        }
+        if (null !== ($v = $this->getAnswerInteger())) {
+            $v->xmlSerialize(true, $sxe->addChild('answerInteger'));
+        }
+        if (null !== ($v = $this->getAnswerQuantity())) {
+            $v->xmlSerialize(true, $sxe->addChild('answerQuantity'));
+        }
+        if (null !== ($v = $this->getAnswerReference())) {
+            $v->xmlSerialize(true, $sxe->addChild('answerReference'));
+        }
+        if (null !== ($v = $this->getAnswerString())) {
+            $v->xmlSerialize(true, $sxe->addChild('answerString'));
+        }
+        if (null !== ($v = $this->getAnswerTime())) {
+            $v->xmlSerialize(true, $sxe->addChild('answerTime'));
+        }
+        if (null !== ($v = $this->getAnswerUri())) {
+            $v->xmlSerialize(true, $sxe->addChild('answerUri'));
+        }
+        if (null !== ($v = $this->getHasAnswer())) {
+            $v->xmlSerialize(true, $sxe->addChild('hasAnswer'));
+        }
+        if (null !== ($v = $this->getQuestion())) {
+            $v->xmlSerialize(true, $sxe->addChild('question'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImagingStudy;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImagingStudy;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,8 +63,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImagingStudy;
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\FHIRElement\FHIRCoding;
-use PHPFHIRGenerated\FHIRElement\FHIRIdentifier;
+use PHPFHIRGenerated\FHIRElement\FHIROid;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
 use PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt;
 
@@ -80,28 +79,28 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement implements \JsonSeria
     const FHIR_TYPE_NAME = 'ImagingStudy.Instance';
 
     /**
-     * Formal identifier for this image or other content.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
-     */
-    public $identifier = null;
-
-    /**
      * The number of instance in the series.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
-    public $number = null;
+    private $number = null;
 
     /**
      * DICOM instance  type.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * @var \PHPFHIRGenerated\FHIRElement\FHIROid
      */
-    public $sopClass = null;
+    private $sopClass = null;
 
     /**
      * The description of the instance.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $title = null;
+    private $title = null;
+
+    /**
+     * Formal identifier for this image or other content.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIROid
+     */
+    private $uid = null;
 
     /**
      * FHIRImagingStudyInstance Constructor
@@ -110,19 +109,54 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement implements \JsonSeria
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
-            if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
-            }
             if (isset($data['number'])) {
-                $this->setNumber($data['number']);
+                $value = $data['number'];
+                if (is_array($value)) {
+                    $value = new FHIRUnsignedInt($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUnsignedInt($value);
+                }
+                if (!($value instanceof FHIRUnsignedInt)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudyInstance::__construct - Property \"number\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setNumber($value);
             }
             if (isset($data['sopClass'])) {
-                $this->setSopClass($data['sopClass']);
+                $value = $data['sopClass'];
+                if (is_array($value)) {
+                    $value = new FHIROid($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIROid($value);
+                }
+                if (!($value instanceof FHIROid)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudyInstance::__construct - Property \"sopClass\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIROid or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setSopClass($value);
             }
             if (isset($data['title'])) {
-                $this->setTitle($data['title']);
+                $value = $data['title'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudyInstance::__construct - Property \"title\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setTitle($value);
+            }
+            if (isset($data['uid'])) {
+                $value = $data['uid'];
+                if (is_array($value)) {
+                    $value = new FHIROid($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIROid($value);
+                }
+                if (!($value instanceof FHIROid)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudyInstance::__construct - Property \"uid\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIROid or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setUid($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -131,31 +165,8 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement implements \JsonSeria
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
-
-    /**
-     * Formal identifier for this image or other content.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
-     * @return $this
-     */
-    public function setIdentifier(FHIRIdentifier $identifier = null)
-    {
-        if (null === $identifier) {
-            return $this; 
-        }
-        $this->identifier = $identifier;
-        return $this;
-    }
-
-    /**
-     * Formal identifier for this image or other content.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
-     */
-    public function getIdentifier()
-    {
-        return $this->identifier;
-    }
-
 
     /**
      * The number of instance in the series.
@@ -189,16 +200,24 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement implements \JsonSeria
         return $this->number;
     }
 
-
     /**
      * DICOM instance  type.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIROid
      * @return $this
      */
-    public function setSopClass(FHIRCoding $sopClass = null)
+    public function setSopClass($sopClass)
     {
         if (null === $sopClass) {
             return $this; 
+        }
+        if (is_scalar($sopClass)) {
+            $sopClass = new FHIROid($sopClass);
+        }
+        if (!($sopClass instanceof FHIROid)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRImagingStudyInstance::setSopClass - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIROid or appropriate scalar value, %s seen.',
+                gettype($sopClass)
+            ));
         }
         $this->sopClass = $sopClass;
         return $this;
@@ -206,13 +225,12 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * DICOM instance  type.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIROid
      */
     public function getSopClass()
     {
         return $this->sopClass;
     }
-
 
     /**
      * The description of the instance.
@@ -246,6 +264,37 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement implements \JsonSeria
         return $this->title;
     }
 
+    /**
+     * Formal identifier for this image or other content.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIROid
+     * @return $this
+     */
+    public function setUid($uid)
+    {
+        if (null === $uid) {
+            return $this; 
+        }
+        if (is_scalar($uid)) {
+            $uid = new FHIROid($uid);
+        }
+        if (!($uid instanceof FHIROid)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRImagingStudyInstance::setUid - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIROid or appropriate scalar value, %s seen.',
+                gettype($uid)
+            ));
+        }
+        $this->uid = $uid;
+        return $this;
+    }
+
+    /**
+     * Formal identifier for this image or other content.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIROid
+     */
+    public function getUid()
+    {
+        return $this->uid;
+    }
 
     /**
      * @return string
@@ -261,9 +310,6 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement implements \JsonSeria
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getIdentifier())) {
-            $a['identifier'] = $v;
-        }
         if (null !== ($v = $this->getNumber())) {
             $a['number'] = $v;
         }
@@ -272,6 +318,9 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement implements \JsonSeria
         }
         if (null !== ($v = $this->getTitle())) {
             $a['title'] = $v;
+        }
+        if (null !== ($v = $this->getUid())) {
+            $a['uid'] = $v;
         }
         return $a;
     }
@@ -286,9 +335,18 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement implements \JsonSeria
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ImagingStudyInstance xmlns="http://hl7.org/fhir"></ImagingStudyInstance>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getNumber())) {
+            $v->xmlSerialize(true, $sxe->addChild('number'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getSopClass())) {
+            $v->xmlSerialize(true, $sxe->addChild('sopClass'));
+        }
+        if (null !== ($v = $this->getTitle())) {
+            $v->xmlSerialize(true, $sxe->addChild('title'));
+        }
+        if (null !== ($v = $this->getUid())) {
+            $v->xmlSerialize(true, $sxe->addChild('uid'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

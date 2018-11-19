@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStateme
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStateme
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,9 +63,9 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStateme
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\FHIRElement\FHIRCanonical;
 use PHPFHIRGenerated\FHIRElement\FHIRDocumentMode;
-use PHPFHIRGenerated\FHIRElement\FHIRMarkdown;
+use PHPFHIRGenerated\FHIRElement\FHIRReference;
+use PHPFHIRGenerated\FHIRElement\FHIRString;
 
 /**
  * A Capability Statement documents a set of capabilities (behaviors) of a FHIR Server that may be used as a statement of actual server functionality or a statement of required or desired server implementation.
@@ -80,21 +80,21 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement implements \Js
 
     /**
      * A description of how the application supports or uses the specified document profile.  For example, when documents are created, what action is taken with consumed documents, etc.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $documentation = null;
+    private $documentation = null;
 
     /**
      * Mode of this document declaration - whether an application is a producer or consumer.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDocumentMode
      */
-    public $mode = null;
+    private $mode = null;
 
     /**
-     * A profile on the document Bundle that constrains which resources are present, and their contents.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * A constraint on a resource used in the document.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $profile = null;
+    private $profile = null;
 
     /**
      * FHIRCapabilityStatementDocument Constructor
@@ -103,16 +103,40 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement implements \Js
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['documentation'])) {
-                $this->setDocumentation($data['documentation']);
+                $value = $data['documentation'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementDocument::__construct - Property \"documentation\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setDocumentation($value);
             }
             if (isset($data['mode'])) {
-                $this->setMode($data['mode']);
+                $value = $data['mode'];
+                if (is_array($value)) {
+                    $value = new FHIRDocumentMode($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDocumentMode($value);
+                }
+                if (!($value instanceof FHIRDocumentMode)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementDocument::__construct - Property \"mode\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDocumentMode or data to construct type, saw ".gettype($value));
+                }
+                $this->setMode($value);
             }
             if (isset($data['profile'])) {
-                $this->setProfile($data['profile']);
+                $value = $data['profile'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementDocument::__construct - Property \"profile\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setProfile($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -121,11 +145,12 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement implements \Js
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
      * A description of how the application supports or uses the specified document profile.  For example, when documents are created, what action is taken with consumed documents, etc.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRMarkdown
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
     public function setDocumentation($documentation)
@@ -134,11 +159,11 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement implements \Js
             return $this; 
         }
         if (is_scalar($documentation)) {
-            $documentation = new FHIRMarkdown($documentation);
+            $documentation = new FHIRString($documentation);
         }
-        if (!($documentation instanceof FHIRMarkdown)) {
+        if (!($documentation instanceof FHIRString)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRCapabilityStatementDocument::setDocumentation - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRMarkdown or appropriate scalar value, %s seen.',
+                'FHIRCapabilityStatementDocument::setDocumentation - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
                 gettype($documentation)
             ));
         }
@@ -148,13 +173,12 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement implements \Js
 
     /**
      * A description of how the application supports or uses the specified document profile.  For example, when documents are created, what action is taken with consumed documents, etc.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRMarkdown
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getDocumentation()
     {
         return $this->documentation;
     }
-
 
     /**
      * Mode of this document declaration - whether an application is a producer or consumer.
@@ -188,39 +212,28 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement implements \Js
         return $this->mode;
     }
 
-
     /**
-     * A profile on the document Bundle that constrains which resources are present, and their contents.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * A constraint on a resource used in the document.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setProfile($profile)
+    public function setProfile(FHIRReference $profile = null)
     {
         if (null === $profile) {
             return $this; 
-        }
-        if (is_scalar($profile)) {
-            $profile = new FHIRCanonical($profile);
-        }
-        if (!($profile instanceof FHIRCanonical)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRCapabilityStatementDocument::setProfile - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCanonical or appropriate scalar value, %s seen.',
-                gettype($profile)
-            ));
         }
         $this->profile = $profile;
         return $this;
     }
 
     /**
-     * A profile on the document Bundle that constrains which resources are present, and their contents.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * A constraint on a resource used in the document.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getProfile()
     {
         return $this->profile;
     }
-
 
     /**
      * @return string
@@ -258,9 +271,15 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement implements \Js
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<CapabilityStatementDocument xmlns="http://hl7.org/fhir"></CapabilityStatementDocument>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getDocumentation())) {
+            $v->xmlSerialize(true, $sxe->addChild('documentation'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getMode())) {
+            $v->xmlSerialize(true, $sxe->addChild('mode'));
+        }
+        if (null !== ($v = $this->getProfile())) {
+            $v->xmlSerialize(true, $sxe->addChild('profile'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

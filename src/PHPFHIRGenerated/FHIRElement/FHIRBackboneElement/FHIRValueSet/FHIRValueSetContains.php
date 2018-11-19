@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -69,7 +69,7 @@ use PHPFHIRGenerated\FHIRElement\FHIRString;
 use PHPFHIRGenerated\FHIRElement\FHIRUri;
 
 /**
- * A ValueSet resource instances specifies a set of codes drawn from one or more code systems, intended for use in a particular context. Value sets link between [[[CodeSystem]]] definitions and their use in [coded elements](terminologies.html).
+ * A value set specifies a set of codes drawn from one or more code systems.
  *
  * Class FHIRValueSetContains
  * @package PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet
@@ -83,49 +83,49 @@ class FHIRValueSetContains extends FHIRBackboneElement implements \JsonSerializa
      * If true, this entry is included in the expansion for navigational purposes, and the user cannot select the code directly as a proper value.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $abstract = null;
+    private $abstract = null;
 
     /**
      * The code for this item in the expansion hierarchy. If this code is missing the entry in the hierarchy is a place holder (abstract) and does not represent a valid code in the value set.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public $code = null;
+    private $code = null;
 
     /**
      * Other codes and entries contained under this entry in the hierarchy.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains[]
      */
-    public $contains = null;
+    private $contains = [];
 
     /**
      * Additional representations for this item - other languages, aliases, specialized purposes, used for particular purposes, etc. These are relevant when the conditions of the expansion do not fix to a single correct representation.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetDesignation
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetDesignation[]
      */
-    public $designation = null;
+    private $designation = [];
 
     /**
      * The recommended display for this item in the expansion.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $display = null;
+    private $display = null;
 
     /**
-     * If the concept is inactive in the code system that defines it. Inactive codes are those that are no longer to be used, but are maintained by the code system for understanding legacy data. It might not be known or specified whether an concept is inactive (and it may depend on the context of use).
+     * If the concept is inactive in the code system that defines it. Inactive codes are those that are no longer to be used, but are maintained by the code system for understanding legacy data.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $inactive = null;
+    private $inactive = null;
 
     /**
      * An absolute URI which is the code system in which the code for this item in the expansion is defined.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $system = null;
+    private $system = null;
 
     /**
-     * The version of the code system from this code was taken. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.
+     * The version of this code system that defined this code and/or display. This should only be used with code systems that do not enforce concept permanence.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $version = null;
+    private $version = null;
 
     /**
      * FHIRValueSetContains Constructor
@@ -134,31 +134,110 @@ class FHIRValueSetContains extends FHIRBackboneElement implements \JsonSerializa
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['abstract'])) {
-                $this->setAbstract($data['abstract']);
+                $value = $data['abstract'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains::__construct - Property \"abstract\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value));
+                }
+                $this->setAbstract($value);
             }
             if (isset($data['code'])) {
-                $this->setCode($data['code']);
+                $value = $data['code'];
+                if (is_array($value)) {
+                    $value = new FHIRCode($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRCode($value);
+                }
+                if (!($value instanceof FHIRCode)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains::__construct - Property \"code\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or data to construct type, saw ".gettype($value));
+                }
+                $this->setCode($value);
             }
             if (isset($data['contains'])) {
-                $this->setContains($data['contains']);
+                $value = $data['contains'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRValueSetContains($v);
+                        } 
+                        if (!($v instanceof FHIRValueSetContains)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains::__construct - Collection field \"contains\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addContains($v);
+                    }
+                }
             }
             if (isset($data['designation'])) {
-                $this->setDesignation($data['designation']);
+                $value = $data['designation'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRValueSetDesignation($v);
+                        } 
+                        if (!($v instanceof FHIRValueSetDesignation)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains::__construct - Collection field \"designation\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetDesignation or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addDesignation($v);
+                    }
+                }
             }
             if (isset($data['display'])) {
-                $this->setDisplay($data['display']);
+                $value = $data['display'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains::__construct - Property \"display\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setDisplay($value);
             }
             if (isset($data['inactive'])) {
-                $this->setInactive($data['inactive']);
+                $value = $data['inactive'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains::__construct - Property \"inactive\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value));
+                }
+                $this->setInactive($value);
             }
             if (isset($data['system'])) {
-                $this->setSystem($data['system']);
+                $value = $data['system'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains::__construct - Property \"system\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value));
+                }
+                $this->setSystem($value);
             }
             if (isset($data['version'])) {
-                $this->setVersion($data['version']);
+                $value = $data['version'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains::__construct - Property \"version\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setVersion($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -167,6 +246,7 @@ class FHIRValueSetContains extends FHIRBackboneElement implements \JsonSerializa
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -201,7 +281,6 @@ class FHIRValueSetContains extends FHIRBackboneElement implements \JsonSerializa
         return $this->abstract;
     }
 
-
     /**
      * The code for this item in the expansion hierarchy. If this code is missing the entry in the hierarchy is a place holder (abstract) and does not represent a valid code in the value set.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCode
@@ -234,54 +313,51 @@ class FHIRValueSetContains extends FHIRBackboneElement implements \JsonSerializa
         return $this->code;
     }
 
-
     /**
      * Other codes and entries contained under this entry in the hierarchy.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains
      * @return $this
      */
-    public function setContains(FHIRValueSetContains $contains = null)
+    public function addContains(FHIRValueSetContains $contains = null)
     {
         if (null === $contains) {
             return $this; 
         }
-        $this->contains = $contains;
+        $this->contains[] = $contains;
         return $this;
     }
 
     /**
      * Other codes and entries contained under this entry in the hierarchy.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains[]
      */
     public function getContains()
     {
         return $this->contains;
     }
 
-
     /**
      * Additional representations for this item - other languages, aliases, specialized purposes, used for particular purposes, etc. These are relevant when the conditions of the expansion do not fix to a single correct representation.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetDesignation
      * @return $this
      */
-    public function setDesignation(FHIRValueSetDesignation $designation = null)
+    public function addDesignation(FHIRValueSetDesignation $designation = null)
     {
         if (null === $designation) {
             return $this; 
         }
-        $this->designation = $designation;
+        $this->designation[] = $designation;
         return $this;
     }
 
     /**
      * Additional representations for this item - other languages, aliases, specialized purposes, used for particular purposes, etc. These are relevant when the conditions of the expansion do not fix to a single correct representation.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetDesignation
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetDesignation[]
      */
     public function getDesignation()
     {
         return $this->designation;
     }
-
 
     /**
      * The recommended display for this item in the expansion.
@@ -315,9 +391,8 @@ class FHIRValueSetContains extends FHIRBackboneElement implements \JsonSerializa
         return $this->display;
     }
 
-
     /**
-     * If the concept is inactive in the code system that defines it. Inactive codes are those that are no longer to be used, but are maintained by the code system for understanding legacy data. It might not be known or specified whether an concept is inactive (and it may depend on the context of use).
+     * If the concept is inactive in the code system that defines it. Inactive codes are those that are no longer to be used, but are maintained by the code system for understanding legacy data.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      * @return $this
      */
@@ -340,14 +415,13 @@ class FHIRValueSetContains extends FHIRBackboneElement implements \JsonSerializa
     }
 
     /**
-     * If the concept is inactive in the code system that defines it. Inactive codes are those that are no longer to be used, but are maintained by the code system for understanding legacy data. It might not be known or specified whether an concept is inactive (and it may depend on the context of use).
+     * If the concept is inactive in the code system that defines it. Inactive codes are those that are no longer to be used, but are maintained by the code system for understanding legacy data.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getInactive()
     {
         return $this->inactive;
     }
-
 
     /**
      * An absolute URI which is the code system in which the code for this item in the expansion is defined.
@@ -381,9 +455,8 @@ class FHIRValueSetContains extends FHIRBackboneElement implements \JsonSerializa
         return $this->system;
     }
 
-
     /**
-     * The version of the code system from this code was taken. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.
+     * The version of this code system that defined this code and/or display. This should only be used with code systems that do not enforce concept permanence.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
@@ -406,14 +479,13 @@ class FHIRValueSetContains extends FHIRBackboneElement implements \JsonSerializa
     }
 
     /**
-     * The version of the code system from this code was taken. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.
+     * The version of this code system that defined this code and/or display. This should only be used with code systems that do not enforce concept permanence.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getVersion()
     {
         return $this->version;
     }
-
 
     /**
      * @return string
@@ -435,11 +507,27 @@ class FHIRValueSetContains extends FHIRBackboneElement implements \JsonSerializa
         if (null !== ($v = $this->getCode())) {
             $a['code'] = $v;
         }
-        if (null !== ($v = $this->getContains())) {
-            $a['contains'] = $v;
+        if (0 < count($values = $this->getContains())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['contains'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getDesignation())) {
-            $a['designation'] = $v;
+        if (0 < count($values = $this->getDesignation())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['designation'] = $vs;
+            }
         }
         if (null !== ($v = $this->getDisplay())) {
             $a['display'] = $v;
@@ -466,9 +554,38 @@ class FHIRValueSetContains extends FHIRBackboneElement implements \JsonSerializa
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ValueSetContains xmlns="http://hl7.org/fhir"></ValueSetContains>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getAbstract())) {
+            $v->xmlSerialize(true, $sxe->addChild('abstract'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getCode())) {
+            $v->xmlSerialize(true, $sxe->addChild('code'));
+        }
+        if (0 < count($values = $this->getContains())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('contains'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getDesignation())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('designation'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getDisplay())) {
+            $v->xmlSerialize(true, $sxe->addChild('display'));
+        }
+        if (null !== ($v = $this->getInactive())) {
+            $v->xmlSerialize(true, $sxe->addChild('inactive'));
+        }
+        if (null !== ($v = $this->getSystem())) {
+            $v->xmlSerialize(true, $sxe->addChild('system'));
+        }
+        if (null !== ($v = $this->getVersion())) {
+            $v->xmlSerialize(true, $sxe->addChild('version'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

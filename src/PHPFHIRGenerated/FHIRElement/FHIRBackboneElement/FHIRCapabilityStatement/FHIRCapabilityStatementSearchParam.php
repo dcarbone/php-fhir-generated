@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStateme
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStateme
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,10 +63,9 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStateme
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\FHIRElement\FHIRCanonical;
-use PHPFHIRGenerated\FHIRElement\FHIRMarkdown;
 use PHPFHIRGenerated\FHIRElement\FHIRSearchParamType;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
+use PHPFHIRGenerated\FHIRElement\FHIRUri;
 
 /**
  * A Capability Statement documents a set of capabilities (behaviors) of a FHIR Server that may be used as a statement of actual server functionality or a statement of required or desired server implementation.
@@ -80,28 +79,28 @@ class FHIRCapabilityStatementSearchParam extends FHIRBackboneElement implements 
     const FHIR_TYPE_NAME = 'CapabilityStatement.SearchParam';
 
     /**
-     * An absolute URI that is a formal reference to where this parameter was first defined, so that a client can be confident of the meaning of the search parameter (a reference to [[[SearchParameter.url]]]). This element SHALL be populated if the search parameter refers to a SearchParameter defined by the FHIR core specification or externally defined IGs.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * An absolute URI that is a formal reference to where this parameter was first defined, so that a client can be confident of the meaning of the search parameter (a reference to [[[SearchParameter.url]]]).
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $definition = null;
+    private $definition = null;
 
     /**
      * This allows documentation of any distinct behaviors about how the search parameter is used.  For example, text matching algorithms.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $documentation = null;
+    private $documentation = null;
 
     /**
      * The name of the search parameter used in the interface.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $name = null;
+    private $name = null;
 
     /**
      * The type of value a search parameter refers to, and how the content is interpreted.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRSearchParamType
      */
-    public $type = null;
+    private $type = null;
 
     /**
      * FHIRCapabilityStatementSearchParam Constructor
@@ -110,19 +109,54 @@ class FHIRCapabilityStatementSearchParam extends FHIRBackboneElement implements 
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['definition'])) {
-                $this->setDefinition($data['definition']);
+                $value = $data['definition'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSearchParam::__construct - Property \"definition\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDefinition($value);
             }
             if (isset($data['documentation'])) {
-                $this->setDocumentation($data['documentation']);
+                $value = $data['documentation'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSearchParam::__construct - Property \"documentation\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDocumentation($value);
             }
             if (isset($data['name'])) {
-                $this->setName($data['name']);
+                $value = $data['name'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSearchParam::__construct - Property \"name\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setName($value);
             }
             if (isset($data['type'])) {
-                $this->setType($data['type']);
+                $value = $data['type'];
+                if (is_array($value)) {
+                    $value = new FHIRSearchParamType($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRSearchParamType($value);
+                }
+                if (!($value instanceof FHIRSearchParamType)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSearchParam::__construct - Property \"type\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRSearchParamType or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setType($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -131,11 +165,12 @@ class FHIRCapabilityStatementSearchParam extends FHIRBackboneElement implements 
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
-     * An absolute URI that is a formal reference to where this parameter was first defined, so that a client can be confident of the meaning of the search parameter (a reference to [[[SearchParameter.url]]]). This element SHALL be populated if the search parameter refers to a SearchParameter defined by the FHIR core specification or externally defined IGs.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * An absolute URI that is a formal reference to where this parameter was first defined, so that a client can be confident of the meaning of the search parameter (a reference to [[[SearchParameter.url]]]).
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
     public function setDefinition($definition)
@@ -144,11 +179,11 @@ class FHIRCapabilityStatementSearchParam extends FHIRBackboneElement implements 
             return $this; 
         }
         if (is_scalar($definition)) {
-            $definition = new FHIRCanonical($definition);
+            $definition = new FHIRUri($definition);
         }
-        if (!($definition instanceof FHIRCanonical)) {
+        if (!($definition instanceof FHIRUri)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRCapabilityStatementSearchParam::setDefinition - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCanonical or appropriate scalar value, %s seen.',
+                'FHIRCapabilityStatementSearchParam::setDefinition - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or appropriate scalar value, %s seen.',
                 gettype($definition)
             ));
         }
@@ -157,18 +192,17 @@ class FHIRCapabilityStatementSearchParam extends FHIRBackboneElement implements 
     }
 
     /**
-     * An absolute URI that is a formal reference to where this parameter was first defined, so that a client can be confident of the meaning of the search parameter (a reference to [[[SearchParameter.url]]]). This element SHALL be populated if the search parameter refers to a SearchParameter defined by the FHIR core specification or externally defined IGs.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * An absolute URI that is a formal reference to where this parameter was first defined, so that a client can be confident of the meaning of the search parameter (a reference to [[[SearchParameter.url]]]).
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getDefinition()
     {
         return $this->definition;
     }
 
-
     /**
      * This allows documentation of any distinct behaviors about how the search parameter is used.  For example, text matching algorithms.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRMarkdown
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
     public function setDocumentation($documentation)
@@ -177,11 +211,11 @@ class FHIRCapabilityStatementSearchParam extends FHIRBackboneElement implements 
             return $this; 
         }
         if (is_scalar($documentation)) {
-            $documentation = new FHIRMarkdown($documentation);
+            $documentation = new FHIRString($documentation);
         }
-        if (!($documentation instanceof FHIRMarkdown)) {
+        if (!($documentation instanceof FHIRString)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRCapabilityStatementSearchParam::setDocumentation - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRMarkdown or appropriate scalar value, %s seen.',
+                'FHIRCapabilityStatementSearchParam::setDocumentation - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
                 gettype($documentation)
             ));
         }
@@ -191,13 +225,12 @@ class FHIRCapabilityStatementSearchParam extends FHIRBackboneElement implements 
 
     /**
      * This allows documentation of any distinct behaviors about how the search parameter is used.  For example, text matching algorithms.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRMarkdown
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getDocumentation()
     {
         return $this->documentation;
     }
-
 
     /**
      * The name of the search parameter used in the interface.
@@ -231,7 +264,6 @@ class FHIRCapabilityStatementSearchParam extends FHIRBackboneElement implements 
         return $this->name;
     }
 
-
     /**
      * The type of value a search parameter refers to, and how the content is interpreted.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRSearchParamType
@@ -263,7 +295,6 @@ class FHIRCapabilityStatementSearchParam extends FHIRBackboneElement implements 
     {
         return $this->type;
     }
-
 
     /**
      * @return string
@@ -304,9 +335,18 @@ class FHIRCapabilityStatementSearchParam extends FHIRBackboneElement implements 
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<CapabilityStatementSearchParam xmlns="http://hl7.org/fhir"></CapabilityStatementSearchParam>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getDefinition())) {
+            $v->xmlSerialize(true, $sxe->addChild('definition'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getDocumentation())) {
+            $v->xmlSerialize(true, $sxe->addChild('documentation'));
+        }
+        if (null !== ($v = $this->getName())) {
+            $v->xmlSerialize(true, $sxe->addChild('name'));
+        }
+        if (null !== ($v = $this->getType())) {
+            $v->xmlSerialize(true, $sxe->addChild('type'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

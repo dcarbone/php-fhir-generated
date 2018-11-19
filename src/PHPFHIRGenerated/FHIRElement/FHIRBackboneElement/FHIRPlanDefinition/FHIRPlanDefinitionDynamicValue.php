@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,7 +63,6 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition;
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\FHIRElement\FHIRExpression;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
 
 /**
@@ -78,16 +77,28 @@ class FHIRPlanDefinitionDynamicValue extends FHIRBackboneElement implements \Jso
     const FHIR_TYPE_NAME = 'PlanDefinition.DynamicValue';
 
     /**
-     * An expression specifying the value of the customized element.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRExpression
+     * A brief, natural language description of the intended semantics of the dynamic value.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $expression = null;
+    private $description = null;
+
+    /**
+     * An expression specifying the value of the customized element.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    private $expression = null;
+
+    /**
+     * The media type of the language for the expression.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    private $language = null;
 
     /**
      * The path to the element to be customized. This is the path on the resource that will hold the result of the calculation defined by the expression.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $path = null;
+    private $path = null;
 
     /**
      * FHIRPlanDefinitionDynamicValue Constructor
@@ -96,13 +107,54 @@ class FHIRPlanDefinitionDynamicValue extends FHIRBackboneElement implements \Jso
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
+            if (isset($data['description'])) {
+                $value = $data['description'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionDynamicValue::__construct - Property \"description\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setDescription($value);
+            }
             if (isset($data['expression'])) {
-                $this->setExpression($data['expression']);
+                $value = $data['expression'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionDynamicValue::__construct - Property \"expression\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setExpression($value);
+            }
+            if (isset($data['language'])) {
+                $value = $data['language'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionDynamicValue::__construct - Property \"language\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setLanguage($value);
             }
             if (isset($data['path'])) {
-                $this->setPath($data['path']);
+                $value = $data['path'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionDynamicValue::__construct - Property \"path\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setPath($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -111,17 +163,59 @@ class FHIRPlanDefinitionDynamicValue extends FHIRBackboneElement implements \Jso
                 ' seen.'
             );
         }
+        parent::__construct($data);
+    }
+
+    /**
+     * A brief, natural language description of the intended semantics of the dynamic value.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        if (null === $description) {
+            return $this; 
+        }
+        if (is_scalar($description)) {
+            $description = new FHIRString($description);
+        }
+        if (!($description instanceof FHIRString)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRPlanDefinitionDynamicValue::setDescription - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                gettype($description)
+            ));
+        }
+        $this->description = $description;
+        return $this;
+    }
+
+    /**
+     * A brief, natural language description of the intended semantics of the dynamic value.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getDescription()
+    {
+        return $this->description;
     }
 
     /**
      * An expression specifying the value of the customized element.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRExpression
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
-    public function setExpression(FHIRExpression $expression = null)
+    public function setExpression($expression)
     {
         if (null === $expression) {
             return $this; 
+        }
+        if (is_scalar($expression)) {
+            $expression = new FHIRString($expression);
+        }
+        if (!($expression instanceof FHIRString)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRPlanDefinitionDynamicValue::setExpression - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                gettype($expression)
+            ));
         }
         $this->expression = $expression;
         return $this;
@@ -129,13 +223,44 @@ class FHIRPlanDefinitionDynamicValue extends FHIRBackboneElement implements \Jso
 
     /**
      * An expression specifying the value of the customized element.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRExpression
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getExpression()
     {
         return $this->expression;
     }
 
+    /**
+     * The media type of the language for the expression.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     * @return $this
+     */
+    public function setLanguage($language)
+    {
+        if (null === $language) {
+            return $this; 
+        }
+        if (is_scalar($language)) {
+            $language = new FHIRString($language);
+        }
+        if (!($language instanceof FHIRString)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRPlanDefinitionDynamicValue::setLanguage - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                gettype($language)
+            ));
+        }
+        $this->language = $language;
+        return $this;
+    }
+
+    /**
+     * The media type of the language for the expression.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getLanguage()
+    {
+        return $this->language;
+    }
 
     /**
      * The path to the element to be customized. This is the path on the resource that will hold the result of the calculation defined by the expression.
@@ -169,7 +294,6 @@ class FHIRPlanDefinitionDynamicValue extends FHIRBackboneElement implements \Jso
         return $this->path;
     }
 
-
     /**
      * @return string
      */
@@ -184,8 +308,14 @@ class FHIRPlanDefinitionDynamicValue extends FHIRBackboneElement implements \Jso
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
+        if (null !== ($v = $this->getDescription())) {
+            $a['description'] = $v;
+        }
         if (null !== ($v = $this->getExpression())) {
             $a['expression'] = $v;
+        }
+        if (null !== ($v = $this->getLanguage())) {
+            $a['language'] = $v;
         }
         if (null !== ($v = $this->getPath())) {
             $a['path'] = $v;
@@ -203,9 +333,18 @@ class FHIRPlanDefinitionDynamicValue extends FHIRBackboneElement implements \Jso
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<PlanDefinitionDynamicValue xmlns="http://hl7.org/fhir"></PlanDefinitionDynamicValue>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getDescription())) {
+            $v->xmlSerialize(true, $sxe->addChild('description'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getExpression())) {
+            $v->xmlSerialize(true, $sxe->addChild('expression'));
+        }
+        if (null !== ($v = $this->getLanguage())) {
+            $v->xmlSerialize(true, $sxe->addChild('language'));
+        }
+        if (null !== ($v = $this->getPath())) {
+            $v->xmlSerialize(true, $sxe->addChild('path'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

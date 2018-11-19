@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -68,7 +68,6 @@ use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHI
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSoftware;
 use PHPFHIRGenerated\FHIRElement\FHIRBoolean;
-use PHPFHIRGenerated\FHIRElement\FHIRCanonical;
 use PHPFHIRGenerated\FHIRElement\FHIRCapabilityStatementKind;
 use PHPFHIRGenerated\FHIRElement\FHIRCode;
 use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
@@ -77,7 +76,9 @@ use PHPFHIRGenerated\FHIRElement\FHIRDateTime;
 use PHPFHIRGenerated\FHIRElement\FHIRId;
 use PHPFHIRGenerated\FHIRElement\FHIRMarkdown;
 use PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus;
+use PHPFHIRGenerated\FHIRElement\FHIRReference;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
+use PHPFHIRGenerated\FHIRElement\FHIRUnknownContentCode;
 use PHPFHIRGenerated\FHIRElement\FHIRUri;
 use PHPFHIRGenerated\FHIRElement\FHIRUsageContext;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
@@ -95,160 +96,166 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
     const FHIR_TYPE_NAME = 'CapabilityStatement';
 
     /**
-     * Contact details to assist a user in finding and communicating with the publisher.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail
+     * A code that indicates whether the application accepts unknown elements or extensions when reading resources.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUnknownContentCode
      */
-    public $contact = null;
+    private $acceptUnknown = null;
+
+    /**
+     * Contact details to assist a user in finding and communicating with the publisher.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
+     */
+    private $contact = [];
 
     /**
      * A copyright statement relating to the capability statement and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the capability statement.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public $copyright = null;
+    private $copyright = null;
 
     /**
-     * The date  (and optionally time) when the capability statement was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the capability statement changes.
+     * The date  (and optionally time) when the capability statement was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the capability statement changes.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $date = null;
+    private $date = null;
 
     /**
      * A free text natural language description of the capability statement from a consumer's perspective. Typically, this is used when the capability statement describes a desired rather than an actual solution, for example as a formal expression of requirements as part of an RFP.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public $description = null;
+    private $description = null;
 
     /**
      * A document definition.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementDocument
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementDocument[]
      */
-    public $document = null;
+    private $document = [];
 
     /**
-     * A Boolean value to indicate that this capability statement is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this capability statement is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $experimental = null;
+    private $experimental = null;
 
     /**
      * The version of the FHIR specification on which this capability statement is based.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRId
      */
-    public $fhirVersion = null;
+    private $fhirVersion = null;
 
     /**
      * A list of the formats supported by this implementation using their content types.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode[]
      */
-    public $format = null;
+    private $format = [];
 
     /**
      * Identifies a specific implementation instance that is described by the capability statement - i.e. a particular installation, rather than the capabilities of a software program.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementImplementation
      */
-    public $implementation = null;
+    private $implementation = null;
 
     /**
      * A list of implementation guides that the server does (or should) support in their entirety.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri[]
      */
-    public $implementationGuide = null;
+    private $implementationGuide = [];
 
     /**
-     * Reference to a canonical URL of another CapabilityStatement that this software adds to. The capability statement automatically includes everything in the other statement, and it is not duplicated, though the server may repeat the same resources, interactions and operations to add additional details to them.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * Reference to a canonical URL of another CapabilityStatement that this software implements or uses. This capability statement is a published API description that corresponds to a business service. The rest of the capability statement does not need to repeat the details of the referenced resource, but can do so.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri[]
      */
-    public $imports = null;
-
-    /**
-     * Reference to a canonical URL of another CapabilityStatement that this software implements. This capability statement is a published API description that corresponds to a business service. The server may actually implement a subset of the capability statement it claims to implement, so the capability statement must specify the full capability details.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCanonical
-     */
-    public $instantiates = null;
+    private $instantiates = [];
 
     /**
      * A legal or geographic region in which the capability statement is intended to be used.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $jurisdiction = null;
+    private $jurisdiction = [];
 
     /**
-     * The way that this statement is intended to be used, to describe an actual running instance of software, a particular product (kind, not instance of software) or a class of implementation (e.g. a desired purchase).
+     * The way that this statement is intended to be used, to describe an actual running instance of software, a particular product (kind not instance of software) or a class of implementation (e.g. a desired purchase).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCapabilityStatementKind
      */
-    public $kind = null;
+    private $kind = null;
 
     /**
      * A description of the messaging capabilities of the solution.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementMessaging
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementMessaging[]
      */
-    public $messaging = null;
+    private $messaging = [];
 
     /**
      * A natural language name identifying the capability statement. This name should be usable as an identifier for the module by machine processing applications such as code generation.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $name = null;
+    private $name = null;
 
     /**
      * A list of the patch formats supported by this implementation using their content types.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode[]
      */
-    public $patchFormat = null;
+    private $patchFormat = [];
 
     /**
-     * The name of the organization or individual that published the capability statement.
+     * A list of profiles that represent different use cases supported by the system. For a server, "supported by the system" means the system hosts/produces a set of resources that are conformant to a particular profile, and allows clients that use its services to search using this profile and to find appropriate data. For a client, it means the system will search by this profile and process data according to the guidance implicit in the profile. See further discussion in [Using Profiles](profiling.html#profile-uses).
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    private $profile = [];
+
+    /**
+     * The name of the individual or organization that published the capability statement.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $publisher = null;
+    private $publisher = null;
 
     /**
-     * Explanation of why this capability statement is needed and why it has been designed as it has.
+     * Explaination of why this capability statement is needed and why it has been designed as it has.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public $purpose = null;
+    private $purpose = null;
 
     /**
      * A definition of the restful capabilities of the solution, if any.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest[]
      */
-    public $rest = null;
+    private $rest = [];
 
     /**
      * Software that is covered by this capability statement.  It is used when the capability statement describes the capabilities of a particular software version, independent of an installation.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSoftware
      */
-    public $software = null;
+    private $software = null;
 
     /**
      * The status of this capability statement. Enables tracking the life-cycle of the content.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus
      */
-    public $status = null;
+    private $status = null;
 
     /**
      * A short, descriptive, user-friendly title for the capability statement.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $title = null;
+    private $title = null;
 
     /**
-     * An absolute URI that is used to identify this capability statement when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this capability statement is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the capability statement is stored on different servers.
+     * An absolute URI that is used to identify this capability statement when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this capability statement is (or will be) published. The URL SHOULD include the major version of the capability statement. For more information see [Technical and Business Versions](resource.html#versions).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $url = null;
+    private $url = null;
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate capability statement instances.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
-    public $useContext = null;
+    private $useContext = [];
 
     /**
      * The identifier that is used to identify this version of the capability statement when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the capability statement author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $version = null;
+    private $version = null;
 
     /**
      * FHIRCapabilityStatement Constructor
@@ -257,85 +264,378 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
+            if (isset($data['acceptUnknown'])) {
+                $value = $data['acceptUnknown'];
+                if (is_array($value)) {
+                    $value = new FHIRUnknownContentCode($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUnknownContentCode($value);
+                }
+                if (!($value instanceof FHIRUnknownContentCode)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement::__construct - Property \"acceptUnknown\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUnknownContentCode or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setAcceptUnknown($value);
+            }
             if (isset($data['contact'])) {
-                $this->setContact($data['contact']);
+                $value = $data['contact'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRContactDetail($v);
+                        } 
+                        if (!($v instanceof FHIRContactDetail)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement::__construct - Collection field \"contact\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRContactDetail or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addContact($v);
+                    }
+                }
             }
             if (isset($data['copyright'])) {
-                $this->setCopyright($data['copyright']);
+                $value = $data['copyright'];
+                if (is_array($value)) {
+                    $value = new FHIRMarkdown($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRMarkdown($value);
+                }
+                if (!($value instanceof FHIRMarkdown)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement::__construct - Property \"copyright\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRMarkdown or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setCopyright($value);
             }
             if (isset($data['date'])) {
-                $this->setDate($data['date']);
+                $value = $data['date'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement::__construct - Property \"date\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDate($value);
             }
             if (isset($data['description'])) {
-                $this->setDescription($data['description']);
+                $value = $data['description'];
+                if (is_array($value)) {
+                    $value = new FHIRMarkdown($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRMarkdown($value);
+                }
+                if (!($value instanceof FHIRMarkdown)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement::__construct - Property \"description\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRMarkdown or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDescription($value);
             }
             if (isset($data['document'])) {
-                $this->setDocument($data['document']);
+                $value = $data['document'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCapabilityStatementDocument($v);
+                        } 
+                        if (!($v instanceof FHIRCapabilityStatementDocument)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement::__construct - Collection field \"document\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementDocument or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addDocument($v);
+                    }
+                }
             }
             if (isset($data['experimental'])) {
-                $this->setExperimental($data['experimental']);
+                $value = $data['experimental'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement::__construct - Property \"experimental\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setExperimental($value);
             }
             if (isset($data['fhirVersion'])) {
-                $this->setFhirVersion($data['fhirVersion']);
+                $value = $data['fhirVersion'];
+                if (is_array($value)) {
+                    $value = new FHIRId($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRId($value);
+                }
+                if (!($value instanceof FHIRId)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement::__construct - Property \"fhirVersion\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRId or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setFhirVersion($value);
             }
             if (isset($data['format'])) {
-                $this->setFormat($data['format']);
+                $value = $data['format'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCode($v);
+                        }  elseif (is_scalar($v)) {
+                            $v = new FHIRCode($v);
+                        }
+                        if (!($v instanceof FHIRCode)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement::__construct - Collection field \"format\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addFormat($v);
+                    }
+                }
             }
             if (isset($data['implementation'])) {
-                $this->setImplementation($data['implementation']);
+                $value = $data['implementation'];
+                if (is_array($value)) {
+                    $value = new FHIRCapabilityStatementImplementation($value);
+                } 
+                if (!($value instanceof FHIRCapabilityStatementImplementation)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement::__construct - Property \"implementation\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementImplementation or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setImplementation($value);
             }
             if (isset($data['implementationGuide'])) {
-                $this->setImplementationGuide($data['implementationGuide']);
-            }
-            if (isset($data['imports'])) {
-                $this->setImports($data['imports']);
+                $value = $data['implementationGuide'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRUri($v);
+                        }  elseif (is_scalar($v)) {
+                            $v = new FHIRUri($v);
+                        }
+                        if (!($v instanceof FHIRUri)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement::__construct - Collection field \"implementationGuide\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addImplementationGuide($v);
+                    }
+                }
             }
             if (isset($data['instantiates'])) {
-                $this->setInstantiates($data['instantiates']);
+                $value = $data['instantiates'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRUri($v);
+                        }  elseif (is_scalar($v)) {
+                            $v = new FHIRUri($v);
+                        }
+                        if (!($v instanceof FHIRUri)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement::__construct - Collection field \"instantiates\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addInstantiates($v);
+                    }
+                }
             }
             if (isset($data['jurisdiction'])) {
-                $this->setJurisdiction($data['jurisdiction']);
+                $value = $data['jurisdiction'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement::__construct - Collection field \"jurisdiction\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addJurisdiction($v);
+                    }
+                }
             }
             if (isset($data['kind'])) {
-                $this->setKind($data['kind']);
+                $value = $data['kind'];
+                if (is_array($value)) {
+                    $value = new FHIRCapabilityStatementKind($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRCapabilityStatementKind($value);
+                }
+                if (!($value instanceof FHIRCapabilityStatementKind)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement::__construct - Property \"kind\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCapabilityStatementKind or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setKind($value);
             }
             if (isset($data['messaging'])) {
-                $this->setMessaging($data['messaging']);
+                $value = $data['messaging'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCapabilityStatementMessaging($v);
+                        } 
+                        if (!($v instanceof FHIRCapabilityStatementMessaging)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement::__construct - Collection field \"messaging\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementMessaging or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addMessaging($v);
+                    }
+                }
             }
             if (isset($data['name'])) {
-                $this->setName($data['name']);
+                $value = $data['name'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement::__construct - Property \"name\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setName($value);
             }
             if (isset($data['patchFormat'])) {
-                $this->setPatchFormat($data['patchFormat']);
+                $value = $data['patchFormat'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCode($v);
+                        }  elseif (is_scalar($v)) {
+                            $v = new FHIRCode($v);
+                        }
+                        if (!($v instanceof FHIRCode)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement::__construct - Collection field \"patchFormat\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addPatchFormat($v);
+                    }
+                }
+            }
+            if (isset($data['profile'])) {
+                $value = $data['profile'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement::__construct - Collection field \"profile\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addProfile($v);
+                    }
+                }
             }
             if (isset($data['publisher'])) {
-                $this->setPublisher($data['publisher']);
+                $value = $data['publisher'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement::__construct - Property \"publisher\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setPublisher($value);
             }
             if (isset($data['purpose'])) {
-                $this->setPurpose($data['purpose']);
+                $value = $data['purpose'];
+                if (is_array($value)) {
+                    $value = new FHIRMarkdown($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRMarkdown($value);
+                }
+                if (!($value instanceof FHIRMarkdown)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement::__construct - Property \"purpose\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRMarkdown or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setPurpose($value);
             }
             if (isset($data['rest'])) {
-                $this->setRest($data['rest']);
+                $value = $data['rest'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCapabilityStatementRest($v);
+                        } 
+                        if (!($v instanceof FHIRCapabilityStatementRest)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement::__construct - Collection field \"rest\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addRest($v);
+                    }
+                }
             }
             if (isset($data['software'])) {
-                $this->setSoftware($data['software']);
+                $value = $data['software'];
+                if (is_array($value)) {
+                    $value = new FHIRCapabilityStatementSoftware($value);
+                } 
+                if (!($value instanceof FHIRCapabilityStatementSoftware)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement::__construct - Property \"software\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSoftware or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setSoftware($value);
             }
             if (isset($data['status'])) {
-                $this->setStatus($data['status']);
+                $value = $data['status'];
+                if (is_array($value)) {
+                    $value = new FHIRPublicationStatus($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRPublicationStatus($value);
+                }
+                if (!($value instanceof FHIRPublicationStatus)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement::__construct - Property \"status\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setStatus($value);
             }
             if (isset($data['title'])) {
-                $this->setTitle($data['title']);
+                $value = $data['title'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement::__construct - Property \"title\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setTitle($value);
             }
             if (isset($data['url'])) {
-                $this->setUrl($data['url']);
+                $value = $data['url'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement::__construct - Property \"url\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setUrl($value);
             }
             if (isset($data['useContext'])) {
-                $this->setUseContext($data['useContext']);
+                $value = $data['useContext'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRUsageContext($v);
+                        } 
+                        if (!($v instanceof FHIRUsageContext)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement::__construct - Collection field \"useContext\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUsageContext or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addUseContext($v);
+                    }
+                }
             }
             if (isset($data['version'])) {
-                $this->setVersion($data['version']);
+                $value = $data['version'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement::__construct - Property \"version\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setVersion($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -344,6 +644,39 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
                 ' seen.'
             );
         }
+        parent::__construct($data);
+    }
+
+    /**
+     * A code that indicates whether the application accepts unknown elements or extensions when reading resources.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUnknownContentCode
+     * @return $this
+     */
+    public function setAcceptUnknown($acceptUnknown)
+    {
+        if (null === $acceptUnknown) {
+            return $this; 
+        }
+        if (is_scalar($acceptUnknown)) {
+            $acceptUnknown = new FHIRUnknownContentCode($acceptUnknown);
+        }
+        if (!($acceptUnknown instanceof FHIRUnknownContentCode)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRCapabilityStatement::setAcceptUnknown - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUnknownContentCode or appropriate scalar value, %s seen.',
+                gettype($acceptUnknown)
+            ));
+        }
+        $this->acceptUnknown = $acceptUnknown;
+        return $this;
+    }
+
+    /**
+     * A code that indicates whether the application accepts unknown elements or extensions when reading resources.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUnknownContentCode
+     */
+    public function getAcceptUnknown()
+    {
+        return $this->acceptUnknown;
     }
 
     /**
@@ -351,24 +684,23 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail
      * @return $this
      */
-    public function setContact(FHIRContactDetail $contact = null)
+    public function addContact(FHIRContactDetail $contact = null)
     {
         if (null === $contact) {
             return $this; 
         }
-        $this->contact = $contact;
+        $this->contact[] = $contact;
         return $this;
     }
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
     public function getContact()
     {
         return $this->contact;
     }
-
 
     /**
      * A copyright statement relating to the capability statement and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the capability statement.
@@ -402,9 +734,8 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
         return $this->copyright;
     }
 
-
     /**
-     * The date  (and optionally time) when the capability statement was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the capability statement changes.
+     * The date  (and optionally time) when the capability statement was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the capability statement changes.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      * @return $this
      */
@@ -427,14 +758,13 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * The date  (and optionally time) when the capability statement was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the capability statement changes.
+     * The date  (and optionally time) when the capability statement was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the capability statement changes.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getDate()
     {
         return $this->date;
     }
-
 
     /**
      * A free text natural language description of the capability statement from a consumer's perspective. Typically, this is used when the capability statement describes a desired rather than an actual solution, for example as a formal expression of requirements as part of an RFP.
@@ -468,33 +798,31 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
         return $this->description;
     }
 
-
     /**
      * A document definition.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementDocument
      * @return $this
      */
-    public function setDocument(FHIRCapabilityStatementDocument $document = null)
+    public function addDocument(FHIRCapabilityStatementDocument $document = null)
     {
         if (null === $document) {
             return $this; 
         }
-        $this->document = $document;
+        $this->document[] = $document;
         return $this;
     }
 
     /**
      * A document definition.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementDocument
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementDocument[]
      */
     public function getDocument()
     {
         return $this->document;
     }
 
-
     /**
-     * A Boolean value to indicate that this capability statement is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this capability statement is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      * @return $this
      */
@@ -517,14 +845,13 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * A Boolean value to indicate that this capability statement is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this capability statement is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getExperimental()
     {
         return $this->experimental;
     }
-
 
     /**
      * The version of the FHIR specification on which this capability statement is based.
@@ -558,13 +885,12 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
         return $this->fhirVersion;
     }
 
-
     /**
      * A list of the formats supported by this implementation using their content types.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCode
      * @return $this
      */
-    public function setFormat($format)
+    public function addFormat($format)
     {
         if (null === $format) {
             return $this; 
@@ -574,23 +900,22 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
         }
         if (!($format instanceof FHIRCode)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRCapabilityStatement::setFormat - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or appropriate scalar value, %s seen.',
+                'FHIRCapabilityStatement::addFormat - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or appropriate scalar value, %s seen.',
                 gettype($format)
             ));
         }
-        $this->format = $format;
+        $this->format[] = $format;
         return $this;
     }
 
     /**
      * A list of the formats supported by this implementation using their content types.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCode[]
      */
     public function getFormat()
     {
         return $this->format;
     }
-
 
     /**
      * Identifies a specific implementation instance that is described by the capability statement - i.e. a particular installation, rather than the capabilities of a software program.
@@ -615,132 +940,95 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
         return $this->implementation;
     }
 
-
     /**
      * A list of implementation guides that the server does (or should) support in their entirety.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
-    public function setImplementationGuide($implementationGuide)
+    public function addImplementationGuide($implementationGuide)
     {
         if (null === $implementationGuide) {
             return $this; 
         }
         if (is_scalar($implementationGuide)) {
-            $implementationGuide = new FHIRCanonical($implementationGuide);
+            $implementationGuide = new FHIRUri($implementationGuide);
         }
-        if (!($implementationGuide instanceof FHIRCanonical)) {
+        if (!($implementationGuide instanceof FHIRUri)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRCapabilityStatement::setImplementationGuide - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCanonical or appropriate scalar value, %s seen.',
+                'FHIRCapabilityStatement::addImplementationGuide - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or appropriate scalar value, %s seen.',
                 gettype($implementationGuide)
             ));
         }
-        $this->implementationGuide = $implementationGuide;
+        $this->implementationGuide[] = $implementationGuide;
         return $this;
     }
 
     /**
      * A list of implementation guides that the server does (or should) support in their entirety.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri[]
      */
     public function getImplementationGuide()
     {
         return $this->implementationGuide;
     }
 
-
     /**
-     * Reference to a canonical URL of another CapabilityStatement that this software adds to. The capability statement automatically includes everything in the other statement, and it is not duplicated, though the server may repeat the same resources, interactions and operations to add additional details to them.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * Reference to a canonical URL of another CapabilityStatement that this software implements or uses. This capability statement is a published API description that corresponds to a business service. The rest of the capability statement does not need to repeat the details of the referenced resource, but can do so.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
-    public function setImports($imports)
-    {
-        if (null === $imports) {
-            return $this; 
-        }
-        if (is_scalar($imports)) {
-            $imports = new FHIRCanonical($imports);
-        }
-        if (!($imports instanceof FHIRCanonical)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRCapabilityStatement::setImports - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCanonical or appropriate scalar value, %s seen.',
-                gettype($imports)
-            ));
-        }
-        $this->imports = $imports;
-        return $this;
-    }
-
-    /**
-     * Reference to a canonical URL of another CapabilityStatement that this software adds to. The capability statement automatically includes everything in the other statement, and it is not duplicated, though the server may repeat the same resources, interactions and operations to add additional details to them.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
-     */
-    public function getImports()
-    {
-        return $this->imports;
-    }
-
-
-    /**
-     * Reference to a canonical URL of another CapabilityStatement that this software implements. This capability statement is a published API description that corresponds to a business service. The server may actually implement a subset of the capability statement it claims to implement, so the capability statement must specify the full capability details.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
-     * @return $this
-     */
-    public function setInstantiates($instantiates)
+    public function addInstantiates($instantiates)
     {
         if (null === $instantiates) {
             return $this; 
         }
         if (is_scalar($instantiates)) {
-            $instantiates = new FHIRCanonical($instantiates);
+            $instantiates = new FHIRUri($instantiates);
         }
-        if (!($instantiates instanceof FHIRCanonical)) {
+        if (!($instantiates instanceof FHIRUri)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRCapabilityStatement::setInstantiates - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCanonical or appropriate scalar value, %s seen.',
+                'FHIRCapabilityStatement::addInstantiates - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or appropriate scalar value, %s seen.',
                 gettype($instantiates)
             ));
         }
-        $this->instantiates = $instantiates;
+        $this->instantiates[] = $instantiates;
         return $this;
     }
 
     /**
-     * Reference to a canonical URL of another CapabilityStatement that this software implements. This capability statement is a published API description that corresponds to a business service. The server may actually implement a subset of the capability statement it claims to implement, so the capability statement must specify the full capability details.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * Reference to a canonical URL of another CapabilityStatement that this software implements or uses. This capability statement is a published API description that corresponds to a business service. The rest of the capability statement does not need to repeat the details of the referenced resource, but can do so.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri[]
      */
     public function getInstantiates()
     {
         return $this->instantiates;
     }
 
-
     /**
      * A legal or geographic region in which the capability statement is intended to be used.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setJurisdiction(FHIRCodeableConcept $jurisdiction = null)
+    public function addJurisdiction(FHIRCodeableConcept $jurisdiction = null)
     {
         if (null === $jurisdiction) {
             return $this; 
         }
-        $this->jurisdiction = $jurisdiction;
+        $this->jurisdiction[] = $jurisdiction;
         return $this;
     }
 
     /**
      * A legal or geographic region in which the capability statement is intended to be used.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getJurisdiction()
     {
         return $this->jurisdiction;
     }
 
-
     /**
-     * The way that this statement is intended to be used, to describe an actual running instance of software, a particular product (kind, not instance of software) or a class of implementation (e.g. a desired purchase).
+     * The way that this statement is intended to be used, to describe an actual running instance of software, a particular product (kind not instance of software) or a class of implementation (e.g. a desired purchase).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCapabilityStatementKind
      * @return $this
      */
@@ -763,7 +1051,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * The way that this statement is intended to be used, to describe an actual running instance of software, a particular product (kind, not instance of software) or a class of implementation (e.g. a desired purchase).
+     * The way that this statement is intended to be used, to describe an actual running instance of software, a particular product (kind not instance of software) or a class of implementation (e.g. a desired purchase).
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCapabilityStatementKind
      */
     public function getKind()
@@ -771,30 +1059,28 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
         return $this->kind;
     }
 
-
     /**
      * A description of the messaging capabilities of the solution.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementMessaging
      * @return $this
      */
-    public function setMessaging(FHIRCapabilityStatementMessaging $messaging = null)
+    public function addMessaging(FHIRCapabilityStatementMessaging $messaging = null)
     {
         if (null === $messaging) {
             return $this; 
         }
-        $this->messaging = $messaging;
+        $this->messaging[] = $messaging;
         return $this;
     }
 
     /**
      * A description of the messaging capabilities of the solution.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementMessaging
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementMessaging[]
      */
     public function getMessaging()
     {
         return $this->messaging;
     }
-
 
     /**
      * A natural language name identifying the capability statement. This name should be usable as an identifier for the module by machine processing applications such as code generation.
@@ -828,13 +1114,12 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
         return $this->name;
     }
 
-
     /**
      * A list of the patch formats supported by this implementation using their content types.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCode
      * @return $this
      */
-    public function setPatchFormat($patchFormat)
+    public function addPatchFormat($patchFormat)
     {
         if (null === $patchFormat) {
             return $this; 
@@ -844,26 +1129,48 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
         }
         if (!($patchFormat instanceof FHIRCode)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRCapabilityStatement::setPatchFormat - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or appropriate scalar value, %s seen.',
+                'FHIRCapabilityStatement::addPatchFormat - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or appropriate scalar value, %s seen.',
                 gettype($patchFormat)
             ));
         }
-        $this->patchFormat = $patchFormat;
+        $this->patchFormat[] = $patchFormat;
         return $this;
     }
 
     /**
      * A list of the patch formats supported by this implementation using their content types.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCode[]
      */
     public function getPatchFormat()
     {
         return $this->patchFormat;
     }
 
+    /**
+     * A list of profiles that represent different use cases supported by the system. For a server, "supported by the system" means the system hosts/produces a set of resources that are conformant to a particular profile, and allows clients that use its services to search using this profile and to find appropriate data. For a client, it means the system will search by this profile and process data according to the guidance implicit in the profile. See further discussion in [Using Profiles](profiling.html#profile-uses).
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return $this
+     */
+    public function addProfile(FHIRReference $profile = null)
+    {
+        if (null === $profile) {
+            return $this; 
+        }
+        $this->profile[] = $profile;
+        return $this;
+    }
 
     /**
-     * The name of the organization or individual that published the capability statement.
+     * A list of profiles that represent different use cases supported by the system. For a server, "supported by the system" means the system hosts/produces a set of resources that are conformant to a particular profile, and allows clients that use its services to search using this profile and to find appropriate data. For a client, it means the system will search by this profile and process data according to the guidance implicit in the profile. See further discussion in [Using Profiles](profiling.html#profile-uses).
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getProfile()
+    {
+        return $this->profile;
+    }
+
+    /**
+     * The name of the individual or organization that published the capability statement.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
@@ -886,7 +1193,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * The name of the organization or individual that published the capability statement.
+     * The name of the individual or organization that published the capability statement.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getPublisher()
@@ -894,9 +1201,8 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
         return $this->publisher;
     }
 
-
     /**
-     * Explanation of why this capability statement is needed and why it has been designed as it has.
+     * Explaination of why this capability statement is needed and why it has been designed as it has.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      * @return $this
      */
@@ -919,7 +1225,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * Explanation of why this capability statement is needed and why it has been designed as it has.
+     * Explaination of why this capability statement is needed and why it has been designed as it has.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getPurpose()
@@ -927,30 +1233,28 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
         return $this->purpose;
     }
 
-
     /**
      * A definition of the restful capabilities of the solution, if any.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest
      * @return $this
      */
-    public function setRest(FHIRCapabilityStatementRest $rest = null)
+    public function addRest(FHIRCapabilityStatementRest $rest = null)
     {
         if (null === $rest) {
             return $this; 
         }
-        $this->rest = $rest;
+        $this->rest[] = $rest;
         return $this;
     }
 
     /**
      * A definition of the restful capabilities of the solution, if any.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest[]
      */
     public function getRest()
     {
         return $this->rest;
     }
-
 
     /**
      * Software that is covered by this capability statement.  It is used when the capability statement describes the capabilities of a particular software version, independent of an installation.
@@ -974,7 +1278,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
     {
         return $this->software;
     }
-
 
     /**
      * The status of this capability statement. Enables tracking the life-cycle of the content.
@@ -1008,7 +1311,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
         return $this->status;
     }
 
-
     /**
      * A short, descriptive, user-friendly title for the capability statement.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -1041,9 +1343,8 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
         return $this->title;
     }
 
-
     /**
-     * An absolute URI that is used to identify this capability statement when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this capability statement is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the capability statement is stored on different servers.
+     * An absolute URI that is used to identify this capability statement when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this capability statement is (or will be) published. The URL SHOULD include the major version of the capability statement. For more information see [Technical and Business Versions](resource.html#versions).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
@@ -1066,7 +1367,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * An absolute URI that is used to identify this capability statement when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this capability statement is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the capability statement is stored on different servers.
+     * An absolute URI that is used to identify this capability statement when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this capability statement is (or will be) published. The URL SHOULD include the major version of the capability statement. For more information see [Technical and Business Versions](resource.html#versions).
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getUrl()
@@ -1074,30 +1375,28 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
         return $this->url;
     }
 
-
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate capability statement instances.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUsageContext
      * @return $this
      */
-    public function setUseContext(FHIRUsageContext $useContext = null)
+    public function addUseContext(FHIRUsageContext $useContext = null)
     {
         if (null === $useContext) {
             return $this; 
         }
-        $this->useContext = $useContext;
+        $this->useContext[] = $useContext;
         return $this;
     }
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate capability statement instances.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUsageContext
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
     public function getUseContext()
     {
         return $this->useContext;
     }
-
 
     /**
      * The identifier that is used to identify this version of the capability statement when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the capability statement author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
@@ -1131,7 +1430,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
         return $this->version;
     }
 
-
     /**
      * @return string
      */
@@ -1147,8 +1445,19 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
     {
         $a = parent::jsonSerialize();
         $a['resourceType'] = self::FHIR_TYPE_NAME;
-        if (null !== ($v = $this->getContact())) {
-            $a['contact'] = $v;
+        if (null !== ($v = $this->getAcceptUnknown())) {
+            $a['acceptUnknown'] = $v;
+        }
+        if (0 < count($values = $this->getContact())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['contact'] = $vs;
+            }
         }
         if (null !== ($v = $this->getCopyright())) {
             $a['copyright'] = $v;
@@ -1159,8 +1468,16 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
         if (null !== ($v = $this->getDescription())) {
             $a['description'] = $v;
         }
-        if (null !== ($v = $this->getDocument())) {
-            $a['document'] = $v;
+        if (0 < count($values = $this->getDocument())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['document'] = $vs;
+            }
         }
         if (null !== ($v = $this->getExperimental())) {
             $a['experimental'] = $v;
@@ -1168,35 +1485,91 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
         if (null !== ($v = $this->getFhirVersion())) {
             $a['fhirVersion'] = $v;
         }
-        if (null !== ($v = $this->getFormat())) {
-            $a['format'] = $v;
+        if (0 < count($values = $this->getFormat())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['format'] = $vs;
+            }
         }
         if (null !== ($v = $this->getImplementation())) {
             $a['implementation'] = $v;
         }
-        if (null !== ($v = $this->getImplementationGuide())) {
-            $a['implementationGuide'] = $v;
+        if (0 < count($values = $this->getImplementationGuide())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['implementationGuide'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getImports())) {
-            $a['imports'] = $v;
+        if (0 < count($values = $this->getInstantiates())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['instantiates'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getInstantiates())) {
-            $a['instantiates'] = $v;
-        }
-        if (null !== ($v = $this->getJurisdiction())) {
-            $a['jurisdiction'] = $v;
+        if (0 < count($values = $this->getJurisdiction())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['jurisdiction'] = $vs;
+            }
         }
         if (null !== ($v = $this->getKind())) {
             $a['kind'] = $v;
         }
-        if (null !== ($v = $this->getMessaging())) {
-            $a['messaging'] = $v;
+        if (0 < count($values = $this->getMessaging())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['messaging'] = $vs;
+            }
         }
         if (null !== ($v = $this->getName())) {
             $a['name'] = $v;
         }
-        if (null !== ($v = $this->getPatchFormat())) {
-            $a['patchFormat'] = $v;
+        if (0 < count($values = $this->getPatchFormat())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['patchFormat'] = $vs;
+            }
+        }
+        if (0 < count($values = $this->getProfile())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['profile'] = $vs;
+            }
         }
         if (null !== ($v = $this->getPublisher())) {
             $a['publisher'] = $v;
@@ -1204,8 +1577,16 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
         if (null !== ($v = $this->getPurpose())) {
             $a['purpose'] = $v;
         }
-        if (null !== ($v = $this->getRest())) {
-            $a['rest'] = $v;
+        if (0 < count($values = $this->getRest())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['rest'] = $vs;
+            }
         }
         if (null !== ($v = $this->getSoftware())) {
             $a['software'] = $v;
@@ -1219,8 +1600,16 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
         if (null !== ($v = $this->getUrl())) {
             $a['url'] = $v;
         }
-        if (null !== ($v = $this->getUseContext())) {
-            $a['useContext'] = $v;
+        if (0 < count($values = $this->getUseContext())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['useContext'] = $vs;
+            }
         }
         if (null !== ($v = $this->getVersion())) {
             $a['version'] = $v;
@@ -1238,9 +1627,131 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<CapabilityStatement xmlns="http://hl7.org/fhir"></CapabilityStatement>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getAcceptUnknown())) {
+            $v->xmlSerialize(true, $sxe->addChild('acceptUnknown'));
         }
-        return $sxe->saveXML();
+        if (0 < count($values = $this->getContact())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('contact'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getCopyright())) {
+            $v->xmlSerialize(true, $sxe->addChild('copyright'));
+        }
+        if (null !== ($v = $this->getDate())) {
+            $v->xmlSerialize(true, $sxe->addChild('date'));
+        }
+        if (null !== ($v = $this->getDescription())) {
+            $v->xmlSerialize(true, $sxe->addChild('description'));
+        }
+        if (0 < count($values = $this->getDocument())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('document'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getExperimental())) {
+            $v->xmlSerialize(true, $sxe->addChild('experimental'));
+        }
+        if (null !== ($v = $this->getFhirVersion())) {
+            $v->xmlSerialize(true, $sxe->addChild('fhirVersion'));
+        }
+        if (0 < count($values = $this->getFormat())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('format'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getImplementation())) {
+            $v->xmlSerialize(true, $sxe->addChild('implementation'));
+        }
+        if (0 < count($values = $this->getImplementationGuide())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('implementationGuide'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getInstantiates())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('instantiates'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getJurisdiction())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('jurisdiction'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getKind())) {
+            $v->xmlSerialize(true, $sxe->addChild('kind'));
+        }
+        if (0 < count($values = $this->getMessaging())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('messaging'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getName())) {
+            $v->xmlSerialize(true, $sxe->addChild('name'));
+        }
+        if (0 < count($values = $this->getPatchFormat())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('patchFormat'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getProfile())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('profile'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getPublisher())) {
+            $v->xmlSerialize(true, $sxe->addChild('publisher'));
+        }
+        if (null !== ($v = $this->getPurpose())) {
+            $v->xmlSerialize(true, $sxe->addChild('purpose'));
+        }
+        if (0 < count($values = $this->getRest())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('rest'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getSoftware())) {
+            $v->xmlSerialize(true, $sxe->addChild('software'));
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('status'));
+        }
+        if (null !== ($v = $this->getTitle())) {
+            $v->xmlSerialize(true, $sxe->addChild('title'));
+        }
+        if (null !== ($v = $this->getUrl())) {
+            $v->xmlSerialize(true, $sxe->addChild('url'));
+        }
+        if (0 < count($values = $this->getUseContext())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('useContext'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getVersion())) {
+            $v->xmlSerialize(true, $sxe->addChild('version'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

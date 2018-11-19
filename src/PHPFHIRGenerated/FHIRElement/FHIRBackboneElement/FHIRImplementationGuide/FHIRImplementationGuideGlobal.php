@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImplementationGui
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImplementationGui
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,8 +63,8 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImplementationGui
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\FHIRElement\FHIRCanonical;
-use PHPFHIRGenerated\FHIRElement\FHIRCode;
+use PHPFHIRGenerated\FHIRElement\FHIRReference;
+use PHPFHIRGenerated\FHIRElement\FHIRResourceType;
 
 /**
  * A set of rules of how FHIR is used to solve a particular problem. This resource is used to gather all the parts of an implementation guide into a logical whole and to publish a computable definition of all the parts.
@@ -79,15 +79,15 @@ class FHIRImplementationGuideGlobal extends FHIRBackboneElement implements \Json
 
     /**
      * A reference to the profile that all instances must conform to.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $profile = null;
+    private $profile = null;
 
     /**
      * The type of resource that all instances must conform to.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRResourceType
      */
-    public $type = null;
+    private $type = null;
 
     /**
      * FHIRImplementationGuideGlobal Constructor
@@ -96,13 +96,28 @@ class FHIRImplementationGuideGlobal extends FHIRBackboneElement implements \Json
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['profile'])) {
-                $this->setProfile($data['profile']);
+                $value = $data['profile'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideGlobal::__construct - Property \"profile\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setProfile($value);
             }
             if (isset($data['type'])) {
-                $this->setType($data['type']);
+                $value = $data['type'];
+                if (is_array($value)) {
+                    $value = new FHIRResourceType($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRResourceType($value);
+                }
+                if (!($value instanceof FHIRResourceType)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideGlobal::__construct - Property \"type\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRResourceType or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setType($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -111,26 +126,18 @@ class FHIRImplementationGuideGlobal extends FHIRBackboneElement implements \Json
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
      * A reference to the profile that all instances must conform to.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setProfile($profile)
+    public function setProfile(FHIRReference $profile = null)
     {
         if (null === $profile) {
             return $this; 
-        }
-        if (is_scalar($profile)) {
-            $profile = new FHIRCanonical($profile);
-        }
-        if (!($profile instanceof FHIRCanonical)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRImplementationGuideGlobal::setProfile - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCanonical or appropriate scalar value, %s seen.',
-                gettype($profile)
-            ));
         }
         $this->profile = $profile;
         return $this;
@@ -138,17 +145,16 @@ class FHIRImplementationGuideGlobal extends FHIRBackboneElement implements \Json
 
     /**
      * A reference to the profile that all instances must conform to.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getProfile()
     {
         return $this->profile;
     }
 
-
     /**
      * The type of resource that all instances must conform to.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRResourceType
      * @return $this
      */
     public function setType($type)
@@ -157,11 +163,11 @@ class FHIRImplementationGuideGlobal extends FHIRBackboneElement implements \Json
             return $this; 
         }
         if (is_scalar($type)) {
-            $type = new FHIRCode($type);
+            $type = new FHIRResourceType($type);
         }
-        if (!($type instanceof FHIRCode)) {
+        if (!($type instanceof FHIRResourceType)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRImplementationGuideGlobal::setType - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or appropriate scalar value, %s seen.',
+                'FHIRImplementationGuideGlobal::setType - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRResourceType or appropriate scalar value, %s seen.',
                 gettype($type)
             ));
         }
@@ -171,13 +177,12 @@ class FHIRImplementationGuideGlobal extends FHIRBackboneElement implements \Json
 
     /**
      * The type of resource that all instances must conform to.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRResourceType
      */
     public function getType()
     {
         return $this->type;
     }
-
 
     /**
      * @return string
@@ -212,9 +217,12 @@ class FHIRImplementationGuideGlobal extends FHIRBackboneElement implements \Json
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ImplementationGuideGlobal xmlns="http://hl7.org/fhir"></ImplementationGuideGlobal>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getProfile())) {
+            $v->xmlSerialize(true, $sxe->addChild('profile'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getType())) {
+            $v->xmlSerialize(true, $sxe->addChild('type'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

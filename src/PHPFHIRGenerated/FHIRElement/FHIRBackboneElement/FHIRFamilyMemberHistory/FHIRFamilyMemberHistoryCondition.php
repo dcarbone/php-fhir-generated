@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRFamilyMemberHisto
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRFamilyMemberHisto
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -71,7 +71,7 @@ use PHPFHIRGenerated\FHIRElement\FHIRRange;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
 
 /**
- * Significant health conditions for a person related to the patient relevant in the context of care for the patient.
+ * Significant health events and conditions for a person related to the patient relevant in the context of care for the patient.
  *
  * Class FHIRFamilyMemberHistoryCondition
  * @package PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRFamilyMemberHistory
@@ -85,43 +85,43 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement implements \J
      * The actual condition specified. Could be a coded condition (like MI or Diabetes) or a less specific string like 'cancer' depending on how much is known about the condition and the capabilities of the creating system.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $code = null;
+    private $code = null;
 
     /**
      * An area where general notes can be placed about this specific condition.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
-    public $note = null;
+    private $note = [];
 
     /**
-     * Either the age of onset, range of approximate age or descriptive string can be recorded.  For conditions with multiple occurrences, this describes the first known occurrence.
+     * Either the age of onset, range of approximate age or descriptive string can be recorded.  For conditions with multiple occurrences, this describes the first known occurrence. (choose any one of onset*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
      */
-    public $onsetAge = null;
+    private $onsetAge = null;
 
     /**
-     * Either the age of onset, range of approximate age or descriptive string can be recorded.  For conditions with multiple occurrences, this describes the first known occurrence.
+     * Either the age of onset, range of approximate age or descriptive string can be recorded.  For conditions with multiple occurrences, this describes the first known occurrence. (choose any one of onset*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public $onsetPeriod = null;
+    private $onsetPeriod = null;
 
     /**
-     * Either the age of onset, range of approximate age or descriptive string can be recorded.  For conditions with multiple occurrences, this describes the first known occurrence.
+     * Either the age of onset, range of approximate age or descriptive string can be recorded.  For conditions with multiple occurrences, this describes the first known occurrence. (choose any one of onset*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
-    public $onsetRange = null;
+    private $onsetRange = null;
 
     /**
-     * Either the age of onset, range of approximate age or descriptive string can be recorded.  For conditions with multiple occurrences, this describes the first known occurrence.
+     * Either the age of onset, range of approximate age or descriptive string can be recorded.  For conditions with multiple occurrences, this describes the first known occurrence. (choose any one of onset*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $onsetString = null;
+    private $onsetString = null;
 
     /**
      * Indicates what happened as a result of this condition.  If the condition resulted in death, deceased date is captured on the relation.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $outcome = null;
+    private $outcome = null;
 
     /**
      * FHIRFamilyMemberHistoryCondition Constructor
@@ -130,28 +130,84 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement implements \J
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['code'])) {
-                $this->setCode($data['code']);
+                $value = $data['code'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryCondition::__construct - Property \"code\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setCode($value);
             }
             if (isset($data['note'])) {
-                $this->setNote($data['note']);
+                $value = $data['note'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRAnnotation($v);
+                        } 
+                        if (!($v instanceof FHIRAnnotation)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryCondition::__construct - Collection field \"note\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAnnotation or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addNote($v);
+                    }
+                }
             }
             if (isset($data['onsetAge'])) {
-                $this->setOnsetAge($data['onsetAge']);
+                $value = $data['onsetAge'];
+                if (is_array($value)) {
+                    $value = new FHIRAge($value);
+                } 
+                if (!($value instanceof FHIRAge)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryCondition::__construct - Property \"onsetAge\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setOnsetAge($value);
             }
             if (isset($data['onsetPeriod'])) {
-                $this->setOnsetPeriod($data['onsetPeriod']);
+                $value = $data['onsetPeriod'];
+                if (is_array($value)) {
+                    $value = new FHIRPeriod($value);
+                } 
+                if (!($value instanceof FHIRPeriod)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryCondition::__construct - Property \"onsetPeriod\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPeriod or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setOnsetPeriod($value);
             }
             if (isset($data['onsetRange'])) {
-                $this->setOnsetRange($data['onsetRange']);
+                $value = $data['onsetRange'];
+                if (is_array($value)) {
+                    $value = new FHIRRange($value);
+                } 
+                if (!($value instanceof FHIRRange)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryCondition::__construct - Property \"onsetRange\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRRange or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setOnsetRange($value);
             }
             if (isset($data['onsetString'])) {
-                $this->setOnsetString($data['onsetString']);
+                $value = $data['onsetString'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryCondition::__construct - Property \"onsetString\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setOnsetString($value);
             }
             if (isset($data['outcome'])) {
-                $this->setOutcome($data['outcome']);
+                $value = $data['outcome'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryCondition::__construct - Property \"outcome\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setOutcome($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -160,6 +216,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement implements \J
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -185,33 +242,31 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement implements \J
         return $this->code;
     }
 
-
     /**
      * An area where general notes can be placed about this specific condition.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation
      * @return $this
      */
-    public function setNote(FHIRAnnotation $note = null)
+    public function addNote(FHIRAnnotation $note = null)
     {
         if (null === $note) {
             return $this; 
         }
-        $this->note = $note;
+        $this->note[] = $note;
         return $this;
     }
 
     /**
      * An area where general notes can be placed about this specific condition.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
         return $this->note;
     }
 
-
     /**
-     * Either the age of onset, range of approximate age or descriptive string can be recorded.  For conditions with multiple occurrences, this describes the first known occurrence.
+     * Either the age of onset, range of approximate age or descriptive string can be recorded.  For conditions with multiple occurrences, this describes the first known occurrence. (choose any one of onset*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
      * @return $this
      */
@@ -225,7 +280,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement implements \J
     }
 
     /**
-     * Either the age of onset, range of approximate age or descriptive string can be recorded.  For conditions with multiple occurrences, this describes the first known occurrence.
+     * Either the age of onset, range of approximate age or descriptive string can be recorded.  For conditions with multiple occurrences, this describes the first known occurrence. (choose any one of onset*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
      */
     public function getOnsetAge()
@@ -233,9 +288,8 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement implements \J
         return $this->onsetAge;
     }
 
-
     /**
-     * Either the age of onset, range of approximate age or descriptive string can be recorded.  For conditions with multiple occurrences, this describes the first known occurrence.
+     * Either the age of onset, range of approximate age or descriptive string can be recorded.  For conditions with multiple occurrences, this describes the first known occurrence. (choose any one of onset*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
      * @return $this
      */
@@ -249,7 +303,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement implements \J
     }
 
     /**
-     * Either the age of onset, range of approximate age or descriptive string can be recorded.  For conditions with multiple occurrences, this describes the first known occurrence.
+     * Either the age of onset, range of approximate age or descriptive string can be recorded.  For conditions with multiple occurrences, this describes the first known occurrence. (choose any one of onset*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getOnsetPeriod()
@@ -257,9 +311,8 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement implements \J
         return $this->onsetPeriod;
     }
 
-
     /**
-     * Either the age of onset, range of approximate age or descriptive string can be recorded.  For conditions with multiple occurrences, this describes the first known occurrence.
+     * Either the age of onset, range of approximate age or descriptive string can be recorded.  For conditions with multiple occurrences, this describes the first known occurrence. (choose any one of onset*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRRange
      * @return $this
      */
@@ -273,7 +326,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement implements \J
     }
 
     /**
-     * Either the age of onset, range of approximate age or descriptive string can be recorded.  For conditions with multiple occurrences, this describes the first known occurrence.
+     * Either the age of onset, range of approximate age or descriptive string can be recorded.  For conditions with multiple occurrences, this describes the first known occurrence. (choose any one of onset*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public function getOnsetRange()
@@ -281,9 +334,8 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement implements \J
         return $this->onsetRange;
     }
 
-
     /**
-     * Either the age of onset, range of approximate age or descriptive string can be recorded.  For conditions with multiple occurrences, this describes the first known occurrence.
+     * Either the age of onset, range of approximate age or descriptive string can be recorded.  For conditions with multiple occurrences, this describes the first known occurrence. (choose any one of onset*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
@@ -306,14 +358,13 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement implements \J
     }
 
     /**
-     * Either the age of onset, range of approximate age or descriptive string can be recorded.  For conditions with multiple occurrences, this describes the first known occurrence.
+     * Either the age of onset, range of approximate age or descriptive string can be recorded.  For conditions with multiple occurrences, this describes the first known occurrence. (choose any one of onset*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getOnsetString()
     {
         return $this->onsetString;
     }
-
 
     /**
      * Indicates what happened as a result of this condition.  If the condition resulted in death, deceased date is captured on the relation.
@@ -338,7 +389,6 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement implements \J
         return $this->outcome;
     }
 
-
     /**
      * @return string
      */
@@ -356,8 +406,16 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement implements \J
         if (null !== ($v = $this->getCode())) {
             $a['code'] = $v;
         }
-        if (null !== ($v = $this->getNote())) {
-            $a['note'] = $v;
+        if (0 < count($values = $this->getNote())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['note'] = $vs;
+            }
         }
         if (null !== ($v = $this->getOnsetAge())) {
             $a['onsetAge'] = $v;
@@ -387,9 +445,31 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement implements \J
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<FamilyMemberHistoryCondition xmlns="http://hl7.org/fhir"></FamilyMemberHistoryCondition>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getCode())) {
+            $v->xmlSerialize(true, $sxe->addChild('code'));
         }
-        return $sxe->saveXML();
+        if (0 < count($values = $this->getNote())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('note'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getOnsetAge())) {
+            $v->xmlSerialize(true, $sxe->addChild('onsetAge'));
+        }
+        if (null !== ($v = $this->getOnsetPeriod())) {
+            $v->xmlSerialize(true, $sxe->addChild('onsetPeriod'));
+        }
+        if (null !== ($v = $this->getOnsetRange())) {
+            $v->xmlSerialize(true, $sxe->addChild('onsetRange'));
+        }
+        if (null !== ($v = $this->getOnsetString())) {
+            $v->xmlSerialize(true, $sxe->addChild('onsetString'));
+        }
+        if (null !== ($v = $this->getOutcome())) {
+            $v->xmlSerialize(true, $sxe->addChild('outcome'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

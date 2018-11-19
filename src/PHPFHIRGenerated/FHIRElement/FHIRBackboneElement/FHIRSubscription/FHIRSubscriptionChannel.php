@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSubscription;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSubscription;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -65,10 +65,10 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSubscription;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
 use PHPFHIRGenerated\FHIRElement\FHIRSubscriptionChannelType;
-use PHPFHIRGenerated\FHIRElement\FHIRUrl;
+use PHPFHIRGenerated\FHIRElement\FHIRUri;
 
 /**
- * The subscription resource is used to define a push-based subscription from a server to another system. Once a subscription is registered with the server, the server checks every resource that is created or updated, and if the resource matches the given criteria, it sends a message on the defined "channel" so that another system can take an appropriate action.
+ * The subscription resource is used to define a push based subscription from a server to another system. Once a subscription is registered with the server, the server checks every resource that is created or updated, and if the resource matches the given criteria, it sends a message on the defined "channel" so that another system is able to take an appropriate action.
  *
  * Class FHIRSubscriptionChannel
  * @package PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSubscription
@@ -79,28 +79,28 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement implements \JsonSerial
     const FHIR_TYPE_NAME = 'Subscription.Channel';
 
     /**
-     * The url that describes the actual end-point to send messages to.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUrl
+     * The uri that describes the actual end-point to send messages to.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $endpoint = null;
+    private $endpoint = null;
 
     /**
      * Additional headers / information to send as part of the notification.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public $header = null;
+    private $header = [];
 
     /**
      * The mime type to send the payload in - either application/fhir+xml, or application/fhir+json. If the payload is not present, then there is no payload in the notification, just a notification.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $payload = null;
+    private $payload = null;
 
     /**
      * The type of channel to send notifications on.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRSubscriptionChannelType
      */
-    public $type = null;
+    private $type = null;
 
     /**
      * FHIRSubscriptionChannel Constructor
@@ -109,19 +109,60 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement implements \JsonSerial
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['endpoint'])) {
-                $this->setEndpoint($data['endpoint']);
+                $value = $data['endpoint'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSubscription\FHIRSubscriptionChannel::__construct - Property \"endpoint\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setEndpoint($value);
             }
             if (isset($data['header'])) {
-                $this->setHeader($data['header']);
+                $value = $data['header'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRString($v);
+                        }  elseif (is_scalar($v)) {
+                            $v = new FHIRString($v);
+                        }
+                        if (!($v instanceof FHIRString)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSubscription\FHIRSubscriptionChannel::__construct - Collection field \"header\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addHeader($v);
+                    }
+                }
             }
             if (isset($data['payload'])) {
-                $this->setPayload($data['payload']);
+                $value = $data['payload'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSubscription\FHIRSubscriptionChannel::__construct - Property \"payload\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setPayload($value);
             }
             if (isset($data['type'])) {
-                $this->setType($data['type']);
+                $value = $data['type'];
+                if (is_array($value)) {
+                    $value = new FHIRSubscriptionChannelType($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRSubscriptionChannelType($value);
+                }
+                if (!($value instanceof FHIRSubscriptionChannelType)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSubscription\FHIRSubscriptionChannel::__construct - Property \"type\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRSubscriptionChannelType or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setType($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -130,11 +171,12 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement implements \JsonSerial
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
-     * The url that describes the actual end-point to send messages to.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUrl
+     * The uri that describes the actual end-point to send messages to.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
     public function setEndpoint($endpoint)
@@ -143,11 +185,11 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement implements \JsonSerial
             return $this; 
         }
         if (is_scalar($endpoint)) {
-            $endpoint = new FHIRUrl($endpoint);
+            $endpoint = new FHIRUri($endpoint);
         }
-        if (!($endpoint instanceof FHIRUrl)) {
+        if (!($endpoint instanceof FHIRUri)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRSubscriptionChannel::setEndpoint - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUrl or appropriate scalar value, %s seen.',
+                'FHIRSubscriptionChannel::setEndpoint - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or appropriate scalar value, %s seen.',
                 gettype($endpoint)
             ));
         }
@@ -156,21 +198,20 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * The url that describes the actual end-point to send messages to.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUrl
+     * The uri that describes the actual end-point to send messages to.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getEndpoint()
     {
         return $this->endpoint;
     }
 
-
     /**
      * Additional headers / information to send as part of the notification.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
-    public function setHeader($header)
+    public function addHeader($header)
     {
         if (null === $header) {
             return $this; 
@@ -180,23 +221,22 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement implements \JsonSerial
         }
         if (!($header instanceof FHIRString)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRSubscriptionChannel::setHeader - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                'FHIRSubscriptionChannel::addHeader - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
                 gettype($header)
             ));
         }
-        $this->header = $header;
+        $this->header[] = $header;
         return $this;
     }
 
     /**
      * Additional headers / information to send as part of the notification.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
     public function getHeader()
     {
         return $this->header;
     }
-
 
     /**
      * The mime type to send the payload in - either application/fhir+xml, or application/fhir+json. If the payload is not present, then there is no payload in the notification, just a notification.
@@ -230,7 +270,6 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement implements \JsonSerial
         return $this->payload;
     }
 
-
     /**
      * The type of channel to send notifications on.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRSubscriptionChannelType
@@ -263,7 +302,6 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement implements \JsonSerial
         return $this->type;
     }
 
-
     /**
      * @return string
      */
@@ -281,8 +319,16 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement implements \JsonSerial
         if (null !== ($v = $this->getEndpoint())) {
             $a['endpoint'] = $v;
         }
-        if (null !== ($v = $this->getHeader())) {
-            $a['header'] = $v;
+        if (0 < count($values = $this->getHeader())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['header'] = $vs;
+            }
         }
         if (null !== ($v = $this->getPayload())) {
             $a['payload'] = $v;
@@ -303,9 +349,22 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement implements \JsonSerial
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<SubscriptionChannel xmlns="http://hl7.org/fhir"></SubscriptionChannel>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getEndpoint())) {
+            $v->xmlSerialize(true, $sxe->addChild('endpoint'));
         }
-        return $sxe->saveXML();
+        if (0 < count($values = $this->getHeader())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('header'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getPayload())) {
+            $v->xmlSerialize(true, $sxe->addChild('payload'));
+        }
+        if (null !== ($v = $this->getType())) {
+            $v->xmlSerialize(true, $sxe->addChild('type'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

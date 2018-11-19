@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,10 +63,9 @@ namespace PHPFHIRGenerated\FHIRElement;
  */
 
 use PHPFHIRGenerated\FHIRElement;
-use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTiming;
 
 /**
- * A description of a triggering event. Triggering events can be named events, data events, or periodic, as determined by the type element.
+ * A description of a triggering event.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
  *
  * Class FHIRTriggerDefinition
@@ -78,52 +77,46 @@ class FHIRTriggerDefinition extends FHIRElement implements \JsonSerializable
     const FHIR_TYPE_NAME = 'TriggerDefinition';
 
     /**
-     * A boolean-valued expression that is evaluated in the context of the container of the trigger definition and returns whether or not the trigger fires.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRExpression
-     */
-    public $condition = null;
-
-    /**
      * The triggering data of the event (if this is a data trigger).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDataRequirement
      */
-    public $data = null;
+    private $eventData = null;
 
     /**
-     * A formal name for the event. This may be an absolute URI that identifies the event formally (e.g. from a trigger registry), or a simple relative URI that identifies the event in a local context.
+     * The name of the event (if this is a named-event trigger).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $name = null;
+    private $eventName = null;
 
     /**
-     * The timing of the event (if this is a periodic trigger).
+     * The timing of the event (if this is a period trigger). (choose any one of eventTiming*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
-    public $timingDate = null;
+    private $eventTimingDate = null;
 
     /**
-     * The timing of the event (if this is a periodic trigger).
+     * The timing of the event (if this is a period trigger). (choose any one of eventTiming*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $timingDateTime = null;
+    private $eventTimingDateTime = null;
 
     /**
-     * The timing of the event (if this is a periodic trigger).
+     * The timing of the event (if this is a period trigger). (choose any one of eventTiming*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $timingReference = null;
+    private $eventTimingReference = null;
 
     /**
-     * The timing of the event (if this is a periodic trigger).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTiming
+     * The timing of the event (if this is a period trigger). (choose any one of eventTiming*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
-    public $timingTiming = null;
+    private $eventTimingTiming = null;
 
     /**
      * The type of triggering event.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTriggerType
      */
-    public $type = null;
+    private $type = null;
 
     /**
      * FHIRTriggerDefinition Constructor
@@ -132,31 +125,84 @@ class FHIRTriggerDefinition extends FHIRElement implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
-            if (isset($data['condition'])) {
-                $this->setCondition($data['condition']);
+            if (isset($data['eventData'])) {
+                $value = $data['eventData'];
+                if (is_array($value)) {
+                    $value = new FHIRDataRequirement($value);
+                } 
+                if (!($value instanceof FHIRDataRequirement)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRTriggerDefinition::__construct - Property \"eventData\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDataRequirement or data to construct type, saw ".gettype($value));
+                }
+                $this->setEventData($value);
             }
-            if (isset($data['data'])) {
-                $this->setData($data['data']);
+            if (isset($data['eventName'])) {
+                $value = $data['eventName'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRTriggerDefinition::__construct - Property \"eventName\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setEventName($value);
             }
-            if (isset($data['name'])) {
-                $this->setName($data['name']);
+            if (isset($data['eventTimingDate'])) {
+                $value = $data['eventTimingDate'];
+                if (is_array($value)) {
+                    $value = new FHIRDate($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDate($value);
+                }
+                if (!($value instanceof FHIRDate)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRTriggerDefinition::__construct - Property \"eventTimingDate\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDate or data to construct type, saw ".gettype($value));
+                }
+                $this->setEventTimingDate($value);
             }
-            if (isset($data['timingDate'])) {
-                $this->setTimingDate($data['timingDate']);
+            if (isset($data['eventTimingDateTime'])) {
+                $value = $data['eventTimingDateTime'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRTriggerDefinition::__construct - Property \"eventTimingDateTime\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value));
+                }
+                $this->setEventTimingDateTime($value);
             }
-            if (isset($data['timingDateTime'])) {
-                $this->setTimingDateTime($data['timingDateTime']);
+            if (isset($data['eventTimingReference'])) {
+                $value = $data['eventTimingReference'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRTriggerDefinition::__construct - Property \"eventTimingReference\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setEventTimingReference($value);
             }
-            if (isset($data['timingReference'])) {
-                $this->setTimingReference($data['timingReference']);
-            }
-            if (isset($data['timingTiming'])) {
-                $this->setTimingTiming($data['timingTiming']);
+            if (isset($data['eventTimingTiming'])) {
+                $value = $data['eventTimingTiming'];
+                if (is_array($value)) {
+                    $value = new FHIRTiming($value);
+                } 
+                if (!($value instanceof FHIRTiming)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRTriggerDefinition::__construct - Property \"eventTimingTiming\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRTiming or data to construct type, saw ".gettype($value));
+                }
+                $this->setEventTimingTiming($value);
             }
             if (isset($data['type'])) {
-                $this->setType($data['type']);
+                $value = $data['type'];
+                if (is_array($value)) {
+                    $value = new FHIRTriggerType($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRTriggerType($value);
+                }
+                if (!($value instanceof FHIRTriggerType)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRTriggerDefinition::__construct - Property \"type\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRTriggerType or data to construct type, saw ".gettype($value));
+                }
+                $this->setType($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -165,43 +211,20 @@ class FHIRTriggerDefinition extends FHIRElement implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
-
-    /**
-     * A boolean-valued expression that is evaluated in the context of the container of the trigger definition and returns whether or not the trigger fires.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRExpression
-     * @return $this
-     */
-    public function setCondition(FHIRExpression $condition = null)
-    {
-        if (null === $condition) {
-            return $this; 
-        }
-        $this->condition = $condition;
-        return $this;
-    }
-
-    /**
-     * A boolean-valued expression that is evaluated in the context of the container of the trigger definition and returns whether or not the trigger fires.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRExpression
-     */
-    public function getCondition()
-    {
-        return $this->condition;
-    }
-
 
     /**
      * The triggering data of the event (if this is a data trigger).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDataRequirement
      * @return $this
      */
-    public function setData(FHIRDataRequirement $data = null)
+    public function setEventData(FHIRDataRequirement $eventData = null)
     {
-        if (null === $data) {
+        if (null === $eventData) {
             return $this; 
         }
-        $this->data = $data;
+        $this->eventData = $eventData;
         return $this;
     }
 
@@ -209,158 +232,152 @@ class FHIRTriggerDefinition extends FHIRElement implements \JsonSerializable
      * The triggering data of the event (if this is a data trigger).
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDataRequirement
      */
-    public function getData()
+    public function getEventData()
     {
-        return $this->data;
+        return $this->eventData;
     }
 
-
     /**
-     * A formal name for the event. This may be an absolute URI that identifies the event formally (e.g. from a trigger registry), or a simple relative URI that identifies the event in a local context.
+     * The name of the event (if this is a named-event trigger).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
-    public function setName($name)
+    public function setEventName($eventName)
     {
-        if (null === $name) {
+        if (null === $eventName) {
             return $this; 
         }
-        if (is_scalar($name)) {
-            $name = new FHIRString($name);
+        if (is_scalar($eventName)) {
+            $eventName = new FHIRString($eventName);
         }
-        if (!($name instanceof FHIRString)) {
+        if (!($eventName instanceof FHIRString)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRTriggerDefinition::setName - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
-                gettype($name)
+                'FHIRTriggerDefinition::setEventName - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                gettype($eventName)
             ));
         }
-        $this->name = $name;
+        $this->eventName = $eventName;
         return $this;
     }
 
     /**
-     * A formal name for the event. This may be an absolute URI that identifies the event formally (e.g. from a trigger registry), or a simple relative URI that identifies the event in a local context.
+     * The name of the event (if this is a named-event trigger).
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getName()
+    public function getEventName()
     {
-        return $this->name;
+        return $this->eventName;
     }
 
-
     /**
-     * The timing of the event (if this is a periodic trigger).
+     * The timing of the event (if this is a period trigger). (choose any one of eventTiming*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDate
      * @return $this
      */
-    public function setTimingDate($timingDate)
+    public function setEventTimingDate($eventTimingDate)
     {
-        if (null === $timingDate) {
+        if (null === $eventTimingDate) {
             return $this; 
         }
-        if (is_scalar($timingDate)) {
-            $timingDate = new FHIRDate($timingDate);
+        if (is_scalar($eventTimingDate)) {
+            $eventTimingDate = new FHIRDate($eventTimingDate);
         }
-        if (!($timingDate instanceof FHIRDate)) {
+        if (!($eventTimingDate instanceof FHIRDate)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRTriggerDefinition::setTimingDate - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRDate or appropriate scalar value, %s seen.',
-                gettype($timingDate)
+                'FHIRTriggerDefinition::setEventTimingDate - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRDate or appropriate scalar value, %s seen.',
+                gettype($eventTimingDate)
             ));
         }
-        $this->timingDate = $timingDate;
+        $this->eventTimingDate = $eventTimingDate;
         return $this;
     }
 
     /**
-     * The timing of the event (if this is a periodic trigger).
+     * The timing of the event (if this is a period trigger). (choose any one of eventTiming*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDate
      */
-    public function getTimingDate()
+    public function getEventTimingDate()
     {
-        return $this->timingDate;
+        return $this->eventTimingDate;
     }
 
-
     /**
-     * The timing of the event (if this is a periodic trigger).
+     * The timing of the event (if this is a period trigger). (choose any one of eventTiming*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      * @return $this
      */
-    public function setTimingDateTime($timingDateTime)
+    public function setEventTimingDateTime($eventTimingDateTime)
     {
-        if (null === $timingDateTime) {
+        if (null === $eventTimingDateTime) {
             return $this; 
         }
-        if (is_scalar($timingDateTime)) {
-            $timingDateTime = new FHIRDateTime($timingDateTime);
+        if (is_scalar($eventTimingDateTime)) {
+            $eventTimingDateTime = new FHIRDateTime($eventTimingDateTime);
         }
-        if (!($timingDateTime instanceof FHIRDateTime)) {
+        if (!($eventTimingDateTime instanceof FHIRDateTime)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRTriggerDefinition::setTimingDateTime - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or appropriate scalar value, %s seen.',
-                gettype($timingDateTime)
+                'FHIRTriggerDefinition::setEventTimingDateTime - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or appropriate scalar value, %s seen.',
+                gettype($eventTimingDateTime)
             ));
         }
-        $this->timingDateTime = $timingDateTime;
+        $this->eventTimingDateTime = $eventTimingDateTime;
         return $this;
     }
 
     /**
-     * The timing of the event (if this is a periodic trigger).
+     * The timing of the event (if this is a period trigger). (choose any one of eventTiming*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getTimingDateTime()
+    public function getEventTimingDateTime()
     {
-        return $this->timingDateTime;
+        return $this->eventTimingDateTime;
     }
 
-
     /**
-     * The timing of the event (if this is a periodic trigger).
+     * The timing of the event (if this is a period trigger). (choose any one of eventTiming*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setTimingReference(FHIRReference $timingReference = null)
+    public function setEventTimingReference(FHIRReference $eventTimingReference = null)
     {
-        if (null === $timingReference) {
+        if (null === $eventTimingReference) {
             return $this; 
         }
-        $this->timingReference = $timingReference;
+        $this->eventTimingReference = $eventTimingReference;
         return $this;
     }
 
     /**
-     * The timing of the event (if this is a periodic trigger).
+     * The timing of the event (if this is a period trigger). (choose any one of eventTiming*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getTimingReference()
+    public function getEventTimingReference()
     {
-        return $this->timingReference;
+        return $this->eventTimingReference;
     }
 
-
     /**
-     * The timing of the event (if this is a periodic trigger).
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTiming
+     * The timing of the event (if this is a period trigger). (choose any one of eventTiming*, but only one)
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRTiming
      * @return $this
      */
-    public function setTimingTiming(FHIRTiming $timingTiming = null)
+    public function setEventTimingTiming(FHIRTiming $eventTimingTiming = null)
     {
-        if (null === $timingTiming) {
+        if (null === $eventTimingTiming) {
             return $this; 
         }
-        $this->timingTiming = $timingTiming;
+        $this->eventTimingTiming = $eventTimingTiming;
         return $this;
     }
 
     /**
-     * The timing of the event (if this is a periodic trigger).
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTiming
+     * The timing of the event (if this is a period trigger). (choose any one of eventTiming*, but only one)
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
-    public function getTimingTiming()
+    public function getEventTimingTiming()
     {
-        return $this->timingTiming;
+        return $this->eventTimingTiming;
     }
-
 
     /**
      * The type of triggering event.
@@ -394,7 +411,6 @@ class FHIRTriggerDefinition extends FHIRElement implements \JsonSerializable
         return $this->type;
     }
 
-
     /**
      * @return string
      */
@@ -409,26 +425,23 @@ class FHIRTriggerDefinition extends FHIRElement implements \JsonSerializable
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getCondition())) {
-            $a['condition'] = $v;
+        if (null !== ($v = $this->getEventData())) {
+            $a['eventData'] = $v;
         }
-        if (null !== ($v = $this->getData())) {
-            $a['data'] = $v;
+        if (null !== ($v = $this->getEventName())) {
+            $a['eventName'] = $v;
         }
-        if (null !== ($v = $this->getName())) {
-            $a['name'] = $v;
+        if (null !== ($v = $this->getEventTimingDate())) {
+            $a['eventTimingDate'] = $v;
         }
-        if (null !== ($v = $this->getTimingDate())) {
-            $a['timingDate'] = $v;
+        if (null !== ($v = $this->getEventTimingDateTime())) {
+            $a['eventTimingDateTime'] = $v;
         }
-        if (null !== ($v = $this->getTimingDateTime())) {
-            $a['timingDateTime'] = $v;
+        if (null !== ($v = $this->getEventTimingReference())) {
+            $a['eventTimingReference'] = $v;
         }
-        if (null !== ($v = $this->getTimingReference())) {
-            $a['timingReference'] = $v;
-        }
-        if (null !== ($v = $this->getTimingTiming())) {
-            $a['timingTiming'] = $v;
+        if (null !== ($v = $this->getEventTimingTiming())) {
+            $a['eventTimingTiming'] = $v;
         }
         if (null !== ($v = $this->getType())) {
             $a['type'] = $v;
@@ -446,9 +459,27 @@ class FHIRTriggerDefinition extends FHIRElement implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<TriggerDefinition xmlns="http://hl7.org/fhir"></TriggerDefinition>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getEventData())) {
+            $v->xmlSerialize(true, $sxe->addChild('eventData'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getEventName())) {
+            $v->xmlSerialize(true, $sxe->addChild('eventName'));
+        }
+        if (null !== ($v = $this->getEventTimingDate())) {
+            $v->xmlSerialize(true, $sxe->addChild('eventTimingDate'));
+        }
+        if (null !== ($v = $this->getEventTimingDateTime())) {
+            $v->xmlSerialize(true, $sxe->addChild('eventTimingDateTime'));
+        }
+        if (null !== ($v = $this->getEventTimingReference())) {
+            $v->xmlSerialize(true, $sxe->addChild('eventTimingReference'));
+        }
+        if (null !== ($v = $this->getEventTimingTiming())) {
+            $v->xmlSerialize(true, $sxe->addChild('eventTimingTiming'));
+        }
+        if (null !== ($v = $this->getType())) {
+            $v->xmlSerialize(true, $sxe->addChild('type'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

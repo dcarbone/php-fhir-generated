@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,13 +63,13 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap;
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\FHIRElement\FHIRCanonical;
 use PHPFHIRGenerated\FHIRElement\FHIRCode;
 use PHPFHIRGenerated\FHIRElement\FHIRConceptMapGroupUnmappedMode;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
+use PHPFHIRGenerated\FHIRElement\FHIRUri;
 
 /**
- * A statement of relationships from one set of concepts to one or more other concepts - either concepts in code systems, or data element/data element concepts, or classes in class models.
+ * A statement of relationships from one set of concepts to one or more other concepts - either code systems or data elements, or classes in class models.
  *
  * Class FHIRConceptMapUnmapped
  * @package PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap
@@ -83,25 +83,25 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement implements \JsonSeriali
      * The fixed code to use when the mode = 'fixed'  - all unmapped codes are mapped to a single fixed code.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public $code = null;
+    private $code = null;
 
     /**
      * The display for the code. The display is only provided to help editors when editing the concept map.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $display = null;
+    private $display = null;
 
     /**
-     * Defines which action to take if there is no match for the source concept in the target system designated for the group. One of 3 actions are possible: use the unmapped code (this is useful when doing a mapping between versions, and only a few codes have changed), use a fixed code (a default code), or alternatively, a reference to a different concept map can be provided (by canonical URL).
+     * Defines which action to take if there is no match in the group. One of 3 actions is possible: use the unmapped code (this is useful when doing a mapping between versions, and only a few codes have changed), use a fixed code (a default code), or alternatively, a reference to a different concept map can be provided (by canonical URL).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRConceptMapGroupUnmappedMode
      */
-    public $mode = null;
+    private $mode = null;
 
     /**
-     * The canonical URI of an additional ConceptMap resource instance to use for mapping if this ConceptMap resource contains no matching mapping for the source concept.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * The canonical URL of the map to use if this map contains no mapping.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $url = null;
+    private $url = null;
 
     /**
      * FHIRConceptMapUnmapped Constructor
@@ -110,19 +110,54 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement implements \JsonSeriali
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['code'])) {
-                $this->setCode($data['code']);
+                $value = $data['code'];
+                if (is_array($value)) {
+                    $value = new FHIRCode($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRCode($value);
+                }
+                if (!($value instanceof FHIRCode)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapUnmapped::__construct - Property \"code\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or data to construct type, saw ".gettype($value));
+                }
+                $this->setCode($value);
             }
             if (isset($data['display'])) {
-                $this->setDisplay($data['display']);
+                $value = $data['display'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapUnmapped::__construct - Property \"display\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setDisplay($value);
             }
             if (isset($data['mode'])) {
-                $this->setMode($data['mode']);
+                $value = $data['mode'];
+                if (is_array($value)) {
+                    $value = new FHIRConceptMapGroupUnmappedMode($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRConceptMapGroupUnmappedMode($value);
+                }
+                if (!($value instanceof FHIRConceptMapGroupUnmappedMode)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapUnmapped::__construct - Property \"mode\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRConceptMapGroupUnmappedMode or data to construct type, saw ".gettype($value));
+                }
+                $this->setMode($value);
             }
             if (isset($data['url'])) {
-                $this->setUrl($data['url']);
+                $value = $data['url'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapUnmapped::__construct - Property \"url\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value));
+                }
+                $this->setUrl($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -131,6 +166,7 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement implements \JsonSeriali
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -165,7 +201,6 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement implements \JsonSeriali
         return $this->code;
     }
 
-
     /**
      * The display for the code. The display is only provided to help editors when editing the concept map.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -198,9 +233,8 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement implements \JsonSeriali
         return $this->display;
     }
 
-
     /**
-     * Defines which action to take if there is no match for the source concept in the target system designated for the group. One of 3 actions are possible: use the unmapped code (this is useful when doing a mapping between versions, and only a few codes have changed), use a fixed code (a default code), or alternatively, a reference to a different concept map can be provided (by canonical URL).
+     * Defines which action to take if there is no match in the group. One of 3 actions is possible: use the unmapped code (this is useful when doing a mapping between versions, and only a few codes have changed), use a fixed code (a default code), or alternatively, a reference to a different concept map can be provided (by canonical URL).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRConceptMapGroupUnmappedMode
      * @return $this
      */
@@ -223,7 +257,7 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * Defines which action to take if there is no match for the source concept in the target system designated for the group. One of 3 actions are possible: use the unmapped code (this is useful when doing a mapping between versions, and only a few codes have changed), use a fixed code (a default code), or alternatively, a reference to a different concept map can be provided (by canonical URL).
+     * Defines which action to take if there is no match in the group. One of 3 actions is possible: use the unmapped code (this is useful when doing a mapping between versions, and only a few codes have changed), use a fixed code (a default code), or alternatively, a reference to a different concept map can be provided (by canonical URL).
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRConceptMapGroupUnmappedMode
      */
     public function getMode()
@@ -231,10 +265,9 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement implements \JsonSeriali
         return $this->mode;
     }
 
-
     /**
-     * The canonical URI of an additional ConceptMap resource instance to use for mapping if this ConceptMap resource contains no matching mapping for the source concept.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * The canonical URL of the map to use if this map contains no mapping.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
     public function setUrl($url)
@@ -243,11 +276,11 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement implements \JsonSeriali
             return $this; 
         }
         if (is_scalar($url)) {
-            $url = new FHIRCanonical($url);
+            $url = new FHIRUri($url);
         }
-        if (!($url instanceof FHIRCanonical)) {
+        if (!($url instanceof FHIRUri)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRConceptMapUnmapped::setUrl - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCanonical or appropriate scalar value, %s seen.',
+                'FHIRConceptMapUnmapped::setUrl - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or appropriate scalar value, %s seen.',
                 gettype($url)
             ));
         }
@@ -256,14 +289,13 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * The canonical URI of an additional ConceptMap resource instance to use for mapping if this ConceptMap resource contains no matching mapping for the source concept.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * The canonical URL of the map to use if this map contains no mapping.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getUrl()
     {
         return $this->url;
     }
-
 
     /**
      * @return string
@@ -304,9 +336,18 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement implements \JsonSeriali
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ConceptMapUnmapped xmlns="http://hl7.org/fhir"></ConceptMapUnmapped>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getCode())) {
+            $v->xmlSerialize(true, $sxe->addChild('code'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getDisplay())) {
+            $v->xmlSerialize(true, $sxe->addChild('display'));
+        }
+        if (null !== ($v = $this->getMode())) {
+            $v->xmlSerialize(true, $sxe->addChild('mode'));
+        }
+        if (null !== ($v = $this->getUrl())) {
+            $v->xmlSerialize(true, $sxe->addChild('url'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

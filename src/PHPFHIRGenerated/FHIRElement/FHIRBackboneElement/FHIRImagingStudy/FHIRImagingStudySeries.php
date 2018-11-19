@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImagingStudy;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImagingStudy;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -65,7 +65,8 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImagingStudy;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 use PHPFHIRGenerated\FHIRElement\FHIRCoding;
 use PHPFHIRGenerated\FHIRElement\FHIRDateTime;
-use PHPFHIRGenerated\FHIRElement\FHIRIdentifier;
+use PHPFHIRGenerated\FHIRElement\FHIRInstanceAvailability;
+use PHPFHIRGenerated\FHIRElement\FHIROid;
 use PHPFHIRGenerated\FHIRElement\FHIRReference;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
 use PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt;
@@ -82,76 +83,76 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
     const FHIR_TYPE_NAME = 'ImagingStudy.Series';
 
     /**
+     * Availability of series (online, offline or nearline).
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRInstanceAvailability
+     */
+    private $availability = null;
+
+    /**
      * The anatomic structures examined. See DICOM Part 16 Annex L (http://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_L.html) for DICOM to SNOMED-CT mappings. The bodySite may indicate the laterality of body part imaged; if so, it shall be consistent with any content of ImagingStudy.series.laterality.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
-    public $bodySite = null;
+    private $bodySite = null;
 
     /**
      * A description of the series.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $description = null;
+    private $description = null;
 
     /**
-     * The network service providing access (e.g., query, view, or retrieval) for this series. See implementation notes for information about using DICOM endpoints. A series-level endpoint, if present, has precedence over a study-level endpoint with the same Endpoint.connectionType.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * The network service providing access (e.g., query, view, or retrieval) for this series. See implementation notes for information about using DICOM endpoints. A series-level endpoint, if present, has precedence over a study-level endpoint with the same Endpoint.type.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $endpoint = null;
-
-    /**
-     * Formal identifier for this series.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
-     */
-    public $identifier = null;
+    private $endpoint = [];
 
     /**
      * A single SOP instance within the series, e.g. an image, or presentation state.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudyInstance
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudyInstance[]
      */
-    public $instance = null;
+    private $instance = [];
 
     /**
      * The laterality of the (possibly paired) anatomic structures examined. E.g., the left knee, both lungs, or unpaired abdomen. If present, shall be consistent with any laterality information indicated in ImagingStudy.series.bodySite.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
-    public $laterality = null;
+    private $laterality = null;
 
     /**
      * The modality of this series sequence.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
-    public $modality = null;
+    private $modality = null;
 
     /**
      * The numeric identifier of this series in the study.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
-    public $number = null;
+    private $number = null;
 
     /**
      * Number of SOP Instances in the Study. The value given may be larger than the number of instance elements this resource contains due to resource availability, security, or other factors. This element should be present if any instance elements are present.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
-    public $numberOfInstances = null;
+    private $numberOfInstances = null;
 
     /**
-     * Indicates who or what performed the series and how they were involved.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudyPerformer
+     * The physician or operator (often the radiology technician)  who performed the series. The performer is recorded at the series level, since each series in a study may be performed by a different practitioner, at different times, and using different devices. A series may be performed by multiple practitioners.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $performer = null;
-
-    /**
-     * The specimen imaged, e.g., for whole slide imaging of a biopsy.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $specimen = null;
+    private $performer = [];
 
     /**
      * The date and time the series was started.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $started = null;
+    private $started = null;
+
+    /**
+     * Formal identifier for this series.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIROid
+     */
+    private $uid = null;
 
     /**
      * FHIRImagingStudySeries Constructor
@@ -160,43 +161,156 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
+            if (isset($data['availability'])) {
+                $value = $data['availability'];
+                if (is_array($value)) {
+                    $value = new FHIRInstanceAvailability($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRInstanceAvailability($value);
+                }
+                if (!($value instanceof FHIRInstanceAvailability)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries::__construct - Property \"availability\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRInstanceAvailability or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setAvailability($value);
+            }
             if (isset($data['bodySite'])) {
-                $this->setBodySite($data['bodySite']);
+                $value = $data['bodySite'];
+                if (is_array($value)) {
+                    $value = new FHIRCoding($value);
+                } 
+                if (!($value instanceof FHIRCoding)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries::__construct - Property \"bodySite\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCoding or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setBodySite($value);
             }
             if (isset($data['description'])) {
-                $this->setDescription($data['description']);
+                $value = $data['description'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries::__construct - Property \"description\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDescription($value);
             }
             if (isset($data['endpoint'])) {
-                $this->setEndpoint($data['endpoint']);
-            }
-            if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
+                $value = $data['endpoint'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries::__construct - Collection field \"endpoint\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addEndpoint($v);
+                    }
+                }
             }
             if (isset($data['instance'])) {
-                $this->setInstance($data['instance']);
+                $value = $data['instance'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRImagingStudyInstance($v);
+                        } 
+                        if (!($v instanceof FHIRImagingStudyInstance)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries::__construct - Collection field \"instance\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudyInstance or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addInstance($v);
+                    }
+                }
             }
             if (isset($data['laterality'])) {
-                $this->setLaterality($data['laterality']);
+                $value = $data['laterality'];
+                if (is_array($value)) {
+                    $value = new FHIRCoding($value);
+                } 
+                if (!($value instanceof FHIRCoding)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries::__construct - Property \"laterality\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCoding or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setLaterality($value);
             }
             if (isset($data['modality'])) {
-                $this->setModality($data['modality']);
+                $value = $data['modality'];
+                if (is_array($value)) {
+                    $value = new FHIRCoding($value);
+                } 
+                if (!($value instanceof FHIRCoding)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries::__construct - Property \"modality\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCoding or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setModality($value);
             }
             if (isset($data['number'])) {
-                $this->setNumber($data['number']);
+                $value = $data['number'];
+                if (is_array($value)) {
+                    $value = new FHIRUnsignedInt($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUnsignedInt($value);
+                }
+                if (!($value instanceof FHIRUnsignedInt)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries::__construct - Property \"number\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setNumber($value);
             }
             if (isset($data['numberOfInstances'])) {
-                $this->setNumberOfInstances($data['numberOfInstances']);
+                $value = $data['numberOfInstances'];
+                if (is_array($value)) {
+                    $value = new FHIRUnsignedInt($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUnsignedInt($value);
+                }
+                if (!($value instanceof FHIRUnsignedInt)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries::__construct - Property \"numberOfInstances\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setNumberOfInstances($value);
             }
             if (isset($data['performer'])) {
-                $this->setPerformer($data['performer']);
-            }
-            if (isset($data['specimen'])) {
-                $this->setSpecimen($data['specimen']);
+                $value = $data['performer'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries::__construct - Collection field \"performer\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addPerformer($v);
+                    }
+                }
             }
             if (isset($data['started'])) {
-                $this->setStarted($data['started']);
+                $value = $data['started'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries::__construct - Property \"started\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setStarted($value);
+            }
+            if (isset($data['uid'])) {
+                $value = $data['uid'];
+                if (is_array($value)) {
+                    $value = new FHIROid($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIROid($value);
+                }
+                if (!($value instanceof FHIROid)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries::__construct - Property \"uid\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIROid or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setUid($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -205,6 +319,39 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
                 ' seen.'
             );
         }
+        parent::__construct($data);
+    }
+
+    /**
+     * Availability of series (online, offline or nearline).
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRInstanceAvailability
+     * @return $this
+     */
+    public function setAvailability($availability)
+    {
+        if (null === $availability) {
+            return $this; 
+        }
+        if (is_scalar($availability)) {
+            $availability = new FHIRInstanceAvailability($availability);
+        }
+        if (!($availability instanceof FHIRInstanceAvailability)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRImagingStudySeries::setAvailability - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRInstanceAvailability or appropriate scalar value, %s seen.',
+                gettype($availability)
+            ));
+        }
+        $this->availability = $availability;
+        return $this;
+    }
+
+    /**
+     * Availability of series (online, offline or nearline).
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRInstanceAvailability
+     */
+    public function getAvailability()
+    {
+        return $this->availability;
     }
 
     /**
@@ -229,7 +376,6 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
     {
         return $this->bodySite;
     }
-
 
     /**
      * A description of the series.
@@ -263,78 +409,51 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
         return $this->description;
     }
 
-
     /**
-     * The network service providing access (e.g., query, view, or retrieval) for this series. See implementation notes for information about using DICOM endpoints. A series-level endpoint, if present, has precedence over a study-level endpoint with the same Endpoint.connectionType.
+     * The network service providing access (e.g., query, view, or retrieval) for this series. See implementation notes for information about using DICOM endpoints. A series-level endpoint, if present, has precedence over a study-level endpoint with the same Endpoint.type.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setEndpoint(FHIRReference $endpoint = null)
+    public function addEndpoint(FHIRReference $endpoint = null)
     {
         if (null === $endpoint) {
             return $this; 
         }
-        $this->endpoint = $endpoint;
+        $this->endpoint[] = $endpoint;
         return $this;
     }
 
     /**
-     * The network service providing access (e.g., query, view, or retrieval) for this series. See implementation notes for information about using DICOM endpoints. A series-level endpoint, if present, has precedence over a study-level endpoint with the same Endpoint.connectionType.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * The network service providing access (e.g., query, view, or retrieval) for this series. See implementation notes for information about using DICOM endpoints. A series-level endpoint, if present, has precedence over a study-level endpoint with the same Endpoint.type.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getEndpoint()
     {
         return $this->endpoint;
     }
 
-
-    /**
-     * Formal identifier for this series.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
-     * @return $this
-     */
-    public function setIdentifier(FHIRIdentifier $identifier = null)
-    {
-        if (null === $identifier) {
-            return $this; 
-        }
-        $this->identifier = $identifier;
-        return $this;
-    }
-
-    /**
-     * Formal identifier for this series.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
-     */
-    public function getIdentifier()
-    {
-        return $this->identifier;
-    }
-
-
     /**
      * A single SOP instance within the series, e.g. an image, or presentation state.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudyInstance
      * @return $this
      */
-    public function setInstance(FHIRImagingStudyInstance $instance = null)
+    public function addInstance(FHIRImagingStudyInstance $instance = null)
     {
         if (null === $instance) {
             return $this; 
         }
-        $this->instance = $instance;
+        $this->instance[] = $instance;
         return $this;
     }
 
     /**
      * A single SOP instance within the series, e.g. an image, or presentation state.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudyInstance
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudyInstance[]
      */
     public function getInstance()
     {
         return $this->instance;
     }
-
 
     /**
      * The laterality of the (possibly paired) anatomic structures examined. E.g., the left knee, both lungs, or unpaired abdomen. If present, shall be consistent with any laterality information indicated in ImagingStudy.series.bodySite.
@@ -359,7 +478,6 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
         return $this->laterality;
     }
 
-
     /**
      * The modality of this series sequence.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
@@ -382,7 +500,6 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
     {
         return $this->modality;
     }
-
 
     /**
      * The numeric identifier of this series in the study.
@@ -416,7 +533,6 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
         return $this->number;
     }
 
-
     /**
      * Number of SOP Instances in the Study. The value given may be larger than the number of instance elements this resource contains due to resource availability, security, or other factors. This element should be present if any instance elements are present.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
@@ -449,54 +565,28 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
         return $this->numberOfInstances;
     }
 
-
     /**
-     * Indicates who or what performed the series and how they were involved.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudyPerformer
+     * The physician or operator (often the radiology technician)  who performed the series. The performer is recorded at the series level, since each series in a study may be performed by a different practitioner, at different times, and using different devices. A series may be performed by multiple practitioners.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setPerformer(FHIRImagingStudyPerformer $performer = null)
+    public function addPerformer(FHIRReference $performer = null)
     {
         if (null === $performer) {
             return $this; 
         }
-        $this->performer = $performer;
+        $this->performer[] = $performer;
         return $this;
     }
 
     /**
-     * Indicates who or what performed the series and how they were involved.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudyPerformer
+     * The physician or operator (often the radiology technician)  who performed the series. The performer is recorded at the series level, since each series in a study may be performed by a different practitioner, at different times, and using different devices. A series may be performed by multiple practitioners.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getPerformer()
     {
         return $this->performer;
     }
-
-
-    /**
-     * The specimen imaged, e.g., for whole slide imaging of a biopsy.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     * @return $this
-     */
-    public function setSpecimen(FHIRReference $specimen = null)
-    {
-        if (null === $specimen) {
-            return $this; 
-        }
-        $this->specimen = $specimen;
-        return $this;
-    }
-
-    /**
-     * The specimen imaged, e.g., for whole slide imaging of a biopsy.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getSpecimen()
-    {
-        return $this->specimen;
-    }
-
 
     /**
      * The date and time the series was started.
@@ -530,6 +620,37 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
         return $this->started;
     }
 
+    /**
+     * Formal identifier for this series.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIROid
+     * @return $this
+     */
+    public function setUid($uid)
+    {
+        if (null === $uid) {
+            return $this; 
+        }
+        if (is_scalar($uid)) {
+            $uid = new FHIROid($uid);
+        }
+        if (!($uid instanceof FHIROid)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRImagingStudySeries::setUid - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIROid or appropriate scalar value, %s seen.',
+                gettype($uid)
+            ));
+        }
+        $this->uid = $uid;
+        return $this;
+    }
+
+    /**
+     * Formal identifier for this series.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIROid
+     */
+    public function getUid()
+    {
+        return $this->uid;
+    }
 
     /**
      * @return string
@@ -545,20 +666,36 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
+        if (null !== ($v = $this->getAvailability())) {
+            $a['availability'] = $v;
+        }
         if (null !== ($v = $this->getBodySite())) {
             $a['bodySite'] = $v;
         }
         if (null !== ($v = $this->getDescription())) {
             $a['description'] = $v;
         }
-        if (null !== ($v = $this->getEndpoint())) {
-            $a['endpoint'] = $v;
+        if (0 < count($values = $this->getEndpoint())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['endpoint'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getIdentifier())) {
-            $a['identifier'] = $v;
-        }
-        if (null !== ($v = $this->getInstance())) {
-            $a['instance'] = $v;
+        if (0 < count($values = $this->getInstance())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['instance'] = $vs;
+            }
         }
         if (null !== ($v = $this->getLaterality())) {
             $a['laterality'] = $v;
@@ -572,14 +709,22 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
         if (null !== ($v = $this->getNumberOfInstances())) {
             $a['numberOfInstances'] = $v;
         }
-        if (null !== ($v = $this->getPerformer())) {
-            $a['performer'] = $v;
-        }
-        if (null !== ($v = $this->getSpecimen())) {
-            $a['specimen'] = $v;
+        if (0 < count($values = $this->getPerformer())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['performer'] = $vs;
+            }
         }
         if (null !== ($v = $this->getStarted())) {
             $a['started'] = $v;
+        }
+        if (null !== ($v = $this->getUid())) {
+            $a['uid'] = $v;
         }
         return $a;
     }
@@ -594,9 +739,54 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ImagingStudySeries xmlns="http://hl7.org/fhir"></ImagingStudySeries>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getAvailability())) {
+            $v->xmlSerialize(true, $sxe->addChild('availability'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getBodySite())) {
+            $v->xmlSerialize(true, $sxe->addChild('bodySite'));
+        }
+        if (null !== ($v = $this->getDescription())) {
+            $v->xmlSerialize(true, $sxe->addChild('description'));
+        }
+        if (0 < count($values = $this->getEndpoint())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('endpoint'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getInstance())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('instance'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getLaterality())) {
+            $v->xmlSerialize(true, $sxe->addChild('laterality'));
+        }
+        if (null !== ($v = $this->getModality())) {
+            $v->xmlSerialize(true, $sxe->addChild('modality'));
+        }
+        if (null !== ($v = $this->getNumber())) {
+            $v->xmlSerialize(true, $sxe->addChild('number'));
+        }
+        if (null !== ($v = $this->getNumberOfInstances())) {
+            $v->xmlSerialize(true, $sxe->addChild('numberOfInstances'));
+        }
+        if (0 < count($values = $this->getPerformer())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('performer'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getStarted())) {
+            $v->xmlSerialize(true, $sxe->addChild('started'));
+        }
+        if (null !== ($v = $this->getUid())) {
+            $v->xmlSerialize(true, $sxe->addChild('uid'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

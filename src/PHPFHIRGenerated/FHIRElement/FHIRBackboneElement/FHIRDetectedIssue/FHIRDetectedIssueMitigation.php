@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDetectedIssue;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDetectedIssue;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -82,19 +82,19 @@ class FHIRDetectedIssueMitigation extends FHIRBackboneElement implements \JsonSe
      * Describes the action that was taken or the observation that was made that reduces/eliminates the risk associated with the identified issue.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $action = null;
+    private $action = null;
 
     /**
      * Identifies the practitioner who determined the mitigation and takes responsibility for the mitigation step occurring.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $author = null;
+    private $author = null;
 
     /**
      * Indicates when the mitigating action was documented.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $date = null;
+    private $date = null;
 
     /**
      * FHIRDetectedIssueMitigation Constructor
@@ -103,16 +103,38 @@ class FHIRDetectedIssueMitigation extends FHIRBackboneElement implements \JsonSe
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['action'])) {
-                $this->setAction($data['action']);
+                $value = $data['action'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDetectedIssue\FHIRDetectedIssueMitigation::__construct - Property \"action\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setAction($value);
             }
             if (isset($data['author'])) {
-                $this->setAuthor($data['author']);
+                $value = $data['author'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDetectedIssue\FHIRDetectedIssueMitigation::__construct - Property \"author\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setAuthor($value);
             }
             if (isset($data['date'])) {
-                $this->setDate($data['date']);
+                $value = $data['date'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDetectedIssue\FHIRDetectedIssueMitigation::__construct - Property \"date\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDate($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -121,6 +143,7 @@ class FHIRDetectedIssueMitigation extends FHIRBackboneElement implements \JsonSe
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -146,7 +169,6 @@ class FHIRDetectedIssueMitigation extends FHIRBackboneElement implements \JsonSe
         return $this->action;
     }
 
-
     /**
      * Identifies the practitioner who determined the mitigation and takes responsibility for the mitigation step occurring.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -169,7 +191,6 @@ class FHIRDetectedIssueMitigation extends FHIRBackboneElement implements \JsonSe
     {
         return $this->author;
     }
-
 
     /**
      * Indicates when the mitigating action was documented.
@@ -202,7 +223,6 @@ class FHIRDetectedIssueMitigation extends FHIRBackboneElement implements \JsonSe
     {
         return $this->date;
     }
-
 
     /**
      * @return string
@@ -240,9 +260,15 @@ class FHIRDetectedIssueMitigation extends FHIRBackboneElement implements \JsonSe
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<DetectedIssueMitigation xmlns="http://hl7.org/fhir"></DetectedIssueMitigation>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getAction())) {
+            $v->xmlSerialize(true, $sxe->addChild('action'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getAuthor())) {
+            $v->xmlSerialize(true, $sxe->addChild('author'));
+        }
+        if (null !== ($v = $this->getDate())) {
+            $v->xmlSerialize(true, $sxe->addChild('date'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

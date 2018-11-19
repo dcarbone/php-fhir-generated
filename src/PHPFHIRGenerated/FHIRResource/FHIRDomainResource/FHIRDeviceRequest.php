@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,18 +63,15 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRAnnotation;
-use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDeviceRequest\FHIRDeviceRequestParameter;
-use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTiming;
-use PHPFHIRGenerated\FHIRElement\FHIRCanonical;
+use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDeviceRequest\FHIRDeviceRequestRequester;
 use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
 use PHPFHIRGenerated\FHIRElement\FHIRDateTime;
 use PHPFHIRGenerated\FHIRElement\FHIRIdentifier;
 use PHPFHIRGenerated\FHIRElement\FHIRPeriod;
 use PHPFHIRGenerated\FHIRElement\FHIRReference;
-use PHPFHIRGenerated\FHIRElement\FHIRRequestIntent;
 use PHPFHIRGenerated\FHIRElement\FHIRRequestPriority;
 use PHPFHIRGenerated\FHIRElement\FHIRRequestStatus;
-use PHPFHIRGenerated\FHIRElement\FHIRUri;
+use PHPFHIRGenerated\FHIRElement\FHIRTiming;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
 /**
@@ -93,163 +90,145 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
      * When the request transitioned to being actionable.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $authoredOn = null;
+    private $authoredOn = null;
 
     /**
      * Plan/proposal/order fulfilled by this request.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $basedOn = null;
+    private $basedOn = [];
 
     /**
-     * The details of the device to be used.
+     * The details of the device to be used. (choose any one of code*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $codeCodeableConcept = null;
+    private $codeCodeableConcept = null;
 
     /**
-     * The details of the device to be used.
+     * The details of the device to be used. (choose any one of code*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $codeReference = null;
+    private $codeReference = null;
 
     /**
      * An encounter that provides additional context in which this request is made.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $context = null;
+    private $context = null;
+
+    /**
+     * Protocol or definition followed by this request. For example: The proposed act must be performed if the indicated conditions occur, e.g.., shortness of breath, SpO2 less than x%.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    private $definition = [];
 
     /**
      * Composite request this is part of.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public $groupIdentifier = null;
+    private $groupIdentifier = null;
 
     /**
      * Identifiers assigned to this order by the orderer or by the receiver.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = null;
-
-    /**
-     * The URL pointing to a FHIR-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this DeviceRequest.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCanonical
-     */
-    public $instantiatesCanonical = null;
-
-    /**
-     * The URL pointing to an externally maintained protocol, guideline, orderset or other definition that is adhered to in whole or in part by this DeviceRequest.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
-     */
-    public $instantiatesUri = null;
-
-    /**
-     * Insurance plans, coverage extensions, pre-authorizations and/or pre-determinations that may be required for delivering the requested service.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $insurance = null;
+    private $identifier = [];
 
     /**
      * Whether the request is a proposal, plan, an original order or a reflex order.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRRequestIntent
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $intent = null;
+    private $intent = null;
 
     /**
      * Details about this request that were not represented at all or sufficiently in one of the attributes provided in a class. These may include for example a comment, an instruction, or a note associated with the statement.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
-    public $note = null;
+    private $note = [];
 
     /**
-     * The timing schedule for the use of the device. The Schedule data type allows many different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013".
+     * The timing schedule for the use of the device. The Schedule data type allows many different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013". (choose any one of occurrence*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $occurrenceDateTime = null;
+    private $occurrenceDateTime = null;
 
     /**
-     * The timing schedule for the use of the device. The Schedule data type allows many different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013".
+     * The timing schedule for the use of the device. The Schedule data type allows many different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013". (choose any one of occurrence*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public $occurrencePeriod = null;
+    private $occurrencePeriod = null;
 
     /**
-     * The timing schedule for the use of the device. The Schedule data type allows many different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013".
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTiming
+     * The timing schedule for the use of the device. The Schedule data type allows many different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013". (choose any one of occurrence*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
-    public $occurrenceTiming = null;
+    private $occurrenceTiming = null;
 
     /**
-     * Specific parameters for the ordered item.  For example, the prism value for lenses.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDeviceRequest\FHIRDeviceRequestParameter
-     */
-    public $parameter = null;
-
-    /**
-     * The desired performer for doing the diagnostic testing.
+     * The desired perfomer for doing the diagnostic testing.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $performer = null;
+    private $performer = null;
 
     /**
      * Desired type of performer for doing the diagnostic testing.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $performerType = null;
+    private $performerType = null;
 
     /**
      * The request takes the place of the referenced completed or terminated request(s).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $priorRequest = null;
+    private $priorRequest = [];
 
     /**
      * Indicates how quickly the {{title}} should be addressed with respect to other requests.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRequestPriority
      */
-    public $priority = null;
+    private $priority = null;
 
     /**
      * Reason or justification for the use of this device.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $reasonCode = null;
+    private $reasonCode = [];
 
     /**
      * Reason or justification for the use of this device.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $reasonReference = null;
+    private $reasonReference = [];
 
     /**
      * Key events in the history of the request.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $relevantHistory = null;
+    private $relevantHistory = [];
 
     /**
      * The individual who initiated the request and has responsibility for its activation.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDeviceRequest\FHIRDeviceRequestRequester
      */
-    public $requester = null;
+    private $requester = null;
 
     /**
      * The status of the request.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRequestStatus
      */
-    public $status = null;
+    private $status = null;
 
     /**
      * The patient who will use the device.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $subject = null;
+    private $subject = null;
 
     /**
-     * Additional clinical information about the patient that may influence the request fulfilment.  For example, this may include where on the subject's body the device will be used (i.e. the target site).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * Additional clinical information about the patient that may influence the request fulfilment.  For example, this may includes body where on the subject's the device will be used ( i.e. the target site).
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $supportingInfo = null;
+    private $supportingInfo = [];
 
     /**
      * FHIRDeviceRequest Constructor
@@ -258,88 +237,308 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['authoredOn'])) {
-                $this->setAuthoredOn($data['authoredOn']);
+                $value = $data['authoredOn'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDeviceRequest::__construct - Property \"authoredOn\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value));
+                }
+                $this->setAuthoredOn($value);
             }
             if (isset($data['basedOn'])) {
-                $this->setBasedOn($data['basedOn']);
+                $value = $data['basedOn'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDeviceRequest::__construct - Collection field \"basedOn\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addBasedOn($v);
+                    }
+                }
             }
             if (isset($data['codeCodeableConcept'])) {
-                $this->setCodeCodeableConcept($data['codeCodeableConcept']);
+                $value = $data['codeCodeableConcept'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDeviceRequest::__construct - Property \"codeCodeableConcept\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setCodeCodeableConcept($value);
             }
             if (isset($data['codeReference'])) {
-                $this->setCodeReference($data['codeReference']);
+                $value = $data['codeReference'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDeviceRequest::__construct - Property \"codeReference\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setCodeReference($value);
             }
             if (isset($data['context'])) {
-                $this->setContext($data['context']);
+                $value = $data['context'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDeviceRequest::__construct - Property \"context\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setContext($value);
+            }
+            if (isset($data['definition'])) {
+                $value = $data['definition'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDeviceRequest::__construct - Collection field \"definition\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addDefinition($v);
+                    }
+                }
             }
             if (isset($data['groupIdentifier'])) {
-                $this->setGroupIdentifier($data['groupIdentifier']);
+                $value = $data['groupIdentifier'];
+                if (is_array($value)) {
+                    $value = new FHIRIdentifier($value);
+                } 
+                if (!($value instanceof FHIRIdentifier)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDeviceRequest::__construct - Property \"groupIdentifier\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($value));
+                }
+                $this->setGroupIdentifier($value);
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
-            }
-            if (isset($data['instantiatesCanonical'])) {
-                $this->setInstantiatesCanonical($data['instantiatesCanonical']);
-            }
-            if (isset($data['instantiatesUri'])) {
-                $this->setInstantiatesUri($data['instantiatesUri']);
-            }
-            if (isset($data['insurance'])) {
-                $this->setInsurance($data['insurance']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRIdentifier($v);
+                        } 
+                        if (!($v instanceof FHIRIdentifier)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDeviceRequest::__construct - Collection field \"identifier\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addIdentifier($v);
+                    }
+                }
             }
             if (isset($data['intent'])) {
-                $this->setIntent($data['intent']);
+                $value = $data['intent'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDeviceRequest::__construct - Property \"intent\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setIntent($value);
             }
             if (isset($data['note'])) {
-                $this->setNote($data['note']);
+                $value = $data['note'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRAnnotation($v);
+                        } 
+                        if (!($v instanceof FHIRAnnotation)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDeviceRequest::__construct - Collection field \"note\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAnnotation or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addNote($v);
+                    }
+                }
             }
             if (isset($data['occurrenceDateTime'])) {
-                $this->setOccurrenceDateTime($data['occurrenceDateTime']);
+                $value = $data['occurrenceDateTime'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDeviceRequest::__construct - Property \"occurrenceDateTime\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value));
+                }
+                $this->setOccurrenceDateTime($value);
             }
             if (isset($data['occurrencePeriod'])) {
-                $this->setOccurrencePeriod($data['occurrencePeriod']);
+                $value = $data['occurrencePeriod'];
+                if (is_array($value)) {
+                    $value = new FHIRPeriod($value);
+                } 
+                if (!($value instanceof FHIRPeriod)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDeviceRequest::__construct - Property \"occurrencePeriod\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPeriod or data to construct type, saw ".gettype($value));
+                }
+                $this->setOccurrencePeriod($value);
             }
             if (isset($data['occurrenceTiming'])) {
-                $this->setOccurrenceTiming($data['occurrenceTiming']);
-            }
-            if (isset($data['parameter'])) {
-                $this->setParameter($data['parameter']);
+                $value = $data['occurrenceTiming'];
+                if (is_array($value)) {
+                    $value = new FHIRTiming($value);
+                } 
+                if (!($value instanceof FHIRTiming)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDeviceRequest::__construct - Property \"occurrenceTiming\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRTiming or data to construct type, saw ".gettype($value));
+                }
+                $this->setOccurrenceTiming($value);
             }
             if (isset($data['performer'])) {
-                $this->setPerformer($data['performer']);
+                $value = $data['performer'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDeviceRequest::__construct - Property \"performer\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setPerformer($value);
             }
             if (isset($data['performerType'])) {
-                $this->setPerformerType($data['performerType']);
+                $value = $data['performerType'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDeviceRequest::__construct - Property \"performerType\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setPerformerType($value);
             }
             if (isset($data['priorRequest'])) {
-                $this->setPriorRequest($data['priorRequest']);
+                $value = $data['priorRequest'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDeviceRequest::__construct - Collection field \"priorRequest\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addPriorRequest($v);
+                    }
+                }
             }
             if (isset($data['priority'])) {
-                $this->setPriority($data['priority']);
+                $value = $data['priority'];
+                if (is_array($value)) {
+                    $value = new FHIRRequestPriority($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRRequestPriority($value);
+                }
+                if (!($value instanceof FHIRRequestPriority)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDeviceRequest::__construct - Property \"priority\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRRequestPriority or data to construct type, saw ".gettype($value));
+                }
+                $this->setPriority($value);
             }
             if (isset($data['reasonCode'])) {
-                $this->setReasonCode($data['reasonCode']);
+                $value = $data['reasonCode'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDeviceRequest::__construct - Collection field \"reasonCode\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addReasonCode($v);
+                    }
+                }
             }
             if (isset($data['reasonReference'])) {
-                $this->setReasonReference($data['reasonReference']);
+                $value = $data['reasonReference'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDeviceRequest::__construct - Collection field \"reasonReference\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addReasonReference($v);
+                    }
+                }
             }
             if (isset($data['relevantHistory'])) {
-                $this->setRelevantHistory($data['relevantHistory']);
+                $value = $data['relevantHistory'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDeviceRequest::__construct - Collection field \"relevantHistory\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addRelevantHistory($v);
+                    }
+                }
             }
             if (isset($data['requester'])) {
-                $this->setRequester($data['requester']);
+                $value = $data['requester'];
+                if (is_array($value)) {
+                    $value = new FHIRDeviceRequestRequester($value);
+                } 
+                if (!($value instanceof FHIRDeviceRequestRequester)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDeviceRequest::__construct - Property \"requester\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDeviceRequest\FHIRDeviceRequestRequester or data to construct type, saw ".gettype($value));
+                }
+                $this->setRequester($value);
             }
             if (isset($data['status'])) {
-                $this->setStatus($data['status']);
+                $value = $data['status'];
+                if (is_array($value)) {
+                    $value = new FHIRRequestStatus($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRRequestStatus($value);
+                }
+                if (!($value instanceof FHIRRequestStatus)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDeviceRequest::__construct - Property \"status\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRRequestStatus or data to construct type, saw ".gettype($value));
+                }
+                $this->setStatus($value);
             }
             if (isset($data['subject'])) {
-                $this->setSubject($data['subject']);
+                $value = $data['subject'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDeviceRequest::__construct - Property \"subject\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setSubject($value);
             }
             if (isset($data['supportingInfo'])) {
-                $this->setSupportingInfo($data['supportingInfo']);
+                $value = $data['supportingInfo'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDeviceRequest::__construct - Collection field \"supportingInfo\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addSupportingInfo($v);
+                    }
+                }
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -348,6 +547,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -382,33 +582,31 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
         return $this->authoredOn;
     }
 
-
     /**
      * Plan/proposal/order fulfilled by this request.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setBasedOn(FHIRReference $basedOn = null)
+    public function addBasedOn(FHIRReference $basedOn = null)
     {
         if (null === $basedOn) {
             return $this; 
         }
-        $this->basedOn = $basedOn;
+        $this->basedOn[] = $basedOn;
         return $this;
     }
 
     /**
      * Plan/proposal/order fulfilled by this request.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getBasedOn()
     {
         return $this->basedOn;
     }
 
-
     /**
-     * The details of the device to be used.
+     * The details of the device to be used. (choose any one of code*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
@@ -422,7 +620,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The details of the device to be used.
+     * The details of the device to be used. (choose any one of code*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getCodeCodeableConcept()
@@ -430,9 +628,8 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
         return $this->codeCodeableConcept;
     }
 
-
     /**
-     * The details of the device to be used.
+     * The details of the device to be used. (choose any one of code*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
@@ -446,14 +643,13 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The details of the device to be used.
+     * The details of the device to be used. (choose any one of code*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getCodeReference()
     {
         return $this->codeReference;
     }
-
 
     /**
      * An encounter that provides additional context in which this request is made.
@@ -478,6 +674,28 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
         return $this->context;
     }
 
+    /**
+     * Protocol or definition followed by this request. For example: The proposed act must be performed if the indicated conditions occur, e.g.., shortness of breath, SpO2 less than x%.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return $this
+     */
+    public function addDefinition(FHIRReference $definition = null)
+    {
+        if (null === $definition) {
+            return $this; 
+        }
+        $this->definition[] = $definition;
+        return $this;
+    }
+
+    /**
+     * Protocol or definition followed by this request. For example: The proposed act must be performed if the indicated conditions occur, e.g.., shortness of breath, SpO2 less than x%.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getDefinition()
+    {
+        return $this->definition;
+    }
 
     /**
      * Composite request this is part of.
@@ -502,139 +720,38 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
         return $this->groupIdentifier;
     }
 
-
     /**
      * Identifiers assigned to this order by the orderer or by the receiver.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
-    public function setIdentifier(FHIRIdentifier $identifier = null)
+    public function addIdentifier(FHIRIdentifier $identifier = null)
     {
         if (null === $identifier) {
             return $this; 
         }
-        $this->identifier = $identifier;
+        $this->identifier[] = $identifier;
         return $this;
     }
 
     /**
      * Identifiers assigned to this order by the orderer or by the receiver.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
         return $this->identifier;
     }
 
-
-    /**
-     * The URL pointing to a FHIR-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this DeviceRequest.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
-     * @return $this
-     */
-    public function setInstantiatesCanonical($instantiatesCanonical)
-    {
-        if (null === $instantiatesCanonical) {
-            return $this; 
-        }
-        if (is_scalar($instantiatesCanonical)) {
-            $instantiatesCanonical = new FHIRCanonical($instantiatesCanonical);
-        }
-        if (!($instantiatesCanonical instanceof FHIRCanonical)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRDeviceRequest::setInstantiatesCanonical - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCanonical or appropriate scalar value, %s seen.',
-                gettype($instantiatesCanonical)
-            ));
-        }
-        $this->instantiatesCanonical = $instantiatesCanonical;
-        return $this;
-    }
-
-    /**
-     * The URL pointing to a FHIR-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this DeviceRequest.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
-     */
-    public function getInstantiatesCanonical()
-    {
-        return $this->instantiatesCanonical;
-    }
-
-
-    /**
-     * The URL pointing to an externally maintained protocol, guideline, orderset or other definition that is adhered to in whole or in part by this DeviceRequest.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
-     * @return $this
-     */
-    public function setInstantiatesUri($instantiatesUri)
-    {
-        if (null === $instantiatesUri) {
-            return $this; 
-        }
-        if (is_scalar($instantiatesUri)) {
-            $instantiatesUri = new FHIRUri($instantiatesUri);
-        }
-        if (!($instantiatesUri instanceof FHIRUri)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRDeviceRequest::setInstantiatesUri - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or appropriate scalar value, %s seen.',
-                gettype($instantiatesUri)
-            ));
-        }
-        $this->instantiatesUri = $instantiatesUri;
-        return $this;
-    }
-
-    /**
-     * The URL pointing to an externally maintained protocol, guideline, orderset or other definition that is adhered to in whole or in part by this DeviceRequest.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
-     */
-    public function getInstantiatesUri()
-    {
-        return $this->instantiatesUri;
-    }
-
-
-    /**
-     * Insurance plans, coverage extensions, pre-authorizations and/or pre-determinations that may be required for delivering the requested service.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     * @return $this
-     */
-    public function setInsurance(FHIRReference $insurance = null)
-    {
-        if (null === $insurance) {
-            return $this; 
-        }
-        $this->insurance = $insurance;
-        return $this;
-    }
-
-    /**
-     * Insurance plans, coverage extensions, pre-authorizations and/or pre-determinations that may be required for delivering the requested service.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getInsurance()
-    {
-        return $this->insurance;
-    }
-
-
     /**
      * Whether the request is a proposal, plan, an original order or a reflex order.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRRequestIntent
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setIntent($intent)
+    public function setIntent(FHIRCodeableConcept $intent = null)
     {
         if (null === $intent) {
             return $this; 
-        }
-        if (is_scalar($intent)) {
-            $intent = new FHIRRequestIntent($intent);
-        }
-        if (!($intent instanceof FHIRRequestIntent)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRDeviceRequest::setIntent - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRRequestIntent or appropriate scalar value, %s seen.',
-                gettype($intent)
-            ));
         }
         $this->intent = $intent;
         return $this;
@@ -642,40 +759,38 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Whether the request is a proposal, plan, an original order or a reflex order.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRRequestIntent
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getIntent()
     {
         return $this->intent;
     }
 
-
     /**
      * Details about this request that were not represented at all or sufficiently in one of the attributes provided in a class. These may include for example a comment, an instruction, or a note associated with the statement.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation
      * @return $this
      */
-    public function setNote(FHIRAnnotation $note = null)
+    public function addNote(FHIRAnnotation $note = null)
     {
         if (null === $note) {
             return $this; 
         }
-        $this->note = $note;
+        $this->note[] = $note;
         return $this;
     }
 
     /**
      * Details about this request that were not represented at all or sufficiently in one of the attributes provided in a class. These may include for example a comment, an instruction, or a note associated with the statement.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
         return $this->note;
     }
 
-
     /**
-     * The timing schedule for the use of the device. The Schedule data type allows many different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013".
+     * The timing schedule for the use of the device. The Schedule data type allows many different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013". (choose any one of occurrence*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      * @return $this
      */
@@ -698,7 +813,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The timing schedule for the use of the device. The Schedule data type allows many different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013".
+     * The timing schedule for the use of the device. The Schedule data type allows many different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013". (choose any one of occurrence*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getOccurrenceDateTime()
@@ -706,9 +821,8 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
         return $this->occurrenceDateTime;
     }
 
-
     /**
-     * The timing schedule for the use of the device. The Schedule data type allows many different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013".
+     * The timing schedule for the use of the device. The Schedule data type allows many different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013". (choose any one of occurrence*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
      * @return $this
      */
@@ -722,7 +836,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The timing schedule for the use of the device. The Schedule data type allows many different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013".
+     * The timing schedule for the use of the device. The Schedule data type allows many different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013". (choose any one of occurrence*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getOccurrencePeriod()
@@ -730,10 +844,9 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
         return $this->occurrencePeriod;
     }
 
-
     /**
-     * The timing schedule for the use of the device. The Schedule data type allows many different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013".
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTiming
+     * The timing schedule for the use of the device. The Schedule data type allows many different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013". (choose any one of occurrence*, but only one)
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRTiming
      * @return $this
      */
     public function setOccurrenceTiming(FHIRTiming $occurrenceTiming = null)
@@ -746,41 +859,16 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The timing schedule for the use of the device. The Schedule data type allows many different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013".
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTiming
+     * The timing schedule for the use of the device. The Schedule data type allows many different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013". (choose any one of occurrence*, but only one)
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public function getOccurrenceTiming()
     {
         return $this->occurrenceTiming;
     }
 
-
     /**
-     * Specific parameters for the ordered item.  For example, the prism value for lenses.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDeviceRequest\FHIRDeviceRequestParameter
-     * @return $this
-     */
-    public function setParameter(FHIRDeviceRequestParameter $parameter = null)
-    {
-        if (null === $parameter) {
-            return $this; 
-        }
-        $this->parameter = $parameter;
-        return $this;
-    }
-
-    /**
-     * Specific parameters for the ordered item.  For example, the prism value for lenses.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDeviceRequest\FHIRDeviceRequestParameter
-     */
-    public function getParameter()
-    {
-        return $this->parameter;
-    }
-
-
-    /**
-     * The desired performer for doing the diagnostic testing.
+     * The desired perfomer for doing the diagnostic testing.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
@@ -794,14 +882,13 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The desired performer for doing the diagnostic testing.
+     * The desired perfomer for doing the diagnostic testing.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getPerformer()
     {
         return $this->performer;
     }
-
 
     /**
      * Desired type of performer for doing the diagnostic testing.
@@ -826,30 +913,28 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
         return $this->performerType;
     }
 
-
     /**
      * The request takes the place of the referenced completed or terminated request(s).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setPriorRequest(FHIRReference $priorRequest = null)
+    public function addPriorRequest(FHIRReference $priorRequest = null)
     {
         if (null === $priorRequest) {
             return $this; 
         }
-        $this->priorRequest = $priorRequest;
+        $this->priorRequest[] = $priorRequest;
         return $this;
     }
 
     /**
      * The request takes the place of the referenced completed or terminated request(s).
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getPriorRequest()
     {
         return $this->priorRequest;
     }
-
 
     /**
      * Indicates how quickly the {{title}} should be addressed with respect to other requests.
@@ -883,85 +968,81 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
         return $this->priority;
     }
 
-
     /**
      * Reason or justification for the use of this device.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setReasonCode(FHIRCodeableConcept $reasonCode = null)
+    public function addReasonCode(FHIRCodeableConcept $reasonCode = null)
     {
         if (null === $reasonCode) {
             return $this; 
         }
-        $this->reasonCode = $reasonCode;
+        $this->reasonCode[] = $reasonCode;
         return $this;
     }
 
     /**
      * Reason or justification for the use of this device.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getReasonCode()
     {
         return $this->reasonCode;
     }
 
-
     /**
      * Reason or justification for the use of this device.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setReasonReference(FHIRReference $reasonReference = null)
+    public function addReasonReference(FHIRReference $reasonReference = null)
     {
         if (null === $reasonReference) {
             return $this; 
         }
-        $this->reasonReference = $reasonReference;
+        $this->reasonReference[] = $reasonReference;
         return $this;
     }
 
     /**
      * Reason or justification for the use of this device.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getReasonReference()
     {
         return $this->reasonReference;
     }
 
-
     /**
      * Key events in the history of the request.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setRelevantHistory(FHIRReference $relevantHistory = null)
+    public function addRelevantHistory(FHIRReference $relevantHistory = null)
     {
         if (null === $relevantHistory) {
             return $this; 
         }
-        $this->relevantHistory = $relevantHistory;
+        $this->relevantHistory[] = $relevantHistory;
         return $this;
     }
 
     /**
      * Key events in the history of the request.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getRelevantHistory()
     {
         return $this->relevantHistory;
     }
 
-
     /**
      * The individual who initiated the request and has responsibility for its activation.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDeviceRequest\FHIRDeviceRequestRequester
      * @return $this
      */
-    public function setRequester(FHIRReference $requester = null)
+    public function setRequester(FHIRDeviceRequestRequester $requester = null)
     {
         if (null === $requester) {
             return $this; 
@@ -972,13 +1053,12 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The individual who initiated the request and has responsibility for its activation.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDeviceRequest\FHIRDeviceRequestRequester
      */
     public function getRequester()
     {
         return $this->requester;
     }
-
 
     /**
      * The status of the request.
@@ -1012,7 +1092,6 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
         return $this->status;
     }
 
-
     /**
      * The patient who will use the device.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -1036,30 +1115,28 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
         return $this->subject;
     }
 
-
     /**
-     * Additional clinical information about the patient that may influence the request fulfilment.  For example, this may include where on the subject's body the device will be used (i.e. the target site).
+     * Additional clinical information about the patient that may influence the request fulfilment.  For example, this may includes body where on the subject's the device will be used ( i.e. the target site).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setSupportingInfo(FHIRReference $supportingInfo = null)
+    public function addSupportingInfo(FHIRReference $supportingInfo = null)
     {
         if (null === $supportingInfo) {
             return $this; 
         }
-        $this->supportingInfo = $supportingInfo;
+        $this->supportingInfo[] = $supportingInfo;
         return $this;
     }
 
     /**
-     * Additional clinical information about the patient that may influence the request fulfilment.  For example, this may include where on the subject's body the device will be used (i.e. the target site).
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * Additional clinical information about the patient that may influence the request fulfilment.  For example, this may includes body where on the subject's the device will be used ( i.e. the target site).
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getSupportingInfo()
     {
         return $this->supportingInfo;
     }
-
 
     /**
      * @return string
@@ -1079,8 +1156,16 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getAuthoredOn())) {
             $a['authoredOn'] = $v;
         }
-        if (null !== ($v = $this->getBasedOn())) {
-            $a['basedOn'] = $v;
+        if (0 < count($values = $this->getBasedOn())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['basedOn'] = $vs;
+            }
         }
         if (null !== ($v = $this->getCodeCodeableConcept())) {
             $a['codeCodeableConcept'] = $v;
@@ -1091,26 +1176,44 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getContext())) {
             $a['context'] = $v;
         }
+        if (0 < count($values = $this->getDefinition())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['definition'] = $vs;
+            }
+        }
         if (null !== ($v = $this->getGroupIdentifier())) {
             $a['groupIdentifier'] = $v;
         }
-        if (null !== ($v = $this->getIdentifier())) {
-            $a['identifier'] = $v;
-        }
-        if (null !== ($v = $this->getInstantiatesCanonical())) {
-            $a['instantiatesCanonical'] = $v;
-        }
-        if (null !== ($v = $this->getInstantiatesUri())) {
-            $a['instantiatesUri'] = $v;
-        }
-        if (null !== ($v = $this->getInsurance())) {
-            $a['insurance'] = $v;
+        if (0 < count($values = $this->getIdentifier())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['identifier'] = $vs;
+            }
         }
         if (null !== ($v = $this->getIntent())) {
             $a['intent'] = $v;
         }
-        if (null !== ($v = $this->getNote())) {
-            $a['note'] = $v;
+        if (0 < count($values = $this->getNote())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['note'] = $vs;
+            }
         }
         if (null !== ($v = $this->getOccurrenceDateTime())) {
             $a['occurrenceDateTime'] = $v;
@@ -1121,29 +1224,58 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getOccurrenceTiming())) {
             $a['occurrenceTiming'] = $v;
         }
-        if (null !== ($v = $this->getParameter())) {
-            $a['parameter'] = $v;
-        }
         if (null !== ($v = $this->getPerformer())) {
             $a['performer'] = $v;
         }
         if (null !== ($v = $this->getPerformerType())) {
             $a['performerType'] = $v;
         }
-        if (null !== ($v = $this->getPriorRequest())) {
-            $a['priorRequest'] = $v;
+        if (0 < count($values = $this->getPriorRequest())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['priorRequest'] = $vs;
+            }
         }
         if (null !== ($v = $this->getPriority())) {
             $a['priority'] = $v;
         }
-        if (null !== ($v = $this->getReasonCode())) {
-            $a['reasonCode'] = $v;
+        if (0 < count($values = $this->getReasonCode())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['reasonCode'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getReasonReference())) {
-            $a['reasonReference'] = $v;
+        if (0 < count($values = $this->getReasonReference())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['reasonReference'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getRelevantHistory())) {
-            $a['relevantHistory'] = $v;
+        if (0 < count($values = $this->getRelevantHistory())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['relevantHistory'] = $vs;
+            }
         }
         if (null !== ($v = $this->getRequester())) {
             $a['requester'] = $v;
@@ -1154,8 +1286,16 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getSubject())) {
             $a['subject'] = $v;
         }
-        if (null !== ($v = $this->getSupportingInfo())) {
-            $a['supportingInfo'] = $v;
+        if (0 < count($values = $this->getSupportingInfo())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['supportingInfo'] = $vs;
+            }
         }
         return $a;
     }
@@ -1170,9 +1310,114 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<DeviceRequest xmlns="http://hl7.org/fhir"></DeviceRequest>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getAuthoredOn())) {
+            $v->xmlSerialize(true, $sxe->addChild('authoredOn'));
         }
-        return $sxe->saveXML();
+        if (0 < count($values = $this->getBasedOn())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('basedOn'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getCodeCodeableConcept())) {
+            $v->xmlSerialize(true, $sxe->addChild('codeCodeableConcept'));
+        }
+        if (null !== ($v = $this->getCodeReference())) {
+            $v->xmlSerialize(true, $sxe->addChild('codeReference'));
+        }
+        if (null !== ($v = $this->getContext())) {
+            $v->xmlSerialize(true, $sxe->addChild('context'));
+        }
+        if (0 < count($values = $this->getDefinition())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('definition'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getGroupIdentifier())) {
+            $v->xmlSerialize(true, $sxe->addChild('groupIdentifier'));
+        }
+        if (0 < count($values = $this->getIdentifier())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('identifier'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getIntent())) {
+            $v->xmlSerialize(true, $sxe->addChild('intent'));
+        }
+        if (0 < count($values = $this->getNote())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('note'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getOccurrenceDateTime())) {
+            $v->xmlSerialize(true, $sxe->addChild('occurrenceDateTime'));
+        }
+        if (null !== ($v = $this->getOccurrencePeriod())) {
+            $v->xmlSerialize(true, $sxe->addChild('occurrencePeriod'));
+        }
+        if (null !== ($v = $this->getOccurrenceTiming())) {
+            $v->xmlSerialize(true, $sxe->addChild('occurrenceTiming'));
+        }
+        if (null !== ($v = $this->getPerformer())) {
+            $v->xmlSerialize(true, $sxe->addChild('performer'));
+        }
+        if (null !== ($v = $this->getPerformerType())) {
+            $v->xmlSerialize(true, $sxe->addChild('performerType'));
+        }
+        if (0 < count($values = $this->getPriorRequest())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('priorRequest'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getPriority())) {
+            $v->xmlSerialize(true, $sxe->addChild('priority'));
+        }
+        if (0 < count($values = $this->getReasonCode())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('reasonCode'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getReasonReference())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('reasonReference'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getRelevantHistory())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('relevantHistory'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getRequester())) {
+            $v->xmlSerialize(true, $sxe->addChild('requester'));
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('status'));
+        }
+        if (null !== ($v = $this->getSubject())) {
+            $v->xmlSerialize(true, $sxe->addChild('subject'));
+        }
+        if (0 < count($values = $this->getSupportingInfo())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('supportingInfo'));
+                }
+            }
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

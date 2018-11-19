@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -62,12 +62,13 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * 
  */
 
-use PHPFHIRGenerated\FHIRElement\FHIRAdverseEventActuality;
+use PHPFHIRGenerated\FHIRElement\FHIRAdverseEventCategory;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventSuspectEntity;
 use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
 use PHPFHIRGenerated\FHIRElement\FHIRDateTime;
 use PHPFHIRGenerated\FHIRElement\FHIRIdentifier;
 use PHPFHIRGenerated\FHIRElement\FHIRReference;
+use PHPFHIRGenerated\FHIRElement\FHIRString;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
 /**
@@ -83,124 +84,100 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
     const FHIR_TYPE_NAME = 'AdverseEvent';
 
     /**
-     * Whether the event actually happened, or just had the potential to. Note that this is independent of whether anyone was affected or harmed or how severely.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRAdverseEventActuality
+     * The type of event which is important to characterize what occurred and caused harm to the subject, or had the potential to cause harm to the subject.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRAdverseEventCategory
      */
-    public $actuality = null;
-
-    /**
-     * The overall type of event, intended for search and filtering purposes.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public $category = null;
-
-    /**
-     * The encounter or episode of care that establishes the context for this AdverseEvent.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $context = null;
-
-    /**
-     * Parties that may or should contribute or have contributed information to the adverse event, which can consist of one or more activities.  Such information includes information leading to the decision to perform the activity and how to perform the activity (e.g. consultant), information that the activity itself seeks to reveal (e.g. informant of clinical history), or information about what activity was performed (e.g. informant witness).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $contributor = null;
+    private $category = null;
 
     /**
      * The date (and perhaps time) when the adverse event occurred.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $date = null;
+    private $date = null;
 
     /**
-     * Estimated or actual date the AdverseEvent began, in the opinion of the reporter.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     * Describes the adverse event in text.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $detected = null;
+    private $description = null;
 
     /**
-     * This element defines the specific type of event that occurred or that was prevented from occurring.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * Parties that may or should contribute or have contributed information to the Act. Such information includes information leading to the decision to perform the Act and how to perform the Act (e.g. consultant), information that the Act itself seeks to reveal (e.g. informant of clinical history), or information about what Act was performed (e.g. informant witness).
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $event = null;
+    private $eventParticipant = null;
 
     /**
-     * Business identifiers assigned to this adverse event by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
+     * The identifier(s) of this adverse event that are assigned by business processes and/or used to refer to it when a direct URL reference to the resource itsefl is not appropriate.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public $identifier = null;
+    private $identifier = null;
 
     /**
      * The information about where the adverse event occurred.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $location = null;
+    private $location = null;
 
     /**
      * Describes the type of outcome from the adverse event.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $outcome = null;
+    private $outcome = null;
 
     /**
-     * The date on which the existence of the AdverseEvent was first recorded.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     * Includes information about the reaction that occurred as a result of exposure to a substance (for example, a drug or a chemical).
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $recordedDate = null;
+    private $reaction = [];
 
     /**
      * Information on who recorded the adverse event.  May be the patient or a practitioner.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $recorder = null;
+    private $recorder = null;
 
     /**
      * AdverseEvent.referenceDocument.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $referenceDocument = null;
+    private $referenceDocument = [];
 
     /**
-     * Includes information about the reaction that occurred as a result of exposure to a substance (for example, a drug or a chemical).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $resultingCondition = null;
-
-    /**
-     * Assessment whether this event was of real importance.
+     * Describes the seriousness or severity of the adverse event.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $seriousness = null;
-
-    /**
-     * Describes the severity of the adverse event, in relation to the subject. Contrast to AdverseEvent.serious - a severe rash might not be serious, but a mild heart problem is.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public $severity = null;
+    private $seriousness = null;
 
     /**
      * AdverseEvent.study.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $study = null;
+    private $study = [];
 
     /**
-     * This subject or group impacted by the event.
+     * This subject or group impacted by the event.  With a prospective adverse event, there will be no subject as the adverse event was prevented.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $subject = null;
+    private $subject = null;
 
     /**
      * AdverseEvent.subjectMedicalHistory.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $subjectMedicalHistory = null;
+    private $subjectMedicalHistory = [];
 
     /**
      * Describes the entity that is suspected to have caused the adverse event.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventSuspectEntity
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventSuspectEntity[]
      */
-    public $suspectEntity = null;
+    private $suspectEntity = [];
+
+    /**
+     * This element defines the specific type of event that occurred or that was prevented from occurring.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    private $type = null;
 
     /**
      * FHIRAdverseEvent Constructor
@@ -209,67 +186,202 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
-            if (isset($data['actuality'])) {
-                $this->setActuality($data['actuality']);
-            }
             if (isset($data['category'])) {
-                $this->setCategory($data['category']);
-            }
-            if (isset($data['context'])) {
-                $this->setContext($data['context']);
-            }
-            if (isset($data['contributor'])) {
-                $this->setContributor($data['contributor']);
+                $value = $data['category'];
+                if (is_array($value)) {
+                    $value = new FHIRAdverseEventCategory($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRAdverseEventCategory($value);
+                }
+                if (!($value instanceof FHIRAdverseEventCategory)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAdverseEvent::__construct - Property \"category\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAdverseEventCategory or data to construct type, saw ".gettype($value));
+                }
+                $this->setCategory($value);
             }
             if (isset($data['date'])) {
-                $this->setDate($data['date']);
+                $value = $data['date'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAdverseEvent::__construct - Property \"date\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value));
+                }
+                $this->setDate($value);
             }
-            if (isset($data['detected'])) {
-                $this->setDetected($data['detected']);
+            if (isset($data['description'])) {
+                $value = $data['description'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAdverseEvent::__construct - Property \"description\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setDescription($value);
             }
-            if (isset($data['event'])) {
-                $this->setEvent($data['event']);
+            if (isset($data['eventParticipant'])) {
+                $value = $data['eventParticipant'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAdverseEvent::__construct - Property \"eventParticipant\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setEventParticipant($value);
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    $value = new FHIRIdentifier($value);
+                } 
+                if (!($value instanceof FHIRIdentifier)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAdverseEvent::__construct - Property \"identifier\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($value));
+                }
+                $this->setIdentifier($value);
             }
             if (isset($data['location'])) {
-                $this->setLocation($data['location']);
+                $value = $data['location'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAdverseEvent::__construct - Property \"location\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setLocation($value);
             }
             if (isset($data['outcome'])) {
-                $this->setOutcome($data['outcome']);
+                $value = $data['outcome'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAdverseEvent::__construct - Property \"outcome\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setOutcome($value);
             }
-            if (isset($data['recordedDate'])) {
-                $this->setRecordedDate($data['recordedDate']);
+            if (isset($data['reaction'])) {
+                $value = $data['reaction'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAdverseEvent::__construct - Collection field \"reaction\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addReaction($v);
+                    }
+                }
             }
             if (isset($data['recorder'])) {
-                $this->setRecorder($data['recorder']);
+                $value = $data['recorder'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAdverseEvent::__construct - Property \"recorder\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setRecorder($value);
             }
             if (isset($data['referenceDocument'])) {
-                $this->setReferenceDocument($data['referenceDocument']);
-            }
-            if (isset($data['resultingCondition'])) {
-                $this->setResultingCondition($data['resultingCondition']);
+                $value = $data['referenceDocument'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAdverseEvent::__construct - Collection field \"referenceDocument\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addReferenceDocument($v);
+                    }
+                }
             }
             if (isset($data['seriousness'])) {
-                $this->setSeriousness($data['seriousness']);
-            }
-            if (isset($data['severity'])) {
-                $this->setSeverity($data['severity']);
+                $value = $data['seriousness'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAdverseEvent::__construct - Property \"seriousness\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setSeriousness($value);
             }
             if (isset($data['study'])) {
-                $this->setStudy($data['study']);
+                $value = $data['study'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAdverseEvent::__construct - Collection field \"study\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addStudy($v);
+                    }
+                }
             }
             if (isset($data['subject'])) {
-                $this->setSubject($data['subject']);
+                $value = $data['subject'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAdverseEvent::__construct - Property \"subject\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setSubject($value);
             }
             if (isset($data['subjectMedicalHistory'])) {
-                $this->setSubjectMedicalHistory($data['subjectMedicalHistory']);
+                $value = $data['subjectMedicalHistory'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAdverseEvent::__construct - Collection field \"subjectMedicalHistory\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addSubjectMedicalHistory($v);
+                    }
+                }
             }
             if (isset($data['suspectEntity'])) {
-                $this->setSuspectEntity($data['suspectEntity']);
+                $value = $data['suspectEntity'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRAdverseEventSuspectEntity($v);
+                        } 
+                        if (!($v instanceof FHIRAdverseEventSuspectEntity)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAdverseEvent::__construct - Collection field \"suspectEntity\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventSuspectEntity or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addSuspectEntity($v);
+                    }
+                }
+            }
+            if (isset($data['type'])) {
+                $value = $data['type'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAdverseEvent::__construct - Property \"type\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setType($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -278,112 +390,40 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
-     * Whether the event actually happened, or just had the potential to. Note that this is independent of whether anyone was affected or harmed or how severely.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRAdverseEventActuality
+     * The type of event which is important to characterize what occurred and caused harm to the subject, or had the potential to cause harm to the subject.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRAdverseEventCategory
      * @return $this
      */
-    public function setActuality($actuality)
-    {
-        if (null === $actuality) {
-            return $this; 
-        }
-        if (is_scalar($actuality)) {
-            $actuality = new FHIRAdverseEventActuality($actuality);
-        }
-        if (!($actuality instanceof FHIRAdverseEventActuality)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRAdverseEvent::setActuality - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRAdverseEventActuality or appropriate scalar value, %s seen.',
-                gettype($actuality)
-            ));
-        }
-        $this->actuality = $actuality;
-        return $this;
-    }
-
-    /**
-     * Whether the event actually happened, or just had the potential to. Note that this is independent of whether anyone was affected or harmed or how severely.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAdverseEventActuality
-     */
-    public function getActuality()
-    {
-        return $this->actuality;
-    }
-
-
-    /**
-     * The overall type of event, intended for search and filtering purposes.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     * @return $this
-     */
-    public function setCategory(FHIRCodeableConcept $category = null)
+    public function setCategory($category)
     {
         if (null === $category) {
             return $this; 
+        }
+        if (is_scalar($category)) {
+            $category = new FHIRAdverseEventCategory($category);
+        }
+        if (!($category instanceof FHIRAdverseEventCategory)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRAdverseEvent::setCategory - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRAdverseEventCategory or appropriate scalar value, %s seen.',
+                gettype($category)
+            ));
         }
         $this->category = $category;
         return $this;
     }
 
     /**
-     * The overall type of event, intended for search and filtering purposes.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * The type of event which is important to characterize what occurred and caused harm to the subject, or had the potential to cause harm to the subject.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAdverseEventCategory
      */
     public function getCategory()
     {
         return $this->category;
     }
-
-
-    /**
-     * The encounter or episode of care that establishes the context for this AdverseEvent.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     * @return $this
-     */
-    public function setContext(FHIRReference $context = null)
-    {
-        if (null === $context) {
-            return $this; 
-        }
-        $this->context = $context;
-        return $this;
-    }
-
-    /**
-     * The encounter or episode of care that establishes the context for this AdverseEvent.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getContext()
-    {
-        return $this->context;
-    }
-
-
-    /**
-     * Parties that may or should contribute or have contributed information to the adverse event, which can consist of one or more activities.  Such information includes information leading to the decision to perform the activity and how to perform the activity (e.g. consultant), information that the activity itself seeks to reveal (e.g. informant of clinical history), or information about what activity was performed (e.g. informant witness).
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     * @return $this
-     */
-    public function setContributor(FHIRReference $contributor = null)
-    {
-        if (null === $contributor) {
-            return $this; 
-        }
-        $this->contributor = $contributor;
-        return $this;
-    }
-
-    /**
-     * Parties that may or should contribute or have contributed information to the adverse event, which can consist of one or more activities.  Such information includes information leading to the decision to perform the activity and how to perform the activity (e.g. consultant), information that the activity itself seeks to reveal (e.g. informant of clinical history), or information about what activity was performed (e.g. informant witness).
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getContributor()
-    {
-        return $this->contributor;
-    }
-
 
     /**
      * The date (and perhaps time) when the adverse event occurred.
@@ -417,66 +457,63 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
         return $this->date;
     }
 
-
     /**
-     * Estimated or actual date the AdverseEvent began, in the opinion of the reporter.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     * Describes the adverse event in text.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
-    public function setDetected($detected)
+    public function setDescription($description)
     {
-        if (null === $detected) {
+        if (null === $description) {
             return $this; 
         }
-        if (is_scalar($detected)) {
-            $detected = new FHIRDateTime($detected);
+        if (is_scalar($description)) {
+            $description = new FHIRString($description);
         }
-        if (!($detected instanceof FHIRDateTime)) {
+        if (!($description instanceof FHIRString)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRAdverseEvent::setDetected - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or appropriate scalar value, %s seen.',
-                gettype($detected)
+                'FHIRAdverseEvent::setDescription - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                gettype($description)
             ));
         }
-        $this->detected = $detected;
+        $this->description = $description;
         return $this;
     }
 
     /**
-     * Estimated or actual date the AdverseEvent began, in the opinion of the reporter.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     * Describes the adverse event in text.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getDetected()
+    public function getDescription()
     {
-        return $this->detected;
+        return $this->description;
     }
 
-
     /**
-     * This element defines the specific type of event that occurred or that was prevented from occurring.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * Parties that may or should contribute or have contributed information to the Act. Such information includes information leading to the decision to perform the Act and how to perform the Act (e.g. consultant), information that the Act itself seeks to reveal (e.g. informant of clinical history), or information about what Act was performed (e.g. informant witness).
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setEvent(FHIRCodeableConcept $event = null)
+    public function setEventParticipant(FHIRReference $eventParticipant = null)
     {
-        if (null === $event) {
+        if (null === $eventParticipant) {
             return $this; 
         }
-        $this->event = $event;
+        $this->eventParticipant = $eventParticipant;
         return $this;
     }
 
     /**
-     * This element defines the specific type of event that occurred or that was prevented from occurring.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * Parties that may or should contribute or have contributed information to the Act. Such information includes information leading to the decision to perform the Act and how to perform the Act (e.g. consultant), information that the Act itself seeks to reveal (e.g. informant of clinical history), or information about what Act was performed (e.g. informant witness).
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getEvent()
+    public function getEventParticipant()
     {
-        return $this->event;
+        return $this->eventParticipant;
     }
 
-
     /**
-     * Business identifiers assigned to this adverse event by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
+     * The identifier(s) of this adverse event that are assigned by business processes and/or used to refer to it when a direct URL reference to the resource itsefl is not appropriate.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
@@ -490,14 +527,13 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Business identifiers assigned to this adverse event by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
+     * The identifier(s) of this adverse event that are assigned by business processes and/or used to refer to it when a direct URL reference to the resource itsefl is not appropriate.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier()
     {
         return $this->identifier;
     }
-
 
     /**
      * The information about where the adverse event occurred.
@@ -522,7 +558,6 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
         return $this->location;
     }
 
-
     /**
      * Describes the type of outcome from the adverse event.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
@@ -546,39 +581,28 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
         return $this->outcome;
     }
 
-
     /**
-     * The date on which the existence of the AdverseEvent was first recorded.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     * Includes information about the reaction that occurred as a result of exposure to a substance (for example, a drug or a chemical).
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setRecordedDate($recordedDate)
+    public function addReaction(FHIRReference $reaction = null)
     {
-        if (null === $recordedDate) {
+        if (null === $reaction) {
             return $this; 
         }
-        if (is_scalar($recordedDate)) {
-            $recordedDate = new FHIRDateTime($recordedDate);
-        }
-        if (!($recordedDate instanceof FHIRDateTime)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRAdverseEvent::setRecordedDate - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or appropriate scalar value, %s seen.',
-                gettype($recordedDate)
-            ));
-        }
-        $this->recordedDate = $recordedDate;
+        $this->reaction[] = $reaction;
         return $this;
     }
 
     /**
-     * The date on which the existence of the AdverseEvent was first recorded.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     * Includes information about the reaction that occurred as a result of exposure to a substance (for example, a drug or a chemical).
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getRecordedDate()
+    public function getReaction()
     {
-        return $this->recordedDate;
+        return $this->reaction;
     }
-
 
     /**
      * Information on who recorded the adverse event.  May be the patient or a practitioner.
@@ -603,57 +627,31 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
         return $this->recorder;
     }
 
-
     /**
      * AdverseEvent.referenceDocument.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setReferenceDocument(FHIRReference $referenceDocument = null)
+    public function addReferenceDocument(FHIRReference $referenceDocument = null)
     {
         if (null === $referenceDocument) {
             return $this; 
         }
-        $this->referenceDocument = $referenceDocument;
+        $this->referenceDocument[] = $referenceDocument;
         return $this;
     }
 
     /**
      * AdverseEvent.referenceDocument.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getReferenceDocument()
     {
         return $this->referenceDocument;
     }
 
-
     /**
-     * Includes information about the reaction that occurred as a result of exposure to a substance (for example, a drug or a chemical).
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     * @return $this
-     */
-    public function setResultingCondition(FHIRReference $resultingCondition = null)
-    {
-        if (null === $resultingCondition) {
-            return $this; 
-        }
-        $this->resultingCondition = $resultingCondition;
-        return $this;
-    }
-
-    /**
-     * Includes information about the reaction that occurred as a result of exposure to a substance (for example, a drug or a chemical).
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getResultingCondition()
-    {
-        return $this->resultingCondition;
-    }
-
-
-    /**
-     * Assessment whether this event was of real importance.
+     * Describes the seriousness or severity of the adverse event.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
@@ -667,7 +665,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Assessment whether this event was of real importance.
+     * Describes the seriousness or severity of the adverse event.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getSeriousness()
@@ -675,57 +673,31 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
         return $this->seriousness;
     }
 
-
-    /**
-     * Describes the severity of the adverse event, in relation to the subject. Contrast to AdverseEvent.serious - a severe rash might not be serious, but a mild heart problem is.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     * @return $this
-     */
-    public function setSeverity(FHIRCodeableConcept $severity = null)
-    {
-        if (null === $severity) {
-            return $this; 
-        }
-        $this->severity = $severity;
-        return $this;
-    }
-
-    /**
-     * Describes the severity of the adverse event, in relation to the subject. Contrast to AdverseEvent.serious - a severe rash might not be serious, but a mild heart problem is.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public function getSeverity()
-    {
-        return $this->severity;
-    }
-
-
     /**
      * AdverseEvent.study.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setStudy(FHIRReference $study = null)
+    public function addStudy(FHIRReference $study = null)
     {
         if (null === $study) {
             return $this; 
         }
-        $this->study = $study;
+        $this->study[] = $study;
         return $this;
     }
 
     /**
      * AdverseEvent.study.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getStudy()
     {
         return $this->study;
     }
 
-
     /**
-     * This subject or group impacted by the event.
+     * This subject or group impacted by the event.  With a prospective adverse event, there will be no subject as the adverse event was prevented.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
@@ -739,7 +711,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * This subject or group impacted by the event.
+     * This subject or group impacted by the event.  With a prospective adverse event, there will be no subject as the adverse event was prevented.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getSubject()
@@ -747,54 +719,74 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
         return $this->subject;
     }
 
-
     /**
      * AdverseEvent.subjectMedicalHistory.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setSubjectMedicalHistory(FHIRReference $subjectMedicalHistory = null)
+    public function addSubjectMedicalHistory(FHIRReference $subjectMedicalHistory = null)
     {
         if (null === $subjectMedicalHistory) {
             return $this; 
         }
-        $this->subjectMedicalHistory = $subjectMedicalHistory;
+        $this->subjectMedicalHistory[] = $subjectMedicalHistory;
         return $this;
     }
 
     /**
      * AdverseEvent.subjectMedicalHistory.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getSubjectMedicalHistory()
     {
         return $this->subjectMedicalHistory;
     }
 
-
     /**
      * Describes the entity that is suspected to have caused the adverse event.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventSuspectEntity
      * @return $this
      */
-    public function setSuspectEntity(FHIRAdverseEventSuspectEntity $suspectEntity = null)
+    public function addSuspectEntity(FHIRAdverseEventSuspectEntity $suspectEntity = null)
     {
         if (null === $suspectEntity) {
             return $this; 
         }
-        $this->suspectEntity = $suspectEntity;
+        $this->suspectEntity[] = $suspectEntity;
         return $this;
     }
 
     /**
      * Describes the entity that is suspected to have caused the adverse event.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventSuspectEntity
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventSuspectEntity[]
      */
     public function getSuspectEntity()
     {
         return $this->suspectEntity;
     }
 
+    /**
+     * This element defines the specific type of event that occurred or that was prevented from occurring.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return $this
+     */
+    public function setType(FHIRCodeableConcept $type = null)
+    {
+        if (null === $type) {
+            return $this; 
+        }
+        $this->type = $type;
+        return $this;
+    }
+
+    /**
+     * This element defines the specific type of event that occurred or that was prevented from occurring.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
 
     /**
      * @return string
@@ -811,26 +803,17 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
     {
         $a = parent::jsonSerialize();
         $a['resourceType'] = self::FHIR_TYPE_NAME;
-        if (null !== ($v = $this->getActuality())) {
-            $a['actuality'] = $v;
-        }
         if (null !== ($v = $this->getCategory())) {
             $a['category'] = $v;
-        }
-        if (null !== ($v = $this->getContext())) {
-            $a['context'] = $v;
-        }
-        if (null !== ($v = $this->getContributor())) {
-            $a['contributor'] = $v;
         }
         if (null !== ($v = $this->getDate())) {
             $a['date'] = $v;
         }
-        if (null !== ($v = $this->getDetected())) {
-            $a['detected'] = $v;
+        if (null !== ($v = $this->getDescription())) {
+            $a['description'] = $v;
         }
-        if (null !== ($v = $this->getEvent())) {
-            $a['event'] = $v;
+        if (null !== ($v = $this->getEventParticipant())) {
+            $a['eventParticipant'] = $v;
         }
         if (null !== ($v = $this->getIdentifier())) {
             $a['identifier'] = $v;
@@ -841,35 +824,72 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getOutcome())) {
             $a['outcome'] = $v;
         }
-        if (null !== ($v = $this->getRecordedDate())) {
-            $a['recordedDate'] = $v;
+        if (0 < count($values = $this->getReaction())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['reaction'] = $vs;
+            }
         }
         if (null !== ($v = $this->getRecorder())) {
             $a['recorder'] = $v;
         }
-        if (null !== ($v = $this->getReferenceDocument())) {
-            $a['referenceDocument'] = $v;
-        }
-        if (null !== ($v = $this->getResultingCondition())) {
-            $a['resultingCondition'] = $v;
+        if (0 < count($values = $this->getReferenceDocument())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['referenceDocument'] = $vs;
+            }
         }
         if (null !== ($v = $this->getSeriousness())) {
             $a['seriousness'] = $v;
         }
-        if (null !== ($v = $this->getSeverity())) {
-            $a['severity'] = $v;
-        }
-        if (null !== ($v = $this->getStudy())) {
-            $a['study'] = $v;
+        if (0 < count($values = $this->getStudy())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['study'] = $vs;
+            }
         }
         if (null !== ($v = $this->getSubject())) {
             $a['subject'] = $v;
         }
-        if (null !== ($v = $this->getSubjectMedicalHistory())) {
-            $a['subjectMedicalHistory'] = $v;
+        if (0 < count($values = $this->getSubjectMedicalHistory())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['subjectMedicalHistory'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getSuspectEntity())) {
-            $a['suspectEntity'] = $v;
+        if (0 < count($values = $this->getSuspectEntity())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['suspectEntity'] = $vs;
+            }
+        }
+        if (null !== ($v = $this->getType())) {
+            $a['type'] = $v;
         }
         return $a;
     }
@@ -884,9 +904,74 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<AdverseEvent xmlns="http://hl7.org/fhir"></AdverseEvent>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getCategory())) {
+            $v->xmlSerialize(true, $sxe->addChild('category'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getDate())) {
+            $v->xmlSerialize(true, $sxe->addChild('date'));
+        }
+        if (null !== ($v = $this->getDescription())) {
+            $v->xmlSerialize(true, $sxe->addChild('description'));
+        }
+        if (null !== ($v = $this->getEventParticipant())) {
+            $v->xmlSerialize(true, $sxe->addChild('eventParticipant'));
+        }
+        if (null !== ($v = $this->getIdentifier())) {
+            $v->xmlSerialize(true, $sxe->addChild('identifier'));
+        }
+        if (null !== ($v = $this->getLocation())) {
+            $v->xmlSerialize(true, $sxe->addChild('location'));
+        }
+        if (null !== ($v = $this->getOutcome())) {
+            $v->xmlSerialize(true, $sxe->addChild('outcome'));
+        }
+        if (0 < count($values = $this->getReaction())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('reaction'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getRecorder())) {
+            $v->xmlSerialize(true, $sxe->addChild('recorder'));
+        }
+        if (0 < count($values = $this->getReferenceDocument())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('referenceDocument'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getSeriousness())) {
+            $v->xmlSerialize(true, $sxe->addChild('seriousness'));
+        }
+        if (0 < count($values = $this->getStudy())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('study'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getSubject())) {
+            $v->xmlSerialize(true, $sxe->addChild('subject'));
+        }
+        if (0 < count($values = $this->getSubjectMedicalHistory())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('subjectMedicalHistory'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getSuspectEntity())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('suspectEntity'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getType())) {
+            $v->xmlSerialize(true, $sxe->addChild('type'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

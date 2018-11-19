@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -80,13 +80,13 @@ class FHIRRange extends FHIRElement implements \JsonSerializable
      * The high limit. The boundary is inclusive.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    public $high = null;
+    private $high = null;
 
     /**
      * The low limit. The boundary is inclusive.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    public $low = null;
+    private $low = null;
 
     /**
      * FHIRRange Constructor
@@ -95,13 +95,26 @@ class FHIRRange extends FHIRElement implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['high'])) {
-                $this->setHigh($data['high']);
+                $value = $data['high'];
+                if (is_array($value)) {
+                    $value = new FHIRQuantity($value);
+                } 
+                if (!($value instanceof FHIRQuantity)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRRange::__construct - Property \"high\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity or data to construct type, saw ".gettype($value));
+                }
+                $this->setHigh($value);
             }
             if (isset($data['low'])) {
-                $this->setLow($data['low']);
+                $value = $data['low'];
+                if (is_array($value)) {
+                    $value = new FHIRQuantity($value);
+                } 
+                if (!($value instanceof FHIRQuantity)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRRange::__construct - Property \"low\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity or data to construct type, saw ".gettype($value));
+                }
+                $this->setLow($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -110,6 +123,7 @@ class FHIRRange extends FHIRElement implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -135,7 +149,6 @@ class FHIRRange extends FHIRElement implements \JsonSerializable
         return $this->high;
     }
 
-
     /**
      * The low limit. The boundary is inclusive.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity
@@ -158,7 +171,6 @@ class FHIRRange extends FHIRElement implements \JsonSerializable
     {
         return $this->low;
     }
-
 
     /**
      * @return string
@@ -193,9 +205,12 @@ class FHIRRange extends FHIRElement implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Range xmlns="http://hl7.org/fhir"></Range>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getHigh())) {
+            $v->xmlSerialize(true, $sxe->addChild('high'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getLow())) {
+            $v->xmlSerialize(true, $sxe->addChild('low'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -64,16 +64,13 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
 use PHPFHIRGenerated\FHIRElement\FHIRAnnotation;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanActivity;
-use PHPFHIRGenerated\FHIRElement\FHIRCanonical;
 use PHPFHIRGenerated\FHIRElement\FHIRCarePlanIntent;
+use PHPFHIRGenerated\FHIRElement\FHIRCarePlanStatus;
 use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
-use PHPFHIRGenerated\FHIRElement\FHIRDateTime;
 use PHPFHIRGenerated\FHIRElement\FHIRIdentifier;
 use PHPFHIRGenerated\FHIRElement\FHIRPeriod;
 use PHPFHIRGenerated\FHIRElement\FHIRReference;
-use PHPFHIRGenerated\FHIRElement\FHIRRequestStatus;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
-use PHPFHIRGenerated\FHIRElement\FHIRUri;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
 /**
@@ -90,141 +87,123 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies a planned action to occur as part of the plan.  For example, a medication to be used, lab tests to perform, self-monitoring, education, etc.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanActivity
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanActivity[]
      */
-    public $activity = null;
+    private $activity = [];
 
     /**
      * Identifies the conditions/problems/concerns/diagnoses/etc. whose management and/or mitigation are handled by this plan.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $addresses = null;
+    private $addresses = [];
 
     /**
-     * When populated, the author is responsible for the care plan.  The care plan is attributed to the author.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * Identifies the individual(s) or ogranization who is responsible for the content of the care plan.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $author = null;
+    private $author = [];
 
     /**
      * A care plan that is fulfilled in whole or in part by this care plan.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $basedOn = null;
+    private $basedOn = [];
 
     /**
      * Identifies all people and organizations who are expected to be involved in the care envisioned by this plan.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $careTeam = null;
+    private $careTeam = [];
 
     /**
      * Identifies what "kind" of plan this is to support differentiation between multiple co-existing plans; e.g. "Home health", "psychiatric", "asthma", "disease management", "wellness plan", etc.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $category = null;
+    private $category = [];
 
     /**
-     * Identifies the original context in which this particular care plan was created.
+     * Identifies the original context in which this particular CarePlan was created.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $context = null;
+    private $context = null;
 
     /**
-     * Identifies the individual(s) or organization who provided the contents of the care plan.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * Identifies the protocol, questionnaire, guideline or other specification the care plan should be conducted in accordance with.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $contributor = null;
-
-    /**
-     * Represents when this particular CarePlan record was created in the system, which is often a system-generated date.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public $created = null;
+    private $definition = [];
 
     /**
      * A description of the scope and nature of the plan.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $description = null;
+    private $description = null;
 
     /**
      * Describes the intended objective(s) of carrying out the care plan.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $goal = null;
+    private $goal = [];
 
     /**
-     * Business identifiers assigned to this care plan by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * This records identifiers associated with this care plan that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = null;
-
-    /**
-     * The URL pointing to a FHIR-defined protocol, guideline, questionnaire or other definition that is adhered to in whole or in part by this CarePlan.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCanonical
-     */
-    public $instantiatesCanonical = null;
-
-    /**
-     * The URL pointing to an externally maintained protocol, guideline, questionnaire or other definition that is adhered to in whole or in part by this CarePlan.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
-     */
-    public $instantiatesUri = null;
+    private $identifier = [];
 
     /**
      * Indicates the level of authority/intentionality associated with the care plan and where the care plan fits into the workflow chain.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCarePlanIntent
      */
-    public $intent = null;
+    private $intent = null;
 
     /**
      * General notes about the care plan not covered elsewhere.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
-    public $note = null;
+    private $note = [];
 
     /**
      * A larger care plan of which this particular care plan is a component or step.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $partOf = null;
+    private $partOf = [];
 
     /**
      * Indicates when the plan did (or is intended to) come into effect and end.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public $period = null;
+    private $period = null;
 
     /**
      * Completed or terminated care plan whose function is taken by this new care plan.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $replaces = null;
+    private $replaces = [];
 
     /**
      * Indicates whether the plan is currently being acted upon, represents future intentions or is now a historical record.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRRequestStatus
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCarePlanStatus
      */
-    public $status = null;
+    private $status = null;
 
     /**
      * Identifies the patient or group whose intended care is described by the plan.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $subject = null;
+    private $subject = null;
 
     /**
-     * Identifies portions of the patient's record that specifically influenced the formation of the plan.  These might include comorbidities, recent procedures, limitations, recent assessments, etc.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * Identifies portions of the patient's record that specifically influenced the formation of the plan.  These might include co-morbidities, recent procedures, limitations, recent assessments, etc.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $supportingInfo = null;
+    private $supportingInfo = [];
 
     /**
-     * Human-friendly name for the care plan.
+     * Human-friendly name for the CarePlan.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $title = null;
+    private $title = null;
 
     /**
      * FHIRCarePlan Constructor
@@ -233,76 +212,292 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['activity'])) {
-                $this->setActivity($data['activity']);
+                $value = $data['activity'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCarePlanActivity($v);
+                        } 
+                        if (!($v instanceof FHIRCarePlanActivity)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCarePlan::__construct - Collection field \"activity\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanActivity or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addActivity($v);
+                    }
+                }
             }
             if (isset($data['addresses'])) {
-                $this->setAddresses($data['addresses']);
+                $value = $data['addresses'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCarePlan::__construct - Collection field \"addresses\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addAddresses($v);
+                    }
+                }
             }
             if (isset($data['author'])) {
-                $this->setAuthor($data['author']);
+                $value = $data['author'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCarePlan::__construct - Collection field \"author\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addAuthor($v);
+                    }
+                }
             }
             if (isset($data['basedOn'])) {
-                $this->setBasedOn($data['basedOn']);
+                $value = $data['basedOn'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCarePlan::__construct - Collection field \"basedOn\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addBasedOn($v);
+                    }
+                }
             }
             if (isset($data['careTeam'])) {
-                $this->setCareTeam($data['careTeam']);
+                $value = $data['careTeam'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCarePlan::__construct - Collection field \"careTeam\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addCareTeam($v);
+                    }
+                }
             }
             if (isset($data['category'])) {
-                $this->setCategory($data['category']);
+                $value = $data['category'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCarePlan::__construct - Collection field \"category\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addCategory($v);
+                    }
+                }
             }
             if (isset($data['context'])) {
-                $this->setContext($data['context']);
+                $value = $data['context'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCarePlan::__construct - Property \"context\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setContext($value);
             }
-            if (isset($data['contributor'])) {
-                $this->setContributor($data['contributor']);
-            }
-            if (isset($data['created'])) {
-                $this->setCreated($data['created']);
+            if (isset($data['definition'])) {
+                $value = $data['definition'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCarePlan::__construct - Collection field \"definition\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addDefinition($v);
+                    }
+                }
             }
             if (isset($data['description'])) {
-                $this->setDescription($data['description']);
+                $value = $data['description'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCarePlan::__construct - Property \"description\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setDescription($value);
             }
             if (isset($data['goal'])) {
-                $this->setGoal($data['goal']);
+                $value = $data['goal'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCarePlan::__construct - Collection field \"goal\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addGoal($v);
+                    }
+                }
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
-            }
-            if (isset($data['instantiatesCanonical'])) {
-                $this->setInstantiatesCanonical($data['instantiatesCanonical']);
-            }
-            if (isset($data['instantiatesUri'])) {
-                $this->setInstantiatesUri($data['instantiatesUri']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRIdentifier($v);
+                        } 
+                        if (!($v instanceof FHIRIdentifier)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCarePlan::__construct - Collection field \"identifier\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addIdentifier($v);
+                    }
+                }
             }
             if (isset($data['intent'])) {
-                $this->setIntent($data['intent']);
+                $value = $data['intent'];
+                if (is_array($value)) {
+                    $value = new FHIRCarePlanIntent($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRCarePlanIntent($value);
+                }
+                if (!($value instanceof FHIRCarePlanIntent)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCarePlan::__construct - Property \"intent\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCarePlanIntent or data to construct type, saw ".gettype($value));
+                }
+                $this->setIntent($value);
             }
             if (isset($data['note'])) {
-                $this->setNote($data['note']);
+                $value = $data['note'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRAnnotation($v);
+                        } 
+                        if (!($v instanceof FHIRAnnotation)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCarePlan::__construct - Collection field \"note\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAnnotation or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addNote($v);
+                    }
+                }
             }
             if (isset($data['partOf'])) {
-                $this->setPartOf($data['partOf']);
+                $value = $data['partOf'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCarePlan::__construct - Collection field \"partOf\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addPartOf($v);
+                    }
+                }
             }
             if (isset($data['period'])) {
-                $this->setPeriod($data['period']);
+                $value = $data['period'];
+                if (is_array($value)) {
+                    $value = new FHIRPeriod($value);
+                } 
+                if (!($value instanceof FHIRPeriod)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCarePlan::__construct - Property \"period\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPeriod or data to construct type, saw ".gettype($value));
+                }
+                $this->setPeriod($value);
             }
             if (isset($data['replaces'])) {
-                $this->setReplaces($data['replaces']);
+                $value = $data['replaces'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCarePlan::__construct - Collection field \"replaces\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addReplaces($v);
+                    }
+                }
             }
             if (isset($data['status'])) {
-                $this->setStatus($data['status']);
+                $value = $data['status'];
+                if (is_array($value)) {
+                    $value = new FHIRCarePlanStatus($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRCarePlanStatus($value);
+                }
+                if (!($value instanceof FHIRCarePlanStatus)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCarePlan::__construct - Property \"status\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCarePlanStatus or data to construct type, saw ".gettype($value));
+                }
+                $this->setStatus($value);
             }
             if (isset($data['subject'])) {
-                $this->setSubject($data['subject']);
+                $value = $data['subject'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCarePlan::__construct - Property \"subject\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setSubject($value);
             }
             if (isset($data['supportingInfo'])) {
-                $this->setSupportingInfo($data['supportingInfo']);
+                $value = $data['supportingInfo'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCarePlan::__construct - Collection field \"supportingInfo\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addSupportingInfo($v);
+                    }
+                }
             }
             if (isset($data['title'])) {
-                $this->setTitle($data['title']);
+                $value = $data['title'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCarePlan::__construct - Property \"title\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setTitle($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -311,6 +506,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -318,147 +514,141 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanActivity
      * @return $this
      */
-    public function setActivity(FHIRCarePlanActivity $activity = null)
+    public function addActivity(FHIRCarePlanActivity $activity = null)
     {
         if (null === $activity) {
             return $this; 
         }
-        $this->activity = $activity;
+        $this->activity[] = $activity;
         return $this;
     }
 
     /**
      * Identifies a planned action to occur as part of the plan.  For example, a medication to be used, lab tests to perform, self-monitoring, education, etc.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanActivity
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanActivity[]
      */
     public function getActivity()
     {
         return $this->activity;
     }
 
-
     /**
      * Identifies the conditions/problems/concerns/diagnoses/etc. whose management and/or mitigation are handled by this plan.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setAddresses(FHIRReference $addresses = null)
+    public function addAddresses(FHIRReference $addresses = null)
     {
         if (null === $addresses) {
             return $this; 
         }
-        $this->addresses = $addresses;
+        $this->addresses[] = $addresses;
         return $this;
     }
 
     /**
      * Identifies the conditions/problems/concerns/diagnoses/etc. whose management and/or mitigation are handled by this plan.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getAddresses()
     {
         return $this->addresses;
     }
 
-
     /**
-     * When populated, the author is responsible for the care plan.  The care plan is attributed to the author.
+     * Identifies the individual(s) or ogranization who is responsible for the content of the care plan.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setAuthor(FHIRReference $author = null)
+    public function addAuthor(FHIRReference $author = null)
     {
         if (null === $author) {
             return $this; 
         }
-        $this->author = $author;
+        $this->author[] = $author;
         return $this;
     }
 
     /**
-     * When populated, the author is responsible for the care plan.  The care plan is attributed to the author.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * Identifies the individual(s) or ogranization who is responsible for the content of the care plan.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getAuthor()
     {
         return $this->author;
     }
 
-
     /**
      * A care plan that is fulfilled in whole or in part by this care plan.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setBasedOn(FHIRReference $basedOn = null)
+    public function addBasedOn(FHIRReference $basedOn = null)
     {
         if (null === $basedOn) {
             return $this; 
         }
-        $this->basedOn = $basedOn;
+        $this->basedOn[] = $basedOn;
         return $this;
     }
 
     /**
      * A care plan that is fulfilled in whole or in part by this care plan.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getBasedOn()
     {
         return $this->basedOn;
     }
 
-
     /**
      * Identifies all people and organizations who are expected to be involved in the care envisioned by this plan.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setCareTeam(FHIRReference $careTeam = null)
+    public function addCareTeam(FHIRReference $careTeam = null)
     {
         if (null === $careTeam) {
             return $this; 
         }
-        $this->careTeam = $careTeam;
+        $this->careTeam[] = $careTeam;
         return $this;
     }
 
     /**
      * Identifies all people and organizations who are expected to be involved in the care envisioned by this plan.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getCareTeam()
     {
         return $this->careTeam;
     }
 
-
     /**
      * Identifies what "kind" of plan this is to support differentiation between multiple co-existing plans; e.g. "Home health", "psychiatric", "asthma", "disease management", "wellness plan", etc.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setCategory(FHIRCodeableConcept $category = null)
+    public function addCategory(FHIRCodeableConcept $category = null)
     {
         if (null === $category) {
             return $this; 
         }
-        $this->category = $category;
+        $this->category[] = $category;
         return $this;
     }
 
     /**
      * Identifies what "kind" of plan this is to support differentiation between multiple co-existing plans; e.g. "Home health", "psychiatric", "asthma", "disease management", "wellness plan", etc.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getCategory()
     {
         return $this->category;
     }
 
-
     /**
-     * Identifies the original context in which this particular care plan was created.
+     * Identifies the original context in which this particular CarePlan was created.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
@@ -472,7 +662,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Identifies the original context in which this particular care plan was created.
+     * Identifies the original context in which this particular CarePlan was created.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getContext()
@@ -480,63 +670,28 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
         return $this->context;
     }
 
-
     /**
-     * Identifies the individual(s) or organization who provided the contents of the care plan.
+     * Identifies the protocol, questionnaire, guideline or other specification the care plan should be conducted in accordance with.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setContributor(FHIRReference $contributor = null)
+    public function addDefinition(FHIRReference $definition = null)
     {
-        if (null === $contributor) {
+        if (null === $definition) {
             return $this; 
         }
-        $this->contributor = $contributor;
+        $this->definition[] = $definition;
         return $this;
     }
 
     /**
-     * Identifies the individual(s) or organization who provided the contents of the care plan.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * Identifies the protocol, questionnaire, guideline or other specification the care plan should be conducted in accordance with.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getContributor()
+    public function getDefinition()
     {
-        return $this->contributor;
+        return $this->definition;
     }
-
-
-    /**
-     * Represents when this particular CarePlan record was created in the system, which is often a system-generated date.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     * @return $this
-     */
-    public function setCreated($created)
-    {
-        if (null === $created) {
-            return $this; 
-        }
-        if (is_scalar($created)) {
-            $created = new FHIRDateTime($created);
-        }
-        if (!($created instanceof FHIRDateTime)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRCarePlan::setCreated - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or appropriate scalar value, %s seen.',
-                gettype($created)
-            ));
-        }
-        $this->created = $created;
-        return $this;
-    }
-
-    /**
-     * Represents when this particular CarePlan record was created in the system, which is often a system-generated date.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public function getCreated()
-    {
-        return $this->created;
-    }
-
 
     /**
      * A description of the scope and nature of the plan.
@@ -570,120 +725,51 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
         return $this->description;
     }
 
-
     /**
      * Describes the intended objective(s) of carrying out the care plan.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setGoal(FHIRReference $goal = null)
+    public function addGoal(FHIRReference $goal = null)
     {
         if (null === $goal) {
             return $this; 
         }
-        $this->goal = $goal;
+        $this->goal[] = $goal;
         return $this;
     }
 
     /**
      * Describes the intended objective(s) of carrying out the care plan.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getGoal()
     {
         return $this->goal;
     }
 
-
     /**
-     * Business identifiers assigned to this care plan by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
+     * This records identifiers associated with this care plan that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
-    public function setIdentifier(FHIRIdentifier $identifier = null)
+    public function addIdentifier(FHIRIdentifier $identifier = null)
     {
         if (null === $identifier) {
             return $this; 
         }
-        $this->identifier = $identifier;
+        $this->identifier[] = $identifier;
         return $this;
     }
 
     /**
-     * Business identifiers assigned to this care plan by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * This records identifiers associated with this care plan that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
         return $this->identifier;
     }
-
-
-    /**
-     * The URL pointing to a FHIR-defined protocol, guideline, questionnaire or other definition that is adhered to in whole or in part by this CarePlan.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
-     * @return $this
-     */
-    public function setInstantiatesCanonical($instantiatesCanonical)
-    {
-        if (null === $instantiatesCanonical) {
-            return $this; 
-        }
-        if (is_scalar($instantiatesCanonical)) {
-            $instantiatesCanonical = new FHIRCanonical($instantiatesCanonical);
-        }
-        if (!($instantiatesCanonical instanceof FHIRCanonical)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRCarePlan::setInstantiatesCanonical - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCanonical or appropriate scalar value, %s seen.',
-                gettype($instantiatesCanonical)
-            ));
-        }
-        $this->instantiatesCanonical = $instantiatesCanonical;
-        return $this;
-    }
-
-    /**
-     * The URL pointing to a FHIR-defined protocol, guideline, questionnaire or other definition that is adhered to in whole or in part by this CarePlan.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
-     */
-    public function getInstantiatesCanonical()
-    {
-        return $this->instantiatesCanonical;
-    }
-
-
-    /**
-     * The URL pointing to an externally maintained protocol, guideline, questionnaire or other definition that is adhered to in whole or in part by this CarePlan.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
-     * @return $this
-     */
-    public function setInstantiatesUri($instantiatesUri)
-    {
-        if (null === $instantiatesUri) {
-            return $this; 
-        }
-        if (is_scalar($instantiatesUri)) {
-            $instantiatesUri = new FHIRUri($instantiatesUri);
-        }
-        if (!($instantiatesUri instanceof FHIRUri)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRCarePlan::setInstantiatesUri - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or appropriate scalar value, %s seen.',
-                gettype($instantiatesUri)
-            ));
-        }
-        $this->instantiatesUri = $instantiatesUri;
-        return $this;
-    }
-
-    /**
-     * The URL pointing to an externally maintained protocol, guideline, questionnaire or other definition that is adhered to in whole or in part by this CarePlan.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
-     */
-    public function getInstantiatesUri()
-    {
-        return $this->instantiatesUri;
-    }
-
 
     /**
      * Indicates the level of authority/intentionality associated with the care plan and where the care plan fits into the workflow chain.
@@ -717,54 +803,51 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
         return $this->intent;
     }
 
-
     /**
      * General notes about the care plan not covered elsewhere.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation
      * @return $this
      */
-    public function setNote(FHIRAnnotation $note = null)
+    public function addNote(FHIRAnnotation $note = null)
     {
         if (null === $note) {
             return $this; 
         }
-        $this->note = $note;
+        $this->note[] = $note;
         return $this;
     }
 
     /**
      * General notes about the care plan not covered elsewhere.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
         return $this->note;
     }
 
-
     /**
      * A larger care plan of which this particular care plan is a component or step.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setPartOf(FHIRReference $partOf = null)
+    public function addPartOf(FHIRReference $partOf = null)
     {
         if (null === $partOf) {
             return $this; 
         }
-        $this->partOf = $partOf;
+        $this->partOf[] = $partOf;
         return $this;
     }
 
     /**
      * A larger care plan of which this particular care plan is a component or step.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getPartOf()
     {
         return $this->partOf;
     }
-
 
     /**
      * Indicates when the plan did (or is intended to) come into effect and end.
@@ -789,34 +872,32 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
         return $this->period;
     }
 
-
     /**
      * Completed or terminated care plan whose function is taken by this new care plan.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setReplaces(FHIRReference $replaces = null)
+    public function addReplaces(FHIRReference $replaces = null)
     {
         if (null === $replaces) {
             return $this; 
         }
-        $this->replaces = $replaces;
+        $this->replaces[] = $replaces;
         return $this;
     }
 
     /**
      * Completed or terminated care plan whose function is taken by this new care plan.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getReplaces()
     {
         return $this->replaces;
     }
 
-
     /**
      * Indicates whether the plan is currently being acted upon, represents future intentions or is now a historical record.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRRequestStatus
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCarePlanStatus
      * @return $this
      */
     public function setStatus($status)
@@ -825,11 +906,11 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
             return $this; 
         }
         if (is_scalar($status)) {
-            $status = new FHIRRequestStatus($status);
+            $status = new FHIRCarePlanStatus($status);
         }
-        if (!($status instanceof FHIRRequestStatus)) {
+        if (!($status instanceof FHIRCarePlanStatus)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRCarePlan::setStatus - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRRequestStatus or appropriate scalar value, %s seen.',
+                'FHIRCarePlan::setStatus - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCarePlanStatus or appropriate scalar value, %s seen.',
                 gettype($status)
             ));
         }
@@ -839,13 +920,12 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates whether the plan is currently being acted upon, represents future intentions or is now a historical record.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRRequestStatus
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCarePlanStatus
      */
     public function getStatus()
     {
         return $this->status;
     }
-
 
     /**
      * Identifies the patient or group whose intended care is described by the plan.
@@ -870,33 +950,31 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
         return $this->subject;
     }
 
-
     /**
-     * Identifies portions of the patient's record that specifically influenced the formation of the plan.  These might include comorbidities, recent procedures, limitations, recent assessments, etc.
+     * Identifies portions of the patient's record that specifically influenced the formation of the plan.  These might include co-morbidities, recent procedures, limitations, recent assessments, etc.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setSupportingInfo(FHIRReference $supportingInfo = null)
+    public function addSupportingInfo(FHIRReference $supportingInfo = null)
     {
         if (null === $supportingInfo) {
             return $this; 
         }
-        $this->supportingInfo = $supportingInfo;
+        $this->supportingInfo[] = $supportingInfo;
         return $this;
     }
 
     /**
-     * Identifies portions of the patient's record that specifically influenced the formation of the plan.  These might include comorbidities, recent procedures, limitations, recent assessments, etc.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * Identifies portions of the patient's record that specifically influenced the formation of the plan.  These might include co-morbidities, recent procedures, limitations, recent assessments, etc.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getSupportingInfo()
     {
         return $this->supportingInfo;
     }
 
-
     /**
-     * Human-friendly name for the care plan.
+     * Human-friendly name for the CarePlan.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
@@ -919,14 +997,13 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Human-friendly name for the care plan.
+     * Human-friendly name for the CarePlan.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getTitle()
     {
         return $this->title;
     }
-
 
     /**
      * @return string
@@ -943,62 +1020,149 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
     {
         $a = parent::jsonSerialize();
         $a['resourceType'] = self::FHIR_TYPE_NAME;
-        if (null !== ($v = $this->getActivity())) {
-            $a['activity'] = $v;
+        if (0 < count($values = $this->getActivity())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['activity'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getAddresses())) {
-            $a['addresses'] = $v;
+        if (0 < count($values = $this->getAddresses())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['addresses'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getAuthor())) {
-            $a['author'] = $v;
+        if (0 < count($values = $this->getAuthor())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['author'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getBasedOn())) {
-            $a['basedOn'] = $v;
+        if (0 < count($values = $this->getBasedOn())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['basedOn'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getCareTeam())) {
-            $a['careTeam'] = $v;
+        if (0 < count($values = $this->getCareTeam())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['careTeam'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getCategory())) {
-            $a['category'] = $v;
+        if (0 < count($values = $this->getCategory())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['category'] = $vs;
+            }
         }
         if (null !== ($v = $this->getContext())) {
             $a['context'] = $v;
         }
-        if (null !== ($v = $this->getContributor())) {
-            $a['contributor'] = $v;
-        }
-        if (null !== ($v = $this->getCreated())) {
-            $a['created'] = $v;
+        if (0 < count($values = $this->getDefinition())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['definition'] = $vs;
+            }
         }
         if (null !== ($v = $this->getDescription())) {
             $a['description'] = $v;
         }
-        if (null !== ($v = $this->getGoal())) {
-            $a['goal'] = $v;
+        if (0 < count($values = $this->getGoal())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['goal'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getIdentifier())) {
-            $a['identifier'] = $v;
-        }
-        if (null !== ($v = $this->getInstantiatesCanonical())) {
-            $a['instantiatesCanonical'] = $v;
-        }
-        if (null !== ($v = $this->getInstantiatesUri())) {
-            $a['instantiatesUri'] = $v;
+        if (0 < count($values = $this->getIdentifier())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['identifier'] = $vs;
+            }
         }
         if (null !== ($v = $this->getIntent())) {
             $a['intent'] = $v;
         }
-        if (null !== ($v = $this->getNote())) {
-            $a['note'] = $v;
+        if (0 < count($values = $this->getNote())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['note'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getPartOf())) {
-            $a['partOf'] = $v;
+        if (0 < count($values = $this->getPartOf())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['partOf'] = $vs;
+            }
         }
         if (null !== ($v = $this->getPeriod())) {
             $a['period'] = $v;
         }
-        if (null !== ($v = $this->getReplaces())) {
-            $a['replaces'] = $v;
+        if (0 < count($values = $this->getReplaces())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['replaces'] = $vs;
+            }
         }
         if (null !== ($v = $this->getStatus())) {
             $a['status'] = $v;
@@ -1006,8 +1170,16 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getSubject())) {
             $a['subject'] = $v;
         }
-        if (null !== ($v = $this->getSupportingInfo())) {
-            $a['supportingInfo'] = $v;
+        if (0 < count($values = $this->getSupportingInfo())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['supportingInfo'] = $vs;
+            }
         }
         if (null !== ($v = $this->getTitle())) {
             $a['title'] = $v;
@@ -1025,9 +1197,118 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<CarePlan xmlns="http://hl7.org/fhir"></CarePlan>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (0 < count($values = $this->getActivity())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('activity'));
+                }
+            }
         }
-        return $sxe->saveXML();
+        if (0 < count($values = $this->getAddresses())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('addresses'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getAuthor())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('author'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getBasedOn())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('basedOn'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getCareTeam())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('careTeam'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getCategory())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('category'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getContext())) {
+            $v->xmlSerialize(true, $sxe->addChild('context'));
+        }
+        if (0 < count($values = $this->getDefinition())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('definition'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getDescription())) {
+            $v->xmlSerialize(true, $sxe->addChild('description'));
+        }
+        if (0 < count($values = $this->getGoal())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('goal'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getIdentifier())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('identifier'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getIntent())) {
+            $v->xmlSerialize(true, $sxe->addChild('intent'));
+        }
+        if (0 < count($values = $this->getNote())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('note'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getPartOf())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('partOf'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getPeriod())) {
+            $v->xmlSerialize(true, $sxe->addChild('period'));
+        }
+        if (0 < count($values = $this->getReplaces())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('replaces'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('status'));
+        }
+        if (null !== ($v = $this->getSubject())) {
+            $v->xmlSerialize(true, $sxe->addChild('subject'));
+        }
+        if (0 < count($values = $this->getSupportingInfo())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('supportingInfo'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getTitle())) {
+            $v->xmlSerialize(true, $sxe->addChild('title'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

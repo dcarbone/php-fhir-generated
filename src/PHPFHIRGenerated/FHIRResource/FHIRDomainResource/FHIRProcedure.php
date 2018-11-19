@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -65,21 +65,17 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 use PHPFHIRGenerated\FHIRElement\FHIRAnnotation;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedureFocalDevice;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedurePerformer;
-use PHPFHIRGenerated\FHIRElement\FHIRCanonical;
+use PHPFHIRGenerated\FHIRElement\FHIRBoolean;
 use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
 use PHPFHIRGenerated\FHIRElement\FHIRDateTime;
 use PHPFHIRGenerated\FHIRElement\FHIREventStatus;
 use PHPFHIRGenerated\FHIRElement\FHIRIdentifier;
 use PHPFHIRGenerated\FHIRElement\FHIRPeriod;
-use PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge;
-use PHPFHIRGenerated\FHIRElement\FHIRRange;
 use PHPFHIRGenerated\FHIRElement\FHIRReference;
-use PHPFHIRGenerated\FHIRElement\FHIRString;
-use PHPFHIRGenerated\FHIRElement\FHIRUri;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
 /**
- * An action that is or was performed on or for a patient. This can be a physical intervention like an operation, or less invasive like long term services, counseling, or hypnotherapy.
+ * An action that is or was performed on a patient. This can be a physical intervention like an operation, or less invasive like counseling or hypnotherapy.
  * If the element is present, it must have either a @value, an @id, or extensions
  *
  * Class FHIRProcedure
@@ -91,196 +87,166 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
     const FHIR_TYPE_NAME = 'Procedure';
 
     /**
-     * Individual who is making the procedure statement.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $asserter = null;
-
-    /**
      * A reference to a resource that contains details of the request for this procedure.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $basedOn = null;
+    private $basedOn = [];
 
     /**
      * Detailed and structured anatomical location information. Multiple locations are allowed - e.g. multiple punch biopsies of a lesion.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $bodySite = null;
+    private $bodySite = [];
 
     /**
      * A code that classifies the procedure for searching, sorting and display purposes (e.g. "Surgical Procedure").
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $category = null;
+    private $category = null;
 
     /**
      * The specific procedure that is performed. Use text if the exact nature of the procedure cannot be coded (e.g. "Laparoscopic Appendectomy").
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $code = null;
+    private $code = null;
 
     /**
      * Any complications that occurred during the procedure, or in the immediate post-performance period. These are generally tracked separately from the notes, which will typically describe the procedure itself rather than any 'post procedure' issues.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $complication = null;
+    private $complication = [];
 
     /**
      * Any complications that occurred during the procedure, or in the immediate post-performance period.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $complicationDetail = null;
+    private $complicationDetail = [];
 
     /**
      * The encounter during which the procedure was performed.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $context = null;
+    private $context = null;
+
+    /**
+     * A protocol, guideline, orderset or other definition that was adhered to in whole or in part by this procedure.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    private $definition = [];
 
     /**
      * A device that is implanted, removed or otherwise manipulated (calibration, battery replacement, fitting a prosthesis, attaching a wound-vac, etc.) as a focal portion of the Procedure.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedureFocalDevice
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedureFocalDevice[]
      */
-    public $focalDevice = null;
+    private $focalDevice = [];
 
     /**
      * If the procedure required specific follow up - e.g. removal of sutures. The followup may be represented as a simple note, or could potentially be more complex in which case the CarePlan resource can be used.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $followUp = null;
+    private $followUp = [];
 
     /**
-     * Business identifiers assigned to this procedure by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * This records identifiers associated with this procedure that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = null;
-
-    /**
-     * The URL pointing to a FHIR-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this Procedure.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCanonical
-     */
-    public $instantiatesCanonical = null;
-
-    /**
-     * The URL pointing to an externally maintained protocol, guideline, orderset or other definition that is adhered to in whole or in part by this Procedure.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
-     */
-    public $instantiatesUri = null;
+    private $identifier = [];
 
     /**
      * The location where the procedure actually happened.  E.g. a newborn at home, a tracheostomy at a restaurant.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $location = null;
+    private $location = null;
 
     /**
-     * Any other notes and comments about the procedure.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation
+     * Set this to true if the record is saying that the procedure was NOT performed.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $note = null;
+    private $notDone = null;
+
+    /**
+     * A code indicating why the procedure was not performed.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    private $notDoneReason = null;
+
+    /**
+     * Any other notes about the procedure.  E.g. the operative notes.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
+     */
+    private $note = [];
 
     /**
      * The outcome of the procedure - did it resolve reasons for the procedure being performed?
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $outcome = null;
+    private $outcome = null;
 
     /**
      * A larger event of which this particular procedure is a component or step.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $partOf = null;
+    private $partOf = [];
 
     /**
-     * Estimated or actual date, date-time, period, or age when the procedure was performed.  Allows a period to support complex procedures that span more than one date, and also allows for the length of the procedure to be captured.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
-     */
-    public $performedAge = null;
-
-    /**
-     * Estimated or actual date, date-time, period, or age when the procedure was performed.  Allows a period to support complex procedures that span more than one date, and also allows for the length of the procedure to be captured.
+     * The date(time)/period over which the procedure was performed. Allows a period to support complex procedures that span more than one date, and also allows for the length of the procedure to be captured. (choose any one of performed*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $performedDateTime = null;
+    private $performedDateTime = null;
 
     /**
-     * Estimated or actual date, date-time, period, or age when the procedure was performed.  Allows a period to support complex procedures that span more than one date, and also allows for the length of the procedure to be captured.
+     * The date(time)/period over which the procedure was performed. Allows a period to support complex procedures that span more than one date, and also allows for the length of the procedure to be captured. (choose any one of performed*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public $performedPeriod = null;
-
-    /**
-     * Estimated or actual date, date-time, period, or age when the procedure was performed.  Allows a period to support complex procedures that span more than one date, and also allows for the length of the procedure to be captured.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
-     */
-    public $performedRange = null;
-
-    /**
-     * Estimated or actual date, date-time, period, or age when the procedure was performed.  Allows a period to support complex procedures that span more than one date, and also allows for the length of the procedure to be captured.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public $performedString = null;
+    private $performedPeriod = null;
 
     /**
      * Limited to 'real' people rather than equipment.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedurePerformer
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedurePerformer[]
      */
-    public $performer = null;
+    private $performer = [];
 
     /**
      * The coded reason why the procedure was performed. This may be coded entity of some type, or may simply be present as text.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $reasonCode = null;
+    private $reasonCode = [];
 
     /**
-     * The justification of why the procedure was performed.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * The condition that is the reason why the procedure was performed.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $reasonReference = null;
+    private $reasonReference = [];
 
     /**
-     * Individual who recorded the record and takes responsibility for its content.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * This could be a histology result, pathology report, surgical report, etc..
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $recorder = null;
-
-    /**
-     * This could be a histology result, pathology report, surgical report, etc.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $report = null;
+    private $report = [];
 
     /**
      * A code specifying the state of the procedure. Generally this will be in-progress or completed state.
      * @var \PHPFHIRGenerated\FHIRElement\FHIREventStatus
      */
-    public $status = null;
-
-    /**
-     * Captures the reason for the current state of the procedure.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public $statusReason = null;
+    private $status = null;
 
     /**
      * The person, animal or group on which the procedure was performed.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $subject = null;
+    private $subject = null;
 
     /**
      * Identifies coded items that were used as part of the procedure.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $usedCode = null;
+    private $usedCode = [];
 
     /**
      * Identifies medications, devices and any other substance used as part of the procedure.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $usedReference = null;
+    private $usedReference = [];
 
     /**
      * FHIRProcedure Constructor
@@ -289,103 +255,378 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
-            if (isset($data['asserter'])) {
-                $this->setAsserter($data['asserter']);
-            }
             if (isset($data['basedOn'])) {
-                $this->setBasedOn($data['basedOn']);
+                $value = $data['basedOn'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcedure::__construct - Collection field \"basedOn\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addBasedOn($v);
+                    }
+                }
             }
             if (isset($data['bodySite'])) {
-                $this->setBodySite($data['bodySite']);
+                $value = $data['bodySite'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcedure::__construct - Collection field \"bodySite\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addBodySite($v);
+                    }
+                }
             }
             if (isset($data['category'])) {
-                $this->setCategory($data['category']);
+                $value = $data['category'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcedure::__construct - Property \"category\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setCategory($value);
             }
             if (isset($data['code'])) {
-                $this->setCode($data['code']);
+                $value = $data['code'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcedure::__construct - Property \"code\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setCode($value);
             }
             if (isset($data['complication'])) {
-                $this->setComplication($data['complication']);
+                $value = $data['complication'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcedure::__construct - Collection field \"complication\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addComplication($v);
+                    }
+                }
             }
             if (isset($data['complicationDetail'])) {
-                $this->setComplicationDetail($data['complicationDetail']);
+                $value = $data['complicationDetail'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcedure::__construct - Collection field \"complicationDetail\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addComplicationDetail($v);
+                    }
+                }
             }
             if (isset($data['context'])) {
-                $this->setContext($data['context']);
+                $value = $data['context'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcedure::__construct - Property \"context\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setContext($value);
+            }
+            if (isset($data['definition'])) {
+                $value = $data['definition'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcedure::__construct - Collection field \"definition\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addDefinition($v);
+                    }
+                }
             }
             if (isset($data['focalDevice'])) {
-                $this->setFocalDevice($data['focalDevice']);
+                $value = $data['focalDevice'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRProcedureFocalDevice($v);
+                        } 
+                        if (!($v instanceof FHIRProcedureFocalDevice)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcedure::__construct - Collection field \"focalDevice\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedureFocalDevice or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addFocalDevice($v);
+                    }
+                }
             }
             if (isset($data['followUp'])) {
-                $this->setFollowUp($data['followUp']);
+                $value = $data['followUp'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcedure::__construct - Collection field \"followUp\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addFollowUp($v);
+                    }
+                }
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
-            }
-            if (isset($data['instantiatesCanonical'])) {
-                $this->setInstantiatesCanonical($data['instantiatesCanonical']);
-            }
-            if (isset($data['instantiatesUri'])) {
-                $this->setInstantiatesUri($data['instantiatesUri']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRIdentifier($v);
+                        } 
+                        if (!($v instanceof FHIRIdentifier)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcedure::__construct - Collection field \"identifier\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addIdentifier($v);
+                    }
+                }
             }
             if (isset($data['location'])) {
-                $this->setLocation($data['location']);
+                $value = $data['location'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcedure::__construct - Property \"location\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setLocation($value);
+            }
+            if (isset($data['notDone'])) {
+                $value = $data['notDone'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcedure::__construct - Property \"notDone\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setNotDone($value);
+            }
+            if (isset($data['notDoneReason'])) {
+                $value = $data['notDoneReason'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcedure::__construct - Property \"notDoneReason\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setNotDoneReason($value);
             }
             if (isset($data['note'])) {
-                $this->setNote($data['note']);
+                $value = $data['note'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRAnnotation($v);
+                        } 
+                        if (!($v instanceof FHIRAnnotation)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcedure::__construct - Collection field \"note\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAnnotation or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addNote($v);
+                    }
+                }
             }
             if (isset($data['outcome'])) {
-                $this->setOutcome($data['outcome']);
+                $value = $data['outcome'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcedure::__construct - Property \"outcome\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setOutcome($value);
             }
             if (isset($data['partOf'])) {
-                $this->setPartOf($data['partOf']);
-            }
-            if (isset($data['performedAge'])) {
-                $this->setPerformedAge($data['performedAge']);
+                $value = $data['partOf'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcedure::__construct - Collection field \"partOf\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addPartOf($v);
+                    }
+                }
             }
             if (isset($data['performedDateTime'])) {
-                $this->setPerformedDateTime($data['performedDateTime']);
+                $value = $data['performedDateTime'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcedure::__construct - Property \"performedDateTime\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setPerformedDateTime($value);
             }
             if (isset($data['performedPeriod'])) {
-                $this->setPerformedPeriod($data['performedPeriod']);
-            }
-            if (isset($data['performedRange'])) {
-                $this->setPerformedRange($data['performedRange']);
-            }
-            if (isset($data['performedString'])) {
-                $this->setPerformedString($data['performedString']);
+                $value = $data['performedPeriod'];
+                if (is_array($value)) {
+                    $value = new FHIRPeriod($value);
+                } 
+                if (!($value instanceof FHIRPeriod)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcedure::__construct - Property \"performedPeriod\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPeriod or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setPerformedPeriod($value);
             }
             if (isset($data['performer'])) {
-                $this->setPerformer($data['performer']);
+                $value = $data['performer'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRProcedurePerformer($v);
+                        } 
+                        if (!($v instanceof FHIRProcedurePerformer)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcedure::__construct - Collection field \"performer\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedurePerformer or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addPerformer($v);
+                    }
+                }
             }
             if (isset($data['reasonCode'])) {
-                $this->setReasonCode($data['reasonCode']);
+                $value = $data['reasonCode'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcedure::__construct - Collection field \"reasonCode\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addReasonCode($v);
+                    }
+                }
             }
             if (isset($data['reasonReference'])) {
-                $this->setReasonReference($data['reasonReference']);
-            }
-            if (isset($data['recorder'])) {
-                $this->setRecorder($data['recorder']);
+                $value = $data['reasonReference'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcedure::__construct - Collection field \"reasonReference\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addReasonReference($v);
+                    }
+                }
             }
             if (isset($data['report'])) {
-                $this->setReport($data['report']);
+                $value = $data['report'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcedure::__construct - Collection field \"report\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addReport($v);
+                    }
+                }
             }
             if (isset($data['status'])) {
-                $this->setStatus($data['status']);
-            }
-            if (isset($data['statusReason'])) {
-                $this->setStatusReason($data['statusReason']);
+                $value = $data['status'];
+                if (is_array($value)) {
+                    $value = new FHIREventStatus($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIREventStatus($value);
+                }
+                if (!($value instanceof FHIREventStatus)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcedure::__construct - Property \"status\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIREventStatus or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setStatus($value);
             }
             if (isset($data['subject'])) {
-                $this->setSubject($data['subject']);
+                $value = $data['subject'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcedure::__construct - Property \"subject\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setSubject($value);
             }
             if (isset($data['usedCode'])) {
-                $this->setUsedCode($data['usedCode']);
+                $value = $data['usedCode'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcedure::__construct - Collection field \"usedCode\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addUsedCode($v);
+                    }
+                }
             }
             if (isset($data['usedReference'])) {
-                $this->setUsedReference($data['usedReference']);
+                $value = $data['usedReference'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcedure::__construct - Collection field \"usedReference\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addUsedReference($v);
+                    }
+                }
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -394,79 +635,54 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
-
-    /**
-     * Individual who is making the procedure statement.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     * @return $this
-     */
-    public function setAsserter(FHIRReference $asserter = null)
-    {
-        if (null === $asserter) {
-            return $this; 
-        }
-        $this->asserter = $asserter;
-        return $this;
-    }
-
-    /**
-     * Individual who is making the procedure statement.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getAsserter()
-    {
-        return $this->asserter;
-    }
-
 
     /**
      * A reference to a resource that contains details of the request for this procedure.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setBasedOn(FHIRReference $basedOn = null)
+    public function addBasedOn(FHIRReference $basedOn = null)
     {
         if (null === $basedOn) {
             return $this; 
         }
-        $this->basedOn = $basedOn;
+        $this->basedOn[] = $basedOn;
         return $this;
     }
 
     /**
      * A reference to a resource that contains details of the request for this procedure.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getBasedOn()
     {
         return $this->basedOn;
     }
 
-
     /**
      * Detailed and structured anatomical location information. Multiple locations are allowed - e.g. multiple punch biopsies of a lesion.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setBodySite(FHIRCodeableConcept $bodySite = null)
+    public function addBodySite(FHIRCodeableConcept $bodySite = null)
     {
         if (null === $bodySite) {
             return $this; 
         }
-        $this->bodySite = $bodySite;
+        $this->bodySite[] = $bodySite;
         return $this;
     }
 
     /**
      * Detailed and structured anatomical location information. Multiple locations are allowed - e.g. multiple punch biopsies of a lesion.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getBodySite()
     {
         return $this->bodySite;
     }
-
 
     /**
      * A code that classifies the procedure for searching, sorting and display purposes (e.g. "Surgical Procedure").
@@ -491,7 +707,6 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
         return $this->category;
     }
 
-
     /**
      * The specific procedure that is performed. Use text if the exact nature of the procedure cannot be coded (e.g. "Laparoscopic Appendectomy").
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
@@ -515,54 +730,51 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
         return $this->code;
     }
 
-
     /**
      * Any complications that occurred during the procedure, or in the immediate post-performance period. These are generally tracked separately from the notes, which will typically describe the procedure itself rather than any 'post procedure' issues.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setComplication(FHIRCodeableConcept $complication = null)
+    public function addComplication(FHIRCodeableConcept $complication = null)
     {
         if (null === $complication) {
             return $this; 
         }
-        $this->complication = $complication;
+        $this->complication[] = $complication;
         return $this;
     }
 
     /**
      * Any complications that occurred during the procedure, or in the immediate post-performance period. These are generally tracked separately from the notes, which will typically describe the procedure itself rather than any 'post procedure' issues.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getComplication()
     {
         return $this->complication;
     }
 
-
     /**
      * Any complications that occurred during the procedure, or in the immediate post-performance period.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setComplicationDetail(FHIRReference $complicationDetail = null)
+    public function addComplicationDetail(FHIRReference $complicationDetail = null)
     {
         if (null === $complicationDetail) {
             return $this; 
         }
-        $this->complicationDetail = $complicationDetail;
+        $this->complicationDetail[] = $complicationDetail;
         return $this;
     }
 
     /**
      * Any complications that occurred during the procedure, or in the immediate post-performance period.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getComplicationDetail()
     {
         return $this->complicationDetail;
     }
-
 
     /**
      * The encounter during which the procedure was performed.
@@ -587,144 +799,97 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
         return $this->context;
     }
 
+    /**
+     * A protocol, guideline, orderset or other definition that was adhered to in whole or in part by this procedure.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return $this
+     */
+    public function addDefinition(FHIRReference $definition = null)
+    {
+        if (null === $definition) {
+            return $this; 
+        }
+        $this->definition[] = $definition;
+        return $this;
+    }
+
+    /**
+     * A protocol, guideline, orderset or other definition that was adhered to in whole or in part by this procedure.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getDefinition()
+    {
+        return $this->definition;
+    }
 
     /**
      * A device that is implanted, removed or otherwise manipulated (calibration, battery replacement, fitting a prosthesis, attaching a wound-vac, etc.) as a focal portion of the Procedure.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedureFocalDevice
      * @return $this
      */
-    public function setFocalDevice(FHIRProcedureFocalDevice $focalDevice = null)
+    public function addFocalDevice(FHIRProcedureFocalDevice $focalDevice = null)
     {
         if (null === $focalDevice) {
             return $this; 
         }
-        $this->focalDevice = $focalDevice;
+        $this->focalDevice[] = $focalDevice;
         return $this;
     }
 
     /**
      * A device that is implanted, removed or otherwise manipulated (calibration, battery replacement, fitting a prosthesis, attaching a wound-vac, etc.) as a focal portion of the Procedure.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedureFocalDevice
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedureFocalDevice[]
      */
     public function getFocalDevice()
     {
         return $this->focalDevice;
     }
 
-
     /**
      * If the procedure required specific follow up - e.g. removal of sutures. The followup may be represented as a simple note, or could potentially be more complex in which case the CarePlan resource can be used.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setFollowUp(FHIRCodeableConcept $followUp = null)
+    public function addFollowUp(FHIRCodeableConcept $followUp = null)
     {
         if (null === $followUp) {
             return $this; 
         }
-        $this->followUp = $followUp;
+        $this->followUp[] = $followUp;
         return $this;
     }
 
     /**
      * If the procedure required specific follow up - e.g. removal of sutures. The followup may be represented as a simple note, or could potentially be more complex in which case the CarePlan resource can be used.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getFollowUp()
     {
         return $this->followUp;
     }
 
-
     /**
-     * Business identifiers assigned to this procedure by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
+     * This records identifiers associated with this procedure that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
-    public function setIdentifier(FHIRIdentifier $identifier = null)
+    public function addIdentifier(FHIRIdentifier $identifier = null)
     {
         if (null === $identifier) {
             return $this; 
         }
-        $this->identifier = $identifier;
+        $this->identifier[] = $identifier;
         return $this;
     }
 
     /**
-     * Business identifiers assigned to this procedure by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * This records identifiers associated with this procedure that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
         return $this->identifier;
     }
-
-
-    /**
-     * The URL pointing to a FHIR-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this Procedure.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
-     * @return $this
-     */
-    public function setInstantiatesCanonical($instantiatesCanonical)
-    {
-        if (null === $instantiatesCanonical) {
-            return $this; 
-        }
-        if (is_scalar($instantiatesCanonical)) {
-            $instantiatesCanonical = new FHIRCanonical($instantiatesCanonical);
-        }
-        if (!($instantiatesCanonical instanceof FHIRCanonical)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRProcedure::setInstantiatesCanonical - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCanonical or appropriate scalar value, %s seen.',
-                gettype($instantiatesCanonical)
-            ));
-        }
-        $this->instantiatesCanonical = $instantiatesCanonical;
-        return $this;
-    }
-
-    /**
-     * The URL pointing to a FHIR-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this Procedure.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
-     */
-    public function getInstantiatesCanonical()
-    {
-        return $this->instantiatesCanonical;
-    }
-
-
-    /**
-     * The URL pointing to an externally maintained protocol, guideline, orderset or other definition that is adhered to in whole or in part by this Procedure.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
-     * @return $this
-     */
-    public function setInstantiatesUri($instantiatesUri)
-    {
-        if (null === $instantiatesUri) {
-            return $this; 
-        }
-        if (is_scalar($instantiatesUri)) {
-            $instantiatesUri = new FHIRUri($instantiatesUri);
-        }
-        if (!($instantiatesUri instanceof FHIRUri)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRProcedure::setInstantiatesUri - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or appropriate scalar value, %s seen.',
-                gettype($instantiatesUri)
-            ));
-        }
-        $this->instantiatesUri = $instantiatesUri;
-        return $this;
-    }
-
-    /**
-     * The URL pointing to an externally maintained protocol, guideline, orderset or other definition that is adhered to in whole or in part by this Procedure.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
-     */
-    public function getInstantiatesUri()
-    {
-        return $this->instantiatesUri;
-    }
-
 
     /**
      * The location where the procedure actually happened.  E.g. a newborn at home, a tracheostomy at a restaurant.
@@ -749,30 +914,83 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
         return $this->location;
     }
 
-
     /**
-     * Any other notes and comments about the procedure.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation
+     * Set this to true if the record is saying that the procedure was NOT performed.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      * @return $this
      */
-    public function setNote(FHIRAnnotation $note = null)
+    public function setNotDone($notDone)
     {
-        if (null === $note) {
+        if (null === $notDone) {
             return $this; 
         }
-        $this->note = $note;
+        if (is_scalar($notDone)) {
+            $notDone = new FHIRBoolean($notDone);
+        }
+        if (!($notDone instanceof FHIRBoolean)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRProcedure::setNotDone - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or appropriate scalar value, %s seen.',
+                gettype($notDone)
+            ));
+        }
+        $this->notDone = $notDone;
         return $this;
     }
 
     /**
-     * Any other notes and comments about the procedure.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation
+     * Set this to true if the record is saying that the procedure was NOT performed.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     */
+    public function getNotDone()
+    {
+        return $this->notDone;
+    }
+
+    /**
+     * A code indicating why the procedure was not performed.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return $this
+     */
+    public function setNotDoneReason(FHIRCodeableConcept $notDoneReason = null)
+    {
+        if (null === $notDoneReason) {
+            return $this; 
+        }
+        $this->notDoneReason = $notDoneReason;
+        return $this;
+    }
+
+    /**
+     * A code indicating why the procedure was not performed.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public function getNotDoneReason()
+    {
+        return $this->notDoneReason;
+    }
+
+    /**
+     * Any other notes about the procedure.  E.g. the operative notes.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation
+     * @return $this
+     */
+    public function addNote(FHIRAnnotation $note = null)
+    {
+        if (null === $note) {
+            return $this; 
+        }
+        $this->note[] = $note;
+        return $this;
+    }
+
+    /**
+     * Any other notes about the procedure.  E.g. the operative notes.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
         return $this->note;
     }
-
 
     /**
      * The outcome of the procedure - did it resolve reasons for the procedure being performed?
@@ -797,57 +1015,31 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
         return $this->outcome;
     }
 
-
     /**
      * A larger event of which this particular procedure is a component or step.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setPartOf(FHIRReference $partOf = null)
+    public function addPartOf(FHIRReference $partOf = null)
     {
         if (null === $partOf) {
             return $this; 
         }
-        $this->partOf = $partOf;
+        $this->partOf[] = $partOf;
         return $this;
     }
 
     /**
      * A larger event of which this particular procedure is a component or step.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getPartOf()
     {
         return $this->partOf;
     }
 
-
     /**
-     * Estimated or actual date, date-time, period, or age when the procedure was performed.  Allows a period to support complex procedures that span more than one date, and also allows for the length of the procedure to be captured.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
-     * @return $this
-     */
-    public function setPerformedAge(FHIRAge $performedAge = null)
-    {
-        if (null === $performedAge) {
-            return $this; 
-        }
-        $this->performedAge = $performedAge;
-        return $this;
-    }
-
-    /**
-     * Estimated or actual date, date-time, period, or age when the procedure was performed.  Allows a period to support complex procedures that span more than one date, and also allows for the length of the procedure to be captured.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
-     */
-    public function getPerformedAge()
-    {
-        return $this->performedAge;
-    }
-
-
-    /**
-     * Estimated or actual date, date-time, period, or age when the procedure was performed.  Allows a period to support complex procedures that span more than one date, and also allows for the length of the procedure to be captured.
+     * The date(time)/period over which the procedure was performed. Allows a period to support complex procedures that span more than one date, and also allows for the length of the procedure to be captured. (choose any one of performed*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      * @return $this
      */
@@ -870,7 +1062,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Estimated or actual date, date-time, period, or age when the procedure was performed.  Allows a period to support complex procedures that span more than one date, and also allows for the length of the procedure to be captured.
+     * The date(time)/period over which the procedure was performed. Allows a period to support complex procedures that span more than one date, and also allows for the length of the procedure to be captured. (choose any one of performed*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getPerformedDateTime()
@@ -878,9 +1070,8 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
         return $this->performedDateTime;
     }
 
-
     /**
-     * Estimated or actual date, date-time, period, or age when the procedure was performed.  Allows a period to support complex procedures that span more than one date, and also allows for the length of the procedure to be captured.
+     * The date(time)/period over which the procedure was performed. Allows a period to support complex procedures that span more than one date, and also allows for the length of the procedure to be captured. (choose any one of performed*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
      * @return $this
      */
@@ -894,7 +1085,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Estimated or actual date, date-time, period, or age when the procedure was performed.  Allows a period to support complex procedures that span more than one date, and also allows for the length of the procedure to be captured.
+     * The date(time)/period over which the procedure was performed. Allows a period to support complex procedures that span more than one date, and also allows for the length of the procedure to be captured. (choose any one of performed*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getPerformedPeriod()
@@ -902,183 +1093,97 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
         return $this->performedPeriod;
     }
 
-
-    /**
-     * Estimated or actual date, date-time, period, or age when the procedure was performed.  Allows a period to support complex procedures that span more than one date, and also allows for the length of the procedure to be captured.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRRange
-     * @return $this
-     */
-    public function setPerformedRange(FHIRRange $performedRange = null)
-    {
-        if (null === $performedRange) {
-            return $this; 
-        }
-        $this->performedRange = $performedRange;
-        return $this;
-    }
-
-    /**
-     * Estimated or actual date, date-time, period, or age when the procedure was performed.  Allows a period to support complex procedures that span more than one date, and also allows for the length of the procedure to be captured.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRRange
-     */
-    public function getPerformedRange()
-    {
-        return $this->performedRange;
-    }
-
-
-    /**
-     * Estimated or actual date, date-time, period, or age when the procedure was performed.  Allows a period to support complex procedures that span more than one date, and also allows for the length of the procedure to be captured.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
-     * @return $this
-     */
-    public function setPerformedString($performedString)
-    {
-        if (null === $performedString) {
-            return $this; 
-        }
-        if (is_scalar($performedString)) {
-            $performedString = new FHIRString($performedString);
-        }
-        if (!($performedString instanceof FHIRString)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRProcedure::setPerformedString - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
-                gettype($performedString)
-            ));
-        }
-        $this->performedString = $performedString;
-        return $this;
-    }
-
-    /**
-     * Estimated or actual date, date-time, period, or age when the procedure was performed.  Allows a period to support complex procedures that span more than one date, and also allows for the length of the procedure to be captured.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public function getPerformedString()
-    {
-        return $this->performedString;
-    }
-
-
     /**
      * Limited to 'real' people rather than equipment.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedurePerformer
      * @return $this
      */
-    public function setPerformer(FHIRProcedurePerformer $performer = null)
+    public function addPerformer(FHIRProcedurePerformer $performer = null)
     {
         if (null === $performer) {
             return $this; 
         }
-        $this->performer = $performer;
+        $this->performer[] = $performer;
         return $this;
     }
 
     /**
      * Limited to 'real' people rather than equipment.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedurePerformer
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedurePerformer[]
      */
     public function getPerformer()
     {
         return $this->performer;
     }
 
-
     /**
      * The coded reason why the procedure was performed. This may be coded entity of some type, or may simply be present as text.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setReasonCode(FHIRCodeableConcept $reasonCode = null)
+    public function addReasonCode(FHIRCodeableConcept $reasonCode = null)
     {
         if (null === $reasonCode) {
             return $this; 
         }
-        $this->reasonCode = $reasonCode;
+        $this->reasonCode[] = $reasonCode;
         return $this;
     }
 
     /**
      * The coded reason why the procedure was performed. This may be coded entity of some type, or may simply be present as text.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getReasonCode()
     {
         return $this->reasonCode;
     }
 
-
     /**
-     * The justification of why the procedure was performed.
+     * The condition that is the reason why the procedure was performed.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setReasonReference(FHIRReference $reasonReference = null)
+    public function addReasonReference(FHIRReference $reasonReference = null)
     {
         if (null === $reasonReference) {
             return $this; 
         }
-        $this->reasonReference = $reasonReference;
+        $this->reasonReference[] = $reasonReference;
         return $this;
     }
 
     /**
-     * The justification of why the procedure was performed.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * The condition that is the reason why the procedure was performed.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getReasonReference()
     {
         return $this->reasonReference;
     }
 
-
     /**
-     * Individual who recorded the record and takes responsibility for its content.
+     * This could be a histology result, pathology report, surgical report, etc..
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setRecorder(FHIRReference $recorder = null)
-    {
-        if (null === $recorder) {
-            return $this; 
-        }
-        $this->recorder = $recorder;
-        return $this;
-    }
-
-    /**
-     * Individual who recorded the record and takes responsibility for its content.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getRecorder()
-    {
-        return $this->recorder;
-    }
-
-
-    /**
-     * This could be a histology result, pathology report, surgical report, etc.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     * @return $this
-     */
-    public function setReport(FHIRReference $report = null)
+    public function addReport(FHIRReference $report = null)
     {
         if (null === $report) {
             return $this; 
         }
-        $this->report = $report;
+        $this->report[] = $report;
         return $this;
     }
 
     /**
-     * This could be a histology result, pathology report, surgical report, etc.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * This could be a histology result, pathology report, surgical report, etc..
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getReport()
     {
         return $this->report;
     }
-
 
     /**
      * A code specifying the state of the procedure. Generally this will be in-progress or completed state.
@@ -1112,31 +1217,6 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
         return $this->status;
     }
 
-
-    /**
-     * Captures the reason for the current state of the procedure.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     * @return $this
-     */
-    public function setStatusReason(FHIRCodeableConcept $statusReason = null)
-    {
-        if (null === $statusReason) {
-            return $this; 
-        }
-        $this->statusReason = $statusReason;
-        return $this;
-    }
-
-    /**
-     * Captures the reason for the current state of the procedure.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public function getStatusReason()
-    {
-        return $this->statusReason;
-    }
-
-
     /**
      * The person, animal or group on which the procedure was performed.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -1160,54 +1240,51 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
         return $this->subject;
     }
 
-
     /**
      * Identifies coded items that were used as part of the procedure.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setUsedCode(FHIRCodeableConcept $usedCode = null)
+    public function addUsedCode(FHIRCodeableConcept $usedCode = null)
     {
         if (null === $usedCode) {
             return $this; 
         }
-        $this->usedCode = $usedCode;
+        $this->usedCode[] = $usedCode;
         return $this;
     }
 
     /**
      * Identifies coded items that were used as part of the procedure.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getUsedCode()
     {
         return $this->usedCode;
     }
 
-
     /**
      * Identifies medications, devices and any other substance used as part of the procedure.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setUsedReference(FHIRReference $usedReference = null)
+    public function addUsedReference(FHIRReference $usedReference = null)
     {
         if (null === $usedReference) {
             return $this; 
         }
-        $this->usedReference = $usedReference;
+        $this->usedReference[] = $usedReference;
         return $this;
     }
 
     /**
      * Identifies medications, devices and any other substance used as part of the procedure.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getUsedReference()
     {
         return $this->usedReference;
     }
-
 
     /**
      * @return string
@@ -1224,14 +1301,27 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
     {
         $a = parent::jsonSerialize();
         $a['resourceType'] = self::FHIR_TYPE_NAME;
-        if (null !== ($v = $this->getAsserter())) {
-            $a['asserter'] = $v;
+        if (0 < count($values = $this->getBasedOn())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['basedOn'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getBasedOn())) {
-            $a['basedOn'] = $v;
-        }
-        if (null !== ($v = $this->getBodySite())) {
-            $a['bodySite'] = $v;
+        if (0 < count($values = $this->getBodySite())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['bodySite'] = $vs;
+            }
         }
         if (null !== ($v = $this->getCategory())) {
             $a['category'] = $v;
@@ -1239,44 +1329,108 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getCode())) {
             $a['code'] = $v;
         }
-        if (null !== ($v = $this->getComplication())) {
-            $a['complication'] = $v;
+        if (0 < count($values = $this->getComplication())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['complication'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getComplicationDetail())) {
-            $a['complicationDetail'] = $v;
+        if (0 < count($values = $this->getComplicationDetail())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['complicationDetail'] = $vs;
+            }
         }
         if (null !== ($v = $this->getContext())) {
             $a['context'] = $v;
         }
-        if (null !== ($v = $this->getFocalDevice())) {
-            $a['focalDevice'] = $v;
+        if (0 < count($values = $this->getDefinition())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['definition'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getFollowUp())) {
-            $a['followUp'] = $v;
+        if (0 < count($values = $this->getFocalDevice())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['focalDevice'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getIdentifier())) {
-            $a['identifier'] = $v;
+        if (0 < count($values = $this->getFollowUp())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['followUp'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getInstantiatesCanonical())) {
-            $a['instantiatesCanonical'] = $v;
-        }
-        if (null !== ($v = $this->getInstantiatesUri())) {
-            $a['instantiatesUri'] = $v;
+        if (0 < count($values = $this->getIdentifier())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['identifier'] = $vs;
+            }
         }
         if (null !== ($v = $this->getLocation())) {
             $a['location'] = $v;
         }
-        if (null !== ($v = $this->getNote())) {
-            $a['note'] = $v;
+        if (null !== ($v = $this->getNotDone())) {
+            $a['notDone'] = $v;
+        }
+        if (null !== ($v = $this->getNotDoneReason())) {
+            $a['notDoneReason'] = $v;
+        }
+        if (0 < count($values = $this->getNote())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['note'] = $vs;
+            }
         }
         if (null !== ($v = $this->getOutcome())) {
             $a['outcome'] = $v;
         }
-        if (null !== ($v = $this->getPartOf())) {
-            $a['partOf'] = $v;
-        }
-        if (null !== ($v = $this->getPerformedAge())) {
-            $a['performedAge'] = $v;
+        if (0 < count($values = $this->getPartOf())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['partOf'] = $vs;
+            }
         }
         if (null !== ($v = $this->getPerformedDateTime())) {
             $a['performedDateTime'] = $v;
@@ -1284,41 +1438,77 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getPerformedPeriod())) {
             $a['performedPeriod'] = $v;
         }
-        if (null !== ($v = $this->getPerformedRange())) {
-            $a['performedRange'] = $v;
+        if (0 < count($values = $this->getPerformer())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['performer'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getPerformedString())) {
-            $a['performedString'] = $v;
+        if (0 < count($values = $this->getReasonCode())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['reasonCode'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getPerformer())) {
-            $a['performer'] = $v;
+        if (0 < count($values = $this->getReasonReference())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['reasonReference'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getReasonCode())) {
-            $a['reasonCode'] = $v;
-        }
-        if (null !== ($v = $this->getReasonReference())) {
-            $a['reasonReference'] = $v;
-        }
-        if (null !== ($v = $this->getRecorder())) {
-            $a['recorder'] = $v;
-        }
-        if (null !== ($v = $this->getReport())) {
-            $a['report'] = $v;
+        if (0 < count($values = $this->getReport())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['report'] = $vs;
+            }
         }
         if (null !== ($v = $this->getStatus())) {
             $a['status'] = $v;
         }
-        if (null !== ($v = $this->getStatusReason())) {
-            $a['statusReason'] = $v;
-        }
         if (null !== ($v = $this->getSubject())) {
             $a['subject'] = $v;
         }
-        if (null !== ($v = $this->getUsedCode())) {
-            $a['usedCode'] = $v;
+        if (0 < count($values = $this->getUsedCode())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['usedCode'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getUsedReference())) {
-            $a['usedReference'] = $v;
+        if (0 < count($values = $this->getUsedReference())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['usedReference'] = $vs;
+            }
         }
         return $a;
     }
@@ -1333,9 +1523,151 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Procedure xmlns="http://hl7.org/fhir"></Procedure>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (0 < count($values = $this->getBasedOn())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('basedOn'));
+                }
+            }
         }
-        return $sxe->saveXML();
+        if (0 < count($values = $this->getBodySite())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('bodySite'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getCategory())) {
+            $v->xmlSerialize(true, $sxe->addChild('category'));
+        }
+        if (null !== ($v = $this->getCode())) {
+            $v->xmlSerialize(true, $sxe->addChild('code'));
+        }
+        if (0 < count($values = $this->getComplication())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('complication'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getComplicationDetail())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('complicationDetail'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getContext())) {
+            $v->xmlSerialize(true, $sxe->addChild('context'));
+        }
+        if (0 < count($values = $this->getDefinition())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('definition'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getFocalDevice())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('focalDevice'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getFollowUp())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('followUp'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getIdentifier())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('identifier'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getLocation())) {
+            $v->xmlSerialize(true, $sxe->addChild('location'));
+        }
+        if (null !== ($v = $this->getNotDone())) {
+            $v->xmlSerialize(true, $sxe->addChild('notDone'));
+        }
+        if (null !== ($v = $this->getNotDoneReason())) {
+            $v->xmlSerialize(true, $sxe->addChild('notDoneReason'));
+        }
+        if (0 < count($values = $this->getNote())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('note'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getOutcome())) {
+            $v->xmlSerialize(true, $sxe->addChild('outcome'));
+        }
+        if (0 < count($values = $this->getPartOf())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('partOf'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getPerformedDateTime())) {
+            $v->xmlSerialize(true, $sxe->addChild('performedDateTime'));
+        }
+        if (null !== ($v = $this->getPerformedPeriod())) {
+            $v->xmlSerialize(true, $sxe->addChild('performedPeriod'));
+        }
+        if (0 < count($values = $this->getPerformer())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('performer'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getReasonCode())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('reasonCode'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getReasonReference())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('reasonReference'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getReport())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('report'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('status'));
+        }
+        if (null !== ($v = $this->getSubject())) {
+            $v->xmlSerialize(true, $sxe->addChild('subject'));
+        }
+        if (0 < count($values = $this->getUsedCode())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('usedCode'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getUsedReference())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('usedReference'));
+                }
+            }
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

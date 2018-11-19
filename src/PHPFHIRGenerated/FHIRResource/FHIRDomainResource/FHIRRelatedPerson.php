@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -91,67 +91,67 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
      * Whether this related person record is in active use.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $active = null;
+    private $active = null;
 
     /**
      * Address where the related person can be contacted or visited.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRAddress
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRAddress[]
      */
-    public $address = null;
+    private $address = [];
 
     /**
      * The date on which the related person was born.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
-    public $birthDate = null;
+    private $birthDate = null;
 
     /**
      * Administrative Gender - the gender that the person is considered to have for administration and record keeping purposes.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAdministrativeGender
      */
-    public $gender = null;
+    private $gender = null;
 
     /**
      * Identifier for a person within a particular scope.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = null;
+    private $identifier = [];
 
     /**
      * A name associated with the person.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRHumanName
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRHumanName[]
      */
-    public $name = null;
+    private $name = [];
 
     /**
      * The patient this person is related to.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $patient = null;
+    private $patient = null;
 
     /**
-     * The period of time during which this relationship is or was active. If there are no dates defined, then the interval is unknown.
+     * The period of time that this relationship is considered to be valid. If there are no dates defined, then the interval is unknown.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public $period = null;
+    private $period = null;
 
     /**
      * Image of the person.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment[]
      */
-    public $photo = null;
+    private $photo = [];
 
     /**
      * The nature of the relationship between a patient and the related person.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $relationship = null;
+    private $relationship = null;
 
     /**
      * A contact detail for the person, e.g. a telephone number or an email address.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactPoint
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactPoint[]
      */
-    public $telecom = null;
+    private $telecom = [];
 
     /**
      * FHIRRelatedPerson Constructor
@@ -160,40 +160,152 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['active'])) {
-                $this->setActive($data['active']);
+                $value = $data['active'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRelatedPerson::__construct - Property \"active\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setActive($value);
             }
             if (isset($data['address'])) {
-                $this->setAddress($data['address']);
+                $value = $data['address'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRAddress($v);
+                        } 
+                        if (!($v instanceof FHIRAddress)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRelatedPerson::__construct - Collection field \"address\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAddress or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addAddress($v);
+                    }
+                }
             }
             if (isset($data['birthDate'])) {
-                $this->setBirthDate($data['birthDate']);
+                $value = $data['birthDate'];
+                if (is_array($value)) {
+                    $value = new FHIRDate($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDate($value);
+                }
+                if (!($value instanceof FHIRDate)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRelatedPerson::__construct - Property \"birthDate\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDate or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setBirthDate($value);
             }
             if (isset($data['gender'])) {
-                $this->setGender($data['gender']);
+                $value = $data['gender'];
+                if (is_array($value)) {
+                    $value = new FHIRAdministrativeGender($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRAdministrativeGender($value);
+                }
+                if (!($value instanceof FHIRAdministrativeGender)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRelatedPerson::__construct - Property \"gender\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAdministrativeGender or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setGender($value);
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRIdentifier($v);
+                        } 
+                        if (!($v instanceof FHIRIdentifier)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRelatedPerson::__construct - Collection field \"identifier\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addIdentifier($v);
+                    }
+                }
             }
             if (isset($data['name'])) {
-                $this->setName($data['name']);
+                $value = $data['name'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRHumanName($v);
+                        } 
+                        if (!($v instanceof FHIRHumanName)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRelatedPerson::__construct - Collection field \"name\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRHumanName or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addName($v);
+                    }
+                }
             }
             if (isset($data['patient'])) {
-                $this->setPatient($data['patient']);
+                $value = $data['patient'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRelatedPerson::__construct - Property \"patient\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setPatient($value);
             }
             if (isset($data['period'])) {
-                $this->setPeriod($data['period']);
+                $value = $data['period'];
+                if (is_array($value)) {
+                    $value = new FHIRPeriod($value);
+                } 
+                if (!($value instanceof FHIRPeriod)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRelatedPerson::__construct - Property \"period\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPeriod or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setPeriod($value);
             }
             if (isset($data['photo'])) {
-                $this->setPhoto($data['photo']);
+                $value = $data['photo'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRAttachment($v);
+                        } 
+                        if (!($v instanceof FHIRAttachment)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRelatedPerson::__construct - Collection field \"photo\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAttachment or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addPhoto($v);
+                    }
+                }
             }
             if (isset($data['relationship'])) {
-                $this->setRelationship($data['relationship']);
+                $value = $data['relationship'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRelatedPerson::__construct - Property \"relationship\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setRelationship($value);
             }
             if (isset($data['telecom'])) {
-                $this->setTelecom($data['telecom']);
+                $value = $data['telecom'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRContactPoint($v);
+                        } 
+                        if (!($v instanceof FHIRContactPoint)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRelatedPerson::__construct - Collection field \"telecom\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRContactPoint or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addTelecom($v);
+                    }
+                }
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -202,6 +314,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -236,30 +349,28 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
         return $this->active;
     }
 
-
     /**
      * Address where the related person can be contacted or visited.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRAddress
      * @return $this
      */
-    public function setAddress(FHIRAddress $address = null)
+    public function addAddress(FHIRAddress $address = null)
     {
         if (null === $address) {
             return $this; 
         }
-        $this->address = $address;
+        $this->address[] = $address;
         return $this;
     }
 
     /**
      * Address where the related person can be contacted or visited.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAddress
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAddress[]
      */
     public function getAddress()
     {
         return $this->address;
     }
-
 
     /**
      * The date on which the related person was born.
@@ -293,7 +404,6 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
         return $this->birthDate;
     }
 
-
     /**
      * Administrative Gender - the gender that the person is considered to have for administration and record keeping purposes.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRAdministrativeGender
@@ -326,54 +436,51 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
         return $this->gender;
     }
 
-
     /**
      * Identifier for a person within a particular scope.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
-    public function setIdentifier(FHIRIdentifier $identifier = null)
+    public function addIdentifier(FHIRIdentifier $identifier = null)
     {
         if (null === $identifier) {
             return $this; 
         }
-        $this->identifier = $identifier;
+        $this->identifier[] = $identifier;
         return $this;
     }
 
     /**
      * Identifier for a person within a particular scope.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
         return $this->identifier;
     }
 
-
     /**
      * A name associated with the person.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRHumanName
      * @return $this
      */
-    public function setName(FHIRHumanName $name = null)
+    public function addName(FHIRHumanName $name = null)
     {
         if (null === $name) {
             return $this; 
         }
-        $this->name = $name;
+        $this->name[] = $name;
         return $this;
     }
 
     /**
      * A name associated with the person.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRHumanName
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRHumanName[]
      */
     public function getName()
     {
         return $this->name;
     }
-
 
     /**
      * The patient this person is related to.
@@ -398,9 +505,8 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
         return $this->patient;
     }
 
-
     /**
-     * The period of time during which this relationship is or was active. If there are no dates defined, then the interval is unknown.
+     * The period of time that this relationship is considered to be valid. If there are no dates defined, then the interval is unknown.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
      * @return $this
      */
@@ -414,7 +520,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The period of time during which this relationship is or was active. If there are no dates defined, then the interval is unknown.
+     * The period of time that this relationship is considered to be valid. If there are no dates defined, then the interval is unknown.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getPeriod()
@@ -422,30 +528,28 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
         return $this->period;
     }
 
-
     /**
      * Image of the person.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRAttachment
      * @return $this
      */
-    public function setPhoto(FHIRAttachment $photo = null)
+    public function addPhoto(FHIRAttachment $photo = null)
     {
         if (null === $photo) {
             return $this; 
         }
-        $this->photo = $photo;
+        $this->photo[] = $photo;
         return $this;
     }
 
     /**
      * Image of the person.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAttachment
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAttachment[]
      */
     public function getPhoto()
     {
         return $this->photo;
     }
-
 
     /**
      * The nature of the relationship between a patient and the related person.
@@ -470,30 +574,28 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
         return $this->relationship;
     }
 
-
     /**
      * A contact detail for the person, e.g. a telephone number or an email address.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContactPoint
      * @return $this
      */
-    public function setTelecom(FHIRContactPoint $telecom = null)
+    public function addTelecom(FHIRContactPoint $telecom = null)
     {
         if (null === $telecom) {
             return $this; 
         }
-        $this->telecom = $telecom;
+        $this->telecom[] = $telecom;
         return $this;
     }
 
     /**
      * A contact detail for the person, e.g. a telephone number or an email address.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactPoint
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactPoint[]
      */
     public function getTelecom()
     {
         return $this->telecom;
     }
-
 
     /**
      * @return string
@@ -513,8 +615,16 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getActive())) {
             $a['active'] = $v;
         }
-        if (null !== ($v = $this->getAddress())) {
-            $a['address'] = $v;
+        if (0 < count($values = $this->getAddress())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['address'] = $vs;
+            }
         }
         if (null !== ($v = $this->getBirthDate())) {
             $a['birthDate'] = $v;
@@ -522,11 +632,27 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getGender())) {
             $a['gender'] = $v;
         }
-        if (null !== ($v = $this->getIdentifier())) {
-            $a['identifier'] = $v;
+        if (0 < count($values = $this->getIdentifier())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['identifier'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getName())) {
-            $a['name'] = $v;
+        if (0 < count($values = $this->getName())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['name'] = $vs;
+            }
         }
         if (null !== ($v = $this->getPatient())) {
             $a['patient'] = $v;
@@ -534,14 +660,30 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getPeriod())) {
             $a['period'] = $v;
         }
-        if (null !== ($v = $this->getPhoto())) {
-            $a['photo'] = $v;
+        if (0 < count($values = $this->getPhoto())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['photo'] = $vs;
+            }
         }
         if (null !== ($v = $this->getRelationship())) {
             $a['relationship'] = $v;
         }
-        if (null !== ($v = $this->getTelecom())) {
-            $a['telecom'] = $v;
+        if (0 < count($values = $this->getTelecom())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['telecom'] = $vs;
+            }
         }
         return $a;
     }
@@ -556,9 +698,59 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<RelatedPerson xmlns="http://hl7.org/fhir"></RelatedPerson>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getActive())) {
+            $v->xmlSerialize(true, $sxe->addChild('active'));
         }
-        return $sxe->saveXML();
+        if (0 < count($values = $this->getAddress())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('address'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getBirthDate())) {
+            $v->xmlSerialize(true, $sxe->addChild('birthDate'));
+        }
+        if (null !== ($v = $this->getGender())) {
+            $v->xmlSerialize(true, $sxe->addChild('gender'));
+        }
+        if (0 < count($values = $this->getIdentifier())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('identifier'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getName())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('name'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getPatient())) {
+            $v->xmlSerialize(true, $sxe->addChild('patient'));
+        }
+        if (null !== ($v = $this->getPeriod())) {
+            $v->xmlSerialize(true, $sxe->addChild('period'));
+        }
+        if (0 < count($values = $this->getPhoto())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('photo'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getRelationship())) {
+            $v->xmlSerialize(true, $sxe->addChild('relationship'));
+        }
+        if (0 < count($values = $this->getTelecom())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('telecom'));
+                }
+            }
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRLocation;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRLocation;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -66,7 +66,7 @@ use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 use PHPFHIRGenerated\FHIRElement\FHIRDecimal;
 
 /**
- * Details and position information for a physical place where services are provided and resources and participants may be stored, found, contained, or accommodated.
+ * Details and position information for a physical place where services are provided  and resources and participants may be stored, found, contained or accommodated.
  *
  * Class FHIRLocationPosition
  * @package PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRLocation
@@ -80,19 +80,19 @@ class FHIRLocationPosition extends FHIRBackboneElement implements \JsonSerializa
      * Altitude. The value domain and the interpretation are the same as for the text of the altitude element in KML (see notes below).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
-    public $altitude = null;
+    private $altitude = null;
 
     /**
      * Latitude. The value domain and the interpretation are the same as for the text of the latitude element in KML (see notes below).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
-    public $latitude = null;
+    private $latitude = null;
 
     /**
      * Longitude. The value domain and the interpretation are the same as for the text of the longitude element in KML (see notes below).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
-    public $longitude = null;
+    private $longitude = null;
 
     /**
      * FHIRLocationPosition Constructor
@@ -101,16 +101,42 @@ class FHIRLocationPosition extends FHIRBackboneElement implements \JsonSerializa
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['altitude'])) {
-                $this->setAltitude($data['altitude']);
+                $value = $data['altitude'];
+                if (is_array($value)) {
+                    $value = new FHIRDecimal($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDecimal($value);
+                }
+                if (!($value instanceof FHIRDecimal)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRLocation\FHIRLocationPosition::__construct - Property \"altitude\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDecimal or data to construct type, saw ".gettype($value));
+                }
+                $this->setAltitude($value);
             }
             if (isset($data['latitude'])) {
-                $this->setLatitude($data['latitude']);
+                $value = $data['latitude'];
+                if (is_array($value)) {
+                    $value = new FHIRDecimal($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDecimal($value);
+                }
+                if (!($value instanceof FHIRDecimal)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRLocation\FHIRLocationPosition::__construct - Property \"latitude\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDecimal or data to construct type, saw ".gettype($value));
+                }
+                $this->setLatitude($value);
             }
             if (isset($data['longitude'])) {
-                $this->setLongitude($data['longitude']);
+                $value = $data['longitude'];
+                if (is_array($value)) {
+                    $value = new FHIRDecimal($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDecimal($value);
+                }
+                if (!($value instanceof FHIRDecimal)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRLocation\FHIRLocationPosition::__construct - Property \"longitude\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDecimal or data to construct type, saw ".gettype($value));
+                }
+                $this->setLongitude($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -119,6 +145,7 @@ class FHIRLocationPosition extends FHIRBackboneElement implements \JsonSerializa
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -153,7 +180,6 @@ class FHIRLocationPosition extends FHIRBackboneElement implements \JsonSerializa
         return $this->altitude;
     }
 
-
     /**
      * Latitude. The value domain and the interpretation are the same as for the text of the latitude element in KML (see notes below).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDecimal
@@ -186,7 +212,6 @@ class FHIRLocationPosition extends FHIRBackboneElement implements \JsonSerializa
         return $this->latitude;
     }
 
-
     /**
      * Longitude. The value domain and the interpretation are the same as for the text of the longitude element in KML (see notes below).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDecimal
@@ -218,7 +243,6 @@ class FHIRLocationPosition extends FHIRBackboneElement implements \JsonSerializa
     {
         return $this->longitude;
     }
-
 
     /**
      * @return string
@@ -256,9 +280,15 @@ class FHIRLocationPosition extends FHIRBackboneElement implements \JsonSerializa
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<LocationPosition xmlns="http://hl7.org/fhir"></LocationPosition>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getAltitude())) {
+            $v->xmlSerialize(true, $sxe->addChild('altitude'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getLatitude())) {
+            $v->xmlSerialize(true, $sxe->addChild('latitude'));
+        }
+        if (null !== ($v = $this->getLongitude())) {
+            $v->xmlSerialize(true, $sxe->addChild('longitude'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

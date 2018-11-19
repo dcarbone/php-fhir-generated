@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -65,10 +65,9 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 use PHPFHIRGenerated\FHIRElement\FHIRCode;
 use PHPFHIRGenerated\FHIRElement\FHIRFilterOperator;
-use PHPFHIRGenerated\FHIRElement\FHIRString;
 
 /**
- * A ValueSet resource instances specifies a set of codes drawn from one or more code systems, intended for use in a particular context. Value sets link between [[[CodeSystem]]] definitions and their use in [coded elements](terminologies.html).
+ * A value set specifies a set of codes drawn from one or more code systems.
  *
  * Class FHIRValueSetFilter
  * @package PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet
@@ -82,19 +81,19 @@ class FHIRValueSetFilter extends FHIRBackboneElement implements \JsonSerializabl
      * The kind of operation to perform as a part of the filter criteria.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRFilterOperator
      */
-    public $op = null;
+    private $op = null;
 
     /**
      * A code that identifies a property defined in the code system.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public $property = null;
+    private $property = null;
 
     /**
      * The match value may be either a code defined by the system, or a string value, which is a regex match on the literal string of the property value when the operation is 'regex', or one of the values (true and false), when the operation is 'exists'.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public $value = null;
+    private $value = null;
 
     /**
      * FHIRValueSetFilter Constructor
@@ -103,16 +102,42 @@ class FHIRValueSetFilter extends FHIRBackboneElement implements \JsonSerializabl
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['op'])) {
-                $this->setOp($data['op']);
+                $value = $data['op'];
+                if (is_array($value)) {
+                    $value = new FHIRFilterOperator($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRFilterOperator($value);
+                }
+                if (!($value instanceof FHIRFilterOperator)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetFilter::__construct - Property \"op\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRFilterOperator or data to construct type, saw ".gettype($value));
+                }
+                $this->setOp($value);
             }
             if (isset($data['property'])) {
-                $this->setProperty($data['property']);
+                $value = $data['property'];
+                if (is_array($value)) {
+                    $value = new FHIRCode($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRCode($value);
+                }
+                if (!($value instanceof FHIRCode)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetFilter::__construct - Property \"property\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or data to construct type, saw ".gettype($value));
+                }
+                $this->setProperty($value);
             }
             if (isset($data['value'])) {
-                $this->setValue($data['value']);
+                $value = $data['value'];
+                if (is_array($value)) {
+                    $value = new FHIRCode($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRCode($value);
+                }
+                if (!($value instanceof FHIRCode)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetFilter::__construct - Property \"value\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or data to construct type, saw ".gettype($value));
+                }
+                $this->setValue($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -121,6 +146,7 @@ class FHIRValueSetFilter extends FHIRBackboneElement implements \JsonSerializabl
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -155,7 +181,6 @@ class FHIRValueSetFilter extends FHIRBackboneElement implements \JsonSerializabl
         return $this->op;
     }
 
-
     /**
      * A code that identifies a property defined in the code system.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCode
@@ -188,10 +213,9 @@ class FHIRValueSetFilter extends FHIRBackboneElement implements \JsonSerializabl
         return $this->property;
     }
 
-
     /**
      * The match value may be either a code defined by the system, or a string value, which is a regex match on the literal string of the property value when the operation is 'regex', or one of the values (true and false), when the operation is 'exists'.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCode
      * @return $this
      */
     public function setValue($value)
@@ -200,11 +224,11 @@ class FHIRValueSetFilter extends FHIRBackboneElement implements \JsonSerializabl
             return $this; 
         }
         if (is_scalar($value)) {
-            $value = new FHIRString($value);
+            $value = new FHIRCode($value);
         }
-        if (!($value instanceof FHIRString)) {
+        if (!($value instanceof FHIRCode)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRValueSetFilter::setValue - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                'FHIRValueSetFilter::setValue - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or appropriate scalar value, %s seen.',
                 gettype($value)
             ));
         }
@@ -214,13 +238,12 @@ class FHIRValueSetFilter extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * The match value may be either a code defined by the system, or a string value, which is a regex match on the literal string of the property value when the operation is 'regex', or one of the values (true and false), when the operation is 'exists'.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCode
      */
     public function getValue()
     {
         return $this->value;
     }
-
 
     /**
      * @return string
@@ -258,9 +281,15 @@ class FHIRValueSetFilter extends FHIRBackboneElement implements \JsonSerializabl
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ValueSetFilter xmlns="http://hl7.org/fhir"></ValueSetFilter>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getOp())) {
+            $v->xmlSerialize(true, $sxe->addChild('op'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getProperty())) {
+            $v->xmlSerialize(true, $sxe->addChild('property'));
+        }
+        if (null !== ($v = $this->getValue())) {
+            $v->xmlSerialize(true, $sxe->addChild('value'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

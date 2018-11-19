@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -64,7 +64,6 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse;
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
-use PHPFHIRGenerated\FHIRElement\FHIRNoteType;
 use PHPFHIRGenerated\FHIRElement\FHIRPositiveInt;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
 
@@ -83,25 +82,25 @@ class FHIRClaimResponseProcessNote extends FHIRBackboneElement implements \JsonS
      * The ISO-639-1 alpha 2 code in lower case for the language, optionally followed by a hyphen and the ISO-3166-1 alpha 2 code for the region in upper case; e.g. "en" for English, or "en-US" for American English versus "en-EN" for England English.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $language = null;
+    private $language = null;
 
     /**
      * An integer associated with each note which may be referred to from each service line item.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
-    public $number = null;
+    private $number = null;
 
     /**
      * The note text.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $text = null;
+    private $text = null;
 
     /**
      * The note purpose: Print/Display.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRNoteType
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $type = null;
+    private $type = null;
 
     /**
      * FHIRClaimResponseProcessNote Constructor
@@ -110,19 +109,50 @@ class FHIRClaimResponseProcessNote extends FHIRBackboneElement implements \JsonS
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['language'])) {
-                $this->setLanguage($data['language']);
+                $value = $data['language'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseProcessNote::__construct - Property \"language\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setLanguage($value);
             }
             if (isset($data['number'])) {
-                $this->setNumber($data['number']);
+                $value = $data['number'];
+                if (is_array($value)) {
+                    $value = new FHIRPositiveInt($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRPositiveInt($value);
+                }
+                if (!($value instanceof FHIRPositiveInt)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseProcessNote::__construct - Property \"number\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setNumber($value);
             }
             if (isset($data['text'])) {
-                $this->setText($data['text']);
+                $value = $data['text'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseProcessNote::__construct - Property \"text\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setText($value);
             }
             if (isset($data['type'])) {
-                $this->setType($data['type']);
+                $value = $data['type'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseProcessNote::__construct - Property \"type\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setType($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -131,6 +161,7 @@ class FHIRClaimResponseProcessNote extends FHIRBackboneElement implements \JsonS
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -155,7 +186,6 @@ class FHIRClaimResponseProcessNote extends FHIRBackboneElement implements \JsonS
     {
         return $this->language;
     }
-
 
     /**
      * An integer associated with each note which may be referred to from each service line item.
@@ -189,7 +219,6 @@ class FHIRClaimResponseProcessNote extends FHIRBackboneElement implements \JsonS
         return $this->number;
     }
 
-
     /**
      * The note text.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -222,25 +251,15 @@ class FHIRClaimResponseProcessNote extends FHIRBackboneElement implements \JsonS
         return $this->text;
     }
 
-
     /**
      * The note purpose: Print/Display.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRNoteType
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setType($type)
+    public function setType(FHIRCodeableConcept $type = null)
     {
         if (null === $type) {
             return $this; 
-        }
-        if (is_scalar($type)) {
-            $type = new FHIRNoteType($type);
-        }
-        if (!($type instanceof FHIRNoteType)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRClaimResponseProcessNote::setType - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRNoteType or appropriate scalar value, %s seen.',
-                gettype($type)
-            ));
         }
         $this->type = $type;
         return $this;
@@ -248,13 +267,12 @@ class FHIRClaimResponseProcessNote extends FHIRBackboneElement implements \JsonS
 
     /**
      * The note purpose: Print/Display.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRNoteType
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
         return $this->type;
     }
-
 
     /**
      * @return string
@@ -295,9 +313,18 @@ class FHIRClaimResponseProcessNote extends FHIRBackboneElement implements \JsonS
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ClaimResponseProcessNote xmlns="http://hl7.org/fhir"></ClaimResponseProcessNote>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getLanguage())) {
+            $v->xmlSerialize(true, $sxe->addChild('language'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getNumber())) {
+            $v->xmlSerialize(true, $sxe->addChild('number'));
+        }
+        if (null !== ($v = $this->getText())) {
+            $v->xmlSerialize(true, $sxe->addChild('text'));
+        }
+        if (null !== ($v = $this->getType())) {
+            $v->xmlSerialize(true, $sxe->addChild('type'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

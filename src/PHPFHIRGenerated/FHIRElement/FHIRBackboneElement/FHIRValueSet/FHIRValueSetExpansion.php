@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -68,7 +68,7 @@ use PHPFHIRGenerated\FHIRElement\FHIRInteger;
 use PHPFHIRGenerated\FHIRElement\FHIRUri;
 
 /**
- * A ValueSet resource instances specifies a set of codes drawn from one or more code systems, intended for use in a particular context. Value sets link between [[[CodeSystem]]] definitions and their use in [coded elements](terminologies.html).
+ * A value set specifies a set of codes drawn from one or more code systems.
  *
  * Class FHIRValueSetExpansion
  * @package PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet
@@ -80,39 +80,39 @@ class FHIRValueSetExpansion extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * The codes that are contained in the value set expansion.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains[]
      */
-    public $contains = null;
+    private $contains = [];
 
     /**
-     * An identifier that uniquely identifies this expansion of the valueset, based on a unique combination of the provided parameters, the system default parameters, and the underlying system code system versions etc. Systems may re-use the same identifier as long as those factors remain the same, and the expansion is the same, but are not required to do so. This is a business identifier.
+     * An identifier that uniquely identifies this expansion of the valueset. Systems may re-use the same identifier as long as the expansion and the definition remain the same, but are not required to do so.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $identifier = null;
+    private $identifier = null;
 
     /**
-     * If paging is being used, the offset at which this resource starts.  I.e. this resource is a partial view into the expansion. If paging is not being used, this element SHALL NOT be present.
+     * If paging is being used, the offset at which this resource starts.  I.e. this resource is a partial view into the expansion. If paging is not being used, this element SHALL not be present.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
-    public $offset = null;
+    private $offset = null;
 
     /**
      * A parameter that controlled the expansion process. These parameters may be used by users of expanded value sets to check whether the expansion is suitable for a particular purpose, or to pick the correct expansion.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetParameter
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetParameter[]
      */
-    public $parameter = null;
+    private $parameter = [];
 
     /**
      * The time at which the expansion was produced by the expanding system.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $timestamp = null;
+    private $timestamp = null;
 
     /**
      * The total number of concepts in the expansion. If the number of concept nodes in this resource is less than the stated number, then the server can return more using the offset parameter.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
-    public $total = null;
+    private $total = null;
 
     /**
      * FHIRValueSetExpansion Constructor
@@ -121,25 +121,86 @@ class FHIRValueSetExpansion extends FHIRBackboneElement implements \JsonSerializ
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['contains'])) {
-                $this->setContains($data['contains']);
+                $value = $data['contains'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRValueSetContains($v);
+                        } 
+                        if (!($v instanceof FHIRValueSetContains)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetExpansion::__construct - Collection field \"contains\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addContains($v);
+                    }
+                }
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetExpansion::__construct - Property \"identifier\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setIdentifier($value);
             }
             if (isset($data['offset'])) {
-                $this->setOffset($data['offset']);
+                $value = $data['offset'];
+                if (is_array($value)) {
+                    $value = new FHIRInteger($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRInteger($value);
+                }
+                if (!($value instanceof FHIRInteger)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetExpansion::__construct - Property \"offset\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRInteger or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setOffset($value);
             }
             if (isset($data['parameter'])) {
-                $this->setParameter($data['parameter']);
+                $value = $data['parameter'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRValueSetParameter($v);
+                        } 
+                        if (!($v instanceof FHIRValueSetParameter)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetExpansion::__construct - Collection field \"parameter\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetParameter or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addParameter($v);
+                    }
+                }
             }
             if (isset($data['timestamp'])) {
-                $this->setTimestamp($data['timestamp']);
+                $value = $data['timestamp'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetExpansion::__construct - Property \"timestamp\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setTimestamp($value);
             }
             if (isset($data['total'])) {
-                $this->setTotal($data['total']);
+                $value = $data['total'];
+                if (is_array($value)) {
+                    $value = new FHIRInteger($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRInteger($value);
+                }
+                if (!($value instanceof FHIRInteger)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetExpansion::__construct - Property \"total\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRInteger or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setTotal($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -148,6 +209,7 @@ class FHIRValueSetExpansion extends FHIRBackboneElement implements \JsonSerializ
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -155,27 +217,26 @@ class FHIRValueSetExpansion extends FHIRBackboneElement implements \JsonSerializ
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains
      * @return $this
      */
-    public function setContains(FHIRValueSetContains $contains = null)
+    public function addContains(FHIRValueSetContains $contains = null)
     {
         if (null === $contains) {
             return $this; 
         }
-        $this->contains = $contains;
+        $this->contains[] = $contains;
         return $this;
     }
 
     /**
      * The codes that are contained in the value set expansion.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains[]
      */
     public function getContains()
     {
         return $this->contains;
     }
 
-
     /**
-     * An identifier that uniquely identifies this expansion of the valueset, based on a unique combination of the provided parameters, the system default parameters, and the underlying system code system versions etc. Systems may re-use the same identifier as long as those factors remain the same, and the expansion is the same, but are not required to do so. This is a business identifier.
+     * An identifier that uniquely identifies this expansion of the valueset. Systems may re-use the same identifier as long as the expansion and the definition remain the same, but are not required to do so.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
@@ -198,7 +259,7 @@ class FHIRValueSetExpansion extends FHIRBackboneElement implements \JsonSerializ
     }
 
     /**
-     * An identifier that uniquely identifies this expansion of the valueset, based on a unique combination of the provided parameters, the system default parameters, and the underlying system code system versions etc. Systems may re-use the same identifier as long as those factors remain the same, and the expansion is the same, but are not required to do so. This is a business identifier.
+     * An identifier that uniquely identifies this expansion of the valueset. Systems may re-use the same identifier as long as the expansion and the definition remain the same, but are not required to do so.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getIdentifier()
@@ -206,9 +267,8 @@ class FHIRValueSetExpansion extends FHIRBackboneElement implements \JsonSerializ
         return $this->identifier;
     }
 
-
     /**
-     * If paging is being used, the offset at which this resource starts.  I.e. this resource is a partial view into the expansion. If paging is not being used, this element SHALL NOT be present.
+     * If paging is being used, the offset at which this resource starts.  I.e. this resource is a partial view into the expansion. If paging is not being used, this element SHALL not be present.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRInteger
      * @return $this
      */
@@ -231,7 +291,7 @@ class FHIRValueSetExpansion extends FHIRBackboneElement implements \JsonSerializ
     }
 
     /**
-     * If paging is being used, the offset at which this resource starts.  I.e. this resource is a partial view into the expansion. If paging is not being used, this element SHALL NOT be present.
+     * If paging is being used, the offset at which this resource starts.  I.e. this resource is a partial view into the expansion. If paging is not being used, this element SHALL not be present.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public function getOffset()
@@ -239,30 +299,28 @@ class FHIRValueSetExpansion extends FHIRBackboneElement implements \JsonSerializ
         return $this->offset;
     }
 
-
     /**
      * A parameter that controlled the expansion process. These parameters may be used by users of expanded value sets to check whether the expansion is suitable for a particular purpose, or to pick the correct expansion.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetParameter
      * @return $this
      */
-    public function setParameter(FHIRValueSetParameter $parameter = null)
+    public function addParameter(FHIRValueSetParameter $parameter = null)
     {
         if (null === $parameter) {
             return $this; 
         }
-        $this->parameter = $parameter;
+        $this->parameter[] = $parameter;
         return $this;
     }
 
     /**
      * A parameter that controlled the expansion process. These parameters may be used by users of expanded value sets to check whether the expansion is suitable for a particular purpose, or to pick the correct expansion.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetParameter
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetParameter[]
      */
     public function getParameter()
     {
         return $this->parameter;
     }
-
 
     /**
      * The time at which the expansion was produced by the expanding system.
@@ -296,7 +354,6 @@ class FHIRValueSetExpansion extends FHIRBackboneElement implements \JsonSerializ
         return $this->timestamp;
     }
 
-
     /**
      * The total number of concepts in the expansion. If the number of concept nodes in this resource is less than the stated number, then the server can return more using the offset parameter.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRInteger
@@ -329,7 +386,6 @@ class FHIRValueSetExpansion extends FHIRBackboneElement implements \JsonSerializ
         return $this->total;
     }
 
-
     /**
      * @return string
      */
@@ -344,8 +400,16 @@ class FHIRValueSetExpansion extends FHIRBackboneElement implements \JsonSerializ
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getContains())) {
-            $a['contains'] = $v;
+        if (0 < count($values = $this->getContains())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['contains'] = $vs;
+            }
         }
         if (null !== ($v = $this->getIdentifier())) {
             $a['identifier'] = $v;
@@ -353,8 +417,16 @@ class FHIRValueSetExpansion extends FHIRBackboneElement implements \JsonSerializ
         if (null !== ($v = $this->getOffset())) {
             $a['offset'] = $v;
         }
-        if (null !== ($v = $this->getParameter())) {
-            $a['parameter'] = $v;
+        if (0 < count($values = $this->getParameter())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['parameter'] = $vs;
+            }
         }
         if (null !== ($v = $this->getTimestamp())) {
             $a['timestamp'] = $v;
@@ -375,9 +447,32 @@ class FHIRValueSetExpansion extends FHIRBackboneElement implements \JsonSerializ
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ValueSetExpansion xmlns="http://hl7.org/fhir"></ValueSetExpansion>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (0 < count($values = $this->getContains())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('contains'));
+                }
+            }
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getIdentifier())) {
+            $v->xmlSerialize(true, $sxe->addChild('identifier'));
+        }
+        if (null !== ($v = $this->getOffset())) {
+            $v->xmlSerialize(true, $sxe->addChild('offset'));
+        }
+        if (0 < count($values = $this->getParameter())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('parameter'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getTimestamp())) {
+            $v->xmlSerialize(true, $sxe->addChild('timestamp'));
+        }
+        if (null !== ($v = $this->getTotal())) {
+            $v->xmlSerialize(true, $sxe->addChild('total'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,7 +63,6 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRAddress;
-use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRLocation\FHIRLocationHoursOfOperation;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRLocation\FHIRLocationPosition;
 use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
 use PHPFHIRGenerated\FHIRElement\FHIRCoding;
@@ -76,7 +75,7 @@ use PHPFHIRGenerated\FHIRElement\FHIRString;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
 /**
- * Details and position information for a physical place where services are provided and resources and participants may be stored, found, contained, or accommodated.
+ * Details and position information for a physical place where services are provided  and resources and participants may be stored, found, contained or accommodated.
  * If the element is present, it must have either a @value, an @id, or extensions
  *
  * Class FHIRLocation
@@ -91,103 +90,91 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
      * Physical location.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAddress
      */
-    public $address = null;
+    private $address = null;
 
     /**
-     * A list of alternate names that the location is known as or was known as in the past.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     * A list of alternate names that the location is known as, or was known as in the past.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public $alias = null;
-
-    /**
-     * A description of when the locations opening ours are different to normal, e.g. public holiday availability. Succinctly describing all possible exceptions to normal site availability as detailed in the opening hours Times.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public $availabilityExceptions = null;
+    private $alias = [];
 
     /**
      * Description of the Location, which helps in finding or referencing the place.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $description = null;
+    private $description = null;
 
     /**
      * Technical endpoints providing access to services operated for the location.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $endpoint = null;
-
-    /**
-     * What days/times during a week is this location usually open.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRLocation\FHIRLocationHoursOfOperation
-     */
-    public $hoursOfOperation = null;
+    private $endpoint = [];
 
     /**
      * Unique code or number identifying the location to its users.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = null;
+    private $identifier = [];
 
     /**
      * The organization responsible for the provisioning and upkeep of the location.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $managingOrganization = null;
+    private $managingOrganization = null;
 
     /**
      * Indicates whether a resource instance represents a specific location or a class of locations.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRLocationMode
      */
-    public $mode = null;
+    private $mode = null;
 
     /**
      * Name of the location as used by humans. Does not need to be unique.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $name = null;
+    private $name = null;
 
     /**
-     * The Operational status covers operation values most relevant to beds (but can also apply to rooms/units/chair/etc. such as an isolation unit/dialysis chair). This typically covers concepts such as contamination, housekeeping and other activities like maintenance.
+     * The Operational status covers operation values most relevant to beds (but can also apply to rooms/units/chair/etc such as an isolation unit/dialisys chair). This typically covers concepts such as contamination, housekeeping and other activities like maintenance.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
-    public $operationalStatus = null;
+    private $operationalStatus = null;
 
     /**
      * Another Location which this Location is physically part of.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $partOf = null;
+    private $partOf = null;
 
     /**
      * Physical form of the location, e.g. building, room, vehicle, road.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $physicalType = null;
+    private $physicalType = null;
 
     /**
      * The absolute geographic location of the Location, expressed using the WGS84 datum (This is the same co-ordinate system used in KML).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRLocation\FHIRLocationPosition
      */
-    public $position = null;
+    private $position = null;
 
     /**
      * The status property covers the general availability of the resource, not the current value which may be covered by the operationStatus, or by a schedule/slots if they are configured for the location.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRLocationStatus
      */
-    public $status = null;
+    private $status = null;
 
     /**
      * The contact details of communication devices available at the location. This can include phone numbers, fax numbers, mobile numbers, email addresses and web sites.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactPoint
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactPoint[]
      */
-    public $telecom = null;
+    private $telecom = [];
 
     /**
      * Indicates the type of function performed at the location.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $type = null;
+    private $type = null;
 
     /**
      * FHIRLocation Constructor
@@ -196,58 +183,190 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['address'])) {
-                $this->setAddress($data['address']);
+                $value = $data['address'];
+                if (is_array($value)) {
+                    $value = new FHIRAddress($value);
+                } 
+                if (!($value instanceof FHIRAddress)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLocation::__construct - Property \"address\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAddress or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setAddress($value);
             }
             if (isset($data['alias'])) {
-                $this->setAlias($data['alias']);
-            }
-            if (isset($data['availabilityExceptions'])) {
-                $this->setAvailabilityExceptions($data['availabilityExceptions']);
+                $value = $data['alias'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRString($v);
+                        }  elseif (is_scalar($v)) {
+                            $v = new FHIRString($v);
+                        }
+                        if (!($v instanceof FHIRString)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLocation::__construct - Collection field \"alias\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addAlias($v);
+                    }
+                }
             }
             if (isset($data['description'])) {
-                $this->setDescription($data['description']);
+                $value = $data['description'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLocation::__construct - Property \"description\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDescription($value);
             }
             if (isset($data['endpoint'])) {
-                $this->setEndpoint($data['endpoint']);
-            }
-            if (isset($data['hoursOfOperation'])) {
-                $this->setHoursOfOperation($data['hoursOfOperation']);
+                $value = $data['endpoint'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLocation::__construct - Collection field \"endpoint\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addEndpoint($v);
+                    }
+                }
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRIdentifier($v);
+                        } 
+                        if (!($v instanceof FHIRIdentifier)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLocation::__construct - Collection field \"identifier\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addIdentifier($v);
+                    }
+                }
             }
             if (isset($data['managingOrganization'])) {
-                $this->setManagingOrganization($data['managingOrganization']);
+                $value = $data['managingOrganization'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLocation::__construct - Property \"managingOrganization\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setManagingOrganization($value);
             }
             if (isset($data['mode'])) {
-                $this->setMode($data['mode']);
+                $value = $data['mode'];
+                if (is_array($value)) {
+                    $value = new FHIRLocationMode($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRLocationMode($value);
+                }
+                if (!($value instanceof FHIRLocationMode)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLocation::__construct - Property \"mode\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRLocationMode or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setMode($value);
             }
             if (isset($data['name'])) {
-                $this->setName($data['name']);
+                $value = $data['name'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLocation::__construct - Property \"name\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setName($value);
             }
             if (isset($data['operationalStatus'])) {
-                $this->setOperationalStatus($data['operationalStatus']);
+                $value = $data['operationalStatus'];
+                if (is_array($value)) {
+                    $value = new FHIRCoding($value);
+                } 
+                if (!($value instanceof FHIRCoding)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLocation::__construct - Property \"operationalStatus\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCoding or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setOperationalStatus($value);
             }
             if (isset($data['partOf'])) {
-                $this->setPartOf($data['partOf']);
+                $value = $data['partOf'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLocation::__construct - Property \"partOf\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setPartOf($value);
             }
             if (isset($data['physicalType'])) {
-                $this->setPhysicalType($data['physicalType']);
+                $value = $data['physicalType'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLocation::__construct - Property \"physicalType\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setPhysicalType($value);
             }
             if (isset($data['position'])) {
-                $this->setPosition($data['position']);
+                $value = $data['position'];
+                if (is_array($value)) {
+                    $value = new FHIRLocationPosition($value);
+                } 
+                if (!($value instanceof FHIRLocationPosition)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLocation::__construct - Property \"position\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRLocation\FHIRLocationPosition or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setPosition($value);
             }
             if (isset($data['status'])) {
-                $this->setStatus($data['status']);
+                $value = $data['status'];
+                if (is_array($value)) {
+                    $value = new FHIRLocationStatus($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRLocationStatus($value);
+                }
+                if (!($value instanceof FHIRLocationStatus)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLocation::__construct - Property \"status\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRLocationStatus or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setStatus($value);
             }
             if (isset($data['telecom'])) {
-                $this->setTelecom($data['telecom']);
+                $value = $data['telecom'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRContactPoint($v);
+                        } 
+                        if (!($v instanceof FHIRContactPoint)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLocation::__construct - Collection field \"telecom\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRContactPoint or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addTelecom($v);
+                    }
+                }
             }
             if (isset($data['type'])) {
-                $this->setType($data['type']);
+                $value = $data['type'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLocation::__construct - Property \"type\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setType($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -256,6 +375,7 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -281,13 +401,12 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
         return $this->address;
     }
 
-
     /**
-     * A list of alternate names that the location is known as or was known as in the past.
+     * A list of alternate names that the location is known as, or was known as in the past.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
-    public function setAlias($alias)
+    public function addAlias($alias)
     {
         if (null === $alias) {
             return $this; 
@@ -297,56 +416,22 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
         }
         if (!($alias instanceof FHIRString)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRLocation::setAlias - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                'FHIRLocation::addAlias - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
                 gettype($alias)
             ));
         }
-        $this->alias = $alias;
+        $this->alias[] = $alias;
         return $this;
     }
 
     /**
-     * A list of alternate names that the location is known as or was known as in the past.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     * A list of alternate names that the location is known as, or was known as in the past.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
     public function getAlias()
     {
         return $this->alias;
     }
-
-
-    /**
-     * A description of when the locations opening ours are different to normal, e.g. public holiday availability. Succinctly describing all possible exceptions to normal site availability as detailed in the opening hours Times.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
-     * @return $this
-     */
-    public function setAvailabilityExceptions($availabilityExceptions)
-    {
-        if (null === $availabilityExceptions) {
-            return $this; 
-        }
-        if (is_scalar($availabilityExceptions)) {
-            $availabilityExceptions = new FHIRString($availabilityExceptions);
-        }
-        if (!($availabilityExceptions instanceof FHIRString)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRLocation::setAvailabilityExceptions - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
-                gettype($availabilityExceptions)
-            ));
-        }
-        $this->availabilityExceptions = $availabilityExceptions;
-        return $this;
-    }
-
-    /**
-     * A description of when the locations opening ours are different to normal, e.g. public holiday availability. Succinctly describing all possible exceptions to normal site availability as detailed in the opening hours Times.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public function getAvailabilityExceptions()
-    {
-        return $this->availabilityExceptions;
-    }
-
 
     /**
      * Description of the Location, which helps in finding or referencing the place.
@@ -380,78 +465,51 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
         return $this->description;
     }
 
-
     /**
      * Technical endpoints providing access to services operated for the location.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setEndpoint(FHIRReference $endpoint = null)
+    public function addEndpoint(FHIRReference $endpoint = null)
     {
         if (null === $endpoint) {
             return $this; 
         }
-        $this->endpoint = $endpoint;
+        $this->endpoint[] = $endpoint;
         return $this;
     }
 
     /**
      * Technical endpoints providing access to services operated for the location.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getEndpoint()
     {
         return $this->endpoint;
     }
 
-
-    /**
-     * What days/times during a week is this location usually open.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRLocation\FHIRLocationHoursOfOperation
-     * @return $this
-     */
-    public function setHoursOfOperation(FHIRLocationHoursOfOperation $hoursOfOperation = null)
-    {
-        if (null === $hoursOfOperation) {
-            return $this; 
-        }
-        $this->hoursOfOperation = $hoursOfOperation;
-        return $this;
-    }
-
-    /**
-     * What days/times during a week is this location usually open.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRLocation\FHIRLocationHoursOfOperation
-     */
-    public function getHoursOfOperation()
-    {
-        return $this->hoursOfOperation;
-    }
-
-
     /**
      * Unique code or number identifying the location to its users.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
-    public function setIdentifier(FHIRIdentifier $identifier = null)
+    public function addIdentifier(FHIRIdentifier $identifier = null)
     {
         if (null === $identifier) {
             return $this; 
         }
-        $this->identifier = $identifier;
+        $this->identifier[] = $identifier;
         return $this;
     }
 
     /**
      * Unique code or number identifying the location to its users.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
         return $this->identifier;
     }
-
 
     /**
      * The organization responsible for the provisioning and upkeep of the location.
@@ -475,7 +533,6 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
     {
         return $this->managingOrganization;
     }
-
 
     /**
      * Indicates whether a resource instance represents a specific location or a class of locations.
@@ -509,7 +566,6 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
         return $this->mode;
     }
 
-
     /**
      * Name of the location as used by humans. Does not need to be unique.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -542,9 +598,8 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
         return $this->name;
     }
 
-
     /**
-     * The Operational status covers operation values most relevant to beds (but can also apply to rooms/units/chair/etc. such as an isolation unit/dialysis chair). This typically covers concepts such as contamination, housekeeping and other activities like maintenance.
+     * The Operational status covers operation values most relevant to beds (but can also apply to rooms/units/chair/etc such as an isolation unit/dialisys chair). This typically covers concepts such as contamination, housekeeping and other activities like maintenance.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
      * @return $this
      */
@@ -558,14 +613,13 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The Operational status covers operation values most relevant to beds (but can also apply to rooms/units/chair/etc. such as an isolation unit/dialysis chair). This typically covers concepts such as contamination, housekeeping and other activities like maintenance.
+     * The Operational status covers operation values most relevant to beds (but can also apply to rooms/units/chair/etc such as an isolation unit/dialisys chair). This typically covers concepts such as contamination, housekeeping and other activities like maintenance.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public function getOperationalStatus()
     {
         return $this->operationalStatus;
     }
-
 
     /**
      * Another Location which this Location is physically part of.
@@ -590,7 +644,6 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
         return $this->partOf;
     }
 
-
     /**
      * Physical form of the location, e.g. building, room, vehicle, road.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
@@ -614,7 +667,6 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
         return $this->physicalType;
     }
 
-
     /**
      * The absolute geographic location of the Location, expressed using the WGS84 datum (This is the same co-ordinate system used in KML).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRLocation\FHIRLocationPosition
@@ -637,7 +689,6 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
     {
         return $this->position;
     }
-
 
     /**
      * The status property covers the general availability of the resource, not the current value which may be covered by the operationStatus, or by a schedule/slots if they are configured for the location.
@@ -671,30 +722,28 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
         return $this->status;
     }
 
-
     /**
      * The contact details of communication devices available at the location. This can include phone numbers, fax numbers, mobile numbers, email addresses and web sites.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContactPoint
      * @return $this
      */
-    public function setTelecom(FHIRContactPoint $telecom = null)
+    public function addTelecom(FHIRContactPoint $telecom = null)
     {
         if (null === $telecom) {
             return $this; 
         }
-        $this->telecom = $telecom;
+        $this->telecom[] = $telecom;
         return $this;
     }
 
     /**
      * The contact details of communication devices available at the location. This can include phone numbers, fax numbers, mobile numbers, email addresses and web sites.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactPoint
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactPoint[]
      */
     public function getTelecom()
     {
         return $this->telecom;
     }
-
 
     /**
      * Indicates the type of function performed at the location.
@@ -719,7 +768,6 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
         return $this->type;
     }
 
-
     /**
      * @return string
      */
@@ -738,23 +786,41 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getAddress())) {
             $a['address'] = $v;
         }
-        if (null !== ($v = $this->getAlias())) {
-            $a['alias'] = $v;
-        }
-        if (null !== ($v = $this->getAvailabilityExceptions())) {
-            $a['availabilityExceptions'] = $v;
+        if (0 < count($values = $this->getAlias())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['alias'] = $vs;
+            }
         }
         if (null !== ($v = $this->getDescription())) {
             $a['description'] = $v;
         }
-        if (null !== ($v = $this->getEndpoint())) {
-            $a['endpoint'] = $v;
+        if (0 < count($values = $this->getEndpoint())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['endpoint'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getHoursOfOperation())) {
-            $a['hoursOfOperation'] = $v;
-        }
-        if (null !== ($v = $this->getIdentifier())) {
-            $a['identifier'] = $v;
+        if (0 < count($values = $this->getIdentifier())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['identifier'] = $vs;
+            }
         }
         if (null !== ($v = $this->getManagingOrganization())) {
             $a['managingOrganization'] = $v;
@@ -780,8 +846,16 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getStatus())) {
             $a['status'] = $v;
         }
-        if (null !== ($v = $this->getTelecom())) {
-            $a['telecom'] = $v;
+        if (0 < count($values = $this->getTelecom())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['telecom'] = $vs;
+            }
         }
         if (null !== ($v = $this->getType())) {
             $a['type'] = $v;
@@ -799,9 +873,67 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Location xmlns="http://hl7.org/fhir"></Location>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getAddress())) {
+            $v->xmlSerialize(true, $sxe->addChild('address'));
         }
-        return $sxe->saveXML();
+        if (0 < count($values = $this->getAlias())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('alias'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getDescription())) {
+            $v->xmlSerialize(true, $sxe->addChild('description'));
+        }
+        if (0 < count($values = $this->getEndpoint())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('endpoint'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getIdentifier())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('identifier'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getManagingOrganization())) {
+            $v->xmlSerialize(true, $sxe->addChild('managingOrganization'));
+        }
+        if (null !== ($v = $this->getMode())) {
+            $v->xmlSerialize(true, $sxe->addChild('mode'));
+        }
+        if (null !== ($v = $this->getName())) {
+            $v->xmlSerialize(true, $sxe->addChild('name'));
+        }
+        if (null !== ($v = $this->getOperationalStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('operationalStatus'));
+        }
+        if (null !== ($v = $this->getPartOf())) {
+            $v->xmlSerialize(true, $sxe->addChild('partOf'));
+        }
+        if (null !== ($v = $this->getPhysicalType())) {
+            $v->xmlSerialize(true, $sxe->addChild('physicalType'));
+        }
+        if (null !== ($v = $this->getPosition())) {
+            $v->xmlSerialize(true, $sxe->addChild('position'));
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('status'));
+        }
+        if (0 < count($values = $this->getTelecom())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('telecom'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getType())) {
+            $v->xmlSerialize(true, $sxe->addChild('type'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -71,7 +71,7 @@ use PHPFHIRGenerated\FHIRElement\FHIRIdentifier;
 use PHPFHIRGenerated\FHIRElement\FHIRPeriod;
 use PHPFHIRGenerated\FHIRElement\FHIRReference;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
-use PHPFHIRGenerated\FHIRElement\FHIRUrl;
+use PHPFHIRGenerated\FHIRElement\FHIRUri;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
 /**
@@ -88,69 +88,69 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The uri that describes the actual end-point to connect to.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUrl
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $address = null;
+    private $address = null;
 
     /**
      * A coded value that represents the technical details of the usage of this endpoint, such as what WSDLs should be used in what way. (e.g. XDS.b/DICOM/cds-hook).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
-    public $connectionType = null;
+    private $connectionType = null;
 
     /**
      * Contact details for a human to contact about the subscription. The primary use of this for system administrator troubleshooting.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactPoint
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactPoint[]
      */
-    public $contact = null;
+    private $contact = [];
 
     /**
      * Additional headers / information to send as part of the notification.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public $header = null;
+    private $header = [];
 
     /**
      * Identifier for the organization that is used to identify the endpoint across multiple disparate systems.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = null;
+    private $identifier = [];
 
     /**
-     * The organization that manages this endpoint (even if technically another organization is hosting this in the cloud, it is the organization associated with the data).
+     * The organization that manages this endpoint (even if technically another organisation is hosting this in the cloud, it is the organisation associated with the data).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $managingOrganization = null;
+    private $managingOrganization = null;
 
     /**
      * A friendly name that this endpoint can be referred to with.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $name = null;
+    private $name = null;
 
     /**
      * The mime type to send the payload in - e.g. application/fhir+xml, application/fhir+json. If the mime type is not specified, then the sender could send any content (including no content depending on the connectionType).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode[]
      */
-    public $payloadMimeType = null;
+    private $payloadMimeType = [];
 
     /**
      * The payload type describes the acceptable content that can be communicated on the endpoint.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $payloadType = null;
+    private $payloadType = [];
 
     /**
      * The interval during which the endpoint is expected to be operational.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public $period = null;
+    private $period = null;
 
     /**
      * active | suspended | error | off | test.
      * @var \PHPFHIRGenerated\FHIRElement\FHIREndpointStatus
      */
-    public $status = null;
+    private $status = null;
 
     /**
      * FHIREndpoint Constructor
@@ -159,40 +159,156 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['address'])) {
-                $this->setAddress($data['address']);
+                $value = $data['address'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREndpoint::__construct - Property \"address\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setAddress($value);
             }
             if (isset($data['connectionType'])) {
-                $this->setConnectionType($data['connectionType']);
+                $value = $data['connectionType'];
+                if (is_array($value)) {
+                    $value = new FHIRCoding($value);
+                } 
+                if (!($value instanceof FHIRCoding)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREndpoint::__construct - Property \"connectionType\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCoding or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setConnectionType($value);
             }
             if (isset($data['contact'])) {
-                $this->setContact($data['contact']);
+                $value = $data['contact'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRContactPoint($v);
+                        } 
+                        if (!($v instanceof FHIRContactPoint)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREndpoint::__construct - Collection field \"contact\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRContactPoint or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addContact($v);
+                    }
+                }
             }
             if (isset($data['header'])) {
-                $this->setHeader($data['header']);
+                $value = $data['header'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRString($v);
+                        }  elseif (is_scalar($v)) {
+                            $v = new FHIRString($v);
+                        }
+                        if (!($v instanceof FHIRString)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREndpoint::__construct - Collection field \"header\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addHeader($v);
+                    }
+                }
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRIdentifier($v);
+                        } 
+                        if (!($v instanceof FHIRIdentifier)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREndpoint::__construct - Collection field \"identifier\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addIdentifier($v);
+                    }
+                }
             }
             if (isset($data['managingOrganization'])) {
-                $this->setManagingOrganization($data['managingOrganization']);
+                $value = $data['managingOrganization'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREndpoint::__construct - Property \"managingOrganization\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setManagingOrganization($value);
             }
             if (isset($data['name'])) {
-                $this->setName($data['name']);
+                $value = $data['name'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREndpoint::__construct - Property \"name\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setName($value);
             }
             if (isset($data['payloadMimeType'])) {
-                $this->setPayloadMimeType($data['payloadMimeType']);
+                $value = $data['payloadMimeType'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCode($v);
+                        }  elseif (is_scalar($v)) {
+                            $v = new FHIRCode($v);
+                        }
+                        if (!($v instanceof FHIRCode)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREndpoint::__construct - Collection field \"payloadMimeType\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addPayloadMimeType($v);
+                    }
+                }
             }
             if (isset($data['payloadType'])) {
-                $this->setPayloadType($data['payloadType']);
+                $value = $data['payloadType'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREndpoint::__construct - Collection field \"payloadType\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addPayloadType($v);
+                    }
+                }
             }
             if (isset($data['period'])) {
-                $this->setPeriod($data['period']);
+                $value = $data['period'];
+                if (is_array($value)) {
+                    $value = new FHIRPeriod($value);
+                } 
+                if (!($value instanceof FHIRPeriod)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREndpoint::__construct - Property \"period\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPeriod or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setPeriod($value);
             }
             if (isset($data['status'])) {
-                $this->setStatus($data['status']);
+                $value = $data['status'];
+                if (is_array($value)) {
+                    $value = new FHIREndpointStatus($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIREndpointStatus($value);
+                }
+                if (!($value instanceof FHIREndpointStatus)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREndpoint::__construct - Property \"status\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIREndpointStatus or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setStatus($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -201,11 +317,12 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
      * The uri that describes the actual end-point to connect to.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUrl
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
     public function setAddress($address)
@@ -214,11 +331,11 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
             return $this; 
         }
         if (is_scalar($address)) {
-            $address = new FHIRUrl($address);
+            $address = new FHIRUri($address);
         }
-        if (!($address instanceof FHIRUrl)) {
+        if (!($address instanceof FHIRUri)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIREndpoint::setAddress - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUrl or appropriate scalar value, %s seen.',
+                'FHIREndpoint::setAddress - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or appropriate scalar value, %s seen.',
                 gettype($address)
             ));
         }
@@ -228,13 +345,12 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The uri that describes the actual end-point to connect to.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUrl
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getAddress()
     {
         return $this->address;
     }
-
 
     /**
      * A coded value that represents the technical details of the usage of this endpoint, such as what WSDLs should be used in what way. (e.g. XDS.b/DICOM/cds-hook).
@@ -259,37 +375,35 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
         return $this->connectionType;
     }
 
-
     /**
      * Contact details for a human to contact about the subscription. The primary use of this for system administrator troubleshooting.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContactPoint
      * @return $this
      */
-    public function setContact(FHIRContactPoint $contact = null)
+    public function addContact(FHIRContactPoint $contact = null)
     {
         if (null === $contact) {
             return $this; 
         }
-        $this->contact = $contact;
+        $this->contact[] = $contact;
         return $this;
     }
 
     /**
      * Contact details for a human to contact about the subscription. The primary use of this for system administrator troubleshooting.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactPoint
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactPoint[]
      */
     public function getContact()
     {
         return $this->contact;
     }
 
-
     /**
      * Additional headers / information to send as part of the notification.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
-    public function setHeader($header)
+    public function addHeader($header)
     {
         if (null === $header) {
             return $this; 
@@ -299,50 +413,48 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
         }
         if (!($header instanceof FHIRString)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIREndpoint::setHeader - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                'FHIREndpoint::addHeader - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
                 gettype($header)
             ));
         }
-        $this->header = $header;
+        $this->header[] = $header;
         return $this;
     }
 
     /**
      * Additional headers / information to send as part of the notification.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
     public function getHeader()
     {
         return $this->header;
     }
 
-
     /**
      * Identifier for the organization that is used to identify the endpoint across multiple disparate systems.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
-    public function setIdentifier(FHIRIdentifier $identifier = null)
+    public function addIdentifier(FHIRIdentifier $identifier = null)
     {
         if (null === $identifier) {
             return $this; 
         }
-        $this->identifier = $identifier;
+        $this->identifier[] = $identifier;
         return $this;
     }
 
     /**
      * Identifier for the organization that is used to identify the endpoint across multiple disparate systems.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
         return $this->identifier;
     }
 
-
     /**
-     * The organization that manages this endpoint (even if technically another organization is hosting this in the cloud, it is the organization associated with the data).
+     * The organization that manages this endpoint (even if technically another organisation is hosting this in the cloud, it is the organisation associated with the data).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
@@ -356,14 +468,13 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The organization that manages this endpoint (even if technically another organization is hosting this in the cloud, it is the organization associated with the data).
+     * The organization that manages this endpoint (even if technically another organisation is hosting this in the cloud, it is the organisation associated with the data).
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getManagingOrganization()
     {
         return $this->managingOrganization;
     }
-
 
     /**
      * A friendly name that this endpoint can be referred to with.
@@ -397,13 +508,12 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
         return $this->name;
     }
 
-
     /**
      * The mime type to send the payload in - e.g. application/fhir+xml, application/fhir+json. If the mime type is not specified, then the sender could send any content (including no content depending on the connectionType).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCode
      * @return $this
      */
-    public function setPayloadMimeType($payloadMimeType)
+    public function addPayloadMimeType($payloadMimeType)
     {
         if (null === $payloadMimeType) {
             return $this; 
@@ -413,47 +523,45 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
         }
         if (!($payloadMimeType instanceof FHIRCode)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIREndpoint::setPayloadMimeType - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or appropriate scalar value, %s seen.',
+                'FHIREndpoint::addPayloadMimeType - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or appropriate scalar value, %s seen.',
                 gettype($payloadMimeType)
             ));
         }
-        $this->payloadMimeType = $payloadMimeType;
+        $this->payloadMimeType[] = $payloadMimeType;
         return $this;
     }
 
     /**
      * The mime type to send the payload in - e.g. application/fhir+xml, application/fhir+json. If the mime type is not specified, then the sender could send any content (including no content depending on the connectionType).
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCode[]
      */
     public function getPayloadMimeType()
     {
         return $this->payloadMimeType;
     }
 
-
     /**
      * The payload type describes the acceptable content that can be communicated on the endpoint.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setPayloadType(FHIRCodeableConcept $payloadType = null)
+    public function addPayloadType(FHIRCodeableConcept $payloadType = null)
     {
         if (null === $payloadType) {
             return $this; 
         }
-        $this->payloadType = $payloadType;
+        $this->payloadType[] = $payloadType;
         return $this;
     }
 
     /**
      * The payload type describes the acceptable content that can be communicated on the endpoint.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getPayloadType()
     {
         return $this->payloadType;
     }
-
 
     /**
      * The interval during which the endpoint is expected to be operational.
@@ -477,7 +585,6 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
     {
         return $this->period;
     }
-
 
     /**
      * active | suspended | error | off | test.
@@ -511,7 +618,6 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
         return $this->status;
     }
 
-
     /**
      * @return string
      */
@@ -533,14 +639,38 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getConnectionType())) {
             $a['connectionType'] = $v;
         }
-        if (null !== ($v = $this->getContact())) {
-            $a['contact'] = $v;
+        if (0 < count($values = $this->getContact())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['contact'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getHeader())) {
-            $a['header'] = $v;
+        if (0 < count($values = $this->getHeader())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['header'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getIdentifier())) {
-            $a['identifier'] = $v;
+        if (0 < count($values = $this->getIdentifier())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['identifier'] = $vs;
+            }
         }
         if (null !== ($v = $this->getManagingOrganization())) {
             $a['managingOrganization'] = $v;
@@ -548,11 +678,27 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getName())) {
             $a['name'] = $v;
         }
-        if (null !== ($v = $this->getPayloadMimeType())) {
-            $a['payloadMimeType'] = $v;
+        if (0 < count($values = $this->getPayloadMimeType())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['payloadMimeType'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getPayloadType())) {
-            $a['payloadType'] = $v;
+        if (0 < count($values = $this->getPayloadType())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['payloadType'] = $vs;
+            }
         }
         if (null !== ($v = $this->getPeriod())) {
             $a['period'] = $v;
@@ -573,9 +719,59 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Endpoint xmlns="http://hl7.org/fhir"></Endpoint>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getAddress())) {
+            $v->xmlSerialize(true, $sxe->addChild('address'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getConnectionType())) {
+            $v->xmlSerialize(true, $sxe->addChild('connectionType'));
+        }
+        if (0 < count($values = $this->getContact())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('contact'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getHeader())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('header'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getIdentifier())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('identifier'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getManagingOrganization())) {
+            $v->xmlSerialize(true, $sxe->addChild('managingOrganization'));
+        }
+        if (null !== ($v = $this->getName())) {
+            $v->xmlSerialize(true, $sxe->addChild('name'));
+        }
+        if (0 < count($values = $this->getPayloadMimeType())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('payloadMimeType'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getPayloadType())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('payloadType'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getPeriod())) {
+            $v->xmlSerialize(true, $sxe->addChild('period'));
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('status'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

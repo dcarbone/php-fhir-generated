@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -84,45 +84,45 @@ class FHIRSubstance extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A code that classifies the general type of substance.  This is used  for searching, sorting and display purposes.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $category = null;
+    private $category = [];
 
     /**
      * A code (or set of codes) that identify this substance.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $code = null;
+    private $code = null;
 
     /**
      * A description of the substance - its appearance, handling requirements, and other usage notes.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $description = null;
+    private $description = null;
 
     /**
      * Unique identifier for the substance.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = null;
+    private $identifier = [];
 
     /**
      * A substance can be composed of other substances.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSubstance\FHIRSubstanceIngredient
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSubstance\FHIRSubstanceIngredient[]
      */
-    public $ingredient = null;
+    private $ingredient = [];
 
     /**
      * Substance may be used to describe a kind of substance, or a specific package/container of the substance: an instance.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSubstance\FHIRSubstanceInstance
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSubstance\FHIRSubstanceInstance[]
      */
-    public $instance = null;
+    private $instance = [];
 
     /**
      * A code to indicate if the substance is actively used.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRFHIRSubstanceStatus
      */
-    public $status = null;
+    private $status = null;
 
     /**
      * FHIRSubstance Constructor
@@ -131,28 +131,104 @@ class FHIRSubstance extends FHIRDomainResource implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['category'])) {
-                $this->setCategory($data['category']);
+                $value = $data['category'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSubstance::__construct - Collection field \"category\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addCategory($v);
+                    }
+                }
             }
             if (isset($data['code'])) {
-                $this->setCode($data['code']);
+                $value = $data['code'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSubstance::__construct - Property \"code\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setCode($value);
             }
             if (isset($data['description'])) {
-                $this->setDescription($data['description']);
+                $value = $data['description'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSubstance::__construct - Property \"description\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDescription($value);
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRIdentifier($v);
+                        } 
+                        if (!($v instanceof FHIRIdentifier)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSubstance::__construct - Collection field \"identifier\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addIdentifier($v);
+                    }
+                }
             }
             if (isset($data['ingredient'])) {
-                $this->setIngredient($data['ingredient']);
+                $value = $data['ingredient'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRSubstanceIngredient($v);
+                        } 
+                        if (!($v instanceof FHIRSubstanceIngredient)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSubstance::__construct - Collection field \"ingredient\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSubstance\FHIRSubstanceIngredient or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addIngredient($v);
+                    }
+                }
             }
             if (isset($data['instance'])) {
-                $this->setInstance($data['instance']);
+                $value = $data['instance'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRSubstanceInstance($v);
+                        } 
+                        if (!($v instanceof FHIRSubstanceInstance)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSubstance::__construct - Collection field \"instance\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSubstance\FHIRSubstanceInstance or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addInstance($v);
+                    }
+                }
             }
             if (isset($data['status'])) {
-                $this->setStatus($data['status']);
+                $value = $data['status'];
+                if (is_array($value)) {
+                    $value = new FHIRFHIRSubstanceStatus($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRFHIRSubstanceStatus($value);
+                }
+                if (!($value instanceof FHIRFHIRSubstanceStatus)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSubstance::__construct - Property \"status\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRFHIRSubstanceStatus or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setStatus($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -161,6 +237,7 @@ class FHIRSubstance extends FHIRDomainResource implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -168,24 +245,23 @@ class FHIRSubstance extends FHIRDomainResource implements \JsonSerializable
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setCategory(FHIRCodeableConcept $category = null)
+    public function addCategory(FHIRCodeableConcept $category = null)
     {
         if (null === $category) {
             return $this; 
         }
-        $this->category = $category;
+        $this->category[] = $category;
         return $this;
     }
 
     /**
      * A code that classifies the general type of substance.  This is used  for searching, sorting and display purposes.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getCategory()
     {
         return $this->category;
     }
-
 
     /**
      * A code (or set of codes) that identify this substance.
@@ -209,7 +285,6 @@ class FHIRSubstance extends FHIRDomainResource implements \JsonSerializable
     {
         return $this->code;
     }
-
 
     /**
      * A description of the substance - its appearance, handling requirements, and other usage notes.
@@ -243,78 +318,74 @@ class FHIRSubstance extends FHIRDomainResource implements \JsonSerializable
         return $this->description;
     }
 
-
     /**
      * Unique identifier for the substance.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
-    public function setIdentifier(FHIRIdentifier $identifier = null)
+    public function addIdentifier(FHIRIdentifier $identifier = null)
     {
         if (null === $identifier) {
             return $this; 
         }
-        $this->identifier = $identifier;
+        $this->identifier[] = $identifier;
         return $this;
     }
 
     /**
      * Unique identifier for the substance.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
         return $this->identifier;
     }
 
-
     /**
      * A substance can be composed of other substances.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSubstance\FHIRSubstanceIngredient
      * @return $this
      */
-    public function setIngredient(FHIRSubstanceIngredient $ingredient = null)
+    public function addIngredient(FHIRSubstanceIngredient $ingredient = null)
     {
         if (null === $ingredient) {
             return $this; 
         }
-        $this->ingredient = $ingredient;
+        $this->ingredient[] = $ingredient;
         return $this;
     }
 
     /**
      * A substance can be composed of other substances.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSubstance\FHIRSubstanceIngredient
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSubstance\FHIRSubstanceIngredient[]
      */
     public function getIngredient()
     {
         return $this->ingredient;
     }
 
-
     /**
      * Substance may be used to describe a kind of substance, or a specific package/container of the substance: an instance.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSubstance\FHIRSubstanceInstance
      * @return $this
      */
-    public function setInstance(FHIRSubstanceInstance $instance = null)
+    public function addInstance(FHIRSubstanceInstance $instance = null)
     {
         if (null === $instance) {
             return $this; 
         }
-        $this->instance = $instance;
+        $this->instance[] = $instance;
         return $this;
     }
 
     /**
      * Substance may be used to describe a kind of substance, or a specific package/container of the substance: an instance.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSubstance\FHIRSubstanceInstance
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSubstance\FHIRSubstanceInstance[]
      */
     public function getInstance()
     {
         return $this->instance;
     }
-
 
     /**
      * A code to indicate if the substance is actively used.
@@ -348,7 +419,6 @@ class FHIRSubstance extends FHIRDomainResource implements \JsonSerializable
         return $this->status;
     }
 
-
     /**
      * @return string
      */
@@ -364,8 +434,16 @@ class FHIRSubstance extends FHIRDomainResource implements \JsonSerializable
     {
         $a = parent::jsonSerialize();
         $a['resourceType'] = self::FHIR_TYPE_NAME;
-        if (null !== ($v = $this->getCategory())) {
-            $a['category'] = $v;
+        if (0 < count($values = $this->getCategory())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['category'] = $vs;
+            }
         }
         if (null !== ($v = $this->getCode())) {
             $a['code'] = $v;
@@ -373,14 +451,38 @@ class FHIRSubstance extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getDescription())) {
             $a['description'] = $v;
         }
-        if (null !== ($v = $this->getIdentifier())) {
-            $a['identifier'] = $v;
+        if (0 < count($values = $this->getIdentifier())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['identifier'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getIngredient())) {
-            $a['ingredient'] = $v;
+        if (0 < count($values = $this->getIngredient())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['ingredient'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getInstance())) {
-            $a['instance'] = $v;
+        if (0 < count($values = $this->getInstance())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['instance'] = $vs;
+            }
         }
         if (null !== ($v = $this->getStatus())) {
             $a['status'] = $v;
@@ -398,9 +500,43 @@ class FHIRSubstance extends FHIRDomainResource implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Substance xmlns="http://hl7.org/fhir"></Substance>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (0 < count($values = $this->getCategory())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('category'));
+                }
+            }
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getCode())) {
+            $v->xmlSerialize(true, $sxe->addChild('code'));
+        }
+        if (null !== ($v = $this->getDescription())) {
+            $v->xmlSerialize(true, $sxe->addChild('description'));
+        }
+        if (0 < count($values = $this->getIdentifier())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('identifier'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getIngredient())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('ingredient'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getInstance())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('instance'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('status'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

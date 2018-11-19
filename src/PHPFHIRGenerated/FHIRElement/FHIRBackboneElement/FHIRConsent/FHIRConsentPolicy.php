@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConsent;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConsent;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -66,7 +66,7 @@ use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 use PHPFHIRGenerated\FHIRElement\FHIRUri;
 
 /**
- * A record of a healthcare consumer’s  choices, which permits or denies identified recipient(s) or recipient role(s) to perform one or more actions within a given policy context, for specific purposes and periods of time.
+ * A record of a healthcare consumer’s policy choices, which permits or denies identified recipient(s) or recipient role(s) to perform one or more actions within a given policy context, for specific purposes and periods of time.
  *
  * Class FHIRConsentPolicy
  * @package PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConsent
@@ -77,16 +77,16 @@ class FHIRConsentPolicy extends FHIRBackboneElement implements \JsonSerializable
     const FHIR_TYPE_NAME = 'Consent.Policy';
 
     /**
-     * Entity or Organization having regulatory jurisdiction or accountability for  enforcing policies pertaining to Consent Directives.
+     * Entity or Organization having regulatory jurisdiction or accountability for  enforcing policies pertaining to Consent Directives.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $authority = null;
+    private $authority = null;
 
     /**
      * The references to the policies that are included in this consent scope. Policies may be organizational, but are often defined jurisdictionally, or in law.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $uri = null;
+    private $uri = null;
 
     /**
      * FHIRConsentPolicy Constructor
@@ -95,13 +95,30 @@ class FHIRConsentPolicy extends FHIRBackboneElement implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['authority'])) {
-                $this->setAuthority($data['authority']);
+                $value = $data['authority'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentPolicy::__construct - Property \"authority\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value));
+                }
+                $this->setAuthority($value);
             }
             if (isset($data['uri'])) {
-                $this->setUri($data['uri']);
+                $value = $data['uri'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentPolicy::__construct - Property \"uri\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value));
+                }
+                $this->setUri($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -110,10 +127,11 @@ class FHIRConsentPolicy extends FHIRBackboneElement implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
-     * Entity or Organization having regulatory jurisdiction or accountability for  enforcing policies pertaining to Consent Directives.
+     * Entity or Organization having regulatory jurisdiction or accountability for  enforcing policies pertaining to Consent Directives.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
@@ -136,14 +154,13 @@ class FHIRConsentPolicy extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * Entity or Organization having regulatory jurisdiction or accountability for  enforcing policies pertaining to Consent Directives.
+     * Entity or Organization having regulatory jurisdiction or accountability for  enforcing policies pertaining to Consent Directives.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getAuthority()
     {
         return $this->authority;
     }
-
 
     /**
      * The references to the policies that are included in this consent scope. Policies may be organizational, but are often defined jurisdictionally, or in law.
@@ -176,7 +193,6 @@ class FHIRConsentPolicy extends FHIRBackboneElement implements \JsonSerializable
     {
         return $this->uri;
     }
-
 
     /**
      * @return string
@@ -211,9 +227,12 @@ class FHIRConsentPolicy extends FHIRBackboneElement implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ConsentPolicy xmlns="http://hl7.org/fhir"></ConsentPolicy>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getAuthority())) {
+            $v->xmlSerialize(true, $sxe->addChild('authority'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getUri())) {
+            $v->xmlSerialize(true, $sxe->addChild('uri'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

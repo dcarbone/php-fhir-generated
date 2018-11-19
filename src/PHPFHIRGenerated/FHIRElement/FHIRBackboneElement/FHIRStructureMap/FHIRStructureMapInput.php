@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -82,25 +82,25 @@ class FHIRStructureMapInput extends FHIRBackboneElement implements \JsonSerializ
      * Documentation for this instance of data.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $documentation = null;
+    private $documentation = null;
 
     /**
      * Mode for this instance of data.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRStructureMapInputMode
      */
-    public $mode = null;
+    private $mode = null;
 
     /**
      * Name for this instance of data.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRId
      */
-    public $name = null;
+    private $name = null;
 
     /**
      * Type for this instance of data.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $type = null;
+    private $type = null;
 
     /**
      * FHIRStructureMapInput Constructor
@@ -109,19 +109,54 @@ class FHIRStructureMapInput extends FHIRBackboneElement implements \JsonSerializ
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['documentation'])) {
-                $this->setDocumentation($data['documentation']);
+                $value = $data['documentation'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapInput::__construct - Property \"documentation\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setDocumentation($value);
             }
             if (isset($data['mode'])) {
-                $this->setMode($data['mode']);
+                $value = $data['mode'];
+                if (is_array($value)) {
+                    $value = new FHIRStructureMapInputMode($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRStructureMapInputMode($value);
+                }
+                if (!($value instanceof FHIRStructureMapInputMode)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapInput::__construct - Property \"mode\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRStructureMapInputMode or data to construct type, saw ".gettype($value));
+                }
+                $this->setMode($value);
             }
             if (isset($data['name'])) {
-                $this->setName($data['name']);
+                $value = $data['name'];
+                if (is_array($value)) {
+                    $value = new FHIRId($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRId($value);
+                }
+                if (!($value instanceof FHIRId)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapInput::__construct - Property \"name\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRId or data to construct type, saw ".gettype($value));
+                }
+                $this->setName($value);
             }
             if (isset($data['type'])) {
-                $this->setType($data['type']);
+                $value = $data['type'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapInput::__construct - Property \"type\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setType($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -130,6 +165,7 @@ class FHIRStructureMapInput extends FHIRBackboneElement implements \JsonSerializ
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -164,7 +200,6 @@ class FHIRStructureMapInput extends FHIRBackboneElement implements \JsonSerializ
         return $this->documentation;
     }
 
-
     /**
      * Mode for this instance of data.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRStructureMapInputMode
@@ -196,7 +231,6 @@ class FHIRStructureMapInput extends FHIRBackboneElement implements \JsonSerializ
     {
         return $this->mode;
     }
-
 
     /**
      * Name for this instance of data.
@@ -230,7 +264,6 @@ class FHIRStructureMapInput extends FHIRBackboneElement implements \JsonSerializ
         return $this->name;
     }
 
-
     /**
      * Type for this instance of data.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -262,7 +295,6 @@ class FHIRStructureMapInput extends FHIRBackboneElement implements \JsonSerializ
     {
         return $this->type;
     }
-
 
     /**
      * @return string
@@ -303,9 +335,18 @@ class FHIRStructureMapInput extends FHIRBackboneElement implements \JsonSerializ
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<StructureMapInput xmlns="http://hl7.org/fhir"></StructureMapInput>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getDocumentation())) {
+            $v->xmlSerialize(true, $sxe->addChild('documentation'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getMode())) {
+            $v->xmlSerialize(true, $sxe->addChild('mode'));
+        }
+        if (null !== ($v = $this->getName())) {
+            $v->xmlSerialize(true, $sxe->addChild('name'));
+        }
+        if (null !== ($v = $this->getType())) {
+            $v->xmlSerialize(true, $sxe->addChild('type'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

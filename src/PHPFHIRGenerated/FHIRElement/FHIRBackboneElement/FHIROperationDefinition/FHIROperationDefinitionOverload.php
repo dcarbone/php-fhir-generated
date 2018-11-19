@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefiniti
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefiniti
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -80,13 +80,13 @@ class FHIROperationDefinitionOverload extends FHIRBackboneElement implements \Js
      * Comments to go on overload.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $comment = null;
+    private $comment = null;
 
     /**
      * Name of parameter to include in overload.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public $parameterName = null;
+    private $parameterName = [];
 
     /**
      * FHIROperationDefinitionOverload Constructor
@@ -95,13 +95,36 @@ class FHIROperationDefinitionOverload extends FHIRBackboneElement implements \Js
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['comment'])) {
-                $this->setComment($data['comment']);
+                $value = $data['comment'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionOverload::__construct - Property \"comment\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setComment($value);
             }
             if (isset($data['parameterName'])) {
-                $this->setParameterName($data['parameterName']);
+                $value = $data['parameterName'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRString($v);
+                        }  elseif (is_scalar($v)) {
+                            $v = new FHIRString($v);
+                        }
+                        if (!($v instanceof FHIRString)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionOverload::__construct - Collection field \"parameterName\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addParameterName($v);
+                    }
+                }
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -110,6 +133,7 @@ class FHIROperationDefinitionOverload extends FHIRBackboneElement implements \Js
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -144,13 +168,12 @@ class FHIROperationDefinitionOverload extends FHIRBackboneElement implements \Js
         return $this->comment;
     }
 
-
     /**
      * Name of parameter to include in overload.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
-    public function setParameterName($parameterName)
+    public function addParameterName($parameterName)
     {
         if (null === $parameterName) {
             return $this; 
@@ -160,23 +183,22 @@ class FHIROperationDefinitionOverload extends FHIRBackboneElement implements \Js
         }
         if (!($parameterName instanceof FHIRString)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIROperationDefinitionOverload::setParameterName - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                'FHIROperationDefinitionOverload::addParameterName - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
                 gettype($parameterName)
             ));
         }
-        $this->parameterName = $parameterName;
+        $this->parameterName[] = $parameterName;
         return $this;
     }
 
     /**
      * Name of parameter to include in overload.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
     public function getParameterName()
     {
         return $this->parameterName;
     }
-
 
     /**
      * @return string
@@ -195,8 +217,16 @@ class FHIROperationDefinitionOverload extends FHIRBackboneElement implements \Js
         if (null !== ($v = $this->getComment())) {
             $a['comment'] = $v;
         }
-        if (null !== ($v = $this->getParameterName())) {
-            $a['parameterName'] = $v;
+        if (0 < count($values = $this->getParameterName())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['parameterName'] = $vs;
+            }
         }
         return $a;
     }
@@ -211,9 +241,16 @@ class FHIROperationDefinitionOverload extends FHIRBackboneElement implements \Js
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<OperationDefinitionOverload xmlns="http://hl7.org/fhir"></OperationDefinitionOverload>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getComment())) {
+            $v->xmlSerialize(true, $sxe->addChild('comment'));
         }
-        return $sxe->saveXML();
+        if (0 < count($values = $this->getParameterName())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('parameterName'));
+                }
+            }
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

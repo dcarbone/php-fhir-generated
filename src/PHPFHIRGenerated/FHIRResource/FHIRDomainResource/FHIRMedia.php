@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -66,14 +66,12 @@ use PHPFHIRGenerated\FHIRElement\FHIRAnnotation;
 use PHPFHIRGenerated\FHIRElement\FHIRAttachment;
 use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
 use PHPFHIRGenerated\FHIRElement\FHIRDateTime;
-use PHPFHIRGenerated\FHIRElement\FHIRDecimal;
-use PHPFHIRGenerated\FHIRElement\FHIREventStatus;
+use PHPFHIRGenerated\FHIRElement\FHIRDigitalMediaType;
 use PHPFHIRGenerated\FHIRElement\FHIRIdentifier;
-use PHPFHIRGenerated\FHIRElement\FHIRInstant;
 use PHPFHIRGenerated\FHIRElement\FHIRPeriod;
 use PHPFHIRGenerated\FHIRElement\FHIRPositiveInt;
 use PHPFHIRGenerated\FHIRElement\FHIRReference;
-use PHPFHIRGenerated\FHIRElement\FHIRString;
+use PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
 /**
@@ -90,141 +88,117 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A procedure that is fulfilled in whole or in part by the creation of this media.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $basedOn = null;
+    private $basedOn = [];
 
     /**
-     * Indicates the site on the subject's body where the observation was made (i.e. the target site).
+     * Indicates the site on the subject's body where the media was collected (i.e. the target site).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $bodySite = null;
+    private $bodySite = null;
 
     /**
      * The actual content of the media - inline or by direct reference to the media source file.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
-    public $content = null;
+    private $content = null;
 
     /**
      * The encounter or episode of care that establishes the context for this media.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $context = null;
-
-    /**
-     * The date and time(s) at which the media was collected.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public $createdDateTime = null;
-
-    /**
-     * The date and time(s) at which the media was collected.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
-     */
-    public $createdPeriod = null;
+    private $context = null;
 
     /**
      * The device used to collect the media.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $device = null;
-
-    /**
-     * The name of the device / manufacturer of the device  that was used to make the recording.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public $deviceName = null;
+    private $device = null;
 
     /**
      * The duration of the recording in seconds - for audio and video.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
-    public $duration = null;
+    private $duration = null;
 
     /**
      * The number of frames in a photo. This is used with a multi-page fax, or an imaging acquisition context that takes multiple slices in a single image, or an animated gif. If there is more than one frame, this SHALL have a value in order to alert interface software that a multi-frame capable rendering widget is required.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
-    public $frames = null;
+    private $frames = null;
 
     /**
      * Height of the image in pixels (photo/video).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
-    public $height = null;
+    private $height = null;
 
     /**
      * Identifiers associated with the image - these may include identifiers for the image itself, identifiers for the context of its collection (e.g. series ids) and context ids such as accession numbers or other workflow identifiers.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = null;
-
-    /**
-     * The date and time this version of the media was made available to providers, typically after having been reviewed.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRInstant
-     */
-    public $issued = null;
-
-    /**
-     * Details of the type of the media - usually, how it was acquired (what type of device). If images sourced from a DICOM system, are wrapped in a Media resource, then this is the modality.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public $modality = null;
+    private $identifier = [];
 
     /**
      * Comments made about the media by the performer, subject or other participants.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
-    public $note = null;
+    private $note = [];
+
+    /**
+     * The date and time(s) at which the media was collected. (choose any one of occurrence*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     */
+    private $occurrenceDateTime = null;
+
+    /**
+     * The date and time(s) at which the media was collected. (choose any one of occurrence*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
+     */
+    private $occurrencePeriod = null;
 
     /**
      * The person who administered the collection of the image.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $operator = null;
-
-    /**
-     * A larger event of which this particular event is a component or step.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $partOf = null;
+    private $operator = null;
 
     /**
      * Describes why the event occurred in coded or textual form.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $reasonCode = null;
-
-    /**
-     * The current state of the {{title}}.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIREventStatus
-     */
-    public $status = null;
+    private $reasonCode = [];
 
     /**
      * Who/What this Media is a record of.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $subject = null;
+    private $subject = null;
 
     /**
-     * A code that classifies whether the media is an image, video or audio recording or some other media category.
+     * Details of the type of the media - usually, how it was acquired (what type of device). If images sourced from a DICOM system, are wrapped in a Media resource, then this is the modality.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $type = null;
+    private $subtype = null;
+
+    /**
+     * Whether the media is a photo (still image), an audio recording, or a video recording.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRDigitalMediaType
+     */
+    private $type = null;
 
     /**
      * The name of the imaging view e.g. Lateral or Antero-posterior (AP).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $view = null;
+    private $view = null;
 
     /**
      * Width of the image in pixels (photo/video).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
-    public $width = null;
+    private $width = null;
 
     /**
      * FHIRMedia Constructor
@@ -233,76 +207,232 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['basedOn'])) {
-                $this->setBasedOn($data['basedOn']);
+                $value = $data['basedOn'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedia::__construct - Collection field \"basedOn\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addBasedOn($v);
+                    }
+                }
             }
             if (isset($data['bodySite'])) {
-                $this->setBodySite($data['bodySite']);
+                $value = $data['bodySite'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedia::__construct - Property \"bodySite\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setBodySite($value);
             }
             if (isset($data['content'])) {
-                $this->setContent($data['content']);
+                $value = $data['content'];
+                if (is_array($value)) {
+                    $value = new FHIRAttachment($value);
+                } 
+                if (!($value instanceof FHIRAttachment)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedia::__construct - Property \"content\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAttachment or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setContent($value);
             }
             if (isset($data['context'])) {
-                $this->setContext($data['context']);
-            }
-            if (isset($data['createdDateTime'])) {
-                $this->setCreatedDateTime($data['createdDateTime']);
-            }
-            if (isset($data['createdPeriod'])) {
-                $this->setCreatedPeriod($data['createdPeriod']);
+                $value = $data['context'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedia::__construct - Property \"context\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setContext($value);
             }
             if (isset($data['device'])) {
-                $this->setDevice($data['device']);
-            }
-            if (isset($data['deviceName'])) {
-                $this->setDeviceName($data['deviceName']);
+                $value = $data['device'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedia::__construct - Property \"device\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDevice($value);
             }
             if (isset($data['duration'])) {
-                $this->setDuration($data['duration']);
+                $value = $data['duration'];
+                if (is_array($value)) {
+                    $value = new FHIRUnsignedInt($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUnsignedInt($value);
+                }
+                if (!($value instanceof FHIRUnsignedInt)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedia::__construct - Property \"duration\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDuration($value);
             }
             if (isset($data['frames'])) {
-                $this->setFrames($data['frames']);
+                $value = $data['frames'];
+                if (is_array($value)) {
+                    $value = new FHIRPositiveInt($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRPositiveInt($value);
+                }
+                if (!($value instanceof FHIRPositiveInt)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedia::__construct - Property \"frames\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setFrames($value);
             }
             if (isset($data['height'])) {
-                $this->setHeight($data['height']);
+                $value = $data['height'];
+                if (is_array($value)) {
+                    $value = new FHIRPositiveInt($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRPositiveInt($value);
+                }
+                if (!($value instanceof FHIRPositiveInt)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedia::__construct - Property \"height\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setHeight($value);
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
-            }
-            if (isset($data['issued'])) {
-                $this->setIssued($data['issued']);
-            }
-            if (isset($data['modality'])) {
-                $this->setModality($data['modality']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRIdentifier($v);
+                        } 
+                        if (!($v instanceof FHIRIdentifier)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedia::__construct - Collection field \"identifier\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addIdentifier($v);
+                    }
+                }
             }
             if (isset($data['note'])) {
-                $this->setNote($data['note']);
+                $value = $data['note'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRAnnotation($v);
+                        } 
+                        if (!($v instanceof FHIRAnnotation)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedia::__construct - Collection field \"note\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAnnotation or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addNote($v);
+                    }
+                }
+            }
+            if (isset($data['occurrenceDateTime'])) {
+                $value = $data['occurrenceDateTime'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedia::__construct - Property \"occurrenceDateTime\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setOccurrenceDateTime($value);
+            }
+            if (isset($data['occurrencePeriod'])) {
+                $value = $data['occurrencePeriod'];
+                if (is_array($value)) {
+                    $value = new FHIRPeriod($value);
+                } 
+                if (!($value instanceof FHIRPeriod)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedia::__construct - Property \"occurrencePeriod\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPeriod or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setOccurrencePeriod($value);
             }
             if (isset($data['operator'])) {
-                $this->setOperator($data['operator']);
-            }
-            if (isset($data['partOf'])) {
-                $this->setPartOf($data['partOf']);
+                $value = $data['operator'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedia::__construct - Property \"operator\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setOperator($value);
             }
             if (isset($data['reasonCode'])) {
-                $this->setReasonCode($data['reasonCode']);
-            }
-            if (isset($data['status'])) {
-                $this->setStatus($data['status']);
+                $value = $data['reasonCode'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedia::__construct - Collection field \"reasonCode\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addReasonCode($v);
+                    }
+                }
             }
             if (isset($data['subject'])) {
-                $this->setSubject($data['subject']);
+                $value = $data['subject'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedia::__construct - Property \"subject\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setSubject($value);
+            }
+            if (isset($data['subtype'])) {
+                $value = $data['subtype'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedia::__construct - Property \"subtype\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setSubtype($value);
             }
             if (isset($data['type'])) {
-                $this->setType($data['type']);
+                $value = $data['type'];
+                if (is_array($value)) {
+                    $value = new FHIRDigitalMediaType($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDigitalMediaType($value);
+                }
+                if (!($value instanceof FHIRDigitalMediaType)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedia::__construct - Property \"type\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDigitalMediaType or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setType($value);
             }
             if (isset($data['view'])) {
-                $this->setView($data['view']);
+                $value = $data['view'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedia::__construct - Property \"view\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setView($value);
             }
             if (isset($data['width'])) {
-                $this->setWidth($data['width']);
+                $value = $data['width'];
+                if (is_array($value)) {
+                    $value = new FHIRPositiveInt($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRPositiveInt($value);
+                }
+                if (!($value instanceof FHIRPositiveInt)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedia::__construct - Property \"width\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setWidth($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -311,6 +441,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -318,27 +449,26 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setBasedOn(FHIRReference $basedOn = null)
+    public function addBasedOn(FHIRReference $basedOn = null)
     {
         if (null === $basedOn) {
             return $this; 
         }
-        $this->basedOn = $basedOn;
+        $this->basedOn[] = $basedOn;
         return $this;
     }
 
     /**
      * A procedure that is fulfilled in whole or in part by the creation of this media.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getBasedOn()
     {
         return $this->basedOn;
     }
 
-
     /**
-     * Indicates the site on the subject's body where the observation was made (i.e. the target site).
+     * Indicates the site on the subject's body where the media was collected (i.e. the target site).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
@@ -352,14 +482,13 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Indicates the site on the subject's body where the observation was made (i.e. the target site).
+     * Indicates the site on the subject's body where the media was collected (i.e. the target site).
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getBodySite()
     {
         return $this->bodySite;
     }
-
 
     /**
      * The actual content of the media - inline or by direct reference to the media source file.
@@ -384,7 +513,6 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
         return $this->content;
     }
 
-
     /**
      * The encounter or episode of care that establishes the context for this media.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -407,64 +535,6 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
     {
         return $this->context;
     }
-
-
-    /**
-     * The date and time(s) at which the media was collected.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     * @return $this
-     */
-    public function setCreatedDateTime($createdDateTime)
-    {
-        if (null === $createdDateTime) {
-            return $this; 
-        }
-        if (is_scalar($createdDateTime)) {
-            $createdDateTime = new FHIRDateTime($createdDateTime);
-        }
-        if (!($createdDateTime instanceof FHIRDateTime)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRMedia::setCreatedDateTime - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or appropriate scalar value, %s seen.',
-                gettype($createdDateTime)
-            ));
-        }
-        $this->createdDateTime = $createdDateTime;
-        return $this;
-    }
-
-    /**
-     * The date and time(s) at which the media was collected.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public function getCreatedDateTime()
-    {
-        return $this->createdDateTime;
-    }
-
-
-    /**
-     * The date and time(s) at which the media was collected.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
-     * @return $this
-     */
-    public function setCreatedPeriod(FHIRPeriod $createdPeriod = null)
-    {
-        if (null === $createdPeriod) {
-            return $this; 
-        }
-        $this->createdPeriod = $createdPeriod;
-        return $this;
-    }
-
-    /**
-     * The date and time(s) at which the media was collected.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
-     */
-    public function getCreatedPeriod()
-    {
-        return $this->createdPeriod;
-    }
-
 
     /**
      * The device used to collect the media.
@@ -489,43 +559,9 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
         return $this->device;
     }
 
-
-    /**
-     * The name of the device / manufacturer of the device  that was used to make the recording.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
-     * @return $this
-     */
-    public function setDeviceName($deviceName)
-    {
-        if (null === $deviceName) {
-            return $this; 
-        }
-        if (is_scalar($deviceName)) {
-            $deviceName = new FHIRString($deviceName);
-        }
-        if (!($deviceName instanceof FHIRString)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRMedia::setDeviceName - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
-                gettype($deviceName)
-            ));
-        }
-        $this->deviceName = $deviceName;
-        return $this;
-    }
-
-    /**
-     * The name of the device / manufacturer of the device  that was used to make the recording.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public function getDeviceName()
-    {
-        return $this->deviceName;
-    }
-
-
     /**
      * The duration of the recording in seconds - for audio and video.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDecimal
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      * @return $this
      */
     public function setDuration($duration)
@@ -534,11 +570,11 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
             return $this; 
         }
         if (is_scalar($duration)) {
-            $duration = new FHIRDecimal($duration);
+            $duration = new FHIRUnsignedInt($duration);
         }
-        if (!($duration instanceof FHIRDecimal)) {
+        if (!($duration instanceof FHIRUnsignedInt)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRMedia::setDuration - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRDecimal or appropriate scalar value, %s seen.',
+                'FHIRMedia::setDuration - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt or appropriate scalar value, %s seen.',
                 gettype($duration)
             ));
         }
@@ -548,13 +584,12 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The duration of the recording in seconds - for audio and video.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDecimal
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
     public function getDuration()
     {
         return $this->duration;
     }
-
 
     /**
      * The number of frames in a photo. This is used with a multi-page fax, or an imaging acquisition context that takes multiple slices in a single image, or an animated gif. If there is more than one frame, this SHALL have a value in order to alert interface software that a multi-frame capable rendering widget is required.
@@ -588,7 +623,6 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
         return $this->frames;
     }
 
-
     /**
      * Height of the image in pixels (photo/video).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
@@ -621,111 +655,106 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
         return $this->height;
     }
 
-
     /**
      * Identifiers associated with the image - these may include identifiers for the image itself, identifiers for the context of its collection (e.g. series ids) and context ids such as accession numbers or other workflow identifiers.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
-    public function setIdentifier(FHIRIdentifier $identifier = null)
+    public function addIdentifier(FHIRIdentifier $identifier = null)
     {
         if (null === $identifier) {
             return $this; 
         }
-        $this->identifier = $identifier;
+        $this->identifier[] = $identifier;
         return $this;
     }
 
     /**
      * Identifiers associated with the image - these may include identifiers for the image itself, identifiers for the context of its collection (e.g. series ids) and context ids such as accession numbers or other workflow identifiers.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
         return $this->identifier;
     }
 
-
-    /**
-     * The date and time this version of the media was made available to providers, typically after having been reviewed.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRInstant
-     * @return $this
-     */
-    public function setIssued($issued)
-    {
-        if (null === $issued) {
-            return $this; 
-        }
-        if (is_scalar($issued)) {
-            $issued = new FHIRInstant($issued);
-        }
-        if (!($issued instanceof FHIRInstant)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRMedia::setIssued - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRInstant or appropriate scalar value, %s seen.',
-                gettype($issued)
-            ));
-        }
-        $this->issued = $issued;
-        return $this;
-    }
-
-    /**
-     * The date and time this version of the media was made available to providers, typically after having been reviewed.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRInstant
-     */
-    public function getIssued()
-    {
-        return $this->issued;
-    }
-
-
-    /**
-     * Details of the type of the media - usually, how it was acquired (what type of device). If images sourced from a DICOM system, are wrapped in a Media resource, then this is the modality.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     * @return $this
-     */
-    public function setModality(FHIRCodeableConcept $modality = null)
-    {
-        if (null === $modality) {
-            return $this; 
-        }
-        $this->modality = $modality;
-        return $this;
-    }
-
-    /**
-     * Details of the type of the media - usually, how it was acquired (what type of device). If images sourced from a DICOM system, are wrapped in a Media resource, then this is the modality.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public function getModality()
-    {
-        return $this->modality;
-    }
-
-
     /**
      * Comments made about the media by the performer, subject or other participants.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation
      * @return $this
      */
-    public function setNote(FHIRAnnotation $note = null)
+    public function addNote(FHIRAnnotation $note = null)
     {
         if (null === $note) {
             return $this; 
         }
-        $this->note = $note;
+        $this->note[] = $note;
         return $this;
     }
 
     /**
      * Comments made about the media by the performer, subject or other participants.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
         return $this->note;
     }
 
+    /**
+     * The date and time(s) at which the media was collected. (choose any one of occurrence*, but only one)
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     * @return $this
+     */
+    public function setOccurrenceDateTime($occurrenceDateTime)
+    {
+        if (null === $occurrenceDateTime) {
+            return $this; 
+        }
+        if (is_scalar($occurrenceDateTime)) {
+            $occurrenceDateTime = new FHIRDateTime($occurrenceDateTime);
+        }
+        if (!($occurrenceDateTime instanceof FHIRDateTime)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRMedia::setOccurrenceDateTime - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or appropriate scalar value, %s seen.',
+                gettype($occurrenceDateTime)
+            ));
+        }
+        $this->occurrenceDateTime = $occurrenceDateTime;
+        return $this;
+    }
+
+    /**
+     * The date and time(s) at which the media was collected. (choose any one of occurrence*, but only one)
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     */
+    public function getOccurrenceDateTime()
+    {
+        return $this->occurrenceDateTime;
+    }
+
+    /**
+     * The date and time(s) at which the media was collected. (choose any one of occurrence*, but only one)
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
+     * @return $this
+     */
+    public function setOccurrencePeriod(FHIRPeriod $occurrencePeriod = null)
+    {
+        if (null === $occurrencePeriod) {
+            return $this; 
+        }
+        $this->occurrencePeriod = $occurrencePeriod;
+        return $this;
+    }
+
+    /**
+     * The date and time(s) at which the media was collected. (choose any one of occurrence*, but only one)
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
+     */
+    public function getOccurrencePeriod()
+    {
+        return $this->occurrencePeriod;
+    }
 
     /**
      * The person who administered the collection of the image.
@@ -750,87 +779,28 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
         return $this->operator;
     }
 
-
-    /**
-     * A larger event of which this particular event is a component or step.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     * @return $this
-     */
-    public function setPartOf(FHIRReference $partOf = null)
-    {
-        if (null === $partOf) {
-            return $this; 
-        }
-        $this->partOf = $partOf;
-        return $this;
-    }
-
-    /**
-     * A larger event of which this particular event is a component or step.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getPartOf()
-    {
-        return $this->partOf;
-    }
-
-
     /**
      * Describes why the event occurred in coded or textual form.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setReasonCode(FHIRCodeableConcept $reasonCode = null)
+    public function addReasonCode(FHIRCodeableConcept $reasonCode = null)
     {
         if (null === $reasonCode) {
             return $this; 
         }
-        $this->reasonCode = $reasonCode;
+        $this->reasonCode[] = $reasonCode;
         return $this;
     }
 
     /**
      * Describes why the event occurred in coded or textual form.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getReasonCode()
     {
         return $this->reasonCode;
     }
-
-
-    /**
-     * The current state of the {{title}}.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIREventStatus
-     * @return $this
-     */
-    public function setStatus($status)
-    {
-        if (null === $status) {
-            return $this; 
-        }
-        if (is_scalar($status)) {
-            $status = new FHIREventStatus($status);
-        }
-        if (!($status instanceof FHIREventStatus)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRMedia::setStatus - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIREventStatus or appropriate scalar value, %s seen.',
-                gettype($status)
-            ));
-        }
-        $this->status = $status;
-        return $this;
-    }
-
-    /**
-     * The current state of the {{title}}.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIREventStatus
-     */
-    public function getStatus()
-    {
-        return $this->status;
-    }
-
 
     /**
      * Who/What this Media is a record of.
@@ -855,30 +825,60 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
         return $this->subject;
     }
 
-
     /**
-     * A code that classifies whether the media is an image, video or audio recording or some other media category.
+     * Details of the type of the media - usually, how it was acquired (what type of device). If images sourced from a DICOM system, are wrapped in a Media resource, then this is the modality.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setType(FHIRCodeableConcept $type = null)
+    public function setSubtype(FHIRCodeableConcept $subtype = null)
+    {
+        if (null === $subtype) {
+            return $this; 
+        }
+        $this->subtype = $subtype;
+        return $this;
+    }
+
+    /**
+     * Details of the type of the media - usually, how it was acquired (what type of device). If images sourced from a DICOM system, are wrapped in a Media resource, then this is the modality.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public function getSubtype()
+    {
+        return $this->subtype;
+    }
+
+    /**
+     * Whether the media is a photo (still image), an audio recording, or a video recording.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDigitalMediaType
+     * @return $this
+     */
+    public function setType($type)
     {
         if (null === $type) {
             return $this; 
+        }
+        if (is_scalar($type)) {
+            $type = new FHIRDigitalMediaType($type);
+        }
+        if (!($type instanceof FHIRDigitalMediaType)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRMedia::setType - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRDigitalMediaType or appropriate scalar value, %s seen.',
+                gettype($type)
+            ));
         }
         $this->type = $type;
         return $this;
     }
 
     /**
-     * A code that classifies whether the media is an image, video or audio recording or some other media category.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * Whether the media is a photo (still image), an audio recording, or a video recording.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDigitalMediaType
      */
     public function getType()
     {
         return $this->type;
     }
-
 
     /**
      * The name of the imaging view e.g. Lateral or Antero-posterior (AP).
@@ -902,7 +902,6 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
     {
         return $this->view;
     }
-
 
     /**
      * Width of the image in pixels (photo/video).
@@ -936,7 +935,6 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
         return $this->width;
     }
 
-
     /**
      * @return string
      */
@@ -952,8 +950,16 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
     {
         $a = parent::jsonSerialize();
         $a['resourceType'] = self::FHIR_TYPE_NAME;
-        if (null !== ($v = $this->getBasedOn())) {
-            $a['basedOn'] = $v;
+        if (0 < count($values = $this->getBasedOn())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['basedOn'] = $vs;
+            }
         }
         if (null !== ($v = $this->getBodySite())) {
             $a['bodySite'] = $v;
@@ -964,17 +970,8 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getContext())) {
             $a['context'] = $v;
         }
-        if (null !== ($v = $this->getCreatedDateTime())) {
-            $a['createdDateTime'] = $v;
-        }
-        if (null !== ($v = $this->getCreatedPeriod())) {
-            $a['createdPeriod'] = $v;
-        }
         if (null !== ($v = $this->getDevice())) {
             $a['device'] = $v;
-        }
-        if (null !== ($v = $this->getDeviceName())) {
-            $a['deviceName'] = $v;
         }
         if (null !== ($v = $this->getDuration())) {
             $a['duration'] = $v;
@@ -985,32 +982,53 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getHeight())) {
             $a['height'] = $v;
         }
-        if (null !== ($v = $this->getIdentifier())) {
-            $a['identifier'] = $v;
+        if (0 < count($values = $this->getIdentifier())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['identifier'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getIssued())) {
-            $a['issued'] = $v;
+        if (0 < count($values = $this->getNote())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['note'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getModality())) {
-            $a['modality'] = $v;
+        if (null !== ($v = $this->getOccurrenceDateTime())) {
+            $a['occurrenceDateTime'] = $v;
         }
-        if (null !== ($v = $this->getNote())) {
-            $a['note'] = $v;
+        if (null !== ($v = $this->getOccurrencePeriod())) {
+            $a['occurrencePeriod'] = $v;
         }
         if (null !== ($v = $this->getOperator())) {
             $a['operator'] = $v;
         }
-        if (null !== ($v = $this->getPartOf())) {
-            $a['partOf'] = $v;
-        }
-        if (null !== ($v = $this->getReasonCode())) {
-            $a['reasonCode'] = $v;
-        }
-        if (null !== ($v = $this->getStatus())) {
-            $a['status'] = $v;
+        if (0 < count($values = $this->getReasonCode())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['reasonCode'] = $vs;
+            }
         }
         if (null !== ($v = $this->getSubject())) {
             $a['subject'] = $v;
+        }
+        if (null !== ($v = $this->getSubtype())) {
+            $a['subtype'] = $v;
         }
         if (null !== ($v = $this->getType())) {
             $a['type'] = $v;
@@ -1034,9 +1052,79 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Media xmlns="http://hl7.org/fhir"></Media>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (0 < count($values = $this->getBasedOn())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('basedOn'));
+                }
+            }
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getBodySite())) {
+            $v->xmlSerialize(true, $sxe->addChild('bodySite'));
+        }
+        if (null !== ($v = $this->getContent())) {
+            $v->xmlSerialize(true, $sxe->addChild('content'));
+        }
+        if (null !== ($v = $this->getContext())) {
+            $v->xmlSerialize(true, $sxe->addChild('context'));
+        }
+        if (null !== ($v = $this->getDevice())) {
+            $v->xmlSerialize(true, $sxe->addChild('device'));
+        }
+        if (null !== ($v = $this->getDuration())) {
+            $v->xmlSerialize(true, $sxe->addChild('duration'));
+        }
+        if (null !== ($v = $this->getFrames())) {
+            $v->xmlSerialize(true, $sxe->addChild('frames'));
+        }
+        if (null !== ($v = $this->getHeight())) {
+            $v->xmlSerialize(true, $sxe->addChild('height'));
+        }
+        if (0 < count($values = $this->getIdentifier())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('identifier'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getNote())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('note'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getOccurrenceDateTime())) {
+            $v->xmlSerialize(true, $sxe->addChild('occurrenceDateTime'));
+        }
+        if (null !== ($v = $this->getOccurrencePeriod())) {
+            $v->xmlSerialize(true, $sxe->addChild('occurrencePeriod'));
+        }
+        if (null !== ($v = $this->getOperator())) {
+            $v->xmlSerialize(true, $sxe->addChild('operator'));
+        }
+        if (0 < count($values = $this->getReasonCode())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('reasonCode'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getSubject())) {
+            $v->xmlSerialize(true, $sxe->addChild('subject'));
+        }
+        if (null !== ($v = $this->getSubtype())) {
+            $v->xmlSerialize(true, $sxe->addChild('subtype'));
+        }
+        if (null !== ($v = $this->getType())) {
+            $v->xmlSerialize(true, $sxe->addChild('type'));
+        }
+        if (null !== ($v = $this->getView())) {
+            $v->xmlSerialize(true, $sxe->addChild('view'));
+        }
+        if (null !== ($v = $this->getWidth())) {
+            $v->xmlSerialize(true, $sxe->addChild('width'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

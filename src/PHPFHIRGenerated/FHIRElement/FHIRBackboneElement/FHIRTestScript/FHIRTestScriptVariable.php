@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -67,7 +67,7 @@ use PHPFHIRGenerated\FHIRElement\FHIRId;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
 
 /**
- * A structured set of tests against a FHIR server or client implementation to determine compliance against the FHIR specification.
+ * A structured set of tests against a FHIR server implementation to determine compliance against the FHIR specification.
  *
  * Class FHIRTestScriptVariable
  * @package PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript
@@ -81,49 +81,49 @@ class FHIRTestScriptVariable extends FHIRBackboneElement implements \JsonSeriali
      * A default, hard-coded, or user-defined value for this variable.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $defaultValue = null;
+    private $defaultValue = null;
 
     /**
      * A free text natural language description of the variable and its purpose.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $description = null;
+    private $description = null;
 
     /**
-     * The FHIRPath expression to evaluate against the fixture body. When variables are defined, only one of either expression, headerField or path must be specified.
+     * The fluentpath expression to evaluate against the fixture body. When variables are defined, only one of either expression, headerField or path must be specified.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $expression = null;
+    private $expression = null;
 
     /**
      * Will be used to grab the HTTP header field value from the headers that sourceId is pointing to.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $headerField = null;
+    private $headerField = null;
 
     /**
      * Displayable text string with hint help information to the user when entering a default value.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $hint = null;
+    private $hint = null;
 
     /**
      * Descriptive name for this variable.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $name = null;
+    private $name = null;
 
     /**
      * XPath or JSONPath to evaluate against the fixture body.  When variables are defined, only one of either expression, headerField or path must be specified.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $path = null;
+    private $path = null;
 
     /**
      * Fixture to evaluate the XPath/JSONPath expression or the headerField  against within this variable.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRId
      */
-    public $sourceId = null;
+    private $sourceId = null;
 
     /**
      * FHIRTestScriptVariable Constructor
@@ -132,31 +132,102 @@ class FHIRTestScriptVariable extends FHIRBackboneElement implements \JsonSeriali
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['defaultValue'])) {
-                $this->setDefaultValue($data['defaultValue']);
+                $value = $data['defaultValue'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptVariable::__construct - Property \"defaultValue\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDefaultValue($value);
             }
             if (isset($data['description'])) {
-                $this->setDescription($data['description']);
+                $value = $data['description'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptVariable::__construct - Property \"description\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDescription($value);
             }
             if (isset($data['expression'])) {
-                $this->setExpression($data['expression']);
+                $value = $data['expression'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptVariable::__construct - Property \"expression\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setExpression($value);
             }
             if (isset($data['headerField'])) {
-                $this->setHeaderField($data['headerField']);
+                $value = $data['headerField'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptVariable::__construct - Property \"headerField\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setHeaderField($value);
             }
             if (isset($data['hint'])) {
-                $this->setHint($data['hint']);
+                $value = $data['hint'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptVariable::__construct - Property \"hint\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setHint($value);
             }
             if (isset($data['name'])) {
-                $this->setName($data['name']);
+                $value = $data['name'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptVariable::__construct - Property \"name\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setName($value);
             }
             if (isset($data['path'])) {
-                $this->setPath($data['path']);
+                $value = $data['path'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptVariable::__construct - Property \"path\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setPath($value);
             }
             if (isset($data['sourceId'])) {
-                $this->setSourceId($data['sourceId']);
+                $value = $data['sourceId'];
+                if (is_array($value)) {
+                    $value = new FHIRId($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRId($value);
+                }
+                if (!($value instanceof FHIRId)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptVariable::__construct - Property \"sourceId\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRId or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setSourceId($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -165,6 +236,7 @@ class FHIRTestScriptVariable extends FHIRBackboneElement implements \JsonSeriali
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -199,7 +271,6 @@ class FHIRTestScriptVariable extends FHIRBackboneElement implements \JsonSeriali
         return $this->defaultValue;
     }
 
-
     /**
      * A free text natural language description of the variable and its purpose.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -232,9 +303,8 @@ class FHIRTestScriptVariable extends FHIRBackboneElement implements \JsonSeriali
         return $this->description;
     }
 
-
     /**
-     * The FHIRPath expression to evaluate against the fixture body. When variables are defined, only one of either expression, headerField or path must be specified.
+     * The fluentpath expression to evaluate against the fixture body. When variables are defined, only one of either expression, headerField or path must be specified.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
@@ -257,14 +327,13 @@ class FHIRTestScriptVariable extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * The FHIRPath expression to evaluate against the fixture body. When variables are defined, only one of either expression, headerField or path must be specified.
+     * The fluentpath expression to evaluate against the fixture body. When variables are defined, only one of either expression, headerField or path must be specified.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getExpression()
     {
         return $this->expression;
     }
-
 
     /**
      * Will be used to grab the HTTP header field value from the headers that sourceId is pointing to.
@@ -298,7 +367,6 @@ class FHIRTestScriptVariable extends FHIRBackboneElement implements \JsonSeriali
         return $this->headerField;
     }
 
-
     /**
      * Displayable text string with hint help information to the user when entering a default value.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -330,7 +398,6 @@ class FHIRTestScriptVariable extends FHIRBackboneElement implements \JsonSeriali
     {
         return $this->hint;
     }
-
 
     /**
      * Descriptive name for this variable.
@@ -364,7 +431,6 @@ class FHIRTestScriptVariable extends FHIRBackboneElement implements \JsonSeriali
         return $this->name;
     }
 
-
     /**
      * XPath or JSONPath to evaluate against the fixture body.  When variables are defined, only one of either expression, headerField or path must be specified.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -397,7 +463,6 @@ class FHIRTestScriptVariable extends FHIRBackboneElement implements \JsonSeriali
         return $this->path;
     }
 
-
     /**
      * Fixture to evaluate the XPath/JSONPath expression or the headerField  against within this variable.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRId
@@ -429,7 +494,6 @@ class FHIRTestScriptVariable extends FHIRBackboneElement implements \JsonSeriali
     {
         return $this->sourceId;
     }
-
 
     /**
      * @return string
@@ -482,9 +546,30 @@ class FHIRTestScriptVariable extends FHIRBackboneElement implements \JsonSeriali
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<TestScriptVariable xmlns="http://hl7.org/fhir"></TestScriptVariable>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getDefaultValue())) {
+            $v->xmlSerialize(true, $sxe->addChild('defaultValue'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getDescription())) {
+            $v->xmlSerialize(true, $sxe->addChild('description'));
+        }
+        if (null !== ($v = $this->getExpression())) {
+            $v->xmlSerialize(true, $sxe->addChild('expression'));
+        }
+        if (null !== ($v = $this->getHeaderField())) {
+            $v->xmlSerialize(true, $sxe->addChild('headerField'));
+        }
+        if (null !== ($v = $this->getHint())) {
+            $v->xmlSerialize(true, $sxe->addChild('hint'));
+        }
+        if (null !== ($v = $this->getName())) {
+            $v->xmlSerialize(true, $sxe->addChild('name'));
+        }
+        if (null !== ($v = $this->getPath())) {
+            $v->xmlSerialize(true, $sxe->addChild('path'));
+        }
+        if (null !== ($v = $this->getSourceId())) {
+            $v->xmlSerialize(true, $sxe->addChild('sourceId'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

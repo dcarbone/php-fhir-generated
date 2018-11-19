@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -77,9 +77,9 @@ class FHIRTestReportTeardown extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The teardown action will only contain an operation.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportAction2
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportAction2[]
      */
-    public $action = null;
+    private $action = [];
 
     /**
      * FHIRTestReportTeardown Constructor
@@ -88,10 +88,22 @@ class FHIRTestReportTeardown extends FHIRBackboneElement implements \JsonSeriali
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['action'])) {
-                $this->setAction($data['action']);
+                $value = $data['action'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRTestReportAction2($v);
+                        } 
+                        if (!($v instanceof FHIRTestReportAction2)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportTeardown::__construct - Collection field \"action\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportAction2 or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addAction($v);
+                    }
+                }
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -100,6 +112,7 @@ class FHIRTestReportTeardown extends FHIRBackboneElement implements \JsonSeriali
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -107,24 +120,23 @@ class FHIRTestReportTeardown extends FHIRBackboneElement implements \JsonSeriali
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportAction2
      * @return $this
      */
-    public function setAction(FHIRTestReportAction2 $action = null)
+    public function addAction(FHIRTestReportAction2 $action = null)
     {
         if (null === $action) {
             return $this; 
         }
-        $this->action = $action;
+        $this->action[] = $action;
         return $this;
     }
 
     /**
      * The teardown action will only contain an operation.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportAction2
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportAction2[]
      */
     public function getAction()
     {
         return $this->action;
     }
-
 
     /**
      * @return string
@@ -140,8 +152,16 @@ class FHIRTestReportTeardown extends FHIRBackboneElement implements \JsonSeriali
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getAction())) {
-            $a['action'] = $v;
+        if (0 < count($values = $this->getAction())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['action'] = $vs;
+            }
         }
         return $a;
     }
@@ -156,9 +176,13 @@ class FHIRTestReportTeardown extends FHIRBackboneElement implements \JsonSeriali
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<TestReportTeardown xmlns="http://hl7.org/fhir"></TestReportTeardown>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (0 < count($values = $this->getAction())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('action'));
+                }
+            }
         }
-        return $sxe->saveXML();
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

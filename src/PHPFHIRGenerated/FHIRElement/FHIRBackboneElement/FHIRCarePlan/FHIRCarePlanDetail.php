@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCarePlan;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCarePlan;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,17 +63,14 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCarePlan;
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTiming;
 use PHPFHIRGenerated\FHIRElement\FHIRBoolean;
-use PHPFHIRGenerated\FHIRElement\FHIRCanonical;
-use PHPFHIRGenerated\FHIRElement\FHIRCarePlanActivityKind;
 use PHPFHIRGenerated\FHIRElement\FHIRCarePlanActivityStatus;
 use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
 use PHPFHIRGenerated\FHIRElement\FHIRPeriod;
 use PHPFHIRGenerated\FHIRElement\FHIRQuantity;
 use PHPFHIRGenerated\FHIRElement\FHIRReference;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
-use PHPFHIRGenerated\FHIRElement\FHIRUri;
+use PHPFHIRGenerated\FHIRElement\FHIRTiming;
 
 /**
  * Describes the intention of how one or more practitioners intend to deliver care for a particular patient, group or community for a period of time, possibly limited to care for a specific condition or set of conditions.
@@ -87,124 +84,118 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
     const FHIR_TYPE_NAME = 'CarePlan.Detail';
 
     /**
-     * Detailed description of the type of planned activity; e.g. what lab test, what procedure, what kind of encounter.
+     * High-level categorization of the type of activity in a care plan.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $code = null;
+    private $category = null;
+
+    /**
+     * Detailed description of the type of planned activity; e.g. What lab test, what procedure, what kind of encounter.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    private $code = null;
 
     /**
      * Identifies the quantity expected to be consumed in a given day.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    public $dailyAmount = null;
+    private $dailyAmount = null;
+
+    /**
+     * Identifies the protocol, questionnaire, guideline or other specification the planned activity should be conducted in accordance with.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    private $definition = null;
 
     /**
      * This provides a textual description of constraints on the intended activity occurrence, including relation to other activities.  It may also include objectives, pre-conditions and end-conditions.  Finally, it may convey specifics about the activity such as body site, method, route, etc.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $description = null;
-
-    /**
-     * If true, indicates that the described activity is one that must NOT be engaged in when following the plan.  If false, or missing, indicates that the described activity is one that should be engaged in when following the plan.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
-     */
-    public $doNotPerform = null;
+    private $description = null;
 
     /**
      * Internal reference that identifies the goals that this activity is intended to contribute towards meeting.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $goal = null;
-
-    /**
-     * The URL pointing to a FHIR-defined protocol, guideline, questionnaire or other definition that is adhered to in whole or in part by this CarePlan activity.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCanonical
-     */
-    public $instantiatesCanonical = null;
-
-    /**
-     * The URL pointing to an externally maintained protocol, guideline, questionnaire or other definition that is adhered to in whole or in part by this CarePlan activity.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
-     */
-    public $instantiatesUri = null;
-
-    /**
-     * A description of the kind of resource the in-line definition of a care plan activity is representing.  The CarePlan.activity.detail is an in-line definition when a resource is not referenced using CarePlan.activity.reference.  For example, a MedicationRequest, a ServiceRequest, or a CommunicationRequest.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCarePlanActivityKind
-     */
-    public $kind = null;
+    private $goal = [];
 
     /**
      * Identifies the facility where the activity will occur; e.g. home, hospital, specific clinic, etc.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $location = null;
+    private $location = null;
 
     /**
      * Identifies who's expected to be involved in the activity.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $performer = null;
+    private $performer = [];
 
     /**
-     * Identifies the food, drug or other product to be consumed or supplied in the activity.
+     * Identifies the food, drug or other product to be consumed or supplied in the activity. (choose any one of product*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $productCodeableConcept = null;
+    private $productCodeableConcept = null;
 
     /**
-     * Identifies the food, drug or other product to be consumed or supplied in the activity.
+     * Identifies the food, drug or other product to be consumed or supplied in the activity. (choose any one of product*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $productReference = null;
+    private $productReference = null;
+
+    /**
+     * If true, indicates that the described activity is one that must NOT be engaged in when following the plan.  If false, indicates that the described activity is one that should be engaged in when following the plan.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     */
+    private $prohibited = null;
 
     /**
      * Identifies the quantity expected to be supplied, administered or consumed by the subject.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    public $quantity = null;
+    private $quantity = null;
 
     /**
      * Provides the rationale that drove the inclusion of this particular activity as part of the plan or the reason why the activity was prohibited.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $reasonCode = null;
+    private $reasonCode = [];
 
     /**
-     * Indicates another resource, such as the health condition(s), whose existence justifies this request and drove the inclusion of this particular activity as part of the plan.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * Provides the health condition(s) that drove the inclusion of this particular activity as part of the plan.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $reasonReference = null;
+    private $reasonReference = [];
 
     /**
-     * The period, timing or frequency upon which the described activity is to occur.
+     * The period, timing or frequency upon which the described activity is to occur. (choose any one of scheduled*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public $scheduledPeriod = null;
+    private $scheduledPeriod = null;
 
     /**
-     * The period, timing or frequency upon which the described activity is to occur.
+     * The period, timing or frequency upon which the described activity is to occur. (choose any one of scheduled*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $scheduledString = null;
+    private $scheduledString = null;
 
     /**
-     * The period, timing or frequency upon which the described activity is to occur.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTiming
+     * The period, timing or frequency upon which the described activity is to occur. (choose any one of scheduled*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
-    public $scheduledTiming = null;
+    private $scheduledTiming = null;
 
     /**
      * Identifies what progress is being made for the specific activity.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCarePlanActivityStatus
      */
-    public $status = null;
+    private $status = null;
 
     /**
      * Provides reason why the activity isn't yet started, is on hold, was cancelled, etc.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $statusReason = null;
+    private $statusReason = null;
 
     /**
      * FHIRCarePlanDetail Constructor
@@ -213,67 +204,230 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
+            if (isset($data['category'])) {
+                $value = $data['category'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanDetail::__construct - Property \"category\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setCategory($value);
+            }
             if (isset($data['code'])) {
-                $this->setCode($data['code']);
+                $value = $data['code'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanDetail::__construct - Property \"code\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setCode($value);
             }
             if (isset($data['dailyAmount'])) {
-                $this->setDailyAmount($data['dailyAmount']);
+                $value = $data['dailyAmount'];
+                if (is_array($value)) {
+                    $value = new FHIRQuantity($value);
+                } 
+                if (!($value instanceof FHIRQuantity)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanDetail::__construct - Property \"dailyAmount\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDailyAmount($value);
+            }
+            if (isset($data['definition'])) {
+                $value = $data['definition'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanDetail::__construct - Property \"definition\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDefinition($value);
             }
             if (isset($data['description'])) {
-                $this->setDescription($data['description']);
-            }
-            if (isset($data['doNotPerform'])) {
-                $this->setDoNotPerform($data['doNotPerform']);
+                $value = $data['description'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanDetail::__construct - Property \"description\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDescription($value);
             }
             if (isset($data['goal'])) {
-                $this->setGoal($data['goal']);
-            }
-            if (isset($data['instantiatesCanonical'])) {
-                $this->setInstantiatesCanonical($data['instantiatesCanonical']);
-            }
-            if (isset($data['instantiatesUri'])) {
-                $this->setInstantiatesUri($data['instantiatesUri']);
-            }
-            if (isset($data['kind'])) {
-                $this->setKind($data['kind']);
+                $value = $data['goal'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanDetail::__construct - Collection field \"goal\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addGoal($v);
+                    }
+                }
             }
             if (isset($data['location'])) {
-                $this->setLocation($data['location']);
+                $value = $data['location'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanDetail::__construct - Property \"location\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setLocation($value);
             }
             if (isset($data['performer'])) {
-                $this->setPerformer($data['performer']);
+                $value = $data['performer'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanDetail::__construct - Collection field \"performer\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addPerformer($v);
+                    }
+                }
             }
             if (isset($data['productCodeableConcept'])) {
-                $this->setProductCodeableConcept($data['productCodeableConcept']);
+                $value = $data['productCodeableConcept'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanDetail::__construct - Property \"productCodeableConcept\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setProductCodeableConcept($value);
             }
             if (isset($data['productReference'])) {
-                $this->setProductReference($data['productReference']);
+                $value = $data['productReference'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanDetail::__construct - Property \"productReference\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setProductReference($value);
+            }
+            if (isset($data['prohibited'])) {
+                $value = $data['prohibited'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanDetail::__construct - Property \"prohibited\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setProhibited($value);
             }
             if (isset($data['quantity'])) {
-                $this->setQuantity($data['quantity']);
+                $value = $data['quantity'];
+                if (is_array($value)) {
+                    $value = new FHIRQuantity($value);
+                } 
+                if (!($value instanceof FHIRQuantity)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanDetail::__construct - Property \"quantity\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setQuantity($value);
             }
             if (isset($data['reasonCode'])) {
-                $this->setReasonCode($data['reasonCode']);
+                $value = $data['reasonCode'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanDetail::__construct - Collection field \"reasonCode\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addReasonCode($v);
+                    }
+                }
             }
             if (isset($data['reasonReference'])) {
-                $this->setReasonReference($data['reasonReference']);
+                $value = $data['reasonReference'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanDetail::__construct - Collection field \"reasonReference\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addReasonReference($v);
+                    }
+                }
             }
             if (isset($data['scheduledPeriod'])) {
-                $this->setScheduledPeriod($data['scheduledPeriod']);
+                $value = $data['scheduledPeriod'];
+                if (is_array($value)) {
+                    $value = new FHIRPeriod($value);
+                } 
+                if (!($value instanceof FHIRPeriod)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanDetail::__construct - Property \"scheduledPeriod\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPeriod or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setScheduledPeriod($value);
             }
             if (isset($data['scheduledString'])) {
-                $this->setScheduledString($data['scheduledString']);
+                $value = $data['scheduledString'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanDetail::__construct - Property \"scheduledString\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setScheduledString($value);
             }
             if (isset($data['scheduledTiming'])) {
-                $this->setScheduledTiming($data['scheduledTiming']);
+                $value = $data['scheduledTiming'];
+                if (is_array($value)) {
+                    $value = new FHIRTiming($value);
+                } 
+                if (!($value instanceof FHIRTiming)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanDetail::__construct - Property \"scheduledTiming\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRTiming or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setScheduledTiming($value);
             }
             if (isset($data['status'])) {
-                $this->setStatus($data['status']);
+                $value = $data['status'];
+                if (is_array($value)) {
+                    $value = new FHIRCarePlanActivityStatus($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRCarePlanActivityStatus($value);
+                }
+                if (!($value instanceof FHIRCarePlanActivityStatus)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanDetail::__construct - Property \"status\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCarePlanActivityStatus or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setStatus($value);
             }
             if (isset($data['statusReason'])) {
-                $this->setStatusReason($data['statusReason']);
+                $value = $data['statusReason'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanDetail::__construct - Property \"statusReason\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setStatusReason($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -282,10 +436,34 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
-     * Detailed description of the type of planned activity; e.g. what lab test, what procedure, what kind of encounter.
+     * High-level categorization of the type of activity in a care plan.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return $this
+     */
+    public function setCategory(FHIRCodeableConcept $category = null)
+    {
+        if (null === $category) {
+            return $this; 
+        }
+        $this->category = $category;
+        return $this;
+    }
+
+    /**
+     * High-level categorization of the type of activity in a care plan.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * Detailed description of the type of planned activity; e.g. What lab test, what procedure, what kind of encounter.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
@@ -299,14 +477,13 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
     }
 
     /**
-     * Detailed description of the type of planned activity; e.g. what lab test, what procedure, what kind of encounter.
+     * Detailed description of the type of planned activity; e.g. What lab test, what procedure, what kind of encounter.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
         return $this->code;
     }
-
 
     /**
      * Identifies the quantity expected to be consumed in a given day.
@@ -331,6 +508,28 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
         return $this->dailyAmount;
     }
 
+    /**
+     * Identifies the protocol, questionnaire, guideline or other specification the planned activity should be conducted in accordance with.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return $this
+     */
+    public function setDefinition(FHIRReference $definition = null)
+    {
+        if (null === $definition) {
+            return $this; 
+        }
+        $this->definition = $definition;
+        return $this;
+    }
+
+    /**
+     * Identifies the protocol, questionnaire, guideline or other specification the planned activity should be conducted in accordance with.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getDefinition()
+    {
+        return $this->definition;
+    }
 
     /**
      * This provides a textual description of constraints on the intended activity occurrence, including relation to other activities.  It may also include objectives, pre-conditions and end-conditions.  Finally, it may convey specifics about the activity such as body site, method, route, etc.
@@ -364,162 +563,28 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
         return $this->description;
     }
 
-
-    /**
-     * If true, indicates that the described activity is one that must NOT be engaged in when following the plan.  If false, or missing, indicates that the described activity is one that should be engaged in when following the plan.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
-     * @return $this
-     */
-    public function setDoNotPerform($doNotPerform)
-    {
-        if (null === $doNotPerform) {
-            return $this; 
-        }
-        if (is_scalar($doNotPerform)) {
-            $doNotPerform = new FHIRBoolean($doNotPerform);
-        }
-        if (!($doNotPerform instanceof FHIRBoolean)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRCarePlanDetail::setDoNotPerform - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or appropriate scalar value, %s seen.',
-                gettype($doNotPerform)
-            ));
-        }
-        $this->doNotPerform = $doNotPerform;
-        return $this;
-    }
-
-    /**
-     * If true, indicates that the described activity is one that must NOT be engaged in when following the plan.  If false, or missing, indicates that the described activity is one that should be engaged in when following the plan.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
-     */
-    public function getDoNotPerform()
-    {
-        return $this->doNotPerform;
-    }
-
-
     /**
      * Internal reference that identifies the goals that this activity is intended to contribute towards meeting.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setGoal(FHIRReference $goal = null)
+    public function addGoal(FHIRReference $goal = null)
     {
         if (null === $goal) {
             return $this; 
         }
-        $this->goal = $goal;
+        $this->goal[] = $goal;
         return $this;
     }
 
     /**
      * Internal reference that identifies the goals that this activity is intended to contribute towards meeting.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getGoal()
     {
         return $this->goal;
     }
-
-
-    /**
-     * The URL pointing to a FHIR-defined protocol, guideline, questionnaire or other definition that is adhered to in whole or in part by this CarePlan activity.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
-     * @return $this
-     */
-    public function setInstantiatesCanonical($instantiatesCanonical)
-    {
-        if (null === $instantiatesCanonical) {
-            return $this; 
-        }
-        if (is_scalar($instantiatesCanonical)) {
-            $instantiatesCanonical = new FHIRCanonical($instantiatesCanonical);
-        }
-        if (!($instantiatesCanonical instanceof FHIRCanonical)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRCarePlanDetail::setInstantiatesCanonical - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCanonical or appropriate scalar value, %s seen.',
-                gettype($instantiatesCanonical)
-            ));
-        }
-        $this->instantiatesCanonical = $instantiatesCanonical;
-        return $this;
-    }
-
-    /**
-     * The URL pointing to a FHIR-defined protocol, guideline, questionnaire or other definition that is adhered to in whole or in part by this CarePlan activity.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
-     */
-    public function getInstantiatesCanonical()
-    {
-        return $this->instantiatesCanonical;
-    }
-
-
-    /**
-     * The URL pointing to an externally maintained protocol, guideline, questionnaire or other definition that is adhered to in whole or in part by this CarePlan activity.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
-     * @return $this
-     */
-    public function setInstantiatesUri($instantiatesUri)
-    {
-        if (null === $instantiatesUri) {
-            return $this; 
-        }
-        if (is_scalar($instantiatesUri)) {
-            $instantiatesUri = new FHIRUri($instantiatesUri);
-        }
-        if (!($instantiatesUri instanceof FHIRUri)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRCarePlanDetail::setInstantiatesUri - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or appropriate scalar value, %s seen.',
-                gettype($instantiatesUri)
-            ));
-        }
-        $this->instantiatesUri = $instantiatesUri;
-        return $this;
-    }
-
-    /**
-     * The URL pointing to an externally maintained protocol, guideline, questionnaire or other definition that is adhered to in whole or in part by this CarePlan activity.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
-     */
-    public function getInstantiatesUri()
-    {
-        return $this->instantiatesUri;
-    }
-
-
-    /**
-     * A description of the kind of resource the in-line definition of a care plan activity is representing.  The CarePlan.activity.detail is an in-line definition when a resource is not referenced using CarePlan.activity.reference.  For example, a MedicationRequest, a ServiceRequest, or a CommunicationRequest.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCarePlanActivityKind
-     * @return $this
-     */
-    public function setKind($kind)
-    {
-        if (null === $kind) {
-            return $this; 
-        }
-        if (is_scalar($kind)) {
-            $kind = new FHIRCarePlanActivityKind($kind);
-        }
-        if (!($kind instanceof FHIRCarePlanActivityKind)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRCarePlanDetail::setKind - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCarePlanActivityKind or appropriate scalar value, %s seen.',
-                gettype($kind)
-            ));
-        }
-        $this->kind = $kind;
-        return $this;
-    }
-
-    /**
-     * A description of the kind of resource the in-line definition of a care plan activity is representing.  The CarePlan.activity.detail is an in-line definition when a resource is not referenced using CarePlan.activity.reference.  For example, a MedicationRequest, a ServiceRequest, or a CommunicationRequest.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCarePlanActivityKind
-     */
-    public function getKind()
-    {
-        return $this->kind;
-    }
-
 
     /**
      * Identifies the facility where the activity will occur; e.g. home, hospital, specific clinic, etc.
@@ -544,33 +609,31 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
         return $this->location;
     }
 
-
     /**
      * Identifies who's expected to be involved in the activity.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setPerformer(FHIRReference $performer = null)
+    public function addPerformer(FHIRReference $performer = null)
     {
         if (null === $performer) {
             return $this; 
         }
-        $this->performer = $performer;
+        $this->performer[] = $performer;
         return $this;
     }
 
     /**
      * Identifies who's expected to be involved in the activity.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getPerformer()
     {
         return $this->performer;
     }
 
-
     /**
-     * Identifies the food, drug or other product to be consumed or supplied in the activity.
+     * Identifies the food, drug or other product to be consumed or supplied in the activity. (choose any one of product*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
@@ -584,7 +647,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
     }
 
     /**
-     * Identifies the food, drug or other product to be consumed or supplied in the activity.
+     * Identifies the food, drug or other product to be consumed or supplied in the activity. (choose any one of product*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getProductCodeableConcept()
@@ -592,9 +655,8 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
         return $this->productCodeableConcept;
     }
 
-
     /**
-     * Identifies the food, drug or other product to be consumed or supplied in the activity.
+     * Identifies the food, drug or other product to be consumed or supplied in the activity. (choose any one of product*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
@@ -608,7 +670,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
     }
 
     /**
-     * Identifies the food, drug or other product to be consumed or supplied in the activity.
+     * Identifies the food, drug or other product to be consumed or supplied in the activity. (choose any one of product*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getProductReference()
@@ -616,6 +678,37 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
         return $this->productReference;
     }
 
+    /**
+     * If true, indicates that the described activity is one that must NOT be engaged in when following the plan.  If false, indicates that the described activity is one that should be engaged in when following the plan.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     * @return $this
+     */
+    public function setProhibited($prohibited)
+    {
+        if (null === $prohibited) {
+            return $this; 
+        }
+        if (is_scalar($prohibited)) {
+            $prohibited = new FHIRBoolean($prohibited);
+        }
+        if (!($prohibited instanceof FHIRBoolean)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRCarePlanDetail::setProhibited - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or appropriate scalar value, %s seen.',
+                gettype($prohibited)
+            ));
+        }
+        $this->prohibited = $prohibited;
+        return $this;
+    }
+
+    /**
+     * If true, indicates that the described activity is one that must NOT be engaged in when following the plan.  If false, indicates that the described activity is one that should be engaged in when following the plan.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     */
+    public function getProhibited()
+    {
+        return $this->prohibited;
+    }
 
     /**
      * Identifies the quantity expected to be supplied, administered or consumed by the subject.
@@ -640,57 +733,54 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
         return $this->quantity;
     }
 
-
     /**
      * Provides the rationale that drove the inclusion of this particular activity as part of the plan or the reason why the activity was prohibited.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setReasonCode(FHIRCodeableConcept $reasonCode = null)
+    public function addReasonCode(FHIRCodeableConcept $reasonCode = null)
     {
         if (null === $reasonCode) {
             return $this; 
         }
-        $this->reasonCode = $reasonCode;
+        $this->reasonCode[] = $reasonCode;
         return $this;
     }
 
     /**
      * Provides the rationale that drove the inclusion of this particular activity as part of the plan or the reason why the activity was prohibited.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getReasonCode()
     {
         return $this->reasonCode;
     }
 
-
     /**
-     * Indicates another resource, such as the health condition(s), whose existence justifies this request and drove the inclusion of this particular activity as part of the plan.
+     * Provides the health condition(s) that drove the inclusion of this particular activity as part of the plan.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setReasonReference(FHIRReference $reasonReference = null)
+    public function addReasonReference(FHIRReference $reasonReference = null)
     {
         if (null === $reasonReference) {
             return $this; 
         }
-        $this->reasonReference = $reasonReference;
+        $this->reasonReference[] = $reasonReference;
         return $this;
     }
 
     /**
-     * Indicates another resource, such as the health condition(s), whose existence justifies this request and drove the inclusion of this particular activity as part of the plan.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * Provides the health condition(s) that drove the inclusion of this particular activity as part of the plan.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getReasonReference()
     {
         return $this->reasonReference;
     }
 
-
     /**
-     * The period, timing or frequency upon which the described activity is to occur.
+     * The period, timing or frequency upon which the described activity is to occur. (choose any one of scheduled*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
      * @return $this
      */
@@ -704,7 +794,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
     }
 
     /**
-     * The period, timing or frequency upon which the described activity is to occur.
+     * The period, timing or frequency upon which the described activity is to occur. (choose any one of scheduled*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getScheduledPeriod()
@@ -712,9 +802,8 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
         return $this->scheduledPeriod;
     }
 
-
     /**
-     * The period, timing or frequency upon which the described activity is to occur.
+     * The period, timing or frequency upon which the described activity is to occur. (choose any one of scheduled*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
@@ -737,7 +826,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
     }
 
     /**
-     * The period, timing or frequency upon which the described activity is to occur.
+     * The period, timing or frequency upon which the described activity is to occur. (choose any one of scheduled*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getScheduledString()
@@ -745,10 +834,9 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
         return $this->scheduledString;
     }
 
-
     /**
-     * The period, timing or frequency upon which the described activity is to occur.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTiming
+     * The period, timing or frequency upon which the described activity is to occur. (choose any one of scheduled*, but only one)
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRTiming
      * @return $this
      */
     public function setScheduledTiming(FHIRTiming $scheduledTiming = null)
@@ -761,14 +849,13 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
     }
 
     /**
-     * The period, timing or frequency upon which the described activity is to occur.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTiming
+     * The period, timing or frequency upon which the described activity is to occur. (choose any one of scheduled*, but only one)
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public function getScheduledTiming()
     {
         return $this->scheduledTiming;
     }
-
 
     /**
      * Identifies what progress is being made for the specific activity.
@@ -802,16 +889,24 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
         return $this->status;
     }
 
-
     /**
      * Provides reason why the activity isn't yet started, is on hold, was cancelled, etc.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
-    public function setStatusReason(FHIRCodeableConcept $statusReason = null)
+    public function setStatusReason($statusReason)
     {
         if (null === $statusReason) {
             return $this; 
+        }
+        if (is_scalar($statusReason)) {
+            $statusReason = new FHIRString($statusReason);
+        }
+        if (!($statusReason instanceof FHIRString)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRCarePlanDetail::setStatusReason - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                gettype($statusReason)
+            ));
         }
         $this->statusReason = $statusReason;
         return $this;
@@ -819,13 +914,12 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Provides reason why the activity isn't yet started, is on hold, was cancelled, etc.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getStatusReason()
     {
         return $this->statusReason;
     }
-
 
     /**
      * @return string
@@ -841,35 +935,45 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
+        if (null !== ($v = $this->getCategory())) {
+            $a['category'] = $v;
+        }
         if (null !== ($v = $this->getCode())) {
             $a['code'] = $v;
         }
         if (null !== ($v = $this->getDailyAmount())) {
             $a['dailyAmount'] = $v;
         }
+        if (null !== ($v = $this->getDefinition())) {
+            $a['definition'] = $v;
+        }
         if (null !== ($v = $this->getDescription())) {
             $a['description'] = $v;
         }
-        if (null !== ($v = $this->getDoNotPerform())) {
-            $a['doNotPerform'] = $v;
-        }
-        if (null !== ($v = $this->getGoal())) {
-            $a['goal'] = $v;
-        }
-        if (null !== ($v = $this->getInstantiatesCanonical())) {
-            $a['instantiatesCanonical'] = $v;
-        }
-        if (null !== ($v = $this->getInstantiatesUri())) {
-            $a['instantiatesUri'] = $v;
-        }
-        if (null !== ($v = $this->getKind())) {
-            $a['kind'] = $v;
+        if (0 < count($values = $this->getGoal())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['goal'] = $vs;
+            }
         }
         if (null !== ($v = $this->getLocation())) {
             $a['location'] = $v;
         }
-        if (null !== ($v = $this->getPerformer())) {
-            $a['performer'] = $v;
+        if (0 < count($values = $this->getPerformer())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['performer'] = $vs;
+            }
         }
         if (null !== ($v = $this->getProductCodeableConcept())) {
             $a['productCodeableConcept'] = $v;
@@ -877,14 +981,33 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
         if (null !== ($v = $this->getProductReference())) {
             $a['productReference'] = $v;
         }
+        if (null !== ($v = $this->getProhibited())) {
+            $a['prohibited'] = $v;
+        }
         if (null !== ($v = $this->getQuantity())) {
             $a['quantity'] = $v;
         }
-        if (null !== ($v = $this->getReasonCode())) {
-            $a['reasonCode'] = $v;
+        if (0 < count($values = $this->getReasonCode())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['reasonCode'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getReasonReference())) {
-            $a['reasonReference'] = $v;
+        if (0 < count($values = $this->getReasonReference())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['reasonReference'] = $vs;
+            }
         }
         if (null !== ($v = $this->getScheduledPeriod())) {
             $a['scheduledPeriod'] = $v;
@@ -914,9 +1037,79 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<CarePlanDetail xmlns="http://hl7.org/fhir"></CarePlanDetail>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getCategory())) {
+            $v->xmlSerialize(true, $sxe->addChild('category'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getCode())) {
+            $v->xmlSerialize(true, $sxe->addChild('code'));
+        }
+        if (null !== ($v = $this->getDailyAmount())) {
+            $v->xmlSerialize(true, $sxe->addChild('dailyAmount'));
+        }
+        if (null !== ($v = $this->getDefinition())) {
+            $v->xmlSerialize(true, $sxe->addChild('definition'));
+        }
+        if (null !== ($v = $this->getDescription())) {
+            $v->xmlSerialize(true, $sxe->addChild('description'));
+        }
+        if (0 < count($values = $this->getGoal())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('goal'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getLocation())) {
+            $v->xmlSerialize(true, $sxe->addChild('location'));
+        }
+        if (0 < count($values = $this->getPerformer())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('performer'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getProductCodeableConcept())) {
+            $v->xmlSerialize(true, $sxe->addChild('productCodeableConcept'));
+        }
+        if (null !== ($v = $this->getProductReference())) {
+            $v->xmlSerialize(true, $sxe->addChild('productReference'));
+        }
+        if (null !== ($v = $this->getProhibited())) {
+            $v->xmlSerialize(true, $sxe->addChild('prohibited'));
+        }
+        if (null !== ($v = $this->getQuantity())) {
+            $v->xmlSerialize(true, $sxe->addChild('quantity'));
+        }
+        if (0 < count($values = $this->getReasonCode())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('reasonCode'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getReasonReference())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('reasonReference'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getScheduledPeriod())) {
+            $v->xmlSerialize(true, $sxe->addChild('scheduledPeriod'));
+        }
+        if (null !== ($v = $this->getScheduledString())) {
+            $v->xmlSerialize(true, $sxe->addChild('scheduledString'));
+        }
+        if (null !== ($v = $this->getScheduledTiming())) {
+            $v->xmlSerialize(true, $sxe->addChild('scheduledTiming'));
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('status'));
+        }
+        if (null !== ($v = $this->getStatusReason())) {
+            $v->xmlSerialize(true, $sxe->addChild('statusReason'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

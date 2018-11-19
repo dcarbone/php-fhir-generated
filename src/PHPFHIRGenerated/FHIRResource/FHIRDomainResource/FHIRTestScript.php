@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -86,7 +86,7 @@ use PHPFHIRGenerated\FHIRElement\FHIRUsageContext;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
 /**
- * A structured set of tests against a FHIR server or client implementation to determine compliance against the FHIR specification.
+ * A structured set of tests against a FHIR server implementation to determine compliance against the FHIR specification.
  * If the element is present, it must have either a @value, an @id, or extensions
  *
  * Class FHIRTestScript
@@ -99,159 +99,159 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
-    public $contact = null;
+    private $contact = [];
 
     /**
      * A copyright statement relating to the test script and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the test script.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public $copyright = null;
+    private $copyright = null;
 
     /**
-     * The date  (and optionally time) when the test script was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the test script changes.
+     * The date  (and optionally time) when the test script was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the test script changes.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $date = null;
+    private $date = null;
 
     /**
      * A free text natural language description of the test script from a consumer's perspective.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public $description = null;
+    private $description = null;
 
     /**
      * An abstract server used in operations within this test script in the destination element.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptDestination
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptDestination[]
      */
-    public $destination = null;
+    private $destination = [];
 
     /**
-     * A Boolean value to indicate that this test script is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this test script is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $experimental = null;
+    private $experimental = null;
 
     /**
      * Fixture in the test script - by reference (uri). All fixtures are required for the test script to execute.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptFixture
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptFixture[]
      */
-    public $fixture = null;
+    private $fixture = [];
 
     /**
      * A formal identifier that is used to identify this test script when it is represented in other formats, or referenced in a specification, model, design or an instance.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public $identifier = null;
+    private $identifier = null;
 
     /**
      * A legal or geographic region in which the test script is intended to be used.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $jurisdiction = null;
+    private $jurisdiction = [];
 
     /**
      * The required capability must exist and are assumed to function correctly on the FHIR server being tested.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptMetadata
      */
-    public $metadata = null;
+    private $metadata = null;
 
     /**
      * A natural language name identifying the test script. This name should be usable as an identifier for the module by machine processing applications such as code generation.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $name = null;
+    private $name = null;
 
     /**
      * An abstract server used in operations within this test script in the origin element.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOrigin
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOrigin[]
      */
-    public $origin = null;
+    private $origin = [];
 
     /**
      * Reference to the profile to be used for validation.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $profile = null;
+    private $profile = [];
 
     /**
-     * The name of the organization or individual that published the test script.
+     * The name of the individual or organization that published the test script.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $publisher = null;
+    private $publisher = null;
 
     /**
-     * Explanation of why this test script is needed and why it has been designed as it has.
+     * Explaination of why this test script is needed and why it has been designed as it has.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public $purpose = null;
+    private $purpose = null;
 
     /**
      * Assert rule to be used in one or more asserts within the test script.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRule
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRule[]
      */
-    public $rule = null;
+    private $rule = [];
 
     /**
      * Contains one or more rules.  Offers a way to group rules so assertions could reference the group of rules and have them all applied.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRuleset
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRuleset[]
      */
-    public $ruleset = null;
+    private $ruleset = [];
 
     /**
      * A series of required setup operations before tests are executed.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptSetup
      */
-    public $setup = null;
+    private $setup = null;
 
     /**
      * The status of this test script. Enables tracking the life-cycle of the content.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus
      */
-    public $status = null;
+    private $status = null;
 
     /**
-     * A series of operations required to clean up after all the tests are executed (successfully or otherwise).
+     * A series of operations required to clean up after the all the tests are executed (successfully or otherwise).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptTeardown
      */
-    public $teardown = null;
+    private $teardown = null;
 
     /**
      * A test in this script.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptTest
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptTest[]
      */
-    public $test = null;
+    private $test = [];
 
     /**
      * A short, descriptive, user-friendly title for the test script.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $title = null;
+    private $title = null;
 
     /**
-     * An absolute URI that is used to identify this test script when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this test script is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the test script is stored on different servers.
+     * An absolute URI that is used to identify this test script when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this test script is (or will be) published. The URL SHOULD include the major version of the test script. For more information see [Technical and Business Versions](resource.html#versions).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $url = null;
+    private $url = null;
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate test script instances.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
-    public $useContext = null;
+    private $useContext = [];
 
     /**
      * Variable is set based either on element value in response body or on header field value in the response headers.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptVariable
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptVariable[]
      */
-    public $variable = null;
+    private $variable = [];
 
     /**
      * The identifier that is used to identify this version of the test script when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the test script author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $version = null;
+    private $version = null;
 
     /**
      * FHIRTestScript Constructor
@@ -260,85 +260,354 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['contact'])) {
-                $this->setContact($data['contact']);
+                $value = $data['contact'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRContactDetail($v);
+                        } 
+                        if (!($v instanceof FHIRContactDetail)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTestScript::__construct - Collection field \"contact\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRContactDetail or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addContact($v);
+                    }
+                }
             }
             if (isset($data['copyright'])) {
-                $this->setCopyright($data['copyright']);
+                $value = $data['copyright'];
+                if (is_array($value)) {
+                    $value = new FHIRMarkdown($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRMarkdown($value);
+                }
+                if (!($value instanceof FHIRMarkdown)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTestScript::__construct - Property \"copyright\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRMarkdown or data to construct type, saw ".gettype($value));
+                }
+                $this->setCopyright($value);
             }
             if (isset($data['date'])) {
-                $this->setDate($data['date']);
+                $value = $data['date'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTestScript::__construct - Property \"date\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value));
+                }
+                $this->setDate($value);
             }
             if (isset($data['description'])) {
-                $this->setDescription($data['description']);
+                $value = $data['description'];
+                if (is_array($value)) {
+                    $value = new FHIRMarkdown($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRMarkdown($value);
+                }
+                if (!($value instanceof FHIRMarkdown)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTestScript::__construct - Property \"description\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRMarkdown or data to construct type, saw ".gettype($value));
+                }
+                $this->setDescription($value);
             }
             if (isset($data['destination'])) {
-                $this->setDestination($data['destination']);
+                $value = $data['destination'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRTestScriptDestination($v);
+                        } 
+                        if (!($v instanceof FHIRTestScriptDestination)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTestScript::__construct - Collection field \"destination\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptDestination or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addDestination($v);
+                    }
+                }
             }
             if (isset($data['experimental'])) {
-                $this->setExperimental($data['experimental']);
+                $value = $data['experimental'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTestScript::__construct - Property \"experimental\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value));
+                }
+                $this->setExperimental($value);
             }
             if (isset($data['fixture'])) {
-                $this->setFixture($data['fixture']);
+                $value = $data['fixture'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRTestScriptFixture($v);
+                        } 
+                        if (!($v instanceof FHIRTestScriptFixture)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTestScript::__construct - Collection field \"fixture\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptFixture or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addFixture($v);
+                    }
+                }
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    $value = new FHIRIdentifier($value);
+                } 
+                if (!($value instanceof FHIRIdentifier)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTestScript::__construct - Property \"identifier\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($value));
+                }
+                $this->setIdentifier($value);
             }
             if (isset($data['jurisdiction'])) {
-                $this->setJurisdiction($data['jurisdiction']);
+                $value = $data['jurisdiction'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTestScript::__construct - Collection field \"jurisdiction\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addJurisdiction($v);
+                    }
+                }
             }
             if (isset($data['metadata'])) {
-                $this->setMetadata($data['metadata']);
+                $value = $data['metadata'];
+                if (is_array($value)) {
+                    $value = new FHIRTestScriptMetadata($value);
+                } 
+                if (!($value instanceof FHIRTestScriptMetadata)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTestScript::__construct - Property \"metadata\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptMetadata or data to construct type, saw ".gettype($value));
+                }
+                $this->setMetadata($value);
             }
             if (isset($data['name'])) {
-                $this->setName($data['name']);
+                $value = $data['name'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTestScript::__construct - Property \"name\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setName($value);
             }
             if (isset($data['origin'])) {
-                $this->setOrigin($data['origin']);
+                $value = $data['origin'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRTestScriptOrigin($v);
+                        } 
+                        if (!($v instanceof FHIRTestScriptOrigin)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTestScript::__construct - Collection field \"origin\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOrigin or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addOrigin($v);
+                    }
+                }
             }
             if (isset($data['profile'])) {
-                $this->setProfile($data['profile']);
+                $value = $data['profile'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTestScript::__construct - Collection field \"profile\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addProfile($v);
+                    }
+                }
             }
             if (isset($data['publisher'])) {
-                $this->setPublisher($data['publisher']);
+                $value = $data['publisher'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTestScript::__construct - Property \"publisher\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setPublisher($value);
             }
             if (isset($data['purpose'])) {
-                $this->setPurpose($data['purpose']);
+                $value = $data['purpose'];
+                if (is_array($value)) {
+                    $value = new FHIRMarkdown($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRMarkdown($value);
+                }
+                if (!($value instanceof FHIRMarkdown)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTestScript::__construct - Property \"purpose\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRMarkdown or data to construct type, saw ".gettype($value));
+                }
+                $this->setPurpose($value);
             }
             if (isset($data['rule'])) {
-                $this->setRule($data['rule']);
+                $value = $data['rule'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRTestScriptRule($v);
+                        } 
+                        if (!($v instanceof FHIRTestScriptRule)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTestScript::__construct - Collection field \"rule\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRule or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addRule($v);
+                    }
+                }
             }
             if (isset($data['ruleset'])) {
-                $this->setRuleset($data['ruleset']);
+                $value = $data['ruleset'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRTestScriptRuleset($v);
+                        } 
+                        if (!($v instanceof FHIRTestScriptRuleset)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTestScript::__construct - Collection field \"ruleset\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRuleset or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addRuleset($v);
+                    }
+                }
             }
             if (isset($data['setup'])) {
-                $this->setSetup($data['setup']);
+                $value = $data['setup'];
+                if (is_array($value)) {
+                    $value = new FHIRTestScriptSetup($value);
+                } 
+                if (!($value instanceof FHIRTestScriptSetup)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTestScript::__construct - Property \"setup\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptSetup or data to construct type, saw ".gettype($value));
+                }
+                $this->setSetup($value);
             }
             if (isset($data['status'])) {
-                $this->setStatus($data['status']);
+                $value = $data['status'];
+                if (is_array($value)) {
+                    $value = new FHIRPublicationStatus($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRPublicationStatus($value);
+                }
+                if (!($value instanceof FHIRPublicationStatus)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTestScript::__construct - Property \"status\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus or data to construct type, saw ".gettype($value));
+                }
+                $this->setStatus($value);
             }
             if (isset($data['teardown'])) {
-                $this->setTeardown($data['teardown']);
+                $value = $data['teardown'];
+                if (is_array($value)) {
+                    $value = new FHIRTestScriptTeardown($value);
+                } 
+                if (!($value instanceof FHIRTestScriptTeardown)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTestScript::__construct - Property \"teardown\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptTeardown or data to construct type, saw ".gettype($value));
+                }
+                $this->setTeardown($value);
             }
             if (isset($data['test'])) {
-                $this->setTest($data['test']);
+                $value = $data['test'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRTestScriptTest($v);
+                        } 
+                        if (!($v instanceof FHIRTestScriptTest)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTestScript::__construct - Collection field \"test\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptTest or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addTest($v);
+                    }
+                }
             }
             if (isset($data['title'])) {
-                $this->setTitle($data['title']);
+                $value = $data['title'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTestScript::__construct - Property \"title\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setTitle($value);
             }
             if (isset($data['url'])) {
-                $this->setUrl($data['url']);
+                $value = $data['url'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTestScript::__construct - Property \"url\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value));
+                }
+                $this->setUrl($value);
             }
             if (isset($data['useContext'])) {
-                $this->setUseContext($data['useContext']);
+                $value = $data['useContext'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRUsageContext($v);
+                        } 
+                        if (!($v instanceof FHIRUsageContext)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTestScript::__construct - Collection field \"useContext\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUsageContext or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addUseContext($v);
+                    }
+                }
             }
             if (isset($data['variable'])) {
-                $this->setVariable($data['variable']);
+                $value = $data['variable'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRTestScriptVariable($v);
+                        } 
+                        if (!($v instanceof FHIRTestScriptVariable)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTestScript::__construct - Collection field \"variable\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptVariable or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addVariable($v);
+                    }
+                }
             }
             if (isset($data['version'])) {
-                $this->setVersion($data['version']);
+                $value = $data['version'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTestScript::__construct - Property \"version\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setVersion($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -347,6 +616,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -354,24 +624,23 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail
      * @return $this
      */
-    public function setContact(FHIRContactDetail $contact = null)
+    public function addContact(FHIRContactDetail $contact = null)
     {
         if (null === $contact) {
             return $this; 
         }
-        $this->contact = $contact;
+        $this->contact[] = $contact;
         return $this;
     }
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
     public function getContact()
     {
         return $this->contact;
     }
-
 
     /**
      * A copyright statement relating to the test script and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the test script.
@@ -405,9 +674,8 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
         return $this->copyright;
     }
 
-
     /**
-     * The date  (and optionally time) when the test script was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the test script changes.
+     * The date  (and optionally time) when the test script was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the test script changes.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      * @return $this
      */
@@ -430,14 +698,13 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date  (and optionally time) when the test script was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the test script changes.
+     * The date  (and optionally time) when the test script was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the test script changes.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getDate()
     {
         return $this->date;
     }
-
 
     /**
      * A free text natural language description of the test script from a consumer's perspective.
@@ -471,33 +738,31 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
         return $this->description;
     }
 
-
     /**
      * An abstract server used in operations within this test script in the destination element.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptDestination
      * @return $this
      */
-    public function setDestination(FHIRTestScriptDestination $destination = null)
+    public function addDestination(FHIRTestScriptDestination $destination = null)
     {
         if (null === $destination) {
             return $this; 
         }
-        $this->destination = $destination;
+        $this->destination[] = $destination;
         return $this;
     }
 
     /**
      * An abstract server used in operations within this test script in the destination element.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptDestination
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptDestination[]
      */
     public function getDestination()
     {
         return $this->destination;
     }
 
-
     /**
-     * A Boolean value to indicate that this test script is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this test script is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      * @return $this
      */
@@ -520,7 +785,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A Boolean value to indicate that this test script is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this test script is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getExperimental()
@@ -528,30 +793,28 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
         return $this->experimental;
     }
 
-
     /**
      * Fixture in the test script - by reference (uri). All fixtures are required for the test script to execute.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptFixture
      * @return $this
      */
-    public function setFixture(FHIRTestScriptFixture $fixture = null)
+    public function addFixture(FHIRTestScriptFixture $fixture = null)
     {
         if (null === $fixture) {
             return $this; 
         }
-        $this->fixture = $fixture;
+        $this->fixture[] = $fixture;
         return $this;
     }
 
     /**
      * Fixture in the test script - by reference (uri). All fixtures are required for the test script to execute.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptFixture
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptFixture[]
      */
     public function getFixture()
     {
         return $this->fixture;
     }
-
 
     /**
      * A formal identifier that is used to identify this test script when it is represented in other formats, or referenced in a specification, model, design or an instance.
@@ -576,30 +839,28 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
         return $this->identifier;
     }
 
-
     /**
      * A legal or geographic region in which the test script is intended to be used.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setJurisdiction(FHIRCodeableConcept $jurisdiction = null)
+    public function addJurisdiction(FHIRCodeableConcept $jurisdiction = null)
     {
         if (null === $jurisdiction) {
             return $this; 
         }
-        $this->jurisdiction = $jurisdiction;
+        $this->jurisdiction[] = $jurisdiction;
         return $this;
     }
 
     /**
      * A legal or geographic region in which the test script is intended to be used.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getJurisdiction()
     {
         return $this->jurisdiction;
     }
-
 
     /**
      * The required capability must exist and are assumed to function correctly on the FHIR server being tested.
@@ -623,7 +884,6 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
     {
         return $this->metadata;
     }
-
 
     /**
      * A natural language name identifying the test script. This name should be usable as an identifier for the module by machine processing applications such as code generation.
@@ -657,57 +917,54 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
         return $this->name;
     }
 
-
     /**
      * An abstract server used in operations within this test script in the origin element.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOrigin
      * @return $this
      */
-    public function setOrigin(FHIRTestScriptOrigin $origin = null)
+    public function addOrigin(FHIRTestScriptOrigin $origin = null)
     {
         if (null === $origin) {
             return $this; 
         }
-        $this->origin = $origin;
+        $this->origin[] = $origin;
         return $this;
     }
 
     /**
      * An abstract server used in operations within this test script in the origin element.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOrigin
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOrigin[]
      */
     public function getOrigin()
     {
         return $this->origin;
     }
 
-
     /**
      * Reference to the profile to be used for validation.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setProfile(FHIRReference $profile = null)
+    public function addProfile(FHIRReference $profile = null)
     {
         if (null === $profile) {
             return $this; 
         }
-        $this->profile = $profile;
+        $this->profile[] = $profile;
         return $this;
     }
 
     /**
      * Reference to the profile to be used for validation.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getProfile()
     {
         return $this->profile;
     }
 
-
     /**
-     * The name of the organization or individual that published the test script.
+     * The name of the individual or organization that published the test script.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
@@ -730,7 +987,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The name of the organization or individual that published the test script.
+     * The name of the individual or organization that published the test script.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getPublisher()
@@ -738,9 +995,8 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
         return $this->publisher;
     }
 
-
     /**
-     * Explanation of why this test script is needed and why it has been designed as it has.
+     * Explaination of why this test script is needed and why it has been designed as it has.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      * @return $this
      */
@@ -763,7 +1019,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Explanation of why this test script is needed and why it has been designed as it has.
+     * Explaination of why this test script is needed and why it has been designed as it has.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getPurpose()
@@ -771,54 +1027,51 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
         return $this->purpose;
     }
 
-
     /**
      * Assert rule to be used in one or more asserts within the test script.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRule
      * @return $this
      */
-    public function setRule(FHIRTestScriptRule $rule = null)
+    public function addRule(FHIRTestScriptRule $rule = null)
     {
         if (null === $rule) {
             return $this; 
         }
-        $this->rule = $rule;
+        $this->rule[] = $rule;
         return $this;
     }
 
     /**
      * Assert rule to be used in one or more asserts within the test script.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRule
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRule[]
      */
     public function getRule()
     {
         return $this->rule;
     }
 
-
     /**
      * Contains one or more rules.  Offers a way to group rules so assertions could reference the group of rules and have them all applied.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRuleset
      * @return $this
      */
-    public function setRuleset(FHIRTestScriptRuleset $ruleset = null)
+    public function addRuleset(FHIRTestScriptRuleset $ruleset = null)
     {
         if (null === $ruleset) {
             return $this; 
         }
-        $this->ruleset = $ruleset;
+        $this->ruleset[] = $ruleset;
         return $this;
     }
 
     /**
      * Contains one or more rules.  Offers a way to group rules so assertions could reference the group of rules and have them all applied.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRuleset
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRuleset[]
      */
     public function getRuleset()
     {
         return $this->ruleset;
     }
-
 
     /**
      * A series of required setup operations before tests are executed.
@@ -842,7 +1095,6 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
     {
         return $this->setup;
     }
-
 
     /**
      * The status of this test script. Enables tracking the life-cycle of the content.
@@ -876,9 +1128,8 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
         return $this->status;
     }
 
-
     /**
-     * A series of operations required to clean up after all the tests are executed (successfully or otherwise).
+     * A series of operations required to clean up after the all the tests are executed (successfully or otherwise).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptTeardown
      * @return $this
      */
@@ -892,7 +1143,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A series of operations required to clean up after all the tests are executed (successfully or otherwise).
+     * A series of operations required to clean up after the all the tests are executed (successfully or otherwise).
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptTeardown
      */
     public function getTeardown()
@@ -900,30 +1151,28 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
         return $this->teardown;
     }
 
-
     /**
      * A test in this script.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptTest
      * @return $this
      */
-    public function setTest(FHIRTestScriptTest $test = null)
+    public function addTest(FHIRTestScriptTest $test = null)
     {
         if (null === $test) {
             return $this; 
         }
-        $this->test = $test;
+        $this->test[] = $test;
         return $this;
     }
 
     /**
      * A test in this script.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptTest
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptTest[]
      */
     public function getTest()
     {
         return $this->test;
     }
-
 
     /**
      * A short, descriptive, user-friendly title for the test script.
@@ -957,9 +1206,8 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
         return $this->title;
     }
 
-
     /**
-     * An absolute URI that is used to identify this test script when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this test script is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the test script is stored on different servers.
+     * An absolute URI that is used to identify this test script when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this test script is (or will be) published. The URL SHOULD include the major version of the test script. For more information see [Technical and Business Versions](resource.html#versions).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
@@ -982,7 +1230,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * An absolute URI that is used to identify this test script when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this test script is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the test script is stored on different servers.
+     * An absolute URI that is used to identify this test script when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this test script is (or will be) published. The URL SHOULD include the major version of the test script. For more information see [Technical and Business Versions](resource.html#versions).
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getUrl()
@@ -990,54 +1238,51 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
         return $this->url;
     }
 
-
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate test script instances.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUsageContext
      * @return $this
      */
-    public function setUseContext(FHIRUsageContext $useContext = null)
+    public function addUseContext(FHIRUsageContext $useContext = null)
     {
         if (null === $useContext) {
             return $this; 
         }
-        $this->useContext = $useContext;
+        $this->useContext[] = $useContext;
         return $this;
     }
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate test script instances.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUsageContext
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
     public function getUseContext()
     {
         return $this->useContext;
     }
 
-
     /**
      * Variable is set based either on element value in response body or on header field value in the response headers.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptVariable
      * @return $this
      */
-    public function setVariable(FHIRTestScriptVariable $variable = null)
+    public function addVariable(FHIRTestScriptVariable $variable = null)
     {
         if (null === $variable) {
             return $this; 
         }
-        $this->variable = $variable;
+        $this->variable[] = $variable;
         return $this;
     }
 
     /**
      * Variable is set based either on element value in response body or on header field value in the response headers.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptVariable
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptVariable[]
      */
     public function getVariable()
     {
         return $this->variable;
     }
-
 
     /**
      * The identifier that is used to identify this version of the test script when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the test script author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
@@ -1071,7 +1316,6 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
         return $this->version;
     }
 
-
     /**
      * @return string
      */
@@ -1087,8 +1331,16 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
     {
         $a = parent::jsonSerialize();
         $a['resourceType'] = self::FHIR_TYPE_NAME;
-        if (null !== ($v = $this->getContact())) {
-            $a['contact'] = $v;
+        if (0 < count($values = $this->getContact())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['contact'] = $vs;
+            }
         }
         if (null !== ($v = $this->getCopyright())) {
             $a['copyright'] = $v;
@@ -1099,20 +1351,44 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getDescription())) {
             $a['description'] = $v;
         }
-        if (null !== ($v = $this->getDestination())) {
-            $a['destination'] = $v;
+        if (0 < count($values = $this->getDestination())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['destination'] = $vs;
+            }
         }
         if (null !== ($v = $this->getExperimental())) {
             $a['experimental'] = $v;
         }
-        if (null !== ($v = $this->getFixture())) {
-            $a['fixture'] = $v;
+        if (0 < count($values = $this->getFixture())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['fixture'] = $vs;
+            }
         }
         if (null !== ($v = $this->getIdentifier())) {
             $a['identifier'] = $v;
         }
-        if (null !== ($v = $this->getJurisdiction())) {
-            $a['jurisdiction'] = $v;
+        if (0 < count($values = $this->getJurisdiction())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['jurisdiction'] = $vs;
+            }
         }
         if (null !== ($v = $this->getMetadata())) {
             $a['metadata'] = $v;
@@ -1120,11 +1396,27 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getName())) {
             $a['name'] = $v;
         }
-        if (null !== ($v = $this->getOrigin())) {
-            $a['origin'] = $v;
+        if (0 < count($values = $this->getOrigin())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['origin'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getProfile())) {
-            $a['profile'] = $v;
+        if (0 < count($values = $this->getProfile())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['profile'] = $vs;
+            }
         }
         if (null !== ($v = $this->getPublisher())) {
             $a['publisher'] = $v;
@@ -1132,11 +1424,27 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getPurpose())) {
             $a['purpose'] = $v;
         }
-        if (null !== ($v = $this->getRule())) {
-            $a['rule'] = $v;
+        if (0 < count($values = $this->getRule())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['rule'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getRuleset())) {
-            $a['ruleset'] = $v;
+        if (0 < count($values = $this->getRuleset())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['ruleset'] = $vs;
+            }
         }
         if (null !== ($v = $this->getSetup())) {
             $a['setup'] = $v;
@@ -1147,8 +1455,16 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getTeardown())) {
             $a['teardown'] = $v;
         }
-        if (null !== ($v = $this->getTest())) {
-            $a['test'] = $v;
+        if (0 < count($values = $this->getTest())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['test'] = $vs;
+            }
         }
         if (null !== ($v = $this->getTitle())) {
             $a['title'] = $v;
@@ -1156,11 +1472,27 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getUrl())) {
             $a['url'] = $v;
         }
-        if (null !== ($v = $this->getUseContext())) {
-            $a['useContext'] = $v;
+        if (0 < count($values = $this->getUseContext())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['useContext'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getVariable())) {
-            $a['variable'] = $v;
+        if (0 < count($values = $this->getVariable())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['variable'] = $vs;
+            }
         }
         if (null !== ($v = $this->getVersion())) {
             $a['version'] = $v;
@@ -1178,9 +1510,128 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<TestScript xmlns="http://hl7.org/fhir"></TestScript>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (0 < count($values = $this->getContact())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('contact'));
+                }
+            }
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getCopyright())) {
+            $v->xmlSerialize(true, $sxe->addChild('copyright'));
+        }
+        if (null !== ($v = $this->getDate())) {
+            $v->xmlSerialize(true, $sxe->addChild('date'));
+        }
+        if (null !== ($v = $this->getDescription())) {
+            $v->xmlSerialize(true, $sxe->addChild('description'));
+        }
+        if (0 < count($values = $this->getDestination())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('destination'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getExperimental())) {
+            $v->xmlSerialize(true, $sxe->addChild('experimental'));
+        }
+        if (0 < count($values = $this->getFixture())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('fixture'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getIdentifier())) {
+            $v->xmlSerialize(true, $sxe->addChild('identifier'));
+        }
+        if (0 < count($values = $this->getJurisdiction())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('jurisdiction'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getMetadata())) {
+            $v->xmlSerialize(true, $sxe->addChild('metadata'));
+        }
+        if (null !== ($v = $this->getName())) {
+            $v->xmlSerialize(true, $sxe->addChild('name'));
+        }
+        if (0 < count($values = $this->getOrigin())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('origin'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getProfile())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('profile'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getPublisher())) {
+            $v->xmlSerialize(true, $sxe->addChild('publisher'));
+        }
+        if (null !== ($v = $this->getPurpose())) {
+            $v->xmlSerialize(true, $sxe->addChild('purpose'));
+        }
+        if (0 < count($values = $this->getRule())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('rule'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getRuleset())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('ruleset'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getSetup())) {
+            $v->xmlSerialize(true, $sxe->addChild('setup'));
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('status'));
+        }
+        if (null !== ($v = $this->getTeardown())) {
+            $v->xmlSerialize(true, $sxe->addChild('teardown'));
+        }
+        if (0 < count($values = $this->getTest())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('test'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getTitle())) {
+            $v->xmlSerialize(true, $sxe->addChild('title'));
+        }
+        if (null !== ($v = $this->getUrl())) {
+            $v->xmlSerialize(true, $sxe->addChild('url'));
+        }
+        if (0 < count($values = $this->getUseContext())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('useContext'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getVariable())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('variable'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getVersion())) {
+            $v->xmlSerialize(true, $sxe->addChild('version'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

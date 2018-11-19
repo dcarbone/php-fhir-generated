@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -79,9 +79,9 @@ class FHIROperationOutcome extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * An error, warning or information message that results from a system action.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationOutcome\FHIROperationOutcomeIssue
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationOutcome\FHIROperationOutcomeIssue[]
      */
-    public $issue = null;
+    private $issue = [];
 
     /**
      * FHIROperationOutcome Constructor
@@ -90,10 +90,22 @@ class FHIROperationOutcome extends FHIRDomainResource implements \JsonSerializab
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['issue'])) {
-                $this->setIssue($data['issue']);
+                $value = $data['issue'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIROperationOutcomeIssue($v);
+                        } 
+                        if (!($v instanceof FHIROperationOutcomeIssue)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROperationOutcome::__construct - Collection field \"issue\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationOutcome\FHIROperationOutcomeIssue or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addIssue($v);
+                    }
+                }
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -102,6 +114,7 @@ class FHIROperationOutcome extends FHIRDomainResource implements \JsonSerializab
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -109,24 +122,23 @@ class FHIROperationOutcome extends FHIRDomainResource implements \JsonSerializab
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationOutcome\FHIROperationOutcomeIssue
      * @return $this
      */
-    public function setIssue(FHIROperationOutcomeIssue $issue = null)
+    public function addIssue(FHIROperationOutcomeIssue $issue = null)
     {
         if (null === $issue) {
             return $this; 
         }
-        $this->issue = $issue;
+        $this->issue[] = $issue;
         return $this;
     }
 
     /**
      * An error, warning or information message that results from a system action.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationOutcome\FHIROperationOutcomeIssue
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationOutcome\FHIROperationOutcomeIssue[]
      */
     public function getIssue()
     {
         return $this->issue;
     }
-
 
     /**
      * @return string
@@ -143,8 +155,16 @@ class FHIROperationOutcome extends FHIRDomainResource implements \JsonSerializab
     {
         $a = parent::jsonSerialize();
         $a['resourceType'] = self::FHIR_TYPE_NAME;
-        if (null !== ($v = $this->getIssue())) {
-            $a['issue'] = $v;
+        if (0 < count($values = $this->getIssue())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['issue'] = $vs;
+            }
         }
         return $a;
     }
@@ -159,9 +179,13 @@ class FHIROperationOutcome extends FHIRDomainResource implements \JsonSerializab
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<OperationOutcome xmlns="http://hl7.org/fhir"></OperationOutcome>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (0 < count($values = $this->getIssue())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('issue'));
+                }
+            }
         }
-        return $sxe->saveXML();
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

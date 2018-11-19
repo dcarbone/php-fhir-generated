@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBene
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBene
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -64,7 +64,6 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBene
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
-use PHPFHIRGenerated\FHIRElement\FHIRCoding;
 use PHPFHIRGenerated\FHIRElement\FHIRReference;
 
 /**
@@ -82,19 +81,19 @@ class FHIRExplanationOfBenefitPayee extends FHIRBackboneElement implements \Json
      * Party to be reimbursed: Subscriber, provider, other.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $party = null;
+    private $party = null;
 
     /**
      * organization | patient | practitioner | relatedperson.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $resource = null;
+    private $resourceType = null;
 
     /**
      * Type of Party to be reimbursed: Subscriber, provider, other.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $type = null;
+    private $type = null;
 
     /**
      * FHIRExplanationOfBenefitPayee Constructor
@@ -103,16 +102,36 @@ class FHIRExplanationOfBenefitPayee extends FHIRBackboneElement implements \Json
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['party'])) {
-                $this->setParty($data['party']);
+                $value = $data['party'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitPayee::__construct - Property \"party\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setParty($value);
             }
-            if (isset($data['resource'])) {
-                $this->setResource($data['resource']);
+            if (isset($data['resourceType'])) {
+                $value = $data['resourceType'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitPayee::__construct - Property \"resourceType\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setResourceType($value);
             }
             if (isset($data['type'])) {
-                $this->setType($data['type']);
+                $value = $data['type'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitPayee::__construct - Property \"type\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setType($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -121,6 +140,7 @@ class FHIRExplanationOfBenefitPayee extends FHIRBackboneElement implements \Json
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -146,30 +166,28 @@ class FHIRExplanationOfBenefitPayee extends FHIRBackboneElement implements \Json
         return $this->party;
     }
 
-
     /**
      * organization | patient | practitioner | relatedperson.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setResource(FHIRCoding $resource = null)
+    public function setResourceType(FHIRCodeableConcept $resourceType = null)
     {
-        if (null === $resource) {
+        if (null === $resourceType) {
             return $this; 
         }
-        $this->resource = $resource;
+        $this->resourceType = $resourceType;
         return $this;
     }
 
     /**
      * organization | patient | practitioner | relatedperson.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getResource()
+    public function getResourceType()
     {
-        return $this->resource;
+        return $this->resourceType;
     }
-
 
     /**
      * Type of Party to be reimbursed: Subscriber, provider, other.
@@ -194,7 +212,6 @@ class FHIRExplanationOfBenefitPayee extends FHIRBackboneElement implements \Json
         return $this->type;
     }
 
-
     /**
      * @return string
      */
@@ -212,8 +229,8 @@ class FHIRExplanationOfBenefitPayee extends FHIRBackboneElement implements \Json
         if (null !== ($v = $this->getParty())) {
             $a['party'] = $v;
         }
-        if (null !== ($v = $this->getResource())) {
-            $a['resource'] = $v;
+        if (null !== ($v = $this->getResourceType())) {
+            $a['resourceType'] = $v;
         }
         if (null !== ($v = $this->getType())) {
             $a['type'] = $v;
@@ -231,9 +248,15 @@ class FHIRExplanationOfBenefitPayee extends FHIRBackboneElement implements \Json
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ExplanationOfBenefitPayee xmlns="http://hl7.org/fhir"></ExplanationOfBenefitPayee>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getParty())) {
+            $v->xmlSerialize(true, $sxe->addChild('party'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getResourceType())) {
+            $v->xmlSerialize(true, $sxe->addChild('resourceType'));
+        }
+        if (null !== ($v = $this->getType())) {
+            $v->xmlSerialize(true, $sxe->addChild('type'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

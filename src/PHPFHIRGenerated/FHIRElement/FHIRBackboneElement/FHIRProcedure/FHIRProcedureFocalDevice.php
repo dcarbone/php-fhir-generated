@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProcedure;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProcedure;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -67,7 +67,7 @@ use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
 use PHPFHIRGenerated\FHIRElement\FHIRReference;
 
 /**
- * An action that is or was performed on or for a patient. This can be a physical intervention like an operation, or less invasive like long term services, counseling, or hypnotherapy.
+ * An action that is or was performed on a patient. This can be a physical intervention like an operation, or less invasive like counseling or hypnotherapy.
  *
  * Class FHIRProcedureFocalDevice
  * @package PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProcedure
@@ -81,13 +81,13 @@ class FHIRProcedureFocalDevice extends FHIRBackboneElement implements \JsonSeria
      * The kind of change that happened to the device during the procedure.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $action = null;
+    private $action = null;
 
     /**
      * The device that was manipulated (changed) during the procedure.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $manipulated = null;
+    private $manipulated = null;
 
     /**
      * FHIRProcedureFocalDevice Constructor
@@ -96,13 +96,26 @@ class FHIRProcedureFocalDevice extends FHIRBackboneElement implements \JsonSeria
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['action'])) {
-                $this->setAction($data['action']);
+                $value = $data['action'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedureFocalDevice::__construct - Property \"action\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setAction($value);
             }
             if (isset($data['manipulated'])) {
-                $this->setManipulated($data['manipulated']);
+                $value = $data['manipulated'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedureFocalDevice::__construct - Property \"manipulated\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setManipulated($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -111,6 +124,7 @@ class FHIRProcedureFocalDevice extends FHIRBackboneElement implements \JsonSeria
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -136,7 +150,6 @@ class FHIRProcedureFocalDevice extends FHIRBackboneElement implements \JsonSeria
         return $this->action;
     }
 
-
     /**
      * The device that was manipulated (changed) during the procedure.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -159,7 +172,6 @@ class FHIRProcedureFocalDevice extends FHIRBackboneElement implements \JsonSeria
     {
         return $this->manipulated;
     }
-
 
     /**
      * @return string
@@ -194,9 +206,12 @@ class FHIRProcedureFocalDevice extends FHIRBackboneElement implements \JsonSeria
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ProcedureFocalDevice xmlns="http://hl7.org/fhir"></ProcedureFocalDevice>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getAction())) {
+            $v->xmlSerialize(true, $sxe->addChild('action'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getManipulated())) {
+            $v->xmlSerialize(true, $sxe->addChild('manipulated'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

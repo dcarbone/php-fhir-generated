@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -86,55 +86,61 @@ class FHIRPaymentNotice extends FHIRDomainResource implements \JsonSerializable
      * The date when this resource was created.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $created = null;
+    private $created = null;
 
     /**
      * The notice business identifier.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = null;
+    private $identifier = [];
+
+    /**
+     * The organization which is responsible for the services rendered to the patient.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    private $organization = null;
 
     /**
      * The payment status, typically paid: payment sent, cleared: payment received.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $paymentStatus = null;
+    private $paymentStatus = null;
 
     /**
      * The practitioner who is responsible for the services rendered to the patient.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $provider = null;
+    private $provider = null;
 
     /**
      * Reference of resource for which payment is being made.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $request = null;
+    private $request = null;
 
     /**
      * Reference of response to resource for which payment is being made.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $response = null;
+    private $response = null;
 
     /**
      * The status of the resource instance.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRFinancialResourceStatusCodes
      */
-    public $status = null;
+    private $status = null;
 
     /**
-     * The date when the above payment action occurred.
+     * The date when the above payment action occurrred.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
-    public $statusDate = null;
+    private $statusDate = null;
 
     /**
      * The Insurer who is target  of the request.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $target = null;
+    private $target = null;
 
     /**
      * FHIRPaymentNotice Constructor
@@ -143,34 +149,118 @@ class FHIRPaymentNotice extends FHIRDomainResource implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['created'])) {
-                $this->setCreated($data['created']);
+                $value = $data['created'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPaymentNotice::__construct - Property \"created\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value));
+                }
+                $this->setCreated($value);
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRIdentifier($v);
+                        } 
+                        if (!($v instanceof FHIRIdentifier)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPaymentNotice::__construct - Collection field \"identifier\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addIdentifier($v);
+                    }
+                }
+            }
+            if (isset($data['organization'])) {
+                $value = $data['organization'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPaymentNotice::__construct - Property \"organization\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setOrganization($value);
             }
             if (isset($data['paymentStatus'])) {
-                $this->setPaymentStatus($data['paymentStatus']);
+                $value = $data['paymentStatus'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPaymentNotice::__construct - Property \"paymentStatus\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setPaymentStatus($value);
             }
             if (isset($data['provider'])) {
-                $this->setProvider($data['provider']);
+                $value = $data['provider'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPaymentNotice::__construct - Property \"provider\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setProvider($value);
             }
             if (isset($data['request'])) {
-                $this->setRequest($data['request']);
+                $value = $data['request'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPaymentNotice::__construct - Property \"request\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setRequest($value);
             }
             if (isset($data['response'])) {
-                $this->setResponse($data['response']);
+                $value = $data['response'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPaymentNotice::__construct - Property \"response\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setResponse($value);
             }
             if (isset($data['status'])) {
-                $this->setStatus($data['status']);
+                $value = $data['status'];
+                if (is_array($value)) {
+                    $value = new FHIRFinancialResourceStatusCodes($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRFinancialResourceStatusCodes($value);
+                }
+                if (!($value instanceof FHIRFinancialResourceStatusCodes)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPaymentNotice::__construct - Property \"status\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRFinancialResourceStatusCodes or data to construct type, saw ".gettype($value));
+                }
+                $this->setStatus($value);
             }
             if (isset($data['statusDate'])) {
-                $this->setStatusDate($data['statusDate']);
+                $value = $data['statusDate'];
+                if (is_array($value)) {
+                    $value = new FHIRDate($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDate($value);
+                }
+                if (!($value instanceof FHIRDate)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPaymentNotice::__construct - Property \"statusDate\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDate or data to construct type, saw ".gettype($value));
+                }
+                $this->setStatusDate($value);
             }
             if (isset($data['target'])) {
-                $this->setTarget($data['target']);
+                $value = $data['target'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPaymentNotice::__construct - Property \"target\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setTarget($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -179,6 +269,7 @@ class FHIRPaymentNotice extends FHIRDomainResource implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -213,30 +304,51 @@ class FHIRPaymentNotice extends FHIRDomainResource implements \JsonSerializable
         return $this->created;
     }
 
-
     /**
      * The notice business identifier.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
-    public function setIdentifier(FHIRIdentifier $identifier = null)
+    public function addIdentifier(FHIRIdentifier $identifier = null)
     {
         if (null === $identifier) {
             return $this; 
         }
-        $this->identifier = $identifier;
+        $this->identifier[] = $identifier;
         return $this;
     }
 
     /**
      * The notice business identifier.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
         return $this->identifier;
     }
 
+    /**
+     * The organization which is responsible for the services rendered to the patient.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return $this
+     */
+    public function setOrganization(FHIRReference $organization = null)
+    {
+        if (null === $organization) {
+            return $this; 
+        }
+        $this->organization = $organization;
+        return $this;
+    }
+
+    /**
+     * The organization which is responsible for the services rendered to the patient.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getOrganization()
+    {
+        return $this->organization;
+    }
 
     /**
      * The payment status, typically paid: payment sent, cleared: payment received.
@@ -261,7 +373,6 @@ class FHIRPaymentNotice extends FHIRDomainResource implements \JsonSerializable
         return $this->paymentStatus;
     }
 
-
     /**
      * The practitioner who is responsible for the services rendered to the patient.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -284,7 +395,6 @@ class FHIRPaymentNotice extends FHIRDomainResource implements \JsonSerializable
     {
         return $this->provider;
     }
-
 
     /**
      * Reference of resource for which payment is being made.
@@ -309,7 +419,6 @@ class FHIRPaymentNotice extends FHIRDomainResource implements \JsonSerializable
         return $this->request;
     }
 
-
     /**
      * Reference of response to resource for which payment is being made.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -332,7 +441,6 @@ class FHIRPaymentNotice extends FHIRDomainResource implements \JsonSerializable
     {
         return $this->response;
     }
-
 
     /**
      * The status of the resource instance.
@@ -366,9 +474,8 @@ class FHIRPaymentNotice extends FHIRDomainResource implements \JsonSerializable
         return $this->status;
     }
 
-
     /**
-     * The date when the above payment action occurred.
+     * The date when the above payment action occurrred.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDate
      * @return $this
      */
@@ -391,14 +498,13 @@ class FHIRPaymentNotice extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date when the above payment action occurred.
+     * The date when the above payment action occurrred.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public function getStatusDate()
     {
         return $this->statusDate;
     }
-
 
     /**
      * The Insurer who is target  of the request.
@@ -423,7 +529,6 @@ class FHIRPaymentNotice extends FHIRDomainResource implements \JsonSerializable
         return $this->target;
     }
 
-
     /**
      * @return string
      */
@@ -442,8 +547,19 @@ class FHIRPaymentNotice extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getCreated())) {
             $a['created'] = $v;
         }
-        if (null !== ($v = $this->getIdentifier())) {
-            $a['identifier'] = $v;
+        if (0 < count($values = $this->getIdentifier())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['identifier'] = $vs;
+            }
+        }
+        if (null !== ($v = $this->getOrganization())) {
+            $a['organization'] = $v;
         }
         if (null !== ($v = $this->getPaymentStatus())) {
             $a['paymentStatus'] = $v;
@@ -479,9 +595,40 @@ class FHIRPaymentNotice extends FHIRDomainResource implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<PaymentNotice xmlns="http://hl7.org/fhir"></PaymentNotice>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getCreated())) {
+            $v->xmlSerialize(true, $sxe->addChild('created'));
         }
-        return $sxe->saveXML();
+        if (0 < count($values = $this->getIdentifier())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('identifier'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getOrganization())) {
+            $v->xmlSerialize(true, $sxe->addChild('organization'));
+        }
+        if (null !== ($v = $this->getPaymentStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('paymentStatus'));
+        }
+        if (null !== ($v = $this->getProvider())) {
+            $v->xmlSerialize(true, $sxe->addChild('provider'));
+        }
+        if (null !== ($v = $this->getRequest())) {
+            $v->xmlSerialize(true, $sxe->addChild('request'));
+        }
+        if (null !== ($v = $this->getResponse())) {
+            $v->xmlSerialize(true, $sxe->addChild('response'));
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('status'));
+        }
+        if (null !== ($v = $this->getStatusDate())) {
+            $v->xmlSerialize(true, $sxe->addChild('statusDate'));
+        }
+        if (null !== ($v = $this->getTarget())) {
+            $v->xmlSerialize(true, $sxe->addChild('target'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

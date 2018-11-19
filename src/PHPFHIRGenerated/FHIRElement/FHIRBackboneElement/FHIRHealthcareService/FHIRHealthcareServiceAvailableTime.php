@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRHealthcareService
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRHealthcareService
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -82,25 +82,25 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement implements 
      * Is this always available? (hence times are irrelevant) e.g. 24 hour service.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $allDay = null;
+    private $allDay = null;
 
     /**
      * The closing time of day. Note: If the AllDay flag is set, then this time is ignored.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
-    public $availableEndTime = null;
+    private $availableEndTime = null;
 
     /**
      * The opening time of day. Note: If the AllDay flag is set, then this time is ignored.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
-    public $availableStartTime = null;
+    private $availableStartTime = null;
 
     /**
      * Indicates which days of the week are available between the start and end Times.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDaysOfWeek
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRDaysOfWeek[]
      */
-    public $daysOfWeek = null;
+    private $daysOfWeek = [];
 
     /**
      * FHIRHealthcareServiceAvailableTime Constructor
@@ -109,19 +109,60 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement implements 
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['allDay'])) {
-                $this->setAllDay($data['allDay']);
+                $value = $data['allDay'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceAvailableTime::__construct - Property \"allDay\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setAllDay($value);
             }
             if (isset($data['availableEndTime'])) {
-                $this->setAvailableEndTime($data['availableEndTime']);
+                $value = $data['availableEndTime'];
+                if (is_array($value)) {
+                    $value = new FHIRTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRTime($value);
+                }
+                if (!($value instanceof FHIRTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceAvailableTime::__construct - Property \"availableEndTime\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRTime or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setAvailableEndTime($value);
             }
             if (isset($data['availableStartTime'])) {
-                $this->setAvailableStartTime($data['availableStartTime']);
+                $value = $data['availableStartTime'];
+                if (is_array($value)) {
+                    $value = new FHIRTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRTime($value);
+                }
+                if (!($value instanceof FHIRTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceAvailableTime::__construct - Property \"availableStartTime\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRTime or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setAvailableStartTime($value);
             }
             if (isset($data['daysOfWeek'])) {
-                $this->setDaysOfWeek($data['daysOfWeek']);
+                $value = $data['daysOfWeek'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRDaysOfWeek($v);
+                        }  elseif (is_scalar($v)) {
+                            $v = new FHIRDaysOfWeek($v);
+                        }
+                        if (!($v instanceof FHIRDaysOfWeek)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceAvailableTime::__construct - Collection field \"daysOfWeek\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDaysOfWeek or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addDaysOfWeek($v);
+                    }
+                }
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -130,6 +171,7 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement implements 
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -164,7 +206,6 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement implements 
         return $this->allDay;
     }
 
-
     /**
      * The closing time of day. Note: If the AllDay flag is set, then this time is ignored.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRTime
@@ -196,7 +237,6 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement implements 
     {
         return $this->availableEndTime;
     }
-
 
     /**
      * The opening time of day. Note: If the AllDay flag is set, then this time is ignored.
@@ -230,13 +270,12 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement implements 
         return $this->availableStartTime;
     }
 
-
     /**
      * Indicates which days of the week are available between the start and end Times.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDaysOfWeek
      * @return $this
      */
-    public function setDaysOfWeek($daysOfWeek)
+    public function addDaysOfWeek($daysOfWeek)
     {
         if (null === $daysOfWeek) {
             return $this; 
@@ -246,23 +285,22 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement implements 
         }
         if (!($daysOfWeek instanceof FHIRDaysOfWeek)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRHealthcareServiceAvailableTime::setDaysOfWeek - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRDaysOfWeek or appropriate scalar value, %s seen.',
+                'FHIRHealthcareServiceAvailableTime::addDaysOfWeek - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRDaysOfWeek or appropriate scalar value, %s seen.',
                 gettype($daysOfWeek)
             ));
         }
-        $this->daysOfWeek = $daysOfWeek;
+        $this->daysOfWeek[] = $daysOfWeek;
         return $this;
     }
 
     /**
      * Indicates which days of the week are available between the start and end Times.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDaysOfWeek
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDaysOfWeek[]
      */
     public function getDaysOfWeek()
     {
         return $this->daysOfWeek;
     }
-
 
     /**
      * @return string
@@ -287,8 +325,16 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement implements 
         if (null !== ($v = $this->getAvailableStartTime())) {
             $a['availableStartTime'] = $v;
         }
-        if (null !== ($v = $this->getDaysOfWeek())) {
-            $a['daysOfWeek'] = $v;
+        if (0 < count($values = $this->getDaysOfWeek())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['daysOfWeek'] = $vs;
+            }
         }
         return $a;
     }
@@ -303,9 +349,22 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement implements 
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<HealthcareServiceAvailableTime xmlns="http://hl7.org/fhir"></HealthcareServiceAvailableTime>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getAllDay())) {
+            $v->xmlSerialize(true, $sxe->addChild('allDay'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getAvailableEndTime())) {
+            $v->xmlSerialize(true, $sxe->addChild('availableEndTime'));
+        }
+        if (null !== ($v = $this->getAvailableStartTime())) {
+            $v->xmlSerialize(true, $sxe->addChild('availableStartTime'));
+        }
+        if (0 < count($values = $this->getDaysOfWeek())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('daysOfWeek'));
+                }
+            }
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

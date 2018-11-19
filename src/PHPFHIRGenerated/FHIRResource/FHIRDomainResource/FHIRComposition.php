@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -68,15 +68,15 @@ use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRComposi
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection;
 use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
 use PHPFHIRGenerated\FHIRElement\FHIRCompositionStatus;
+use PHPFHIRGenerated\FHIRElement\FHIRConfidentialityClassification;
 use PHPFHIRGenerated\FHIRElement\FHIRDateTime;
 use PHPFHIRGenerated\FHIRElement\FHIRIdentifier;
 use PHPFHIRGenerated\FHIRElement\FHIRReference;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
-use PHPFHIRGenerated\FHIRElement\FHIRVConfidentialityClassification;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
 /**
- * A set of healthcare-related information that is assembled together into a single logical package that provides a single coherent statement of meaning, establishes its own context and that has clinical attestation with regard to who is making the statement. A Composition defines the structure and narrative content necessary for a document. However, a Composition alone does not constitute a document. Rather, the Composition must be the first entry in a Bundle where Bundle.type=document, and any other resources referenced from Composition must be included as subsequent entries in the Bundle (for example Patient, Practitioner, Encounter, etc.).
+ * A set of healthcare-related information that is assembled together into a single logical document that provides a single coherent statement of meaning, establishes its own context and that has clinical attestation with regard to who is making the statement. While a Composition defines the structure, it does not actually contain the content: rather the full content of a document is contained in a Bundle, of which the Composition is the first resource contained.
  * If the element is present, it must have either a @value, an @id, or extensions
  *
  * Class FHIRComposition
@@ -89,93 +89,93 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A participant who has attested to the accuracy of the composition/document.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionAttester
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionAttester[]
      */
-    public $attester = null;
+    private $attester = [];
 
     /**
      * Identifies who is responsible for the information in the composition, not necessarily who typed it in.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $author = null;
+    private $author = [];
 
     /**
      * A categorization for the type of the composition - helps for indexing and searching. This may be implied by or derived from the code specified in the Composition Type.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $category = null;
+    private $class = null;
 
     /**
      * The code specifying the level of confidentiality of the Composition.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRVConfidentialityClassification
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRConfidentialityClassification
      */
-    public $confidentiality = null;
+    private $confidentiality = null;
 
     /**
      * Identifies the organization or group who is responsible for ongoing maintenance of and access to the composition/document information.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $custodian = null;
+    private $custodian = null;
 
     /**
      * The composition editing time, when the composition was last logically changed by the author.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $date = null;
+    private $date = null;
 
     /**
      * Describes the clinical encounter or type of care this documentation is associated with.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $encounter = null;
+    private $encounter = null;
 
     /**
      * The clinical service, such as a colonoscopy or an appendectomy, being documented.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionEvent
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionEvent[]
      */
-    public $event = null;
+    private $event = [];
 
     /**
-     * A version-independent identifier for the Composition. This identifier stays constant as the composition is changed over time.
+     * Logical identifier for the composition, assigned when created. This identifier stays constant as the composition is changed over time.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public $identifier = null;
+    private $identifier = null;
 
     /**
      * Relationships that this composition has with other compositions or documents that already exist.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionRelatesTo
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionRelatesTo[]
      */
-    public $relatesTo = null;
+    private $relatesTo = [];
 
     /**
      * The root of the sections that make up the composition.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection[]
      */
-    public $section = null;
+    private $section = [];
 
     /**
      * The workflow/clinical status of this composition. The status is a marker for the clinical standing of the document.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCompositionStatus
      */
-    public $status = null;
+    private $status = null;
 
     /**
      * Who or what the composition is about. The composition can be about a person, (patient or healthcare practitioner), a device (e.g. a machine) or even a group of subjects (such as a document about a herd of livestock, or a set of patients that share a common exposure).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $subject = null;
+    private $subject = null;
 
     /**
      * Official human-readable label for the composition.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $title = null;
+    private $title = null;
 
     /**
      * Specifies the particular kind of composition (e.g. History and Physical, Discharge Summary, Progress Note). This usually equates to the purpose of making the composition.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $type = null;
+    private $type = null;
 
     /**
      * FHIRComposition Constructor
@@ -184,52 +184,194 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['attester'])) {
-                $this->setAttester($data['attester']);
+                $value = $data['attester'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCompositionAttester($v);
+                        } 
+                        if (!($v instanceof FHIRCompositionAttester)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRComposition::__construct - Collection field \"attester\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionAttester or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addAttester($v);
+                    }
+                }
             }
             if (isset($data['author'])) {
-                $this->setAuthor($data['author']);
+                $value = $data['author'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRComposition::__construct - Collection field \"author\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addAuthor($v);
+                    }
+                }
             }
-            if (isset($data['category'])) {
-                $this->setCategory($data['category']);
+            if (isset($data['class'])) {
+                $value = $data['class'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRComposition::__construct - Property \"class\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setClass($value);
             }
             if (isset($data['confidentiality'])) {
-                $this->setConfidentiality($data['confidentiality']);
+                $value = $data['confidentiality'];
+                if (is_array($value)) {
+                    $value = new FHIRConfidentialityClassification($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRConfidentialityClassification($value);
+                }
+                if (!($value instanceof FHIRConfidentialityClassification)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRComposition::__construct - Property \"confidentiality\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRConfidentialityClassification or data to construct type, saw ".gettype($value));
+                }
+                $this->setConfidentiality($value);
             }
             if (isset($data['custodian'])) {
-                $this->setCustodian($data['custodian']);
+                $value = $data['custodian'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRComposition::__construct - Property \"custodian\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setCustodian($value);
             }
             if (isset($data['date'])) {
-                $this->setDate($data['date']);
+                $value = $data['date'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRComposition::__construct - Property \"date\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value));
+                }
+                $this->setDate($value);
             }
             if (isset($data['encounter'])) {
-                $this->setEncounter($data['encounter']);
+                $value = $data['encounter'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRComposition::__construct - Property \"encounter\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setEncounter($value);
             }
             if (isset($data['event'])) {
-                $this->setEvent($data['event']);
+                $value = $data['event'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCompositionEvent($v);
+                        } 
+                        if (!($v instanceof FHIRCompositionEvent)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRComposition::__construct - Collection field \"event\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionEvent or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addEvent($v);
+                    }
+                }
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    $value = new FHIRIdentifier($value);
+                } 
+                if (!($value instanceof FHIRIdentifier)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRComposition::__construct - Property \"identifier\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($value));
+                }
+                $this->setIdentifier($value);
             }
             if (isset($data['relatesTo'])) {
-                $this->setRelatesTo($data['relatesTo']);
+                $value = $data['relatesTo'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCompositionRelatesTo($v);
+                        } 
+                        if (!($v instanceof FHIRCompositionRelatesTo)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRComposition::__construct - Collection field \"relatesTo\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionRelatesTo or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addRelatesTo($v);
+                    }
+                }
             }
             if (isset($data['section'])) {
-                $this->setSection($data['section']);
+                $value = $data['section'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCompositionSection($v);
+                        } 
+                        if (!($v instanceof FHIRCompositionSection)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRComposition::__construct - Collection field \"section\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addSection($v);
+                    }
+                }
             }
             if (isset($data['status'])) {
-                $this->setStatus($data['status']);
+                $value = $data['status'];
+                if (is_array($value)) {
+                    $value = new FHIRCompositionStatus($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRCompositionStatus($value);
+                }
+                if (!($value instanceof FHIRCompositionStatus)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRComposition::__construct - Property \"status\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCompositionStatus or data to construct type, saw ".gettype($value));
+                }
+                $this->setStatus($value);
             }
             if (isset($data['subject'])) {
-                $this->setSubject($data['subject']);
+                $value = $data['subject'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRComposition::__construct - Property \"subject\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setSubject($value);
             }
             if (isset($data['title'])) {
-                $this->setTitle($data['title']);
+                $value = $data['title'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRComposition::__construct - Property \"title\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setTitle($value);
             }
             if (isset($data['type'])) {
-                $this->setType($data['type']);
+                $value = $data['type'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRComposition::__construct - Property \"type\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setType($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -238,6 +380,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -245,60 +388,58 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionAttester
      * @return $this
      */
-    public function setAttester(FHIRCompositionAttester $attester = null)
+    public function addAttester(FHIRCompositionAttester $attester = null)
     {
         if (null === $attester) {
             return $this; 
         }
-        $this->attester = $attester;
+        $this->attester[] = $attester;
         return $this;
     }
 
     /**
      * A participant who has attested to the accuracy of the composition/document.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionAttester
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionAttester[]
      */
     public function getAttester()
     {
         return $this->attester;
     }
 
-
     /**
      * Identifies who is responsible for the information in the composition, not necessarily who typed it in.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setAuthor(FHIRReference $author = null)
+    public function addAuthor(FHIRReference $author = null)
     {
         if (null === $author) {
             return $this; 
         }
-        $this->author = $author;
+        $this->author[] = $author;
         return $this;
     }
 
     /**
      * Identifies who is responsible for the information in the composition, not necessarily who typed it in.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getAuthor()
     {
         return $this->author;
     }
 
-
     /**
      * A categorization for the type of the composition - helps for indexing and searching. This may be implied by or derived from the code specified in the Composition Type.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setCategory(FHIRCodeableConcept $category = null)
+    public function setClass(FHIRCodeableConcept $class = null)
     {
-        if (null === $category) {
+        if (null === $class) {
             return $this; 
         }
-        $this->category = $category;
+        $this->class = $class;
         return $this;
     }
 
@@ -306,15 +447,14 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
      * A categorization for the type of the composition - helps for indexing and searching. This may be implied by or derived from the code specified in the Composition Type.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getCategory()
+    public function getClass()
     {
-        return $this->category;
+        return $this->class;
     }
-
 
     /**
      * The code specifying the level of confidentiality of the Composition.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRVConfidentialityClassification
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRConfidentialityClassification
      * @return $this
      */
     public function setConfidentiality($confidentiality)
@@ -323,11 +463,11 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
             return $this; 
         }
         if (is_scalar($confidentiality)) {
-            $confidentiality = new FHIRVConfidentialityClassification($confidentiality);
+            $confidentiality = new FHIRConfidentialityClassification($confidentiality);
         }
-        if (!($confidentiality instanceof FHIRVConfidentialityClassification)) {
+        if (!($confidentiality instanceof FHIRConfidentialityClassification)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRComposition::setConfidentiality - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRVConfidentialityClassification or appropriate scalar value, %s seen.',
+                'FHIRComposition::setConfidentiality - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRConfidentialityClassification or appropriate scalar value, %s seen.',
                 gettype($confidentiality)
             ));
         }
@@ -337,13 +477,12 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The code specifying the level of confidentiality of the Composition.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRVConfidentialityClassification
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRConfidentialityClassification
      */
     public function getConfidentiality()
     {
         return $this->confidentiality;
     }
-
 
     /**
      * Identifies the organization or group who is responsible for ongoing maintenance of and access to the composition/document information.
@@ -367,7 +506,6 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
     {
         return $this->custodian;
     }
-
 
     /**
      * The composition editing time, when the composition was last logically changed by the author.
@@ -401,7 +539,6 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
         return $this->date;
     }
 
-
     /**
      * Describes the clinical encounter or type of care this documentation is associated with.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -425,33 +562,31 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
         return $this->encounter;
     }
 
-
     /**
      * The clinical service, such as a colonoscopy or an appendectomy, being documented.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionEvent
      * @return $this
      */
-    public function setEvent(FHIRCompositionEvent $event = null)
+    public function addEvent(FHIRCompositionEvent $event = null)
     {
         if (null === $event) {
             return $this; 
         }
-        $this->event = $event;
+        $this->event[] = $event;
         return $this;
     }
 
     /**
      * The clinical service, such as a colonoscopy or an appendectomy, being documented.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionEvent
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionEvent[]
      */
     public function getEvent()
     {
         return $this->event;
     }
 
-
     /**
-     * A version-independent identifier for the Composition. This identifier stays constant as the composition is changed over time.
+     * Logical identifier for the composition, assigned when created. This identifier stays constant as the composition is changed over time.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
@@ -465,7 +600,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A version-independent identifier for the Composition. This identifier stays constant as the composition is changed over time.
+     * Logical identifier for the composition, assigned when created. This identifier stays constant as the composition is changed over time.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier()
@@ -473,54 +608,51 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
         return $this->identifier;
     }
 
-
     /**
      * Relationships that this composition has with other compositions or documents that already exist.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionRelatesTo
      * @return $this
      */
-    public function setRelatesTo(FHIRCompositionRelatesTo $relatesTo = null)
+    public function addRelatesTo(FHIRCompositionRelatesTo $relatesTo = null)
     {
         if (null === $relatesTo) {
             return $this; 
         }
-        $this->relatesTo = $relatesTo;
+        $this->relatesTo[] = $relatesTo;
         return $this;
     }
 
     /**
      * Relationships that this composition has with other compositions or documents that already exist.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionRelatesTo
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionRelatesTo[]
      */
     public function getRelatesTo()
     {
         return $this->relatesTo;
     }
 
-
     /**
      * The root of the sections that make up the composition.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection
      * @return $this
      */
-    public function setSection(FHIRCompositionSection $section = null)
+    public function addSection(FHIRCompositionSection $section = null)
     {
         if (null === $section) {
             return $this; 
         }
-        $this->section = $section;
+        $this->section[] = $section;
         return $this;
     }
 
     /**
      * The root of the sections that make up the composition.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection[]
      */
     public function getSection()
     {
         return $this->section;
     }
-
 
     /**
      * The workflow/clinical status of this composition. The status is a marker for the clinical standing of the document.
@@ -554,7 +686,6 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
         return $this->status;
     }
 
-
     /**
      * Who or what the composition is about. The composition can be about a person, (patient or healthcare practitioner), a device (e.g. a machine) or even a group of subjects (such as a document about a herd of livestock, or a set of patients that share a common exposure).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -577,7 +708,6 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
     {
         return $this->subject;
     }
-
 
     /**
      * Official human-readable label for the composition.
@@ -611,7 +741,6 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
         return $this->title;
     }
 
-
     /**
      * Specifies the particular kind of composition (e.g. History and Physical, Discharge Summary, Progress Note). This usually equates to the purpose of making the composition.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
@@ -635,7 +764,6 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
         return $this->type;
     }
 
-
     /**
      * @return string
      */
@@ -651,14 +779,30 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
     {
         $a = parent::jsonSerialize();
         $a['resourceType'] = self::FHIR_TYPE_NAME;
-        if (null !== ($v = $this->getAttester())) {
-            $a['attester'] = $v;
+        if (0 < count($values = $this->getAttester())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['attester'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getAuthor())) {
-            $a['author'] = $v;
+        if (0 < count($values = $this->getAuthor())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['author'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getCategory())) {
-            $a['category'] = $v;
+        if (null !== ($v = $this->getClass())) {
+            $a['class'] = $v;
         }
         if (null !== ($v = $this->getConfidentiality())) {
             $a['confidentiality'] = $v;
@@ -672,17 +816,41 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getEncounter())) {
             $a['encounter'] = $v;
         }
-        if (null !== ($v = $this->getEvent())) {
-            $a['event'] = $v;
+        if (0 < count($values = $this->getEvent())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['event'] = $vs;
+            }
         }
         if (null !== ($v = $this->getIdentifier())) {
             $a['identifier'] = $v;
         }
-        if (null !== ($v = $this->getRelatesTo())) {
-            $a['relatesTo'] = $v;
+        if (0 < count($values = $this->getRelatesTo())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['relatesTo'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getSection())) {
-            $a['section'] = $v;
+        if (0 < count($values = $this->getSection())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['section'] = $vs;
+            }
         }
         if (null !== ($v = $this->getStatus())) {
             $a['status'] = $v;
@@ -709,9 +877,71 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Composition xmlns="http://hl7.org/fhir"></Composition>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (0 < count($values = $this->getAttester())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('attester'));
+                }
+            }
         }
-        return $sxe->saveXML();
+        if (0 < count($values = $this->getAuthor())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('author'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getClass())) {
+            $v->xmlSerialize(true, $sxe->addChild('class'));
+        }
+        if (null !== ($v = $this->getConfidentiality())) {
+            $v->xmlSerialize(true, $sxe->addChild('confidentiality'));
+        }
+        if (null !== ($v = $this->getCustodian())) {
+            $v->xmlSerialize(true, $sxe->addChild('custodian'));
+        }
+        if (null !== ($v = $this->getDate())) {
+            $v->xmlSerialize(true, $sxe->addChild('date'));
+        }
+        if (null !== ($v = $this->getEncounter())) {
+            $v->xmlSerialize(true, $sxe->addChild('encounter'));
+        }
+        if (0 < count($values = $this->getEvent())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('event'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getIdentifier())) {
+            $v->xmlSerialize(true, $sxe->addChild('identifier'));
+        }
+        if (0 < count($values = $this->getRelatesTo())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('relatesTo'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getSection())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('section'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('status'));
+        }
+        if (null !== ($v = $this->getSubject())) {
+            $v->xmlSerialize(true, $sxe->addChild('subject'));
+        }
+        if (null !== ($v = $this->getTitle())) {
+            $v->xmlSerialize(true, $sxe->addChild('title'));
+        }
+        if (null !== ($v = $this->getType())) {
+            $v->xmlSerialize(true, $sxe->addChild('type'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

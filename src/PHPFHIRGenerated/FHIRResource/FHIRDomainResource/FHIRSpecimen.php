@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -89,79 +89,73 @@ class FHIRSpecimen extends FHIRDomainResource implements \JsonSerializable
      * The identifier assigned by the lab when accessioning specimen(s). This is not necessarily the same as the specimen identifier, depending on local lab procedures.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public $accessionIdentifier = null;
+    private $accessionIdentifier = null;
 
     /**
      * Details concerning the specimen collection.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenCollection
      */
-    public $collection = null;
-
-    /**
-     * A mode or state of being that describes the nature of the specimen.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public $condition = null;
+    private $collection = null;
 
     /**
      * The container holding the specimen.  The recursive nature of containers; i.e. blood in tube in tray in rack is not addressed here.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenContainer
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenContainer[]
      */
-    public $container = null;
+    private $container = [];
 
     /**
      * Id for specimen.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = null;
+    private $identifier = [];
 
     /**
      * To communicate any details or issues about the specimen or during the specimen collection. (for example: broken vial, sent with patient, frozen).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
-    public $note = null;
+    private $note = [];
 
     /**
      * Reference to the parent (source) specimen which is used when the specimen was either derived from or a component of another specimen.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $parent = null;
+    private $parent = [];
 
     /**
      * Details concerning processing and processing steps for the specimen.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenProcessing
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenProcessing[]
      */
-    public $processing = null;
+    private $processing = [];
 
     /**
      * Time when specimen was received for processing or testing.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $receivedTime = null;
+    private $receivedTime = null;
 
     /**
-     * Details concerning a service request that required a specimen to be collected.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * Details concerning a test or procedure request that required a specimen to be collected.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $request = null;
+    private $request = [];
 
     /**
      * The availability of the specimen.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRSpecimenStatus
      */
-    public $status = null;
+    private $status = null;
 
     /**
-     * Where the specimen came from. This may be from patient(s),from a location (e.g., the source of an environmental sample), or a sampling of a substance or a device.
+     * Where the specimen came from. This may be from the patient(s) or from the environment or a device.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $subject = null;
+    private $subject = null;
 
     /**
      * The kind of material that forms the specimen.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $type = null;
+    private $type = null;
 
     /**
      * FHIRSpecimen Constructor
@@ -170,46 +164,166 @@ class FHIRSpecimen extends FHIRDomainResource implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['accessionIdentifier'])) {
-                $this->setAccessionIdentifier($data['accessionIdentifier']);
+                $value = $data['accessionIdentifier'];
+                if (is_array($value)) {
+                    $value = new FHIRIdentifier($value);
+                } 
+                if (!($value instanceof FHIRIdentifier)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSpecimen::__construct - Property \"accessionIdentifier\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setAccessionIdentifier($value);
             }
             if (isset($data['collection'])) {
-                $this->setCollection($data['collection']);
-            }
-            if (isset($data['condition'])) {
-                $this->setCondition($data['condition']);
+                $value = $data['collection'];
+                if (is_array($value)) {
+                    $value = new FHIRSpecimenCollection($value);
+                } 
+                if (!($value instanceof FHIRSpecimenCollection)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSpecimen::__construct - Property \"collection\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenCollection or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setCollection($value);
             }
             if (isset($data['container'])) {
-                $this->setContainer($data['container']);
+                $value = $data['container'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRSpecimenContainer($v);
+                        } 
+                        if (!($v instanceof FHIRSpecimenContainer)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSpecimen::__construct - Collection field \"container\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenContainer or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addContainer($v);
+                    }
+                }
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRIdentifier($v);
+                        } 
+                        if (!($v instanceof FHIRIdentifier)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSpecimen::__construct - Collection field \"identifier\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addIdentifier($v);
+                    }
+                }
             }
             if (isset($data['note'])) {
-                $this->setNote($data['note']);
+                $value = $data['note'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRAnnotation($v);
+                        } 
+                        if (!($v instanceof FHIRAnnotation)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSpecimen::__construct - Collection field \"note\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAnnotation or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addNote($v);
+                    }
+                }
             }
             if (isset($data['parent'])) {
-                $this->setParent($data['parent']);
+                $value = $data['parent'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSpecimen::__construct - Collection field \"parent\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addParent($v);
+                    }
+                }
             }
             if (isset($data['processing'])) {
-                $this->setProcessing($data['processing']);
+                $value = $data['processing'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRSpecimenProcessing($v);
+                        } 
+                        if (!($v instanceof FHIRSpecimenProcessing)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSpecimen::__construct - Collection field \"processing\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenProcessing or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addProcessing($v);
+                    }
+                }
             }
             if (isset($data['receivedTime'])) {
-                $this->setReceivedTime($data['receivedTime']);
+                $value = $data['receivedTime'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSpecimen::__construct - Property \"receivedTime\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setReceivedTime($value);
             }
             if (isset($data['request'])) {
-                $this->setRequest($data['request']);
+                $value = $data['request'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSpecimen::__construct - Collection field \"request\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addRequest($v);
+                    }
+                }
             }
             if (isset($data['status'])) {
-                $this->setStatus($data['status']);
+                $value = $data['status'];
+                if (is_array($value)) {
+                    $value = new FHIRSpecimenStatus($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRSpecimenStatus($value);
+                }
+                if (!($value instanceof FHIRSpecimenStatus)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSpecimen::__construct - Property \"status\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRSpecimenStatus or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setStatus($value);
             }
             if (isset($data['subject'])) {
-                $this->setSubject($data['subject']);
+                $value = $data['subject'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSpecimen::__construct - Property \"subject\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setSubject($value);
             }
             if (isset($data['type'])) {
-                $this->setType($data['type']);
+                $value = $data['type'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSpecimen::__construct - Property \"type\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setType($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -218,6 +332,7 @@ class FHIRSpecimen extends FHIRDomainResource implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -243,7 +358,6 @@ class FHIRSpecimen extends FHIRDomainResource implements \JsonSerializable
         return $this->accessionIdentifier;
     }
 
-
     /**
      * Details concerning the specimen collection.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenCollection
@@ -267,150 +381,120 @@ class FHIRSpecimen extends FHIRDomainResource implements \JsonSerializable
         return $this->collection;
     }
 
-
-    /**
-     * A mode or state of being that describes the nature of the specimen.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     * @return $this
-     */
-    public function setCondition(FHIRCodeableConcept $condition = null)
-    {
-        if (null === $condition) {
-            return $this; 
-        }
-        $this->condition = $condition;
-        return $this;
-    }
-
-    /**
-     * A mode or state of being that describes the nature of the specimen.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public function getCondition()
-    {
-        return $this->condition;
-    }
-
-
     /**
      * The container holding the specimen.  The recursive nature of containers; i.e. blood in tube in tray in rack is not addressed here.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenContainer
      * @return $this
      */
-    public function setContainer(FHIRSpecimenContainer $container = null)
+    public function addContainer(FHIRSpecimenContainer $container = null)
     {
         if (null === $container) {
             return $this; 
         }
-        $this->container = $container;
+        $this->container[] = $container;
         return $this;
     }
 
     /**
      * The container holding the specimen.  The recursive nature of containers; i.e. blood in tube in tray in rack is not addressed here.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenContainer
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenContainer[]
      */
     public function getContainer()
     {
         return $this->container;
     }
 
-
     /**
      * Id for specimen.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
-    public function setIdentifier(FHIRIdentifier $identifier = null)
+    public function addIdentifier(FHIRIdentifier $identifier = null)
     {
         if (null === $identifier) {
             return $this; 
         }
-        $this->identifier = $identifier;
+        $this->identifier[] = $identifier;
         return $this;
     }
 
     /**
      * Id for specimen.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
         return $this->identifier;
     }
 
-
     /**
      * To communicate any details or issues about the specimen or during the specimen collection. (for example: broken vial, sent with patient, frozen).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation
      * @return $this
      */
-    public function setNote(FHIRAnnotation $note = null)
+    public function addNote(FHIRAnnotation $note = null)
     {
         if (null === $note) {
             return $this; 
         }
-        $this->note = $note;
+        $this->note[] = $note;
         return $this;
     }
 
     /**
      * To communicate any details or issues about the specimen or during the specimen collection. (for example: broken vial, sent with patient, frozen).
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
         return $this->note;
     }
 
-
     /**
      * Reference to the parent (source) specimen which is used when the specimen was either derived from or a component of another specimen.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setParent(FHIRReference $parent = null)
+    public function addParent(FHIRReference $parent = null)
     {
         if (null === $parent) {
             return $this; 
         }
-        $this->parent = $parent;
+        $this->parent[] = $parent;
         return $this;
     }
 
     /**
      * Reference to the parent (source) specimen which is used when the specimen was either derived from or a component of another specimen.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getParent()
     {
         return $this->parent;
     }
 
-
     /**
      * Details concerning processing and processing steps for the specimen.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenProcessing
      * @return $this
      */
-    public function setProcessing(FHIRSpecimenProcessing $processing = null)
+    public function addProcessing(FHIRSpecimenProcessing $processing = null)
     {
         if (null === $processing) {
             return $this; 
         }
-        $this->processing = $processing;
+        $this->processing[] = $processing;
         return $this;
     }
 
     /**
      * Details concerning processing and processing steps for the specimen.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenProcessing
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenProcessing[]
      */
     public function getProcessing()
     {
         return $this->processing;
     }
-
 
     /**
      * Time when specimen was received for processing or testing.
@@ -444,30 +528,28 @@ class FHIRSpecimen extends FHIRDomainResource implements \JsonSerializable
         return $this->receivedTime;
     }
 
-
     /**
-     * Details concerning a service request that required a specimen to be collected.
+     * Details concerning a test or procedure request that required a specimen to be collected.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setRequest(FHIRReference $request = null)
+    public function addRequest(FHIRReference $request = null)
     {
         if (null === $request) {
             return $this; 
         }
-        $this->request = $request;
+        $this->request[] = $request;
         return $this;
     }
 
     /**
-     * Details concerning a service request that required a specimen to be collected.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * Details concerning a test or procedure request that required a specimen to be collected.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getRequest()
     {
         return $this->request;
     }
-
 
     /**
      * The availability of the specimen.
@@ -501,9 +583,8 @@ class FHIRSpecimen extends FHIRDomainResource implements \JsonSerializable
         return $this->status;
     }
 
-
     /**
-     * Where the specimen came from. This may be from patient(s),from a location (e.g., the source of an environmental sample), or a sampling of a substance or a device.
+     * Where the specimen came from. This may be from the patient(s) or from the environment or a device.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
@@ -517,14 +598,13 @@ class FHIRSpecimen extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Where the specimen came from. This may be from patient(s),from a location (e.g., the source of an environmental sample), or a sampling of a substance or a device.
+     * Where the specimen came from. This may be from the patient(s) or from the environment or a device.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getSubject()
     {
         return $this->subject;
     }
-
 
     /**
      * The kind of material that forms the specimen.
@@ -549,7 +629,6 @@ class FHIRSpecimen extends FHIRDomainResource implements \JsonSerializable
         return $this->type;
     }
 
-
     /**
      * @return string
      */
@@ -571,29 +650,74 @@ class FHIRSpecimen extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getCollection())) {
             $a['collection'] = $v;
         }
-        if (null !== ($v = $this->getCondition())) {
-            $a['condition'] = $v;
+        if (0 < count($values = $this->getContainer())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['container'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getContainer())) {
-            $a['container'] = $v;
+        if (0 < count($values = $this->getIdentifier())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['identifier'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getIdentifier())) {
-            $a['identifier'] = $v;
+        if (0 < count($values = $this->getNote())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['note'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getNote())) {
-            $a['note'] = $v;
+        if (0 < count($values = $this->getParent())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['parent'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getParent())) {
-            $a['parent'] = $v;
-        }
-        if (null !== ($v = $this->getProcessing())) {
-            $a['processing'] = $v;
+        if (0 < count($values = $this->getProcessing())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['processing'] = $vs;
+            }
         }
         if (null !== ($v = $this->getReceivedTime())) {
             $a['receivedTime'] = $v;
         }
-        if (null !== ($v = $this->getRequest())) {
-            $a['request'] = $v;
+        if (0 < count($values = $this->getRequest())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['request'] = $vs;
+            }
         }
         if (null !== ($v = $this->getStatus())) {
             $a['status'] = $v;
@@ -617,9 +741,66 @@ class FHIRSpecimen extends FHIRDomainResource implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Specimen xmlns="http://hl7.org/fhir"></Specimen>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getAccessionIdentifier())) {
+            $v->xmlSerialize(true, $sxe->addChild('accessionIdentifier'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getCollection())) {
+            $v->xmlSerialize(true, $sxe->addChild('collection'));
+        }
+        if (0 < count($values = $this->getContainer())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('container'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getIdentifier())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('identifier'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getNote())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('note'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getParent())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('parent'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getProcessing())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('processing'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getReceivedTime())) {
+            $v->xmlSerialize(true, $sxe->addChild('receivedTime'));
+        }
+        if (0 < count($values = $this->getRequest())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('request'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('status'));
+        }
+        if (null !== ($v = $this->getSubject())) {
+            $v->xmlSerialize(true, $sxe->addChild('subject'));
+        }
+        if (null !== ($v = $this->getType())) {
+            $v->xmlSerialize(true, $sxe->addChild('type'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

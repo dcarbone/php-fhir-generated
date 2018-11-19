@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResp
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -89,81 +89,81 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
 
     /**
      * Nested groups and/or questions found within this particular answer.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem[]
      */
-    public $item = null;
+    private $item = [];
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question.
+     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
-    public $valueAttachment = null;
+    private $valueAttachment = null;
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question.
+     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $valueBoolean = null;
+    private $valueBoolean = null;
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question.
+     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
-    public $valueCoding = null;
+    private $valueCoding = null;
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question.
+     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
-    public $valueDate = null;
+    private $valueDate = null;
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question.
+     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $valueDateTime = null;
+    private $valueDateTime = null;
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question.
+     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
-    public $valueDecimal = null;
+    private $valueDecimal = null;
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question.
+     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
-    public $valueInteger = null;
+    private $valueInteger = null;
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question.
+     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    public $valueQuantity = null;
+    private $valueQuantity = null;
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question.
+     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $valueReference = null;
+    private $valueReference = null;
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question.
+     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $valueString = null;
+    private $valueString = null;
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question.
+     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
-    public $valueTime = null;
+    private $valueTime = null;
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question.
+     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $valueUri = null;
+    private $valueUri = null;
 
     /**
      * FHIRQuestionnaireResponseAnswer Constructor
@@ -172,46 +172,158 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['item'])) {
-                $this->setItem($data['item']);
+                $value = $data['item'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRQuestionnaireResponseItem($v);
+                        } 
+                        if (!($v instanceof FHIRQuestionnaireResponseItem)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer::__construct - Collection field \"item\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addItem($v);
+                    }
+                }
             }
             if (isset($data['valueAttachment'])) {
-                $this->setValueAttachment($data['valueAttachment']);
+                $value = $data['valueAttachment'];
+                if (is_array($value)) {
+                    $value = new FHIRAttachment($value);
+                } 
+                if (!($value instanceof FHIRAttachment)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer::__construct - Property \"valueAttachment\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAttachment or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setValueAttachment($value);
             }
             if (isset($data['valueBoolean'])) {
-                $this->setValueBoolean($data['valueBoolean']);
+                $value = $data['valueBoolean'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer::__construct - Property \"valueBoolean\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setValueBoolean($value);
             }
             if (isset($data['valueCoding'])) {
-                $this->setValueCoding($data['valueCoding']);
+                $value = $data['valueCoding'];
+                if (is_array($value)) {
+                    $value = new FHIRCoding($value);
+                } 
+                if (!($value instanceof FHIRCoding)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer::__construct - Property \"valueCoding\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCoding or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setValueCoding($value);
             }
             if (isset($data['valueDate'])) {
-                $this->setValueDate($data['valueDate']);
+                $value = $data['valueDate'];
+                if (is_array($value)) {
+                    $value = new FHIRDate($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDate($value);
+                }
+                if (!($value instanceof FHIRDate)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer::__construct - Property \"valueDate\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDate or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setValueDate($value);
             }
             if (isset($data['valueDateTime'])) {
-                $this->setValueDateTime($data['valueDateTime']);
+                $value = $data['valueDateTime'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer::__construct - Property \"valueDateTime\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setValueDateTime($value);
             }
             if (isset($data['valueDecimal'])) {
-                $this->setValueDecimal($data['valueDecimal']);
+                $value = $data['valueDecimal'];
+                if (is_array($value)) {
+                    $value = new FHIRDecimal($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDecimal($value);
+                }
+                if (!($value instanceof FHIRDecimal)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer::__construct - Property \"valueDecimal\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDecimal or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setValueDecimal($value);
             }
             if (isset($data['valueInteger'])) {
-                $this->setValueInteger($data['valueInteger']);
+                $value = $data['valueInteger'];
+                if (is_array($value)) {
+                    $value = new FHIRInteger($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRInteger($value);
+                }
+                if (!($value instanceof FHIRInteger)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer::__construct - Property \"valueInteger\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRInteger or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setValueInteger($value);
             }
             if (isset($data['valueQuantity'])) {
-                $this->setValueQuantity($data['valueQuantity']);
+                $value = $data['valueQuantity'];
+                if (is_array($value)) {
+                    $value = new FHIRQuantity($value);
+                } 
+                if (!($value instanceof FHIRQuantity)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer::__construct - Property \"valueQuantity\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setValueQuantity($value);
             }
             if (isset($data['valueReference'])) {
-                $this->setValueReference($data['valueReference']);
+                $value = $data['valueReference'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer::__construct - Property \"valueReference\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setValueReference($value);
             }
             if (isset($data['valueString'])) {
-                $this->setValueString($data['valueString']);
+                $value = $data['valueString'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer::__construct - Property \"valueString\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setValueString($value);
             }
             if (isset($data['valueTime'])) {
-                $this->setValueTime($data['valueTime']);
+                $value = $data['valueTime'];
+                if (is_array($value)) {
+                    $value = new FHIRTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRTime($value);
+                }
+                if (!($value instanceof FHIRTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer::__construct - Property \"valueTime\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRTime or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setValueTime($value);
             }
             if (isset($data['valueUri'])) {
-                $this->setValueUri($data['valueUri']);
+                $value = $data['valueUri'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer::__construct - Property \"valueUri\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setValueUri($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -220,6 +332,7 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -227,27 +340,26 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem
      * @return $this
      */
-    public function setItem(FHIRQuestionnaireResponseItem $item = null)
+    public function addItem(FHIRQuestionnaireResponseItem $item = null)
     {
         if (null === $item) {
             return $this; 
         }
-        $this->item = $item;
+        $this->item[] = $item;
         return $this;
     }
 
     /**
      * Nested groups and/or questions found within this particular answer.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem[]
      */
     public function getItem()
     {
         return $this->item;
     }
 
-
     /**
-     * The answer (or one of the answers) provided by the respondent to the question.
+     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRAttachment
      * @return $this
      */
@@ -261,7 +373,7 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question.
+     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public function getValueAttachment()
@@ -269,9 +381,8 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
         return $this->valueAttachment;
     }
 
-
     /**
-     * The answer (or one of the answers) provided by the respondent to the question.
+     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      * @return $this
      */
@@ -294,7 +405,7 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question.
+     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getValueBoolean()
@@ -302,9 +413,8 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
         return $this->valueBoolean;
     }
 
-
     /**
-     * The answer (or one of the answers) provided by the respondent to the question.
+     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
      * @return $this
      */
@@ -318,7 +428,7 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question.
+     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public function getValueCoding()
@@ -326,9 +436,8 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
         return $this->valueCoding;
     }
 
-
     /**
-     * The answer (or one of the answers) provided by the respondent to the question.
+     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDate
      * @return $this
      */
@@ -351,7 +460,7 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question.
+     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public function getValueDate()
@@ -359,9 +468,8 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
         return $this->valueDate;
     }
 
-
     /**
-     * The answer (or one of the answers) provided by the respondent to the question.
+     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      * @return $this
      */
@@ -384,7 +492,7 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question.
+     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getValueDateTime()
@@ -392,9 +500,8 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
         return $this->valueDateTime;
     }
 
-
     /**
-     * The answer (or one of the answers) provided by the respondent to the question.
+     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDecimal
      * @return $this
      */
@@ -417,7 +524,7 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question.
+     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
     public function getValueDecimal()
@@ -425,9 +532,8 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
         return $this->valueDecimal;
     }
 
-
     /**
-     * The answer (or one of the answers) provided by the respondent to the question.
+     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRInteger
      * @return $this
      */
@@ -450,7 +556,7 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question.
+     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public function getValueInteger()
@@ -458,9 +564,8 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
         return $this->valueInteger;
     }
 
-
     /**
-     * The answer (or one of the answers) provided by the respondent to the question.
+     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity
      * @return $this
      */
@@ -474,7 +579,7 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question.
+     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public function getValueQuantity()
@@ -482,9 +587,8 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
         return $this->valueQuantity;
     }
 
-
     /**
-     * The answer (or one of the answers) provided by the respondent to the question.
+     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
@@ -498,7 +602,7 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question.
+     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getValueReference()
@@ -506,9 +610,8 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
         return $this->valueReference;
     }
 
-
     /**
-     * The answer (or one of the answers) provided by the respondent to the question.
+     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
@@ -531,7 +634,7 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question.
+     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getValueString()
@@ -539,9 +642,8 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
         return $this->valueString;
     }
 
-
     /**
-     * The answer (or one of the answers) provided by the respondent to the question.
+     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRTime
      * @return $this
      */
@@ -564,7 +666,7 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question.
+     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRTime
      */
     public function getValueTime()
@@ -572,9 +674,8 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
         return $this->valueTime;
     }
 
-
     /**
-     * The answer (or one of the answers) provided by the respondent to the question.
+     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
@@ -597,14 +698,13 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question.
+     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getValueUri()
     {
         return $this->valueUri;
     }
-
 
     /**
      * @return string
@@ -620,8 +720,16 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getItem())) {
-            $a['item'] = $v;
+        if (0 < count($values = $this->getItem())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['item'] = $vs;
+            }
         }
         if (null !== ($v = $this->getValueAttachment())) {
             $a['valueAttachment'] = $v;
@@ -672,9 +780,49 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<QuestionnaireResponseAnswer xmlns="http://hl7.org/fhir"></QuestionnaireResponseAnswer>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (0 < count($values = $this->getItem())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('item'));
+                }
+            }
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getValueAttachment())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueAttachment'));
+        }
+        if (null !== ($v = $this->getValueBoolean())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueBoolean'));
+        }
+        if (null !== ($v = $this->getValueCoding())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueCoding'));
+        }
+        if (null !== ($v = $this->getValueDate())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueDate'));
+        }
+        if (null !== ($v = $this->getValueDateTime())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueDateTime'));
+        }
+        if (null !== ($v = $this->getValueDecimal())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueDecimal'));
+        }
+        if (null !== ($v = $this->getValueInteger())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueInteger'));
+        }
+        if (null !== ($v = $this->getValueQuantity())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueQuantity'));
+        }
+        if (null !== ($v = $this->getValueReference())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueReference'));
+        }
+        if (null !== ($v = $this->getValueString())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueString'));
+        }
+        if (null !== ($v = $this->getValueTime())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueTime'));
+        }
+        if (null !== ($v = $this->getValueUri())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueUri'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

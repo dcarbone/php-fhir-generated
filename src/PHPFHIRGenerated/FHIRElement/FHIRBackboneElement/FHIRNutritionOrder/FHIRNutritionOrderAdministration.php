@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,9 +63,9 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder;
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTiming;
 use PHPFHIRGenerated\FHIRElement\FHIRQuantity;
 use PHPFHIRGenerated\FHIRElement\FHIRRatio;
+use PHPFHIRGenerated\FHIRElement\FHIRTiming;
 
 /**
  * A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to a patient/resident.
@@ -82,25 +82,25 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement implements \J
      * The volume of formula to provide to the patient per the specified administration schedule.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    public $quantity = null;
+    private $quantity = null;
 
     /**
-     * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour, according to the specified schedule.
+     * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour, according to the specified schedule. (choose any one of rate*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    public $rateQuantity = null;
+    private $rateQuantity = null;
 
     /**
-     * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour, according to the specified schedule.
+     * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour, according to the specified schedule. (choose any one of rate*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
-    public $rateRatio = null;
+    private $rateRatio = null;
 
     /**
      * The time period and frequency at which the enteral formula should be delivered to the patient.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTiming
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
-    public $schedule = null;
+    private $schedule = null;
 
     /**
      * FHIRNutritionOrderAdministration Constructor
@@ -109,19 +109,46 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement implements \J
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['quantity'])) {
-                $this->setQuantity($data['quantity']);
+                $value = $data['quantity'];
+                if (is_array($value)) {
+                    $value = new FHIRQuantity($value);
+                } 
+                if (!($value instanceof FHIRQuantity)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdministration::__construct - Property \"quantity\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setQuantity($value);
             }
             if (isset($data['rateQuantity'])) {
-                $this->setRateQuantity($data['rateQuantity']);
+                $value = $data['rateQuantity'];
+                if (is_array($value)) {
+                    $value = new FHIRQuantity($value);
+                } 
+                if (!($value instanceof FHIRQuantity)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdministration::__construct - Property \"rateQuantity\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setRateQuantity($value);
             }
             if (isset($data['rateRatio'])) {
-                $this->setRateRatio($data['rateRatio']);
+                $value = $data['rateRatio'];
+                if (is_array($value)) {
+                    $value = new FHIRRatio($value);
+                } 
+                if (!($value instanceof FHIRRatio)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdministration::__construct - Property \"rateRatio\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRRatio or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setRateRatio($value);
             }
             if (isset($data['schedule'])) {
-                $this->setSchedule($data['schedule']);
+                $value = $data['schedule'];
+                if (is_array($value)) {
+                    $value = new FHIRTiming($value);
+                } 
+                if (!($value instanceof FHIRTiming)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdministration::__construct - Property \"schedule\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRTiming or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setSchedule($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -130,6 +157,7 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement implements \J
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -155,9 +183,8 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement implements \J
         return $this->quantity;
     }
 
-
     /**
-     * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour, according to the specified schedule.
+     * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour, according to the specified schedule. (choose any one of rate*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity
      * @return $this
      */
@@ -171,7 +198,7 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement implements \J
     }
 
     /**
-     * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour, according to the specified schedule.
+     * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour, according to the specified schedule. (choose any one of rate*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public function getRateQuantity()
@@ -179,9 +206,8 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement implements \J
         return $this->rateQuantity;
     }
 
-
     /**
-     * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour, according to the specified schedule.
+     * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour, according to the specified schedule. (choose any one of rate*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRRatio
      * @return $this
      */
@@ -195,7 +221,7 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement implements \J
     }
 
     /**
-     * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour, according to the specified schedule.
+     * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour, according to the specified schedule. (choose any one of rate*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
     public function getRateRatio()
@@ -203,10 +229,9 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement implements \J
         return $this->rateRatio;
     }
 
-
     /**
      * The time period and frequency at which the enteral formula should be delivered to the patient.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTiming
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRTiming
      * @return $this
      */
     public function setSchedule(FHIRTiming $schedule = null)
@@ -220,13 +245,12 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement implements \J
 
     /**
      * The time period and frequency at which the enteral formula should be delivered to the patient.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTiming
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public function getSchedule()
     {
         return $this->schedule;
     }
-
 
     /**
      * @return string
@@ -267,9 +291,18 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement implements \J
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<NutritionOrderAdministration xmlns="http://hl7.org/fhir"></NutritionOrderAdministration>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getQuantity())) {
+            $v->xmlSerialize(true, $sxe->addChild('quantity'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getRateQuantity())) {
+            $v->xmlSerialize(true, $sxe->addChild('rateQuantity'));
+        }
+        if (null !== ($v = $this->getRateRatio())) {
+            $v->xmlSerialize(true, $sxe->addChild('rateRatio'));
+        }
+        if (null !== ($v = $this->getSchedule())) {
+            $v->xmlSerialize(true, $sxe->addChild('schedule'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

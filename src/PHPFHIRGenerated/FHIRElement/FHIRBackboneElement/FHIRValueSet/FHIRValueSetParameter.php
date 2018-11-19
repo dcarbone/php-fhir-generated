@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -65,14 +65,13 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 use PHPFHIRGenerated\FHIRElement\FHIRBoolean;
 use PHPFHIRGenerated\FHIRElement\FHIRCode;
-use PHPFHIRGenerated\FHIRElement\FHIRDateTime;
 use PHPFHIRGenerated\FHIRElement\FHIRDecimal;
 use PHPFHIRGenerated\FHIRElement\FHIRInteger;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
 use PHPFHIRGenerated\FHIRElement\FHIRUri;
 
 /**
- * A ValueSet resource instances specifies a set of codes drawn from one or more code systems, intended for use in a particular context. Value sets link between [[[CodeSystem]]] definitions and their use in [coded elements](terminologies.html).
+ * A value set specifies a set of codes drawn from one or more code systems.
  *
  * Class FHIRValueSetParameter
  * @package PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet
@@ -83,52 +82,46 @@ class FHIRValueSetParameter extends FHIRBackboneElement implements \JsonSerializ
     const FHIR_TYPE_NAME = 'ValueSet.Parameter';
 
     /**
-     * Name of the input parameter to the $expand operation; may be a server-assigned name for additional default or other server-supplied parameters used to control the expansion process.
+     * The name of the parameter.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $name = null;
+    private $name = null;
 
     /**
-     * The value of the parameter.
+     * The value of the parameter. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $valueBoolean = null;
+    private $valueBoolean = null;
 
     /**
-     * The value of the parameter.
+     * The value of the parameter. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public $valueCode = null;
+    private $valueCode = null;
 
     /**
-     * The value of the parameter.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public $valueDateTime = null;
-
-    /**
-     * The value of the parameter.
+     * The value of the parameter. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
-    public $valueDecimal = null;
+    private $valueDecimal = null;
 
     /**
-     * The value of the parameter.
+     * The value of the parameter. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
-    public $valueInteger = null;
+    private $valueInteger = null;
 
     /**
-     * The value of the parameter.
+     * The value of the parameter. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $valueString = null;
+    private $valueString = null;
 
     /**
-     * The value of the parameter.
+     * The value of the parameter. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $valueUri = null;
+    private $valueUri = null;
 
     /**
      * FHIRValueSetParameter Constructor
@@ -137,31 +130,90 @@ class FHIRValueSetParameter extends FHIRBackboneElement implements \JsonSerializ
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['name'])) {
-                $this->setName($data['name']);
+                $value = $data['name'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetParameter::__construct - Property \"name\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setName($value);
             }
             if (isset($data['valueBoolean'])) {
-                $this->setValueBoolean($data['valueBoolean']);
+                $value = $data['valueBoolean'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetParameter::__construct - Property \"valueBoolean\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueBoolean($value);
             }
             if (isset($data['valueCode'])) {
-                $this->setValueCode($data['valueCode']);
-            }
-            if (isset($data['valueDateTime'])) {
-                $this->setValueDateTime($data['valueDateTime']);
+                $value = $data['valueCode'];
+                if (is_array($value)) {
+                    $value = new FHIRCode($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRCode($value);
+                }
+                if (!($value instanceof FHIRCode)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetParameter::__construct - Property \"valueCode\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueCode($value);
             }
             if (isset($data['valueDecimal'])) {
-                $this->setValueDecimal($data['valueDecimal']);
+                $value = $data['valueDecimal'];
+                if (is_array($value)) {
+                    $value = new FHIRDecimal($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDecimal($value);
+                }
+                if (!($value instanceof FHIRDecimal)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetParameter::__construct - Property \"valueDecimal\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDecimal or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueDecimal($value);
             }
             if (isset($data['valueInteger'])) {
-                $this->setValueInteger($data['valueInteger']);
+                $value = $data['valueInteger'];
+                if (is_array($value)) {
+                    $value = new FHIRInteger($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRInteger($value);
+                }
+                if (!($value instanceof FHIRInteger)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetParameter::__construct - Property \"valueInteger\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRInteger or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueInteger($value);
             }
             if (isset($data['valueString'])) {
-                $this->setValueString($data['valueString']);
+                $value = $data['valueString'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetParameter::__construct - Property \"valueString\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueString($value);
             }
             if (isset($data['valueUri'])) {
-                $this->setValueUri($data['valueUri']);
+                $value = $data['valueUri'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetParameter::__construct - Property \"valueUri\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueUri($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -170,10 +222,11 @@ class FHIRValueSetParameter extends FHIRBackboneElement implements \JsonSerializ
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
-     * Name of the input parameter to the $expand operation; may be a server-assigned name for additional default or other server-supplied parameters used to control the expansion process.
+     * The name of the parameter.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
@@ -196,7 +249,7 @@ class FHIRValueSetParameter extends FHIRBackboneElement implements \JsonSerializ
     }
 
     /**
-     * Name of the input parameter to the $expand operation; may be a server-assigned name for additional default or other server-supplied parameters used to control the expansion process.
+     * The name of the parameter.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getName()
@@ -204,9 +257,8 @@ class FHIRValueSetParameter extends FHIRBackboneElement implements \JsonSerializ
         return $this->name;
     }
 
-
     /**
-     * The value of the parameter.
+     * The value of the parameter. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      * @return $this
      */
@@ -229,7 +281,7 @@ class FHIRValueSetParameter extends FHIRBackboneElement implements \JsonSerializ
     }
 
     /**
-     * The value of the parameter.
+     * The value of the parameter. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getValueBoolean()
@@ -237,9 +289,8 @@ class FHIRValueSetParameter extends FHIRBackboneElement implements \JsonSerializ
         return $this->valueBoolean;
     }
 
-
     /**
-     * The value of the parameter.
+     * The value of the parameter. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCode
      * @return $this
      */
@@ -262,7 +313,7 @@ class FHIRValueSetParameter extends FHIRBackboneElement implements \JsonSerializ
     }
 
     /**
-     * The value of the parameter.
+     * The value of the parameter. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCode
      */
     public function getValueCode()
@@ -270,42 +321,8 @@ class FHIRValueSetParameter extends FHIRBackboneElement implements \JsonSerializ
         return $this->valueCode;
     }
 
-
     /**
-     * The value of the parameter.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     * @return $this
-     */
-    public function setValueDateTime($valueDateTime)
-    {
-        if (null === $valueDateTime) {
-            return $this; 
-        }
-        if (is_scalar($valueDateTime)) {
-            $valueDateTime = new FHIRDateTime($valueDateTime);
-        }
-        if (!($valueDateTime instanceof FHIRDateTime)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRValueSetParameter::setValueDateTime - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or appropriate scalar value, %s seen.',
-                gettype($valueDateTime)
-            ));
-        }
-        $this->valueDateTime = $valueDateTime;
-        return $this;
-    }
-
-    /**
-     * The value of the parameter.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public function getValueDateTime()
-    {
-        return $this->valueDateTime;
-    }
-
-
-    /**
-     * The value of the parameter.
+     * The value of the parameter. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDecimal
      * @return $this
      */
@@ -328,7 +345,7 @@ class FHIRValueSetParameter extends FHIRBackboneElement implements \JsonSerializ
     }
 
     /**
-     * The value of the parameter.
+     * The value of the parameter. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
     public function getValueDecimal()
@@ -336,9 +353,8 @@ class FHIRValueSetParameter extends FHIRBackboneElement implements \JsonSerializ
         return $this->valueDecimal;
     }
 
-
     /**
-     * The value of the parameter.
+     * The value of the parameter. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRInteger
      * @return $this
      */
@@ -361,7 +377,7 @@ class FHIRValueSetParameter extends FHIRBackboneElement implements \JsonSerializ
     }
 
     /**
-     * The value of the parameter.
+     * The value of the parameter. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public function getValueInteger()
@@ -369,9 +385,8 @@ class FHIRValueSetParameter extends FHIRBackboneElement implements \JsonSerializ
         return $this->valueInteger;
     }
 
-
     /**
-     * The value of the parameter.
+     * The value of the parameter. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
@@ -394,7 +409,7 @@ class FHIRValueSetParameter extends FHIRBackboneElement implements \JsonSerializ
     }
 
     /**
-     * The value of the parameter.
+     * The value of the parameter. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getValueString()
@@ -402,9 +417,8 @@ class FHIRValueSetParameter extends FHIRBackboneElement implements \JsonSerializ
         return $this->valueString;
     }
 
-
     /**
-     * The value of the parameter.
+     * The value of the parameter. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
@@ -427,14 +441,13 @@ class FHIRValueSetParameter extends FHIRBackboneElement implements \JsonSerializ
     }
 
     /**
-     * The value of the parameter.
+     * The value of the parameter. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getValueUri()
     {
         return $this->valueUri;
     }
-
 
     /**
      * @return string
@@ -458,9 +471,6 @@ class FHIRValueSetParameter extends FHIRBackboneElement implements \JsonSerializ
         }
         if (null !== ($v = $this->getValueCode())) {
             $a['valueCode'] = $v;
-        }
-        if (null !== ($v = $this->getValueDateTime())) {
-            $a['valueDateTime'] = $v;
         }
         if (null !== ($v = $this->getValueDecimal())) {
             $a['valueDecimal'] = $v;
@@ -487,9 +497,27 @@ class FHIRValueSetParameter extends FHIRBackboneElement implements \JsonSerializ
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ValueSetParameter xmlns="http://hl7.org/fhir"></ValueSetParameter>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getName())) {
+            $v->xmlSerialize(true, $sxe->addChild('name'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getValueBoolean())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueBoolean'));
+        }
+        if (null !== ($v = $this->getValueCode())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueCode'));
+        }
+        if (null !== ($v = $this->getValueDecimal())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueDecimal'));
+        }
+        if (null !== ($v = $this->getValueInteger())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueInteger'));
+        }
+        if (null !== ($v = $this->getValueString())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueString'));
+        }
+        if (null !== ($v = $this->getValueUri())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueUri'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

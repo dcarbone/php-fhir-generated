@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -84,31 +84,31 @@ class FHIRBasic extends FHIRDomainResource implements \JsonSerializable
      * Indicates who was responsible for creating the resource instance.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $author = null;
+    private $author = null;
 
     /**
      * Identifies the 'type' of resource - equivalent to the resource name for other resources.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $code = null;
+    private $code = null;
 
     /**
      * Identifies when the resource was first created.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
-    public $created = null;
+    private $created = null;
 
     /**
      * Identifier assigned to the resource for business purposes, outside the context of FHIR.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = null;
+    private $identifier = [];
 
     /**
      * Identifies the patient, practitioner, device or any other resource that is the "focus" of this resource.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $subject = null;
+    private $subject = null;
 
     /**
      * FHIRBasic Constructor
@@ -117,22 +117,64 @@ class FHIRBasic extends FHIRDomainResource implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['author'])) {
-                $this->setAuthor($data['author']);
+                $value = $data['author'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRBasic::__construct - Property \"author\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setAuthor($value);
             }
             if (isset($data['code'])) {
-                $this->setCode($data['code']);
+                $value = $data['code'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRBasic::__construct - Property \"code\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setCode($value);
             }
             if (isset($data['created'])) {
-                $this->setCreated($data['created']);
+                $value = $data['created'];
+                if (is_array($value)) {
+                    $value = new FHIRDate($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDate($value);
+                }
+                if (!($value instanceof FHIRDate)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRBasic::__construct - Property \"created\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDate or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setCreated($value);
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRIdentifier($v);
+                        } 
+                        if (!($v instanceof FHIRIdentifier)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRBasic::__construct - Collection field \"identifier\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addIdentifier($v);
+                    }
+                }
             }
             if (isset($data['subject'])) {
-                $this->setSubject($data['subject']);
+                $value = $data['subject'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRBasic::__construct - Property \"subject\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setSubject($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -141,6 +183,7 @@ class FHIRBasic extends FHIRDomainResource implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -166,7 +209,6 @@ class FHIRBasic extends FHIRDomainResource implements \JsonSerializable
         return $this->author;
     }
 
-
     /**
      * Identifies the 'type' of resource - equivalent to the resource name for other resources.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
@@ -189,7 +231,6 @@ class FHIRBasic extends FHIRDomainResource implements \JsonSerializable
     {
         return $this->code;
     }
-
 
     /**
      * Identifies when the resource was first created.
@@ -223,30 +264,28 @@ class FHIRBasic extends FHIRDomainResource implements \JsonSerializable
         return $this->created;
     }
 
-
     /**
      * Identifier assigned to the resource for business purposes, outside the context of FHIR.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
-    public function setIdentifier(FHIRIdentifier $identifier = null)
+    public function addIdentifier(FHIRIdentifier $identifier = null)
     {
         if (null === $identifier) {
             return $this; 
         }
-        $this->identifier = $identifier;
+        $this->identifier[] = $identifier;
         return $this;
     }
 
     /**
      * Identifier assigned to the resource for business purposes, outside the context of FHIR.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
         return $this->identifier;
     }
-
 
     /**
      * Identifies the patient, practitioner, device or any other resource that is the "focus" of this resource.
@@ -270,7 +309,6 @@ class FHIRBasic extends FHIRDomainResource implements \JsonSerializable
     {
         return $this->subject;
     }
-
 
     /**
      * @return string
@@ -296,8 +334,16 @@ class FHIRBasic extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getCreated())) {
             $a['created'] = $v;
         }
-        if (null !== ($v = $this->getIdentifier())) {
-            $a['identifier'] = $v;
+        if (0 < count($values = $this->getIdentifier())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['identifier'] = $vs;
+            }
         }
         if (null !== ($v = $this->getSubject())) {
             $a['subject'] = $v;
@@ -315,9 +361,25 @@ class FHIRBasic extends FHIRDomainResource implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Basic xmlns="http://hl7.org/fhir"></Basic>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getAuthor())) {
+            $v->xmlSerialize(true, $sxe->addChild('author'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getCode())) {
+            $v->xmlSerialize(true, $sxe->addChild('code'));
+        }
+        if (null !== ($v = $this->getCreated())) {
+            $v->xmlSerialize(true, $sxe->addChild('created'));
+        }
+        if (0 < count($values = $this->getIdentifier())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('identifier'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getSubject())) {
+            $v->xmlSerialize(true, $sxe->addChild('subject'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

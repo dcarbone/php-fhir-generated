@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -72,14 +72,11 @@ use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAppointment;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAppointmentResponse;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAuditEvent;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRBasic;
-use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRBiologicallyDerivedProduct;
-use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRBodyStructure;
+use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRBodySite;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCarePlan;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCareTeam;
-use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCatalogEntry;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRChargeItem;
-use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRChargeItemDefinition;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClaim;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClaimResponse;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClinicalImpression;
@@ -93,24 +90,24 @@ use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCondition;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRConsent;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRContract;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCoverage;
-use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCoverageEligibilityRequest;
-use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCoverageEligibilityResponse;
+use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDataElement;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDetectedIssue;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDevice;
-use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDeviceDefinition;
+use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDeviceComponent;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDeviceMetric;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDeviceRequest;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDeviceUseStatement;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDiagnosticReport;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDocumentManifest;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDocumentReference;
+use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREligibilityRequest;
+use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREligibilityResponse;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREncounter;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREndpoint;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREnrollmentRequest;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREnrollmentResponse;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREpisodeOfCare;
-use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREventDefinition;
-use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRExampleScenario;
+use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRExpansionProfile;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRExplanationOfBenefit;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRFlag;
@@ -119,14 +116,11 @@ use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRGraphDefinition;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRGroup;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRGuidanceResponse;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRHealthcareService;
+use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImagingManifest;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImagingStudy;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImmunization;
-use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImmunizationEvaluation;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImmunizationRecommendation;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImplementationGuide;
-use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRInsurancePlan;
-use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRInvoice;
-use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRItemInstance;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLibrary;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLinkage;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRList;
@@ -137,31 +131,16 @@ use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedia;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedication;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicationAdministration;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicationDispense;
-use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicationRequest;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicationStatement;
-use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProduct;
-use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductAuthorization;
-use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductClinicals;
-use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductContraindication;
-use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductDeviceSpec;
-use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIndication;
-use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIngredient;
-use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductInteraction;
-use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductManufactured;
-use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductPackaged;
-use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductPharmaceutical;
-use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductUndesirableEffect;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMessageDefinition;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMessageHeader;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRNamingSystem;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRNutritionOrder;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRObservation;
-use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRObservationDefinition;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROperationDefinition;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROperationOutcome;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROrganization;
-use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROrganizationAffiliation;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPatient;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPaymentNotice;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPaymentReconciliation;
@@ -170,11 +149,13 @@ use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPlanDefinition;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPractitioner;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPractitionerRole;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcedure;
+use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcedureRequest;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcessRequest;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcessResponse;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProvenance;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRQuestionnaire;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRQuestionnaireResponse;
+use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRReferralRequest;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRelatedPerson;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRequestGroup;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRResearchStudy;
@@ -183,30 +164,25 @@ use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRiskAssessment;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSchedule;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSearchParameter;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSequence;
-use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRServiceRequest;
+use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRServiceDefinition;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSlot;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSpecimen;
-use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSpecimenDefinition;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRStructureDefinition;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRStructureMap;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSubscription;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSubstance;
-use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSubstancePolymer;
-use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSubstanceReferenceInformation;
-use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSubstanceSpecification;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSupplyDelivery;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSupplyRequest;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTask;
-use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTerminologyCapabilities;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTestReport;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTestScript;
-use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRUserSession;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRValueSet;
-use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRVerificationResult;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRVisionPrescription;
 use PHPFHIRGenerated\FHIRResource\FHIRParameters;
 
 /**
+ * (choose any one of the elements, but only one)
+ *
  * Class FHIRResourceContainer
  * @package PHPFHIRGenerated
  */
@@ -218,717 +194,587 @@ class FHIRResourceContainer implements \JsonSerializable
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAccount
      */
-    public $Account = null;
+    private $Account = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
      */
-    public $ActivityDefinition = null;
+    private $ActivityDefinition = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAdverseEvent
      */
-    public $AdverseEvent = null;
+    private $AdverseEvent = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance
      */
-    public $AllergyIntolerance = null;
+    private $AllergyIntolerance = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAppointment
      */
-    public $Appointment = null;
+    private $Appointment = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAppointmentResponse
      */
-    public $AppointmentResponse = null;
+    private $AppointmentResponse = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAuditEvent
      */
-    public $AuditEvent = null;
+    private $AuditEvent = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRBasic
      */
-    public $Basic = null;
+    private $Basic = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRBinary
      */
-    public $Binary = null;
+    private $Binary = null;
 
     /**
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRBiologicallyDerivedProduct
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRBodySite
      */
-    public $BiologicallyDerivedProduct = null;
-
-    /**
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRBodyStructure
-     */
-    public $BodyStructure = null;
+    private $BodySite = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRBundle
      */
-    public $Bundle = null;
+    private $Bundle = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement
      */
-    public $CapabilityStatement = null;
+    private $CapabilityStatement = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCarePlan
      */
-    public $CarePlan = null;
+    private $CarePlan = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCareTeam
      */
-    public $CareTeam = null;
-
-    /**
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCatalogEntry
-     */
-    public $CatalogEntry = null;
+    private $CareTeam = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRChargeItem
      */
-    public $ChargeItem = null;
-
-    /**
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRChargeItemDefinition
-     */
-    public $ChargeItemDefinition = null;
+    private $ChargeItem = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClaim
      */
-    public $Claim = null;
+    private $Claim = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClaimResponse
      */
-    public $ClaimResponse = null;
+    private $ClaimResponse = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClinicalImpression
      */
-    public $ClinicalImpression = null;
+    private $ClinicalImpression = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCodeSystem
      */
-    public $CodeSystem = null;
+    private $CodeSystem = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCommunication
      */
-    public $Communication = null;
+    private $Communication = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest
      */
-    public $CommunicationRequest = null;
+    private $CommunicationRequest = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCompartmentDefinition
      */
-    public $CompartmentDefinition = null;
+    private $CompartmentDefinition = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRComposition
      */
-    public $Composition = null;
+    private $Composition = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRConceptMap
      */
-    public $ConceptMap = null;
+    private $ConceptMap = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCondition
      */
-    public $Condition = null;
+    private $Condition = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRConsent
      */
-    public $Consent = null;
+    private $Consent = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRContract
      */
-    public $Contract = null;
+    private $Contract = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCoverage
      */
-    public $Coverage = null;
+    private $Coverage = null;
 
     /**
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCoverageEligibilityRequest
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDataElement
      */
-    public $CoverageEligibilityRequest = null;
-
-    /**
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCoverageEligibilityResponse
-     */
-    public $CoverageEligibilityResponse = null;
+    private $DataElement = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDetectedIssue
      */
-    public $DetectedIssue = null;
+    private $DetectedIssue = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDevice
      */
-    public $Device = null;
+    private $Device = null;
 
     /**
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDeviceDefinition
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDeviceComponent
      */
-    public $DeviceDefinition = null;
+    private $DeviceComponent = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDeviceMetric
      */
-    public $DeviceMetric = null;
+    private $DeviceMetric = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDeviceRequest
      */
-    public $DeviceRequest = null;
+    private $DeviceRequest = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDeviceUseStatement
      */
-    public $DeviceUseStatement = null;
+    private $DeviceUseStatement = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDiagnosticReport
      */
-    public $DiagnosticReport = null;
+    private $DiagnosticReport = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDocumentManifest
      */
-    public $DocumentManifest = null;
+    private $DocumentManifest = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDocumentReference
      */
-    public $DocumentReference = null;
+    private $DocumentReference = null;
+
+    /**
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREligibilityRequest
+     */
+    private $EligibilityRequest = null;
+
+    /**
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREligibilityResponse
+     */
+    private $EligibilityResponse = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREncounter
      */
-    public $Encounter = null;
+    private $Encounter = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREndpoint
      */
-    public $Endpoint = null;
+    private $Endpoint = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREnrollmentRequest
      */
-    public $EnrollmentRequest = null;
+    private $EnrollmentRequest = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREnrollmentResponse
      */
-    public $EnrollmentResponse = null;
+    private $EnrollmentResponse = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREpisodeOfCare
      */
-    public $EpisodeOfCare = null;
+    private $EpisodeOfCare = null;
 
     /**
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREventDefinition
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRExpansionProfile
      */
-    public $EventDefinition = null;
-
-    /**
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRExampleScenario
-     */
-    public $ExampleScenario = null;
+    private $ExpansionProfile = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRExplanationOfBenefit
      */
-    public $ExplanationOfBenefit = null;
+    private $ExplanationOfBenefit = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
      */
-    public $FamilyMemberHistory = null;
+    private $FamilyMemberHistory = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRFlag
      */
-    public $Flag = null;
+    private $Flag = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRGoal
      */
-    public $Goal = null;
+    private $Goal = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRGraphDefinition
      */
-    public $GraphDefinition = null;
+    private $GraphDefinition = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRGroup
      */
-    public $Group = null;
+    private $Group = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRGuidanceResponse
      */
-    public $GuidanceResponse = null;
+    private $GuidanceResponse = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRHealthcareService
      */
-    public $HealthcareService = null;
+    private $HealthcareService = null;
+
+    /**
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImagingManifest
+     */
+    private $ImagingManifest = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImagingStudy
      */
-    public $ImagingStudy = null;
+    private $ImagingStudy = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImmunization
      */
-    public $Immunization = null;
-
-    /**
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImmunizationEvaluation
-     */
-    public $ImmunizationEvaluation = null;
+    private $Immunization = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImmunizationRecommendation
      */
-    public $ImmunizationRecommendation = null;
+    private $ImmunizationRecommendation = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImplementationGuide
      */
-    public $ImplementationGuide = null;
-
-    /**
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRInsurancePlan
-     */
-    public $InsurancePlan = null;
-
-    /**
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRInvoice
-     */
-    public $Invoice = null;
-
-    /**
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRItemInstance
-     */
-    public $ItemInstance = null;
+    private $ImplementationGuide = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLibrary
      */
-    public $Library = null;
+    private $Library = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLinkage
      */
-    public $Linkage = null;
+    private $Linkage = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRList
      */
-    public $List = null;
+    private $List = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLocation
      */
-    public $Location = null;
+    private $Location = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMeasure
      */
-    public $Measure = null;
+    private $Measure = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMeasureReport
      */
-    public $MeasureReport = null;
+    private $MeasureReport = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedia
      */
-    public $Media = null;
+    private $Media = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedication
      */
-    public $Medication = null;
+    private $Medication = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicationAdministration
      */
-    public $MedicationAdministration = null;
+    private $MedicationAdministration = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicationDispense
      */
-    public $MedicationDispense = null;
-
-    /**
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge
-     */
-    public $MedicationKnowledge = null;
+    private $MedicationDispense = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicationRequest
      */
-    public $MedicationRequest = null;
+    private $MedicationRequest = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicationStatement
      */
-    public $MedicationStatement = null;
-
-    /**
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProduct
-     */
-    public $MedicinalProduct = null;
-
-    /**
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductAuthorization
-     */
-    public $MedicinalProductAuthorization = null;
-
-    /**
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductClinicals
-     */
-    public $MedicinalProductClinicals = null;
-
-    /**
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductContraindication
-     */
-    public $MedicinalProductContraindication = null;
-
-    /**
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductDeviceSpec
-     */
-    public $MedicinalProductDeviceSpec = null;
-
-    /**
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIndication
-     */
-    public $MedicinalProductIndication = null;
-
-    /**
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIngredient
-     */
-    public $MedicinalProductIngredient = null;
-
-    /**
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductInteraction
-     */
-    public $MedicinalProductInteraction = null;
-
-    /**
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductManufactured
-     */
-    public $MedicinalProductManufactured = null;
-
-    /**
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductPackaged
-     */
-    public $MedicinalProductPackaged = null;
-
-    /**
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductPharmaceutical
-     */
-    public $MedicinalProductPharmaceutical = null;
-
-    /**
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductUndesirableEffect
-     */
-    public $MedicinalProductUndesirableEffect = null;
+    private $MedicationStatement = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMessageDefinition
      */
-    public $MessageDefinition = null;
+    private $MessageDefinition = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMessageHeader
      */
-    public $MessageHeader = null;
+    private $MessageHeader = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRNamingSystem
      */
-    public $NamingSystem = null;
+    private $NamingSystem = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRNutritionOrder
      */
-    public $NutritionOrder = null;
+    private $NutritionOrder = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRObservation
      */
-    public $Observation = null;
-
-    /**
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRObservationDefinition
-     */
-    public $ObservationDefinition = null;
+    private $Observation = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROperationDefinition
      */
-    public $OperationDefinition = null;
+    private $OperationDefinition = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROperationOutcome
      */
-    public $OperationOutcome = null;
+    private $OperationOutcome = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROrganization
      */
-    public $Organization = null;
-
-    /**
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROrganizationAffiliation
-     */
-    public $OrganizationAffiliation = null;
+    private $Organization = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRParameters
      */
-    public $Parameters = null;
+    private $Parameters = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPatient
      */
-    public $Patient = null;
+    private $Patient = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPaymentNotice
      */
-    public $PaymentNotice = null;
+    private $PaymentNotice = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPaymentReconciliation
      */
-    public $PaymentReconciliation = null;
+    private $PaymentReconciliation = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPerson
      */
-    public $Person = null;
+    private $Person = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPlanDefinition
      */
-    public $PlanDefinition = null;
+    private $PlanDefinition = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPractitioner
      */
-    public $Practitioner = null;
+    private $Practitioner = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPractitionerRole
      */
-    public $PractitionerRole = null;
+    private $PractitionerRole = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcedure
      */
-    public $Procedure = null;
+    private $Procedure = null;
+
+    /**
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcedureRequest
+     */
+    private $ProcedureRequest = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcessRequest
      */
-    public $ProcessRequest = null;
+    private $ProcessRequest = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcessResponse
      */
-    public $ProcessResponse = null;
+    private $ProcessResponse = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProvenance
      */
-    public $Provenance = null;
+    private $Provenance = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRQuestionnaire
      */
-    public $Questionnaire = null;
+    private $Questionnaire = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRQuestionnaireResponse
      */
-    public $QuestionnaireResponse = null;
+    private $QuestionnaireResponse = null;
+
+    /**
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRReferralRequest
+     */
+    private $ReferralRequest = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRelatedPerson
      */
-    public $RelatedPerson = null;
+    private $RelatedPerson = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRequestGroup
      */
-    public $RequestGroup = null;
+    private $RequestGroup = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRResearchStudy
      */
-    public $ResearchStudy = null;
+    private $ResearchStudy = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRResearchSubject
      */
-    public $ResearchSubject = null;
+    private $ResearchSubject = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRiskAssessment
      */
-    public $RiskAssessment = null;
+    private $RiskAssessment = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSchedule
      */
-    public $Schedule = null;
+    private $Schedule = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSearchParameter
      */
-    public $SearchParameter = null;
+    private $SearchParameter = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSequence
      */
-    public $Sequence = null;
+    private $Sequence = null;
 
     /**
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRServiceRequest
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRServiceDefinition
      */
-    public $ServiceRequest = null;
+    private $ServiceDefinition = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSlot
      */
-    public $Slot = null;
+    private $Slot = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSpecimen
      */
-    public $Specimen = null;
-
-    /**
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSpecimenDefinition
-     */
-    public $SpecimenDefinition = null;
+    private $Specimen = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRStructureDefinition
      */
-    public $StructureDefinition = null;
+    private $StructureDefinition = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRStructureMap
      */
-    public $StructureMap = null;
+    private $StructureMap = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSubscription
      */
-    public $Subscription = null;
+    private $Subscription = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSubstance
      */
-    public $Substance = null;
-
-    /**
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSubstancePolymer
-     */
-    public $SubstancePolymer = null;
-
-    /**
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSubstanceReferenceInformation
-     */
-    public $SubstanceReferenceInformation = null;
-
-    /**
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSubstanceSpecification
-     */
-    public $SubstanceSpecification = null;
+    private $Substance = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSupplyDelivery
      */
-    public $SupplyDelivery = null;
+    private $SupplyDelivery = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSupplyRequest
      */
-    public $SupplyRequest = null;
+    private $SupplyRequest = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTask
      */
-    public $Task = null;
-
-    /**
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTerminologyCapabilities
-     */
-    public $TerminologyCapabilities = null;
+    private $Task = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTestReport
      */
-    public $TestReport = null;
+    private $TestReport = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTestScript
      */
-    public $TestScript = null;
-
-    /**
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRUserSession
-     */
-    public $UserSession = null;
+    private $TestScript = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRValueSet
      */
-    public $ValueSet = null;
-
-    /**
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRVerificationResult
-     */
-    public $VerificationResult = null;
+    private $ValueSet = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRVisionPrescription
      */
-    public $VisionPrescription = null;
+    private $VisionPrescription = null;
 
     /**
      * FHIRResourceContainer Constructor
@@ -977,7 +823,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->Account;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
      * @return $this
@@ -998,7 +843,6 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         return $this->ActivityDefinition;
     }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAdverseEvent
@@ -1021,7 +865,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->AdverseEvent;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance
      * @return $this
@@ -1042,7 +885,6 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         return $this->AllergyIntolerance;
     }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAppointment
@@ -1065,7 +907,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->Appointment;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAppointmentResponse
      * @return $this
@@ -1086,7 +927,6 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         return $this->AppointmentResponse;
     }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAuditEvent
@@ -1109,7 +949,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->AuditEvent;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRBasic
      * @return $this
@@ -1130,7 +969,6 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         return $this->Basic;
     }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRBinary
@@ -1153,50 +991,26 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->Binary;
     }
 
-
     /**
-     * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRBiologicallyDerivedProduct
+     * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRBodySite
      * @return $this
      */
-    public function setBiologicallyDerivedProduct(FHIRBiologicallyDerivedProduct $BiologicallyDerivedProduct = null)
+    public function setBodySite(FHIRBodySite $BodySite = null)
     {
-        if (null === $BiologicallyDerivedProduct) {
+        if (null === $BodySite) {
             return $this; 
         }
-        $this->BiologicallyDerivedProduct = $BiologicallyDerivedProduct;
+        $this->BodySite = $BodySite;
         return $this;
     }
 
     /**
-     * @return null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRBiologicallyDerivedProduct
+     * @return null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRBodySite
      */
-    public function getBiologicallyDerivedProduct()
+    public function getBodySite()
     {
-        return $this->BiologicallyDerivedProduct;
+        return $this->BodySite;
     }
-
-
-    /**
-     * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRBodyStructure
-     * @return $this
-     */
-    public function setBodyStructure(FHIRBodyStructure $BodyStructure = null)
-    {
-        if (null === $BodyStructure) {
-            return $this; 
-        }
-        $this->BodyStructure = $BodyStructure;
-        return $this;
-    }
-
-    /**
-     * @return null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRBodyStructure
-     */
-    public function getBodyStructure()
-    {
-        return $this->BodyStructure;
-    }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRBundle
@@ -1219,7 +1033,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->Bundle;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement
      * @return $this
@@ -1240,7 +1053,6 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         return $this->CapabilityStatement;
     }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCarePlan
@@ -1263,7 +1075,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->CarePlan;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCareTeam
      * @return $this
@@ -1284,29 +1095,6 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         return $this->CareTeam;
     }
-
-
-    /**
-     * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCatalogEntry
-     * @return $this
-     */
-    public function setCatalogEntry(FHIRCatalogEntry $CatalogEntry = null)
-    {
-        if (null === $CatalogEntry) {
-            return $this; 
-        }
-        $this->CatalogEntry = $CatalogEntry;
-        return $this;
-    }
-
-    /**
-     * @return null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCatalogEntry
-     */
-    public function getCatalogEntry()
-    {
-        return $this->CatalogEntry;
-    }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRChargeItem
@@ -1329,29 +1117,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->ChargeItem;
     }
 
-
-    /**
-     * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRChargeItemDefinition
-     * @return $this
-     */
-    public function setChargeItemDefinition(FHIRChargeItemDefinition $ChargeItemDefinition = null)
-    {
-        if (null === $ChargeItemDefinition) {
-            return $this; 
-        }
-        $this->ChargeItemDefinition = $ChargeItemDefinition;
-        return $this;
-    }
-
-    /**
-     * @return null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRChargeItemDefinition
-     */
-    public function getChargeItemDefinition()
-    {
-        return $this->ChargeItemDefinition;
-    }
-
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClaim
      * @return $this
@@ -1372,7 +1137,6 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         return $this->Claim;
     }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClaimResponse
@@ -1395,7 +1159,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->ClaimResponse;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClinicalImpression
      * @return $this
@@ -1416,7 +1179,6 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         return $this->ClinicalImpression;
     }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCodeSystem
@@ -1439,7 +1201,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->CodeSystem;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCommunication
      * @return $this
@@ -1460,7 +1221,6 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         return $this->Communication;
     }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest
@@ -1483,7 +1243,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->CommunicationRequest;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCompartmentDefinition
      * @return $this
@@ -1504,7 +1263,6 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         return $this->CompartmentDefinition;
     }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRComposition
@@ -1527,7 +1285,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->Composition;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRConceptMap
      * @return $this
@@ -1548,7 +1305,6 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         return $this->ConceptMap;
     }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCondition
@@ -1571,7 +1327,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->Condition;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRConsent
      * @return $this
@@ -1592,7 +1347,6 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         return $this->Consent;
     }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRContract
@@ -1615,7 +1369,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->Contract;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCoverage
      * @return $this
@@ -1637,50 +1390,26 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->Coverage;
     }
 
-
     /**
-     * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCoverageEligibilityRequest
+     * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDataElement
      * @return $this
      */
-    public function setCoverageEligibilityRequest(FHIRCoverageEligibilityRequest $CoverageEligibilityRequest = null)
+    public function setDataElement(FHIRDataElement $DataElement = null)
     {
-        if (null === $CoverageEligibilityRequest) {
+        if (null === $DataElement) {
             return $this; 
         }
-        $this->CoverageEligibilityRequest = $CoverageEligibilityRequest;
+        $this->DataElement = $DataElement;
         return $this;
     }
 
     /**
-     * @return null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCoverageEligibilityRequest
+     * @return null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDataElement
      */
-    public function getCoverageEligibilityRequest()
+    public function getDataElement()
     {
-        return $this->CoverageEligibilityRequest;
+        return $this->DataElement;
     }
-
-
-    /**
-     * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCoverageEligibilityResponse
-     * @return $this
-     */
-    public function setCoverageEligibilityResponse(FHIRCoverageEligibilityResponse $CoverageEligibilityResponse = null)
-    {
-        if (null === $CoverageEligibilityResponse) {
-            return $this; 
-        }
-        $this->CoverageEligibilityResponse = $CoverageEligibilityResponse;
-        return $this;
-    }
-
-    /**
-     * @return null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCoverageEligibilityResponse
-     */
-    public function getCoverageEligibilityResponse()
-    {
-        return $this->CoverageEligibilityResponse;
-    }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDetectedIssue
@@ -1703,7 +1432,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->DetectedIssue;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDevice
      * @return $this
@@ -1725,28 +1453,26 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->Device;
     }
 
-
     /**
-     * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDeviceDefinition
+     * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDeviceComponent
      * @return $this
      */
-    public function setDeviceDefinition(FHIRDeviceDefinition $DeviceDefinition = null)
+    public function setDeviceComponent(FHIRDeviceComponent $DeviceComponent = null)
     {
-        if (null === $DeviceDefinition) {
+        if (null === $DeviceComponent) {
             return $this; 
         }
-        $this->DeviceDefinition = $DeviceDefinition;
+        $this->DeviceComponent = $DeviceComponent;
         return $this;
     }
 
     /**
-     * @return null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDeviceDefinition
+     * @return null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDeviceComponent
      */
-    public function getDeviceDefinition()
+    public function getDeviceComponent()
     {
-        return $this->DeviceDefinition;
+        return $this->DeviceComponent;
     }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDeviceMetric
@@ -1769,7 +1495,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->DeviceMetric;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDeviceRequest
      * @return $this
@@ -1790,7 +1515,6 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         return $this->DeviceRequest;
     }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDeviceUseStatement
@@ -1813,7 +1537,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->DeviceUseStatement;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDiagnosticReport
      * @return $this
@@ -1834,7 +1557,6 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         return $this->DiagnosticReport;
     }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDocumentManifest
@@ -1857,7 +1579,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->DocumentManifest;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDocumentReference
      * @return $this
@@ -1879,6 +1600,47 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->DocumentReference;
     }
 
+    /**
+     * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREligibilityRequest
+     * @return $this
+     */
+    public function setEligibilityRequest(FHIREligibilityRequest $EligibilityRequest = null)
+    {
+        if (null === $EligibilityRequest) {
+            return $this; 
+        }
+        $this->EligibilityRequest = $EligibilityRequest;
+        return $this;
+    }
+
+    /**
+     * @return null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREligibilityRequest
+     */
+    public function getEligibilityRequest()
+    {
+        return $this->EligibilityRequest;
+    }
+
+    /**
+     * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREligibilityResponse
+     * @return $this
+     */
+    public function setEligibilityResponse(FHIREligibilityResponse $EligibilityResponse = null)
+    {
+        if (null === $EligibilityResponse) {
+            return $this; 
+        }
+        $this->EligibilityResponse = $EligibilityResponse;
+        return $this;
+    }
+
+    /**
+     * @return null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREligibilityResponse
+     */
+    public function getEligibilityResponse()
+    {
+        return $this->EligibilityResponse;
+    }
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREncounter
@@ -1901,7 +1663,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->Encounter;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREndpoint
      * @return $this
@@ -1922,7 +1683,6 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         return $this->Endpoint;
     }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREnrollmentRequest
@@ -1945,7 +1705,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->EnrollmentRequest;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREnrollmentResponse
      * @return $this
@@ -1966,7 +1725,6 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         return $this->EnrollmentResponse;
     }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREpisodeOfCare
@@ -1989,50 +1747,26 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->EpisodeOfCare;
     }
 
-
     /**
-     * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREventDefinition
+     * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRExpansionProfile
      * @return $this
      */
-    public function setEventDefinition(FHIREventDefinition $EventDefinition = null)
+    public function setExpansionProfile(FHIRExpansionProfile $ExpansionProfile = null)
     {
-        if (null === $EventDefinition) {
+        if (null === $ExpansionProfile) {
             return $this; 
         }
-        $this->EventDefinition = $EventDefinition;
+        $this->ExpansionProfile = $ExpansionProfile;
         return $this;
     }
 
     /**
-     * @return null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREventDefinition
+     * @return null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRExpansionProfile
      */
-    public function getEventDefinition()
+    public function getExpansionProfile()
     {
-        return $this->EventDefinition;
+        return $this->ExpansionProfile;
     }
-
-
-    /**
-     * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRExampleScenario
-     * @return $this
-     */
-    public function setExampleScenario(FHIRExampleScenario $ExampleScenario = null)
-    {
-        if (null === $ExampleScenario) {
-            return $this; 
-        }
-        $this->ExampleScenario = $ExampleScenario;
-        return $this;
-    }
-
-    /**
-     * @return null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRExampleScenario
-     */
-    public function getExampleScenario()
-    {
-        return $this->ExampleScenario;
-    }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRExplanationOfBenefit
@@ -2055,7 +1789,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->ExplanationOfBenefit;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
      * @return $this
@@ -2076,7 +1809,6 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         return $this->FamilyMemberHistory;
     }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRFlag
@@ -2099,7 +1831,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->Flag;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRGoal
      * @return $this
@@ -2120,7 +1851,6 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         return $this->Goal;
     }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRGraphDefinition
@@ -2143,7 +1873,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->GraphDefinition;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRGroup
      * @return $this
@@ -2164,7 +1893,6 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         return $this->Group;
     }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRGuidanceResponse
@@ -2187,7 +1915,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->GuidanceResponse;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRHealthcareService
      * @return $this
@@ -2209,6 +1936,26 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->HealthcareService;
     }
 
+    /**
+     * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImagingManifest
+     * @return $this
+     */
+    public function setImagingManifest(FHIRImagingManifest $ImagingManifest = null)
+    {
+        if (null === $ImagingManifest) {
+            return $this; 
+        }
+        $this->ImagingManifest = $ImagingManifest;
+        return $this;
+    }
+
+    /**
+     * @return null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImagingManifest
+     */
+    public function getImagingManifest()
+    {
+        return $this->ImagingManifest;
+    }
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImagingStudy
@@ -2231,7 +1978,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->ImagingStudy;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImmunization
      * @return $this
@@ -2252,29 +1998,6 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         return $this->Immunization;
     }
-
-
-    /**
-     * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImmunizationEvaluation
-     * @return $this
-     */
-    public function setImmunizationEvaluation(FHIRImmunizationEvaluation $ImmunizationEvaluation = null)
-    {
-        if (null === $ImmunizationEvaluation) {
-            return $this; 
-        }
-        $this->ImmunizationEvaluation = $ImmunizationEvaluation;
-        return $this;
-    }
-
-    /**
-     * @return null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImmunizationEvaluation
-     */
-    public function getImmunizationEvaluation()
-    {
-        return $this->ImmunizationEvaluation;
-    }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImmunizationRecommendation
@@ -2297,7 +2020,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->ImmunizationRecommendation;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImplementationGuide
      * @return $this
@@ -2318,73 +2040,6 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         return $this->ImplementationGuide;
     }
-
-
-    /**
-     * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRInsurancePlan
-     * @return $this
-     */
-    public function setInsurancePlan(FHIRInsurancePlan $InsurancePlan = null)
-    {
-        if (null === $InsurancePlan) {
-            return $this; 
-        }
-        $this->InsurancePlan = $InsurancePlan;
-        return $this;
-    }
-
-    /**
-     * @return null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRInsurancePlan
-     */
-    public function getInsurancePlan()
-    {
-        return $this->InsurancePlan;
-    }
-
-
-    /**
-     * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRInvoice
-     * @return $this
-     */
-    public function setInvoice(FHIRInvoice $Invoice = null)
-    {
-        if (null === $Invoice) {
-            return $this; 
-        }
-        $this->Invoice = $Invoice;
-        return $this;
-    }
-
-    /**
-     * @return null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRInvoice
-     */
-    public function getInvoice()
-    {
-        return $this->Invoice;
-    }
-
-
-    /**
-     * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRItemInstance
-     * @return $this
-     */
-    public function setItemInstance(FHIRItemInstance $ItemInstance = null)
-    {
-        if (null === $ItemInstance) {
-            return $this; 
-        }
-        $this->ItemInstance = $ItemInstance;
-        return $this;
-    }
-
-    /**
-     * @return null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRItemInstance
-     */
-    public function getItemInstance()
-    {
-        return $this->ItemInstance;
-    }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLibrary
@@ -2407,7 +2062,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->Library;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLinkage
      * @return $this
@@ -2428,7 +2082,6 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         return $this->Linkage;
     }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRList
@@ -2451,7 +2104,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->List;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLocation
      * @return $this
@@ -2472,7 +2124,6 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         return $this->Location;
     }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMeasure
@@ -2495,7 +2146,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->Measure;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMeasureReport
      * @return $this
@@ -2516,7 +2166,6 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         return $this->MeasureReport;
     }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedia
@@ -2539,7 +2188,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->Media;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedication
      * @return $this
@@ -2560,7 +2208,6 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         return $this->Medication;
     }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicationAdministration
@@ -2583,7 +2230,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->MedicationAdministration;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicationDispense
      * @return $this
@@ -2604,29 +2250,6 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         return $this->MedicationDispense;
     }
-
-
-    /**
-     * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge
-     * @return $this
-     */
-    public function setMedicationKnowledge(FHIRMedicationKnowledge $MedicationKnowledge = null)
-    {
-        if (null === $MedicationKnowledge) {
-            return $this; 
-        }
-        $this->MedicationKnowledge = $MedicationKnowledge;
-        return $this;
-    }
-
-    /**
-     * @return null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge
-     */
-    public function getMedicationKnowledge()
-    {
-        return $this->MedicationKnowledge;
-    }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicationRequest
@@ -2649,7 +2272,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->MedicationRequest;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicationStatement
      * @return $this
@@ -2670,271 +2292,6 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         return $this->MedicationStatement;
     }
-
-
-    /**
-     * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProduct
-     * @return $this
-     */
-    public function setMedicinalProduct(FHIRMedicinalProduct $MedicinalProduct = null)
-    {
-        if (null === $MedicinalProduct) {
-            return $this; 
-        }
-        $this->MedicinalProduct = $MedicinalProduct;
-        return $this;
-    }
-
-    /**
-     * @return null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProduct
-     */
-    public function getMedicinalProduct()
-    {
-        return $this->MedicinalProduct;
-    }
-
-
-    /**
-     * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductAuthorization
-     * @return $this
-     */
-    public function setMedicinalProductAuthorization(FHIRMedicinalProductAuthorization $MedicinalProductAuthorization = null)
-    {
-        if (null === $MedicinalProductAuthorization) {
-            return $this; 
-        }
-        $this->MedicinalProductAuthorization = $MedicinalProductAuthorization;
-        return $this;
-    }
-
-    /**
-     * @return null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductAuthorization
-     */
-    public function getMedicinalProductAuthorization()
-    {
-        return $this->MedicinalProductAuthorization;
-    }
-
-
-    /**
-     * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductClinicals
-     * @return $this
-     */
-    public function setMedicinalProductClinicals(FHIRMedicinalProductClinicals $MedicinalProductClinicals = null)
-    {
-        if (null === $MedicinalProductClinicals) {
-            return $this; 
-        }
-        $this->MedicinalProductClinicals = $MedicinalProductClinicals;
-        return $this;
-    }
-
-    /**
-     * @return null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductClinicals
-     */
-    public function getMedicinalProductClinicals()
-    {
-        return $this->MedicinalProductClinicals;
-    }
-
-
-    /**
-     * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductContraindication
-     * @return $this
-     */
-    public function setMedicinalProductContraindication(FHIRMedicinalProductContraindication $MedicinalProductContraindication = null)
-    {
-        if (null === $MedicinalProductContraindication) {
-            return $this; 
-        }
-        $this->MedicinalProductContraindication = $MedicinalProductContraindication;
-        return $this;
-    }
-
-    /**
-     * @return null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductContraindication
-     */
-    public function getMedicinalProductContraindication()
-    {
-        return $this->MedicinalProductContraindication;
-    }
-
-
-    /**
-     * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductDeviceSpec
-     * @return $this
-     */
-    public function setMedicinalProductDeviceSpec(FHIRMedicinalProductDeviceSpec $MedicinalProductDeviceSpec = null)
-    {
-        if (null === $MedicinalProductDeviceSpec) {
-            return $this; 
-        }
-        $this->MedicinalProductDeviceSpec = $MedicinalProductDeviceSpec;
-        return $this;
-    }
-
-    /**
-     * @return null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductDeviceSpec
-     */
-    public function getMedicinalProductDeviceSpec()
-    {
-        return $this->MedicinalProductDeviceSpec;
-    }
-
-
-    /**
-     * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIndication
-     * @return $this
-     */
-    public function setMedicinalProductIndication(FHIRMedicinalProductIndication $MedicinalProductIndication = null)
-    {
-        if (null === $MedicinalProductIndication) {
-            return $this; 
-        }
-        $this->MedicinalProductIndication = $MedicinalProductIndication;
-        return $this;
-    }
-
-    /**
-     * @return null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIndication
-     */
-    public function getMedicinalProductIndication()
-    {
-        return $this->MedicinalProductIndication;
-    }
-
-
-    /**
-     * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIngredient
-     * @return $this
-     */
-    public function setMedicinalProductIngredient(FHIRMedicinalProductIngredient $MedicinalProductIngredient = null)
-    {
-        if (null === $MedicinalProductIngredient) {
-            return $this; 
-        }
-        $this->MedicinalProductIngredient = $MedicinalProductIngredient;
-        return $this;
-    }
-
-    /**
-     * @return null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIngredient
-     */
-    public function getMedicinalProductIngredient()
-    {
-        return $this->MedicinalProductIngredient;
-    }
-
-
-    /**
-     * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductInteraction
-     * @return $this
-     */
-    public function setMedicinalProductInteraction(FHIRMedicinalProductInteraction $MedicinalProductInteraction = null)
-    {
-        if (null === $MedicinalProductInteraction) {
-            return $this; 
-        }
-        $this->MedicinalProductInteraction = $MedicinalProductInteraction;
-        return $this;
-    }
-
-    /**
-     * @return null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductInteraction
-     */
-    public function getMedicinalProductInteraction()
-    {
-        return $this->MedicinalProductInteraction;
-    }
-
-
-    /**
-     * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductManufactured
-     * @return $this
-     */
-    public function setMedicinalProductManufactured(FHIRMedicinalProductManufactured $MedicinalProductManufactured = null)
-    {
-        if (null === $MedicinalProductManufactured) {
-            return $this; 
-        }
-        $this->MedicinalProductManufactured = $MedicinalProductManufactured;
-        return $this;
-    }
-
-    /**
-     * @return null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductManufactured
-     */
-    public function getMedicinalProductManufactured()
-    {
-        return $this->MedicinalProductManufactured;
-    }
-
-
-    /**
-     * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductPackaged
-     * @return $this
-     */
-    public function setMedicinalProductPackaged(FHIRMedicinalProductPackaged $MedicinalProductPackaged = null)
-    {
-        if (null === $MedicinalProductPackaged) {
-            return $this; 
-        }
-        $this->MedicinalProductPackaged = $MedicinalProductPackaged;
-        return $this;
-    }
-
-    /**
-     * @return null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductPackaged
-     */
-    public function getMedicinalProductPackaged()
-    {
-        return $this->MedicinalProductPackaged;
-    }
-
-
-    /**
-     * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductPharmaceutical
-     * @return $this
-     */
-    public function setMedicinalProductPharmaceutical(FHIRMedicinalProductPharmaceutical $MedicinalProductPharmaceutical = null)
-    {
-        if (null === $MedicinalProductPharmaceutical) {
-            return $this; 
-        }
-        $this->MedicinalProductPharmaceutical = $MedicinalProductPharmaceutical;
-        return $this;
-    }
-
-    /**
-     * @return null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductPharmaceutical
-     */
-    public function getMedicinalProductPharmaceutical()
-    {
-        return $this->MedicinalProductPharmaceutical;
-    }
-
-
-    /**
-     * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductUndesirableEffect
-     * @return $this
-     */
-    public function setMedicinalProductUndesirableEffect(FHIRMedicinalProductUndesirableEffect $MedicinalProductUndesirableEffect = null)
-    {
-        if (null === $MedicinalProductUndesirableEffect) {
-            return $this; 
-        }
-        $this->MedicinalProductUndesirableEffect = $MedicinalProductUndesirableEffect;
-        return $this;
-    }
-
-    /**
-     * @return null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductUndesirableEffect
-     */
-    public function getMedicinalProductUndesirableEffect()
-    {
-        return $this->MedicinalProductUndesirableEffect;
-    }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMessageDefinition
@@ -2957,7 +2314,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->MessageDefinition;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMessageHeader
      * @return $this
@@ -2978,7 +2334,6 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         return $this->MessageHeader;
     }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRNamingSystem
@@ -3001,7 +2356,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->NamingSystem;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRNutritionOrder
      * @return $this
@@ -3022,7 +2376,6 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         return $this->NutritionOrder;
     }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRObservation
@@ -3045,29 +2398,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->Observation;
     }
 
-
-    /**
-     * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRObservationDefinition
-     * @return $this
-     */
-    public function setObservationDefinition(FHIRObservationDefinition $ObservationDefinition = null)
-    {
-        if (null === $ObservationDefinition) {
-            return $this; 
-        }
-        $this->ObservationDefinition = $ObservationDefinition;
-        return $this;
-    }
-
-    /**
-     * @return null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRObservationDefinition
-     */
-    public function getObservationDefinition()
-    {
-        return $this->ObservationDefinition;
-    }
-
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROperationDefinition
      * @return $this
@@ -3088,7 +2418,6 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         return $this->OperationDefinition;
     }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROperationOutcome
@@ -3111,7 +2440,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->OperationOutcome;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROrganization
      * @return $this
@@ -3132,29 +2460,6 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         return $this->Organization;
     }
-
-
-    /**
-     * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROrganizationAffiliation
-     * @return $this
-     */
-    public function setOrganizationAffiliation(FHIROrganizationAffiliation $OrganizationAffiliation = null)
-    {
-        if (null === $OrganizationAffiliation) {
-            return $this; 
-        }
-        $this->OrganizationAffiliation = $OrganizationAffiliation;
-        return $this;
-    }
-
-    /**
-     * @return null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROrganizationAffiliation
-     */
-    public function getOrganizationAffiliation()
-    {
-        return $this->OrganizationAffiliation;
-    }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRParameters
@@ -3177,7 +2482,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->Parameters;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPatient
      * @return $this
@@ -3198,7 +2502,6 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         return $this->Patient;
     }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPaymentNotice
@@ -3221,7 +2524,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->PaymentNotice;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPaymentReconciliation
      * @return $this
@@ -3242,7 +2544,6 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         return $this->PaymentReconciliation;
     }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPerson
@@ -3265,7 +2566,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->Person;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPlanDefinition
      * @return $this
@@ -3286,7 +2586,6 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         return $this->PlanDefinition;
     }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPractitioner
@@ -3309,7 +2608,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->Practitioner;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPractitionerRole
      * @return $this
@@ -3330,7 +2628,6 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         return $this->PractitionerRole;
     }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcedure
@@ -3353,6 +2650,26 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->Procedure;
     }
 
+    /**
+     * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcedureRequest
+     * @return $this
+     */
+    public function setProcedureRequest(FHIRProcedureRequest $ProcedureRequest = null)
+    {
+        if (null === $ProcedureRequest) {
+            return $this; 
+        }
+        $this->ProcedureRequest = $ProcedureRequest;
+        return $this;
+    }
+
+    /**
+     * @return null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcedureRequest
+     */
+    public function getProcedureRequest()
+    {
+        return $this->ProcedureRequest;
+    }
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcessRequest
@@ -3375,7 +2692,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->ProcessRequest;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcessResponse
      * @return $this
@@ -3396,7 +2712,6 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         return $this->ProcessResponse;
     }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProvenance
@@ -3419,7 +2734,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->Provenance;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRQuestionnaire
      * @return $this
@@ -3440,7 +2754,6 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         return $this->Questionnaire;
     }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRQuestionnaireResponse
@@ -3463,6 +2776,26 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->QuestionnaireResponse;
     }
 
+    /**
+     * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRReferralRequest
+     * @return $this
+     */
+    public function setReferralRequest(FHIRReferralRequest $ReferralRequest = null)
+    {
+        if (null === $ReferralRequest) {
+            return $this; 
+        }
+        $this->ReferralRequest = $ReferralRequest;
+        return $this;
+    }
+
+    /**
+     * @return null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRReferralRequest
+     */
+    public function getReferralRequest()
+    {
+        return $this->ReferralRequest;
+    }
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRelatedPerson
@@ -3485,7 +2818,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->RelatedPerson;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRequestGroup
      * @return $this
@@ -3506,7 +2838,6 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         return $this->RequestGroup;
     }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRResearchStudy
@@ -3529,7 +2860,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->ResearchStudy;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRResearchSubject
      * @return $this
@@ -3550,7 +2880,6 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         return $this->ResearchSubject;
     }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRiskAssessment
@@ -3573,7 +2902,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->RiskAssessment;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSchedule
      * @return $this
@@ -3594,7 +2922,6 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         return $this->Schedule;
     }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSearchParameter
@@ -3617,7 +2944,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->SearchParameter;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSequence
      * @return $this
@@ -3639,28 +2965,26 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->Sequence;
     }
 
-
     /**
-     * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRServiceRequest
+     * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRServiceDefinition
      * @return $this
      */
-    public function setServiceRequest(FHIRServiceRequest $ServiceRequest = null)
+    public function setServiceDefinition(FHIRServiceDefinition $ServiceDefinition = null)
     {
-        if (null === $ServiceRequest) {
+        if (null === $ServiceDefinition) {
             return $this; 
         }
-        $this->ServiceRequest = $ServiceRequest;
+        $this->ServiceDefinition = $ServiceDefinition;
         return $this;
     }
 
     /**
-     * @return null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRServiceRequest
+     * @return null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRServiceDefinition
      */
-    public function getServiceRequest()
+    public function getServiceDefinition()
     {
-        return $this->ServiceRequest;
+        return $this->ServiceDefinition;
     }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSlot
@@ -3683,7 +3007,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->Slot;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSpecimen
      * @return $this
@@ -3704,29 +3027,6 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         return $this->Specimen;
     }
-
-
-    /**
-     * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSpecimenDefinition
-     * @return $this
-     */
-    public function setSpecimenDefinition(FHIRSpecimenDefinition $SpecimenDefinition = null)
-    {
-        if (null === $SpecimenDefinition) {
-            return $this; 
-        }
-        $this->SpecimenDefinition = $SpecimenDefinition;
-        return $this;
-    }
-
-    /**
-     * @return null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSpecimenDefinition
-     */
-    public function getSpecimenDefinition()
-    {
-        return $this->SpecimenDefinition;
-    }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRStructureDefinition
@@ -3749,7 +3049,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->StructureDefinition;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRStructureMap
      * @return $this
@@ -3770,7 +3069,6 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         return $this->StructureMap;
     }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSubscription
@@ -3793,7 +3091,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->Subscription;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSubstance
      * @return $this
@@ -3814,73 +3111,6 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         return $this->Substance;
     }
-
-
-    /**
-     * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSubstancePolymer
-     * @return $this
-     */
-    public function setSubstancePolymer(FHIRSubstancePolymer $SubstancePolymer = null)
-    {
-        if (null === $SubstancePolymer) {
-            return $this; 
-        }
-        $this->SubstancePolymer = $SubstancePolymer;
-        return $this;
-    }
-
-    /**
-     * @return null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSubstancePolymer
-     */
-    public function getSubstancePolymer()
-    {
-        return $this->SubstancePolymer;
-    }
-
-
-    /**
-     * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSubstanceReferenceInformation
-     * @return $this
-     */
-    public function setSubstanceReferenceInformation(FHIRSubstanceReferenceInformation $SubstanceReferenceInformation = null)
-    {
-        if (null === $SubstanceReferenceInformation) {
-            return $this; 
-        }
-        $this->SubstanceReferenceInformation = $SubstanceReferenceInformation;
-        return $this;
-    }
-
-    /**
-     * @return null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSubstanceReferenceInformation
-     */
-    public function getSubstanceReferenceInformation()
-    {
-        return $this->SubstanceReferenceInformation;
-    }
-
-
-    /**
-     * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSubstanceSpecification
-     * @return $this
-     */
-    public function setSubstanceSpecification(FHIRSubstanceSpecification $SubstanceSpecification = null)
-    {
-        if (null === $SubstanceSpecification) {
-            return $this; 
-        }
-        $this->SubstanceSpecification = $SubstanceSpecification;
-        return $this;
-    }
-
-    /**
-     * @return null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSubstanceSpecification
-     */
-    public function getSubstanceSpecification()
-    {
-        return $this->SubstanceSpecification;
-    }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSupplyDelivery
@@ -3903,7 +3133,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->SupplyDelivery;
     }
 
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSupplyRequest
      * @return $this
@@ -3924,7 +3153,6 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         return $this->SupplyRequest;
     }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTask
@@ -3947,29 +3175,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->Task;
     }
 
-
-    /**
-     * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTerminologyCapabilities
-     * @return $this
-     */
-    public function setTerminologyCapabilities(FHIRTerminologyCapabilities $TerminologyCapabilities = null)
-    {
-        if (null === $TerminologyCapabilities) {
-            return $this; 
-        }
-        $this->TerminologyCapabilities = $TerminologyCapabilities;
-        return $this;
-    }
-
-    /**
-     * @return null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTerminologyCapabilities
-     */
-    public function getTerminologyCapabilities()
-    {
-        return $this->TerminologyCapabilities;
-    }
-
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTestReport
      * @return $this
@@ -3990,7 +3195,6 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         return $this->TestReport;
     }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTestScript
@@ -4013,29 +3217,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->TestScript;
     }
 
-
-    /**
-     * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRUserSession
-     * @return $this
-     */
-    public function setUserSession(FHIRUserSession $UserSession = null)
-    {
-        if (null === $UserSession) {
-            return $this; 
-        }
-        $this->UserSession = $UserSession;
-        return $this;
-    }
-
-    /**
-     * @return null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRUserSession
-     */
-    public function getUserSession()
-    {
-        return $this->UserSession;
-    }
-
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRValueSet
      * @return $this
@@ -4057,29 +3238,6 @@ class FHIRResourceContainer implements \JsonSerializable
         return $this->ValueSet;
     }
 
-
-    /**
-     * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRVerificationResult
-     * @return $this
-     */
-    public function setVerificationResult(FHIRVerificationResult $VerificationResult = null)
-    {
-        if (null === $VerificationResult) {
-            return $this; 
-        }
-        $this->VerificationResult = $VerificationResult;
-        return $this;
-    }
-
-    /**
-     * @return null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRVerificationResult
-     */
-    public function getVerificationResult()
-    {
-        return $this->VerificationResult;
-    }
-
-
     /**
      * @param null|\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRVisionPrescription
      * @return $this
@@ -4100,7 +3258,6 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         return $this->VisionPrescription;
     }
-
 
     /**
      * @return string
@@ -4133,9 +3290,7 @@ class FHIRResourceContainer implements \JsonSerializable
             return $v;
         } elseif (null !== ($v = ($this->getBinary()))) {
             return $v;
-        } elseif (null !== ($v = ($this->getBiologicallyDerivedProduct()))) {
-            return $v;
-        } elseif (null !== ($v = ($this->getBodyStructure()))) {
+        } elseif (null !== ($v = ($this->getBodySite()))) {
             return $v;
         } elseif (null !== ($v = ($this->getBundle()))) {
             return $v;
@@ -4145,11 +3300,7 @@ class FHIRResourceContainer implements \JsonSerializable
             return $v;
         } elseif (null !== ($v = ($this->getCareTeam()))) {
             return $v;
-        } elseif (null !== ($v = ($this->getCatalogEntry()))) {
-            return $v;
         } elseif (null !== ($v = ($this->getChargeItem()))) {
-            return $v;
-        } elseif (null !== ($v = ($this->getChargeItemDefinition()))) {
             return $v;
         } elseif (null !== ($v = ($this->getClaim()))) {
             return $v;
@@ -4177,15 +3328,13 @@ class FHIRResourceContainer implements \JsonSerializable
             return $v;
         } elseif (null !== ($v = ($this->getCoverage()))) {
             return $v;
-        } elseif (null !== ($v = ($this->getCoverageEligibilityRequest()))) {
-            return $v;
-        } elseif (null !== ($v = ($this->getCoverageEligibilityResponse()))) {
+        } elseif (null !== ($v = ($this->getDataElement()))) {
             return $v;
         } elseif (null !== ($v = ($this->getDetectedIssue()))) {
             return $v;
         } elseif (null !== ($v = ($this->getDevice()))) {
             return $v;
-        } elseif (null !== ($v = ($this->getDeviceDefinition()))) {
+        } elseif (null !== ($v = ($this->getDeviceComponent()))) {
             return $v;
         } elseif (null !== ($v = ($this->getDeviceMetric()))) {
             return $v;
@@ -4199,6 +3348,10 @@ class FHIRResourceContainer implements \JsonSerializable
             return $v;
         } elseif (null !== ($v = ($this->getDocumentReference()))) {
             return $v;
+        } elseif (null !== ($v = ($this->getEligibilityRequest()))) {
+            return $v;
+        } elseif (null !== ($v = ($this->getEligibilityResponse()))) {
+            return $v;
         } elseif (null !== ($v = ($this->getEncounter()))) {
             return $v;
         } elseif (null !== ($v = ($this->getEndpoint()))) {
@@ -4209,9 +3362,7 @@ class FHIRResourceContainer implements \JsonSerializable
             return $v;
         } elseif (null !== ($v = ($this->getEpisodeOfCare()))) {
             return $v;
-        } elseif (null !== ($v = ($this->getEventDefinition()))) {
-            return $v;
-        } elseif (null !== ($v = ($this->getExampleScenario()))) {
+        } elseif (null !== ($v = ($this->getExpansionProfile()))) {
             return $v;
         } elseif (null !== ($v = ($this->getExplanationOfBenefit()))) {
             return $v;
@@ -4229,21 +3380,15 @@ class FHIRResourceContainer implements \JsonSerializable
             return $v;
         } elseif (null !== ($v = ($this->getHealthcareService()))) {
             return $v;
+        } elseif (null !== ($v = ($this->getImagingManifest()))) {
+            return $v;
         } elseif (null !== ($v = ($this->getImagingStudy()))) {
             return $v;
         } elseif (null !== ($v = ($this->getImmunization()))) {
             return $v;
-        } elseif (null !== ($v = ($this->getImmunizationEvaluation()))) {
-            return $v;
         } elseif (null !== ($v = ($this->getImmunizationRecommendation()))) {
             return $v;
         } elseif (null !== ($v = ($this->getImplementationGuide()))) {
-            return $v;
-        } elseif (null !== ($v = ($this->getInsurancePlan()))) {
-            return $v;
-        } elseif (null !== ($v = ($this->getInvoice()))) {
-            return $v;
-        } elseif (null !== ($v = ($this->getItemInstance()))) {
             return $v;
         } elseif (null !== ($v = ($this->getLibrary()))) {
             return $v;
@@ -4265,35 +3410,9 @@ class FHIRResourceContainer implements \JsonSerializable
             return $v;
         } elseif (null !== ($v = ($this->getMedicationDispense()))) {
             return $v;
-        } elseif (null !== ($v = ($this->getMedicationKnowledge()))) {
-            return $v;
         } elseif (null !== ($v = ($this->getMedicationRequest()))) {
             return $v;
         } elseif (null !== ($v = ($this->getMedicationStatement()))) {
-            return $v;
-        } elseif (null !== ($v = ($this->getMedicinalProduct()))) {
-            return $v;
-        } elseif (null !== ($v = ($this->getMedicinalProductAuthorization()))) {
-            return $v;
-        } elseif (null !== ($v = ($this->getMedicinalProductClinicals()))) {
-            return $v;
-        } elseif (null !== ($v = ($this->getMedicinalProductContraindication()))) {
-            return $v;
-        } elseif (null !== ($v = ($this->getMedicinalProductDeviceSpec()))) {
-            return $v;
-        } elseif (null !== ($v = ($this->getMedicinalProductIndication()))) {
-            return $v;
-        } elseif (null !== ($v = ($this->getMedicinalProductIngredient()))) {
-            return $v;
-        } elseif (null !== ($v = ($this->getMedicinalProductInteraction()))) {
-            return $v;
-        } elseif (null !== ($v = ($this->getMedicinalProductManufactured()))) {
-            return $v;
-        } elseif (null !== ($v = ($this->getMedicinalProductPackaged()))) {
-            return $v;
-        } elseif (null !== ($v = ($this->getMedicinalProductPharmaceutical()))) {
-            return $v;
-        } elseif (null !== ($v = ($this->getMedicinalProductUndesirableEffect()))) {
             return $v;
         } elseif (null !== ($v = ($this->getMessageDefinition()))) {
             return $v;
@@ -4305,15 +3424,11 @@ class FHIRResourceContainer implements \JsonSerializable
             return $v;
         } elseif (null !== ($v = ($this->getObservation()))) {
             return $v;
-        } elseif (null !== ($v = ($this->getObservationDefinition()))) {
-            return $v;
         } elseif (null !== ($v = ($this->getOperationDefinition()))) {
             return $v;
         } elseif (null !== ($v = ($this->getOperationOutcome()))) {
             return $v;
         } elseif (null !== ($v = ($this->getOrganization()))) {
-            return $v;
-        } elseif (null !== ($v = ($this->getOrganizationAffiliation()))) {
             return $v;
         } elseif (null !== ($v = ($this->getParameters()))) {
             return $v;
@@ -4333,6 +3448,8 @@ class FHIRResourceContainer implements \JsonSerializable
             return $v;
         } elseif (null !== ($v = ($this->getProcedure()))) {
             return $v;
+        } elseif (null !== ($v = ($this->getProcedureRequest()))) {
+            return $v;
         } elseif (null !== ($v = ($this->getProcessRequest()))) {
             return $v;
         } elseif (null !== ($v = ($this->getProcessResponse()))) {
@@ -4342,6 +3459,8 @@ class FHIRResourceContainer implements \JsonSerializable
         } elseif (null !== ($v = ($this->getQuestionnaire()))) {
             return $v;
         } elseif (null !== ($v = ($this->getQuestionnaireResponse()))) {
+            return $v;
+        } elseif (null !== ($v = ($this->getReferralRequest()))) {
             return $v;
         } elseif (null !== ($v = ($this->getRelatedPerson()))) {
             return $v;
@@ -4359,13 +3478,11 @@ class FHIRResourceContainer implements \JsonSerializable
             return $v;
         } elseif (null !== ($v = ($this->getSequence()))) {
             return $v;
-        } elseif (null !== ($v = ($this->getServiceRequest()))) {
+        } elseif (null !== ($v = ($this->getServiceDefinition()))) {
             return $v;
         } elseif (null !== ($v = ($this->getSlot()))) {
             return $v;
         } elseif (null !== ($v = ($this->getSpecimen()))) {
-            return $v;
-        } elseif (null !== ($v = ($this->getSpecimenDefinition()))) {
             return $v;
         } elseif (null !== ($v = ($this->getStructureDefinition()))) {
             return $v;
@@ -4375,29 +3492,17 @@ class FHIRResourceContainer implements \JsonSerializable
             return $v;
         } elseif (null !== ($v = ($this->getSubstance()))) {
             return $v;
-        } elseif (null !== ($v = ($this->getSubstancePolymer()))) {
-            return $v;
-        } elseif (null !== ($v = ($this->getSubstanceReferenceInformation()))) {
-            return $v;
-        } elseif (null !== ($v = ($this->getSubstanceSpecification()))) {
-            return $v;
         } elseif (null !== ($v = ($this->getSupplyDelivery()))) {
             return $v;
         } elseif (null !== ($v = ($this->getSupplyRequest()))) {
             return $v;
         } elseif (null !== ($v = ($this->getTask()))) {
             return $v;
-        } elseif (null !== ($v = ($this->getTerminologyCapabilities()))) {
-            return $v;
         } elseif (null !== ($v = ($this->getTestReport()))) {
             return $v;
         } elseif (null !== ($v = ($this->getTestScript()))) {
             return $v;
-        } elseif (null !== ($v = ($this->getUserSession()))) {
-            return $v;
         } elseif (null !== ($v = ($this->getValueSet()))) {
-            return $v;
-        } elseif (null !== ($v = ($this->getVerificationResult()))) {
             return $v;
         } elseif (null !== ($v = ($this->getVisionPrescription()))) {
             return $v;
@@ -4413,12 +3518,244 @@ class FHIRResourceContainer implements \JsonSerializable
      */
     public function xmlSerialize($returnSXE = false, \SimpleXMLElement $sxe = null)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<ResourceContainer xmlns="http://hl7.org/fhir"></ResourceContainer>');
-        }
-        if ($returnSXE) {
+        if (null !== ($v = $this->getAccount())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getActivityDefinition())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getAdverseEvent())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getAllergyIntolerance())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getAppointment())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getAppointmentResponse())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getAuditEvent())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getBasic())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getBinary())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getBodySite())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getBundle())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getCapabilityStatement())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getCarePlan())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getCareTeam())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getChargeItem())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getClaim())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getClaimResponse())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getClinicalImpression())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getCodeSystem())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getCommunication())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getCommunicationRequest())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getCompartmentDefinition())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getComposition())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getConceptMap())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getCondition())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getConsent())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getContract())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getCoverage())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getDataElement())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getDetectedIssue())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getDevice())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getDeviceComponent())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getDeviceMetric())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getDeviceRequest())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getDeviceUseStatement())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getDiagnosticReport())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getDocumentManifest())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getDocumentReference())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getEligibilityRequest())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getEligibilityResponse())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getEncounter())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getEndpoint())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getEnrollmentRequest())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getEnrollmentResponse())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getEpisodeOfCare())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getExpansionProfile())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getExplanationOfBenefit())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getFamilyMemberHistory())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getFlag())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getGoal())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getGraphDefinition())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getGroup())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getGuidanceResponse())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getHealthcareService())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getImagingManifest())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getImagingStudy())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getImmunization())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getImmunizationRecommendation())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getImplementationGuide())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getLibrary())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getLinkage())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getList())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getLocation())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getMeasure())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getMeasureReport())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getMedia())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getMedication())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getMedicationAdministration())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getMedicationDispense())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getMedicationRequest())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getMedicationStatement())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getMessageDefinition())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getMessageHeader())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getNamingSystem())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getNutritionOrder())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getObservation())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getOperationDefinition())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getOperationOutcome())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getOrganization())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getParameters())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getPatient())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getPaymentNotice())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getPaymentReconciliation())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getPerson())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getPlanDefinition())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getPractitioner())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getPractitionerRole())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getProcedure())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getProcedureRequest())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getProcessRequest())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getProcessResponse())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getProvenance())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getQuestionnaire())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getQuestionnaireResponse())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getReferralRequest())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getRelatedPerson())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getRequestGroup())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getResearchStudy())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getResearchSubject())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getRiskAssessment())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getSchedule())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getSearchParameter())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getSequence())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getServiceDefinition())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getSlot())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getSpecimen())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getStructureDefinition())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getStructureMap())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getSubscription())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getSubstance())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getSupplyDelivery())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getSupplyRequest())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getTask())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getTestReport())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getTestScript())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getValueSet())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif (null !== ($v = $this->getVisionPrescription())) {
+            return $v->xmlSerialize($returnSXE, $sxe);
+        } elseif ($returnSXE) {
             return $sxe;
+        } else {
+            return null === $sxe ? '' : $sxe->saveXML();
         }
-        return $sxe->saveXML();
     }
 }

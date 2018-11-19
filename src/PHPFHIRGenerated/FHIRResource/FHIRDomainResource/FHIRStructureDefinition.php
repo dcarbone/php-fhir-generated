@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -62,16 +62,16 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * 
  */
 
-use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionContext;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionDifferential;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionMapping;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionSnapshot;
 use PHPFHIRGenerated\FHIRElement\FHIRBoolean;
-use PHPFHIRGenerated\FHIRElement\FHIRCanonical;
+use PHPFHIRGenerated\FHIRElement\FHIRCode;
 use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
 use PHPFHIRGenerated\FHIRElement\FHIRCoding;
 use PHPFHIRGenerated\FHIRElement\FHIRContactDetail;
 use PHPFHIRGenerated\FHIRElement\FHIRDateTime;
+use PHPFHIRGenerated\FHIRElement\FHIRExtensionContext;
 use PHPFHIRGenerated\FHIRElement\FHIRId;
 use PHPFHIRGenerated\FHIRElement\FHIRIdentifier;
 use PHPFHIRGenerated\FHIRElement\FHIRMarkdown;
@@ -99,163 +99,169 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * Whether structure this definition describes is abstract or not  - that is, whether the structure is not intended to be instantiated. For Resources and Data types, abstract types will never be exchanged  between systems.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $abstract = null;
+    private $abstract = null;
 
     /**
      * An absolute URI that is the base structure from which this type is derived, either by specialization or constraint.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $baseDefinition = null;
+    private $baseDefinition = null;
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
-    public $contact = null;
+    private $contact = [];
 
     /**
      * Identifies the types of resource or data type elements to which the extension can be applied.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionContext
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public $context = null;
+    private $context = [];
 
     /**
-     * A set of rules as FHIRPath Invariants about when the extension can be used (e.g. co-occurrence variants for the extension). All the rules must be true.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     * A set of rules as Fluent Invariants about when the extension can be used (e.g. co-occurrence variants for the extension).
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public $contextInvariant = null;
+    private $contextInvariant = [];
+
+    /**
+     * If this is an extension, Identifies the context within FHIR resources where the extension can be used.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRExtensionContext
+     */
+    private $contextType = null;
 
     /**
      * A copyright statement relating to the structure definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the structure definition.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public $copyright = null;
+    private $copyright = null;
 
     /**
-     * The date  (and optionally time) when the structure definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the structure definition changes.
+     * The date  (and optionally time) when the structure definition was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the structure definition changes.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $date = null;
+    private $date = null;
 
     /**
      * How the type relates to the baseDefinition.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTypeDerivationRule
      */
-    public $derivation = null;
+    private $derivation = null;
 
     /**
      * A free text natural language description of the structure definition from a consumer's perspective.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public $description = null;
+    private $description = null;
 
     /**
      * A differential view is expressed relative to the base StructureDefinition - a statement of differences that it applies.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionDifferential
      */
-    public $differential = null;
+    private $differential = null;
 
     /**
-     * A Boolean value to indicate that this structure definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this structure definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $experimental = null;
+    private $experimental = null;
 
     /**
-     * The version of the FHIR specification on which this StructureDefinition is based - this is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 3.5.0. for this version.
+     * The version of the FHIR specification on which this StructureDefinition is based - this is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 3.0.1 for this version.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRId
      */
-    public $fhirVersion = null;
+    private $fhirVersion = null;
 
     /**
      * A formal identifier that is used to identify this structure definition when it is represented in other formats, or referenced in a specification, model, design or an instance.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = null;
+    private $identifier = [];
 
     /**
      * A legal or geographic region in which the structure definition is intended to be used.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $jurisdiction = null;
+    private $jurisdiction = [];
 
     /**
-     * A set of key words or terms from external terminologies that may be used to assist with indexing and searching of templates nby describing the use of this structure definition, or the content it describes.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * A set of key words or terms from external terminologies that may be used to assist with indexing and searching of templates.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
-    public $keyword = null;
+    private $keyword = [];
 
     /**
      * Defines the kind of structure that this definition is describing.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRStructureDefinitionKind
      */
-    public $kind = null;
+    private $kind = null;
 
     /**
      * An external specification that the content is mapped to.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionMapping
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionMapping[]
      */
-    public $mapping = null;
+    private $mapping = [];
 
     /**
      * A natural language name identifying the structure definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $name = null;
+    private $name = null;
 
     /**
-     * The name of the organization or individual that published the structure definition.
+     * The name of the individual or organization that published the structure definition.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $publisher = null;
+    private $publisher = null;
 
     /**
-     * Explanation of why this structure definition is needed and why it has been designed as it has.
+     * Explaination of why this structure definition is needed and why it has been designed as it has.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public $purpose = null;
+    private $purpose = null;
 
     /**
-     * A snapshot view is expressed in a standalone form that can be used and interpreted without considering the base StructureDefinition.
+     * A snapshot view is expressed in a stand alone form that can be used and interpreted without considering the base StructureDefinition.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionSnapshot
      */
-    public $snapshot = null;
+    private $snapshot = null;
 
     /**
      * The status of this structure definition. Enables tracking the life-cycle of the content.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus
      */
-    public $status = null;
+    private $status = null;
 
     /**
      * A short, descriptive, user-friendly title for the structure definition.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $title = null;
+    private $title = null;
 
     /**
-     * The type this structure describes. If the derivation kind is 'specialization' then this is the master definition for a type, and there is always one of these (a data type, an extension, a resource, including abstract ones). Otherwise the structure definition is a constraint on the stated type (and in this case, the type cannot be an abstract type).  References are URLs that are relative to http://hl7.org/fhir/StructureDefinition e.g. "string" is a reference to http://hl7.org/fhir/StructureDefinition/string. Absolute URLs are only allowed in logical models.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
+     * The type this structure describes. If the derivation kind is 'specialization' then this is the master definition for a type, and there is always one of these (a data type, an extension, a resource, including abstract ones). Otherwise the structure definition is a constraint on the stated type (and in this case, the type cannot be an abstract type).
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public $type = null;
+    private $type = null;
 
     /**
-     * An absolute URI that is used to identify this structure definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this structure definition is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the structure definition is stored on different servers.
+     * An absolute URI that is used to identify this structure definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this structure definition is (or will be) published. The URL SHOULD include the major version of the structure definition. For more information see [Technical and Business Versions](resource.html#versions).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $url = null;
+    private $url = null;
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate structure definition instances.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
-    public $useContext = null;
+    private $useContext = [];
 
     /**
      * The identifier that is used to identify this version of the structure definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the structure definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $version = null;
+    private $version = null;
 
     /**
      * FHIRStructureDefinition Constructor
@@ -264,88 +270,374 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['abstract'])) {
-                $this->setAbstract($data['abstract']);
+                $value = $data['abstract'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRStructureDefinition::__construct - Property \"abstract\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value));
+                }
+                $this->setAbstract($value);
             }
             if (isset($data['baseDefinition'])) {
-                $this->setBaseDefinition($data['baseDefinition']);
+                $value = $data['baseDefinition'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRStructureDefinition::__construct - Property \"baseDefinition\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value));
+                }
+                $this->setBaseDefinition($value);
             }
             if (isset($data['contact'])) {
-                $this->setContact($data['contact']);
+                $value = $data['contact'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRContactDetail($v);
+                        } 
+                        if (!($v instanceof FHIRContactDetail)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRStructureDefinition::__construct - Collection field \"contact\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRContactDetail or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addContact($v);
+                    }
+                }
             }
             if (isset($data['context'])) {
-                $this->setContext($data['context']);
+                $value = $data['context'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRString($v);
+                        }  elseif (is_scalar($v)) {
+                            $v = new FHIRString($v);
+                        }
+                        if (!($v instanceof FHIRString)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRStructureDefinition::__construct - Collection field \"context\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addContext($v);
+                    }
+                }
             }
             if (isset($data['contextInvariant'])) {
-                $this->setContextInvariant($data['contextInvariant']);
+                $value = $data['contextInvariant'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRString($v);
+                        }  elseif (is_scalar($v)) {
+                            $v = new FHIRString($v);
+                        }
+                        if (!($v instanceof FHIRString)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRStructureDefinition::__construct - Collection field \"contextInvariant\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addContextInvariant($v);
+                    }
+                }
+            }
+            if (isset($data['contextType'])) {
+                $value = $data['contextType'];
+                if (is_array($value)) {
+                    $value = new FHIRExtensionContext($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRExtensionContext($value);
+                }
+                if (!($value instanceof FHIRExtensionContext)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRStructureDefinition::__construct - Property \"contextType\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRExtensionContext or data to construct type, saw ".gettype($value));
+                }
+                $this->setContextType($value);
             }
             if (isset($data['copyright'])) {
-                $this->setCopyright($data['copyright']);
+                $value = $data['copyright'];
+                if (is_array($value)) {
+                    $value = new FHIRMarkdown($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRMarkdown($value);
+                }
+                if (!($value instanceof FHIRMarkdown)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRStructureDefinition::__construct - Property \"copyright\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRMarkdown or data to construct type, saw ".gettype($value));
+                }
+                $this->setCopyright($value);
             }
             if (isset($data['date'])) {
-                $this->setDate($data['date']);
+                $value = $data['date'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRStructureDefinition::__construct - Property \"date\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value));
+                }
+                $this->setDate($value);
             }
             if (isset($data['derivation'])) {
-                $this->setDerivation($data['derivation']);
+                $value = $data['derivation'];
+                if (is_array($value)) {
+                    $value = new FHIRTypeDerivationRule($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRTypeDerivationRule($value);
+                }
+                if (!($value instanceof FHIRTypeDerivationRule)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRStructureDefinition::__construct - Property \"derivation\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRTypeDerivationRule or data to construct type, saw ".gettype($value));
+                }
+                $this->setDerivation($value);
             }
             if (isset($data['description'])) {
-                $this->setDescription($data['description']);
+                $value = $data['description'];
+                if (is_array($value)) {
+                    $value = new FHIRMarkdown($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRMarkdown($value);
+                }
+                if (!($value instanceof FHIRMarkdown)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRStructureDefinition::__construct - Property \"description\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRMarkdown or data to construct type, saw ".gettype($value));
+                }
+                $this->setDescription($value);
             }
             if (isset($data['differential'])) {
-                $this->setDifferential($data['differential']);
+                $value = $data['differential'];
+                if (is_array($value)) {
+                    $value = new FHIRStructureDefinitionDifferential($value);
+                } 
+                if (!($value instanceof FHIRStructureDefinitionDifferential)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRStructureDefinition::__construct - Property \"differential\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionDifferential or data to construct type, saw ".gettype($value));
+                }
+                $this->setDifferential($value);
             }
             if (isset($data['experimental'])) {
-                $this->setExperimental($data['experimental']);
+                $value = $data['experimental'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRStructureDefinition::__construct - Property \"experimental\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value));
+                }
+                $this->setExperimental($value);
             }
             if (isset($data['fhirVersion'])) {
-                $this->setFhirVersion($data['fhirVersion']);
+                $value = $data['fhirVersion'];
+                if (is_array($value)) {
+                    $value = new FHIRId($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRId($value);
+                }
+                if (!($value instanceof FHIRId)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRStructureDefinition::__construct - Property \"fhirVersion\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRId or data to construct type, saw ".gettype($value));
+                }
+                $this->setFhirVersion($value);
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRIdentifier($v);
+                        } 
+                        if (!($v instanceof FHIRIdentifier)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRStructureDefinition::__construct - Collection field \"identifier\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addIdentifier($v);
+                    }
+                }
             }
             if (isset($data['jurisdiction'])) {
-                $this->setJurisdiction($data['jurisdiction']);
+                $value = $data['jurisdiction'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRStructureDefinition::__construct - Collection field \"jurisdiction\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addJurisdiction($v);
+                    }
+                }
             }
             if (isset($data['keyword'])) {
-                $this->setKeyword($data['keyword']);
+                $value = $data['keyword'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCoding($v);
+                        } 
+                        if (!($v instanceof FHIRCoding)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRStructureDefinition::__construct - Collection field \"keyword\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCoding or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addKeyword($v);
+                    }
+                }
             }
             if (isset($data['kind'])) {
-                $this->setKind($data['kind']);
+                $value = $data['kind'];
+                if (is_array($value)) {
+                    $value = new FHIRStructureDefinitionKind($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRStructureDefinitionKind($value);
+                }
+                if (!($value instanceof FHIRStructureDefinitionKind)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRStructureDefinition::__construct - Property \"kind\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRStructureDefinitionKind or data to construct type, saw ".gettype($value));
+                }
+                $this->setKind($value);
             }
             if (isset($data['mapping'])) {
-                $this->setMapping($data['mapping']);
+                $value = $data['mapping'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRStructureDefinitionMapping($v);
+                        } 
+                        if (!($v instanceof FHIRStructureDefinitionMapping)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRStructureDefinition::__construct - Collection field \"mapping\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionMapping or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addMapping($v);
+                    }
+                }
             }
             if (isset($data['name'])) {
-                $this->setName($data['name']);
+                $value = $data['name'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRStructureDefinition::__construct - Property \"name\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setName($value);
             }
             if (isset($data['publisher'])) {
-                $this->setPublisher($data['publisher']);
+                $value = $data['publisher'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRStructureDefinition::__construct - Property \"publisher\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setPublisher($value);
             }
             if (isset($data['purpose'])) {
-                $this->setPurpose($data['purpose']);
+                $value = $data['purpose'];
+                if (is_array($value)) {
+                    $value = new FHIRMarkdown($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRMarkdown($value);
+                }
+                if (!($value instanceof FHIRMarkdown)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRStructureDefinition::__construct - Property \"purpose\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRMarkdown or data to construct type, saw ".gettype($value));
+                }
+                $this->setPurpose($value);
             }
             if (isset($data['snapshot'])) {
-                $this->setSnapshot($data['snapshot']);
+                $value = $data['snapshot'];
+                if (is_array($value)) {
+                    $value = new FHIRStructureDefinitionSnapshot($value);
+                } 
+                if (!($value instanceof FHIRStructureDefinitionSnapshot)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRStructureDefinition::__construct - Property \"snapshot\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionSnapshot or data to construct type, saw ".gettype($value));
+                }
+                $this->setSnapshot($value);
             }
             if (isset($data['status'])) {
-                $this->setStatus($data['status']);
+                $value = $data['status'];
+                if (is_array($value)) {
+                    $value = new FHIRPublicationStatus($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRPublicationStatus($value);
+                }
+                if (!($value instanceof FHIRPublicationStatus)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRStructureDefinition::__construct - Property \"status\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus or data to construct type, saw ".gettype($value));
+                }
+                $this->setStatus($value);
             }
             if (isset($data['title'])) {
-                $this->setTitle($data['title']);
+                $value = $data['title'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRStructureDefinition::__construct - Property \"title\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setTitle($value);
             }
             if (isset($data['type'])) {
-                $this->setType($data['type']);
+                $value = $data['type'];
+                if (is_array($value)) {
+                    $value = new FHIRCode($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRCode($value);
+                }
+                if (!($value instanceof FHIRCode)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRStructureDefinition::__construct - Property \"type\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or data to construct type, saw ".gettype($value));
+                }
+                $this->setType($value);
             }
             if (isset($data['url'])) {
-                $this->setUrl($data['url']);
+                $value = $data['url'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRStructureDefinition::__construct - Property \"url\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value));
+                }
+                $this->setUrl($value);
             }
             if (isset($data['useContext'])) {
-                $this->setUseContext($data['useContext']);
+                $value = $data['useContext'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRUsageContext($v);
+                        } 
+                        if (!($v instanceof FHIRUsageContext)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRStructureDefinition::__construct - Collection field \"useContext\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUsageContext or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addUseContext($v);
+                    }
+                }
             }
             if (isset($data['version'])) {
-                $this->setVersion($data['version']);
+                $value = $data['version'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRStructureDefinition::__construct - Property \"version\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setVersion($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -354,6 +646,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -388,10 +681,9 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
         return $this->abstract;
     }
 
-
     /**
      * An absolute URI that is the base structure from which this type is derived, either by specialization or constraint.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
     public function setBaseDefinition($baseDefinition)
@@ -400,11 +692,11 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
             return $this; 
         }
         if (is_scalar($baseDefinition)) {
-            $baseDefinition = new FHIRCanonical($baseDefinition);
+            $baseDefinition = new FHIRUri($baseDefinition);
         }
-        if (!($baseDefinition instanceof FHIRCanonical)) {
+        if (!($baseDefinition instanceof FHIRUri)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRStructureDefinition::setBaseDefinition - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCanonical or appropriate scalar value, %s seen.',
+                'FHIRStructureDefinition::setBaseDefinition - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or appropriate scalar value, %s seen.',
                 gettype($baseDefinition)
             ));
         }
@@ -414,68 +706,74 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * An absolute URI that is the base structure from which this type is derived, either by specialization or constraint.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getBaseDefinition()
     {
         return $this->baseDefinition;
     }
 
-
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail
      * @return $this
      */
-    public function setContact(FHIRContactDetail $contact = null)
+    public function addContact(FHIRContactDetail $contact = null)
     {
         if (null === $contact) {
             return $this; 
         }
-        $this->contact = $contact;
+        $this->contact[] = $contact;
         return $this;
     }
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
     public function getContact()
     {
         return $this->contact;
     }
 
-
     /**
      * Identifies the types of resource or data type elements to which the extension can be applied.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionContext
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
-    public function setContext(FHIRStructureDefinitionContext $context = null)
+    public function addContext($context)
     {
         if (null === $context) {
             return $this; 
         }
-        $this->context = $context;
+        if (is_scalar($context)) {
+            $context = new FHIRString($context);
+        }
+        if (!($context instanceof FHIRString)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRStructureDefinition::addContext - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                gettype($context)
+            ));
+        }
+        $this->context[] = $context;
         return $this;
     }
 
     /**
      * Identifies the types of resource or data type elements to which the extension can be applied.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionContext
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
     public function getContext()
     {
         return $this->context;
     }
 
-
     /**
-     * A set of rules as FHIRPath Invariants about when the extension can be used (e.g. co-occurrence variants for the extension). All the rules must be true.
+     * A set of rules as Fluent Invariants about when the extension can be used (e.g. co-occurrence variants for the extension).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
-    public function setContextInvariant($contextInvariant)
+    public function addContextInvariant($contextInvariant)
     {
         if (null === $contextInvariant) {
             return $this; 
@@ -485,23 +783,54 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
         }
         if (!($contextInvariant instanceof FHIRString)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRStructureDefinition::setContextInvariant - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                'FHIRStructureDefinition::addContextInvariant - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
                 gettype($contextInvariant)
             ));
         }
-        $this->contextInvariant = $contextInvariant;
+        $this->contextInvariant[] = $contextInvariant;
         return $this;
     }
 
     /**
-     * A set of rules as FHIRPath Invariants about when the extension can be used (e.g. co-occurrence variants for the extension). All the rules must be true.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     * A set of rules as Fluent Invariants about when the extension can be used (e.g. co-occurrence variants for the extension).
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
     public function getContextInvariant()
     {
         return $this->contextInvariant;
     }
 
+    /**
+     * If this is an extension, Identifies the context within FHIR resources where the extension can be used.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRExtensionContext
+     * @return $this
+     */
+    public function setContextType($contextType)
+    {
+        if (null === $contextType) {
+            return $this; 
+        }
+        if (is_scalar($contextType)) {
+            $contextType = new FHIRExtensionContext($contextType);
+        }
+        if (!($contextType instanceof FHIRExtensionContext)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRStructureDefinition::setContextType - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRExtensionContext or appropriate scalar value, %s seen.',
+                gettype($contextType)
+            ));
+        }
+        $this->contextType = $contextType;
+        return $this;
+    }
+
+    /**
+     * If this is an extension, Identifies the context within FHIR resources where the extension can be used.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRExtensionContext
+     */
+    public function getContextType()
+    {
+        return $this->contextType;
+    }
 
     /**
      * A copyright statement relating to the structure definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the structure definition.
@@ -535,9 +864,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
         return $this->copyright;
     }
 
-
     /**
-     * The date  (and optionally time) when the structure definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the structure definition changes.
+     * The date  (and optionally time) when the structure definition was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the structure definition changes.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      * @return $this
      */
@@ -560,14 +888,13 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * The date  (and optionally time) when the structure definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the structure definition changes.
+     * The date  (and optionally time) when the structure definition was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the structure definition changes.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getDate()
     {
         return $this->date;
     }
-
 
     /**
      * How the type relates to the baseDefinition.
@@ -601,7 +928,6 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
         return $this->derivation;
     }
 
-
     /**
      * A free text natural language description of the structure definition from a consumer's perspective.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRMarkdown
@@ -634,7 +960,6 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
         return $this->description;
     }
 
-
     /**
      * A differential view is expressed relative to the base StructureDefinition - a statement of differences that it applies.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionDifferential
@@ -658,9 +983,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
         return $this->differential;
     }
 
-
     /**
-     * A Boolean value to indicate that this structure definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this structure definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      * @return $this
      */
@@ -683,7 +1007,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * A Boolean value to indicate that this structure definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this structure definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getExperimental()
@@ -691,9 +1015,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
         return $this->experimental;
     }
 
-
     /**
-     * The version of the FHIR specification on which this StructureDefinition is based - this is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 3.5.0. for this version.
+     * The version of the FHIR specification on which this StructureDefinition is based - this is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 3.0.1 for this version.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRId
      * @return $this
      */
@@ -716,7 +1039,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * The version of the FHIR specification on which this StructureDefinition is based - this is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 3.5.0. for this version.
+     * The version of the FHIR specification on which this StructureDefinition is based - this is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 3.0.1 for this version.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRId
      */
     public function getFhirVersion()
@@ -724,78 +1047,74 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
         return $this->fhirVersion;
     }
 
-
     /**
      * A formal identifier that is used to identify this structure definition when it is represented in other formats, or referenced in a specification, model, design or an instance.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
-    public function setIdentifier(FHIRIdentifier $identifier = null)
+    public function addIdentifier(FHIRIdentifier $identifier = null)
     {
         if (null === $identifier) {
             return $this; 
         }
-        $this->identifier = $identifier;
+        $this->identifier[] = $identifier;
         return $this;
     }
 
     /**
      * A formal identifier that is used to identify this structure definition when it is represented in other formats, or referenced in a specification, model, design or an instance.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
         return $this->identifier;
     }
 
-
     /**
      * A legal or geographic region in which the structure definition is intended to be used.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setJurisdiction(FHIRCodeableConcept $jurisdiction = null)
+    public function addJurisdiction(FHIRCodeableConcept $jurisdiction = null)
     {
         if (null === $jurisdiction) {
             return $this; 
         }
-        $this->jurisdiction = $jurisdiction;
+        $this->jurisdiction[] = $jurisdiction;
         return $this;
     }
 
     /**
      * A legal or geographic region in which the structure definition is intended to be used.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getJurisdiction()
     {
         return $this->jurisdiction;
     }
 
-
     /**
-     * A set of key words or terms from external terminologies that may be used to assist with indexing and searching of templates nby describing the use of this structure definition, or the content it describes.
+     * A set of key words or terms from external terminologies that may be used to assist with indexing and searching of templates.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
      * @return $this
      */
-    public function setKeyword(FHIRCoding $keyword = null)
+    public function addKeyword(FHIRCoding $keyword = null)
     {
         if (null === $keyword) {
             return $this; 
         }
-        $this->keyword = $keyword;
+        $this->keyword[] = $keyword;
         return $this;
     }
 
     /**
-     * A set of key words or terms from external terminologies that may be used to assist with indexing and searching of templates nby describing the use of this structure definition, or the content it describes.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * A set of key words or terms from external terminologies that may be used to assist with indexing and searching of templates.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
     public function getKeyword()
     {
         return $this->keyword;
     }
-
 
     /**
      * Defines the kind of structure that this definition is describing.
@@ -829,30 +1148,28 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
         return $this->kind;
     }
 
-
     /**
      * An external specification that the content is mapped to.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionMapping
      * @return $this
      */
-    public function setMapping(FHIRStructureDefinitionMapping $mapping = null)
+    public function addMapping(FHIRStructureDefinitionMapping $mapping = null)
     {
         if (null === $mapping) {
             return $this; 
         }
-        $this->mapping = $mapping;
+        $this->mapping[] = $mapping;
         return $this;
     }
 
     /**
      * An external specification that the content is mapped to.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionMapping
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionMapping[]
      */
     public function getMapping()
     {
         return $this->mapping;
     }
-
 
     /**
      * A natural language name identifying the structure definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.
@@ -886,9 +1203,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
         return $this->name;
     }
 
-
     /**
-     * The name of the organization or individual that published the structure definition.
+     * The name of the individual or organization that published the structure definition.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
@@ -911,7 +1227,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * The name of the organization or individual that published the structure definition.
+     * The name of the individual or organization that published the structure definition.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getPublisher()
@@ -919,9 +1235,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
         return $this->publisher;
     }
 
-
     /**
-     * Explanation of why this structure definition is needed and why it has been designed as it has.
+     * Explaination of why this structure definition is needed and why it has been designed as it has.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      * @return $this
      */
@@ -944,7 +1259,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * Explanation of why this structure definition is needed and why it has been designed as it has.
+     * Explaination of why this structure definition is needed and why it has been designed as it has.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getPurpose()
@@ -952,9 +1267,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
         return $this->purpose;
     }
 
-
     /**
-     * A snapshot view is expressed in a standalone form that can be used and interpreted without considering the base StructureDefinition.
+     * A snapshot view is expressed in a stand alone form that can be used and interpreted without considering the base StructureDefinition.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionSnapshot
      * @return $this
      */
@@ -968,14 +1282,13 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * A snapshot view is expressed in a standalone form that can be used and interpreted without considering the base StructureDefinition.
+     * A snapshot view is expressed in a stand alone form that can be used and interpreted without considering the base StructureDefinition.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionSnapshot
      */
     public function getSnapshot()
     {
         return $this->snapshot;
     }
-
 
     /**
      * The status of this structure definition. Enables tracking the life-cycle of the content.
@@ -1009,7 +1322,6 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
         return $this->status;
     }
 
-
     /**
      * A short, descriptive, user-friendly title for the structure definition.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -1042,10 +1354,9 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
         return $this->title;
     }
 
-
     /**
-     * The type this structure describes. If the derivation kind is 'specialization' then this is the master definition for a type, and there is always one of these (a data type, an extension, a resource, including abstract ones). Otherwise the structure definition is a constraint on the stated type (and in this case, the type cannot be an abstract type).  References are URLs that are relative to http://hl7.org/fhir/StructureDefinition e.g. "string" is a reference to http://hl7.org/fhir/StructureDefinition/string. Absolute URLs are only allowed in logical models.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
+     * The type this structure describes. If the derivation kind is 'specialization' then this is the master definition for a type, and there is always one of these (a data type, an extension, a resource, including abstract ones). Otherwise the structure definition is a constraint on the stated type (and in this case, the type cannot be an abstract type).
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCode
      * @return $this
      */
     public function setType($type)
@@ -1054,11 +1365,11 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
             return $this; 
         }
         if (is_scalar($type)) {
-            $type = new FHIRUri($type);
+            $type = new FHIRCode($type);
         }
-        if (!($type instanceof FHIRUri)) {
+        if (!($type instanceof FHIRCode)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRStructureDefinition::setType - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or appropriate scalar value, %s seen.',
+                'FHIRStructureDefinition::setType - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or appropriate scalar value, %s seen.',
                 gettype($type)
             ));
         }
@@ -1067,17 +1378,16 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * The type this structure describes. If the derivation kind is 'specialization' then this is the master definition for a type, and there is always one of these (a data type, an extension, a resource, including abstract ones). Otherwise the structure definition is a constraint on the stated type (and in this case, the type cannot be an abstract type).  References are URLs that are relative to http://hl7.org/fhir/StructureDefinition e.g. "string" is a reference to http://hl7.org/fhir/StructureDefinition/string. Absolute URLs are only allowed in logical models.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
+     * The type this structure describes. If the derivation kind is 'specialization' then this is the master definition for a type, and there is always one of these (a data type, an extension, a resource, including abstract ones). Otherwise the structure definition is a constraint on the stated type (and in this case, the type cannot be an abstract type).
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCode
      */
     public function getType()
     {
         return $this->type;
     }
 
-
     /**
-     * An absolute URI that is used to identify this structure definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this structure definition is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the structure definition is stored on different servers.
+     * An absolute URI that is used to identify this structure definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this structure definition is (or will be) published. The URL SHOULD include the major version of the structure definition. For more information see [Technical and Business Versions](resource.html#versions).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
@@ -1100,7 +1410,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * An absolute URI that is used to identify this structure definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this structure definition is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the structure definition is stored on different servers.
+     * An absolute URI that is used to identify this structure definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this structure definition is (or will be) published. The URL SHOULD include the major version of the structure definition. For more information see [Technical and Business Versions](resource.html#versions).
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getUrl()
@@ -1108,30 +1418,28 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
         return $this->url;
     }
 
-
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate structure definition instances.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUsageContext
      * @return $this
      */
-    public function setUseContext(FHIRUsageContext $useContext = null)
+    public function addUseContext(FHIRUsageContext $useContext = null)
     {
         if (null === $useContext) {
             return $this; 
         }
-        $this->useContext = $useContext;
+        $this->useContext[] = $useContext;
         return $this;
     }
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate structure definition instances.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUsageContext
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
     public function getUseContext()
     {
         return $this->useContext;
     }
-
 
     /**
      * The identifier that is used to identify this version of the structure definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the structure definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
@@ -1165,7 +1473,6 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
         return $this->version;
     }
 
-
     /**
      * @return string
      */
@@ -1187,14 +1494,41 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
         if (null !== ($v = $this->getBaseDefinition())) {
             $a['baseDefinition'] = $v;
         }
-        if (null !== ($v = $this->getContact())) {
-            $a['contact'] = $v;
+        if (0 < count($values = $this->getContact())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['contact'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getContext())) {
-            $a['context'] = $v;
+        if (0 < count($values = $this->getContext())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['context'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getContextInvariant())) {
-            $a['contextInvariant'] = $v;
+        if (0 < count($values = $this->getContextInvariant())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['contextInvariant'] = $vs;
+            }
+        }
+        if (null !== ($v = $this->getContextType())) {
+            $a['contextType'] = $v;
         }
         if (null !== ($v = $this->getCopyright())) {
             $a['copyright'] = $v;
@@ -1217,20 +1551,52 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
         if (null !== ($v = $this->getFhirVersion())) {
             $a['fhirVersion'] = $v;
         }
-        if (null !== ($v = $this->getIdentifier())) {
-            $a['identifier'] = $v;
+        if (0 < count($values = $this->getIdentifier())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['identifier'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getJurisdiction())) {
-            $a['jurisdiction'] = $v;
+        if (0 < count($values = $this->getJurisdiction())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['jurisdiction'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getKeyword())) {
-            $a['keyword'] = $v;
+        if (0 < count($values = $this->getKeyword())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['keyword'] = $vs;
+            }
         }
         if (null !== ($v = $this->getKind())) {
             $a['kind'] = $v;
         }
-        if (null !== ($v = $this->getMapping())) {
-            $a['mapping'] = $v;
+        if (0 < count($values = $this->getMapping())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['mapping'] = $vs;
+            }
         }
         if (null !== ($v = $this->getName())) {
             $a['name'] = $v;
@@ -1256,8 +1622,16 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
         if (null !== ($v = $this->getUrl())) {
             $a['url'] = $v;
         }
-        if (null !== ($v = $this->getUseContext())) {
-            $a['useContext'] = $v;
+        if (0 < count($values = $this->getUseContext())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['useContext'] = $vs;
+            }
         }
         if (null !== ($v = $this->getVersion())) {
             $a['version'] = $v;
@@ -1275,9 +1649,122 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<StructureDefinition xmlns="http://hl7.org/fhir"></StructureDefinition>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getAbstract())) {
+            $v->xmlSerialize(true, $sxe->addChild('abstract'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getBaseDefinition())) {
+            $v->xmlSerialize(true, $sxe->addChild('baseDefinition'));
+        }
+        if (0 < count($values = $this->getContact())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('contact'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getContext())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('context'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getContextInvariant())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('contextInvariant'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getContextType())) {
+            $v->xmlSerialize(true, $sxe->addChild('contextType'));
+        }
+        if (null !== ($v = $this->getCopyright())) {
+            $v->xmlSerialize(true, $sxe->addChild('copyright'));
+        }
+        if (null !== ($v = $this->getDate())) {
+            $v->xmlSerialize(true, $sxe->addChild('date'));
+        }
+        if (null !== ($v = $this->getDerivation())) {
+            $v->xmlSerialize(true, $sxe->addChild('derivation'));
+        }
+        if (null !== ($v = $this->getDescription())) {
+            $v->xmlSerialize(true, $sxe->addChild('description'));
+        }
+        if (null !== ($v = $this->getDifferential())) {
+            $v->xmlSerialize(true, $sxe->addChild('differential'));
+        }
+        if (null !== ($v = $this->getExperimental())) {
+            $v->xmlSerialize(true, $sxe->addChild('experimental'));
+        }
+        if (null !== ($v = $this->getFhirVersion())) {
+            $v->xmlSerialize(true, $sxe->addChild('fhirVersion'));
+        }
+        if (0 < count($values = $this->getIdentifier())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('identifier'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getJurisdiction())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('jurisdiction'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getKeyword())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('keyword'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getKind())) {
+            $v->xmlSerialize(true, $sxe->addChild('kind'));
+        }
+        if (0 < count($values = $this->getMapping())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('mapping'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getName())) {
+            $v->xmlSerialize(true, $sxe->addChild('name'));
+        }
+        if (null !== ($v = $this->getPublisher())) {
+            $v->xmlSerialize(true, $sxe->addChild('publisher'));
+        }
+        if (null !== ($v = $this->getPurpose())) {
+            $v->xmlSerialize(true, $sxe->addChild('purpose'));
+        }
+        if (null !== ($v = $this->getSnapshot())) {
+            $v->xmlSerialize(true, $sxe->addChild('snapshot'));
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('status'));
+        }
+        if (null !== ($v = $this->getTitle())) {
+            $v->xmlSerialize(true, $sxe->addChild('title'));
+        }
+        if (null !== ($v = $this->getType())) {
+            $v->xmlSerialize(true, $sxe->addChild('type'));
+        }
+        if (null !== ($v = $this->getUrl())) {
+            $v->xmlSerialize(true, $sxe->addChild('url'));
+        }
+        if (0 < count($values = $this->getUseContext())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('useContext'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getVersion())) {
+            $v->xmlSerialize(true, $sxe->addChild('version'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

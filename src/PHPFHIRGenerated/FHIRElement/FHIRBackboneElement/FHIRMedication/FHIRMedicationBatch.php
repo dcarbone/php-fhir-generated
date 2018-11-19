@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMedication;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMedication;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -67,7 +67,7 @@ use PHPFHIRGenerated\FHIRElement\FHIRDateTime;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
 
 /**
- * This resource is primarily used for the identification and definition of a medication for the purposes of prescribing, dispensing, and administering a medication as well as for making statements about medication use.
+ * This resource is primarily used for the identification and definition of a medication. It covers the ingredients and the packaging for a medication.
  *
  * Class FHIRMedicationBatch
  * @package PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMedication
@@ -81,19 +81,13 @@ class FHIRMedicationBatch extends FHIRBackboneElement implements \JsonSerializab
      * When this specific batch of product will expire.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $expirationDate = null;
+    private $expirationDate = null;
 
     /**
      * The assigned lot number of a batch of the specified product.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $lotNumber = null;
-
-    /**
-     * An identifier assigned to a drug at the point of manufacturing and repackaging (at the package or pallet level), sufficient to facilitate the identification, validation, authentication, and tracking and tracking of drugs.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public $serialNumber = null;
+    private $lotNumber = null;
 
     /**
      * FHIRMedicationBatch Constructor
@@ -102,16 +96,30 @@ class FHIRMedicationBatch extends FHIRBackboneElement implements \JsonSerializab
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['expirationDate'])) {
-                $this->setExpirationDate($data['expirationDate']);
+                $value = $data['expirationDate'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationBatch::__construct - Property \"expirationDate\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value));
+                }
+                $this->setExpirationDate($value);
             }
             if (isset($data['lotNumber'])) {
-                $this->setLotNumber($data['lotNumber']);
-            }
-            if (isset($data['serialNumber'])) {
-                $this->setSerialNumber($data['serialNumber']);
+                $value = $data['lotNumber'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationBatch::__construct - Property \"lotNumber\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setLotNumber($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -120,6 +128,7 @@ class FHIRMedicationBatch extends FHIRBackboneElement implements \JsonSerializab
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -154,7 +163,6 @@ class FHIRMedicationBatch extends FHIRBackboneElement implements \JsonSerializab
         return $this->expirationDate;
     }
 
-
     /**
      * The assigned lot number of a batch of the specified product.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -187,40 +195,6 @@ class FHIRMedicationBatch extends FHIRBackboneElement implements \JsonSerializab
         return $this->lotNumber;
     }
 
-
-    /**
-     * An identifier assigned to a drug at the point of manufacturing and repackaging (at the package or pallet level), sufficient to facilitate the identification, validation, authentication, and tracking and tracking of drugs.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
-     * @return $this
-     */
-    public function setSerialNumber($serialNumber)
-    {
-        if (null === $serialNumber) {
-            return $this; 
-        }
-        if (is_scalar($serialNumber)) {
-            $serialNumber = new FHIRString($serialNumber);
-        }
-        if (!($serialNumber instanceof FHIRString)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRMedicationBatch::setSerialNumber - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
-                gettype($serialNumber)
-            ));
-        }
-        $this->serialNumber = $serialNumber;
-        return $this;
-    }
-
-    /**
-     * An identifier assigned to a drug at the point of manufacturing and repackaging (at the package or pallet level), sufficient to facilitate the identification, validation, authentication, and tracking and tracking of drugs.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public function getSerialNumber()
-    {
-        return $this->serialNumber;
-    }
-
-
     /**
      * @return string
      */
@@ -241,9 +215,6 @@ class FHIRMedicationBatch extends FHIRBackboneElement implements \JsonSerializab
         if (null !== ($v = $this->getLotNumber())) {
             $a['lotNumber'] = $v;
         }
-        if (null !== ($v = $this->getSerialNumber())) {
-            $a['serialNumber'] = $v;
-        }
         return $a;
     }
 
@@ -257,9 +228,12 @@ class FHIRMedicationBatch extends FHIRBackboneElement implements \JsonSerializab
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<MedicationBatch xmlns="http://hl7.org/fhir"></MedicationBatch>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getExpirationDate())) {
+            $v->xmlSerialize(true, $sxe->addChild('expirationDate'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getLotNumber())) {
+            $v->xmlSerialize(true, $sxe->addChild('lotNumber'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

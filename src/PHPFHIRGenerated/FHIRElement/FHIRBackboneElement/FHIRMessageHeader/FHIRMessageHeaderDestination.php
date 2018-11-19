@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMessageHeader;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMessageHeader;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -65,7 +65,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMessageHeader;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 use PHPFHIRGenerated\FHIRElement\FHIRReference;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
-use PHPFHIRGenerated\FHIRElement\FHIRUrl;
+use PHPFHIRGenerated\FHIRElement\FHIRUri;
 
 /**
  * The header for a message exchange that is either requesting or responding to an action.  The reference(s) that are the subject of the action as well as other information related to the action are typically transmitted in a bundle in which the MessageHeader resource instance is the first resource in the bundle.
@@ -80,27 +80,21 @@ class FHIRMessageHeaderDestination extends FHIRBackboneElement implements \JsonS
 
     /**
      * Indicates where the message should be routed to.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUrl
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $endpoint = null;
+    private $endpoint = null;
 
     /**
      * Human-readable name for the target system.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $name = null;
-
-    /**
-     * Allows data conveyed by a message to be addressed to a particular person or department when routing to a specific application isn't sufficient.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $receiver = null;
+    private $name = null;
 
     /**
      * Identifies the target end system in situations where the initial message transmission is to an intermediary system.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $target = null;
+    private $target = null;
 
     /**
      * FHIRMessageHeaderDestination Constructor
@@ -109,19 +103,40 @@ class FHIRMessageHeaderDestination extends FHIRBackboneElement implements \JsonS
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['endpoint'])) {
-                $this->setEndpoint($data['endpoint']);
+                $value = $data['endpoint'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderDestination::__construct - Property \"endpoint\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value));
+                }
+                $this->setEndpoint($value);
             }
             if (isset($data['name'])) {
-                $this->setName($data['name']);
-            }
-            if (isset($data['receiver'])) {
-                $this->setReceiver($data['receiver']);
+                $value = $data['name'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderDestination::__construct - Property \"name\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setName($value);
             }
             if (isset($data['target'])) {
-                $this->setTarget($data['target']);
+                $value = $data['target'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderDestination::__construct - Property \"target\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setTarget($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -130,11 +145,12 @@ class FHIRMessageHeaderDestination extends FHIRBackboneElement implements \JsonS
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
      * Indicates where the message should be routed to.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUrl
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
     public function setEndpoint($endpoint)
@@ -143,11 +159,11 @@ class FHIRMessageHeaderDestination extends FHIRBackboneElement implements \JsonS
             return $this; 
         }
         if (is_scalar($endpoint)) {
-            $endpoint = new FHIRUrl($endpoint);
+            $endpoint = new FHIRUri($endpoint);
         }
-        if (!($endpoint instanceof FHIRUrl)) {
+        if (!($endpoint instanceof FHIRUri)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRMessageHeaderDestination::setEndpoint - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUrl or appropriate scalar value, %s seen.',
+                'FHIRMessageHeaderDestination::setEndpoint - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or appropriate scalar value, %s seen.',
                 gettype($endpoint)
             ));
         }
@@ -157,13 +173,12 @@ class FHIRMessageHeaderDestination extends FHIRBackboneElement implements \JsonS
 
     /**
      * Indicates where the message should be routed to.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUrl
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getEndpoint()
     {
         return $this->endpoint;
     }
-
 
     /**
      * Human-readable name for the target system.
@@ -197,31 +212,6 @@ class FHIRMessageHeaderDestination extends FHIRBackboneElement implements \JsonS
         return $this->name;
     }
 
-
-    /**
-     * Allows data conveyed by a message to be addressed to a particular person or department when routing to a specific application isn't sufficient.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     * @return $this
-     */
-    public function setReceiver(FHIRReference $receiver = null)
-    {
-        if (null === $receiver) {
-            return $this; 
-        }
-        $this->receiver = $receiver;
-        return $this;
-    }
-
-    /**
-     * Allows data conveyed by a message to be addressed to a particular person or department when routing to a specific application isn't sufficient.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getReceiver()
-    {
-        return $this->receiver;
-    }
-
-
     /**
      * Identifies the target end system in situations where the initial message transmission is to an intermediary system.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -245,7 +235,6 @@ class FHIRMessageHeaderDestination extends FHIRBackboneElement implements \JsonS
         return $this->target;
     }
 
-
     /**
      * @return string
      */
@@ -266,9 +255,6 @@ class FHIRMessageHeaderDestination extends FHIRBackboneElement implements \JsonS
         if (null !== ($v = $this->getName())) {
             $a['name'] = $v;
         }
-        if (null !== ($v = $this->getReceiver())) {
-            $a['receiver'] = $v;
-        }
         if (null !== ($v = $this->getTarget())) {
             $a['target'] = $v;
         }
@@ -285,9 +271,15 @@ class FHIRMessageHeaderDestination extends FHIRBackboneElement implements \JsonS
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<MessageHeaderDestination xmlns="http://hl7.org/fhir"></MessageHeaderDestination>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getEndpoint())) {
+            $v->xmlSerialize(true, $sxe->addChild('endpoint'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getName())) {
+            $v->xmlSerialize(true, $sxe->addChild('name'));
+        }
+        if (null !== ($v = $this->getTarget())) {
+            $v->xmlSerialize(true, $sxe->addChild('target'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

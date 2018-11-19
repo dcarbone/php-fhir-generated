@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -81,46 +81,52 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements \JsonSerializa
     const FHIR_TYPE_NAME = 'EnrollmentRequest';
 
     /**
-     * Patient Resource.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $candidate = null;
-
-    /**
      * Reference to the program or plan identification, underwriter or payor.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $coverage = null;
+    private $coverage = null;
 
     /**
      * The date when this resource was created.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $created = null;
+    private $created = null;
 
     /**
      * The Response business identifier.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = null;
+    private $identifier = [];
 
     /**
      * The Insurer who is target  of the request.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $insurer = null;
+    private $insurer = null;
+
+    /**
+     * The organization which is responsible for the services rendered to the patient.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    private $organization = null;
 
     /**
      * The practitioner who is responsible for the services rendered to the patient.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $provider = null;
+    private $provider = null;
 
     /**
      * The status of the resource instance.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRFinancialResourceStatusCodes
      */
-    public $status = null;
+    private $status = null;
+
+    /**
+     * Patient Resource.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    private $subject = null;
 
     /**
      * FHIREnrollmentRequest Constructor
@@ -129,28 +135,96 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements \JsonSerializa
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
-            if (isset($data['candidate'])) {
-                $this->setCandidate($data['candidate']);
-            }
             if (isset($data['coverage'])) {
-                $this->setCoverage($data['coverage']);
+                $value = $data['coverage'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREnrollmentRequest::__construct - Property \"coverage\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setCoverage($value);
             }
             if (isset($data['created'])) {
-                $this->setCreated($data['created']);
+                $value = $data['created'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREnrollmentRequest::__construct - Property \"created\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value));
+                }
+                $this->setCreated($value);
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRIdentifier($v);
+                        } 
+                        if (!($v instanceof FHIRIdentifier)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREnrollmentRequest::__construct - Collection field \"identifier\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addIdentifier($v);
+                    }
+                }
             }
             if (isset($data['insurer'])) {
-                $this->setInsurer($data['insurer']);
+                $value = $data['insurer'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREnrollmentRequest::__construct - Property \"insurer\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setInsurer($value);
+            }
+            if (isset($data['organization'])) {
+                $value = $data['organization'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREnrollmentRequest::__construct - Property \"organization\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setOrganization($value);
             }
             if (isset($data['provider'])) {
-                $this->setProvider($data['provider']);
+                $value = $data['provider'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREnrollmentRequest::__construct - Property \"provider\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setProvider($value);
             }
             if (isset($data['status'])) {
-                $this->setStatus($data['status']);
+                $value = $data['status'];
+                if (is_array($value)) {
+                    $value = new FHIRFinancialResourceStatusCodes($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRFinancialResourceStatusCodes($value);
+                }
+                if (!($value instanceof FHIRFinancialResourceStatusCodes)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREnrollmentRequest::__construct - Property \"status\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRFinancialResourceStatusCodes or data to construct type, saw ".gettype($value));
+                }
+                $this->setStatus($value);
+            }
+            if (isset($data['subject'])) {
+                $value = $data['subject'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREnrollmentRequest::__construct - Property \"subject\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setSubject($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -159,31 +233,8 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements \JsonSerializa
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
-
-    /**
-     * Patient Resource.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     * @return $this
-     */
-    public function setCandidate(FHIRReference $candidate = null)
-    {
-        if (null === $candidate) {
-            return $this; 
-        }
-        $this->candidate = $candidate;
-        return $this;
-    }
-
-    /**
-     * Patient Resource.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getCandidate()
-    {
-        return $this->candidate;
-    }
-
 
     /**
      * Reference to the program or plan identification, underwriter or payor.
@@ -207,7 +258,6 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements \JsonSerializa
     {
         return $this->coverage;
     }
-
 
     /**
      * The date when this resource was created.
@@ -241,30 +291,28 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements \JsonSerializa
         return $this->created;
     }
 
-
     /**
      * The Response business identifier.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
-    public function setIdentifier(FHIRIdentifier $identifier = null)
+    public function addIdentifier(FHIRIdentifier $identifier = null)
     {
         if (null === $identifier) {
             return $this; 
         }
-        $this->identifier = $identifier;
+        $this->identifier[] = $identifier;
         return $this;
     }
 
     /**
      * The Response business identifier.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
         return $this->identifier;
     }
-
 
     /**
      * The Insurer who is target  of the request.
@@ -289,6 +337,28 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements \JsonSerializa
         return $this->insurer;
     }
 
+    /**
+     * The organization which is responsible for the services rendered to the patient.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return $this
+     */
+    public function setOrganization(FHIRReference $organization = null)
+    {
+        if (null === $organization) {
+            return $this; 
+        }
+        $this->organization = $organization;
+        return $this;
+    }
+
+    /**
+     * The organization which is responsible for the services rendered to the patient.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getOrganization()
+    {
+        return $this->organization;
+    }
 
     /**
      * The practitioner who is responsible for the services rendered to the patient.
@@ -312,7 +382,6 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements \JsonSerializa
     {
         return $this->provider;
     }
-
 
     /**
      * The status of the resource instance.
@@ -346,6 +415,28 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements \JsonSerializa
         return $this->status;
     }
 
+    /**
+     * Patient Resource.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return $this
+     */
+    public function setSubject(FHIRReference $subject = null)
+    {
+        if (null === $subject) {
+            return $this; 
+        }
+        $this->subject = $subject;
+        return $this;
+    }
+
+    /**
+     * Patient Resource.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getSubject()
+    {
+        return $this->subject;
+    }
 
     /**
      * @return string
@@ -362,26 +453,37 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements \JsonSerializa
     {
         $a = parent::jsonSerialize();
         $a['resourceType'] = self::FHIR_TYPE_NAME;
-        if (null !== ($v = $this->getCandidate())) {
-            $a['candidate'] = $v;
-        }
         if (null !== ($v = $this->getCoverage())) {
             $a['coverage'] = $v;
         }
         if (null !== ($v = $this->getCreated())) {
             $a['created'] = $v;
         }
-        if (null !== ($v = $this->getIdentifier())) {
-            $a['identifier'] = $v;
+        if (0 < count($values = $this->getIdentifier())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['identifier'] = $vs;
+            }
         }
         if (null !== ($v = $this->getInsurer())) {
             $a['insurer'] = $v;
+        }
+        if (null !== ($v = $this->getOrganization())) {
+            $a['organization'] = $v;
         }
         if (null !== ($v = $this->getProvider())) {
             $a['provider'] = $v;
         }
         if (null !== ($v = $this->getStatus())) {
             $a['status'] = $v;
+        }
+        if (null !== ($v = $this->getSubject())) {
+            $a['subject'] = $v;
         }
         return $a;
     }
@@ -396,9 +498,34 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements \JsonSerializa
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<EnrollmentRequest xmlns="http://hl7.org/fhir"></EnrollmentRequest>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getCoverage())) {
+            $v->xmlSerialize(true, $sxe->addChild('coverage'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getCreated())) {
+            $v->xmlSerialize(true, $sxe->addChild('created'));
+        }
+        if (0 < count($values = $this->getIdentifier())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('identifier'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getInsurer())) {
+            $v->xmlSerialize(true, $sxe->addChild('insurer'));
+        }
+        if (null !== ($v = $this->getOrganization())) {
+            $v->xmlSerialize(true, $sxe->addChild('organization'));
+        }
+        if (null !== ($v = $this->getProvider())) {
+            $v->xmlSerialize(true, $sxe->addChild('provider'));
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('status'));
+        }
+        if (null !== ($v = $this->getSubject())) {
+            $v->xmlSerialize(true, $sxe->addChild('subject'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

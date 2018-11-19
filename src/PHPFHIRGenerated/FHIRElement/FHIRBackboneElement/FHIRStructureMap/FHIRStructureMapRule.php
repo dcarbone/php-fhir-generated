@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -79,39 +79,39 @@ class FHIRStructureMapRule extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Which other rules to apply in the context of this rule.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapDependent
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapDependent[]
      */
-    public $dependent = null;
+    private $dependent = [];
 
     /**
      * Documentation for this instance of data.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $documentation = null;
+    private $documentation = null;
 
     /**
      * Name of the rule for internal references.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRId
      */
-    public $name = null;
+    private $name = null;
 
     /**
      * Rules contained in this rule.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule[]
      */
-    public $rule = null;
+    private $rule = [];
 
     /**
      * Source inputs to the mapping.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource[]
      */
-    public $source = null;
+    private $source = [];
 
     /**
      * Content to create because of this mapping rule.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapTarget
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapTarget[]
      */
-    public $target = null;
+    private $target = [];
 
     /**
      * FHIRStructureMapRule Constructor
@@ -120,25 +120,94 @@ class FHIRStructureMapRule extends FHIRBackboneElement implements \JsonSerializa
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['dependent'])) {
-                $this->setDependent($data['dependent']);
+                $value = $data['dependent'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRStructureMapDependent($v);
+                        } 
+                        if (!($v instanceof FHIRStructureMapDependent)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule::__construct - Collection field \"dependent\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapDependent or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addDependent($v);
+                    }
+                }
             }
             if (isset($data['documentation'])) {
-                $this->setDocumentation($data['documentation']);
+                $value = $data['documentation'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule::__construct - Property \"documentation\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setDocumentation($value);
             }
             if (isset($data['name'])) {
-                $this->setName($data['name']);
+                $value = $data['name'];
+                if (is_array($value)) {
+                    $value = new FHIRId($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRId($value);
+                }
+                if (!($value instanceof FHIRId)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule::__construct - Property \"name\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRId or data to construct type, saw ".gettype($value));
+                }
+                $this->setName($value);
             }
             if (isset($data['rule'])) {
-                $this->setRule($data['rule']);
+                $value = $data['rule'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRStructureMapRule($v);
+                        } 
+                        if (!($v instanceof FHIRStructureMapRule)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule::__construct - Collection field \"rule\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addRule($v);
+                    }
+                }
             }
             if (isset($data['source'])) {
-                $this->setSource($data['source']);
+                $value = $data['source'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRStructureMapSource($v);
+                        } 
+                        if (!($v instanceof FHIRStructureMapSource)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule::__construct - Collection field \"source\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addSource($v);
+                    }
+                }
             }
             if (isset($data['target'])) {
-                $this->setTarget($data['target']);
+                $value = $data['target'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRStructureMapTarget($v);
+                        } 
+                        if (!($v instanceof FHIRStructureMapTarget)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule::__construct - Collection field \"target\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapTarget or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addTarget($v);
+                    }
+                }
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -147,6 +216,7 @@ class FHIRStructureMapRule extends FHIRBackboneElement implements \JsonSerializa
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -154,24 +224,23 @@ class FHIRStructureMapRule extends FHIRBackboneElement implements \JsonSerializa
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapDependent
      * @return $this
      */
-    public function setDependent(FHIRStructureMapDependent $dependent = null)
+    public function addDependent(FHIRStructureMapDependent $dependent = null)
     {
         if (null === $dependent) {
             return $this; 
         }
-        $this->dependent = $dependent;
+        $this->dependent[] = $dependent;
         return $this;
     }
 
     /**
      * Which other rules to apply in the context of this rule.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapDependent
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapDependent[]
      */
     public function getDependent()
     {
         return $this->dependent;
     }
-
 
     /**
      * Documentation for this instance of data.
@@ -205,7 +274,6 @@ class FHIRStructureMapRule extends FHIRBackboneElement implements \JsonSerializa
         return $this->documentation;
     }
 
-
     /**
      * Name of the rule for internal references.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRId
@@ -238,78 +306,74 @@ class FHIRStructureMapRule extends FHIRBackboneElement implements \JsonSerializa
         return $this->name;
     }
 
-
     /**
      * Rules contained in this rule.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule
      * @return $this
      */
-    public function setRule(FHIRStructureMapRule $rule = null)
+    public function addRule(FHIRStructureMapRule $rule = null)
     {
         if (null === $rule) {
             return $this; 
         }
-        $this->rule = $rule;
+        $this->rule[] = $rule;
         return $this;
     }
 
     /**
      * Rules contained in this rule.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule[]
      */
     public function getRule()
     {
         return $this->rule;
     }
 
-
     /**
      * Source inputs to the mapping.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource
      * @return $this
      */
-    public function setSource(FHIRStructureMapSource $source = null)
+    public function addSource(FHIRStructureMapSource $source = null)
     {
         if (null === $source) {
             return $this; 
         }
-        $this->source = $source;
+        $this->source[] = $source;
         return $this;
     }
 
     /**
      * Source inputs to the mapping.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource[]
      */
     public function getSource()
     {
         return $this->source;
     }
 
-
     /**
      * Content to create because of this mapping rule.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapTarget
      * @return $this
      */
-    public function setTarget(FHIRStructureMapTarget $target = null)
+    public function addTarget(FHIRStructureMapTarget $target = null)
     {
         if (null === $target) {
             return $this; 
         }
-        $this->target = $target;
+        $this->target[] = $target;
         return $this;
     }
 
     /**
      * Content to create because of this mapping rule.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapTarget
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapTarget[]
      */
     public function getTarget()
     {
         return $this->target;
     }
-
 
     /**
      * @return string
@@ -325,8 +389,16 @@ class FHIRStructureMapRule extends FHIRBackboneElement implements \JsonSerializa
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getDependent())) {
-            $a['dependent'] = $v;
+        if (0 < count($values = $this->getDependent())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['dependent'] = $vs;
+            }
         }
         if (null !== ($v = $this->getDocumentation())) {
             $a['documentation'] = $v;
@@ -334,14 +406,38 @@ class FHIRStructureMapRule extends FHIRBackboneElement implements \JsonSerializa
         if (null !== ($v = $this->getName())) {
             $a['name'] = $v;
         }
-        if (null !== ($v = $this->getRule())) {
-            $a['rule'] = $v;
+        if (0 < count($values = $this->getRule())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['rule'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getSource())) {
-            $a['source'] = $v;
+        if (0 < count($values = $this->getSource())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['source'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getTarget())) {
-            $a['target'] = $v;
+        if (0 < count($values = $this->getTarget())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['target'] = $vs;
+            }
         }
         return $a;
     }
@@ -356,9 +452,40 @@ class FHIRStructureMapRule extends FHIRBackboneElement implements \JsonSerializa
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<StructureMapRule xmlns="http://hl7.org/fhir"></StructureMapRule>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (0 < count($values = $this->getDependent())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('dependent'));
+                }
+            }
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getDocumentation())) {
+            $v->xmlSerialize(true, $sxe->addChild('documentation'));
+        }
+        if (null !== ($v = $this->getName())) {
+            $v->xmlSerialize(true, $sxe->addChild('name'));
+        }
+        if (0 < count($values = $this->getRule())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('rule'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getSource())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('source'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getTarget())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('target'));
+                }
+            }
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

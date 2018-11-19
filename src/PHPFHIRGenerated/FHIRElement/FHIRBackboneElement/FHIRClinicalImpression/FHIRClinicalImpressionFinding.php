@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClinicalImpressio
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClinicalImpressio
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -82,19 +82,19 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement implements \Json
      * Which investigations support finding or diagnosis.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $basis = null;
+    private $basis = null;
 
     /**
-     * Specific text or code for finding or diagnosis, which may include ruled-out or resolved conditions.
+     * Specific text, code or reference for finding or diagnosis, which may include ruled-out or resolved conditions. (choose any one of item*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $itemCodeableConcept = null;
+    private $itemCodeableConcept = null;
 
     /**
-     * Specific reference for finding or diagnosis, which may include ruled-out or resolved conditions.
+     * Specific text, code or reference for finding or diagnosis, which may include ruled-out or resolved conditions. (choose any one of item*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $itemReference = null;
+    private $itemReference = null;
 
     /**
      * FHIRClinicalImpressionFinding Constructor
@@ -103,16 +103,38 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement implements \Json
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['basis'])) {
-                $this->setBasis($data['basis']);
+                $value = $data['basis'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionFinding::__construct - Property \"basis\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setBasis($value);
             }
             if (isset($data['itemCodeableConcept'])) {
-                $this->setItemCodeableConcept($data['itemCodeableConcept']);
+                $value = $data['itemCodeableConcept'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionFinding::__construct - Property \"itemCodeableConcept\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setItemCodeableConcept($value);
             }
             if (isset($data['itemReference'])) {
-                $this->setItemReference($data['itemReference']);
+                $value = $data['itemReference'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionFinding::__construct - Property \"itemReference\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setItemReference($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -121,6 +143,7 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement implements \Json
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -155,9 +178,8 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement implements \Json
         return $this->basis;
     }
 
-
     /**
-     * Specific text or code for finding or diagnosis, which may include ruled-out or resolved conditions.
+     * Specific text, code or reference for finding or diagnosis, which may include ruled-out or resolved conditions. (choose any one of item*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
@@ -171,7 +193,7 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement implements \Json
     }
 
     /**
-     * Specific text or code for finding or diagnosis, which may include ruled-out or resolved conditions.
+     * Specific text, code or reference for finding or diagnosis, which may include ruled-out or resolved conditions. (choose any one of item*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getItemCodeableConcept()
@@ -179,9 +201,8 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement implements \Json
         return $this->itemCodeableConcept;
     }
 
-
     /**
-     * Specific reference for finding or diagnosis, which may include ruled-out or resolved conditions.
+     * Specific text, code or reference for finding or diagnosis, which may include ruled-out or resolved conditions. (choose any one of item*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
@@ -195,14 +216,13 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement implements \Json
     }
 
     /**
-     * Specific reference for finding or diagnosis, which may include ruled-out or resolved conditions.
+     * Specific text, code or reference for finding or diagnosis, which may include ruled-out or resolved conditions. (choose any one of item*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getItemReference()
     {
         return $this->itemReference;
     }
-
 
     /**
      * @return string
@@ -240,9 +260,15 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement implements \Json
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ClinicalImpressionFinding xmlns="http://hl7.org/fhir"></ClinicalImpressionFinding>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getBasis())) {
+            $v->xmlSerialize(true, $sxe->addChild('basis'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getItemCodeableConcept())) {
+            $v->xmlSerialize(true, $sxe->addChild('itemCodeableConcept'));
+        }
+        if (null !== ($v = $this->getItemReference())) {
+            $v->xmlSerialize(true, $sxe->addChild('itemReference'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

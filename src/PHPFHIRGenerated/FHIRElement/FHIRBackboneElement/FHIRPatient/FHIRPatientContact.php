@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPatient;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPatient;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -86,43 +86,43 @@ class FHIRPatientContact extends FHIRBackboneElement implements \JsonSerializabl
      * Address for the contact person.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAddress
      */
-    public $address = null;
+    private $address = null;
 
     /**
      * Administrative Gender - the gender that the contact person is considered to have for administration and record keeping purposes.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAdministrativeGender
      */
-    public $gender = null;
+    private $gender = null;
 
     /**
      * A name associated with the contact person.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRHumanName
      */
-    public $name = null;
+    private $name = null;
 
     /**
      * Organization on behalf of which the contact is acting or for which the contact is working.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $organization = null;
+    private $organization = null;
 
     /**
      * The period during which this contact person or organization is valid to be contacted relating to this patient.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public $period = null;
+    private $period = null;
 
     /**
      * The nature of the relationship between the patient and the contact person.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $relationship = null;
+    private $relationship = [];
 
     /**
      * A contact detail for the person, e.g. a telephone number or an email address.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactPoint
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactPoint[]
      */
-    public $telecom = null;
+    private $telecom = [];
 
     /**
      * FHIRPatientContact Constructor
@@ -131,28 +131,90 @@ class FHIRPatientContact extends FHIRBackboneElement implements \JsonSerializabl
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['address'])) {
-                $this->setAddress($data['address']);
+                $value = $data['address'];
+                if (is_array($value)) {
+                    $value = new FHIRAddress($value);
+                } 
+                if (!($value instanceof FHIRAddress)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientContact::__construct - Property \"address\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAddress or data to construct type, saw ".gettype($value));
+                }
+                $this->setAddress($value);
             }
             if (isset($data['gender'])) {
-                $this->setGender($data['gender']);
+                $value = $data['gender'];
+                if (is_array($value)) {
+                    $value = new FHIRAdministrativeGender($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRAdministrativeGender($value);
+                }
+                if (!($value instanceof FHIRAdministrativeGender)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientContact::__construct - Property \"gender\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAdministrativeGender or data to construct type, saw ".gettype($value));
+                }
+                $this->setGender($value);
             }
             if (isset($data['name'])) {
-                $this->setName($data['name']);
+                $value = $data['name'];
+                if (is_array($value)) {
+                    $value = new FHIRHumanName($value);
+                } 
+                if (!($value instanceof FHIRHumanName)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientContact::__construct - Property \"name\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRHumanName or data to construct type, saw ".gettype($value));
+                }
+                $this->setName($value);
             }
             if (isset($data['organization'])) {
-                $this->setOrganization($data['organization']);
+                $value = $data['organization'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientContact::__construct - Property \"organization\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setOrganization($value);
             }
             if (isset($data['period'])) {
-                $this->setPeriod($data['period']);
+                $value = $data['period'];
+                if (is_array($value)) {
+                    $value = new FHIRPeriod($value);
+                } 
+                if (!($value instanceof FHIRPeriod)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientContact::__construct - Property \"period\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPeriod or data to construct type, saw ".gettype($value));
+                }
+                $this->setPeriod($value);
             }
             if (isset($data['relationship'])) {
-                $this->setRelationship($data['relationship']);
+                $value = $data['relationship'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientContact::__construct - Collection field \"relationship\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addRelationship($v);
+                    }
+                }
             }
             if (isset($data['telecom'])) {
-                $this->setTelecom($data['telecom']);
+                $value = $data['telecom'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRContactPoint($v);
+                        } 
+                        if (!($v instanceof FHIRContactPoint)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientContact::__construct - Collection field \"telecom\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRContactPoint or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addTelecom($v);
+                    }
+                }
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -161,6 +223,7 @@ class FHIRPatientContact extends FHIRBackboneElement implements \JsonSerializabl
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -185,7 +248,6 @@ class FHIRPatientContact extends FHIRBackboneElement implements \JsonSerializabl
     {
         return $this->address;
     }
-
 
     /**
      * Administrative Gender - the gender that the contact person is considered to have for administration and record keeping purposes.
@@ -219,7 +281,6 @@ class FHIRPatientContact extends FHIRBackboneElement implements \JsonSerializabl
         return $this->gender;
     }
 
-
     /**
      * A name associated with the contact person.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRHumanName
@@ -242,7 +303,6 @@ class FHIRPatientContact extends FHIRBackboneElement implements \JsonSerializabl
     {
         return $this->name;
     }
-
 
     /**
      * Organization on behalf of which the contact is acting or for which the contact is working.
@@ -267,7 +327,6 @@ class FHIRPatientContact extends FHIRBackboneElement implements \JsonSerializabl
         return $this->organization;
     }
 
-
     /**
      * The period during which this contact person or organization is valid to be contacted relating to this patient.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
@@ -291,54 +350,51 @@ class FHIRPatientContact extends FHIRBackboneElement implements \JsonSerializabl
         return $this->period;
     }
 
-
     /**
      * The nature of the relationship between the patient and the contact person.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setRelationship(FHIRCodeableConcept $relationship = null)
+    public function addRelationship(FHIRCodeableConcept $relationship = null)
     {
         if (null === $relationship) {
             return $this; 
         }
-        $this->relationship = $relationship;
+        $this->relationship[] = $relationship;
         return $this;
     }
 
     /**
      * The nature of the relationship between the patient and the contact person.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getRelationship()
     {
         return $this->relationship;
     }
 
-
     /**
      * A contact detail for the person, e.g. a telephone number or an email address.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContactPoint
      * @return $this
      */
-    public function setTelecom(FHIRContactPoint $telecom = null)
+    public function addTelecom(FHIRContactPoint $telecom = null)
     {
         if (null === $telecom) {
             return $this; 
         }
-        $this->telecom = $telecom;
+        $this->telecom[] = $telecom;
         return $this;
     }
 
     /**
      * A contact detail for the person, e.g. a telephone number or an email address.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactPoint
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactPoint[]
      */
     public function getTelecom()
     {
         return $this->telecom;
     }
-
 
     /**
      * @return string
@@ -369,11 +425,27 @@ class FHIRPatientContact extends FHIRBackboneElement implements \JsonSerializabl
         if (null !== ($v = $this->getPeriod())) {
             $a['period'] = $v;
         }
-        if (null !== ($v = $this->getRelationship())) {
-            $a['relationship'] = $v;
+        if (0 < count($values = $this->getRelationship())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['relationship'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getTelecom())) {
-            $a['telecom'] = $v;
+        if (0 < count($values = $this->getTelecom())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['telecom'] = $vs;
+            }
         }
         return $a;
     }
@@ -388,9 +460,35 @@ class FHIRPatientContact extends FHIRBackboneElement implements \JsonSerializabl
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<PatientContact xmlns="http://hl7.org/fhir"></PatientContact>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getAddress())) {
+            $v->xmlSerialize(true, $sxe->addChild('address'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getGender())) {
+            $v->xmlSerialize(true, $sxe->addChild('gender'));
+        }
+        if (null !== ($v = $this->getName())) {
+            $v->xmlSerialize(true, $sxe->addChild('name'));
+        }
+        if (null !== ($v = $this->getOrganization())) {
+            $v->xmlSerialize(true, $sxe->addChild('organization'));
+        }
+        if (null !== ($v = $this->getPeriod())) {
+            $v->xmlSerialize(true, $sxe->addChild('period'));
+        }
+        if (0 < count($values = $this->getRelationship())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('relationship'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getTelecom())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('telecom'));
+                }
+            }
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

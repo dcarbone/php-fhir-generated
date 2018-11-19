@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSequence;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSequence;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -82,37 +82,37 @@ class FHIRSequenceRepository extends FHIRBackboneElement implements \JsonSeriali
      * Id of the variant in this external repository. The server will understand how to use this id to call for more info about datasets in external repository.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $datasetId = null;
+    private $datasetId = null;
 
     /**
      * URI of an external repository which contains further details about the genetics data.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $name = null;
+    private $name = null;
 
     /**
      * Id of the read in this external repository.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $readsetId = null;
+    private $readsetId = null;
 
     /**
      * Click and see / RESTful API / Need login to see / RESTful API with authentication / Other ways to see resource.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRepositoryType
      */
-    public $type = null;
+    private $type = null;
 
     /**
      * URI of an external repository which contains further details about the genetics data.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $url = null;
+    private $url = null;
 
     /**
      * Id of the variantset in this external repository. The server will understand how to use this id to call for more info about variantsets in external repository.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $variantsetId = null;
+    private $variantsetId = null;
 
     /**
      * FHIRSequenceRepository Constructor
@@ -121,25 +121,78 @@ class FHIRSequenceRepository extends FHIRBackboneElement implements \JsonSeriali
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['datasetId'])) {
-                $this->setDatasetId($data['datasetId']);
+                $value = $data['datasetId'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRepository::__construct - Property \"datasetId\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setDatasetId($value);
             }
             if (isset($data['name'])) {
-                $this->setName($data['name']);
+                $value = $data['name'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRepository::__construct - Property \"name\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setName($value);
             }
             if (isset($data['readsetId'])) {
-                $this->setReadsetId($data['readsetId']);
+                $value = $data['readsetId'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRepository::__construct - Property \"readsetId\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setReadsetId($value);
             }
             if (isset($data['type'])) {
-                $this->setType($data['type']);
+                $value = $data['type'];
+                if (is_array($value)) {
+                    $value = new FHIRRepositoryType($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRRepositoryType($value);
+                }
+                if (!($value instanceof FHIRRepositoryType)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRepository::__construct - Property \"type\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRRepositoryType or data to construct type, saw ".gettype($value));
+                }
+                $this->setType($value);
             }
             if (isset($data['url'])) {
-                $this->setUrl($data['url']);
+                $value = $data['url'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRepository::__construct - Property \"url\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value));
+                }
+                $this->setUrl($value);
             }
             if (isset($data['variantsetId'])) {
-                $this->setVariantsetId($data['variantsetId']);
+                $value = $data['variantsetId'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRepository::__construct - Property \"variantsetId\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setVariantsetId($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -148,6 +201,7 @@ class FHIRSequenceRepository extends FHIRBackboneElement implements \JsonSeriali
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -182,7 +236,6 @@ class FHIRSequenceRepository extends FHIRBackboneElement implements \JsonSeriali
         return $this->datasetId;
     }
 
-
     /**
      * URI of an external repository which contains further details about the genetics data.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -214,7 +267,6 @@ class FHIRSequenceRepository extends FHIRBackboneElement implements \JsonSeriali
     {
         return $this->name;
     }
-
 
     /**
      * Id of the read in this external repository.
@@ -248,7 +300,6 @@ class FHIRSequenceRepository extends FHIRBackboneElement implements \JsonSeriali
         return $this->readsetId;
     }
 
-
     /**
      * Click and see / RESTful API / Need login to see / RESTful API with authentication / Other ways to see resource.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRRepositoryType
@@ -280,7 +331,6 @@ class FHIRSequenceRepository extends FHIRBackboneElement implements \JsonSeriali
     {
         return $this->type;
     }
-
 
     /**
      * URI of an external repository which contains further details about the genetics data.
@@ -314,7 +364,6 @@ class FHIRSequenceRepository extends FHIRBackboneElement implements \JsonSeriali
         return $this->url;
     }
 
-
     /**
      * Id of the variantset in this external repository. The server will understand how to use this id to call for more info about variantsets in external repository.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -346,7 +395,6 @@ class FHIRSequenceRepository extends FHIRBackboneElement implements \JsonSeriali
     {
         return $this->variantsetId;
     }
-
 
     /**
      * @return string
@@ -393,9 +441,24 @@ class FHIRSequenceRepository extends FHIRBackboneElement implements \JsonSeriali
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<SequenceRepository xmlns="http://hl7.org/fhir"></SequenceRepository>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getDatasetId())) {
+            $v->xmlSerialize(true, $sxe->addChild('datasetId'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getName())) {
+            $v->xmlSerialize(true, $sxe->addChild('name'));
+        }
+        if (null !== ($v = $this->getReadsetId())) {
+            $v->xmlSerialize(true, $sxe->addChild('readsetId'));
+        }
+        if (null !== ($v = $this->getType())) {
+            $v->xmlSerialize(true, $sxe->addChild('type'));
+        }
+        if (null !== ($v = $this->getUrl())) {
+            $v->xmlSerialize(true, $sxe->addChild('url'));
+        }
+        if (null !== ($v = $this->getVariantsetId())) {
+            $v->xmlSerialize(true, $sxe->addChild('variantsetId'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

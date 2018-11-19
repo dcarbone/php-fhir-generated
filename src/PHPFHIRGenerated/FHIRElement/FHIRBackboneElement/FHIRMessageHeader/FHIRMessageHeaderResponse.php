@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMessageHeader;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMessageHeader;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -82,19 +82,19 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement implements \JsonSeri
      * Code that identifies the type of response to the message - whether it was successful or not, and whether it should be resent or not.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRResponseType
      */
-    public $code = null;
+    private $code = null;
 
     /**
      * Full details of any issues found in the message.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $details = null;
+    private $details = null;
 
     /**
      * The MessageHeader.id of the message to which this message is a response.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRId
      */
-    public $identifier = null;
+    private $identifier = null;
 
     /**
      * FHIRMessageHeaderResponse Constructor
@@ -103,16 +103,40 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement implements \JsonSeri
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['code'])) {
-                $this->setCode($data['code']);
+                $value = $data['code'];
+                if (is_array($value)) {
+                    $value = new FHIRResponseType($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRResponseType($value);
+                }
+                if (!($value instanceof FHIRResponseType)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderResponse::__construct - Property \"code\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRResponseType or data to construct type, saw ".gettype($value));
+                }
+                $this->setCode($value);
             }
             if (isset($data['details'])) {
-                $this->setDetails($data['details']);
+                $value = $data['details'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderResponse::__construct - Property \"details\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setDetails($value);
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    $value = new FHIRId($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRId($value);
+                }
+                if (!($value instanceof FHIRId)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderResponse::__construct - Property \"identifier\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRId or data to construct type, saw ".gettype($value));
+                }
+                $this->setIdentifier($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -121,6 +145,7 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement implements \JsonSeri
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -155,7 +180,6 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement implements \JsonSeri
         return $this->code;
     }
 
-
     /**
      * Full details of any issues found in the message.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -178,7 +202,6 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement implements \JsonSeri
     {
         return $this->details;
     }
-
 
     /**
      * The MessageHeader.id of the message to which this message is a response.
@@ -211,7 +234,6 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement implements \JsonSeri
     {
         return $this->identifier;
     }
-
 
     /**
      * @return string
@@ -249,9 +271,15 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement implements \JsonSeri
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<MessageHeaderResponse xmlns="http://hl7.org/fhir"></MessageHeaderResponse>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getCode())) {
+            $v->xmlSerialize(true, $sxe->addChild('code'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getDetails())) {
+            $v->xmlSerialize(true, $sxe->addChild('details'));
+        }
+        if (null !== ($v = $this->getIdentifier())) {
+            $v->xmlSerialize(true, $sxe->addChild('identifier'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

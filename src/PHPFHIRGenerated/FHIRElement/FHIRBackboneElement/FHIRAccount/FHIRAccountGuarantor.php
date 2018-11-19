@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAccount;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAccount;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -82,19 +82,19 @@ class FHIRAccountGuarantor extends FHIRBackboneElement implements \JsonSerializa
      * A guarantor may be placed on credit hold or otherwise have their role temporarily suspended.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $onHold = null;
+    private $onHold = null;
 
     /**
      * The entity who is responsible.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $party = null;
+    private $party = null;
 
     /**
      * The timeframe during which the guarantor accepts responsibility for the account.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public $period = null;
+    private $period = null;
 
     /**
      * FHIRAccountGuarantor Constructor
@@ -103,16 +103,38 @@ class FHIRAccountGuarantor extends FHIRBackboneElement implements \JsonSerializa
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['onHold'])) {
-                $this->setOnHold($data['onHold']);
+                $value = $data['onHold'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountGuarantor::__construct - Property \"onHold\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value));
+                }
+                $this->setOnHold($value);
             }
             if (isset($data['party'])) {
-                $this->setParty($data['party']);
+                $value = $data['party'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountGuarantor::__construct - Property \"party\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setParty($value);
             }
             if (isset($data['period'])) {
-                $this->setPeriod($data['period']);
+                $value = $data['period'];
+                if (is_array($value)) {
+                    $value = new FHIRPeriod($value);
+                } 
+                if (!($value instanceof FHIRPeriod)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountGuarantor::__construct - Property \"period\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPeriod or data to construct type, saw ".gettype($value));
+                }
+                $this->setPeriod($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -121,6 +143,7 @@ class FHIRAccountGuarantor extends FHIRBackboneElement implements \JsonSerializa
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -155,7 +178,6 @@ class FHIRAccountGuarantor extends FHIRBackboneElement implements \JsonSerializa
         return $this->onHold;
     }
 
-
     /**
      * The entity who is responsible.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -179,7 +201,6 @@ class FHIRAccountGuarantor extends FHIRBackboneElement implements \JsonSerializa
         return $this->party;
     }
 
-
     /**
      * The timeframe during which the guarantor accepts responsibility for the account.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
@@ -202,7 +223,6 @@ class FHIRAccountGuarantor extends FHIRBackboneElement implements \JsonSerializa
     {
         return $this->period;
     }
-
 
     /**
      * @return string
@@ -240,9 +260,15 @@ class FHIRAccountGuarantor extends FHIRBackboneElement implements \JsonSerializa
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<AccountGuarantor xmlns="http://hl7.org/fhir"></AccountGuarantor>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getOnHold())) {
+            $v->xmlSerialize(true, $sxe->addChild('onHold'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getParty())) {
+            $v->xmlSerialize(true, $sxe->addChild('party'));
+        }
+        if (null !== ($v = $this->getPeriod())) {
+            $v->xmlSerialize(true, $sxe->addChild('period'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

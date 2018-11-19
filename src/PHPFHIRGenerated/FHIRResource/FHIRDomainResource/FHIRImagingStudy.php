@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -62,13 +62,13 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * 
  */
 
-use PHPFHIRGenerated\FHIRElement\FHIRAnnotation;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries;
 use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
 use PHPFHIRGenerated\FHIRElement\FHIRCoding;
 use PHPFHIRGenerated\FHIRElement\FHIRDateTime;
 use PHPFHIRGenerated\FHIRElement\FHIRIdentifier;
-use PHPFHIRGenerated\FHIRElement\FHIRImagingStudyStatus;
+use PHPFHIRGenerated\FHIRElement\FHIRInstanceAvailability;
+use PHPFHIRGenerated\FHIRElement\FHIROid;
 use PHPFHIRGenerated\FHIRElement\FHIRReference;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
 use PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt;
@@ -87,124 +87,118 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
     const FHIR_TYPE_NAME = 'ImagingStudy';
 
     /**
-     * A list of the diagnostic requests that resulted in this imaging study being performed.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * Accession Number is an identifier related to some aspect of imaging workflow and data management. Usage may vary across different institutions.  See for instance [IHE Radiology Technical Framework Volume 1 Appendix A](http://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_TF_Rev13.0_Vol1_FT_2014-07-30.pdf).
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public $basedOn = null;
+    private $accession = null;
+
+    /**
+     * Availability of study (online, offline, or nearline).
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRInstanceAvailability
+     */
+    private $availability = null;
+
+    /**
+     * A list of the diagnostic requests that resulted in this imaging study being performed.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    private $basedOn = [];
 
     /**
      * The encounter or episode at which the request is initiated.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $context = null;
+    private $context = null;
 
     /**
-     * The Imaging Manager description of the study. Institution-generated description or classification of the Study (component) performed.
+     * Institution-generated description or classification of the Study performed.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $description = null;
+    private $description = null;
 
     /**
-     * The network service providing access (e.g., query, view, or retrieval) for the study. See implementation notes for information about using DICOM endpoints. A study-level endpoint applies to each series in the study, unless overridden by a series-level endpoint with the same Endpoint.connectionType.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * The network service providing access (e.g., query, view, or retrieval) for the study. See implementation notes for information about using DICOM endpoints. A study-level endpoint applies to each series in the study, unless overridden by a series-level endpoint with the same Endpoint.type.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $endpoint = null;
+    private $endpoint = [];
 
     /**
-     * DICOM Study Instance UID, and Accession Number.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * Other identifiers for the study.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = null;
+    private $identifier = [];
 
     /**
      * Who read the study and interpreted the images or other content.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $interpreter = null;
+    private $interpreter = [];
 
     /**
-     * The principal physical location where the ImagingStudy was performed.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * A list of all the Series.ImageModality values that are actual acquisition modalities, i.e. those in the DICOM Context Group 29 (value set OID 1.2.840.10008.6.1.19).
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
-    public $location = null;
-
-    /**
-     * A list of all the series.modality values that are actual acquisition modalities, i.e. those in the DICOM Context Group 29 (value set OID 1.2.840.10008.6.1.19).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
-     */
-    public $modality = null;
-
-    /**
-     * Per the recommended DICOM mapping, this element is derived from the Study Description attribute (0008,1030). Observations or findings about the imaging study should be recorded in another resource, e.g. Observation, and not in this element.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation
-     */
-    public $note = null;
+    private $modalityList = [];
 
     /**
      * Number of SOP Instances in Study. This value given may be larger than the number of instance elements this resource contains due to resource availability, security, or other factors. This element should be present if any instance elements are present.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
-    public $numberOfInstances = null;
+    private $numberOfInstances = null;
 
     /**
      * Number of Series in the Study. This value given may be larger than the number of series elements this Resource contains due to resource availability, security, or other factors. This element should be present if any series elements are present.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
-    public $numberOfSeries = null;
+    private $numberOfSeries = null;
+
+    /**
+     * The patient imaged in the study.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    private $patient = null;
 
     /**
      * The code for the performed procedure type.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $procedureCode = null;
+    private $procedureCode = [];
 
     /**
      * A reference to the performed Procedure.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $procedureReference = null;
+    private $procedureReference = [];
 
     /**
      * Description of clinical condition indicating why the ImagingStudy was requested.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $reasonCode = null;
-
-    /**
-     * Indicates another resource whose existence justifies this Study.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $reasonReference = null;
+    private $reason = null;
 
     /**
      * The requesting/referring physician.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $referrer = null;
+    private $referrer = null;
 
     /**
      * Each study has one or more series of images or other content.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries[]
      */
-    public $series = null;
+    private $series = [];
 
     /**
      * Date and time the study started.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $started = null;
+    private $started = null;
 
     /**
-     * The current state of the ImagingStudy.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRImagingStudyStatus
+     * Formal identifier for the study.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIROid
      */
-    public $status = null;
-
-    /**
-     * The subject, typically a patient, of the imaging study.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $subject = null;
+    private $uid = null;
 
     /**
      * FHIRImagingStudy Constructor
@@ -213,67 +207,256 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
+            if (isset($data['accession'])) {
+                $value = $data['accession'];
+                if (is_array($value)) {
+                    $value = new FHIRIdentifier($value);
+                } 
+                if (!($value instanceof FHIRIdentifier)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImagingStudy::__construct - Property \"accession\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setAccession($value);
+            }
+            if (isset($data['availability'])) {
+                $value = $data['availability'];
+                if (is_array($value)) {
+                    $value = new FHIRInstanceAvailability($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRInstanceAvailability($value);
+                }
+                if (!($value instanceof FHIRInstanceAvailability)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImagingStudy::__construct - Property \"availability\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRInstanceAvailability or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setAvailability($value);
+            }
             if (isset($data['basedOn'])) {
-                $this->setBasedOn($data['basedOn']);
+                $value = $data['basedOn'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImagingStudy::__construct - Collection field \"basedOn\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addBasedOn($v);
+                    }
+                }
             }
             if (isset($data['context'])) {
-                $this->setContext($data['context']);
+                $value = $data['context'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImagingStudy::__construct - Property \"context\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setContext($value);
             }
             if (isset($data['description'])) {
-                $this->setDescription($data['description']);
+                $value = $data['description'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImagingStudy::__construct - Property \"description\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDescription($value);
             }
             if (isset($data['endpoint'])) {
-                $this->setEndpoint($data['endpoint']);
+                $value = $data['endpoint'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImagingStudy::__construct - Collection field \"endpoint\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addEndpoint($v);
+                    }
+                }
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRIdentifier($v);
+                        } 
+                        if (!($v instanceof FHIRIdentifier)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImagingStudy::__construct - Collection field \"identifier\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addIdentifier($v);
+                    }
+                }
             }
             if (isset($data['interpreter'])) {
-                $this->setInterpreter($data['interpreter']);
+                $value = $data['interpreter'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImagingStudy::__construct - Collection field \"interpreter\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addInterpreter($v);
+                    }
+                }
             }
-            if (isset($data['location'])) {
-                $this->setLocation($data['location']);
-            }
-            if (isset($data['modality'])) {
-                $this->setModality($data['modality']);
-            }
-            if (isset($data['note'])) {
-                $this->setNote($data['note']);
+            if (isset($data['modalityList'])) {
+                $value = $data['modalityList'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCoding($v);
+                        } 
+                        if (!($v instanceof FHIRCoding)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImagingStudy::__construct - Collection field \"modalityList\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCoding or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addModalityList($v);
+                    }
+                }
             }
             if (isset($data['numberOfInstances'])) {
-                $this->setNumberOfInstances($data['numberOfInstances']);
+                $value = $data['numberOfInstances'];
+                if (is_array($value)) {
+                    $value = new FHIRUnsignedInt($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUnsignedInt($value);
+                }
+                if (!($value instanceof FHIRUnsignedInt)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImagingStudy::__construct - Property \"numberOfInstances\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setNumberOfInstances($value);
             }
             if (isset($data['numberOfSeries'])) {
-                $this->setNumberOfSeries($data['numberOfSeries']);
+                $value = $data['numberOfSeries'];
+                if (is_array($value)) {
+                    $value = new FHIRUnsignedInt($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUnsignedInt($value);
+                }
+                if (!($value instanceof FHIRUnsignedInt)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImagingStudy::__construct - Property \"numberOfSeries\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setNumberOfSeries($value);
+            }
+            if (isset($data['patient'])) {
+                $value = $data['patient'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImagingStudy::__construct - Property \"patient\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setPatient($value);
             }
             if (isset($data['procedureCode'])) {
-                $this->setProcedureCode($data['procedureCode']);
+                $value = $data['procedureCode'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImagingStudy::__construct - Collection field \"procedureCode\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addProcedureCode($v);
+                    }
+                }
             }
             if (isset($data['procedureReference'])) {
-                $this->setProcedureReference($data['procedureReference']);
+                $value = $data['procedureReference'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImagingStudy::__construct - Collection field \"procedureReference\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addProcedureReference($v);
+                    }
+                }
             }
-            if (isset($data['reasonCode'])) {
-                $this->setReasonCode($data['reasonCode']);
-            }
-            if (isset($data['reasonReference'])) {
-                $this->setReasonReference($data['reasonReference']);
+            if (isset($data['reason'])) {
+                $value = $data['reason'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImagingStudy::__construct - Property \"reason\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setReason($value);
             }
             if (isset($data['referrer'])) {
-                $this->setReferrer($data['referrer']);
+                $value = $data['referrer'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImagingStudy::__construct - Property \"referrer\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setReferrer($value);
             }
             if (isset($data['series'])) {
-                $this->setSeries($data['series']);
+                $value = $data['series'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRImagingStudySeries($v);
+                        } 
+                        if (!($v instanceof FHIRImagingStudySeries)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImagingStudy::__construct - Collection field \"series\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addSeries($v);
+                    }
+                }
             }
             if (isset($data['started'])) {
-                $this->setStarted($data['started']);
+                $value = $data['started'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImagingStudy::__construct - Property \"started\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setStarted($value);
             }
-            if (isset($data['status'])) {
-                $this->setStatus($data['status']);
-            }
-            if (isset($data['subject'])) {
-                $this->setSubject($data['subject']);
+            if (isset($data['uid'])) {
+                $value = $data['uid'];
+                if (is_array($value)) {
+                    $value = new FHIROid($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIROid($value);
+                }
+                if (!($value instanceof FHIROid)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImagingStudy::__construct - Property \"uid\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIROid or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setUid($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -282,6 +465,62 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
+    }
+
+    /**
+     * Accession Number is an identifier related to some aspect of imaging workflow and data management. Usage may vary across different institutions.  See for instance [IHE Radiology Technical Framework Volume 1 Appendix A](http://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_TF_Rev13.0_Vol1_FT_2014-07-30.pdf).
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @return $this
+     */
+    public function setAccession(FHIRIdentifier $accession = null)
+    {
+        if (null === $accession) {
+            return $this; 
+        }
+        $this->accession = $accession;
+        return $this;
+    }
+
+    /**
+     * Accession Number is an identifier related to some aspect of imaging workflow and data management. Usage may vary across different institutions.  See for instance [IHE Radiology Technical Framework Volume 1 Appendix A](http://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_TF_Rev13.0_Vol1_FT_2014-07-30.pdf).
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     */
+    public function getAccession()
+    {
+        return $this->accession;
+    }
+
+    /**
+     * Availability of study (online, offline, or nearline).
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRInstanceAvailability
+     * @return $this
+     */
+    public function setAvailability($availability)
+    {
+        if (null === $availability) {
+            return $this; 
+        }
+        if (is_scalar($availability)) {
+            $availability = new FHIRInstanceAvailability($availability);
+        }
+        if (!($availability instanceof FHIRInstanceAvailability)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRImagingStudy::setAvailability - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRInstanceAvailability or appropriate scalar value, %s seen.',
+                gettype($availability)
+            ));
+        }
+        $this->availability = $availability;
+        return $this;
+    }
+
+    /**
+     * Availability of study (online, offline, or nearline).
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRInstanceAvailability
+     */
+    public function getAvailability()
+    {
+        return $this->availability;
     }
 
     /**
@@ -289,24 +528,23 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setBasedOn(FHIRReference $basedOn = null)
+    public function addBasedOn(FHIRReference $basedOn = null)
     {
         if (null === $basedOn) {
             return $this; 
         }
-        $this->basedOn = $basedOn;
+        $this->basedOn[] = $basedOn;
         return $this;
     }
 
     /**
      * A list of the diagnostic requests that resulted in this imaging study being performed.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getBasedOn()
     {
         return $this->basedOn;
     }
-
 
     /**
      * The encounter or episode at which the request is initiated.
@@ -331,9 +569,8 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
         return $this->context;
     }
 
-
     /**
-     * The Imaging Manager description of the study. Institution-generated description or classification of the Study (component) performed.
+     * Institution-generated description or classification of the Study performed.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
@@ -356,7 +593,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The Imaging Manager description of the study. Institution-generated description or classification of the Study (component) performed.
+     * Institution-generated description or classification of the Study performed.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getDescription()
@@ -364,150 +601,97 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
         return $this->description;
     }
 
-
     /**
-     * The network service providing access (e.g., query, view, or retrieval) for the study. See implementation notes for information about using DICOM endpoints. A study-level endpoint applies to each series in the study, unless overridden by a series-level endpoint with the same Endpoint.connectionType.
+     * The network service providing access (e.g., query, view, or retrieval) for the study. See implementation notes for information about using DICOM endpoints. A study-level endpoint applies to each series in the study, unless overridden by a series-level endpoint with the same Endpoint.type.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setEndpoint(FHIRReference $endpoint = null)
+    public function addEndpoint(FHIRReference $endpoint = null)
     {
         if (null === $endpoint) {
             return $this; 
         }
-        $this->endpoint = $endpoint;
+        $this->endpoint[] = $endpoint;
         return $this;
     }
 
     /**
-     * The network service providing access (e.g., query, view, or retrieval) for the study. See implementation notes for information about using DICOM endpoints. A study-level endpoint applies to each series in the study, unless overridden by a series-level endpoint with the same Endpoint.connectionType.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * The network service providing access (e.g., query, view, or retrieval) for the study. See implementation notes for information about using DICOM endpoints. A study-level endpoint applies to each series in the study, unless overridden by a series-level endpoint with the same Endpoint.type.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getEndpoint()
     {
         return $this->endpoint;
     }
 
-
     /**
-     * DICOM Study Instance UID, and Accession Number.
+     * Other identifiers for the study.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
-    public function setIdentifier(FHIRIdentifier $identifier = null)
+    public function addIdentifier(FHIRIdentifier $identifier = null)
     {
         if (null === $identifier) {
             return $this; 
         }
-        $this->identifier = $identifier;
+        $this->identifier[] = $identifier;
         return $this;
     }
 
     /**
-     * DICOM Study Instance UID, and Accession Number.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * Other identifiers for the study.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
         return $this->identifier;
     }
 
-
     /**
      * Who read the study and interpreted the images or other content.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setInterpreter(FHIRReference $interpreter = null)
+    public function addInterpreter(FHIRReference $interpreter = null)
     {
         if (null === $interpreter) {
             return $this; 
         }
-        $this->interpreter = $interpreter;
+        $this->interpreter[] = $interpreter;
         return $this;
     }
 
     /**
      * Who read the study and interpreted the images or other content.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getInterpreter()
     {
         return $this->interpreter;
     }
 
-
     /**
-     * The principal physical location where the ImagingStudy was performed.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     * @return $this
-     */
-    public function setLocation(FHIRReference $location = null)
-    {
-        if (null === $location) {
-            return $this; 
-        }
-        $this->location = $location;
-        return $this;
-    }
-
-    /**
-     * The principal physical location where the ImagingStudy was performed.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getLocation()
-    {
-        return $this->location;
-    }
-
-
-    /**
-     * A list of all the series.modality values that are actual acquisition modalities, i.e. those in the DICOM Context Group 29 (value set OID 1.2.840.10008.6.1.19).
+     * A list of all the Series.ImageModality values that are actual acquisition modalities, i.e. those in the DICOM Context Group 29 (value set OID 1.2.840.10008.6.1.19).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
      * @return $this
      */
-    public function setModality(FHIRCoding $modality = null)
+    public function addModalityList(FHIRCoding $modalityList = null)
     {
-        if (null === $modality) {
+        if (null === $modalityList) {
             return $this; 
         }
-        $this->modality = $modality;
+        $this->modalityList[] = $modalityList;
         return $this;
     }
 
     /**
-     * A list of all the series.modality values that are actual acquisition modalities, i.e. those in the DICOM Context Group 29 (value set OID 1.2.840.10008.6.1.19).
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * A list of all the Series.ImageModality values that are actual acquisition modalities, i.e. those in the DICOM Context Group 29 (value set OID 1.2.840.10008.6.1.19).
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
-    public function getModality()
+    public function getModalityList()
     {
-        return $this->modality;
+        return $this->modalityList;
     }
-
-
-    /**
-     * Per the recommended DICOM mapping, this element is derived from the Study Description attribute (0008,1030). Observations or findings about the imaging study should be recorded in another resource, e.g. Observation, and not in this element.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation
-     * @return $this
-     */
-    public function setNote(FHIRAnnotation $note = null)
-    {
-        if (null === $note) {
-            return $this; 
-        }
-        $this->note = $note;
-        return $this;
-    }
-
-    /**
-     * Per the recommended DICOM mapping, this element is derived from the Study Description attribute (0008,1030). Observations or findings about the imaging study should be recorded in another resource, e.g. Observation, and not in this element.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation
-     */
-    public function getNote()
-    {
-        return $this->note;
-    }
-
 
     /**
      * Number of SOP Instances in Study. This value given may be larger than the number of instance elements this resource contains due to resource availability, security, or other factors. This element should be present if any instance elements are present.
@@ -541,7 +725,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
         return $this->numberOfInstances;
     }
 
-
     /**
      * Number of Series in the Study. This value given may be larger than the number of series elements this Resource contains due to resource availability, security, or other factors. This element should be present if any series elements are present.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
@@ -574,66 +757,86 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
         return $this->numberOfSeries;
     }
 
+    /**
+     * The patient imaged in the study.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return $this
+     */
+    public function setPatient(FHIRReference $patient = null)
+    {
+        if (null === $patient) {
+            return $this; 
+        }
+        $this->patient = $patient;
+        return $this;
+    }
+
+    /**
+     * The patient imaged in the study.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getPatient()
+    {
+        return $this->patient;
+    }
 
     /**
      * The code for the performed procedure type.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setProcedureCode(FHIRCodeableConcept $procedureCode = null)
+    public function addProcedureCode(FHIRCodeableConcept $procedureCode = null)
     {
         if (null === $procedureCode) {
             return $this; 
         }
-        $this->procedureCode = $procedureCode;
+        $this->procedureCode[] = $procedureCode;
         return $this;
     }
 
     /**
      * The code for the performed procedure type.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getProcedureCode()
     {
         return $this->procedureCode;
     }
 
-
     /**
      * A reference to the performed Procedure.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setProcedureReference(FHIRReference $procedureReference = null)
+    public function addProcedureReference(FHIRReference $procedureReference = null)
     {
         if (null === $procedureReference) {
             return $this; 
         }
-        $this->procedureReference = $procedureReference;
+        $this->procedureReference[] = $procedureReference;
         return $this;
     }
 
     /**
      * A reference to the performed Procedure.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getProcedureReference()
     {
         return $this->procedureReference;
     }
 
-
     /**
      * Description of clinical condition indicating why the ImagingStudy was requested.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setReasonCode(FHIRCodeableConcept $reasonCode = null)
+    public function setReason(FHIRCodeableConcept $reason = null)
     {
-        if (null === $reasonCode) {
+        if (null === $reason) {
             return $this; 
         }
-        $this->reasonCode = $reasonCode;
+        $this->reason = $reason;
         return $this;
     }
 
@@ -641,35 +844,10 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
      * Description of clinical condition indicating why the ImagingStudy was requested.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getReasonCode()
+    public function getReason()
     {
-        return $this->reasonCode;
+        return $this->reason;
     }
-
-
-    /**
-     * Indicates another resource whose existence justifies this Study.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     * @return $this
-     */
-    public function setReasonReference(FHIRReference $reasonReference = null)
-    {
-        if (null === $reasonReference) {
-            return $this; 
-        }
-        $this->reasonReference = $reasonReference;
-        return $this;
-    }
-
-    /**
-     * Indicates another resource whose existence justifies this Study.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getReasonReference()
-    {
-        return $this->reasonReference;
-    }
-
 
     /**
      * The requesting/referring physician.
@@ -694,30 +872,28 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
         return $this->referrer;
     }
 
-
     /**
      * Each study has one or more series of images or other content.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries
      * @return $this
      */
-    public function setSeries(FHIRImagingStudySeries $series = null)
+    public function addSeries(FHIRImagingStudySeries $series = null)
     {
         if (null === $series) {
             return $this; 
         }
-        $this->series = $series;
+        $this->series[] = $series;
         return $this;
     }
 
     /**
      * Each study has one or more series of images or other content.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries[]
      */
     public function getSeries()
     {
         return $this->series;
     }
-
 
     /**
      * Date and time the study started.
@@ -751,63 +927,37 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
         return $this->started;
     }
 
-
     /**
-     * The current state of the ImagingStudy.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRImagingStudyStatus
+     * Formal identifier for the study.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIROid
      * @return $this
      */
-    public function setStatus($status)
+    public function setUid($uid)
     {
-        if (null === $status) {
+        if (null === $uid) {
             return $this; 
         }
-        if (is_scalar($status)) {
-            $status = new FHIRImagingStudyStatus($status);
+        if (is_scalar($uid)) {
+            $uid = new FHIROid($uid);
         }
-        if (!($status instanceof FHIRImagingStudyStatus)) {
+        if (!($uid instanceof FHIROid)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRImagingStudy::setStatus - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRImagingStudyStatus or appropriate scalar value, %s seen.',
-                gettype($status)
+                'FHIRImagingStudy::setUid - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIROid or appropriate scalar value, %s seen.',
+                gettype($uid)
             ));
         }
-        $this->status = $status;
+        $this->uid = $uid;
         return $this;
     }
 
     /**
-     * The current state of the ImagingStudy.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRImagingStudyStatus
+     * Formal identifier for the study.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIROid
      */
-    public function getStatus()
+    public function getUid()
     {
-        return $this->status;
+        return $this->uid;
     }
-
-
-    /**
-     * The subject, typically a patient, of the imaging study.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     * @return $this
-     */
-    public function setSubject(FHIRReference $subject = null)
-    {
-        if (null === $subject) {
-            return $this; 
-        }
-        $this->subject = $subject;
-        return $this;
-    }
-
-    /**
-     * The subject, typically a patient, of the imaging study.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getSubject()
-    {
-        return $this->subject;
-    }
-
 
     /**
      * @return string
@@ -824,8 +974,22 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
     {
         $a = parent::jsonSerialize();
         $a['resourceType'] = self::FHIR_TYPE_NAME;
-        if (null !== ($v = $this->getBasedOn())) {
-            $a['basedOn'] = $v;
+        if (null !== ($v = $this->getAccession())) {
+            $a['accession'] = $v;
+        }
+        if (null !== ($v = $this->getAvailability())) {
+            $a['availability'] = $v;
+        }
+        if (0 < count($values = $this->getBasedOn())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['basedOn'] = $vs;
+            }
         }
         if (null !== ($v = $this->getContext())) {
             $a['context'] = $v;
@@ -833,23 +997,49 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getDescription())) {
             $a['description'] = $v;
         }
-        if (null !== ($v = $this->getEndpoint())) {
-            $a['endpoint'] = $v;
+        if (0 < count($values = $this->getEndpoint())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['endpoint'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getIdentifier())) {
-            $a['identifier'] = $v;
+        if (0 < count($values = $this->getIdentifier())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['identifier'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getInterpreter())) {
-            $a['interpreter'] = $v;
+        if (0 < count($values = $this->getInterpreter())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['interpreter'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getLocation())) {
-            $a['location'] = $v;
-        }
-        if (null !== ($v = $this->getModality())) {
-            $a['modality'] = $v;
-        }
-        if (null !== ($v = $this->getNote())) {
-            $a['note'] = $v;
+        if (0 < count($values = $this->getModalityList())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['modalityList'] = $vs;
+            }
         }
         if (null !== ($v = $this->getNumberOfInstances())) {
             $a['numberOfInstances'] = $v;
@@ -857,32 +1047,53 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getNumberOfSeries())) {
             $a['numberOfSeries'] = $v;
         }
-        if (null !== ($v = $this->getProcedureCode())) {
-            $a['procedureCode'] = $v;
+        if (null !== ($v = $this->getPatient())) {
+            $a['patient'] = $v;
         }
-        if (null !== ($v = $this->getProcedureReference())) {
-            $a['procedureReference'] = $v;
+        if (0 < count($values = $this->getProcedureCode())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['procedureCode'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getReasonCode())) {
-            $a['reasonCode'] = $v;
+        if (0 < count($values = $this->getProcedureReference())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['procedureReference'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getReasonReference())) {
-            $a['reasonReference'] = $v;
+        if (null !== ($v = $this->getReason())) {
+            $a['reason'] = $v;
         }
         if (null !== ($v = $this->getReferrer())) {
             $a['referrer'] = $v;
         }
-        if (null !== ($v = $this->getSeries())) {
-            $a['series'] = $v;
+        if (0 < count($values = $this->getSeries())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['series'] = $vs;
+            }
         }
         if (null !== ($v = $this->getStarted())) {
             $a['started'] = $v;
         }
-        if (null !== ($v = $this->getStatus())) {
-            $a['status'] = $v;
-        }
-        if (null !== ($v = $this->getSubject())) {
-            $a['subject'] = $v;
+        if (null !== ($v = $this->getUid())) {
+            $a['uid'] = $v;
         }
         return $a;
     }
@@ -897,9 +1108,95 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ImagingStudy xmlns="http://hl7.org/fhir"></ImagingStudy>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getAccession())) {
+            $v->xmlSerialize(true, $sxe->addChild('accession'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getAvailability())) {
+            $v->xmlSerialize(true, $sxe->addChild('availability'));
+        }
+        if (0 < count($values = $this->getBasedOn())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('basedOn'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getContext())) {
+            $v->xmlSerialize(true, $sxe->addChild('context'));
+        }
+        if (null !== ($v = $this->getDescription())) {
+            $v->xmlSerialize(true, $sxe->addChild('description'));
+        }
+        if (0 < count($values = $this->getEndpoint())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('endpoint'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getIdentifier())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('identifier'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getInterpreter())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('interpreter'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getModalityList())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('modalityList'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getNumberOfInstances())) {
+            $v->xmlSerialize(true, $sxe->addChild('numberOfInstances'));
+        }
+        if (null !== ($v = $this->getNumberOfSeries())) {
+            $v->xmlSerialize(true, $sxe->addChild('numberOfSeries'));
+        }
+        if (null !== ($v = $this->getPatient())) {
+            $v->xmlSerialize(true, $sxe->addChild('patient'));
+        }
+        if (0 < count($values = $this->getProcedureCode())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('procedureCode'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getProcedureReference())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('procedureReference'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getReason())) {
+            $v->xmlSerialize(true, $sxe->addChild('reason'));
+        }
+        if (null !== ($v = $this->getReferrer())) {
+            $v->xmlSerialize(true, $sxe->addChild('referrer'));
+        }
+        if (0 < count($values = $this->getSeries())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('series'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getStarted())) {
+            $v->xmlSerialize(true, $sxe->addChild('started'));
+        }
+        if (null !== ($v = $this->getUid())) {
+            $v->xmlSerialize(true, $sxe->addChild('uid'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

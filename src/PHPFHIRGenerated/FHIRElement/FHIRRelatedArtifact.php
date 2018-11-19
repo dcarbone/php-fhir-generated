@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -80,37 +80,37 @@ class FHIRRelatedArtifact extends FHIRElement implements \JsonSerializable
      * A bibliographic citation for the related artifact. This text SHOULD be formatted according to an accepted citation format.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $citation = null;
+    private $citation = null;
 
     /**
      * A brief description of the document or knowledge resource being referenced, suitable for display to a consumer.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $display = null;
+    private $display = null;
 
     /**
      * The document being referenced, represented as an attachment. This is exclusive with the resource element.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
-    public $document = null;
+    private $document = null;
 
     /**
      * The related resource, such as a library, value set, profile, or other knowledge resource.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $resource = null;
+    private $resource = null;
 
     /**
      * The type of relationship to the related artifact.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifactType
      */
-    public $type = null;
+    private $type = null;
 
     /**
      * A url for the artifact that can be followed to access the actual content.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUrl
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $url = null;
+    private $url = null;
 
     /**
      * FHIRRelatedArtifact Constructor
@@ -119,25 +119,74 @@ class FHIRRelatedArtifact extends FHIRElement implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['citation'])) {
-                $this->setCitation($data['citation']);
+                $value = $data['citation'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact::__construct - Property \"citation\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setCitation($value);
             }
             if (isset($data['display'])) {
-                $this->setDisplay($data['display']);
+                $value = $data['display'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact::__construct - Property \"display\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setDisplay($value);
             }
             if (isset($data['document'])) {
-                $this->setDocument($data['document']);
+                $value = $data['document'];
+                if (is_array($value)) {
+                    $value = new FHIRAttachment($value);
+                } 
+                if (!($value instanceof FHIRAttachment)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact::__construct - Property \"document\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAttachment or data to construct type, saw ".gettype($value));
+                }
+                $this->setDocument($value);
             }
             if (isset($data['resource'])) {
-                $this->setResource($data['resource']);
+                $value = $data['resource'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact::__construct - Property \"resource\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setResource($value);
             }
             if (isset($data['type'])) {
-                $this->setType($data['type']);
+                $value = $data['type'];
+                if (is_array($value)) {
+                    $value = new FHIRRelatedArtifactType($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRRelatedArtifactType($value);
+                }
+                if (!($value instanceof FHIRRelatedArtifactType)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact::__construct - Property \"type\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifactType or data to construct type, saw ".gettype($value));
+                }
+                $this->setType($value);
             }
             if (isset($data['url'])) {
-                $this->setUrl($data['url']);
+                $value = $data['url'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact::__construct - Property \"url\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value));
+                }
+                $this->setUrl($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -146,6 +195,7 @@ class FHIRRelatedArtifact extends FHIRElement implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -180,7 +230,6 @@ class FHIRRelatedArtifact extends FHIRElement implements \JsonSerializable
         return $this->citation;
     }
 
-
     /**
      * A brief description of the document or knowledge resource being referenced, suitable for display to a consumer.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -213,7 +262,6 @@ class FHIRRelatedArtifact extends FHIRElement implements \JsonSerializable
         return $this->display;
     }
 
-
     /**
      * The document being referenced, represented as an attachment. This is exclusive with the resource element.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRAttachment
@@ -237,25 +285,15 @@ class FHIRRelatedArtifact extends FHIRElement implements \JsonSerializable
         return $this->document;
     }
 
-
     /**
      * The related resource, such as a library, value set, profile, or other knowledge resource.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setResource($resource)
+    public function setResource(FHIRReference $resource = null)
     {
         if (null === $resource) {
             return $this; 
-        }
-        if (is_scalar($resource)) {
-            $resource = new FHIRCanonical($resource);
-        }
-        if (!($resource instanceof FHIRCanonical)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRRelatedArtifact::setResource - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCanonical or appropriate scalar value, %s seen.',
-                gettype($resource)
-            ));
         }
         $this->resource = $resource;
         return $this;
@@ -263,13 +301,12 @@ class FHIRRelatedArtifact extends FHIRElement implements \JsonSerializable
 
     /**
      * The related resource, such as a library, value set, profile, or other knowledge resource.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getResource()
     {
         return $this->resource;
     }
-
 
     /**
      * The type of relationship to the related artifact.
@@ -303,10 +340,9 @@ class FHIRRelatedArtifact extends FHIRElement implements \JsonSerializable
         return $this->type;
     }
 
-
     /**
      * A url for the artifact that can be followed to access the actual content.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUrl
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
     public function setUrl($url)
@@ -315,11 +351,11 @@ class FHIRRelatedArtifact extends FHIRElement implements \JsonSerializable
             return $this; 
         }
         if (is_scalar($url)) {
-            $url = new FHIRUrl($url);
+            $url = new FHIRUri($url);
         }
-        if (!($url instanceof FHIRUrl)) {
+        if (!($url instanceof FHIRUri)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRRelatedArtifact::setUrl - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUrl or appropriate scalar value, %s seen.',
+                'FHIRRelatedArtifact::setUrl - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or appropriate scalar value, %s seen.',
                 gettype($url)
             ));
         }
@@ -329,13 +365,12 @@ class FHIRRelatedArtifact extends FHIRElement implements \JsonSerializable
 
     /**
      * A url for the artifact that can be followed to access the actual content.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUrl
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getUrl()
     {
         return $this->url;
     }
-
 
     /**
      * @return string
@@ -382,9 +417,24 @@ class FHIRRelatedArtifact extends FHIRElement implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<RelatedArtifact xmlns="http://hl7.org/fhir"></RelatedArtifact>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getCitation())) {
+            $v->xmlSerialize(true, $sxe->addChild('citation'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getDisplay())) {
+            $v->xmlSerialize(true, $sxe->addChild('display'));
+        }
+        if (null !== ($v = $this->getDocument())) {
+            $v->xmlSerialize(true, $sxe->addChild('document'));
+        }
+        if (null !== ($v = $this->getResource())) {
+            $v->xmlSerialize(true, $sxe->addChild('resource'));
+        }
+        if (null !== ($v = $this->getType())) {
+            $v->xmlSerialize(true, $sxe->addChild('type'));
+        }
+        if (null !== ($v = $this->getUrl())) {
+            $v->xmlSerialize(true, $sxe->addChild('url'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

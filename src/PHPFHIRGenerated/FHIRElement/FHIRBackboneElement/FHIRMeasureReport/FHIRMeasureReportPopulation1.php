@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMeasureReport;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMeasureReport;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -64,11 +64,12 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMeasureReport;
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
+use PHPFHIRGenerated\FHIRElement\FHIRIdentifier;
 use PHPFHIRGenerated\FHIRElement\FHIRInteger;
 use PHPFHIRGenerated\FHIRElement\FHIRReference;
 
 /**
- * The MeasureReport resource contains the results of the calculation of a measure; and optionally a reference to the resources involved in that calculation.
+ * The MeasureReport resource contains the results of evaluating a measure.
  *
  * Class FHIRMeasureReportPopulation1
  * @package PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMeasureReport
@@ -82,19 +83,25 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement implements \JsonS
      * The type of the population.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $code = null;
+    private $code = null;
 
     /**
      * The number of members of the population in this stratum.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
-    public $count = null;
+    private $count = null;
 
     /**
-     * This element refers to a List of subject level MeasureReport resources, one for each subject in this population in this stratum.
+     * The identifier of the population being reported, as defined by the population element of the measure.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     */
+    private $identifier = null;
+
+    /**
+     * This element refers to a List of patient level MeasureReport resources, one for each patient in this population in this stratum.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $subjectResults = null;
+    private $patients = null;
 
     /**
      * FHIRMeasureReportPopulation1 Constructor
@@ -103,16 +110,48 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement implements \JsonS
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['code'])) {
-                $this->setCode($data['code']);
+                $value = $data['code'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportPopulation1::__construct - Property \"code\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setCode($value);
             }
             if (isset($data['count'])) {
-                $this->setCount($data['count']);
+                $value = $data['count'];
+                if (is_array($value)) {
+                    $value = new FHIRInteger($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRInteger($value);
+                }
+                if (!($value instanceof FHIRInteger)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportPopulation1::__construct - Property \"count\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRInteger or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setCount($value);
             }
-            if (isset($data['subjectResults'])) {
-                $this->setSubjectResults($data['subjectResults']);
+            if (isset($data['identifier'])) {
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    $value = new FHIRIdentifier($value);
+                } 
+                if (!($value instanceof FHIRIdentifier)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportPopulation1::__construct - Property \"identifier\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setIdentifier($value);
+            }
+            if (isset($data['patients'])) {
+                $value = $data['patients'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportPopulation1::__construct - Property \"patients\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setPatients($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -121,6 +160,7 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement implements \JsonS
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -145,7 +185,6 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement implements \JsonS
     {
         return $this->code;
     }
-
 
     /**
      * The number of members of the population in this stratum.
@@ -179,30 +218,51 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement implements \JsonS
         return $this->count;
     }
 
-
     /**
-     * This element refers to a List of subject level MeasureReport resources, one for each subject in this population in this stratum.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * The identifier of the population being reported, as defined by the population element of the measure.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
-    public function setSubjectResults(FHIRReference $subjectResults = null)
+    public function setIdentifier(FHIRIdentifier $identifier = null)
     {
-        if (null === $subjectResults) {
+        if (null === $identifier) {
             return $this; 
         }
-        $this->subjectResults = $subjectResults;
+        $this->identifier = $identifier;
         return $this;
     }
 
     /**
-     * This element refers to a List of subject level MeasureReport resources, one for each subject in this population in this stratum.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * The identifier of the population being reported, as defined by the population element of the measure.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public function getSubjectResults()
+    public function getIdentifier()
     {
-        return $this->subjectResults;
+        return $this->identifier;
     }
 
+    /**
+     * This element refers to a List of patient level MeasureReport resources, one for each patient in this population in this stratum.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return $this
+     */
+    public function setPatients(FHIRReference $patients = null)
+    {
+        if (null === $patients) {
+            return $this; 
+        }
+        $this->patients = $patients;
+        return $this;
+    }
+
+    /**
+     * This element refers to a List of patient level MeasureReport resources, one for each patient in this population in this stratum.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getPatients()
+    {
+        return $this->patients;
+    }
 
     /**
      * @return string
@@ -224,8 +284,11 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement implements \JsonS
         if (null !== ($v = $this->getCount())) {
             $a['count'] = $v;
         }
-        if (null !== ($v = $this->getSubjectResults())) {
-            $a['subjectResults'] = $v;
+        if (null !== ($v = $this->getIdentifier())) {
+            $a['identifier'] = $v;
+        }
+        if (null !== ($v = $this->getPatients())) {
+            $a['patients'] = $v;
         }
         return $a;
     }
@@ -240,9 +303,18 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement implements \JsonS
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<MeasureReportPopulation1 xmlns="http://hl7.org/fhir"></MeasureReportPopulation1>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getCode())) {
+            $v->xmlSerialize(true, $sxe->addChild('code'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getCount())) {
+            $v->xmlSerialize(true, $sxe->addChild('count'));
+        }
+        if (null !== ($v = $this->getIdentifier())) {
+            $v->xmlSerialize(true, $sxe->addChild('identifier'));
+        }
+        if (null !== ($v = $this->getPatients())) {
+            $v->xmlSerialize(true, $sxe->addChild('patients'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

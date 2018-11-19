@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -68,17 +68,16 @@ use PHPFHIRGenerated\FHIRElement\FHIRActionPrecheckBehavior;
 use PHPFHIRGenerated\FHIRElement\FHIRActionRequiredBehavior;
 use PHPFHIRGenerated\FHIRElement\FHIRActionSelectionBehavior;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTiming;
 use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
+use PHPFHIRGenerated\FHIRElement\FHIRCoding;
 use PHPFHIRGenerated\FHIRElement\FHIRDateTime;
 use PHPFHIRGenerated\FHIRElement\FHIRPeriod;
-use PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge;
 use PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration;
 use PHPFHIRGenerated\FHIRElement\FHIRRange;
 use PHPFHIRGenerated\FHIRElement\FHIRReference;
 use PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact;
-use PHPFHIRGenerated\FHIRElement\FHIRRequestPriority;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
+use PHPFHIRGenerated\FHIRElement\FHIRTiming;
 
 /**
  * A group of related requests that can be used to capture intended activities that have inter-dependencies such as "give this medication after that one".
@@ -93,147 +92,135 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Sub actions.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction[]
      */
-    public $action = null;
+    private $action = [];
 
     /**
      * Defines whether the action can be selected multiple times.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRActionCardinalityBehavior
      */
-    public $cardinalityBehavior = null;
+    private $cardinalityBehavior = null;
 
     /**
      * A code that provides meaning for the action or action group. For example, a section may have a LOINC code for a the section of a documentation template.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $code = null;
+    private $code = [];
 
     /**
      * An expression that describes applicability criteria, or start/stop conditions for the action.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupCondition
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupCondition[]
      */
-    public $condition = null;
+    private $condition = [];
 
     /**
      * A short description of the action used to provide a summary to display to the user.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $description = null;
+    private $description = null;
 
     /**
      * Didactic or other informational resources associated with the action that can be provided to the CDS recipient. Information resources can include inline text commentary and links to web resources.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact[]
      */
-    public $documentation = null;
+    private $documentation = [];
 
     /**
      * Defines the grouping behavior for the action and its children.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRActionGroupingBehavior
      */
-    public $groupingBehavior = null;
+    private $groupingBehavior = null;
+
+    /**
+     * A user-visible label for the action.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    private $label = null;
 
     /**
      * The participant that should perform or be responsible for this action.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $participant = null;
+    private $participant = [];
 
     /**
      * Defines whether the action should usually be preselected.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRActionPrecheckBehavior
      */
-    public $precheckBehavior = null;
-
-    /**
-     * A user-visible prefix for the action.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public $prefix = null;
-
-    /**
-     * Indicates how quickly the action should be addressed with respect to other actions.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRRequestPriority
-     */
-    public $priority = null;
+    private $precheckBehavior = null;
 
     /**
      * A relationship to another action such as "before" or "30-60 minutes after start of".
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupRelatedAction
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupRelatedAction[]
      */
-    public $relatedAction = null;
+    private $relatedAction = [];
 
     /**
      * Defines the requiredness behavior for the action.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRActionRequiredBehavior
      */
-    public $requiredBehavior = null;
+    private $requiredBehavior = null;
 
     /**
      * The resource that is the target of the action (e.g. CommunicationRequest).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $resource = null;
+    private $resource = null;
 
     /**
      * Defines the selection behavior for the action and its children.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRActionSelectionBehavior
      */
-    public $selectionBehavior = null;
+    private $selectionBehavior = null;
 
     /**
-     * A text equivalent of the action to be performed. This provides a human-interpretable description of the action when the definition is consumed by a system that might not be capable of interpreting it dynamically.
+     * A text equivalent of the action to be performed. This provides a human-interpretable description of the action when the definition is consumed by a system that may not be capable of interpreting it dynamically.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $textEquivalent = null;
+    private $textEquivalent = null;
 
     /**
-     * An optional value describing when the action should be performed.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
-     */
-    public $timingAge = null;
-
-    /**
-     * An optional value describing when the action should be performed.
+     * An optional value describing when the action should be performed. (choose any one of timing*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $timingDateTime = null;
+    private $timingDateTime = null;
 
     /**
-     * An optional value describing when the action should be performed.
+     * An optional value describing when the action should be performed. (choose any one of timing*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration
      */
-    public $timingDuration = null;
+    private $timingDuration = null;
 
     /**
-     * An optional value describing when the action should be performed.
+     * An optional value describing when the action should be performed. (choose any one of timing*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public $timingPeriod = null;
+    private $timingPeriod = null;
 
     /**
-     * An optional value describing when the action should be performed.
+     * An optional value describing when the action should be performed. (choose any one of timing*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
-    public $timingRange = null;
+    private $timingRange = null;
 
     /**
-     * An optional value describing when the action should be performed.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTiming
+     * An optional value describing when the action should be performed. (choose any one of timing*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
-    public $timingTiming = null;
+    private $timingTiming = null;
 
     /**
      * The title of the action displayed to a user.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $title = null;
+    private $title = null;
 
     /**
      * The type of action to perform (create, update, remove).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
-    public $type = null;
+    private $type = null;
 
     /**
      * FHIRRequestGroupAction Constructor
@@ -242,79 +229,282 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['action'])) {
-                $this->setAction($data['action']);
+                $value = $data['action'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRRequestGroupAction($v);
+                        } 
+                        if (!($v instanceof FHIRRequestGroupAction)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction::__construct - Collection field \"action\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addAction($v);
+                    }
+                }
             }
             if (isset($data['cardinalityBehavior'])) {
-                $this->setCardinalityBehavior($data['cardinalityBehavior']);
+                $value = $data['cardinalityBehavior'];
+                if (is_array($value)) {
+                    $value = new FHIRActionCardinalityBehavior($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRActionCardinalityBehavior($value);
+                }
+                if (!($value instanceof FHIRActionCardinalityBehavior)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction::__construct - Property \"cardinalityBehavior\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRActionCardinalityBehavior or data to construct type, saw ".gettype($value));
+                }
+                $this->setCardinalityBehavior($value);
             }
             if (isset($data['code'])) {
-                $this->setCode($data['code']);
+                $value = $data['code'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction::__construct - Collection field \"code\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addCode($v);
+                    }
+                }
             }
             if (isset($data['condition'])) {
-                $this->setCondition($data['condition']);
+                $value = $data['condition'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRRequestGroupCondition($v);
+                        } 
+                        if (!($v instanceof FHIRRequestGroupCondition)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction::__construct - Collection field \"condition\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupCondition or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addCondition($v);
+                    }
+                }
             }
             if (isset($data['description'])) {
-                $this->setDescription($data['description']);
+                $value = $data['description'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction::__construct - Property \"description\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setDescription($value);
             }
             if (isset($data['documentation'])) {
-                $this->setDocumentation($data['documentation']);
+                $value = $data['documentation'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRRelatedArtifact($v);
+                        } 
+                        if (!($v instanceof FHIRRelatedArtifact)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction::__construct - Collection field \"documentation\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addDocumentation($v);
+                    }
+                }
             }
             if (isset($data['groupingBehavior'])) {
-                $this->setGroupingBehavior($data['groupingBehavior']);
+                $value = $data['groupingBehavior'];
+                if (is_array($value)) {
+                    $value = new FHIRActionGroupingBehavior($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRActionGroupingBehavior($value);
+                }
+                if (!($value instanceof FHIRActionGroupingBehavior)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction::__construct - Property \"groupingBehavior\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRActionGroupingBehavior or data to construct type, saw ".gettype($value));
+                }
+                $this->setGroupingBehavior($value);
+            }
+            if (isset($data['label'])) {
+                $value = $data['label'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction::__construct - Property \"label\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setLabel($value);
             }
             if (isset($data['participant'])) {
-                $this->setParticipant($data['participant']);
+                $value = $data['participant'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction::__construct - Collection field \"participant\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addParticipant($v);
+                    }
+                }
             }
             if (isset($data['precheckBehavior'])) {
-                $this->setPrecheckBehavior($data['precheckBehavior']);
-            }
-            if (isset($data['prefix'])) {
-                $this->setPrefix($data['prefix']);
-            }
-            if (isset($data['priority'])) {
-                $this->setPriority($data['priority']);
+                $value = $data['precheckBehavior'];
+                if (is_array($value)) {
+                    $value = new FHIRActionPrecheckBehavior($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRActionPrecheckBehavior($value);
+                }
+                if (!($value instanceof FHIRActionPrecheckBehavior)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction::__construct - Property \"precheckBehavior\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRActionPrecheckBehavior or data to construct type, saw ".gettype($value));
+                }
+                $this->setPrecheckBehavior($value);
             }
             if (isset($data['relatedAction'])) {
-                $this->setRelatedAction($data['relatedAction']);
+                $value = $data['relatedAction'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRRequestGroupRelatedAction($v);
+                        } 
+                        if (!($v instanceof FHIRRequestGroupRelatedAction)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction::__construct - Collection field \"relatedAction\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupRelatedAction or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addRelatedAction($v);
+                    }
+                }
             }
             if (isset($data['requiredBehavior'])) {
-                $this->setRequiredBehavior($data['requiredBehavior']);
+                $value = $data['requiredBehavior'];
+                if (is_array($value)) {
+                    $value = new FHIRActionRequiredBehavior($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRActionRequiredBehavior($value);
+                }
+                if (!($value instanceof FHIRActionRequiredBehavior)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction::__construct - Property \"requiredBehavior\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRActionRequiredBehavior or data to construct type, saw ".gettype($value));
+                }
+                $this->setRequiredBehavior($value);
             }
             if (isset($data['resource'])) {
-                $this->setResource($data['resource']);
+                $value = $data['resource'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction::__construct - Property \"resource\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setResource($value);
             }
             if (isset($data['selectionBehavior'])) {
-                $this->setSelectionBehavior($data['selectionBehavior']);
+                $value = $data['selectionBehavior'];
+                if (is_array($value)) {
+                    $value = new FHIRActionSelectionBehavior($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRActionSelectionBehavior($value);
+                }
+                if (!($value instanceof FHIRActionSelectionBehavior)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction::__construct - Property \"selectionBehavior\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRActionSelectionBehavior or data to construct type, saw ".gettype($value));
+                }
+                $this->setSelectionBehavior($value);
             }
             if (isset($data['textEquivalent'])) {
-                $this->setTextEquivalent($data['textEquivalent']);
-            }
-            if (isset($data['timingAge'])) {
-                $this->setTimingAge($data['timingAge']);
+                $value = $data['textEquivalent'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction::__construct - Property \"textEquivalent\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setTextEquivalent($value);
             }
             if (isset($data['timingDateTime'])) {
-                $this->setTimingDateTime($data['timingDateTime']);
+                $value = $data['timingDateTime'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction::__construct - Property \"timingDateTime\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value));
+                }
+                $this->setTimingDateTime($value);
             }
             if (isset($data['timingDuration'])) {
-                $this->setTimingDuration($data['timingDuration']);
+                $value = $data['timingDuration'];
+                if (is_array($value)) {
+                    $value = new FHIRDuration($value);
+                } 
+                if (!($value instanceof FHIRDuration)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction::__construct - Property \"timingDuration\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration or data to construct type, saw ".gettype($value));
+                }
+                $this->setTimingDuration($value);
             }
             if (isset($data['timingPeriod'])) {
-                $this->setTimingPeriod($data['timingPeriod']);
+                $value = $data['timingPeriod'];
+                if (is_array($value)) {
+                    $value = new FHIRPeriod($value);
+                } 
+                if (!($value instanceof FHIRPeriod)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction::__construct - Property \"timingPeriod\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPeriod or data to construct type, saw ".gettype($value));
+                }
+                $this->setTimingPeriod($value);
             }
             if (isset($data['timingRange'])) {
-                $this->setTimingRange($data['timingRange']);
+                $value = $data['timingRange'];
+                if (is_array($value)) {
+                    $value = new FHIRRange($value);
+                } 
+                if (!($value instanceof FHIRRange)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction::__construct - Property \"timingRange\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRRange or data to construct type, saw ".gettype($value));
+                }
+                $this->setTimingRange($value);
             }
             if (isset($data['timingTiming'])) {
-                $this->setTimingTiming($data['timingTiming']);
+                $value = $data['timingTiming'];
+                if (is_array($value)) {
+                    $value = new FHIRTiming($value);
+                } 
+                if (!($value instanceof FHIRTiming)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction::__construct - Property \"timingTiming\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRTiming or data to construct type, saw ".gettype($value));
+                }
+                $this->setTimingTiming($value);
             }
             if (isset($data['title'])) {
-                $this->setTitle($data['title']);
+                $value = $data['title'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction::__construct - Property \"title\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setTitle($value);
             }
             if (isset($data['type'])) {
-                $this->setType($data['type']);
+                $value = $data['type'];
+                if (is_array($value)) {
+                    $value = new FHIRCoding($value);
+                } 
+                if (!($value instanceof FHIRCoding)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction::__construct - Property \"type\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCoding or data to construct type, saw ".gettype($value));
+                }
+                $this->setType($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -323,6 +513,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -330,24 +521,23 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction
      * @return $this
      */
-    public function setAction(FHIRRequestGroupAction $action = null)
+    public function addAction(FHIRRequestGroupAction $action = null)
     {
         if (null === $action) {
             return $this; 
         }
-        $this->action = $action;
+        $this->action[] = $action;
         return $this;
     }
 
     /**
      * Sub actions.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction[]
      */
     public function getAction()
     {
         return $this->action;
     }
-
 
     /**
      * Defines whether the action can be selected multiple times.
@@ -381,54 +571,51 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
         return $this->cardinalityBehavior;
     }
 
-
     /**
      * A code that provides meaning for the action or action group. For example, a section may have a LOINC code for a the section of a documentation template.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setCode(FHIRCodeableConcept $code = null)
+    public function addCode(FHIRCodeableConcept $code = null)
     {
         if (null === $code) {
             return $this; 
         }
-        $this->code = $code;
+        $this->code[] = $code;
         return $this;
     }
 
     /**
      * A code that provides meaning for the action or action group. For example, a section may have a LOINC code for a the section of a documentation template.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getCode()
     {
         return $this->code;
     }
 
-
     /**
      * An expression that describes applicability criteria, or start/stop conditions for the action.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupCondition
      * @return $this
      */
-    public function setCondition(FHIRRequestGroupCondition $condition = null)
+    public function addCondition(FHIRRequestGroupCondition $condition = null)
     {
         if (null === $condition) {
             return $this; 
         }
-        $this->condition = $condition;
+        $this->condition[] = $condition;
         return $this;
     }
 
     /**
      * An expression that describes applicability criteria, or start/stop conditions for the action.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupCondition
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupCondition[]
      */
     public function getCondition()
     {
         return $this->condition;
     }
-
 
     /**
      * A short description of the action used to provide a summary to display to the user.
@@ -462,30 +649,28 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
         return $this->description;
     }
 
-
     /**
      * Didactic or other informational resources associated with the action that can be provided to the CDS recipient. Information resources can include inline text commentary and links to web resources.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact
      * @return $this
      */
-    public function setDocumentation(FHIRRelatedArtifact $documentation = null)
+    public function addDocumentation(FHIRRelatedArtifact $documentation = null)
     {
         if (null === $documentation) {
             return $this; 
         }
-        $this->documentation = $documentation;
+        $this->documentation[] = $documentation;
         return $this;
     }
 
     /**
      * Didactic or other informational resources associated with the action that can be provided to the CDS recipient. Information resources can include inline text commentary and links to web resources.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact[]
      */
     public function getDocumentation()
     {
         return $this->documentation;
     }
-
 
     /**
      * Defines the grouping behavior for the action and its children.
@@ -519,30 +704,60 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
         return $this->groupingBehavior;
     }
 
+    /**
+     * A user-visible label for the action.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     * @return $this
+     */
+    public function setLabel($label)
+    {
+        if (null === $label) {
+            return $this; 
+        }
+        if (is_scalar($label)) {
+            $label = new FHIRString($label);
+        }
+        if (!($label instanceof FHIRString)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRRequestGroupAction::setLabel - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                gettype($label)
+            ));
+        }
+        $this->label = $label;
+        return $this;
+    }
+
+    /**
+     * A user-visible label for the action.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getLabel()
+    {
+        return $this->label;
+    }
 
     /**
      * The participant that should perform or be responsible for this action.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setParticipant(FHIRReference $participant = null)
+    public function addParticipant(FHIRReference $participant = null)
     {
         if (null === $participant) {
             return $this; 
         }
-        $this->participant = $participant;
+        $this->participant[] = $participant;
         return $this;
     }
 
     /**
      * The participant that should perform or be responsible for this action.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getParticipant()
     {
         return $this->participant;
     }
-
 
     /**
      * Defines whether the action should usually be preselected.
@@ -576,96 +791,28 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
         return $this->precheckBehavior;
     }
 
-
-    /**
-     * A user-visible prefix for the action.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
-     * @return $this
-     */
-    public function setPrefix($prefix)
-    {
-        if (null === $prefix) {
-            return $this; 
-        }
-        if (is_scalar($prefix)) {
-            $prefix = new FHIRString($prefix);
-        }
-        if (!($prefix instanceof FHIRString)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRRequestGroupAction::setPrefix - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
-                gettype($prefix)
-            ));
-        }
-        $this->prefix = $prefix;
-        return $this;
-    }
-
-    /**
-     * A user-visible prefix for the action.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public function getPrefix()
-    {
-        return $this->prefix;
-    }
-
-
-    /**
-     * Indicates how quickly the action should be addressed with respect to other actions.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRRequestPriority
-     * @return $this
-     */
-    public function setPriority($priority)
-    {
-        if (null === $priority) {
-            return $this; 
-        }
-        if (is_scalar($priority)) {
-            $priority = new FHIRRequestPriority($priority);
-        }
-        if (!($priority instanceof FHIRRequestPriority)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRRequestGroupAction::setPriority - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRRequestPriority or appropriate scalar value, %s seen.',
-                gettype($priority)
-            ));
-        }
-        $this->priority = $priority;
-        return $this;
-    }
-
-    /**
-     * Indicates how quickly the action should be addressed with respect to other actions.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRRequestPriority
-     */
-    public function getPriority()
-    {
-        return $this->priority;
-    }
-
-
     /**
      * A relationship to another action such as "before" or "30-60 minutes after start of".
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupRelatedAction
      * @return $this
      */
-    public function setRelatedAction(FHIRRequestGroupRelatedAction $relatedAction = null)
+    public function addRelatedAction(FHIRRequestGroupRelatedAction $relatedAction = null)
     {
         if (null === $relatedAction) {
             return $this; 
         }
-        $this->relatedAction = $relatedAction;
+        $this->relatedAction[] = $relatedAction;
         return $this;
     }
 
     /**
      * A relationship to another action such as "before" or "30-60 minutes after start of".
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupRelatedAction
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupRelatedAction[]
      */
     public function getRelatedAction()
     {
         return $this->relatedAction;
     }
-
 
     /**
      * Defines the requiredness behavior for the action.
@@ -699,7 +846,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
         return $this->requiredBehavior;
     }
 
-
     /**
      * The resource that is the target of the action (e.g. CommunicationRequest).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -722,7 +868,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
     {
         return $this->resource;
     }
-
 
     /**
      * Defines the selection behavior for the action and its children.
@@ -756,9 +901,8 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
         return $this->selectionBehavior;
     }
 
-
     /**
-     * A text equivalent of the action to be performed. This provides a human-interpretable description of the action when the definition is consumed by a system that might not be capable of interpreting it dynamically.
+     * A text equivalent of the action to be performed. This provides a human-interpretable description of the action when the definition is consumed by a system that may not be capable of interpreting it dynamically.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
@@ -781,7 +925,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A text equivalent of the action to be performed. This provides a human-interpretable description of the action when the definition is consumed by a system that might not be capable of interpreting it dynamically.
+     * A text equivalent of the action to be performed. This provides a human-interpretable description of the action when the definition is consumed by a system that may not be capable of interpreting it dynamically.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getTextEquivalent()
@@ -789,33 +933,8 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
         return $this->textEquivalent;
     }
 
-
     /**
-     * An optional value describing when the action should be performed.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
-     * @return $this
-     */
-    public function setTimingAge(FHIRAge $timingAge = null)
-    {
-        if (null === $timingAge) {
-            return $this; 
-        }
-        $this->timingAge = $timingAge;
-        return $this;
-    }
-
-    /**
-     * An optional value describing when the action should be performed.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
-     */
-    public function getTimingAge()
-    {
-        return $this->timingAge;
-    }
-
-
-    /**
-     * An optional value describing when the action should be performed.
+     * An optional value describing when the action should be performed. (choose any one of timing*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      * @return $this
      */
@@ -838,7 +957,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * An optional value describing when the action should be performed.
+     * An optional value describing when the action should be performed. (choose any one of timing*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getTimingDateTime()
@@ -846,9 +965,8 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
         return $this->timingDateTime;
     }
 
-
     /**
-     * An optional value describing when the action should be performed.
+     * An optional value describing when the action should be performed. (choose any one of timing*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration
      * @return $this
      */
@@ -862,7 +980,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * An optional value describing when the action should be performed.
+     * An optional value describing when the action should be performed. (choose any one of timing*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getTimingDuration()
@@ -870,9 +988,8 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
         return $this->timingDuration;
     }
 
-
     /**
-     * An optional value describing when the action should be performed.
+     * An optional value describing when the action should be performed. (choose any one of timing*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
      * @return $this
      */
@@ -886,7 +1003,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * An optional value describing when the action should be performed.
+     * An optional value describing when the action should be performed. (choose any one of timing*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getTimingPeriod()
@@ -894,9 +1011,8 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
         return $this->timingPeriod;
     }
 
-
     /**
-     * An optional value describing when the action should be performed.
+     * An optional value describing when the action should be performed. (choose any one of timing*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRRange
      * @return $this
      */
@@ -910,7 +1026,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * An optional value describing when the action should be performed.
+     * An optional value describing when the action should be performed. (choose any one of timing*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public function getTimingRange()
@@ -918,10 +1034,9 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
         return $this->timingRange;
     }
 
-
     /**
-     * An optional value describing when the action should be performed.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTiming
+     * An optional value describing when the action should be performed. (choose any one of timing*, but only one)
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRTiming
      * @return $this
      */
     public function setTimingTiming(FHIRTiming $timingTiming = null)
@@ -934,14 +1049,13 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * An optional value describing when the action should be performed.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTiming
+     * An optional value describing when the action should be performed. (choose any one of timing*, but only one)
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public function getTimingTiming()
     {
         return $this->timingTiming;
     }
-
 
     /**
      * The title of the action displayed to a user.
@@ -975,13 +1089,12 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
         return $this->title;
     }
 
-
     /**
      * The type of action to perform (create, update, remove).
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
      * @return $this
      */
-    public function setType(FHIRCodeableConcept $type = null)
+    public function setType(FHIRCoding $type = null)
     {
         if (null === $type) {
             return $this; 
@@ -992,13 +1105,12 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The type of action to perform (create, update, remove).
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public function getType()
     {
         return $this->type;
     }
-
 
     /**
      * @return string
@@ -1014,41 +1126,86 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getAction())) {
-            $a['action'] = $v;
+        if (0 < count($values = $this->getAction())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['action'] = $vs;
+            }
         }
         if (null !== ($v = $this->getCardinalityBehavior())) {
             $a['cardinalityBehavior'] = $v;
         }
-        if (null !== ($v = $this->getCode())) {
-            $a['code'] = $v;
+        if (0 < count($values = $this->getCode())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['code'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getCondition())) {
-            $a['condition'] = $v;
+        if (0 < count($values = $this->getCondition())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['condition'] = $vs;
+            }
         }
         if (null !== ($v = $this->getDescription())) {
             $a['description'] = $v;
         }
-        if (null !== ($v = $this->getDocumentation())) {
-            $a['documentation'] = $v;
+        if (0 < count($values = $this->getDocumentation())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['documentation'] = $vs;
+            }
         }
         if (null !== ($v = $this->getGroupingBehavior())) {
             $a['groupingBehavior'] = $v;
         }
-        if (null !== ($v = $this->getParticipant())) {
-            $a['participant'] = $v;
+        if (null !== ($v = $this->getLabel())) {
+            $a['label'] = $v;
+        }
+        if (0 < count($values = $this->getParticipant())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['participant'] = $vs;
+            }
         }
         if (null !== ($v = $this->getPrecheckBehavior())) {
             $a['precheckBehavior'] = $v;
         }
-        if (null !== ($v = $this->getPrefix())) {
-            $a['prefix'] = $v;
-        }
-        if (null !== ($v = $this->getPriority())) {
-            $a['priority'] = $v;
-        }
-        if (null !== ($v = $this->getRelatedAction())) {
-            $a['relatedAction'] = $v;
+        if (0 < count($values = $this->getRelatedAction())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['relatedAction'] = $vs;
+            }
         }
         if (null !== ($v = $this->getRequiredBehavior())) {
             $a['requiredBehavior'] = $v;
@@ -1061,9 +1218,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
         }
         if (null !== ($v = $this->getTextEquivalent())) {
             $a['textEquivalent'] = $v;
-        }
-        if (null !== ($v = $this->getTimingAge())) {
-            $a['timingAge'] = $v;
         }
         if (null !== ($v = $this->getTimingDateTime())) {
             $a['timingDateTime'] = $v;
@@ -1099,9 +1253,96 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<RequestGroupAction xmlns="http://hl7.org/fhir"></RequestGroupAction>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (0 < count($values = $this->getAction())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('action'));
+                }
+            }
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getCardinalityBehavior())) {
+            $v->xmlSerialize(true, $sxe->addChild('cardinalityBehavior'));
+        }
+        if (0 < count($values = $this->getCode())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('code'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getCondition())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('condition'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getDescription())) {
+            $v->xmlSerialize(true, $sxe->addChild('description'));
+        }
+        if (0 < count($values = $this->getDocumentation())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('documentation'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getGroupingBehavior())) {
+            $v->xmlSerialize(true, $sxe->addChild('groupingBehavior'));
+        }
+        if (null !== ($v = $this->getLabel())) {
+            $v->xmlSerialize(true, $sxe->addChild('label'));
+        }
+        if (0 < count($values = $this->getParticipant())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('participant'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getPrecheckBehavior())) {
+            $v->xmlSerialize(true, $sxe->addChild('precheckBehavior'));
+        }
+        if (0 < count($values = $this->getRelatedAction())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('relatedAction'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getRequiredBehavior())) {
+            $v->xmlSerialize(true, $sxe->addChild('requiredBehavior'));
+        }
+        if (null !== ($v = $this->getResource())) {
+            $v->xmlSerialize(true, $sxe->addChild('resource'));
+        }
+        if (null !== ($v = $this->getSelectionBehavior())) {
+            $v->xmlSerialize(true, $sxe->addChild('selectionBehavior'));
+        }
+        if (null !== ($v = $this->getTextEquivalent())) {
+            $v->xmlSerialize(true, $sxe->addChild('textEquivalent'));
+        }
+        if (null !== ($v = $this->getTimingDateTime())) {
+            $v->xmlSerialize(true, $sxe->addChild('timingDateTime'));
+        }
+        if (null !== ($v = $this->getTimingDuration())) {
+            $v->xmlSerialize(true, $sxe->addChild('timingDuration'));
+        }
+        if (null !== ($v = $this->getTimingPeriod())) {
+            $v->xmlSerialize(true, $sxe->addChild('timingPeriod'));
+        }
+        if (null !== ($v = $this->getTimingRange())) {
+            $v->xmlSerialize(true, $sxe->addChild('timingRange'));
+        }
+        if (null !== ($v = $this->getTimingTiming())) {
+            $v->xmlSerialize(true, $sxe->addChild('timingTiming'));
+        }
+        if (null !== ($v = $this->getTitle())) {
+            $v->xmlSerialize(true, $sxe->addChild('title'));
+        }
+        if (null !== ($v = $this->getType())) {
+            $v->xmlSerialize(true, $sxe->addChild('type'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

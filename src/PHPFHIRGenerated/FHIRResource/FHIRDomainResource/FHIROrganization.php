@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -73,7 +73,7 @@ use PHPFHIRGenerated\FHIRElement\FHIRString;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
 /**
- * A formally or informally recognized grouping of people or organizations formed for the purpose of achieving some form of collective action.  Includes companies, institutions, corporations, departments, community groups, healthcare practice groups, payer/insurer, etc.
+ * A formally or informally recognized grouping of people or organizations formed for the purpose of achieving some form of collective action.  Includes companies, institutions, corporations, departments, community groups, healthcare practice groups, etc.
  * If the element is present, it must have either a @value, an @id, or extensions
  *
  * Class FHIROrganization
@@ -88,61 +88,61 @@ class FHIROrganization extends FHIRDomainResource implements \JsonSerializable
      * Whether the organization's record is still in active use.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $active = null;
+    private $active = null;
 
     /**
      * An address for the organization.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRAddress
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRAddress[]
      */
-    public $address = null;
+    private $address = [];
 
     /**
-     * A list of alternate names that the organization is known as, or was known as in the past.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     * A list of alternate names that the organization is known as, or was known as in the past.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public $alias = null;
+    private $alias = [];
 
     /**
      * Contact for the organization for a certain purpose.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROrganization\FHIROrganizationContact
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROrganization\FHIROrganizationContact[]
      */
-    public $contact = null;
+    private $contact = [];
 
     /**
      * Technical endpoints providing access to services operated for the organization.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $endpoint = null;
+    private $endpoint = [];
 
     /**
      * Identifier for the organization that is used to identify the organization across multiple disparate systems.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = null;
+    private $identifier = [];
 
     /**
      * A name associated with the organization.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $name = null;
+    private $name = null;
 
     /**
      * The organization of which this organization forms a part.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $partOf = null;
+    private $partOf = null;
 
     /**
      * A contact detail for the organization.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactPoint
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactPoint[]
      */
-    public $telecom = null;
+    private $telecom = [];
 
     /**
      * The kind(s) of organization that this is.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $type = null;
+    private $type = [];
 
     /**
      * FHIROrganization Constructor
@@ -151,37 +151,154 @@ class FHIROrganization extends FHIRDomainResource implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['active'])) {
-                $this->setActive($data['active']);
+                $value = $data['active'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROrganization::__construct - Property \"active\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setActive($value);
             }
             if (isset($data['address'])) {
-                $this->setAddress($data['address']);
+                $value = $data['address'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRAddress($v);
+                        } 
+                        if (!($v instanceof FHIRAddress)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROrganization::__construct - Collection field \"address\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAddress or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addAddress($v);
+                    }
+                }
             }
             if (isset($data['alias'])) {
-                $this->setAlias($data['alias']);
+                $value = $data['alias'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRString($v);
+                        }  elseif (is_scalar($v)) {
+                            $v = new FHIRString($v);
+                        }
+                        if (!($v instanceof FHIRString)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROrganization::__construct - Collection field \"alias\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addAlias($v);
+                    }
+                }
             }
             if (isset($data['contact'])) {
-                $this->setContact($data['contact']);
+                $value = $data['contact'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIROrganizationContact($v);
+                        } 
+                        if (!($v instanceof FHIROrganizationContact)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROrganization::__construct - Collection field \"contact\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROrganization\FHIROrganizationContact or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addContact($v);
+                    }
+                }
             }
             if (isset($data['endpoint'])) {
-                $this->setEndpoint($data['endpoint']);
+                $value = $data['endpoint'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROrganization::__construct - Collection field \"endpoint\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addEndpoint($v);
+                    }
+                }
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRIdentifier($v);
+                        } 
+                        if (!($v instanceof FHIRIdentifier)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROrganization::__construct - Collection field \"identifier\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addIdentifier($v);
+                    }
+                }
             }
             if (isset($data['name'])) {
-                $this->setName($data['name']);
+                $value = $data['name'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROrganization::__construct - Property \"name\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setName($value);
             }
             if (isset($data['partOf'])) {
-                $this->setPartOf($data['partOf']);
+                $value = $data['partOf'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROrganization::__construct - Property \"partOf\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setPartOf($value);
             }
             if (isset($data['telecom'])) {
-                $this->setTelecom($data['telecom']);
+                $value = $data['telecom'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRContactPoint($v);
+                        } 
+                        if (!($v instanceof FHIRContactPoint)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROrganization::__construct - Collection field \"telecom\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRContactPoint or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addTelecom($v);
+                    }
+                }
             }
             if (isset($data['type'])) {
-                $this->setType($data['type']);
+                $value = $data['type'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROrganization::__construct - Collection field \"type\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addType($v);
+                    }
+                }
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -190,6 +307,7 @@ class FHIROrganization extends FHIRDomainResource implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -224,37 +342,35 @@ class FHIROrganization extends FHIRDomainResource implements \JsonSerializable
         return $this->active;
     }
 
-
     /**
      * An address for the organization.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRAddress
      * @return $this
      */
-    public function setAddress(FHIRAddress $address = null)
+    public function addAddress(FHIRAddress $address = null)
     {
         if (null === $address) {
             return $this; 
         }
-        $this->address = $address;
+        $this->address[] = $address;
         return $this;
     }
 
     /**
      * An address for the organization.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAddress
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAddress[]
      */
     public function getAddress()
     {
         return $this->address;
     }
 
-
     /**
-     * A list of alternate names that the organization is known as, or was known as in the past.
+     * A list of alternate names that the organization is known as, or was known as in the past.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
-    public function setAlias($alias)
+    public function addAlias($alias)
     {
         if (null === $alias) {
             return $this; 
@@ -264,95 +380,91 @@ class FHIROrganization extends FHIRDomainResource implements \JsonSerializable
         }
         if (!($alias instanceof FHIRString)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIROrganization::setAlias - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                'FHIROrganization::addAlias - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
                 gettype($alias)
             ));
         }
-        $this->alias = $alias;
+        $this->alias[] = $alias;
         return $this;
     }
 
     /**
-     * A list of alternate names that the organization is known as, or was known as in the past.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     * A list of alternate names that the organization is known as, or was known as in the past.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
     public function getAlias()
     {
         return $this->alias;
     }
 
-
     /**
      * Contact for the organization for a certain purpose.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROrganization\FHIROrganizationContact
      * @return $this
      */
-    public function setContact(FHIROrganizationContact $contact = null)
+    public function addContact(FHIROrganizationContact $contact = null)
     {
         if (null === $contact) {
             return $this; 
         }
-        $this->contact = $contact;
+        $this->contact[] = $contact;
         return $this;
     }
 
     /**
      * Contact for the organization for a certain purpose.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROrganization\FHIROrganizationContact
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROrganization\FHIROrganizationContact[]
      */
     public function getContact()
     {
         return $this->contact;
     }
 
-
     /**
      * Technical endpoints providing access to services operated for the organization.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setEndpoint(FHIRReference $endpoint = null)
+    public function addEndpoint(FHIRReference $endpoint = null)
     {
         if (null === $endpoint) {
             return $this; 
         }
-        $this->endpoint = $endpoint;
+        $this->endpoint[] = $endpoint;
         return $this;
     }
 
     /**
      * Technical endpoints providing access to services operated for the organization.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getEndpoint()
     {
         return $this->endpoint;
     }
 
-
     /**
      * Identifier for the organization that is used to identify the organization across multiple disparate systems.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
-    public function setIdentifier(FHIRIdentifier $identifier = null)
+    public function addIdentifier(FHIRIdentifier $identifier = null)
     {
         if (null === $identifier) {
             return $this; 
         }
-        $this->identifier = $identifier;
+        $this->identifier[] = $identifier;
         return $this;
     }
 
     /**
      * Identifier for the organization that is used to identify the organization across multiple disparate systems.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
         return $this->identifier;
     }
-
 
     /**
      * A name associated with the organization.
@@ -386,7 +498,6 @@ class FHIROrganization extends FHIRDomainResource implements \JsonSerializable
         return $this->name;
     }
 
-
     /**
      * The organization of which this organization forms a part.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -410,54 +521,51 @@ class FHIROrganization extends FHIRDomainResource implements \JsonSerializable
         return $this->partOf;
     }
 
-
     /**
      * A contact detail for the organization.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContactPoint
      * @return $this
      */
-    public function setTelecom(FHIRContactPoint $telecom = null)
+    public function addTelecom(FHIRContactPoint $telecom = null)
     {
         if (null === $telecom) {
             return $this; 
         }
-        $this->telecom = $telecom;
+        $this->telecom[] = $telecom;
         return $this;
     }
 
     /**
      * A contact detail for the organization.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactPoint
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactPoint[]
      */
     public function getTelecom()
     {
         return $this->telecom;
     }
 
-
     /**
      * The kind(s) of organization that this is.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setType(FHIRCodeableConcept $type = null)
+    public function addType(FHIRCodeableConcept $type = null)
     {
         if (null === $type) {
             return $this; 
         }
-        $this->type = $type;
+        $this->type[] = $type;
         return $this;
     }
 
     /**
      * The kind(s) of organization that this is.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getType()
     {
         return $this->type;
     }
-
 
     /**
      * @return string
@@ -477,20 +585,60 @@ class FHIROrganization extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getActive())) {
             $a['active'] = $v;
         }
-        if (null !== ($v = $this->getAddress())) {
-            $a['address'] = $v;
+        if (0 < count($values = $this->getAddress())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['address'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getAlias())) {
-            $a['alias'] = $v;
+        if (0 < count($values = $this->getAlias())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['alias'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getContact())) {
-            $a['contact'] = $v;
+        if (0 < count($values = $this->getContact())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['contact'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getEndpoint())) {
-            $a['endpoint'] = $v;
+        if (0 < count($values = $this->getEndpoint())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['endpoint'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getIdentifier())) {
-            $a['identifier'] = $v;
+        if (0 < count($values = $this->getIdentifier())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['identifier'] = $vs;
+            }
         }
         if (null !== ($v = $this->getName())) {
             $a['name'] = $v;
@@ -498,11 +646,27 @@ class FHIROrganization extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getPartOf())) {
             $a['partOf'] = $v;
         }
-        if (null !== ($v = $this->getTelecom())) {
-            $a['telecom'] = $v;
+        if (0 < count($values = $this->getTelecom())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['telecom'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getType())) {
-            $a['type'] = $v;
+        if (0 < count($values = $this->getType())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['type'] = $vs;
+            }
         }
         return $a;
     }
@@ -517,9 +681,64 @@ class FHIROrganization extends FHIRDomainResource implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Organization xmlns="http://hl7.org/fhir"></Organization>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getActive())) {
+            $v->xmlSerialize(true, $sxe->addChild('active'));
         }
-        return $sxe->saveXML();
+        if (0 < count($values = $this->getAddress())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('address'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getAlias())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('alias'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getContact())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('contact'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getEndpoint())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('endpoint'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getIdentifier())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('identifier'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getName())) {
+            $v->xmlSerialize(true, $sxe->addChild('name'));
+        }
+        if (null !== ($v = $this->getPartOf())) {
+            $v->xmlSerialize(true, $sxe->addChild('partOf'));
+        }
+        if (0 < count($values = $this->getTelecom())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('telecom'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getType())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('type'));
+                }
+            }
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

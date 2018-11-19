@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAccount;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAccount;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -78,18 +78,18 @@ class FHIRAccountCoverage extends FHIRBackboneElement implements \JsonSerializab
     const FHIR_TYPE_NAME = 'Account.Coverage';
 
     /**
-     * The party(s) that contribute to payment (or part of) of the charges applied to this account (including self-pay).
+     * The party(s) that are responsible for payment (or part of) of charges applied to this account (including self-pay).
 
 A coverage may only be resposible for specific types of charges, and the sequence of the coverages in the account could be important when processing billing.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $coverage = null;
+    private $coverage = null;
 
     /**
      * The priority of the coverage in the context of this account.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
-    public $priority = null;
+    private $priority = null;
 
     /**
      * FHIRAccountCoverage Constructor
@@ -98,13 +98,28 @@ A coverage may only be resposible for specific types of charges, and the sequenc
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['coverage'])) {
-                $this->setCoverage($data['coverage']);
+                $value = $data['coverage'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountCoverage::__construct - Property \"coverage\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setCoverage($value);
             }
             if (isset($data['priority'])) {
-                $this->setPriority($data['priority']);
+                $value = $data['priority'];
+                if (is_array($value)) {
+                    $value = new FHIRPositiveInt($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRPositiveInt($value);
+                }
+                if (!($value instanceof FHIRPositiveInt)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountCoverage::__construct - Property \"priority\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt or data to construct type, saw ".gettype($value));
+                }
+                $this->setPriority($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -113,10 +128,11 @@ A coverage may only be resposible for specific types of charges, and the sequenc
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
-     * The party(s) that contribute to payment (or part of) of the charges applied to this account (including self-pay).
+     * The party(s) that are responsible for payment (or part of) of charges applied to this account (including self-pay).
 
 A coverage may only be resposible for specific types of charges, and the sequence of the coverages in the account could be important when processing billing.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -132,7 +148,7 @@ A coverage may only be resposible for specific types of charges, and the sequenc
     }
 
     /**
-     * The party(s) that contribute to payment (or part of) of the charges applied to this account (including self-pay).
+     * The party(s) that are responsible for payment (or part of) of charges applied to this account (including self-pay).
 
 A coverage may only be resposible for specific types of charges, and the sequence of the coverages in the account could be important when processing billing.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -141,7 +157,6 @@ A coverage may only be resposible for specific types of charges, and the sequenc
     {
         return $this->coverage;
     }
-
 
     /**
      * The priority of the coverage in the context of this account.
@@ -174,7 +189,6 @@ A coverage may only be resposible for specific types of charges, and the sequenc
     {
         return $this->priority;
     }
-
 
     /**
      * @return string
@@ -209,9 +223,12 @@ A coverage may only be resposible for specific types of charges, and the sequenc
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<AccountCoverage xmlns="http://hl7.org/fhir"></AccountCoverage>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getCoverage())) {
+            $v->xmlSerialize(true, $sxe->addChild('coverage'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getPriority())) {
+            $v->xmlSerialize(true, $sxe->addChild('priority'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

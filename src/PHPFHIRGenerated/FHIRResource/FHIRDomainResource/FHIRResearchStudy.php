@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -64,7 +64,6 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
 use PHPFHIRGenerated\FHIRElement\FHIRAnnotation;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyArm;
-use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyObjective;
 use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
 use PHPFHIRGenerated\FHIRElement\FHIRContactDetail;
 use PHPFHIRGenerated\FHIRElement\FHIRIdentifier;
@@ -90,147 +89,123 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes an expected sequence of events for one of the participants of a study.  E.g. Exposure to drug A, wash-out, exposure to drug B, wash-out, follow-up.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyArm
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyArm[]
      */
-    public $arm = null;
+    private $arm = [];
 
     /**
      * Codes categorizing the type of study such as investigational vs. observational, type of blinding, type of randomization, safety vs. efficacy, etc.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $category = null;
-
-    /**
-     * The condition that is the focus of the study.  For example, In a study to examine risk factors for Lupus, might have as an inclusion criterion "healthy volunteer", but the target condition code would be a Lupus SNOMED code.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public $condition = null;
+    private $category = [];
 
     /**
      * Contact details to assist a user in learning more about or engaging with the study.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
-    public $contact = null;
+    private $contact = [];
 
     /**
      * A full description of how the study is being conducted.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public $description = null;
+    private $description = null;
 
     /**
      * Reference to a Group that defines the criteria for and quantity of subjects participating in the study.  E.g. " 200 female Europeans between the ages of 20 and 45 with early onset diabetes".
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $enrollment = null;
+    private $enrollment = [];
 
     /**
-     * The medication(s), food(s), therapy(ies), device(s) or other concerns or interventions that the study is seeking to gain more information about.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * The condition(s), medication(s), food(s), therapy(ies), device(s) or other concerns or interventions that the study is seeking to gain more information about.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $focus = null;
+    private $focus = [];
 
     /**
      * Identifiers assigned to this research study by the sponsor or other systems.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = null;
-
-    /**
-     * Key terms to aid in searching for or filtering the study.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public $keyword = null;
+    private $identifier = [];
 
     /**
      * Indicates a country, state or other region where the study is taking place.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $location = null;
+    private $jurisdiction = [];
 
     /**
-     * Comments made about the study by the performer, subject or other participants.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation
+     * Key terms to aid in searching for or filtering the study.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $note = null;
+    private $keyword = [];
 
     /**
-     * A goal that the study is aiming to achieve in terms of a scientific question to be answered by the analysis of data collected during the study.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyObjective
+     * Comments made about the event by the performer, subject or other participants.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
-    public $objective = null;
+    private $note = [];
 
     /**
      * A larger research study of which this particular study is a component or step.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $partOf = null;
+    private $partOf = [];
 
     /**
      * Identifies the start date and the expected (or actual, depending on status) end date for the study.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public $period = null;
+    private $period = null;
 
     /**
-     * The stage in the progression of a therapy from initial experimental use in humans in clinical trials to post-market evaluation.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public $phase = null;
-
-    /**
-     * The type of study based upon the intent of the study's activities. A classification of the intent of the study.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public $primaryPurposeType = null;
-
-    /**
-     * A researcher in a study who oversees multiple aspects of the study, such as concept development, protocol writing, protocol submission for IRB approval, participant recruitment, informed consent, data collection, analysis, interpretation and presentation.
+     * Indicates the individual who has primary oversite of the execution of the study.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $principalInvestigator = null;
+    private $principalInvestigator = null;
 
     /**
      * The set of steps expected to be performed as part of the execution of the study.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $protocol = null;
+    private $protocol = [];
 
     /**
      * A description and/or code explaining the premature termination of the study.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $reasonStopped = null;
+    private $reasonStopped = null;
 
     /**
      * Citations, references and other related documents.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact[]
      */
-    public $relatedArtifact = null;
+    private $relatedArtifact = [];
 
     /**
-     * A facility in which study activities are conducted.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * Clinic, hospital or other healthcare location that is participating in the study.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $site = null;
+    private $site = [];
 
     /**
-     * An organization that initiates the investigation and is legally responsible for the study.
+     * The organization responsible for the execution of the study.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $sponsor = null;
+    private $sponsor = null;
 
     /**
      * The current state of the study.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRResearchStudyStatus
      */
-    public $status = null;
+    private $status = null;
 
     /**
      * A short, descriptive user-friendly label for the study.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $title = null;
+    private $title = null;
 
     /**
      * FHIRResearchStudy Constructor
@@ -239,79 +214,290 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['arm'])) {
-                $this->setArm($data['arm']);
+                $value = $data['arm'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRResearchStudyArm($v);
+                        } 
+                        if (!($v instanceof FHIRResearchStudyArm)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRResearchStudy::__construct - Collection field \"arm\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyArm or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addArm($v);
+                    }
+                }
             }
             if (isset($data['category'])) {
-                $this->setCategory($data['category']);
-            }
-            if (isset($data['condition'])) {
-                $this->setCondition($data['condition']);
+                $value = $data['category'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRResearchStudy::__construct - Collection field \"category\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addCategory($v);
+                    }
+                }
             }
             if (isset($data['contact'])) {
-                $this->setContact($data['contact']);
+                $value = $data['contact'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRContactDetail($v);
+                        } 
+                        if (!($v instanceof FHIRContactDetail)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRResearchStudy::__construct - Collection field \"contact\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRContactDetail or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addContact($v);
+                    }
+                }
             }
             if (isset($data['description'])) {
-                $this->setDescription($data['description']);
+                $value = $data['description'];
+                if (is_array($value)) {
+                    $value = new FHIRMarkdown($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRMarkdown($value);
+                }
+                if (!($value instanceof FHIRMarkdown)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRResearchStudy::__construct - Property \"description\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRMarkdown or data to construct type, saw ".gettype($value));
+                }
+                $this->setDescription($value);
             }
             if (isset($data['enrollment'])) {
-                $this->setEnrollment($data['enrollment']);
+                $value = $data['enrollment'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRResearchStudy::__construct - Collection field \"enrollment\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addEnrollment($v);
+                    }
+                }
             }
             if (isset($data['focus'])) {
-                $this->setFocus($data['focus']);
+                $value = $data['focus'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRResearchStudy::__construct - Collection field \"focus\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addFocus($v);
+                    }
+                }
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRIdentifier($v);
+                        } 
+                        if (!($v instanceof FHIRIdentifier)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRResearchStudy::__construct - Collection field \"identifier\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addIdentifier($v);
+                    }
+                }
+            }
+            if (isset($data['jurisdiction'])) {
+                $value = $data['jurisdiction'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRResearchStudy::__construct - Collection field \"jurisdiction\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addJurisdiction($v);
+                    }
+                }
             }
             if (isset($data['keyword'])) {
-                $this->setKeyword($data['keyword']);
-            }
-            if (isset($data['location'])) {
-                $this->setLocation($data['location']);
+                $value = $data['keyword'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRResearchStudy::__construct - Collection field \"keyword\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addKeyword($v);
+                    }
+                }
             }
             if (isset($data['note'])) {
-                $this->setNote($data['note']);
-            }
-            if (isset($data['objective'])) {
-                $this->setObjective($data['objective']);
+                $value = $data['note'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRAnnotation($v);
+                        } 
+                        if (!($v instanceof FHIRAnnotation)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRResearchStudy::__construct - Collection field \"note\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAnnotation or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addNote($v);
+                    }
+                }
             }
             if (isset($data['partOf'])) {
-                $this->setPartOf($data['partOf']);
+                $value = $data['partOf'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRResearchStudy::__construct - Collection field \"partOf\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addPartOf($v);
+                    }
+                }
             }
             if (isset($data['period'])) {
-                $this->setPeriod($data['period']);
-            }
-            if (isset($data['phase'])) {
-                $this->setPhase($data['phase']);
-            }
-            if (isset($data['primaryPurposeType'])) {
-                $this->setPrimaryPurposeType($data['primaryPurposeType']);
+                $value = $data['period'];
+                if (is_array($value)) {
+                    $value = new FHIRPeriod($value);
+                } 
+                if (!($value instanceof FHIRPeriod)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRResearchStudy::__construct - Property \"period\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPeriod or data to construct type, saw ".gettype($value));
+                }
+                $this->setPeriod($value);
             }
             if (isset($data['principalInvestigator'])) {
-                $this->setPrincipalInvestigator($data['principalInvestigator']);
+                $value = $data['principalInvestigator'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRResearchStudy::__construct - Property \"principalInvestigator\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setPrincipalInvestigator($value);
             }
             if (isset($data['protocol'])) {
-                $this->setProtocol($data['protocol']);
+                $value = $data['protocol'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRResearchStudy::__construct - Collection field \"protocol\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addProtocol($v);
+                    }
+                }
             }
             if (isset($data['reasonStopped'])) {
-                $this->setReasonStopped($data['reasonStopped']);
+                $value = $data['reasonStopped'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRResearchStudy::__construct - Property \"reasonStopped\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setReasonStopped($value);
             }
             if (isset($data['relatedArtifact'])) {
-                $this->setRelatedArtifact($data['relatedArtifact']);
+                $value = $data['relatedArtifact'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRRelatedArtifact($v);
+                        } 
+                        if (!($v instanceof FHIRRelatedArtifact)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRResearchStudy::__construct - Collection field \"relatedArtifact\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addRelatedArtifact($v);
+                    }
+                }
             }
             if (isset($data['site'])) {
-                $this->setSite($data['site']);
+                $value = $data['site'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRResearchStudy::__construct - Collection field \"site\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addSite($v);
+                    }
+                }
             }
             if (isset($data['sponsor'])) {
-                $this->setSponsor($data['sponsor']);
+                $value = $data['sponsor'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRResearchStudy::__construct - Property \"sponsor\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setSponsor($value);
             }
             if (isset($data['status'])) {
-                $this->setStatus($data['status']);
+                $value = $data['status'];
+                if (is_array($value)) {
+                    $value = new FHIRResearchStudyStatus($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRResearchStudyStatus($value);
+                }
+                if (!($value instanceof FHIRResearchStudyStatus)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRResearchStudy::__construct - Property \"status\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRResearchStudyStatus or data to construct type, saw ".gettype($value));
+                }
+                $this->setStatus($value);
             }
             if (isset($data['title'])) {
-                $this->setTitle($data['title']);
+                $value = $data['title'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRResearchStudy::__construct - Property \"title\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setTitle($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -320,6 +506,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -327,96 +514,69 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyArm
      * @return $this
      */
-    public function setArm(FHIRResearchStudyArm $arm = null)
+    public function addArm(FHIRResearchStudyArm $arm = null)
     {
         if (null === $arm) {
             return $this; 
         }
-        $this->arm = $arm;
+        $this->arm[] = $arm;
         return $this;
     }
 
     /**
      * Describes an expected sequence of events for one of the participants of a study.  E.g. Exposure to drug A, wash-out, exposure to drug B, wash-out, follow-up.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyArm
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyArm[]
      */
     public function getArm()
     {
         return $this->arm;
     }
 
-
     /**
      * Codes categorizing the type of study such as investigational vs. observational, type of blinding, type of randomization, safety vs. efficacy, etc.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setCategory(FHIRCodeableConcept $category = null)
+    public function addCategory(FHIRCodeableConcept $category = null)
     {
         if (null === $category) {
             return $this; 
         }
-        $this->category = $category;
+        $this->category[] = $category;
         return $this;
     }
 
     /**
      * Codes categorizing the type of study such as investigational vs. observational, type of blinding, type of randomization, safety vs. efficacy, etc.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getCategory()
     {
         return $this->category;
     }
 
-
-    /**
-     * The condition that is the focus of the study.  For example, In a study to examine risk factors for Lupus, might have as an inclusion criterion "healthy volunteer", but the target condition code would be a Lupus SNOMED code.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     * @return $this
-     */
-    public function setCondition(FHIRCodeableConcept $condition = null)
-    {
-        if (null === $condition) {
-            return $this; 
-        }
-        $this->condition = $condition;
-        return $this;
-    }
-
-    /**
-     * The condition that is the focus of the study.  For example, In a study to examine risk factors for Lupus, might have as an inclusion criterion "healthy volunteer", but the target condition code would be a Lupus SNOMED code.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public function getCondition()
-    {
-        return $this->condition;
-    }
-
-
     /**
      * Contact details to assist a user in learning more about or engaging with the study.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail
      * @return $this
      */
-    public function setContact(FHIRContactDetail $contact = null)
+    public function addContact(FHIRContactDetail $contact = null)
     {
         if (null === $contact) {
             return $this; 
         }
-        $this->contact = $contact;
+        $this->contact[] = $contact;
         return $this;
     }
 
     /**
      * Contact details to assist a user in learning more about or engaging with the study.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
     public function getContact()
     {
         return $this->contact;
     }
-
 
     /**
      * A full description of how the study is being conducted.
@@ -450,198 +610,166 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
         return $this->description;
     }
 
-
     /**
      * Reference to a Group that defines the criteria for and quantity of subjects participating in the study.  E.g. " 200 female Europeans between the ages of 20 and 45 with early onset diabetes".
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setEnrollment(FHIRReference $enrollment = null)
+    public function addEnrollment(FHIRReference $enrollment = null)
     {
         if (null === $enrollment) {
             return $this; 
         }
-        $this->enrollment = $enrollment;
+        $this->enrollment[] = $enrollment;
         return $this;
     }
 
     /**
      * Reference to a Group that defines the criteria for and quantity of subjects participating in the study.  E.g. " 200 female Europeans between the ages of 20 and 45 with early onset diabetes".
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getEnrollment()
     {
         return $this->enrollment;
     }
 
-
     /**
-     * The medication(s), food(s), therapy(ies), device(s) or other concerns or interventions that the study is seeking to gain more information about.
+     * The condition(s), medication(s), food(s), therapy(ies), device(s) or other concerns or interventions that the study is seeking to gain more information about.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setFocus(FHIRCodeableConcept $focus = null)
+    public function addFocus(FHIRCodeableConcept $focus = null)
     {
         if (null === $focus) {
             return $this; 
         }
-        $this->focus = $focus;
+        $this->focus[] = $focus;
         return $this;
     }
 
     /**
-     * The medication(s), food(s), therapy(ies), device(s) or other concerns or interventions that the study is seeking to gain more information about.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * The condition(s), medication(s), food(s), therapy(ies), device(s) or other concerns or interventions that the study is seeking to gain more information about.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getFocus()
     {
         return $this->focus;
     }
 
-
     /**
      * Identifiers assigned to this research study by the sponsor or other systems.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
-    public function setIdentifier(FHIRIdentifier $identifier = null)
+    public function addIdentifier(FHIRIdentifier $identifier = null)
     {
         if (null === $identifier) {
             return $this; 
         }
-        $this->identifier = $identifier;
+        $this->identifier[] = $identifier;
         return $this;
     }
 
     /**
      * Identifiers assigned to this research study by the sponsor or other systems.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
         return $this->identifier;
     }
 
+    /**
+     * Indicates a country, state or other region where the study is taking place.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return $this
+     */
+    public function addJurisdiction(FHIRCodeableConcept $jurisdiction = null)
+    {
+        if (null === $jurisdiction) {
+            return $this; 
+        }
+        $this->jurisdiction[] = $jurisdiction;
+        return $this;
+    }
+
+    /**
+     * Indicates a country, state or other region where the study is taking place.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    public function getJurisdiction()
+    {
+        return $this->jurisdiction;
+    }
 
     /**
      * Key terms to aid in searching for or filtering the study.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setKeyword(FHIRCodeableConcept $keyword = null)
+    public function addKeyword(FHIRCodeableConcept $keyword = null)
     {
         if (null === $keyword) {
             return $this; 
         }
-        $this->keyword = $keyword;
+        $this->keyword[] = $keyword;
         return $this;
     }
 
     /**
      * Key terms to aid in searching for or filtering the study.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getKeyword()
     {
         return $this->keyword;
     }
 
-
     /**
-     * Indicates a country, state or other region where the study is taking place.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     * @return $this
-     */
-    public function setLocation(FHIRCodeableConcept $location = null)
-    {
-        if (null === $location) {
-            return $this; 
-        }
-        $this->location = $location;
-        return $this;
-    }
-
-    /**
-     * Indicates a country, state or other region where the study is taking place.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public function getLocation()
-    {
-        return $this->location;
-    }
-
-
-    /**
-     * Comments made about the study by the performer, subject or other participants.
+     * Comments made about the event by the performer, subject or other participants.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation
      * @return $this
      */
-    public function setNote(FHIRAnnotation $note = null)
+    public function addNote(FHIRAnnotation $note = null)
     {
         if (null === $note) {
             return $this; 
         }
-        $this->note = $note;
+        $this->note[] = $note;
         return $this;
     }
 
     /**
-     * Comments made about the study by the performer, subject or other participants.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation
+     * Comments made about the event by the performer, subject or other participants.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
         return $this->note;
     }
 
-
-    /**
-     * A goal that the study is aiming to achieve in terms of a scientific question to be answered by the analysis of data collected during the study.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyObjective
-     * @return $this
-     */
-    public function setObjective(FHIRResearchStudyObjective $objective = null)
-    {
-        if (null === $objective) {
-            return $this; 
-        }
-        $this->objective = $objective;
-        return $this;
-    }
-
-    /**
-     * A goal that the study is aiming to achieve in terms of a scientific question to be answered by the analysis of data collected during the study.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyObjective
-     */
-    public function getObjective()
-    {
-        return $this->objective;
-    }
-
-
     /**
      * A larger research study of which this particular study is a component or step.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setPartOf(FHIRReference $partOf = null)
+    public function addPartOf(FHIRReference $partOf = null)
     {
         if (null === $partOf) {
             return $this; 
         }
-        $this->partOf = $partOf;
+        $this->partOf[] = $partOf;
         return $this;
     }
 
     /**
      * A larger research study of which this particular study is a component or step.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getPartOf()
     {
         return $this->partOf;
     }
-
 
     /**
      * Identifies the start date and the expected (or actual, depending on status) end date for the study.
@@ -666,57 +794,8 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
         return $this->period;
     }
 
-
     /**
-     * The stage in the progression of a therapy from initial experimental use in humans in clinical trials to post-market evaluation.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     * @return $this
-     */
-    public function setPhase(FHIRCodeableConcept $phase = null)
-    {
-        if (null === $phase) {
-            return $this; 
-        }
-        $this->phase = $phase;
-        return $this;
-    }
-
-    /**
-     * The stage in the progression of a therapy from initial experimental use in humans in clinical trials to post-market evaluation.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public function getPhase()
-    {
-        return $this->phase;
-    }
-
-
-    /**
-     * The type of study based upon the intent of the study's activities. A classification of the intent of the study.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     * @return $this
-     */
-    public function setPrimaryPurposeType(FHIRCodeableConcept $primaryPurposeType = null)
-    {
-        if (null === $primaryPurposeType) {
-            return $this; 
-        }
-        $this->primaryPurposeType = $primaryPurposeType;
-        return $this;
-    }
-
-    /**
-     * The type of study based upon the intent of the study's activities. A classification of the intent of the study.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public function getPrimaryPurposeType()
-    {
-        return $this->primaryPurposeType;
-    }
-
-
-    /**
-     * A researcher in a study who oversees multiple aspects of the study, such as concept development, protocol writing, protocol submission for IRB approval, participant recruitment, informed consent, data collection, analysis, interpretation and presentation.
+     * Indicates the individual who has primary oversite of the execution of the study.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
@@ -730,7 +809,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A researcher in a study who oversees multiple aspects of the study, such as concept development, protocol writing, protocol submission for IRB approval, participant recruitment, informed consent, data collection, analysis, interpretation and presentation.
+     * Indicates the individual who has primary oversite of the execution of the study.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getPrincipalInvestigator()
@@ -738,30 +817,28 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
         return $this->principalInvestigator;
     }
 
-
     /**
      * The set of steps expected to be performed as part of the execution of the study.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setProtocol(FHIRReference $protocol = null)
+    public function addProtocol(FHIRReference $protocol = null)
     {
         if (null === $protocol) {
             return $this; 
         }
-        $this->protocol = $protocol;
+        $this->protocol[] = $protocol;
         return $this;
     }
 
     /**
      * The set of steps expected to be performed as part of the execution of the study.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getProtocol()
     {
         return $this->protocol;
     }
-
 
     /**
      * A description and/or code explaining the premature termination of the study.
@@ -786,57 +863,54 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
         return $this->reasonStopped;
     }
 
-
     /**
      * Citations, references and other related documents.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact
      * @return $this
      */
-    public function setRelatedArtifact(FHIRRelatedArtifact $relatedArtifact = null)
+    public function addRelatedArtifact(FHIRRelatedArtifact $relatedArtifact = null)
     {
         if (null === $relatedArtifact) {
             return $this; 
         }
-        $this->relatedArtifact = $relatedArtifact;
+        $this->relatedArtifact[] = $relatedArtifact;
         return $this;
     }
 
     /**
      * Citations, references and other related documents.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact[]
      */
     public function getRelatedArtifact()
     {
         return $this->relatedArtifact;
     }
 
-
     /**
-     * A facility in which study activities are conducted.
+     * Clinic, hospital or other healthcare location that is participating in the study.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setSite(FHIRReference $site = null)
+    public function addSite(FHIRReference $site = null)
     {
         if (null === $site) {
             return $this; 
         }
-        $this->site = $site;
+        $this->site[] = $site;
         return $this;
     }
 
     /**
-     * A facility in which study activities are conducted.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * Clinic, hospital or other healthcare location that is participating in the study.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getSite()
     {
         return $this->site;
     }
 
-
     /**
-     * An organization that initiates the investigation and is legally responsible for the study.
+     * The organization responsible for the execution of the study.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
@@ -850,14 +924,13 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * An organization that initiates the investigation and is legally responsible for the study.
+     * The organization responsible for the execution of the study.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getSponsor()
     {
         return $this->sponsor;
     }
-
 
     /**
      * The current state of the study.
@@ -891,7 +964,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
         return $this->status;
     }
 
-
     /**
      * A short, descriptive user-friendly label for the study.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -924,7 +996,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
         return $this->title;
     }
 
-
     /**
      * @return string
      */
@@ -940,68 +1011,160 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
     {
         $a = parent::jsonSerialize();
         $a['resourceType'] = self::FHIR_TYPE_NAME;
-        if (null !== ($v = $this->getArm())) {
-            $a['arm'] = $v;
+        if (0 < count($values = $this->getArm())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['arm'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getCategory())) {
-            $a['category'] = $v;
+        if (0 < count($values = $this->getCategory())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['category'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getCondition())) {
-            $a['condition'] = $v;
-        }
-        if (null !== ($v = $this->getContact())) {
-            $a['contact'] = $v;
+        if (0 < count($values = $this->getContact())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['contact'] = $vs;
+            }
         }
         if (null !== ($v = $this->getDescription())) {
             $a['description'] = $v;
         }
-        if (null !== ($v = $this->getEnrollment())) {
-            $a['enrollment'] = $v;
+        if (0 < count($values = $this->getEnrollment())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['enrollment'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getFocus())) {
-            $a['focus'] = $v;
+        if (0 < count($values = $this->getFocus())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['focus'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getIdentifier())) {
-            $a['identifier'] = $v;
+        if (0 < count($values = $this->getIdentifier())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['identifier'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getKeyword())) {
-            $a['keyword'] = $v;
+        if (0 < count($values = $this->getJurisdiction())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['jurisdiction'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getLocation())) {
-            $a['location'] = $v;
+        if (0 < count($values = $this->getKeyword())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['keyword'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getNote())) {
-            $a['note'] = $v;
+        if (0 < count($values = $this->getNote())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['note'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getObjective())) {
-            $a['objective'] = $v;
-        }
-        if (null !== ($v = $this->getPartOf())) {
-            $a['partOf'] = $v;
+        if (0 < count($values = $this->getPartOf())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['partOf'] = $vs;
+            }
         }
         if (null !== ($v = $this->getPeriod())) {
             $a['period'] = $v;
         }
-        if (null !== ($v = $this->getPhase())) {
-            $a['phase'] = $v;
-        }
-        if (null !== ($v = $this->getPrimaryPurposeType())) {
-            $a['primaryPurposeType'] = $v;
-        }
         if (null !== ($v = $this->getPrincipalInvestigator())) {
             $a['principalInvestigator'] = $v;
         }
-        if (null !== ($v = $this->getProtocol())) {
-            $a['protocol'] = $v;
+        if (0 < count($values = $this->getProtocol())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['protocol'] = $vs;
+            }
         }
         if (null !== ($v = $this->getReasonStopped())) {
             $a['reasonStopped'] = $v;
         }
-        if (null !== ($v = $this->getRelatedArtifact())) {
-            $a['relatedArtifact'] = $v;
+        if (0 < count($values = $this->getRelatedArtifact())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['relatedArtifact'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getSite())) {
-            $a['site'] = $v;
+        if (0 < count($values = $this->getSite())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['site'] = $vs;
+            }
         }
         if (null !== ($v = $this->getSponsor())) {
             $a['sponsor'] = $v;
@@ -1025,9 +1188,118 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ResearchStudy xmlns="http://hl7.org/fhir"></ResearchStudy>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (0 < count($values = $this->getArm())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('arm'));
+                }
+            }
         }
-        return $sxe->saveXML();
+        if (0 < count($values = $this->getCategory())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('category'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getContact())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('contact'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getDescription())) {
+            $v->xmlSerialize(true, $sxe->addChild('description'));
+        }
+        if (0 < count($values = $this->getEnrollment())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('enrollment'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getFocus())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('focus'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getIdentifier())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('identifier'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getJurisdiction())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('jurisdiction'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getKeyword())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('keyword'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getNote())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('note'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getPartOf())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('partOf'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getPeriod())) {
+            $v->xmlSerialize(true, $sxe->addChild('period'));
+        }
+        if (null !== ($v = $this->getPrincipalInvestigator())) {
+            $v->xmlSerialize(true, $sxe->addChild('principalInvestigator'));
+        }
+        if (0 < count($values = $this->getProtocol())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('protocol'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getReasonStopped())) {
+            $v->xmlSerialize(true, $sxe->addChild('reasonStopped'));
+        }
+        if (0 < count($values = $this->getRelatedArtifact())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('relatedArtifact'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getSite())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('site'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getSponsor())) {
+            $v->xmlSerialize(true, $sxe->addChild('sponsor'));
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('status'));
+        }
+        if (null !== ($v = $this->getTitle())) {
+            $v->xmlSerialize(true, $sxe->addChild('title'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

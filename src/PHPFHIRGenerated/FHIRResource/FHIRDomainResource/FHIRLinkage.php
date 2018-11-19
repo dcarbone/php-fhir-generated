@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -83,19 +83,19 @@ class FHIRLinkage extends FHIRDomainResource implements \JsonSerializable
      * Indicates whether the asserted set of linkages are considered to be "in effect".
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $active = null;
+    private $active = null;
 
     /**
      * Identifies the user or organization responsible for asserting the linkages and who establishes the context for evaluating the nature of each linkage.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $author = null;
+    private $author = null;
 
     /**
-     * Identifies one of the records that is considered to refer to the same real-world occurrence as well as how the items should be evaluated within the collection of linked items.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRLinkage\FHIRLinkageItem
+     * Identifies one of the records that is considered to refer to the same real-world occurrence as well as how the items hould be evaluated within the collection of linked items.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRLinkage\FHIRLinkageItem[]
      */
-    public $item = null;
+    private $item = [];
 
     /**
      * FHIRLinkage Constructor
@@ -104,16 +104,44 @@ class FHIRLinkage extends FHIRDomainResource implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['active'])) {
-                $this->setActive($data['active']);
+                $value = $data['active'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLinkage::__construct - Property \"active\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value));
+                }
+                $this->setActive($value);
             }
             if (isset($data['author'])) {
-                $this->setAuthor($data['author']);
+                $value = $data['author'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLinkage::__construct - Property \"author\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setAuthor($value);
             }
             if (isset($data['item'])) {
-                $this->setItem($data['item']);
+                $value = $data['item'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRLinkageItem($v);
+                        } 
+                        if (!($v instanceof FHIRLinkageItem)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLinkage::__construct - Collection field \"item\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRLinkage\FHIRLinkageItem or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addItem($v);
+                    }
+                }
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -122,6 +150,7 @@ class FHIRLinkage extends FHIRDomainResource implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -156,7 +185,6 @@ class FHIRLinkage extends FHIRDomainResource implements \JsonSerializable
         return $this->active;
     }
 
-
     /**
      * Identifies the user or organization responsible for asserting the linkages and who establishes the context for evaluating the nature of each linkage.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -180,30 +208,28 @@ class FHIRLinkage extends FHIRDomainResource implements \JsonSerializable
         return $this->author;
     }
 
-
     /**
-     * Identifies one of the records that is considered to refer to the same real-world occurrence as well as how the items should be evaluated within the collection of linked items.
+     * Identifies one of the records that is considered to refer to the same real-world occurrence as well as how the items hould be evaluated within the collection of linked items.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRLinkage\FHIRLinkageItem
      * @return $this
      */
-    public function setItem(FHIRLinkageItem $item = null)
+    public function addItem(FHIRLinkageItem $item = null)
     {
         if (null === $item) {
             return $this; 
         }
-        $this->item = $item;
+        $this->item[] = $item;
         return $this;
     }
 
     /**
-     * Identifies one of the records that is considered to refer to the same real-world occurrence as well as how the items should be evaluated within the collection of linked items.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRLinkage\FHIRLinkageItem
+     * Identifies one of the records that is considered to refer to the same real-world occurrence as well as how the items hould be evaluated within the collection of linked items.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRLinkage\FHIRLinkageItem[]
      */
     public function getItem()
     {
         return $this->item;
     }
-
 
     /**
      * @return string
@@ -226,8 +252,16 @@ class FHIRLinkage extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getAuthor())) {
             $a['author'] = $v;
         }
-        if (null !== ($v = $this->getItem())) {
-            $a['item'] = $v;
+        if (0 < count($values = $this->getItem())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['item'] = $vs;
+            }
         }
         return $a;
     }
@@ -242,9 +276,19 @@ class FHIRLinkage extends FHIRDomainResource implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Linkage xmlns="http://hl7.org/fhir"></Linkage>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getActive())) {
+            $v->xmlSerialize(true, $sxe->addChild('active'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getAuthor())) {
+            $v->xmlSerialize(true, $sxe->addChild('author'));
+        }
+        if (0 < count($values = $this->getItem())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('item'));
+                }
+            }
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,7 +63,6 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem;
-use PHPFHIRGenerated\FHIRElement\FHIRCanonical;
 use PHPFHIRGenerated\FHIRElement\FHIRDateTime;
 use PHPFHIRGenerated\FHIRElement\FHIRIdentifier;
 use PHPFHIRGenerated\FHIRElement\FHIRQuestionnaireResponseStatus;
@@ -86,67 +85,67 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
      * Person who received the answers to the questions in the QuestionnaireResponse and recorded them in the system.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $author = null;
+    private $author = null;
 
     /**
      * The date and/or time that this set of answers were last changed.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $authored = null;
+    private $authored = null;
 
     /**
-     * The order, proposal or plan that is fulfilled in whole or in part by this QuestionnaireResponse.  For example, a ServiceRequest seeking an intake assessment or a decision support recommendation to assess for post-partum depression.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * The order, proposal or plan that is fulfilled in whole or in part by this QuestionnaireResponse.  For example, a ProcedureRequest seeking an intake assessment or a decision support recommendation to assess for post-partum depression.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $basedOn = null;
+    private $basedOn = [];
 
     /**
      * The encounter or episode of care with primary association to the questionnaire response.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $context = null;
+    private $context = null;
 
     /**
      * A business identifier assigned to a particular completed (or partially completed) questionnaire.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public $identifier = null;
+    private $identifier = null;
 
     /**
      * A group or question item from the original questionnaire for which answers are provided.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem[]
      */
-    public $item = null;
+    private $item = [];
 
     /**
      * A procedure or observation that this questionnaire was performed as part of the execution of.  For example, the surgery a checklist was executed as part of.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $partOf = null;
+    private $parent = [];
 
     /**
      * The Questionnaire that defines and organizes the questions for which answers are being provided.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $questionnaire = null;
+    private $questionnaire = null;
 
     /**
      * The person who answered the questions about the subject.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $source = null;
+    private $source = null;
 
     /**
      * The position of the questionnaire response within its overall lifecycle.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuestionnaireResponseStatus
      */
-    public $status = null;
+    private $status = null;
 
     /**
      * The subject of the questionnaire response.  This could be a patient, organization, practitioner, device, etc.  This is who/what the answers apply to, but is not necessarily the source of information.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $subject = null;
+    private $subject = null;
 
     /**
      * FHIRQuestionnaireResponse Constructor
@@ -155,40 +154,138 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['author'])) {
-                $this->setAuthor($data['author']);
+                $value = $data['author'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRQuestionnaireResponse::__construct - Property \"author\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setAuthor($value);
             }
             if (isset($data['authored'])) {
-                $this->setAuthored($data['authored']);
+                $value = $data['authored'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRQuestionnaireResponse::__construct - Property \"authored\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value));
+                }
+                $this->setAuthored($value);
             }
             if (isset($data['basedOn'])) {
-                $this->setBasedOn($data['basedOn']);
+                $value = $data['basedOn'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRQuestionnaireResponse::__construct - Collection field \"basedOn\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addBasedOn($v);
+                    }
+                }
             }
             if (isset($data['context'])) {
-                $this->setContext($data['context']);
+                $value = $data['context'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRQuestionnaireResponse::__construct - Property \"context\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setContext($value);
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    $value = new FHIRIdentifier($value);
+                } 
+                if (!($value instanceof FHIRIdentifier)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRQuestionnaireResponse::__construct - Property \"identifier\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($value));
+                }
+                $this->setIdentifier($value);
             }
             if (isset($data['item'])) {
-                $this->setItem($data['item']);
+                $value = $data['item'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRQuestionnaireResponseItem($v);
+                        } 
+                        if (!($v instanceof FHIRQuestionnaireResponseItem)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRQuestionnaireResponse::__construct - Collection field \"item\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addItem($v);
+                    }
+                }
             }
-            if (isset($data['partOf'])) {
-                $this->setPartOf($data['partOf']);
+            if (isset($data['parent'])) {
+                $value = $data['parent'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRQuestionnaireResponse::__construct - Collection field \"parent\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addParent($v);
+                    }
+                }
             }
             if (isset($data['questionnaire'])) {
-                $this->setQuestionnaire($data['questionnaire']);
+                $value = $data['questionnaire'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRQuestionnaireResponse::__construct - Property \"questionnaire\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setQuestionnaire($value);
             }
             if (isset($data['source'])) {
-                $this->setSource($data['source']);
+                $value = $data['source'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRQuestionnaireResponse::__construct - Property \"source\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setSource($value);
             }
             if (isset($data['status'])) {
-                $this->setStatus($data['status']);
+                $value = $data['status'];
+                if (is_array($value)) {
+                    $value = new FHIRQuestionnaireResponseStatus($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRQuestionnaireResponseStatus($value);
+                }
+                if (!($value instanceof FHIRQuestionnaireResponseStatus)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRQuestionnaireResponse::__construct - Property \"status\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuestionnaireResponseStatus or data to construct type, saw ".gettype($value));
+                }
+                $this->setStatus($value);
             }
             if (isset($data['subject'])) {
-                $this->setSubject($data['subject']);
+                $value = $data['subject'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRQuestionnaireResponse::__construct - Property \"subject\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setSubject($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -197,6 +294,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -221,7 +319,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
     {
         return $this->author;
     }
-
 
     /**
      * The date and/or time that this set of answers were last changed.
@@ -255,30 +352,28 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
         return $this->authored;
     }
 
-
     /**
-     * The order, proposal or plan that is fulfilled in whole or in part by this QuestionnaireResponse.  For example, a ServiceRequest seeking an intake assessment or a decision support recommendation to assess for post-partum depression.
+     * The order, proposal or plan that is fulfilled in whole or in part by this QuestionnaireResponse.  For example, a ProcedureRequest seeking an intake assessment or a decision support recommendation to assess for post-partum depression.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setBasedOn(FHIRReference $basedOn = null)
+    public function addBasedOn(FHIRReference $basedOn = null)
     {
         if (null === $basedOn) {
             return $this; 
         }
-        $this->basedOn = $basedOn;
+        $this->basedOn[] = $basedOn;
         return $this;
     }
 
     /**
-     * The order, proposal or plan that is fulfilled in whole or in part by this QuestionnaireResponse.  For example, a ServiceRequest seeking an intake assessment or a decision support recommendation to assess for post-partum depression.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * The order, proposal or plan that is fulfilled in whole or in part by this QuestionnaireResponse.  For example, a ProcedureRequest seeking an intake assessment or a decision support recommendation to assess for post-partum depression.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getBasedOn()
     {
         return $this->basedOn;
     }
-
 
     /**
      * The encounter or episode of care with primary association to the questionnaire response.
@@ -303,7 +398,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
         return $this->context;
     }
 
-
     /**
      * A business identifier assigned to a particular completed (or partially completed) questionnaire.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
@@ -327,73 +421,61 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
         return $this->identifier;
     }
 
-
     /**
      * A group or question item from the original questionnaire for which answers are provided.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem
      * @return $this
      */
-    public function setItem(FHIRQuestionnaireResponseItem $item = null)
+    public function addItem(FHIRQuestionnaireResponseItem $item = null)
     {
         if (null === $item) {
             return $this; 
         }
-        $this->item = $item;
+        $this->item[] = $item;
         return $this;
     }
 
     /**
      * A group or question item from the original questionnaire for which answers are provided.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem[]
      */
     public function getItem()
     {
         return $this->item;
     }
 
-
     /**
      * A procedure or observation that this questionnaire was performed as part of the execution of.  For example, the surgery a checklist was executed as part of.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setPartOf(FHIRReference $partOf = null)
+    public function addParent(FHIRReference $parent = null)
     {
-        if (null === $partOf) {
+        if (null === $parent) {
             return $this; 
         }
-        $this->partOf = $partOf;
+        $this->parent[] = $parent;
         return $this;
     }
 
     /**
      * A procedure or observation that this questionnaire was performed as part of the execution of.  For example, the surgery a checklist was executed as part of.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getPartOf()
+    public function getParent()
     {
-        return $this->partOf;
+        return $this->parent;
     }
-
 
     /**
      * The Questionnaire that defines and organizes the questions for which answers are being provided.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setQuestionnaire($questionnaire)
+    public function setQuestionnaire(FHIRReference $questionnaire = null)
     {
         if (null === $questionnaire) {
             return $this; 
-        }
-        if (is_scalar($questionnaire)) {
-            $questionnaire = new FHIRCanonical($questionnaire);
-        }
-        if (!($questionnaire instanceof FHIRCanonical)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRQuestionnaireResponse::setQuestionnaire - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCanonical or appropriate scalar value, %s seen.',
-                gettype($questionnaire)
-            ));
         }
         $this->questionnaire = $questionnaire;
         return $this;
@@ -401,13 +483,12 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The Questionnaire that defines and organizes the questions for which answers are being provided.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getQuestionnaire()
     {
         return $this->questionnaire;
     }
-
 
     /**
      * The person who answered the questions about the subject.
@@ -431,7 +512,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
     {
         return $this->source;
     }
-
 
     /**
      * The position of the questionnaire response within its overall lifecycle.
@@ -465,7 +545,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
         return $this->status;
     }
 
-
     /**
      * The subject of the questionnaire response.  This could be a patient, organization, practitioner, device, etc.  This is who/what the answers apply to, but is not necessarily the source of information.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -489,7 +568,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
         return $this->subject;
     }
 
-
     /**
      * @return string
      */
@@ -511,8 +589,16 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
         if (null !== ($v = $this->getAuthored())) {
             $a['authored'] = $v;
         }
-        if (null !== ($v = $this->getBasedOn())) {
-            $a['basedOn'] = $v;
+        if (0 < count($values = $this->getBasedOn())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['basedOn'] = $vs;
+            }
         }
         if (null !== ($v = $this->getContext())) {
             $a['context'] = $v;
@@ -520,11 +606,27 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
         if (null !== ($v = $this->getIdentifier())) {
             $a['identifier'] = $v;
         }
-        if (null !== ($v = $this->getItem())) {
-            $a['item'] = $v;
+        if (0 < count($values = $this->getItem())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['item'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getPartOf())) {
-            $a['partOf'] = $v;
+        if (0 < count($values = $this->getParent())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['parent'] = $vs;
+            }
         }
         if (null !== ($v = $this->getQuestionnaire())) {
             $a['questionnaire'] = $v;
@@ -551,9 +653,51 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<QuestionnaireResponse xmlns="http://hl7.org/fhir"></QuestionnaireResponse>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getAuthor())) {
+            $v->xmlSerialize(true, $sxe->addChild('author'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getAuthored())) {
+            $v->xmlSerialize(true, $sxe->addChild('authored'));
+        }
+        if (0 < count($values = $this->getBasedOn())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('basedOn'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getContext())) {
+            $v->xmlSerialize(true, $sxe->addChild('context'));
+        }
+        if (null !== ($v = $this->getIdentifier())) {
+            $v->xmlSerialize(true, $sxe->addChild('identifier'));
+        }
+        if (0 < count($values = $this->getItem())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('item'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getParent())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('parent'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getQuestionnaire())) {
+            $v->xmlSerialize(true, $sxe->addChild('questionnaire'));
+        }
+        if (null !== ($v = $this->getSource())) {
+            $v->xmlSerialize(true, $sxe->addChild('source'));
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('status'));
+        }
+        if (null !== ($v = $this->getSubject())) {
+            $v->xmlSerialize(true, $sxe->addChild('subject'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

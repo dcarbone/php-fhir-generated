@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResp
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,6 +63,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResp
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
+use PHPFHIRGenerated\FHIRElement\FHIRReference;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
 use PHPFHIRGenerated\FHIRElement\FHIRUri;
 
@@ -79,33 +80,39 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement implements \Json
 
     /**
      * The respondent's answer(s) to the question.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer[]
      */
-    public $answer = null;
+    private $answer = [];
 
     /**
      * A reference to an [[[ElementDefinition]]] that provides the details for the item.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $definition = null;
+    private $definition = null;
 
     /**
      * Questions or sub-groups nested beneath a question or group.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem[]
      */
-    public $item = null;
+    private $item = [];
 
     /**
      * The item from the Questionnaire that corresponds to this item in the QuestionnaireResponse resource.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $linkId = null;
+    private $linkId = null;
+
+    /**
+     * More specific subject this section's answers are about, details the subject given in QuestionnaireResponse.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    private $subject = null;
 
     /**
      * Text that is displayed above the contents of the group or as the text of the question being answered.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $text = null;
+    private $text = null;
 
     /**
      * FHIRQuestionnaireResponseItem Constructor
@@ -114,22 +121,84 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement implements \Json
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['answer'])) {
-                $this->setAnswer($data['answer']);
+                $value = $data['answer'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRQuestionnaireResponseAnswer($v);
+                        } 
+                        if (!($v instanceof FHIRQuestionnaireResponseAnswer)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem::__construct - Collection field \"answer\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addAnswer($v);
+                    }
+                }
             }
             if (isset($data['definition'])) {
-                $this->setDefinition($data['definition']);
+                $value = $data['definition'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem::__construct - Property \"definition\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value));
+                }
+                $this->setDefinition($value);
             }
             if (isset($data['item'])) {
-                $this->setItem($data['item']);
+                $value = $data['item'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRQuestionnaireResponseItem($v);
+                        } 
+                        if (!($v instanceof FHIRQuestionnaireResponseItem)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem::__construct - Collection field \"item\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addItem($v);
+                    }
+                }
             }
             if (isset($data['linkId'])) {
-                $this->setLinkId($data['linkId']);
+                $value = $data['linkId'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem::__construct - Property \"linkId\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setLinkId($value);
+            }
+            if (isset($data['subject'])) {
+                $value = $data['subject'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem::__construct - Property \"subject\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setSubject($value);
             }
             if (isset($data['text'])) {
-                $this->setText($data['text']);
+                $value = $data['text'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem::__construct - Property \"text\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setText($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -138,6 +207,7 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement implements \Json
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -145,24 +215,23 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement implements \Json
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer
      * @return $this
      */
-    public function setAnswer(FHIRQuestionnaireResponseAnswer $answer = null)
+    public function addAnswer(FHIRQuestionnaireResponseAnswer $answer = null)
     {
         if (null === $answer) {
             return $this; 
         }
-        $this->answer = $answer;
+        $this->answer[] = $answer;
         return $this;
     }
 
     /**
      * The respondent's answer(s) to the question.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer[]
      */
     public function getAnswer()
     {
         return $this->answer;
     }
-
 
     /**
      * A reference to an [[[ElementDefinition]]] that provides the details for the item.
@@ -196,30 +265,28 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement implements \Json
         return $this->definition;
     }
 
-
     /**
      * Questions or sub-groups nested beneath a question or group.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem
      * @return $this
      */
-    public function setItem(FHIRQuestionnaireResponseItem $item = null)
+    public function addItem(FHIRQuestionnaireResponseItem $item = null)
     {
         if (null === $item) {
             return $this; 
         }
-        $this->item = $item;
+        $this->item[] = $item;
         return $this;
     }
 
     /**
      * Questions or sub-groups nested beneath a question or group.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem[]
      */
     public function getItem()
     {
         return $this->item;
     }
-
 
     /**
      * The item from the Questionnaire that corresponds to this item in the QuestionnaireResponse resource.
@@ -253,6 +320,28 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement implements \Json
         return $this->linkId;
     }
 
+    /**
+     * More specific subject this section's answers are about, details the subject given in QuestionnaireResponse.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return $this
+     */
+    public function setSubject(FHIRReference $subject = null)
+    {
+        if (null === $subject) {
+            return $this; 
+        }
+        $this->subject = $subject;
+        return $this;
+    }
+
+    /**
+     * More specific subject this section's answers are about, details the subject given in QuestionnaireResponse.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getSubject()
+    {
+        return $this->subject;
+    }
 
     /**
      * Text that is displayed above the contents of the group or as the text of the question being answered.
@@ -286,7 +375,6 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement implements \Json
         return $this->text;
     }
 
-
     /**
      * @return string
      */
@@ -301,17 +389,36 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement implements \Json
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getAnswer())) {
-            $a['answer'] = $v;
+        if (0 < count($values = $this->getAnswer())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['answer'] = $vs;
+            }
         }
         if (null !== ($v = $this->getDefinition())) {
             $a['definition'] = $v;
         }
-        if (null !== ($v = $this->getItem())) {
-            $a['item'] = $v;
+        if (0 < count($values = $this->getItem())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['item'] = $vs;
+            }
         }
         if (null !== ($v = $this->getLinkId())) {
             $a['linkId'] = $v;
+        }
+        if (null !== ($v = $this->getSubject())) {
+            $a['subject'] = $v;
         }
         if (null !== ($v = $this->getText())) {
             $a['text'] = $v;
@@ -329,9 +436,32 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement implements \Json
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<QuestionnaireResponseItem xmlns="http://hl7.org/fhir"></QuestionnaireResponseItem>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (0 < count($values = $this->getAnswer())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('answer'));
+                }
+            }
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getDefinition())) {
+            $v->xmlSerialize(true, $sxe->addChild('definition'));
+        }
+        if (0 < count($values = $this->getItem())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('item'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getLinkId())) {
+            $v->xmlSerialize(true, $sxe->addChild('linkId'));
+        }
+        if (null !== ($v = $this->getSubject())) {
+            $v->xmlSerialize(true, $sxe->addChild('subject'));
+        }
+        if (null !== ($v = $this->getText())) {
+            $v->xmlSerialize(true, $sxe->addChild('text'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

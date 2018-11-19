@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -92,124 +92,118 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
     const FHIR_TYPE_NAME = 'AllergyIntolerance';
 
     /**
+     * The date on which the existance of the AllergyIntolerance was first asserted or acknowledged.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     */
+    private $assertedDate = null;
+
+    /**
      * The source of the information about the allergy that is recorded.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $asserter = null;
+    private $asserter = null;
 
     /**
      * Category of the identified substance.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRAllergyIntoleranceCategory
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRAllergyIntoleranceCategory[]
      */
-    public $category = null;
+    private $category = [];
 
     /**
      * The clinical status of the allergy or intolerance.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAllergyIntoleranceClinicalStatus
      */
-    public $clinicalStatus = null;
+    private $clinicalStatus = null;
 
     /**
-     * Code for an allergy or intolerance statement (either a positive or a negated/excluded statement).  This may be a code for a substance or pharmaceutical product that is considered to be responsible for the adverse reaction risk (e.g., "Latex"), an allergy or intolerance condition (e.g., "Latex allergy"), or a negated/excluded code for a specific substance or class (e.g., "No latex allergy") or a general or categorical negated statement (e.g.,  "No known allergy", "No known drug allergies").  Note: the substance for a specific reaction may be different from the substance identified as the cause of the risk, but it must be consistent with it. For instance, it may be a more specific substance (e.g. a brand medication) or a composite product that includes the identified substance. It must be clinically safe to only process the 'code' and ignore the 'reaction.substance'.  If a receiving system is unable to confirm that AllergyIntolerance.reaction.substance falls within the semantic scope of AllergyIntolerance.code, then the receiving system should ignore AllergyIntolerance.reaction.substance.
+     * Code for an allergy or intolerance statement (either a positive or a negated/excluded statement).  This may be a code for a substance or pharmaceutical product that is considered to be responsible for the adverse reaction risk (e.g., "Latex"), an allergy or intolerance condition (e.g., "Latex allergy"), or a negated/excluded code for a specific substance or class (e.g., "No latex allergy") or a general or categorical negated statement (e.g.,  "No known allergy", "No known drug allergies").
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $code = null;
+    private $code = null;
 
     /**
      * Estimate of the potential clinical harm, or seriousness, of the reaction to the identified substance.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAllergyIntoleranceCriticality
      */
-    public $criticality = null;
+    private $criticality = null;
 
     /**
-     * The encounter when the allergy or intolerance was asserted.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * This records identifiers associated with this allergy/intolerance concern that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $encounter = null;
-
-    /**
-     * Business identifiers assigned to this AllergyIntolerance by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
-     */
-    public $identifier = null;
+    private $identifier = [];
 
     /**
      * Represents the date and/or time of the last known occurrence of a reaction event.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $lastOccurrence = null;
+    private $lastOccurrence = null;
 
     /**
      * Additional narrative about the propensity for the Adverse Reaction, not captured in other fields.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
-    public $note = null;
+    private $note = [];
 
     /**
-     * Estimated or actual date,  date-time, or age when allergy or intolerance was identified.
+     * Estimated or actual date,  date-time, or age when allergy or intolerance was identified. (choose any one of onset*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
      */
-    public $onsetAge = null;
+    private $onsetAge = null;
 
     /**
-     * Estimated or actual date,  date-time, or age when allergy or intolerance was identified.
+     * Estimated or actual date,  date-time, or age when allergy or intolerance was identified. (choose any one of onset*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $onsetDateTime = null;
+    private $onsetDateTime = null;
 
     /**
-     * Estimated or actual date,  date-time, or age when allergy or intolerance was identified.
+     * Estimated or actual date,  date-time, or age when allergy or intolerance was identified. (choose any one of onset*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public $onsetPeriod = null;
+    private $onsetPeriod = null;
 
     /**
-     * Estimated or actual date,  date-time, or age when allergy or intolerance was identified.
+     * Estimated or actual date,  date-time, or age when allergy or intolerance was identified. (choose any one of onset*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
-    public $onsetRange = null;
+    private $onsetRange = null;
 
     /**
-     * Estimated or actual date,  date-time, or age when allergy or intolerance was identified.
+     * Estimated or actual date,  date-time, or age when allergy or intolerance was identified. (choose any one of onset*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $onsetString = null;
+    private $onsetString = null;
 
     /**
      * The patient who has the allergy or intolerance.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $patient = null;
+    private $patient = null;
 
     /**
      * Details about each adverse reaction event linked to exposure to the identified substance.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAllergyIntolerance\FHIRAllergyIntoleranceReaction
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAllergyIntolerance\FHIRAllergyIntoleranceReaction[]
      */
-    public $reaction = null;
-
-    /**
-     * The recordedDate represents when this particular AllergyIntolerance record was created in the system, which is often a system-generated date.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public $recordedDate = null;
+    private $reaction = [];
 
     /**
      * Individual who recorded the record and takes responsibility for its content.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $recorder = null;
+    private $recorder = null;
 
     /**
      * Identification of the underlying physiological mechanism for the reaction risk.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAllergyIntoleranceType
      */
-    public $type = null;
+    private $type = null;
 
     /**
      * Assertion about certainty associated with the propensity, or potential risk, of a reaction to the identified substance (including pharmaceutical product).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAllergyIntoleranceVerificationStatus
      */
-    public $verificationStatus = null;
+    private $verificationStatus = null;
 
     /**
      * FHIRAllergyIntolerance Constructor
@@ -218,67 +212,238 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
+            if (isset($data['assertedDate'])) {
+                $value = $data['assertedDate'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance::__construct - Property \"assertedDate\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value));
+                }
+                $this->setAssertedDate($value);
+            }
             if (isset($data['asserter'])) {
-                $this->setAsserter($data['asserter']);
+                $value = $data['asserter'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance::__construct - Property \"asserter\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setAsserter($value);
             }
             if (isset($data['category'])) {
-                $this->setCategory($data['category']);
+                $value = $data['category'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRAllergyIntoleranceCategory($v);
+                        }  elseif (is_scalar($v)) {
+                            $v = new FHIRAllergyIntoleranceCategory($v);
+                        }
+                        if (!($v instanceof FHIRAllergyIntoleranceCategory)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance::__construct - Collection field \"category\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAllergyIntoleranceCategory or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addCategory($v);
+                    }
+                }
             }
             if (isset($data['clinicalStatus'])) {
-                $this->setClinicalStatus($data['clinicalStatus']);
+                $value = $data['clinicalStatus'];
+                if (is_array($value)) {
+                    $value = new FHIRAllergyIntoleranceClinicalStatus($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRAllergyIntoleranceClinicalStatus($value);
+                }
+                if (!($value instanceof FHIRAllergyIntoleranceClinicalStatus)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance::__construct - Property \"clinicalStatus\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAllergyIntoleranceClinicalStatus or data to construct type, saw ".gettype($value));
+                }
+                $this->setClinicalStatus($value);
             }
             if (isset($data['code'])) {
-                $this->setCode($data['code']);
+                $value = $data['code'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance::__construct - Property \"code\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setCode($value);
             }
             if (isset($data['criticality'])) {
-                $this->setCriticality($data['criticality']);
-            }
-            if (isset($data['encounter'])) {
-                $this->setEncounter($data['encounter']);
+                $value = $data['criticality'];
+                if (is_array($value)) {
+                    $value = new FHIRAllergyIntoleranceCriticality($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRAllergyIntoleranceCriticality($value);
+                }
+                if (!($value instanceof FHIRAllergyIntoleranceCriticality)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance::__construct - Property \"criticality\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAllergyIntoleranceCriticality or data to construct type, saw ".gettype($value));
+                }
+                $this->setCriticality($value);
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRIdentifier($v);
+                        } 
+                        if (!($v instanceof FHIRIdentifier)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance::__construct - Collection field \"identifier\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addIdentifier($v);
+                    }
+                }
             }
             if (isset($data['lastOccurrence'])) {
-                $this->setLastOccurrence($data['lastOccurrence']);
+                $value = $data['lastOccurrence'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance::__construct - Property \"lastOccurrence\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value));
+                }
+                $this->setLastOccurrence($value);
             }
             if (isset($data['note'])) {
-                $this->setNote($data['note']);
+                $value = $data['note'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRAnnotation($v);
+                        } 
+                        if (!($v instanceof FHIRAnnotation)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance::__construct - Collection field \"note\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAnnotation or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addNote($v);
+                    }
+                }
             }
             if (isset($data['onsetAge'])) {
-                $this->setOnsetAge($data['onsetAge']);
+                $value = $data['onsetAge'];
+                if (is_array($value)) {
+                    $value = new FHIRAge($value);
+                } 
+                if (!($value instanceof FHIRAge)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance::__construct - Property \"onsetAge\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge or data to construct type, saw ".gettype($value));
+                }
+                $this->setOnsetAge($value);
             }
             if (isset($data['onsetDateTime'])) {
-                $this->setOnsetDateTime($data['onsetDateTime']);
+                $value = $data['onsetDateTime'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance::__construct - Property \"onsetDateTime\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value));
+                }
+                $this->setOnsetDateTime($value);
             }
             if (isset($data['onsetPeriod'])) {
-                $this->setOnsetPeriod($data['onsetPeriod']);
+                $value = $data['onsetPeriod'];
+                if (is_array($value)) {
+                    $value = new FHIRPeriod($value);
+                } 
+                if (!($value instanceof FHIRPeriod)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance::__construct - Property \"onsetPeriod\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPeriod or data to construct type, saw ".gettype($value));
+                }
+                $this->setOnsetPeriod($value);
             }
             if (isset($data['onsetRange'])) {
-                $this->setOnsetRange($data['onsetRange']);
+                $value = $data['onsetRange'];
+                if (is_array($value)) {
+                    $value = new FHIRRange($value);
+                } 
+                if (!($value instanceof FHIRRange)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance::__construct - Property \"onsetRange\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRRange or data to construct type, saw ".gettype($value));
+                }
+                $this->setOnsetRange($value);
             }
             if (isset($data['onsetString'])) {
-                $this->setOnsetString($data['onsetString']);
+                $value = $data['onsetString'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance::__construct - Property \"onsetString\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setOnsetString($value);
             }
             if (isset($data['patient'])) {
-                $this->setPatient($data['patient']);
+                $value = $data['patient'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance::__construct - Property \"patient\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setPatient($value);
             }
             if (isset($data['reaction'])) {
-                $this->setReaction($data['reaction']);
-            }
-            if (isset($data['recordedDate'])) {
-                $this->setRecordedDate($data['recordedDate']);
+                $value = $data['reaction'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRAllergyIntoleranceReaction($v);
+                        } 
+                        if (!($v instanceof FHIRAllergyIntoleranceReaction)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance::__construct - Collection field \"reaction\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAllergyIntolerance\FHIRAllergyIntoleranceReaction or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addReaction($v);
+                    }
+                }
             }
             if (isset($data['recorder'])) {
-                $this->setRecorder($data['recorder']);
+                $value = $data['recorder'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance::__construct - Property \"recorder\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setRecorder($value);
             }
             if (isset($data['type'])) {
-                $this->setType($data['type']);
+                $value = $data['type'];
+                if (is_array($value)) {
+                    $value = new FHIRAllergyIntoleranceType($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRAllergyIntoleranceType($value);
+                }
+                if (!($value instanceof FHIRAllergyIntoleranceType)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance::__construct - Property \"type\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAllergyIntoleranceType or data to construct type, saw ".gettype($value));
+                }
+                $this->setType($value);
             }
             if (isset($data['verificationStatus'])) {
-                $this->setVerificationStatus($data['verificationStatus']);
+                $value = $data['verificationStatus'];
+                if (is_array($value)) {
+                    $value = new FHIRAllergyIntoleranceVerificationStatus($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRAllergyIntoleranceVerificationStatus($value);
+                }
+                if (!($value instanceof FHIRAllergyIntoleranceVerificationStatus)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance::__construct - Property \"verificationStatus\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAllergyIntoleranceVerificationStatus or data to construct type, saw ".gettype($value));
+                }
+                $this->setVerificationStatus($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -287,6 +452,39 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
                 ' seen.'
             );
         }
+        parent::__construct($data);
+    }
+
+    /**
+     * The date on which the existance of the AllergyIntolerance was first asserted or acknowledged.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     * @return $this
+     */
+    public function setAssertedDate($assertedDate)
+    {
+        if (null === $assertedDate) {
+            return $this; 
+        }
+        if (is_scalar($assertedDate)) {
+            $assertedDate = new FHIRDateTime($assertedDate);
+        }
+        if (!($assertedDate instanceof FHIRDateTime)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRAllergyIntolerance::setAssertedDate - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or appropriate scalar value, %s seen.',
+                gettype($assertedDate)
+            ));
+        }
+        $this->assertedDate = $assertedDate;
+        return $this;
+    }
+
+    /**
+     * The date on which the existance of the AllergyIntolerance was first asserted or acknowledged.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     */
+    public function getAssertedDate()
+    {
+        return $this->assertedDate;
     }
 
     /**
@@ -312,13 +510,12 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
         return $this->asserter;
     }
 
-
     /**
      * Category of the identified substance.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRAllergyIntoleranceCategory
      * @return $this
      */
-    public function setCategory($category)
+    public function addCategory($category)
     {
         if (null === $category) {
             return $this; 
@@ -328,23 +525,22 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
         }
         if (!($category instanceof FHIRAllergyIntoleranceCategory)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRAllergyIntolerance::setCategory - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRAllergyIntoleranceCategory or appropriate scalar value, %s seen.',
+                'FHIRAllergyIntolerance::addCategory - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRAllergyIntoleranceCategory or appropriate scalar value, %s seen.',
                 gettype($category)
             ));
         }
-        $this->category = $category;
+        $this->category[] = $category;
         return $this;
     }
 
     /**
      * Category of the identified substance.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAllergyIntoleranceCategory
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAllergyIntoleranceCategory[]
      */
     public function getCategory()
     {
         return $this->category;
     }
-
 
     /**
      * The clinical status of the allergy or intolerance.
@@ -378,9 +574,8 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
         return $this->clinicalStatus;
     }
 
-
     /**
-     * Code for an allergy or intolerance statement (either a positive or a negated/excluded statement).  This may be a code for a substance or pharmaceutical product that is considered to be responsible for the adverse reaction risk (e.g., "Latex"), an allergy or intolerance condition (e.g., "Latex allergy"), or a negated/excluded code for a specific substance or class (e.g., "No latex allergy") or a general or categorical negated statement (e.g.,  "No known allergy", "No known drug allergies").  Note: the substance for a specific reaction may be different from the substance identified as the cause of the risk, but it must be consistent with it. For instance, it may be a more specific substance (e.g. a brand medication) or a composite product that includes the identified substance. It must be clinically safe to only process the 'code' and ignore the 'reaction.substance'.  If a receiving system is unable to confirm that AllergyIntolerance.reaction.substance falls within the semantic scope of AllergyIntolerance.code, then the receiving system should ignore AllergyIntolerance.reaction.substance.
+     * Code for an allergy or intolerance statement (either a positive or a negated/excluded statement).  This may be a code for a substance or pharmaceutical product that is considered to be responsible for the adverse reaction risk (e.g., "Latex"), an allergy or intolerance condition (e.g., "Latex allergy"), or a negated/excluded code for a specific substance or class (e.g., "No latex allergy") or a general or categorical negated statement (e.g.,  "No known allergy", "No known drug allergies").
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
@@ -394,14 +589,13 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * Code for an allergy or intolerance statement (either a positive or a negated/excluded statement).  This may be a code for a substance or pharmaceutical product that is considered to be responsible for the adverse reaction risk (e.g., "Latex"), an allergy or intolerance condition (e.g., "Latex allergy"), or a negated/excluded code for a specific substance or class (e.g., "No latex allergy") or a general or categorical negated statement (e.g.,  "No known allergy", "No known drug allergies").  Note: the substance for a specific reaction may be different from the substance identified as the cause of the risk, but it must be consistent with it. For instance, it may be a more specific substance (e.g. a brand medication) or a composite product that includes the identified substance. It must be clinically safe to only process the 'code' and ignore the 'reaction.substance'.  If a receiving system is unable to confirm that AllergyIntolerance.reaction.substance falls within the semantic scope of AllergyIntolerance.code, then the receiving system should ignore AllergyIntolerance.reaction.substance.
+     * Code for an allergy or intolerance statement (either a positive or a negated/excluded statement).  This may be a code for a substance or pharmaceutical product that is considered to be responsible for the adverse reaction risk (e.g., "Latex"), an allergy or intolerance condition (e.g., "Latex allergy"), or a negated/excluded code for a specific substance or class (e.g., "No latex allergy") or a general or categorical negated statement (e.g.,  "No known allergy", "No known drug allergies").
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
         return $this->code;
     }
-
 
     /**
      * Estimate of the potential clinical harm, or seriousness, of the reaction to the identified substance.
@@ -435,54 +629,28 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
         return $this->criticality;
     }
 
-
     /**
-     * The encounter when the allergy or intolerance was asserted.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     * @return $this
-     */
-    public function setEncounter(FHIRReference $encounter = null)
-    {
-        if (null === $encounter) {
-            return $this; 
-        }
-        $this->encounter = $encounter;
-        return $this;
-    }
-
-    /**
-     * The encounter when the allergy or intolerance was asserted.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getEncounter()
-    {
-        return $this->encounter;
-    }
-
-
-    /**
-     * Business identifiers assigned to this AllergyIntolerance by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
+     * This records identifiers associated with this allergy/intolerance concern that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
-    public function setIdentifier(FHIRIdentifier $identifier = null)
+    public function addIdentifier(FHIRIdentifier $identifier = null)
     {
         if (null === $identifier) {
             return $this; 
         }
-        $this->identifier = $identifier;
+        $this->identifier[] = $identifier;
         return $this;
     }
 
     /**
-     * Business identifiers assigned to this AllergyIntolerance by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * This records identifiers associated with this allergy/intolerance concern that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
         return $this->identifier;
     }
-
 
     /**
      * Represents the date and/or time of the last known occurrence of a reaction event.
@@ -516,33 +684,31 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
         return $this->lastOccurrence;
     }
 
-
     /**
      * Additional narrative about the propensity for the Adverse Reaction, not captured in other fields.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation
      * @return $this
      */
-    public function setNote(FHIRAnnotation $note = null)
+    public function addNote(FHIRAnnotation $note = null)
     {
         if (null === $note) {
             return $this; 
         }
-        $this->note = $note;
+        $this->note[] = $note;
         return $this;
     }
 
     /**
      * Additional narrative about the propensity for the Adverse Reaction, not captured in other fields.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
         return $this->note;
     }
 
-
     /**
-     * Estimated or actual date,  date-time, or age when allergy or intolerance was identified.
+     * Estimated or actual date,  date-time, or age when allergy or intolerance was identified. (choose any one of onset*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
      * @return $this
      */
@@ -556,7 +722,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * Estimated or actual date,  date-time, or age when allergy or intolerance was identified.
+     * Estimated or actual date,  date-time, or age when allergy or intolerance was identified. (choose any one of onset*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
      */
     public function getOnsetAge()
@@ -564,9 +730,8 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
         return $this->onsetAge;
     }
 
-
     /**
-     * Estimated or actual date,  date-time, or age when allergy or intolerance was identified.
+     * Estimated or actual date,  date-time, or age when allergy or intolerance was identified. (choose any one of onset*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      * @return $this
      */
@@ -589,7 +754,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * Estimated or actual date,  date-time, or age when allergy or intolerance was identified.
+     * Estimated or actual date,  date-time, or age when allergy or intolerance was identified. (choose any one of onset*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getOnsetDateTime()
@@ -597,9 +762,8 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
         return $this->onsetDateTime;
     }
 
-
     /**
-     * Estimated or actual date,  date-time, or age when allergy or intolerance was identified.
+     * Estimated or actual date,  date-time, or age when allergy or intolerance was identified. (choose any one of onset*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
      * @return $this
      */
@@ -613,7 +777,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * Estimated or actual date,  date-time, or age when allergy or intolerance was identified.
+     * Estimated or actual date,  date-time, or age when allergy or intolerance was identified. (choose any one of onset*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getOnsetPeriod()
@@ -621,9 +785,8 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
         return $this->onsetPeriod;
     }
 
-
     /**
-     * Estimated or actual date,  date-time, or age when allergy or intolerance was identified.
+     * Estimated or actual date,  date-time, or age when allergy or intolerance was identified. (choose any one of onset*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRRange
      * @return $this
      */
@@ -637,7 +800,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * Estimated or actual date,  date-time, or age when allergy or intolerance was identified.
+     * Estimated or actual date,  date-time, or age when allergy or intolerance was identified. (choose any one of onset*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public function getOnsetRange()
@@ -645,9 +808,8 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
         return $this->onsetRange;
     }
 
-
     /**
-     * Estimated or actual date,  date-time, or age when allergy or intolerance was identified.
+     * Estimated or actual date,  date-time, or age when allergy or intolerance was identified. (choose any one of onset*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
@@ -670,14 +832,13 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * Estimated or actual date,  date-time, or age when allergy or intolerance was identified.
+     * Estimated or actual date,  date-time, or age when allergy or intolerance was identified. (choose any one of onset*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getOnsetString()
     {
         return $this->onsetString;
     }
-
 
     /**
      * The patient who has the allergy or intolerance.
@@ -702,63 +863,28 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
         return $this->patient;
     }
 
-
     /**
      * Details about each adverse reaction event linked to exposure to the identified substance.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAllergyIntolerance\FHIRAllergyIntoleranceReaction
      * @return $this
      */
-    public function setReaction(FHIRAllergyIntoleranceReaction $reaction = null)
+    public function addReaction(FHIRAllergyIntoleranceReaction $reaction = null)
     {
         if (null === $reaction) {
             return $this; 
         }
-        $this->reaction = $reaction;
+        $this->reaction[] = $reaction;
         return $this;
     }
 
     /**
      * Details about each adverse reaction event linked to exposure to the identified substance.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAllergyIntolerance\FHIRAllergyIntoleranceReaction
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAllergyIntolerance\FHIRAllergyIntoleranceReaction[]
      */
     public function getReaction()
     {
         return $this->reaction;
     }
-
-
-    /**
-     * The recordedDate represents when this particular AllergyIntolerance record was created in the system, which is often a system-generated date.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     * @return $this
-     */
-    public function setRecordedDate($recordedDate)
-    {
-        if (null === $recordedDate) {
-            return $this; 
-        }
-        if (is_scalar($recordedDate)) {
-            $recordedDate = new FHIRDateTime($recordedDate);
-        }
-        if (!($recordedDate instanceof FHIRDateTime)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRAllergyIntolerance::setRecordedDate - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or appropriate scalar value, %s seen.',
-                gettype($recordedDate)
-            ));
-        }
-        $this->recordedDate = $recordedDate;
-        return $this;
-    }
-
-    /**
-     * The recordedDate represents when this particular AllergyIntolerance record was created in the system, which is often a system-generated date.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public function getRecordedDate()
-    {
-        return $this->recordedDate;
-    }
-
 
     /**
      * Individual who recorded the record and takes responsibility for its content.
@@ -782,7 +908,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
     {
         return $this->recorder;
     }
-
 
     /**
      * Identification of the underlying physiological mechanism for the reaction risk.
@@ -816,7 +941,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
         return $this->type;
     }
 
-
     /**
      * Assertion about certainty associated with the propensity, or potential risk, of a reaction to the identified substance (including pharmaceutical product).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRAllergyIntoleranceVerificationStatus
@@ -849,7 +973,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
         return $this->verificationStatus;
     }
 
-
     /**
      * @return string
      */
@@ -865,11 +988,22 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
     {
         $a = parent::jsonSerialize();
         $a['resourceType'] = self::FHIR_TYPE_NAME;
+        if (null !== ($v = $this->getAssertedDate())) {
+            $a['assertedDate'] = $v;
+        }
         if (null !== ($v = $this->getAsserter())) {
             $a['asserter'] = $v;
         }
-        if (null !== ($v = $this->getCategory())) {
-            $a['category'] = $v;
+        if (0 < count($values = $this->getCategory())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['category'] = $vs;
+            }
         }
         if (null !== ($v = $this->getClinicalStatus())) {
             $a['clinicalStatus'] = $v;
@@ -880,17 +1014,30 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
         if (null !== ($v = $this->getCriticality())) {
             $a['criticality'] = $v;
         }
-        if (null !== ($v = $this->getEncounter())) {
-            $a['encounter'] = $v;
-        }
-        if (null !== ($v = $this->getIdentifier())) {
-            $a['identifier'] = $v;
+        if (0 < count($values = $this->getIdentifier())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['identifier'] = $vs;
+            }
         }
         if (null !== ($v = $this->getLastOccurrence())) {
             $a['lastOccurrence'] = $v;
         }
-        if (null !== ($v = $this->getNote())) {
-            $a['note'] = $v;
+        if (0 < count($values = $this->getNote())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['note'] = $vs;
+            }
         }
         if (null !== ($v = $this->getOnsetAge())) {
             $a['onsetAge'] = $v;
@@ -910,11 +1057,16 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
         if (null !== ($v = $this->getPatient())) {
             $a['patient'] = $v;
         }
-        if (null !== ($v = $this->getReaction())) {
-            $a['reaction'] = $v;
-        }
-        if (null !== ($v = $this->getRecordedDate())) {
-            $a['recordedDate'] = $v;
+        if (0 < count($values = $this->getReaction())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['reaction'] = $vs;
+            }
         }
         if (null !== ($v = $this->getRecorder())) {
             $a['recorder'] = $v;
@@ -938,9 +1090,79 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<AllergyIntolerance xmlns="http://hl7.org/fhir"></AllergyIntolerance>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getAssertedDate())) {
+            $v->xmlSerialize(true, $sxe->addChild('assertedDate'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getAsserter())) {
+            $v->xmlSerialize(true, $sxe->addChild('asserter'));
+        }
+        if (0 < count($values = $this->getCategory())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('category'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getClinicalStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('clinicalStatus'));
+        }
+        if (null !== ($v = $this->getCode())) {
+            $v->xmlSerialize(true, $sxe->addChild('code'));
+        }
+        if (null !== ($v = $this->getCriticality())) {
+            $v->xmlSerialize(true, $sxe->addChild('criticality'));
+        }
+        if (0 < count($values = $this->getIdentifier())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('identifier'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getLastOccurrence())) {
+            $v->xmlSerialize(true, $sxe->addChild('lastOccurrence'));
+        }
+        if (0 < count($values = $this->getNote())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('note'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getOnsetAge())) {
+            $v->xmlSerialize(true, $sxe->addChild('onsetAge'));
+        }
+        if (null !== ($v = $this->getOnsetDateTime())) {
+            $v->xmlSerialize(true, $sxe->addChild('onsetDateTime'));
+        }
+        if (null !== ($v = $this->getOnsetPeriod())) {
+            $v->xmlSerialize(true, $sxe->addChild('onsetPeriod'));
+        }
+        if (null !== ($v = $this->getOnsetRange())) {
+            $v->xmlSerialize(true, $sxe->addChild('onsetRange'));
+        }
+        if (null !== ($v = $this->getOnsetString())) {
+            $v->xmlSerialize(true, $sxe->addChild('onsetString'));
+        }
+        if (null !== ($v = $this->getPatient())) {
+            $v->xmlSerialize(true, $sxe->addChild('patient'));
+        }
+        if (0 < count($values = $this->getReaction())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('reaction'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getRecorder())) {
+            $v->xmlSerialize(true, $sxe->addChild('recorder'));
+        }
+        if (null !== ($v = $this->getType())) {
+            $v->xmlSerialize(true, $sxe->addChild('type'));
+        }
+        if (null !== ($v = $this->getVerificationStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('verificationStatus'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

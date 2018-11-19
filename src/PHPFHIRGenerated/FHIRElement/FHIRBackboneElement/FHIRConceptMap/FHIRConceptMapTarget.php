@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -68,7 +68,7 @@ use PHPFHIRGenerated\FHIRElement\FHIRConceptMapEquivalence;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
 
 /**
- * A statement of relationships from one set of concepts to one or more other concepts - either concepts in code systems, or data element/data element concepts, or classes in class models.
+ * A statement of relationships from one set of concepts to one or more other concepts - either code systems or data elements, or classes in class models.
  *
  * Class FHIRConceptMapTarget
  * @package PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap
@@ -82,37 +82,37 @@ class FHIRConceptMapTarget extends FHIRBackboneElement implements \JsonSerializa
      * Identity (code or path) or the element/item that the map refers to.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public $code = null;
+    private $code = null;
 
     /**
      * A description of status/issues in mapping that conveys additional information not represented in  the structured data.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $comment = null;
+    private $comment = null;
 
     /**
      * A set of additional dependencies for this mapping to hold. This mapping is only applicable if the specified element can be resolved, and it has the specified value.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn[]
      */
-    public $dependsOn = null;
+    private $dependsOn = [];
 
     /**
      * The display for the code. The display is only provided to help editors when editing the concept map.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $display = null;
+    private $display = null;
 
     /**
      * The equivalence between the source and target concepts (counting for the dependencies and products). The equivalence is read from target to source (e.g. the target is 'wider' than the source).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRConceptMapEquivalence
      */
-    public $equivalence = null;
+    private $equivalence = null;
 
     /**
      * A set of additional outcomes from this mapping to other elements. To properly execute this mapping, the specified element must be mapped to some data element or source that is in context. The mapping may still be useful without a place for the additional data elements, but the equivalence cannot be relied on.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn[]
      */
-    public $product = null;
+    private $product = [];
 
     /**
      * FHIRConceptMapTarget Constructor
@@ -121,25 +121,86 @@ class FHIRConceptMapTarget extends FHIRBackboneElement implements \JsonSerializa
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['code'])) {
-                $this->setCode($data['code']);
+                $value = $data['code'];
+                if (is_array($value)) {
+                    $value = new FHIRCode($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRCode($value);
+                }
+                if (!($value instanceof FHIRCode)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapTarget::__construct - Property \"code\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or data to construct type, saw ".gettype($value));
+                }
+                $this->setCode($value);
             }
             if (isset($data['comment'])) {
-                $this->setComment($data['comment']);
+                $value = $data['comment'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapTarget::__construct - Property \"comment\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setComment($value);
             }
             if (isset($data['dependsOn'])) {
-                $this->setDependsOn($data['dependsOn']);
+                $value = $data['dependsOn'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRConceptMapDependsOn($v);
+                        } 
+                        if (!($v instanceof FHIRConceptMapDependsOn)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapTarget::__construct - Collection field \"dependsOn\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addDependsOn($v);
+                    }
+                }
             }
             if (isset($data['display'])) {
-                $this->setDisplay($data['display']);
+                $value = $data['display'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapTarget::__construct - Property \"display\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setDisplay($value);
             }
             if (isset($data['equivalence'])) {
-                $this->setEquivalence($data['equivalence']);
+                $value = $data['equivalence'];
+                if (is_array($value)) {
+                    $value = new FHIRConceptMapEquivalence($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRConceptMapEquivalence($value);
+                }
+                if (!($value instanceof FHIRConceptMapEquivalence)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapTarget::__construct - Property \"equivalence\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRConceptMapEquivalence or data to construct type, saw ".gettype($value));
+                }
+                $this->setEquivalence($value);
             }
             if (isset($data['product'])) {
-                $this->setProduct($data['product']);
+                $value = $data['product'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRConceptMapDependsOn($v);
+                        } 
+                        if (!($v instanceof FHIRConceptMapDependsOn)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapTarget::__construct - Collection field \"product\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addProduct($v);
+                    }
+                }
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -148,6 +209,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement implements \JsonSerializa
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -182,7 +244,6 @@ class FHIRConceptMapTarget extends FHIRBackboneElement implements \JsonSerializa
         return $this->code;
     }
 
-
     /**
      * A description of status/issues in mapping that conveys additional information not represented in  the structured data.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -215,30 +276,28 @@ class FHIRConceptMapTarget extends FHIRBackboneElement implements \JsonSerializa
         return $this->comment;
     }
 
-
     /**
      * A set of additional dependencies for this mapping to hold. This mapping is only applicable if the specified element can be resolved, and it has the specified value.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn
      * @return $this
      */
-    public function setDependsOn(FHIRConceptMapDependsOn $dependsOn = null)
+    public function addDependsOn(FHIRConceptMapDependsOn $dependsOn = null)
     {
         if (null === $dependsOn) {
             return $this; 
         }
-        $this->dependsOn = $dependsOn;
+        $this->dependsOn[] = $dependsOn;
         return $this;
     }
 
     /**
      * A set of additional dependencies for this mapping to hold. This mapping is only applicable if the specified element can be resolved, and it has the specified value.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn[]
      */
     public function getDependsOn()
     {
         return $this->dependsOn;
     }
-
 
     /**
      * The display for the code. The display is only provided to help editors when editing the concept map.
@@ -272,7 +331,6 @@ class FHIRConceptMapTarget extends FHIRBackboneElement implements \JsonSerializa
         return $this->display;
     }
 
-
     /**
      * The equivalence between the source and target concepts (counting for the dependencies and products). The equivalence is read from target to source (e.g. the target is 'wider' than the source).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRConceptMapEquivalence
@@ -305,30 +363,28 @@ class FHIRConceptMapTarget extends FHIRBackboneElement implements \JsonSerializa
         return $this->equivalence;
     }
 
-
     /**
      * A set of additional outcomes from this mapping to other elements. To properly execute this mapping, the specified element must be mapped to some data element or source that is in context. The mapping may still be useful without a place for the additional data elements, but the equivalence cannot be relied on.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn
      * @return $this
      */
-    public function setProduct(FHIRConceptMapDependsOn $product = null)
+    public function addProduct(FHIRConceptMapDependsOn $product = null)
     {
         if (null === $product) {
             return $this; 
         }
-        $this->product = $product;
+        $this->product[] = $product;
         return $this;
     }
 
     /**
      * A set of additional outcomes from this mapping to other elements. To properly execute this mapping, the specified element must be mapped to some data element or source that is in context. The mapping may still be useful without a place for the additional data elements, but the equivalence cannot be relied on.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn[]
      */
     public function getProduct()
     {
         return $this->product;
     }
-
 
     /**
      * @return string
@@ -350,8 +406,16 @@ class FHIRConceptMapTarget extends FHIRBackboneElement implements \JsonSerializa
         if (null !== ($v = $this->getComment())) {
             $a['comment'] = $v;
         }
-        if (null !== ($v = $this->getDependsOn())) {
-            $a['dependsOn'] = $v;
+        if (0 < count($values = $this->getDependsOn())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['dependsOn'] = $vs;
+            }
         }
         if (null !== ($v = $this->getDisplay())) {
             $a['display'] = $v;
@@ -359,8 +423,16 @@ class FHIRConceptMapTarget extends FHIRBackboneElement implements \JsonSerializa
         if (null !== ($v = $this->getEquivalence())) {
             $a['equivalence'] = $v;
         }
-        if (null !== ($v = $this->getProduct())) {
-            $a['product'] = $v;
+        if (0 < count($values = $this->getProduct())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['product'] = $vs;
+            }
         }
         return $a;
     }
@@ -375,9 +447,32 @@ class FHIRConceptMapTarget extends FHIRBackboneElement implements \JsonSerializa
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ConceptMapTarget xmlns="http://hl7.org/fhir"></ConceptMapTarget>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getCode())) {
+            $v->xmlSerialize(true, $sxe->addChild('code'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getComment())) {
+            $v->xmlSerialize(true, $sxe->addChild('comment'));
+        }
+        if (0 < count($values = $this->getDependsOn())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('dependsOn'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getDisplay())) {
+            $v->xmlSerialize(true, $sxe->addChild('display'));
+        }
+        if (null !== ($v = $this->getEquivalence())) {
+            $v->xmlSerialize(true, $sxe->addChild('equivalence'));
+        }
+        if (0 < count($values = $this->getProduct())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('product'));
+                }
+            }
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

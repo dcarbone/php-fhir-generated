@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRObservation;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRObservation;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -62,11 +62,10 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRObservation;
  * 
  */
 
+use PHPFHIRGenerated\FHIRElement\FHIRAttachment;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\FHIRElement\FHIRBoolean;
 use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
 use PHPFHIRGenerated\FHIRElement\FHIRDateTime;
-use PHPFHIRGenerated\FHIRElement\FHIRInteger;
 use PHPFHIRGenerated\FHIRElement\FHIRPeriod;
 use PHPFHIRGenerated\FHIRElement\FHIRQuantity;
 use PHPFHIRGenerated\FHIRElement\FHIRRange;
@@ -90,91 +89,85 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
      * Describes what was observed. Sometimes this is called the observation "code".
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $code = null;
+    private $code = null;
 
     /**
-     * Provides a reason why the expected value in the element Observation.component.value[x] is missing.
+     * Provides a reason why the expected value in the element Observation.value[x] is missing.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $dataAbsentReason = null;
+    private $dataAbsentReason = null;
 
     /**
-     * A categorical assessment of an observation value.  For example, high, low, normal.
+     * The assessment made based on the result of the observation.  Intended as a simple compact code often placed adjacent to the result value in reports and flow sheets to signal the meaning/normalcy status of the result. Otherwise known as abnormal flag.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $interpretation = null;
+    private $interpretation = null;
 
     /**
      * Guidance on how to interpret the value by comparison to a normal or recommended range.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationReferenceRange
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationReferenceRange[]
      */
-    public $referenceRange = null;
+    private $referenceRange = [];
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
-    public $valueBoolean = null;
+    private $valueAttachment = null;
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value.
+     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $valueCodeableConcept = null;
+    private $valueCodeableConcept = null;
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value.
+     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $valueDateTime = null;
+    private $valueDateTime = null;
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
-     */
-    public $valueInteger = null;
-
-    /**
-     * The information determined as a result of making the observation, if the information has a simple value.
+     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public $valuePeriod = null;
+    private $valuePeriod = null;
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value.
+     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    public $valueQuantity = null;
+    private $valueQuantity = null;
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value.
+     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
-    public $valueRange = null;
+    private $valueRange = null;
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value.
+     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
-    public $valueRatio = null;
+    private $valueRatio = null;
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value.
+     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRSampledData
      */
-    public $valueSampledData = null;
+    private $valueSampledData = null;
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value.
+     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $valueString = null;
+    private $valueString = null;
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value.
+     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
-    public $valueTime = null;
+    private $valueTime = null;
 
     /**
      * FHIRObservationComponent Constructor
@@ -183,52 +176,158 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['code'])) {
-                $this->setCode($data['code']);
+                $value = $data['code'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationComponent::__construct - Property \"code\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setCode($value);
             }
             if (isset($data['dataAbsentReason'])) {
-                $this->setDataAbsentReason($data['dataAbsentReason']);
+                $value = $data['dataAbsentReason'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationComponent::__construct - Property \"dataAbsentReason\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setDataAbsentReason($value);
             }
             if (isset($data['interpretation'])) {
-                $this->setInterpretation($data['interpretation']);
+                $value = $data['interpretation'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationComponent::__construct - Property \"interpretation\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setInterpretation($value);
             }
             if (isset($data['referenceRange'])) {
-                $this->setReferenceRange($data['referenceRange']);
+                $value = $data['referenceRange'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRObservationReferenceRange($v);
+                        } 
+                        if (!($v instanceof FHIRObservationReferenceRange)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationComponent::__construct - Collection field \"referenceRange\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationReferenceRange or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addReferenceRange($v);
+                    }
+                }
             }
-            if (isset($data['valueBoolean'])) {
-                $this->setValueBoolean($data['valueBoolean']);
+            if (isset($data['valueAttachment'])) {
+                $value = $data['valueAttachment'];
+                if (is_array($value)) {
+                    $value = new FHIRAttachment($value);
+                } 
+                if (!($value instanceof FHIRAttachment)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationComponent::__construct - Property \"valueAttachment\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAttachment or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueAttachment($value);
             }
             if (isset($data['valueCodeableConcept'])) {
-                $this->setValueCodeableConcept($data['valueCodeableConcept']);
+                $value = $data['valueCodeableConcept'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationComponent::__construct - Property \"valueCodeableConcept\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueCodeableConcept($value);
             }
             if (isset($data['valueDateTime'])) {
-                $this->setValueDateTime($data['valueDateTime']);
-            }
-            if (isset($data['valueInteger'])) {
-                $this->setValueInteger($data['valueInteger']);
+                $value = $data['valueDateTime'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationComponent::__construct - Property \"valueDateTime\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueDateTime($value);
             }
             if (isset($data['valuePeriod'])) {
-                $this->setValuePeriod($data['valuePeriod']);
+                $value = $data['valuePeriod'];
+                if (is_array($value)) {
+                    $value = new FHIRPeriod($value);
+                } 
+                if (!($value instanceof FHIRPeriod)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationComponent::__construct - Property \"valuePeriod\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPeriod or data to construct type, saw ".gettype($value));
+                }
+                $this->setValuePeriod($value);
             }
             if (isset($data['valueQuantity'])) {
-                $this->setValueQuantity($data['valueQuantity']);
+                $value = $data['valueQuantity'];
+                if (is_array($value)) {
+                    $value = new FHIRQuantity($value);
+                } 
+                if (!($value instanceof FHIRQuantity)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationComponent::__construct - Property \"valueQuantity\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueQuantity($value);
             }
             if (isset($data['valueRange'])) {
-                $this->setValueRange($data['valueRange']);
+                $value = $data['valueRange'];
+                if (is_array($value)) {
+                    $value = new FHIRRange($value);
+                } 
+                if (!($value instanceof FHIRRange)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationComponent::__construct - Property \"valueRange\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRRange or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueRange($value);
             }
             if (isset($data['valueRatio'])) {
-                $this->setValueRatio($data['valueRatio']);
+                $value = $data['valueRatio'];
+                if (is_array($value)) {
+                    $value = new FHIRRatio($value);
+                } 
+                if (!($value instanceof FHIRRatio)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationComponent::__construct - Property \"valueRatio\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRRatio or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueRatio($value);
             }
             if (isset($data['valueSampledData'])) {
-                $this->setValueSampledData($data['valueSampledData']);
+                $value = $data['valueSampledData'];
+                if (is_array($value)) {
+                    $value = new FHIRSampledData($value);
+                } 
+                if (!($value instanceof FHIRSampledData)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationComponent::__construct - Property \"valueSampledData\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRSampledData or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueSampledData($value);
             }
             if (isset($data['valueString'])) {
-                $this->setValueString($data['valueString']);
+                $value = $data['valueString'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationComponent::__construct - Property \"valueString\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueString($value);
             }
             if (isset($data['valueTime'])) {
-                $this->setValueTime($data['valueTime']);
+                $value = $data['valueTime'];
+                if (is_array($value)) {
+                    $value = new FHIRTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRTime($value);
+                }
+                if (!($value instanceof FHIRTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationComponent::__construct - Property \"valueTime\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRTime or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueTime($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -237,6 +336,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -262,9 +362,8 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
         return $this->code;
     }
 
-
     /**
-     * Provides a reason why the expected value in the element Observation.component.value[x] is missing.
+     * Provides a reason why the expected value in the element Observation.value[x] is missing.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
@@ -278,7 +377,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * Provides a reason why the expected value in the element Observation.component.value[x] is missing.
+     * Provides a reason why the expected value in the element Observation.value[x] is missing.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getDataAbsentReason()
@@ -286,9 +385,8 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
         return $this->dataAbsentReason;
     }
 
-
     /**
-     * A categorical assessment of an observation value.  For example, high, low, normal.
+     * The assessment made based on the result of the observation.  Intended as a simple compact code often placed adjacent to the result value in reports and flow sheets to signal the meaning/normalcy status of the result. Otherwise known as abnormal flag.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
@@ -302,7 +400,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * A categorical assessment of an observation value.  For example, high, low, normal.
+     * The assessment made based on the result of the observation.  Intended as a simple compact code often placed adjacent to the result value in reports and flow sheets to signal the meaning/normalcy status of the result. Otherwise known as abnormal flag.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getInterpretation()
@@ -310,66 +408,54 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
         return $this->interpretation;
     }
 
-
     /**
      * Guidance on how to interpret the value by comparison to a normal or recommended range.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationReferenceRange
      * @return $this
      */
-    public function setReferenceRange(FHIRObservationReferenceRange $referenceRange = null)
+    public function addReferenceRange(FHIRObservationReferenceRange $referenceRange = null)
     {
         if (null === $referenceRange) {
             return $this; 
         }
-        $this->referenceRange = $referenceRange;
+        $this->referenceRange[] = $referenceRange;
         return $this;
     }
 
     /**
      * Guidance on how to interpret the value by comparison to a normal or recommended range.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationReferenceRange
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationReferenceRange[]
      */
     public function getReferenceRange()
     {
         return $this->referenceRange;
     }
 
-
     /**
-     * The information determined as a result of making the observation, if the information has a simple value.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRAttachment
      * @return $this
      */
-    public function setValueBoolean($valueBoolean)
+    public function setValueAttachment(FHIRAttachment $valueAttachment = null)
     {
-        if (null === $valueBoolean) {
+        if (null === $valueAttachment) {
             return $this; 
         }
-        if (is_scalar($valueBoolean)) {
-            $valueBoolean = new FHIRBoolean($valueBoolean);
-        }
-        if (!($valueBoolean instanceof FHIRBoolean)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRObservationComponent::setValueBoolean - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or appropriate scalar value, %s seen.',
-                gettype($valueBoolean)
-            ));
-        }
-        $this->valueBoolean = $valueBoolean;
+        $this->valueAttachment = $valueAttachment;
         return $this;
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
-    public function getValueBoolean()
+    public function getValueAttachment()
     {
-        return $this->valueBoolean;
+        return $this->valueAttachment;
     }
 
-
     /**
-     * The information determined as a result of making the observation, if the information has a simple value.
+     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
@@ -383,7 +469,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value.
+     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getValueCodeableConcept()
@@ -391,9 +477,8 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
         return $this->valueCodeableConcept;
     }
 
-
     /**
-     * The information determined as a result of making the observation, if the information has a simple value.
+     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      * @return $this
      */
@@ -416,7 +501,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value.
+     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getValueDateTime()
@@ -424,42 +509,8 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
         return $this->valueDateTime;
     }
 
-
     /**
-     * The information determined as a result of making the observation, if the information has a simple value.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRInteger
-     * @return $this
-     */
-    public function setValueInteger($valueInteger)
-    {
-        if (null === $valueInteger) {
-            return $this; 
-        }
-        if (is_scalar($valueInteger)) {
-            $valueInteger = new FHIRInteger($valueInteger);
-        }
-        if (!($valueInteger instanceof FHIRInteger)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRObservationComponent::setValueInteger - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRInteger or appropriate scalar value, %s seen.',
-                gettype($valueInteger)
-            ));
-        }
-        $this->valueInteger = $valueInteger;
-        return $this;
-    }
-
-    /**
-     * The information determined as a result of making the observation, if the information has a simple value.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRInteger
-     */
-    public function getValueInteger()
-    {
-        return $this->valueInteger;
-    }
-
-
-    /**
-     * The information determined as a result of making the observation, if the information has a simple value.
+     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
      * @return $this
      */
@@ -473,7 +524,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value.
+     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getValuePeriod()
@@ -481,9 +532,8 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
         return $this->valuePeriod;
     }
 
-
     /**
-     * The information determined as a result of making the observation, if the information has a simple value.
+     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity
      * @return $this
      */
@@ -497,7 +547,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value.
+     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public function getValueQuantity()
@@ -505,9 +555,8 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
         return $this->valueQuantity;
     }
 
-
     /**
-     * The information determined as a result of making the observation, if the information has a simple value.
+     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRRange
      * @return $this
      */
@@ -521,7 +570,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value.
+     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public function getValueRange()
@@ -529,9 +578,8 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
         return $this->valueRange;
     }
 
-
     /**
-     * The information determined as a result of making the observation, if the information has a simple value.
+     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRRatio
      * @return $this
      */
@@ -545,7 +593,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value.
+     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
     public function getValueRatio()
@@ -553,9 +601,8 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
         return $this->valueRatio;
     }
 
-
     /**
-     * The information determined as a result of making the observation, if the information has a simple value.
+     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRSampledData
      * @return $this
      */
@@ -569,7 +616,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value.
+     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRSampledData
      */
     public function getValueSampledData()
@@ -577,9 +624,8 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
         return $this->valueSampledData;
     }
 
-
     /**
-     * The information determined as a result of making the observation, if the information has a simple value.
+     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
@@ -602,7 +648,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value.
+     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getValueString()
@@ -610,9 +656,8 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
         return $this->valueString;
     }
 
-
     /**
-     * The information determined as a result of making the observation, if the information has a simple value.
+     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRTime
      * @return $this
      */
@@ -635,14 +680,13 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value.
+     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRTime
      */
     public function getValueTime()
     {
         return $this->valueTime;
     }
-
 
     /**
      * @return string
@@ -667,20 +711,25 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
         if (null !== ($v = $this->getInterpretation())) {
             $a['interpretation'] = $v;
         }
-        if (null !== ($v = $this->getReferenceRange())) {
-            $a['referenceRange'] = $v;
+        if (0 < count($values = $this->getReferenceRange())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['referenceRange'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getValueBoolean())) {
-            $a['valueBoolean'] = $v;
+        if (null !== ($v = $this->getValueAttachment())) {
+            $a['valueAttachment'] = $v;
         }
         if (null !== ($v = $this->getValueCodeableConcept())) {
             $a['valueCodeableConcept'] = $v;
         }
         if (null !== ($v = $this->getValueDateTime())) {
             $a['valueDateTime'] = $v;
-        }
-        if (null !== ($v = $this->getValueInteger())) {
-            $a['valueInteger'] = $v;
         }
         if (null !== ($v = $this->getValuePeriod())) {
             $a['valuePeriod'] = $v;
@@ -716,9 +765,52 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ObservationComponent xmlns="http://hl7.org/fhir"></ObservationComponent>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getCode())) {
+            $v->xmlSerialize(true, $sxe->addChild('code'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getDataAbsentReason())) {
+            $v->xmlSerialize(true, $sxe->addChild('dataAbsentReason'));
+        }
+        if (null !== ($v = $this->getInterpretation())) {
+            $v->xmlSerialize(true, $sxe->addChild('interpretation'));
+        }
+        if (0 < count($values = $this->getReferenceRange())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('referenceRange'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getValueAttachment())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueAttachment'));
+        }
+        if (null !== ($v = $this->getValueCodeableConcept())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueCodeableConcept'));
+        }
+        if (null !== ($v = $this->getValueDateTime())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueDateTime'));
+        }
+        if (null !== ($v = $this->getValuePeriod())) {
+            $v->xmlSerialize(true, $sxe->addChild('valuePeriod'));
+        }
+        if (null !== ($v = $this->getValueQuantity())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueQuantity'));
+        }
+        if (null !== ($v = $this->getValueRange())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueRange'));
+        }
+        if (null !== ($v = $this->getValueRatio())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueRatio'));
+        }
+        if (null !== ($v = $this->getValueSampledData())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueSampledData'));
+        }
+        if (null !== ($v = $this->getValueString())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueString'));
+        }
+        if (null !== ($v = $this->getValueTime())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueTime'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

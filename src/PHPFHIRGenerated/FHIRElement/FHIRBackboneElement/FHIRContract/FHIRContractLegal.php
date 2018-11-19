@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRContract;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRContract;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -67,7 +67,7 @@ use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 use PHPFHIRGenerated\FHIRElement\FHIRReference;
 
 /**
- * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a policy or agreement.
+ * A formal agreement between parties regarding the conduct of business, exchange of information or other matters.
  *
  * Class FHIRContractLegal
  * @package PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRContract
@@ -78,16 +78,16 @@ class FHIRContractLegal extends FHIRBackboneElement implements \JsonSerializable
     const FHIR_TYPE_NAME = 'Contract.Legal';
 
     /**
-     * Contract legal text in human renderable form.
+     * Contract legal text in human renderable form. (choose any one of content*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
-    public $contentAttachment = null;
+    private $contentAttachment = null;
 
     /**
-     * Contract legal text in human renderable form.
+     * Contract legal text in human renderable form. (choose any one of content*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $contentReference = null;
+    private $contentReference = null;
 
     /**
      * FHIRContractLegal Constructor
@@ -96,13 +96,26 @@ class FHIRContractLegal extends FHIRBackboneElement implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['contentAttachment'])) {
-                $this->setContentAttachment($data['contentAttachment']);
+                $value = $data['contentAttachment'];
+                if (is_array($value)) {
+                    $value = new FHIRAttachment($value);
+                } 
+                if (!($value instanceof FHIRAttachment)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractLegal::__construct - Property \"contentAttachment\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAttachment or data to construct type, saw ".gettype($value));
+                }
+                $this->setContentAttachment($value);
             }
             if (isset($data['contentReference'])) {
-                $this->setContentReference($data['contentReference']);
+                $value = $data['contentReference'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractLegal::__construct - Property \"contentReference\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setContentReference($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -111,10 +124,11 @@ class FHIRContractLegal extends FHIRBackboneElement implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
-     * Contract legal text in human renderable form.
+     * Contract legal text in human renderable form. (choose any one of content*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRAttachment
      * @return $this
      */
@@ -128,7 +142,7 @@ class FHIRContractLegal extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * Contract legal text in human renderable form.
+     * Contract legal text in human renderable form. (choose any one of content*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public function getContentAttachment()
@@ -136,9 +150,8 @@ class FHIRContractLegal extends FHIRBackboneElement implements \JsonSerializable
         return $this->contentAttachment;
     }
 
-
     /**
-     * Contract legal text in human renderable form.
+     * Contract legal text in human renderable form. (choose any one of content*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
@@ -152,14 +165,13 @@ class FHIRContractLegal extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * Contract legal text in human renderable form.
+     * Contract legal text in human renderable form. (choose any one of content*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getContentReference()
     {
         return $this->contentReference;
     }
-
 
     /**
      * @return string
@@ -194,9 +206,12 @@ class FHIRContractLegal extends FHIRBackboneElement implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ContractLegal xmlns="http://hl7.org/fhir"></ContractLegal>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getContentAttachment())) {
+            $v->xmlSerialize(true, $sxe->addChild('contentAttachment'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getContentReference())) {
+            $v->xmlSerialize(true, $sxe->addChild('contentReference'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

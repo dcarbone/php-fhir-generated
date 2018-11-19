@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRBundle;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRBundle;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -81,34 +81,34 @@ class FHIRBundleResponse extends FHIRBackboneElement implements \JsonSerializabl
     const FHIR_TYPE_NAME = 'Bundle.Response';
 
     /**
-     * The Etag for the resource, if the operation for the entry produced a versioned resource (see [Resource Metadata and Versioning](http.html#versioning) and [Managing Resource Contention](http.html#concurrency)).
+     * The etag for the resource, it the operation for the entry produced a versioned resource (see [Resource Metadata and Versioning](http.html#versioning) and [Managing Resource Contention](http.html#concurrency)).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $etag = null;
+    private $etag = null;
 
     /**
      * The date/time that the resource was modified on the server.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInstant
      */
-    public $lastModified = null;
+    private $lastModified = null;
 
     /**
-     * The location header created by processing this operation, populated if the operation returns a location.
+     * The location header created by processing this operation.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $location = null;
+    private $location = null;
 
     /**
      * An OperationOutcome containing hints and warnings produced as part of processing this entry in a batch or transaction.
      * @var \PHPFHIRGenerated\FHIRResourceContainer
      */
-    public $outcome = null;
+    private $outcome = null;
 
     /**
      * The status code returned by processing this entry. The status SHALL start with a 3 digit HTTP code (e.g. 404) and may contain the standard HTTP description associated with the status code.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $status = null;
+    private $status = null;
 
     /**
      * FHIRBundleResponse Constructor
@@ -117,22 +117,64 @@ class FHIRBundleResponse extends FHIRBackboneElement implements \JsonSerializabl
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['etag'])) {
-                $this->setEtag($data['etag']);
+                $value = $data['etag'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleResponse::__construct - Property \"etag\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setEtag($value);
             }
             if (isset($data['lastModified'])) {
-                $this->setLastModified($data['lastModified']);
+                $value = $data['lastModified'];
+                if (is_array($value)) {
+                    $value = new FHIRInstant($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRInstant($value);
+                }
+                if (!($value instanceof FHIRInstant)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleResponse::__construct - Property \"lastModified\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRInstant or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setLastModified($value);
             }
             if (isset($data['location'])) {
-                $this->setLocation($data['location']);
+                $value = $data['location'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleResponse::__construct - Property \"location\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setLocation($value);
             }
             if (isset($data['outcome'])) {
-                $this->setOutcome($data['outcome']);
+                $value = $data['outcome'];
+                if (is_array($value)) {
+                    $value = new FHIRResourceContainer($value);
+                } 
+                if (!($value instanceof FHIRResourceContainer)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleResponse::__construct - Property \"outcome\" must either be instance of \PHPFHIRGenerated\FHIRResourceContainer or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setOutcome($value);
             }
             if (isset($data['status'])) {
-                $this->setStatus($data['status']);
+                $value = $data['status'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleResponse::__construct - Property \"status\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setStatus($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -141,10 +183,11 @@ class FHIRBundleResponse extends FHIRBackboneElement implements \JsonSerializabl
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
-     * The Etag for the resource, if the operation for the entry produced a versioned resource (see [Resource Metadata and Versioning](http.html#versioning) and [Managing Resource Contention](http.html#concurrency)).
+     * The etag for the resource, it the operation for the entry produced a versioned resource (see [Resource Metadata and Versioning](http.html#versioning) and [Managing Resource Contention](http.html#concurrency)).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
@@ -167,14 +210,13 @@ class FHIRBundleResponse extends FHIRBackboneElement implements \JsonSerializabl
     }
 
     /**
-     * The Etag for the resource, if the operation for the entry produced a versioned resource (see [Resource Metadata and Versioning](http.html#versioning) and [Managing Resource Contention](http.html#concurrency)).
+     * The etag for the resource, it the operation for the entry produced a versioned resource (see [Resource Metadata and Versioning](http.html#versioning) and [Managing Resource Contention](http.html#concurrency)).
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getEtag()
     {
         return $this->etag;
     }
-
 
     /**
      * The date/time that the resource was modified on the server.
@@ -208,9 +250,8 @@ class FHIRBundleResponse extends FHIRBackboneElement implements \JsonSerializabl
         return $this->lastModified;
     }
 
-
     /**
-     * The location header created by processing this operation, populated if the operation returns a location.
+     * The location header created by processing this operation.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
@@ -233,14 +274,13 @@ class FHIRBundleResponse extends FHIRBackboneElement implements \JsonSerializabl
     }
 
     /**
-     * The location header created by processing this operation, populated if the operation returns a location.
+     * The location header created by processing this operation.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getLocation()
     {
         return $this->location;
     }
-
 
     /**
      * An OperationOutcome containing hints and warnings produced as part of processing this entry in a batch or transaction.
@@ -275,7 +315,6 @@ class FHIRBundleResponse extends FHIRBackboneElement implements \JsonSerializabl
         return isset($this->outcome) ? $this->outcome->jsonSerialize() : null;
     }
 
-
     /**
      * The status code returned by processing this entry. The status SHALL start with a 3 digit HTTP code (e.g. 404) and may contain the standard HTTP description associated with the status code.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -307,7 +346,6 @@ class FHIRBundleResponse extends FHIRBackboneElement implements \JsonSerializabl
     {
         return $this->status;
     }
-
 
     /**
      * @return string
@@ -351,9 +389,21 @@ class FHIRBundleResponse extends FHIRBackboneElement implements \JsonSerializabl
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<BundleResponse xmlns="http://hl7.org/fhir"></BundleResponse>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getEtag())) {
+            $v->xmlSerialize(true, $sxe->addChild('etag'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getLastModified())) {
+            $v->xmlSerialize(true, $sxe->addChild('lastModified'));
+        }
+        if (null !== ($v = $this->getLocation())) {
+            $v->xmlSerialize(true, $sxe->addChild('location'));
+        }
+        if (null !== ($v = $this->getOutcome())) {
+            $v->xmlSerialize(true, $sxe->addChild('outcome'));
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('status'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

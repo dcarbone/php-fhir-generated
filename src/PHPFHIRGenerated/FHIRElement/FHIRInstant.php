@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -67,7 +67,7 @@ use PHPFHIRGenerated\FHIRInstantPrimitive;
 
 /**
  * An instant in time - known at least to the second
- * Note: This is intended for where precisely observed times are required, typically system logs etc., and not human-reported times - for them, see date and dateTime (which can be as precise as instant, but is not required to be) below. Time zone is always required
+ * Note: This is intended for precisely observed times, typically system logs etc., and not human-reported times - for them, see date and dateTime below. Time zone is always required
  * If the element is present, it must have either a @value, an @id, or extensions
  *
  * Class FHIRInstant
@@ -81,7 +81,7 @@ class FHIRInstant extends FHIRElement implements \JsonSerializable
     /**
      * @var \PHPFHIRGenerated\FHIRInstantPrimitive
      */
-    public $value = null;
+    private $value = null;
 
     /**
      * FHIRInstant Constructor
@@ -94,10 +94,18 @@ class FHIRInstant extends FHIRElement implements \JsonSerializable
             $this->setValue($data);
             return;
         }
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['value'])) {
-                $this->setValue($data['value']);
+                $value = $data['value'];
+                if (is_array($value)) {
+                    $value = new FHIRInstantPrimitive($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRInstantPrimitive($value);
+                }
+                if (!($value instanceof FHIRInstantPrimitive)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRInstant::__construct - Property \"value\" must either be instance of \PHPFHIRGenerated\FHIRInstantPrimitive or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setValue($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -106,6 +114,7 @@ class FHIRInstant extends FHIRElement implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -169,11 +178,10 @@ class FHIRInstant extends FHIRElement implements \JsonSerializable
     public function xmlSerialize($returnSXE = false, \SimpleXMLElement $sxe = null)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<instant xmlns="http://hl7.org/fhir"></instant>');
+            $sxe = new \SimpleXMLElement('<instant xmlns="http://hl7.org/fhir" value="'.(string)$this.'">'.(string)$this.'</instant>');
+        } else {
+            $sxe->addAttribute('value', (string)$this);
         }
-        if ($returnSXE) {
-            return $sxe;
-        }
-        return $sxe->saveXML();
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

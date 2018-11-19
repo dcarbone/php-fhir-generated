@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -79,9 +79,9 @@ class FHIRParameters extends FHIRResource implements \JsonSerializable
 
     /**
      * A parameter passed to or received from the operation.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter[]
      */
-    public $parameter = null;
+    private $parameter = [];
 
     /**
      * FHIRParameters Constructor
@@ -90,10 +90,22 @@ class FHIRParameters extends FHIRResource implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['parameter'])) {
-                $this->setParameter($data['parameter']);
+                $value = $data['parameter'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRParametersParameter($v);
+                        } 
+                        if (!($v instanceof FHIRParametersParameter)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRParameters::__construct - Collection field \"parameter\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addParameter($v);
+                    }
+                }
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -102,6 +114,7 @@ class FHIRParameters extends FHIRResource implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -109,24 +122,23 @@ class FHIRParameters extends FHIRResource implements \JsonSerializable
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter
      * @return $this
      */
-    public function setParameter(FHIRParametersParameter $parameter = null)
+    public function addParameter(FHIRParametersParameter $parameter = null)
     {
         if (null === $parameter) {
             return $this; 
         }
-        $this->parameter = $parameter;
+        $this->parameter[] = $parameter;
         return $this;
     }
 
     /**
      * A parameter passed to or received from the operation.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter[]
      */
     public function getParameter()
     {
         return $this->parameter;
     }
-
 
     /**
      * @return string
@@ -143,8 +155,16 @@ class FHIRParameters extends FHIRResource implements \JsonSerializable
     {
         $a = parent::jsonSerialize();
         $a['resourceType'] = self::FHIR_TYPE_NAME;
-        if (null !== ($v = $this->getParameter())) {
-            $a['parameter'] = $v;
+        if (0 < count($values = $this->getParameter())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['parameter'] = $vs;
+            }
         }
         return $a;
     }
@@ -159,9 +179,13 @@ class FHIRParameters extends FHIRResource implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Parameters xmlns="http://hl7.org/fhir"></Parameters>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (0 < count($values = $this->getParameter())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('parameter'));
+                }
+            }
         }
-        return $sxe->saveXML();
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

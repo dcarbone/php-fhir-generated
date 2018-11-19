@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTask;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTask;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -82,19 +82,19 @@ class FHIRTaskRestriction extends FHIRBackboneElement implements \JsonSerializab
      * Over what time-period is fulfillment sought.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public $period = null;
+    private $period = null;
 
     /**
      * For requests that are targeted to more than on potential recipient/target, for whom is fulfillment sought?
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $recipient = null;
+    private $recipient = [];
 
     /**
      * Indicates the number of times the requested action should occur.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
-    public $repetitions = null;
+    private $repetitions = null;
 
     /**
      * FHIRTaskRestriction Constructor
@@ -103,16 +103,44 @@ class FHIRTaskRestriction extends FHIRBackboneElement implements \JsonSerializab
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['period'])) {
-                $this->setPeriod($data['period']);
+                $value = $data['period'];
+                if (is_array($value)) {
+                    $value = new FHIRPeriod($value);
+                } 
+                if (!($value instanceof FHIRPeriod)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskRestriction::__construct - Property \"period\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPeriod or data to construct type, saw ".gettype($value));
+                }
+                $this->setPeriod($value);
             }
             if (isset($data['recipient'])) {
-                $this->setRecipient($data['recipient']);
+                $value = $data['recipient'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskRestriction::__construct - Collection field \"recipient\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addRecipient($v);
+                    }
+                }
             }
             if (isset($data['repetitions'])) {
-                $this->setRepetitions($data['repetitions']);
+                $value = $data['repetitions'];
+                if (is_array($value)) {
+                    $value = new FHIRPositiveInt($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRPositiveInt($value);
+                }
+                if (!($value instanceof FHIRPositiveInt)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskRestriction::__construct - Property \"repetitions\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt or data to construct type, saw ".gettype($value));
+                }
+                $this->setRepetitions($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -121,6 +149,7 @@ class FHIRTaskRestriction extends FHIRBackboneElement implements \JsonSerializab
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -146,30 +175,28 @@ class FHIRTaskRestriction extends FHIRBackboneElement implements \JsonSerializab
         return $this->period;
     }
 
-
     /**
      * For requests that are targeted to more than on potential recipient/target, for whom is fulfillment sought?
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setRecipient(FHIRReference $recipient = null)
+    public function addRecipient(FHIRReference $recipient = null)
     {
         if (null === $recipient) {
             return $this; 
         }
-        $this->recipient = $recipient;
+        $this->recipient[] = $recipient;
         return $this;
     }
 
     /**
      * For requests that are targeted to more than on potential recipient/target, for whom is fulfillment sought?
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getRecipient()
     {
         return $this->recipient;
     }
-
 
     /**
      * Indicates the number of times the requested action should occur.
@@ -203,7 +230,6 @@ class FHIRTaskRestriction extends FHIRBackboneElement implements \JsonSerializab
         return $this->repetitions;
     }
 
-
     /**
      * @return string
      */
@@ -221,8 +247,16 @@ class FHIRTaskRestriction extends FHIRBackboneElement implements \JsonSerializab
         if (null !== ($v = $this->getPeriod())) {
             $a['period'] = $v;
         }
-        if (null !== ($v = $this->getRecipient())) {
-            $a['recipient'] = $v;
+        if (0 < count($values = $this->getRecipient())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['recipient'] = $vs;
+            }
         }
         if (null !== ($v = $this->getRepetitions())) {
             $a['repetitions'] = $v;
@@ -240,9 +274,19 @@ class FHIRTaskRestriction extends FHIRBackboneElement implements \JsonSerializab
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<TaskRestriction xmlns="http://hl7.org/fhir"></TaskRestriction>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getPeriod())) {
+            $v->xmlSerialize(true, $sxe->addChild('period'));
         }
-        return $sxe->saveXML();
+        if (0 < count($values = $this->getRecipient())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('recipient'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getRepetitions())) {
+            $v->xmlSerialize(true, $sxe->addChild('repetitions'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

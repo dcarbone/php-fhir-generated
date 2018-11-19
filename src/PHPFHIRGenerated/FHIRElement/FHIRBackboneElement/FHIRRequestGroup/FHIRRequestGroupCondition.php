@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -81,25 +81,25 @@ class FHIRRequestGroupCondition extends FHIRBackboneElement implements \JsonSeri
      * A brief, natural language description of the condition that effectively communicates the intended semantics.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $description = null;
+    private $description = null;
 
     /**
      * An expression that returns true or false, indicating whether or not the condition is satisfied.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $expression = null;
+    private $expression = null;
 
     /**
      * The kind of condition.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRActionConditionKind
      */
-    public $kind = null;
+    private $kind = null;
 
     /**
      * The media type of the language for the expression.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $language = null;
+    private $language = null;
 
     /**
      * FHIRRequestGroupCondition Constructor
@@ -108,19 +108,54 @@ class FHIRRequestGroupCondition extends FHIRBackboneElement implements \JsonSeri
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['description'])) {
-                $this->setDescription($data['description']);
+                $value = $data['description'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupCondition::__construct - Property \"description\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDescription($value);
             }
             if (isset($data['expression'])) {
-                $this->setExpression($data['expression']);
+                $value = $data['expression'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupCondition::__construct - Property \"expression\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setExpression($value);
             }
             if (isset($data['kind'])) {
-                $this->setKind($data['kind']);
+                $value = $data['kind'];
+                if (is_array($value)) {
+                    $value = new FHIRActionConditionKind($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRActionConditionKind($value);
+                }
+                if (!($value instanceof FHIRActionConditionKind)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupCondition::__construct - Property \"kind\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRActionConditionKind or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setKind($value);
             }
             if (isset($data['language'])) {
-                $this->setLanguage($data['language']);
+                $value = $data['language'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupCondition::__construct - Property \"language\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setLanguage($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -129,6 +164,7 @@ class FHIRRequestGroupCondition extends FHIRBackboneElement implements \JsonSeri
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -163,7 +199,6 @@ class FHIRRequestGroupCondition extends FHIRBackboneElement implements \JsonSeri
         return $this->description;
     }
 
-
     /**
      * An expression that returns true or false, indicating whether or not the condition is satisfied.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -195,7 +230,6 @@ class FHIRRequestGroupCondition extends FHIRBackboneElement implements \JsonSeri
     {
         return $this->expression;
     }
-
 
     /**
      * The kind of condition.
@@ -229,7 +263,6 @@ class FHIRRequestGroupCondition extends FHIRBackboneElement implements \JsonSeri
         return $this->kind;
     }
 
-
     /**
      * The media type of the language for the expression.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -261,7 +294,6 @@ class FHIRRequestGroupCondition extends FHIRBackboneElement implements \JsonSeri
     {
         return $this->language;
     }
-
 
     /**
      * @return string
@@ -302,9 +334,18 @@ class FHIRRequestGroupCondition extends FHIRBackboneElement implements \JsonSeri
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<RequestGroupCondition xmlns="http://hl7.org/fhir"></RequestGroupCondition>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getDescription())) {
+            $v->xmlSerialize(true, $sxe->addChild('description'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getExpression())) {
+            $v->xmlSerialize(true, $sxe->addChild('expression'));
+        }
+        if (null !== ($v = $this->getKind())) {
+            $v->xmlSerialize(true, $sxe->addChild('kind'));
+        }
+        if (null !== ($v = $this->getLanguage())) {
+            $v->xmlSerialize(true, $sxe->addChild('language'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

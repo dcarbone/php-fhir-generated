@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -78,21 +78,21 @@ class FHIRTestReportTest extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Action would contain either an operation or an assertion.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportAction1
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportAction1[]
      */
-    public $action = null;
+    private $action = [];
 
     /**
      * A short description of the test used by test engines for tracking and reporting purposes.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $description = null;
+    private $description = null;
 
     /**
      * The name of this test used for tracking/logging purposes by test engines.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $name = null;
+    private $name = null;
 
     /**
      * FHIRTestReportTest Constructor
@@ -101,16 +101,46 @@ class FHIRTestReportTest extends FHIRBackboneElement implements \JsonSerializabl
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['action'])) {
-                $this->setAction($data['action']);
+                $value = $data['action'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRTestReportAction1($v);
+                        } 
+                        if (!($v instanceof FHIRTestReportAction1)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportTest::__construct - Collection field \"action\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportAction1 or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addAction($v);
+                    }
+                }
             }
             if (isset($data['description'])) {
-                $this->setDescription($data['description']);
+                $value = $data['description'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportTest::__construct - Property \"description\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDescription($value);
             }
             if (isset($data['name'])) {
-                $this->setName($data['name']);
+                $value = $data['name'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportTest::__construct - Property \"name\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setName($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -119,6 +149,7 @@ class FHIRTestReportTest extends FHIRBackboneElement implements \JsonSerializabl
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -126,24 +157,23 @@ class FHIRTestReportTest extends FHIRBackboneElement implements \JsonSerializabl
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportAction1
      * @return $this
      */
-    public function setAction(FHIRTestReportAction1 $action = null)
+    public function addAction(FHIRTestReportAction1 $action = null)
     {
         if (null === $action) {
             return $this; 
         }
-        $this->action = $action;
+        $this->action[] = $action;
         return $this;
     }
 
     /**
      * Action would contain either an operation or an assertion.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportAction1
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportAction1[]
      */
     public function getAction()
     {
         return $this->action;
     }
-
 
     /**
      * A short description of the test used by test engines for tracking and reporting purposes.
@@ -177,7 +207,6 @@ class FHIRTestReportTest extends FHIRBackboneElement implements \JsonSerializabl
         return $this->description;
     }
 
-
     /**
      * The name of this test used for tracking/logging purposes by test engines.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -210,7 +239,6 @@ class FHIRTestReportTest extends FHIRBackboneElement implements \JsonSerializabl
         return $this->name;
     }
 
-
     /**
      * @return string
      */
@@ -225,8 +253,16 @@ class FHIRTestReportTest extends FHIRBackboneElement implements \JsonSerializabl
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getAction())) {
-            $a['action'] = $v;
+        if (0 < count($values = $this->getAction())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['action'] = $vs;
+            }
         }
         if (null !== ($v = $this->getDescription())) {
             $a['description'] = $v;
@@ -247,9 +283,19 @@ class FHIRTestReportTest extends FHIRBackboneElement implements \JsonSerializabl
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<TestReportTest xmlns="http://hl7.org/fhir"></TestReportTest>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (0 < count($values = $this->getAction())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('action'));
+                }
+            }
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getDescription())) {
+            $v->xmlSerialize(true, $sxe->addChild('description'));
+        }
+        if (null !== ($v = $this->getName())) {
+            $v->xmlSerialize(true, $sxe->addChild('name'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -62,8 +62,11 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent;
  * 
  */
 
+use PHPFHIRGenerated\FHIRElement\FHIRAdverseEventCausality;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
+use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
 use PHPFHIRGenerated\FHIRElement\FHIRReference;
+use PHPFHIRGenerated\FHIRElement\FHIRString;
 
 /**
  * Actual or  potential/avoided event causing unintended physical injury resulting from or contributed to by medical care, a research study or other healthcare setting factors that requires additional monitoring, treatment, or hospitalization, or that results in death.
@@ -77,16 +80,46 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement implements \Json
     const FHIR_TYPE_NAME = 'AdverseEvent.SuspectEntity';
 
     /**
-     * Information on the possible cause of the event.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventCausality
+     * causality1 | causality2.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRAdverseEventCausality
      */
-    public $causality = null;
+    private $causality = null;
+
+    /**
+     * assess1 | assess2.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    private $causalityAssessment = null;
+
+    /**
+     * AdverseEvent.suspectEntity.causalityAuthor.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    private $causalityAuthor = null;
+
+    /**
+     * method1 | method2.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    private $causalityMethod = null;
+
+    /**
+     * AdverseEvent.suspectEntity.causalityProductRelatedness.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    private $causalityProductRelatedness = null;
+
+    /**
+     * result1 | result2.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    private $causalityResult = null;
 
     /**
      * Identifies the actual instance of what caused the adverse event.  May be a substance, medication, medication administration, medication statement or a device.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $instance = null;
+    private $instance = null;
 
     /**
      * FHIRAdverseEventSuspectEntity Constructor
@@ -95,13 +128,80 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement implements \Json
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['causality'])) {
-                $this->setCausality($data['causality']);
+                $value = $data['causality'];
+                if (is_array($value)) {
+                    $value = new FHIRAdverseEventCausality($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRAdverseEventCausality($value);
+                }
+                if (!($value instanceof FHIRAdverseEventCausality)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventSuspectEntity::__construct - Property \"causality\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAdverseEventCausality or data to construct type, saw ".gettype($value));
+                }
+                $this->setCausality($value);
+            }
+            if (isset($data['causalityAssessment'])) {
+                $value = $data['causalityAssessment'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventSuspectEntity::__construct - Property \"causalityAssessment\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setCausalityAssessment($value);
+            }
+            if (isset($data['causalityAuthor'])) {
+                $value = $data['causalityAuthor'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventSuspectEntity::__construct - Property \"causalityAuthor\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setCausalityAuthor($value);
+            }
+            if (isset($data['causalityMethod'])) {
+                $value = $data['causalityMethod'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventSuspectEntity::__construct - Property \"causalityMethod\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setCausalityMethod($value);
+            }
+            if (isset($data['causalityProductRelatedness'])) {
+                $value = $data['causalityProductRelatedness'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventSuspectEntity::__construct - Property \"causalityProductRelatedness\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setCausalityProductRelatedness($value);
+            }
+            if (isset($data['causalityResult'])) {
+                $value = $data['causalityResult'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventSuspectEntity::__construct - Property \"causalityResult\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setCausalityResult($value);
             }
             if (isset($data['instance'])) {
-                $this->setInstance($data['instance']);
+                $value = $data['instance'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventSuspectEntity::__construct - Property \"instance\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setInstance($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -110,31 +210,164 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement implements \Json
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
-     * Information on the possible cause of the event.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventCausality
+     * causality1 | causality2.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRAdverseEventCausality
      * @return $this
      */
-    public function setCausality(FHIRAdverseEventCausality $causality = null)
+    public function setCausality($causality)
     {
         if (null === $causality) {
             return $this; 
+        }
+        if (is_scalar($causality)) {
+            $causality = new FHIRAdverseEventCausality($causality);
+        }
+        if (!($causality instanceof FHIRAdverseEventCausality)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRAdverseEventSuspectEntity::setCausality - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRAdverseEventCausality or appropriate scalar value, %s seen.',
+                gettype($causality)
+            ));
         }
         $this->causality = $causality;
         return $this;
     }
 
     /**
-     * Information on the possible cause of the event.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventCausality
+     * causality1 | causality2.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAdverseEventCausality
      */
     public function getCausality()
     {
         return $this->causality;
     }
 
+    /**
+     * assess1 | assess2.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return $this
+     */
+    public function setCausalityAssessment(FHIRCodeableConcept $causalityAssessment = null)
+    {
+        if (null === $causalityAssessment) {
+            return $this; 
+        }
+        $this->causalityAssessment = $causalityAssessment;
+        return $this;
+    }
+
+    /**
+     * assess1 | assess2.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public function getCausalityAssessment()
+    {
+        return $this->causalityAssessment;
+    }
+
+    /**
+     * AdverseEvent.suspectEntity.causalityAuthor.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return $this
+     */
+    public function setCausalityAuthor(FHIRReference $causalityAuthor = null)
+    {
+        if (null === $causalityAuthor) {
+            return $this; 
+        }
+        $this->causalityAuthor = $causalityAuthor;
+        return $this;
+    }
+
+    /**
+     * AdverseEvent.suspectEntity.causalityAuthor.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getCausalityAuthor()
+    {
+        return $this->causalityAuthor;
+    }
+
+    /**
+     * method1 | method2.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return $this
+     */
+    public function setCausalityMethod(FHIRCodeableConcept $causalityMethod = null)
+    {
+        if (null === $causalityMethod) {
+            return $this; 
+        }
+        $this->causalityMethod = $causalityMethod;
+        return $this;
+    }
+
+    /**
+     * method1 | method2.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public function getCausalityMethod()
+    {
+        return $this->causalityMethod;
+    }
+
+    /**
+     * AdverseEvent.suspectEntity.causalityProductRelatedness.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     * @return $this
+     */
+    public function setCausalityProductRelatedness($causalityProductRelatedness)
+    {
+        if (null === $causalityProductRelatedness) {
+            return $this; 
+        }
+        if (is_scalar($causalityProductRelatedness)) {
+            $causalityProductRelatedness = new FHIRString($causalityProductRelatedness);
+        }
+        if (!($causalityProductRelatedness instanceof FHIRString)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRAdverseEventSuspectEntity::setCausalityProductRelatedness - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                gettype($causalityProductRelatedness)
+            ));
+        }
+        $this->causalityProductRelatedness = $causalityProductRelatedness;
+        return $this;
+    }
+
+    /**
+     * AdverseEvent.suspectEntity.causalityProductRelatedness.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getCausalityProductRelatedness()
+    {
+        return $this->causalityProductRelatedness;
+    }
+
+    /**
+     * result1 | result2.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return $this
+     */
+    public function setCausalityResult(FHIRCodeableConcept $causalityResult = null)
+    {
+        if (null === $causalityResult) {
+            return $this; 
+        }
+        $this->causalityResult = $causalityResult;
+        return $this;
+    }
+
+    /**
+     * result1 | result2.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public function getCausalityResult()
+    {
+        return $this->causalityResult;
+    }
 
     /**
      * Identifies the actual instance of what caused the adverse event.  May be a substance, medication, medication administration, medication statement or a device.
@@ -159,7 +392,6 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement implements \Json
         return $this->instance;
     }
 
-
     /**
      * @return string
      */
@@ -177,6 +409,21 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement implements \Json
         if (null !== ($v = $this->getCausality())) {
             $a['causality'] = $v;
         }
+        if (null !== ($v = $this->getCausalityAssessment())) {
+            $a['causalityAssessment'] = $v;
+        }
+        if (null !== ($v = $this->getCausalityAuthor())) {
+            $a['causalityAuthor'] = $v;
+        }
+        if (null !== ($v = $this->getCausalityMethod())) {
+            $a['causalityMethod'] = $v;
+        }
+        if (null !== ($v = $this->getCausalityProductRelatedness())) {
+            $a['causalityProductRelatedness'] = $v;
+        }
+        if (null !== ($v = $this->getCausalityResult())) {
+            $a['causalityResult'] = $v;
+        }
         if (null !== ($v = $this->getInstance())) {
             $a['instance'] = $v;
         }
@@ -193,9 +440,27 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement implements \Json
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<AdverseEventSuspectEntity xmlns="http://hl7.org/fhir"></AdverseEventSuspectEntity>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getCausality())) {
+            $v->xmlSerialize(true, $sxe->addChild('causality'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getCausalityAssessment())) {
+            $v->xmlSerialize(true, $sxe->addChild('causalityAssessment'));
+        }
+        if (null !== ($v = $this->getCausalityAuthor())) {
+            $v->xmlSerialize(true, $sxe->addChild('causalityAuthor'));
+        }
+        if (null !== ($v = $this->getCausalityMethod())) {
+            $v->xmlSerialize(true, $sxe->addChild('causalityMethod'));
+        }
+        if (null !== ($v = $this->getCausalityProductRelatedness())) {
+            $v->xmlSerialize(true, $sxe->addChild('causalityProductRelatedness'));
+        }
+        if (null !== ($v = $this->getCausalityResult())) {
+            $v->xmlSerialize(true, $sxe->addChild('causalityResult'));
+        }
+        if (null !== ($v = $this->getInstance())) {
+            $v->xmlSerialize(true, $sxe->addChild('instance'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

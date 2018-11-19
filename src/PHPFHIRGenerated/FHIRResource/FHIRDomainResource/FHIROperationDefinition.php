@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -65,7 +65,6 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionOverload;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter;
 use PHPFHIRGenerated\FHIRElement\FHIRBoolean;
-use PHPFHIRGenerated\FHIRElement\FHIRCanonical;
 use PHPFHIRGenerated\FHIRElement\FHIRCode;
 use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
 use PHPFHIRGenerated\FHIRElement\FHIRContactDetail;
@@ -73,6 +72,8 @@ use PHPFHIRGenerated\FHIRElement\FHIRDateTime;
 use PHPFHIRGenerated\FHIRElement\FHIRMarkdown;
 use PHPFHIRGenerated\FHIRElement\FHIROperationKind;
 use PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus;
+use PHPFHIRGenerated\FHIRElement\FHIRReference;
+use PHPFHIRGenerated\FHIRElement\FHIRResourceType;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
 use PHPFHIRGenerated\FHIRElement\FHIRUri;
 use PHPFHIRGenerated\FHIRElement\FHIRUsageContext;
@@ -91,160 +92,142 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
     const FHIR_TYPE_NAME = 'OperationDefinition';
 
     /**
-     * Whether the operation affects state = false (see [HTTP specification definition of idempotent](https://tools.ietf.org/html/rfc7231#section-4.2.2). Side effects such as producing audit trail entries do not count as 'changing state/content'.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
-     */
-    public $affectsState = null;
-
-    /**
      * Indicates that this operation definition is a constraining profile on the base.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $base = null;
+    private $base = null;
 
     /**
      * The name used to invoke the operation.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public $code = null;
+    private $code = null;
 
     /**
      * Additional information about how to use this operation or named query.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $comment = null;
+    private $comment = null;
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
-    public $contact = null;
+    private $contact = [];
 
     /**
-     * The date  (and optionally time) when the operation definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the operation definition changes.
+     * The date  (and optionally time) when the operation definition was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the operation definition changes.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $date = null;
+    private $date = null;
 
     /**
      * A free text natural language description of the operation definition from a consumer's perspective.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public $description = null;
+    private $description = null;
 
     /**
-     * A Boolean value to indicate that this operation definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this operation definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $experimental = null;
+    private $experimental = null;
 
     /**
-     * Additional validation information for the in parameters - a single profile that covers all the parameters. The profile is a constraint on the parameters resource as a whole.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * Operations that are idempotent (see [HTTP specification definition of idempotent](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html)) may be invoked by performing an HTTP GET operation instead of a POST.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $inputProfile = null;
+    private $idempotent = null;
 
     /**
      * Indicates whether this operation can be invoked on a particular instance of one of the given types.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $instance = null;
+    private $instance = null;
 
     /**
      * A legal or geographic region in which the operation definition is intended to be used.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $jurisdiction = null;
+    private $jurisdiction = [];
 
     /**
      * Whether this is an operation or a named query.
      * @var \PHPFHIRGenerated\FHIRElement\FHIROperationKind
      */
-    public $kind = null;
+    private $kind = null;
 
     /**
      * A natural language name identifying the operation definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $name = null;
-
-    /**
-     * Additional validation information for the out parameters - a single profile that covers all the parameters. The profile is a constraint on the parameters resource.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCanonical
-     */
-    public $outputProfile = null;
+    private $name = null;
 
     /**
      * Defines an appropriate combination of parameters to use when invoking this operation, to help code generators when generating overloaded parameter sets for this operation.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionOverload
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionOverload[]
      */
-    public $overload = null;
+    private $overload = [];
 
     /**
      * The parameters for the operation/query.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter[]
      */
-    public $parameter = null;
+    private $parameter = [];
 
     /**
-     * The name of the organization or individual that published the operation definition.
+     * The name of the individual or organization that published the operation definition.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $publisher = null;
+    private $publisher = null;
 
     /**
-     * Explanation of why this operation definition is needed and why it has been designed as it has.
+     * Explaination of why this operation definition is needed and why it has been designed as it has.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public $purpose = null;
+    private $purpose = null;
 
     /**
      * The types on which this operation can be executed.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRResourceType[]
      */
-    public $resource = null;
+    private $resource = [];
 
     /**
      * The status of this operation definition. Enables tracking the life-cycle of the content.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus
      */
-    public $status = null;
+    private $status = null;
 
     /**
      * Indicates whether this operation or named query can be invoked at the system level (e.g. without needing to choose a resource type for the context).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $system = null;
-
-    /**
-     * A short, descriptive, user-friendly title for the operation definition.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public $title = null;
+    private $system = null;
 
     /**
      * Indicates whether this operation or named query can be invoked at the resource type level for any given resource type level (e.g. without needing to choose a specific resource id for the context).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $type = null;
+    private $type = null;
 
     /**
-     * An absolute URI that is used to identify this operation definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this operation definition is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the operation definition is stored on different servers.
+     * An absolute URI that is used to identify this operation definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this operation definition is (or will be) published. The URL SHOULD include the major version of the operation definition. For more information see [Technical and Business Versions](resource.html#versions).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $url = null;
+    private $url = null;
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate operation definition instances.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
-    public $useContext = null;
+    private $useContext = [];
 
     /**
      * The identifier that is used to identify this version of the operation definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the operation definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $version = null;
+    private $version = null;
 
     /**
      * FHIROperationDefinition Constructor
@@ -253,85 +236,306 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
-            if (isset($data['affectsState'])) {
-                $this->setAffectsState($data['affectsState']);
-            }
             if (isset($data['base'])) {
-                $this->setBase($data['base']);
+                $value = $data['base'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROperationDefinition::__construct - Property \"base\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setBase($value);
             }
             if (isset($data['code'])) {
-                $this->setCode($data['code']);
+                $value = $data['code'];
+                if (is_array($value)) {
+                    $value = new FHIRCode($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRCode($value);
+                }
+                if (!($value instanceof FHIRCode)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROperationDefinition::__construct - Property \"code\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setCode($value);
             }
             if (isset($data['comment'])) {
-                $this->setComment($data['comment']);
+                $value = $data['comment'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROperationDefinition::__construct - Property \"comment\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setComment($value);
             }
             if (isset($data['contact'])) {
-                $this->setContact($data['contact']);
+                $value = $data['contact'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRContactDetail($v);
+                        } 
+                        if (!($v instanceof FHIRContactDetail)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROperationDefinition::__construct - Collection field \"contact\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRContactDetail or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addContact($v);
+                    }
+                }
             }
             if (isset($data['date'])) {
-                $this->setDate($data['date']);
+                $value = $data['date'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROperationDefinition::__construct - Property \"date\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDate($value);
             }
             if (isset($data['description'])) {
-                $this->setDescription($data['description']);
+                $value = $data['description'];
+                if (is_array($value)) {
+                    $value = new FHIRMarkdown($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRMarkdown($value);
+                }
+                if (!($value instanceof FHIRMarkdown)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROperationDefinition::__construct - Property \"description\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRMarkdown or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDescription($value);
             }
             if (isset($data['experimental'])) {
-                $this->setExperimental($data['experimental']);
+                $value = $data['experimental'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROperationDefinition::__construct - Property \"experimental\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setExperimental($value);
             }
-            if (isset($data['inputProfile'])) {
-                $this->setInputProfile($data['inputProfile']);
+            if (isset($data['idempotent'])) {
+                $value = $data['idempotent'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROperationDefinition::__construct - Property \"idempotent\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setIdempotent($value);
             }
             if (isset($data['instance'])) {
-                $this->setInstance($data['instance']);
+                $value = $data['instance'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROperationDefinition::__construct - Property \"instance\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setInstance($value);
             }
             if (isset($data['jurisdiction'])) {
-                $this->setJurisdiction($data['jurisdiction']);
+                $value = $data['jurisdiction'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROperationDefinition::__construct - Collection field \"jurisdiction\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addJurisdiction($v);
+                    }
+                }
             }
             if (isset($data['kind'])) {
-                $this->setKind($data['kind']);
+                $value = $data['kind'];
+                if (is_array($value)) {
+                    $value = new FHIROperationKind($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIROperationKind($value);
+                }
+                if (!($value instanceof FHIROperationKind)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROperationDefinition::__construct - Property \"kind\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIROperationKind or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setKind($value);
             }
             if (isset($data['name'])) {
-                $this->setName($data['name']);
-            }
-            if (isset($data['outputProfile'])) {
-                $this->setOutputProfile($data['outputProfile']);
+                $value = $data['name'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROperationDefinition::__construct - Property \"name\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setName($value);
             }
             if (isset($data['overload'])) {
-                $this->setOverload($data['overload']);
+                $value = $data['overload'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIROperationDefinitionOverload($v);
+                        } 
+                        if (!($v instanceof FHIROperationDefinitionOverload)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROperationDefinition::__construct - Collection field \"overload\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionOverload or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addOverload($v);
+                    }
+                }
             }
             if (isset($data['parameter'])) {
-                $this->setParameter($data['parameter']);
+                $value = $data['parameter'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIROperationDefinitionParameter($v);
+                        } 
+                        if (!($v instanceof FHIROperationDefinitionParameter)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROperationDefinition::__construct - Collection field \"parameter\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addParameter($v);
+                    }
+                }
             }
             if (isset($data['publisher'])) {
-                $this->setPublisher($data['publisher']);
+                $value = $data['publisher'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROperationDefinition::__construct - Property \"publisher\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setPublisher($value);
             }
             if (isset($data['purpose'])) {
-                $this->setPurpose($data['purpose']);
+                $value = $data['purpose'];
+                if (is_array($value)) {
+                    $value = new FHIRMarkdown($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRMarkdown($value);
+                }
+                if (!($value instanceof FHIRMarkdown)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROperationDefinition::__construct - Property \"purpose\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRMarkdown or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setPurpose($value);
             }
             if (isset($data['resource'])) {
-                $this->setResource($data['resource']);
+                $value = $data['resource'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRResourceType($v);
+                        }  elseif (is_scalar($v)) {
+                            $v = new FHIRResourceType($v);
+                        }
+                        if (!($v instanceof FHIRResourceType)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROperationDefinition::__construct - Collection field \"resource\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRResourceType or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addResource($v);
+                    }
+                }
             }
             if (isset($data['status'])) {
-                $this->setStatus($data['status']);
+                $value = $data['status'];
+                if (is_array($value)) {
+                    $value = new FHIRPublicationStatus($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRPublicationStatus($value);
+                }
+                if (!($value instanceof FHIRPublicationStatus)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROperationDefinition::__construct - Property \"status\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setStatus($value);
             }
             if (isset($data['system'])) {
-                $this->setSystem($data['system']);
-            }
-            if (isset($data['title'])) {
-                $this->setTitle($data['title']);
+                $value = $data['system'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROperationDefinition::__construct - Property \"system\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setSystem($value);
             }
             if (isset($data['type'])) {
-                $this->setType($data['type']);
+                $value = $data['type'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROperationDefinition::__construct - Property \"type\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setType($value);
             }
             if (isset($data['url'])) {
-                $this->setUrl($data['url']);
+                $value = $data['url'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROperationDefinition::__construct - Property \"url\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setUrl($value);
             }
             if (isset($data['useContext'])) {
-                $this->setUseContext($data['useContext']);
+                $value = $data['useContext'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRUsageContext($v);
+                        } 
+                        if (!($v instanceof FHIRUsageContext)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROperationDefinition::__construct - Collection field \"useContext\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUsageContext or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addUseContext($v);
+                    }
+                }
             }
             if (isset($data['version'])) {
-                $this->setVersion($data['version']);
+                $value = $data['version'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROperationDefinition::__construct - Property \"version\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setVersion($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -340,59 +544,18 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
-
-    /**
-     * Whether the operation affects state = false (see [HTTP specification definition of idempotent](https://tools.ietf.org/html/rfc7231#section-4.2.2). Side effects such as producing audit trail entries do not count as 'changing state/content'.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
-     * @return $this
-     */
-    public function setAffectsState($affectsState)
-    {
-        if (null === $affectsState) {
-            return $this; 
-        }
-        if (is_scalar($affectsState)) {
-            $affectsState = new FHIRBoolean($affectsState);
-        }
-        if (!($affectsState instanceof FHIRBoolean)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIROperationDefinition::setAffectsState - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or appropriate scalar value, %s seen.',
-                gettype($affectsState)
-            ));
-        }
-        $this->affectsState = $affectsState;
-        return $this;
-    }
-
-    /**
-     * Whether the operation affects state = false (see [HTTP specification definition of idempotent](https://tools.ietf.org/html/rfc7231#section-4.2.2). Side effects such as producing audit trail entries do not count as 'changing state/content'.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
-     */
-    public function getAffectsState()
-    {
-        return $this->affectsState;
-    }
-
 
     /**
      * Indicates that this operation definition is a constraining profile on the base.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setBase($base)
+    public function setBase(FHIRReference $base = null)
     {
         if (null === $base) {
             return $this; 
-        }
-        if (is_scalar($base)) {
-            $base = new FHIRCanonical($base);
-        }
-        if (!($base instanceof FHIRCanonical)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIROperationDefinition::setBase - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCanonical or appropriate scalar value, %s seen.',
-                gettype($base)
-            ));
         }
         $this->base = $base;
         return $this;
@@ -400,13 +563,12 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Indicates that this operation definition is a constraining profile on the base.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getBase()
     {
         return $this->base;
     }
-
 
     /**
      * The name used to invoke the operation.
@@ -440,10 +602,9 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
         return $this->code;
     }
 
-
     /**
      * Additional information about how to use this operation or named query.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRMarkdown
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
     public function setComment($comment)
@@ -452,11 +613,11 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
             return $this; 
         }
         if (is_scalar($comment)) {
-            $comment = new FHIRMarkdown($comment);
+            $comment = new FHIRString($comment);
         }
-        if (!($comment instanceof FHIRMarkdown)) {
+        if (!($comment instanceof FHIRString)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIROperationDefinition::setComment - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRMarkdown or appropriate scalar value, %s seen.',
+                'FHIROperationDefinition::setComment - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
                 gettype($comment)
             ));
         }
@@ -466,40 +627,38 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Additional information about how to use this operation or named query.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRMarkdown
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getComment()
     {
         return $this->comment;
     }
 
-
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail
      * @return $this
      */
-    public function setContact(FHIRContactDetail $contact = null)
+    public function addContact(FHIRContactDetail $contact = null)
     {
         if (null === $contact) {
             return $this; 
         }
-        $this->contact = $contact;
+        $this->contact[] = $contact;
         return $this;
     }
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
     public function getContact()
     {
         return $this->contact;
     }
 
-
     /**
-     * The date  (and optionally time) when the operation definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the operation definition changes.
+     * The date  (and optionally time) when the operation definition was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the operation definition changes.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      * @return $this
      */
@@ -522,14 +681,13 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * The date  (and optionally time) when the operation definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the operation definition changes.
+     * The date  (and optionally time) when the operation definition was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the operation definition changes.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getDate()
     {
         return $this->date;
     }
-
 
     /**
      * A free text natural language description of the operation definition from a consumer's perspective.
@@ -563,9 +721,8 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
         return $this->description;
     }
 
-
     /**
-     * A Boolean value to indicate that this operation definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this operation definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      * @return $this
      */
@@ -588,7 +745,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * A Boolean value to indicate that this operation definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this operation definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getExperimental()
@@ -596,39 +753,37 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
         return $this->experimental;
     }
 
-
     /**
-     * Additional validation information for the in parameters - a single profile that covers all the parameters. The profile is a constraint on the parameters resource as a whole.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * Operations that are idempotent (see [HTTP specification definition of idempotent](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html)) may be invoked by performing an HTTP GET operation instead of a POST.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      * @return $this
      */
-    public function setInputProfile($inputProfile)
+    public function setIdempotent($idempotent)
     {
-        if (null === $inputProfile) {
+        if (null === $idempotent) {
             return $this; 
         }
-        if (is_scalar($inputProfile)) {
-            $inputProfile = new FHIRCanonical($inputProfile);
+        if (is_scalar($idempotent)) {
+            $idempotent = new FHIRBoolean($idempotent);
         }
-        if (!($inputProfile instanceof FHIRCanonical)) {
+        if (!($idempotent instanceof FHIRBoolean)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIROperationDefinition::setInputProfile - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCanonical or appropriate scalar value, %s seen.',
-                gettype($inputProfile)
+                'FHIROperationDefinition::setIdempotent - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or appropriate scalar value, %s seen.',
+                gettype($idempotent)
             ));
         }
-        $this->inputProfile = $inputProfile;
+        $this->idempotent = $idempotent;
         return $this;
     }
 
     /**
-     * Additional validation information for the in parameters - a single profile that covers all the parameters. The profile is a constraint on the parameters resource as a whole.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * Operations that are idempotent (see [HTTP specification definition of idempotent](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html)) may be invoked by performing an HTTP GET operation instead of a POST.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getInputProfile()
+    public function getIdempotent()
     {
-        return $this->inputProfile;
+        return $this->idempotent;
     }
-
 
     /**
      * Indicates whether this operation can be invoked on a particular instance of one of the given types.
@@ -662,30 +817,28 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
         return $this->instance;
     }
 
-
     /**
      * A legal or geographic region in which the operation definition is intended to be used.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setJurisdiction(FHIRCodeableConcept $jurisdiction = null)
+    public function addJurisdiction(FHIRCodeableConcept $jurisdiction = null)
     {
         if (null === $jurisdiction) {
             return $this; 
         }
-        $this->jurisdiction = $jurisdiction;
+        $this->jurisdiction[] = $jurisdiction;
         return $this;
     }
 
     /**
      * A legal or geographic region in which the operation definition is intended to be used.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getJurisdiction()
     {
         return $this->jurisdiction;
     }
-
 
     /**
      * Whether this is an operation or a named query.
@@ -719,7 +872,6 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
         return $this->kind;
     }
 
-
     /**
      * A natural language name identifying the operation definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -752,90 +904,54 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
         return $this->name;
     }
 
-
-    /**
-     * Additional validation information for the out parameters - a single profile that covers all the parameters. The profile is a constraint on the parameters resource.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
-     * @return $this
-     */
-    public function setOutputProfile($outputProfile)
-    {
-        if (null === $outputProfile) {
-            return $this; 
-        }
-        if (is_scalar($outputProfile)) {
-            $outputProfile = new FHIRCanonical($outputProfile);
-        }
-        if (!($outputProfile instanceof FHIRCanonical)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIROperationDefinition::setOutputProfile - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCanonical or appropriate scalar value, %s seen.',
-                gettype($outputProfile)
-            ));
-        }
-        $this->outputProfile = $outputProfile;
-        return $this;
-    }
-
-    /**
-     * Additional validation information for the out parameters - a single profile that covers all the parameters. The profile is a constraint on the parameters resource.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
-     */
-    public function getOutputProfile()
-    {
-        return $this->outputProfile;
-    }
-
-
     /**
      * Defines an appropriate combination of parameters to use when invoking this operation, to help code generators when generating overloaded parameter sets for this operation.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionOverload
      * @return $this
      */
-    public function setOverload(FHIROperationDefinitionOverload $overload = null)
+    public function addOverload(FHIROperationDefinitionOverload $overload = null)
     {
         if (null === $overload) {
             return $this; 
         }
-        $this->overload = $overload;
+        $this->overload[] = $overload;
         return $this;
     }
 
     /**
      * Defines an appropriate combination of parameters to use when invoking this operation, to help code generators when generating overloaded parameter sets for this operation.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionOverload
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionOverload[]
      */
     public function getOverload()
     {
         return $this->overload;
     }
 
-
     /**
      * The parameters for the operation/query.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter
      * @return $this
      */
-    public function setParameter(FHIROperationDefinitionParameter $parameter = null)
+    public function addParameter(FHIROperationDefinitionParameter $parameter = null)
     {
         if (null === $parameter) {
             return $this; 
         }
-        $this->parameter = $parameter;
+        $this->parameter[] = $parameter;
         return $this;
     }
 
     /**
      * The parameters for the operation/query.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter[]
      */
     public function getParameter()
     {
         return $this->parameter;
     }
 
-
     /**
-     * The name of the organization or individual that published the operation definition.
+     * The name of the individual or organization that published the operation definition.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
@@ -858,7 +974,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * The name of the organization or individual that published the operation definition.
+     * The name of the individual or organization that published the operation definition.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getPublisher()
@@ -866,9 +982,8 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
         return $this->publisher;
     }
 
-
     /**
-     * Explanation of why this operation definition is needed and why it has been designed as it has.
+     * Explaination of why this operation definition is needed and why it has been designed as it has.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      * @return $this
      */
@@ -891,7 +1006,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * Explanation of why this operation definition is needed and why it has been designed as it has.
+     * Explaination of why this operation definition is needed and why it has been designed as it has.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getPurpose()
@@ -899,39 +1014,37 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
         return $this->purpose;
     }
 
-
     /**
      * The types on which this operation can be executed.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRResourceType
      * @return $this
      */
-    public function setResource($resource)
+    public function addResource($resource)
     {
         if (null === $resource) {
             return $this; 
         }
         if (is_scalar($resource)) {
-            $resource = new FHIRCode($resource);
+            $resource = new FHIRResourceType($resource);
         }
-        if (!($resource instanceof FHIRCode)) {
+        if (!($resource instanceof FHIRResourceType)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIROperationDefinition::setResource - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or appropriate scalar value, %s seen.',
+                'FHIROperationDefinition::addResource - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRResourceType or appropriate scalar value, %s seen.',
                 gettype($resource)
             ));
         }
-        $this->resource = $resource;
+        $this->resource[] = $resource;
         return $this;
     }
 
     /**
      * The types on which this operation can be executed.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRResourceType[]
      */
     public function getResource()
     {
         return $this->resource;
     }
-
 
     /**
      * The status of this operation definition. Enables tracking the life-cycle of the content.
@@ -965,7 +1078,6 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
         return $this->status;
     }
 
-
     /**
      * Indicates whether this operation or named query can be invoked at the system level (e.g. without needing to choose a resource type for the context).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
@@ -997,40 +1109,6 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
     {
         return $this->system;
     }
-
-
-    /**
-     * A short, descriptive, user-friendly title for the operation definition.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
-     * @return $this
-     */
-    public function setTitle($title)
-    {
-        if (null === $title) {
-            return $this; 
-        }
-        if (is_scalar($title)) {
-            $title = new FHIRString($title);
-        }
-        if (!($title instanceof FHIRString)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIROperationDefinition::setTitle - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
-                gettype($title)
-            ));
-        }
-        $this->title = $title;
-        return $this;
-    }
-
-    /**
-     * A short, descriptive, user-friendly title for the operation definition.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public function getTitle()
-    {
-        return $this->title;
-    }
-
 
     /**
      * Indicates whether this operation or named query can be invoked at the resource type level for any given resource type level (e.g. without needing to choose a specific resource id for the context).
@@ -1064,9 +1142,8 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
         return $this->type;
     }
 
-
     /**
-     * An absolute URI that is used to identify this operation definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this operation definition is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the operation definition is stored on different servers.
+     * An absolute URI that is used to identify this operation definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this operation definition is (or will be) published. The URL SHOULD include the major version of the operation definition. For more information see [Technical and Business Versions](resource.html#versions).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
@@ -1089,7 +1166,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * An absolute URI that is used to identify this operation definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this operation definition is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the operation definition is stored on different servers.
+     * An absolute URI that is used to identify this operation definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this operation definition is (or will be) published. The URL SHOULD include the major version of the operation definition. For more information see [Technical and Business Versions](resource.html#versions).
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getUrl()
@@ -1097,30 +1174,28 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
         return $this->url;
     }
 
-
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate operation definition instances.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUsageContext
      * @return $this
      */
-    public function setUseContext(FHIRUsageContext $useContext = null)
+    public function addUseContext(FHIRUsageContext $useContext = null)
     {
         if (null === $useContext) {
             return $this; 
         }
-        $this->useContext = $useContext;
+        $this->useContext[] = $useContext;
         return $this;
     }
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate operation definition instances.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUsageContext
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
     public function getUseContext()
     {
         return $this->useContext;
     }
-
 
     /**
      * The identifier that is used to identify this version of the operation definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the operation definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
@@ -1154,7 +1229,6 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
         return $this->version;
     }
 
-
     /**
      * @return string
      */
@@ -1170,9 +1244,6 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
     {
         $a = parent::jsonSerialize();
         $a['resourceType'] = self::FHIR_TYPE_NAME;
-        if (null !== ($v = $this->getAffectsState())) {
-            $a['affectsState'] = $v;
-        }
         if (null !== ($v = $this->getBase())) {
             $a['base'] = $v;
         }
@@ -1182,8 +1253,16 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
         if (null !== ($v = $this->getComment())) {
             $a['comment'] = $v;
         }
-        if (null !== ($v = $this->getContact())) {
-            $a['contact'] = $v;
+        if (0 < count($values = $this->getContact())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['contact'] = $vs;
+            }
         }
         if (null !== ($v = $this->getDate())) {
             $a['date'] = $v;
@@ -1194,14 +1273,22 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
         if (null !== ($v = $this->getExperimental())) {
             $a['experimental'] = $v;
         }
-        if (null !== ($v = $this->getInputProfile())) {
-            $a['inputProfile'] = $v;
+        if (null !== ($v = $this->getIdempotent())) {
+            $a['idempotent'] = $v;
         }
         if (null !== ($v = $this->getInstance())) {
             $a['instance'] = $v;
         }
-        if (null !== ($v = $this->getJurisdiction())) {
-            $a['jurisdiction'] = $v;
+        if (0 < count($values = $this->getJurisdiction())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['jurisdiction'] = $vs;
+            }
         }
         if (null !== ($v = $this->getKind())) {
             $a['kind'] = $v;
@@ -1209,14 +1296,27 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
         if (null !== ($v = $this->getName())) {
             $a['name'] = $v;
         }
-        if (null !== ($v = $this->getOutputProfile())) {
-            $a['outputProfile'] = $v;
+        if (0 < count($values = $this->getOverload())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['overload'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getOverload())) {
-            $a['overload'] = $v;
-        }
-        if (null !== ($v = $this->getParameter())) {
-            $a['parameter'] = $v;
+        if (0 < count($values = $this->getParameter())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['parameter'] = $vs;
+            }
         }
         if (null !== ($v = $this->getPublisher())) {
             $a['publisher'] = $v;
@@ -1224,8 +1324,16 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
         if (null !== ($v = $this->getPurpose())) {
             $a['purpose'] = $v;
         }
-        if (null !== ($v = $this->getResource())) {
-            $a['resource'] = $v;
+        if (0 < count($values = $this->getResource())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['resource'] = $vs;
+            }
         }
         if (null !== ($v = $this->getStatus())) {
             $a['status'] = $v;
@@ -1233,17 +1341,22 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
         if (null !== ($v = $this->getSystem())) {
             $a['system'] = $v;
         }
-        if (null !== ($v = $this->getTitle())) {
-            $a['title'] = $v;
-        }
         if (null !== ($v = $this->getType())) {
             $a['type'] = $v;
         }
         if (null !== ($v = $this->getUrl())) {
             $a['url'] = $v;
         }
-        if (null !== ($v = $this->getUseContext())) {
-            $a['useContext'] = $v;
+        if (0 < count($values = $this->getUseContext())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['useContext'] = $vs;
+            }
         }
         if (null !== ($v = $this->getVersion())) {
             $a['version'] = $v;
@@ -1261,9 +1374,99 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<OperationDefinition xmlns="http://hl7.org/fhir"></OperationDefinition>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getBase())) {
+            $v->xmlSerialize(true, $sxe->addChild('base'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getCode())) {
+            $v->xmlSerialize(true, $sxe->addChild('code'));
+        }
+        if (null !== ($v = $this->getComment())) {
+            $v->xmlSerialize(true, $sxe->addChild('comment'));
+        }
+        if (0 < count($values = $this->getContact())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('contact'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getDate())) {
+            $v->xmlSerialize(true, $sxe->addChild('date'));
+        }
+        if (null !== ($v = $this->getDescription())) {
+            $v->xmlSerialize(true, $sxe->addChild('description'));
+        }
+        if (null !== ($v = $this->getExperimental())) {
+            $v->xmlSerialize(true, $sxe->addChild('experimental'));
+        }
+        if (null !== ($v = $this->getIdempotent())) {
+            $v->xmlSerialize(true, $sxe->addChild('idempotent'));
+        }
+        if (null !== ($v = $this->getInstance())) {
+            $v->xmlSerialize(true, $sxe->addChild('instance'));
+        }
+        if (0 < count($values = $this->getJurisdiction())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('jurisdiction'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getKind())) {
+            $v->xmlSerialize(true, $sxe->addChild('kind'));
+        }
+        if (null !== ($v = $this->getName())) {
+            $v->xmlSerialize(true, $sxe->addChild('name'));
+        }
+        if (0 < count($values = $this->getOverload())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('overload'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getParameter())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('parameter'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getPublisher())) {
+            $v->xmlSerialize(true, $sxe->addChild('publisher'));
+        }
+        if (null !== ($v = $this->getPurpose())) {
+            $v->xmlSerialize(true, $sxe->addChild('purpose'));
+        }
+        if (0 < count($values = $this->getResource())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('resource'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('status'));
+        }
+        if (null !== ($v = $this->getSystem())) {
+            $v->xmlSerialize(true, $sxe->addChild('system'));
+        }
+        if (null !== ($v = $this->getType())) {
+            $v->xmlSerialize(true, $sxe->addChild('type'));
+        }
+        if (null !== ($v = $this->getUrl())) {
+            $v->xmlSerialize(true, $sxe->addChild('url'));
+        }
+        if (0 < count($values = $this->getUseContext())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('useContext'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getVersion())) {
+            $v->xmlSerialize(true, $sxe->addChild('version'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

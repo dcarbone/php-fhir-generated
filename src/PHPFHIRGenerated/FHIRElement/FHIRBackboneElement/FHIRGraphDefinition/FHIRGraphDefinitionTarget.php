@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,9 +63,8 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition;
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\FHIRElement\FHIRCanonical;
-use PHPFHIRGenerated\FHIRElement\FHIRCode;
-use PHPFHIRGenerated\FHIRElement\FHIRString;
+use PHPFHIRGenerated\FHIRElement\FHIRResourceType;
+use PHPFHIRGenerated\FHIRElement\FHIRUri;
 
 /**
  * A formal computable definition of a graph of resources - that is, a coherent set of resources that form a graph by following references. The Graph Definition resource defines a set and makes rules about the set.
@@ -80,33 +79,27 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Compartment Consistency Rules.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionCompartment
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionCompartment[]
      */
-    public $compartment = null;
+    private $compartment = [];
 
     /**
      * Additional links from target resource.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionLink
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionLink[]
      */
-    public $link = null;
-
-    /**
-     * A set of parameters to look up.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public $params = null;
+    private $link = [];
 
     /**
      * Profile for the target resource.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $profile = null;
+    private $profile = null;
 
     /**
      * Type of resource this link refers to.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRResourceType
      */
-    public $type = null;
+    private $type = null;
 
     /**
      * FHIRGraphDefinitionTarget Constructor
@@ -115,22 +108,62 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement implements \JsonSeri
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['compartment'])) {
-                $this->setCompartment($data['compartment']);
+                $value = $data['compartment'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRGraphDefinitionCompartment($v);
+                        } 
+                        if (!($v instanceof FHIRGraphDefinitionCompartment)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionTarget::__construct - Collection field \"compartment\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionCompartment or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addCompartment($v);
+                    }
+                }
             }
             if (isset($data['link'])) {
-                $this->setLink($data['link']);
-            }
-            if (isset($data['params'])) {
-                $this->setParams($data['params']);
+                $value = $data['link'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRGraphDefinitionLink($v);
+                        } 
+                        if (!($v instanceof FHIRGraphDefinitionLink)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionTarget::__construct - Collection field \"link\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionLink or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addLink($v);
+                    }
+                }
             }
             if (isset($data['profile'])) {
-                $this->setProfile($data['profile']);
+                $value = $data['profile'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionTarget::__construct - Property \"profile\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setProfile($value);
             }
             if (isset($data['type'])) {
-                $this->setType($data['type']);
+                $value = $data['type'];
+                if (is_array($value)) {
+                    $value = new FHIRResourceType($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRResourceType($value);
+                }
+                if (!($value instanceof FHIRResourceType)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionTarget::__construct - Property \"type\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRResourceType or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setType($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -139,6 +172,7 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement implements \JsonSeri
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -146,85 +180,50 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement implements \JsonSeri
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionCompartment
      * @return $this
      */
-    public function setCompartment(FHIRGraphDefinitionCompartment $compartment = null)
+    public function addCompartment(FHIRGraphDefinitionCompartment $compartment = null)
     {
         if (null === $compartment) {
             return $this; 
         }
-        $this->compartment = $compartment;
+        $this->compartment[] = $compartment;
         return $this;
     }
 
     /**
      * Compartment Consistency Rules.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionCompartment
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionCompartment[]
      */
     public function getCompartment()
     {
         return $this->compartment;
     }
 
-
     /**
      * Additional links from target resource.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionLink
      * @return $this
      */
-    public function setLink(FHIRGraphDefinitionLink $link = null)
+    public function addLink(FHIRGraphDefinitionLink $link = null)
     {
         if (null === $link) {
             return $this; 
         }
-        $this->link = $link;
+        $this->link[] = $link;
         return $this;
     }
 
     /**
      * Additional links from target resource.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionLink
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionLink[]
      */
     public function getLink()
     {
         return $this->link;
     }
 
-
-    /**
-     * A set of parameters to look up.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
-     * @return $this
-     */
-    public function setParams($params)
-    {
-        if (null === $params) {
-            return $this; 
-        }
-        if (is_scalar($params)) {
-            $params = new FHIRString($params);
-        }
-        if (!($params instanceof FHIRString)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRGraphDefinitionTarget::setParams - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
-                gettype($params)
-            ));
-        }
-        $this->params = $params;
-        return $this;
-    }
-
-    /**
-     * A set of parameters to look up.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public function getParams()
-    {
-        return $this->params;
-    }
-
-
     /**
      * Profile for the target resource.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
     public function setProfile($profile)
@@ -233,11 +232,11 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement implements \JsonSeri
             return $this; 
         }
         if (is_scalar($profile)) {
-            $profile = new FHIRCanonical($profile);
+            $profile = new FHIRUri($profile);
         }
-        if (!($profile instanceof FHIRCanonical)) {
+        if (!($profile instanceof FHIRUri)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRGraphDefinitionTarget::setProfile - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCanonical or appropriate scalar value, %s seen.',
+                'FHIRGraphDefinitionTarget::setProfile - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or appropriate scalar value, %s seen.',
                 gettype($profile)
             ));
         }
@@ -247,17 +246,16 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Profile for the target resource.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getProfile()
     {
         return $this->profile;
     }
 
-
     /**
      * Type of resource this link refers to.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRResourceType
      * @return $this
      */
     public function setType($type)
@@ -266,11 +264,11 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement implements \JsonSeri
             return $this; 
         }
         if (is_scalar($type)) {
-            $type = new FHIRCode($type);
+            $type = new FHIRResourceType($type);
         }
-        if (!($type instanceof FHIRCode)) {
+        if (!($type instanceof FHIRResourceType)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRGraphDefinitionTarget::setType - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or appropriate scalar value, %s seen.',
+                'FHIRGraphDefinitionTarget::setType - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRResourceType or appropriate scalar value, %s seen.',
                 gettype($type)
             ));
         }
@@ -280,13 +278,12 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Type of resource this link refers to.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRResourceType
      */
     public function getType()
     {
         return $this->type;
     }
-
 
     /**
      * @return string
@@ -302,14 +299,27 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement implements \JsonSeri
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getCompartment())) {
-            $a['compartment'] = $v;
+        if (0 < count($values = $this->getCompartment())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['compartment'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getLink())) {
-            $a['link'] = $v;
-        }
-        if (null !== ($v = $this->getParams())) {
-            $a['params'] = $v;
+        if (0 < count($values = $this->getLink())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['link'] = $vs;
+            }
         }
         if (null !== ($v = $this->getProfile())) {
             $a['profile'] = $v;
@@ -330,9 +340,26 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement implements \JsonSeri
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<GraphDefinitionTarget xmlns="http://hl7.org/fhir"></GraphDefinitionTarget>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (0 < count($values = $this->getCompartment())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('compartment'));
+                }
+            }
         }
-        return $sxe->saveXML();
+        if (0 < count($values = $this->getLink())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('link'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getProfile())) {
+            $v->xmlSerialize(true, $sxe->addChild('profile'));
+        }
+        if (null !== ($v = $this->getType())) {
+            $v->xmlSerialize(true, $sxe->addChild('type'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

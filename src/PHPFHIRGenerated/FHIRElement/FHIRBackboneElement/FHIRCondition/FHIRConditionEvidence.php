@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCondition;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCondition;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -79,15 +79,15 @@ class FHIRConditionEvidence extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * A manifestation or symptom that led to the recording of this condition.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $code = null;
+    private $code = [];
 
     /**
      * Links to other relevant information, including pathology reports.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $detail = null;
+    private $detail = [];
 
     /**
      * FHIRConditionEvidence Constructor
@@ -96,13 +96,38 @@ class FHIRConditionEvidence extends FHIRBackboneElement implements \JsonSerializ
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['code'])) {
-                $this->setCode($data['code']);
+                $value = $data['code'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCondition\FHIRConditionEvidence::__construct - Collection field \"code\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addCode($v);
+                    }
+                }
             }
             if (isset($data['detail'])) {
-                $this->setDetail($data['detail']);
+                $value = $data['detail'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCondition\FHIRConditionEvidence::__construct - Collection field \"detail\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addDetail($v);
+                    }
+                }
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -111,6 +136,7 @@ class FHIRConditionEvidence extends FHIRBackboneElement implements \JsonSerializ
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -118,48 +144,46 @@ class FHIRConditionEvidence extends FHIRBackboneElement implements \JsonSerializ
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setCode(FHIRCodeableConcept $code = null)
+    public function addCode(FHIRCodeableConcept $code = null)
     {
         if (null === $code) {
             return $this; 
         }
-        $this->code = $code;
+        $this->code[] = $code;
         return $this;
     }
 
     /**
      * A manifestation or symptom that led to the recording of this condition.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getCode()
     {
         return $this->code;
     }
 
-
     /**
      * Links to other relevant information, including pathology reports.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setDetail(FHIRReference $detail = null)
+    public function addDetail(FHIRReference $detail = null)
     {
         if (null === $detail) {
             return $this; 
         }
-        $this->detail = $detail;
+        $this->detail[] = $detail;
         return $this;
     }
 
     /**
      * Links to other relevant information, including pathology reports.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getDetail()
     {
         return $this->detail;
     }
-
 
     /**
      * @return string
@@ -175,11 +199,27 @@ class FHIRConditionEvidence extends FHIRBackboneElement implements \JsonSerializ
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getCode())) {
-            $a['code'] = $v;
+        if (0 < count($values = $this->getCode())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['code'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getDetail())) {
-            $a['detail'] = $v;
+        if (0 < count($values = $this->getDetail())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['detail'] = $vs;
+            }
         }
         return $a;
     }
@@ -194,9 +234,20 @@ class FHIRConditionEvidence extends FHIRBackboneElement implements \JsonSerializ
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ConditionEvidence xmlns="http://hl7.org/fhir"></ConditionEvidence>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (0 < count($values = $this->getCode())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('code'));
+                }
+            }
         }
-        return $sxe->saveXML();
+        if (0 < count($values = $this->getDetail())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('detail'));
+                }
+            }
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

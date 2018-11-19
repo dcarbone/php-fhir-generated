@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMeasure;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMeasure;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -64,7 +64,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMeasure;
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
-use PHPFHIRGenerated\FHIRElement\FHIRExpression;
+use PHPFHIRGenerated\FHIRElement\FHIRIdentifier;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
 
 /**
@@ -79,28 +79,28 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement implements \JsonSe
     const FHIR_TYPE_NAME = 'Measure.SupplementalData';
 
     /**
-     * Indicates a meaning for the supplemental data. This can be as simple as a unique identifier, or it can establish meaning in a broader context by drawing from a terminology, allowing supplemental data to be correlated across measures.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public $code = null;
-
-    /**
-     * The criteria for the supplemental data. This is typically the name of a valid expression defined within a referenced library, but it may also be a path to a specific data element. The criteria defines the data to be returned for this element.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRExpression
-     */
-    public $criteria = null;
-
-    /**
-     * The human readable description of this supplemental data.
+     * The criteria for the supplemental data. This must be the name of a valid expression defined within a referenced library, and defines the data to be returned for this element.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $description = null;
+    private $criteria = null;
+
+    /**
+     * An identifier for the supplemental data.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     */
+    private $identifier = null;
+
+    /**
+     * The supplemental data to be supplied as part of the measure response, specified as a valid FHIR Resource Path.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    private $path = null;
 
     /**
      * An indicator of the intended usage for the supplemental data element. Supplemental data indicates the data is additional information requested to augment the measure information. Risk adjustment factor indicates the data is additional information used to calculate risk adjustment factors when applying a risk model to the measure calculation.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $usage = null;
+    private $usage = [];
 
     /**
      * FHIRMeasureSupplementalData Constructor
@@ -109,19 +109,56 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement implements \JsonSe
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
-            if (isset($data['code'])) {
-                $this->setCode($data['code']);
-            }
             if (isset($data['criteria'])) {
-                $this->setCriteria($data['criteria']);
+                $value = $data['criteria'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureSupplementalData::__construct - Property \"criteria\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setCriteria($value);
             }
-            if (isset($data['description'])) {
-                $this->setDescription($data['description']);
+            if (isset($data['identifier'])) {
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    $value = new FHIRIdentifier($value);
+                } 
+                if (!($value instanceof FHIRIdentifier)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureSupplementalData::__construct - Property \"identifier\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setIdentifier($value);
+            }
+            if (isset($data['path'])) {
+                $value = $data['path'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureSupplementalData::__construct - Property \"path\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setPath($value);
             }
             if (isset($data['usage'])) {
-                $this->setUsage($data['usage']);
+                $value = $data['usage'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureSupplementalData::__construct - Collection field \"usage\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addUsage($v);
+                    }
+                }
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -130,112 +167,118 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement implements \JsonSe
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
-     * Indicates a meaning for the supplemental data. This can be as simple as a unique identifier, or it can establish meaning in a broader context by drawing from a terminology, allowing supplemental data to be correlated across measures.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * The criteria for the supplemental data. This must be the name of a valid expression defined within a referenced library, and defines the data to be returned for this element.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
-    public function setCode(FHIRCodeableConcept $code = null)
-    {
-        if (null === $code) {
-            return $this; 
-        }
-        $this->code = $code;
-        return $this;
-    }
-
-    /**
-     * Indicates a meaning for the supplemental data. This can be as simple as a unique identifier, or it can establish meaning in a broader context by drawing from a terminology, allowing supplemental data to be correlated across measures.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public function getCode()
-    {
-        return $this->code;
-    }
-
-
-    /**
-     * The criteria for the supplemental data. This is typically the name of a valid expression defined within a referenced library, but it may also be a path to a specific data element. The criteria defines the data to be returned for this element.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRExpression
-     * @return $this
-     */
-    public function setCriteria(FHIRExpression $criteria = null)
+    public function setCriteria($criteria)
     {
         if (null === $criteria) {
             return $this; 
+        }
+        if (is_scalar($criteria)) {
+            $criteria = new FHIRString($criteria);
+        }
+        if (!($criteria instanceof FHIRString)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRMeasureSupplementalData::setCriteria - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                gettype($criteria)
+            ));
         }
         $this->criteria = $criteria;
         return $this;
     }
 
     /**
-     * The criteria for the supplemental data. This is typically the name of a valid expression defined within a referenced library, but it may also be a path to a specific data element. The criteria defines the data to be returned for this element.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRExpression
+     * The criteria for the supplemental data. This must be the name of a valid expression defined within a referenced library, and defines the data to be returned for this element.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getCriteria()
     {
         return $this->criteria;
     }
 
-
     /**
-     * The human readable description of this supplemental data.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     * An identifier for the supplemental data.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
-    public function setDescription($description)
+    public function setIdentifier(FHIRIdentifier $identifier = null)
     {
-        if (null === $description) {
+        if (null === $identifier) {
             return $this; 
         }
-        if (is_scalar($description)) {
-            $description = new FHIRString($description);
-        }
-        if (!($description instanceof FHIRString)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRMeasureSupplementalData::setDescription - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
-                gettype($description)
-            ));
-        }
-        $this->description = $description;
+        $this->identifier = $identifier;
         return $this;
     }
 
     /**
-     * The human readable description of this supplemental data.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     * An identifier for the supplemental data.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public function getDescription()
+    public function getIdentifier()
     {
-        return $this->description;
+        return $this->identifier;
     }
 
+    /**
+     * The supplemental data to be supplied as part of the measure response, specified as a valid FHIR Resource Path.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     * @return $this
+     */
+    public function setPath($path)
+    {
+        if (null === $path) {
+            return $this; 
+        }
+        if (is_scalar($path)) {
+            $path = new FHIRString($path);
+        }
+        if (!($path instanceof FHIRString)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRMeasureSupplementalData::setPath - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                gettype($path)
+            ));
+        }
+        $this->path = $path;
+        return $this;
+    }
+
+    /**
+     * The supplemental data to be supplied as part of the measure response, specified as a valid FHIR Resource Path.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getPath()
+    {
+        return $this->path;
+    }
 
     /**
      * An indicator of the intended usage for the supplemental data element. Supplemental data indicates the data is additional information requested to augment the measure information. Risk adjustment factor indicates the data is additional information used to calculate risk adjustment factors when applying a risk model to the measure calculation.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setUsage(FHIRCodeableConcept $usage = null)
+    public function addUsage(FHIRCodeableConcept $usage = null)
     {
         if (null === $usage) {
             return $this; 
         }
-        $this->usage = $usage;
+        $this->usage[] = $usage;
         return $this;
     }
 
     /**
      * An indicator of the intended usage for the supplemental data element. Supplemental data indicates the data is additional information requested to augment the measure information. Risk adjustment factor indicates the data is additional information used to calculate risk adjustment factors when applying a risk model to the measure calculation.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getUsage()
     {
         return $this->usage;
     }
-
 
     /**
      * @return string
@@ -251,17 +294,25 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement implements \JsonSe
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getCode())) {
-            $a['code'] = $v;
-        }
         if (null !== ($v = $this->getCriteria())) {
             $a['criteria'] = $v;
         }
-        if (null !== ($v = $this->getDescription())) {
-            $a['description'] = $v;
+        if (null !== ($v = $this->getIdentifier())) {
+            $a['identifier'] = $v;
         }
-        if (null !== ($v = $this->getUsage())) {
-            $a['usage'] = $v;
+        if (null !== ($v = $this->getPath())) {
+            $a['path'] = $v;
+        }
+        if (0 < count($values = $this->getUsage())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['usage'] = $vs;
+            }
         }
         return $a;
     }
@@ -276,9 +327,22 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement implements \JsonSe
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<MeasureSupplementalData xmlns="http://hl7.org/fhir"></MeasureSupplementalData>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getCriteria())) {
+            $v->xmlSerialize(true, $sxe->addChild('criteria'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getIdentifier())) {
+            $v->xmlSerialize(true, $sxe->addChild('identifier'));
+        }
+        if (null !== ($v = $this->getPath())) {
+            $v->xmlSerialize(true, $sxe->addChild('path'));
+        }
+        if (0 < count($values = $this->getUsage())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('usage'));
+                }
+            }
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

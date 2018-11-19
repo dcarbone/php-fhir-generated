@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -84,49 +84,49 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
      * One of the potential outcomes for the patient (e.g. remission, death,  a particular condition).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $outcome = null;
+    private $outcome = null;
 
     /**
-     * Indicates how likely the outcome is (in the specified timeframe).
+     * How likely is the outcome (in the specified timeframe). (choose any one of probability*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
-    public $probabilityDecimal = null;
+    private $probabilityDecimal = null;
 
     /**
-     * Indicates how likely the outcome is (in the specified timeframe).
+     * How likely is the outcome (in the specified timeframe). (choose any one of probability*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
-    public $probabilityRange = null;
+    private $probabilityRange = null;
 
     /**
-     * Indicates how likely the outcome is (in the specified timeframe), expressed as a qualitative value (e.g. low, medium, or high).
+     * How likely is the outcome (in the specified timeframe), expressed as a qualitative value (e.g. low, medium, high).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $qualitativeRisk = null;
+    private $qualitativeRisk = null;
 
     /**
      * Additional information explaining the basis for the prediction.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $rationale = null;
+    private $rationale = null;
 
     /**
      * Indicates the risk for this particular subject (with their specific characteristics) divided by the risk of the population in general.  (Numbers greater than 1 = higher risk than the population, numbers less than 1 = lower risk.).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
-    public $relativeRisk = null;
+    private $relativeRisk = null;
 
     /**
-     * Indicates the period of time or age range of the subject to which the specified probability applies.
+     * Indicates the period of time or age range of the subject to which the specified probability applies. (choose any one of when*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public $whenPeriod = null;
+    private $whenPeriod = null;
 
     /**
-     * Indicates the period of time or age range of the subject to which the specified probability applies.
+     * Indicates the period of time or age range of the subject to which the specified probability applies. (choose any one of when*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
-    public $whenRange = null;
+    private $whenRange = null;
 
     /**
      * FHIRRiskAssessmentPrediction Constructor
@@ -135,31 +135,92 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['outcome'])) {
-                $this->setOutcome($data['outcome']);
+                $value = $data['outcome'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction::__construct - Property \"outcome\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setOutcome($value);
             }
             if (isset($data['probabilityDecimal'])) {
-                $this->setProbabilityDecimal($data['probabilityDecimal']);
+                $value = $data['probabilityDecimal'];
+                if (is_array($value)) {
+                    $value = new FHIRDecimal($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDecimal($value);
+                }
+                if (!($value instanceof FHIRDecimal)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction::__construct - Property \"probabilityDecimal\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDecimal or data to construct type, saw ".gettype($value));
+                }
+                $this->setProbabilityDecimal($value);
             }
             if (isset($data['probabilityRange'])) {
-                $this->setProbabilityRange($data['probabilityRange']);
+                $value = $data['probabilityRange'];
+                if (is_array($value)) {
+                    $value = new FHIRRange($value);
+                } 
+                if (!($value instanceof FHIRRange)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction::__construct - Property \"probabilityRange\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRRange or data to construct type, saw ".gettype($value));
+                }
+                $this->setProbabilityRange($value);
             }
             if (isset($data['qualitativeRisk'])) {
-                $this->setQualitativeRisk($data['qualitativeRisk']);
+                $value = $data['qualitativeRisk'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction::__construct - Property \"qualitativeRisk\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setQualitativeRisk($value);
             }
             if (isset($data['rationale'])) {
-                $this->setRationale($data['rationale']);
+                $value = $data['rationale'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction::__construct - Property \"rationale\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setRationale($value);
             }
             if (isset($data['relativeRisk'])) {
-                $this->setRelativeRisk($data['relativeRisk']);
+                $value = $data['relativeRisk'];
+                if (is_array($value)) {
+                    $value = new FHIRDecimal($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDecimal($value);
+                }
+                if (!($value instanceof FHIRDecimal)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction::__construct - Property \"relativeRisk\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDecimal or data to construct type, saw ".gettype($value));
+                }
+                $this->setRelativeRisk($value);
             }
             if (isset($data['whenPeriod'])) {
-                $this->setWhenPeriod($data['whenPeriod']);
+                $value = $data['whenPeriod'];
+                if (is_array($value)) {
+                    $value = new FHIRPeriod($value);
+                } 
+                if (!($value instanceof FHIRPeriod)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction::__construct - Property \"whenPeriod\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPeriod or data to construct type, saw ".gettype($value));
+                }
+                $this->setWhenPeriod($value);
             }
             if (isset($data['whenRange'])) {
-                $this->setWhenRange($data['whenRange']);
+                $value = $data['whenRange'];
+                if (is_array($value)) {
+                    $value = new FHIRRange($value);
+                } 
+                if (!($value instanceof FHIRRange)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction::__construct - Property \"whenRange\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRRange or data to construct type, saw ".gettype($value));
+                }
+                $this->setWhenRange($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -168,6 +229,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -193,9 +255,8 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
         return $this->outcome;
     }
 
-
     /**
-     * Indicates how likely the outcome is (in the specified timeframe).
+     * How likely is the outcome (in the specified timeframe). (choose any one of probability*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDecimal
      * @return $this
      */
@@ -218,7 +279,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * Indicates how likely the outcome is (in the specified timeframe).
+     * How likely is the outcome (in the specified timeframe). (choose any one of probability*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
     public function getProbabilityDecimal()
@@ -226,9 +287,8 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
         return $this->probabilityDecimal;
     }
 
-
     /**
-     * Indicates how likely the outcome is (in the specified timeframe).
+     * How likely is the outcome (in the specified timeframe). (choose any one of probability*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRRange
      * @return $this
      */
@@ -242,7 +302,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * Indicates how likely the outcome is (in the specified timeframe).
+     * How likely is the outcome (in the specified timeframe). (choose any one of probability*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public function getProbabilityRange()
@@ -250,9 +310,8 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
         return $this->probabilityRange;
     }
 
-
     /**
-     * Indicates how likely the outcome is (in the specified timeframe), expressed as a qualitative value (e.g. low, medium, or high).
+     * How likely is the outcome (in the specified timeframe), expressed as a qualitative value (e.g. low, medium, high).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
@@ -266,14 +325,13 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * Indicates how likely the outcome is (in the specified timeframe), expressed as a qualitative value (e.g. low, medium, or high).
+     * How likely is the outcome (in the specified timeframe), expressed as a qualitative value (e.g. low, medium, high).
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getQualitativeRisk()
     {
         return $this->qualitativeRisk;
     }
-
 
     /**
      * Additional information explaining the basis for the prediction.
@@ -307,7 +365,6 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
         return $this->rationale;
     }
 
-
     /**
      * Indicates the risk for this particular subject (with their specific characteristics) divided by the risk of the population in general.  (Numbers greater than 1 = higher risk than the population, numbers less than 1 = lower risk.).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDecimal
@@ -340,9 +397,8 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
         return $this->relativeRisk;
     }
 
-
     /**
-     * Indicates the period of time or age range of the subject to which the specified probability applies.
+     * Indicates the period of time or age range of the subject to which the specified probability applies. (choose any one of when*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
      * @return $this
      */
@@ -356,7 +412,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * Indicates the period of time or age range of the subject to which the specified probability applies.
+     * Indicates the period of time or age range of the subject to which the specified probability applies. (choose any one of when*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getWhenPeriod()
@@ -364,9 +420,8 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
         return $this->whenPeriod;
     }
 
-
     /**
-     * Indicates the period of time or age range of the subject to which the specified probability applies.
+     * Indicates the period of time or age range of the subject to which the specified probability applies. (choose any one of when*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRRange
      * @return $this
      */
@@ -380,14 +435,13 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * Indicates the period of time or age range of the subject to which the specified probability applies.
+     * Indicates the period of time or age range of the subject to which the specified probability applies. (choose any one of when*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public function getWhenRange()
     {
         return $this->whenRange;
     }
-
 
     /**
      * @return string
@@ -440,9 +494,30 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<RiskAssessmentPrediction xmlns="http://hl7.org/fhir"></RiskAssessmentPrediction>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getOutcome())) {
+            $v->xmlSerialize(true, $sxe->addChild('outcome'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getProbabilityDecimal())) {
+            $v->xmlSerialize(true, $sxe->addChild('probabilityDecimal'));
+        }
+        if (null !== ($v = $this->getProbabilityRange())) {
+            $v->xmlSerialize(true, $sxe->addChild('probabilityRange'));
+        }
+        if (null !== ($v = $this->getQualitativeRisk())) {
+            $v->xmlSerialize(true, $sxe->addChild('qualitativeRisk'));
+        }
+        if (null !== ($v = $this->getRationale())) {
+            $v->xmlSerialize(true, $sxe->addChild('rationale'));
+        }
+        if (null !== ($v = $this->getRelativeRisk())) {
+            $v->xmlSerialize(true, $sxe->addChild('relativeRisk'));
+        }
+        if (null !== ($v = $this->getWhenPeriod())) {
+            $v->xmlSerialize(true, $sxe->addChild('whenPeriod'));
+        }
+        if (null !== ($v = $this->getWhenRange())) {
+            $v->xmlSerialize(true, $sxe->addChild('whenRange'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

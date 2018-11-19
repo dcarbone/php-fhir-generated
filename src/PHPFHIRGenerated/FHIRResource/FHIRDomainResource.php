@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -81,29 +81,27 @@ class FHIRDomainResource extends FHIRResource implements \JsonSerializable
 
     /**
      * These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.
-     * @var \PHPFHIRGenerated\FHIRResourceContainer
+     * @var \PHPFHIRGenerated\FHIRResourceContainer[]
      */
-    public $contained = null;
+    private $contained = [];
 
     /**
-     * May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRExtension
+     * May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRExtension[]
      */
-    public $extension = null;
+    private $extension = [];
 
     /**
-     * May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.
-
-Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRExtension
+     * May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRExtension[]
      */
-    public $modifierExtension = null;
+    private $modifierExtension = [];
 
     /**
-     * A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it "clinically safe" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.
+     * A human-readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it "clinically safe" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRNarrative
      */
-    public $text = null;
+    private $text = null;
 
     /**
      * FHIRDomainResource Constructor
@@ -112,19 +110,64 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['contained'])) {
-                $this->setContained($data['contained']);
+                $value = $data['contained'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRResourceContainer($v);
+                        } 
+                        if (!($v instanceof FHIRResourceContainer)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource::__construct - Collection field \"contained\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRResourceContainer or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addContained($v);
+                    }
+                }
             }
             if (isset($data['extension'])) {
-                $this->setExtension($data['extension']);
+                $value = $data['extension'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRExtension($v);
+                        } 
+                        if (!($v instanceof FHIRExtension)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource::__construct - Collection field \"extension\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRExtension or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addExtension($v);
+                    }
+                }
             }
             if (isset($data['modifierExtension'])) {
-                $this->setModifierExtension($data['modifierExtension']);
+                $value = $data['modifierExtension'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRExtension($v);
+                        } 
+                        if (!($v instanceof FHIRExtension)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource::__construct - Collection field \"modifierExtension\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRExtension or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addModifierExtension($v);
+                    }
+                }
             }
             if (isset($data['text'])) {
-                $this->setText($data['text']);
+                $value = $data['text'];
+                if (is_array($value)) {
+                    $value = new FHIRNarrative($value);
+                } 
+                if (!($value instanceof FHIRNarrative)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource::__construct - Property \"text\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRNarrative or data to construct type, saw ".gettype($value));
+                }
+                $this->setText($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -133,6 +176,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -140,7 +184,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
      * @param null|mixed An instance of a FHIRResource or FHIRResourceContainer
      * @return $this
      */
-    public function setContained($contained = null)
+    public function addContained($contained = null)
     {
         if (null === $contained) {
             return $this; 
@@ -150,11 +194,11 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
         }
         if (!($contained instanceof FHIRResourceContainer)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRDomainResource::setContained - Argument expected to be instanceof FHIRResource, FHIRResourceContainer, or null, %s seen',
+                'FHIRDomainResource::addContained - Argument expected to be instanceof FHIRResource, FHIRResourceContainer, or null, %s seen',
                 gettype($contained)
             ));
         }
-        $this->contained = $contained;
+        $this->contained[] = $contained;
         return $this;
     }
 
@@ -165,64 +209,63 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
      */
     public function getContained()
     {
-        return isset($this->contained) ? $this->contained->jsonSerialize() : null;
+        $resources = [];
+        foreach($this->contained as $container) {
+            if ($container instanceof FHIRResourceContainer) {
+                $resources[] = $container->jsonSerialize();
+            }
+        }
+        return $resources;
     }
 
-
     /**
-     * May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.
+     * May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRExtension
      * @return $this
      */
-    public function setExtension(FHIRExtension $extension = null)
+    public function addExtension(FHIRExtension $extension = null)
     {
         if (null === $extension) {
             return $this; 
         }
-        $this->extension = $extension;
+        $this->extension[] = $extension;
         return $this;
     }
 
     /**
-     * May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRExtension
+     * May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRExtension[]
      */
     public function getExtension()
     {
         return $this->extension;
     }
 
-
     /**
-     * May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.
-
-Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).
+     * May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRExtension
      * @return $this
      */
-    public function setModifierExtension(FHIRExtension $modifierExtension = null)
+    public function addModifierExtension(FHIRExtension $modifierExtension = null)
     {
         if (null === $modifierExtension) {
             return $this; 
         }
-        $this->modifierExtension = $modifierExtension;
+        $this->modifierExtension[] = $modifierExtension;
         return $this;
     }
 
     /**
-     * May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.
-
-Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRExtension
+     * May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRExtension[]
      */
     public function getModifierExtension()
     {
         return $this->modifierExtension;
     }
 
-
     /**
-     * A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it "clinically safe" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.
+     * A human-readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it "clinically safe" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRNarrative
      * @return $this
      */
@@ -236,14 +279,13 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
     }
 
     /**
-     * A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it "clinically safe" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.
+     * A human-readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it "clinically safe" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRNarrative
      */
     public function getText()
     {
         return $this->text;
     }
-
 
     /**
      * @return string
@@ -260,14 +302,38 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
     {
         $a = parent::jsonSerialize();
         $a['resourceType'] = self::FHIR_TYPE_NAME;
-        if (null !== ($v = $this->getContained())) {
-            $a['contained'] = $v;
+        if (0 < count($values = $this->getContained())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['contained'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getExtension())) {
-            $a['extension'] = $v;
+        if (0 < count($values = $this->getExtension())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['extension'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getModifierExtension())) {
-            $a['modifierExtension'] = $v;
+        if (0 < count($values = $this->getModifierExtension())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['modifierExtension'] = $vs;
+            }
         }
         if (null !== ($v = $this->getText())) {
             $a['text'] = $v;
@@ -285,9 +351,30 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<DomainResource xmlns="http://hl7.org/fhir"></DomainResource>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (0 < count($values = $this->getContained())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('contained'));
+                }
+            }
         }
-        return $sxe->saveXML();
+        if (0 < count($values = $this->getExtension())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('extension'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getModifierExtension())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('modifierExtension'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getText())) {
+            $v->xmlSerialize(true, $sxe->addChild('text'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

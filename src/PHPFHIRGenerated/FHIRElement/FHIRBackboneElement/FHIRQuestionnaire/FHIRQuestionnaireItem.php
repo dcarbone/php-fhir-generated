@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -62,14 +62,19 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire;
  * 
  */
 
+use PHPFHIRGenerated\FHIRElement\FHIRAttachment;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 use PHPFHIRGenerated\FHIRElement\FHIRBoolean;
-use PHPFHIRGenerated\FHIRElement\FHIRCanonical;
 use PHPFHIRGenerated\FHIRElement\FHIRCoding;
-use PHPFHIRGenerated\FHIRElement\FHIREnableWhenBehavior;
+use PHPFHIRGenerated\FHIRElement\FHIRDate;
+use PHPFHIRGenerated\FHIRElement\FHIRDateTime;
+use PHPFHIRGenerated\FHIRElement\FHIRDecimal;
 use PHPFHIRGenerated\FHIRElement\FHIRInteger;
+use PHPFHIRGenerated\FHIRElement\FHIRQuantity;
 use PHPFHIRGenerated\FHIRElement\FHIRQuestionnaireItemType;
+use PHPFHIRGenerated\FHIRElement\FHIRReference;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
+use PHPFHIRGenerated\FHIRElement\FHIRTime;
 use PHPFHIRGenerated\FHIRElement\FHIRUri;
 
 /**
@@ -84,108 +89,169 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
     const FHIR_TYPE_NAME = 'Questionnaire.Item';
 
     /**
-     * One of the permitted answers for a "choice" or "open-choice" question.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireAnswerOption
-     */
-    public $answerOption = null;
-
-    /**
-     * A reference to a value set containing a list of codes representing permitted answers for a "choice" or "open-choice" question.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCanonical
-     */
-    public $answerValueSet = null;
-
-    /**
      * A terminology code that corresponds to this group or question (e.g. a code from LOINC, which defines many questions and answers).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
-    public $code = null;
+    private $code = [];
 
     /**
-     * This element is a URI that refers to an [[[ElementDefinition]]] that provides information about this item, including information that might otherwise be included in the instance of the Questionnaire resource. A detailed description of the construction of the URI is shown in Comments, below. If this element is present then the following element values MAY be derived from the Element Definition if the corresponding elements of this Questionnaire resource instance have no value:
+     * A reference to an [[[ElementDefinition]]] that provides the details for the item. If a definition is provided, then the following element values can be inferred from the definition: 
 
-* code (ElementDefinition.code) 
-* type (ElementDefinition.type) 
-* required (ElementDefinition.min) 
-* repeats (ElementDefinition.max) 
-* maxLength (ElementDefinition.maxLength) 
-* answerValueSet (ElementDefinition.binding)
-* options (ElementDefinition.binding).
+* code (ElementDefinition.code)
+* type (ElementDefinition.type)
+* required (ElementDefinition.min)
+* repeats (ElementDefinition.max)
+* maxLength (ElementDefinition.maxLength)
+* options (ElementDefinition.binding)
+
+Any information provided in these elements on a Questionnaire Item overrides the information from the definition.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $definition = null;
-
-    /**
-     * Controls how multiple enableWhen values are interpreted -  whether all or any must be true.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIREnableWhenBehavior
-     */
-    public $enableBehavior = null;
+    private $definition = null;
 
     /**
      * A constraint indicating that this item should only be enabled (displayed/allow answers to be captured) when the specified condition is true.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen[]
      */
-    public $enableWhen = null;
+    private $enableWhen = [];
 
     /**
-     * One or more values that should be pre-populated in the answer when initially rendering the questionnaire for user input.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireInitial
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
-    public $initial = null;
+    private $initialAttachment = null;
+
+    /**
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     */
+    private $initialBoolean = null;
+
+    /**
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     */
+    private $initialCoding = null;
+
+    /**
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
+     */
+    private $initialDate = null;
+
+    /**
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     */
+    private $initialDateTime = null;
+
+    /**
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
+     */
+    private $initialDecimal = null;
+
+    /**
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
+     */
+    private $initialInteger = null;
+
+    /**
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
+     */
+    private $initialQuantity = null;
+
+    /**
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    private $initialReference = null;
+
+    /**
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    private $initialString = null;
+
+    /**
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRTime
+     */
+    private $initialTime = null;
+
+    /**
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
+     */
+    private $initialUri = null;
 
     /**
      * Text, questions and other groups to be nested beneath a question or group.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem[]
      */
-    public $item = null;
+    private $item = [];
 
     /**
      * An identifier that is unique within the Questionnaire allowing linkage to the equivalent item in a QuestionnaireResponse resource.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $linkId = null;
+    private $linkId = null;
 
     /**
      * The maximum number of characters that are permitted in the answer to be considered a "valid" QuestionnaireResponse.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
-    public $maxLength = null;
+    private $maxLength = null;
+
+    /**
+     * One of the permitted answers for a "choice" or "open-choice" question.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireOption[]
+     */
+    private $option = [];
+
+    /**
+     * A reference to a value set containing a list of codes representing permitted answers for a "choice" or "open-choice" question.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    private $options = null;
 
     /**
      * A short label for a particular group, question or set of display text within the questionnaire used for reference by the individual completing the questionnaire.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $prefix = null;
+    private $prefix = null;
 
     /**
      * An indication, when true, that the value cannot be changed by a human respondent to the Questionnaire.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $readOnly = null;
+    private $readOnly = null;
 
     /**
-     * An indication, if true, that the item may occur multiple times in the response, collecting multiple answers for questions or multiple sets of answers for groups.
+     * An indication, if true, that the item may occur multiple times in the response, collecting multiple answers answers for questions or multiple sets of answers for groups.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $repeats = null;
+    private $repeats = null;
 
     /**
      * An indication, if true, that the item must be present in a "completed" QuestionnaireResponse.  If false, the item may be skipped when answering the questionnaire.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $required = null;
+    private $required = null;
 
     /**
      * The name of a section, the text of a question or text content for a display item.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $text = null;
+    private $text = null;
 
     /**
      * The type of questionnaire item this is - whether text for display, a grouping of other items or a particular type of data to be captured (string, integer, coded choice, etc.).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuestionnaireItemType
      */
-    public $type = null;
+    private $type = null;
 
     /**
      * FHIRQuestionnaireItem Constructor
@@ -194,55 +260,324 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
-            if (isset($data['answerOption'])) {
-                $this->setAnswerOption($data['answerOption']);
-            }
-            if (isset($data['answerValueSet'])) {
-                $this->setAnswerValueSet($data['answerValueSet']);
-            }
             if (isset($data['code'])) {
-                $this->setCode($data['code']);
+                $value = $data['code'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCoding($v);
+                        } 
+                        if (!($v instanceof FHIRCoding)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem::__construct - Collection field \"code\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCoding or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addCode($v);
+                    }
+                }
             }
             if (isset($data['definition'])) {
-                $this->setDefinition($data['definition']);
-            }
-            if (isset($data['enableBehavior'])) {
-                $this->setEnableBehavior($data['enableBehavior']);
+                $value = $data['definition'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem::__construct - Property \"definition\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDefinition($value);
             }
             if (isset($data['enableWhen'])) {
-                $this->setEnableWhen($data['enableWhen']);
+                $value = $data['enableWhen'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRQuestionnaireEnableWhen($v);
+                        } 
+                        if (!($v instanceof FHIRQuestionnaireEnableWhen)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem::__construct - Collection field \"enableWhen\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addEnableWhen($v);
+                    }
+                }
             }
-            if (isset($data['initial'])) {
-                $this->setInitial($data['initial']);
+            if (isset($data['initialAttachment'])) {
+                $value = $data['initialAttachment'];
+                if (is_array($value)) {
+                    $value = new FHIRAttachment($value);
+                } 
+                if (!($value instanceof FHIRAttachment)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem::__construct - Property \"initialAttachment\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAttachment or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setInitialAttachment($value);
+            }
+            if (isset($data['initialBoolean'])) {
+                $value = $data['initialBoolean'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem::__construct - Property \"initialBoolean\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setInitialBoolean($value);
+            }
+            if (isset($data['initialCoding'])) {
+                $value = $data['initialCoding'];
+                if (is_array($value)) {
+                    $value = new FHIRCoding($value);
+                } 
+                if (!($value instanceof FHIRCoding)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem::__construct - Property \"initialCoding\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCoding or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setInitialCoding($value);
+            }
+            if (isset($data['initialDate'])) {
+                $value = $data['initialDate'];
+                if (is_array($value)) {
+                    $value = new FHIRDate($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDate($value);
+                }
+                if (!($value instanceof FHIRDate)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem::__construct - Property \"initialDate\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDate or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setInitialDate($value);
+            }
+            if (isset($data['initialDateTime'])) {
+                $value = $data['initialDateTime'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem::__construct - Property \"initialDateTime\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setInitialDateTime($value);
+            }
+            if (isset($data['initialDecimal'])) {
+                $value = $data['initialDecimal'];
+                if (is_array($value)) {
+                    $value = new FHIRDecimal($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDecimal($value);
+                }
+                if (!($value instanceof FHIRDecimal)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem::__construct - Property \"initialDecimal\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDecimal or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setInitialDecimal($value);
+            }
+            if (isset($data['initialInteger'])) {
+                $value = $data['initialInteger'];
+                if (is_array($value)) {
+                    $value = new FHIRInteger($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRInteger($value);
+                }
+                if (!($value instanceof FHIRInteger)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem::__construct - Property \"initialInteger\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRInteger or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setInitialInteger($value);
+            }
+            if (isset($data['initialQuantity'])) {
+                $value = $data['initialQuantity'];
+                if (is_array($value)) {
+                    $value = new FHIRQuantity($value);
+                } 
+                if (!($value instanceof FHIRQuantity)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem::__construct - Property \"initialQuantity\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setInitialQuantity($value);
+            }
+            if (isset($data['initialReference'])) {
+                $value = $data['initialReference'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem::__construct - Property \"initialReference\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setInitialReference($value);
+            }
+            if (isset($data['initialString'])) {
+                $value = $data['initialString'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem::__construct - Property \"initialString\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setInitialString($value);
+            }
+            if (isset($data['initialTime'])) {
+                $value = $data['initialTime'];
+                if (is_array($value)) {
+                    $value = new FHIRTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRTime($value);
+                }
+                if (!($value instanceof FHIRTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem::__construct - Property \"initialTime\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRTime or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setInitialTime($value);
+            }
+            if (isset($data['initialUri'])) {
+                $value = $data['initialUri'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem::__construct - Property \"initialUri\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setInitialUri($value);
             }
             if (isset($data['item'])) {
-                $this->setItem($data['item']);
+                $value = $data['item'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRQuestionnaireItem($v);
+                        } 
+                        if (!($v instanceof FHIRQuestionnaireItem)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem::__construct - Collection field \"item\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addItem($v);
+                    }
+                }
             }
             if (isset($data['linkId'])) {
-                $this->setLinkId($data['linkId']);
+                $value = $data['linkId'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem::__construct - Property \"linkId\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setLinkId($value);
             }
             if (isset($data['maxLength'])) {
-                $this->setMaxLength($data['maxLength']);
+                $value = $data['maxLength'];
+                if (is_array($value)) {
+                    $value = new FHIRInteger($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRInteger($value);
+                }
+                if (!($value instanceof FHIRInteger)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem::__construct - Property \"maxLength\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRInteger or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setMaxLength($value);
+            }
+            if (isset($data['option'])) {
+                $value = $data['option'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRQuestionnaireOption($v);
+                        } 
+                        if (!($v instanceof FHIRQuestionnaireOption)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem::__construct - Collection field \"option\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireOption or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addOption($v);
+                    }
+                }
+            }
+            if (isset($data['options'])) {
+                $value = $data['options'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem::__construct - Property \"options\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setOptions($value);
             }
             if (isset($data['prefix'])) {
-                $this->setPrefix($data['prefix']);
+                $value = $data['prefix'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem::__construct - Property \"prefix\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setPrefix($value);
             }
             if (isset($data['readOnly'])) {
-                $this->setReadOnly($data['readOnly']);
+                $value = $data['readOnly'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem::__construct - Property \"readOnly\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setReadOnly($value);
             }
             if (isset($data['repeats'])) {
-                $this->setRepeats($data['repeats']);
+                $value = $data['repeats'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem::__construct - Property \"repeats\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setRepeats($value);
             }
             if (isset($data['required'])) {
-                $this->setRequired($data['required']);
+                $value = $data['required'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem::__construct - Property \"required\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setRequired($value);
             }
             if (isset($data['text'])) {
-                $this->setText($data['text']);
+                $value = $data['text'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem::__construct - Property \"text\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setText($value);
             }
             if (isset($data['type'])) {
-                $this->setType($data['type']);
+                $value = $data['type'];
+                if (is_array($value)) {
+                    $value = new FHIRQuestionnaireItemType($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRQuestionnaireItemType($value);
+                }
+                if (!($value instanceof FHIRQuestionnaireItemType)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem::__construct - Property \"type\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuestionnaireItemType or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setType($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -251,99 +586,43 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
-
-    /**
-     * One of the permitted answers for a "choice" or "open-choice" question.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireAnswerOption
-     * @return $this
-     */
-    public function setAnswerOption(FHIRQuestionnaireAnswerOption $answerOption = null)
-    {
-        if (null === $answerOption) {
-            return $this; 
-        }
-        $this->answerOption = $answerOption;
-        return $this;
-    }
-
-    /**
-     * One of the permitted answers for a "choice" or "open-choice" question.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireAnswerOption
-     */
-    public function getAnswerOption()
-    {
-        return $this->answerOption;
-    }
-
-
-    /**
-     * A reference to a value set containing a list of codes representing permitted answers for a "choice" or "open-choice" question.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
-     * @return $this
-     */
-    public function setAnswerValueSet($answerValueSet)
-    {
-        if (null === $answerValueSet) {
-            return $this; 
-        }
-        if (is_scalar($answerValueSet)) {
-            $answerValueSet = new FHIRCanonical($answerValueSet);
-        }
-        if (!($answerValueSet instanceof FHIRCanonical)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRQuestionnaireItem::setAnswerValueSet - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCanonical or appropriate scalar value, %s seen.',
-                gettype($answerValueSet)
-            ));
-        }
-        $this->answerValueSet = $answerValueSet;
-        return $this;
-    }
-
-    /**
-     * A reference to a value set containing a list of codes representing permitted answers for a "choice" or "open-choice" question.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
-     */
-    public function getAnswerValueSet()
-    {
-        return $this->answerValueSet;
-    }
-
 
     /**
      * A terminology code that corresponds to this group or question (e.g. a code from LOINC, which defines many questions and answers).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
      * @return $this
      */
-    public function setCode(FHIRCoding $code = null)
+    public function addCode(FHIRCoding $code = null)
     {
         if (null === $code) {
             return $this; 
         }
-        $this->code = $code;
+        $this->code[] = $code;
         return $this;
     }
 
     /**
      * A terminology code that corresponds to this group or question (e.g. a code from LOINC, which defines many questions and answers).
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
     public function getCode()
     {
         return $this->code;
     }
 
-
     /**
-     * This element is a URI that refers to an [[[ElementDefinition]]] that provides information about this item, including information that might otherwise be included in the instance of the Questionnaire resource. A detailed description of the construction of the URI is shown in Comments, below. If this element is present then the following element values MAY be derived from the Element Definition if the corresponding elements of this Questionnaire resource instance have no value:
+     * A reference to an [[[ElementDefinition]]] that provides the details for the item. If a definition is provided, then the following element values can be inferred from the definition: 
 
-* code (ElementDefinition.code) 
-* type (ElementDefinition.type) 
-* required (ElementDefinition.min) 
-* repeats (ElementDefinition.max) 
-* maxLength (ElementDefinition.maxLength) 
-* answerValueSet (ElementDefinition.binding)
-* options (ElementDefinition.binding).
+* code (ElementDefinition.code)
+* type (ElementDefinition.type)
+* required (ElementDefinition.min)
+* repeats (ElementDefinition.max)
+* maxLength (ElementDefinition.maxLength)
+* options (ElementDefinition.binding)
+
+Any information provided in these elements on a Questionnaire Item overrides the information from the definition.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
@@ -366,15 +645,16 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
     }
 
     /**
-     * This element is a URI that refers to an [[[ElementDefinition]]] that provides information about this item, including information that might otherwise be included in the instance of the Questionnaire resource. A detailed description of the construction of the URI is shown in Comments, below. If this element is present then the following element values MAY be derived from the Element Definition if the corresponding elements of this Questionnaire resource instance have no value:
+     * A reference to an [[[ElementDefinition]]] that provides the details for the item. If a definition is provided, then the following element values can be inferred from the definition: 
 
-* code (ElementDefinition.code) 
-* type (ElementDefinition.type) 
-* required (ElementDefinition.min) 
-* repeats (ElementDefinition.max) 
-* maxLength (ElementDefinition.maxLength) 
-* answerValueSet (ElementDefinition.binding)
-* options (ElementDefinition.binding).
+* code (ElementDefinition.code)
+* type (ElementDefinition.type)
+* required (ElementDefinition.min)
+* repeats (ElementDefinition.max)
+* maxLength (ElementDefinition.maxLength)
+* options (ElementDefinition.binding)
+
+Any information provided in these elements on a Questionnaire Item overrides the information from the definition.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getDefinition()
@@ -382,111 +662,399 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
         return $this->definition;
     }
 
-
-    /**
-     * Controls how multiple enableWhen values are interpreted -  whether all or any must be true.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIREnableWhenBehavior
-     * @return $this
-     */
-    public function setEnableBehavior($enableBehavior)
-    {
-        if (null === $enableBehavior) {
-            return $this; 
-        }
-        if (is_scalar($enableBehavior)) {
-            $enableBehavior = new FHIREnableWhenBehavior($enableBehavior);
-        }
-        if (!($enableBehavior instanceof FHIREnableWhenBehavior)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRQuestionnaireItem::setEnableBehavior - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIREnableWhenBehavior or appropriate scalar value, %s seen.',
-                gettype($enableBehavior)
-            ));
-        }
-        $this->enableBehavior = $enableBehavior;
-        return $this;
-    }
-
-    /**
-     * Controls how multiple enableWhen values are interpreted -  whether all or any must be true.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIREnableWhenBehavior
-     */
-    public function getEnableBehavior()
-    {
-        return $this->enableBehavior;
-    }
-
-
     /**
      * A constraint indicating that this item should only be enabled (displayed/allow answers to be captured) when the specified condition is true.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen
      * @return $this
      */
-    public function setEnableWhen(FHIRQuestionnaireEnableWhen $enableWhen = null)
+    public function addEnableWhen(FHIRQuestionnaireEnableWhen $enableWhen = null)
     {
         if (null === $enableWhen) {
             return $this; 
         }
-        $this->enableWhen = $enableWhen;
+        $this->enableWhen[] = $enableWhen;
         return $this;
     }
 
     /**
      * A constraint indicating that this item should only be enabled (displayed/allow answers to be captured) when the specified condition is true.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen[]
      */
     public function getEnableWhen()
     {
         return $this->enableWhen;
     }
 
-
     /**
-     * One or more values that should be pre-populated in the answer when initially rendering the questionnaire for user input.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireInitial
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRAttachment
      * @return $this
      */
-    public function setInitial(FHIRQuestionnaireInitial $initial = null)
+    public function setInitialAttachment(FHIRAttachment $initialAttachment = null)
     {
-        if (null === $initial) {
+        if (null === $initialAttachment) {
             return $this; 
         }
-        $this->initial = $initial;
+        $this->initialAttachment = $initialAttachment;
         return $this;
     }
 
     /**
-     * One or more values that should be pre-populated in the answer when initially rendering the questionnaire for user input.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireInitial
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
-    public function getInitial()
+    public function getInitialAttachment()
     {
-        return $this->initial;
+        return $this->initialAttachment;
     }
 
+    /**
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     * @return $this
+     */
+    public function setInitialBoolean($initialBoolean)
+    {
+        if (null === $initialBoolean) {
+            return $this; 
+        }
+        if (is_scalar($initialBoolean)) {
+            $initialBoolean = new FHIRBoolean($initialBoolean);
+        }
+        if (!($initialBoolean instanceof FHIRBoolean)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRQuestionnaireItem::setInitialBoolean - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or appropriate scalar value, %s seen.',
+                gettype($initialBoolean)
+            ));
+        }
+        $this->initialBoolean = $initialBoolean;
+        return $this;
+    }
+
+    /**
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     */
+    public function getInitialBoolean()
+    {
+        return $this->initialBoolean;
+    }
+
+    /**
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * @return $this
+     */
+    public function setInitialCoding(FHIRCoding $initialCoding = null)
+    {
+        if (null === $initialCoding) {
+            return $this; 
+        }
+        $this->initialCoding = $initialCoding;
+        return $this;
+    }
+
+    /**
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
+     */
+    public function getInitialCoding()
+    {
+        return $this->initialCoding;
+    }
+
+    /**
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDate
+     * @return $this
+     */
+    public function setInitialDate($initialDate)
+    {
+        if (null === $initialDate) {
+            return $this; 
+        }
+        if (is_scalar($initialDate)) {
+            $initialDate = new FHIRDate($initialDate);
+        }
+        if (!($initialDate instanceof FHIRDate)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRQuestionnaireItem::setInitialDate - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRDate or appropriate scalar value, %s seen.',
+                gettype($initialDate)
+            ));
+        }
+        $this->initialDate = $initialDate;
+        return $this;
+    }
+
+    /**
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDate
+     */
+    public function getInitialDate()
+    {
+        return $this->initialDate;
+    }
+
+    /**
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     * @return $this
+     */
+    public function setInitialDateTime($initialDateTime)
+    {
+        if (null === $initialDateTime) {
+            return $this; 
+        }
+        if (is_scalar($initialDateTime)) {
+            $initialDateTime = new FHIRDateTime($initialDateTime);
+        }
+        if (!($initialDateTime instanceof FHIRDateTime)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRQuestionnaireItem::setInitialDateTime - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or appropriate scalar value, %s seen.',
+                gettype($initialDateTime)
+            ));
+        }
+        $this->initialDateTime = $initialDateTime;
+        return $this;
+    }
+
+    /**
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     */
+    public function getInitialDateTime()
+    {
+        return $this->initialDateTime;
+    }
+
+    /**
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDecimal
+     * @return $this
+     */
+    public function setInitialDecimal($initialDecimal)
+    {
+        if (null === $initialDecimal) {
+            return $this; 
+        }
+        if (is_scalar($initialDecimal)) {
+            $initialDecimal = new FHIRDecimal($initialDecimal);
+        }
+        if (!($initialDecimal instanceof FHIRDecimal)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRQuestionnaireItem::setInitialDecimal - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRDecimal or appropriate scalar value, %s seen.',
+                gettype($initialDecimal)
+            ));
+        }
+        $this->initialDecimal = $initialDecimal;
+        return $this;
+    }
+
+    /**
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDecimal
+     */
+    public function getInitialDecimal()
+    {
+        return $this->initialDecimal;
+    }
+
+    /**
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRInteger
+     * @return $this
+     */
+    public function setInitialInteger($initialInteger)
+    {
+        if (null === $initialInteger) {
+            return $this; 
+        }
+        if (is_scalar($initialInteger)) {
+            $initialInteger = new FHIRInteger($initialInteger);
+        }
+        if (!($initialInteger instanceof FHIRInteger)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRQuestionnaireItem::setInitialInteger - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRInteger or appropriate scalar value, %s seen.',
+                gettype($initialInteger)
+            ));
+        }
+        $this->initialInteger = $initialInteger;
+        return $this;
+    }
+
+    /**
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRInteger
+     */
+    public function getInitialInteger()
+    {
+        return $this->initialInteger;
+    }
+
+    /**
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity
+     * @return $this
+     */
+    public function setInitialQuantity(FHIRQuantity $initialQuantity = null)
+    {
+        if (null === $initialQuantity) {
+            return $this; 
+        }
+        $this->initialQuantity = $initialQuantity;
+        return $this;
+    }
+
+    /**
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity
+     */
+    public function getInitialQuantity()
+    {
+        return $this->initialQuantity;
+    }
+
+    /**
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return $this
+     */
+    public function setInitialReference(FHIRReference $initialReference = null)
+    {
+        if (null === $initialReference) {
+            return $this; 
+        }
+        $this->initialReference = $initialReference;
+        return $this;
+    }
+
+    /**
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getInitialReference()
+    {
+        return $this->initialReference;
+    }
+
+    /**
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     * @return $this
+     */
+    public function setInitialString($initialString)
+    {
+        if (null === $initialString) {
+            return $this; 
+        }
+        if (is_scalar($initialString)) {
+            $initialString = new FHIRString($initialString);
+        }
+        if (!($initialString instanceof FHIRString)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRQuestionnaireItem::setInitialString - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                gettype($initialString)
+            ));
+        }
+        $this->initialString = $initialString;
+        return $this;
+    }
+
+    /**
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getInitialString()
+    {
+        return $this->initialString;
+    }
+
+    /**
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRTime
+     * @return $this
+     */
+    public function setInitialTime($initialTime)
+    {
+        if (null === $initialTime) {
+            return $this; 
+        }
+        if (is_scalar($initialTime)) {
+            $initialTime = new FHIRTime($initialTime);
+        }
+        if (!($initialTime instanceof FHIRTime)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRQuestionnaireItem::setInitialTime - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRTime or appropriate scalar value, %s seen.',
+                gettype($initialTime)
+            ));
+        }
+        $this->initialTime = $initialTime;
+        return $this;
+    }
+
+    /**
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRTime
+     */
+    public function getInitialTime()
+    {
+        return $this->initialTime;
+    }
+
+    /**
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
+     * @return $this
+     */
+    public function setInitialUri($initialUri)
+    {
+        if (null === $initialUri) {
+            return $this; 
+        }
+        if (is_scalar($initialUri)) {
+            $initialUri = new FHIRUri($initialUri);
+        }
+        if (!($initialUri instanceof FHIRUri)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRQuestionnaireItem::setInitialUri - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or appropriate scalar value, %s seen.',
+                gettype($initialUri)
+            ));
+        }
+        $this->initialUri = $initialUri;
+        return $this;
+    }
+
+    /**
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
+     */
+    public function getInitialUri()
+    {
+        return $this->initialUri;
+    }
 
     /**
      * Text, questions and other groups to be nested beneath a question or group.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem
      * @return $this
      */
-    public function setItem(FHIRQuestionnaireItem $item = null)
+    public function addItem(FHIRQuestionnaireItem $item = null)
     {
         if (null === $item) {
             return $this; 
         }
-        $this->item = $item;
+        $this->item[] = $item;
         return $this;
     }
 
     /**
      * Text, questions and other groups to be nested beneath a question or group.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem[]
      */
     public function getItem()
     {
         return $this->item;
     }
-
 
     /**
      * An identifier that is unique within the Questionnaire allowing linkage to the equivalent item in a QuestionnaireResponse resource.
@@ -520,7 +1088,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
         return $this->linkId;
     }
 
-
     /**
      * The maximum number of characters that are permitted in the answer to be considered a "valid" QuestionnaireResponse.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRInteger
@@ -553,6 +1120,51 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
         return $this->maxLength;
     }
 
+    /**
+     * One of the permitted answers for a "choice" or "open-choice" question.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireOption
+     * @return $this
+     */
+    public function addOption(FHIRQuestionnaireOption $option = null)
+    {
+        if (null === $option) {
+            return $this; 
+        }
+        $this->option[] = $option;
+        return $this;
+    }
+
+    /**
+     * One of the permitted answers for a "choice" or "open-choice" question.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireOption[]
+     */
+    public function getOption()
+    {
+        return $this->option;
+    }
+
+    /**
+     * A reference to a value set containing a list of codes representing permitted answers for a "choice" or "open-choice" question.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return $this
+     */
+    public function setOptions(FHIRReference $options = null)
+    {
+        if (null === $options) {
+            return $this; 
+        }
+        $this->options = $options;
+        return $this;
+    }
+
+    /**
+     * A reference to a value set containing a list of codes representing permitted answers for a "choice" or "open-choice" question.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getOptions()
+    {
+        return $this->options;
+    }
 
     /**
      * A short label for a particular group, question or set of display text within the questionnaire used for reference by the individual completing the questionnaire.
@@ -586,7 +1198,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
         return $this->prefix;
     }
 
-
     /**
      * An indication, when true, that the value cannot be changed by a human respondent to the Questionnaire.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
@@ -619,9 +1230,8 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
         return $this->readOnly;
     }
 
-
     /**
-     * An indication, if true, that the item may occur multiple times in the response, collecting multiple answers for questions or multiple sets of answers for groups.
+     * An indication, if true, that the item may occur multiple times in the response, collecting multiple answers answers for questions or multiple sets of answers for groups.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      * @return $this
      */
@@ -644,14 +1254,13 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
     }
 
     /**
-     * An indication, if true, that the item may occur multiple times in the response, collecting multiple answers for questions or multiple sets of answers for groups.
+     * An indication, if true, that the item may occur multiple times in the response, collecting multiple answers answers for questions or multiple sets of answers for groups.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getRepeats()
     {
         return $this->repeats;
     }
-
 
     /**
      * An indication, if true, that the item must be present in a "completed" QuestionnaireResponse.  If false, the item may be skipped when answering the questionnaire.
@@ -685,7 +1294,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
         return $this->required;
     }
 
-
     /**
      * The name of a section, the text of a question or text content for a display item.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -717,7 +1325,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
     {
         return $this->text;
     }
-
 
     /**
      * The type of questionnaire item this is - whether text for display, a grouping of other items or a particular type of data to be captured (string, integer, coded choice, etc.).
@@ -751,7 +1358,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
         return $this->type;
     }
 
-
     /**
      * @return string
      */
@@ -766,35 +1372,97 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getAnswerOption())) {
-            $a['answerOption'] = $v;
-        }
-        if (null !== ($v = $this->getAnswerValueSet())) {
-            $a['answerValueSet'] = $v;
-        }
-        if (null !== ($v = $this->getCode())) {
-            $a['code'] = $v;
+        if (0 < count($values = $this->getCode())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['code'] = $vs;
+            }
         }
         if (null !== ($v = $this->getDefinition())) {
             $a['definition'] = $v;
         }
-        if (null !== ($v = $this->getEnableBehavior())) {
-            $a['enableBehavior'] = $v;
+        if (0 < count($values = $this->getEnableWhen())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['enableWhen'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getEnableWhen())) {
-            $a['enableWhen'] = $v;
+        if (null !== ($v = $this->getInitialAttachment())) {
+            $a['initialAttachment'] = $v;
         }
-        if (null !== ($v = $this->getInitial())) {
-            $a['initial'] = $v;
+        if (null !== ($v = $this->getInitialBoolean())) {
+            $a['initialBoolean'] = $v;
         }
-        if (null !== ($v = $this->getItem())) {
-            $a['item'] = $v;
+        if (null !== ($v = $this->getInitialCoding())) {
+            $a['initialCoding'] = $v;
+        }
+        if (null !== ($v = $this->getInitialDate())) {
+            $a['initialDate'] = $v;
+        }
+        if (null !== ($v = $this->getInitialDateTime())) {
+            $a['initialDateTime'] = $v;
+        }
+        if (null !== ($v = $this->getInitialDecimal())) {
+            $a['initialDecimal'] = $v;
+        }
+        if (null !== ($v = $this->getInitialInteger())) {
+            $a['initialInteger'] = $v;
+        }
+        if (null !== ($v = $this->getInitialQuantity())) {
+            $a['initialQuantity'] = $v;
+        }
+        if (null !== ($v = $this->getInitialReference())) {
+            $a['initialReference'] = $v;
+        }
+        if (null !== ($v = $this->getInitialString())) {
+            $a['initialString'] = $v;
+        }
+        if (null !== ($v = $this->getInitialTime())) {
+            $a['initialTime'] = $v;
+        }
+        if (null !== ($v = $this->getInitialUri())) {
+            $a['initialUri'] = $v;
+        }
+        if (0 < count($values = $this->getItem())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['item'] = $vs;
+            }
         }
         if (null !== ($v = $this->getLinkId())) {
             $a['linkId'] = $v;
         }
         if (null !== ($v = $this->getMaxLength())) {
             $a['maxLength'] = $v;
+        }
+        if (0 < count($values = $this->getOption())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['option'] = $vs;
+            }
+        }
+        if (null !== ($v = $this->getOptions())) {
+            $a['options'] = $v;
         }
         if (null !== ($v = $this->getPrefix())) {
             $a['prefix'] = $v;
@@ -827,9 +1495,100 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<QuestionnaireItem xmlns="http://hl7.org/fhir"></QuestionnaireItem>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (0 < count($values = $this->getCode())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('code'));
+                }
+            }
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getDefinition())) {
+            $v->xmlSerialize(true, $sxe->addChild('definition'));
+        }
+        if (0 < count($values = $this->getEnableWhen())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('enableWhen'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getInitialAttachment())) {
+            $v->xmlSerialize(true, $sxe->addChild('initialAttachment'));
+        }
+        if (null !== ($v = $this->getInitialBoolean())) {
+            $v->xmlSerialize(true, $sxe->addChild('initialBoolean'));
+        }
+        if (null !== ($v = $this->getInitialCoding())) {
+            $v->xmlSerialize(true, $sxe->addChild('initialCoding'));
+        }
+        if (null !== ($v = $this->getInitialDate())) {
+            $v->xmlSerialize(true, $sxe->addChild('initialDate'));
+        }
+        if (null !== ($v = $this->getInitialDateTime())) {
+            $v->xmlSerialize(true, $sxe->addChild('initialDateTime'));
+        }
+        if (null !== ($v = $this->getInitialDecimal())) {
+            $v->xmlSerialize(true, $sxe->addChild('initialDecimal'));
+        }
+        if (null !== ($v = $this->getInitialInteger())) {
+            $v->xmlSerialize(true, $sxe->addChild('initialInteger'));
+        }
+        if (null !== ($v = $this->getInitialQuantity())) {
+            $v->xmlSerialize(true, $sxe->addChild('initialQuantity'));
+        }
+        if (null !== ($v = $this->getInitialReference())) {
+            $v->xmlSerialize(true, $sxe->addChild('initialReference'));
+        }
+        if (null !== ($v = $this->getInitialString())) {
+            $v->xmlSerialize(true, $sxe->addChild('initialString'));
+        }
+        if (null !== ($v = $this->getInitialTime())) {
+            $v->xmlSerialize(true, $sxe->addChild('initialTime'));
+        }
+        if (null !== ($v = $this->getInitialUri())) {
+            $v->xmlSerialize(true, $sxe->addChild('initialUri'));
+        }
+        if (0 < count($values = $this->getItem())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('item'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getLinkId())) {
+            $v->xmlSerialize(true, $sxe->addChild('linkId'));
+        }
+        if (null !== ($v = $this->getMaxLength())) {
+            $v->xmlSerialize(true, $sxe->addChild('maxLength'));
+        }
+        if (0 < count($values = $this->getOption())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('option'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getOptions())) {
+            $v->xmlSerialize(true, $sxe->addChild('options'));
+        }
+        if (null !== ($v = $this->getPrefix())) {
+            $v->xmlSerialize(true, $sxe->addChild('prefix'));
+        }
+        if (null !== ($v = $this->getReadOnly())) {
+            $v->xmlSerialize(true, $sxe->addChild('readOnly'));
+        }
+        if (null !== ($v = $this->getRepeats())) {
+            $v->xmlSerialize(true, $sxe->addChild('repeats'));
+        }
+        if (null !== ($v = $this->getRequired())) {
+            $v->xmlSerialize(true, $sxe->addChild('required'));
+        }
+        if (null !== ($v = $this->getText())) {
+            $v->xmlSerialize(true, $sxe->addChild('text'));
+        }
+        if (null !== ($v = $this->getType())) {
+            $v->xmlSerialize(true, $sxe->addChild('type'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

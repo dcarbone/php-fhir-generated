@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -81,34 +81,34 @@ class FHIRStructureMapParameter extends FHIRBackboneElement implements \JsonSeri
     const FHIR_TYPE_NAME = 'StructureMap.Parameter';
 
     /**
-     * Parameter value - variable or literal.
+     * Parameter value - variable or literal. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $valueBoolean = null;
+    private $valueBoolean = null;
 
     /**
-     * Parameter value - variable or literal.
+     * Parameter value - variable or literal. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
-    public $valueDecimal = null;
+    private $valueDecimal = null;
 
     /**
-     * Parameter value - variable or literal.
+     * Parameter value - variable or literal. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRId
      */
-    public $valueId = null;
+    private $valueId = null;
 
     /**
-     * Parameter value - variable or literal.
+     * Parameter value - variable or literal. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
-    public $valueInteger = null;
+    private $valueInteger = null;
 
     /**
-     * Parameter value - variable or literal.
+     * Parameter value - variable or literal. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $valueString = null;
+    private $valueString = null;
 
     /**
      * FHIRStructureMapParameter Constructor
@@ -117,22 +117,66 @@ class FHIRStructureMapParameter extends FHIRBackboneElement implements \JsonSeri
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['valueBoolean'])) {
-                $this->setValueBoolean($data['valueBoolean']);
+                $value = $data['valueBoolean'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapParameter::__construct - Property \"valueBoolean\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setValueBoolean($value);
             }
             if (isset($data['valueDecimal'])) {
-                $this->setValueDecimal($data['valueDecimal']);
+                $value = $data['valueDecimal'];
+                if (is_array($value)) {
+                    $value = new FHIRDecimal($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDecimal($value);
+                }
+                if (!($value instanceof FHIRDecimal)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapParameter::__construct - Property \"valueDecimal\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDecimal or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setValueDecimal($value);
             }
             if (isset($data['valueId'])) {
-                $this->setValueId($data['valueId']);
+                $value = $data['valueId'];
+                if (is_array($value)) {
+                    $value = new FHIRId($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRId($value);
+                }
+                if (!($value instanceof FHIRId)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapParameter::__construct - Property \"valueId\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRId or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setValueId($value);
             }
             if (isset($data['valueInteger'])) {
-                $this->setValueInteger($data['valueInteger']);
+                $value = $data['valueInteger'];
+                if (is_array($value)) {
+                    $value = new FHIRInteger($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRInteger($value);
+                }
+                if (!($value instanceof FHIRInteger)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapParameter::__construct - Property \"valueInteger\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRInteger or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setValueInteger($value);
             }
             if (isset($data['valueString'])) {
-                $this->setValueString($data['valueString']);
+                $value = $data['valueString'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapParameter::__construct - Property \"valueString\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setValueString($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -141,10 +185,11 @@ class FHIRStructureMapParameter extends FHIRBackboneElement implements \JsonSeri
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
-     * Parameter value - variable or literal.
+     * Parameter value - variable or literal. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      * @return $this
      */
@@ -167,7 +212,7 @@ class FHIRStructureMapParameter extends FHIRBackboneElement implements \JsonSeri
     }
 
     /**
-     * Parameter value - variable or literal.
+     * Parameter value - variable or literal. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getValueBoolean()
@@ -175,9 +220,8 @@ class FHIRStructureMapParameter extends FHIRBackboneElement implements \JsonSeri
         return $this->valueBoolean;
     }
 
-
     /**
-     * Parameter value - variable or literal.
+     * Parameter value - variable or literal. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDecimal
      * @return $this
      */
@@ -200,7 +244,7 @@ class FHIRStructureMapParameter extends FHIRBackboneElement implements \JsonSeri
     }
 
     /**
-     * Parameter value - variable or literal.
+     * Parameter value - variable or literal. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
     public function getValueDecimal()
@@ -208,9 +252,8 @@ class FHIRStructureMapParameter extends FHIRBackboneElement implements \JsonSeri
         return $this->valueDecimal;
     }
 
-
     /**
-     * Parameter value - variable or literal.
+     * Parameter value - variable or literal. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRId
      * @return $this
      */
@@ -233,7 +276,7 @@ class FHIRStructureMapParameter extends FHIRBackboneElement implements \JsonSeri
     }
 
     /**
-     * Parameter value - variable or literal.
+     * Parameter value - variable or literal. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRId
      */
     public function getValueId()
@@ -241,9 +284,8 @@ class FHIRStructureMapParameter extends FHIRBackboneElement implements \JsonSeri
         return $this->valueId;
     }
 
-
     /**
-     * Parameter value - variable or literal.
+     * Parameter value - variable or literal. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRInteger
      * @return $this
      */
@@ -266,7 +308,7 @@ class FHIRStructureMapParameter extends FHIRBackboneElement implements \JsonSeri
     }
 
     /**
-     * Parameter value - variable or literal.
+     * Parameter value - variable or literal. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public function getValueInteger()
@@ -274,9 +316,8 @@ class FHIRStructureMapParameter extends FHIRBackboneElement implements \JsonSeri
         return $this->valueInteger;
     }
 
-
     /**
-     * Parameter value - variable or literal.
+     * Parameter value - variable or literal. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
@@ -299,14 +340,13 @@ class FHIRStructureMapParameter extends FHIRBackboneElement implements \JsonSeri
     }
 
     /**
-     * Parameter value - variable or literal.
+     * Parameter value - variable or literal. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getValueString()
     {
         return $this->valueString;
     }
-
 
     /**
      * @return string
@@ -350,9 +390,21 @@ class FHIRStructureMapParameter extends FHIRBackboneElement implements \JsonSeri
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<StructureMapParameter xmlns="http://hl7.org/fhir"></StructureMapParameter>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getValueBoolean())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueBoolean'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getValueDecimal())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueDecimal'));
+        }
+        if (null !== ($v = $this->getValueId())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueId'));
+        }
+        if (null !== ($v = $this->getValueInteger())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueInteger'));
+        }
+        if (null !== ($v = $this->getValueString())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueString'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

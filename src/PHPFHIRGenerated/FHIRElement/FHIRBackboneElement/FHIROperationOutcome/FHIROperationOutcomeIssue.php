@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationOutcome;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationOutcome;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -83,39 +83,37 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement implements \JsonSeri
      * Describes the type of the issue. The system that creates an OperationOutcome SHALL choose the most applicable code from the IssueType value set, and may additional provide its own code for the error in the details element.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIssueType
      */
-    public $code = null;
+    private $code = null;
 
     /**
      * Additional details about the error. This may be a text description of the error, or a system code that identifies the error.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $details = null;
+    private $details = null;
 
     /**
      * Additional diagnostic information about the issue.  Typically, this may be a description of how a value is erroneous, or a stack dump to help trace the issue.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $diagnostics = null;
+    private $diagnostics = null;
 
     /**
-     * A [simple subset of FHIRPath](fhirpath.html#simple) limited to element names, repetition indicators and the default child access that identifies one of the elements in the resource that caused this issue to be raised.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     * A simple FHIRPath limited to element names, repetition indicators and the default child access that identifies one of the elements in the resource that caused this issue to be raised.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public $expression = null;
+    private $expression = [];
 
     /**
-     * This element is depracated because it is XML specific. It is replaced by issue.expression, which is format independent, and simpler to parse. 
-
-For resource issues, this will be a simple XPath limited to element names, repetition indicators and the default child access that identifies one of the elements in the resource that caused this issue to be raised.  For HTTP errors, will be "http." + the parameter name.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     * For resource issues, this will be a simple XPath limited to element names, repetition indicators and the default child access that identifies one of the elements in the resource that caused this issue to be raised.  For HTTP errors, will be "http." + the parameter name.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public $location = null;
+    private $location = [];
 
     /**
      * Indicates whether the issue indicates a variation from successful processing.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIssueSeverity
      */
-    public $severity = null;
+    private $severity = null;
 
     /**
      * FHIROperationOutcomeIssue Constructor
@@ -124,25 +122,88 @@ For resource issues, this will be a simple XPath limited to element names, repet
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['code'])) {
-                $this->setCode($data['code']);
+                $value = $data['code'];
+                if (is_array($value)) {
+                    $value = new FHIRIssueType($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRIssueType($value);
+                }
+                if (!($value instanceof FHIRIssueType)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationOutcome\FHIROperationOutcomeIssue::__construct - Property \"code\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIssueType or data to construct type, saw ".gettype($value));
+                }
+                $this->setCode($value);
             }
             if (isset($data['details'])) {
-                $this->setDetails($data['details']);
+                $value = $data['details'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationOutcome\FHIROperationOutcomeIssue::__construct - Property \"details\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setDetails($value);
             }
             if (isset($data['diagnostics'])) {
-                $this->setDiagnostics($data['diagnostics']);
+                $value = $data['diagnostics'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationOutcome\FHIROperationOutcomeIssue::__construct - Property \"diagnostics\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setDiagnostics($value);
             }
             if (isset($data['expression'])) {
-                $this->setExpression($data['expression']);
+                $value = $data['expression'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRString($v);
+                        }  elseif (is_scalar($v)) {
+                            $v = new FHIRString($v);
+                        }
+                        if (!($v instanceof FHIRString)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationOutcome\FHIROperationOutcomeIssue::__construct - Collection field \"expression\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addExpression($v);
+                    }
+                }
             }
             if (isset($data['location'])) {
-                $this->setLocation($data['location']);
+                $value = $data['location'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRString($v);
+                        }  elseif (is_scalar($v)) {
+                            $v = new FHIRString($v);
+                        }
+                        if (!($v instanceof FHIRString)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationOutcome\FHIROperationOutcomeIssue::__construct - Collection field \"location\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addLocation($v);
+                    }
+                }
             }
             if (isset($data['severity'])) {
-                $this->setSeverity($data['severity']);
+                $value = $data['severity'];
+                if (is_array($value)) {
+                    $value = new FHIRIssueSeverity($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRIssueSeverity($value);
+                }
+                if (!($value instanceof FHIRIssueSeverity)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationOutcome\FHIROperationOutcomeIssue::__construct - Property \"severity\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIssueSeverity or data to construct type, saw ".gettype($value));
+                }
+                $this->setSeverity($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -151,6 +212,7 @@ For resource issues, this will be a simple XPath limited to element names, repet
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -185,7 +247,6 @@ For resource issues, this will be a simple XPath limited to element names, repet
         return $this->code;
     }
 
-
     /**
      * Additional details about the error. This may be a text description of the error, or a system code that identifies the error.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
@@ -208,7 +269,6 @@ For resource issues, this will be a simple XPath limited to element names, repet
     {
         return $this->details;
     }
-
 
     /**
      * Additional diagnostic information about the issue.  Typically, this may be a description of how a value is erroneous, or a stack dump to help trace the issue.
@@ -242,13 +302,12 @@ For resource issues, this will be a simple XPath limited to element names, repet
         return $this->diagnostics;
     }
 
-
     /**
-     * A [simple subset of FHIRPath](fhirpath.html#simple) limited to element names, repetition indicators and the default child access that identifies one of the elements in the resource that caused this issue to be raised.
+     * A simple FHIRPath limited to element names, repetition indicators and the default child access that identifies one of the elements in the resource that caused this issue to be raised.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
-    public function setExpression($expression)
+    public function addExpression($expression)
     {
         if (null === $expression) {
             return $this; 
@@ -258,32 +317,29 @@ For resource issues, this will be a simple XPath limited to element names, repet
         }
         if (!($expression instanceof FHIRString)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIROperationOutcomeIssue::setExpression - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                'FHIROperationOutcomeIssue::addExpression - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
                 gettype($expression)
             ));
         }
-        $this->expression = $expression;
+        $this->expression[] = $expression;
         return $this;
     }
 
     /**
-     * A [simple subset of FHIRPath](fhirpath.html#simple) limited to element names, repetition indicators and the default child access that identifies one of the elements in the resource that caused this issue to be raised.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     * A simple FHIRPath limited to element names, repetition indicators and the default child access that identifies one of the elements in the resource that caused this issue to be raised.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
     public function getExpression()
     {
         return $this->expression;
     }
 
-
     /**
-     * This element is depracated because it is XML specific. It is replaced by issue.expression, which is format independent, and simpler to parse. 
-
-For resource issues, this will be a simple XPath limited to element names, repetition indicators and the default child access that identifies one of the elements in the resource that caused this issue to be raised.  For HTTP errors, will be "http." + the parameter name.
+     * For resource issues, this will be a simple XPath limited to element names, repetition indicators and the default child access that identifies one of the elements in the resource that caused this issue to be raised.  For HTTP errors, will be "http." + the parameter name.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
-    public function setLocation($location)
+    public function addLocation($location)
     {
         if (null === $location) {
             return $this; 
@@ -293,25 +349,22 @@ For resource issues, this will be a simple XPath limited to element names, repet
         }
         if (!($location instanceof FHIRString)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIROperationOutcomeIssue::setLocation - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                'FHIROperationOutcomeIssue::addLocation - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
                 gettype($location)
             ));
         }
-        $this->location = $location;
+        $this->location[] = $location;
         return $this;
     }
 
     /**
-     * This element is depracated because it is XML specific. It is replaced by issue.expression, which is format independent, and simpler to parse. 
-
-For resource issues, this will be a simple XPath limited to element names, repetition indicators and the default child access that identifies one of the elements in the resource that caused this issue to be raised.  For HTTP errors, will be "http." + the parameter name.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     * For resource issues, this will be a simple XPath limited to element names, repetition indicators and the default child access that identifies one of the elements in the resource that caused this issue to be raised.  For HTTP errors, will be "http." + the parameter name.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
     public function getLocation()
     {
         return $this->location;
     }
-
 
     /**
      * Indicates whether the issue indicates a variation from successful processing.
@@ -345,7 +398,6 @@ For resource issues, this will be a simple XPath limited to element names, repet
         return $this->severity;
     }
 
-
     /**
      * @return string
      */
@@ -369,11 +421,27 @@ For resource issues, this will be a simple XPath limited to element names, repet
         if (null !== ($v = $this->getDiagnostics())) {
             $a['diagnostics'] = $v;
         }
-        if (null !== ($v = $this->getExpression())) {
-            $a['expression'] = $v;
+        if (0 < count($values = $this->getExpression())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['expression'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getLocation())) {
-            $a['location'] = $v;
+        if (0 < count($values = $this->getLocation())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['location'] = $vs;
+            }
         }
         if (null !== ($v = $this->getSeverity())) {
             $a['severity'] = $v;
@@ -391,9 +459,32 @@ For resource issues, this will be a simple XPath limited to element names, repet
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<OperationOutcomeIssue xmlns="http://hl7.org/fhir"></OperationOutcomeIssue>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getCode())) {
+            $v->xmlSerialize(true, $sxe->addChild('code'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getDetails())) {
+            $v->xmlSerialize(true, $sxe->addChild('details'));
+        }
+        if (null !== ($v = $this->getDiagnostics())) {
+            $v->xmlSerialize(true, $sxe->addChild('diagnostics'));
+        }
+        if (0 < count($values = $this->getExpression())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('expression'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getLocation())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('location'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getSeverity())) {
+            $v->xmlSerialize(true, $sxe->addChild('severity'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

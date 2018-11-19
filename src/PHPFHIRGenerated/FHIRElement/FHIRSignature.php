@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -65,7 +65,7 @@ namespace PHPFHIRGenerated\FHIRElement;
 use PHPFHIRGenerated\FHIRElement;
 
 /**
- * A signature along with supporting context. The signature may be a digital signature that is cryptographic in nature, or some other signature acceptable to the domain. This other signature may be as simple as a graphical image representing a hand-written signature, or a signature ceremony Different signature approaches have different utilities.
+ * A digital signature along with supporting context. The signature may be electronic/cryptographic in nature, or a graphical image representing a hand-written signature, or a signature process. Different signature approaches have different utilities.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
  *
  * Class FHIRSignature
@@ -80,43 +80,49 @@ class FHIRSignature extends FHIRElement implements \JsonSerializable
      * The base64 encoding of the Signature content. When signature is not recorded electronically this element would be empty.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
      */
-    public $data = null;
+    private $blob = null;
 
     /**
-     * A reference to an application-usable description of the identity that is represented by the signature.
+     * A mime type that indicates the technical format of the signature. Important mime types are application/signature+xml for X ML DigSig, application/jwt for JWT, and image/* for a graphical image of a signature, etc.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     */
+    private $contentType = null;
+
+    /**
+     * A reference to an application-usable description of the identity that is represented by the signature. (choose any one of onBehalfOf*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $onBehalfOf = null;
+    private $onBehalfOfReference = null;
 
     /**
-     * A mime type that indicates the technical format of the signature. Important mime types are application/signature+xml for X ML DigSig, application/jose for JWS, and image/* for a graphical image of a signature, etc.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * A reference to an application-usable description of the identity that is represented by the signature. (choose any one of onBehalfOf*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $sigFormat = null;
-
-    /**
-     * A mime type that indicates the technical format of the target resources signed by the signature.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
-     */
-    public $targetFormat = null;
+    private $onBehalfOfUri = null;
 
     /**
      * An indication of the reason that the entity signed this document. This may be explicitly included as part of the signature information and can be used when determining accountability for various actions concerning the document.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
-    public $type = null;
+    private $type = [];
 
     /**
      * When the digital signature was signed.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInstant
      */
-    public $when = null;
+    private $when = null;
 
     /**
-     * A reference to an application-usable description of the identity that signed  (e.g. the signature used their private key).
+     * A reference to an application-usable description of the identity that signed  (e.g. the signature used their private key). (choose any one of who*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $who = null;
+    private $whoReference = null;
+
+    /**
+     * A reference to an application-usable description of the identity that signed  (e.g. the signature used their private key). (choose any one of who*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
+     */
+    private $whoUri = null;
 
     /**
      * FHIRSignature Constructor
@@ -125,28 +131,102 @@ class FHIRSignature extends FHIRElement implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
-            if (isset($data['data'])) {
-                $this->setData($data['data']);
+            if (isset($data['blob'])) {
+                $value = $data['blob'];
+                if (is_array($value)) {
+                    $value = new FHIRBase64Binary($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBase64Binary($value);
+                }
+                if (!($value instanceof FHIRBase64Binary)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRSignature::__construct - Property \"blob\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setBlob($value);
             }
-            if (isset($data['onBehalfOf'])) {
-                $this->setOnBehalfOf($data['onBehalfOf']);
+            if (isset($data['contentType'])) {
+                $value = $data['contentType'];
+                if (is_array($value)) {
+                    $value = new FHIRCode($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRCode($value);
+                }
+                if (!($value instanceof FHIRCode)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRSignature::__construct - Property \"contentType\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setContentType($value);
             }
-            if (isset($data['sigFormat'])) {
-                $this->setSigFormat($data['sigFormat']);
+            if (isset($data['onBehalfOfReference'])) {
+                $value = $data['onBehalfOfReference'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRSignature::__construct - Property \"onBehalfOfReference\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setOnBehalfOfReference($value);
             }
-            if (isset($data['targetFormat'])) {
-                $this->setTargetFormat($data['targetFormat']);
+            if (isset($data['onBehalfOfUri'])) {
+                $value = $data['onBehalfOfUri'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRSignature::__construct - Property \"onBehalfOfUri\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setOnBehalfOfUri($value);
             }
             if (isset($data['type'])) {
-                $this->setType($data['type']);
+                $value = $data['type'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCoding($v);
+                        } 
+                        if (!($v instanceof FHIRCoding)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRSignature::__construct - Collection field \"type\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCoding or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addType($v);
+                    }
+                }
             }
             if (isset($data['when'])) {
-                $this->setWhen($data['when']);
+                $value = $data['when'];
+                if (is_array($value)) {
+                    $value = new FHIRInstant($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRInstant($value);
+                }
+                if (!($value instanceof FHIRInstant)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRSignature::__construct - Property \"when\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRInstant or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setWhen($value);
             }
-            if (isset($data['who'])) {
-                $this->setWho($data['who']);
+            if (isset($data['whoReference'])) {
+                $value = $data['whoReference'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRSignature::__construct - Property \"whoReference\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setWhoReference($value);
+            }
+            if (isset($data['whoUri'])) {
+                $value = $data['whoUri'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRSignature::__construct - Property \"whoUri\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setWhoUri($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -155,6 +235,7 @@ class FHIRSignature extends FHIRElement implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -162,21 +243,21 @@ class FHIRSignature extends FHIRElement implements \JsonSerializable
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
      * @return $this
      */
-    public function setData($data)
+    public function setBlob($blob)
     {
-        if (null === $data) {
+        if (null === $blob) {
             return $this; 
         }
-        if (is_scalar($data)) {
-            $data = new FHIRBase64Binary($data);
+        if (is_scalar($blob)) {
+            $blob = new FHIRBase64Binary($blob);
         }
-        if (!($data instanceof FHIRBase64Binary)) {
+        if (!($blob instanceof FHIRBase64Binary)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRSignature::setData - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary or appropriate scalar value, %s seen.',
-                gettype($data)
+                'FHIRSignature::setBlob - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary or appropriate scalar value, %s seen.',
+                gettype($blob)
             ));
         }
-        $this->data = $data;
+        $this->blob = $blob;
         return $this;
     }
 
@@ -184,125 +265,120 @@ class FHIRSignature extends FHIRElement implements \JsonSerializable
      * The base64 encoding of the Signature content. When signature is not recorded electronically this element would be empty.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
      */
-    public function getData()
+    public function getBlob()
     {
-        return $this->data;
+        return $this->blob;
     }
 
+    /**
+     * A mime type that indicates the technical format of the signature. Important mime types are application/signature+xml for X ML DigSig, application/jwt for JWT, and image/* for a graphical image of a signature, etc.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @return $this
+     */
+    public function setContentType($contentType)
+    {
+        if (null === $contentType) {
+            return $this; 
+        }
+        if (is_scalar($contentType)) {
+            $contentType = new FHIRCode($contentType);
+        }
+        if (!($contentType instanceof FHIRCode)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRSignature::setContentType - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or appropriate scalar value, %s seen.',
+                gettype($contentType)
+            ));
+        }
+        $this->contentType = $contentType;
+        return $this;
+    }
 
     /**
-     * A reference to an application-usable description of the identity that is represented by the signature.
+     * A mime type that indicates the technical format of the signature. Important mime types are application/signature+xml for X ML DigSig, application/jwt for JWT, and image/* for a graphical image of a signature, etc.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCode
+     */
+    public function getContentType()
+    {
+        return $this->contentType;
+    }
+
+    /**
+     * A reference to an application-usable description of the identity that is represented by the signature. (choose any one of onBehalfOf*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setOnBehalfOf(FHIRReference $onBehalfOf = null)
+    public function setOnBehalfOfReference(FHIRReference $onBehalfOfReference = null)
     {
-        if (null === $onBehalfOf) {
+        if (null === $onBehalfOfReference) {
             return $this; 
         }
-        $this->onBehalfOf = $onBehalfOf;
+        $this->onBehalfOfReference = $onBehalfOfReference;
         return $this;
     }
 
     /**
-     * A reference to an application-usable description of the identity that is represented by the signature.
+     * A reference to an application-usable description of the identity that is represented by the signature. (choose any one of onBehalfOf*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getOnBehalfOf()
+    public function getOnBehalfOfReference()
     {
-        return $this->onBehalfOf;
+        return $this->onBehalfOfReference;
     }
 
-
     /**
-     * A mime type that indicates the technical format of the signature. Important mime types are application/signature+xml for X ML DigSig, application/jose for JWS, and image/* for a graphical image of a signature, etc.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCode
+     * A reference to an application-usable description of the identity that is represented by the signature. (choose any one of onBehalfOf*, but only one)
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
-    public function setSigFormat($sigFormat)
+    public function setOnBehalfOfUri($onBehalfOfUri)
     {
-        if (null === $sigFormat) {
+        if (null === $onBehalfOfUri) {
             return $this; 
         }
-        if (is_scalar($sigFormat)) {
-            $sigFormat = new FHIRCode($sigFormat);
+        if (is_scalar($onBehalfOfUri)) {
+            $onBehalfOfUri = new FHIRUri($onBehalfOfUri);
         }
-        if (!($sigFormat instanceof FHIRCode)) {
+        if (!($onBehalfOfUri instanceof FHIRUri)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRSignature::setSigFormat - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or appropriate scalar value, %s seen.',
-                gettype($sigFormat)
+                'FHIRSignature::setOnBehalfOfUri - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or appropriate scalar value, %s seen.',
+                gettype($onBehalfOfUri)
             ));
         }
-        $this->sigFormat = $sigFormat;
+        $this->onBehalfOfUri = $onBehalfOfUri;
         return $this;
     }
 
     /**
-     * A mime type that indicates the technical format of the signature. Important mime types are application/signature+xml for X ML DigSig, application/jose for JWS, and image/* for a graphical image of a signature, etc.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCode
+     * A reference to an application-usable description of the identity that is represented by the signature. (choose any one of onBehalfOf*, but only one)
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public function getSigFormat()
+    public function getOnBehalfOfUri()
     {
-        return $this->sigFormat;
+        return $this->onBehalfOfUri;
     }
-
-
-    /**
-     * A mime type that indicates the technical format of the target resources signed by the signature.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCode
-     * @return $this
-     */
-    public function setTargetFormat($targetFormat)
-    {
-        if (null === $targetFormat) {
-            return $this; 
-        }
-        if (is_scalar($targetFormat)) {
-            $targetFormat = new FHIRCode($targetFormat);
-        }
-        if (!($targetFormat instanceof FHIRCode)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRSignature::setTargetFormat - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or appropriate scalar value, %s seen.',
-                gettype($targetFormat)
-            ));
-        }
-        $this->targetFormat = $targetFormat;
-        return $this;
-    }
-
-    /**
-     * A mime type that indicates the technical format of the target resources signed by the signature.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCode
-     */
-    public function getTargetFormat()
-    {
-        return $this->targetFormat;
-    }
-
 
     /**
      * An indication of the reason that the entity signed this document. This may be explicitly included as part of the signature information and can be used when determining accountability for various actions concerning the document.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
      * @return $this
      */
-    public function setType(FHIRCoding $type = null)
+    public function addType(FHIRCoding $type = null)
     {
         if (null === $type) {
             return $this; 
         }
-        $this->type = $type;
+        $this->type[] = $type;
         return $this;
     }
 
     /**
      * An indication of the reason that the entity signed this document. This may be explicitly included as part of the signature information and can be used when determining accountability for various actions concerning the document.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
     public function getType()
     {
         return $this->type;
     }
-
 
     /**
      * When the digital signature was signed.
@@ -336,30 +412,60 @@ class FHIRSignature extends FHIRElement implements \JsonSerializable
         return $this->when;
     }
 
-
     /**
-     * A reference to an application-usable description of the identity that signed  (e.g. the signature used their private key).
+     * A reference to an application-usable description of the identity that signed  (e.g. the signature used their private key). (choose any one of who*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setWho(FHIRReference $who = null)
+    public function setWhoReference(FHIRReference $whoReference = null)
     {
-        if (null === $who) {
+        if (null === $whoReference) {
             return $this; 
         }
-        $this->who = $who;
+        $this->whoReference = $whoReference;
         return $this;
     }
 
     /**
-     * A reference to an application-usable description of the identity that signed  (e.g. the signature used their private key).
+     * A reference to an application-usable description of the identity that signed  (e.g. the signature used their private key). (choose any one of who*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getWho()
+    public function getWhoReference()
     {
-        return $this->who;
+        return $this->whoReference;
     }
 
+    /**
+     * A reference to an application-usable description of the identity that signed  (e.g. the signature used their private key). (choose any one of who*, but only one)
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
+     * @return $this
+     */
+    public function setWhoUri($whoUri)
+    {
+        if (null === $whoUri) {
+            return $this; 
+        }
+        if (is_scalar($whoUri)) {
+            $whoUri = new FHIRUri($whoUri);
+        }
+        if (!($whoUri instanceof FHIRUri)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRSignature::setWhoUri - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or appropriate scalar value, %s seen.',
+                gettype($whoUri)
+            ));
+        }
+        $this->whoUri = $whoUri;
+        return $this;
+    }
+
+    /**
+     * A reference to an application-usable description of the identity that signed  (e.g. the signature used their private key). (choose any one of who*, but only one)
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
+     */
+    public function getWhoUri()
+    {
+        return $this->whoUri;
+    }
 
     /**
      * @return string
@@ -375,26 +481,37 @@ class FHIRSignature extends FHIRElement implements \JsonSerializable
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getData())) {
-            $a['data'] = $v;
+        if (null !== ($v = $this->getBlob())) {
+            $a['blob'] = $v;
         }
-        if (null !== ($v = $this->getOnBehalfOf())) {
-            $a['onBehalfOf'] = $v;
+        if (null !== ($v = $this->getContentType())) {
+            $a['contentType'] = $v;
         }
-        if (null !== ($v = $this->getSigFormat())) {
-            $a['sigFormat'] = $v;
+        if (null !== ($v = $this->getOnBehalfOfReference())) {
+            $a['onBehalfOfReference'] = $v;
         }
-        if (null !== ($v = $this->getTargetFormat())) {
-            $a['targetFormat'] = $v;
+        if (null !== ($v = $this->getOnBehalfOfUri())) {
+            $a['onBehalfOfUri'] = $v;
         }
-        if (null !== ($v = $this->getType())) {
-            $a['type'] = $v;
+        if (0 < count($values = $this->getType())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['type'] = $vs;
+            }
         }
         if (null !== ($v = $this->getWhen())) {
             $a['when'] = $v;
         }
-        if (null !== ($v = $this->getWho())) {
-            $a['who'] = $v;
+        if (null !== ($v = $this->getWhoReference())) {
+            $a['whoReference'] = $v;
+        }
+        if (null !== ($v = $this->getWhoUri())) {
+            $a['whoUri'] = $v;
         }
         return $a;
     }
@@ -409,9 +526,34 @@ class FHIRSignature extends FHIRElement implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Signature xmlns="http://hl7.org/fhir"></Signature>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getBlob())) {
+            $v->xmlSerialize(true, $sxe->addChild('blob'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getContentType())) {
+            $v->xmlSerialize(true, $sxe->addChild('contentType'));
+        }
+        if (null !== ($v = $this->getOnBehalfOfReference())) {
+            $v->xmlSerialize(true, $sxe->addChild('onBehalfOfReference'));
+        }
+        if (null !== ($v = $this->getOnBehalfOfUri())) {
+            $v->xmlSerialize(true, $sxe->addChild('onBehalfOfUri'));
+        }
+        if (0 < count($values = $this->getType())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('type'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getWhen())) {
+            $v->xmlSerialize(true, $sxe->addChild('when'));
+        }
+        if (null !== ($v = $this->getWhoReference())) {
+            $v->xmlSerialize(true, $sxe->addChild('whoReference'));
+        }
+        if (null !== ($v = $this->getWhoUri())) {
+            $v->xmlSerialize(true, $sxe->addChild('whoUri'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

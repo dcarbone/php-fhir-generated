@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -82,37 +82,37 @@ class FHIRStructureMapGroup extends FHIRBackboneElement implements \JsonSerializ
      * Additional supporting documentation that explains the purpose of the group and the types of mappings within it.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $documentation = null;
+    private $documentation = null;
 
     /**
      * Another group that this group adds rules to.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRId
      */
-    public $extends = null;
+    private $extends = null;
 
     /**
      * A name assigned to an instance of data. The instance must be provided when the mapping is invoked.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapInput
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapInput[]
      */
-    public $input = null;
+    private $input = [];
 
     /**
      * A unique name for the group for the convenience of human readers.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRId
      */
-    public $name = null;
+    private $name = null;
 
     /**
      * Transform Rule from source to target.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule[]
      */
-    public $rule = null;
+    private $rule = [];
 
     /**
-     * If this is the default rule set to apply for the source type or this combination of types.
+     * If this is the default rule set to apply for thie source type, or this combination of types.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRStructureMapGroupTypeMode
      */
-    public $typeMode = null;
+    private $typeMode = null;
 
     /**
      * FHIRStructureMapGroup Constructor
@@ -121,25 +121,86 @@ class FHIRStructureMapGroup extends FHIRBackboneElement implements \JsonSerializ
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['documentation'])) {
-                $this->setDocumentation($data['documentation']);
+                $value = $data['documentation'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapGroup::__construct - Property \"documentation\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setDocumentation($value);
             }
             if (isset($data['extends'])) {
-                $this->setExtends($data['extends']);
+                $value = $data['extends'];
+                if (is_array($value)) {
+                    $value = new FHIRId($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRId($value);
+                }
+                if (!($value instanceof FHIRId)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapGroup::__construct - Property \"extends\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRId or data to construct type, saw ".gettype($value));
+                }
+                $this->setExtends($value);
             }
             if (isset($data['input'])) {
-                $this->setInput($data['input']);
+                $value = $data['input'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRStructureMapInput($v);
+                        } 
+                        if (!($v instanceof FHIRStructureMapInput)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapGroup::__construct - Collection field \"input\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapInput or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addInput($v);
+                    }
+                }
             }
             if (isset($data['name'])) {
-                $this->setName($data['name']);
+                $value = $data['name'];
+                if (is_array($value)) {
+                    $value = new FHIRId($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRId($value);
+                }
+                if (!($value instanceof FHIRId)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapGroup::__construct - Property \"name\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRId or data to construct type, saw ".gettype($value));
+                }
+                $this->setName($value);
             }
             if (isset($data['rule'])) {
-                $this->setRule($data['rule']);
+                $value = $data['rule'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRStructureMapRule($v);
+                        } 
+                        if (!($v instanceof FHIRStructureMapRule)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapGroup::__construct - Collection field \"rule\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addRule($v);
+                    }
+                }
             }
             if (isset($data['typeMode'])) {
-                $this->setTypeMode($data['typeMode']);
+                $value = $data['typeMode'];
+                if (is_array($value)) {
+                    $value = new FHIRStructureMapGroupTypeMode($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRStructureMapGroupTypeMode($value);
+                }
+                if (!($value instanceof FHIRStructureMapGroupTypeMode)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapGroup::__construct - Property \"typeMode\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRStructureMapGroupTypeMode or data to construct type, saw ".gettype($value));
+                }
+                $this->setTypeMode($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -148,6 +209,7 @@ class FHIRStructureMapGroup extends FHIRBackboneElement implements \JsonSerializ
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -182,7 +244,6 @@ class FHIRStructureMapGroup extends FHIRBackboneElement implements \JsonSerializ
         return $this->documentation;
     }
 
-
     /**
      * Another group that this group adds rules to.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRId
@@ -215,30 +276,28 @@ class FHIRStructureMapGroup extends FHIRBackboneElement implements \JsonSerializ
         return $this->extends;
     }
 
-
     /**
      * A name assigned to an instance of data. The instance must be provided when the mapping is invoked.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapInput
      * @return $this
      */
-    public function setInput(FHIRStructureMapInput $input = null)
+    public function addInput(FHIRStructureMapInput $input = null)
     {
         if (null === $input) {
             return $this; 
         }
-        $this->input = $input;
+        $this->input[] = $input;
         return $this;
     }
 
     /**
      * A name assigned to an instance of data. The instance must be provided when the mapping is invoked.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapInput
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapInput[]
      */
     public function getInput()
     {
         return $this->input;
     }
-
 
     /**
      * A unique name for the group for the convenience of human readers.
@@ -272,33 +331,31 @@ class FHIRStructureMapGroup extends FHIRBackboneElement implements \JsonSerializ
         return $this->name;
     }
 
-
     /**
      * Transform Rule from source to target.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule
      * @return $this
      */
-    public function setRule(FHIRStructureMapRule $rule = null)
+    public function addRule(FHIRStructureMapRule $rule = null)
     {
         if (null === $rule) {
             return $this; 
         }
-        $this->rule = $rule;
+        $this->rule[] = $rule;
         return $this;
     }
 
     /**
      * Transform Rule from source to target.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule[]
      */
     public function getRule()
     {
         return $this->rule;
     }
 
-
     /**
-     * If this is the default rule set to apply for the source type or this combination of types.
+     * If this is the default rule set to apply for thie source type, or this combination of types.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRStructureMapGroupTypeMode
      * @return $this
      */
@@ -321,14 +378,13 @@ class FHIRStructureMapGroup extends FHIRBackboneElement implements \JsonSerializ
     }
 
     /**
-     * If this is the default rule set to apply for the source type or this combination of types.
+     * If this is the default rule set to apply for thie source type, or this combination of types.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRStructureMapGroupTypeMode
      */
     public function getTypeMode()
     {
         return $this->typeMode;
     }
-
 
     /**
      * @return string
@@ -350,14 +406,30 @@ class FHIRStructureMapGroup extends FHIRBackboneElement implements \JsonSerializ
         if (null !== ($v = $this->getExtends())) {
             $a['extends'] = $v;
         }
-        if (null !== ($v = $this->getInput())) {
-            $a['input'] = $v;
+        if (0 < count($values = $this->getInput())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['input'] = $vs;
+            }
         }
         if (null !== ($v = $this->getName())) {
             $a['name'] = $v;
         }
-        if (null !== ($v = $this->getRule())) {
-            $a['rule'] = $v;
+        if (0 < count($values = $this->getRule())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['rule'] = $vs;
+            }
         }
         if (null !== ($v = $this->getTypeMode())) {
             $a['typeMode'] = $v;
@@ -375,9 +447,32 @@ class FHIRStructureMapGroup extends FHIRBackboneElement implements \JsonSerializ
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<StructureMapGroup xmlns="http://hl7.org/fhir"></StructureMapGroup>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getDocumentation())) {
+            $v->xmlSerialize(true, $sxe->addChild('documentation'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getExtends())) {
+            $v->xmlSerialize(true, $sxe->addChild('extends'));
+        }
+        if (0 < count($values = $this->getInput())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('input'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getName())) {
+            $v->xmlSerialize(true, $sxe->addChild('name'));
+        }
+        if (0 < count($values = $this->getRule())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('rule'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getTypeMode())) {
+            $v->xmlSerialize(true, $sxe->addChild('typeMode'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

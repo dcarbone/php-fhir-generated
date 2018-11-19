@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -77,28 +77,28 @@ class FHIRClaimResponseDetail extends FHIRBackboneElement implements \JsonSerial
     const FHIR_TYPE_NAME = 'ClaimResponse.Detail';
 
     /**
-     * The adjudication results.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication
+     * The adjudications results.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication[]
      */
-    public $adjudication = null;
+    private $adjudication = [];
+
+    /**
+     * A list of note references to the notes provided below.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt[]
+     */
+    private $noteNumber = [];
 
     /**
      * A service line number.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
-    public $detailSequence = null;
+    private $sequenceLinkId = null;
 
     /**
-     * A list of note references to the notes provided below.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
+     * The third tier service adjudications for submitted services.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseSubDetail[]
      */
-    public $noteNumber = null;
-
-    /**
-     * The third-tier service adjudications for submitted services.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseSubDetail
-     */
-    public $subDetail = null;
+    private $subDetail = [];
 
     /**
      * FHIRClaimResponseDetail Constructor
@@ -107,19 +107,68 @@ class FHIRClaimResponseDetail extends FHIRBackboneElement implements \JsonSerial
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['adjudication'])) {
-                $this->setAdjudication($data['adjudication']);
-            }
-            if (isset($data['detailSequence'])) {
-                $this->setDetailSequence($data['detailSequence']);
+                $value = $data['adjudication'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRClaimResponseAdjudication($v);
+                        } 
+                        if (!($v instanceof FHIRClaimResponseAdjudication)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseDetail::__construct - Collection field \"adjudication\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addAdjudication($v);
+                    }
+                }
             }
             if (isset($data['noteNumber'])) {
-                $this->setNoteNumber($data['noteNumber']);
+                $value = $data['noteNumber'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRPositiveInt($v);
+                        }  elseif (is_scalar($v)) {
+                            $v = new FHIRPositiveInt($v);
+                        }
+                        if (!($v instanceof FHIRPositiveInt)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseDetail::__construct - Collection field \"noteNumber\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addNoteNumber($v);
+                    }
+                }
+            }
+            if (isset($data['sequenceLinkId'])) {
+                $value = $data['sequenceLinkId'];
+                if (is_array($value)) {
+                    $value = new FHIRPositiveInt($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRPositiveInt($value);
+                }
+                if (!($value instanceof FHIRPositiveInt)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseDetail::__construct - Property \"sequenceLinkId\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt or data to construct type, saw ".gettype($value));
+                }
+                $this->setSequenceLinkId($value);
             }
             if (isset($data['subDetail'])) {
-                $this->setSubDetail($data['subDetail']);
+                $value = $data['subDetail'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRClaimResponseSubDetail($v);
+                        } 
+                        if (!($v instanceof FHIRClaimResponseSubDetail)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseDetail::__construct - Collection field \"subDetail\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseSubDetail or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addSubDetail($v);
+                    }
+                }
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -128,71 +177,38 @@ class FHIRClaimResponseDetail extends FHIRBackboneElement implements \JsonSerial
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
-     * The adjudication results.
+     * The adjudications results.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication
      * @return $this
      */
-    public function setAdjudication(FHIRClaimResponseAdjudication $adjudication = null)
+    public function addAdjudication(FHIRClaimResponseAdjudication $adjudication = null)
     {
         if (null === $adjudication) {
             return $this; 
         }
-        $this->adjudication = $adjudication;
+        $this->adjudication[] = $adjudication;
         return $this;
     }
 
     /**
-     * The adjudication results.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication
+     * The adjudications results.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication[]
      */
     public function getAdjudication()
     {
         return $this->adjudication;
     }
 
-
-    /**
-     * A service line number.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
-     * @return $this
-     */
-    public function setDetailSequence($detailSequence)
-    {
-        if (null === $detailSequence) {
-            return $this; 
-        }
-        if (is_scalar($detailSequence)) {
-            $detailSequence = new FHIRPositiveInt($detailSequence);
-        }
-        if (!($detailSequence instanceof FHIRPositiveInt)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRClaimResponseDetail::setDetailSequence - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt or appropriate scalar value, %s seen.',
-                gettype($detailSequence)
-            ));
-        }
-        $this->detailSequence = $detailSequence;
-        return $this;
-    }
-
-    /**
-     * A service line number.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
-     */
-    public function getDetailSequence()
-    {
-        return $this->detailSequence;
-    }
-
-
     /**
      * A list of note references to the notes provided below.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      * @return $this
      */
-    public function setNoteNumber($noteNumber)
+    public function addNoteNumber($noteNumber)
     {
         if (null === $noteNumber) {
             return $this; 
@@ -202,47 +218,77 @@ class FHIRClaimResponseDetail extends FHIRBackboneElement implements \JsonSerial
         }
         if (!($noteNumber instanceof FHIRPositiveInt)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRClaimResponseDetail::setNoteNumber - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt or appropriate scalar value, %s seen.',
+                'FHIRClaimResponseDetail::addNoteNumber - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt or appropriate scalar value, %s seen.',
                 gettype($noteNumber)
             ));
         }
-        $this->noteNumber = $noteNumber;
+        $this->noteNumber[] = $noteNumber;
         return $this;
     }
 
     /**
      * A list of note references to the notes provided below.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRPositiveInt[]
      */
     public function getNoteNumber()
     {
         return $this->noteNumber;
     }
 
-
     /**
-     * The third-tier service adjudications for submitted services.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseSubDetail
+     * A service line number.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      * @return $this
      */
-    public function setSubDetail(FHIRClaimResponseSubDetail $subDetail = null)
+    public function setSequenceLinkId($sequenceLinkId)
     {
-        if (null === $subDetail) {
+        if (null === $sequenceLinkId) {
             return $this; 
         }
-        $this->subDetail = $subDetail;
+        if (is_scalar($sequenceLinkId)) {
+            $sequenceLinkId = new FHIRPositiveInt($sequenceLinkId);
+        }
+        if (!($sequenceLinkId instanceof FHIRPositiveInt)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRClaimResponseDetail::setSequenceLinkId - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt or appropriate scalar value, %s seen.',
+                gettype($sequenceLinkId)
+            ));
+        }
+        $this->sequenceLinkId = $sequenceLinkId;
         return $this;
     }
 
     /**
-     * The third-tier service adjudications for submitted services.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseSubDetail
+     * A service line number.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
+     */
+    public function getSequenceLinkId()
+    {
+        return $this->sequenceLinkId;
+    }
+
+    /**
+     * The third tier service adjudications for submitted services.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseSubDetail
+     * @return $this
+     */
+    public function addSubDetail(FHIRClaimResponseSubDetail $subDetail = null)
+    {
+        if (null === $subDetail) {
+            return $this; 
+        }
+        $this->subDetail[] = $subDetail;
+        return $this;
+    }
+
+    /**
+     * The third tier service adjudications for submitted services.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseSubDetail[]
      */
     public function getSubDetail()
     {
         return $this->subDetail;
     }
-
 
     /**
      * @return string
@@ -258,17 +304,41 @@ class FHIRClaimResponseDetail extends FHIRBackboneElement implements \JsonSerial
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getAdjudication())) {
-            $a['adjudication'] = $v;
+        if (0 < count($values = $this->getAdjudication())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['adjudication'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getDetailSequence())) {
-            $a['detailSequence'] = $v;
+        if (0 < count($values = $this->getNoteNumber())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['noteNumber'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getNoteNumber())) {
-            $a['noteNumber'] = $v;
+        if (null !== ($v = $this->getSequenceLinkId())) {
+            $a['sequenceLinkId'] = $v;
         }
-        if (null !== ($v = $this->getSubDetail())) {
-            $a['subDetail'] = $v;
+        if (0 < count($values = $this->getSubDetail())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['subDetail'] = $vs;
+            }
         }
         return $a;
     }
@@ -283,9 +353,30 @@ class FHIRClaimResponseDetail extends FHIRBackboneElement implements \JsonSerial
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ClaimResponseDetail xmlns="http://hl7.org/fhir"></ClaimResponseDetail>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (0 < count($values = $this->getAdjudication())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('adjudication'));
+                }
+            }
         }
-        return $sxe->saveXML();
+        if (0 < count($values = $this->getNoteNumber())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('noteNumber'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getSequenceLinkId())) {
+            $v->xmlSerialize(true, $sxe->addChild('sequenceLinkId'));
+        }
+        if (0 < count($values = $this->getSubDetail())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('subDetail'));
+                }
+            }
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

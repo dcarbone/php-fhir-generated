@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBene
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBene
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -66,7 +66,7 @@ use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
 use PHPFHIRGenerated\FHIRElement\FHIRDate;
 use PHPFHIRGenerated\FHIRElement\FHIRIdentifier;
-use PHPFHIRGenerated\FHIRElement\FHIRMoney;
+use PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney;
 
 /**
  * This resource provides: the claim details; adjudication details from the processing of a Claim; and optionally account balance information, for informing the subscriber of the benefits provided.
@@ -81,39 +81,39 @@ class FHIRExplanationOfBenefitPayment extends FHIRBackboneElement implements \Js
 
     /**
      * Adjustment to the payment of this transaction which is not related to adjudication of this transaction.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRMoney
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
-    public $adjustment = null;
+    private $adjustment = null;
 
     /**
      * Reason for the payment adjustment.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $adjustmentReason = null;
+    private $adjustmentReason = null;
 
     /**
      * Payable less any payment adjustment.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRMoney
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
-    public $amount = null;
+    private $amount = null;
 
     /**
      * Estimated payment date.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
-    public $date = null;
+    private $date = null;
 
     /**
-     * Payment identifier.
+     * Payment identifer.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public $identifier = null;
+    private $identifier = null;
 
     /**
      * Whether this represents partial or complete payment of the claim.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $type = null;
+    private $type = null;
 
     /**
      * FHIRExplanationOfBenefitPayment Constructor
@@ -122,25 +122,68 @@ class FHIRExplanationOfBenefitPayment extends FHIRBackboneElement implements \Js
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['adjustment'])) {
-                $this->setAdjustment($data['adjustment']);
+                $value = $data['adjustment'];
+                if (is_array($value)) {
+                    $value = new FHIRMoney($value);
+                } 
+                if (!($value instanceof FHIRMoney)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitPayment::__construct - Property \"adjustment\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney or data to construct type, saw ".gettype($value));
+                }
+                $this->setAdjustment($value);
             }
             if (isset($data['adjustmentReason'])) {
-                $this->setAdjustmentReason($data['adjustmentReason']);
+                $value = $data['adjustmentReason'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitPayment::__construct - Property \"adjustmentReason\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setAdjustmentReason($value);
             }
             if (isset($data['amount'])) {
-                $this->setAmount($data['amount']);
+                $value = $data['amount'];
+                if (is_array($value)) {
+                    $value = new FHIRMoney($value);
+                } 
+                if (!($value instanceof FHIRMoney)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitPayment::__construct - Property \"amount\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney or data to construct type, saw ".gettype($value));
+                }
+                $this->setAmount($value);
             }
             if (isset($data['date'])) {
-                $this->setDate($data['date']);
+                $value = $data['date'];
+                if (is_array($value)) {
+                    $value = new FHIRDate($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDate($value);
+                }
+                if (!($value instanceof FHIRDate)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitPayment::__construct - Property \"date\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDate or data to construct type, saw ".gettype($value));
+                }
+                $this->setDate($value);
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    $value = new FHIRIdentifier($value);
+                } 
+                if (!($value instanceof FHIRIdentifier)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitPayment::__construct - Property \"identifier\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($value));
+                }
+                $this->setIdentifier($value);
             }
             if (isset($data['type'])) {
-                $this->setType($data['type']);
+                $value = $data['type'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitPayment::__construct - Property \"type\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setType($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -149,11 +192,12 @@ class FHIRExplanationOfBenefitPayment extends FHIRBackboneElement implements \Js
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
      * Adjustment to the payment of this transaction which is not related to adjudication of this transaction.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRMoney
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      * @return $this
      */
     public function setAdjustment(FHIRMoney $adjustment = null)
@@ -167,13 +211,12 @@ class FHIRExplanationOfBenefitPayment extends FHIRBackboneElement implements \Js
 
     /**
      * Adjustment to the payment of this transaction which is not related to adjudication of this transaction.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRMoney
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public function getAdjustment()
     {
         return $this->adjustment;
     }
-
 
     /**
      * Reason for the payment adjustment.
@@ -198,10 +241,9 @@ class FHIRExplanationOfBenefitPayment extends FHIRBackboneElement implements \Js
         return $this->adjustmentReason;
     }
 
-
     /**
      * Payable less any payment adjustment.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRMoney
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      * @return $this
      */
     public function setAmount(FHIRMoney $amount = null)
@@ -215,13 +257,12 @@ class FHIRExplanationOfBenefitPayment extends FHIRBackboneElement implements \Js
 
     /**
      * Payable less any payment adjustment.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRMoney
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public function getAmount()
     {
         return $this->amount;
     }
-
 
     /**
      * Estimated payment date.
@@ -255,9 +296,8 @@ class FHIRExplanationOfBenefitPayment extends FHIRBackboneElement implements \Js
         return $this->date;
     }
 
-
     /**
-     * Payment identifier.
+     * Payment identifer.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
@@ -271,14 +311,13 @@ class FHIRExplanationOfBenefitPayment extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * Payment identifier.
+     * Payment identifer.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier()
     {
         return $this->identifier;
     }
-
 
     /**
      * Whether this represents partial or complete payment of the claim.
@@ -302,7 +341,6 @@ class FHIRExplanationOfBenefitPayment extends FHIRBackboneElement implements \Js
     {
         return $this->type;
     }
-
 
     /**
      * @return string
@@ -349,9 +387,24 @@ class FHIRExplanationOfBenefitPayment extends FHIRBackboneElement implements \Js
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ExplanationOfBenefitPayment xmlns="http://hl7.org/fhir"></ExplanationOfBenefitPayment>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getAdjustment())) {
+            $v->xmlSerialize(true, $sxe->addChild('adjustment'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getAdjustmentReason())) {
+            $v->xmlSerialize(true, $sxe->addChild('adjustmentReason'));
+        }
+        if (null !== ($v = $this->getAmount())) {
+            $v->xmlSerialize(true, $sxe->addChild('amount'));
+        }
+        if (null !== ($v = $this->getDate())) {
+            $v->xmlSerialize(true, $sxe->addChild('date'));
+        }
+        if (null !== ($v = $this->getIdentifier())) {
+            $v->xmlSerialize(true, $sxe->addChild('identifier'));
+        }
+        if (null !== ($v = $this->getType())) {
+            $v->xmlSerialize(true, $sxe->addChild('type'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

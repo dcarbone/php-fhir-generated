@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRObservation;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRObservation;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -83,37 +83,37 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement implements \Json
      * The age at which this reference range is applicable. This is a neonatal age (e.g. number of weeks at term) if the meaning says so.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
-    public $age = null;
+    private $age = null;
 
     /**
      * Codes to indicate the target population this reference range applies to.  For example, a reference range may be based on the normal population or a particular sex or race.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $appliesTo = null;
+    private $appliesTo = [];
 
     /**
-     * The value of the high bound of the reference range.  The high bound of the reference range endpoint is inclusive of the value (e.g.  reference range is >=5 - <=9). If the high bound is omitted,  it is assumed to be meaningless (e.g. reference range is >= 2.3).
+     * The value of the high bound of the reference range.  The high bound of the reference range endpoint is inclusive of the value (e.g.  reference range is >=5 - <=9).   If the high bound is omitted,  it is assumed to be meaningless (e.g. reference range is >= 2.3).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    public $high = null;
+    private $high = null;
 
     /**
-     * The value of the low bound of the reference range.  The low bound of the reference range endpoint is inclusive of the value (e.g.  reference range is >=5 - <=9). If the low bound is omitted,  it is assumed to be meaningless (e.g. reference range is <=2.3).
+     * The value of the low bound of the reference range.  The low bound of the reference range endpoint is inclusive of the value (e.g.  reference range is >=5 - <=9).   If the low bound is omitted,  it is assumed to be meaningless (e.g. reference range is <=2.3).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    public $low = null;
+    private $low = null;
 
     /**
-     * Text based reference range in an observation which may be used when a quantitative range is not appropriate for an observation.  An example would be a reference value of "Negative" or a list or table of "normals".
+     * Text based reference range in an observation which may be used when a quantitative range is not appropriate for an observation.  An example would be a reference value of "Negative" or a list or table of 'normals'.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $text = null;
+    private $text = null;
 
     /**
      * Codes to indicate the what part of the targeted reference population it applies to. For example, the normal or therapeutic range.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $type = null;
+    private $type = null;
 
     /**
      * FHIRObservationReferenceRange Constructor
@@ -122,25 +122,74 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement implements \Json
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['age'])) {
-                $this->setAge($data['age']);
+                $value = $data['age'];
+                if (is_array($value)) {
+                    $value = new FHIRRange($value);
+                } 
+                if (!($value instanceof FHIRRange)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationReferenceRange::__construct - Property \"age\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRRange or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setAge($value);
             }
             if (isset($data['appliesTo'])) {
-                $this->setAppliesTo($data['appliesTo']);
+                $value = $data['appliesTo'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationReferenceRange::__construct - Collection field \"appliesTo\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addAppliesTo($v);
+                    }
+                }
             }
             if (isset($data['high'])) {
-                $this->setHigh($data['high']);
+                $value = $data['high'];
+                if (is_array($value)) {
+                    $value = new FHIRQuantity($value);
+                } 
+                if (!($value instanceof FHIRQuantity)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationReferenceRange::__construct - Property \"high\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setHigh($value);
             }
             if (isset($data['low'])) {
-                $this->setLow($data['low']);
+                $value = $data['low'];
+                if (is_array($value)) {
+                    $value = new FHIRQuantity($value);
+                } 
+                if (!($value instanceof FHIRQuantity)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationReferenceRange::__construct - Property \"low\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setLow($value);
             }
             if (isset($data['text'])) {
-                $this->setText($data['text']);
+                $value = $data['text'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationReferenceRange::__construct - Property \"text\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setText($value);
             }
             if (isset($data['type'])) {
-                $this->setType($data['type']);
+                $value = $data['type'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationReferenceRange::__construct - Property \"type\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setType($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -149,6 +198,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement implements \Json
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -174,33 +224,31 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement implements \Json
         return $this->age;
     }
 
-
     /**
      * Codes to indicate the target population this reference range applies to.  For example, a reference range may be based on the normal population or a particular sex or race.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setAppliesTo(FHIRCodeableConcept $appliesTo = null)
+    public function addAppliesTo(FHIRCodeableConcept $appliesTo = null)
     {
         if (null === $appliesTo) {
             return $this; 
         }
-        $this->appliesTo = $appliesTo;
+        $this->appliesTo[] = $appliesTo;
         return $this;
     }
 
     /**
      * Codes to indicate the target population this reference range applies to.  For example, a reference range may be based on the normal population or a particular sex or race.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getAppliesTo()
     {
         return $this->appliesTo;
     }
 
-
     /**
-     * The value of the high bound of the reference range.  The high bound of the reference range endpoint is inclusive of the value (e.g.  reference range is >=5 - <=9). If the high bound is omitted,  it is assumed to be meaningless (e.g. reference range is >= 2.3).
+     * The value of the high bound of the reference range.  The high bound of the reference range endpoint is inclusive of the value (e.g.  reference range is >=5 - <=9).   If the high bound is omitted,  it is assumed to be meaningless (e.g. reference range is >= 2.3).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity
      * @return $this
      */
@@ -214,7 +262,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement implements \Json
     }
 
     /**
-     * The value of the high bound of the reference range.  The high bound of the reference range endpoint is inclusive of the value (e.g.  reference range is >=5 - <=9). If the high bound is omitted,  it is assumed to be meaningless (e.g. reference range is >= 2.3).
+     * The value of the high bound of the reference range.  The high bound of the reference range endpoint is inclusive of the value (e.g.  reference range is >=5 - <=9).   If the high bound is omitted,  it is assumed to be meaningless (e.g. reference range is >= 2.3).
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public function getHigh()
@@ -222,9 +270,8 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement implements \Json
         return $this->high;
     }
 
-
     /**
-     * The value of the low bound of the reference range.  The low bound of the reference range endpoint is inclusive of the value (e.g.  reference range is >=5 - <=9). If the low bound is omitted,  it is assumed to be meaningless (e.g. reference range is <=2.3).
+     * The value of the low bound of the reference range.  The low bound of the reference range endpoint is inclusive of the value (e.g.  reference range is >=5 - <=9).   If the low bound is omitted,  it is assumed to be meaningless (e.g. reference range is <=2.3).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity
      * @return $this
      */
@@ -238,7 +285,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement implements \Json
     }
 
     /**
-     * The value of the low bound of the reference range.  The low bound of the reference range endpoint is inclusive of the value (e.g.  reference range is >=5 - <=9). If the low bound is omitted,  it is assumed to be meaningless (e.g. reference range is <=2.3).
+     * The value of the low bound of the reference range.  The low bound of the reference range endpoint is inclusive of the value (e.g.  reference range is >=5 - <=9).   If the low bound is omitted,  it is assumed to be meaningless (e.g. reference range is <=2.3).
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public function getLow()
@@ -246,9 +293,8 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement implements \Json
         return $this->low;
     }
 
-
     /**
-     * Text based reference range in an observation which may be used when a quantitative range is not appropriate for an observation.  An example would be a reference value of "Negative" or a list or table of "normals".
+     * Text based reference range in an observation which may be used when a quantitative range is not appropriate for an observation.  An example would be a reference value of "Negative" or a list or table of 'normals'.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
@@ -271,14 +317,13 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement implements \Json
     }
 
     /**
-     * Text based reference range in an observation which may be used when a quantitative range is not appropriate for an observation.  An example would be a reference value of "Negative" or a list or table of "normals".
+     * Text based reference range in an observation which may be used when a quantitative range is not appropriate for an observation.  An example would be a reference value of "Negative" or a list or table of 'normals'.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getText()
     {
         return $this->text;
     }
-
 
     /**
      * Codes to indicate the what part of the targeted reference population it applies to. For example, the normal or therapeutic range.
@@ -303,7 +348,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement implements \Json
         return $this->type;
     }
 
-
     /**
      * @return string
      */
@@ -321,8 +365,16 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement implements \Json
         if (null !== ($v = $this->getAge())) {
             $a['age'] = $v;
         }
-        if (null !== ($v = $this->getAppliesTo())) {
-            $a['appliesTo'] = $v;
+        if (0 < count($values = $this->getAppliesTo())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['appliesTo'] = $vs;
+            }
         }
         if (null !== ($v = $this->getHigh())) {
             $a['high'] = $v;
@@ -349,9 +401,28 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement implements \Json
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ObservationReferenceRange xmlns="http://hl7.org/fhir"></ObservationReferenceRange>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getAge())) {
+            $v->xmlSerialize(true, $sxe->addChild('age'));
         }
-        return $sxe->saveXML();
+        if (0 < count($values = $this->getAppliesTo())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('appliesTo'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getHigh())) {
+            $v->xmlSerialize(true, $sxe->addChild('high'));
+        }
+        if (null !== ($v = $this->getLow())) {
+            $v->xmlSerialize(true, $sxe->addChild('low'));
+        }
+        if (null !== ($v = $this->getText())) {
+            $v->xmlSerialize(true, $sxe->addChild('text'));
+        }
+        if (null !== ($v = $this->getType())) {
+            $v->xmlSerialize(true, $sxe->addChild('type'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

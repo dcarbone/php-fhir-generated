@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -66,31 +66,23 @@ use PHPFHIRGenerated\FHIRElement\FHIRAddress;
 use PHPFHIRGenerated\FHIRElement\FHIRAnnotation;
 use PHPFHIRGenerated\FHIRElement\FHIRAttachment;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDosage;
-use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTiming;
 use PHPFHIRGenerated\FHIRElement\FHIRBase64Binary;
 use PHPFHIRGenerated\FHIRElement\FHIRBoolean;
-use PHPFHIRGenerated\FHIRElement\FHIRCanonical;
 use PHPFHIRGenerated\FHIRElement\FHIRCode;
 use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
 use PHPFHIRGenerated\FHIRElement\FHIRCoding;
-use PHPFHIRGenerated\FHIRElement\FHIRContactDetail;
 use PHPFHIRGenerated\FHIRElement\FHIRContactPoint;
-use PHPFHIRGenerated\FHIRElement\FHIRContributor;
-use PHPFHIRGenerated\FHIRElement\FHIRDataRequirement;
 use PHPFHIRGenerated\FHIRElement\FHIRDate;
 use PHPFHIRGenerated\FHIRElement\FHIRDateTime;
 use PHPFHIRGenerated\FHIRElement\FHIRDecimal;
-use PHPFHIRGenerated\FHIRElement\FHIRExpression;
 use PHPFHIRGenerated\FHIRElement\FHIRHumanName;
 use PHPFHIRGenerated\FHIRElement\FHIRId;
 use PHPFHIRGenerated\FHIRElement\FHIRIdentifier;
 use PHPFHIRGenerated\FHIRElement\FHIRInstant;
 use PHPFHIRGenerated\FHIRElement\FHIRInteger;
 use PHPFHIRGenerated\FHIRElement\FHIRMarkdown;
-use PHPFHIRGenerated\FHIRElement\FHIRMoney;
+use PHPFHIRGenerated\FHIRElement\FHIRMeta;
 use PHPFHIRGenerated\FHIRElement\FHIROid;
-use PHPFHIRGenerated\FHIRElement\FHIRParameterDefinition;
 use PHPFHIRGenerated\FHIRElement\FHIRPeriod;
 use PHPFHIRGenerated\FHIRElement\FHIRPositiveInt;
 use PHPFHIRGenerated\FHIRElement\FHIRQuantity;
@@ -98,21 +90,18 @@ use PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge;
 use PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRCount;
 use PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDistance;
 use PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration;
+use PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney;
 use PHPFHIRGenerated\FHIRElement\FHIRRange;
 use PHPFHIRGenerated\FHIRElement\FHIRRatio;
 use PHPFHIRGenerated\FHIRElement\FHIRReference;
-use PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact;
 use PHPFHIRGenerated\FHIRElement\FHIRSampledData;
 use PHPFHIRGenerated\FHIRElement\FHIRSignature;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
 use PHPFHIRGenerated\FHIRElement\FHIRStructureMapSourceListMode;
 use PHPFHIRGenerated\FHIRElement\FHIRTime;
-use PHPFHIRGenerated\FHIRElement\FHIRTriggerDefinition;
+use PHPFHIRGenerated\FHIRElement\FHIRTiming;
 use PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt;
 use PHPFHIRGenerated\FHIRElement\FHIRUri;
-use PHPFHIRGenerated\FHIRElement\FHIRUrl;
-use PHPFHIRGenerated\FHIRElement\FHIRUsageContext;
-use PHPFHIRGenerated\FHIRElement\FHIRUuid;
 
 /**
  * A Map of relationships between 2 structures that can be used to transform data.
@@ -129,355 +118,283 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
      * FHIRPath expression  - must be true or the mapping engine throws an error instead of completing.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $check = null;
+    private $check = null;
 
     /**
      * FHIRPath expression  - must be true or the rule does not apply.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $condition = null;
+    private $condition = null;
 
     /**
      * Type or variable this rule applies to.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRId
      */
-    public $context = null;
+    private $context = null;
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAddress
      */
-    public $defaultValueAddress = null;
+    private $defaultValueAddress = null;
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
      */
-    public $defaultValueAge = null;
+    private $defaultValueAge = null;
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation
      */
-    public $defaultValueAnnotation = null;
+    private $defaultValueAnnotation = null;
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
-    public $defaultValueAttachment = null;
+    private $defaultValueAttachment = null;
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
      */
-    public $defaultValueBase64Binary = null;
+    private $defaultValueBase64Binary = null;
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $defaultValueBoolean = null;
+    private $defaultValueBoolean = null;
 
     /**
-     * A value to use if there is no existing value in the source object.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCanonical
-     */
-    public $defaultValueCanonical = null;
-
-    /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public $defaultValueCode = null;
+    private $defaultValueCode = null;
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $defaultValueCodeableConcept = null;
+    private $defaultValueCodeableConcept = null;
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
-    public $defaultValueCoding = null;
+    private $defaultValueCoding = null;
 
     /**
-     * A value to use if there is no existing value in the source object.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail
-     */
-    public $defaultValueContactDetail = null;
-
-    /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRContactPoint
      */
-    public $defaultValueContactPoint = null;
+    private $defaultValueContactPoint = null;
 
     /**
-     * A value to use if there is no existing value in the source object.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRContributor
-     */
-    public $defaultValueContributor = null;
-
-    /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRCount
      */
-    public $defaultValueCount = null;
+    private $defaultValueCount = null;
 
     /**
-     * A value to use if there is no existing value in the source object.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDataRequirement
-     */
-    public $defaultValueDataRequirement = null;
-
-    /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
-    public $defaultValueDate = null;
+    private $defaultValueDate = null;
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $defaultValueDateTime = null;
+    private $defaultValueDateTime = null;
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
-    public $defaultValueDecimal = null;
+    private $defaultValueDecimal = null;
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDistance
      */
-    public $defaultValueDistance = null;
+    private $defaultValueDistance = null;
 
     /**
-     * A value to use if there is no existing value in the source object.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDosage
-     */
-    public $defaultValueDosage = null;
-
-    /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration
      */
-    public $defaultValueDuration = null;
+    private $defaultValueDuration = null;
 
     /**
-     * A value to use if there is no existing value in the source object.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRExpression
-     */
-    public $defaultValueExpression = null;
-
-    /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRHumanName
      */
-    public $defaultValueHumanName = null;
+    private $defaultValueHumanName = null;
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRId
      */
-    public $defaultValueId = null;
+    private $defaultValueId = null;
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public $defaultValueIdentifier = null;
+    private $defaultValueIdentifier = null;
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInstant
      */
-    public $defaultValueInstant = null;
+    private $defaultValueInstant = null;
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
-    public $defaultValueInteger = null;
+    private $defaultValueInteger = null;
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public $defaultValueMarkdown = null;
+    private $defaultValueMarkdown = null;
 
     /**
-     * A value to use if there is no existing value in the source object.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRMoney
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRMeta
      */
-    public $defaultValueMoney = null;
+    private $defaultValueMeta = null;
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
+     */
+    private $defaultValueMoney = null;
+
+    /**
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIROid
      */
-    public $defaultValueOid = null;
+    private $defaultValueOid = null;
 
     /**
-     * A value to use if there is no existing value in the source object.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRParameterDefinition
-     */
-    public $defaultValueParameterDefinition = null;
-
-    /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public $defaultValuePeriod = null;
+    private $defaultValuePeriod = null;
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
-    public $defaultValuePositiveInt = null;
+    private $defaultValuePositiveInt = null;
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    public $defaultValueQuantity = null;
+    private $defaultValueQuantity = null;
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
-    public $defaultValueRange = null;
+    private $defaultValueRange = null;
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
-    public $defaultValueRatio = null;
+    private $defaultValueRatio = null;
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $defaultValueReference = null;
+    private $defaultValueReference = null;
 
     /**
-     * A value to use if there is no existing value in the source object.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact
-     */
-    public $defaultValueRelatedArtifact = null;
-
-    /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRSampledData
      */
-    public $defaultValueSampledData = null;
+    private $defaultValueSampledData = null;
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRSignature
      */
-    public $defaultValueSignature = null;
+    private $defaultValueSignature = null;
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $defaultValueString = null;
+    private $defaultValueString = null;
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
-    public $defaultValueTime = null;
+    private $defaultValueTime = null;
 
     /**
-     * A value to use if there is no existing value in the source object.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTiming
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
-    public $defaultValueTiming = null;
+    private $defaultValueTiming = null;
 
     /**
-     * A value to use if there is no existing value in the source object.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRTriggerDefinition
-     */
-    public $defaultValueTriggerDefinition = null;
-
-    /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
-    public $defaultValueUnsignedInt = null;
+    private $defaultValueUnsignedInt = null;
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $defaultValueUri = null;
-
-    /**
-     * A value to use if there is no existing value in the source object.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUrl
-     */
-    public $defaultValueUrl = null;
-
-    /**
-     * A value to use if there is no existing value in the source object.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext
-     */
-    public $defaultValueUsageContext = null;
-
-    /**
-     * A value to use if there is no existing value in the source object.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUuid
-     */
-    public $defaultValueUuid = null;
+    private $defaultValueUri = null;
 
     /**
      * Optional field for this source.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $element = null;
+    private $element = null;
 
     /**
      * How to handle the list mode for this element.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRStructureMapSourceListMode
      */
-    public $listMode = null;
-
-    /**
-     * A FHIRPath expression which specifies a message to put in the transform log when content matching the source rule is found.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public $logMessage = null;
+    private $listMode = null;
 
     /**
      * Specified maximum cardinality for the element - a number or a "*". This is optional; if present, it acts an implicit check on the input content (* just serves as documentation; it's the default value).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $max = null;
+    private $max = null;
 
     /**
      * Specified minimum cardinality for the element. This is optional; if present, it acts an implicit check on the input content.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
-    public $min = null;
+    private $min = null;
 
     /**
      * Specified type for the element. This works as a condition on the mapping - use for polymorphic elements.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $type = null;
+    private $type = null;
 
     /**
      * Named context for field, if a field is specified.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRId
      */
-    public $variable = null;
+    private $variable = null;
 
     /**
      * FHIRStructureMapSource Constructor
@@ -486,184 +403,526 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['check'])) {
-                $this->setCheck($data['check']);
+                $value = $data['check'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"check\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setCheck($value);
             }
             if (isset($data['condition'])) {
-                $this->setCondition($data['condition']);
+                $value = $data['condition'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"condition\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setCondition($value);
             }
             if (isset($data['context'])) {
-                $this->setContext($data['context']);
+                $value = $data['context'];
+                if (is_array($value)) {
+                    $value = new FHIRId($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRId($value);
+                }
+                if (!($value instanceof FHIRId)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"context\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRId or data to construct type, saw ".gettype($value));
+                }
+                $this->setContext($value);
             }
             if (isset($data['defaultValueAddress'])) {
-                $this->setDefaultValueAddress($data['defaultValueAddress']);
+                $value = $data['defaultValueAddress'];
+                if (is_array($value)) {
+                    $value = new FHIRAddress($value);
+                } 
+                if (!($value instanceof FHIRAddress)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"defaultValueAddress\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAddress or data to construct type, saw ".gettype($value));
+                }
+                $this->setDefaultValueAddress($value);
             }
             if (isset($data['defaultValueAge'])) {
-                $this->setDefaultValueAge($data['defaultValueAge']);
+                $value = $data['defaultValueAge'];
+                if (is_array($value)) {
+                    $value = new FHIRAge($value);
+                } 
+                if (!($value instanceof FHIRAge)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"defaultValueAge\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge or data to construct type, saw ".gettype($value));
+                }
+                $this->setDefaultValueAge($value);
             }
             if (isset($data['defaultValueAnnotation'])) {
-                $this->setDefaultValueAnnotation($data['defaultValueAnnotation']);
+                $value = $data['defaultValueAnnotation'];
+                if (is_array($value)) {
+                    $value = new FHIRAnnotation($value);
+                } 
+                if (!($value instanceof FHIRAnnotation)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"defaultValueAnnotation\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAnnotation or data to construct type, saw ".gettype($value));
+                }
+                $this->setDefaultValueAnnotation($value);
             }
             if (isset($data['defaultValueAttachment'])) {
-                $this->setDefaultValueAttachment($data['defaultValueAttachment']);
+                $value = $data['defaultValueAttachment'];
+                if (is_array($value)) {
+                    $value = new FHIRAttachment($value);
+                } 
+                if (!($value instanceof FHIRAttachment)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"defaultValueAttachment\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAttachment or data to construct type, saw ".gettype($value));
+                }
+                $this->setDefaultValueAttachment($value);
             }
             if (isset($data['defaultValueBase64Binary'])) {
-                $this->setDefaultValueBase64Binary($data['defaultValueBase64Binary']);
+                $value = $data['defaultValueBase64Binary'];
+                if (is_array($value)) {
+                    $value = new FHIRBase64Binary($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBase64Binary($value);
+                }
+                if (!($value instanceof FHIRBase64Binary)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"defaultValueBase64Binary\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary or data to construct type, saw ".gettype($value));
+                }
+                $this->setDefaultValueBase64Binary($value);
             }
             if (isset($data['defaultValueBoolean'])) {
-                $this->setDefaultValueBoolean($data['defaultValueBoolean']);
-            }
-            if (isset($data['defaultValueCanonical'])) {
-                $this->setDefaultValueCanonical($data['defaultValueCanonical']);
+                $value = $data['defaultValueBoolean'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"defaultValueBoolean\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value));
+                }
+                $this->setDefaultValueBoolean($value);
             }
             if (isset($data['defaultValueCode'])) {
-                $this->setDefaultValueCode($data['defaultValueCode']);
+                $value = $data['defaultValueCode'];
+                if (is_array($value)) {
+                    $value = new FHIRCode($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRCode($value);
+                }
+                if (!($value instanceof FHIRCode)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"defaultValueCode\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or data to construct type, saw ".gettype($value));
+                }
+                $this->setDefaultValueCode($value);
             }
             if (isset($data['defaultValueCodeableConcept'])) {
-                $this->setDefaultValueCodeableConcept($data['defaultValueCodeableConcept']);
+                $value = $data['defaultValueCodeableConcept'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"defaultValueCodeableConcept\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setDefaultValueCodeableConcept($value);
             }
             if (isset($data['defaultValueCoding'])) {
-                $this->setDefaultValueCoding($data['defaultValueCoding']);
-            }
-            if (isset($data['defaultValueContactDetail'])) {
-                $this->setDefaultValueContactDetail($data['defaultValueContactDetail']);
+                $value = $data['defaultValueCoding'];
+                if (is_array($value)) {
+                    $value = new FHIRCoding($value);
+                } 
+                if (!($value instanceof FHIRCoding)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"defaultValueCoding\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCoding or data to construct type, saw ".gettype($value));
+                }
+                $this->setDefaultValueCoding($value);
             }
             if (isset($data['defaultValueContactPoint'])) {
-                $this->setDefaultValueContactPoint($data['defaultValueContactPoint']);
-            }
-            if (isset($data['defaultValueContributor'])) {
-                $this->setDefaultValueContributor($data['defaultValueContributor']);
+                $value = $data['defaultValueContactPoint'];
+                if (is_array($value)) {
+                    $value = new FHIRContactPoint($value);
+                } 
+                if (!($value instanceof FHIRContactPoint)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"defaultValueContactPoint\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRContactPoint or data to construct type, saw ".gettype($value));
+                }
+                $this->setDefaultValueContactPoint($value);
             }
             if (isset($data['defaultValueCount'])) {
-                $this->setDefaultValueCount($data['defaultValueCount']);
-            }
-            if (isset($data['defaultValueDataRequirement'])) {
-                $this->setDefaultValueDataRequirement($data['defaultValueDataRequirement']);
+                $value = $data['defaultValueCount'];
+                if (is_array($value)) {
+                    $value = new FHIRCount($value);
+                } 
+                if (!($value instanceof FHIRCount)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"defaultValueCount\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRCount or data to construct type, saw ".gettype($value));
+                }
+                $this->setDefaultValueCount($value);
             }
             if (isset($data['defaultValueDate'])) {
-                $this->setDefaultValueDate($data['defaultValueDate']);
+                $value = $data['defaultValueDate'];
+                if (is_array($value)) {
+                    $value = new FHIRDate($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDate($value);
+                }
+                if (!($value instanceof FHIRDate)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"defaultValueDate\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDate or data to construct type, saw ".gettype($value));
+                }
+                $this->setDefaultValueDate($value);
             }
             if (isset($data['defaultValueDateTime'])) {
-                $this->setDefaultValueDateTime($data['defaultValueDateTime']);
+                $value = $data['defaultValueDateTime'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"defaultValueDateTime\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value));
+                }
+                $this->setDefaultValueDateTime($value);
             }
             if (isset($data['defaultValueDecimal'])) {
-                $this->setDefaultValueDecimal($data['defaultValueDecimal']);
+                $value = $data['defaultValueDecimal'];
+                if (is_array($value)) {
+                    $value = new FHIRDecimal($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDecimal($value);
+                }
+                if (!($value instanceof FHIRDecimal)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"defaultValueDecimal\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDecimal or data to construct type, saw ".gettype($value));
+                }
+                $this->setDefaultValueDecimal($value);
             }
             if (isset($data['defaultValueDistance'])) {
-                $this->setDefaultValueDistance($data['defaultValueDistance']);
-            }
-            if (isset($data['defaultValueDosage'])) {
-                $this->setDefaultValueDosage($data['defaultValueDosage']);
+                $value = $data['defaultValueDistance'];
+                if (is_array($value)) {
+                    $value = new FHIRDistance($value);
+                } 
+                if (!($value instanceof FHIRDistance)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"defaultValueDistance\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDistance or data to construct type, saw ".gettype($value));
+                }
+                $this->setDefaultValueDistance($value);
             }
             if (isset($data['defaultValueDuration'])) {
-                $this->setDefaultValueDuration($data['defaultValueDuration']);
-            }
-            if (isset($data['defaultValueExpression'])) {
-                $this->setDefaultValueExpression($data['defaultValueExpression']);
+                $value = $data['defaultValueDuration'];
+                if (is_array($value)) {
+                    $value = new FHIRDuration($value);
+                } 
+                if (!($value instanceof FHIRDuration)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"defaultValueDuration\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration or data to construct type, saw ".gettype($value));
+                }
+                $this->setDefaultValueDuration($value);
             }
             if (isset($data['defaultValueHumanName'])) {
-                $this->setDefaultValueHumanName($data['defaultValueHumanName']);
+                $value = $data['defaultValueHumanName'];
+                if (is_array($value)) {
+                    $value = new FHIRHumanName($value);
+                } 
+                if (!($value instanceof FHIRHumanName)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"defaultValueHumanName\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRHumanName or data to construct type, saw ".gettype($value));
+                }
+                $this->setDefaultValueHumanName($value);
             }
             if (isset($data['defaultValueId'])) {
-                $this->setDefaultValueId($data['defaultValueId']);
+                $value = $data['defaultValueId'];
+                if (is_array($value)) {
+                    $value = new FHIRId($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRId($value);
+                }
+                if (!($value instanceof FHIRId)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"defaultValueId\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRId or data to construct type, saw ".gettype($value));
+                }
+                $this->setDefaultValueId($value);
             }
             if (isset($data['defaultValueIdentifier'])) {
-                $this->setDefaultValueIdentifier($data['defaultValueIdentifier']);
+                $value = $data['defaultValueIdentifier'];
+                if (is_array($value)) {
+                    $value = new FHIRIdentifier($value);
+                } 
+                if (!($value instanceof FHIRIdentifier)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"defaultValueIdentifier\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($value));
+                }
+                $this->setDefaultValueIdentifier($value);
             }
             if (isset($data['defaultValueInstant'])) {
-                $this->setDefaultValueInstant($data['defaultValueInstant']);
+                $value = $data['defaultValueInstant'];
+                if (is_array($value)) {
+                    $value = new FHIRInstant($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRInstant($value);
+                }
+                if (!($value instanceof FHIRInstant)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"defaultValueInstant\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRInstant or data to construct type, saw ".gettype($value));
+                }
+                $this->setDefaultValueInstant($value);
             }
             if (isset($data['defaultValueInteger'])) {
-                $this->setDefaultValueInteger($data['defaultValueInteger']);
+                $value = $data['defaultValueInteger'];
+                if (is_array($value)) {
+                    $value = new FHIRInteger($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRInteger($value);
+                }
+                if (!($value instanceof FHIRInteger)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"defaultValueInteger\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRInteger or data to construct type, saw ".gettype($value));
+                }
+                $this->setDefaultValueInteger($value);
             }
             if (isset($data['defaultValueMarkdown'])) {
-                $this->setDefaultValueMarkdown($data['defaultValueMarkdown']);
+                $value = $data['defaultValueMarkdown'];
+                if (is_array($value)) {
+                    $value = new FHIRMarkdown($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRMarkdown($value);
+                }
+                if (!($value instanceof FHIRMarkdown)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"defaultValueMarkdown\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRMarkdown or data to construct type, saw ".gettype($value));
+                }
+                $this->setDefaultValueMarkdown($value);
+            }
+            if (isset($data['defaultValueMeta'])) {
+                $value = $data['defaultValueMeta'];
+                if (is_array($value)) {
+                    $value = new FHIRMeta($value);
+                } 
+                if (!($value instanceof FHIRMeta)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"defaultValueMeta\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRMeta or data to construct type, saw ".gettype($value));
+                }
+                $this->setDefaultValueMeta($value);
             }
             if (isset($data['defaultValueMoney'])) {
-                $this->setDefaultValueMoney($data['defaultValueMoney']);
+                $value = $data['defaultValueMoney'];
+                if (is_array($value)) {
+                    $value = new FHIRMoney($value);
+                } 
+                if (!($value instanceof FHIRMoney)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"defaultValueMoney\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney or data to construct type, saw ".gettype($value));
+                }
+                $this->setDefaultValueMoney($value);
             }
             if (isset($data['defaultValueOid'])) {
-                $this->setDefaultValueOid($data['defaultValueOid']);
-            }
-            if (isset($data['defaultValueParameterDefinition'])) {
-                $this->setDefaultValueParameterDefinition($data['defaultValueParameterDefinition']);
+                $value = $data['defaultValueOid'];
+                if (is_array($value)) {
+                    $value = new FHIROid($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIROid($value);
+                }
+                if (!($value instanceof FHIROid)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"defaultValueOid\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIROid or data to construct type, saw ".gettype($value));
+                }
+                $this->setDefaultValueOid($value);
             }
             if (isset($data['defaultValuePeriod'])) {
-                $this->setDefaultValuePeriod($data['defaultValuePeriod']);
+                $value = $data['defaultValuePeriod'];
+                if (is_array($value)) {
+                    $value = new FHIRPeriod($value);
+                } 
+                if (!($value instanceof FHIRPeriod)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"defaultValuePeriod\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPeriod or data to construct type, saw ".gettype($value));
+                }
+                $this->setDefaultValuePeriod($value);
             }
             if (isset($data['defaultValuePositiveInt'])) {
-                $this->setDefaultValuePositiveInt($data['defaultValuePositiveInt']);
+                $value = $data['defaultValuePositiveInt'];
+                if (is_array($value)) {
+                    $value = new FHIRPositiveInt($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRPositiveInt($value);
+                }
+                if (!($value instanceof FHIRPositiveInt)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"defaultValuePositiveInt\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt or data to construct type, saw ".gettype($value));
+                }
+                $this->setDefaultValuePositiveInt($value);
             }
             if (isset($data['defaultValueQuantity'])) {
-                $this->setDefaultValueQuantity($data['defaultValueQuantity']);
+                $value = $data['defaultValueQuantity'];
+                if (is_array($value)) {
+                    $value = new FHIRQuantity($value);
+                } 
+                if (!($value instanceof FHIRQuantity)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"defaultValueQuantity\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity or data to construct type, saw ".gettype($value));
+                }
+                $this->setDefaultValueQuantity($value);
             }
             if (isset($data['defaultValueRange'])) {
-                $this->setDefaultValueRange($data['defaultValueRange']);
+                $value = $data['defaultValueRange'];
+                if (is_array($value)) {
+                    $value = new FHIRRange($value);
+                } 
+                if (!($value instanceof FHIRRange)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"defaultValueRange\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRRange or data to construct type, saw ".gettype($value));
+                }
+                $this->setDefaultValueRange($value);
             }
             if (isset($data['defaultValueRatio'])) {
-                $this->setDefaultValueRatio($data['defaultValueRatio']);
+                $value = $data['defaultValueRatio'];
+                if (is_array($value)) {
+                    $value = new FHIRRatio($value);
+                } 
+                if (!($value instanceof FHIRRatio)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"defaultValueRatio\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRRatio or data to construct type, saw ".gettype($value));
+                }
+                $this->setDefaultValueRatio($value);
             }
             if (isset($data['defaultValueReference'])) {
-                $this->setDefaultValueReference($data['defaultValueReference']);
-            }
-            if (isset($data['defaultValueRelatedArtifact'])) {
-                $this->setDefaultValueRelatedArtifact($data['defaultValueRelatedArtifact']);
+                $value = $data['defaultValueReference'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"defaultValueReference\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setDefaultValueReference($value);
             }
             if (isset($data['defaultValueSampledData'])) {
-                $this->setDefaultValueSampledData($data['defaultValueSampledData']);
+                $value = $data['defaultValueSampledData'];
+                if (is_array($value)) {
+                    $value = new FHIRSampledData($value);
+                } 
+                if (!($value instanceof FHIRSampledData)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"defaultValueSampledData\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRSampledData or data to construct type, saw ".gettype($value));
+                }
+                $this->setDefaultValueSampledData($value);
             }
             if (isset($data['defaultValueSignature'])) {
-                $this->setDefaultValueSignature($data['defaultValueSignature']);
+                $value = $data['defaultValueSignature'];
+                if (is_array($value)) {
+                    $value = new FHIRSignature($value);
+                } 
+                if (!($value instanceof FHIRSignature)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"defaultValueSignature\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRSignature or data to construct type, saw ".gettype($value));
+                }
+                $this->setDefaultValueSignature($value);
             }
             if (isset($data['defaultValueString'])) {
-                $this->setDefaultValueString($data['defaultValueString']);
+                $value = $data['defaultValueString'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"defaultValueString\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setDefaultValueString($value);
             }
             if (isset($data['defaultValueTime'])) {
-                $this->setDefaultValueTime($data['defaultValueTime']);
+                $value = $data['defaultValueTime'];
+                if (is_array($value)) {
+                    $value = new FHIRTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRTime($value);
+                }
+                if (!($value instanceof FHIRTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"defaultValueTime\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRTime or data to construct type, saw ".gettype($value));
+                }
+                $this->setDefaultValueTime($value);
             }
             if (isset($data['defaultValueTiming'])) {
-                $this->setDefaultValueTiming($data['defaultValueTiming']);
-            }
-            if (isset($data['defaultValueTriggerDefinition'])) {
-                $this->setDefaultValueTriggerDefinition($data['defaultValueTriggerDefinition']);
+                $value = $data['defaultValueTiming'];
+                if (is_array($value)) {
+                    $value = new FHIRTiming($value);
+                } 
+                if (!($value instanceof FHIRTiming)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"defaultValueTiming\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRTiming or data to construct type, saw ".gettype($value));
+                }
+                $this->setDefaultValueTiming($value);
             }
             if (isset($data['defaultValueUnsignedInt'])) {
-                $this->setDefaultValueUnsignedInt($data['defaultValueUnsignedInt']);
+                $value = $data['defaultValueUnsignedInt'];
+                if (is_array($value)) {
+                    $value = new FHIRUnsignedInt($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUnsignedInt($value);
+                }
+                if (!($value instanceof FHIRUnsignedInt)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"defaultValueUnsignedInt\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt or data to construct type, saw ".gettype($value));
+                }
+                $this->setDefaultValueUnsignedInt($value);
             }
             if (isset($data['defaultValueUri'])) {
-                $this->setDefaultValueUri($data['defaultValueUri']);
-            }
-            if (isset($data['defaultValueUrl'])) {
-                $this->setDefaultValueUrl($data['defaultValueUrl']);
-            }
-            if (isset($data['defaultValueUsageContext'])) {
-                $this->setDefaultValueUsageContext($data['defaultValueUsageContext']);
-            }
-            if (isset($data['defaultValueUuid'])) {
-                $this->setDefaultValueUuid($data['defaultValueUuid']);
+                $value = $data['defaultValueUri'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"defaultValueUri\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value));
+                }
+                $this->setDefaultValueUri($value);
             }
             if (isset($data['element'])) {
-                $this->setElement($data['element']);
+                $value = $data['element'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"element\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setElement($value);
             }
             if (isset($data['listMode'])) {
-                $this->setListMode($data['listMode']);
-            }
-            if (isset($data['logMessage'])) {
-                $this->setLogMessage($data['logMessage']);
+                $value = $data['listMode'];
+                if (is_array($value)) {
+                    $value = new FHIRStructureMapSourceListMode($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRStructureMapSourceListMode($value);
+                }
+                if (!($value instanceof FHIRStructureMapSourceListMode)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"listMode\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRStructureMapSourceListMode or data to construct type, saw ".gettype($value));
+                }
+                $this->setListMode($value);
             }
             if (isset($data['max'])) {
-                $this->setMax($data['max']);
+                $value = $data['max'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"max\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setMax($value);
             }
             if (isset($data['min'])) {
-                $this->setMin($data['min']);
+                $value = $data['min'];
+                if (is_array($value)) {
+                    $value = new FHIRInteger($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRInteger($value);
+                }
+                if (!($value instanceof FHIRInteger)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"min\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRInteger or data to construct type, saw ".gettype($value));
+                }
+                $this->setMin($value);
             }
             if (isset($data['type'])) {
-                $this->setType($data['type']);
+                $value = $data['type'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"type\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setType($value);
             }
             if (isset($data['variable'])) {
-                $this->setVariable($data['variable']);
+                $value = $data['variable'];
+                if (is_array($value)) {
+                    $value = new FHIRId($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRId($value);
+                }
+                if (!($value instanceof FHIRId)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource::__construct - Property \"variable\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRId or data to construct type, saw ".gettype($value));
+                }
+                $this->setVariable($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -672,6 +931,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -706,7 +966,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
         return $this->check;
     }
 
-
     /**
      * FHIRPath expression  - must be true or the rule does not apply.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -738,7 +997,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     {
         return $this->condition;
     }
-
 
     /**
      * Type or variable this rule applies to.
@@ -772,9 +1030,8 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
         return $this->context;
     }
 
-
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRAddress
      * @return $this
      */
@@ -788,7 +1045,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAddress
      */
     public function getDefaultValueAddress()
@@ -796,9 +1053,8 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
         return $this->defaultValueAddress;
     }
 
-
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
      * @return $this
      */
@@ -812,7 +1068,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
      */
     public function getDefaultValueAge()
@@ -820,9 +1076,8 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
         return $this->defaultValueAge;
     }
 
-
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation
      * @return $this
      */
@@ -836,7 +1091,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation
      */
     public function getDefaultValueAnnotation()
@@ -844,9 +1099,8 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
         return $this->defaultValueAnnotation;
     }
 
-
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRAttachment
      * @return $this
      */
@@ -860,7 +1114,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public function getDefaultValueAttachment()
@@ -868,9 +1122,8 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
         return $this->defaultValueAttachment;
     }
 
-
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
      * @return $this
      */
@@ -893,7 +1146,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
      */
     public function getDefaultValueBase64Binary()
@@ -901,9 +1154,8 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
         return $this->defaultValueBase64Binary;
     }
 
-
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      * @return $this
      */
@@ -926,7 +1178,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getDefaultValueBoolean()
@@ -934,42 +1186,8 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
         return $this->defaultValueBoolean;
     }
 
-
     /**
-     * A value to use if there is no existing value in the source object.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
-     * @return $this
-     */
-    public function setDefaultValueCanonical($defaultValueCanonical)
-    {
-        if (null === $defaultValueCanonical) {
-            return $this; 
-        }
-        if (is_scalar($defaultValueCanonical)) {
-            $defaultValueCanonical = new FHIRCanonical($defaultValueCanonical);
-        }
-        if (!($defaultValueCanonical instanceof FHIRCanonical)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRStructureMapSource::setDefaultValueCanonical - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCanonical or appropriate scalar value, %s seen.',
-                gettype($defaultValueCanonical)
-            ));
-        }
-        $this->defaultValueCanonical = $defaultValueCanonical;
-        return $this;
-    }
-
-    /**
-     * A value to use if there is no existing value in the source object.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
-     */
-    public function getDefaultValueCanonical()
-    {
-        return $this->defaultValueCanonical;
-    }
-
-
-    /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCode
      * @return $this
      */
@@ -992,7 +1210,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCode
      */
     public function getDefaultValueCode()
@@ -1000,9 +1218,8 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
         return $this->defaultValueCode;
     }
 
-
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
@@ -1016,7 +1233,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getDefaultValueCodeableConcept()
@@ -1024,9 +1241,8 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
         return $this->defaultValueCodeableConcept;
     }
 
-
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
      * @return $this
      */
@@ -1040,7 +1256,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public function getDefaultValueCoding()
@@ -1048,33 +1264,8 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
         return $this->defaultValueCoding;
     }
 
-
     /**
-     * A value to use if there is no existing value in the source object.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail
-     * @return $this
-     */
-    public function setDefaultValueContactDetail(FHIRContactDetail $defaultValueContactDetail = null)
-    {
-        if (null === $defaultValueContactDetail) {
-            return $this; 
-        }
-        $this->defaultValueContactDetail = $defaultValueContactDetail;
-        return $this;
-    }
-
-    /**
-     * A value to use if there is no existing value in the source object.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail
-     */
-    public function getDefaultValueContactDetail()
-    {
-        return $this->defaultValueContactDetail;
-    }
-
-
-    /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContactPoint
      * @return $this
      */
@@ -1088,7 +1279,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactPoint
      */
     public function getDefaultValueContactPoint()
@@ -1096,33 +1287,8 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
         return $this->defaultValueContactPoint;
     }
 
-
     /**
-     * A value to use if there is no existing value in the source object.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContributor
-     * @return $this
-     */
-    public function setDefaultValueContributor(FHIRContributor $defaultValueContributor = null)
-    {
-        if (null === $defaultValueContributor) {
-            return $this; 
-        }
-        $this->defaultValueContributor = $defaultValueContributor;
-        return $this;
-    }
-
-    /**
-     * A value to use if there is no existing value in the source object.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContributor
-     */
-    public function getDefaultValueContributor()
-    {
-        return $this->defaultValueContributor;
-    }
-
-
-    /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRCount
      * @return $this
      */
@@ -1136,7 +1302,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRCount
      */
     public function getDefaultValueCount()
@@ -1144,33 +1310,8 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
         return $this->defaultValueCount;
     }
 
-
     /**
-     * A value to use if there is no existing value in the source object.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDataRequirement
-     * @return $this
-     */
-    public function setDefaultValueDataRequirement(FHIRDataRequirement $defaultValueDataRequirement = null)
-    {
-        if (null === $defaultValueDataRequirement) {
-            return $this; 
-        }
-        $this->defaultValueDataRequirement = $defaultValueDataRequirement;
-        return $this;
-    }
-
-    /**
-     * A value to use if there is no existing value in the source object.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDataRequirement
-     */
-    public function getDefaultValueDataRequirement()
-    {
-        return $this->defaultValueDataRequirement;
-    }
-
-
-    /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDate
      * @return $this
      */
@@ -1193,7 +1334,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public function getDefaultValueDate()
@@ -1201,9 +1342,8 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
         return $this->defaultValueDate;
     }
 
-
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      * @return $this
      */
@@ -1226,7 +1366,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getDefaultValueDateTime()
@@ -1234,9 +1374,8 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
         return $this->defaultValueDateTime;
     }
 
-
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDecimal
      * @return $this
      */
@@ -1259,7 +1398,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
     public function getDefaultValueDecimal()
@@ -1267,9 +1406,8 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
         return $this->defaultValueDecimal;
     }
 
-
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDistance
      * @return $this
      */
@@ -1283,7 +1421,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDistance
      */
     public function getDefaultValueDistance()
@@ -1291,33 +1429,8 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
         return $this->defaultValueDistance;
     }
 
-
     /**
-     * A value to use if there is no existing value in the source object.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDosage
-     * @return $this
-     */
-    public function setDefaultValueDosage(FHIRDosage $defaultValueDosage = null)
-    {
-        if (null === $defaultValueDosage) {
-            return $this; 
-        }
-        $this->defaultValueDosage = $defaultValueDosage;
-        return $this;
-    }
-
-    /**
-     * A value to use if there is no existing value in the source object.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDosage
-     */
-    public function getDefaultValueDosage()
-    {
-        return $this->defaultValueDosage;
-    }
-
-
-    /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration
      * @return $this
      */
@@ -1331,7 +1444,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getDefaultValueDuration()
@@ -1339,33 +1452,8 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
         return $this->defaultValueDuration;
     }
 
-
     /**
-     * A value to use if there is no existing value in the source object.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRExpression
-     * @return $this
-     */
-    public function setDefaultValueExpression(FHIRExpression $defaultValueExpression = null)
-    {
-        if (null === $defaultValueExpression) {
-            return $this; 
-        }
-        $this->defaultValueExpression = $defaultValueExpression;
-        return $this;
-    }
-
-    /**
-     * A value to use if there is no existing value in the source object.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRExpression
-     */
-    public function getDefaultValueExpression()
-    {
-        return $this->defaultValueExpression;
-    }
-
-
-    /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRHumanName
      * @return $this
      */
@@ -1379,7 +1467,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRHumanName
      */
     public function getDefaultValueHumanName()
@@ -1387,9 +1475,8 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
         return $this->defaultValueHumanName;
     }
 
-
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRId
      * @return $this
      */
@@ -1412,7 +1499,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRId
      */
     public function getDefaultValueId()
@@ -1420,9 +1507,8 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
         return $this->defaultValueId;
     }
 
-
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
@@ -1436,7 +1522,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
     public function getDefaultValueIdentifier()
@@ -1444,9 +1530,8 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
         return $this->defaultValueIdentifier;
     }
 
-
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRInstant
      * @return $this
      */
@@ -1469,7 +1554,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRInstant
      */
     public function getDefaultValueInstant()
@@ -1477,9 +1562,8 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
         return $this->defaultValueInstant;
     }
 
-
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRInteger
      * @return $this
      */
@@ -1502,7 +1586,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public function getDefaultValueInteger()
@@ -1510,9 +1594,8 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
         return $this->defaultValueInteger;
     }
 
-
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      * @return $this
      */
@@ -1535,7 +1618,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getDefaultValueMarkdown()
@@ -1543,10 +1626,32 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
         return $this->defaultValueMarkdown;
     }
 
+    /**
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRMeta
+     * @return $this
+     */
+    public function setDefaultValueMeta(FHIRMeta $defaultValueMeta = null)
+    {
+        if (null === $defaultValueMeta) {
+            return $this; 
+        }
+        $this->defaultValueMeta = $defaultValueMeta;
+        return $this;
+    }
 
     /**
-     * A value to use if there is no existing value in the source object.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRMoney
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRMeta
+     */
+    public function getDefaultValueMeta()
+    {
+        return $this->defaultValueMeta;
+    }
+
+    /**
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      * @return $this
      */
     public function setDefaultValueMoney(FHIRMoney $defaultValueMoney = null)
@@ -1559,17 +1664,16 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRMoney
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public function getDefaultValueMoney()
     {
         return $this->defaultValueMoney;
     }
 
-
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIROid
      * @return $this
      */
@@ -1592,7 +1696,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIROid
      */
     public function getDefaultValueOid()
@@ -1600,33 +1704,8 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
         return $this->defaultValueOid;
     }
 
-
     /**
-     * A value to use if there is no existing value in the source object.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRParameterDefinition
-     * @return $this
-     */
-    public function setDefaultValueParameterDefinition(FHIRParameterDefinition $defaultValueParameterDefinition = null)
-    {
-        if (null === $defaultValueParameterDefinition) {
-            return $this; 
-        }
-        $this->defaultValueParameterDefinition = $defaultValueParameterDefinition;
-        return $this;
-    }
-
-    /**
-     * A value to use if there is no existing value in the source object.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRParameterDefinition
-     */
-    public function getDefaultValueParameterDefinition()
-    {
-        return $this->defaultValueParameterDefinition;
-    }
-
-
-    /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
      * @return $this
      */
@@ -1640,7 +1719,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getDefaultValuePeriod()
@@ -1648,9 +1727,8 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
         return $this->defaultValuePeriod;
     }
 
-
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      * @return $this
      */
@@ -1673,7 +1751,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
     public function getDefaultValuePositiveInt()
@@ -1681,9 +1759,8 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
         return $this->defaultValuePositiveInt;
     }
 
-
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity
      * @return $this
      */
@@ -1697,7 +1774,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public function getDefaultValueQuantity()
@@ -1705,9 +1782,8 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
         return $this->defaultValueQuantity;
     }
 
-
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRRange
      * @return $this
      */
@@ -1721,7 +1797,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public function getDefaultValueRange()
@@ -1729,9 +1805,8 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
         return $this->defaultValueRange;
     }
 
-
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRRatio
      * @return $this
      */
@@ -1745,7 +1820,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
     public function getDefaultValueRatio()
@@ -1753,9 +1828,8 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
         return $this->defaultValueRatio;
     }
 
-
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
@@ -1769,7 +1843,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getDefaultValueReference()
@@ -1777,33 +1851,8 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
         return $this->defaultValueReference;
     }
 
-
     /**
-     * A value to use if there is no existing value in the source object.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact
-     * @return $this
-     */
-    public function setDefaultValueRelatedArtifact(FHIRRelatedArtifact $defaultValueRelatedArtifact = null)
-    {
-        if (null === $defaultValueRelatedArtifact) {
-            return $this; 
-        }
-        $this->defaultValueRelatedArtifact = $defaultValueRelatedArtifact;
-        return $this;
-    }
-
-    /**
-     * A value to use if there is no existing value in the source object.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact
-     */
-    public function getDefaultValueRelatedArtifact()
-    {
-        return $this->defaultValueRelatedArtifact;
-    }
-
-
-    /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRSampledData
      * @return $this
      */
@@ -1817,7 +1866,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRSampledData
      */
     public function getDefaultValueSampledData()
@@ -1825,9 +1874,8 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
         return $this->defaultValueSampledData;
     }
 
-
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRSignature
      * @return $this
      */
@@ -1841,7 +1889,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRSignature
      */
     public function getDefaultValueSignature()
@@ -1849,9 +1897,8 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
         return $this->defaultValueSignature;
     }
 
-
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
@@ -1874,7 +1921,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getDefaultValueString()
@@ -1882,9 +1929,8 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
         return $this->defaultValueString;
     }
 
-
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRTime
      * @return $this
      */
@@ -1907,7 +1953,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRTime
      */
     public function getDefaultValueTime()
@@ -1915,10 +1961,9 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
         return $this->defaultValueTime;
     }
 
-
     /**
-     * A value to use if there is no existing value in the source object.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTiming
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRTiming
      * @return $this
      */
     public function setDefaultValueTiming(FHIRTiming $defaultValueTiming = null)
@@ -1931,41 +1976,16 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTiming
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public function getDefaultValueTiming()
     {
         return $this->defaultValueTiming;
     }
 
-
     /**
-     * A value to use if there is no existing value in the source object.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRTriggerDefinition
-     * @return $this
-     */
-    public function setDefaultValueTriggerDefinition(FHIRTriggerDefinition $defaultValueTriggerDefinition = null)
-    {
-        if (null === $defaultValueTriggerDefinition) {
-            return $this; 
-        }
-        $this->defaultValueTriggerDefinition = $defaultValueTriggerDefinition;
-        return $this;
-    }
-
-    /**
-     * A value to use if there is no existing value in the source object.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRTriggerDefinition
-     */
-    public function getDefaultValueTriggerDefinition()
-    {
-        return $this->defaultValueTriggerDefinition;
-    }
-
-
-    /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      * @return $this
      */
@@ -1988,7 +2008,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
     public function getDefaultValueUnsignedInt()
@@ -1996,9 +2016,8 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
         return $this->defaultValueUnsignedInt;
     }
 
-
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
@@ -2021,104 +2040,13 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object.
+     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getDefaultValueUri()
     {
         return $this->defaultValueUri;
     }
-
-
-    /**
-     * A value to use if there is no existing value in the source object.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUrl
-     * @return $this
-     */
-    public function setDefaultValueUrl($defaultValueUrl)
-    {
-        if (null === $defaultValueUrl) {
-            return $this; 
-        }
-        if (is_scalar($defaultValueUrl)) {
-            $defaultValueUrl = new FHIRUrl($defaultValueUrl);
-        }
-        if (!($defaultValueUrl instanceof FHIRUrl)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRStructureMapSource::setDefaultValueUrl - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUrl or appropriate scalar value, %s seen.',
-                gettype($defaultValueUrl)
-            ));
-        }
-        $this->defaultValueUrl = $defaultValueUrl;
-        return $this;
-    }
-
-    /**
-     * A value to use if there is no existing value in the source object.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUrl
-     */
-    public function getDefaultValueUrl()
-    {
-        return $this->defaultValueUrl;
-    }
-
-
-    /**
-     * A value to use if there is no existing value in the source object.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUsageContext
-     * @return $this
-     */
-    public function setDefaultValueUsageContext(FHIRUsageContext $defaultValueUsageContext = null)
-    {
-        if (null === $defaultValueUsageContext) {
-            return $this; 
-        }
-        $this->defaultValueUsageContext = $defaultValueUsageContext;
-        return $this;
-    }
-
-    /**
-     * A value to use if there is no existing value in the source object.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUsageContext
-     */
-    public function getDefaultValueUsageContext()
-    {
-        return $this->defaultValueUsageContext;
-    }
-
-
-    /**
-     * A value to use if there is no existing value in the source object.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUuid
-     * @return $this
-     */
-    public function setDefaultValueUuid($defaultValueUuid)
-    {
-        if (null === $defaultValueUuid) {
-            return $this; 
-        }
-        if (is_scalar($defaultValueUuid)) {
-            $defaultValueUuid = new FHIRUuid($defaultValueUuid);
-        }
-        if (!($defaultValueUuid instanceof FHIRUuid)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRStructureMapSource::setDefaultValueUuid - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUuid or appropriate scalar value, %s seen.',
-                gettype($defaultValueUuid)
-            ));
-        }
-        $this->defaultValueUuid = $defaultValueUuid;
-        return $this;
-    }
-
-    /**
-     * A value to use if there is no existing value in the source object.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUuid
-     */
-    public function getDefaultValueUuid()
-    {
-        return $this->defaultValueUuid;
-    }
-
 
     /**
      * Optional field for this source.
@@ -2152,7 +2080,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
         return $this->element;
     }
 
-
     /**
      * How to handle the list mode for this element.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRStructureMapSourceListMode
@@ -2184,40 +2111,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     {
         return $this->listMode;
     }
-
-
-    /**
-     * A FHIRPath expression which specifies a message to put in the transform log when content matching the source rule is found.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
-     * @return $this
-     */
-    public function setLogMessage($logMessage)
-    {
-        if (null === $logMessage) {
-            return $this; 
-        }
-        if (is_scalar($logMessage)) {
-            $logMessage = new FHIRString($logMessage);
-        }
-        if (!($logMessage instanceof FHIRString)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRStructureMapSource::setLogMessage - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
-                gettype($logMessage)
-            ));
-        }
-        $this->logMessage = $logMessage;
-        return $this;
-    }
-
-    /**
-     * A FHIRPath expression which specifies a message to put in the transform log when content matching the source rule is found.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public function getLogMessage()
-    {
-        return $this->logMessage;
-    }
-
 
     /**
      * Specified maximum cardinality for the element - a number or a "*". This is optional; if present, it acts an implicit check on the input content (* just serves as documentation; it's the default value).
@@ -2251,7 +2144,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
         return $this->max;
     }
 
-
     /**
      * Specified minimum cardinality for the element. This is optional; if present, it acts an implicit check on the input content.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRInteger
@@ -2283,7 +2175,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     {
         return $this->min;
     }
-
 
     /**
      * Specified type for the element. This works as a condition on the mapping - use for polymorphic elements.
@@ -2317,7 +2208,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
         return $this->type;
     }
 
-
     /**
      * Named context for field, if a field is specified.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRId
@@ -2349,7 +2239,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     {
         return $this->variable;
     }
-
 
     /**
      * @return string
@@ -2392,9 +2281,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
         if (null !== ($v = $this->getDefaultValueBoolean())) {
             $a['defaultValueBoolean'] = $v;
         }
-        if (null !== ($v = $this->getDefaultValueCanonical())) {
-            $a['defaultValueCanonical'] = $v;
-        }
         if (null !== ($v = $this->getDefaultValueCode())) {
             $a['defaultValueCode'] = $v;
         }
@@ -2404,20 +2290,11 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
         if (null !== ($v = $this->getDefaultValueCoding())) {
             $a['defaultValueCoding'] = $v;
         }
-        if (null !== ($v = $this->getDefaultValueContactDetail())) {
-            $a['defaultValueContactDetail'] = $v;
-        }
         if (null !== ($v = $this->getDefaultValueContactPoint())) {
             $a['defaultValueContactPoint'] = $v;
         }
-        if (null !== ($v = $this->getDefaultValueContributor())) {
-            $a['defaultValueContributor'] = $v;
-        }
         if (null !== ($v = $this->getDefaultValueCount())) {
             $a['defaultValueCount'] = $v;
-        }
-        if (null !== ($v = $this->getDefaultValueDataRequirement())) {
-            $a['defaultValueDataRequirement'] = $v;
         }
         if (null !== ($v = $this->getDefaultValueDate())) {
             $a['defaultValueDate'] = $v;
@@ -2431,14 +2308,8 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
         if (null !== ($v = $this->getDefaultValueDistance())) {
             $a['defaultValueDistance'] = $v;
         }
-        if (null !== ($v = $this->getDefaultValueDosage())) {
-            $a['defaultValueDosage'] = $v;
-        }
         if (null !== ($v = $this->getDefaultValueDuration())) {
             $a['defaultValueDuration'] = $v;
-        }
-        if (null !== ($v = $this->getDefaultValueExpression())) {
-            $a['defaultValueExpression'] = $v;
         }
         if (null !== ($v = $this->getDefaultValueHumanName())) {
             $a['defaultValueHumanName'] = $v;
@@ -2458,14 +2329,14 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
         if (null !== ($v = $this->getDefaultValueMarkdown())) {
             $a['defaultValueMarkdown'] = $v;
         }
+        if (null !== ($v = $this->getDefaultValueMeta())) {
+            $a['defaultValueMeta'] = $v;
+        }
         if (null !== ($v = $this->getDefaultValueMoney())) {
             $a['defaultValueMoney'] = $v;
         }
         if (null !== ($v = $this->getDefaultValueOid())) {
             $a['defaultValueOid'] = $v;
-        }
-        if (null !== ($v = $this->getDefaultValueParameterDefinition())) {
-            $a['defaultValueParameterDefinition'] = $v;
         }
         if (null !== ($v = $this->getDefaultValuePeriod())) {
             $a['defaultValuePeriod'] = $v;
@@ -2485,9 +2356,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
         if (null !== ($v = $this->getDefaultValueReference())) {
             $a['defaultValueReference'] = $v;
         }
-        if (null !== ($v = $this->getDefaultValueRelatedArtifact())) {
-            $a['defaultValueRelatedArtifact'] = $v;
-        }
         if (null !== ($v = $this->getDefaultValueSampledData())) {
             $a['defaultValueSampledData'] = $v;
         }
@@ -2503,32 +2371,17 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
         if (null !== ($v = $this->getDefaultValueTiming())) {
             $a['defaultValueTiming'] = $v;
         }
-        if (null !== ($v = $this->getDefaultValueTriggerDefinition())) {
-            $a['defaultValueTriggerDefinition'] = $v;
-        }
         if (null !== ($v = $this->getDefaultValueUnsignedInt())) {
             $a['defaultValueUnsignedInt'] = $v;
         }
         if (null !== ($v = $this->getDefaultValueUri())) {
             $a['defaultValueUri'] = $v;
         }
-        if (null !== ($v = $this->getDefaultValueUrl())) {
-            $a['defaultValueUrl'] = $v;
-        }
-        if (null !== ($v = $this->getDefaultValueUsageContext())) {
-            $a['defaultValueUsageContext'] = $v;
-        }
-        if (null !== ($v = $this->getDefaultValueUuid())) {
-            $a['defaultValueUuid'] = $v;
-        }
         if (null !== ($v = $this->getElement())) {
             $a['element'] = $v;
         }
         if (null !== ($v = $this->getListMode())) {
             $a['listMode'] = $v;
-        }
-        if (null !== ($v = $this->getLogMessage())) {
-            $a['logMessage'] = $v;
         }
         if (null !== ($v = $this->getMax())) {
             $a['max'] = $v;
@@ -2555,9 +2408,147 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<StructureMapSource xmlns="http://hl7.org/fhir"></StructureMapSource>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getCheck())) {
+            $v->xmlSerialize(true, $sxe->addChild('check'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getCondition())) {
+            $v->xmlSerialize(true, $sxe->addChild('condition'));
+        }
+        if (null !== ($v = $this->getContext())) {
+            $v->xmlSerialize(true, $sxe->addChild('context'));
+        }
+        if (null !== ($v = $this->getDefaultValueAddress())) {
+            $v->xmlSerialize(true, $sxe->addChild('defaultValueAddress'));
+        }
+        if (null !== ($v = $this->getDefaultValueAge())) {
+            $v->xmlSerialize(true, $sxe->addChild('defaultValueAge'));
+        }
+        if (null !== ($v = $this->getDefaultValueAnnotation())) {
+            $v->xmlSerialize(true, $sxe->addChild('defaultValueAnnotation'));
+        }
+        if (null !== ($v = $this->getDefaultValueAttachment())) {
+            $v->xmlSerialize(true, $sxe->addChild('defaultValueAttachment'));
+        }
+        if (null !== ($v = $this->getDefaultValueBase64Binary())) {
+            $v->xmlSerialize(true, $sxe->addChild('defaultValueBase64Binary'));
+        }
+        if (null !== ($v = $this->getDefaultValueBoolean())) {
+            $v->xmlSerialize(true, $sxe->addChild('defaultValueBoolean'));
+        }
+        if (null !== ($v = $this->getDefaultValueCode())) {
+            $v->xmlSerialize(true, $sxe->addChild('defaultValueCode'));
+        }
+        if (null !== ($v = $this->getDefaultValueCodeableConcept())) {
+            $v->xmlSerialize(true, $sxe->addChild('defaultValueCodeableConcept'));
+        }
+        if (null !== ($v = $this->getDefaultValueCoding())) {
+            $v->xmlSerialize(true, $sxe->addChild('defaultValueCoding'));
+        }
+        if (null !== ($v = $this->getDefaultValueContactPoint())) {
+            $v->xmlSerialize(true, $sxe->addChild('defaultValueContactPoint'));
+        }
+        if (null !== ($v = $this->getDefaultValueCount())) {
+            $v->xmlSerialize(true, $sxe->addChild('defaultValueCount'));
+        }
+        if (null !== ($v = $this->getDefaultValueDate())) {
+            $v->xmlSerialize(true, $sxe->addChild('defaultValueDate'));
+        }
+        if (null !== ($v = $this->getDefaultValueDateTime())) {
+            $v->xmlSerialize(true, $sxe->addChild('defaultValueDateTime'));
+        }
+        if (null !== ($v = $this->getDefaultValueDecimal())) {
+            $v->xmlSerialize(true, $sxe->addChild('defaultValueDecimal'));
+        }
+        if (null !== ($v = $this->getDefaultValueDistance())) {
+            $v->xmlSerialize(true, $sxe->addChild('defaultValueDistance'));
+        }
+        if (null !== ($v = $this->getDefaultValueDuration())) {
+            $v->xmlSerialize(true, $sxe->addChild('defaultValueDuration'));
+        }
+        if (null !== ($v = $this->getDefaultValueHumanName())) {
+            $v->xmlSerialize(true, $sxe->addChild('defaultValueHumanName'));
+        }
+        if (null !== ($v = $this->getDefaultValueId())) {
+            $v->xmlSerialize(true, $sxe->addChild('defaultValueId'));
+        }
+        if (null !== ($v = $this->getDefaultValueIdentifier())) {
+            $v->xmlSerialize(true, $sxe->addChild('defaultValueIdentifier'));
+        }
+        if (null !== ($v = $this->getDefaultValueInstant())) {
+            $v->xmlSerialize(true, $sxe->addChild('defaultValueInstant'));
+        }
+        if (null !== ($v = $this->getDefaultValueInteger())) {
+            $v->xmlSerialize(true, $sxe->addChild('defaultValueInteger'));
+        }
+        if (null !== ($v = $this->getDefaultValueMarkdown())) {
+            $v->xmlSerialize(true, $sxe->addChild('defaultValueMarkdown'));
+        }
+        if (null !== ($v = $this->getDefaultValueMeta())) {
+            $v->xmlSerialize(true, $sxe->addChild('defaultValueMeta'));
+        }
+        if (null !== ($v = $this->getDefaultValueMoney())) {
+            $v->xmlSerialize(true, $sxe->addChild('defaultValueMoney'));
+        }
+        if (null !== ($v = $this->getDefaultValueOid())) {
+            $v->xmlSerialize(true, $sxe->addChild('defaultValueOid'));
+        }
+        if (null !== ($v = $this->getDefaultValuePeriod())) {
+            $v->xmlSerialize(true, $sxe->addChild('defaultValuePeriod'));
+        }
+        if (null !== ($v = $this->getDefaultValuePositiveInt())) {
+            $v->xmlSerialize(true, $sxe->addChild('defaultValuePositiveInt'));
+        }
+        if (null !== ($v = $this->getDefaultValueQuantity())) {
+            $v->xmlSerialize(true, $sxe->addChild('defaultValueQuantity'));
+        }
+        if (null !== ($v = $this->getDefaultValueRange())) {
+            $v->xmlSerialize(true, $sxe->addChild('defaultValueRange'));
+        }
+        if (null !== ($v = $this->getDefaultValueRatio())) {
+            $v->xmlSerialize(true, $sxe->addChild('defaultValueRatio'));
+        }
+        if (null !== ($v = $this->getDefaultValueReference())) {
+            $v->xmlSerialize(true, $sxe->addChild('defaultValueReference'));
+        }
+        if (null !== ($v = $this->getDefaultValueSampledData())) {
+            $v->xmlSerialize(true, $sxe->addChild('defaultValueSampledData'));
+        }
+        if (null !== ($v = $this->getDefaultValueSignature())) {
+            $v->xmlSerialize(true, $sxe->addChild('defaultValueSignature'));
+        }
+        if (null !== ($v = $this->getDefaultValueString())) {
+            $v->xmlSerialize(true, $sxe->addChild('defaultValueString'));
+        }
+        if (null !== ($v = $this->getDefaultValueTime())) {
+            $v->xmlSerialize(true, $sxe->addChild('defaultValueTime'));
+        }
+        if (null !== ($v = $this->getDefaultValueTiming())) {
+            $v->xmlSerialize(true, $sxe->addChild('defaultValueTiming'));
+        }
+        if (null !== ($v = $this->getDefaultValueUnsignedInt())) {
+            $v->xmlSerialize(true, $sxe->addChild('defaultValueUnsignedInt'));
+        }
+        if (null !== ($v = $this->getDefaultValueUri())) {
+            $v->xmlSerialize(true, $sxe->addChild('defaultValueUri'));
+        }
+        if (null !== ($v = $this->getElement())) {
+            $v->xmlSerialize(true, $sxe->addChild('element'));
+        }
+        if (null !== ($v = $this->getListMode())) {
+            $v->xmlSerialize(true, $sxe->addChild('listMode'));
+        }
+        if (null !== ($v = $this->getMax())) {
+            $v->xmlSerialize(true, $sxe->addChild('max'));
+        }
+        if (null !== ($v = $this->getMin())) {
+            $v->xmlSerialize(true, $sxe->addChild('min'));
+        }
+        if (null !== ($v = $this->getType())) {
+            $v->xmlSerialize(true, $sxe->addChild('type'));
+        }
+        if (null !== ($v = $this->getVariable())) {
+            $v->xmlSerialize(true, $sxe->addChild('variable'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

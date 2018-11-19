@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -77,15 +77,15 @@ class FHIRElement implements \JsonSerializable
     const FHIR_TYPE_NAME = 'Element';
 
     /**
-     * May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRExtension
+     * May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRExtension[]
      */
-    public $extension = null;
+    private $extension = [];
 
     /**
      * @var \PHPFHIRGenerated\FHIRStringPrimitive
      */
-    public $id = null;
+    private $id = null;
 
     /**
      * FHIRElement Constructor
@@ -96,10 +96,32 @@ class FHIRElement implements \JsonSerializable
     {
         if (is_array($data)) {
             if (isset($data['extension'])) {
-                $this->setExtension($data['extension']);
+                $value = $data['extension'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRExtension($v);
+                        } 
+                        if (!($v instanceof FHIRExtension)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement::__construct - Collection field \"extension\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRExtension or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addExtension($v);
+                    }
+                }
             }
             if (isset($data['id'])) {
-                $this->setId($data['id']);
+                $value = $data['id'];
+                if (is_array($value)) {
+                    $value = new FHIRStringPrimitive($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRStringPrimitive($value);
+                }
+                if (!($value instanceof FHIRStringPrimitive)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement::__construct - Property \"id\" must either be instance of \PHPFHIRGenerated\FHIRStringPrimitive or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setId($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -111,28 +133,27 @@ class FHIRElement implements \JsonSerializable
     }
 
     /**
-     * May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.
+     * May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRExtension
      * @return $this
      */
-    public function setExtension(FHIRExtension $extension = null)
+    public function addExtension(FHIRExtension $extension = null)
     {
         if (null === $extension) {
             return $this; 
         }
-        $this->extension = $extension;
+        $this->extension[] = $extension;
         return $this;
     }
 
     /**
-     * May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRExtension
+     * May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRExtension[]
      */
     public function getExtension()
     {
         return $this->extension;
     }
-
 
     /**
      * @param null|\PHPFHIRGenerated\FHIRStringPrimitive
@@ -164,7 +185,6 @@ class FHIRElement implements \JsonSerializable
         return $this->id;
     }
 
-
     /**
      * @return string
      */
@@ -179,8 +199,16 @@ class FHIRElement implements \JsonSerializable
     public function jsonSerialize()
     {
         $a = [];
-        if (null !== ($v = $this->getExtension())) {
-            $a['extension'] = $v;
+        if (0 < count($values = $this->getExtension())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['extension'] = $vs;
+            }
         }
         if (null !== ($v = $this->getId())) {
             $a['id'] = $v;
@@ -198,9 +226,16 @@ class FHIRElement implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Element xmlns="http://hl7.org/fhir"></Element>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (0 < count($values = $this->getExtension())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('extension'));
+                }
+            }
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getId())) {
+            $v->xmlSerialize(true, $sxe->addChild('id'));
+        }
+        return $returnSXE ? $sxe : $sxe->saveXML();
     }
 }

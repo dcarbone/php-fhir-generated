@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -67,12 +67,11 @@ use PHPFHIRGenerated\FHIRElement\FHIRBoolean;
 use PHPFHIRGenerated\FHIRElement\FHIRCode;
 use PHPFHIRGenerated\FHIRElement\FHIRCoding;
 use PHPFHIRGenerated\FHIRElement\FHIRDateTime;
-use PHPFHIRGenerated\FHIRElement\FHIRDecimal;
 use PHPFHIRGenerated\FHIRElement\FHIRInteger;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
 
 /**
- * The CodeSystem resource is used to declare the existence of and describe a code system or code system supplement and its key properties, and optionally define a part or all of its content.
+ * A code system resource specifies a set of codes drawn from one or more code systems.
  *
  * Class FHIRCodeSystemProperty1
  * @package PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem
@@ -86,49 +85,43 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement implements \JsonSerial
      * A code that is a reference to CodeSystem.property.code.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public $code = null;
+    private $code = null;
 
     /**
-     * The value of this property.
+     * The value of this property. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $valueBoolean = null;
+    private $valueBoolean = null;
 
     /**
-     * The value of this property.
+     * The value of this property. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public $valueCode = null;
+    private $valueCode = null;
 
     /**
-     * The value of this property.
+     * The value of this property. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
-    public $valueCoding = null;
+    private $valueCoding = null;
 
     /**
-     * The value of this property.
+     * The value of this property. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $valueDateTime = null;
+    private $valueDateTime = null;
 
     /**
-     * The value of this property.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
-     */
-    public $valueDecimal = null;
-
-    /**
-     * The value of this property.
+     * The value of this property. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
-    public $valueInteger = null;
+    private $valueInteger = null;
 
     /**
-     * The value of this property.
+     * The value of this property. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $valueString = null;
+    private $valueString = null;
 
     /**
      * FHIRCodeSystemProperty1 Constructor
@@ -137,31 +130,88 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement implements \JsonSerial
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['code'])) {
-                $this->setCode($data['code']);
+                $value = $data['code'];
+                if (is_array($value)) {
+                    $value = new FHIRCode($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRCode($value);
+                }
+                if (!($value instanceof FHIRCode)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemProperty1::__construct - Property \"code\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setCode($value);
             }
             if (isset($data['valueBoolean'])) {
-                $this->setValueBoolean($data['valueBoolean']);
+                $value = $data['valueBoolean'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemProperty1::__construct - Property \"valueBoolean\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setValueBoolean($value);
             }
             if (isset($data['valueCode'])) {
-                $this->setValueCode($data['valueCode']);
+                $value = $data['valueCode'];
+                if (is_array($value)) {
+                    $value = new FHIRCode($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRCode($value);
+                }
+                if (!($value instanceof FHIRCode)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemProperty1::__construct - Property \"valueCode\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setValueCode($value);
             }
             if (isset($data['valueCoding'])) {
-                $this->setValueCoding($data['valueCoding']);
+                $value = $data['valueCoding'];
+                if (is_array($value)) {
+                    $value = new FHIRCoding($value);
+                } 
+                if (!($value instanceof FHIRCoding)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemProperty1::__construct - Property \"valueCoding\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCoding or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setValueCoding($value);
             }
             if (isset($data['valueDateTime'])) {
-                $this->setValueDateTime($data['valueDateTime']);
-            }
-            if (isset($data['valueDecimal'])) {
-                $this->setValueDecimal($data['valueDecimal']);
+                $value = $data['valueDateTime'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemProperty1::__construct - Property \"valueDateTime\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setValueDateTime($value);
             }
             if (isset($data['valueInteger'])) {
-                $this->setValueInteger($data['valueInteger']);
+                $value = $data['valueInteger'];
+                if (is_array($value)) {
+                    $value = new FHIRInteger($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRInteger($value);
+                }
+                if (!($value instanceof FHIRInteger)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemProperty1::__construct - Property \"valueInteger\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRInteger or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setValueInteger($value);
             }
             if (isset($data['valueString'])) {
-                $this->setValueString($data['valueString']);
+                $value = $data['valueString'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemProperty1::__construct - Property \"valueString\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setValueString($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -170,6 +220,7 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement implements \JsonSerial
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -204,9 +255,8 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement implements \JsonSerial
         return $this->code;
     }
 
-
     /**
-     * The value of this property.
+     * The value of this property. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      * @return $this
      */
@@ -229,7 +279,7 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * The value of this property.
+     * The value of this property. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getValueBoolean()
@@ -237,9 +287,8 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement implements \JsonSerial
         return $this->valueBoolean;
     }
 
-
     /**
-     * The value of this property.
+     * The value of this property. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCode
      * @return $this
      */
@@ -262,7 +311,7 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * The value of this property.
+     * The value of this property. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCode
      */
     public function getValueCode()
@@ -270,9 +319,8 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement implements \JsonSerial
         return $this->valueCode;
     }
 
-
     /**
-     * The value of this property.
+     * The value of this property. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
      * @return $this
      */
@@ -286,7 +334,7 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * The value of this property.
+     * The value of this property. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public function getValueCoding()
@@ -294,9 +342,8 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement implements \JsonSerial
         return $this->valueCoding;
     }
 
-
     /**
-     * The value of this property.
+     * The value of this property. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      * @return $this
      */
@@ -319,7 +366,7 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * The value of this property.
+     * The value of this property. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getValueDateTime()
@@ -327,42 +374,8 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement implements \JsonSerial
         return $this->valueDateTime;
     }
 
-
     /**
-     * The value of this property.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDecimal
-     * @return $this
-     */
-    public function setValueDecimal($valueDecimal)
-    {
-        if (null === $valueDecimal) {
-            return $this; 
-        }
-        if (is_scalar($valueDecimal)) {
-            $valueDecimal = new FHIRDecimal($valueDecimal);
-        }
-        if (!($valueDecimal instanceof FHIRDecimal)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRCodeSystemProperty1::setValueDecimal - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRDecimal or appropriate scalar value, %s seen.',
-                gettype($valueDecimal)
-            ));
-        }
-        $this->valueDecimal = $valueDecimal;
-        return $this;
-    }
-
-    /**
-     * The value of this property.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDecimal
-     */
-    public function getValueDecimal()
-    {
-        return $this->valueDecimal;
-    }
-
-
-    /**
-     * The value of this property.
+     * The value of this property. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRInteger
      * @return $this
      */
@@ -385,7 +398,7 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * The value of this property.
+     * The value of this property. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public function getValueInteger()
@@ -393,9 +406,8 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement implements \JsonSerial
         return $this->valueInteger;
     }
 
-
     /**
-     * The value of this property.
+     * The value of this property. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
@@ -418,14 +430,13 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * The value of this property.
+     * The value of this property. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getValueString()
     {
         return $this->valueString;
     }
-
 
     /**
      * @return string
@@ -456,9 +467,6 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement implements \JsonSerial
         if (null !== ($v = $this->getValueDateTime())) {
             $a['valueDateTime'] = $v;
         }
-        if (null !== ($v = $this->getValueDecimal())) {
-            $a['valueDecimal'] = $v;
-        }
         if (null !== ($v = $this->getValueInteger())) {
             $a['valueInteger'] = $v;
         }
@@ -478,9 +486,27 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement implements \JsonSerial
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<CodeSystemProperty1 xmlns="http://hl7.org/fhir"></CodeSystemProperty1>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getCode())) {
+            $v->xmlSerialize(true, $sxe->addChild('code'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getValueBoolean())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueBoolean'));
+        }
+        if (null !== ($v = $this->getValueCode())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueCode'));
+        }
+        if (null !== ($v = $this->getValueCoding())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueCoding'));
+        }
+        if (null !== ($v = $this->getValueDateTime())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueDateTime'));
+        }
+        if (null !== ($v = $this->getValueInteger())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueInteger'));
+        }
+        if (null !== ($v = $this->getValueString())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueString'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

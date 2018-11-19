@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStateme
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStateme
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,7 +63,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStateme
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\FHIRElement\FHIRMarkdown;
+use PHPFHIRGenerated\FHIRElement\FHIRString;
 use PHPFHIRGenerated\FHIRElement\FHIRSystemRestfulInteraction;
 
 /**
@@ -81,13 +81,13 @@ class FHIRCapabilityStatementInteraction1 extends FHIRBackboneElement implements
      * A coded identifier of the operation, supported by the system.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRSystemRestfulInteraction
      */
-    public $code = null;
+    private $code = null;
 
     /**
      * Guidance specific to the implementation of this operation, such as limitations on the kind of transactions allowed, or information about system wide search is implemented.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $documentation = null;
+    private $documentation = null;
 
     /**
      * FHIRCapabilityStatementInteraction1 Constructor
@@ -96,13 +96,30 @@ class FHIRCapabilityStatementInteraction1 extends FHIRBackboneElement implements
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['code'])) {
-                $this->setCode($data['code']);
+                $value = $data['code'];
+                if (is_array($value)) {
+                    $value = new FHIRSystemRestfulInteraction($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRSystemRestfulInteraction($value);
+                }
+                if (!($value instanceof FHIRSystemRestfulInteraction)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction1::__construct - Property \"code\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRSystemRestfulInteraction or data to construct type, saw ".gettype($value));
+                }
+                $this->setCode($value);
             }
             if (isset($data['documentation'])) {
-                $this->setDocumentation($data['documentation']);
+                $value = $data['documentation'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction1::__construct - Property \"documentation\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setDocumentation($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -111,6 +128,7 @@ class FHIRCapabilityStatementInteraction1 extends FHIRBackboneElement implements
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -145,10 +163,9 @@ class FHIRCapabilityStatementInteraction1 extends FHIRBackboneElement implements
         return $this->code;
     }
 
-
     /**
      * Guidance specific to the implementation of this operation, such as limitations on the kind of transactions allowed, or information about system wide search is implemented.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRMarkdown
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
     public function setDocumentation($documentation)
@@ -157,11 +174,11 @@ class FHIRCapabilityStatementInteraction1 extends FHIRBackboneElement implements
             return $this; 
         }
         if (is_scalar($documentation)) {
-            $documentation = new FHIRMarkdown($documentation);
+            $documentation = new FHIRString($documentation);
         }
-        if (!($documentation instanceof FHIRMarkdown)) {
+        if (!($documentation instanceof FHIRString)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRCapabilityStatementInteraction1::setDocumentation - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRMarkdown or appropriate scalar value, %s seen.',
+                'FHIRCapabilityStatementInteraction1::setDocumentation - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
                 gettype($documentation)
             ));
         }
@@ -171,13 +188,12 @@ class FHIRCapabilityStatementInteraction1 extends FHIRBackboneElement implements
 
     /**
      * Guidance specific to the implementation of this operation, such as limitations on the kind of transactions allowed, or information about system wide search is implemented.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRMarkdown
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getDocumentation()
     {
         return $this->documentation;
     }
-
 
     /**
      * @return string
@@ -212,9 +228,12 @@ class FHIRCapabilityStatementInteraction1 extends FHIRBackboneElement implements
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<CapabilityStatementInteraction1 xmlns="http://hl7.org/fhir"></CapabilityStatementInteraction1>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getCode())) {
+            $v->xmlSerialize(true, $sxe->addChild('code'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getDocumentation())) {
+            $v->xmlSerialize(true, $sxe->addChild('documentation'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

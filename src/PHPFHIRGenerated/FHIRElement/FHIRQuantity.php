@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -80,31 +80,31 @@ class FHIRQuantity extends FHIRElement implements \JsonSerializable
      * A computer processable form of the unit in some unit representation system.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public $code = null;
+    private $code = null;
 
     /**
      * How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is "<" , then the real value is < stated value.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantityComparator
      */
-    public $comparator = null;
+    private $comparator = null;
 
     /**
      * The identification of the system that provides the coded form of the unit.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $system = null;
+    private $system = null;
 
     /**
      * A human-readable form of the unit.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $unit = null;
+    private $unit = null;
 
     /**
      * The value of the measured amount. The value includes an implicit precision in the presentation of the value.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
-    public $value = null;
+    private $value = null;
 
     /**
      * FHIRQuantity Constructor
@@ -113,22 +113,66 @@ class FHIRQuantity extends FHIRElement implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['code'])) {
-                $this->setCode($data['code']);
+                $value = $data['code'];
+                if (is_array($value)) {
+                    $value = new FHIRCode($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRCode($value);
+                }
+                if (!($value instanceof FHIRCode)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRQuantity::__construct - Property \"code\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setCode($value);
             }
             if (isset($data['comparator'])) {
-                $this->setComparator($data['comparator']);
+                $value = $data['comparator'];
+                if (is_array($value)) {
+                    $value = new FHIRQuantityComparator($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRQuantityComparator($value);
+                }
+                if (!($value instanceof FHIRQuantityComparator)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRQuantity::__construct - Property \"comparator\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantityComparator or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setComparator($value);
             }
             if (isset($data['system'])) {
-                $this->setSystem($data['system']);
+                $value = $data['system'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRQuantity::__construct - Property \"system\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setSystem($value);
             }
             if (isset($data['unit'])) {
-                $this->setUnit($data['unit']);
+                $value = $data['unit'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRQuantity::__construct - Property \"unit\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setUnit($value);
             }
             if (isset($data['value'])) {
-                $this->setValue($data['value']);
+                $value = $data['value'];
+                if (is_array($value)) {
+                    $value = new FHIRDecimal($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDecimal($value);
+                }
+                if (!($value instanceof FHIRDecimal)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRQuantity::__construct - Property \"value\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDecimal or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setValue($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -137,6 +181,7 @@ class FHIRQuantity extends FHIRElement implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -171,7 +216,6 @@ class FHIRQuantity extends FHIRElement implements \JsonSerializable
         return $this->code;
     }
 
-
     /**
      * How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is "<" , then the real value is < stated value.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantityComparator
@@ -203,7 +247,6 @@ class FHIRQuantity extends FHIRElement implements \JsonSerializable
     {
         return $this->comparator;
     }
-
 
     /**
      * The identification of the system that provides the coded form of the unit.
@@ -237,7 +280,6 @@ class FHIRQuantity extends FHIRElement implements \JsonSerializable
         return $this->system;
     }
 
-
     /**
      * A human-readable form of the unit.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -270,7 +312,6 @@ class FHIRQuantity extends FHIRElement implements \JsonSerializable
         return $this->unit;
     }
 
-
     /**
      * The value of the measured amount. The value includes an implicit precision in the presentation of the value.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDecimal
@@ -302,7 +343,6 @@ class FHIRQuantity extends FHIRElement implements \JsonSerializable
     {
         return $this->value;
     }
-
 
     /**
      * @return string
@@ -346,9 +386,21 @@ class FHIRQuantity extends FHIRElement implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Quantity xmlns="http://hl7.org/fhir"></Quantity>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getCode())) {
+            $v->xmlSerialize(true, $sxe->addChild('code'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getComparator())) {
+            $v->xmlSerialize(true, $sxe->addChild('comparator'));
+        }
+        if (null !== ($v = $this->getSystem())) {
+            $v->xmlSerialize(true, $sxe->addChild('system'));
+        }
+        if (null !== ($v = $this->getUnit())) {
+            $v->xmlSerialize(true, $sxe->addChild('unit'));
+        }
+        if (null !== ($v = $this->getValue())) {
+            $v->xmlSerialize(true, $sxe->addChild('value'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

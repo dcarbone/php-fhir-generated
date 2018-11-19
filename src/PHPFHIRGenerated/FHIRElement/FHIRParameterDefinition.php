@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -80,43 +80,43 @@ class FHIRParameterDefinition extends FHIRElement implements \JsonSerializable
      * A brief discussion of what the parameter is for and how it is used by the module.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $documentation = null;
+    private $documentation = null;
 
     /**
      * The maximum number of times this element is permitted to appear in the request or response.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $max = null;
+    private $max = null;
 
     /**
      * The minimum number of times this parameter SHALL appear in the request or response.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
-    public $min = null;
+    private $min = null;
 
     /**
      * The name of the parameter used to allow access to the value of the parameter in evaluation contexts.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public $name = null;
+    private $name = null;
 
     /**
      * If specified, this indicates a profile that the input data must conform to, or that the output data will conform to.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $profile = null;
+    private $profile = null;
 
     /**
      * The type of the parameter.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public $type = null;
+    private $type = null;
 
     /**
      * Whether the parameter is input or output for the module.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public $use = null;
+    private $use = null;
 
     /**
      * FHIRParameterDefinition Constructor
@@ -125,28 +125,88 @@ class FHIRParameterDefinition extends FHIRElement implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['documentation'])) {
-                $this->setDocumentation($data['documentation']);
+                $value = $data['documentation'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRParameterDefinition::__construct - Property \"documentation\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setDocumentation($value);
             }
             if (isset($data['max'])) {
-                $this->setMax($data['max']);
+                $value = $data['max'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRParameterDefinition::__construct - Property \"max\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setMax($value);
             }
             if (isset($data['min'])) {
-                $this->setMin($data['min']);
+                $value = $data['min'];
+                if (is_array($value)) {
+                    $value = new FHIRInteger($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRInteger($value);
+                }
+                if (!($value instanceof FHIRInteger)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRParameterDefinition::__construct - Property \"min\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRInteger or data to construct type, saw ".gettype($value));
+                }
+                $this->setMin($value);
             }
             if (isset($data['name'])) {
-                $this->setName($data['name']);
+                $value = $data['name'];
+                if (is_array($value)) {
+                    $value = new FHIRCode($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRCode($value);
+                }
+                if (!($value instanceof FHIRCode)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRParameterDefinition::__construct - Property \"name\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or data to construct type, saw ".gettype($value));
+                }
+                $this->setName($value);
             }
             if (isset($data['profile'])) {
-                $this->setProfile($data['profile']);
+                $value = $data['profile'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRParameterDefinition::__construct - Property \"profile\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setProfile($value);
             }
             if (isset($data['type'])) {
-                $this->setType($data['type']);
+                $value = $data['type'];
+                if (is_array($value)) {
+                    $value = new FHIRCode($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRCode($value);
+                }
+                if (!($value instanceof FHIRCode)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRParameterDefinition::__construct - Property \"type\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or data to construct type, saw ".gettype($value));
+                }
+                $this->setType($value);
             }
             if (isset($data['use'])) {
-                $this->setUse($data['use']);
+                $value = $data['use'];
+                if (is_array($value)) {
+                    $value = new FHIRCode($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRCode($value);
+                }
+                if (!($value instanceof FHIRCode)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRParameterDefinition::__construct - Property \"use\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or data to construct type, saw ".gettype($value));
+                }
+                $this->setUse($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -155,6 +215,7 @@ class FHIRParameterDefinition extends FHIRElement implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -189,7 +250,6 @@ class FHIRParameterDefinition extends FHIRElement implements \JsonSerializable
         return $this->documentation;
     }
 
-
     /**
      * The maximum number of times this element is permitted to appear in the request or response.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -221,7 +281,6 @@ class FHIRParameterDefinition extends FHIRElement implements \JsonSerializable
     {
         return $this->max;
     }
-
 
     /**
      * The minimum number of times this parameter SHALL appear in the request or response.
@@ -255,7 +314,6 @@ class FHIRParameterDefinition extends FHIRElement implements \JsonSerializable
         return $this->min;
     }
 
-
     /**
      * The name of the parameter used to allow access to the value of the parameter in evaluation contexts.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCode
@@ -288,25 +346,15 @@ class FHIRParameterDefinition extends FHIRElement implements \JsonSerializable
         return $this->name;
     }
 
-
     /**
      * If specified, this indicates a profile that the input data must conform to, or that the output data will conform to.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setProfile($profile)
+    public function setProfile(FHIRReference $profile = null)
     {
         if (null === $profile) {
             return $this; 
-        }
-        if (is_scalar($profile)) {
-            $profile = new FHIRCanonical($profile);
-        }
-        if (!($profile instanceof FHIRCanonical)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRParameterDefinition::setProfile - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCanonical or appropriate scalar value, %s seen.',
-                gettype($profile)
-            ));
         }
         $this->profile = $profile;
         return $this;
@@ -314,13 +362,12 @@ class FHIRParameterDefinition extends FHIRElement implements \JsonSerializable
 
     /**
      * If specified, this indicates a profile that the input data must conform to, or that the output data will conform to.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getProfile()
     {
         return $this->profile;
     }
-
 
     /**
      * The type of the parameter.
@@ -354,7 +401,6 @@ class FHIRParameterDefinition extends FHIRElement implements \JsonSerializable
         return $this->type;
     }
 
-
     /**
      * Whether the parameter is input or output for the module.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCode
@@ -386,7 +432,6 @@ class FHIRParameterDefinition extends FHIRElement implements \JsonSerializable
     {
         return $this->use;
     }
-
 
     /**
      * @return string
@@ -436,9 +481,27 @@ class FHIRParameterDefinition extends FHIRElement implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ParameterDefinition xmlns="http://hl7.org/fhir"></ParameterDefinition>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getDocumentation())) {
+            $v->xmlSerialize(true, $sxe->addChild('documentation'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getMax())) {
+            $v->xmlSerialize(true, $sxe->addChild('max'));
+        }
+        if (null !== ($v = $this->getMin())) {
+            $v->xmlSerialize(true, $sxe->addChild('min'));
+        }
+        if (null !== ($v = $this->getName())) {
+            $v->xmlSerialize(true, $sxe->addChild('name'));
+        }
+        if (null !== ($v = $this->getProfile())) {
+            $v->xmlSerialize(true, $sxe->addChild('profile'));
+        }
+        if (null !== ($v = $this->getType())) {
+            $v->xmlSerialize(true, $sxe->addChild('type'));
+        }
+        if (null !== ($v = $this->getUse())) {
+            $v->xmlSerialize(true, $sxe->addChild('use'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

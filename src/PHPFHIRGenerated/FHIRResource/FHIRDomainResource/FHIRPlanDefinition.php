@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -65,9 +65,9 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionGoal;
 use PHPFHIRGenerated\FHIRElement\FHIRBoolean;
-use PHPFHIRGenerated\FHIRElement\FHIRCanonical;
 use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
 use PHPFHIRGenerated\FHIRElement\FHIRContactDetail;
+use PHPFHIRGenerated\FHIRElement\FHIRContributor;
 use PHPFHIRGenerated\FHIRElement\FHIRDate;
 use PHPFHIRGenerated\FHIRElement\FHIRDateTime;
 use PHPFHIRGenerated\FHIRElement\FHIRIdentifier;
@@ -94,196 +94,160 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
     const FHIR_TYPE_NAME = 'PlanDefinition';
 
     /**
-     * An action or group of actions to be taken as part of the plan.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
+     * An action to be taken as part of the plan.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction[]
      */
-    public $action = null;
+    private $action = [];
 
     /**
      * The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
-    public $approvalDate = null;
-
-    /**
-     * An individiual or organization primarily involved in the creation and maintenance of the content.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail
-     */
-    public $author = null;
+    private $approvalDate = null;
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
-    public $contact = null;
+    private $contact = [];
+
+    /**
+     * A contributor to the content of the asset, including authors, editors, reviewers, and endorsers.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRContributor[]
+     */
+    private $contributor = [];
 
     /**
      * A copyright statement relating to the plan definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the plan definition.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public $copyright = null;
+    private $copyright = null;
 
     /**
-     * The date  (and optionally time) when the plan definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the plan definition changes.
+     * The date  (and optionally time) when the plan definition was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the plan definition changes.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $date = null;
+    private $date = null;
 
     /**
      * A free text natural language description of the plan definition from a consumer's perspective.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public $description = null;
-
-    /**
-     * An individual or organization primarily responsible for internal coherence of the content.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail
-     */
-    public $editor = null;
+    private $description = null;
 
     /**
      * The period during which the plan definition content was or is planned to be in active use.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public $effectivePeriod = null;
+    private $effectivePeriod = null;
 
     /**
-     * An individual or organization responsible for officially endorsing the content for use in some setting.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail
-     */
-    public $endorser = null;
-
-    /**
-     * A Boolean value to indicate that this plan definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this plan definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $experimental = null;
+    private $experimental = null;
 
     /**
      * Goals that describe what the activities within the plan are intended to achieve. For example, weight loss, restoring an activity of daily living, obtaining herd immunity via immunization, meeting a process improvement objective, etc.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionGoal
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionGoal[]
      */
-    public $goal = null;
+    private $goal = [];
 
     /**
      * A formal identifier that is used to identify this plan definition when it is represented in other formats, or referenced in a specification, model, design or an instance.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = null;
+    private $identifier = [];
 
     /**
      * A legal or geographic region in which the plan definition is intended to be used.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $jurisdiction = null;
+    private $jurisdiction = [];
 
     /**
-     * The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date.
+     * The date on which the resource content was last reviewed. Review happens periodically after approval, but doesn't change the original approval date.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
-    public $lastReviewDate = null;
+    private $lastReviewDate = null;
 
     /**
      * A reference to a Library resource containing any formal logic used by the plan definition.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $library = null;
+    private $library = [];
 
     /**
      * A natural language name identifying the plan definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $name = null;
+    private $name = null;
 
     /**
-     * The name of the organization or individual that published the plan definition.
+     * The name of the individual or organization that published the plan definition.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $publisher = null;
+    private $publisher = null;
 
     /**
-     * Explanation of why this plan definition is needed and why it has been designed as it has.
+     * Explaination of why this plan definition is needed and why it has been designed as it has.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public $purpose = null;
+    private $purpose = null;
 
     /**
      * Related artifacts such as additional documentation, justification, or bibliographic references.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact[]
      */
-    public $relatedArtifact = null;
-
-    /**
-     * An individual or organization primarily responsible for review of some aspect of the content.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail
-     */
-    public $reviewer = null;
+    private $relatedArtifact = [];
 
     /**
      * The status of this plan definition. Enables tracking the life-cycle of the content.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus
      */
-    public $status = null;
-
-    /**
-     * A code or group definition that describes the intended subject of the plan definition.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public $subjectCodeableConcept = null;
-
-    /**
-     * A code or group definition that describes the intended subject of the plan definition.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $subjectReference = null;
-
-    /**
-     * An explanatory or alternate title for the plan definition giving additional information about its content.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public $subtitle = null;
+    private $status = null;
 
     /**
      * A short, descriptive, user-friendly title for the plan definition.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $title = null;
+    private $title = null;
 
     /**
      * Descriptive topics related to the content of the plan definition. Topics provide a high-level categorization of the definition that can be useful for filtering and searching.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $topic = null;
+    private $topic = [];
 
     /**
-     * A high-level category for the plan definition that distinguishes the kinds of systems that would be interested in the plan definition.
+     * The type of asset the plan definition represents, e.g. an order set, protocol, or event-condition-action rule.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $type = null;
+    private $type = null;
 
     /**
-     * An absolute URI that is used to identify this plan definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this plan definition is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the plan definition is stored on different servers.
+     * An absolute URI that is used to identify this plan definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this plan definition is (or will be) published. The URL SHOULD include the major version of the plan definition. For more information see [Technical and Business Versions](resource.html#versions).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $url = null;
+    private $url = null;
 
     /**
-     * A detailed description of how the plan definition is used from a clinical perspective.
+     * A detailed description of how the asset is used from a clinical perspective.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $usage = null;
+    private $usage = null;
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate plan definition instances.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
-    public $useContext = null;
+    private $useContext = [];
 
     /**
      * The identifier that is used to identify this version of the plan definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the plan definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active artifacts.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $version = null;
+    private $version = null;
 
     /**
      * FHIRPlanDefinition Constructor
@@ -292,103 +256,354 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['action'])) {
-                $this->setAction($data['action']);
+                $value = $data['action'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRPlanDefinitionAction($v);
+                        } 
+                        if (!($v instanceof FHIRPlanDefinitionAction)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPlanDefinition::__construct - Collection field \"action\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addAction($v);
+                    }
+                }
             }
             if (isset($data['approvalDate'])) {
-                $this->setApprovalDate($data['approvalDate']);
-            }
-            if (isset($data['author'])) {
-                $this->setAuthor($data['author']);
+                $value = $data['approvalDate'];
+                if (is_array($value)) {
+                    $value = new FHIRDate($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDate($value);
+                }
+                if (!($value instanceof FHIRDate)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPlanDefinition::__construct - Property \"approvalDate\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDate or data to construct type, saw ".gettype($value));
+                }
+                $this->setApprovalDate($value);
             }
             if (isset($data['contact'])) {
-                $this->setContact($data['contact']);
+                $value = $data['contact'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRContactDetail($v);
+                        } 
+                        if (!($v instanceof FHIRContactDetail)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPlanDefinition::__construct - Collection field \"contact\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRContactDetail or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addContact($v);
+                    }
+                }
+            }
+            if (isset($data['contributor'])) {
+                $value = $data['contributor'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRContributor($v);
+                        } 
+                        if (!($v instanceof FHIRContributor)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPlanDefinition::__construct - Collection field \"contributor\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRContributor or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addContributor($v);
+                    }
+                }
             }
             if (isset($data['copyright'])) {
-                $this->setCopyright($data['copyright']);
+                $value = $data['copyright'];
+                if (is_array($value)) {
+                    $value = new FHIRMarkdown($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRMarkdown($value);
+                }
+                if (!($value instanceof FHIRMarkdown)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPlanDefinition::__construct - Property \"copyright\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRMarkdown or data to construct type, saw ".gettype($value));
+                }
+                $this->setCopyright($value);
             }
             if (isset($data['date'])) {
-                $this->setDate($data['date']);
+                $value = $data['date'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPlanDefinition::__construct - Property \"date\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value));
+                }
+                $this->setDate($value);
             }
             if (isset($data['description'])) {
-                $this->setDescription($data['description']);
-            }
-            if (isset($data['editor'])) {
-                $this->setEditor($data['editor']);
+                $value = $data['description'];
+                if (is_array($value)) {
+                    $value = new FHIRMarkdown($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRMarkdown($value);
+                }
+                if (!($value instanceof FHIRMarkdown)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPlanDefinition::__construct - Property \"description\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRMarkdown or data to construct type, saw ".gettype($value));
+                }
+                $this->setDescription($value);
             }
             if (isset($data['effectivePeriod'])) {
-                $this->setEffectivePeriod($data['effectivePeriod']);
-            }
-            if (isset($data['endorser'])) {
-                $this->setEndorser($data['endorser']);
+                $value = $data['effectivePeriod'];
+                if (is_array($value)) {
+                    $value = new FHIRPeriod($value);
+                } 
+                if (!($value instanceof FHIRPeriod)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPlanDefinition::__construct - Property \"effectivePeriod\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPeriod or data to construct type, saw ".gettype($value));
+                }
+                $this->setEffectivePeriod($value);
             }
             if (isset($data['experimental'])) {
-                $this->setExperimental($data['experimental']);
+                $value = $data['experimental'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPlanDefinition::__construct - Property \"experimental\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value));
+                }
+                $this->setExperimental($value);
             }
             if (isset($data['goal'])) {
-                $this->setGoal($data['goal']);
+                $value = $data['goal'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRPlanDefinitionGoal($v);
+                        } 
+                        if (!($v instanceof FHIRPlanDefinitionGoal)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPlanDefinition::__construct - Collection field \"goal\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionGoal or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addGoal($v);
+                    }
+                }
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRIdentifier($v);
+                        } 
+                        if (!($v instanceof FHIRIdentifier)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPlanDefinition::__construct - Collection field \"identifier\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addIdentifier($v);
+                    }
+                }
             }
             if (isset($data['jurisdiction'])) {
-                $this->setJurisdiction($data['jurisdiction']);
+                $value = $data['jurisdiction'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPlanDefinition::__construct - Collection field \"jurisdiction\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addJurisdiction($v);
+                    }
+                }
             }
             if (isset($data['lastReviewDate'])) {
-                $this->setLastReviewDate($data['lastReviewDate']);
+                $value = $data['lastReviewDate'];
+                if (is_array($value)) {
+                    $value = new FHIRDate($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDate($value);
+                }
+                if (!($value instanceof FHIRDate)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPlanDefinition::__construct - Property \"lastReviewDate\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDate or data to construct type, saw ".gettype($value));
+                }
+                $this->setLastReviewDate($value);
             }
             if (isset($data['library'])) {
-                $this->setLibrary($data['library']);
+                $value = $data['library'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPlanDefinition::__construct - Collection field \"library\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addLibrary($v);
+                    }
+                }
             }
             if (isset($data['name'])) {
-                $this->setName($data['name']);
+                $value = $data['name'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPlanDefinition::__construct - Property \"name\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setName($value);
             }
             if (isset($data['publisher'])) {
-                $this->setPublisher($data['publisher']);
+                $value = $data['publisher'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPlanDefinition::__construct - Property \"publisher\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setPublisher($value);
             }
             if (isset($data['purpose'])) {
-                $this->setPurpose($data['purpose']);
+                $value = $data['purpose'];
+                if (is_array($value)) {
+                    $value = new FHIRMarkdown($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRMarkdown($value);
+                }
+                if (!($value instanceof FHIRMarkdown)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPlanDefinition::__construct - Property \"purpose\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRMarkdown or data to construct type, saw ".gettype($value));
+                }
+                $this->setPurpose($value);
             }
             if (isset($data['relatedArtifact'])) {
-                $this->setRelatedArtifact($data['relatedArtifact']);
-            }
-            if (isset($data['reviewer'])) {
-                $this->setReviewer($data['reviewer']);
+                $value = $data['relatedArtifact'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRRelatedArtifact($v);
+                        } 
+                        if (!($v instanceof FHIRRelatedArtifact)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPlanDefinition::__construct - Collection field \"relatedArtifact\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addRelatedArtifact($v);
+                    }
+                }
             }
             if (isset($data['status'])) {
-                $this->setStatus($data['status']);
-            }
-            if (isset($data['subjectCodeableConcept'])) {
-                $this->setSubjectCodeableConcept($data['subjectCodeableConcept']);
-            }
-            if (isset($data['subjectReference'])) {
-                $this->setSubjectReference($data['subjectReference']);
-            }
-            if (isset($data['subtitle'])) {
-                $this->setSubtitle($data['subtitle']);
+                $value = $data['status'];
+                if (is_array($value)) {
+                    $value = new FHIRPublicationStatus($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRPublicationStatus($value);
+                }
+                if (!($value instanceof FHIRPublicationStatus)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPlanDefinition::__construct - Property \"status\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus or data to construct type, saw ".gettype($value));
+                }
+                $this->setStatus($value);
             }
             if (isset($data['title'])) {
-                $this->setTitle($data['title']);
+                $value = $data['title'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPlanDefinition::__construct - Property \"title\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setTitle($value);
             }
             if (isset($data['topic'])) {
-                $this->setTopic($data['topic']);
+                $value = $data['topic'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPlanDefinition::__construct - Collection field \"topic\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addTopic($v);
+                    }
+                }
             }
             if (isset($data['type'])) {
-                $this->setType($data['type']);
+                $value = $data['type'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPlanDefinition::__construct - Property \"type\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setType($value);
             }
             if (isset($data['url'])) {
-                $this->setUrl($data['url']);
+                $value = $data['url'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPlanDefinition::__construct - Property \"url\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value));
+                }
+                $this->setUrl($value);
             }
             if (isset($data['usage'])) {
-                $this->setUsage($data['usage']);
+                $value = $data['usage'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPlanDefinition::__construct - Property \"usage\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setUsage($value);
             }
             if (isset($data['useContext'])) {
-                $this->setUseContext($data['useContext']);
+                $value = $data['useContext'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRUsageContext($v);
+                        } 
+                        if (!($v instanceof FHIRUsageContext)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPlanDefinition::__construct - Collection field \"useContext\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUsageContext or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addUseContext($v);
+                    }
+                }
             }
             if (isset($data['version'])) {
-                $this->setVersion($data['version']);
+                $value = $data['version'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPlanDefinition::__construct - Property \"version\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setVersion($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -397,31 +612,31 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
-     * An action or group of actions to be taken as part of the plan.
+     * An action to be taken as part of the plan.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
      * @return $this
      */
-    public function setAction(FHIRPlanDefinitionAction $action = null)
+    public function addAction(FHIRPlanDefinitionAction $action = null)
     {
         if (null === $action) {
             return $this; 
         }
-        $this->action = $action;
+        $this->action[] = $action;
         return $this;
     }
 
     /**
-     * An action or group of actions to be taken as part of the plan.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
+     * An action to be taken as part of the plan.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction[]
      */
     public function getAction()
     {
         return $this->action;
     }
-
 
     /**
      * The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.
@@ -455,54 +670,51 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
         return $this->approvalDate;
     }
 
-
-    /**
-     * An individiual or organization primarily involved in the creation and maintenance of the content.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail
-     * @return $this
-     */
-    public function setAuthor(FHIRContactDetail $author = null)
-    {
-        if (null === $author) {
-            return $this; 
-        }
-        $this->author = $author;
-        return $this;
-    }
-
-    /**
-     * An individiual or organization primarily involved in the creation and maintenance of the content.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail
-     */
-    public function getAuthor()
-    {
-        return $this->author;
-    }
-
-
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail
      * @return $this
      */
-    public function setContact(FHIRContactDetail $contact = null)
+    public function addContact(FHIRContactDetail $contact = null)
     {
         if (null === $contact) {
             return $this; 
         }
-        $this->contact = $contact;
+        $this->contact[] = $contact;
         return $this;
     }
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
     public function getContact()
     {
         return $this->contact;
     }
 
+    /**
+     * A contributor to the content of the asset, including authors, editors, reviewers, and endorsers.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContributor
+     * @return $this
+     */
+    public function addContributor(FHIRContributor $contributor = null)
+    {
+        if (null === $contributor) {
+            return $this; 
+        }
+        $this->contributor[] = $contributor;
+        return $this;
+    }
+
+    /**
+     * A contributor to the content of the asset, including authors, editors, reviewers, and endorsers.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContributor[]
+     */
+    public function getContributor()
+    {
+        return $this->contributor;
+    }
 
     /**
      * A copyright statement relating to the plan definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the plan definition.
@@ -536,9 +748,8 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
         return $this->copyright;
     }
 
-
     /**
-     * The date  (and optionally time) when the plan definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the plan definition changes.
+     * The date  (and optionally time) when the plan definition was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the plan definition changes.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      * @return $this
      */
@@ -561,14 +772,13 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date  (and optionally time) when the plan definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the plan definition changes.
+     * The date  (and optionally time) when the plan definition was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the plan definition changes.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getDate()
     {
         return $this->date;
     }
-
 
     /**
      * A free text natural language description of the plan definition from a consumer's perspective.
@@ -602,31 +812,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
         return $this->description;
     }
 
-
-    /**
-     * An individual or organization primarily responsible for internal coherence of the content.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail
-     * @return $this
-     */
-    public function setEditor(FHIRContactDetail $editor = null)
-    {
-        if (null === $editor) {
-            return $this; 
-        }
-        $this->editor = $editor;
-        return $this;
-    }
-
-    /**
-     * An individual or organization primarily responsible for internal coherence of the content.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail
-     */
-    public function getEditor()
-    {
-        return $this->editor;
-    }
-
-
     /**
      * The period during which the plan definition content was or is planned to be in active use.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
@@ -650,33 +835,8 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
         return $this->effectivePeriod;
     }
 
-
     /**
-     * An individual or organization responsible for officially endorsing the content for use in some setting.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail
-     * @return $this
-     */
-    public function setEndorser(FHIRContactDetail $endorser = null)
-    {
-        if (null === $endorser) {
-            return $this; 
-        }
-        $this->endorser = $endorser;
-        return $this;
-    }
-
-    /**
-     * An individual or organization responsible for officially endorsing the content for use in some setting.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail
-     */
-    public function getEndorser()
-    {
-        return $this->endorser;
-    }
-
-
-    /**
-     * A Boolean value to indicate that this plan definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this plan definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      * @return $this
      */
@@ -699,7 +859,7 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A Boolean value to indicate that this plan definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this plan definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getExperimental()
@@ -707,81 +867,77 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
         return $this->experimental;
     }
 
-
     /**
      * Goals that describe what the activities within the plan are intended to achieve. For example, weight loss, restoring an activity of daily living, obtaining herd immunity via immunization, meeting a process improvement objective, etc.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionGoal
      * @return $this
      */
-    public function setGoal(FHIRPlanDefinitionGoal $goal = null)
+    public function addGoal(FHIRPlanDefinitionGoal $goal = null)
     {
         if (null === $goal) {
             return $this; 
         }
-        $this->goal = $goal;
+        $this->goal[] = $goal;
         return $this;
     }
 
     /**
      * Goals that describe what the activities within the plan are intended to achieve. For example, weight loss, restoring an activity of daily living, obtaining herd immunity via immunization, meeting a process improvement objective, etc.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionGoal
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionGoal[]
      */
     public function getGoal()
     {
         return $this->goal;
     }
 
-
     /**
      * A formal identifier that is used to identify this plan definition when it is represented in other formats, or referenced in a specification, model, design or an instance.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
-    public function setIdentifier(FHIRIdentifier $identifier = null)
+    public function addIdentifier(FHIRIdentifier $identifier = null)
     {
         if (null === $identifier) {
             return $this; 
         }
-        $this->identifier = $identifier;
+        $this->identifier[] = $identifier;
         return $this;
     }
 
     /**
      * A formal identifier that is used to identify this plan definition when it is represented in other formats, or referenced in a specification, model, design or an instance.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
         return $this->identifier;
     }
 
-
     /**
      * A legal or geographic region in which the plan definition is intended to be used.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setJurisdiction(FHIRCodeableConcept $jurisdiction = null)
+    public function addJurisdiction(FHIRCodeableConcept $jurisdiction = null)
     {
         if (null === $jurisdiction) {
             return $this; 
         }
-        $this->jurisdiction = $jurisdiction;
+        $this->jurisdiction[] = $jurisdiction;
         return $this;
     }
 
     /**
      * A legal or geographic region in which the plan definition is intended to be used.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getJurisdiction()
     {
         return $this->jurisdiction;
     }
 
-
     /**
-     * The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date.
+     * The date on which the resource content was last reviewed. Review happens periodically after approval, but doesn't change the original approval date.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDate
      * @return $this
      */
@@ -804,7 +960,7 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date.
+     * The date on which the resource content was last reviewed. Review happens periodically after approval, but doesn't change the original approval date.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public function getLastReviewDate()
@@ -812,39 +968,28 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
         return $this->lastReviewDate;
     }
 
-
     /**
      * A reference to a Library resource containing any formal logic used by the plan definition.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setLibrary($library)
+    public function addLibrary(FHIRReference $library = null)
     {
         if (null === $library) {
             return $this; 
         }
-        if (is_scalar($library)) {
-            $library = new FHIRCanonical($library);
-        }
-        if (!($library instanceof FHIRCanonical)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRPlanDefinition::setLibrary - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCanonical or appropriate scalar value, %s seen.',
-                gettype($library)
-            ));
-        }
-        $this->library = $library;
+        $this->library[] = $library;
         return $this;
     }
 
     /**
      * A reference to a Library resource containing any formal logic used by the plan definition.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getLibrary()
     {
         return $this->library;
     }
-
 
     /**
      * A natural language name identifying the plan definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.
@@ -878,9 +1023,8 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
         return $this->name;
     }
 
-
     /**
-     * The name of the organization or individual that published the plan definition.
+     * The name of the individual or organization that published the plan definition.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
@@ -903,7 +1047,7 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The name of the organization or individual that published the plan definition.
+     * The name of the individual or organization that published the plan definition.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getPublisher()
@@ -911,9 +1055,8 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
         return $this->publisher;
     }
 
-
     /**
-     * Explanation of why this plan definition is needed and why it has been designed as it has.
+     * Explaination of why this plan definition is needed and why it has been designed as it has.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      * @return $this
      */
@@ -936,7 +1079,7 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Explanation of why this plan definition is needed and why it has been designed as it has.
+     * Explaination of why this plan definition is needed and why it has been designed as it has.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getPurpose()
@@ -944,54 +1087,28 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
         return $this->purpose;
     }
 
-
     /**
      * Related artifacts such as additional documentation, justification, or bibliographic references.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact
      * @return $this
      */
-    public function setRelatedArtifact(FHIRRelatedArtifact $relatedArtifact = null)
+    public function addRelatedArtifact(FHIRRelatedArtifact $relatedArtifact = null)
     {
         if (null === $relatedArtifact) {
             return $this; 
         }
-        $this->relatedArtifact = $relatedArtifact;
+        $this->relatedArtifact[] = $relatedArtifact;
         return $this;
     }
 
     /**
      * Related artifacts such as additional documentation, justification, or bibliographic references.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact[]
      */
     public function getRelatedArtifact()
     {
         return $this->relatedArtifact;
     }
-
-
-    /**
-     * An individual or organization primarily responsible for review of some aspect of the content.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail
-     * @return $this
-     */
-    public function setReviewer(FHIRContactDetail $reviewer = null)
-    {
-        if (null === $reviewer) {
-            return $this; 
-        }
-        $this->reviewer = $reviewer;
-        return $this;
-    }
-
-    /**
-     * An individual or organization primarily responsible for review of some aspect of the content.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail
-     */
-    public function getReviewer()
-    {
-        return $this->reviewer;
-    }
-
 
     /**
      * The status of this plan definition. Enables tracking the life-cycle of the content.
@@ -1025,88 +1142,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
         return $this->status;
     }
 
-
-    /**
-     * A code or group definition that describes the intended subject of the plan definition.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     * @return $this
-     */
-    public function setSubjectCodeableConcept(FHIRCodeableConcept $subjectCodeableConcept = null)
-    {
-        if (null === $subjectCodeableConcept) {
-            return $this; 
-        }
-        $this->subjectCodeableConcept = $subjectCodeableConcept;
-        return $this;
-    }
-
-    /**
-     * A code or group definition that describes the intended subject of the plan definition.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public function getSubjectCodeableConcept()
-    {
-        return $this->subjectCodeableConcept;
-    }
-
-
-    /**
-     * A code or group definition that describes the intended subject of the plan definition.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     * @return $this
-     */
-    public function setSubjectReference(FHIRReference $subjectReference = null)
-    {
-        if (null === $subjectReference) {
-            return $this; 
-        }
-        $this->subjectReference = $subjectReference;
-        return $this;
-    }
-
-    /**
-     * A code or group definition that describes the intended subject of the plan definition.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getSubjectReference()
-    {
-        return $this->subjectReference;
-    }
-
-
-    /**
-     * An explanatory or alternate title for the plan definition giving additional information about its content.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
-     * @return $this
-     */
-    public function setSubtitle($subtitle)
-    {
-        if (null === $subtitle) {
-            return $this; 
-        }
-        if (is_scalar($subtitle)) {
-            $subtitle = new FHIRString($subtitle);
-        }
-        if (!($subtitle instanceof FHIRString)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRPlanDefinition::setSubtitle - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
-                gettype($subtitle)
-            ));
-        }
-        $this->subtitle = $subtitle;
-        return $this;
-    }
-
-    /**
-     * An explanatory or alternate title for the plan definition giving additional information about its content.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public function getSubtitle()
-    {
-        return $this->subtitle;
-    }
-
-
     /**
      * A short, descriptive, user-friendly title for the plan definition.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -1139,33 +1174,31 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
         return $this->title;
     }
 
-
     /**
      * Descriptive topics related to the content of the plan definition. Topics provide a high-level categorization of the definition that can be useful for filtering and searching.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setTopic(FHIRCodeableConcept $topic = null)
+    public function addTopic(FHIRCodeableConcept $topic = null)
     {
         if (null === $topic) {
             return $this; 
         }
-        $this->topic = $topic;
+        $this->topic[] = $topic;
         return $this;
     }
 
     /**
      * Descriptive topics related to the content of the plan definition. Topics provide a high-level categorization of the definition that can be useful for filtering and searching.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getTopic()
     {
         return $this->topic;
     }
 
-
     /**
-     * A high-level category for the plan definition that distinguishes the kinds of systems that would be interested in the plan definition.
+     * The type of asset the plan definition represents, e.g. an order set, protocol, or event-condition-action rule.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
@@ -1179,7 +1212,7 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A high-level category for the plan definition that distinguishes the kinds of systems that would be interested in the plan definition.
+     * The type of asset the plan definition represents, e.g. an order set, protocol, or event-condition-action rule.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
@@ -1187,9 +1220,8 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
         return $this->type;
     }
 
-
     /**
-     * An absolute URI that is used to identify this plan definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this plan definition is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the plan definition is stored on different servers.
+     * An absolute URI that is used to identify this plan definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this plan definition is (or will be) published. The URL SHOULD include the major version of the plan definition. For more information see [Technical and Business Versions](resource.html#versions).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
@@ -1212,7 +1244,7 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * An absolute URI that is used to identify this plan definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this plan definition is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the plan definition is stored on different servers.
+     * An absolute URI that is used to identify this plan definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this plan definition is (or will be) published. The URL SHOULD include the major version of the plan definition. For more information see [Technical and Business Versions](resource.html#versions).
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getUrl()
@@ -1220,9 +1252,8 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
         return $this->url;
     }
 
-
     /**
-     * A detailed description of how the plan definition is used from a clinical perspective.
+     * A detailed description of how the asset is used from a clinical perspective.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
@@ -1245,7 +1276,7 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A detailed description of how the plan definition is used from a clinical perspective.
+     * A detailed description of how the asset is used from a clinical perspective.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getUsage()
@@ -1253,30 +1284,28 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
         return $this->usage;
     }
 
-
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate plan definition instances.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUsageContext
      * @return $this
      */
-    public function setUseContext(FHIRUsageContext $useContext = null)
+    public function addUseContext(FHIRUsageContext $useContext = null)
     {
         if (null === $useContext) {
             return $this; 
         }
-        $this->useContext = $useContext;
+        $this->useContext[] = $useContext;
         return $this;
     }
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate plan definition instances.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUsageContext
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
     public function getUseContext()
     {
         return $this->useContext;
     }
-
 
     /**
      * The identifier that is used to identify this version of the plan definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the plan definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active artifacts.
@@ -1310,7 +1339,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
         return $this->version;
     }
 
-
     /**
      * @return string
      */
@@ -1326,17 +1354,41 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
     {
         $a = parent::jsonSerialize();
         $a['resourceType'] = self::FHIR_TYPE_NAME;
-        if (null !== ($v = $this->getAction())) {
-            $a['action'] = $v;
+        if (0 < count($values = $this->getAction())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['action'] = $vs;
+            }
         }
         if (null !== ($v = $this->getApprovalDate())) {
             $a['approvalDate'] = $v;
         }
-        if (null !== ($v = $this->getAuthor())) {
-            $a['author'] = $v;
+        if (0 < count($values = $this->getContact())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['contact'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getContact())) {
-            $a['contact'] = $v;
+        if (0 < count($values = $this->getContributor())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['contributor'] = $vs;
+            }
         }
         if (null !== ($v = $this->getCopyright())) {
             $a['copyright'] = $v;
@@ -1347,32 +1399,58 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getDescription())) {
             $a['description'] = $v;
         }
-        if (null !== ($v = $this->getEditor())) {
-            $a['editor'] = $v;
-        }
         if (null !== ($v = $this->getEffectivePeriod())) {
             $a['effectivePeriod'] = $v;
-        }
-        if (null !== ($v = $this->getEndorser())) {
-            $a['endorser'] = $v;
         }
         if (null !== ($v = $this->getExperimental())) {
             $a['experimental'] = $v;
         }
-        if (null !== ($v = $this->getGoal())) {
-            $a['goal'] = $v;
+        if (0 < count($values = $this->getGoal())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['goal'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getIdentifier())) {
-            $a['identifier'] = $v;
+        if (0 < count($values = $this->getIdentifier())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['identifier'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getJurisdiction())) {
-            $a['jurisdiction'] = $v;
+        if (0 < count($values = $this->getJurisdiction())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['jurisdiction'] = $vs;
+            }
         }
         if (null !== ($v = $this->getLastReviewDate())) {
             $a['lastReviewDate'] = $v;
         }
-        if (null !== ($v = $this->getLibrary())) {
-            $a['library'] = $v;
+        if (0 < count($values = $this->getLibrary())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['library'] = $vs;
+            }
         }
         if (null !== ($v = $this->getName())) {
             $a['name'] = $v;
@@ -1383,29 +1461,33 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getPurpose())) {
             $a['purpose'] = $v;
         }
-        if (null !== ($v = $this->getRelatedArtifact())) {
-            $a['relatedArtifact'] = $v;
-        }
-        if (null !== ($v = $this->getReviewer())) {
-            $a['reviewer'] = $v;
+        if (0 < count($values = $this->getRelatedArtifact())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['relatedArtifact'] = $vs;
+            }
         }
         if (null !== ($v = $this->getStatus())) {
             $a['status'] = $v;
         }
-        if (null !== ($v = $this->getSubjectCodeableConcept())) {
-            $a['subjectCodeableConcept'] = $v;
-        }
-        if (null !== ($v = $this->getSubjectReference())) {
-            $a['subjectReference'] = $v;
-        }
-        if (null !== ($v = $this->getSubtitle())) {
-            $a['subtitle'] = $v;
-        }
         if (null !== ($v = $this->getTitle())) {
             $a['title'] = $v;
         }
-        if (null !== ($v = $this->getTopic())) {
-            $a['topic'] = $v;
+        if (0 < count($values = $this->getTopic())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['topic'] = $vs;
+            }
         }
         if (null !== ($v = $this->getType())) {
             $a['type'] = $v;
@@ -1416,8 +1498,16 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getUsage())) {
             $a['usage'] = $v;
         }
-        if (null !== ($v = $this->getUseContext())) {
-            $a['useContext'] = $v;
+        if (0 < count($values = $this->getUseContext())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['useContext'] = $vs;
+            }
         }
         if (null !== ($v = $this->getVersion())) {
             $a['version'] = $v;
@@ -1435,9 +1525,124 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<PlanDefinition xmlns="http://hl7.org/fhir"></PlanDefinition>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (0 < count($values = $this->getAction())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('action'));
+                }
+            }
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getApprovalDate())) {
+            $v->xmlSerialize(true, $sxe->addChild('approvalDate'));
+        }
+        if (0 < count($values = $this->getContact())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('contact'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getContributor())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('contributor'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getCopyright())) {
+            $v->xmlSerialize(true, $sxe->addChild('copyright'));
+        }
+        if (null !== ($v = $this->getDate())) {
+            $v->xmlSerialize(true, $sxe->addChild('date'));
+        }
+        if (null !== ($v = $this->getDescription())) {
+            $v->xmlSerialize(true, $sxe->addChild('description'));
+        }
+        if (null !== ($v = $this->getEffectivePeriod())) {
+            $v->xmlSerialize(true, $sxe->addChild('effectivePeriod'));
+        }
+        if (null !== ($v = $this->getExperimental())) {
+            $v->xmlSerialize(true, $sxe->addChild('experimental'));
+        }
+        if (0 < count($values = $this->getGoal())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('goal'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getIdentifier())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('identifier'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getJurisdiction())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('jurisdiction'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getLastReviewDate())) {
+            $v->xmlSerialize(true, $sxe->addChild('lastReviewDate'));
+        }
+        if (0 < count($values = $this->getLibrary())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('library'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getName())) {
+            $v->xmlSerialize(true, $sxe->addChild('name'));
+        }
+        if (null !== ($v = $this->getPublisher())) {
+            $v->xmlSerialize(true, $sxe->addChild('publisher'));
+        }
+        if (null !== ($v = $this->getPurpose())) {
+            $v->xmlSerialize(true, $sxe->addChild('purpose'));
+        }
+        if (0 < count($values = $this->getRelatedArtifact())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('relatedArtifact'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('status'));
+        }
+        if (null !== ($v = $this->getTitle())) {
+            $v->xmlSerialize(true, $sxe->addChild('title'));
+        }
+        if (0 < count($values = $this->getTopic())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('topic'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getType())) {
+            $v->xmlSerialize(true, $sxe->addChild('type'));
+        }
+        if (null !== ($v = $this->getUrl())) {
+            $v->xmlSerialize(true, $sxe->addChild('url'));
+        }
+        if (null !== ($v = $this->getUsage())) {
+            $v->xmlSerialize(true, $sxe->addChild('usage'));
+        }
+        if (0 < count($values = $this->getUseContext())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('useContext'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getVersion())) {
+            $v->xmlSerialize(true, $sxe->addChild('version'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

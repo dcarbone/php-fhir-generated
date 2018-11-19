@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStateme
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStateme
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,8 +63,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStateme
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\FHIRElement\FHIRCanonical;
-use PHPFHIRGenerated\FHIRElement\FHIRMarkdown;
+use PHPFHIRGenerated\FHIRElement\FHIRReference;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
 
 /**
@@ -80,21 +79,15 @@ class FHIRCapabilityStatementOperation extends FHIRBackboneElement implements \J
 
     /**
      * Where the formal definition can be found.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $definition = null;
-
-    /**
-     * Documentation that describes anything special about the operation behavior, possibly detailing different behavior for system, type and instance-level invocation of the operation.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
-     */
-    public $documentation = null;
+    private $definition = null;
 
     /**
      * The name of the operation or query. For an operation, this is the name  prefixed with $ and used in the URL. For a query, this is the name used in the _query parameter when the query is called.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $name = null;
+    private $name = null;
 
     /**
      * FHIRCapabilityStatementOperation Constructor
@@ -103,16 +96,28 @@ class FHIRCapabilityStatementOperation extends FHIRBackboneElement implements \J
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['definition'])) {
-                $this->setDefinition($data['definition']);
-            }
-            if (isset($data['documentation'])) {
-                $this->setDocumentation($data['documentation']);
+                $value = $data['definition'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementOperation::__construct - Property \"definition\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDefinition($value);
             }
             if (isset($data['name'])) {
-                $this->setName($data['name']);
+                $value = $data['name'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementOperation::__construct - Property \"name\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setName($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -121,26 +126,18 @@ class FHIRCapabilityStatementOperation extends FHIRBackboneElement implements \J
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
      * Where the formal definition can be found.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setDefinition($definition)
+    public function setDefinition(FHIRReference $definition = null)
     {
         if (null === $definition) {
             return $this; 
-        }
-        if (is_scalar($definition)) {
-            $definition = new FHIRCanonical($definition);
-        }
-        if (!($definition instanceof FHIRCanonical)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRCapabilityStatementOperation::setDefinition - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCanonical or appropriate scalar value, %s seen.',
-                gettype($definition)
-            ));
         }
         $this->definition = $definition;
         return $this;
@@ -148,46 +145,12 @@ class FHIRCapabilityStatementOperation extends FHIRBackboneElement implements \J
 
     /**
      * Where the formal definition can be found.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getDefinition()
     {
         return $this->definition;
     }
-
-
-    /**
-     * Documentation that describes anything special about the operation behavior, possibly detailing different behavior for system, type and instance-level invocation of the operation.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRMarkdown
-     * @return $this
-     */
-    public function setDocumentation($documentation)
-    {
-        if (null === $documentation) {
-            return $this; 
-        }
-        if (is_scalar($documentation)) {
-            $documentation = new FHIRMarkdown($documentation);
-        }
-        if (!($documentation instanceof FHIRMarkdown)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRCapabilityStatementOperation::setDocumentation - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRMarkdown or appropriate scalar value, %s seen.',
-                gettype($documentation)
-            ));
-        }
-        $this->documentation = $documentation;
-        return $this;
-    }
-
-    /**
-     * Documentation that describes anything special about the operation behavior, possibly detailing different behavior for system, type and instance-level invocation of the operation.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRMarkdown
-     */
-    public function getDocumentation()
-    {
-        return $this->documentation;
-    }
-
 
     /**
      * The name of the operation or query. For an operation, this is the name  prefixed with $ and used in the URL. For a query, this is the name used in the _query parameter when the query is called.
@@ -221,7 +184,6 @@ class FHIRCapabilityStatementOperation extends FHIRBackboneElement implements \J
         return $this->name;
     }
 
-
     /**
      * @return string
      */
@@ -239,9 +201,6 @@ class FHIRCapabilityStatementOperation extends FHIRBackboneElement implements \J
         if (null !== ($v = $this->getDefinition())) {
             $a['definition'] = $v;
         }
-        if (null !== ($v = $this->getDocumentation())) {
-            $a['documentation'] = $v;
-        }
         if (null !== ($v = $this->getName())) {
             $a['name'] = $v;
         }
@@ -258,9 +217,12 @@ class FHIRCapabilityStatementOperation extends FHIRBackboneElement implements \J
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<CapabilityStatementOperation xmlns="http://hl7.org/fhir"></CapabilityStatementOperation>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getDefinition())) {
+            $v->xmlSerialize(true, $sxe->addChild('definition'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getName())) {
+            $v->xmlSerialize(true, $sxe->addChild('name'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

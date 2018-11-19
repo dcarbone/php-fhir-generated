@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -68,7 +68,7 @@ use PHPFHIRGenerated\FHIRElement\FHIRFilterOperator;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
 
 /**
- * The CodeSystem resource is used to declare the existence of and describe a code system or code system supplement and its key properties, and optionally define a part or all of its content.
+ * A code system resource specifies a set of codes drawn from one or more code systems.
  *
  * Class FHIRCodeSystemFilter
  * @package PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem
@@ -79,28 +79,28 @@ class FHIRCodeSystemFilter extends FHIRBackboneElement implements \JsonSerializa
     const FHIR_TYPE_NAME = 'CodeSystem.Filter';
 
     /**
-     * The code that identifies this filter when it is used as a filter in [[[ValueSet]]].compose.include.filter.
+     * The code that identifies this filter when it is used in the instance.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public $code = null;
+    private $code = null;
 
     /**
      * A description of how or why the filter is used.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $description = null;
+    private $description = null;
 
     /**
      * A list of operators that can be used with the filter.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRFilterOperator
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRFilterOperator[]
      */
-    public $operator = null;
+    private $operator = [];
 
     /**
      * A description of what the value for the filter should be.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $value = null;
+    private $value = null;
 
     /**
      * FHIRCodeSystemFilter Constructor
@@ -109,19 +109,60 @@ class FHIRCodeSystemFilter extends FHIRBackboneElement implements \JsonSerializa
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['code'])) {
-                $this->setCode($data['code']);
+                $value = $data['code'];
+                if (is_array($value)) {
+                    $value = new FHIRCode($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRCode($value);
+                }
+                if (!($value instanceof FHIRCode)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemFilter::__construct - Property \"code\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or data to construct type, saw ".gettype($value));
+                }
+                $this->setCode($value);
             }
             if (isset($data['description'])) {
-                $this->setDescription($data['description']);
+                $value = $data['description'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemFilter::__construct - Property \"description\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setDescription($value);
             }
             if (isset($data['operator'])) {
-                $this->setOperator($data['operator']);
+                $value = $data['operator'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRFilterOperator($v);
+                        }  elseif (is_scalar($v)) {
+                            $v = new FHIRFilterOperator($v);
+                        }
+                        if (!($v instanceof FHIRFilterOperator)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemFilter::__construct - Collection field \"operator\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRFilterOperator or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addOperator($v);
+                    }
+                }
             }
             if (isset($data['value'])) {
-                $this->setValue($data['value']);
+                $value = $data['value'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemFilter::__construct - Property \"value\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setValue($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -130,10 +171,11 @@ class FHIRCodeSystemFilter extends FHIRBackboneElement implements \JsonSerializa
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
-     * The code that identifies this filter when it is used as a filter in [[[ValueSet]]].compose.include.filter.
+     * The code that identifies this filter when it is used in the instance.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCode
      * @return $this
      */
@@ -156,14 +198,13 @@ class FHIRCodeSystemFilter extends FHIRBackboneElement implements \JsonSerializa
     }
 
     /**
-     * The code that identifies this filter when it is used as a filter in [[[ValueSet]]].compose.include.filter.
+     * The code that identifies this filter when it is used in the instance.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCode
      */
     public function getCode()
     {
         return $this->code;
     }
-
 
     /**
      * A description of how or why the filter is used.
@@ -197,13 +238,12 @@ class FHIRCodeSystemFilter extends FHIRBackboneElement implements \JsonSerializa
         return $this->description;
     }
 
-
     /**
      * A list of operators that can be used with the filter.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRFilterOperator
      * @return $this
      */
-    public function setOperator($operator)
+    public function addOperator($operator)
     {
         if (null === $operator) {
             return $this; 
@@ -213,23 +253,22 @@ class FHIRCodeSystemFilter extends FHIRBackboneElement implements \JsonSerializa
         }
         if (!($operator instanceof FHIRFilterOperator)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRCodeSystemFilter::setOperator - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRFilterOperator or appropriate scalar value, %s seen.',
+                'FHIRCodeSystemFilter::addOperator - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRFilterOperator or appropriate scalar value, %s seen.',
                 gettype($operator)
             ));
         }
-        $this->operator = $operator;
+        $this->operator[] = $operator;
         return $this;
     }
 
     /**
      * A list of operators that can be used with the filter.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRFilterOperator
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRFilterOperator[]
      */
     public function getOperator()
     {
         return $this->operator;
     }
-
 
     /**
      * A description of what the value for the filter should be.
@@ -263,7 +302,6 @@ class FHIRCodeSystemFilter extends FHIRBackboneElement implements \JsonSerializa
         return $this->value;
     }
 
-
     /**
      * @return string
      */
@@ -284,8 +322,16 @@ class FHIRCodeSystemFilter extends FHIRBackboneElement implements \JsonSerializa
         if (null !== ($v = $this->getDescription())) {
             $a['description'] = $v;
         }
-        if (null !== ($v = $this->getOperator())) {
-            $a['operator'] = $v;
+        if (0 < count($values = $this->getOperator())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['operator'] = $vs;
+            }
         }
         if (null !== ($v = $this->getValue())) {
             $a['value'] = $v;
@@ -303,9 +349,22 @@ class FHIRCodeSystemFilter extends FHIRBackboneElement implements \JsonSerializa
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<CodeSystemFilter xmlns="http://hl7.org/fhir"></CodeSystemFilter>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getCode())) {
+            $v->xmlSerialize(true, $sxe->addChild('code'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getDescription())) {
+            $v->xmlSerialize(true, $sxe->addChild('description'));
+        }
+        if (0 < count($values = $this->getOperator())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('operator'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getValue())) {
+            $v->xmlSerialize(true, $sxe->addChild('value'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

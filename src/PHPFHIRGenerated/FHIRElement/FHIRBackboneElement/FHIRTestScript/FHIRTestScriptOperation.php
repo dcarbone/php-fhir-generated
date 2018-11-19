@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -64,14 +64,15 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript;
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 use PHPFHIRGenerated\FHIRElement\FHIRBoolean;
-use PHPFHIRGenerated\FHIRElement\FHIRCode;
 use PHPFHIRGenerated\FHIRElement\FHIRCoding;
+use PHPFHIRGenerated\FHIRElement\FHIRContentType;
+use PHPFHIRGenerated\FHIRElement\FHIRFHIRDefinedType;
 use PHPFHIRGenerated\FHIRElement\FHIRId;
 use PHPFHIRGenerated\FHIRElement\FHIRInteger;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
 
 /**
- * A structured set of tests against a FHIR server or client implementation to determine compliance against the FHIR specification.
+ * A structured set of tests against a FHIR server implementation to determine compliance against the FHIR specification.
  *
  * Class FHIRTestScriptOperation
  * @package PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript
@@ -82,100 +83,100 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
     const FHIR_TYPE_NAME = 'TestScript.Operation';
 
     /**
-     * The mime-type to use for RESTful operation in the 'Accept' header.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * The content-type or mime-type to use for RESTful operation in the 'Accept' header.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRContentType
      */
-    public $accept = null;
+    private $accept = null;
 
     /**
-     * The mime-type to use for RESTful operation in the 'Content-Type' header.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * The content-type or mime-type to use for RESTful operation in the 'Content-Type' header.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRContentType
      */
-    public $contentType = null;
+    private $contentType = null;
 
     /**
      * The description would be used by test engines for tracking and reporting purposes.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $description = null;
+    private $description = null;
 
     /**
      * The server where the request message is destined for.  Must be one of the server numbers listed in TestScript.destination section.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
-    public $destination = null;
+    private $destination = null;
 
     /**
      * Whether or not to implicitly send the request url in encoded format. The default is true to match the standard RESTful client behavior. Set to false when communicating with a server that does not support encoded url paths.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $encodeRequestUrl = null;
+    private $encodeRequestUrl = null;
 
     /**
      * The label would be used for tracking/logging purposes by test engines.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $label = null;
+    private $label = null;
 
     /**
      * The server where the request message originates from.  Must be one of the server numbers listed in TestScript.origin section.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
-    public $origin = null;
+    private $origin = null;
 
     /**
      * Path plus parameters after [type].  Used to set parts of the request URL explicitly.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $params = null;
+    private $params = null;
 
     /**
      * Header elements would be used to set HTTP headers.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRequestHeader
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRequestHeader[]
      */
-    public $requestHeader = null;
+    private $requestHeader = [];
 
     /**
      * The fixture id (maybe new) to map to the request.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRId
      */
-    public $requestId = null;
+    private $requestId = null;
 
     /**
      * The type of the resource.  See http://build.fhir.org/resourcelist.html.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRFHIRDefinedType
      */
-    public $resource = null;
+    private $resource = null;
 
     /**
      * The fixture id (maybe new) to map to the response.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRId
      */
-    public $responseId = null;
+    private $responseId = null;
 
     /**
      * The id of the fixture used as the body of a PUT or POST request.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRId
      */
-    public $sourceId = null;
+    private $sourceId = null;
 
     /**
      * Id of fixture used for extracting the [id],  [type], and [vid] for GET requests.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRId
      */
-    public $targetId = null;
+    private $targetId = null;
 
     /**
      * Server interaction or operation type.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
-    public $type = null;
+    private $type = null;
 
     /**
      * Complete request URL.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $url = null;
+    private $url = null;
 
     /**
      * FHIRTestScriptOperation Constructor
@@ -184,55 +185,200 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['accept'])) {
-                $this->setAccept($data['accept']);
+                $value = $data['accept'];
+                if (is_array($value)) {
+                    $value = new FHIRContentType($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRContentType($value);
+                }
+                if (!($value instanceof FHIRContentType)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOperation::__construct - Property \"accept\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRContentType or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setAccept($value);
             }
             if (isset($data['contentType'])) {
-                $this->setContentType($data['contentType']);
+                $value = $data['contentType'];
+                if (is_array($value)) {
+                    $value = new FHIRContentType($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRContentType($value);
+                }
+                if (!($value instanceof FHIRContentType)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOperation::__construct - Property \"contentType\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRContentType or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setContentType($value);
             }
             if (isset($data['description'])) {
-                $this->setDescription($data['description']);
+                $value = $data['description'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOperation::__construct - Property \"description\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDescription($value);
             }
             if (isset($data['destination'])) {
-                $this->setDestination($data['destination']);
+                $value = $data['destination'];
+                if (is_array($value)) {
+                    $value = new FHIRInteger($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRInteger($value);
+                }
+                if (!($value instanceof FHIRInteger)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOperation::__construct - Property \"destination\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRInteger or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDestination($value);
             }
             if (isset($data['encodeRequestUrl'])) {
-                $this->setEncodeRequestUrl($data['encodeRequestUrl']);
+                $value = $data['encodeRequestUrl'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOperation::__construct - Property \"encodeRequestUrl\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setEncodeRequestUrl($value);
             }
             if (isset($data['label'])) {
-                $this->setLabel($data['label']);
+                $value = $data['label'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOperation::__construct - Property \"label\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setLabel($value);
             }
             if (isset($data['origin'])) {
-                $this->setOrigin($data['origin']);
+                $value = $data['origin'];
+                if (is_array($value)) {
+                    $value = new FHIRInteger($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRInteger($value);
+                }
+                if (!($value instanceof FHIRInteger)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOperation::__construct - Property \"origin\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRInteger or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setOrigin($value);
             }
             if (isset($data['params'])) {
-                $this->setParams($data['params']);
+                $value = $data['params'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOperation::__construct - Property \"params\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setParams($value);
             }
             if (isset($data['requestHeader'])) {
-                $this->setRequestHeader($data['requestHeader']);
+                $value = $data['requestHeader'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRTestScriptRequestHeader($v);
+                        } 
+                        if (!($v instanceof FHIRTestScriptRequestHeader)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOperation::__construct - Collection field \"requestHeader\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRequestHeader or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addRequestHeader($v);
+                    }
+                }
             }
             if (isset($data['requestId'])) {
-                $this->setRequestId($data['requestId']);
+                $value = $data['requestId'];
+                if (is_array($value)) {
+                    $value = new FHIRId($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRId($value);
+                }
+                if (!($value instanceof FHIRId)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOperation::__construct - Property \"requestId\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRId or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setRequestId($value);
             }
             if (isset($data['resource'])) {
-                $this->setResource($data['resource']);
+                $value = $data['resource'];
+                if (is_array($value)) {
+                    $value = new FHIRFHIRDefinedType($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRFHIRDefinedType($value);
+                }
+                if (!($value instanceof FHIRFHIRDefinedType)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOperation::__construct - Property \"resource\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRFHIRDefinedType or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setResource($value);
             }
             if (isset($data['responseId'])) {
-                $this->setResponseId($data['responseId']);
+                $value = $data['responseId'];
+                if (is_array($value)) {
+                    $value = new FHIRId($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRId($value);
+                }
+                if (!($value instanceof FHIRId)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOperation::__construct - Property \"responseId\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRId or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setResponseId($value);
             }
             if (isset($data['sourceId'])) {
-                $this->setSourceId($data['sourceId']);
+                $value = $data['sourceId'];
+                if (is_array($value)) {
+                    $value = new FHIRId($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRId($value);
+                }
+                if (!($value instanceof FHIRId)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOperation::__construct - Property \"sourceId\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRId or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setSourceId($value);
             }
             if (isset($data['targetId'])) {
-                $this->setTargetId($data['targetId']);
+                $value = $data['targetId'];
+                if (is_array($value)) {
+                    $value = new FHIRId($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRId($value);
+                }
+                if (!($value instanceof FHIRId)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOperation::__construct - Property \"targetId\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRId or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setTargetId($value);
             }
             if (isset($data['type'])) {
-                $this->setType($data['type']);
+                $value = $data['type'];
+                if (is_array($value)) {
+                    $value = new FHIRCoding($value);
+                } 
+                if (!($value instanceof FHIRCoding)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOperation::__construct - Property \"type\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCoding or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setType($value);
             }
             if (isset($data['url'])) {
-                $this->setUrl($data['url']);
+                $value = $data['url'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOperation::__construct - Property \"url\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setUrl($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -241,11 +387,12 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
-     * The mime-type to use for RESTful operation in the 'Accept' header.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCode
+     * The content-type or mime-type to use for RESTful operation in the 'Accept' header.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContentType
      * @return $this
      */
     public function setAccept($accept)
@@ -254,11 +401,11 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
             return $this; 
         }
         if (is_scalar($accept)) {
-            $accept = new FHIRCode($accept);
+            $accept = new FHIRContentType($accept);
         }
-        if (!($accept instanceof FHIRCode)) {
+        if (!($accept instanceof FHIRContentType)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRTestScriptOperation::setAccept - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or appropriate scalar value, %s seen.',
+                'FHIRTestScriptOperation::setAccept - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRContentType or appropriate scalar value, %s seen.',
                 gettype($accept)
             ));
         }
@@ -267,18 +414,17 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * The mime-type to use for RESTful operation in the 'Accept' header.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCode
+     * The content-type or mime-type to use for RESTful operation in the 'Accept' header.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContentType
      */
     public function getAccept()
     {
         return $this->accept;
     }
 
-
     /**
-     * The mime-type to use for RESTful operation in the 'Content-Type' header.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCode
+     * The content-type or mime-type to use for RESTful operation in the 'Content-Type' header.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContentType
      * @return $this
      */
     public function setContentType($contentType)
@@ -287,11 +433,11 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
             return $this; 
         }
         if (is_scalar($contentType)) {
-            $contentType = new FHIRCode($contentType);
+            $contentType = new FHIRContentType($contentType);
         }
-        if (!($contentType instanceof FHIRCode)) {
+        if (!($contentType instanceof FHIRContentType)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRTestScriptOperation::setContentType - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or appropriate scalar value, %s seen.',
+                'FHIRTestScriptOperation::setContentType - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRContentType or appropriate scalar value, %s seen.',
                 gettype($contentType)
             ));
         }
@@ -300,14 +446,13 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * The mime-type to use for RESTful operation in the 'Content-Type' header.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCode
+     * The content-type or mime-type to use for RESTful operation in the 'Content-Type' header.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContentType
      */
     public function getContentType()
     {
         return $this->contentType;
     }
-
 
     /**
      * The description would be used by test engines for tracking and reporting purposes.
@@ -341,7 +486,6 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
         return $this->description;
     }
 
-
     /**
      * The server where the request message is destined for.  Must be one of the server numbers listed in TestScript.destination section.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRInteger
@@ -373,7 +517,6 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
     {
         return $this->destination;
     }
-
 
     /**
      * Whether or not to implicitly send the request url in encoded format. The default is true to match the standard RESTful client behavior. Set to false when communicating with a server that does not support encoded url paths.
@@ -407,7 +550,6 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
         return $this->encodeRequestUrl;
     }
 
-
     /**
      * The label would be used for tracking/logging purposes by test engines.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -439,7 +581,6 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
     {
         return $this->label;
     }
-
 
     /**
      * The server where the request message originates from.  Must be one of the server numbers listed in TestScript.origin section.
@@ -473,7 +614,6 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
         return $this->origin;
     }
 
-
     /**
      * Path plus parameters after [type].  Used to set parts of the request URL explicitly.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -506,30 +646,28 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
         return $this->params;
     }
 
-
     /**
      * Header elements would be used to set HTTP headers.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRequestHeader
      * @return $this
      */
-    public function setRequestHeader(FHIRTestScriptRequestHeader $requestHeader = null)
+    public function addRequestHeader(FHIRTestScriptRequestHeader $requestHeader = null)
     {
         if (null === $requestHeader) {
             return $this; 
         }
-        $this->requestHeader = $requestHeader;
+        $this->requestHeader[] = $requestHeader;
         return $this;
     }
 
     /**
      * Header elements would be used to set HTTP headers.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRequestHeader
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRequestHeader[]
      */
     public function getRequestHeader()
     {
         return $this->requestHeader;
     }
-
 
     /**
      * The fixture id (maybe new) to map to the request.
@@ -563,10 +701,9 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
         return $this->requestId;
     }
 
-
     /**
      * The type of the resource.  See http://build.fhir.org/resourcelist.html.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRFHIRDefinedType
      * @return $this
      */
     public function setResource($resource)
@@ -575,11 +712,11 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
             return $this; 
         }
         if (is_scalar($resource)) {
-            $resource = new FHIRCode($resource);
+            $resource = new FHIRFHIRDefinedType($resource);
         }
-        if (!($resource instanceof FHIRCode)) {
+        if (!($resource instanceof FHIRFHIRDefinedType)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRTestScriptOperation::setResource - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or appropriate scalar value, %s seen.',
+                'FHIRTestScriptOperation::setResource - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRFHIRDefinedType or appropriate scalar value, %s seen.',
                 gettype($resource)
             ));
         }
@@ -589,13 +726,12 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * The type of the resource.  See http://build.fhir.org/resourcelist.html.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRFHIRDefinedType
      */
     public function getResource()
     {
         return $this->resource;
     }
-
 
     /**
      * The fixture id (maybe new) to map to the response.
@@ -629,7 +765,6 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
         return $this->responseId;
     }
 
-
     /**
      * The id of the fixture used as the body of a PUT or POST request.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRId
@@ -661,7 +796,6 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
     {
         return $this->sourceId;
     }
-
 
     /**
      * Id of fixture used for extracting the [id],  [type], and [vid] for GET requests.
@@ -695,7 +829,6 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
         return $this->targetId;
     }
 
-
     /**
      * Server interaction or operation type.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
@@ -718,7 +851,6 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
     {
         return $this->type;
     }
-
 
     /**
      * Complete request URL.
@@ -751,7 +883,6 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
     {
         return $this->url;
     }
-
 
     /**
      * @return string
@@ -791,8 +922,16 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
         if (null !== ($v = $this->getParams())) {
             $a['params'] = $v;
         }
-        if (null !== ($v = $this->getRequestHeader())) {
-            $a['requestHeader'] = $v;
+        if (0 < count($values = $this->getRequestHeader())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['requestHeader'] = $vs;
+            }
         }
         if (null !== ($v = $this->getRequestId())) {
             $a['requestId'] = $v;
@@ -828,9 +967,58 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<TestScriptOperation xmlns="http://hl7.org/fhir"></TestScriptOperation>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getAccept())) {
+            $v->xmlSerialize(true, $sxe->addChild('accept'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getContentType())) {
+            $v->xmlSerialize(true, $sxe->addChild('contentType'));
+        }
+        if (null !== ($v = $this->getDescription())) {
+            $v->xmlSerialize(true, $sxe->addChild('description'));
+        }
+        if (null !== ($v = $this->getDestination())) {
+            $v->xmlSerialize(true, $sxe->addChild('destination'));
+        }
+        if (null !== ($v = $this->getEncodeRequestUrl())) {
+            $v->xmlSerialize(true, $sxe->addChild('encodeRequestUrl'));
+        }
+        if (null !== ($v = $this->getLabel())) {
+            $v->xmlSerialize(true, $sxe->addChild('label'));
+        }
+        if (null !== ($v = $this->getOrigin())) {
+            $v->xmlSerialize(true, $sxe->addChild('origin'));
+        }
+        if (null !== ($v = $this->getParams())) {
+            $v->xmlSerialize(true, $sxe->addChild('params'));
+        }
+        if (0 < count($values = $this->getRequestHeader())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('requestHeader'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getRequestId())) {
+            $v->xmlSerialize(true, $sxe->addChild('requestId'));
+        }
+        if (null !== ($v = $this->getResource())) {
+            $v->xmlSerialize(true, $sxe->addChild('resource'));
+        }
+        if (null !== ($v = $this->getResponseId())) {
+            $v->xmlSerialize(true, $sxe->addChild('responseId'));
+        }
+        if (null !== ($v = $this->getSourceId())) {
+            $v->xmlSerialize(true, $sxe->addChild('sourceId'));
+        }
+        if (null !== ($v = $this->getTargetId())) {
+            $v->xmlSerialize(true, $sxe->addChild('targetId'));
+        }
+        if (null !== ($v = $this->getType())) {
+            $v->xmlSerialize(true, $sxe->addChild('type'));
+        }
+        if (null !== ($v = $this->getUrl())) {
+            $v->xmlSerialize(true, $sxe->addChild('url'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

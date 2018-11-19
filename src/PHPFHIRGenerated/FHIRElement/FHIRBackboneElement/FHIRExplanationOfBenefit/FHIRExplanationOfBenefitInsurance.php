@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBene
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBene
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,8 +63,8 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBene
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\FHIRElement\FHIRBoolean;
 use PHPFHIRGenerated\FHIRElement\FHIRReference;
+use PHPFHIRGenerated\FHIRElement\FHIRString;
 
 /**
  * This resource provides: the claim details; adjudication details from the processing of a Claim; and optionally account balance information, for informing the subscriber of the benefits provided.
@@ -81,13 +81,13 @@ class FHIRExplanationOfBenefitInsurance extends FHIRBackboneElement implements \
      * Reference to the program or plan identification, underwriter or payor.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $coverage = null;
+    private $coverage = null;
 
     /**
-     * The instance number of the Coverage which is the focus for adjudication. The Coverage against which the claim was adjudicated.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     * A list of references from the Insurer to which these services pertain.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public $focal = null;
+    private $preAuthRef = [];
 
     /**
      * FHIRExplanationOfBenefitInsurance Constructor
@@ -96,13 +96,34 @@ class FHIRExplanationOfBenefitInsurance extends FHIRBackboneElement implements \
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['coverage'])) {
-                $this->setCoverage($data['coverage']);
+                $value = $data['coverage'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitInsurance::__construct - Property \"coverage\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setCoverage($value);
             }
-            if (isset($data['focal'])) {
-                $this->setFocal($data['focal']);
+            if (isset($data['preAuthRef'])) {
+                $value = $data['preAuthRef'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRString($v);
+                        }  elseif (is_scalar($v)) {
+                            $v = new FHIRString($v);
+                        }
+                        if (!($v instanceof FHIRString)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitInsurance::__construct - Collection field \"preAuthRef\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addPreAuthRef($v);
+                    }
+                }
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -111,6 +132,7 @@ class FHIRExplanationOfBenefitInsurance extends FHIRBackboneElement implements \
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -136,39 +158,37 @@ class FHIRExplanationOfBenefitInsurance extends FHIRBackboneElement implements \
         return $this->coverage;
     }
 
-
     /**
-     * The instance number of the Coverage which is the focus for adjudication. The Coverage against which the claim was adjudicated.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     * A list of references from the Insurer to which these services pertain.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
-    public function setFocal($focal)
+    public function addPreAuthRef($preAuthRef)
     {
-        if (null === $focal) {
+        if (null === $preAuthRef) {
             return $this; 
         }
-        if (is_scalar($focal)) {
-            $focal = new FHIRBoolean($focal);
+        if (is_scalar($preAuthRef)) {
+            $preAuthRef = new FHIRString($preAuthRef);
         }
-        if (!($focal instanceof FHIRBoolean)) {
+        if (!($preAuthRef instanceof FHIRString)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRExplanationOfBenefitInsurance::setFocal - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or appropriate scalar value, %s seen.',
-                gettype($focal)
+                'FHIRExplanationOfBenefitInsurance::addPreAuthRef - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                gettype($preAuthRef)
             ));
         }
-        $this->focal = $focal;
+        $this->preAuthRef[] = $preAuthRef;
         return $this;
     }
 
     /**
-     * The instance number of the Coverage which is the focus for adjudication. The Coverage against which the claim was adjudicated.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     * A list of references from the Insurer to which these services pertain.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public function getFocal()
+    public function getPreAuthRef()
     {
-        return $this->focal;
+        return $this->preAuthRef;
     }
-
 
     /**
      * @return string
@@ -187,8 +207,16 @@ class FHIRExplanationOfBenefitInsurance extends FHIRBackboneElement implements \
         if (null !== ($v = $this->getCoverage())) {
             $a['coverage'] = $v;
         }
-        if (null !== ($v = $this->getFocal())) {
-            $a['focal'] = $v;
+        if (0 < count($values = $this->getPreAuthRef())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['preAuthRef'] = $vs;
+            }
         }
         return $a;
     }
@@ -203,9 +231,16 @@ class FHIRExplanationOfBenefitInsurance extends FHIRBackboneElement implements \
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ExplanationOfBenefitInsurance xmlns="http://hl7.org/fhir"></ExplanationOfBenefitInsurance>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getCoverage())) {
+            $v->xmlSerialize(true, $sxe->addChild('coverage'));
         }
-        return $sxe->saveXML();
+        if (0 < count($values = $this->getPreAuthRef())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('preAuthRef'));
+                }
+            }
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

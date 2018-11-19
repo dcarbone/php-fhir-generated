@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPerson;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPerson;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -78,16 +78,16 @@ class FHIRPersonLink extends FHIRBackboneElement implements \JsonSerializable
     const FHIR_TYPE_NAME = 'Person.Link';
 
     /**
-     * Level of assurance that this link is associated with the target resource.
+     * Level of assurance that this link is actually associated with the target resource.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentityAssuranceLevel
      */
-    public $assurance = null;
+    private $assurance = null;
 
     /**
      * The resource to which this actual person is associated.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $target = null;
+    private $target = null;
 
     /**
      * FHIRPersonLink Constructor
@@ -96,13 +96,28 @@ class FHIRPersonLink extends FHIRBackboneElement implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['assurance'])) {
-                $this->setAssurance($data['assurance']);
+                $value = $data['assurance'];
+                if (is_array($value)) {
+                    $value = new FHIRIdentityAssuranceLevel($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRIdentityAssuranceLevel($value);
+                }
+                if (!($value instanceof FHIRIdentityAssuranceLevel)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPerson\FHIRPersonLink::__construct - Property \"assurance\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentityAssuranceLevel or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setAssurance($value);
             }
             if (isset($data['target'])) {
-                $this->setTarget($data['target']);
+                $value = $data['target'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPerson\FHIRPersonLink::__construct - Property \"target\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setTarget($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -111,10 +126,11 @@ class FHIRPersonLink extends FHIRBackboneElement implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
-     * Level of assurance that this link is associated with the target resource.
+     * Level of assurance that this link is actually associated with the target resource.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentityAssuranceLevel
      * @return $this
      */
@@ -137,14 +153,13 @@ class FHIRPersonLink extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * Level of assurance that this link is associated with the target resource.
+     * Level of assurance that this link is actually associated with the target resource.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentityAssuranceLevel
      */
     public function getAssurance()
     {
         return $this->assurance;
     }
-
 
     /**
      * The resource to which this actual person is associated.
@@ -168,7 +183,6 @@ class FHIRPersonLink extends FHIRBackboneElement implements \JsonSerializable
     {
         return $this->target;
     }
-
 
     /**
      * @return string
@@ -203,9 +217,12 @@ class FHIRPersonLink extends FHIRBackboneElement implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<PersonLink xmlns="http://hl7.org/fhir"></PersonLink>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getAssurance())) {
+            $v->xmlSerialize(true, $sxe->addChild('assurance'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getTarget())) {
+            $v->xmlSerialize(true, $sxe->addChild('target'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

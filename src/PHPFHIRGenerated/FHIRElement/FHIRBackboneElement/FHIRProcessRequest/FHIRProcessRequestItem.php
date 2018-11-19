@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProcessRequest;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProcessRequest;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -80,7 +80,7 @@ class FHIRProcessRequestItem extends FHIRBackboneElement implements \JsonSeriali
      * A service line number.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
-    public $sequenceLinkId = null;
+    private $sequenceLinkId = null;
 
     /**
      * FHIRProcessRequestItem Constructor
@@ -89,10 +89,18 @@ class FHIRProcessRequestItem extends FHIRBackboneElement implements \JsonSeriali
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['sequenceLinkId'])) {
-                $this->setSequenceLinkId($data['sequenceLinkId']);
+                $value = $data['sequenceLinkId'];
+                if (is_array($value)) {
+                    $value = new FHIRInteger($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRInteger($value);
+                }
+                if (!($value instanceof FHIRInteger)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProcessRequest\FHIRProcessRequestItem::__construct - Property \"sequenceLinkId\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRInteger or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setSequenceLinkId($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -101,6 +109,7 @@ class FHIRProcessRequestItem extends FHIRBackboneElement implements \JsonSeriali
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -135,7 +144,6 @@ class FHIRProcessRequestItem extends FHIRBackboneElement implements \JsonSeriali
         return $this->sequenceLinkId;
     }
 
-
     /**
      * @return string
      */
@@ -166,9 +174,9 @@ class FHIRProcessRequestItem extends FHIRBackboneElement implements \JsonSeriali
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ProcessRequestItem xmlns="http://hl7.org/fhir"></ProcessRequestItem>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getSequenceLinkId())) {
+            $v->xmlSerialize(true, $sxe->addChild('sequenceLinkId'));
         }
-        return $sxe->saveXML();
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

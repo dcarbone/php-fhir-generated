@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPatient;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPatient;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -81,13 +81,13 @@ class FHIRPatientCommunication extends FHIRBackboneElement implements \JsonSeria
      * The ISO-639-1 alpha 2 code in lower case for the language, optionally followed by a hyphen and the ISO-3166-1 alpha 2 code for the region in upper case; e.g. "en" for English, or "en-US" for American English versus "en-EN" for England English.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $language = null;
+    private $language = null;
 
     /**
      * Indicates whether or not the patient prefers this language (over other languages he masters up a certain level).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $preferred = null;
+    private $preferred = null;
 
     /**
      * FHIRPatientCommunication Constructor
@@ -96,13 +96,28 @@ class FHIRPatientCommunication extends FHIRBackboneElement implements \JsonSeria
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['language'])) {
-                $this->setLanguage($data['language']);
+                $value = $data['language'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientCommunication::__construct - Property \"language\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setLanguage($value);
             }
             if (isset($data['preferred'])) {
-                $this->setPreferred($data['preferred']);
+                $value = $data['preferred'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientCommunication::__construct - Property \"preferred\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setPreferred($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -111,6 +126,7 @@ class FHIRPatientCommunication extends FHIRBackboneElement implements \JsonSeria
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -135,7 +151,6 @@ class FHIRPatientCommunication extends FHIRBackboneElement implements \JsonSeria
     {
         return $this->language;
     }
-
 
     /**
      * Indicates whether or not the patient prefers this language (over other languages he masters up a certain level).
@@ -168,7 +183,6 @@ class FHIRPatientCommunication extends FHIRBackboneElement implements \JsonSeria
     {
         return $this->preferred;
     }
-
 
     /**
      * @return string
@@ -203,9 +217,12 @@ class FHIRPatientCommunication extends FHIRBackboneElement implements \JsonSeria
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<PatientCommunication xmlns="http://hl7.org/fhir"></PatientCommunication>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getLanguage())) {
+            $v->xmlSerialize(true, $sxe->addChild('language'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getPreferred())) {
+            $v->xmlSerialize(true, $sxe->addChild('preferred'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

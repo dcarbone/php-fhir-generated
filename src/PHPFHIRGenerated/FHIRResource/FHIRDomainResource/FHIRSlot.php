@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -87,67 +87,67 @@ class FHIRSlot extends FHIRDomainResource implements \JsonSerializable
      * The style of appointment or patient that may be booked in the slot (not service type).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $appointmentType = null;
+    private $appointmentType = null;
 
     /**
      * Comments on the slot to describe any extended information. Such as custom constraints on the slot.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $comment = null;
+    private $comment = null;
 
     /**
      * Date/Time that the slot is to conclude.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInstant
      */
-    public $end = null;
+    private $end = null;
 
     /**
      * External Ids for this item.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = null;
+    private $identifier = [];
 
     /**
      * This slot has already been overbooked, appointments are unlikely to be accepted for this time.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $overbooked = null;
+    private $overbooked = null;
 
     /**
      * The schedule resource that this slot defines an interval of status information.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $schedule = null;
+    private $schedule = null;
 
     /**
-     * A broad categorization of the service that is to be performed during this appointment.
+     * A broad categorisation of the service that is to be performed during this appointment.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $serviceCategory = null;
+    private $serviceCategory = null;
 
     /**
      * The type of appointments that can be booked into this slot (ideally this would be an identifiable service - which is at a location, rather than the location itself). If provided then this overrides the value provided on the availability resource.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $serviceType = null;
+    private $serviceType = [];
 
     /**
      * The specialty of a practitioner that would be required to perform the service requested in this appointment.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $specialty = null;
+    private $specialty = [];
 
     /**
      * Date/Time that the slot is to begin.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInstant
      */
-    public $start = null;
+    private $start = null;
 
     /**
      * busy | free | busy-unavailable | busy-tentative | entered-in-error.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRSlotStatus
      */
-    public $status = null;
+    private $status = null;
 
     /**
      * FHIRSlot Constructor
@@ -156,40 +156,144 @@ class FHIRSlot extends FHIRDomainResource implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['appointmentType'])) {
-                $this->setAppointmentType($data['appointmentType']);
+                $value = $data['appointmentType'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSlot::__construct - Property \"appointmentType\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setAppointmentType($value);
             }
             if (isset($data['comment'])) {
-                $this->setComment($data['comment']);
+                $value = $data['comment'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSlot::__construct - Property \"comment\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setComment($value);
             }
             if (isset($data['end'])) {
-                $this->setEnd($data['end']);
+                $value = $data['end'];
+                if (is_array($value)) {
+                    $value = new FHIRInstant($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRInstant($value);
+                }
+                if (!($value instanceof FHIRInstant)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSlot::__construct - Property \"end\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRInstant or data to construct type, saw ".gettype($value));
+                }
+                $this->setEnd($value);
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRIdentifier($v);
+                        } 
+                        if (!($v instanceof FHIRIdentifier)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSlot::__construct - Collection field \"identifier\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addIdentifier($v);
+                    }
+                }
             }
             if (isset($data['overbooked'])) {
-                $this->setOverbooked($data['overbooked']);
+                $value = $data['overbooked'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSlot::__construct - Property \"overbooked\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value));
+                }
+                $this->setOverbooked($value);
             }
             if (isset($data['schedule'])) {
-                $this->setSchedule($data['schedule']);
+                $value = $data['schedule'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSlot::__construct - Property \"schedule\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setSchedule($value);
             }
             if (isset($data['serviceCategory'])) {
-                $this->setServiceCategory($data['serviceCategory']);
+                $value = $data['serviceCategory'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSlot::__construct - Property \"serviceCategory\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setServiceCategory($value);
             }
             if (isset($data['serviceType'])) {
-                $this->setServiceType($data['serviceType']);
+                $value = $data['serviceType'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSlot::__construct - Collection field \"serviceType\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addServiceType($v);
+                    }
+                }
             }
             if (isset($data['specialty'])) {
-                $this->setSpecialty($data['specialty']);
+                $value = $data['specialty'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSlot::__construct - Collection field \"specialty\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addSpecialty($v);
+                    }
+                }
             }
             if (isset($data['start'])) {
-                $this->setStart($data['start']);
+                $value = $data['start'];
+                if (is_array($value)) {
+                    $value = new FHIRInstant($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRInstant($value);
+                }
+                if (!($value instanceof FHIRInstant)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSlot::__construct - Property \"start\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRInstant or data to construct type, saw ".gettype($value));
+                }
+                $this->setStart($value);
             }
             if (isset($data['status'])) {
-                $this->setStatus($data['status']);
+                $value = $data['status'];
+                if (is_array($value)) {
+                    $value = new FHIRSlotStatus($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRSlotStatus($value);
+                }
+                if (!($value instanceof FHIRSlotStatus)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSlot::__construct - Property \"status\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRSlotStatus or data to construct type, saw ".gettype($value));
+                }
+                $this->setStatus($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -198,6 +302,7 @@ class FHIRSlot extends FHIRDomainResource implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -222,7 +327,6 @@ class FHIRSlot extends FHIRDomainResource implements \JsonSerializable
     {
         return $this->appointmentType;
     }
-
 
     /**
      * Comments on the slot to describe any extended information. Such as custom constraints on the slot.
@@ -256,7 +360,6 @@ class FHIRSlot extends FHIRDomainResource implements \JsonSerializable
         return $this->comment;
     }
 
-
     /**
      * Date/Time that the slot is to conclude.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRInstant
@@ -289,30 +392,28 @@ class FHIRSlot extends FHIRDomainResource implements \JsonSerializable
         return $this->end;
     }
 
-
     /**
      * External Ids for this item.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
-    public function setIdentifier(FHIRIdentifier $identifier = null)
+    public function addIdentifier(FHIRIdentifier $identifier = null)
     {
         if (null === $identifier) {
             return $this; 
         }
-        $this->identifier = $identifier;
+        $this->identifier[] = $identifier;
         return $this;
     }
 
     /**
      * External Ids for this item.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
         return $this->identifier;
     }
-
 
     /**
      * This slot has already been overbooked, appointments are unlikely to be accepted for this time.
@@ -346,7 +447,6 @@ class FHIRSlot extends FHIRDomainResource implements \JsonSerializable
         return $this->overbooked;
     }
 
-
     /**
      * The schedule resource that this slot defines an interval of status information.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -370,9 +470,8 @@ class FHIRSlot extends FHIRDomainResource implements \JsonSerializable
         return $this->schedule;
     }
 
-
     /**
-     * A broad categorization of the service that is to be performed during this appointment.
+     * A broad categorisation of the service that is to be performed during this appointment.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
@@ -386,7 +485,7 @@ class FHIRSlot extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A broad categorization of the service that is to be performed during this appointment.
+     * A broad categorisation of the service that is to be performed during this appointment.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getServiceCategory()
@@ -394,54 +493,51 @@ class FHIRSlot extends FHIRDomainResource implements \JsonSerializable
         return $this->serviceCategory;
     }
 
-
     /**
      * The type of appointments that can be booked into this slot (ideally this would be an identifiable service - which is at a location, rather than the location itself). If provided then this overrides the value provided on the availability resource.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setServiceType(FHIRCodeableConcept $serviceType = null)
+    public function addServiceType(FHIRCodeableConcept $serviceType = null)
     {
         if (null === $serviceType) {
             return $this; 
         }
-        $this->serviceType = $serviceType;
+        $this->serviceType[] = $serviceType;
         return $this;
     }
 
     /**
      * The type of appointments that can be booked into this slot (ideally this would be an identifiable service - which is at a location, rather than the location itself). If provided then this overrides the value provided on the availability resource.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getServiceType()
     {
         return $this->serviceType;
     }
 
-
     /**
      * The specialty of a practitioner that would be required to perform the service requested in this appointment.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setSpecialty(FHIRCodeableConcept $specialty = null)
+    public function addSpecialty(FHIRCodeableConcept $specialty = null)
     {
         if (null === $specialty) {
             return $this; 
         }
-        $this->specialty = $specialty;
+        $this->specialty[] = $specialty;
         return $this;
     }
 
     /**
      * The specialty of a practitioner that would be required to perform the service requested in this appointment.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getSpecialty()
     {
         return $this->specialty;
     }
-
 
     /**
      * Date/Time that the slot is to begin.
@@ -475,7 +571,6 @@ class FHIRSlot extends FHIRDomainResource implements \JsonSerializable
         return $this->start;
     }
 
-
     /**
      * busy | free | busy-unavailable | busy-tentative | entered-in-error.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRSlotStatus
@@ -508,7 +603,6 @@ class FHIRSlot extends FHIRDomainResource implements \JsonSerializable
         return $this->status;
     }
 
-
     /**
      * @return string
      */
@@ -533,8 +627,16 @@ class FHIRSlot extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getEnd())) {
             $a['end'] = $v;
         }
-        if (null !== ($v = $this->getIdentifier())) {
-            $a['identifier'] = $v;
+        if (0 < count($values = $this->getIdentifier())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['identifier'] = $vs;
+            }
         }
         if (null !== ($v = $this->getOverbooked())) {
             $a['overbooked'] = $v;
@@ -545,11 +647,27 @@ class FHIRSlot extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getServiceCategory())) {
             $a['serviceCategory'] = $v;
         }
-        if (null !== ($v = $this->getServiceType())) {
-            $a['serviceType'] = $v;
+        if (0 < count($values = $this->getServiceType())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['serviceType'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getSpecialty())) {
-            $a['specialty'] = $v;
+        if (0 < count($values = $this->getSpecialty())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['specialty'] = $vs;
+            }
         }
         if (null !== ($v = $this->getStart())) {
             $a['start'] = $v;
@@ -570,9 +688,51 @@ class FHIRSlot extends FHIRDomainResource implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Slot xmlns="http://hl7.org/fhir"></Slot>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getAppointmentType())) {
+            $v->xmlSerialize(true, $sxe->addChild('appointmentType'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getComment())) {
+            $v->xmlSerialize(true, $sxe->addChild('comment'));
+        }
+        if (null !== ($v = $this->getEnd())) {
+            $v->xmlSerialize(true, $sxe->addChild('end'));
+        }
+        if (0 < count($values = $this->getIdentifier())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('identifier'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getOverbooked())) {
+            $v->xmlSerialize(true, $sxe->addChild('overbooked'));
+        }
+        if (null !== ($v = $this->getSchedule())) {
+            $v->xmlSerialize(true, $sxe->addChild('schedule'));
+        }
+        if (null !== ($v = $this->getServiceCategory())) {
+            $v->xmlSerialize(true, $sxe->addChild('serviceCategory'));
+        }
+        if (0 < count($values = $this->getServiceType())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('serviceType'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getSpecialty())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('specialty'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getStart())) {
+            $v->xmlSerialize(true, $sxe->addChild('start'));
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('status'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

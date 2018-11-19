@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -65,7 +65,6 @@ namespace PHPFHIRGenerated\FHIRElement;
 use PHPFHIRGenerated\FHIRElement;
 use PHPFHIRGenerated\FHIRElement\FHIRDataRequirement\FHIRDataRequirementCodeFilter;
 use PHPFHIRGenerated\FHIRElement\FHIRDataRequirement\FHIRDataRequirementDateFilter;
-use PHPFHIRGenerated\FHIRElement\FHIRDataRequirement\FHIRDataRequirementSort;
 
 /**
  * Describes a required data item for evaluation in terms of the type of data, and optional code or date-based filters of the data.
@@ -80,60 +79,34 @@ class FHIRDataRequirement extends FHIRElement implements \JsonSerializable
     const FHIR_TYPE_NAME = 'DataRequirement';
 
     /**
-     * Code filters specify additional constraints on the data, specifying the value set of interest for a particular element of the data. Each code filter defines an additional constraint on the data, i.e. code filters are AND'ed, not OR'ed.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDataRequirement\FHIRDataRequirementCodeFilter
+     * Code filters specify additional constraints on the data, specifying the value set of interest for a particular element of the data.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRDataRequirement\FHIRDataRequirementCodeFilter[]
      */
-    public $codeFilter = null;
+    private $codeFilter = [];
 
     /**
-     * Date filters specify additional constraints on the data in terms of the applicable date range for specific elements. Each date filter specifies an additional constraint on the data, i.e. date filters are AND'ed, not OR'ed.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDataRequirement\FHIRDataRequirementDateFilter
+     * Date filters specify additional constraints on the data in terms of the applicable date range for specific elements.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRDataRequirement\FHIRDataRequirementDateFilter[]
      */
-    public $dateFilter = null;
+    private $dateFilter = [];
 
     /**
-     * Specifies a maximum number of results that are required (uses the _count search parameter).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
+     * Indicates that specific elements of the type are referenced by the knowledge module and must be supported by the consumer in order to obtain an effective evaluation. This does not mean that a value is required for this element, only that the consuming system must understand the element and be able to provide values for it if they are available. Note that the value for this element can be a path to allow references to nested elements. In that case, all the elements along the path must be supported.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public $limit = null;
-
-    /**
-     * Indicates that specific elements of the type are referenced by the knowledge module and must be supported by the consumer in order to obtain an effective evaluation. This does not mean that a value is required for this element, only that the consuming system must understand the element and be able to provide values for it if they are available. 
-
-The value of mustSupport SHALL be a FHIRPath resolveable on the type of the DataRequirement. The path SHALL consist only of identifiers, constant indexers, and .resolve() (see the [Simple FHIRPath Profile](fhirpath.html#simple) for full details).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public $mustSupport = null;
+    private $mustSupport = [];
 
     /**
      * The profile of the required data, specified as the uri of the profile definition.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri[]
      */
-    public $profile = null;
-
-    /**
-     * Specifies the order of the results to be returned.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDataRequirement\FHIRDataRequirementSort
-     */
-    public $sort = null;
-
-    /**
-     * The intended subjects of the data requirement. If this element is not provided, a Patient subject is assumed.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public $subjectCodeableConcept = null;
-
-    /**
-     * The intended subjects of the data requirement. If this element is not provided, a Patient subject is assumed.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $subjectReference = null;
+    private $profile = [];
 
     /**
      * The type of the required data, specified as the type name of a resource. For profiles, this value is set to the type of the base resource of the profile.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public $type = null;
+    private $type = null;
 
     /**
      * FHIRDataRequirement Constructor
@@ -142,34 +115,86 @@ The value of mustSupport SHALL be a FHIRPath resolveable on the type of the Data
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['codeFilter'])) {
-                $this->setCodeFilter($data['codeFilter']);
+                $value = $data['codeFilter'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRDataRequirementCodeFilter($v);
+                        } 
+                        if (!($v instanceof FHIRDataRequirementCodeFilter)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRDataRequirement::__construct - Collection field \"codeFilter\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDataRequirement\FHIRDataRequirementCodeFilter or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addCodeFilter($v);
+                    }
+                }
             }
             if (isset($data['dateFilter'])) {
-                $this->setDateFilter($data['dateFilter']);
-            }
-            if (isset($data['limit'])) {
-                $this->setLimit($data['limit']);
+                $value = $data['dateFilter'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRDataRequirementDateFilter($v);
+                        } 
+                        if (!($v instanceof FHIRDataRequirementDateFilter)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRDataRequirement::__construct - Collection field \"dateFilter\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDataRequirement\FHIRDataRequirementDateFilter or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addDateFilter($v);
+                    }
+                }
             }
             if (isset($data['mustSupport'])) {
-                $this->setMustSupport($data['mustSupport']);
+                $value = $data['mustSupport'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRString($v);
+                        }  elseif (is_scalar($v)) {
+                            $v = new FHIRString($v);
+                        }
+                        if (!($v instanceof FHIRString)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRDataRequirement::__construct - Collection field \"mustSupport\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addMustSupport($v);
+                    }
+                }
             }
             if (isset($data['profile'])) {
-                $this->setProfile($data['profile']);
-            }
-            if (isset($data['sort'])) {
-                $this->setSort($data['sort']);
-            }
-            if (isset($data['subjectCodeableConcept'])) {
-                $this->setSubjectCodeableConcept($data['subjectCodeableConcept']);
-            }
-            if (isset($data['subjectReference'])) {
-                $this->setSubjectReference($data['subjectReference']);
+                $value = $data['profile'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRUri($v);
+                        }  elseif (is_scalar($v)) {
+                            $v = new FHIRUri($v);
+                        }
+                        if (!($v instanceof FHIRUri)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRDataRequirement::__construct - Collection field \"profile\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addProfile($v);
+                    }
+                }
             }
             if (isset($data['type'])) {
-                $this->setType($data['type']);
+                $value = $data['type'];
+                if (is_array($value)) {
+                    $value = new FHIRCode($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRCode($value);
+                }
+                if (!($value instanceof FHIRCode)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRDataRequirement::__construct - Property \"type\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setType($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -178,97 +203,61 @@ The value of mustSupport SHALL be a FHIRPath resolveable on the type of the Data
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
-     * Code filters specify additional constraints on the data, specifying the value set of interest for a particular element of the data. Each code filter defines an additional constraint on the data, i.e. code filters are AND'ed, not OR'ed.
+     * Code filters specify additional constraints on the data, specifying the value set of interest for a particular element of the data.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDataRequirement\FHIRDataRequirementCodeFilter
      * @return $this
      */
-    public function setCodeFilter(FHIRDataRequirementCodeFilter $codeFilter = null)
+    public function addCodeFilter(FHIRDataRequirementCodeFilter $codeFilter = null)
     {
         if (null === $codeFilter) {
             return $this; 
         }
-        $this->codeFilter = $codeFilter;
+        $this->codeFilter[] = $codeFilter;
         return $this;
     }
 
     /**
-     * Code filters specify additional constraints on the data, specifying the value set of interest for a particular element of the data. Each code filter defines an additional constraint on the data, i.e. code filters are AND'ed, not OR'ed.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDataRequirement\FHIRDataRequirementCodeFilter
+     * Code filters specify additional constraints on the data, specifying the value set of interest for a particular element of the data.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDataRequirement\FHIRDataRequirementCodeFilter[]
      */
     public function getCodeFilter()
     {
         return $this->codeFilter;
     }
 
-
     /**
-     * Date filters specify additional constraints on the data in terms of the applicable date range for specific elements. Each date filter specifies an additional constraint on the data, i.e. date filters are AND'ed, not OR'ed.
+     * Date filters specify additional constraints on the data in terms of the applicable date range for specific elements.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDataRequirement\FHIRDataRequirementDateFilter
      * @return $this
      */
-    public function setDateFilter(FHIRDataRequirementDateFilter $dateFilter = null)
+    public function addDateFilter(FHIRDataRequirementDateFilter $dateFilter = null)
     {
         if (null === $dateFilter) {
             return $this; 
         }
-        $this->dateFilter = $dateFilter;
+        $this->dateFilter[] = $dateFilter;
         return $this;
     }
 
     /**
-     * Date filters specify additional constraints on the data in terms of the applicable date range for specific elements. Each date filter specifies an additional constraint on the data, i.e. date filters are AND'ed, not OR'ed.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDataRequirement\FHIRDataRequirementDateFilter
+     * Date filters specify additional constraints on the data in terms of the applicable date range for specific elements.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDataRequirement\FHIRDataRequirementDateFilter[]
      */
     public function getDateFilter()
     {
         return $this->dateFilter;
     }
 
-
     /**
-     * Specifies a maximum number of results that are required (uses the _count search parameter).
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
-     * @return $this
-     */
-    public function setLimit($limit)
-    {
-        if (null === $limit) {
-            return $this; 
-        }
-        if (is_scalar($limit)) {
-            $limit = new FHIRPositiveInt($limit);
-        }
-        if (!($limit instanceof FHIRPositiveInt)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRDataRequirement::setLimit - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt or appropriate scalar value, %s seen.',
-                gettype($limit)
-            ));
-        }
-        $this->limit = $limit;
-        return $this;
-    }
-
-    /**
-     * Specifies a maximum number of results that are required (uses the _count search parameter).
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
-     */
-    public function getLimit()
-    {
-        return $this->limit;
-    }
-
-
-    /**
-     * Indicates that specific elements of the type are referenced by the knowledge module and must be supported by the consumer in order to obtain an effective evaluation. This does not mean that a value is required for this element, only that the consuming system must understand the element and be able to provide values for it if they are available. 
-
-The value of mustSupport SHALL be a FHIRPath resolveable on the type of the DataRequirement. The path SHALL consist only of identifiers, constant indexers, and .resolve() (see the [Simple FHIRPath Profile](fhirpath.html#simple) for full details).
+     * Indicates that specific elements of the type are referenced by the knowledge module and must be supported by the consumer in order to obtain an effective evaluation. This does not mean that a value is required for this element, only that the consuming system must understand the element and be able to provide values for it if they are available. Note that the value for this element can be a path to allow references to nested elements. In that case, all the elements along the path must be supported.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
-    public function setMustSupport($mustSupport)
+    public function addMustSupport($mustSupport)
     {
         if (null === $mustSupport) {
             return $this; 
@@ -278,130 +267,54 @@ The value of mustSupport SHALL be a FHIRPath resolveable on the type of the Data
         }
         if (!($mustSupport instanceof FHIRString)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRDataRequirement::setMustSupport - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                'FHIRDataRequirement::addMustSupport - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
                 gettype($mustSupport)
             ));
         }
-        $this->mustSupport = $mustSupport;
+        $this->mustSupport[] = $mustSupport;
         return $this;
     }
 
     /**
-     * Indicates that specific elements of the type are referenced by the knowledge module and must be supported by the consumer in order to obtain an effective evaluation. This does not mean that a value is required for this element, only that the consuming system must understand the element and be able to provide values for it if they are available. 
-
-The value of mustSupport SHALL be a FHIRPath resolveable on the type of the DataRequirement. The path SHALL consist only of identifiers, constant indexers, and .resolve() (see the [Simple FHIRPath Profile](fhirpath.html#simple) for full details).
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     * Indicates that specific elements of the type are referenced by the knowledge module and must be supported by the consumer in order to obtain an effective evaluation. This does not mean that a value is required for this element, only that the consuming system must understand the element and be able to provide values for it if they are available. Note that the value for this element can be a path to allow references to nested elements. In that case, all the elements along the path must be supported.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
     public function getMustSupport()
     {
         return $this->mustSupport;
     }
 
-
     /**
      * The profile of the required data, specified as the uri of the profile definition.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
-    public function setProfile($profile)
+    public function addProfile($profile)
     {
         if (null === $profile) {
             return $this; 
         }
         if (is_scalar($profile)) {
-            $profile = new FHIRCanonical($profile);
+            $profile = new FHIRUri($profile);
         }
-        if (!($profile instanceof FHIRCanonical)) {
+        if (!($profile instanceof FHIRUri)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRDataRequirement::setProfile - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCanonical or appropriate scalar value, %s seen.',
+                'FHIRDataRequirement::addProfile - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or appropriate scalar value, %s seen.',
                 gettype($profile)
             ));
         }
-        $this->profile = $profile;
+        $this->profile[] = $profile;
         return $this;
     }
 
     /**
      * The profile of the required data, specified as the uri of the profile definition.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri[]
      */
     public function getProfile()
     {
         return $this->profile;
     }
-
-
-    /**
-     * Specifies the order of the results to be returned.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDataRequirement\FHIRDataRequirementSort
-     * @return $this
-     */
-    public function setSort(FHIRDataRequirementSort $sort = null)
-    {
-        if (null === $sort) {
-            return $this; 
-        }
-        $this->sort = $sort;
-        return $this;
-    }
-
-    /**
-     * Specifies the order of the results to be returned.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDataRequirement\FHIRDataRequirementSort
-     */
-    public function getSort()
-    {
-        return $this->sort;
-    }
-
-
-    /**
-     * The intended subjects of the data requirement. If this element is not provided, a Patient subject is assumed.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     * @return $this
-     */
-    public function setSubjectCodeableConcept(FHIRCodeableConcept $subjectCodeableConcept = null)
-    {
-        if (null === $subjectCodeableConcept) {
-            return $this; 
-        }
-        $this->subjectCodeableConcept = $subjectCodeableConcept;
-        return $this;
-    }
-
-    /**
-     * The intended subjects of the data requirement. If this element is not provided, a Patient subject is assumed.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public function getSubjectCodeableConcept()
-    {
-        return $this->subjectCodeableConcept;
-    }
-
-
-    /**
-     * The intended subjects of the data requirement. If this element is not provided, a Patient subject is assumed.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     * @return $this
-     */
-    public function setSubjectReference(FHIRReference $subjectReference = null)
-    {
-        if (null === $subjectReference) {
-            return $this; 
-        }
-        $this->subjectReference = $subjectReference;
-        return $this;
-    }
-
-    /**
-     * The intended subjects of the data requirement. If this element is not provided, a Patient subject is assumed.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getSubjectReference()
-    {
-        return $this->subjectReference;
-    }
-
 
     /**
      * The type of the required data, specified as the type name of a resource. For profiles, this value is set to the type of the base resource of the profile.
@@ -435,7 +348,6 @@ The value of mustSupport SHALL be a FHIRPath resolveable on the type of the Data
         return $this->type;
     }
 
-
     /**
      * @return string
      */
@@ -450,29 +362,49 @@ The value of mustSupport SHALL be a FHIRPath resolveable on the type of the Data
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getCodeFilter())) {
-            $a['codeFilter'] = $v;
+        if (0 < count($values = $this->getCodeFilter())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['codeFilter'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getDateFilter())) {
-            $a['dateFilter'] = $v;
+        if (0 < count($values = $this->getDateFilter())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['dateFilter'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getLimit())) {
-            $a['limit'] = $v;
+        if (0 < count($values = $this->getMustSupport())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['mustSupport'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getMustSupport())) {
-            $a['mustSupport'] = $v;
-        }
-        if (null !== ($v = $this->getProfile())) {
-            $a['profile'] = $v;
-        }
-        if (null !== ($v = $this->getSort())) {
-            $a['sort'] = $v;
-        }
-        if (null !== ($v = $this->getSubjectCodeableConcept())) {
-            $a['subjectCodeableConcept'] = $v;
-        }
-        if (null !== ($v = $this->getSubjectReference())) {
-            $a['subjectReference'] = $v;
+        if (0 < count($values = $this->getProfile())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['profile'] = $vs;
+            }
         }
         if (null !== ($v = $this->getType())) {
             $a['type'] = $v;
@@ -490,9 +422,37 @@ The value of mustSupport SHALL be a FHIRPath resolveable on the type of the Data
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<DataRequirement xmlns="http://hl7.org/fhir"></DataRequirement>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (0 < count($values = $this->getCodeFilter())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('codeFilter'));
+                }
+            }
         }
-        return $sxe->saveXML();
+        if (0 < count($values = $this->getDateFilter())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('dateFilter'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getMustSupport())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('mustSupport'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getProfile())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('profile'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getType())) {
+            $v->xmlSerialize(true, $sxe->addChild('type'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

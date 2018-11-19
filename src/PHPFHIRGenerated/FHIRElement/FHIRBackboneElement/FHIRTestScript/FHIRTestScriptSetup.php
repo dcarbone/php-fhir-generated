@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -65,7 +65,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 
 /**
- * A structured set of tests against a FHIR server or client implementation to determine compliance against the FHIR specification.
+ * A structured set of tests against a FHIR server implementation to determine compliance against the FHIR specification.
  *
  * Class FHIRTestScriptSetup
  * @package PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript
@@ -77,9 +77,9 @@ class FHIRTestScriptSetup extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Action would contain either an operation or an assertion.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAction
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAction[]
      */
-    public $action = null;
+    private $action = [];
 
     /**
      * FHIRTestScriptSetup Constructor
@@ -88,10 +88,22 @@ class FHIRTestScriptSetup extends FHIRBackboneElement implements \JsonSerializab
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['action'])) {
-                $this->setAction($data['action']);
+                $value = $data['action'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRTestScriptAction($v);
+                        } 
+                        if (!($v instanceof FHIRTestScriptAction)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptSetup::__construct - Collection field \"action\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAction or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addAction($v);
+                    }
+                }
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -100,6 +112,7 @@ class FHIRTestScriptSetup extends FHIRBackboneElement implements \JsonSerializab
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -107,24 +120,23 @@ class FHIRTestScriptSetup extends FHIRBackboneElement implements \JsonSerializab
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAction
      * @return $this
      */
-    public function setAction(FHIRTestScriptAction $action = null)
+    public function addAction(FHIRTestScriptAction $action = null)
     {
         if (null === $action) {
             return $this; 
         }
-        $this->action = $action;
+        $this->action[] = $action;
         return $this;
     }
 
     /**
      * Action would contain either an operation or an assertion.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAction
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAction[]
      */
     public function getAction()
     {
         return $this->action;
     }
-
 
     /**
      * @return string
@@ -140,8 +152,16 @@ class FHIRTestScriptSetup extends FHIRBackboneElement implements \JsonSerializab
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getAction())) {
-            $a['action'] = $v;
+        if (0 < count($values = $this->getAction())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['action'] = $vs;
+            }
         }
         return $a;
     }
@@ -156,9 +176,13 @@ class FHIRTestScriptSetup extends FHIRBackboneElement implements \JsonSerializab
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<TestScriptSetup xmlns="http://hl7.org/fhir"></TestScriptSetup>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (0 < count($values = $this->getAction())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('action'));
+                }
+            }
         }
-        return $sxe->saveXML();
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

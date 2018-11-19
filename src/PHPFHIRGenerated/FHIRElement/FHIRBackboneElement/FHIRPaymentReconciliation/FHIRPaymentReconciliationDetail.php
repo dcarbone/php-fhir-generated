@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPaymentReconcilia
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPaymentReconcilia
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -65,7 +65,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPaymentReconcilia
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
 use PHPFHIRGenerated\FHIRElement\FHIRDate;
-use PHPFHIRGenerated\FHIRElement\FHIRMoney;
+use PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney;
 use PHPFHIRGenerated\FHIRElement\FHIRReference;
 
 /**
@@ -81,45 +81,45 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement implements \Js
 
     /**
      * Amount paid for this detail.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRMoney
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
-    public $amount = null;
+    private $amount = null;
 
     /**
      * The date of the invoice or financial resource.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
-    public $date = null;
+    private $date = null;
 
     /**
      * The organization which is receiving the payment.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $payee = null;
+    private $payee = null;
 
     /**
      * The claim or financial resource.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $request = null;
+    private $request = null;
 
     /**
      * The claim response resource.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $response = null;
+    private $response = null;
 
     /**
      * The Organization which submitted the claim or financial transaction.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $submitter = null;
+    private $submitter = null;
 
     /**
      * Code to indicate the nature of the payment, adjustment, funds advance, etc.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $type = null;
+    private $type = null;
 
     /**
      * FHIRPaymentReconciliationDetail Constructor
@@ -128,28 +128,78 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement implements \Js
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['amount'])) {
-                $this->setAmount($data['amount']);
+                $value = $data['amount'];
+                if (is_array($value)) {
+                    $value = new FHIRMoney($value);
+                } 
+                if (!($value instanceof FHIRMoney)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationDetail::__construct - Property \"amount\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney or data to construct type, saw ".gettype($value));
+                }
+                $this->setAmount($value);
             }
             if (isset($data['date'])) {
-                $this->setDate($data['date']);
+                $value = $data['date'];
+                if (is_array($value)) {
+                    $value = new FHIRDate($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDate($value);
+                }
+                if (!($value instanceof FHIRDate)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationDetail::__construct - Property \"date\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDate or data to construct type, saw ".gettype($value));
+                }
+                $this->setDate($value);
             }
             if (isset($data['payee'])) {
-                $this->setPayee($data['payee']);
+                $value = $data['payee'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationDetail::__construct - Property \"payee\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setPayee($value);
             }
             if (isset($data['request'])) {
-                $this->setRequest($data['request']);
+                $value = $data['request'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationDetail::__construct - Property \"request\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setRequest($value);
             }
             if (isset($data['response'])) {
-                $this->setResponse($data['response']);
+                $value = $data['response'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationDetail::__construct - Property \"response\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setResponse($value);
             }
             if (isset($data['submitter'])) {
-                $this->setSubmitter($data['submitter']);
+                $value = $data['submitter'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationDetail::__construct - Property \"submitter\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setSubmitter($value);
             }
             if (isset($data['type'])) {
-                $this->setType($data['type']);
+                $value = $data['type'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationDetail::__construct - Property \"type\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setType($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -158,11 +208,12 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement implements \Js
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
      * Amount paid for this detail.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRMoney
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      * @return $this
      */
     public function setAmount(FHIRMoney $amount = null)
@@ -176,13 +227,12 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement implements \Js
 
     /**
      * Amount paid for this detail.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRMoney
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public function getAmount()
     {
         return $this->amount;
     }
-
 
     /**
      * The date of the invoice or financial resource.
@@ -216,7 +266,6 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement implements \Js
         return $this->date;
     }
 
-
     /**
      * The organization which is receiving the payment.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -239,7 +288,6 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement implements \Js
     {
         return $this->payee;
     }
-
 
     /**
      * The claim or financial resource.
@@ -264,7 +312,6 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement implements \Js
         return $this->request;
     }
 
-
     /**
      * The claim response resource.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -287,7 +334,6 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement implements \Js
     {
         return $this->response;
     }
-
 
     /**
      * The Organization which submitted the claim or financial transaction.
@@ -312,7 +358,6 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement implements \Js
         return $this->submitter;
     }
 
-
     /**
      * Code to indicate the nature of the payment, adjustment, funds advance, etc.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
@@ -335,7 +380,6 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement implements \Js
     {
         return $this->type;
     }
-
 
     /**
      * @return string
@@ -385,9 +429,27 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement implements \Js
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<PaymentReconciliationDetail xmlns="http://hl7.org/fhir"></PaymentReconciliationDetail>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getAmount())) {
+            $v->xmlSerialize(true, $sxe->addChild('amount'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getDate())) {
+            $v->xmlSerialize(true, $sxe->addChild('date'));
+        }
+        if (null !== ($v = $this->getPayee())) {
+            $v->xmlSerialize(true, $sxe->addChild('payee'));
+        }
+        if (null !== ($v = $this->getRequest())) {
+            $v->xmlSerialize(true, $sxe->addChild('request'));
+        }
+        if (null !== ($v = $this->getResponse())) {
+            $v->xmlSerialize(true, $sxe->addChild('response'));
+        }
+        if (null !== ($v = $this->getSubmitter())) {
+            $v->xmlSerialize(true, $sxe->addChild('submitter'));
+        }
+        if (null !== ($v = $this->getType())) {
+            $v->xmlSerialize(true, $sxe->addChild('type'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

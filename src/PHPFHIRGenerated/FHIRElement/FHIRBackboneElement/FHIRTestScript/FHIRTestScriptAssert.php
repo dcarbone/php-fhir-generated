@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -67,13 +67,14 @@ use PHPFHIRGenerated\FHIRElement\FHIRAssertionOperatorType;
 use PHPFHIRGenerated\FHIRElement\FHIRAssertionResponseTypes;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 use PHPFHIRGenerated\FHIRElement\FHIRBoolean;
-use PHPFHIRGenerated\FHIRElement\FHIRCode;
+use PHPFHIRGenerated\FHIRElement\FHIRContentType;
+use PHPFHIRGenerated\FHIRElement\FHIRFHIRDefinedType;
 use PHPFHIRGenerated\FHIRElement\FHIRId;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
 use PHPFHIRGenerated\FHIRElement\FHIRTestScriptRequestMethodCode;
 
 /**
- * A structured set of tests against a FHIR server or client implementation to determine compliance against the FHIR specification.
+ * A structured set of tests against a FHIR server implementation to determine compliance against the FHIR specification.
  *
  * Class FHIRTestScriptAssert
  * @package PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript
@@ -84,148 +85,148 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
     const FHIR_TYPE_NAME = 'TestScript.Assert';
 
     /**
-     * The FHIRPath expression to evaluate against the source fixture. When compareToSourceId is defined, either compareToSourceExpression or compareToSourcePath must be defined, but not both.
+     * The fluentpath expression to evaluate against the source fixture. When compareToSourceId is defined, either compareToSourceExpression or compareToSourcePath must be defined, but not both.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $compareToSourceExpression = null;
+    private $compareToSourceExpression = null;
 
     /**
      * Id of the source fixture used as the contents to be evaluated by either the "source/expression" or "sourceId/path" definition.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $compareToSourceId = null;
+    private $compareToSourceId = null;
 
     /**
      * XPath or JSONPath expression to evaluate against the source fixture. When compareToSourceId is defined, either compareToSourceExpression or compareToSourcePath must be defined, but not both.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $compareToSourcePath = null;
+    private $compareToSourcePath = null;
 
     /**
-     * The mime-type contents to compare against the request or response message 'Content-Type' header.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * The content-type or mime-type to use for RESTful operation in the 'Content-Type' header.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRContentType
      */
-    public $contentType = null;
+    private $contentType = null;
 
     /**
      * The description would be used by test engines for tracking and reporting purposes.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $description = null;
+    private $description = null;
 
     /**
      * The direction to use for the assertion.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAssertionDirectionType
      */
-    public $direction = null;
+    private $direction = null;
 
     /**
-     * The FHIRPath expression to be evaluated against the request or response message contents - HTTP headers and payload.
+     * The fluentpath expression to be evaluated against the request or response message contents - HTTP headers and payload.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $expression = null;
+    private $expression = null;
 
     /**
      * The HTTP header field name e.g. 'Location'.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $headerField = null;
+    private $headerField = null;
 
     /**
      * The label would be used for tracking/logging purposes by test engines.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $label = null;
+    private $label = null;
 
     /**
      * The ID of a fixture.  Asserts that the response contains at a minimum the fixture specified by minimumId.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $minimumId = null;
+    private $minimumId = null;
 
     /**
      * Whether or not the test execution performs validation on the bundle navigation links.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $navigationLinks = null;
+    private $navigationLinks = null;
 
     /**
      * The operator type defines the conditional behavior of the assert. If not defined, the default is equals.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAssertionOperatorType
      */
-    public $operator = null;
+    private $operator = null;
 
     /**
      * The XPath or JSONPath expression to be evaluated against the fixture representing the response received from server.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $path = null;
+    private $path = null;
 
     /**
      * The request method or HTTP operation code to compare against that used by the client system under test.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTestScriptRequestMethodCode
      */
-    public $requestMethod = null;
+    private $requestMethod = null;
 
     /**
      * The value to use in a comparison against the request URL path string.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $requestURL = null;
+    private $requestURL = null;
 
     /**
      * The type of the resource.  See http://build.fhir.org/resourcelist.html.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRFHIRDefinedType
      */
-    public $resource = null;
+    private $resource = null;
 
     /**
      * okay | created | noContent | notModified | bad | forbidden | notFound | methodNotAllowed | conflict | gone | preconditionFailed | unprocessable.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAssertionResponseTypes
      */
-    public $response = null;
+    private $response = null;
 
     /**
      * The value of the HTTP response code to be tested.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $responseCode = null;
+    private $responseCode = null;
 
     /**
      * The TestScript.rule this assert will evaluate.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRule2
      */
-    public $rule = null;
+    private $rule = null;
 
     /**
      * The TestScript.ruleset this assert will evaluate.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRuleset1
      */
-    public $ruleset = null;
+    private $ruleset = null;
 
     /**
      * Fixture to evaluate the XPath/JSONPath expression or the headerField  against.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRId
      */
-    public $sourceId = null;
+    private $sourceId = null;
 
     /**
      * The ID of the Profile to validate against.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRId
      */
-    public $validateProfileId = null;
+    private $validateProfileId = null;
 
     /**
      * The value to compare to.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $value = null;
+    private $value = null;
 
     /**
      * Whether or not the test execution will produce a warning only on error for this assert.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $warningOnly = null;
+    private $warningOnly = null;
 
     /**
      * FHIRTestScriptAssert Constructor
@@ -234,79 +235,290 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['compareToSourceExpression'])) {
-                $this->setCompareToSourceExpression($data['compareToSourceExpression']);
+                $value = $data['compareToSourceExpression'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert::__construct - Property \"compareToSourceExpression\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setCompareToSourceExpression($value);
             }
             if (isset($data['compareToSourceId'])) {
-                $this->setCompareToSourceId($data['compareToSourceId']);
+                $value = $data['compareToSourceId'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert::__construct - Property \"compareToSourceId\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setCompareToSourceId($value);
             }
             if (isset($data['compareToSourcePath'])) {
-                $this->setCompareToSourcePath($data['compareToSourcePath']);
+                $value = $data['compareToSourcePath'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert::__construct - Property \"compareToSourcePath\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setCompareToSourcePath($value);
             }
             if (isset($data['contentType'])) {
-                $this->setContentType($data['contentType']);
+                $value = $data['contentType'];
+                if (is_array($value)) {
+                    $value = new FHIRContentType($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRContentType($value);
+                }
+                if (!($value instanceof FHIRContentType)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert::__construct - Property \"contentType\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRContentType or data to construct type, saw ".gettype($value));
+                }
+                $this->setContentType($value);
             }
             if (isset($data['description'])) {
-                $this->setDescription($data['description']);
+                $value = $data['description'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert::__construct - Property \"description\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setDescription($value);
             }
             if (isset($data['direction'])) {
-                $this->setDirection($data['direction']);
+                $value = $data['direction'];
+                if (is_array($value)) {
+                    $value = new FHIRAssertionDirectionType($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRAssertionDirectionType($value);
+                }
+                if (!($value instanceof FHIRAssertionDirectionType)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert::__construct - Property \"direction\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAssertionDirectionType or data to construct type, saw ".gettype($value));
+                }
+                $this->setDirection($value);
             }
             if (isset($data['expression'])) {
-                $this->setExpression($data['expression']);
+                $value = $data['expression'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert::__construct - Property \"expression\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setExpression($value);
             }
             if (isset($data['headerField'])) {
-                $this->setHeaderField($data['headerField']);
+                $value = $data['headerField'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert::__construct - Property \"headerField\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setHeaderField($value);
             }
             if (isset($data['label'])) {
-                $this->setLabel($data['label']);
+                $value = $data['label'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert::__construct - Property \"label\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setLabel($value);
             }
             if (isset($data['minimumId'])) {
-                $this->setMinimumId($data['minimumId']);
+                $value = $data['minimumId'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert::__construct - Property \"minimumId\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setMinimumId($value);
             }
             if (isset($data['navigationLinks'])) {
-                $this->setNavigationLinks($data['navigationLinks']);
+                $value = $data['navigationLinks'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert::__construct - Property \"navigationLinks\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value));
+                }
+                $this->setNavigationLinks($value);
             }
             if (isset($data['operator'])) {
-                $this->setOperator($data['operator']);
+                $value = $data['operator'];
+                if (is_array($value)) {
+                    $value = new FHIRAssertionOperatorType($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRAssertionOperatorType($value);
+                }
+                if (!($value instanceof FHIRAssertionOperatorType)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert::__construct - Property \"operator\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAssertionOperatorType or data to construct type, saw ".gettype($value));
+                }
+                $this->setOperator($value);
             }
             if (isset($data['path'])) {
-                $this->setPath($data['path']);
+                $value = $data['path'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert::__construct - Property \"path\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setPath($value);
             }
             if (isset($data['requestMethod'])) {
-                $this->setRequestMethod($data['requestMethod']);
+                $value = $data['requestMethod'];
+                if (is_array($value)) {
+                    $value = new FHIRTestScriptRequestMethodCode($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRTestScriptRequestMethodCode($value);
+                }
+                if (!($value instanceof FHIRTestScriptRequestMethodCode)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert::__construct - Property \"requestMethod\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRTestScriptRequestMethodCode or data to construct type, saw ".gettype($value));
+                }
+                $this->setRequestMethod($value);
             }
             if (isset($data['requestURL'])) {
-                $this->setRequestURL($data['requestURL']);
+                $value = $data['requestURL'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert::__construct - Property \"requestURL\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setRequestURL($value);
             }
             if (isset($data['resource'])) {
-                $this->setResource($data['resource']);
+                $value = $data['resource'];
+                if (is_array($value)) {
+                    $value = new FHIRFHIRDefinedType($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRFHIRDefinedType($value);
+                }
+                if (!($value instanceof FHIRFHIRDefinedType)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert::__construct - Property \"resource\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRFHIRDefinedType or data to construct type, saw ".gettype($value));
+                }
+                $this->setResource($value);
             }
             if (isset($data['response'])) {
-                $this->setResponse($data['response']);
+                $value = $data['response'];
+                if (is_array($value)) {
+                    $value = new FHIRAssertionResponseTypes($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRAssertionResponseTypes($value);
+                }
+                if (!($value instanceof FHIRAssertionResponseTypes)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert::__construct - Property \"response\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAssertionResponseTypes or data to construct type, saw ".gettype($value));
+                }
+                $this->setResponse($value);
             }
             if (isset($data['responseCode'])) {
-                $this->setResponseCode($data['responseCode']);
+                $value = $data['responseCode'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert::__construct - Property \"responseCode\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setResponseCode($value);
             }
             if (isset($data['rule'])) {
-                $this->setRule($data['rule']);
+                $value = $data['rule'];
+                if (is_array($value)) {
+                    $value = new FHIRTestScriptRule2($value);
+                } 
+                if (!($value instanceof FHIRTestScriptRule2)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert::__construct - Property \"rule\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRule2 or data to construct type, saw ".gettype($value));
+                }
+                $this->setRule($value);
             }
             if (isset($data['ruleset'])) {
-                $this->setRuleset($data['ruleset']);
+                $value = $data['ruleset'];
+                if (is_array($value)) {
+                    $value = new FHIRTestScriptRuleset1($value);
+                } 
+                if (!($value instanceof FHIRTestScriptRuleset1)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert::__construct - Property \"ruleset\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRuleset1 or data to construct type, saw ".gettype($value));
+                }
+                $this->setRuleset($value);
             }
             if (isset($data['sourceId'])) {
-                $this->setSourceId($data['sourceId']);
+                $value = $data['sourceId'];
+                if (is_array($value)) {
+                    $value = new FHIRId($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRId($value);
+                }
+                if (!($value instanceof FHIRId)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert::__construct - Property \"sourceId\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRId or data to construct type, saw ".gettype($value));
+                }
+                $this->setSourceId($value);
             }
             if (isset($data['validateProfileId'])) {
-                $this->setValidateProfileId($data['validateProfileId']);
+                $value = $data['validateProfileId'];
+                if (is_array($value)) {
+                    $value = new FHIRId($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRId($value);
+                }
+                if (!($value instanceof FHIRId)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert::__construct - Property \"validateProfileId\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRId or data to construct type, saw ".gettype($value));
+                }
+                $this->setValidateProfileId($value);
             }
             if (isset($data['value'])) {
-                $this->setValue($data['value']);
+                $value = $data['value'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert::__construct - Property \"value\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setValue($value);
             }
             if (isset($data['warningOnly'])) {
-                $this->setWarningOnly($data['warningOnly']);
+                $value = $data['warningOnly'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert::__construct - Property \"warningOnly\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value));
+                }
+                $this->setWarningOnly($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -315,10 +527,11 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
-     * The FHIRPath expression to evaluate against the source fixture. When compareToSourceId is defined, either compareToSourceExpression or compareToSourcePath must be defined, but not both.
+     * The fluentpath expression to evaluate against the source fixture. When compareToSourceId is defined, either compareToSourceExpression or compareToSourcePath must be defined, but not both.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
@@ -341,14 +554,13 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
     }
 
     /**
-     * The FHIRPath expression to evaluate against the source fixture. When compareToSourceId is defined, either compareToSourceExpression or compareToSourcePath must be defined, but not both.
+     * The fluentpath expression to evaluate against the source fixture. When compareToSourceId is defined, either compareToSourceExpression or compareToSourcePath must be defined, but not both.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getCompareToSourceExpression()
     {
         return $this->compareToSourceExpression;
     }
-
 
     /**
      * Id of the source fixture used as the contents to be evaluated by either the "source/expression" or "sourceId/path" definition.
@@ -382,7 +594,6 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
         return $this->compareToSourceId;
     }
 
-
     /**
      * XPath or JSONPath expression to evaluate against the source fixture. When compareToSourceId is defined, either compareToSourceExpression or compareToSourcePath must be defined, but not both.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -415,10 +626,9 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
         return $this->compareToSourcePath;
     }
 
-
     /**
-     * The mime-type contents to compare against the request or response message 'Content-Type' header.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCode
+     * The content-type or mime-type to use for RESTful operation in the 'Content-Type' header.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContentType
      * @return $this
      */
     public function setContentType($contentType)
@@ -427,11 +637,11 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
             return $this; 
         }
         if (is_scalar($contentType)) {
-            $contentType = new FHIRCode($contentType);
+            $contentType = new FHIRContentType($contentType);
         }
-        if (!($contentType instanceof FHIRCode)) {
+        if (!($contentType instanceof FHIRContentType)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRTestScriptAssert::setContentType - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or appropriate scalar value, %s seen.',
+                'FHIRTestScriptAssert::setContentType - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRContentType or appropriate scalar value, %s seen.',
                 gettype($contentType)
             ));
         }
@@ -440,14 +650,13 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
     }
 
     /**
-     * The mime-type contents to compare against the request or response message 'Content-Type' header.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCode
+     * The content-type or mime-type to use for RESTful operation in the 'Content-Type' header.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContentType
      */
     public function getContentType()
     {
         return $this->contentType;
     }
-
 
     /**
      * The description would be used by test engines for tracking and reporting purposes.
@@ -481,7 +690,6 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
         return $this->description;
     }
 
-
     /**
      * The direction to use for the assertion.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRAssertionDirectionType
@@ -514,9 +722,8 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
         return $this->direction;
     }
 
-
     /**
-     * The FHIRPath expression to be evaluated against the request or response message contents - HTTP headers and payload.
+     * The fluentpath expression to be evaluated against the request or response message contents - HTTP headers and payload.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
@@ -539,14 +746,13 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
     }
 
     /**
-     * The FHIRPath expression to be evaluated against the request or response message contents - HTTP headers and payload.
+     * The fluentpath expression to be evaluated against the request or response message contents - HTTP headers and payload.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getExpression()
     {
         return $this->expression;
     }
-
 
     /**
      * The HTTP header field name e.g. 'Location'.
@@ -580,7 +786,6 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
         return $this->headerField;
     }
 
-
     /**
      * The label would be used for tracking/logging purposes by test engines.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -612,7 +817,6 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
     {
         return $this->label;
     }
-
 
     /**
      * The ID of a fixture.  Asserts that the response contains at a minimum the fixture specified by minimumId.
@@ -646,7 +850,6 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
         return $this->minimumId;
     }
 
-
     /**
      * Whether or not the test execution performs validation on the bundle navigation links.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
@@ -678,7 +881,6 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
     {
         return $this->navigationLinks;
     }
-
 
     /**
      * The operator type defines the conditional behavior of the assert. If not defined, the default is equals.
@@ -712,7 +914,6 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
         return $this->operator;
     }
 
-
     /**
      * The XPath or JSONPath expression to be evaluated against the fixture representing the response received from server.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -744,7 +945,6 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
     {
         return $this->path;
     }
-
 
     /**
      * The request method or HTTP operation code to compare against that used by the client system under test.
@@ -778,7 +978,6 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
         return $this->requestMethod;
     }
 
-
     /**
      * The value to use in a comparison against the request URL path string.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -811,10 +1010,9 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
         return $this->requestURL;
     }
 
-
     /**
      * The type of the resource.  See http://build.fhir.org/resourcelist.html.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRFHIRDefinedType
      * @return $this
      */
     public function setResource($resource)
@@ -823,11 +1021,11 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
             return $this; 
         }
         if (is_scalar($resource)) {
-            $resource = new FHIRCode($resource);
+            $resource = new FHIRFHIRDefinedType($resource);
         }
-        if (!($resource instanceof FHIRCode)) {
+        if (!($resource instanceof FHIRFHIRDefinedType)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRTestScriptAssert::setResource - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or appropriate scalar value, %s seen.',
+                'FHIRTestScriptAssert::setResource - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRFHIRDefinedType or appropriate scalar value, %s seen.',
                 gettype($resource)
             ));
         }
@@ -837,13 +1035,12 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The type of the resource.  See http://build.fhir.org/resourcelist.html.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRFHIRDefinedType
      */
     public function getResource()
     {
         return $this->resource;
     }
-
 
     /**
      * okay | created | noContent | notModified | bad | forbidden | notFound | methodNotAllowed | conflict | gone | preconditionFailed | unprocessable.
@@ -877,7 +1074,6 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
         return $this->response;
     }
 
-
     /**
      * The value of the HTTP response code to be tested.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -910,7 +1106,6 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
         return $this->responseCode;
     }
 
-
     /**
      * The TestScript.rule this assert will evaluate.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRule2
@@ -934,7 +1129,6 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
         return $this->rule;
     }
 
-
     /**
      * The TestScript.ruleset this assert will evaluate.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRuleset1
@@ -957,7 +1151,6 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
     {
         return $this->ruleset;
     }
-
 
     /**
      * Fixture to evaluate the XPath/JSONPath expression or the headerField  against.
@@ -991,7 +1184,6 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
         return $this->sourceId;
     }
 
-
     /**
      * The ID of the Profile to validate against.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRId
@@ -1023,7 +1215,6 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
     {
         return $this->validateProfileId;
     }
-
 
     /**
      * The value to compare to.
@@ -1057,7 +1248,6 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
         return $this->value;
     }
 
-
     /**
      * Whether or not the test execution will produce a warning only on error for this assert.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
@@ -1089,7 +1279,6 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
     {
         return $this->warningOnly;
     }
-
 
     /**
      * @return string
@@ -1190,9 +1379,78 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<TestScriptAssert xmlns="http://hl7.org/fhir"></TestScriptAssert>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getCompareToSourceExpression())) {
+            $v->xmlSerialize(true, $sxe->addChild('compareToSourceExpression'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getCompareToSourceId())) {
+            $v->xmlSerialize(true, $sxe->addChild('compareToSourceId'));
+        }
+        if (null !== ($v = $this->getCompareToSourcePath())) {
+            $v->xmlSerialize(true, $sxe->addChild('compareToSourcePath'));
+        }
+        if (null !== ($v = $this->getContentType())) {
+            $v->xmlSerialize(true, $sxe->addChild('contentType'));
+        }
+        if (null !== ($v = $this->getDescription())) {
+            $v->xmlSerialize(true, $sxe->addChild('description'));
+        }
+        if (null !== ($v = $this->getDirection())) {
+            $v->xmlSerialize(true, $sxe->addChild('direction'));
+        }
+        if (null !== ($v = $this->getExpression())) {
+            $v->xmlSerialize(true, $sxe->addChild('expression'));
+        }
+        if (null !== ($v = $this->getHeaderField())) {
+            $v->xmlSerialize(true, $sxe->addChild('headerField'));
+        }
+        if (null !== ($v = $this->getLabel())) {
+            $v->xmlSerialize(true, $sxe->addChild('label'));
+        }
+        if (null !== ($v = $this->getMinimumId())) {
+            $v->xmlSerialize(true, $sxe->addChild('minimumId'));
+        }
+        if (null !== ($v = $this->getNavigationLinks())) {
+            $v->xmlSerialize(true, $sxe->addChild('navigationLinks'));
+        }
+        if (null !== ($v = $this->getOperator())) {
+            $v->xmlSerialize(true, $sxe->addChild('operator'));
+        }
+        if (null !== ($v = $this->getPath())) {
+            $v->xmlSerialize(true, $sxe->addChild('path'));
+        }
+        if (null !== ($v = $this->getRequestMethod())) {
+            $v->xmlSerialize(true, $sxe->addChild('requestMethod'));
+        }
+        if (null !== ($v = $this->getRequestURL())) {
+            $v->xmlSerialize(true, $sxe->addChild('requestURL'));
+        }
+        if (null !== ($v = $this->getResource())) {
+            $v->xmlSerialize(true, $sxe->addChild('resource'));
+        }
+        if (null !== ($v = $this->getResponse())) {
+            $v->xmlSerialize(true, $sxe->addChild('response'));
+        }
+        if (null !== ($v = $this->getResponseCode())) {
+            $v->xmlSerialize(true, $sxe->addChild('responseCode'));
+        }
+        if (null !== ($v = $this->getRule())) {
+            $v->xmlSerialize(true, $sxe->addChild('rule'));
+        }
+        if (null !== ($v = $this->getRuleset())) {
+            $v->xmlSerialize(true, $sxe->addChild('ruleset'));
+        }
+        if (null !== ($v = $this->getSourceId())) {
+            $v->xmlSerialize(true, $sxe->addChild('sourceId'));
+        }
+        if (null !== ($v = $this->getValidateProfileId())) {
+            $v->xmlSerialize(true, $sxe->addChild('validateProfileId'));
+        }
+        if (null !== ($v = $this->getValue())) {
+            $v->xmlSerialize(true, $sxe->addChild('value'));
+        }
+        if (null !== ($v = $this->getWarningOnly())) {
+            $v->xmlSerialize(true, $sxe->addChild('warningOnly'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

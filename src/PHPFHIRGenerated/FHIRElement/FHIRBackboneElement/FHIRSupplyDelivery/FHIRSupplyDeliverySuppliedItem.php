@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSupplyDelivery;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSupplyDelivery;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -79,22 +79,22 @@ class FHIRSupplyDeliverySuppliedItem extends FHIRBackboneElement implements \Jso
     const FHIR_TYPE_NAME = 'SupplyDelivery.SuppliedItem';
 
     /**
-     * Identifies the medication, substance or device being dispensed. This is either a link to a resource representing the details of the item or a code that identifies the item from a known list.
+     * Identifies the medication, substance or device being dispensed. This is either a link to a resource representing the details of the item or a code that identifies the item from a known list. (choose any one of item*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $itemCodeableConcept = null;
+    private $itemCodeableConcept = null;
 
     /**
-     * Identifies the medication, substance or device being dispensed. This is either a link to a resource representing the details of the item or a code that identifies the item from a known list.
+     * Identifies the medication, substance or device being dispensed. This is either a link to a resource representing the details of the item or a code that identifies the item from a known list. (choose any one of item*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $itemReference = null;
+    private $itemReference = null;
 
     /**
      * The amount of supply that has been dispensed. Includes unit of measure.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    public $quantity = null;
+    private $quantity = null;
 
     /**
      * FHIRSupplyDeliverySuppliedItem Constructor
@@ -103,16 +103,36 @@ class FHIRSupplyDeliverySuppliedItem extends FHIRBackboneElement implements \Jso
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['itemCodeableConcept'])) {
-                $this->setItemCodeableConcept($data['itemCodeableConcept']);
+                $value = $data['itemCodeableConcept'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSupplyDelivery\FHIRSupplyDeliverySuppliedItem::__construct - Property \"itemCodeableConcept\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setItemCodeableConcept($value);
             }
             if (isset($data['itemReference'])) {
-                $this->setItemReference($data['itemReference']);
+                $value = $data['itemReference'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSupplyDelivery\FHIRSupplyDeliverySuppliedItem::__construct - Property \"itemReference\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setItemReference($value);
             }
             if (isset($data['quantity'])) {
-                $this->setQuantity($data['quantity']);
+                $value = $data['quantity'];
+                if (is_array($value)) {
+                    $value = new FHIRQuantity($value);
+                } 
+                if (!($value instanceof FHIRQuantity)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSupplyDelivery\FHIRSupplyDeliverySuppliedItem::__construct - Property \"quantity\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setQuantity($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -121,10 +141,11 @@ class FHIRSupplyDeliverySuppliedItem extends FHIRBackboneElement implements \Jso
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
-     * Identifies the medication, substance or device being dispensed. This is either a link to a resource representing the details of the item or a code that identifies the item from a known list.
+     * Identifies the medication, substance or device being dispensed. This is either a link to a resource representing the details of the item or a code that identifies the item from a known list. (choose any one of item*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
@@ -138,7 +159,7 @@ class FHIRSupplyDeliverySuppliedItem extends FHIRBackboneElement implements \Jso
     }
 
     /**
-     * Identifies the medication, substance or device being dispensed. This is either a link to a resource representing the details of the item or a code that identifies the item from a known list.
+     * Identifies the medication, substance or device being dispensed. This is either a link to a resource representing the details of the item or a code that identifies the item from a known list. (choose any one of item*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getItemCodeableConcept()
@@ -146,9 +167,8 @@ class FHIRSupplyDeliverySuppliedItem extends FHIRBackboneElement implements \Jso
         return $this->itemCodeableConcept;
     }
 
-
     /**
-     * Identifies the medication, substance or device being dispensed. This is either a link to a resource representing the details of the item or a code that identifies the item from a known list.
+     * Identifies the medication, substance or device being dispensed. This is either a link to a resource representing the details of the item or a code that identifies the item from a known list. (choose any one of item*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
@@ -162,14 +182,13 @@ class FHIRSupplyDeliverySuppliedItem extends FHIRBackboneElement implements \Jso
     }
 
     /**
-     * Identifies the medication, substance or device being dispensed. This is either a link to a resource representing the details of the item or a code that identifies the item from a known list.
+     * Identifies the medication, substance or device being dispensed. This is either a link to a resource representing the details of the item or a code that identifies the item from a known list. (choose any one of item*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getItemReference()
     {
         return $this->itemReference;
     }
-
 
     /**
      * The amount of supply that has been dispensed. Includes unit of measure.
@@ -193,7 +212,6 @@ class FHIRSupplyDeliverySuppliedItem extends FHIRBackboneElement implements \Jso
     {
         return $this->quantity;
     }
-
 
     /**
      * @return string
@@ -231,9 +249,15 @@ class FHIRSupplyDeliverySuppliedItem extends FHIRBackboneElement implements \Jso
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<SupplyDeliverySuppliedItem xmlns="http://hl7.org/fhir"></SupplyDeliverySuppliedItem>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getItemCodeableConcept())) {
+            $v->xmlSerialize(true, $sxe->addChild('itemCodeableConcept'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getItemReference())) {
+            $v->xmlSerialize(true, $sxe->addChild('itemReference'));
+        }
+        if (null !== ($v = $this->getQuantity())) {
+            $v->xmlSerialize(true, $sxe->addChild('quantity'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

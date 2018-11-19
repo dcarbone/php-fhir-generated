@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -71,7 +71,7 @@ use PHPFHIRGenerated\FHIRElement\FHIRSubscriptionStatus;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
 /**
- * The subscription resource is used to define a push-based subscription from a server to another system. Once a subscription is registered with the server, the server checks every resource that is created or updated, and if the resource matches the given criteria, it sends a message on the defined "channel" so that another system can take an appropriate action.
+ * The subscription resource is used to define a push based subscription from a server to another system. Once a subscription is registered with the server, the server checks every resource that is created or updated, and if the resource matches the given criteria, it sends a message on the defined "channel" so that another system is able to take an appropriate action.
  * If the element is present, it must have either a @value, an @id, or extensions
  *
  * Class FHIRSubscription
@@ -86,49 +86,49 @@ class FHIRSubscription extends FHIRDomainResource implements \JsonSerializable
      * Details where to send notifications when resources are received that meet the criteria.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSubscription\FHIRSubscriptionChannel
      */
-    public $channel = null;
+    private $channel = null;
 
     /**
      * Contact details for a human to contact about the subscription. The primary use of this for system administrator troubleshooting.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactPoint
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactPoint[]
      */
-    public $contact = null;
+    private $contact = [];
 
     /**
      * The rules that the server should use to determine when to generate notifications for this subscription.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $criteria = null;
+    private $criteria = null;
 
     /**
      * The time for the server to turn the subscription off.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInstant
      */
-    public $end = null;
+    private $end = null;
 
     /**
      * A record of the last error that occurred when the server processed a notification.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $error = null;
+    private $error = null;
 
     /**
      * A description of why this subscription is defined.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $reason = null;
+    private $reason = null;
 
     /**
      * The status of the subscription, which marks the server state for managing the subscription.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRSubscriptionStatus
      */
-    public $status = null;
+    private $status = null;
 
     /**
      * A tag to add to any resource that matches the criteria, after the subscription is processed.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
-    public $tag = null;
+    private $tag = [];
 
     /**
      * FHIRSubscription Constructor
@@ -137,31 +137,108 @@ class FHIRSubscription extends FHIRDomainResource implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['channel'])) {
-                $this->setChannel($data['channel']);
+                $value = $data['channel'];
+                if (is_array($value)) {
+                    $value = new FHIRSubscriptionChannel($value);
+                } 
+                if (!($value instanceof FHIRSubscriptionChannel)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSubscription::__construct - Property \"channel\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSubscription\FHIRSubscriptionChannel or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setChannel($value);
             }
             if (isset($data['contact'])) {
-                $this->setContact($data['contact']);
+                $value = $data['contact'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRContactPoint($v);
+                        } 
+                        if (!($v instanceof FHIRContactPoint)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSubscription::__construct - Collection field \"contact\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRContactPoint or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addContact($v);
+                    }
+                }
             }
             if (isset($data['criteria'])) {
-                $this->setCriteria($data['criteria']);
+                $value = $data['criteria'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSubscription::__construct - Property \"criteria\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setCriteria($value);
             }
             if (isset($data['end'])) {
-                $this->setEnd($data['end']);
+                $value = $data['end'];
+                if (is_array($value)) {
+                    $value = new FHIRInstant($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRInstant($value);
+                }
+                if (!($value instanceof FHIRInstant)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSubscription::__construct - Property \"end\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRInstant or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setEnd($value);
             }
             if (isset($data['error'])) {
-                $this->setError($data['error']);
+                $value = $data['error'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSubscription::__construct - Property \"error\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setError($value);
             }
             if (isset($data['reason'])) {
-                $this->setReason($data['reason']);
+                $value = $data['reason'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSubscription::__construct - Property \"reason\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setReason($value);
             }
             if (isset($data['status'])) {
-                $this->setStatus($data['status']);
+                $value = $data['status'];
+                if (is_array($value)) {
+                    $value = new FHIRSubscriptionStatus($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRSubscriptionStatus($value);
+                }
+                if (!($value instanceof FHIRSubscriptionStatus)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSubscription::__construct - Property \"status\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRSubscriptionStatus or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setStatus($value);
             }
             if (isset($data['tag'])) {
-                $this->setTag($data['tag']);
+                $value = $data['tag'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCoding($v);
+                        } 
+                        if (!($v instanceof FHIRCoding)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSubscription::__construct - Collection field \"tag\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCoding or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addTag($v);
+                    }
+                }
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -170,6 +247,7 @@ class FHIRSubscription extends FHIRDomainResource implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -195,30 +273,28 @@ class FHIRSubscription extends FHIRDomainResource implements \JsonSerializable
         return $this->channel;
     }
 
-
     /**
      * Contact details for a human to contact about the subscription. The primary use of this for system administrator troubleshooting.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContactPoint
      * @return $this
      */
-    public function setContact(FHIRContactPoint $contact = null)
+    public function addContact(FHIRContactPoint $contact = null)
     {
         if (null === $contact) {
             return $this; 
         }
-        $this->contact = $contact;
+        $this->contact[] = $contact;
         return $this;
     }
 
     /**
      * Contact details for a human to contact about the subscription. The primary use of this for system administrator troubleshooting.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactPoint
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactPoint[]
      */
     public function getContact()
     {
         return $this->contact;
     }
-
 
     /**
      * The rules that the server should use to determine when to generate notifications for this subscription.
@@ -252,7 +328,6 @@ class FHIRSubscription extends FHIRDomainResource implements \JsonSerializable
         return $this->criteria;
     }
 
-
     /**
      * The time for the server to turn the subscription off.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRInstant
@@ -284,7 +359,6 @@ class FHIRSubscription extends FHIRDomainResource implements \JsonSerializable
     {
         return $this->end;
     }
-
 
     /**
      * A record of the last error that occurred when the server processed a notification.
@@ -318,7 +392,6 @@ class FHIRSubscription extends FHIRDomainResource implements \JsonSerializable
         return $this->error;
     }
 
-
     /**
      * A description of why this subscription is defined.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -350,7 +423,6 @@ class FHIRSubscription extends FHIRDomainResource implements \JsonSerializable
     {
         return $this->reason;
     }
-
 
     /**
      * The status of the subscription, which marks the server state for managing the subscription.
@@ -384,30 +456,28 @@ class FHIRSubscription extends FHIRDomainResource implements \JsonSerializable
         return $this->status;
     }
 
-
     /**
      * A tag to add to any resource that matches the criteria, after the subscription is processed.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
      * @return $this
      */
-    public function setTag(FHIRCoding $tag = null)
+    public function addTag(FHIRCoding $tag = null)
     {
         if (null === $tag) {
             return $this; 
         }
-        $this->tag = $tag;
+        $this->tag[] = $tag;
         return $this;
     }
 
     /**
      * A tag to add to any resource that matches the criteria, after the subscription is processed.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
     public function getTag()
     {
         return $this->tag;
     }
-
 
     /**
      * @return string
@@ -427,8 +497,16 @@ class FHIRSubscription extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getChannel())) {
             $a['channel'] = $v;
         }
-        if (null !== ($v = $this->getContact())) {
-            $a['contact'] = $v;
+        if (0 < count($values = $this->getContact())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['contact'] = $vs;
+            }
         }
         if (null !== ($v = $this->getCriteria())) {
             $a['criteria'] = $v;
@@ -445,8 +523,16 @@ class FHIRSubscription extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getStatus())) {
             $a['status'] = $v;
         }
-        if (null !== ($v = $this->getTag())) {
-            $a['tag'] = $v;
+        if (0 < count($values = $this->getTag())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['tag'] = $vs;
+            }
         }
         return $a;
     }
@@ -461,9 +547,38 @@ class FHIRSubscription extends FHIRDomainResource implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Subscription xmlns="http://hl7.org/fhir"></Subscription>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getChannel())) {
+            $v->xmlSerialize(true, $sxe->addChild('channel'));
         }
-        return $sxe->saveXML();
+        if (0 < count($values = $this->getContact())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('contact'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getCriteria())) {
+            $v->xmlSerialize(true, $sxe->addChild('criteria'));
+        }
+        if (null !== ($v = $this->getEnd())) {
+            $v->xmlSerialize(true, $sxe->addChild('end'));
+        }
+        if (null !== ($v = $this->getError())) {
+            $v->xmlSerialize(true, $sxe->addChild('error'));
+        }
+        if (null !== ($v = $this->getReason())) {
+            $v->xmlSerialize(true, $sxe->addChild('reason'));
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('status'));
+        }
+        if (0 < count($values = $this->getTag())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('tag'));
+                }
+            }
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

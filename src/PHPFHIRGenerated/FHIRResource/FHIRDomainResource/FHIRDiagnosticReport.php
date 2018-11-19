@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,7 +63,8 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRAttachment;
-use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDiagnosticReport\FHIRDiagnosticReportMedia;
+use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDiagnosticReport\FHIRDiagnosticReportImage;
+use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDiagnosticReport\FHIRDiagnosticReportPerformer;
 use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
 use PHPFHIRGenerated\FHIRElement\FHIRDateTime;
 use PHPFHIRGenerated\FHIRElement\FHIRDiagnosticReportStatus;
@@ -87,118 +88,112 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
     const FHIR_TYPE_NAME = 'DiagnosticReport';
 
     /**
-     * Details concerning a service requested.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * Details concerning a test or procedure requested.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $basedOn = null;
+    private $basedOn = [];
 
     /**
      * A code that classifies the clinical discipline, department or diagnostic service that created the report (e.g. cardiology, biochemistry, hematology, MRI). This is used for searching, sorting and display purposes.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $category = null;
+    private $category = null;
 
     /**
      * A code or name that describes this diagnostic report.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $code = null;
+    private $code = null;
 
     /**
-     * Concise and clinically contextualized summary conclusion (interpretation/impression) of the diagnostic report.
+     * Codes for the conclusion.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    private $codedDiagnosis = [];
+
+    /**
+     * Concise and clinically contextualized impression / summary of the diagnostic report.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $conclusion = null;
-
-    /**
-     * One or more codes that represent the summary conclusion (interpretation/impression) of the diagnostic report.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public $conclusionCode = null;
+    private $conclusion = null;
 
     /**
      * The healthcare event  (e.g. a patient and healthcare provider interaction) which this DiagnosticReport per is about.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $context = null;
+    private $context = null;
 
     /**
-     * The time or time-period the observed values are related to. When the subject of the report is a patient, this is usually either the time of the procedure or of specimen collection(s), but very often the source of the date/time is not known, only the date/time itself.
+     * The time or time-period the observed values are related to. When the subject of the report is a patient, this is usually either the time of the procedure or of specimen collection(s), but very often the source of the date/time is not known, only the date/time itself. (choose any one of effective*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $effectiveDateTime = null;
+    private $effectiveDateTime = null;
 
     /**
-     * The time or time-period the observed values are related to. When the subject of the report is a patient, this is usually either the time of the procedure or of specimen collection(s), but very often the source of the date/time is not known, only the date/time itself.
+     * The time or time-period the observed values are related to. When the subject of the report is a patient, this is usually either the time of the procedure or of specimen collection(s), but very often the source of the date/time is not known, only the date/time itself. (choose any one of effective*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public $effectivePeriod = null;
+    private $effectivePeriod = null;
 
     /**
      * Identifiers assigned to this report by the performer or other systems.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = null;
-
-    /**
-     * One or more links to full details of any imaging performed during the diagnostic investigation. Typically, this is imaging performed by DICOM enabled modalities, but this is not required. A fully enabled PACS viewer can use this information to provide views of the source images.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $imagingStudy = null;
-
-    /**
-     * The date and time that this version of the report was made available to providers, typically after the report was reviewed and verified.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRInstant
-     */
-    public $issued = null;
+    private $identifier = [];
 
     /**
      * A list of key images associated with this report. The images are generally created during the diagnostic process, and may be directly of the patient, or of treated specimens (i.e. slides of interest).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDiagnosticReport\FHIRDiagnosticReportMedia
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDiagnosticReport\FHIRDiagnosticReportImage[]
      */
-    public $media = null;
+    private $image = [];
 
     /**
-     * The diagnostic service that is responsible for issuing the report.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * One or more links to full details of any imaging performed during the diagnostic investigation. Typically, this is imaging performed by DICOM enabled modalities, but this is not required. A fully enabled PACS viewer can use this information to provide views of the source images.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $performer = null;
+    private $imagingStudy = [];
+
+    /**
+     * The date and time that this version of the report was released from the source diagnostic service.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRInstant
+     */
+    private $issued = null;
+
+    /**
+     * Indicates who or what participated in producing the report.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDiagnosticReport\FHIRDiagnosticReportPerformer[]
+     */
+    private $performer = [];
 
     /**
      * Rich text representation of the entire result as issued by the diagnostic service. Multiple formats are allowed but they SHALL be semantically equivalent.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment[]
      */
-    public $presentedForm = null;
+    private $presentedForm = [];
 
     /**
-     * [Observations](observation.html)  that are part of this diagnostic report.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * Observations that are part of this diagnostic report. Observations can be simple name/value pairs (e.g. "atomic" results), or they can be grouping observations that include references to other members of the group (e.g. "panels").
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $result = null;
-
-    /**
-     * The practitioner or organization that is responsible for the report's conclusions and interpretations.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $resultsInterpreter = null;
+    private $result = [];
 
     /**
      * Details about the specimens on which this diagnostic report is based.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $specimen = null;
+    private $specimen = [];
 
     /**
-     * The status of the diagnostic report.
+     * The status of the diagnostic report as a whole.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDiagnosticReportStatus
      */
-    public $status = null;
+    private $status = null;
 
     /**
      * The subject of the report. Usually, but not always, this is a patient. However diagnostic services also perform analyses on specimens collected from a variety of other sources.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $subject = null;
+    private $subject = null;
 
     /**
      * FHIRDiagnosticReport Constructor
@@ -207,64 +202,248 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['basedOn'])) {
-                $this->setBasedOn($data['basedOn']);
+                $value = $data['basedOn'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDiagnosticReport::__construct - Collection field \"basedOn\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addBasedOn($v);
+                    }
+                }
             }
             if (isset($data['category'])) {
-                $this->setCategory($data['category']);
+                $value = $data['category'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDiagnosticReport::__construct - Property \"category\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setCategory($value);
             }
             if (isset($data['code'])) {
-                $this->setCode($data['code']);
+                $value = $data['code'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDiagnosticReport::__construct - Property \"code\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setCode($value);
+            }
+            if (isset($data['codedDiagnosis'])) {
+                $value = $data['codedDiagnosis'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDiagnosticReport::__construct - Collection field \"codedDiagnosis\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addCodedDiagnosis($v);
+                    }
+                }
             }
             if (isset($data['conclusion'])) {
-                $this->setConclusion($data['conclusion']);
-            }
-            if (isset($data['conclusionCode'])) {
-                $this->setConclusionCode($data['conclusionCode']);
+                $value = $data['conclusion'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDiagnosticReport::__construct - Property \"conclusion\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setConclusion($value);
             }
             if (isset($data['context'])) {
-                $this->setContext($data['context']);
+                $value = $data['context'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDiagnosticReport::__construct - Property \"context\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setContext($value);
             }
             if (isset($data['effectiveDateTime'])) {
-                $this->setEffectiveDateTime($data['effectiveDateTime']);
+                $value = $data['effectiveDateTime'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDiagnosticReport::__construct - Property \"effectiveDateTime\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setEffectiveDateTime($value);
             }
             if (isset($data['effectivePeriod'])) {
-                $this->setEffectivePeriod($data['effectivePeriod']);
+                $value = $data['effectivePeriod'];
+                if (is_array($value)) {
+                    $value = new FHIRPeriod($value);
+                } 
+                if (!($value instanceof FHIRPeriod)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDiagnosticReport::__construct - Property \"effectivePeriod\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPeriod or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setEffectivePeriod($value);
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRIdentifier($v);
+                        } 
+                        if (!($v instanceof FHIRIdentifier)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDiagnosticReport::__construct - Collection field \"identifier\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addIdentifier($v);
+                    }
+                }
+            }
+            if (isset($data['image'])) {
+                $value = $data['image'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRDiagnosticReportImage($v);
+                        } 
+                        if (!($v instanceof FHIRDiagnosticReportImage)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDiagnosticReport::__construct - Collection field \"image\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDiagnosticReport\FHIRDiagnosticReportImage or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addImage($v);
+                    }
+                }
             }
             if (isset($data['imagingStudy'])) {
-                $this->setImagingStudy($data['imagingStudy']);
+                $value = $data['imagingStudy'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDiagnosticReport::__construct - Collection field \"imagingStudy\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addImagingStudy($v);
+                    }
+                }
             }
             if (isset($data['issued'])) {
-                $this->setIssued($data['issued']);
-            }
-            if (isset($data['media'])) {
-                $this->setMedia($data['media']);
+                $value = $data['issued'];
+                if (is_array($value)) {
+                    $value = new FHIRInstant($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRInstant($value);
+                }
+                if (!($value instanceof FHIRInstant)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDiagnosticReport::__construct - Property \"issued\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRInstant or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setIssued($value);
             }
             if (isset($data['performer'])) {
-                $this->setPerformer($data['performer']);
+                $value = $data['performer'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRDiagnosticReportPerformer($v);
+                        } 
+                        if (!($v instanceof FHIRDiagnosticReportPerformer)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDiagnosticReport::__construct - Collection field \"performer\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDiagnosticReport\FHIRDiagnosticReportPerformer or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addPerformer($v);
+                    }
+                }
             }
             if (isset($data['presentedForm'])) {
-                $this->setPresentedForm($data['presentedForm']);
+                $value = $data['presentedForm'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRAttachment($v);
+                        } 
+                        if (!($v instanceof FHIRAttachment)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDiagnosticReport::__construct - Collection field \"presentedForm\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAttachment or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addPresentedForm($v);
+                    }
+                }
             }
             if (isset($data['result'])) {
-                $this->setResult($data['result']);
-            }
-            if (isset($data['resultsInterpreter'])) {
-                $this->setResultsInterpreter($data['resultsInterpreter']);
+                $value = $data['result'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDiagnosticReport::__construct - Collection field \"result\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addResult($v);
+                    }
+                }
             }
             if (isset($data['specimen'])) {
-                $this->setSpecimen($data['specimen']);
+                $value = $data['specimen'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDiagnosticReport::__construct - Collection field \"specimen\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addSpecimen($v);
+                    }
+                }
             }
             if (isset($data['status'])) {
-                $this->setStatus($data['status']);
+                $value = $data['status'];
+                if (is_array($value)) {
+                    $value = new FHIRDiagnosticReportStatus($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDiagnosticReportStatus($value);
+                }
+                if (!($value instanceof FHIRDiagnosticReportStatus)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDiagnosticReport::__construct - Property \"status\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDiagnosticReportStatus or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setStatus($value);
             }
             if (isset($data['subject'])) {
-                $this->setSubject($data['subject']);
+                $value = $data['subject'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDiagnosticReport::__construct - Property \"subject\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setSubject($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -273,31 +452,31 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
-     * Details concerning a service requested.
+     * Details concerning a test or procedure requested.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setBasedOn(FHIRReference $basedOn = null)
+    public function addBasedOn(FHIRReference $basedOn = null)
     {
         if (null === $basedOn) {
             return $this; 
         }
-        $this->basedOn = $basedOn;
+        $this->basedOn[] = $basedOn;
         return $this;
     }
 
     /**
-     * Details concerning a service requested.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * Details concerning a test or procedure requested.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getBasedOn()
     {
         return $this->basedOn;
     }
-
 
     /**
      * A code that classifies the clinical discipline, department or diagnostic service that created the report (e.g. cardiology, biochemistry, hematology, MRI). This is used for searching, sorting and display purposes.
@@ -322,7 +501,6 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
         return $this->category;
     }
 
-
     /**
      * A code or name that describes this diagnostic report.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
@@ -346,9 +524,31 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
         return $this->code;
     }
 
+    /**
+     * Codes for the conclusion.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return $this
+     */
+    public function addCodedDiagnosis(FHIRCodeableConcept $codedDiagnosis = null)
+    {
+        if (null === $codedDiagnosis) {
+            return $this; 
+        }
+        $this->codedDiagnosis[] = $codedDiagnosis;
+        return $this;
+    }
 
     /**
-     * Concise and clinically contextualized summary conclusion (interpretation/impression) of the diagnostic report.
+     * Codes for the conclusion.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    public function getCodedDiagnosis()
+    {
+        return $this->codedDiagnosis;
+    }
+
+    /**
+     * Concise and clinically contextualized impression / summary of the diagnostic report.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
@@ -371,38 +571,13 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * Concise and clinically contextualized summary conclusion (interpretation/impression) of the diagnostic report.
+     * Concise and clinically contextualized impression / summary of the diagnostic report.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getConclusion()
     {
         return $this->conclusion;
     }
-
-
-    /**
-     * One or more codes that represent the summary conclusion (interpretation/impression) of the diagnostic report.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     * @return $this
-     */
-    public function setConclusionCode(FHIRCodeableConcept $conclusionCode = null)
-    {
-        if (null === $conclusionCode) {
-            return $this; 
-        }
-        $this->conclusionCode = $conclusionCode;
-        return $this;
-    }
-
-    /**
-     * One or more codes that represent the summary conclusion (interpretation/impression) of the diagnostic report.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public function getConclusionCode()
-    {
-        return $this->conclusionCode;
-    }
-
 
     /**
      * The healthcare event  (e.g. a patient and healthcare provider interaction) which this DiagnosticReport per is about.
@@ -427,9 +602,8 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
         return $this->context;
     }
 
-
     /**
-     * The time or time-period the observed values are related to. When the subject of the report is a patient, this is usually either the time of the procedure or of specimen collection(s), but very often the source of the date/time is not known, only the date/time itself.
+     * The time or time-period the observed values are related to. When the subject of the report is a patient, this is usually either the time of the procedure or of specimen collection(s), but very often the source of the date/time is not known, only the date/time itself. (choose any one of effective*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      * @return $this
      */
@@ -452,7 +626,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * The time or time-period the observed values are related to. When the subject of the report is a patient, this is usually either the time of the procedure or of specimen collection(s), but very often the source of the date/time is not known, only the date/time itself.
+     * The time or time-period the observed values are related to. When the subject of the report is a patient, this is usually either the time of the procedure or of specimen collection(s), but very often the source of the date/time is not known, only the date/time itself. (choose any one of effective*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getEffectiveDateTime()
@@ -460,9 +634,8 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
         return $this->effectiveDateTime;
     }
 
-
     /**
-     * The time or time-period the observed values are related to. When the subject of the report is a patient, this is usually either the time of the procedure or of specimen collection(s), but very often the source of the date/time is not known, only the date/time itself.
+     * The time or time-period the observed values are related to. When the subject of the report is a patient, this is usually either the time of the procedure or of specimen collection(s), but very often the source of the date/time is not known, only the date/time itself. (choose any one of effective*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
      * @return $this
      */
@@ -476,7 +649,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * The time or time-period the observed values are related to. When the subject of the report is a patient, this is usually either the time of the procedure or of specimen collection(s), but very often the source of the date/time is not known, only the date/time itself.
+     * The time or time-period the observed values are related to. When the subject of the report is a patient, this is usually either the time of the procedure or of specimen collection(s), but very often the source of the date/time is not known, only the date/time itself. (choose any one of effective*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getEffectivePeriod()
@@ -484,57 +657,77 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
         return $this->effectivePeriod;
     }
 
-
     /**
      * Identifiers assigned to this report by the performer or other systems.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
-    public function setIdentifier(FHIRIdentifier $identifier = null)
+    public function addIdentifier(FHIRIdentifier $identifier = null)
     {
         if (null === $identifier) {
             return $this; 
         }
-        $this->identifier = $identifier;
+        $this->identifier[] = $identifier;
         return $this;
     }
 
     /**
      * Identifiers assigned to this report by the performer or other systems.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
         return $this->identifier;
     }
 
+    /**
+     * A list of key images associated with this report. The images are generally created during the diagnostic process, and may be directly of the patient, or of treated specimens (i.e. slides of interest).
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDiagnosticReport\FHIRDiagnosticReportImage
+     * @return $this
+     */
+    public function addImage(FHIRDiagnosticReportImage $image = null)
+    {
+        if (null === $image) {
+            return $this; 
+        }
+        $this->image[] = $image;
+        return $this;
+    }
+
+    /**
+     * A list of key images associated with this report. The images are generally created during the diagnostic process, and may be directly of the patient, or of treated specimens (i.e. slides of interest).
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDiagnosticReport\FHIRDiagnosticReportImage[]
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
 
     /**
      * One or more links to full details of any imaging performed during the diagnostic investigation. Typically, this is imaging performed by DICOM enabled modalities, but this is not required. A fully enabled PACS viewer can use this information to provide views of the source images.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setImagingStudy(FHIRReference $imagingStudy = null)
+    public function addImagingStudy(FHIRReference $imagingStudy = null)
     {
         if (null === $imagingStudy) {
             return $this; 
         }
-        $this->imagingStudy = $imagingStudy;
+        $this->imagingStudy[] = $imagingStudy;
         return $this;
     }
 
     /**
      * One or more links to full details of any imaging performed during the diagnostic investigation. Typically, this is imaging performed by DICOM enabled modalities, but this is not required. A fully enabled PACS viewer can use this information to provide views of the source images.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getImagingStudy()
     {
         return $this->imagingStudy;
     }
 
-
     /**
-     * The date and time that this version of the report was made available to providers, typically after the report was reviewed and verified.
+     * The date and time that this version of the report was released from the source diagnostic service.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRInstant
      * @return $this
      */
@@ -557,7 +750,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * The date and time that this version of the report was made available to providers, typically after the report was reviewed and verified.
+     * The date and time that this version of the report was released from the source diagnostic service.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRInstant
      */
     public function getIssued()
@@ -565,153 +758,100 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
         return $this->issued;
     }
 
-
     /**
-     * A list of key images associated with this report. The images are generally created during the diagnostic process, and may be directly of the patient, or of treated specimens (i.e. slides of interest).
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDiagnosticReport\FHIRDiagnosticReportMedia
+     * Indicates who or what participated in producing the report.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDiagnosticReport\FHIRDiagnosticReportPerformer
      * @return $this
      */
-    public function setMedia(FHIRDiagnosticReportMedia $media = null)
-    {
-        if (null === $media) {
-            return $this; 
-        }
-        $this->media = $media;
-        return $this;
-    }
-
-    /**
-     * A list of key images associated with this report. The images are generally created during the diagnostic process, and may be directly of the patient, or of treated specimens (i.e. slides of interest).
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDiagnosticReport\FHIRDiagnosticReportMedia
-     */
-    public function getMedia()
-    {
-        return $this->media;
-    }
-
-
-    /**
-     * The diagnostic service that is responsible for issuing the report.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     * @return $this
-     */
-    public function setPerformer(FHIRReference $performer = null)
+    public function addPerformer(FHIRDiagnosticReportPerformer $performer = null)
     {
         if (null === $performer) {
             return $this; 
         }
-        $this->performer = $performer;
+        $this->performer[] = $performer;
         return $this;
     }
 
     /**
-     * The diagnostic service that is responsible for issuing the report.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * Indicates who or what participated in producing the report.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDiagnosticReport\FHIRDiagnosticReportPerformer[]
      */
     public function getPerformer()
     {
         return $this->performer;
     }
 
-
     /**
      * Rich text representation of the entire result as issued by the diagnostic service. Multiple formats are allowed but they SHALL be semantically equivalent.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRAttachment
      * @return $this
      */
-    public function setPresentedForm(FHIRAttachment $presentedForm = null)
+    public function addPresentedForm(FHIRAttachment $presentedForm = null)
     {
         if (null === $presentedForm) {
             return $this; 
         }
-        $this->presentedForm = $presentedForm;
+        $this->presentedForm[] = $presentedForm;
         return $this;
     }
 
     /**
      * Rich text representation of the entire result as issued by the diagnostic service. Multiple formats are allowed but they SHALL be semantically equivalent.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAttachment
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAttachment[]
      */
     public function getPresentedForm()
     {
         return $this->presentedForm;
     }
 
-
     /**
-     * [Observations](observation.html)  that are part of this diagnostic report.
+     * Observations that are part of this diagnostic report. Observations can be simple name/value pairs (e.g. "atomic" results), or they can be grouping observations that include references to other members of the group (e.g. "panels").
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setResult(FHIRReference $result = null)
+    public function addResult(FHIRReference $result = null)
     {
         if (null === $result) {
             return $this; 
         }
-        $this->result = $result;
+        $this->result[] = $result;
         return $this;
     }
 
     /**
-     * [Observations](observation.html)  that are part of this diagnostic report.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * Observations that are part of this diagnostic report. Observations can be simple name/value pairs (e.g. "atomic" results), or they can be grouping observations that include references to other members of the group (e.g. "panels").
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getResult()
     {
         return $this->result;
     }
 
-
-    /**
-     * The practitioner or organization that is responsible for the report's conclusions and interpretations.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     * @return $this
-     */
-    public function setResultsInterpreter(FHIRReference $resultsInterpreter = null)
-    {
-        if (null === $resultsInterpreter) {
-            return $this; 
-        }
-        $this->resultsInterpreter = $resultsInterpreter;
-        return $this;
-    }
-
-    /**
-     * The practitioner or organization that is responsible for the report's conclusions and interpretations.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getResultsInterpreter()
-    {
-        return $this->resultsInterpreter;
-    }
-
-
     /**
      * Details about the specimens on which this diagnostic report is based.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setSpecimen(FHIRReference $specimen = null)
+    public function addSpecimen(FHIRReference $specimen = null)
     {
         if (null === $specimen) {
             return $this; 
         }
-        $this->specimen = $specimen;
+        $this->specimen[] = $specimen;
         return $this;
     }
 
     /**
      * Details about the specimens on which this diagnostic report is based.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getSpecimen()
     {
         return $this->specimen;
     }
 
-
     /**
-     * The status of the diagnostic report.
+     * The status of the diagnostic report as a whole.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDiagnosticReportStatus
      * @return $this
      */
@@ -734,14 +874,13 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * The status of the diagnostic report.
+     * The status of the diagnostic report as a whole.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDiagnosticReportStatus
      */
     public function getStatus()
     {
         return $this->status;
     }
-
 
     /**
      * The subject of the report. Usually, but not always, this is a patient. However diagnostic services also perform analyses on specimens collected from a variety of other sources.
@@ -766,7 +905,6 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
         return $this->subject;
     }
 
-
     /**
      * @return string
      */
@@ -782,8 +920,16 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
     {
         $a = parent::jsonSerialize();
         $a['resourceType'] = self::FHIR_TYPE_NAME;
-        if (null !== ($v = $this->getBasedOn())) {
-            $a['basedOn'] = $v;
+        if (0 < count($values = $this->getBasedOn())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['basedOn'] = $vs;
+            }
         }
         if (null !== ($v = $this->getCategory())) {
             $a['category'] = $v;
@@ -791,11 +937,19 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
         if (null !== ($v = $this->getCode())) {
             $a['code'] = $v;
         }
+        if (0 < count($values = $this->getCodedDiagnosis())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['codedDiagnosis'] = $vs;
+            }
+        }
         if (null !== ($v = $this->getConclusion())) {
             $a['conclusion'] = $v;
-        }
-        if (null !== ($v = $this->getConclusionCode())) {
-            $a['conclusionCode'] = $v;
         }
         if (null !== ($v = $this->getContext())) {
             $a['context'] = $v;
@@ -806,32 +960,85 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
         if (null !== ($v = $this->getEffectivePeriod())) {
             $a['effectivePeriod'] = $v;
         }
-        if (null !== ($v = $this->getIdentifier())) {
-            $a['identifier'] = $v;
+        if (0 < count($values = $this->getIdentifier())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['identifier'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getImagingStudy())) {
-            $a['imagingStudy'] = $v;
+        if (0 < count($values = $this->getImage())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['image'] = $vs;
+            }
+        }
+        if (0 < count($values = $this->getImagingStudy())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['imagingStudy'] = $vs;
+            }
         }
         if (null !== ($v = $this->getIssued())) {
             $a['issued'] = $v;
         }
-        if (null !== ($v = $this->getMedia())) {
-            $a['media'] = $v;
+        if (0 < count($values = $this->getPerformer())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['performer'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getPerformer())) {
-            $a['performer'] = $v;
+        if (0 < count($values = $this->getPresentedForm())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['presentedForm'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getPresentedForm())) {
-            $a['presentedForm'] = $v;
+        if (0 < count($values = $this->getResult())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['result'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getResult())) {
-            $a['result'] = $v;
-        }
-        if (null !== ($v = $this->getResultsInterpreter())) {
-            $a['resultsInterpreter'] = $v;
-        }
-        if (null !== ($v = $this->getSpecimen())) {
-            $a['specimen'] = $v;
+        if (0 < count($values = $this->getSpecimen())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['specimen'] = $vs;
+            }
         }
         if (null !== ($v = $this->getStatus())) {
             $a['status'] = $v;
@@ -852,9 +1059,96 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<DiagnosticReport xmlns="http://hl7.org/fhir"></DiagnosticReport>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (0 < count($values = $this->getBasedOn())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('basedOn'));
+                }
+            }
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getCategory())) {
+            $v->xmlSerialize(true, $sxe->addChild('category'));
+        }
+        if (null !== ($v = $this->getCode())) {
+            $v->xmlSerialize(true, $sxe->addChild('code'));
+        }
+        if (0 < count($values = $this->getCodedDiagnosis())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('codedDiagnosis'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getConclusion())) {
+            $v->xmlSerialize(true, $sxe->addChild('conclusion'));
+        }
+        if (null !== ($v = $this->getContext())) {
+            $v->xmlSerialize(true, $sxe->addChild('context'));
+        }
+        if (null !== ($v = $this->getEffectiveDateTime())) {
+            $v->xmlSerialize(true, $sxe->addChild('effectiveDateTime'));
+        }
+        if (null !== ($v = $this->getEffectivePeriod())) {
+            $v->xmlSerialize(true, $sxe->addChild('effectivePeriod'));
+        }
+        if (0 < count($values = $this->getIdentifier())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('identifier'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getImage())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('image'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getImagingStudy())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('imagingStudy'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getIssued())) {
+            $v->xmlSerialize(true, $sxe->addChild('issued'));
+        }
+        if (0 < count($values = $this->getPerformer())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('performer'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getPresentedForm())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('presentedForm'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getResult())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('result'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getSpecimen())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('specimen'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('status'));
+        }
+        if (null !== ($v = $this->getSubject())) {
+            $v->xmlSerialize(true, $sxe->addChild('subject'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -65,7 +65,7 @@ namespace PHPFHIRGenerated\FHIRElement;
 use PHPFHIRGenerated\FHIRElement;
 
 /**
- * Specifies clinical/business/etc. metadata that can be used to retrieve, index and/or categorize an artifact. This metadata can either be specific to the applicable population (e.g., age category, DRG) or the specific context of care (e.g., venue, care setting, provider of care).
+ * Specifies clinical/business/etc metadata that can be used to retrieve, index and/or categorize an artifact. This metadata can either be specific to the applicable population (e.g., age category, DRG) or the specific context of care (e.g., venue, care setting, provider of care).
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
  *
  * Class FHIRUsageContext
@@ -80,25 +80,25 @@ class FHIRUsageContext extends FHIRElement implements \JsonSerializable
      * A code that identifies the type of context being specified by this usage context.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
-    public $code = null;
+    private $code = null;
 
     /**
-     * A value that defines the context specified in this context of use. The interpretation of the value is defined by the code.
+     * A value that defines the context specified in this context of use. The interpretation of the value is defined by the code. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $valueCodeableConcept = null;
+    private $valueCodeableConcept = null;
 
     /**
-     * A value that defines the context specified in this context of use. The interpretation of the value is defined by the code.
+     * A value that defines the context specified in this context of use. The interpretation of the value is defined by the code. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    public $valueQuantity = null;
+    private $valueQuantity = null;
 
     /**
-     * A value that defines the context specified in this context of use. The interpretation of the value is defined by the code.
+     * A value that defines the context specified in this context of use. The interpretation of the value is defined by the code. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
-    public $valueRange = null;
+    private $valueRange = null;
 
     /**
      * FHIRUsageContext Constructor
@@ -107,19 +107,46 @@ class FHIRUsageContext extends FHIRElement implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['code'])) {
-                $this->setCode($data['code']);
+                $value = $data['code'];
+                if (is_array($value)) {
+                    $value = new FHIRCoding($value);
+                } 
+                if (!($value instanceof FHIRCoding)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRUsageContext::__construct - Property \"code\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCoding or data to construct type, saw ".gettype($value));
+                }
+                $this->setCode($value);
             }
             if (isset($data['valueCodeableConcept'])) {
-                $this->setValueCodeableConcept($data['valueCodeableConcept']);
+                $value = $data['valueCodeableConcept'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRUsageContext::__construct - Property \"valueCodeableConcept\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueCodeableConcept($value);
             }
             if (isset($data['valueQuantity'])) {
-                $this->setValueQuantity($data['valueQuantity']);
+                $value = $data['valueQuantity'];
+                if (is_array($value)) {
+                    $value = new FHIRQuantity($value);
+                } 
+                if (!($value instanceof FHIRQuantity)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRUsageContext::__construct - Property \"valueQuantity\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueQuantity($value);
             }
             if (isset($data['valueRange'])) {
-                $this->setValueRange($data['valueRange']);
+                $value = $data['valueRange'];
+                if (is_array($value)) {
+                    $value = new FHIRRange($value);
+                } 
+                if (!($value instanceof FHIRRange)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRUsageContext::__construct - Property \"valueRange\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRRange or data to construct type, saw ".gettype($value));
+                }
+                $this->setValueRange($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -128,6 +155,7 @@ class FHIRUsageContext extends FHIRElement implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -153,9 +181,8 @@ class FHIRUsageContext extends FHIRElement implements \JsonSerializable
         return $this->code;
     }
 
-
     /**
-     * A value that defines the context specified in this context of use. The interpretation of the value is defined by the code.
+     * A value that defines the context specified in this context of use. The interpretation of the value is defined by the code. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
@@ -169,7 +196,7 @@ class FHIRUsageContext extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A value that defines the context specified in this context of use. The interpretation of the value is defined by the code.
+     * A value that defines the context specified in this context of use. The interpretation of the value is defined by the code. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getValueCodeableConcept()
@@ -177,9 +204,8 @@ class FHIRUsageContext extends FHIRElement implements \JsonSerializable
         return $this->valueCodeableConcept;
     }
 
-
     /**
-     * A value that defines the context specified in this context of use. The interpretation of the value is defined by the code.
+     * A value that defines the context specified in this context of use. The interpretation of the value is defined by the code. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity
      * @return $this
      */
@@ -193,7 +219,7 @@ class FHIRUsageContext extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A value that defines the context specified in this context of use. The interpretation of the value is defined by the code.
+     * A value that defines the context specified in this context of use. The interpretation of the value is defined by the code. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public function getValueQuantity()
@@ -201,9 +227,8 @@ class FHIRUsageContext extends FHIRElement implements \JsonSerializable
         return $this->valueQuantity;
     }
 
-
     /**
-     * A value that defines the context specified in this context of use. The interpretation of the value is defined by the code.
+     * A value that defines the context specified in this context of use. The interpretation of the value is defined by the code. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRRange
      * @return $this
      */
@@ -217,14 +242,13 @@ class FHIRUsageContext extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A value that defines the context specified in this context of use. The interpretation of the value is defined by the code.
+     * A value that defines the context specified in this context of use. The interpretation of the value is defined by the code. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public function getValueRange()
     {
         return $this->valueRange;
     }
-
 
     /**
      * @return string
@@ -265,9 +289,18 @@ class FHIRUsageContext extends FHIRElement implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<UsageContext xmlns="http://hl7.org/fhir"></UsageContext>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getCode())) {
+            $v->xmlSerialize(true, $sxe->addChild('code'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getValueCodeableConcept())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueCodeableConcept'));
+        }
+        if (null !== ($v = $this->getValueQuantity())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueQuantity'));
+        }
+        if (null !== ($v = $this->getValueRange())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueRange'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

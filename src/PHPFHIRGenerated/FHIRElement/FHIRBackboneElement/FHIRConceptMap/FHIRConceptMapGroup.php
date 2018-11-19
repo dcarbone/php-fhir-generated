@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -67,7 +67,7 @@ use PHPFHIRGenerated\FHIRElement\FHIRString;
 use PHPFHIRGenerated\FHIRElement\FHIRUri;
 
 /**
- * A statement of relationships from one set of concepts to one or more other concepts - either concepts in code systems, or data element/data element concepts, or classes in class models.
+ * A statement of relationships from one set of concepts to one or more other concepts - either code systems or data elements, or classes in class models.
  *
  * Class FHIRConceptMapGroup
  * @package PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap
@@ -79,39 +79,39 @@ class FHIRConceptMapGroup extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Mappings for an individual concept in the source to one or more concepts in the target.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapElement
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapElement[]
      */
-    public $element = null;
+    private $element = [];
 
     /**
-     * An absolute URI that identifies the source system where the concepts to be mapped are defined.
+     * An absolute URI that identifies the Code System (if the source is a value set that crosses more than one code system).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $source = null;
+    private $source = null;
 
     /**
      * The specific version of the code system, as determined by the code system authority.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $sourceVersion = null;
+    private $sourceVersion = null;
 
     /**
-     * An absolute URI that identifies the target system that the concepts will be mapped to.
+     * An absolute URI that identifies the code system of the target code (if the target is a value set that cross code systems).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $target = null;
+    private $target = null;
 
     /**
      * The specific version of the code system, as determined by the code system authority.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $targetVersion = null;
+    private $targetVersion = null;
 
     /**
-     * What to do when there is no mapping for the source concept. "Unmapped" does not include codes that are unamatched, and the unmapped element is ignored in a code is specified to have equivalence = unmatched.
+     * What to do when there is no match in the mappings in the group.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapUnmapped
      */
-    public $unmapped = null;
+    private $unmapped = null;
 
     /**
      * FHIRConceptMapGroup Constructor
@@ -120,25 +120,80 @@ class FHIRConceptMapGroup extends FHIRBackboneElement implements \JsonSerializab
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['element'])) {
-                $this->setElement($data['element']);
+                $value = $data['element'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRConceptMapElement($v);
+                        } 
+                        if (!($v instanceof FHIRConceptMapElement)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapGroup::__construct - Collection field \"element\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapElement or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addElement($v);
+                    }
+                }
             }
             if (isset($data['source'])) {
-                $this->setSource($data['source']);
+                $value = $data['source'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapGroup::__construct - Property \"source\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setSource($value);
             }
             if (isset($data['sourceVersion'])) {
-                $this->setSourceVersion($data['sourceVersion']);
+                $value = $data['sourceVersion'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapGroup::__construct - Property \"sourceVersion\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setSourceVersion($value);
             }
             if (isset($data['target'])) {
-                $this->setTarget($data['target']);
+                $value = $data['target'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapGroup::__construct - Property \"target\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setTarget($value);
             }
             if (isset($data['targetVersion'])) {
-                $this->setTargetVersion($data['targetVersion']);
+                $value = $data['targetVersion'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapGroup::__construct - Property \"targetVersion\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setTargetVersion($value);
             }
             if (isset($data['unmapped'])) {
-                $this->setUnmapped($data['unmapped']);
+                $value = $data['unmapped'];
+                if (is_array($value)) {
+                    $value = new FHIRConceptMapUnmapped($value);
+                } 
+                if (!($value instanceof FHIRConceptMapUnmapped)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapGroup::__construct - Property \"unmapped\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapUnmapped or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setUnmapped($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -147,6 +202,7 @@ class FHIRConceptMapGroup extends FHIRBackboneElement implements \JsonSerializab
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -154,27 +210,26 @@ class FHIRConceptMapGroup extends FHIRBackboneElement implements \JsonSerializab
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapElement
      * @return $this
      */
-    public function setElement(FHIRConceptMapElement $element = null)
+    public function addElement(FHIRConceptMapElement $element = null)
     {
         if (null === $element) {
             return $this; 
         }
-        $this->element = $element;
+        $this->element[] = $element;
         return $this;
     }
 
     /**
      * Mappings for an individual concept in the source to one or more concepts in the target.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapElement
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapElement[]
      */
     public function getElement()
     {
         return $this->element;
     }
 
-
     /**
-     * An absolute URI that identifies the source system where the concepts to be mapped are defined.
+     * An absolute URI that identifies the Code System (if the source is a value set that crosses more than one code system).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
@@ -197,14 +252,13 @@ class FHIRConceptMapGroup extends FHIRBackboneElement implements \JsonSerializab
     }
 
     /**
-     * An absolute URI that identifies the source system where the concepts to be mapped are defined.
+     * An absolute URI that identifies the Code System (if the source is a value set that crosses more than one code system).
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getSource()
     {
         return $this->source;
     }
-
 
     /**
      * The specific version of the code system, as determined by the code system authority.
@@ -238,9 +292,8 @@ class FHIRConceptMapGroup extends FHIRBackboneElement implements \JsonSerializab
         return $this->sourceVersion;
     }
 
-
     /**
-     * An absolute URI that identifies the target system that the concepts will be mapped to.
+     * An absolute URI that identifies the code system of the target code (if the target is a value set that cross code systems).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
@@ -263,14 +316,13 @@ class FHIRConceptMapGroup extends FHIRBackboneElement implements \JsonSerializab
     }
 
     /**
-     * An absolute URI that identifies the target system that the concepts will be mapped to.
+     * An absolute URI that identifies the code system of the target code (if the target is a value set that cross code systems).
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getTarget()
     {
         return $this->target;
     }
-
 
     /**
      * The specific version of the code system, as determined by the code system authority.
@@ -304,9 +356,8 @@ class FHIRConceptMapGroup extends FHIRBackboneElement implements \JsonSerializab
         return $this->targetVersion;
     }
 
-
     /**
-     * What to do when there is no mapping for the source concept. "Unmapped" does not include codes that are unamatched, and the unmapped element is ignored in a code is specified to have equivalence = unmatched.
+     * What to do when there is no match in the mappings in the group.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapUnmapped
      * @return $this
      */
@@ -320,14 +371,13 @@ class FHIRConceptMapGroup extends FHIRBackboneElement implements \JsonSerializab
     }
 
     /**
-     * What to do when there is no mapping for the source concept. "Unmapped" does not include codes that are unamatched, and the unmapped element is ignored in a code is specified to have equivalence = unmatched.
+     * What to do when there is no match in the mappings in the group.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapUnmapped
      */
     public function getUnmapped()
     {
         return $this->unmapped;
     }
-
 
     /**
      * @return string
@@ -343,8 +393,16 @@ class FHIRConceptMapGroup extends FHIRBackboneElement implements \JsonSerializab
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getElement())) {
-            $a['element'] = $v;
+        if (0 < count($values = $this->getElement())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['element'] = $vs;
+            }
         }
         if (null !== ($v = $this->getSource())) {
             $a['source'] = $v;
@@ -374,9 +432,28 @@ class FHIRConceptMapGroup extends FHIRBackboneElement implements \JsonSerializab
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ConceptMapGroup xmlns="http://hl7.org/fhir"></ConceptMapGroup>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (0 < count($values = $this->getElement())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('element'));
+                }
+            }
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getSource())) {
+            $v->xmlSerialize(true, $sxe->addChild('source'));
+        }
+        if (null !== ($v = $this->getSourceVersion())) {
+            $v->xmlSerialize(true, $sxe->addChild('sourceVersion'));
+        }
+        if (null !== ($v = $this->getTarget())) {
+            $v->xmlSerialize(true, $sxe->addChild('target'));
+        }
+        if (null !== ($v = $this->getTargetVersion())) {
+            $v->xmlSerialize(true, $sxe->addChild('targetVersion'));
+        }
+        if (null !== ($v = $this->getUnmapped())) {
+            $v->xmlSerialize(true, $sxe->addChild('unmapped'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

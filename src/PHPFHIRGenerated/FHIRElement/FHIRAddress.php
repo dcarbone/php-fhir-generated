@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -77,64 +77,64 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
     const FHIR_TYPE_NAME = 'Address';
 
     /**
-     * The name of the city, town, suburb, village or other community or delivery center.
+     * The name of the city, town, village or other community or delivery center.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $city = null;
+    private $city = null;
 
     /**
      * Country - a nation as commonly understood or generally accepted.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $country = null;
+    private $country = null;
 
     /**
      * The name of the administrative area (county).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $district = null;
+    private $district = null;
 
     /**
      * This component contains the house number, apartment number, street name, street direction,  P.O. Box number, delivery hints, and similar address information.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public $line = null;
+    private $line = [];
 
     /**
      * Time period when address was/is in use.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public $period = null;
+    private $period = null;
 
     /**
      * A postal code designating a region defined by the postal service.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $postalCode = null;
+    private $postalCode = null;
 
     /**
-     * Sub-unit of a country with limited sovereignty in a federally organized country. A code may be used if codes are in common use (e.g. US 2 letter state codes).
+     * Sub-unit of a country with limited sovereignty in a federally organized country. A code may be used if codes are in common use (i.e. US 2 letter state codes).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $state = null;
+    private $state = null;
 
     /**
-     * Specifies the entire address as it should be displayed e.g. on a postal label. This may be provided instead of or as well as the specific parts.
+     * A full text representation of the address.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $text = null;
+    private $text = null;
 
     /**
      * Distinguishes between physical addresses (those you can visit) and mailing addresses (e.g. PO Boxes and care-of addresses). Most addresses are both.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAddressType
      */
-    public $type = null;
+    private $type = null;
 
     /**
      * The purpose of this address.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAddressUse
      */
-    public $use = null;
+    private $use = null;
 
     /**
      * FHIRAddress Constructor
@@ -143,37 +143,130 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['city'])) {
-                $this->setCity($data['city']);
+                $value = $data['city'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRAddress::__construct - Property \"city\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setCity($value);
             }
             if (isset($data['country'])) {
-                $this->setCountry($data['country']);
+                $value = $data['country'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRAddress::__construct - Property \"country\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setCountry($value);
             }
             if (isset($data['district'])) {
-                $this->setDistrict($data['district']);
+                $value = $data['district'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRAddress::__construct - Property \"district\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setDistrict($value);
             }
             if (isset($data['line'])) {
-                $this->setLine($data['line']);
+                $value = $data['line'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRString($v);
+                        }  elseif (is_scalar($v)) {
+                            $v = new FHIRString($v);
+                        }
+                        if (!($v instanceof FHIRString)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRAddress::__construct - Collection field \"line\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addLine($v);
+                    }
+                }
             }
             if (isset($data['period'])) {
-                $this->setPeriod($data['period']);
+                $value = $data['period'];
+                if (is_array($value)) {
+                    $value = new FHIRPeriod($value);
+                } 
+                if (!($value instanceof FHIRPeriod)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRAddress::__construct - Property \"period\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPeriod or data to construct type, saw ".gettype($value));
+                }
+                $this->setPeriod($value);
             }
             if (isset($data['postalCode'])) {
-                $this->setPostalCode($data['postalCode']);
+                $value = $data['postalCode'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRAddress::__construct - Property \"postalCode\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setPostalCode($value);
             }
             if (isset($data['state'])) {
-                $this->setState($data['state']);
+                $value = $data['state'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRAddress::__construct - Property \"state\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setState($value);
             }
             if (isset($data['text'])) {
-                $this->setText($data['text']);
+                $value = $data['text'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRAddress::__construct - Property \"text\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setText($value);
             }
             if (isset($data['type'])) {
-                $this->setType($data['type']);
+                $value = $data['type'];
+                if (is_array($value)) {
+                    $value = new FHIRAddressType($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRAddressType($value);
+                }
+                if (!($value instanceof FHIRAddressType)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRAddress::__construct - Property \"type\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAddressType or data to construct type, saw ".gettype($value));
+                }
+                $this->setType($value);
             }
             if (isset($data['use'])) {
-                $this->setUse($data['use']);
+                $value = $data['use'];
+                if (is_array($value)) {
+                    $value = new FHIRAddressUse($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRAddressUse($value);
+                }
+                if (!($value instanceof FHIRAddressUse)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRAddress::__construct - Property \"use\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAddressUse or data to construct type, saw ".gettype($value));
+                }
+                $this->setUse($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -182,10 +275,11 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
-     * The name of the city, town, suburb, village or other community or delivery center.
+     * The name of the city, town, village or other community or delivery center.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
@@ -208,14 +302,13 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The name of the city, town, suburb, village or other community or delivery center.
+     * The name of the city, town, village or other community or delivery center.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getCity()
     {
         return $this->city;
     }
-
 
     /**
      * Country - a nation as commonly understood or generally accepted.
@@ -249,7 +342,6 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
         return $this->country;
     }
 
-
     /**
      * The name of the administrative area (county).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -282,13 +374,12 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
         return $this->district;
     }
 
-
     /**
      * This component contains the house number, apartment number, street name, street direction,  P.O. Box number, delivery hints, and similar address information.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
-    public function setLine($line)
+    public function addLine($line)
     {
         if (null === $line) {
             return $this; 
@@ -298,23 +389,22 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
         }
         if (!($line instanceof FHIRString)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRAddress::setLine - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                'FHIRAddress::addLine - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
                 gettype($line)
             ));
         }
-        $this->line = $line;
+        $this->line[] = $line;
         return $this;
     }
 
     /**
      * This component contains the house number, apartment number, street name, street direction,  P.O. Box number, delivery hints, and similar address information.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
     public function getLine()
     {
         return $this->line;
     }
-
 
     /**
      * Time period when address was/is in use.
@@ -338,7 +428,6 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
     {
         return $this->period;
     }
-
 
     /**
      * A postal code designating a region defined by the postal service.
@@ -372,9 +461,8 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
         return $this->postalCode;
     }
 
-
     /**
-     * Sub-unit of a country with limited sovereignty in a federally organized country. A code may be used if codes are in common use (e.g. US 2 letter state codes).
+     * Sub-unit of a country with limited sovereignty in a federally organized country. A code may be used if codes are in common use (i.e. US 2 letter state codes).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
@@ -397,7 +485,7 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Sub-unit of a country with limited sovereignty in a federally organized country. A code may be used if codes are in common use (e.g. US 2 letter state codes).
+     * Sub-unit of a country with limited sovereignty in a federally organized country. A code may be used if codes are in common use (i.e. US 2 letter state codes).
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getState()
@@ -405,9 +493,8 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
         return $this->state;
     }
 
-
     /**
-     * Specifies the entire address as it should be displayed e.g. on a postal label. This may be provided instead of or as well as the specific parts.
+     * A full text representation of the address.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
@@ -430,14 +517,13 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies the entire address as it should be displayed e.g. on a postal label. This may be provided instead of or as well as the specific parts.
+     * A full text representation of the address.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getText()
     {
         return $this->text;
     }
-
 
     /**
      * Distinguishes between physical addresses (those you can visit) and mailing addresses (e.g. PO Boxes and care-of addresses). Most addresses are both.
@@ -471,7 +557,6 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
         return $this->type;
     }
 
-
     /**
      * The purpose of this address.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRAddressUse
@@ -504,7 +589,6 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
         return $this->use;
     }
 
-
     /**
      * @return string
      */
@@ -528,8 +612,16 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
         if (null !== ($v = $this->getDistrict())) {
             $a['district'] = $v;
         }
-        if (null !== ($v = $this->getLine())) {
-            $a['line'] = $v;
+        if (0 < count($values = $this->getLine())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['line'] = $vs;
+            }
         }
         if (null !== ($v = $this->getPeriod())) {
             $a['period'] = $v;
@@ -562,9 +654,40 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Address xmlns="http://hl7.org/fhir"></Address>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getCity())) {
+            $v->xmlSerialize(true, $sxe->addChild('city'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getCountry())) {
+            $v->xmlSerialize(true, $sxe->addChild('country'));
+        }
+        if (null !== ($v = $this->getDistrict())) {
+            $v->xmlSerialize(true, $sxe->addChild('district'));
+        }
+        if (0 < count($values = $this->getLine())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('line'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getPeriod())) {
+            $v->xmlSerialize(true, $sxe->addChild('period'));
+        }
+        if (null !== ($v = $this->getPostalCode())) {
+            $v->xmlSerialize(true, $sxe->addChild('postalCode'));
+        }
+        if (null !== ($v = $this->getState())) {
+            $v->xmlSerialize(true, $sxe->addChild('state'));
+        }
+        if (null !== ($v = $this->getText())) {
+            $v->xmlSerialize(true, $sxe->addChild('text'));
+        }
+        if (null !== ($v = $this->getType())) {
+            $v->xmlSerialize(true, $sxe->addChild('type'));
+        }
+        if (null !== ($v = $this->getUse())) {
+            $v->xmlSerialize(true, $sxe->addChild('use'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

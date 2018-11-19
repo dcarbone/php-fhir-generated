@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImplementationGui
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImplementationGui
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -64,10 +64,9 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImplementationGui
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 use PHPFHIRGenerated\FHIRElement\FHIRBoolean;
-use PHPFHIRGenerated\FHIRElement\FHIRCanonical;
-use PHPFHIRGenerated\FHIRElement\FHIRId;
 use PHPFHIRGenerated\FHIRElement\FHIRReference;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
+use PHPFHIRGenerated\FHIRElement\FHIRUri;
 
 /**
  * A set of rules of how FHIR is used to solve a particular problem. This resource is used to gather all the parts of an implementation guide into a logical whole and to publish a computable definition of all the parts.
@@ -81,40 +80,46 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement implements \Js
     const FHIR_TYPE_NAME = 'ImplementationGuide.Resource';
 
     /**
+     * A short code that may be used to identify the resource throughout the implementation guide.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    private $acronym = null;
+
+    /**
      * A description of the reason that a resource has been included in the implementation guide.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $description = null;
+    private $description = null;
 
     /**
-     * If true or a reference, indicates the resource is an example instance.  If a reference is present, indicates that the example is an example of the specified profile.
+     * Whether a resource is included in the guide as part of the rules defined by the guide, or just as an example of a resource that conforms to the rules and/or help implementers understand the intent of the guide.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $exampleBoolean = null;
+    private $example = null;
 
     /**
-     * If true or a reference, indicates the resource is an example instance.  If a reference is present, indicates that the example is an example of the specified profile.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * Another resource that this resource is an example for. This is mostly used for resources that are included as examples of StructureDefinitions.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $exampleCanonical = null;
+    private $exampleFor = null;
 
     /**
      * A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $name = null;
+    private $name = null;
 
     /**
-     * Reference to the id of the pack this resource appears in.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRId
-     */
-    public $package = null;
-
-    /**
-     * Where this resource is found.
+     * Where this resource is found. (choose any one of source*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $reference = null;
+    private $sourceReference = null;
+
+    /**
+     * Where this resource is found. (choose any one of source*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
+     */
+    private $sourceUri = null;
 
     /**
      * FHIRImplementationGuideResource Constructor
@@ -123,25 +128,86 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement implements \Js
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
+            if (isset($data['acronym'])) {
+                $value = $data['acronym'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideResource::__construct - Property \"acronym\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setAcronym($value);
+            }
             if (isset($data['description'])) {
-                $this->setDescription($data['description']);
+                $value = $data['description'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideResource::__construct - Property \"description\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setDescription($value);
             }
-            if (isset($data['exampleBoolean'])) {
-                $this->setExampleBoolean($data['exampleBoolean']);
+            if (isset($data['example'])) {
+                $value = $data['example'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideResource::__construct - Property \"example\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value));
+                }
+                $this->setExample($value);
             }
-            if (isset($data['exampleCanonical'])) {
-                $this->setExampleCanonical($data['exampleCanonical']);
+            if (isset($data['exampleFor'])) {
+                $value = $data['exampleFor'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideResource::__construct - Property \"exampleFor\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setExampleFor($value);
             }
             if (isset($data['name'])) {
-                $this->setName($data['name']);
+                $value = $data['name'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideResource::__construct - Property \"name\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setName($value);
             }
-            if (isset($data['package'])) {
-                $this->setPackage($data['package']);
+            if (isset($data['sourceReference'])) {
+                $value = $data['sourceReference'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideResource::__construct - Property \"sourceReference\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setSourceReference($value);
             }
-            if (isset($data['reference'])) {
-                $this->setReference($data['reference']);
+            if (isset($data['sourceUri'])) {
+                $value = $data['sourceUri'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideResource::__construct - Property \"sourceUri\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value));
+                }
+                $this->setSourceUri($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -150,6 +216,39 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement implements \Js
                 ' seen.'
             );
         }
+        parent::__construct($data);
+    }
+
+    /**
+     * A short code that may be used to identify the resource throughout the implementation guide.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     * @return $this
+     */
+    public function setAcronym($acronym)
+    {
+        if (null === $acronym) {
+            return $this; 
+        }
+        if (is_scalar($acronym)) {
+            $acronym = new FHIRString($acronym);
+        }
+        if (!($acronym instanceof FHIRString)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRImplementationGuideResource::setAcronym - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                gettype($acronym)
+            ));
+        }
+        $this->acronym = $acronym;
+        return $this;
+    }
+
+    /**
+     * A short code that may be used to identify the resource throughout the implementation guide.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getAcronym()
+    {
+        return $this->acronym;
     }
 
     /**
@@ -184,72 +283,60 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement implements \Js
         return $this->description;
     }
 
-
     /**
-     * If true or a reference, indicates the resource is an example instance.  If a reference is present, indicates that the example is an example of the specified profile.
+     * Whether a resource is included in the guide as part of the rules defined by the guide, or just as an example of a resource that conforms to the rules and/or help implementers understand the intent of the guide.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      * @return $this
      */
-    public function setExampleBoolean($exampleBoolean)
+    public function setExample($example)
     {
-        if (null === $exampleBoolean) {
+        if (null === $example) {
             return $this; 
         }
-        if (is_scalar($exampleBoolean)) {
-            $exampleBoolean = new FHIRBoolean($exampleBoolean);
+        if (is_scalar($example)) {
+            $example = new FHIRBoolean($example);
         }
-        if (!($exampleBoolean instanceof FHIRBoolean)) {
+        if (!($example instanceof FHIRBoolean)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRImplementationGuideResource::setExampleBoolean - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or appropriate scalar value, %s seen.',
-                gettype($exampleBoolean)
+                'FHIRImplementationGuideResource::setExample - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or appropriate scalar value, %s seen.',
+                gettype($example)
             ));
         }
-        $this->exampleBoolean = $exampleBoolean;
+        $this->example = $example;
         return $this;
     }
 
     /**
-     * If true or a reference, indicates the resource is an example instance.  If a reference is present, indicates that the example is an example of the specified profile.
+     * Whether a resource is included in the guide as part of the rules defined by the guide, or just as an example of a resource that conforms to the rules and/or help implementers understand the intent of the guide.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getExampleBoolean()
+    public function getExample()
     {
-        return $this->exampleBoolean;
+        return $this->example;
     }
 
-
     /**
-     * If true or a reference, indicates the resource is an example instance.  If a reference is present, indicates that the example is an example of the specified profile.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * Another resource that this resource is an example for. This is mostly used for resources that are included as examples of StructureDefinitions.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setExampleCanonical($exampleCanonical)
+    public function setExampleFor(FHIRReference $exampleFor = null)
     {
-        if (null === $exampleCanonical) {
+        if (null === $exampleFor) {
             return $this; 
         }
-        if (is_scalar($exampleCanonical)) {
-            $exampleCanonical = new FHIRCanonical($exampleCanonical);
-        }
-        if (!($exampleCanonical instanceof FHIRCanonical)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRImplementationGuideResource::setExampleCanonical - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCanonical or appropriate scalar value, %s seen.',
-                gettype($exampleCanonical)
-            ));
-        }
-        $this->exampleCanonical = $exampleCanonical;
+        $this->exampleFor = $exampleFor;
         return $this;
     }
 
     /**
-     * If true or a reference, indicates the resource is an example instance.  If a reference is present, indicates that the example is an example of the specified profile.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * Another resource that this resource is an example for. This is mostly used for resources that are included as examples of StructureDefinitions.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getExampleCanonical()
+    public function getExampleFor()
     {
-        return $this->exampleCanonical;
+        return $this->exampleFor;
     }
-
 
     /**
      * A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).
@@ -283,63 +370,60 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement implements \Js
         return $this->name;
     }
 
-
     /**
-     * Reference to the id of the pack this resource appears in.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRId
-     * @return $this
-     */
-    public function setPackage($package)
-    {
-        if (null === $package) {
-            return $this; 
-        }
-        if (is_scalar($package)) {
-            $package = new FHIRId($package);
-        }
-        if (!($package instanceof FHIRId)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRImplementationGuideResource::setPackage - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRId or appropriate scalar value, %s seen.',
-                gettype($package)
-            ));
-        }
-        $this->package = $package;
-        return $this;
-    }
-
-    /**
-     * Reference to the id of the pack this resource appears in.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRId
-     */
-    public function getPackage()
-    {
-        return $this->package;
-    }
-
-
-    /**
-     * Where this resource is found.
+     * Where this resource is found. (choose any one of source*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setReference(FHIRReference $reference = null)
+    public function setSourceReference(FHIRReference $sourceReference = null)
     {
-        if (null === $reference) {
+        if (null === $sourceReference) {
             return $this; 
         }
-        $this->reference = $reference;
+        $this->sourceReference = $sourceReference;
         return $this;
     }
 
     /**
-     * Where this resource is found.
+     * Where this resource is found. (choose any one of source*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getReference()
+    public function getSourceReference()
     {
-        return $this->reference;
+        return $this->sourceReference;
     }
 
+    /**
+     * Where this resource is found. (choose any one of source*, but only one)
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
+     * @return $this
+     */
+    public function setSourceUri($sourceUri)
+    {
+        if (null === $sourceUri) {
+            return $this; 
+        }
+        if (is_scalar($sourceUri)) {
+            $sourceUri = new FHIRUri($sourceUri);
+        }
+        if (!($sourceUri instanceof FHIRUri)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRImplementationGuideResource::setSourceUri - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or appropriate scalar value, %s seen.',
+                gettype($sourceUri)
+            ));
+        }
+        $this->sourceUri = $sourceUri;
+        return $this;
+    }
+
+    /**
+     * Where this resource is found. (choose any one of source*, but only one)
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
+     */
+    public function getSourceUri()
+    {
+        return $this->sourceUri;
+    }
 
     /**
      * @return string
@@ -355,23 +439,26 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement implements \Js
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
+        if (null !== ($v = $this->getAcronym())) {
+            $a['acronym'] = $v;
+        }
         if (null !== ($v = $this->getDescription())) {
             $a['description'] = $v;
         }
-        if (null !== ($v = $this->getExampleBoolean())) {
-            $a['exampleBoolean'] = $v;
+        if (null !== ($v = $this->getExample())) {
+            $a['example'] = $v;
         }
-        if (null !== ($v = $this->getExampleCanonical())) {
-            $a['exampleCanonical'] = $v;
+        if (null !== ($v = $this->getExampleFor())) {
+            $a['exampleFor'] = $v;
         }
         if (null !== ($v = $this->getName())) {
             $a['name'] = $v;
         }
-        if (null !== ($v = $this->getPackage())) {
-            $a['package'] = $v;
+        if (null !== ($v = $this->getSourceReference())) {
+            $a['sourceReference'] = $v;
         }
-        if (null !== ($v = $this->getReference())) {
-            $a['reference'] = $v;
+        if (null !== ($v = $this->getSourceUri())) {
+            $a['sourceUri'] = $v;
         }
         return $a;
     }
@@ -386,9 +473,27 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement implements \Js
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ImplementationGuideResource xmlns="http://hl7.org/fhir"></ImplementationGuideResource>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getAcronym())) {
+            $v->xmlSerialize(true, $sxe->addChild('acronym'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getDescription())) {
+            $v->xmlSerialize(true, $sxe->addChild('description'));
+        }
+        if (null !== ($v = $this->getExample())) {
+            $v->xmlSerialize(true, $sxe->addChild('example'));
+        }
+        if (null !== ($v = $this->getExampleFor())) {
+            $v->xmlSerialize(true, $sxe->addChild('exampleFor'));
+        }
+        if (null !== ($v = $this->getName())) {
+            $v->xmlSerialize(true, $sxe->addChild('name'));
+        }
+        if (null !== ($v = $this->getSourceReference())) {
+            $v->xmlSerialize(true, $sxe->addChild('sourceReference'));
+        }
+        if (null !== ($v = $this->getSourceUri())) {
+            $v->xmlSerialize(true, $sxe->addChild('sourceUri'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

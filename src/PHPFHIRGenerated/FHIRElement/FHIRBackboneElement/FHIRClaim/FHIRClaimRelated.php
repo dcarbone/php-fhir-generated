@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaim;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaim;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -82,19 +82,19 @@ class FHIRClaimRelated extends FHIRBackboneElement implements \JsonSerializable
      * Other claims which are related to this claim such as prior claim versions or for related services.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $claim = null;
+    private $claim = null;
 
     /**
-     * An alternate organizational reference to the case or file to which this particular claim pertains - e.g. Property/Casualty insurer claim # or Workers Compensation case # .
+     * An alternate organizational reference to the case or file to which this particular claim pertains - eg Property/Casualy insurer claim # or Workers Compensation case # .
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public $reference = null;
+    private $reference = null;
 
     /**
-     * For example, prior or umbrella.
+     * For example prior or umbrella.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $relationship = null;
+    private $relationship = null;
 
     /**
      * FHIRClaimRelated Constructor
@@ -103,16 +103,36 @@ class FHIRClaimRelated extends FHIRBackboneElement implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['claim'])) {
-                $this->setClaim($data['claim']);
+                $value = $data['claim'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimRelated::__construct - Property \"claim\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setClaim($value);
             }
             if (isset($data['reference'])) {
-                $this->setReference($data['reference']);
+                $value = $data['reference'];
+                if (is_array($value)) {
+                    $value = new FHIRIdentifier($value);
+                } 
+                if (!($value instanceof FHIRIdentifier)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimRelated::__construct - Property \"reference\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($value));
+                }
+                $this->setReference($value);
             }
             if (isset($data['relationship'])) {
-                $this->setRelationship($data['relationship']);
+                $value = $data['relationship'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimRelated::__construct - Property \"relationship\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setRelationship($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -121,6 +141,7 @@ class FHIRClaimRelated extends FHIRBackboneElement implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -146,9 +167,8 @@ class FHIRClaimRelated extends FHIRBackboneElement implements \JsonSerializable
         return $this->claim;
     }
 
-
     /**
-     * An alternate organizational reference to the case or file to which this particular claim pertains - e.g. Property/Casualty insurer claim # or Workers Compensation case # .
+     * An alternate organizational reference to the case or file to which this particular claim pertains - eg Property/Casualy insurer claim # or Workers Compensation case # .
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
@@ -162,7 +182,7 @@ class FHIRClaimRelated extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * An alternate organizational reference to the case or file to which this particular claim pertains - e.g. Property/Casualty insurer claim # or Workers Compensation case # .
+     * An alternate organizational reference to the case or file to which this particular claim pertains - eg Property/Casualy insurer claim # or Workers Compensation case # .
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
     public function getReference()
@@ -170,9 +190,8 @@ class FHIRClaimRelated extends FHIRBackboneElement implements \JsonSerializable
         return $this->reference;
     }
 
-
     /**
-     * For example, prior or umbrella.
+     * For example prior or umbrella.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
@@ -186,14 +205,13 @@ class FHIRClaimRelated extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * For example, prior or umbrella.
+     * For example prior or umbrella.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getRelationship()
     {
         return $this->relationship;
     }
-
 
     /**
      * @return string
@@ -231,9 +249,15 @@ class FHIRClaimRelated extends FHIRBackboneElement implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ClaimRelated xmlns="http://hl7.org/fhir"></ClaimRelated>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getClaim())) {
+            $v->xmlSerialize(true, $sxe->addChild('claim'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getReference())) {
+            $v->xmlSerialize(true, $sxe->addChild('reference'));
+        }
+        if (null !== ($v = $this->getRelationship())) {
+            $v->xmlSerialize(true, $sxe->addChild('relationship'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

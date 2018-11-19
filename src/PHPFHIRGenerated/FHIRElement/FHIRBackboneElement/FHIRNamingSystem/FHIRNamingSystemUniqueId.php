@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRNamingSystem;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRNamingSystem;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -83,31 +83,31 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements \JsonSeria
      * Notes about the past or intended usage of this identifier.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $comment = null;
+    private $comment = null;
 
     /**
      * Identifies the period of time over which this identifier is considered appropriate to refer to the naming system.  Outside of this window, the identifier might be non-deterministic.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public $period = null;
+    private $period = null;
 
     /**
      * Indicates whether this identifier is the "preferred" identifier of this type.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $preferred = null;
+    private $preferred = null;
 
     /**
      * Identifies the unique identifier scheme used for this particular identifier.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRNamingSystemIdentifierType
      */
-    public $type = null;
+    private $type = null;
 
     /**
      * The string that should be sent over the wire to identify the code system or identifier system.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $value = null;
+    private $value = null;
 
     /**
      * FHIRNamingSystemUniqueId Constructor
@@ -116,22 +116,64 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements \JsonSeria
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['comment'])) {
-                $this->setComment($data['comment']);
+                $value = $data['comment'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRNamingSystem\FHIRNamingSystemUniqueId::__construct - Property \"comment\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setComment($value);
             }
             if (isset($data['period'])) {
-                $this->setPeriod($data['period']);
+                $value = $data['period'];
+                if (is_array($value)) {
+                    $value = new FHIRPeriod($value);
+                } 
+                if (!($value instanceof FHIRPeriod)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRNamingSystem\FHIRNamingSystemUniqueId::__construct - Property \"period\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPeriod or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setPeriod($value);
             }
             if (isset($data['preferred'])) {
-                $this->setPreferred($data['preferred']);
+                $value = $data['preferred'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRNamingSystem\FHIRNamingSystemUniqueId::__construct - Property \"preferred\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setPreferred($value);
             }
             if (isset($data['type'])) {
-                $this->setType($data['type']);
+                $value = $data['type'];
+                if (is_array($value)) {
+                    $value = new FHIRNamingSystemIdentifierType($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRNamingSystemIdentifierType($value);
+                }
+                if (!($value instanceof FHIRNamingSystemIdentifierType)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRNamingSystem\FHIRNamingSystemUniqueId::__construct - Property \"type\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRNamingSystemIdentifierType or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setType($value);
             }
             if (isset($data['value'])) {
-                $this->setValue($data['value']);
+                $value = $data['value'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRNamingSystem\FHIRNamingSystemUniqueId::__construct - Property \"value\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setValue($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -140,6 +182,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements \JsonSeria
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -174,7 +217,6 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements \JsonSeria
         return $this->comment;
     }
 
-
     /**
      * Identifies the period of time over which this identifier is considered appropriate to refer to the naming system.  Outside of this window, the identifier might be non-deterministic.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
@@ -197,7 +239,6 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements \JsonSeria
     {
         return $this->period;
     }
-
 
     /**
      * Indicates whether this identifier is the "preferred" identifier of this type.
@@ -231,7 +272,6 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements \JsonSeria
         return $this->preferred;
     }
 
-
     /**
      * Identifies the unique identifier scheme used for this particular identifier.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRNamingSystemIdentifierType
@@ -264,7 +304,6 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements \JsonSeria
         return $this->type;
     }
 
-
     /**
      * The string that should be sent over the wire to identify the code system or identifier system.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -296,7 +335,6 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements \JsonSeria
     {
         return $this->value;
     }
-
 
     /**
      * @return string
@@ -340,9 +378,21 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements \JsonSeria
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<NamingSystemUniqueId xmlns="http://hl7.org/fhir"></NamingSystemUniqueId>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getComment())) {
+            $v->xmlSerialize(true, $sxe->addChild('comment'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getPeriod())) {
+            $v->xmlSerialize(true, $sxe->addChild('period'));
+        }
+        if (null !== ($v = $this->getPreferred())) {
+            $v->xmlSerialize(true, $sxe->addChild('preferred'));
+        }
+        if (null !== ($v = $this->getType())) {
+            $v->xmlSerialize(true, $sxe->addChild('type'));
+        }
+        if (null !== ($v = $this->getValue())) {
+            $v->xmlSerialize(true, $sxe->addChild('value'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

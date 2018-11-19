@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,11 +63,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRAnnotation;
-use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceDeviceName;
-use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceProperty;
-use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceSpecialization;
-use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceUdiCarrier;
-use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceVersion;
+use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceUdi;
 use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
 use PHPFHIRGenerated\FHIRElement\FHIRContactPoint;
 use PHPFHIRGenerated\FHIRElement\FHIRDateTime;
@@ -79,7 +75,7 @@ use PHPFHIRGenerated\FHIRElement\FHIRUri;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
 /**
- * This resource identifies a type of a manufactured item that is used in the provision of healthcare without being substantially changed through that activity. The device may be a medical or non-medical device.  Medical devices include durable (reusable) medical equipment, implantable devices, as well as disposable equipment used for diagnostic, treatment, and research for healthcare and public health.  Non-medical devices may include items such as a machine, cellphone, computer, application, etc. This is the catalog description of a device (not the specific instance).
+ * This resource identifies an instance or a type of a manufactured item that is used in the provision of healthcare without being substantially changed through that activity. The device may be a medical or non-medical device.  Medical devices include durable (reusable) medical equipment, implantable devices, as well as disposable equipment used for diagnostic, treatment, and research for healthcare and public health.  Non-medical devices may include items such as a machine, cellphone, computer, application, etc.
  * If the element is present, it must have either a @value, an @id, or extensions
  *
  * Class FHIRDevice
@@ -92,159 +88,105 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Contact details for an organization or a particular human that is responsible for the device.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactPoint
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactPoint[]
      */
-    public $contact = null;
-
-    /**
-     * The reference to the definition for the device.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $definition = null;
-
-    /**
-     * This represents the manufacturer's name of the device as provided by the device, from a UDI label, or by a person describing the Device.  This typically would be used when a person provides the name(s) or when the device represents one of the names available from DeviceDefinition.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceDeviceName
-     */
-    public $deviceName = null;
-
-    /**
-     * The distinct identification code required by §1271.290(c) for a human cell, tissue, or cellular and tissue-based product regulated as a device.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public $distinctIdentificationCode = null;
+    private $contact = [];
 
     /**
      * The date and time beyond which this device is no longer valid or should not be used (if applicable).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $expirationDate = null;
+    private $expirationDate = null;
 
     /**
      * Unique instance identifiers assigned to a device by manufacturers other organizations or owners.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = null;
+    private $identifier = [];
 
     /**
      * The place where the device can be found.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $location = null;
+    private $location = null;
 
     /**
      * Lot number assigned by the manufacturer.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $lotNumber = null;
+    private $lotNumber = null;
 
     /**
      * The date and time when the device was manufactured.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $manufactureDate = null;
+    private $manufactureDate = null;
 
     /**
      * A name of the manufacturer.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $manufacturer = null;
+    private $manufacturer = null;
 
     /**
-     * The model number for the device.
+     * The "model" is an identifier assigned by the manufacturer to identify the product by its type. This number is shared by the all devices sold as the same type.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $modelNumber = null;
+    private $model = null;
 
     /**
      * Descriptive information, usage information or implantation information that is not captured in an existing element.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
-    public $note = null;
+    private $note = [];
 
     /**
      * An organization that is responsible for the provision and ongoing maintenance of the device.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $owner = null;
-
-    /**
-     * The parent device.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $parent = null;
-
-    /**
-     * The part number of thedevice.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public $partNumber = null;
+    private $owner = null;
 
     /**
      * Patient information, If the device is affixed to a person.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $patient = null;
-
-    /**
-     * The actual configuration settings of a device as it actually operates, e.g., regulation status, time properties.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceProperty
-     */
-    public $property = null;
+    private $patient = null;
 
     /**
      * Provides additional safety characteristics about a medical device.  For example devices containing latex.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $safety = null;
-
-    /**
-     * The serial number assigned by the organization when the device was manufactured.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public $serialNumber = null;
-
-    /**
-     * The capabilities supported on a  device, the standards to which the device conforms for a particular purpose, and used for the communication.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceSpecialization
-     */
-    public $specialization = null;
+    private $safety = [];
 
     /**
      * Status of the Device availability.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRFHIRDeviceStatus
      */
-    public $status = null;
+    private $status = null;
 
     /**
-     * Reason for the dtatus of the Device availability.
+     * Code or identifier to identify a kind of device.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $statusReason = null;
+    private $type = null;
 
     /**
-     * The kind or type of device.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * [Unique device identifier (UDI)](device.html#5.11.3.2.2) assigned to device label or package.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceUdi
      */
-    public $type = null;
-
-    /**
-     * Unique device identifier (UDI) assigned to device label or package.  Note that the Device may include multiple udiCarriers as it either may include just the udiCarrier for the jurisdiction it is sold, or for multiple jurisdictions it could have been sold.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceUdiCarrier
-     */
-    public $udiCarrier = null;
+    private $udi = null;
 
     /**
      * A network address on which the device may be contacted directly.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $url = null;
+    private $url = null;
 
     /**
-     * The actual design of the device or software version running on the device.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceVersion
+     * The version of the device, if the device has multiple releases under the same model, or if the device is software or carries firmware.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $version = null;
+    private $version = null;
 
     /**
      * FHIRDevice Constructor
@@ -253,85 +195,216 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['contact'])) {
-                $this->setContact($data['contact']);
-            }
-            if (isset($data['definition'])) {
-                $this->setDefinition($data['definition']);
-            }
-            if (isset($data['deviceName'])) {
-                $this->setDeviceName($data['deviceName']);
-            }
-            if (isset($data['distinctIdentificationCode'])) {
-                $this->setDistinctIdentificationCode($data['distinctIdentificationCode']);
+                $value = $data['contact'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRContactPoint($v);
+                        } 
+                        if (!($v instanceof FHIRContactPoint)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDevice::__construct - Collection field \"contact\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRContactPoint or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addContact($v);
+                    }
+                }
             }
             if (isset($data['expirationDate'])) {
-                $this->setExpirationDate($data['expirationDate']);
+                $value = $data['expirationDate'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDevice::__construct - Property \"expirationDate\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value));
+                }
+                $this->setExpirationDate($value);
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRIdentifier($v);
+                        } 
+                        if (!($v instanceof FHIRIdentifier)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDevice::__construct - Collection field \"identifier\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addIdentifier($v);
+                    }
+                }
             }
             if (isset($data['location'])) {
-                $this->setLocation($data['location']);
+                $value = $data['location'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDevice::__construct - Property \"location\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setLocation($value);
             }
             if (isset($data['lotNumber'])) {
-                $this->setLotNumber($data['lotNumber']);
+                $value = $data['lotNumber'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDevice::__construct - Property \"lotNumber\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setLotNumber($value);
             }
             if (isset($data['manufactureDate'])) {
-                $this->setManufactureDate($data['manufactureDate']);
+                $value = $data['manufactureDate'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDevice::__construct - Property \"manufactureDate\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value));
+                }
+                $this->setManufactureDate($value);
             }
             if (isset($data['manufacturer'])) {
-                $this->setManufacturer($data['manufacturer']);
+                $value = $data['manufacturer'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDevice::__construct - Property \"manufacturer\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setManufacturer($value);
             }
-            if (isset($data['modelNumber'])) {
-                $this->setModelNumber($data['modelNumber']);
+            if (isset($data['model'])) {
+                $value = $data['model'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDevice::__construct - Property \"model\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setModel($value);
             }
             if (isset($data['note'])) {
-                $this->setNote($data['note']);
+                $value = $data['note'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRAnnotation($v);
+                        } 
+                        if (!($v instanceof FHIRAnnotation)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDevice::__construct - Collection field \"note\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAnnotation or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addNote($v);
+                    }
+                }
             }
             if (isset($data['owner'])) {
-                $this->setOwner($data['owner']);
-            }
-            if (isset($data['parent'])) {
-                $this->setParent($data['parent']);
-            }
-            if (isset($data['partNumber'])) {
-                $this->setPartNumber($data['partNumber']);
+                $value = $data['owner'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDevice::__construct - Property \"owner\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setOwner($value);
             }
             if (isset($data['patient'])) {
-                $this->setPatient($data['patient']);
-            }
-            if (isset($data['property'])) {
-                $this->setProperty($data['property']);
+                $value = $data['patient'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDevice::__construct - Property \"patient\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setPatient($value);
             }
             if (isset($data['safety'])) {
-                $this->setSafety($data['safety']);
-            }
-            if (isset($data['serialNumber'])) {
-                $this->setSerialNumber($data['serialNumber']);
-            }
-            if (isset($data['specialization'])) {
-                $this->setSpecialization($data['specialization']);
+                $value = $data['safety'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDevice::__construct - Collection field \"safety\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addSafety($v);
+                    }
+                }
             }
             if (isset($data['status'])) {
-                $this->setStatus($data['status']);
-            }
-            if (isset($data['statusReason'])) {
-                $this->setStatusReason($data['statusReason']);
+                $value = $data['status'];
+                if (is_array($value)) {
+                    $value = new FHIRFHIRDeviceStatus($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRFHIRDeviceStatus($value);
+                }
+                if (!($value instanceof FHIRFHIRDeviceStatus)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDevice::__construct - Property \"status\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRFHIRDeviceStatus or data to construct type, saw ".gettype($value));
+                }
+                $this->setStatus($value);
             }
             if (isset($data['type'])) {
-                $this->setType($data['type']);
+                $value = $data['type'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDevice::__construct - Property \"type\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setType($value);
             }
-            if (isset($data['udiCarrier'])) {
-                $this->setUdiCarrier($data['udiCarrier']);
+            if (isset($data['udi'])) {
+                $value = $data['udi'];
+                if (is_array($value)) {
+                    $value = new FHIRDeviceUdi($value);
+                } 
+                if (!($value instanceof FHIRDeviceUdi)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDevice::__construct - Property \"udi\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceUdi or data to construct type, saw ".gettype($value));
+                }
+                $this->setUdi($value);
             }
             if (isset($data['url'])) {
-                $this->setUrl($data['url']);
+                $value = $data['url'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDevice::__construct - Property \"url\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value));
+                }
+                $this->setUrl($value);
             }
             if (isset($data['version'])) {
-                $this->setVersion($data['version']);
+                $value = $data['version'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDevice::__construct - Property \"version\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setVersion($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -340,6 +413,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -347,105 +421,23 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContactPoint
      * @return $this
      */
-    public function setContact(FHIRContactPoint $contact = null)
+    public function addContact(FHIRContactPoint $contact = null)
     {
         if (null === $contact) {
             return $this; 
         }
-        $this->contact = $contact;
+        $this->contact[] = $contact;
         return $this;
     }
 
     /**
      * Contact details for an organization or a particular human that is responsible for the device.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactPoint
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactPoint[]
      */
     public function getContact()
     {
         return $this->contact;
     }
-
-
-    /**
-     * The reference to the definition for the device.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     * @return $this
-     */
-    public function setDefinition(FHIRReference $definition = null)
-    {
-        if (null === $definition) {
-            return $this; 
-        }
-        $this->definition = $definition;
-        return $this;
-    }
-
-    /**
-     * The reference to the definition for the device.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getDefinition()
-    {
-        return $this->definition;
-    }
-
-
-    /**
-     * This represents the manufacturer's name of the device as provided by the device, from a UDI label, or by a person describing the Device.  This typically would be used when a person provides the name(s) or when the device represents one of the names available from DeviceDefinition.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceDeviceName
-     * @return $this
-     */
-    public function setDeviceName(FHIRDeviceDeviceName $deviceName = null)
-    {
-        if (null === $deviceName) {
-            return $this; 
-        }
-        $this->deviceName = $deviceName;
-        return $this;
-    }
-
-    /**
-     * This represents the manufacturer's name of the device as provided by the device, from a UDI label, or by a person describing the Device.  This typically would be used when a person provides the name(s) or when the device represents one of the names available from DeviceDefinition.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceDeviceName
-     */
-    public function getDeviceName()
-    {
-        return $this->deviceName;
-    }
-
-
-    /**
-     * The distinct identification code required by §1271.290(c) for a human cell, tissue, or cellular and tissue-based product regulated as a device.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
-     * @return $this
-     */
-    public function setDistinctIdentificationCode($distinctIdentificationCode)
-    {
-        if (null === $distinctIdentificationCode) {
-            return $this; 
-        }
-        if (is_scalar($distinctIdentificationCode)) {
-            $distinctIdentificationCode = new FHIRString($distinctIdentificationCode);
-        }
-        if (!($distinctIdentificationCode instanceof FHIRString)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRDevice::setDistinctIdentificationCode - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
-                gettype($distinctIdentificationCode)
-            ));
-        }
-        $this->distinctIdentificationCode = $distinctIdentificationCode;
-        return $this;
-    }
-
-    /**
-     * The distinct identification code required by §1271.290(c) for a human cell, tissue, or cellular and tissue-based product regulated as a device.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public function getDistinctIdentificationCode()
-    {
-        return $this->distinctIdentificationCode;
-    }
-
 
     /**
      * The date and time beyond which this device is no longer valid or should not be used (if applicable).
@@ -479,30 +471,28 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
         return $this->expirationDate;
     }
 
-
     /**
      * Unique instance identifiers assigned to a device by manufacturers other organizations or owners.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
-    public function setIdentifier(FHIRIdentifier $identifier = null)
+    public function addIdentifier(FHIRIdentifier $identifier = null)
     {
         if (null === $identifier) {
             return $this; 
         }
-        $this->identifier = $identifier;
+        $this->identifier[] = $identifier;
         return $this;
     }
 
     /**
      * Unique instance identifiers assigned to a device by manufacturers other organizations or owners.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
         return $this->identifier;
     }
-
 
     /**
      * The place where the device can be found.
@@ -526,7 +516,6 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
     {
         return $this->location;
     }
-
 
     /**
      * Lot number assigned by the manufacturer.
@@ -560,7 +549,6 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
         return $this->lotNumber;
     }
 
-
     /**
      * The date and time when the device was manufactured.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
@@ -592,7 +580,6 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
     {
         return $this->manufactureDate;
     }
-
 
     /**
      * A name of the manufacturer.
@@ -626,63 +613,60 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
         return $this->manufacturer;
     }
 
-
     /**
-     * The model number for the device.
+     * The "model" is an identifier assigned by the manufacturer to identify the product by its type. This number is shared by the all devices sold as the same type.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
-    public function setModelNumber($modelNumber)
+    public function setModel($model)
     {
-        if (null === $modelNumber) {
+        if (null === $model) {
             return $this; 
         }
-        if (is_scalar($modelNumber)) {
-            $modelNumber = new FHIRString($modelNumber);
+        if (is_scalar($model)) {
+            $model = new FHIRString($model);
         }
-        if (!($modelNumber instanceof FHIRString)) {
+        if (!($model instanceof FHIRString)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRDevice::setModelNumber - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
-                gettype($modelNumber)
+                'FHIRDevice::setModel - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                gettype($model)
             ));
         }
-        $this->modelNumber = $modelNumber;
+        $this->model = $model;
         return $this;
     }
 
     /**
-     * The model number for the device.
+     * The "model" is an identifier assigned by the manufacturer to identify the product by its type. This number is shared by the all devices sold as the same type.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getModelNumber()
+    public function getModel()
     {
-        return $this->modelNumber;
+        return $this->model;
     }
-
 
     /**
      * Descriptive information, usage information or implantation information that is not captured in an existing element.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation
      * @return $this
      */
-    public function setNote(FHIRAnnotation $note = null)
+    public function addNote(FHIRAnnotation $note = null)
     {
         if (null === $note) {
             return $this; 
         }
-        $this->note = $note;
+        $this->note[] = $note;
         return $this;
     }
 
     /**
      * Descriptive information, usage information or implantation information that is not captured in an existing element.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
         return $this->note;
     }
-
 
     /**
      * An organization that is responsible for the provision and ongoing maintenance of the device.
@@ -707,64 +691,6 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
         return $this->owner;
     }
 
-
-    /**
-     * The parent device.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     * @return $this
-     */
-    public function setParent(FHIRReference $parent = null)
-    {
-        if (null === $parent) {
-            return $this; 
-        }
-        $this->parent = $parent;
-        return $this;
-    }
-
-    /**
-     * The parent device.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getParent()
-    {
-        return $this->parent;
-    }
-
-
-    /**
-     * The part number of thedevice.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
-     * @return $this
-     */
-    public function setPartNumber($partNumber)
-    {
-        if (null === $partNumber) {
-            return $this; 
-        }
-        if (is_scalar($partNumber)) {
-            $partNumber = new FHIRString($partNumber);
-        }
-        if (!($partNumber instanceof FHIRString)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRDevice::setPartNumber - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
-                gettype($partNumber)
-            ));
-        }
-        $this->partNumber = $partNumber;
-        return $this;
-    }
-
-    /**
-     * The part number of thedevice.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public function getPartNumber()
-    {
-        return $this->partNumber;
-    }
-
-
     /**
      * Patient information, If the device is affixed to a person.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -788,111 +714,28 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
         return $this->patient;
     }
 
-
-    /**
-     * The actual configuration settings of a device as it actually operates, e.g., regulation status, time properties.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceProperty
-     * @return $this
-     */
-    public function setProperty(FHIRDeviceProperty $property = null)
-    {
-        if (null === $property) {
-            return $this; 
-        }
-        $this->property = $property;
-        return $this;
-    }
-
-    /**
-     * The actual configuration settings of a device as it actually operates, e.g., regulation status, time properties.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceProperty
-     */
-    public function getProperty()
-    {
-        return $this->property;
-    }
-
-
     /**
      * Provides additional safety characteristics about a medical device.  For example devices containing latex.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setSafety(FHIRCodeableConcept $safety = null)
+    public function addSafety(FHIRCodeableConcept $safety = null)
     {
         if (null === $safety) {
             return $this; 
         }
-        $this->safety = $safety;
+        $this->safety[] = $safety;
         return $this;
     }
 
     /**
      * Provides additional safety characteristics about a medical device.  For example devices containing latex.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getSafety()
     {
         return $this->safety;
     }
-
-
-    /**
-     * The serial number assigned by the organization when the device was manufactured.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
-     * @return $this
-     */
-    public function setSerialNumber($serialNumber)
-    {
-        if (null === $serialNumber) {
-            return $this; 
-        }
-        if (is_scalar($serialNumber)) {
-            $serialNumber = new FHIRString($serialNumber);
-        }
-        if (!($serialNumber instanceof FHIRString)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRDevice::setSerialNumber - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
-                gettype($serialNumber)
-            ));
-        }
-        $this->serialNumber = $serialNumber;
-        return $this;
-    }
-
-    /**
-     * The serial number assigned by the organization when the device was manufactured.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public function getSerialNumber()
-    {
-        return $this->serialNumber;
-    }
-
-
-    /**
-     * The capabilities supported on a  device, the standards to which the device conforms for a particular purpose, and used for the communication.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceSpecialization
-     * @return $this
-     */
-    public function setSpecialization(FHIRDeviceSpecialization $specialization = null)
-    {
-        if (null === $specialization) {
-            return $this; 
-        }
-        $this->specialization = $specialization;
-        return $this;
-    }
-
-    /**
-     * The capabilities supported on a  device, the standards to which the device conforms for a particular purpose, and used for the communication.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceSpecialization
-     */
-    public function getSpecialization()
-    {
-        return $this->specialization;
-    }
-
 
     /**
      * Status of the Device availability.
@@ -926,33 +769,8 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
         return $this->status;
     }
 
-
     /**
-     * Reason for the dtatus of the Device availability.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     * @return $this
-     */
-    public function setStatusReason(FHIRCodeableConcept $statusReason = null)
-    {
-        if (null === $statusReason) {
-            return $this; 
-        }
-        $this->statusReason = $statusReason;
-        return $this;
-    }
-
-    /**
-     * Reason for the dtatus of the Device availability.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public function getStatusReason()
-    {
-        return $this->statusReason;
-    }
-
-
-    /**
-     * The kind or type of device.
+     * Code or identifier to identify a kind of device.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
@@ -966,7 +784,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The kind or type of device.
+     * Code or identifier to identify a kind of device.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
@@ -974,30 +792,28 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
         return $this->type;
     }
 
-
     /**
-     * Unique device identifier (UDI) assigned to device label or package.  Note that the Device may include multiple udiCarriers as it either may include just the udiCarrier for the jurisdiction it is sold, or for multiple jurisdictions it could have been sold.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceUdiCarrier
+     * [Unique device identifier (UDI)](device.html#5.11.3.2.2) assigned to device label or package.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceUdi
      * @return $this
      */
-    public function setUdiCarrier(FHIRDeviceUdiCarrier $udiCarrier = null)
+    public function setUdi(FHIRDeviceUdi $udi = null)
     {
-        if (null === $udiCarrier) {
+        if (null === $udi) {
             return $this; 
         }
-        $this->udiCarrier = $udiCarrier;
+        $this->udi = $udi;
         return $this;
     }
 
     /**
-     * Unique device identifier (UDI) assigned to device label or package.  Note that the Device may include multiple udiCarriers as it either may include just the udiCarrier for the jurisdiction it is sold, or for multiple jurisdictions it could have been sold.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceUdiCarrier
+     * [Unique device identifier (UDI)](device.html#5.11.3.2.2) assigned to device label or package.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceUdi
      */
-    public function getUdiCarrier()
+    public function getUdi()
     {
-        return $this->udiCarrier;
+        return $this->udi;
     }
-
 
     /**
      * A network address on which the device may be contacted directly.
@@ -1031,30 +847,37 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
         return $this->url;
     }
 
-
     /**
-     * The actual design of the device or software version running on the device.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceVersion
+     * The version of the device, if the device has multiple releases under the same model, or if the device is software or carries firmware.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
-    public function setVersion(FHIRDeviceVersion $version = null)
+    public function setVersion($version)
     {
         if (null === $version) {
             return $this; 
+        }
+        if (is_scalar($version)) {
+            $version = new FHIRString($version);
+        }
+        if (!($version instanceof FHIRString)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRDevice::setVersion - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                gettype($version)
+            ));
         }
         $this->version = $version;
         return $this;
     }
 
     /**
-     * The actual design of the device or software version running on the device.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceVersion
+     * The version of the device, if the device has multiple releases under the same model, or if the device is software or carries firmware.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getVersion()
     {
         return $this->version;
     }
-
 
     /**
      * @return string
@@ -1071,23 +894,30 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
     {
         $a = parent::jsonSerialize();
         $a['resourceType'] = self::FHIR_TYPE_NAME;
-        if (null !== ($v = $this->getContact())) {
-            $a['contact'] = $v;
-        }
-        if (null !== ($v = $this->getDefinition())) {
-            $a['definition'] = $v;
-        }
-        if (null !== ($v = $this->getDeviceName())) {
-            $a['deviceName'] = $v;
-        }
-        if (null !== ($v = $this->getDistinctIdentificationCode())) {
-            $a['distinctIdentificationCode'] = $v;
+        if (0 < count($values = $this->getContact())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['contact'] = $vs;
+            }
         }
         if (null !== ($v = $this->getExpirationDate())) {
             $a['expirationDate'] = $v;
         }
-        if (null !== ($v = $this->getIdentifier())) {
-            $a['identifier'] = $v;
+        if (0 < count($values = $this->getIdentifier())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['identifier'] = $vs;
+            }
         }
         if (null !== ($v = $this->getLocation())) {
             $a['location'] = $v;
@@ -1101,47 +931,45 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getManufacturer())) {
             $a['manufacturer'] = $v;
         }
-        if (null !== ($v = $this->getModelNumber())) {
-            $a['modelNumber'] = $v;
+        if (null !== ($v = $this->getModel())) {
+            $a['model'] = $v;
         }
-        if (null !== ($v = $this->getNote())) {
-            $a['note'] = $v;
+        if (0 < count($values = $this->getNote())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['note'] = $vs;
+            }
         }
         if (null !== ($v = $this->getOwner())) {
             $a['owner'] = $v;
         }
-        if (null !== ($v = $this->getParent())) {
-            $a['parent'] = $v;
-        }
-        if (null !== ($v = $this->getPartNumber())) {
-            $a['partNumber'] = $v;
-        }
         if (null !== ($v = $this->getPatient())) {
             $a['patient'] = $v;
         }
-        if (null !== ($v = $this->getProperty())) {
-            $a['property'] = $v;
-        }
-        if (null !== ($v = $this->getSafety())) {
-            $a['safety'] = $v;
-        }
-        if (null !== ($v = $this->getSerialNumber())) {
-            $a['serialNumber'] = $v;
-        }
-        if (null !== ($v = $this->getSpecialization())) {
-            $a['specialization'] = $v;
+        if (0 < count($values = $this->getSafety())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['safety'] = $vs;
+            }
         }
         if (null !== ($v = $this->getStatus())) {
             $a['status'] = $v;
         }
-        if (null !== ($v = $this->getStatusReason())) {
-            $a['statusReason'] = $v;
-        }
         if (null !== ($v = $this->getType())) {
             $a['type'] = $v;
         }
-        if (null !== ($v = $this->getUdiCarrier())) {
-            $a['udiCarrier'] = $v;
+        if (null !== ($v = $this->getUdi())) {
+            $a['udi'] = $v;
         }
         if (null !== ($v = $this->getUrl())) {
             $a['url'] = $v;
@@ -1162,9 +990,73 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Device xmlns="http://hl7.org/fhir"></Device>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (0 < count($values = $this->getContact())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('contact'));
+                }
+            }
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getExpirationDate())) {
+            $v->xmlSerialize(true, $sxe->addChild('expirationDate'));
+        }
+        if (0 < count($values = $this->getIdentifier())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('identifier'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getLocation())) {
+            $v->xmlSerialize(true, $sxe->addChild('location'));
+        }
+        if (null !== ($v = $this->getLotNumber())) {
+            $v->xmlSerialize(true, $sxe->addChild('lotNumber'));
+        }
+        if (null !== ($v = $this->getManufactureDate())) {
+            $v->xmlSerialize(true, $sxe->addChild('manufactureDate'));
+        }
+        if (null !== ($v = $this->getManufacturer())) {
+            $v->xmlSerialize(true, $sxe->addChild('manufacturer'));
+        }
+        if (null !== ($v = $this->getModel())) {
+            $v->xmlSerialize(true, $sxe->addChild('model'));
+        }
+        if (0 < count($values = $this->getNote())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('note'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getOwner())) {
+            $v->xmlSerialize(true, $sxe->addChild('owner'));
+        }
+        if (null !== ($v = $this->getPatient())) {
+            $v->xmlSerialize(true, $sxe->addChild('patient'));
+        }
+        if (0 < count($values = $this->getSafety())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('safety'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('status'));
+        }
+        if (null !== ($v = $this->getType())) {
+            $v->xmlSerialize(true, $sxe->addChild('type'));
+        }
+        if (null !== ($v = $this->getUdi())) {
+            $v->xmlSerialize(true, $sxe->addChild('udi'));
+        }
+        if (null !== ($v = $this->getUrl())) {
+            $v->xmlSerialize(true, $sxe->addChild('url'));
+        }
+        if (null !== ($v = $this->getVersion())) {
+            $v->xmlSerialize(true, $sxe->addChild('version'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

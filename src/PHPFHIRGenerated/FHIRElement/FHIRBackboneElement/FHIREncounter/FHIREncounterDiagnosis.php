@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIREncounter;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIREncounter;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -82,19 +82,19 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement implements \JsonSeriali
      * Reason the encounter takes place, as specified using information from another resource. For admissions, this is the admission diagnosis. The indication will typically be a Condition (with other resources referenced in the evidence.detail), or a Procedure.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $condition = null;
+    private $condition = null;
 
     /**
      * Ranking of the diagnosis (for each role type).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
-    public $rank = null;
+    private $rank = null;
 
     /**
      * Role that this diagnosis has within the encounter (e.g. admission, billing, discharge …).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $role = null;
+    private $role = null;
 
     /**
      * FHIREncounterDiagnosis Constructor
@@ -103,16 +103,38 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement implements \JsonSeriali
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['condition'])) {
-                $this->setCondition($data['condition']);
+                $value = $data['condition'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterDiagnosis::__construct - Property \"condition\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setCondition($value);
             }
             if (isset($data['rank'])) {
-                $this->setRank($data['rank']);
+                $value = $data['rank'];
+                if (is_array($value)) {
+                    $value = new FHIRPositiveInt($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRPositiveInt($value);
+                }
+                if (!($value instanceof FHIRPositiveInt)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterDiagnosis::__construct - Property \"rank\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setRank($value);
             }
             if (isset($data['role'])) {
-                $this->setRole($data['role']);
+                $value = $data['role'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterDiagnosis::__construct - Property \"role\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setRole($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -121,6 +143,7 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement implements \JsonSeriali
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -145,7 +168,6 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement implements \JsonSeriali
     {
         return $this->condition;
     }
-
 
     /**
      * Ranking of the diagnosis (for each role type).
@@ -179,7 +201,6 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement implements \JsonSeriali
         return $this->rank;
     }
 
-
     /**
      * Role that this diagnosis has within the encounter (e.g. admission, billing, discharge …).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
@@ -202,7 +223,6 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement implements \JsonSeriali
     {
         return $this->role;
     }
-
 
     /**
      * @return string
@@ -240,9 +260,15 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement implements \JsonSeriali
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<EncounterDiagnosis xmlns="http://hl7.org/fhir"></EncounterDiagnosis>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getCondition())) {
+            $v->xmlSerialize(true, $sxe->addChild('condition'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getRank())) {
+            $v->xmlSerialize(true, $sxe->addChild('rank'));
+        }
+        if (null !== ($v = $this->getRole())) {
+            $v->xmlSerialize(true, $sxe->addChild('role'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

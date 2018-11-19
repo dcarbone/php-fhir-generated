@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -66,6 +66,7 @@ use PHPFHIRGenerated\FHIRElement\FHIRAttachment;
 use PHPFHIRGenerated\FHIRElement\FHIRBoolean;
 use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
 use PHPFHIRGenerated\FHIRElement\FHIRContactDetail;
+use PHPFHIRGenerated\FHIRElement\FHIRContributor;
 use PHPFHIRGenerated\FHIRElement\FHIRDataRequirement;
 use PHPFHIRGenerated\FHIRElement\FHIRDate;
 use PHPFHIRGenerated\FHIRElement\FHIRDateTime;
@@ -74,7 +75,6 @@ use PHPFHIRGenerated\FHIRElement\FHIRMarkdown;
 use PHPFHIRGenerated\FHIRElement\FHIRParameterDefinition;
 use PHPFHIRGenerated\FHIRElement\FHIRPeriod;
 use PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus;
-use PHPFHIRGenerated\FHIRElement\FHIRReference;
 use PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
 use PHPFHIRGenerated\FHIRElement\FHIRUri;
@@ -97,193 +97,157 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
-    public $approvalDate = null;
-
-    /**
-     * An individiual or organization primarily involved in the creation and maintenance of the content.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail
-     */
-    public $author = null;
+    private $approvalDate = null;
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
-    public $contact = null;
+    private $contact = [];
 
     /**
      * The content of the library as an Attachment. The content may be a reference to a url, or may be directly embedded as a base-64 string. Either way, the contentType of the attachment determines how to interpret the content.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment[]
      */
-    public $content = null;
+    private $content = [];
+
+    /**
+     * A contributor to the content of the library, including authors, editors, reviewers, and endorsers.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRContributor[]
+     */
+    private $contributor = [];
 
     /**
      * A copyright statement relating to the library and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the library.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public $copyright = null;
+    private $copyright = null;
 
     /**
      * Describes a set of data that must be provided in order to be able to successfully perform the computations defined by the library.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDataRequirement
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRDataRequirement[]
      */
-    public $dataRequirement = null;
+    private $dataRequirement = [];
 
     /**
-     * The date  (and optionally time) when the library was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the library changes.
+     * The date  (and optionally time) when the library was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the library changes.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $date = null;
+    private $date = null;
 
     /**
      * A free text natural language description of the library from a consumer's perspective.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public $description = null;
-
-    /**
-     * An individual or organization primarily responsible for internal coherence of the content.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail
-     */
-    public $editor = null;
+    private $description = null;
 
     /**
      * The period during which the library content was or is planned to be in active use.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public $effectivePeriod = null;
+    private $effectivePeriod = null;
 
     /**
-     * An individual or organization responsible for officially endorsing the content for use in some setting.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail
-     */
-    public $endorser = null;
-
-    /**
-     * A Boolean value to indicate that this library is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this library is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $experimental = null;
+    private $experimental = null;
 
     /**
      * A formal identifier that is used to identify this library when it is represented in other formats, or referenced in a specification, model, design or an instance. e.g. CMS or NQF identifiers for a measure artifact. Note that at least one identifier is required for non-experimental active artifacts.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = null;
+    private $identifier = [];
 
     /**
      * A legal or geographic region in which the library is intended to be used.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $jurisdiction = null;
+    private $jurisdiction = [];
 
     /**
-     * The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date.
+     * The date on which the resource content was last reviewed. Review happens periodically after approval, but doesn't change the original approval date.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
-    public $lastReviewDate = null;
+    private $lastReviewDate = null;
 
     /**
      * A natural language name identifying the library. This name should be usable as an identifier for the module by machine processing applications such as code generation.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $name = null;
+    private $name = null;
 
     /**
      * The parameter element defines parameters used by the library.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRParameterDefinition
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRParameterDefinition[]
      */
-    public $parameter = null;
+    private $parameter = [];
 
     /**
-     * The name of the organization or individual that published the library.
+     * The name of the individual or organization that published the library.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $publisher = null;
+    private $publisher = null;
 
     /**
-     * Explanation of why this library is needed and why it has been designed as it has.
+     * Explaination of why this library is needed and why it has been designed as it has.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public $purpose = null;
+    private $purpose = null;
 
     /**
      * Related artifacts such as additional documentation, justification, or bibliographic references.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact[]
      */
-    public $relatedArtifact = null;
-
-    /**
-     * An individual or organization primarily responsible for review of some aspect of the content.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail
-     */
-    public $reviewer = null;
+    private $relatedArtifact = [];
 
     /**
      * The status of this library. Enables tracking the life-cycle of the content.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus
      */
-    public $status = null;
-
-    /**
-     * A code or group definition that describes the intended subject of the contents of the library.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public $subjectCodeableConcept = null;
-
-    /**
-     * A code or group definition that describes the intended subject of the contents of the library.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $subjectReference = null;
-
-    /**
-     * An explanatory or alternate title for the library giving additional information about its content.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public $subtitle = null;
+    private $status = null;
 
     /**
      * A short, descriptive, user-friendly title for the library.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $title = null;
+    private $title = null;
 
     /**
      * Descriptive topics related to the content of the library. Topics provide a high-level categorization of the library that can be useful for filtering and searching.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $topic = null;
+    private $topic = [];
 
     /**
      * Identifies the type of library such as a Logic Library, Model Definition, Asset Collection, or Module Definition.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $type = null;
+    private $type = null;
 
     /**
-     * An absolute URI that is used to identify this library when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this library is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the library is stored on different servers.
+     * An absolute URI that is used to identify this library when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this library is (or will be) published. The URL SHOULD include the major version of the library. For more information see [Technical and Business Versions](resource.html#versions).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $url = null;
+    private $url = null;
 
     /**
      * A detailed description of how the library is used from a clinical perspective.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $usage = null;
+    private $usage = null;
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate library instances.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
-    public $useContext = null;
+    private $useContext = [];
 
     /**
      * The identifier that is used to identify this version of the library when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the library author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active artifacts.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $version = null;
+    private $version = null;
 
     /**
      * FHIRLibrary Constructor
@@ -292,103 +256,354 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['approvalDate'])) {
-                $this->setApprovalDate($data['approvalDate']);
-            }
-            if (isset($data['author'])) {
-                $this->setAuthor($data['author']);
+                $value = $data['approvalDate'];
+                if (is_array($value)) {
+                    $value = new FHIRDate($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDate($value);
+                }
+                if (!($value instanceof FHIRDate)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLibrary::__construct - Property \"approvalDate\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDate or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setApprovalDate($value);
             }
             if (isset($data['contact'])) {
-                $this->setContact($data['contact']);
+                $value = $data['contact'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRContactDetail($v);
+                        } 
+                        if (!($v instanceof FHIRContactDetail)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLibrary::__construct - Collection field \"contact\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRContactDetail or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addContact($v);
+                    }
+                }
             }
             if (isset($data['content'])) {
-                $this->setContent($data['content']);
+                $value = $data['content'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRAttachment($v);
+                        } 
+                        if (!($v instanceof FHIRAttachment)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLibrary::__construct - Collection field \"content\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAttachment or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addContent($v);
+                    }
+                }
+            }
+            if (isset($data['contributor'])) {
+                $value = $data['contributor'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRContributor($v);
+                        } 
+                        if (!($v instanceof FHIRContributor)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLibrary::__construct - Collection field \"contributor\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRContributor or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addContributor($v);
+                    }
+                }
             }
             if (isset($data['copyright'])) {
-                $this->setCopyright($data['copyright']);
+                $value = $data['copyright'];
+                if (is_array($value)) {
+                    $value = new FHIRMarkdown($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRMarkdown($value);
+                }
+                if (!($value instanceof FHIRMarkdown)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLibrary::__construct - Property \"copyright\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRMarkdown or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setCopyright($value);
             }
             if (isset($data['dataRequirement'])) {
-                $this->setDataRequirement($data['dataRequirement']);
+                $value = $data['dataRequirement'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRDataRequirement($v);
+                        } 
+                        if (!($v instanceof FHIRDataRequirement)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLibrary::__construct - Collection field \"dataRequirement\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDataRequirement or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addDataRequirement($v);
+                    }
+                }
             }
             if (isset($data['date'])) {
-                $this->setDate($data['date']);
+                $value = $data['date'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLibrary::__construct - Property \"date\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDate($value);
             }
             if (isset($data['description'])) {
-                $this->setDescription($data['description']);
-            }
-            if (isset($data['editor'])) {
-                $this->setEditor($data['editor']);
+                $value = $data['description'];
+                if (is_array($value)) {
+                    $value = new FHIRMarkdown($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRMarkdown($value);
+                }
+                if (!($value instanceof FHIRMarkdown)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLibrary::__construct - Property \"description\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRMarkdown or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDescription($value);
             }
             if (isset($data['effectivePeriod'])) {
-                $this->setEffectivePeriod($data['effectivePeriod']);
-            }
-            if (isset($data['endorser'])) {
-                $this->setEndorser($data['endorser']);
+                $value = $data['effectivePeriod'];
+                if (is_array($value)) {
+                    $value = new FHIRPeriod($value);
+                } 
+                if (!($value instanceof FHIRPeriod)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLibrary::__construct - Property \"effectivePeriod\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPeriod or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setEffectivePeriod($value);
             }
             if (isset($data['experimental'])) {
-                $this->setExperimental($data['experimental']);
+                $value = $data['experimental'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLibrary::__construct - Property \"experimental\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setExperimental($value);
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRIdentifier($v);
+                        } 
+                        if (!($v instanceof FHIRIdentifier)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLibrary::__construct - Collection field \"identifier\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addIdentifier($v);
+                    }
+                }
             }
             if (isset($data['jurisdiction'])) {
-                $this->setJurisdiction($data['jurisdiction']);
+                $value = $data['jurisdiction'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLibrary::__construct - Collection field \"jurisdiction\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addJurisdiction($v);
+                    }
+                }
             }
             if (isset($data['lastReviewDate'])) {
-                $this->setLastReviewDate($data['lastReviewDate']);
+                $value = $data['lastReviewDate'];
+                if (is_array($value)) {
+                    $value = new FHIRDate($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDate($value);
+                }
+                if (!($value instanceof FHIRDate)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLibrary::__construct - Property \"lastReviewDate\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDate or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setLastReviewDate($value);
             }
             if (isset($data['name'])) {
-                $this->setName($data['name']);
+                $value = $data['name'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLibrary::__construct - Property \"name\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setName($value);
             }
             if (isset($data['parameter'])) {
-                $this->setParameter($data['parameter']);
+                $value = $data['parameter'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRParameterDefinition($v);
+                        } 
+                        if (!($v instanceof FHIRParameterDefinition)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLibrary::__construct - Collection field \"parameter\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRParameterDefinition or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addParameter($v);
+                    }
+                }
             }
             if (isset($data['publisher'])) {
-                $this->setPublisher($data['publisher']);
+                $value = $data['publisher'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLibrary::__construct - Property \"publisher\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setPublisher($value);
             }
             if (isset($data['purpose'])) {
-                $this->setPurpose($data['purpose']);
+                $value = $data['purpose'];
+                if (is_array($value)) {
+                    $value = new FHIRMarkdown($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRMarkdown($value);
+                }
+                if (!($value instanceof FHIRMarkdown)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLibrary::__construct - Property \"purpose\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRMarkdown or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setPurpose($value);
             }
             if (isset($data['relatedArtifact'])) {
-                $this->setRelatedArtifact($data['relatedArtifact']);
-            }
-            if (isset($data['reviewer'])) {
-                $this->setReviewer($data['reviewer']);
+                $value = $data['relatedArtifact'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRRelatedArtifact($v);
+                        } 
+                        if (!($v instanceof FHIRRelatedArtifact)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLibrary::__construct - Collection field \"relatedArtifact\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addRelatedArtifact($v);
+                    }
+                }
             }
             if (isset($data['status'])) {
-                $this->setStatus($data['status']);
-            }
-            if (isset($data['subjectCodeableConcept'])) {
-                $this->setSubjectCodeableConcept($data['subjectCodeableConcept']);
-            }
-            if (isset($data['subjectReference'])) {
-                $this->setSubjectReference($data['subjectReference']);
-            }
-            if (isset($data['subtitle'])) {
-                $this->setSubtitle($data['subtitle']);
+                $value = $data['status'];
+                if (is_array($value)) {
+                    $value = new FHIRPublicationStatus($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRPublicationStatus($value);
+                }
+                if (!($value instanceof FHIRPublicationStatus)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLibrary::__construct - Property \"status\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setStatus($value);
             }
             if (isset($data['title'])) {
-                $this->setTitle($data['title']);
+                $value = $data['title'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLibrary::__construct - Property \"title\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setTitle($value);
             }
             if (isset($data['topic'])) {
-                $this->setTopic($data['topic']);
+                $value = $data['topic'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLibrary::__construct - Collection field \"topic\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addTopic($v);
+                    }
+                }
             }
             if (isset($data['type'])) {
-                $this->setType($data['type']);
+                $value = $data['type'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLibrary::__construct - Property \"type\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setType($value);
             }
             if (isset($data['url'])) {
-                $this->setUrl($data['url']);
+                $value = $data['url'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLibrary::__construct - Property \"url\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setUrl($value);
             }
             if (isset($data['usage'])) {
-                $this->setUsage($data['usage']);
+                $value = $data['usage'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLibrary::__construct - Property \"usage\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setUsage($value);
             }
             if (isset($data['useContext'])) {
-                $this->setUseContext($data['useContext']);
+                $value = $data['useContext'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRUsageContext($v);
+                        } 
+                        if (!($v instanceof FHIRUsageContext)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLibrary::__construct - Collection field \"useContext\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUsageContext or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addUseContext($v);
+                    }
+                }
             }
             if (isset($data['version'])) {
-                $this->setVersion($data['version']);
+                $value = $data['version'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRLibrary::__construct - Property \"version\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setVersion($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -397,6 +612,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -431,78 +647,74 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
         return $this->approvalDate;
     }
 
-
-    /**
-     * An individiual or organization primarily involved in the creation and maintenance of the content.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail
-     * @return $this
-     */
-    public function setAuthor(FHIRContactDetail $author = null)
-    {
-        if (null === $author) {
-            return $this; 
-        }
-        $this->author = $author;
-        return $this;
-    }
-
-    /**
-     * An individiual or organization primarily involved in the creation and maintenance of the content.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail
-     */
-    public function getAuthor()
-    {
-        return $this->author;
-    }
-
-
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail
      * @return $this
      */
-    public function setContact(FHIRContactDetail $contact = null)
+    public function addContact(FHIRContactDetail $contact = null)
     {
         if (null === $contact) {
             return $this; 
         }
-        $this->contact = $contact;
+        $this->contact[] = $contact;
         return $this;
     }
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
     public function getContact()
     {
         return $this->contact;
     }
 
-
     /**
      * The content of the library as an Attachment. The content may be a reference to a url, or may be directly embedded as a base-64 string. Either way, the contentType of the attachment determines how to interpret the content.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRAttachment
      * @return $this
      */
-    public function setContent(FHIRAttachment $content = null)
+    public function addContent(FHIRAttachment $content = null)
     {
         if (null === $content) {
             return $this; 
         }
-        $this->content = $content;
+        $this->content[] = $content;
         return $this;
     }
 
     /**
      * The content of the library as an Attachment. The content may be a reference to a url, or may be directly embedded as a base-64 string. Either way, the contentType of the attachment determines how to interpret the content.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAttachment
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAttachment[]
      */
     public function getContent()
     {
         return $this->content;
     }
 
+    /**
+     * A contributor to the content of the library, including authors, editors, reviewers, and endorsers.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContributor
+     * @return $this
+     */
+    public function addContributor(FHIRContributor $contributor = null)
+    {
+        if (null === $contributor) {
+            return $this; 
+        }
+        $this->contributor[] = $contributor;
+        return $this;
+    }
+
+    /**
+     * A contributor to the content of the library, including authors, editors, reviewers, and endorsers.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContributor[]
+     */
+    public function getContributor()
+    {
+        return $this->contributor;
+    }
 
     /**
      * A copyright statement relating to the library and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the library.
@@ -536,33 +748,31 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
         return $this->copyright;
     }
 
-
     /**
      * Describes a set of data that must be provided in order to be able to successfully perform the computations defined by the library.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDataRequirement
      * @return $this
      */
-    public function setDataRequirement(FHIRDataRequirement $dataRequirement = null)
+    public function addDataRequirement(FHIRDataRequirement $dataRequirement = null)
     {
         if (null === $dataRequirement) {
             return $this; 
         }
-        $this->dataRequirement = $dataRequirement;
+        $this->dataRequirement[] = $dataRequirement;
         return $this;
     }
 
     /**
      * Describes a set of data that must be provided in order to be able to successfully perform the computations defined by the library.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDataRequirement
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDataRequirement[]
      */
     public function getDataRequirement()
     {
         return $this->dataRequirement;
     }
 
-
     /**
-     * The date  (and optionally time) when the library was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the library changes.
+     * The date  (and optionally time) when the library was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the library changes.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      * @return $this
      */
@@ -585,14 +795,13 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date  (and optionally time) when the library was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the library changes.
+     * The date  (and optionally time) when the library was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the library changes.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getDate()
     {
         return $this->date;
     }
-
 
     /**
      * A free text natural language description of the library from a consumer's perspective.
@@ -626,31 +835,6 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
         return $this->description;
     }
 
-
-    /**
-     * An individual or organization primarily responsible for internal coherence of the content.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail
-     * @return $this
-     */
-    public function setEditor(FHIRContactDetail $editor = null)
-    {
-        if (null === $editor) {
-            return $this; 
-        }
-        $this->editor = $editor;
-        return $this;
-    }
-
-    /**
-     * An individual or organization primarily responsible for internal coherence of the content.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail
-     */
-    public function getEditor()
-    {
-        return $this->editor;
-    }
-
-
     /**
      * The period during which the library content was or is planned to be in active use.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
@@ -674,33 +858,8 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
         return $this->effectivePeriod;
     }
 
-
     /**
-     * An individual or organization responsible for officially endorsing the content for use in some setting.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail
-     * @return $this
-     */
-    public function setEndorser(FHIRContactDetail $endorser = null)
-    {
-        if (null === $endorser) {
-            return $this; 
-        }
-        $this->endorser = $endorser;
-        return $this;
-    }
-
-    /**
-     * An individual or organization responsible for officially endorsing the content for use in some setting.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail
-     */
-    public function getEndorser()
-    {
-        return $this->endorser;
-    }
-
-
-    /**
-     * A Boolean value to indicate that this library is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this library is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      * @return $this
      */
@@ -723,7 +882,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A Boolean value to indicate that this library is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this library is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getExperimental()
@@ -731,57 +890,54 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
         return $this->experimental;
     }
 
-
     /**
      * A formal identifier that is used to identify this library when it is represented in other formats, or referenced in a specification, model, design or an instance. e.g. CMS or NQF identifiers for a measure artifact. Note that at least one identifier is required for non-experimental active artifacts.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
-    public function setIdentifier(FHIRIdentifier $identifier = null)
+    public function addIdentifier(FHIRIdentifier $identifier = null)
     {
         if (null === $identifier) {
             return $this; 
         }
-        $this->identifier = $identifier;
+        $this->identifier[] = $identifier;
         return $this;
     }
 
     /**
      * A formal identifier that is used to identify this library when it is represented in other formats, or referenced in a specification, model, design or an instance. e.g. CMS or NQF identifiers for a measure artifact. Note that at least one identifier is required for non-experimental active artifacts.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
         return $this->identifier;
     }
 
-
     /**
      * A legal or geographic region in which the library is intended to be used.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setJurisdiction(FHIRCodeableConcept $jurisdiction = null)
+    public function addJurisdiction(FHIRCodeableConcept $jurisdiction = null)
     {
         if (null === $jurisdiction) {
             return $this; 
         }
-        $this->jurisdiction = $jurisdiction;
+        $this->jurisdiction[] = $jurisdiction;
         return $this;
     }
 
     /**
      * A legal or geographic region in which the library is intended to be used.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getJurisdiction()
     {
         return $this->jurisdiction;
     }
 
-
     /**
-     * The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date.
+     * The date on which the resource content was last reviewed. Review happens periodically after approval, but doesn't change the original approval date.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDate
      * @return $this
      */
@@ -804,14 +960,13 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date.
+     * The date on which the resource content was last reviewed. Review happens periodically after approval, but doesn't change the original approval date.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public function getLastReviewDate()
     {
         return $this->lastReviewDate;
     }
-
 
     /**
      * A natural language name identifying the library. This name should be usable as an identifier for the module by machine processing applications such as code generation.
@@ -845,33 +1000,31 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
         return $this->name;
     }
 
-
     /**
      * The parameter element defines parameters used by the library.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRParameterDefinition
      * @return $this
      */
-    public function setParameter(FHIRParameterDefinition $parameter = null)
+    public function addParameter(FHIRParameterDefinition $parameter = null)
     {
         if (null === $parameter) {
             return $this; 
         }
-        $this->parameter = $parameter;
+        $this->parameter[] = $parameter;
         return $this;
     }
 
     /**
      * The parameter element defines parameters used by the library.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRParameterDefinition
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRParameterDefinition[]
      */
     public function getParameter()
     {
         return $this->parameter;
     }
 
-
     /**
-     * The name of the organization or individual that published the library.
+     * The name of the individual or organization that published the library.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
@@ -894,7 +1047,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The name of the organization or individual that published the library.
+     * The name of the individual or organization that published the library.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getPublisher()
@@ -902,9 +1055,8 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
         return $this->publisher;
     }
 
-
     /**
-     * Explanation of why this library is needed and why it has been designed as it has.
+     * Explaination of why this library is needed and why it has been designed as it has.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      * @return $this
      */
@@ -927,7 +1079,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Explanation of why this library is needed and why it has been designed as it has.
+     * Explaination of why this library is needed and why it has been designed as it has.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getPurpose()
@@ -935,54 +1087,28 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
         return $this->purpose;
     }
 
-
     /**
      * Related artifacts such as additional documentation, justification, or bibliographic references.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact
      * @return $this
      */
-    public function setRelatedArtifact(FHIRRelatedArtifact $relatedArtifact = null)
+    public function addRelatedArtifact(FHIRRelatedArtifact $relatedArtifact = null)
     {
         if (null === $relatedArtifact) {
             return $this; 
         }
-        $this->relatedArtifact = $relatedArtifact;
+        $this->relatedArtifact[] = $relatedArtifact;
         return $this;
     }
 
     /**
      * Related artifacts such as additional documentation, justification, or bibliographic references.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact[]
      */
     public function getRelatedArtifact()
     {
         return $this->relatedArtifact;
     }
-
-
-    /**
-     * An individual or organization primarily responsible for review of some aspect of the content.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail
-     * @return $this
-     */
-    public function setReviewer(FHIRContactDetail $reviewer = null)
-    {
-        if (null === $reviewer) {
-            return $this; 
-        }
-        $this->reviewer = $reviewer;
-        return $this;
-    }
-
-    /**
-     * An individual or organization primarily responsible for review of some aspect of the content.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail
-     */
-    public function getReviewer()
-    {
-        return $this->reviewer;
-    }
-
 
     /**
      * The status of this library. Enables tracking the life-cycle of the content.
@@ -1016,88 +1142,6 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
         return $this->status;
     }
 
-
-    /**
-     * A code or group definition that describes the intended subject of the contents of the library.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     * @return $this
-     */
-    public function setSubjectCodeableConcept(FHIRCodeableConcept $subjectCodeableConcept = null)
-    {
-        if (null === $subjectCodeableConcept) {
-            return $this; 
-        }
-        $this->subjectCodeableConcept = $subjectCodeableConcept;
-        return $this;
-    }
-
-    /**
-     * A code or group definition that describes the intended subject of the contents of the library.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public function getSubjectCodeableConcept()
-    {
-        return $this->subjectCodeableConcept;
-    }
-
-
-    /**
-     * A code or group definition that describes the intended subject of the contents of the library.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     * @return $this
-     */
-    public function setSubjectReference(FHIRReference $subjectReference = null)
-    {
-        if (null === $subjectReference) {
-            return $this; 
-        }
-        $this->subjectReference = $subjectReference;
-        return $this;
-    }
-
-    /**
-     * A code or group definition that describes the intended subject of the contents of the library.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getSubjectReference()
-    {
-        return $this->subjectReference;
-    }
-
-
-    /**
-     * An explanatory or alternate title for the library giving additional information about its content.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
-     * @return $this
-     */
-    public function setSubtitle($subtitle)
-    {
-        if (null === $subtitle) {
-            return $this; 
-        }
-        if (is_scalar($subtitle)) {
-            $subtitle = new FHIRString($subtitle);
-        }
-        if (!($subtitle instanceof FHIRString)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRLibrary::setSubtitle - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
-                gettype($subtitle)
-            ));
-        }
-        $this->subtitle = $subtitle;
-        return $this;
-    }
-
-    /**
-     * An explanatory or alternate title for the library giving additional information about its content.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public function getSubtitle()
-    {
-        return $this->subtitle;
-    }
-
-
     /**
      * A short, descriptive, user-friendly title for the library.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -1130,30 +1174,28 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
         return $this->title;
     }
 
-
     /**
      * Descriptive topics related to the content of the library. Topics provide a high-level categorization of the library that can be useful for filtering and searching.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setTopic(FHIRCodeableConcept $topic = null)
+    public function addTopic(FHIRCodeableConcept $topic = null)
     {
         if (null === $topic) {
             return $this; 
         }
-        $this->topic = $topic;
+        $this->topic[] = $topic;
         return $this;
     }
 
     /**
      * Descriptive topics related to the content of the library. Topics provide a high-level categorization of the library that can be useful for filtering and searching.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getTopic()
     {
         return $this->topic;
     }
-
 
     /**
      * Identifies the type of library such as a Logic Library, Model Definition, Asset Collection, or Module Definition.
@@ -1178,9 +1220,8 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
         return $this->type;
     }
 
-
     /**
-     * An absolute URI that is used to identify this library when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this library is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the library is stored on different servers.
+     * An absolute URI that is used to identify this library when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this library is (or will be) published. The URL SHOULD include the major version of the library. For more information see [Technical and Business Versions](resource.html#versions).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
@@ -1203,14 +1244,13 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * An absolute URI that is used to identify this library when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this library is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the library is stored on different servers.
+     * An absolute URI that is used to identify this library when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this library is (or will be) published. The URL SHOULD include the major version of the library. For more information see [Technical and Business Versions](resource.html#versions).
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getUrl()
     {
         return $this->url;
     }
-
 
     /**
      * A detailed description of how the library is used from a clinical perspective.
@@ -1244,30 +1284,28 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
         return $this->usage;
     }
 
-
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate library instances.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUsageContext
      * @return $this
      */
-    public function setUseContext(FHIRUsageContext $useContext = null)
+    public function addUseContext(FHIRUsageContext $useContext = null)
     {
         if (null === $useContext) {
             return $this; 
         }
-        $this->useContext = $useContext;
+        $this->useContext[] = $useContext;
         return $this;
     }
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate library instances.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUsageContext
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
     public function getUseContext()
     {
         return $this->useContext;
     }
-
 
     /**
      * The identifier that is used to identify this version of the library when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the library author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active artifacts.
@@ -1301,7 +1339,6 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
         return $this->version;
     }
 
-
     /**
      * @return string
      */
@@ -1320,20 +1357,52 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getApprovalDate())) {
             $a['approvalDate'] = $v;
         }
-        if (null !== ($v = $this->getAuthor())) {
-            $a['author'] = $v;
+        if (0 < count($values = $this->getContact())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['contact'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getContact())) {
-            $a['contact'] = $v;
+        if (0 < count($values = $this->getContent())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['content'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getContent())) {
-            $a['content'] = $v;
+        if (0 < count($values = $this->getContributor())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['contributor'] = $vs;
+            }
         }
         if (null !== ($v = $this->getCopyright())) {
             $a['copyright'] = $v;
         }
-        if (null !== ($v = $this->getDataRequirement())) {
-            $a['dataRequirement'] = $v;
+        if (0 < count($values = $this->getDataRequirement())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['dataRequirement'] = $vs;
+            }
         }
         if (null !== ($v = $this->getDate())) {
             $a['date'] = $v;
@@ -1341,23 +1410,33 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getDescription())) {
             $a['description'] = $v;
         }
-        if (null !== ($v = $this->getEditor())) {
-            $a['editor'] = $v;
-        }
         if (null !== ($v = $this->getEffectivePeriod())) {
             $a['effectivePeriod'] = $v;
-        }
-        if (null !== ($v = $this->getEndorser())) {
-            $a['endorser'] = $v;
         }
         if (null !== ($v = $this->getExperimental())) {
             $a['experimental'] = $v;
         }
-        if (null !== ($v = $this->getIdentifier())) {
-            $a['identifier'] = $v;
+        if (0 < count($values = $this->getIdentifier())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['identifier'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getJurisdiction())) {
-            $a['jurisdiction'] = $v;
+        if (0 < count($values = $this->getJurisdiction())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['jurisdiction'] = $vs;
+            }
         }
         if (null !== ($v = $this->getLastReviewDate())) {
             $a['lastReviewDate'] = $v;
@@ -1365,8 +1444,16 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getName())) {
             $a['name'] = $v;
         }
-        if (null !== ($v = $this->getParameter())) {
-            $a['parameter'] = $v;
+        if (0 < count($values = $this->getParameter())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['parameter'] = $vs;
+            }
         }
         if (null !== ($v = $this->getPublisher())) {
             $a['publisher'] = $v;
@@ -1374,29 +1461,33 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getPurpose())) {
             $a['purpose'] = $v;
         }
-        if (null !== ($v = $this->getRelatedArtifact())) {
-            $a['relatedArtifact'] = $v;
-        }
-        if (null !== ($v = $this->getReviewer())) {
-            $a['reviewer'] = $v;
+        if (0 < count($values = $this->getRelatedArtifact())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['relatedArtifact'] = $vs;
+            }
         }
         if (null !== ($v = $this->getStatus())) {
             $a['status'] = $v;
         }
-        if (null !== ($v = $this->getSubjectCodeableConcept())) {
-            $a['subjectCodeableConcept'] = $v;
-        }
-        if (null !== ($v = $this->getSubjectReference())) {
-            $a['subjectReference'] = $v;
-        }
-        if (null !== ($v = $this->getSubtitle())) {
-            $a['subtitle'] = $v;
-        }
         if (null !== ($v = $this->getTitle())) {
             $a['title'] = $v;
         }
-        if (null !== ($v = $this->getTopic())) {
-            $a['topic'] = $v;
+        if (0 < count($values = $this->getTopic())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['topic'] = $vs;
+            }
         }
         if (null !== ($v = $this->getType())) {
             $a['type'] = $v;
@@ -1407,8 +1498,16 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getUsage())) {
             $a['usage'] = $v;
         }
-        if (null !== ($v = $this->getUseContext())) {
-            $a['useContext'] = $v;
+        if (0 < count($values = $this->getUseContext())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['useContext'] = $vs;
+            }
         }
         if (null !== ($v = $this->getVersion())) {
             $a['version'] = $v;
@@ -1426,9 +1525,124 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Library xmlns="http://hl7.org/fhir"></Library>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getApprovalDate())) {
+            $v->xmlSerialize(true, $sxe->addChild('approvalDate'));
         }
-        return $sxe->saveXML();
+        if (0 < count($values = $this->getContact())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('contact'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getContent())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('content'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getContributor())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('contributor'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getCopyright())) {
+            $v->xmlSerialize(true, $sxe->addChild('copyright'));
+        }
+        if (0 < count($values = $this->getDataRequirement())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('dataRequirement'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getDate())) {
+            $v->xmlSerialize(true, $sxe->addChild('date'));
+        }
+        if (null !== ($v = $this->getDescription())) {
+            $v->xmlSerialize(true, $sxe->addChild('description'));
+        }
+        if (null !== ($v = $this->getEffectivePeriod())) {
+            $v->xmlSerialize(true, $sxe->addChild('effectivePeriod'));
+        }
+        if (null !== ($v = $this->getExperimental())) {
+            $v->xmlSerialize(true, $sxe->addChild('experimental'));
+        }
+        if (0 < count($values = $this->getIdentifier())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('identifier'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getJurisdiction())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('jurisdiction'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getLastReviewDate())) {
+            $v->xmlSerialize(true, $sxe->addChild('lastReviewDate'));
+        }
+        if (null !== ($v = $this->getName())) {
+            $v->xmlSerialize(true, $sxe->addChild('name'));
+        }
+        if (0 < count($values = $this->getParameter())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('parameter'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getPublisher())) {
+            $v->xmlSerialize(true, $sxe->addChild('publisher'));
+        }
+        if (null !== ($v = $this->getPurpose())) {
+            $v->xmlSerialize(true, $sxe->addChild('purpose'));
+        }
+        if (0 < count($values = $this->getRelatedArtifact())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('relatedArtifact'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('status'));
+        }
+        if (null !== ($v = $this->getTitle())) {
+            $v->xmlSerialize(true, $sxe->addChild('title'));
+        }
+        if (0 < count($values = $this->getTopic())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('topic'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getType())) {
+            $v->xmlSerialize(true, $sxe->addChild('type'));
+        }
+        if (null !== ($v = $this->getUrl())) {
+            $v->xmlSerialize(true, $sxe->addChild('url'));
+        }
+        if (null !== ($v = $this->getUsage())) {
+            $v->xmlSerialize(true, $sxe->addChild('usage'));
+        }
+        if (0 < count($values = $this->getUseContext())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('useContext'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getVersion())) {
+            $v->xmlSerialize(true, $sxe->addChild('version'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImmunizationRecom
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImmunizationRecom
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -67,7 +67,7 @@ use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
 use PHPFHIRGenerated\FHIRElement\FHIRDateTime;
 
 /**
- * A patient's point-in-time set of recommendations (i.e. forecasting) according to a published schedule with optional supporting justification.
+ * A patient's point-in-time immunization and recommendation (i.e. forecasting a patient's immunization eligibility according to a published schedule) with optional supporting justification.
  *
  * Class FHIRImmunizationRecommendationDateCriterion
  * @package PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImmunizationRecommendation
@@ -81,13 +81,13 @@ class FHIRImmunizationRecommendationDateCriterion extends FHIRBackboneElement im
      * Date classification of recommendation.  For example, earliest date to give, latest date to give, etc.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $code = null;
+    private $code = null;
 
     /**
      * The date whose meaning is specified by dateCriterion.code.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $value = null;
+    private $value = null;
 
     /**
      * FHIRImmunizationRecommendationDateCriterion Constructor
@@ -96,13 +96,28 @@ class FHIRImmunizationRecommendationDateCriterion extends FHIRBackboneElement im
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['code'])) {
-                $this->setCode($data['code']);
+                $value = $data['code'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationDateCriterion::__construct - Property \"code\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setCode($value);
             }
             if (isset($data['value'])) {
-                $this->setValue($data['value']);
+                $value = $data['value'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationDateCriterion::__construct - Property \"value\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value));
+                }
+                $this->setValue($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -111,6 +126,7 @@ class FHIRImmunizationRecommendationDateCriterion extends FHIRBackboneElement im
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -135,7 +151,6 @@ class FHIRImmunizationRecommendationDateCriterion extends FHIRBackboneElement im
     {
         return $this->code;
     }
-
 
     /**
      * The date whose meaning is specified by dateCriterion.code.
@@ -168,7 +183,6 @@ class FHIRImmunizationRecommendationDateCriterion extends FHIRBackboneElement im
     {
         return $this->value;
     }
-
 
     /**
      * @return string
@@ -203,9 +217,12 @@ class FHIRImmunizationRecommendationDateCriterion extends FHIRBackboneElement im
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ImmunizationRecommendationDateCriterion xmlns="http://hl7.org/fhir"></ImmunizationRecommendationDateCriterion>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getCode())) {
+            $v->xmlSerialize(true, $sxe->addChild('code'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getValue())) {
+            $v->xmlSerialize(true, $sxe->addChild('value'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

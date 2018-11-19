@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,9 +63,10 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRAnnotation;
-use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationEducation;
-use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationPerformer;
-use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationProtocolApplied;
+use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationExplanation;
+use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationPractitioner;
+use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationReaction;
+use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationVaccinationProtocol;
 use PHPFHIRGenerated\FHIRElement\FHIRBoolean;
 use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
 use PHPFHIRGenerated\FHIRElement\FHIRDate;
@@ -78,7 +79,7 @@ use PHPFHIRGenerated\FHIRElement\FHIRString;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
 /**
- * Describes the event of a patient being administered a vaccine or a record of an immunization as reported by a patient, a clinician or another party.
+ * Describes the event of a patient being administered a vaccination or a record of a vaccination as reported by a patient, a clinician or another party and may include vaccine reaction information and what vaccination protocol was followed.
  * If the element is present, it must have either a @value, an @id, or extensions
  *
  * Class FHIRImmunization
@@ -90,172 +91,130 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
     const FHIR_TYPE_NAME = 'Immunization';
 
     /**
+     * Date vaccine administered or was to be administered.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     */
+    private $date = null;
+
+    /**
      * The quantity of vaccine product that was administered.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    public $doseQuantity = null;
-
-    /**
-     * Educational material presented to the patient (or guardian) at the time of vaccine administration.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationEducation
-     */
-    public $education = null;
+    private $doseQuantity = null;
 
     /**
      * The visit or admission or other contact between patient and health care provider the immunization was performed as part of.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $encounter = null;
+    private $encounter = null;
 
     /**
      * Date vaccine batch expires.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
-    public $expirationDate = null;
+    private $expirationDate = null;
 
     /**
-     * Indicates the source of the vaccine actually administered. This may be different than the patient eligibility (e.g. the patient may be eligible for a publically purchased vaccine but due to inventory issues, vaccine purchased with private funds was actually administered).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * Reasons why a vaccine was or was not administered.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationExplanation
      */
-    public $fundingSource = null;
+    private $explanation = null;
 
     /**
      * A unique identifier assigned to this immunization record.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = null;
-
-    /**
-     * Indication if a dose is considered to be subpotent. By default, a dose should be considered to be potent.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
-     */
-    public $isSubpotent = null;
+    private $identifier = [];
 
     /**
      * The service delivery location where the vaccine administration occurred.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $location = null;
+    private $location = null;
 
     /**
      * Lot number of the  vaccine product.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $lotNumber = null;
+    private $lotNumber = null;
 
     /**
      * Name of vaccine manufacturer.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $manufacturer = null;
+    private $manufacturer = null;
+
+    /**
+     * Indicates if the vaccination was or was not given.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     */
+    private $notGiven = null;
 
     /**
      * Extra information about the immunization that is not conveyed by the other attributes.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
-    public $note = null;
-
-    /**
-     * Date vaccine administered or was to be administered.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public $occurrenceDateTime = null;
-
-    /**
-     * Date vaccine administered or was to be administered.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public $occurrenceString = null;
+    private $note = [];
 
     /**
      * The patient who either received or did not receive the immunization.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $patient = null;
+    private $patient = null;
 
     /**
-     * Indicates who performed the immunization event.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationPerformer
+     * Indicates who or what performed the event.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationPractitioner[]
      */
-    public $performer = null;
+    private $practitioner = [];
 
     /**
      * An indication that the content of the record is based on information from the person who administered the vaccine. This reflects the context under which the data was originally recorded.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $primarySource = null;
+    private $primarySource = null;
 
     /**
-     * Indicates a patient's eligibility for a funding program.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * Categorical data indicating that an adverse event is associated in time to an immunization.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationReaction[]
      */
-    public $programEligibility = null;
-
-    /**
-     * The protocol (set of recommendations) being followed by the provider who administered the dose.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationProtocolApplied
-     */
-    public $protocolApplied = null;
-
-    /**
-     * Reasons why the vaccine was administered.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public $reasonCode = null;
-
-    /**
-     * Condition, Observation or DiagnosticReport that supports why the immunization was administered.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $reasonReference = null;
-
-    /**
-     * The date the occurrence of the immunization was first captured in the record - potentially significantly after the occurrence of the event.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public $recorded = null;
+    private $reaction = [];
 
     /**
      * The source of the data when the report of the immunization event is not based on information from the person who administered the vaccine.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $reportOrigin = null;
+    private $reportOrigin = null;
 
     /**
      * The path by which the vaccine product is taken into the body.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $route = null;
+    private $route = null;
 
     /**
      * Body site where vaccine was administered.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $site = null;
+    private $site = null;
 
     /**
-     * Indicates the current status of the immunization event.
+     * Indicates the current status of the vaccination event.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRImmunizationStatusCodes
      */
-    public $status = null;
+    private $status = null;
 
     /**
-     * Indicates the reason the immunization event was not performed.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * Contains information about the protocol(s) under which the vaccine was administered.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationVaccinationProtocol[]
      */
-    public $statusReason = null;
-
-    /**
-     * Reason why a dose is considered to be subpotent.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public $subpotentReason = null;
+    private $vaccinationProtocol = [];
 
     /**
      * Vaccine that was administered or was to be administered.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $vaccineCode = null;
+    private $vaccineCode = null;
 
     /**
      * FHIRImmunization Constructor
@@ -264,91 +223,258 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
-            if (isset($data['doseQuantity'])) {
-                $this->setDoseQuantity($data['doseQuantity']);
+            if (isset($data['date'])) {
+                $value = $data['date'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImmunization::__construct - Property \"date\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value));
+                }
+                $this->setDate($value);
             }
-            if (isset($data['education'])) {
-                $this->setEducation($data['education']);
+            if (isset($data['doseQuantity'])) {
+                $value = $data['doseQuantity'];
+                if (is_array($value)) {
+                    $value = new FHIRQuantity($value);
+                } 
+                if (!($value instanceof FHIRQuantity)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImmunization::__construct - Property \"doseQuantity\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity or data to construct type, saw ".gettype($value));
+                }
+                $this->setDoseQuantity($value);
             }
             if (isset($data['encounter'])) {
-                $this->setEncounter($data['encounter']);
+                $value = $data['encounter'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImmunization::__construct - Property \"encounter\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setEncounter($value);
             }
             if (isset($data['expirationDate'])) {
-                $this->setExpirationDate($data['expirationDate']);
+                $value = $data['expirationDate'];
+                if (is_array($value)) {
+                    $value = new FHIRDate($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDate($value);
+                }
+                if (!($value instanceof FHIRDate)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImmunization::__construct - Property \"expirationDate\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDate or data to construct type, saw ".gettype($value));
+                }
+                $this->setExpirationDate($value);
             }
-            if (isset($data['fundingSource'])) {
-                $this->setFundingSource($data['fundingSource']);
+            if (isset($data['explanation'])) {
+                $value = $data['explanation'];
+                if (is_array($value)) {
+                    $value = new FHIRImmunizationExplanation($value);
+                } 
+                if (!($value instanceof FHIRImmunizationExplanation)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImmunization::__construct - Property \"explanation\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationExplanation or data to construct type, saw ".gettype($value));
+                }
+                $this->setExplanation($value);
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
-            }
-            if (isset($data['isSubpotent'])) {
-                $this->setIsSubpotent($data['isSubpotent']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRIdentifier($v);
+                        } 
+                        if (!($v instanceof FHIRIdentifier)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImmunization::__construct - Collection field \"identifier\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addIdentifier($v);
+                    }
+                }
             }
             if (isset($data['location'])) {
-                $this->setLocation($data['location']);
+                $value = $data['location'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImmunization::__construct - Property \"location\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setLocation($value);
             }
             if (isset($data['lotNumber'])) {
-                $this->setLotNumber($data['lotNumber']);
+                $value = $data['lotNumber'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImmunization::__construct - Property \"lotNumber\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setLotNumber($value);
             }
             if (isset($data['manufacturer'])) {
-                $this->setManufacturer($data['manufacturer']);
+                $value = $data['manufacturer'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImmunization::__construct - Property \"manufacturer\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setManufacturer($value);
+            }
+            if (isset($data['notGiven'])) {
+                $value = $data['notGiven'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImmunization::__construct - Property \"notGiven\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value));
+                }
+                $this->setNotGiven($value);
             }
             if (isset($data['note'])) {
-                $this->setNote($data['note']);
-            }
-            if (isset($data['occurrenceDateTime'])) {
-                $this->setOccurrenceDateTime($data['occurrenceDateTime']);
-            }
-            if (isset($data['occurrenceString'])) {
-                $this->setOccurrenceString($data['occurrenceString']);
+                $value = $data['note'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRAnnotation($v);
+                        } 
+                        if (!($v instanceof FHIRAnnotation)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImmunization::__construct - Collection field \"note\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAnnotation or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addNote($v);
+                    }
+                }
             }
             if (isset($data['patient'])) {
-                $this->setPatient($data['patient']);
+                $value = $data['patient'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImmunization::__construct - Property \"patient\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setPatient($value);
             }
-            if (isset($data['performer'])) {
-                $this->setPerformer($data['performer']);
+            if (isset($data['practitioner'])) {
+                $value = $data['practitioner'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRImmunizationPractitioner($v);
+                        } 
+                        if (!($v instanceof FHIRImmunizationPractitioner)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImmunization::__construct - Collection field \"practitioner\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationPractitioner or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addPractitioner($v);
+                    }
+                }
             }
             if (isset($data['primarySource'])) {
-                $this->setPrimarySource($data['primarySource']);
+                $value = $data['primarySource'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImmunization::__construct - Property \"primarySource\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value));
+                }
+                $this->setPrimarySource($value);
             }
-            if (isset($data['programEligibility'])) {
-                $this->setProgramEligibility($data['programEligibility']);
-            }
-            if (isset($data['protocolApplied'])) {
-                $this->setProtocolApplied($data['protocolApplied']);
-            }
-            if (isset($data['reasonCode'])) {
-                $this->setReasonCode($data['reasonCode']);
-            }
-            if (isset($data['reasonReference'])) {
-                $this->setReasonReference($data['reasonReference']);
-            }
-            if (isset($data['recorded'])) {
-                $this->setRecorded($data['recorded']);
+            if (isset($data['reaction'])) {
+                $value = $data['reaction'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRImmunizationReaction($v);
+                        } 
+                        if (!($v instanceof FHIRImmunizationReaction)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImmunization::__construct - Collection field \"reaction\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationReaction or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addReaction($v);
+                    }
+                }
             }
             if (isset($data['reportOrigin'])) {
-                $this->setReportOrigin($data['reportOrigin']);
+                $value = $data['reportOrigin'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImmunization::__construct - Property \"reportOrigin\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setReportOrigin($value);
             }
             if (isset($data['route'])) {
-                $this->setRoute($data['route']);
+                $value = $data['route'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImmunization::__construct - Property \"route\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setRoute($value);
             }
             if (isset($data['site'])) {
-                $this->setSite($data['site']);
+                $value = $data['site'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImmunization::__construct - Property \"site\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setSite($value);
             }
             if (isset($data['status'])) {
-                $this->setStatus($data['status']);
+                $value = $data['status'];
+                if (is_array($value)) {
+                    $value = new FHIRImmunizationStatusCodes($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRImmunizationStatusCodes($value);
+                }
+                if (!($value instanceof FHIRImmunizationStatusCodes)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImmunization::__construct - Property \"status\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRImmunizationStatusCodes or data to construct type, saw ".gettype($value));
+                }
+                $this->setStatus($value);
             }
-            if (isset($data['statusReason'])) {
-                $this->setStatusReason($data['statusReason']);
-            }
-            if (isset($data['subpotentReason'])) {
-                $this->setSubpotentReason($data['subpotentReason']);
+            if (isset($data['vaccinationProtocol'])) {
+                $value = $data['vaccinationProtocol'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRImmunizationVaccinationProtocol($v);
+                        } 
+                        if (!($v instanceof FHIRImmunizationVaccinationProtocol)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImmunization::__construct - Collection field \"vaccinationProtocol\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationVaccinationProtocol or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addVaccinationProtocol($v);
+                    }
+                }
             }
             if (isset($data['vaccineCode'])) {
-                $this->setVaccineCode($data['vaccineCode']);
+                $value = $data['vaccineCode'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImmunization::__construct - Property \"vaccineCode\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setVaccineCode($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -357,6 +483,39 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
+    }
+
+    /**
+     * Date vaccine administered or was to be administered.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     * @return $this
+     */
+    public function setDate($date)
+    {
+        if (null === $date) {
+            return $this; 
+        }
+        if (is_scalar($date)) {
+            $date = new FHIRDateTime($date);
+        }
+        if (!($date instanceof FHIRDateTime)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRImmunization::setDate - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or appropriate scalar value, %s seen.',
+                gettype($date)
+            ));
+        }
+        $this->date = $date;
+        return $this;
+    }
+
+    /**
+     * Date vaccine administered or was to be administered.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
     }
 
     /**
@@ -382,31 +541,6 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
         return $this->doseQuantity;
     }
 
-
-    /**
-     * Educational material presented to the patient (or guardian) at the time of vaccine administration.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationEducation
-     * @return $this
-     */
-    public function setEducation(FHIRImmunizationEducation $education = null)
-    {
-        if (null === $education) {
-            return $this; 
-        }
-        $this->education = $education;
-        return $this;
-    }
-
-    /**
-     * Educational material presented to the patient (or guardian) at the time of vaccine administration.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationEducation
-     */
-    public function getEducation()
-    {
-        return $this->education;
-    }
-
-
     /**
      * The visit or admission or other contact between patient and health care provider the immunization was performed as part of.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -429,7 +563,6 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
     {
         return $this->encounter;
     }
-
 
     /**
      * Date vaccine batch expires.
@@ -463,87 +596,51 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
         return $this->expirationDate;
     }
 
-
     /**
-     * Indicates the source of the vaccine actually administered. This may be different than the patient eligibility (e.g. the patient may be eligible for a publically purchased vaccine but due to inventory issues, vaccine purchased with private funds was actually administered).
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * Reasons why a vaccine was or was not administered.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationExplanation
      * @return $this
      */
-    public function setFundingSource(FHIRCodeableConcept $fundingSource = null)
+    public function setExplanation(FHIRImmunizationExplanation $explanation = null)
     {
-        if (null === $fundingSource) {
+        if (null === $explanation) {
             return $this; 
         }
-        $this->fundingSource = $fundingSource;
+        $this->explanation = $explanation;
         return $this;
     }
 
     /**
-     * Indicates the source of the vaccine actually administered. This may be different than the patient eligibility (e.g. the patient may be eligible for a publically purchased vaccine but due to inventory issues, vaccine purchased with private funds was actually administered).
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * Reasons why a vaccine was or was not administered.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationExplanation
      */
-    public function getFundingSource()
+    public function getExplanation()
     {
-        return $this->fundingSource;
+        return $this->explanation;
     }
-
 
     /**
      * A unique identifier assigned to this immunization record.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
-    public function setIdentifier(FHIRIdentifier $identifier = null)
+    public function addIdentifier(FHIRIdentifier $identifier = null)
     {
         if (null === $identifier) {
             return $this; 
         }
-        $this->identifier = $identifier;
+        $this->identifier[] = $identifier;
         return $this;
     }
 
     /**
      * A unique identifier assigned to this immunization record.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
         return $this->identifier;
     }
-
-
-    /**
-     * Indication if a dose is considered to be subpotent. By default, a dose should be considered to be potent.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
-     * @return $this
-     */
-    public function setIsSubpotent($isSubpotent)
-    {
-        if (null === $isSubpotent) {
-            return $this; 
-        }
-        if (is_scalar($isSubpotent)) {
-            $isSubpotent = new FHIRBoolean($isSubpotent);
-        }
-        if (!($isSubpotent instanceof FHIRBoolean)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRImmunization::setIsSubpotent - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or appropriate scalar value, %s seen.',
-                gettype($isSubpotent)
-            ));
-        }
-        $this->isSubpotent = $isSubpotent;
-        return $this;
-    }
-
-    /**
-     * Indication if a dose is considered to be subpotent. By default, a dose should be considered to be potent.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
-     */
-    public function getIsSubpotent()
-    {
-        return $this->isSubpotent;
-    }
-
 
     /**
      * The service delivery location where the vaccine administration occurred.
@@ -567,7 +664,6 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
     {
         return $this->location;
     }
-
 
     /**
      * Lot number of the  vaccine product.
@@ -601,7 +697,6 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
         return $this->lotNumber;
     }
 
-
     /**
      * Name of vaccine manufacturer.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -625,96 +720,60 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
         return $this->manufacturer;
     }
 
+    /**
+     * Indicates if the vaccination was or was not given.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     * @return $this
+     */
+    public function setNotGiven($notGiven)
+    {
+        if (null === $notGiven) {
+            return $this; 
+        }
+        if (is_scalar($notGiven)) {
+            $notGiven = new FHIRBoolean($notGiven);
+        }
+        if (!($notGiven instanceof FHIRBoolean)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRImmunization::setNotGiven - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or appropriate scalar value, %s seen.',
+                gettype($notGiven)
+            ));
+        }
+        $this->notGiven = $notGiven;
+        return $this;
+    }
+
+    /**
+     * Indicates if the vaccination was or was not given.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     */
+    public function getNotGiven()
+    {
+        return $this->notGiven;
+    }
 
     /**
      * Extra information about the immunization that is not conveyed by the other attributes.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation
      * @return $this
      */
-    public function setNote(FHIRAnnotation $note = null)
+    public function addNote(FHIRAnnotation $note = null)
     {
         if (null === $note) {
             return $this; 
         }
-        $this->note = $note;
+        $this->note[] = $note;
         return $this;
     }
 
     /**
      * Extra information about the immunization that is not conveyed by the other attributes.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
         return $this->note;
     }
-
-
-    /**
-     * Date vaccine administered or was to be administered.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     * @return $this
-     */
-    public function setOccurrenceDateTime($occurrenceDateTime)
-    {
-        if (null === $occurrenceDateTime) {
-            return $this; 
-        }
-        if (is_scalar($occurrenceDateTime)) {
-            $occurrenceDateTime = new FHIRDateTime($occurrenceDateTime);
-        }
-        if (!($occurrenceDateTime instanceof FHIRDateTime)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRImmunization::setOccurrenceDateTime - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or appropriate scalar value, %s seen.',
-                gettype($occurrenceDateTime)
-            ));
-        }
-        $this->occurrenceDateTime = $occurrenceDateTime;
-        return $this;
-    }
-
-    /**
-     * Date vaccine administered or was to be administered.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public function getOccurrenceDateTime()
-    {
-        return $this->occurrenceDateTime;
-    }
-
-
-    /**
-     * Date vaccine administered or was to be administered.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
-     * @return $this
-     */
-    public function setOccurrenceString($occurrenceString)
-    {
-        if (null === $occurrenceString) {
-            return $this; 
-        }
-        if (is_scalar($occurrenceString)) {
-            $occurrenceString = new FHIRString($occurrenceString);
-        }
-        if (!($occurrenceString instanceof FHIRString)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRImmunization::setOccurrenceString - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
-                gettype($occurrenceString)
-            ));
-        }
-        $this->occurrenceString = $occurrenceString;
-        return $this;
-    }
-
-    /**
-     * Date vaccine administered or was to be administered.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public function getOccurrenceString()
-    {
-        return $this->occurrenceString;
-    }
-
 
     /**
      * The patient who either received or did not receive the immunization.
@@ -739,30 +798,28 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
         return $this->patient;
     }
 
-
     /**
-     * Indicates who performed the immunization event.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationPerformer
+     * Indicates who or what performed the event.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationPractitioner
      * @return $this
      */
-    public function setPerformer(FHIRImmunizationPerformer $performer = null)
+    public function addPractitioner(FHIRImmunizationPractitioner $practitioner = null)
     {
-        if (null === $performer) {
+        if (null === $practitioner) {
             return $this; 
         }
-        $this->performer = $performer;
+        $this->practitioner[] = $practitioner;
         return $this;
     }
 
     /**
-     * Indicates who performed the immunization event.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationPerformer
+     * Indicates who or what performed the event.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationPractitioner[]
      */
-    public function getPerformer()
+    public function getPractitioner()
     {
-        return $this->performer;
+        return $this->practitioner;
     }
-
 
     /**
      * An indication that the content of the record is based on information from the person who administered the vaccine. This reflects the context under which the data was originally recorded.
@@ -796,135 +853,28 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
         return $this->primarySource;
     }
 
-
     /**
-     * Indicates a patient's eligibility for a funding program.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * Categorical data indicating that an adverse event is associated in time to an immunization.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationReaction
      * @return $this
      */
-    public function setProgramEligibility(FHIRCodeableConcept $programEligibility = null)
+    public function addReaction(FHIRImmunizationReaction $reaction = null)
     {
-        if (null === $programEligibility) {
+        if (null === $reaction) {
             return $this; 
         }
-        $this->programEligibility = $programEligibility;
+        $this->reaction[] = $reaction;
         return $this;
     }
 
     /**
-     * Indicates a patient's eligibility for a funding program.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * Categorical data indicating that an adverse event is associated in time to an immunization.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationReaction[]
      */
-    public function getProgramEligibility()
+    public function getReaction()
     {
-        return $this->programEligibility;
+        return $this->reaction;
     }
-
-
-    /**
-     * The protocol (set of recommendations) being followed by the provider who administered the dose.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationProtocolApplied
-     * @return $this
-     */
-    public function setProtocolApplied(FHIRImmunizationProtocolApplied $protocolApplied = null)
-    {
-        if (null === $protocolApplied) {
-            return $this; 
-        }
-        $this->protocolApplied = $protocolApplied;
-        return $this;
-    }
-
-    /**
-     * The protocol (set of recommendations) being followed by the provider who administered the dose.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationProtocolApplied
-     */
-    public function getProtocolApplied()
-    {
-        return $this->protocolApplied;
-    }
-
-
-    /**
-     * Reasons why the vaccine was administered.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     * @return $this
-     */
-    public function setReasonCode(FHIRCodeableConcept $reasonCode = null)
-    {
-        if (null === $reasonCode) {
-            return $this; 
-        }
-        $this->reasonCode = $reasonCode;
-        return $this;
-    }
-
-    /**
-     * Reasons why the vaccine was administered.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public function getReasonCode()
-    {
-        return $this->reasonCode;
-    }
-
-
-    /**
-     * Condition, Observation or DiagnosticReport that supports why the immunization was administered.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     * @return $this
-     */
-    public function setReasonReference(FHIRReference $reasonReference = null)
-    {
-        if (null === $reasonReference) {
-            return $this; 
-        }
-        $this->reasonReference = $reasonReference;
-        return $this;
-    }
-
-    /**
-     * Condition, Observation or DiagnosticReport that supports why the immunization was administered.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getReasonReference()
-    {
-        return $this->reasonReference;
-    }
-
-
-    /**
-     * The date the occurrence of the immunization was first captured in the record - potentially significantly after the occurrence of the event.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     * @return $this
-     */
-    public function setRecorded($recorded)
-    {
-        if (null === $recorded) {
-            return $this; 
-        }
-        if (is_scalar($recorded)) {
-            $recorded = new FHIRDateTime($recorded);
-        }
-        if (!($recorded instanceof FHIRDateTime)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRImmunization::setRecorded - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or appropriate scalar value, %s seen.',
-                gettype($recorded)
-            ));
-        }
-        $this->recorded = $recorded;
-        return $this;
-    }
-
-    /**
-     * The date the occurrence of the immunization was first captured in the record - potentially significantly after the occurrence of the event.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public function getRecorded()
-    {
-        return $this->recorded;
-    }
-
 
     /**
      * The source of the data when the report of the immunization event is not based on information from the person who administered the vaccine.
@@ -949,7 +899,6 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
         return $this->reportOrigin;
     }
 
-
     /**
      * The path by which the vaccine product is taken into the body.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
@@ -972,7 +921,6 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
     {
         return $this->route;
     }
-
 
     /**
      * Body site where vaccine was administered.
@@ -997,9 +945,8 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
         return $this->site;
     }
 
-
     /**
-     * Indicates the current status of the immunization event.
+     * Indicates the current status of the vaccination event.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRImmunizationStatusCodes
      * @return $this
      */
@@ -1022,7 +969,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Indicates the current status of the immunization event.
+     * Indicates the current status of the vaccination event.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRImmunizationStatusCodes
      */
     public function getStatus()
@@ -1030,54 +977,28 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
         return $this->status;
     }
 
-
     /**
-     * Indicates the reason the immunization event was not performed.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * Contains information about the protocol(s) under which the vaccine was administered.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationVaccinationProtocol
      * @return $this
      */
-    public function setStatusReason(FHIRCodeableConcept $statusReason = null)
+    public function addVaccinationProtocol(FHIRImmunizationVaccinationProtocol $vaccinationProtocol = null)
     {
-        if (null === $statusReason) {
+        if (null === $vaccinationProtocol) {
             return $this; 
         }
-        $this->statusReason = $statusReason;
+        $this->vaccinationProtocol[] = $vaccinationProtocol;
         return $this;
     }
 
     /**
-     * Indicates the reason the immunization event was not performed.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * Contains information about the protocol(s) under which the vaccine was administered.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationVaccinationProtocol[]
      */
-    public function getStatusReason()
+    public function getVaccinationProtocol()
     {
-        return $this->statusReason;
+        return $this->vaccinationProtocol;
     }
-
-
-    /**
-     * Reason why a dose is considered to be subpotent.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     * @return $this
-     */
-    public function setSubpotentReason(FHIRCodeableConcept $subpotentReason = null)
-    {
-        if (null === $subpotentReason) {
-            return $this; 
-        }
-        $this->subpotentReason = $subpotentReason;
-        return $this;
-    }
-
-    /**
-     * Reason why a dose is considered to be subpotent.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public function getSubpotentReason()
-    {
-        return $this->subpotentReason;
-    }
-
 
     /**
      * Vaccine that was administered or was to be administered.
@@ -1102,7 +1023,6 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
         return $this->vaccineCode;
     }
 
-
     /**
      * @return string
      */
@@ -1118,11 +1038,11 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
     {
         $a = parent::jsonSerialize();
         $a['resourceType'] = self::FHIR_TYPE_NAME;
+        if (null !== ($v = $this->getDate())) {
+            $a['date'] = $v;
+        }
         if (null !== ($v = $this->getDoseQuantity())) {
             $a['doseQuantity'] = $v;
-        }
-        if (null !== ($v = $this->getEducation())) {
-            $a['education'] = $v;
         }
         if (null !== ($v = $this->getEncounter())) {
             $a['encounter'] = $v;
@@ -1130,14 +1050,19 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getExpirationDate())) {
             $a['expirationDate'] = $v;
         }
-        if (null !== ($v = $this->getFundingSource())) {
-            $a['fundingSource'] = $v;
+        if (null !== ($v = $this->getExplanation())) {
+            $a['explanation'] = $v;
         }
-        if (null !== ($v = $this->getIdentifier())) {
-            $a['identifier'] = $v;
-        }
-        if (null !== ($v = $this->getIsSubpotent())) {
-            $a['isSubpotent'] = $v;
+        if (0 < count($values = $this->getIdentifier())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['identifier'] = $vs;
+            }
         }
         if (null !== ($v = $this->getLocation())) {
             $a['location'] = $v;
@@ -1148,38 +1073,47 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getManufacturer())) {
             $a['manufacturer'] = $v;
         }
-        if (null !== ($v = $this->getNote())) {
-            $a['note'] = $v;
+        if (null !== ($v = $this->getNotGiven())) {
+            $a['notGiven'] = $v;
         }
-        if (null !== ($v = $this->getOccurrenceDateTime())) {
-            $a['occurrenceDateTime'] = $v;
-        }
-        if (null !== ($v = $this->getOccurrenceString())) {
-            $a['occurrenceString'] = $v;
+        if (0 < count($values = $this->getNote())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['note'] = $vs;
+            }
         }
         if (null !== ($v = $this->getPatient())) {
             $a['patient'] = $v;
         }
-        if (null !== ($v = $this->getPerformer())) {
-            $a['performer'] = $v;
+        if (0 < count($values = $this->getPractitioner())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['practitioner'] = $vs;
+            }
         }
         if (null !== ($v = $this->getPrimarySource())) {
             $a['primarySource'] = $v;
         }
-        if (null !== ($v = $this->getProgramEligibility())) {
-            $a['programEligibility'] = $v;
-        }
-        if (null !== ($v = $this->getProtocolApplied())) {
-            $a['protocolApplied'] = $v;
-        }
-        if (null !== ($v = $this->getReasonCode())) {
-            $a['reasonCode'] = $v;
-        }
-        if (null !== ($v = $this->getReasonReference())) {
-            $a['reasonReference'] = $v;
-        }
-        if (null !== ($v = $this->getRecorded())) {
-            $a['recorded'] = $v;
+        if (0 < count($values = $this->getReaction())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['reaction'] = $vs;
+            }
         }
         if (null !== ($v = $this->getReportOrigin())) {
             $a['reportOrigin'] = $v;
@@ -1193,11 +1127,16 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getStatus())) {
             $a['status'] = $v;
         }
-        if (null !== ($v = $this->getStatusReason())) {
-            $a['statusReason'] = $v;
-        }
-        if (null !== ($v = $this->getSubpotentReason())) {
-            $a['subpotentReason'] = $v;
+        if (0 < count($values = $this->getVaccinationProtocol())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['vaccinationProtocol'] = $vs;
+            }
         }
         if (null !== ($v = $this->getVaccineCode())) {
             $a['vaccineCode'] = $v;
@@ -1215,9 +1154,89 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Immunization xmlns="http://hl7.org/fhir"></Immunization>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getDate())) {
+            $v->xmlSerialize(true, $sxe->addChild('date'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getDoseQuantity())) {
+            $v->xmlSerialize(true, $sxe->addChild('doseQuantity'));
+        }
+        if (null !== ($v = $this->getEncounter())) {
+            $v->xmlSerialize(true, $sxe->addChild('encounter'));
+        }
+        if (null !== ($v = $this->getExpirationDate())) {
+            $v->xmlSerialize(true, $sxe->addChild('expirationDate'));
+        }
+        if (null !== ($v = $this->getExplanation())) {
+            $v->xmlSerialize(true, $sxe->addChild('explanation'));
+        }
+        if (0 < count($values = $this->getIdentifier())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('identifier'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getLocation())) {
+            $v->xmlSerialize(true, $sxe->addChild('location'));
+        }
+        if (null !== ($v = $this->getLotNumber())) {
+            $v->xmlSerialize(true, $sxe->addChild('lotNumber'));
+        }
+        if (null !== ($v = $this->getManufacturer())) {
+            $v->xmlSerialize(true, $sxe->addChild('manufacturer'));
+        }
+        if (null !== ($v = $this->getNotGiven())) {
+            $v->xmlSerialize(true, $sxe->addChild('notGiven'));
+        }
+        if (0 < count($values = $this->getNote())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('note'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getPatient())) {
+            $v->xmlSerialize(true, $sxe->addChild('patient'));
+        }
+        if (0 < count($values = $this->getPractitioner())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('practitioner'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getPrimarySource())) {
+            $v->xmlSerialize(true, $sxe->addChild('primarySource'));
+        }
+        if (0 < count($values = $this->getReaction())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('reaction'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getReportOrigin())) {
+            $v->xmlSerialize(true, $sxe->addChild('reportOrigin'));
+        }
+        if (null !== ($v = $this->getRoute())) {
+            $v->xmlSerialize(true, $sxe->addChild('route'));
+        }
+        if (null !== ($v = $this->getSite())) {
+            $v->xmlSerialize(true, $sxe->addChild('site'));
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('status'));
+        }
+        if (0 < count($values = $this->getVaccinationProtocol())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('vaccinationProtocol'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getVaccineCode())) {
+            $v->xmlSerialize(true, $sxe->addChild('vaccineCode'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

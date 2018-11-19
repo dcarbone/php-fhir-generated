@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRVisionPrescriptio
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRVisionPrescriptio
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -69,6 +69,7 @@ use PHPFHIRGenerated\FHIRElement\FHIRDecimal;
 use PHPFHIRGenerated\FHIRElement\FHIRInteger;
 use PHPFHIRGenerated\FHIRElement\FHIRQuantity;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
+use PHPFHIRGenerated\FHIRElement\FHIRVisionBase;
 use PHPFHIRGenerated\FHIRElement\FHIRVisionEyes;
 
 /**
@@ -83,88 +84,94 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements \Jso
     const FHIR_TYPE_NAME = 'VisionPrescription.Dispense';
 
     /**
-     * Power adjustment for multifocal lenses measured in dioptres (0.25 units).
+     * Power adjustment for multifocal lenses measured in diopters (0.25 units).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
-    public $add = null;
+    private $add = null;
 
     /**
      * Adjustment for astigmatism measured in integer degrees.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
-    public $axis = null;
+    private $axis = null;
 
     /**
-     * Back curvature measured in millimetres.
+     * Back curvature measured in millimeters.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
-    public $backCurve = null;
+    private $backCurve = null;
+
+    /**
+     * The relative base, or reference lens edge, for the prism.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRVisionBase
+     */
+    private $base = null;
 
     /**
      * Brand recommendations or restrictions.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $brand = null;
+    private $brand = null;
 
     /**
      * Special color or pattern.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $color = null;
+    private $color = null;
 
     /**
-     * Power adjustment for astigmatism measured in dioptres (0.25 units).
+     * Power adjustment for astigmatism measured in diopters (0.25 units).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
-    public $cylinder = null;
+    private $cylinder = null;
 
     /**
-     * Contact lens diameter measured in millimetres.
+     * Contact lens diameter measured in millimeters.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
-    public $diameter = null;
+    private $diameter = null;
 
     /**
      * The recommended maximum wear period for the lens.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    public $duration = null;
+    private $duration = null;
 
     /**
      * The eye for which the lens applies.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRVisionEyes
      */
-    public $eye = null;
+    private $eye = null;
 
     /**
      * Notes for special requirements such as coatings and lens materials.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
-    public $note = null;
+    private $note = [];
 
     /**
-     * Contact lens power measured in dioptres (0.25 units).
+     * Contact lens power measured in diopters (0.25 units).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
-    public $power = null;
+    private $power = null;
 
     /**
-     * Allows for adjustment on two axis.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionPrism
+     * Amount of prism to compensate for eye alignment in fractional units.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
-    public $prism = null;
+    private $prism = null;
 
     /**
      * Identifies the type of vision correction product which is required for the patient.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $product = null;
+    private $product = null;
 
     /**
-     * Lens power measured in dioptres (0.25 units).
+     * Lens power measured in diopters (0.25 units).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
-    public $sphere = null;
+    private $sphere = null;
 
     /**
      * FHIRVisionPrescriptionDispense Constructor
@@ -173,49 +180,186 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements \Jso
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['add'])) {
-                $this->setAdd($data['add']);
+                $value = $data['add'];
+                if (is_array($value)) {
+                    $value = new FHIRDecimal($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDecimal($value);
+                }
+                if (!($value instanceof FHIRDecimal)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionDispense::__construct - Property \"add\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDecimal or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setAdd($value);
             }
             if (isset($data['axis'])) {
-                $this->setAxis($data['axis']);
+                $value = $data['axis'];
+                if (is_array($value)) {
+                    $value = new FHIRInteger($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRInteger($value);
+                }
+                if (!($value instanceof FHIRInteger)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionDispense::__construct - Property \"axis\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRInteger or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setAxis($value);
             }
             if (isset($data['backCurve'])) {
-                $this->setBackCurve($data['backCurve']);
+                $value = $data['backCurve'];
+                if (is_array($value)) {
+                    $value = new FHIRDecimal($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDecimal($value);
+                }
+                if (!($value instanceof FHIRDecimal)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionDispense::__construct - Property \"backCurve\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDecimal or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setBackCurve($value);
+            }
+            if (isset($data['base'])) {
+                $value = $data['base'];
+                if (is_array($value)) {
+                    $value = new FHIRVisionBase($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRVisionBase($value);
+                }
+                if (!($value instanceof FHIRVisionBase)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionDispense::__construct - Property \"base\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRVisionBase or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setBase($value);
             }
             if (isset($data['brand'])) {
-                $this->setBrand($data['brand']);
+                $value = $data['brand'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionDispense::__construct - Property \"brand\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setBrand($value);
             }
             if (isset($data['color'])) {
-                $this->setColor($data['color']);
+                $value = $data['color'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionDispense::__construct - Property \"color\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setColor($value);
             }
             if (isset($data['cylinder'])) {
-                $this->setCylinder($data['cylinder']);
+                $value = $data['cylinder'];
+                if (is_array($value)) {
+                    $value = new FHIRDecimal($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDecimal($value);
+                }
+                if (!($value instanceof FHIRDecimal)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionDispense::__construct - Property \"cylinder\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDecimal or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setCylinder($value);
             }
             if (isset($data['diameter'])) {
-                $this->setDiameter($data['diameter']);
+                $value = $data['diameter'];
+                if (is_array($value)) {
+                    $value = new FHIRDecimal($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDecimal($value);
+                }
+                if (!($value instanceof FHIRDecimal)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionDispense::__construct - Property \"diameter\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDecimal or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDiameter($value);
             }
             if (isset($data['duration'])) {
-                $this->setDuration($data['duration']);
+                $value = $data['duration'];
+                if (is_array($value)) {
+                    $value = new FHIRQuantity($value);
+                } 
+                if (!($value instanceof FHIRQuantity)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionDispense::__construct - Property \"duration\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDuration($value);
             }
             if (isset($data['eye'])) {
-                $this->setEye($data['eye']);
+                $value = $data['eye'];
+                if (is_array($value)) {
+                    $value = new FHIRVisionEyes($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRVisionEyes($value);
+                }
+                if (!($value instanceof FHIRVisionEyes)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionDispense::__construct - Property \"eye\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRVisionEyes or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setEye($value);
             }
             if (isset($data['note'])) {
-                $this->setNote($data['note']);
+                $value = $data['note'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRAnnotation($v);
+                        } 
+                        if (!($v instanceof FHIRAnnotation)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionDispense::__construct - Collection field \"note\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAnnotation or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addNote($v);
+                    }
+                }
             }
             if (isset($data['power'])) {
-                $this->setPower($data['power']);
+                $value = $data['power'];
+                if (is_array($value)) {
+                    $value = new FHIRDecimal($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDecimal($value);
+                }
+                if (!($value instanceof FHIRDecimal)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionDispense::__construct - Property \"power\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDecimal or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setPower($value);
             }
             if (isset($data['prism'])) {
-                $this->setPrism($data['prism']);
+                $value = $data['prism'];
+                if (is_array($value)) {
+                    $value = new FHIRDecimal($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDecimal($value);
+                }
+                if (!($value instanceof FHIRDecimal)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionDispense::__construct - Property \"prism\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDecimal or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setPrism($value);
             }
             if (isset($data['product'])) {
-                $this->setProduct($data['product']);
+                $value = $data['product'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionDispense::__construct - Property \"product\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setProduct($value);
             }
             if (isset($data['sphere'])) {
-                $this->setSphere($data['sphere']);
+                $value = $data['sphere'];
+                if (is_array($value)) {
+                    $value = new FHIRDecimal($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDecimal($value);
+                }
+                if (!($value instanceof FHIRDecimal)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionDispense::__construct - Property \"sphere\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDecimal or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setSphere($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -224,10 +368,11 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements \Jso
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
-     * Power adjustment for multifocal lenses measured in dioptres (0.25 units).
+     * Power adjustment for multifocal lenses measured in diopters (0.25 units).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDecimal
      * @return $this
      */
@@ -250,14 +395,13 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements \Jso
     }
 
     /**
-     * Power adjustment for multifocal lenses measured in dioptres (0.25 units).
+     * Power adjustment for multifocal lenses measured in diopters (0.25 units).
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
     public function getAdd()
     {
         return $this->add;
     }
-
 
     /**
      * Adjustment for astigmatism measured in integer degrees.
@@ -291,9 +435,8 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements \Jso
         return $this->axis;
     }
 
-
     /**
-     * Back curvature measured in millimetres.
+     * Back curvature measured in millimeters.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDecimal
      * @return $this
      */
@@ -316,7 +459,7 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements \Jso
     }
 
     /**
-     * Back curvature measured in millimetres.
+     * Back curvature measured in millimeters.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
     public function getBackCurve()
@@ -324,6 +467,37 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements \Jso
         return $this->backCurve;
     }
 
+    /**
+     * The relative base, or reference lens edge, for the prism.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRVisionBase
+     * @return $this
+     */
+    public function setBase($base)
+    {
+        if (null === $base) {
+            return $this; 
+        }
+        if (is_scalar($base)) {
+            $base = new FHIRVisionBase($base);
+        }
+        if (!($base instanceof FHIRVisionBase)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRVisionPrescriptionDispense::setBase - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRVisionBase or appropriate scalar value, %s seen.',
+                gettype($base)
+            ));
+        }
+        $this->base = $base;
+        return $this;
+    }
+
+    /**
+     * The relative base, or reference lens edge, for the prism.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRVisionBase
+     */
+    public function getBase()
+    {
+        return $this->base;
+    }
 
     /**
      * Brand recommendations or restrictions.
@@ -357,7 +531,6 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements \Jso
         return $this->brand;
     }
 
-
     /**
      * Special color or pattern.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -390,9 +563,8 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements \Jso
         return $this->color;
     }
 
-
     /**
-     * Power adjustment for astigmatism measured in dioptres (0.25 units).
+     * Power adjustment for astigmatism measured in diopters (0.25 units).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDecimal
      * @return $this
      */
@@ -415,7 +587,7 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements \Jso
     }
 
     /**
-     * Power adjustment for astigmatism measured in dioptres (0.25 units).
+     * Power adjustment for astigmatism measured in diopters (0.25 units).
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
     public function getCylinder()
@@ -423,9 +595,8 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements \Jso
         return $this->cylinder;
     }
 
-
     /**
-     * Contact lens diameter measured in millimetres.
+     * Contact lens diameter measured in millimeters.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDecimal
      * @return $this
      */
@@ -448,14 +619,13 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements \Jso
     }
 
     /**
-     * Contact lens diameter measured in millimetres.
+     * Contact lens diameter measured in millimeters.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
     public function getDiameter()
     {
         return $this->diameter;
     }
-
 
     /**
      * The recommended maximum wear period for the lens.
@@ -479,7 +649,6 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements \Jso
     {
         return $this->duration;
     }
-
 
     /**
      * The eye for which the lens applies.
@@ -513,33 +682,31 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements \Jso
         return $this->eye;
     }
 
-
     /**
      * Notes for special requirements such as coatings and lens materials.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation
      * @return $this
      */
-    public function setNote(FHIRAnnotation $note = null)
+    public function addNote(FHIRAnnotation $note = null)
     {
         if (null === $note) {
             return $this; 
         }
-        $this->note = $note;
+        $this->note[] = $note;
         return $this;
     }
 
     /**
      * Notes for special requirements such as coatings and lens materials.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
         return $this->note;
     }
 
-
     /**
-     * Contact lens power measured in dioptres (0.25 units).
+     * Contact lens power measured in diopters (0.25 units).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDecimal
      * @return $this
      */
@@ -562,7 +729,7 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements \Jso
     }
 
     /**
-     * Contact lens power measured in dioptres (0.25 units).
+     * Contact lens power measured in diopters (0.25 units).
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
     public function getPower()
@@ -570,30 +737,37 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements \Jso
         return $this->power;
     }
 
-
     /**
-     * Allows for adjustment on two axis.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionPrism
+     * Amount of prism to compensate for eye alignment in fractional units.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDecimal
      * @return $this
      */
-    public function setPrism(FHIRVisionPrescriptionPrism $prism = null)
+    public function setPrism($prism)
     {
         if (null === $prism) {
             return $this; 
+        }
+        if (is_scalar($prism)) {
+            $prism = new FHIRDecimal($prism);
+        }
+        if (!($prism instanceof FHIRDecimal)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRVisionPrescriptionDispense::setPrism - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRDecimal or appropriate scalar value, %s seen.',
+                gettype($prism)
+            ));
         }
         $this->prism = $prism;
         return $this;
     }
 
     /**
-     * Allows for adjustment on two axis.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionPrism
+     * Amount of prism to compensate for eye alignment in fractional units.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
     public function getPrism()
     {
         return $this->prism;
     }
-
 
     /**
      * Identifies the type of vision correction product which is required for the patient.
@@ -618,9 +792,8 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements \Jso
         return $this->product;
     }
 
-
     /**
-     * Lens power measured in dioptres (0.25 units).
+     * Lens power measured in diopters (0.25 units).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDecimal
      * @return $this
      */
@@ -643,14 +816,13 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements \Jso
     }
 
     /**
-     * Lens power measured in dioptres (0.25 units).
+     * Lens power measured in diopters (0.25 units).
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
     public function getSphere()
     {
         return $this->sphere;
     }
-
 
     /**
      * @return string
@@ -675,6 +847,9 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements \Jso
         if (null !== ($v = $this->getBackCurve())) {
             $a['backCurve'] = $v;
         }
+        if (null !== ($v = $this->getBase())) {
+            $a['base'] = $v;
+        }
         if (null !== ($v = $this->getBrand())) {
             $a['brand'] = $v;
         }
@@ -693,8 +868,16 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements \Jso
         if (null !== ($v = $this->getEye())) {
             $a['eye'] = $v;
         }
-        if (null !== ($v = $this->getNote())) {
-            $a['note'] = $v;
+        if (0 < count($values = $this->getNote())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['note'] = $vs;
+            }
         }
         if (null !== ($v = $this->getPower())) {
             $a['power'] = $v;
@@ -721,9 +904,55 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements \Jso
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<VisionPrescriptionDispense xmlns="http://hl7.org/fhir"></VisionPrescriptionDispense>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getAdd())) {
+            $v->xmlSerialize(true, $sxe->addChild('add'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getAxis())) {
+            $v->xmlSerialize(true, $sxe->addChild('axis'));
+        }
+        if (null !== ($v = $this->getBackCurve())) {
+            $v->xmlSerialize(true, $sxe->addChild('backCurve'));
+        }
+        if (null !== ($v = $this->getBase())) {
+            $v->xmlSerialize(true, $sxe->addChild('base'));
+        }
+        if (null !== ($v = $this->getBrand())) {
+            $v->xmlSerialize(true, $sxe->addChild('brand'));
+        }
+        if (null !== ($v = $this->getColor())) {
+            $v->xmlSerialize(true, $sxe->addChild('color'));
+        }
+        if (null !== ($v = $this->getCylinder())) {
+            $v->xmlSerialize(true, $sxe->addChild('cylinder'));
+        }
+        if (null !== ($v = $this->getDiameter())) {
+            $v->xmlSerialize(true, $sxe->addChild('diameter'));
+        }
+        if (null !== ($v = $this->getDuration())) {
+            $v->xmlSerialize(true, $sxe->addChild('duration'));
+        }
+        if (null !== ($v = $this->getEye())) {
+            $v->xmlSerialize(true, $sxe->addChild('eye'));
+        }
+        if (0 < count($values = $this->getNote())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('note'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getPower())) {
+            $v->xmlSerialize(true, $sxe->addChild('power'));
+        }
+        if (null !== ($v = $this->getPrism())) {
+            $v->xmlSerialize(true, $sxe->addChild('prism'));
+        }
+        if (null !== ($v = $this->getProduct())) {
+            $v->xmlSerialize(true, $sxe->addChild('product'));
+        }
+        if (null !== ($v = $this->getSphere())) {
+            $v->xmlSerialize(true, $sxe->addChild('sphere'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

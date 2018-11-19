@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -70,7 +70,6 @@ use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEve
 use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
 use PHPFHIRGenerated\FHIRElement\FHIRCoding;
 use PHPFHIRGenerated\FHIRElement\FHIRInstant;
-use PHPFHIRGenerated\FHIRElement\FHIRPeriod;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
@@ -90,67 +89,61 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
      * Indicator for type of action performed during the event that generated the audit.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAuditEventAction
      */
-    public $action = null;
+    private $action = null;
 
     /**
      * An actor taking an active role in the event or activity that is logged.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventAgent
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventAgent[]
      */
-    public $agent = null;
+    private $agent = [];
 
     /**
      * Specific instances of data or objects that have been accessed.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventEntity
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventEntity[]
      */
-    public $entity = null;
+    private $entity = [];
 
     /**
      * Indicates whether the event succeeded or failed.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAuditEventOutcome
      */
-    public $outcome = null;
+    private $outcome = null;
 
     /**
      * A free text description of the outcome of the event.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $outcomeDesc = null;
-
-    /**
-     * The period during which the activity occurred.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
-     */
-    public $period = null;
+    private $outcomeDesc = null;
 
     /**
      * The purposeOfUse (reason) that was used during the event being recorded.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $purposeOfEvent = null;
+    private $purposeOfEvent = [];
 
     /**
-     * The time when the event was recorded.
+     * The time when the event occurred on the source.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInstant
      */
-    public $recorded = null;
+    private $recorded = null;
 
     /**
      * The system that is reporting the event.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventSource
      */
-    public $source = null;
+    private $source = null;
 
     /**
      * Identifier for the category of event.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
-    public $subtype = null;
+    private $subtype = [];
 
     /**
      * Identifier for a family of the event.  For example, a menu item, program, rule, policy, function code, application name or URL. It identifies the performed function.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
-    public $type = null;
+    private $type = null;
 
     /**
      * FHIRAuditEvent Constructor
@@ -159,40 +152,138 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['action'])) {
-                $this->setAction($data['action']);
+                $value = $data['action'];
+                if (is_array($value)) {
+                    $value = new FHIRAuditEventAction($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRAuditEventAction($value);
+                }
+                if (!($value instanceof FHIRAuditEventAction)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAuditEvent::__construct - Property \"action\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAuditEventAction or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setAction($value);
             }
             if (isset($data['agent'])) {
-                $this->setAgent($data['agent']);
+                $value = $data['agent'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRAuditEventAgent($v);
+                        } 
+                        if (!($v instanceof FHIRAuditEventAgent)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAuditEvent::__construct - Collection field \"agent\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventAgent or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addAgent($v);
+                    }
+                }
             }
             if (isset($data['entity'])) {
-                $this->setEntity($data['entity']);
+                $value = $data['entity'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRAuditEventEntity($v);
+                        } 
+                        if (!($v instanceof FHIRAuditEventEntity)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAuditEvent::__construct - Collection field \"entity\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventEntity or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addEntity($v);
+                    }
+                }
             }
             if (isset($data['outcome'])) {
-                $this->setOutcome($data['outcome']);
+                $value = $data['outcome'];
+                if (is_array($value)) {
+                    $value = new FHIRAuditEventOutcome($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRAuditEventOutcome($value);
+                }
+                if (!($value instanceof FHIRAuditEventOutcome)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAuditEvent::__construct - Property \"outcome\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAuditEventOutcome or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setOutcome($value);
             }
             if (isset($data['outcomeDesc'])) {
-                $this->setOutcomeDesc($data['outcomeDesc']);
-            }
-            if (isset($data['period'])) {
-                $this->setPeriod($data['period']);
+                $value = $data['outcomeDesc'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAuditEvent::__construct - Property \"outcomeDesc\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setOutcomeDesc($value);
             }
             if (isset($data['purposeOfEvent'])) {
-                $this->setPurposeOfEvent($data['purposeOfEvent']);
+                $value = $data['purposeOfEvent'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAuditEvent::__construct - Collection field \"purposeOfEvent\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addPurposeOfEvent($v);
+                    }
+                }
             }
             if (isset($data['recorded'])) {
-                $this->setRecorded($data['recorded']);
+                $value = $data['recorded'];
+                if (is_array($value)) {
+                    $value = new FHIRInstant($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRInstant($value);
+                }
+                if (!($value instanceof FHIRInstant)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAuditEvent::__construct - Property \"recorded\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRInstant or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setRecorded($value);
             }
             if (isset($data['source'])) {
-                $this->setSource($data['source']);
+                $value = $data['source'];
+                if (is_array($value)) {
+                    $value = new FHIRAuditEventSource($value);
+                } 
+                if (!($value instanceof FHIRAuditEventSource)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAuditEvent::__construct - Property \"source\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventSource or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setSource($value);
             }
             if (isset($data['subtype'])) {
-                $this->setSubtype($data['subtype']);
+                $value = $data['subtype'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCoding($v);
+                        } 
+                        if (!($v instanceof FHIRCoding)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAuditEvent::__construct - Collection field \"subtype\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCoding or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addSubtype($v);
+                    }
+                }
             }
             if (isset($data['type'])) {
-                $this->setType($data['type']);
+                $value = $data['type'];
+                if (is_array($value)) {
+                    $value = new FHIRCoding($value);
+                } 
+                if (!($value instanceof FHIRCoding)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRAuditEvent::__construct - Property \"type\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCoding or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setType($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -201,6 +292,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -235,54 +327,51 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
         return $this->action;
     }
 
-
     /**
      * An actor taking an active role in the event or activity that is logged.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventAgent
      * @return $this
      */
-    public function setAgent(FHIRAuditEventAgent $agent = null)
+    public function addAgent(FHIRAuditEventAgent $agent = null)
     {
         if (null === $agent) {
             return $this; 
         }
-        $this->agent = $agent;
+        $this->agent[] = $agent;
         return $this;
     }
 
     /**
      * An actor taking an active role in the event or activity that is logged.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventAgent
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventAgent[]
      */
     public function getAgent()
     {
         return $this->agent;
     }
 
-
     /**
      * Specific instances of data or objects that have been accessed.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventEntity
      * @return $this
      */
-    public function setEntity(FHIRAuditEventEntity $entity = null)
+    public function addEntity(FHIRAuditEventEntity $entity = null)
     {
         if (null === $entity) {
             return $this; 
         }
-        $this->entity = $entity;
+        $this->entity[] = $entity;
         return $this;
     }
 
     /**
      * Specific instances of data or objects that have been accessed.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventEntity
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventEntity[]
      */
     public function getEntity()
     {
         return $this->entity;
     }
-
 
     /**
      * Indicates whether the event succeeded or failed.
@@ -316,7 +405,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
         return $this->outcome;
     }
 
-
     /**
      * A free text description of the outcome of the event.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -349,57 +437,31 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
         return $this->outcomeDesc;
     }
 
-
-    /**
-     * The period during which the activity occurred.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
-     * @return $this
-     */
-    public function setPeriod(FHIRPeriod $period = null)
-    {
-        if (null === $period) {
-            return $this; 
-        }
-        $this->period = $period;
-        return $this;
-    }
-
-    /**
-     * The period during which the activity occurred.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
-     */
-    public function getPeriod()
-    {
-        return $this->period;
-    }
-
-
     /**
      * The purposeOfUse (reason) that was used during the event being recorded.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setPurposeOfEvent(FHIRCodeableConcept $purposeOfEvent = null)
+    public function addPurposeOfEvent(FHIRCodeableConcept $purposeOfEvent = null)
     {
         if (null === $purposeOfEvent) {
             return $this; 
         }
-        $this->purposeOfEvent = $purposeOfEvent;
+        $this->purposeOfEvent[] = $purposeOfEvent;
         return $this;
     }
 
     /**
      * The purposeOfUse (reason) that was used during the event being recorded.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getPurposeOfEvent()
     {
         return $this->purposeOfEvent;
     }
 
-
     /**
-     * The time when the event was recorded.
+     * The time when the event occurred on the source.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRInstant
      * @return $this
      */
@@ -422,14 +484,13 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The time when the event was recorded.
+     * The time when the event occurred on the source.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRInstant
      */
     public function getRecorded()
     {
         return $this->recorded;
     }
-
 
     /**
      * The system that is reporting the event.
@@ -454,30 +515,28 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
         return $this->source;
     }
 
-
     /**
      * Identifier for the category of event.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
      * @return $this
      */
-    public function setSubtype(FHIRCoding $subtype = null)
+    public function addSubtype(FHIRCoding $subtype = null)
     {
         if (null === $subtype) {
             return $this; 
         }
-        $this->subtype = $subtype;
+        $this->subtype[] = $subtype;
         return $this;
     }
 
     /**
      * Identifier for the category of event.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
     public function getSubtype()
     {
         return $this->subtype;
     }
-
 
     /**
      * Identifier for a family of the event.  For example, a menu item, program, rule, policy, function code, application name or URL. It identifies the performed function.
@@ -502,7 +561,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
         return $this->type;
     }
 
-
     /**
      * @return string
      */
@@ -521,11 +579,27 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getAction())) {
             $a['action'] = $v;
         }
-        if (null !== ($v = $this->getAgent())) {
-            $a['agent'] = $v;
+        if (0 < count($values = $this->getAgent())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['agent'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getEntity())) {
-            $a['entity'] = $v;
+        if (0 < count($values = $this->getEntity())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['entity'] = $vs;
+            }
         }
         if (null !== ($v = $this->getOutcome())) {
             $a['outcome'] = $v;
@@ -533,11 +607,16 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getOutcomeDesc())) {
             $a['outcomeDesc'] = $v;
         }
-        if (null !== ($v = $this->getPeriod())) {
-            $a['period'] = $v;
-        }
-        if (null !== ($v = $this->getPurposeOfEvent())) {
-            $a['purposeOfEvent'] = $v;
+        if (0 < count($values = $this->getPurposeOfEvent())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['purposeOfEvent'] = $vs;
+            }
         }
         if (null !== ($v = $this->getRecorded())) {
             $a['recorded'] = $v;
@@ -545,8 +624,16 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getSource())) {
             $a['source'] = $v;
         }
-        if (null !== ($v = $this->getSubtype())) {
-            $a['subtype'] = $v;
+        if (0 < count($values = $this->getSubtype())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['subtype'] = $vs;
+            }
         }
         if (null !== ($v = $this->getType())) {
             $a['type'] = $v;
@@ -564,9 +651,52 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<AuditEvent xmlns="http://hl7.org/fhir"></AuditEvent>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getAction())) {
+            $v->xmlSerialize(true, $sxe->addChild('action'));
         }
-        return $sxe->saveXML();
+        if (0 < count($values = $this->getAgent())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('agent'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getEntity())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('entity'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getOutcome())) {
+            $v->xmlSerialize(true, $sxe->addChild('outcome'));
+        }
+        if (null !== ($v = $this->getOutcomeDesc())) {
+            $v->xmlSerialize(true, $sxe->addChild('outcomeDesc'));
+        }
+        if (0 < count($values = $this->getPurposeOfEvent())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('purposeOfEvent'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getRecorded())) {
+            $v->xmlSerialize(true, $sxe->addChild('recorded'));
+        }
+        if (null !== ($v = $this->getSource())) {
+            $v->xmlSerialize(true, $sxe->addChild('source'));
+        }
+        if (0 < count($values = $this->getSubtype())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('subtype'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getType())) {
+            $v->xmlSerialize(true, $sxe->addChild('type'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

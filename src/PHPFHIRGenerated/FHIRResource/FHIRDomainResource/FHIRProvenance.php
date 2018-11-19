@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -64,8 +64,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceAgent;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceEntity;
-use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
-use PHPFHIRGenerated\FHIRElement\FHIRDateTime;
+use PHPFHIRGenerated\FHIRElement\FHIRCoding;
 use PHPFHIRGenerated\FHIRElement\FHIRInstant;
 use PHPFHIRGenerated\FHIRElement\FHIRPeriod;
 use PHPFHIRGenerated\FHIRElement\FHIRReference;
@@ -87,69 +86,63 @@ class FHIRProvenance extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
-    public $activity = null;
+    private $activity = null;
 
     /**
      * An actor taking a role in an activity  for which it can be assigned some degree of responsibility for the activity taking place.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceAgent
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceAgent[]
      */
-    public $agent = null;
+    private $agent = [];
 
     /**
      * An entity used in this activity.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceEntity
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceEntity[]
      */
-    public $entity = null;
+    private $entity = [];
 
     /**
      * Where the activity occurred, if relevant.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $location = null;
-
-    /**
-     * The period during which the activity occurred.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public $occurredDateTime = null;
+    private $location = null;
 
     /**
      * The period during which the activity occurred.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public $occurredPeriod = null;
+    private $period = null;
 
     /**
      * Policy or plan the activity was defined by. Typically, a single activity may have multiple applicable policy documents, such as patient consent, guarantor funding, etc.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri[]
      */
-    public $policy = null;
+    private $policy = [];
 
     /**
      * The reason that the activity was taking place.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
-    public $reason = null;
+    private $reason = [];
 
     /**
      * The instant of time at which the activity was recorded.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInstant
      */
-    public $recorded = null;
+    private $recorded = null;
 
     /**
      * A digital signature on the target Reference(s). The signer should match a Provenance.agent. The purpose of the signature is indicated.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRSignature
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRSignature[]
      */
-    public $signature = null;
+    private $signature = [];
 
     /**
      * The Reference(s) that were generated or updated by  the activity described in this resource. A provenance can point to more than one target if multiple resources were created/updated by the same activity.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $target = null;
+    private $target = [];
 
     /**
      * FHIRProvenance Constructor
@@ -158,40 +151,146 @@ class FHIRProvenance extends FHIRDomainResource implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['activity'])) {
-                $this->setActivity($data['activity']);
+                $value = $data['activity'];
+                if (is_array($value)) {
+                    $value = new FHIRCoding($value);
+                } 
+                if (!($value instanceof FHIRCoding)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProvenance::__construct - Property \"activity\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCoding or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setActivity($value);
             }
             if (isset($data['agent'])) {
-                $this->setAgent($data['agent']);
+                $value = $data['agent'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRProvenanceAgent($v);
+                        } 
+                        if (!($v instanceof FHIRProvenanceAgent)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProvenance::__construct - Collection field \"agent\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceAgent or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addAgent($v);
+                    }
+                }
             }
             if (isset($data['entity'])) {
-                $this->setEntity($data['entity']);
+                $value = $data['entity'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRProvenanceEntity($v);
+                        } 
+                        if (!($v instanceof FHIRProvenanceEntity)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProvenance::__construct - Collection field \"entity\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceEntity or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addEntity($v);
+                    }
+                }
             }
             if (isset($data['location'])) {
-                $this->setLocation($data['location']);
+                $value = $data['location'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProvenance::__construct - Property \"location\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setLocation($value);
             }
-            if (isset($data['occurredDateTime'])) {
-                $this->setOccurredDateTime($data['occurredDateTime']);
-            }
-            if (isset($data['occurredPeriod'])) {
-                $this->setOccurredPeriod($data['occurredPeriod']);
+            if (isset($data['period'])) {
+                $value = $data['period'];
+                if (is_array($value)) {
+                    $value = new FHIRPeriod($value);
+                } 
+                if (!($value instanceof FHIRPeriod)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProvenance::__construct - Property \"period\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPeriod or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setPeriod($value);
             }
             if (isset($data['policy'])) {
-                $this->setPolicy($data['policy']);
+                $value = $data['policy'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRUri($v);
+                        }  elseif (is_scalar($v)) {
+                            $v = new FHIRUri($v);
+                        }
+                        if (!($v instanceof FHIRUri)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProvenance::__construct - Collection field \"policy\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addPolicy($v);
+                    }
+                }
             }
             if (isset($data['reason'])) {
-                $this->setReason($data['reason']);
+                $value = $data['reason'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCoding($v);
+                        } 
+                        if (!($v instanceof FHIRCoding)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProvenance::__construct - Collection field \"reason\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCoding or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addReason($v);
+                    }
+                }
             }
             if (isset($data['recorded'])) {
-                $this->setRecorded($data['recorded']);
+                $value = $data['recorded'];
+                if (is_array($value)) {
+                    $value = new FHIRInstant($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRInstant($value);
+                }
+                if (!($value instanceof FHIRInstant)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProvenance::__construct - Property \"recorded\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRInstant or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setRecorded($value);
             }
             if (isset($data['signature'])) {
-                $this->setSignature($data['signature']);
+                $value = $data['signature'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRSignature($v);
+                        } 
+                        if (!($v instanceof FHIRSignature)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProvenance::__construct - Collection field \"signature\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRSignature or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addSignature($v);
+                    }
+                }
             }
             if (isset($data['target'])) {
-                $this->setTarget($data['target']);
+                $value = $data['target'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProvenance::__construct - Collection field \"target\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addTarget($v);
+                    }
+                }
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -200,14 +299,15 @@ class FHIRProvenance extends FHIRDomainResource implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
      * An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
      * @return $this
      */
-    public function setActivity(FHIRCodeableConcept $activity = null)
+    public function setActivity(FHIRCoding $activity = null)
     {
         if (null === $activity) {
             return $this; 
@@ -218,61 +318,58 @@ class FHIRProvenance extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public function getActivity()
     {
         return $this->activity;
     }
 
-
     /**
      * An actor taking a role in an activity  for which it can be assigned some degree of responsibility for the activity taking place.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceAgent
      * @return $this
      */
-    public function setAgent(FHIRProvenanceAgent $agent = null)
+    public function addAgent(FHIRProvenanceAgent $agent = null)
     {
         if (null === $agent) {
             return $this; 
         }
-        $this->agent = $agent;
+        $this->agent[] = $agent;
         return $this;
     }
 
     /**
      * An actor taking a role in an activity  for which it can be assigned some degree of responsibility for the activity taking place.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceAgent
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceAgent[]
      */
     public function getAgent()
     {
         return $this->agent;
     }
 
-
     /**
      * An entity used in this activity.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceEntity
      * @return $this
      */
-    public function setEntity(FHIRProvenanceEntity $entity = null)
+    public function addEntity(FHIRProvenanceEntity $entity = null)
     {
         if (null === $entity) {
             return $this; 
         }
-        $this->entity = $entity;
+        $this->entity[] = $entity;
         return $this;
     }
 
     /**
      * An entity used in this activity.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceEntity
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceEntity[]
      */
     public function getEntity()
     {
         return $this->entity;
     }
-
 
     /**
      * Where the activity occurred, if relevant.
@@ -297,51 +394,17 @@ class FHIRProvenance extends FHIRDomainResource implements \JsonSerializable
         return $this->location;
     }
 
-
-    /**
-     * The period during which the activity occurred.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     * @return $this
-     */
-    public function setOccurredDateTime($occurredDateTime)
-    {
-        if (null === $occurredDateTime) {
-            return $this; 
-        }
-        if (is_scalar($occurredDateTime)) {
-            $occurredDateTime = new FHIRDateTime($occurredDateTime);
-        }
-        if (!($occurredDateTime instanceof FHIRDateTime)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRProvenance::setOccurredDateTime - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or appropriate scalar value, %s seen.',
-                gettype($occurredDateTime)
-            ));
-        }
-        $this->occurredDateTime = $occurredDateTime;
-        return $this;
-    }
-
-    /**
-     * The period during which the activity occurred.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public function getOccurredDateTime()
-    {
-        return $this->occurredDateTime;
-    }
-
-
     /**
      * The period during which the activity occurred.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
      * @return $this
      */
-    public function setOccurredPeriod(FHIRPeriod $occurredPeriod = null)
+    public function setPeriod(FHIRPeriod $period = null)
     {
-        if (null === $occurredPeriod) {
+        if (null === $period) {
             return $this; 
         }
-        $this->occurredPeriod = $occurredPeriod;
+        $this->period = $period;
         return $this;
     }
 
@@ -349,18 +412,17 @@ class FHIRProvenance extends FHIRDomainResource implements \JsonSerializable
      * The period during which the activity occurred.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public function getOccurredPeriod()
+    public function getPeriod()
     {
-        return $this->occurredPeriod;
+        return $this->period;
     }
-
 
     /**
      * Policy or plan the activity was defined by. Typically, a single activity may have multiple applicable policy documents, such as patient consent, guarantor funding, etc.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
-    public function setPolicy($policy)
+    public function addPolicy($policy)
     {
         if (null === $policy) {
             return $this; 
@@ -370,47 +432,45 @@ class FHIRProvenance extends FHIRDomainResource implements \JsonSerializable
         }
         if (!($policy instanceof FHIRUri)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRProvenance::setPolicy - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or appropriate scalar value, %s seen.',
+                'FHIRProvenance::addPolicy - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or appropriate scalar value, %s seen.',
                 gettype($policy)
             ));
         }
-        $this->policy = $policy;
+        $this->policy[] = $policy;
         return $this;
     }
 
     /**
      * Policy or plan the activity was defined by. Typically, a single activity may have multiple applicable policy documents, such as patient consent, guarantor funding, etc.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri[]
      */
     public function getPolicy()
     {
         return $this->policy;
     }
 
-
     /**
      * The reason that the activity was taking place.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
      * @return $this
      */
-    public function setReason(FHIRCodeableConcept $reason = null)
+    public function addReason(FHIRCoding $reason = null)
     {
         if (null === $reason) {
             return $this; 
         }
-        $this->reason = $reason;
+        $this->reason[] = $reason;
         return $this;
     }
 
     /**
      * The reason that the activity was taking place.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
     public function getReason()
     {
         return $this->reason;
     }
-
 
     /**
      * The instant of time at which the activity was recorded.
@@ -444,54 +504,51 @@ class FHIRProvenance extends FHIRDomainResource implements \JsonSerializable
         return $this->recorded;
     }
 
-
     /**
      * A digital signature on the target Reference(s). The signer should match a Provenance.agent. The purpose of the signature is indicated.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRSignature
      * @return $this
      */
-    public function setSignature(FHIRSignature $signature = null)
+    public function addSignature(FHIRSignature $signature = null)
     {
         if (null === $signature) {
             return $this; 
         }
-        $this->signature = $signature;
+        $this->signature[] = $signature;
         return $this;
     }
 
     /**
      * A digital signature on the target Reference(s). The signer should match a Provenance.agent. The purpose of the signature is indicated.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRSignature
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRSignature[]
      */
     public function getSignature()
     {
         return $this->signature;
     }
 
-
     /**
      * The Reference(s) that were generated or updated by  the activity described in this resource. A provenance can point to more than one target if multiple resources were created/updated by the same activity.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setTarget(FHIRReference $target = null)
+    public function addTarget(FHIRReference $target = null)
     {
         if (null === $target) {
             return $this; 
         }
-        $this->target = $target;
+        $this->target[] = $target;
         return $this;
     }
 
     /**
      * The Reference(s) that were generated or updated by  the activity described in this resource. A provenance can point to more than one target if multiple resources were created/updated by the same activity.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getTarget()
     {
         return $this->target;
     }
-
 
     /**
      * @return string
@@ -511,35 +568,80 @@ class FHIRProvenance extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getActivity())) {
             $a['activity'] = $v;
         }
-        if (null !== ($v = $this->getAgent())) {
-            $a['agent'] = $v;
+        if (0 < count($values = $this->getAgent())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['agent'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getEntity())) {
-            $a['entity'] = $v;
+        if (0 < count($values = $this->getEntity())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['entity'] = $vs;
+            }
         }
         if (null !== ($v = $this->getLocation())) {
             $a['location'] = $v;
         }
-        if (null !== ($v = $this->getOccurredDateTime())) {
-            $a['occurredDateTime'] = $v;
+        if (null !== ($v = $this->getPeriod())) {
+            $a['period'] = $v;
         }
-        if (null !== ($v = $this->getOccurredPeriod())) {
-            $a['occurredPeriod'] = $v;
+        if (0 < count($values = $this->getPolicy())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['policy'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getPolicy())) {
-            $a['policy'] = $v;
-        }
-        if (null !== ($v = $this->getReason())) {
-            $a['reason'] = $v;
+        if (0 < count($values = $this->getReason())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['reason'] = $vs;
+            }
         }
         if (null !== ($v = $this->getRecorded())) {
             $a['recorded'] = $v;
         }
-        if (null !== ($v = $this->getSignature())) {
-            $a['signature'] = $v;
+        if (0 < count($values = $this->getSignature())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['signature'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getTarget())) {
-            $a['target'] = $v;
+        if (0 < count($values = $this->getTarget())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['target'] = $vs;
+            }
         }
         return $a;
     }
@@ -554,9 +656,60 @@ class FHIRProvenance extends FHIRDomainResource implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Provenance xmlns="http://hl7.org/fhir"></Provenance>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getActivity())) {
+            $v->xmlSerialize(true, $sxe->addChild('activity'));
         }
-        return $sxe->saveXML();
+        if (0 < count($values = $this->getAgent())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('agent'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getEntity())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('entity'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getLocation())) {
+            $v->xmlSerialize(true, $sxe->addChild('location'));
+        }
+        if (null !== ($v = $this->getPeriod())) {
+            $v->xmlSerialize(true, $sxe->addChild('period'));
+        }
+        if (0 < count($values = $this->getPolicy())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('policy'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getReason())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('reason'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getRecorded())) {
+            $v->xmlSerialize(true, $sxe->addChild('recorded'));
+        }
+        if (0 < count($values = $this->getSignature())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('signature'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getTarget())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('target'));
+                }
+            }
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

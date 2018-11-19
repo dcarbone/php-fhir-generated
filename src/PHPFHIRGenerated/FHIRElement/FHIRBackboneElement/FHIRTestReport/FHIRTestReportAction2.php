@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -79,7 +79,7 @@ class FHIRTestReportAction2 extends FHIRBackboneElement implements \JsonSerializ
      * An operation would involve a REST request to a server.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportOperation
      */
-    public $operation = null;
+    private $operation = null;
 
     /**
      * FHIRTestReportAction2 Constructor
@@ -88,10 +88,16 @@ class FHIRTestReportAction2 extends FHIRBackboneElement implements \JsonSerializ
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['operation'])) {
-                $this->setOperation($data['operation']);
+                $value = $data['operation'];
+                if (is_array($value)) {
+                    $value = new FHIRTestReportOperation($value);
+                } 
+                if (!($value instanceof FHIRTestReportOperation)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportAction2::__construct - Property \"operation\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportOperation or data to construct type, saw ".gettype($value));
+                }
+                $this->setOperation($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -100,6 +106,7 @@ class FHIRTestReportAction2 extends FHIRBackboneElement implements \JsonSerializ
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -124,7 +131,6 @@ class FHIRTestReportAction2 extends FHIRBackboneElement implements \JsonSerializ
     {
         return $this->operation;
     }
-
 
     /**
      * @return string
@@ -156,9 +162,9 @@ class FHIRTestReportAction2 extends FHIRBackboneElement implements \JsonSerializ
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<TestReportAction2 xmlns="http://hl7.org/fhir"></TestReportAction2>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getOperation())) {
+            $v->xmlSerialize(true, $sxe->addChild('operation'));
         }
-        return $sxe->saveXML();
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

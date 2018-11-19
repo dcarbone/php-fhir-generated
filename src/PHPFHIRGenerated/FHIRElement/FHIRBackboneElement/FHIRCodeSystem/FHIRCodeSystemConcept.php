@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -67,7 +67,7 @@ use PHPFHIRGenerated\FHIRElement\FHIRCode;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
 
 /**
- * The CodeSystem resource is used to declare the existence of and describe a code system or code system supplement and its key properties, and optionally define a part or all of its content.
+ * A code system resource specifies a set of codes drawn from one or more code systems.
  *
  * Class FHIRCodeSystemConcept
  * @package PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem
@@ -81,37 +81,37 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement implements \JsonSerializ
      * A code - a text symbol - that uniquely identifies the concept within the code system.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public $code = null;
+    private $code = null;
 
     /**
      * Defines children of a concept to produce a hierarchy of concepts. The nature of the relationships is variable (is-a/contains/categorizes) - see hierarchyMeaning.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept[]
      */
-    public $concept = null;
+    private $concept = [];
 
     /**
      * The formal definition of the concept. The code system resource does not make formal definitions required, because of the prevalence of legacy systems. However, they are highly recommended, as without them there is no formal meaning associated with the concept.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $definition = null;
+    private $definition = null;
 
     /**
      * Additional representations for the concept - other languages, aliases, specialized purposes, used for particular purposes, etc.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemDesignation
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemDesignation[]
      */
-    public $designation = null;
+    private $designation = [];
 
     /**
      * A human readable string that is the recommended default way to present this concept to a user.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $display = null;
+    private $display = null;
 
     /**
      * A property value for this concept.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemProperty1
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemProperty1[]
      */
-    public $property = null;
+    private $property = [];
 
     /**
      * FHIRCodeSystemConcept Constructor
@@ -120,25 +120,90 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement implements \JsonSerializ
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['code'])) {
-                $this->setCode($data['code']);
+                $value = $data['code'];
+                if (is_array($value)) {
+                    $value = new FHIRCode($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRCode($value);
+                }
+                if (!($value instanceof FHIRCode)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept::__construct - Property \"code\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or data to construct type, saw ".gettype($value));
+                }
+                $this->setCode($value);
             }
             if (isset($data['concept'])) {
-                $this->setConcept($data['concept']);
+                $value = $data['concept'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeSystemConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeSystemConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept::__construct - Collection field \"concept\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addConcept($v);
+                    }
+                }
             }
             if (isset($data['definition'])) {
-                $this->setDefinition($data['definition']);
+                $value = $data['definition'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept::__construct - Property \"definition\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setDefinition($value);
             }
             if (isset($data['designation'])) {
-                $this->setDesignation($data['designation']);
+                $value = $data['designation'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeSystemDesignation($v);
+                        } 
+                        if (!($v instanceof FHIRCodeSystemDesignation)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept::__construct - Collection field \"designation\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemDesignation or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addDesignation($v);
+                    }
+                }
             }
             if (isset($data['display'])) {
-                $this->setDisplay($data['display']);
+                $value = $data['display'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept::__construct - Property \"display\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setDisplay($value);
             }
             if (isset($data['property'])) {
-                $this->setProperty($data['property']);
+                $value = $data['property'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeSystemProperty1($v);
+                        } 
+                        if (!($v instanceof FHIRCodeSystemProperty1)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept::__construct - Collection field \"property\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemProperty1 or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addProperty($v);
+                    }
+                }
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -147,6 +212,7 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement implements \JsonSerializ
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -181,30 +247,28 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement implements \JsonSerializ
         return $this->code;
     }
 
-
     /**
      * Defines children of a concept to produce a hierarchy of concepts. The nature of the relationships is variable (is-a/contains/categorizes) - see hierarchyMeaning.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept
      * @return $this
      */
-    public function setConcept(FHIRCodeSystemConcept $concept = null)
+    public function addConcept(FHIRCodeSystemConcept $concept = null)
     {
         if (null === $concept) {
             return $this; 
         }
-        $this->concept = $concept;
+        $this->concept[] = $concept;
         return $this;
     }
 
     /**
      * Defines children of a concept to produce a hierarchy of concepts. The nature of the relationships is variable (is-a/contains/categorizes) - see hierarchyMeaning.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept[]
      */
     public function getConcept()
     {
         return $this->concept;
     }
-
 
     /**
      * The formal definition of the concept. The code system resource does not make formal definitions required, because of the prevalence of legacy systems. However, they are highly recommended, as without them there is no formal meaning associated with the concept.
@@ -238,30 +302,28 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement implements \JsonSerializ
         return $this->definition;
     }
 
-
     /**
      * Additional representations for the concept - other languages, aliases, specialized purposes, used for particular purposes, etc.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemDesignation
      * @return $this
      */
-    public function setDesignation(FHIRCodeSystemDesignation $designation = null)
+    public function addDesignation(FHIRCodeSystemDesignation $designation = null)
     {
         if (null === $designation) {
             return $this; 
         }
-        $this->designation = $designation;
+        $this->designation[] = $designation;
         return $this;
     }
 
     /**
      * Additional representations for the concept - other languages, aliases, specialized purposes, used for particular purposes, etc.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemDesignation
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemDesignation[]
      */
     public function getDesignation()
     {
         return $this->designation;
     }
-
 
     /**
      * A human readable string that is the recommended default way to present this concept to a user.
@@ -295,30 +357,28 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement implements \JsonSerializ
         return $this->display;
     }
 
-
     /**
      * A property value for this concept.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemProperty1
      * @return $this
      */
-    public function setProperty(FHIRCodeSystemProperty1 $property = null)
+    public function addProperty(FHIRCodeSystemProperty1 $property = null)
     {
         if (null === $property) {
             return $this; 
         }
-        $this->property = $property;
+        $this->property[] = $property;
         return $this;
     }
 
     /**
      * A property value for this concept.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemProperty1
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemProperty1[]
      */
     public function getProperty()
     {
         return $this->property;
     }
-
 
     /**
      * @return string
@@ -337,20 +397,44 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement implements \JsonSerializ
         if (null !== ($v = $this->getCode())) {
             $a['code'] = $v;
         }
-        if (null !== ($v = $this->getConcept())) {
-            $a['concept'] = $v;
+        if (0 < count($values = $this->getConcept())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['concept'] = $vs;
+            }
         }
         if (null !== ($v = $this->getDefinition())) {
             $a['definition'] = $v;
         }
-        if (null !== ($v = $this->getDesignation())) {
-            $a['designation'] = $v;
+        if (0 < count($values = $this->getDesignation())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['designation'] = $vs;
+            }
         }
         if (null !== ($v = $this->getDisplay())) {
             $a['display'] = $v;
         }
-        if (null !== ($v = $this->getProperty())) {
-            $a['property'] = $v;
+        if (0 < count($values = $this->getProperty())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['property'] = $vs;
+            }
         }
         return $a;
     }
@@ -365,9 +449,36 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement implements \JsonSerializ
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<CodeSystemConcept xmlns="http://hl7.org/fhir"></CodeSystemConcept>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getCode())) {
+            $v->xmlSerialize(true, $sxe->addChild('code'));
         }
-        return $sxe->saveXML();
+        if (0 < count($values = $this->getConcept())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('concept'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getDefinition())) {
+            $v->xmlSerialize(true, $sxe->addChild('definition'));
+        }
+        if (0 < count($values = $this->getDesignation())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('designation'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getDisplay())) {
+            $v->xmlSerialize(true, $sxe->addChild('display'));
+        }
+        if (0 < count($values = $this->getProperty())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('property'));
+                }
+            }
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

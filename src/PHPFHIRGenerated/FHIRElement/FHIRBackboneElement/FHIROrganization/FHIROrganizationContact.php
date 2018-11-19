@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROrganization;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROrganization;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -69,7 +69,7 @@ use PHPFHIRGenerated\FHIRElement\FHIRContactPoint;
 use PHPFHIRGenerated\FHIRElement\FHIRHumanName;
 
 /**
- * A formally or informally recognized grouping of people or organizations formed for the purpose of achieving some form of collective action.  Includes companies, institutions, corporations, departments, community groups, healthcare practice groups, payer/insurer, etc.
+ * A formally or informally recognized grouping of people or organizations formed for the purpose of achieving some form of collective action.  Includes companies, institutions, corporations, departments, community groups, healthcare practice groups, etc.
  *
  * Class FHIROrganizationContact
  * @package PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROrganization
@@ -83,25 +83,25 @@ class FHIROrganizationContact extends FHIRBackboneElement implements \JsonSerial
      * Visiting or postal addresses for the contact.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAddress
      */
-    public $address = null;
+    private $address = null;
 
     /**
      * A name associated with the contact.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRHumanName
      */
-    public $name = null;
+    private $name = null;
 
     /**
      * Indicates a purpose for which the contact can be reached.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $purpose = null;
+    private $purpose = null;
 
     /**
      * A contact detail (e.g. a telephone number or an email address) by which the party may be contacted.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactPoint
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactPoint[]
      */
-    public $telecom = null;
+    private $telecom = [];
 
     /**
      * FHIROrganizationContact Constructor
@@ -110,19 +110,52 @@ class FHIROrganizationContact extends FHIRBackboneElement implements \JsonSerial
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['address'])) {
-                $this->setAddress($data['address']);
+                $value = $data['address'];
+                if (is_array($value)) {
+                    $value = new FHIRAddress($value);
+                } 
+                if (!($value instanceof FHIRAddress)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROrganization\FHIROrganizationContact::__construct - Property \"address\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAddress or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setAddress($value);
             }
             if (isset($data['name'])) {
-                $this->setName($data['name']);
+                $value = $data['name'];
+                if (is_array($value)) {
+                    $value = new FHIRHumanName($value);
+                } 
+                if (!($value instanceof FHIRHumanName)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROrganization\FHIROrganizationContact::__construct - Property \"name\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRHumanName or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setName($value);
             }
             if (isset($data['purpose'])) {
-                $this->setPurpose($data['purpose']);
+                $value = $data['purpose'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROrganization\FHIROrganizationContact::__construct - Property \"purpose\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setPurpose($value);
             }
             if (isset($data['telecom'])) {
-                $this->setTelecom($data['telecom']);
+                $value = $data['telecom'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRContactPoint($v);
+                        } 
+                        if (!($v instanceof FHIRContactPoint)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROrganization\FHIROrganizationContact::__construct - Collection field \"telecom\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRContactPoint or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addTelecom($v);
+                    }
+                }
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -131,6 +164,7 @@ class FHIROrganizationContact extends FHIRBackboneElement implements \JsonSerial
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -156,7 +190,6 @@ class FHIROrganizationContact extends FHIRBackboneElement implements \JsonSerial
         return $this->address;
     }
 
-
     /**
      * A name associated with the contact.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRHumanName
@@ -179,7 +212,6 @@ class FHIROrganizationContact extends FHIRBackboneElement implements \JsonSerial
     {
         return $this->name;
     }
-
 
     /**
      * Indicates a purpose for which the contact can be reached.
@@ -204,30 +236,28 @@ class FHIROrganizationContact extends FHIRBackboneElement implements \JsonSerial
         return $this->purpose;
     }
 
-
     /**
      * A contact detail (e.g. a telephone number or an email address) by which the party may be contacted.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContactPoint
      * @return $this
      */
-    public function setTelecom(FHIRContactPoint $telecom = null)
+    public function addTelecom(FHIRContactPoint $telecom = null)
     {
         if (null === $telecom) {
             return $this; 
         }
-        $this->telecom = $telecom;
+        $this->telecom[] = $telecom;
         return $this;
     }
 
     /**
      * A contact detail (e.g. a telephone number or an email address) by which the party may be contacted.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactPoint
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactPoint[]
      */
     public function getTelecom()
     {
         return $this->telecom;
     }
-
 
     /**
      * @return string
@@ -252,8 +282,16 @@ class FHIROrganizationContact extends FHIRBackboneElement implements \JsonSerial
         if (null !== ($v = $this->getPurpose())) {
             $a['purpose'] = $v;
         }
-        if (null !== ($v = $this->getTelecom())) {
-            $a['telecom'] = $v;
+        if (0 < count($values = $this->getTelecom())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['telecom'] = $vs;
+            }
         }
         return $a;
     }
@@ -268,9 +306,22 @@ class FHIROrganizationContact extends FHIRBackboneElement implements \JsonSerial
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<OrganizationContact xmlns="http://hl7.org/fhir"></OrganizationContact>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getAddress())) {
+            $v->xmlSerialize(true, $sxe->addChild('address'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getName())) {
+            $v->xmlSerialize(true, $sxe->addChild('name'));
+        }
+        if (null !== ($v = $this->getPurpose())) {
+            $v->xmlSerialize(true, $sxe->addChild('purpose'));
+        }
+        if (0 < count($values = $this->getTelecom())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('telecom'));
+                }
+            }
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

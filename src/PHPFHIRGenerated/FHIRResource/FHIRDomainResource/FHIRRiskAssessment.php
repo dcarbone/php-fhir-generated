@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -62,7 +62,6 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * 
  */
 
-use PHPFHIRGenerated\FHIRElement\FHIRAnnotation;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction;
 use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
 use PHPFHIRGenerated\FHIRElement\FHIRDateTime;
@@ -89,109 +88,109 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
      * A reference to the request that is fulfilled by this risk assessment.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $basedOn = null;
+    private $basedOn = null;
 
     /**
-     * Indicates the source data considered as part of the assessment (for example, FamilyHistory, Observations, Procedures, Conditions, etc.).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * Indicates the source data considered as part of the assessment (FamilyHistory, Observations, Procedures, Conditions, etc.).
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $basis = null;
+    private $basis = [];
 
     /**
      * The type of the risk assessment performed.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $code = null;
+    private $code = null;
+
+    /**
+     * Additional comments about the risk assessment.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    private $comment = null;
 
     /**
      * For assessments or prognosis specific to a particular condition, indicates the condition being assessed.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $condition = null;
+    private $condition = null;
 
     /**
      * The encounter where the assessment was performed.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $context = null;
+    private $context = null;
 
     /**
      * Business identifier assigned to the risk assessment.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public $identifier = null;
+    private $identifier = null;
 
     /**
      * The algorithm, process or mechanism used to evaluate the risk.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $method = null;
+    private $method = null;
 
     /**
      * A description of the steps that might be taken to reduce the identified risk(s).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $mitigation = null;
+    private $mitigation = null;
 
     /**
-     * Additional comments about the risk assessment.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation
-     */
-    public $note = null;
-
-    /**
-     * The date (and possibly time) the risk assessment was performed.
+     * The date (and possibly time) the risk assessment was performed. (choose any one of occurrence*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $occurrenceDateTime = null;
+    private $occurrenceDateTime = null;
 
     /**
-     * The date (and possibly time) the risk assessment was performed.
+     * The date (and possibly time) the risk assessment was performed. (choose any one of occurrence*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public $occurrencePeriod = null;
+    private $occurrencePeriod = null;
 
     /**
      * A reference to a resource that this risk assessment is part of, such as a Procedure.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $parent = null;
+    private $parent = null;
 
     /**
      * The provider or software application that performed the assessment.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $performer = null;
+    private $performer = null;
 
     /**
      * Describes the expected outcome for the subject.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction[]
      */
-    public $prediction = null;
+    private $prediction = [];
 
     /**
-     * The reason the risk assessment was performed.
+     * The reason the risk assessment was performed. (choose any one of reason*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $reasonCode = null;
+    private $reasonCodeableConcept = null;
 
     /**
-     * Resources supporting the reason the risk assessment was performed.
+     * The reason the risk assessment was performed. (choose any one of reason*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $reasonReference = null;
+    private $reasonReference = null;
 
     /**
      * The status of the RiskAssessment, using the same statuses as an Observation.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRObservationStatus
      */
-    public $status = null;
+    private $status = null;
 
     /**
      * The patient or group the risk assessment applies to.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $subject = null;
+    private $subject = null;
 
     /**
      * FHIRRiskAssessment Constructor
@@ -200,61 +199,206 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['basedOn'])) {
-                $this->setBasedOn($data['basedOn']);
+                $value = $data['basedOn'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRiskAssessment::__construct - Property \"basedOn\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setBasedOn($value);
             }
             if (isset($data['basis'])) {
-                $this->setBasis($data['basis']);
+                $value = $data['basis'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRiskAssessment::__construct - Collection field \"basis\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addBasis($v);
+                    }
+                }
             }
             if (isset($data['code'])) {
-                $this->setCode($data['code']);
+                $value = $data['code'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRiskAssessment::__construct - Property \"code\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setCode($value);
+            }
+            if (isset($data['comment'])) {
+                $value = $data['comment'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRiskAssessment::__construct - Property \"comment\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setComment($value);
             }
             if (isset($data['condition'])) {
-                $this->setCondition($data['condition']);
+                $value = $data['condition'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRiskAssessment::__construct - Property \"condition\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setCondition($value);
             }
             if (isset($data['context'])) {
-                $this->setContext($data['context']);
+                $value = $data['context'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRiskAssessment::__construct - Property \"context\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setContext($value);
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    $value = new FHIRIdentifier($value);
+                } 
+                if (!($value instanceof FHIRIdentifier)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRiskAssessment::__construct - Property \"identifier\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setIdentifier($value);
             }
             if (isset($data['method'])) {
-                $this->setMethod($data['method']);
+                $value = $data['method'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRiskAssessment::__construct - Property \"method\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setMethod($value);
             }
             if (isset($data['mitigation'])) {
-                $this->setMitigation($data['mitigation']);
-            }
-            if (isset($data['note'])) {
-                $this->setNote($data['note']);
+                $value = $data['mitigation'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRiskAssessment::__construct - Property \"mitigation\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setMitigation($value);
             }
             if (isset($data['occurrenceDateTime'])) {
-                $this->setOccurrenceDateTime($data['occurrenceDateTime']);
+                $value = $data['occurrenceDateTime'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRiskAssessment::__construct - Property \"occurrenceDateTime\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setOccurrenceDateTime($value);
             }
             if (isset($data['occurrencePeriod'])) {
-                $this->setOccurrencePeriod($data['occurrencePeriod']);
+                $value = $data['occurrencePeriod'];
+                if (is_array($value)) {
+                    $value = new FHIRPeriod($value);
+                } 
+                if (!($value instanceof FHIRPeriod)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRiskAssessment::__construct - Property \"occurrencePeriod\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPeriod or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setOccurrencePeriod($value);
             }
             if (isset($data['parent'])) {
-                $this->setParent($data['parent']);
+                $value = $data['parent'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRiskAssessment::__construct - Property \"parent\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setParent($value);
             }
             if (isset($data['performer'])) {
-                $this->setPerformer($data['performer']);
+                $value = $data['performer'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRiskAssessment::__construct - Property \"performer\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setPerformer($value);
             }
             if (isset($data['prediction'])) {
-                $this->setPrediction($data['prediction']);
+                $value = $data['prediction'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRRiskAssessmentPrediction($v);
+                        } 
+                        if (!($v instanceof FHIRRiskAssessmentPrediction)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRiskAssessment::__construct - Collection field \"prediction\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addPrediction($v);
+                    }
+                }
             }
-            if (isset($data['reasonCode'])) {
-                $this->setReasonCode($data['reasonCode']);
+            if (isset($data['reasonCodeableConcept'])) {
+                $value = $data['reasonCodeableConcept'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRiskAssessment::__construct - Property \"reasonCodeableConcept\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setReasonCodeableConcept($value);
             }
             if (isset($data['reasonReference'])) {
-                $this->setReasonReference($data['reasonReference']);
+                $value = $data['reasonReference'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRiskAssessment::__construct - Property \"reasonReference\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setReasonReference($value);
             }
             if (isset($data['status'])) {
-                $this->setStatus($data['status']);
+                $value = $data['status'];
+                if (is_array($value)) {
+                    $value = new FHIRObservationStatus($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRObservationStatus($value);
+                }
+                if (!($value instanceof FHIRObservationStatus)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRiskAssessment::__construct - Property \"status\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRObservationStatus or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setStatus($value);
             }
             if (isset($data['subject'])) {
-                $this->setSubject($data['subject']);
+                $value = $data['subject'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRiskAssessment::__construct - Property \"subject\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setSubject($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -263,6 +407,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -288,30 +433,28 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
         return $this->basedOn;
     }
 
-
     /**
-     * Indicates the source data considered as part of the assessment (for example, FamilyHistory, Observations, Procedures, Conditions, etc.).
+     * Indicates the source data considered as part of the assessment (FamilyHistory, Observations, Procedures, Conditions, etc.).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setBasis(FHIRReference $basis = null)
+    public function addBasis(FHIRReference $basis = null)
     {
         if (null === $basis) {
             return $this; 
         }
-        $this->basis = $basis;
+        $this->basis[] = $basis;
         return $this;
     }
 
     /**
-     * Indicates the source data considered as part of the assessment (for example, FamilyHistory, Observations, Procedures, Conditions, etc.).
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * Indicates the source data considered as part of the assessment (FamilyHistory, Observations, Procedures, Conditions, etc.).
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getBasis()
     {
         return $this->basis;
     }
-
 
     /**
      * The type of the risk assessment performed.
@@ -336,6 +479,37 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
         return $this->code;
     }
 
+    /**
+     * Additional comments about the risk assessment.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     * @return $this
+     */
+    public function setComment($comment)
+    {
+        if (null === $comment) {
+            return $this; 
+        }
+        if (is_scalar($comment)) {
+            $comment = new FHIRString($comment);
+        }
+        if (!($comment instanceof FHIRString)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRRiskAssessment::setComment - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                gettype($comment)
+            ));
+        }
+        $this->comment = $comment;
+        return $this;
+    }
+
+    /**
+     * Additional comments about the risk assessment.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getComment()
+    {
+        return $this->comment;
+    }
 
     /**
      * For assessments or prognosis specific to a particular condition, indicates the condition being assessed.
@@ -360,7 +534,6 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
         return $this->condition;
     }
 
-
     /**
      * The encounter where the assessment was performed.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -383,7 +556,6 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
     {
         return $this->context;
     }
-
 
     /**
      * Business identifier assigned to the risk assessment.
@@ -408,7 +580,6 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
         return $this->identifier;
     }
 
-
     /**
      * The algorithm, process or mechanism used to evaluate the risk.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
@@ -431,7 +602,6 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
     {
         return $this->method;
     }
-
 
     /**
      * A description of the steps that might be taken to reduce the identified risk(s).
@@ -465,33 +635,8 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
         return $this->mitigation;
     }
 
-
     /**
-     * Additional comments about the risk assessment.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation
-     * @return $this
-     */
-    public function setNote(FHIRAnnotation $note = null)
-    {
-        if (null === $note) {
-            return $this; 
-        }
-        $this->note = $note;
-        return $this;
-    }
-
-    /**
-     * Additional comments about the risk assessment.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation
-     */
-    public function getNote()
-    {
-        return $this->note;
-    }
-
-
-    /**
-     * The date (and possibly time) the risk assessment was performed.
+     * The date (and possibly time) the risk assessment was performed. (choose any one of occurrence*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      * @return $this
      */
@@ -514,7 +659,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date (and possibly time) the risk assessment was performed.
+     * The date (and possibly time) the risk assessment was performed. (choose any one of occurrence*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getOccurrenceDateTime()
@@ -522,9 +667,8 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
         return $this->occurrenceDateTime;
     }
 
-
     /**
-     * The date (and possibly time) the risk assessment was performed.
+     * The date (and possibly time) the risk assessment was performed. (choose any one of occurrence*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
      * @return $this
      */
@@ -538,14 +682,13 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date (and possibly time) the risk assessment was performed.
+     * The date (and possibly time) the risk assessment was performed. (choose any one of occurrence*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getOccurrencePeriod()
     {
         return $this->occurrencePeriod;
     }
-
 
     /**
      * A reference to a resource that this risk assessment is part of, such as a Procedure.
@@ -570,7 +713,6 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
         return $this->parent;
     }
 
-
     /**
      * The provider or software application that performed the assessment.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -594,57 +736,54 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
         return $this->performer;
     }
 
-
     /**
      * Describes the expected outcome for the subject.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction
      * @return $this
      */
-    public function setPrediction(FHIRRiskAssessmentPrediction $prediction = null)
+    public function addPrediction(FHIRRiskAssessmentPrediction $prediction = null)
     {
         if (null === $prediction) {
             return $this; 
         }
-        $this->prediction = $prediction;
+        $this->prediction[] = $prediction;
         return $this;
     }
 
     /**
      * Describes the expected outcome for the subject.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction[]
      */
     public function getPrediction()
     {
         return $this->prediction;
     }
 
-
     /**
-     * The reason the risk assessment was performed.
+     * The reason the risk assessment was performed. (choose any one of reason*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setReasonCode(FHIRCodeableConcept $reasonCode = null)
+    public function setReasonCodeableConcept(FHIRCodeableConcept $reasonCodeableConcept = null)
     {
-        if (null === $reasonCode) {
+        if (null === $reasonCodeableConcept) {
             return $this; 
         }
-        $this->reasonCode = $reasonCode;
+        $this->reasonCodeableConcept = $reasonCodeableConcept;
         return $this;
     }
 
     /**
-     * The reason the risk assessment was performed.
+     * The reason the risk assessment was performed. (choose any one of reason*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getReasonCode()
+    public function getReasonCodeableConcept()
     {
-        return $this->reasonCode;
+        return $this->reasonCodeableConcept;
     }
 
-
     /**
-     * Resources supporting the reason the risk assessment was performed.
+     * The reason the risk assessment was performed. (choose any one of reason*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
@@ -658,14 +797,13 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Resources supporting the reason the risk assessment was performed.
+     * The reason the risk assessment was performed. (choose any one of reason*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getReasonReference()
     {
         return $this->reasonReference;
     }
-
 
     /**
      * The status of the RiskAssessment, using the same statuses as an Observation.
@@ -699,7 +837,6 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
         return $this->status;
     }
 
-
     /**
      * The patient or group the risk assessment applies to.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -723,7 +860,6 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
         return $this->subject;
     }
 
-
     /**
      * @return string
      */
@@ -742,11 +878,22 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getBasedOn())) {
             $a['basedOn'] = $v;
         }
-        if (null !== ($v = $this->getBasis())) {
-            $a['basis'] = $v;
+        if (0 < count($values = $this->getBasis())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['basis'] = $vs;
+            }
         }
         if (null !== ($v = $this->getCode())) {
             $a['code'] = $v;
+        }
+        if (null !== ($v = $this->getComment())) {
+            $a['comment'] = $v;
         }
         if (null !== ($v = $this->getCondition())) {
             $a['condition'] = $v;
@@ -763,9 +910,6 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getMitigation())) {
             $a['mitigation'] = $v;
         }
-        if (null !== ($v = $this->getNote())) {
-            $a['note'] = $v;
-        }
         if (null !== ($v = $this->getOccurrenceDateTime())) {
             $a['occurrenceDateTime'] = $v;
         }
@@ -778,11 +922,19 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getPerformer())) {
             $a['performer'] = $v;
         }
-        if (null !== ($v = $this->getPrediction())) {
-            $a['prediction'] = $v;
+        if (0 < count($values = $this->getPrediction())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['prediction'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getReasonCode())) {
-            $a['reasonCode'] = $v;
+        if (null !== ($v = $this->getReasonCodeableConcept())) {
+            $a['reasonCodeableConcept'] = $v;
         }
         if (null !== ($v = $this->getReasonReference())) {
             $a['reasonReference'] = $v;
@@ -806,9 +958,68 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<RiskAssessment xmlns="http://hl7.org/fhir"></RiskAssessment>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getBasedOn())) {
+            $v->xmlSerialize(true, $sxe->addChild('basedOn'));
         }
-        return $sxe->saveXML();
+        if (0 < count($values = $this->getBasis())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('basis'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getCode())) {
+            $v->xmlSerialize(true, $sxe->addChild('code'));
+        }
+        if (null !== ($v = $this->getComment())) {
+            $v->xmlSerialize(true, $sxe->addChild('comment'));
+        }
+        if (null !== ($v = $this->getCondition())) {
+            $v->xmlSerialize(true, $sxe->addChild('condition'));
+        }
+        if (null !== ($v = $this->getContext())) {
+            $v->xmlSerialize(true, $sxe->addChild('context'));
+        }
+        if (null !== ($v = $this->getIdentifier())) {
+            $v->xmlSerialize(true, $sxe->addChild('identifier'));
+        }
+        if (null !== ($v = $this->getMethod())) {
+            $v->xmlSerialize(true, $sxe->addChild('method'));
+        }
+        if (null !== ($v = $this->getMitigation())) {
+            $v->xmlSerialize(true, $sxe->addChild('mitigation'));
+        }
+        if (null !== ($v = $this->getOccurrenceDateTime())) {
+            $v->xmlSerialize(true, $sxe->addChild('occurrenceDateTime'));
+        }
+        if (null !== ($v = $this->getOccurrencePeriod())) {
+            $v->xmlSerialize(true, $sxe->addChild('occurrencePeriod'));
+        }
+        if (null !== ($v = $this->getParent())) {
+            $v->xmlSerialize(true, $sxe->addChild('parent'));
+        }
+        if (null !== ($v = $this->getPerformer())) {
+            $v->xmlSerialize(true, $sxe->addChild('performer'));
+        }
+        if (0 < count($values = $this->getPrediction())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('prediction'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getReasonCodeableConcept())) {
+            $v->xmlSerialize(true, $sxe->addChild('reasonCodeableConcept'));
+        }
+        if (null !== ($v = $this->getReasonReference())) {
+            $v->xmlSerialize(true, $sxe->addChild('reasonReference'));
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('status'));
+        }
+        if (null !== ($v = $this->getSubject())) {
+            $v->xmlSerialize(true, $sxe->addChild('subject'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -70,7 +70,7 @@ use PHPFHIRGenerated\FHIRElement\FHIRString;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
 /**
- * A physical entity which is the primary unit of operational and/or administrative interest in a study.
+ * A process where a researcher or organization plans and then executes a series of steps intended to increase the field of healthcare-related knowledge.  This includes studies of safety, efficacy, comparative effectiveness and other information about medications, devices, therapies and other interventional and investigative techniques.  A ResearchStudy involves the gathering of information about human or animal subjects.
  * If the element is present, it must have either a @value, an @id, or extensions
  *
  * Class FHIRResearchSubject
@@ -85,49 +85,49 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
      * The name of the arm in the study the subject actually followed as part of this study.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $actualArm = null;
+    private $actualArm = null;
 
     /**
      * The name of the arm in the study the subject is expected to follow as part of this study.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $assignedArm = null;
+    private $assignedArm = null;
 
     /**
      * A record of the patient's informed agreement to participate in the study.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $consent = null;
+    private $consent = null;
 
     /**
-     * Identifiers assigned to this research subject for a study.
+     * Identifiers assigned to this research study by the sponsor or other systems.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public $identifier = null;
+    private $identifier = null;
 
     /**
      * The record of the person or animal who is involved in the study.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $individual = null;
+    private $individual = null;
 
     /**
      * The dates the subject began and ended their participation in the study.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public $period = null;
+    private $period = null;
 
     /**
      * The current state of the subject.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRResearchSubjectStatus
      */
-    public $status = null;
+    private $status = null;
 
     /**
      * Reference to the study the subject is participating in.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $study = null;
+    private $study = null;
 
     /**
      * FHIRResearchSubject Constructor
@@ -136,31 +136,92 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['actualArm'])) {
-                $this->setActualArm($data['actualArm']);
+                $value = $data['actualArm'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRResearchSubject::__construct - Property \"actualArm\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setActualArm($value);
             }
             if (isset($data['assignedArm'])) {
-                $this->setAssignedArm($data['assignedArm']);
+                $value = $data['assignedArm'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRResearchSubject::__construct - Property \"assignedArm\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setAssignedArm($value);
             }
             if (isset($data['consent'])) {
-                $this->setConsent($data['consent']);
+                $value = $data['consent'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRResearchSubject::__construct - Property \"consent\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setConsent($value);
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    $value = new FHIRIdentifier($value);
+                } 
+                if (!($value instanceof FHIRIdentifier)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRResearchSubject::__construct - Property \"identifier\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($value));
+                }
+                $this->setIdentifier($value);
             }
             if (isset($data['individual'])) {
-                $this->setIndividual($data['individual']);
+                $value = $data['individual'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRResearchSubject::__construct - Property \"individual\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setIndividual($value);
             }
             if (isset($data['period'])) {
-                $this->setPeriod($data['period']);
+                $value = $data['period'];
+                if (is_array($value)) {
+                    $value = new FHIRPeriod($value);
+                } 
+                if (!($value instanceof FHIRPeriod)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRResearchSubject::__construct - Property \"period\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPeriod or data to construct type, saw ".gettype($value));
+                }
+                $this->setPeriod($value);
             }
             if (isset($data['status'])) {
-                $this->setStatus($data['status']);
+                $value = $data['status'];
+                if (is_array($value)) {
+                    $value = new FHIRResearchSubjectStatus($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRResearchSubjectStatus($value);
+                }
+                if (!($value instanceof FHIRResearchSubjectStatus)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRResearchSubject::__construct - Property \"status\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRResearchSubjectStatus or data to construct type, saw ".gettype($value));
+                }
+                $this->setStatus($value);
             }
             if (isset($data['study'])) {
-                $this->setStudy($data['study']);
+                $value = $data['study'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRResearchSubject::__construct - Property \"study\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setStudy($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -169,6 +230,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -203,7 +265,6 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
         return $this->actualArm;
     }
 
-
     /**
      * The name of the arm in the study the subject is expected to follow as part of this study.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -236,7 +297,6 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
         return $this->assignedArm;
     }
 
-
     /**
      * A record of the patient's informed agreement to participate in the study.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -260,9 +320,8 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
         return $this->consent;
     }
 
-
     /**
-     * Identifiers assigned to this research subject for a study.
+     * Identifiers assigned to this research study by the sponsor or other systems.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
@@ -276,14 +335,13 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * Identifiers assigned to this research subject for a study.
+     * Identifiers assigned to this research study by the sponsor or other systems.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier()
     {
         return $this->identifier;
     }
-
 
     /**
      * The record of the person or animal who is involved in the study.
@@ -308,7 +366,6 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
         return $this->individual;
     }
 
-
     /**
      * The dates the subject began and ended their participation in the study.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
@@ -331,7 +388,6 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
     {
         return $this->period;
     }
-
 
     /**
      * The current state of the subject.
@@ -365,7 +421,6 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
         return $this->status;
     }
 
-
     /**
      * Reference to the study the subject is participating in.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -388,7 +443,6 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
     {
         return $this->study;
     }
-
 
     /**
      * @return string
@@ -442,9 +496,30 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ResearchSubject xmlns="http://hl7.org/fhir"></ResearchSubject>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getActualArm())) {
+            $v->xmlSerialize(true, $sxe->addChild('actualArm'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getAssignedArm())) {
+            $v->xmlSerialize(true, $sxe->addChild('assignedArm'));
+        }
+        if (null !== ($v = $this->getConsent())) {
+            $v->xmlSerialize(true, $sxe->addChild('consent'));
+        }
+        if (null !== ($v = $this->getIdentifier())) {
+            $v->xmlSerialize(true, $sxe->addChild('identifier'));
+        }
+        if (null !== ($v = $this->getIndividual())) {
+            $v->xmlSerialize(true, $sxe->addChild('individual'));
+        }
+        if (null !== ($v = $this->getPeriod())) {
+            $v->xmlSerialize(true, $sxe->addChild('period'));
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('status'));
+        }
+        if (null !== ($v = $this->getStudy())) {
+            $v->xmlSerialize(true, $sxe->addChild('study'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -65,7 +65,6 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionAllowedResponse;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionFocus;
 use PHPFHIRGenerated\FHIRElement\FHIRBoolean;
-use PHPFHIRGenerated\FHIRElement\FHIRCanonical;
 use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
 use PHPFHIRGenerated\FHIRElement\FHIRCoding;
 use PHPFHIRGenerated\FHIRElement\FHIRContactDetail;
@@ -73,8 +72,8 @@ use PHPFHIRGenerated\FHIRElement\FHIRDateTime;
 use PHPFHIRGenerated\FHIRElement\FHIRIdentifier;
 use PHPFHIRGenerated\FHIRElement\FHIRMarkdown;
 use PHPFHIRGenerated\FHIRElement\FHIRMessageSignificanceCategory;
-use PHPFHIRGenerated\FHIRElement\FHIRMessageheaderResponseRequest;
 use PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus;
+use PHPFHIRGenerated\FHIRElement\FHIRReference;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
 use PHPFHIRGenerated\FHIRElement\FHIRUri;
 use PHPFHIRGenerated\FHIRElement\FHIRUsageContext;
@@ -94,153 +93,141 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Indicates what types of messages may be sent as an application-level response to this message.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionAllowedResponse
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionAllowedResponse[]
      */
-    public $allowedResponse = null;
+    private $allowedResponse = [];
 
     /**
      * The MessageDefinition that is the basis for the contents of this resource.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $base = null;
+    private $base = null;
 
     /**
      * The impact of the content of the message.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMessageSignificanceCategory
      */
-    public $category = null;
+    private $category = null;
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
-    public $contact = null;
+    private $contact = [];
 
     /**
      * A copyright statement relating to the message definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the message definition.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public $copyright = null;
+    private $copyright = null;
 
     /**
-     * The date  (and optionally time) when the message definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the message definition changes.
+     * The date  (and optionally time) when the message definition was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the message definition changes.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $date = null;
+    private $date = null;
 
     /**
      * A free text natural language description of the message definition from a consumer's perspective.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public $description = null;
+    private $description = null;
 
     /**
-     * Event code or link to the EventDefinition.
+     * A coded identifier of a supported messaging event.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
-    public $eventCoding = null;
+    private $event = null;
 
     /**
-     * Event code or link to the EventDefinition.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
-     */
-    public $eventUri = null;
-
-    /**
-     * A Boolean value to indicate that this message definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this message definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $experimental = null;
+    private $experimental = null;
 
     /**
      * Identifies the resource (or resources) that are being addressed by the event.  For example, the Encounter for an admit message or two Account records for a merge.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionFocus
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionFocus[]
      */
-    public $focus = null;
-
-    /**
-     * Canonical URL for a GraphDefinition. If a URL is provided, it is the canonical URL for a [[[GraphDefinition]]] that it controls what resources are to be added to the bundle when building the document. The GraphDefinition can also specify profiles that apply to the various resources.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCanonical
-     */
-    public $graph = null;
+    private $focus = [];
 
     /**
      * A formal identifier that is used to identify this message definition when it is represented in other formats, or referenced in a specification, model, design or an instance.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public $identifier = null;
+    private $identifier = null;
 
     /**
      * A legal or geographic region in which the message definition is intended to be used.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $jurisdiction = null;
+    private $jurisdiction = [];
 
     /**
      * A natural language name identifying the message definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $name = null;
+    private $name = null;
 
     /**
      * Identifies a protocol or workflow that this MessageDefinition represents a step in.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $parent = null;
+    private $parent = [];
 
     /**
-     * The name of the organization or individual that published the message definition.
+     * The name of the individual or organization that published the message definition.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $publisher = null;
+    private $publisher = null;
 
     /**
-     * Explanation of why this message definition is needed and why it has been designed as it has.
+     * Explaination of why this message definition is needed and why it has been designed as it has.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public $purpose = null;
+    private $purpose = null;
 
     /**
      * A MessageDefinition that is superseded by this definition.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $replaces = null;
+    private $replaces = [];
 
     /**
-     * Declare at a message definition level whether a response is required or only upon error or success, or never.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRMessageheaderResponseRequest
+     * Indicates whether a response is required for this message.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $responseRequired = null;
+    private $responseRequired = null;
 
     /**
      * The status of this message definition. Enables tracking the life-cycle of the content.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus
      */
-    public $status = null;
+    private $status = null;
 
     /**
      * A short, descriptive, user-friendly title for the message definition.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $title = null;
+    private $title = null;
 
     /**
-     * The business identifier that is used to reference the MessageDefinition and *is* expected to be consistent from server to server.
+     * An absolute URI that is used to identify this message definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this message definition is (or will be) published. The URL SHOULD include the major version of the message definition. For more information see [Technical and Business Versions](resource.html#versions).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $url = null;
+    private $url = null;
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate message definition instances.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
-    public $useContext = null;
+    private $useContext = [];
 
     /**
      * The identifier that is used to identify this version of the message definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the message definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $version = null;
+    private $version = null;
 
     /**
      * FHIRMessageDefinition Constructor
@@ -249,82 +236,304 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['allowedResponse'])) {
-                $this->setAllowedResponse($data['allowedResponse']);
+                $value = $data['allowedResponse'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRMessageDefinitionAllowedResponse($v);
+                        } 
+                        if (!($v instanceof FHIRMessageDefinitionAllowedResponse)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMessageDefinition::__construct - Collection field \"allowedResponse\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionAllowedResponse or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addAllowedResponse($v);
+                    }
+                }
             }
             if (isset($data['base'])) {
-                $this->setBase($data['base']);
+                $value = $data['base'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMessageDefinition::__construct - Property \"base\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setBase($value);
             }
             if (isset($data['category'])) {
-                $this->setCategory($data['category']);
+                $value = $data['category'];
+                if (is_array($value)) {
+                    $value = new FHIRMessageSignificanceCategory($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRMessageSignificanceCategory($value);
+                }
+                if (!($value instanceof FHIRMessageSignificanceCategory)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMessageDefinition::__construct - Property \"category\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRMessageSignificanceCategory or data to construct type, saw ".gettype($value));
+                }
+                $this->setCategory($value);
             }
             if (isset($data['contact'])) {
-                $this->setContact($data['contact']);
+                $value = $data['contact'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRContactDetail($v);
+                        } 
+                        if (!($v instanceof FHIRContactDetail)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMessageDefinition::__construct - Collection field \"contact\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRContactDetail or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addContact($v);
+                    }
+                }
             }
             if (isset($data['copyright'])) {
-                $this->setCopyright($data['copyright']);
+                $value = $data['copyright'];
+                if (is_array($value)) {
+                    $value = new FHIRMarkdown($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRMarkdown($value);
+                }
+                if (!($value instanceof FHIRMarkdown)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMessageDefinition::__construct - Property \"copyright\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRMarkdown or data to construct type, saw ".gettype($value));
+                }
+                $this->setCopyright($value);
             }
             if (isset($data['date'])) {
-                $this->setDate($data['date']);
+                $value = $data['date'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMessageDefinition::__construct - Property \"date\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value));
+                }
+                $this->setDate($value);
             }
             if (isset($data['description'])) {
-                $this->setDescription($data['description']);
+                $value = $data['description'];
+                if (is_array($value)) {
+                    $value = new FHIRMarkdown($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRMarkdown($value);
+                }
+                if (!($value instanceof FHIRMarkdown)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMessageDefinition::__construct - Property \"description\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRMarkdown or data to construct type, saw ".gettype($value));
+                }
+                $this->setDescription($value);
             }
-            if (isset($data['eventCoding'])) {
-                $this->setEventCoding($data['eventCoding']);
-            }
-            if (isset($data['eventUri'])) {
-                $this->setEventUri($data['eventUri']);
+            if (isset($data['event'])) {
+                $value = $data['event'];
+                if (is_array($value)) {
+                    $value = new FHIRCoding($value);
+                } 
+                if (!($value instanceof FHIRCoding)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMessageDefinition::__construct - Property \"event\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCoding or data to construct type, saw ".gettype($value));
+                }
+                $this->setEvent($value);
             }
             if (isset($data['experimental'])) {
-                $this->setExperimental($data['experimental']);
+                $value = $data['experimental'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMessageDefinition::__construct - Property \"experimental\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value));
+                }
+                $this->setExperimental($value);
             }
             if (isset($data['focus'])) {
-                $this->setFocus($data['focus']);
-            }
-            if (isset($data['graph'])) {
-                $this->setGraph($data['graph']);
+                $value = $data['focus'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRMessageDefinitionFocus($v);
+                        } 
+                        if (!($v instanceof FHIRMessageDefinitionFocus)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMessageDefinition::__construct - Collection field \"focus\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionFocus or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addFocus($v);
+                    }
+                }
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    $value = new FHIRIdentifier($value);
+                } 
+                if (!($value instanceof FHIRIdentifier)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMessageDefinition::__construct - Property \"identifier\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($value));
+                }
+                $this->setIdentifier($value);
             }
             if (isset($data['jurisdiction'])) {
-                $this->setJurisdiction($data['jurisdiction']);
+                $value = $data['jurisdiction'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMessageDefinition::__construct - Collection field \"jurisdiction\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addJurisdiction($v);
+                    }
+                }
             }
             if (isset($data['name'])) {
-                $this->setName($data['name']);
+                $value = $data['name'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMessageDefinition::__construct - Property \"name\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setName($value);
             }
             if (isset($data['parent'])) {
-                $this->setParent($data['parent']);
+                $value = $data['parent'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMessageDefinition::__construct - Collection field \"parent\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addParent($v);
+                    }
+                }
             }
             if (isset($data['publisher'])) {
-                $this->setPublisher($data['publisher']);
+                $value = $data['publisher'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMessageDefinition::__construct - Property \"publisher\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setPublisher($value);
             }
             if (isset($data['purpose'])) {
-                $this->setPurpose($data['purpose']);
+                $value = $data['purpose'];
+                if (is_array($value)) {
+                    $value = new FHIRMarkdown($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRMarkdown($value);
+                }
+                if (!($value instanceof FHIRMarkdown)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMessageDefinition::__construct - Property \"purpose\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRMarkdown or data to construct type, saw ".gettype($value));
+                }
+                $this->setPurpose($value);
             }
             if (isset($data['replaces'])) {
-                $this->setReplaces($data['replaces']);
+                $value = $data['replaces'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMessageDefinition::__construct - Collection field \"replaces\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addReplaces($v);
+                    }
+                }
             }
             if (isset($data['responseRequired'])) {
-                $this->setResponseRequired($data['responseRequired']);
+                $value = $data['responseRequired'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMessageDefinition::__construct - Property \"responseRequired\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value));
+                }
+                $this->setResponseRequired($value);
             }
             if (isset($data['status'])) {
-                $this->setStatus($data['status']);
+                $value = $data['status'];
+                if (is_array($value)) {
+                    $value = new FHIRPublicationStatus($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRPublicationStatus($value);
+                }
+                if (!($value instanceof FHIRPublicationStatus)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMessageDefinition::__construct - Property \"status\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus or data to construct type, saw ".gettype($value));
+                }
+                $this->setStatus($value);
             }
             if (isset($data['title'])) {
-                $this->setTitle($data['title']);
+                $value = $data['title'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMessageDefinition::__construct - Property \"title\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setTitle($value);
             }
             if (isset($data['url'])) {
-                $this->setUrl($data['url']);
+                $value = $data['url'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMessageDefinition::__construct - Property \"url\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value));
+                }
+                $this->setUrl($value);
             }
             if (isset($data['useContext'])) {
-                $this->setUseContext($data['useContext']);
+                $value = $data['useContext'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRUsageContext($v);
+                        } 
+                        if (!($v instanceof FHIRUsageContext)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMessageDefinition::__construct - Collection field \"useContext\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUsageContext or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addUseContext($v);
+                    }
+                }
             }
             if (isset($data['version'])) {
-                $this->setVersion($data['version']);
+                $value = $data['version'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMessageDefinition::__construct - Property \"version\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setVersion($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -333,6 +542,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -340,43 +550,33 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionAllowedResponse
      * @return $this
      */
-    public function setAllowedResponse(FHIRMessageDefinitionAllowedResponse $allowedResponse = null)
+    public function addAllowedResponse(FHIRMessageDefinitionAllowedResponse $allowedResponse = null)
     {
         if (null === $allowedResponse) {
             return $this; 
         }
-        $this->allowedResponse = $allowedResponse;
+        $this->allowedResponse[] = $allowedResponse;
         return $this;
     }
 
     /**
      * Indicates what types of messages may be sent as an application-level response to this message.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionAllowedResponse
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionAllowedResponse[]
      */
     public function getAllowedResponse()
     {
         return $this->allowedResponse;
     }
 
-
     /**
      * The MessageDefinition that is the basis for the contents of this resource.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setBase($base)
+    public function setBase(FHIRReference $base = null)
     {
         if (null === $base) {
             return $this; 
-        }
-        if (is_scalar($base)) {
-            $base = new FHIRCanonical($base);
-        }
-        if (!($base instanceof FHIRCanonical)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRMessageDefinition::setBase - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCanonical or appropriate scalar value, %s seen.',
-                gettype($base)
-            ));
         }
         $this->base = $base;
         return $this;
@@ -384,13 +584,12 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The MessageDefinition that is the basis for the contents of this resource.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getBase()
     {
         return $this->base;
     }
-
 
     /**
      * The impact of the content of the message.
@@ -424,30 +623,28 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
         return $this->category;
     }
 
-
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail
      * @return $this
      */
-    public function setContact(FHIRContactDetail $contact = null)
+    public function addContact(FHIRContactDetail $contact = null)
     {
         if (null === $contact) {
             return $this; 
         }
-        $this->contact = $contact;
+        $this->contact[] = $contact;
         return $this;
     }
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
     public function getContact()
     {
         return $this->contact;
     }
-
 
     /**
      * A copyright statement relating to the message definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the message definition.
@@ -481,9 +678,8 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
         return $this->copyright;
     }
 
-
     /**
-     * The date  (and optionally time) when the message definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the message definition changes.
+     * The date  (and optionally time) when the message definition was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the message definition changes.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      * @return $this
      */
@@ -506,14 +702,13 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * The date  (and optionally time) when the message definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the message definition changes.
+     * The date  (and optionally time) when the message definition was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the message definition changes.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getDate()
     {
         return $this->date;
     }
-
 
     /**
      * A free text natural language description of the message definition from a consumer's perspective.
@@ -547,66 +742,31 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
         return $this->description;
     }
 
-
     /**
-     * Event code or link to the EventDefinition.
+     * A coded identifier of a supported messaging event.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
      * @return $this
      */
-    public function setEventCoding(FHIRCoding $eventCoding = null)
+    public function setEvent(FHIRCoding $event = null)
     {
-        if (null === $eventCoding) {
+        if (null === $event) {
             return $this; 
         }
-        $this->eventCoding = $eventCoding;
+        $this->event = $event;
         return $this;
     }
 
     /**
-     * Event code or link to the EventDefinition.
+     * A coded identifier of a supported messaging event.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
-    public function getEventCoding()
+    public function getEvent()
     {
-        return $this->eventCoding;
-    }
-
-
-    /**
-     * Event code or link to the EventDefinition.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
-     * @return $this
-     */
-    public function setEventUri($eventUri)
-    {
-        if (null === $eventUri) {
-            return $this; 
-        }
-        if (is_scalar($eventUri)) {
-            $eventUri = new FHIRUri($eventUri);
-        }
-        if (!($eventUri instanceof FHIRUri)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRMessageDefinition::setEventUri - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or appropriate scalar value, %s seen.',
-                gettype($eventUri)
-            ));
-        }
-        $this->eventUri = $eventUri;
-        return $this;
+        return $this->event;
     }
 
     /**
-     * Event code or link to the EventDefinition.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
-     */
-    public function getEventUri()
-    {
-        return $this->eventUri;
-    }
-
-
-    /**
-     * A Boolean value to indicate that this message definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this message definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      * @return $this
      */
@@ -629,7 +789,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * A Boolean value to indicate that this message definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this message definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getExperimental()
@@ -637,63 +797,28 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
         return $this->experimental;
     }
 
-
     /**
      * Identifies the resource (or resources) that are being addressed by the event.  For example, the Encounter for an admit message or two Account records for a merge.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionFocus
      * @return $this
      */
-    public function setFocus(FHIRMessageDefinitionFocus $focus = null)
+    public function addFocus(FHIRMessageDefinitionFocus $focus = null)
     {
         if (null === $focus) {
             return $this; 
         }
-        $this->focus = $focus;
+        $this->focus[] = $focus;
         return $this;
     }
 
     /**
      * Identifies the resource (or resources) that are being addressed by the event.  For example, the Encounter for an admit message or two Account records for a merge.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionFocus
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionFocus[]
      */
     public function getFocus()
     {
         return $this->focus;
     }
-
-
-    /**
-     * Canonical URL for a GraphDefinition. If a URL is provided, it is the canonical URL for a [[[GraphDefinition]]] that it controls what resources are to be added to the bundle when building the document. The GraphDefinition can also specify profiles that apply to the various resources.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
-     * @return $this
-     */
-    public function setGraph($graph)
-    {
-        if (null === $graph) {
-            return $this; 
-        }
-        if (is_scalar($graph)) {
-            $graph = new FHIRCanonical($graph);
-        }
-        if (!($graph instanceof FHIRCanonical)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRMessageDefinition::setGraph - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCanonical or appropriate scalar value, %s seen.',
-                gettype($graph)
-            ));
-        }
-        $this->graph = $graph;
-        return $this;
-    }
-
-    /**
-     * Canonical URL for a GraphDefinition. If a URL is provided, it is the canonical URL for a [[[GraphDefinition]]] that it controls what resources are to be added to the bundle when building the document. The GraphDefinition can also specify profiles that apply to the various resources.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
-     */
-    public function getGraph()
-    {
-        return $this->graph;
-    }
-
 
     /**
      * A formal identifier that is used to identify this message definition when it is represented in other formats, or referenced in a specification, model, design or an instance.
@@ -718,30 +843,28 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
         return $this->identifier;
     }
 
-
     /**
      * A legal or geographic region in which the message definition is intended to be used.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setJurisdiction(FHIRCodeableConcept $jurisdiction = null)
+    public function addJurisdiction(FHIRCodeableConcept $jurisdiction = null)
     {
         if (null === $jurisdiction) {
             return $this; 
         }
-        $this->jurisdiction = $jurisdiction;
+        $this->jurisdiction[] = $jurisdiction;
         return $this;
     }
 
     /**
      * A legal or geographic region in which the message definition is intended to be used.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getJurisdiction()
     {
         return $this->jurisdiction;
     }
-
 
     /**
      * A natural language name identifying the message definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.
@@ -775,42 +898,31 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
         return $this->name;
     }
 
-
     /**
      * Identifies a protocol or workflow that this MessageDefinition represents a step in.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setParent($parent)
+    public function addParent(FHIRReference $parent = null)
     {
         if (null === $parent) {
             return $this; 
         }
-        if (is_scalar($parent)) {
-            $parent = new FHIRCanonical($parent);
-        }
-        if (!($parent instanceof FHIRCanonical)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRMessageDefinition::setParent - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCanonical or appropriate scalar value, %s seen.',
-                gettype($parent)
-            ));
-        }
-        $this->parent = $parent;
+        $this->parent[] = $parent;
         return $this;
     }
 
     /**
      * Identifies a protocol or workflow that this MessageDefinition represents a step in.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getParent()
     {
         return $this->parent;
     }
 
-
     /**
-     * The name of the organization or individual that published the message definition.
+     * The name of the individual or organization that published the message definition.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
@@ -833,7 +945,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * The name of the organization or individual that published the message definition.
+     * The name of the individual or organization that published the message definition.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getPublisher()
@@ -841,9 +953,8 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
         return $this->publisher;
     }
 
-
     /**
-     * Explanation of why this message definition is needed and why it has been designed as it has.
+     * Explaination of why this message definition is needed and why it has been designed as it has.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      * @return $this
      */
@@ -866,7 +977,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * Explanation of why this message definition is needed and why it has been designed as it has.
+     * Explaination of why this message definition is needed and why it has been designed as it has.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getPurpose()
@@ -874,43 +985,32 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
         return $this->purpose;
     }
 
-
     /**
      * A MessageDefinition that is superseded by this definition.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setReplaces($replaces)
+    public function addReplaces(FHIRReference $replaces = null)
     {
         if (null === $replaces) {
             return $this; 
         }
-        if (is_scalar($replaces)) {
-            $replaces = new FHIRCanonical($replaces);
-        }
-        if (!($replaces instanceof FHIRCanonical)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRMessageDefinition::setReplaces - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCanonical or appropriate scalar value, %s seen.',
-                gettype($replaces)
-            ));
-        }
-        $this->replaces = $replaces;
+        $this->replaces[] = $replaces;
         return $this;
     }
 
     /**
      * A MessageDefinition that is superseded by this definition.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getReplaces()
     {
         return $this->replaces;
     }
 
-
     /**
-     * Declare at a message definition level whether a response is required or only upon error or success, or never.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRMessageheaderResponseRequest
+     * Indicates whether a response is required for this message.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      * @return $this
      */
     public function setResponseRequired($responseRequired)
@@ -919,11 +1019,11 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
             return $this; 
         }
         if (is_scalar($responseRequired)) {
-            $responseRequired = new FHIRMessageheaderResponseRequest($responseRequired);
+            $responseRequired = new FHIRBoolean($responseRequired);
         }
-        if (!($responseRequired instanceof FHIRMessageheaderResponseRequest)) {
+        if (!($responseRequired instanceof FHIRBoolean)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRMessageDefinition::setResponseRequired - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRMessageheaderResponseRequest or appropriate scalar value, %s seen.',
+                'FHIRMessageDefinition::setResponseRequired - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or appropriate scalar value, %s seen.',
                 gettype($responseRequired)
             ));
         }
@@ -932,14 +1032,13 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * Declare at a message definition level whether a response is required or only upon error or success, or never.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRMessageheaderResponseRequest
+     * Indicates whether a response is required for this message.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getResponseRequired()
     {
         return $this->responseRequired;
     }
-
 
     /**
      * The status of this message definition. Enables tracking the life-cycle of the content.
@@ -973,7 +1072,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
         return $this->status;
     }
 
-
     /**
      * A short, descriptive, user-friendly title for the message definition.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -1006,9 +1104,8 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
         return $this->title;
     }
 
-
     /**
-     * The business identifier that is used to reference the MessageDefinition and *is* expected to be consistent from server to server.
+     * An absolute URI that is used to identify this message definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this message definition is (or will be) published. The URL SHOULD include the major version of the message definition. For more information see [Technical and Business Versions](resource.html#versions).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
@@ -1031,7 +1128,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * The business identifier that is used to reference the MessageDefinition and *is* expected to be consistent from server to server.
+     * An absolute URI that is used to identify this message definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this message definition is (or will be) published. The URL SHOULD include the major version of the message definition. For more information see [Technical and Business Versions](resource.html#versions).
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getUrl()
@@ -1039,30 +1136,28 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
         return $this->url;
     }
 
-
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate message definition instances.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUsageContext
      * @return $this
      */
-    public function setUseContext(FHIRUsageContext $useContext = null)
+    public function addUseContext(FHIRUsageContext $useContext = null)
     {
         if (null === $useContext) {
             return $this; 
         }
-        $this->useContext = $useContext;
+        $this->useContext[] = $useContext;
         return $this;
     }
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate message definition instances.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUsageContext
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
     public function getUseContext()
     {
         return $this->useContext;
     }
-
 
     /**
      * The identifier that is used to identify this version of the message definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the message definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
@@ -1096,7 +1191,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
         return $this->version;
     }
 
-
     /**
      * @return string
      */
@@ -1112,8 +1206,16 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
     {
         $a = parent::jsonSerialize();
         $a['resourceType'] = self::FHIR_TYPE_NAME;
-        if (null !== ($v = $this->getAllowedResponse())) {
-            $a['allowedResponse'] = $v;
+        if (0 < count($values = $this->getAllowedResponse())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['allowedResponse'] = $vs;
+            }
         }
         if (null !== ($v = $this->getBase())) {
             $a['base'] = $v;
@@ -1121,8 +1223,16 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
         if (null !== ($v = $this->getCategory())) {
             $a['category'] = $v;
         }
-        if (null !== ($v = $this->getContact())) {
-            $a['contact'] = $v;
+        if (0 < count($values = $this->getContact())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['contact'] = $vs;
+            }
         }
         if (null !== ($v = $this->getCopyright())) {
             $a['copyright'] = $v;
@@ -1133,32 +1243,50 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
         if (null !== ($v = $this->getDescription())) {
             $a['description'] = $v;
         }
-        if (null !== ($v = $this->getEventCoding())) {
-            $a['eventCoding'] = $v;
-        }
-        if (null !== ($v = $this->getEventUri())) {
-            $a['eventUri'] = $v;
+        if (null !== ($v = $this->getEvent())) {
+            $a['event'] = $v;
         }
         if (null !== ($v = $this->getExperimental())) {
             $a['experimental'] = $v;
         }
-        if (null !== ($v = $this->getFocus())) {
-            $a['focus'] = $v;
-        }
-        if (null !== ($v = $this->getGraph())) {
-            $a['graph'] = $v;
+        if (0 < count($values = $this->getFocus())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['focus'] = $vs;
+            }
         }
         if (null !== ($v = $this->getIdentifier())) {
             $a['identifier'] = $v;
         }
-        if (null !== ($v = $this->getJurisdiction())) {
-            $a['jurisdiction'] = $v;
+        if (0 < count($values = $this->getJurisdiction())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['jurisdiction'] = $vs;
+            }
         }
         if (null !== ($v = $this->getName())) {
             $a['name'] = $v;
         }
-        if (null !== ($v = $this->getParent())) {
-            $a['parent'] = $v;
+        if (0 < count($values = $this->getParent())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['parent'] = $vs;
+            }
         }
         if (null !== ($v = $this->getPublisher())) {
             $a['publisher'] = $v;
@@ -1166,8 +1294,16 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
         if (null !== ($v = $this->getPurpose())) {
             $a['purpose'] = $v;
         }
-        if (null !== ($v = $this->getReplaces())) {
-            $a['replaces'] = $v;
+        if (0 < count($values = $this->getReplaces())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['replaces'] = $vs;
+            }
         }
         if (null !== ($v = $this->getResponseRequired())) {
             $a['responseRequired'] = $v;
@@ -1181,8 +1317,16 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
         if (null !== ($v = $this->getUrl())) {
             $a['url'] = $v;
         }
-        if (null !== ($v = $this->getUseContext())) {
-            $a['useContext'] = $v;
+        if (0 < count($values = $this->getUseContext())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['useContext'] = $vs;
+            }
         }
         if (null !== ($v = $this->getVersion())) {
             $a['version'] = $v;
@@ -1200,9 +1344,103 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<MessageDefinition xmlns="http://hl7.org/fhir"></MessageDefinition>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (0 < count($values = $this->getAllowedResponse())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('allowedResponse'));
+                }
+            }
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getBase())) {
+            $v->xmlSerialize(true, $sxe->addChild('base'));
+        }
+        if (null !== ($v = $this->getCategory())) {
+            $v->xmlSerialize(true, $sxe->addChild('category'));
+        }
+        if (0 < count($values = $this->getContact())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('contact'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getCopyright())) {
+            $v->xmlSerialize(true, $sxe->addChild('copyright'));
+        }
+        if (null !== ($v = $this->getDate())) {
+            $v->xmlSerialize(true, $sxe->addChild('date'));
+        }
+        if (null !== ($v = $this->getDescription())) {
+            $v->xmlSerialize(true, $sxe->addChild('description'));
+        }
+        if (null !== ($v = $this->getEvent())) {
+            $v->xmlSerialize(true, $sxe->addChild('event'));
+        }
+        if (null !== ($v = $this->getExperimental())) {
+            $v->xmlSerialize(true, $sxe->addChild('experimental'));
+        }
+        if (0 < count($values = $this->getFocus())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('focus'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getIdentifier())) {
+            $v->xmlSerialize(true, $sxe->addChild('identifier'));
+        }
+        if (0 < count($values = $this->getJurisdiction())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('jurisdiction'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getName())) {
+            $v->xmlSerialize(true, $sxe->addChild('name'));
+        }
+        if (0 < count($values = $this->getParent())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('parent'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getPublisher())) {
+            $v->xmlSerialize(true, $sxe->addChild('publisher'));
+        }
+        if (null !== ($v = $this->getPurpose())) {
+            $v->xmlSerialize(true, $sxe->addChild('purpose'));
+        }
+        if (0 < count($values = $this->getReplaces())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('replaces'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getResponseRequired())) {
+            $v->xmlSerialize(true, $sxe->addChild('responseRequired'));
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('status'));
+        }
+        if (null !== ($v = $this->getTitle())) {
+            $v->xmlSerialize(true, $sxe->addChild('title'));
+        }
+        if (null !== ($v = $this->getUrl())) {
+            $v->xmlSerialize(true, $sxe->addChild('url'));
+        }
+        if (0 < count($values = $this->getUseContext())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('useContext'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getVersion())) {
+            $v->xmlSerialize(true, $sxe->addChild('version'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

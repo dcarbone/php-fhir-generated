@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -65,7 +65,7 @@ namespace PHPFHIRGenerated\FHIRElement;
 use PHPFHIRGenerated\FHIRElement;
 
 /**
- * The metadata about a resource. This is content in the resource that is maintained by the infrastructure. Changes to the content might not always be associated with version changes to the resource.
+ * The metadata about a resource. This is content in the resource that is maintained by the infrastructure. Changes to the content may not always be associated with version changes to the resource.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
  *
  * Class FHIRMeta
@@ -80,37 +80,31 @@ class FHIRMeta extends FHIRElement implements \JsonSerializable
      * When the resource last changed - e.g. when the version changed.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInstant
      */
-    public $lastUpdated = null;
+    private $lastUpdated = null;
 
     /**
      * A list of profiles (references to [[[StructureDefinition]]] resources) that this resource claims to conform to. The URL is a reference to [[[StructureDefinition.url]]].
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri[]
      */
-    public $profile = null;
+    private $profile = [];
 
     /**
      * Security labels applied to this resource. These tags connect specific resources to the overall security policy and infrastructure.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
-    public $security = null;
-
-    /**
-     * A uri that identifies the source system of the resource. This provides a minimal amount of [[[Provenance]]] information that can be used to track or differentiate the source of information in the resource. The source may identify another FHIR server, document, message, database, etc.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
-     */
-    public $source = null;
+    private $security = [];
 
     /**
      * Tags applied to this resource. Tags are intended to be used to identify and relate resources to process and workflow, and applications are not required to consider the tags when interpreting the meaning of a resource.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
-    public $tag = null;
+    private $tag = [];
 
     /**
-     * The version specific identifier, as it appears in the version portion of the URL. This value changes when the resource is created, updated, or deleted.
+     * The version specific identifier, as it appears in the version portion of the URL. This values changes when the resource is created, updated, or deleted.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRId
      */
-    public $versionId = null;
+    private $versionId = null;
 
     /**
      * FHIRMeta Constructor
@@ -119,25 +113,80 @@ class FHIRMeta extends FHIRElement implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['lastUpdated'])) {
-                $this->setLastUpdated($data['lastUpdated']);
+                $value = $data['lastUpdated'];
+                if (is_array($value)) {
+                    $value = new FHIRInstant($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRInstant($value);
+                }
+                if (!($value instanceof FHIRInstant)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRMeta::__construct - Property \"lastUpdated\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRInstant or data to construct type, saw ".gettype($value));
+                }
+                $this->setLastUpdated($value);
             }
             if (isset($data['profile'])) {
-                $this->setProfile($data['profile']);
+                $value = $data['profile'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRUri($v);
+                        }  elseif (is_scalar($v)) {
+                            $v = new FHIRUri($v);
+                        }
+                        if (!($v instanceof FHIRUri)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRMeta::__construct - Collection field \"profile\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addProfile($v);
+                    }
+                }
             }
             if (isset($data['security'])) {
-                $this->setSecurity($data['security']);
-            }
-            if (isset($data['source'])) {
-                $this->setSource($data['source']);
+                $value = $data['security'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCoding($v);
+                        } 
+                        if (!($v instanceof FHIRCoding)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRMeta::__construct - Collection field \"security\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCoding or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addSecurity($v);
+                    }
+                }
             }
             if (isset($data['tag'])) {
-                $this->setTag($data['tag']);
+                $value = $data['tag'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCoding($v);
+                        } 
+                        if (!($v instanceof FHIRCoding)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRMeta::__construct - Collection field \"tag\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCoding or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addTag($v);
+                    }
+                }
             }
             if (isset($data['versionId'])) {
-                $this->setVersionId($data['versionId']);
+                $value = $data['versionId'];
+                if (is_array($value)) {
+                    $value = new FHIRId($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRId($value);
+                }
+                if (!($value instanceof FHIRId)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRMeta::__construct - Property \"versionId\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRId or data to construct type, saw ".gettype($value));
+                }
+                $this->setVersionId($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -146,6 +195,7 @@ class FHIRMeta extends FHIRElement implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -180,123 +230,86 @@ class FHIRMeta extends FHIRElement implements \JsonSerializable
         return $this->lastUpdated;
     }
 
-
     /**
      * A list of profiles (references to [[[StructureDefinition]]] resources) that this resource claims to conform to. The URL is a reference to [[[StructureDefinition.url]]].
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
-    public function setProfile($profile)
+    public function addProfile($profile)
     {
         if (null === $profile) {
             return $this; 
         }
         if (is_scalar($profile)) {
-            $profile = new FHIRCanonical($profile);
+            $profile = new FHIRUri($profile);
         }
-        if (!($profile instanceof FHIRCanonical)) {
+        if (!($profile instanceof FHIRUri)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRMeta::setProfile - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCanonical or appropriate scalar value, %s seen.',
+                'FHIRMeta::addProfile - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or appropriate scalar value, %s seen.',
                 gettype($profile)
             ));
         }
-        $this->profile = $profile;
+        $this->profile[] = $profile;
         return $this;
     }
 
     /**
      * A list of profiles (references to [[[StructureDefinition]]] resources) that this resource claims to conform to. The URL is a reference to [[[StructureDefinition.url]]].
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri[]
      */
     public function getProfile()
     {
         return $this->profile;
     }
 
-
     /**
      * Security labels applied to this resource. These tags connect specific resources to the overall security policy and infrastructure.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
      * @return $this
      */
-    public function setSecurity(FHIRCoding $security = null)
+    public function addSecurity(FHIRCoding $security = null)
     {
         if (null === $security) {
             return $this; 
         }
-        $this->security = $security;
+        $this->security[] = $security;
         return $this;
     }
 
     /**
      * Security labels applied to this resource. These tags connect specific resources to the overall security policy and infrastructure.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
     public function getSecurity()
     {
         return $this->security;
     }
 
-
-    /**
-     * A uri that identifies the source system of the resource. This provides a minimal amount of [[[Provenance]]] information that can be used to track or differentiate the source of information in the resource. The source may identify another FHIR server, document, message, database, etc.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
-     * @return $this
-     */
-    public function setSource($source)
-    {
-        if (null === $source) {
-            return $this; 
-        }
-        if (is_scalar($source)) {
-            $source = new FHIRUri($source);
-        }
-        if (!($source instanceof FHIRUri)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRMeta::setSource - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or appropriate scalar value, %s seen.',
-                gettype($source)
-            ));
-        }
-        $this->source = $source;
-        return $this;
-    }
-
-    /**
-     * A uri that identifies the source system of the resource. This provides a minimal amount of [[[Provenance]]] information that can be used to track or differentiate the source of information in the resource. The source may identify another FHIR server, document, message, database, etc.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
-     */
-    public function getSource()
-    {
-        return $this->source;
-    }
-
-
     /**
      * Tags applied to this resource. Tags are intended to be used to identify and relate resources to process and workflow, and applications are not required to consider the tags when interpreting the meaning of a resource.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
      * @return $this
      */
-    public function setTag(FHIRCoding $tag = null)
+    public function addTag(FHIRCoding $tag = null)
     {
         if (null === $tag) {
             return $this; 
         }
-        $this->tag = $tag;
+        $this->tag[] = $tag;
         return $this;
     }
 
     /**
      * Tags applied to this resource. Tags are intended to be used to identify and relate resources to process and workflow, and applications are not required to consider the tags when interpreting the meaning of a resource.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
     public function getTag()
     {
         return $this->tag;
     }
 
-
     /**
-     * The version specific identifier, as it appears in the version portion of the URL. This value changes when the resource is created, updated, or deleted.
+     * The version specific identifier, as it appears in the version portion of the URL. This values changes when the resource is created, updated, or deleted.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRId
      * @return $this
      */
@@ -319,14 +332,13 @@ class FHIRMeta extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The version specific identifier, as it appears in the version portion of the URL. This value changes when the resource is created, updated, or deleted.
+     * The version specific identifier, as it appears in the version portion of the URL. This values changes when the resource is created, updated, or deleted.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRId
      */
     public function getVersionId()
     {
         return $this->versionId;
     }
-
 
     /**
      * @return string
@@ -345,17 +357,38 @@ class FHIRMeta extends FHIRElement implements \JsonSerializable
         if (null !== ($v = $this->getLastUpdated())) {
             $a['lastUpdated'] = $v;
         }
-        if (null !== ($v = $this->getProfile())) {
-            $a['profile'] = $v;
+        if (0 < count($values = $this->getProfile())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['profile'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getSecurity())) {
-            $a['security'] = $v;
+        if (0 < count($values = $this->getSecurity())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['security'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getSource())) {
-            $a['source'] = $v;
-        }
-        if (null !== ($v = $this->getTag())) {
-            $a['tag'] = $v;
+        if (0 < count($values = $this->getTag())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['tag'] = $vs;
+            }
         }
         if (null !== ($v = $this->getVersionId())) {
             $a['versionId'] = $v;
@@ -373,9 +406,33 @@ class FHIRMeta extends FHIRElement implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Meta xmlns="http://hl7.org/fhir"></Meta>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getLastUpdated())) {
+            $v->xmlSerialize(true, $sxe->addChild('lastUpdated'));
         }
-        return $sxe->saveXML();
+        if (0 < count($values = $this->getProfile())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('profile'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getSecurity())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('security'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getTag())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('tag'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getVersionId())) {
+            $v->xmlSerialize(true, $sxe->addChild('versionId'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

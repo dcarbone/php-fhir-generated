@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGroup;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGroup;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -70,7 +70,7 @@ use PHPFHIRGenerated\FHIRElement\FHIRQuantity;
 use PHPFHIRGenerated\FHIRElement\FHIRRange;
 
 /**
- * Represents a defined collection of entities that may be discussed or acted upon collectively but which are not expected to act collectively, and are not formally or legally recognized; i.e. a collection of entities that isn't an Organization.
+ * Represents a defined collection of entities that may be discussed or acted upon collectively but which are not expected to act collectively and are not formally or legally recognized; i.e. a collection of entities that isn't an Organization.
  *
  * Class FHIRGroupCharacteristic
  * @package PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGroup
@@ -84,43 +84,43 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement implements \JsonSerial
      * A code that identifies the kind of trait being asserted.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $code = null;
+    private $code = null;
 
     /**
      * If true, indicates the characteristic is one that is NOT held by members of the group.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $exclude = null;
+    private $exclude = null;
 
     /**
      * The period over which the characteristic is tested; e.g. the patient had an operation during the month of June.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public $period = null;
+    private $period = null;
 
     /**
-     * The value of the trait that holds (or does not hold - see 'exclude') for members of the group.
+     * The value of the trait that holds (or does not hold - see 'exclude') for members of the group. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $valueBoolean = null;
+    private $valueBoolean = null;
 
     /**
-     * The value of the trait that holds (or does not hold - see 'exclude') for members of the group.
+     * The value of the trait that holds (or does not hold - see 'exclude') for members of the group. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $valueCodeableConcept = null;
+    private $valueCodeableConcept = null;
 
     /**
-     * The value of the trait that holds (or does not hold - see 'exclude') for members of the group.
+     * The value of the trait that holds (or does not hold - see 'exclude') for members of the group. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    public $valueQuantity = null;
+    private $valueQuantity = null;
 
     /**
-     * The value of the trait that holds (or does not hold - see 'exclude') for members of the group.
+     * The value of the trait that holds (or does not hold - see 'exclude') for members of the group. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
-    public $valueRange = null;
+    private $valueRange = null;
 
     /**
      * FHIRGroupCharacteristic Constructor
@@ -129,28 +129,80 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement implements \JsonSerial
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['code'])) {
-                $this->setCode($data['code']);
+                $value = $data['code'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGroup\FHIRGroupCharacteristic::__construct - Property \"code\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setCode($value);
             }
             if (isset($data['exclude'])) {
-                $this->setExclude($data['exclude']);
+                $value = $data['exclude'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGroup\FHIRGroupCharacteristic::__construct - Property \"exclude\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setExclude($value);
             }
             if (isset($data['period'])) {
-                $this->setPeriod($data['period']);
+                $value = $data['period'];
+                if (is_array($value)) {
+                    $value = new FHIRPeriod($value);
+                } 
+                if (!($value instanceof FHIRPeriod)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGroup\FHIRGroupCharacteristic::__construct - Property \"period\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPeriod or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setPeriod($value);
             }
             if (isset($data['valueBoolean'])) {
-                $this->setValueBoolean($data['valueBoolean']);
+                $value = $data['valueBoolean'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGroup\FHIRGroupCharacteristic::__construct - Property \"valueBoolean\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setValueBoolean($value);
             }
             if (isset($data['valueCodeableConcept'])) {
-                $this->setValueCodeableConcept($data['valueCodeableConcept']);
+                $value = $data['valueCodeableConcept'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGroup\FHIRGroupCharacteristic::__construct - Property \"valueCodeableConcept\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setValueCodeableConcept($value);
             }
             if (isset($data['valueQuantity'])) {
-                $this->setValueQuantity($data['valueQuantity']);
+                $value = $data['valueQuantity'];
+                if (is_array($value)) {
+                    $value = new FHIRQuantity($value);
+                } 
+                if (!($value instanceof FHIRQuantity)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGroup\FHIRGroupCharacteristic::__construct - Property \"valueQuantity\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setValueQuantity($value);
             }
             if (isset($data['valueRange'])) {
-                $this->setValueRange($data['valueRange']);
+                $value = $data['valueRange'];
+                if (is_array($value)) {
+                    $value = new FHIRRange($value);
+                } 
+                if (!($value instanceof FHIRRange)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGroup\FHIRGroupCharacteristic::__construct - Property \"valueRange\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRRange or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setValueRange($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -159,6 +211,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement implements \JsonSerial
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -183,7 +236,6 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement implements \JsonSerial
     {
         return $this->code;
     }
-
 
     /**
      * If true, indicates the characteristic is one that is NOT held by members of the group.
@@ -217,7 +269,6 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement implements \JsonSerial
         return $this->exclude;
     }
 
-
     /**
      * The period over which the characteristic is tested; e.g. the patient had an operation during the month of June.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
@@ -241,9 +292,8 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement implements \JsonSerial
         return $this->period;
     }
 
-
     /**
-     * The value of the trait that holds (or does not hold - see 'exclude') for members of the group.
+     * The value of the trait that holds (or does not hold - see 'exclude') for members of the group. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      * @return $this
      */
@@ -266,7 +316,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * The value of the trait that holds (or does not hold - see 'exclude') for members of the group.
+     * The value of the trait that holds (or does not hold - see 'exclude') for members of the group. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getValueBoolean()
@@ -274,9 +324,8 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement implements \JsonSerial
         return $this->valueBoolean;
     }
 
-
     /**
-     * The value of the trait that holds (or does not hold - see 'exclude') for members of the group.
+     * The value of the trait that holds (or does not hold - see 'exclude') for members of the group. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
@@ -290,7 +339,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * The value of the trait that holds (or does not hold - see 'exclude') for members of the group.
+     * The value of the trait that holds (or does not hold - see 'exclude') for members of the group. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getValueCodeableConcept()
@@ -298,9 +347,8 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement implements \JsonSerial
         return $this->valueCodeableConcept;
     }
 
-
     /**
-     * The value of the trait that holds (or does not hold - see 'exclude') for members of the group.
+     * The value of the trait that holds (or does not hold - see 'exclude') for members of the group. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity
      * @return $this
      */
@@ -314,7 +362,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * The value of the trait that holds (or does not hold - see 'exclude') for members of the group.
+     * The value of the trait that holds (or does not hold - see 'exclude') for members of the group. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public function getValueQuantity()
@@ -322,9 +370,8 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement implements \JsonSerial
         return $this->valueQuantity;
     }
 
-
     /**
-     * The value of the trait that holds (or does not hold - see 'exclude') for members of the group.
+     * The value of the trait that holds (or does not hold - see 'exclude') for members of the group. (choose any one of value*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRRange
      * @return $this
      */
@@ -338,14 +385,13 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * The value of the trait that holds (or does not hold - see 'exclude') for members of the group.
+     * The value of the trait that holds (or does not hold - see 'exclude') for members of the group. (choose any one of value*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public function getValueRange()
     {
         return $this->valueRange;
     }
-
 
     /**
      * @return string
@@ -395,9 +441,27 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement implements \JsonSerial
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<GroupCharacteristic xmlns="http://hl7.org/fhir"></GroupCharacteristic>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getCode())) {
+            $v->xmlSerialize(true, $sxe->addChild('code'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getExclude())) {
+            $v->xmlSerialize(true, $sxe->addChild('exclude'));
+        }
+        if (null !== ($v = $this->getPeriod())) {
+            $v->xmlSerialize(true, $sxe->addChild('period'));
+        }
+        if (null !== ($v = $this->getValueBoolean())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueBoolean'));
+        }
+        if (null !== ($v = $this->getValueCodeableConcept())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueCodeableConcept'));
+        }
+        if (null !== ($v = $this->getValueQuantity())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueQuantity'));
+        }
+        if (null !== ($v = $this->getValueRange())) {
+            $v->xmlSerialize(true, $sxe->addChild('valueRange'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

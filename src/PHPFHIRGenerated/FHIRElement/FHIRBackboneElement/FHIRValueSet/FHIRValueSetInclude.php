@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,12 +63,11 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet;
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\FHIRElement\FHIRCanonical;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
 use PHPFHIRGenerated\FHIRElement\FHIRUri;
 
 /**
- * A ValueSet resource instances specifies a set of codes drawn from one or more code systems, intended for use in a particular context. Value sets link between [[[CodeSystem]]] definitions and their use in [coded elements](terminologies.html).
+ * A value set specifies a set of codes drawn from one or more code systems.
  *
  * Class FHIRValueSetInclude
  * @package PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet
@@ -80,33 +79,33 @@ class FHIRValueSetInclude extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Specifies a concept to be included or excluded.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetConcept[]
      */
-    public $concept = null;
+    private $concept = [];
 
     /**
      * Select concepts by specify a matching criteria based on the properties (including relationships) defined by the system. If multiple filters are specified, they SHALL all be true.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetFilter
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetFilter[]
      */
-    public $filter = null;
+    private $filter = [];
 
     /**
      * An absolute URI which is the code system from which the selected codes come from.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $system = null;
+    private $system = null;
 
     /**
-     * Selects the concepts found in this value set (based on its value set definition). This is an absolute URI that is a reference to ValueSet.url.  If multiple value sets are specified this includes the union of the contents of all of the referenced value sets.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * Selects concepts found in this value set. This is an absolute URI that is a reference to ValueSet.url.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri[]
      */
-    public $valueSet = null;
+    private $valueSet = [];
 
     /**
-     * The version of the code system that the codes are selected from, or the special version "*" for all versions.
+     * The version of the code system that the codes are selected from.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $version = null;
+    private $version = null;
 
     /**
      * FHIRValueSetInclude Constructor
@@ -115,22 +114,80 @@ class FHIRValueSetInclude extends FHIRBackboneElement implements \JsonSerializab
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['concept'])) {
-                $this->setConcept($data['concept']);
+                $value = $data['concept'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRValueSetConcept($v);
+                        } 
+                        if (!($v instanceof FHIRValueSetConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude::__construct - Collection field \"concept\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetConcept or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addConcept($v);
+                    }
+                }
             }
             if (isset($data['filter'])) {
-                $this->setFilter($data['filter']);
+                $value = $data['filter'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRValueSetFilter($v);
+                        } 
+                        if (!($v instanceof FHIRValueSetFilter)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude::__construct - Collection field \"filter\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetFilter or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addFilter($v);
+                    }
+                }
             }
             if (isset($data['system'])) {
-                $this->setSystem($data['system']);
+                $value = $data['system'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude::__construct - Property \"system\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value));
+                }
+                $this->setSystem($value);
             }
             if (isset($data['valueSet'])) {
-                $this->setValueSet($data['valueSet']);
+                $value = $data['valueSet'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRUri($v);
+                        }  elseif (is_scalar($v)) {
+                            $v = new FHIRUri($v);
+                        }
+                        if (!($v instanceof FHIRUri)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude::__construct - Collection field \"valueSet\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addValueSet($v);
+                    }
+                }
             }
             if (isset($data['version'])) {
-                $this->setVersion($data['version']);
+                $value = $data['version'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude::__construct - Property \"version\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setVersion($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -139,6 +196,7 @@ class FHIRValueSetInclude extends FHIRBackboneElement implements \JsonSerializab
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -146,48 +204,46 @@ class FHIRValueSetInclude extends FHIRBackboneElement implements \JsonSerializab
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetConcept
      * @return $this
      */
-    public function setConcept(FHIRValueSetConcept $concept = null)
+    public function addConcept(FHIRValueSetConcept $concept = null)
     {
         if (null === $concept) {
             return $this; 
         }
-        $this->concept = $concept;
+        $this->concept[] = $concept;
         return $this;
     }
 
     /**
      * Specifies a concept to be included or excluded.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetConcept[]
      */
     public function getConcept()
     {
         return $this->concept;
     }
 
-
     /**
      * Select concepts by specify a matching criteria based on the properties (including relationships) defined by the system. If multiple filters are specified, they SHALL all be true.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetFilter
      * @return $this
      */
-    public function setFilter(FHIRValueSetFilter $filter = null)
+    public function addFilter(FHIRValueSetFilter $filter = null)
     {
         if (null === $filter) {
             return $this; 
         }
-        $this->filter = $filter;
+        $this->filter[] = $filter;
         return $this;
     }
 
     /**
      * Select concepts by specify a matching criteria based on the properties (including relationships) defined by the system. If multiple filters are specified, they SHALL all be true.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetFilter
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetFilter[]
      */
     public function getFilter()
     {
         return $this->filter;
     }
-
 
     /**
      * An absolute URI which is the code system from which the selected codes come from.
@@ -221,42 +277,40 @@ class FHIRValueSetInclude extends FHIRBackboneElement implements \JsonSerializab
         return $this->system;
     }
 
-
     /**
-     * Selects the concepts found in this value set (based on its value set definition). This is an absolute URI that is a reference to ValueSet.url.  If multiple value sets are specified this includes the union of the contents of all of the referenced value sets.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * Selects concepts found in this value set. This is an absolute URI that is a reference to ValueSet.url.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
-    public function setValueSet($valueSet)
+    public function addValueSet($valueSet)
     {
         if (null === $valueSet) {
             return $this; 
         }
         if (is_scalar($valueSet)) {
-            $valueSet = new FHIRCanonical($valueSet);
+            $valueSet = new FHIRUri($valueSet);
         }
-        if (!($valueSet instanceof FHIRCanonical)) {
+        if (!($valueSet instanceof FHIRUri)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRValueSetInclude::setValueSet - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCanonical or appropriate scalar value, %s seen.',
+                'FHIRValueSetInclude::addValueSet - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or appropriate scalar value, %s seen.',
                 gettype($valueSet)
             ));
         }
-        $this->valueSet = $valueSet;
+        $this->valueSet[] = $valueSet;
         return $this;
     }
 
     /**
-     * Selects the concepts found in this value set (based on its value set definition). This is an absolute URI that is a reference to ValueSet.url.  If multiple value sets are specified this includes the union of the contents of all of the referenced value sets.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * Selects concepts found in this value set. This is an absolute URI that is a reference to ValueSet.url.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri[]
      */
     public function getValueSet()
     {
         return $this->valueSet;
     }
 
-
     /**
-     * The version of the code system that the codes are selected from, or the special version "*" for all versions.
+     * The version of the code system that the codes are selected from.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
@@ -279,14 +333,13 @@ class FHIRValueSetInclude extends FHIRBackboneElement implements \JsonSerializab
     }
 
     /**
-     * The version of the code system that the codes are selected from, or the special version "*" for all versions.
+     * The version of the code system that the codes are selected from.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getVersion()
     {
         return $this->version;
     }
-
 
     /**
      * @return string
@@ -302,17 +355,41 @@ class FHIRValueSetInclude extends FHIRBackboneElement implements \JsonSerializab
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getConcept())) {
-            $a['concept'] = $v;
+        if (0 < count($values = $this->getConcept())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['concept'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getFilter())) {
-            $a['filter'] = $v;
+        if (0 < count($values = $this->getFilter())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['filter'] = $vs;
+            }
         }
         if (null !== ($v = $this->getSystem())) {
             $a['system'] = $v;
         }
-        if (null !== ($v = $this->getValueSet())) {
-            $a['valueSet'] = $v;
+        if (0 < count($values = $this->getValueSet())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['valueSet'] = $vs;
+            }
         }
         if (null !== ($v = $this->getVersion())) {
             $a['version'] = $v;
@@ -330,9 +407,33 @@ class FHIRValueSetInclude extends FHIRBackboneElement implements \JsonSerializab
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ValueSetInclude xmlns="http://hl7.org/fhir"></ValueSetInclude>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (0 < count($values = $this->getConcept())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('concept'));
+                }
+            }
         }
-        return $sxe->saveXML();
+        if (0 < count($values = $this->getFilter())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('filter'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getSystem())) {
+            $v->xmlSerialize(true, $sxe->addChild('system'));
+        }
+        if (0 < count($values = $this->getValueSet())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('valueSet'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getVersion())) {
+            $v->xmlSerialize(true, $sxe->addChild('version'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

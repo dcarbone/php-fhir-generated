@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -67,7 +67,7 @@ use PHPFHIRGenerated\FHIRElement\FHIRCoding;
 use PHPFHIRGenerated\FHIRElement\FHIRInteger;
 
 /**
- * A structured set of tests against a FHIR server or client implementation to determine compliance against the FHIR specification.
+ * A structured set of tests against a FHIR server implementation to determine compliance against the FHIR specification.
  *
  * Class FHIRTestScriptOrigin
  * @package PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript
@@ -81,13 +81,13 @@ class FHIRTestScriptOrigin extends FHIRBackboneElement implements \JsonSerializa
      * Abstract name given to an origin server in this test script.  The name is provided as a number starting at 1.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
-    public $index = null;
+    private $index = null;
 
     /**
      * The type of origin profile the test system supports.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
-    public $profile = null;
+    private $profile = null;
 
     /**
      * FHIRTestScriptOrigin Constructor
@@ -96,13 +96,28 @@ class FHIRTestScriptOrigin extends FHIRBackboneElement implements \JsonSerializa
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['index'])) {
-                $this->setIndex($data['index']);
+                $value = $data['index'];
+                if (is_array($value)) {
+                    $value = new FHIRInteger($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRInteger($value);
+                }
+                if (!($value instanceof FHIRInteger)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOrigin::__construct - Property \"index\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRInteger or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setIndex($value);
             }
             if (isset($data['profile'])) {
-                $this->setProfile($data['profile']);
+                $value = $data['profile'];
+                if (is_array($value)) {
+                    $value = new FHIRCoding($value);
+                } 
+                if (!($value instanceof FHIRCoding)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOrigin::__construct - Property \"profile\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCoding or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setProfile($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -111,6 +126,7 @@ class FHIRTestScriptOrigin extends FHIRBackboneElement implements \JsonSerializa
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -145,7 +161,6 @@ class FHIRTestScriptOrigin extends FHIRBackboneElement implements \JsonSerializa
         return $this->index;
     }
 
-
     /**
      * The type of origin profile the test system supports.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
@@ -168,7 +183,6 @@ class FHIRTestScriptOrigin extends FHIRBackboneElement implements \JsonSerializa
     {
         return $this->profile;
     }
-
 
     /**
      * @return string
@@ -203,9 +217,12 @@ class FHIRTestScriptOrigin extends FHIRBackboneElement implements \JsonSerializa
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<TestScriptOrigin xmlns="http://hl7.org/fhir"></TestScriptOrigin>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getIndex())) {
+            $v->xmlSerialize(true, $sxe->addChild('index'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getProfile())) {
+            $v->xmlSerialize(true, $sxe->addChild('profile'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

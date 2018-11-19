@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSubstance;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSubstance;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -82,19 +82,19 @@ class FHIRSubstanceInstance extends FHIRBackboneElement implements \JsonSerializ
      * When the substance is no longer valid to use. For some substances, a single arbitrary date is used for expiry.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $expiry = null;
+    private $expiry = null;
 
     /**
      * Identifier associated with the package/container (usually a label affixed directly).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public $identifier = null;
+    private $identifier = null;
 
     /**
      * The amount of the substance.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    public $quantity = null;
+    private $quantity = null;
 
     /**
      * FHIRSubstanceInstance Constructor
@@ -103,16 +103,38 @@ class FHIRSubstanceInstance extends FHIRBackboneElement implements \JsonSerializ
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['expiry'])) {
-                $this->setExpiry($data['expiry']);
+                $value = $data['expiry'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSubstance\FHIRSubstanceInstance::__construct - Property \"expiry\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value));
+                }
+                $this->setExpiry($value);
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    $value = new FHIRIdentifier($value);
+                } 
+                if (!($value instanceof FHIRIdentifier)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSubstance\FHIRSubstanceInstance::__construct - Property \"identifier\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($value));
+                }
+                $this->setIdentifier($value);
             }
             if (isset($data['quantity'])) {
-                $this->setQuantity($data['quantity']);
+                $value = $data['quantity'];
+                if (is_array($value)) {
+                    $value = new FHIRQuantity($value);
+                } 
+                if (!($value instanceof FHIRQuantity)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSubstance\FHIRSubstanceInstance::__construct - Property \"quantity\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantity or data to construct type, saw ".gettype($value));
+                }
+                $this->setQuantity($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -121,6 +143,7 @@ class FHIRSubstanceInstance extends FHIRBackboneElement implements \JsonSerializ
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -155,7 +178,6 @@ class FHIRSubstanceInstance extends FHIRBackboneElement implements \JsonSerializ
         return $this->expiry;
     }
 
-
     /**
      * Identifier associated with the package/container (usually a label affixed directly).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
@@ -179,7 +201,6 @@ class FHIRSubstanceInstance extends FHIRBackboneElement implements \JsonSerializ
         return $this->identifier;
     }
 
-
     /**
      * The amount of the substance.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity
@@ -202,7 +223,6 @@ class FHIRSubstanceInstance extends FHIRBackboneElement implements \JsonSerializ
     {
         return $this->quantity;
     }
-
 
     /**
      * @return string
@@ -240,9 +260,15 @@ class FHIRSubstanceInstance extends FHIRBackboneElement implements \JsonSerializ
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<SubstanceInstance xmlns="http://hl7.org/fhir"></SubstanceInstance>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getExpiry())) {
+            $v->xmlSerialize(true, $sxe->addChild('expiry'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getIdentifier())) {
+            $v->xmlSerialize(true, $sxe->addChild('identifier'));
+        }
+        if (null !== ($v = $this->getQuantity())) {
+            $v->xmlSerialize(true, $sxe->addChild('quantity'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

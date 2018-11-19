@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -62,8 +62,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * 
  */
 
-use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageClass;
-use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageCopay;
+use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageGrouping;
 use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
 use PHPFHIRGenerated\FHIRElement\FHIRFinancialResourceStatusCodes;
 use PHPFHIRGenerated\FHIRElement\FHIRIdentifier;
@@ -86,100 +85,100 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
     const FHIR_TYPE_NAME = 'Coverage';
 
     /**
-     * The party who benefits from the insurance coverage; the patient when services are provided.
+     * The party who benefits from the insurance coverage., the patient when services are provided.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $beneficiary = null;
-
-    /**
-     * A suite of underwrite specific classifiers, for example may be used to identify a class of coverage or employer group, Policy, Plan.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageClass
-     */
-    public $class = null;
+    private $beneficiary = null;
 
     /**
      * The policy(s) which constitute this insurance coverage.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $contract = null;
-
-    /**
-     * A suite of underwrite specific classifiers, for example may be used to identify a class of coverage or employer group, Policy, Plan.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageCopay
-     */
-    public $copay = null;
+    private $contract = [];
 
     /**
      * A unique identifier for a dependent under the coverage.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $dependent = null;
+    private $dependent = null;
 
     /**
-     * The main (and possibly only) identifier for the coverage - often referred to as a Member Id, Certificate number, Personal Health Number or Case ID. May be constructed as the concatenation of the Coverage.SubscriberID and the Coverage.dependant.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * A suite of underwrite specific classifiers, for example may be used to identify a class of coverage or employer group, Policy, Plan.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageGrouping
      */
-    public $identifier = null;
+    private $grouping = null;
+
+    /**
+     * The main (and possibly only) identifier for the coverage - often referred to as a Member Id, Certificate number, Personal Health Number or Case ID. May be constructed as the concatination of the Coverage.SubscriberID and the Coverage.dependant.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
+     */
+    private $identifier = [];
 
     /**
      * The insurer-specific identifier for the insurer-defined network of providers to which the beneficiary may seek treatment which will be covered at the 'in-network' rate, otherwise 'out of network' terms and conditions apply.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $network = null;
+    private $network = null;
 
     /**
-     * The order of applicability of this coverage relative to other coverages which are currently in force. Note, there may be gaps in the numbering and this does not imply primary, secondary etc. as the specific positioning of coverages depends upon the episode of care.
+     * The order of applicability of this coverage relative to other coverages which are currently inforce. Note, there may be gaps in the numbering and this does not imply primary, secondard etc. as the specific positioning of coverages depends upon the episode of care.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
-    public $order = null;
+    private $order = null;
 
     /**
      * The program or plan underwriter or payor including both insurance and non-insurance agreements, such as patient-pay agreements. May provide multiple identifiers such as insurance company identifier or business identifier (BIN number).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $payor = null;
+    private $payor = [];
 
     /**
      * Time period during which the coverage is in force. A missing start date indicates the start date isn't known, a missing end date means the coverage is continuing to be in force.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public $period = null;
+    private $period = null;
 
     /**
      * The party who 'owns' the insurance policy,  may be an individual, corporation or the subscriber's employer.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $policyHolder = null;
+    private $policyHolder = null;
 
     /**
      * The relationship of beneficiary (patient) to the subscriber.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $relationship = null;
+    private $relationship = null;
+
+    /**
+     * An optional counter for a particular instance of the identified coverage which increments upon each renewal.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    private $sequence = null;
 
     /**
      * The status of the resource instance.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRFinancialResourceStatusCodes
      */
-    public $status = null;
+    private $status = null;
 
     /**
      * The party who has signed-up for or 'owns' the contractual relationship to the policy or to whom the benefit of the policy for services rendered to them or their family is due.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $subscriber = null;
+    private $subscriber = null;
 
     /**
      * The insurer assigned ID for the Subscriber.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $subscriberId = null;
+    private $subscriberId = null;
 
     /**
      * The type of coverage: social program, medical plan, accident coverage (workers compensation, auto), group health or payment by an individual or organization.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $type = null;
+    private $type = null;
 
     /**
      * FHIRCoverage Constructor
@@ -188,55 +187,196 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['beneficiary'])) {
-                $this->setBeneficiary($data['beneficiary']);
-            }
-            if (isset($data['class'])) {
-                $this->setClass($data['class']);
+                $value = $data['beneficiary'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCoverage::__construct - Property \"beneficiary\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setBeneficiary($value);
             }
             if (isset($data['contract'])) {
-                $this->setContract($data['contract']);
-            }
-            if (isset($data['copay'])) {
-                $this->setCopay($data['copay']);
+                $value = $data['contract'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCoverage::__construct - Collection field \"contract\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addContract($v);
+                    }
+                }
             }
             if (isset($data['dependent'])) {
-                $this->setDependent($data['dependent']);
+                $value = $data['dependent'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCoverage::__construct - Property \"dependent\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDependent($value);
+            }
+            if (isset($data['grouping'])) {
+                $value = $data['grouping'];
+                if (is_array($value)) {
+                    $value = new FHIRCoverageGrouping($value);
+                } 
+                if (!($value instanceof FHIRCoverageGrouping)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCoverage::__construct - Property \"grouping\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageGrouping or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setGrouping($value);
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRIdentifier($v);
+                        } 
+                        if (!($v instanceof FHIRIdentifier)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCoverage::__construct - Collection field \"identifier\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addIdentifier($v);
+                    }
+                }
             }
             if (isset($data['network'])) {
-                $this->setNetwork($data['network']);
+                $value = $data['network'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCoverage::__construct - Property \"network\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setNetwork($value);
             }
             if (isset($data['order'])) {
-                $this->setOrder($data['order']);
+                $value = $data['order'];
+                if (is_array($value)) {
+                    $value = new FHIRPositiveInt($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRPositiveInt($value);
+                }
+                if (!($value instanceof FHIRPositiveInt)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCoverage::__construct - Property \"order\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setOrder($value);
             }
             if (isset($data['payor'])) {
-                $this->setPayor($data['payor']);
+                $value = $data['payor'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCoverage::__construct - Collection field \"payor\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addPayor($v);
+                    }
+                }
             }
             if (isset($data['period'])) {
-                $this->setPeriod($data['period']);
+                $value = $data['period'];
+                if (is_array($value)) {
+                    $value = new FHIRPeriod($value);
+                } 
+                if (!($value instanceof FHIRPeriod)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCoverage::__construct - Property \"period\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPeriod or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setPeriod($value);
             }
             if (isset($data['policyHolder'])) {
-                $this->setPolicyHolder($data['policyHolder']);
+                $value = $data['policyHolder'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCoverage::__construct - Property \"policyHolder\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setPolicyHolder($value);
             }
             if (isset($data['relationship'])) {
-                $this->setRelationship($data['relationship']);
+                $value = $data['relationship'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCoverage::__construct - Property \"relationship\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setRelationship($value);
+            }
+            if (isset($data['sequence'])) {
+                $value = $data['sequence'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCoverage::__construct - Property \"sequence\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setSequence($value);
             }
             if (isset($data['status'])) {
-                $this->setStatus($data['status']);
+                $value = $data['status'];
+                if (is_array($value)) {
+                    $value = new FHIRFinancialResourceStatusCodes($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRFinancialResourceStatusCodes($value);
+                }
+                if (!($value instanceof FHIRFinancialResourceStatusCodes)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCoverage::__construct - Property \"status\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRFinancialResourceStatusCodes or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setStatus($value);
             }
             if (isset($data['subscriber'])) {
-                $this->setSubscriber($data['subscriber']);
+                $value = $data['subscriber'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCoverage::__construct - Property \"subscriber\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setSubscriber($value);
             }
             if (isset($data['subscriberId'])) {
-                $this->setSubscriberId($data['subscriberId']);
+                $value = $data['subscriberId'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCoverage::__construct - Property \"subscriberId\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setSubscriberId($value);
             }
             if (isset($data['type'])) {
-                $this->setType($data['type']);
+                $value = $data['type'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCoverage::__construct - Property \"type\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setType($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -245,10 +385,11 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
-     * The party who benefits from the insurance coverage; the patient when services are provided.
+     * The party who benefits from the insurance coverage., the patient when services are provided.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
@@ -262,7 +403,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The party who benefits from the insurance coverage; the patient when services are provided.
+     * The party who benefits from the insurance coverage., the patient when services are provided.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getBeneficiary()
@@ -270,78 +411,28 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
         return $this->beneficiary;
     }
 
-
-    /**
-     * A suite of underwrite specific classifiers, for example may be used to identify a class of coverage or employer group, Policy, Plan.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageClass
-     * @return $this
-     */
-    public function setClass(FHIRCoverageClass $class = null)
-    {
-        if (null === $class) {
-            return $this; 
-        }
-        $this->class = $class;
-        return $this;
-    }
-
-    /**
-     * A suite of underwrite specific classifiers, for example may be used to identify a class of coverage or employer group, Policy, Plan.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageClass
-     */
-    public function getClass()
-    {
-        return $this->class;
-    }
-
-
     /**
      * The policy(s) which constitute this insurance coverage.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setContract(FHIRReference $contract = null)
+    public function addContract(FHIRReference $contract = null)
     {
         if (null === $contract) {
             return $this; 
         }
-        $this->contract = $contract;
+        $this->contract[] = $contract;
         return $this;
     }
 
     /**
      * The policy(s) which constitute this insurance coverage.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getContract()
     {
         return $this->contract;
     }
-
-
-    /**
-     * A suite of underwrite specific classifiers, for example may be used to identify a class of coverage or employer group, Policy, Plan.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageCopay
-     * @return $this
-     */
-    public function setCopay(FHIRCoverageCopay $copay = null)
-    {
-        if (null === $copay) {
-            return $this; 
-        }
-        $this->copay = $copay;
-        return $this;
-    }
-
-    /**
-     * A suite of underwrite specific classifiers, for example may be used to identify a class of coverage or employer group, Policy, Plan.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageCopay
-     */
-    public function getCopay()
-    {
-        return $this->copay;
-    }
-
 
     /**
      * A unique identifier for a dependent under the coverage.
@@ -375,30 +466,51 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
         return $this->dependent;
     }
 
-
     /**
-     * The main (and possibly only) identifier for the coverage - often referred to as a Member Id, Certificate number, Personal Health Number or Case ID. May be constructed as the concatenation of the Coverage.SubscriberID and the Coverage.dependant.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * A suite of underwrite specific classifiers, for example may be used to identify a class of coverage or employer group, Policy, Plan.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageGrouping
      * @return $this
      */
-    public function setIdentifier(FHIRIdentifier $identifier = null)
+    public function setGrouping(FHIRCoverageGrouping $grouping = null)
     {
-        if (null === $identifier) {
+        if (null === $grouping) {
             return $this; 
         }
-        $this->identifier = $identifier;
+        $this->grouping = $grouping;
         return $this;
     }
 
     /**
-     * The main (and possibly only) identifier for the coverage - often referred to as a Member Id, Certificate number, Personal Health Number or Case ID. May be constructed as the concatenation of the Coverage.SubscriberID and the Coverage.dependant.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * A suite of underwrite specific classifiers, for example may be used to identify a class of coverage or employer group, Policy, Plan.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageGrouping
+     */
+    public function getGrouping()
+    {
+        return $this->grouping;
+    }
+
+    /**
+     * The main (and possibly only) identifier for the coverage - often referred to as a Member Id, Certificate number, Personal Health Number or Case ID. May be constructed as the concatination of the Coverage.SubscriberID and the Coverage.dependant.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @return $this
+     */
+    public function addIdentifier(FHIRIdentifier $identifier = null)
+    {
+        if (null === $identifier) {
+            return $this; 
+        }
+        $this->identifier[] = $identifier;
+        return $this;
+    }
+
+    /**
+     * The main (and possibly only) identifier for the coverage - often referred to as a Member Id, Certificate number, Personal Health Number or Case ID. May be constructed as the concatination of the Coverage.SubscriberID and the Coverage.dependant.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
         return $this->identifier;
     }
-
 
     /**
      * The insurer-specific identifier for the insurer-defined network of providers to which the beneficiary may seek treatment which will be covered at the 'in-network' rate, otherwise 'out of network' terms and conditions apply.
@@ -432,9 +544,8 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
         return $this->network;
     }
 
-
     /**
-     * The order of applicability of this coverage relative to other coverages which are currently in force. Note, there may be gaps in the numbering and this does not imply primary, secondary etc. as the specific positioning of coverages depends upon the episode of care.
+     * The order of applicability of this coverage relative to other coverages which are currently inforce. Note, there may be gaps in the numbering and this does not imply primary, secondard etc. as the specific positioning of coverages depends upon the episode of care.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      * @return $this
      */
@@ -457,7 +568,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The order of applicability of this coverage relative to other coverages which are currently in force. Note, there may be gaps in the numbering and this does not imply primary, secondary etc. as the specific positioning of coverages depends upon the episode of care.
+     * The order of applicability of this coverage relative to other coverages which are currently inforce. Note, there may be gaps in the numbering and this does not imply primary, secondard etc. as the specific positioning of coverages depends upon the episode of care.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
     public function getOrder()
@@ -465,30 +576,28 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
         return $this->order;
     }
 
-
     /**
      * The program or plan underwriter or payor including both insurance and non-insurance agreements, such as patient-pay agreements. May provide multiple identifiers such as insurance company identifier or business identifier (BIN number).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setPayor(FHIRReference $payor = null)
+    public function addPayor(FHIRReference $payor = null)
     {
         if (null === $payor) {
             return $this; 
         }
-        $this->payor = $payor;
+        $this->payor[] = $payor;
         return $this;
     }
 
     /**
      * The program or plan underwriter or payor including both insurance and non-insurance agreements, such as patient-pay agreements. May provide multiple identifiers such as insurance company identifier or business identifier (BIN number).
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getPayor()
     {
         return $this->payor;
     }
-
 
     /**
      * Time period during which the coverage is in force. A missing start date indicates the start date isn't known, a missing end date means the coverage is continuing to be in force.
@@ -513,7 +622,6 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
         return $this->period;
     }
 
-
     /**
      * The party who 'owns' the insurance policy,  may be an individual, corporation or the subscriber's employer.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -536,7 +644,6 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
     {
         return $this->policyHolder;
     }
-
 
     /**
      * The relationship of beneficiary (patient) to the subscriber.
@@ -561,6 +668,37 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
         return $this->relationship;
     }
 
+    /**
+     * An optional counter for a particular instance of the identified coverage which increments upon each renewal.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     * @return $this
+     */
+    public function setSequence($sequence)
+    {
+        if (null === $sequence) {
+            return $this; 
+        }
+        if (is_scalar($sequence)) {
+            $sequence = new FHIRString($sequence);
+        }
+        if (!($sequence instanceof FHIRString)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRCoverage::setSequence - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                gettype($sequence)
+            ));
+        }
+        $this->sequence = $sequence;
+        return $this;
+    }
+
+    /**
+     * An optional counter for a particular instance of the identified coverage which increments upon each renewal.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getSequence()
+    {
+        return $this->sequence;
+    }
 
     /**
      * The status of the resource instance.
@@ -594,7 +732,6 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
         return $this->status;
     }
 
-
     /**
      * The party who has signed-up for or 'owns' the contractual relationship to the policy or to whom the benefit of the policy for services rendered to them or their family is due.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -617,7 +754,6 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
     {
         return $this->subscriber;
     }
-
 
     /**
      * The insurer assigned ID for the Subscriber.
@@ -651,7 +787,6 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
         return $this->subscriberId;
     }
 
-
     /**
      * The type of coverage: social program, medical plan, accident coverage (workers compensation, auto), group health or payment by an individual or organization.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
@@ -675,7 +810,6 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
         return $this->type;
     }
 
-
     /**
      * @return string
      */
@@ -694,20 +828,33 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getBeneficiary())) {
             $a['beneficiary'] = $v;
         }
-        if (null !== ($v = $this->getClass())) {
-            $a['class'] = $v;
-        }
-        if (null !== ($v = $this->getContract())) {
-            $a['contract'] = $v;
-        }
-        if (null !== ($v = $this->getCopay())) {
-            $a['copay'] = $v;
+        if (0 < count($values = $this->getContract())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['contract'] = $vs;
+            }
         }
         if (null !== ($v = $this->getDependent())) {
             $a['dependent'] = $v;
         }
-        if (null !== ($v = $this->getIdentifier())) {
-            $a['identifier'] = $v;
+        if (null !== ($v = $this->getGrouping())) {
+            $a['grouping'] = $v;
+        }
+        if (0 < count($values = $this->getIdentifier())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['identifier'] = $vs;
+            }
         }
         if (null !== ($v = $this->getNetwork())) {
             $a['network'] = $v;
@@ -715,8 +862,16 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getOrder())) {
             $a['order'] = $v;
         }
-        if (null !== ($v = $this->getPayor())) {
-            $a['payor'] = $v;
+        if (0 < count($values = $this->getPayor())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['payor'] = $vs;
+            }
         }
         if (null !== ($v = $this->getPeriod())) {
             $a['period'] = $v;
@@ -726,6 +881,9 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
         }
         if (null !== ($v = $this->getRelationship())) {
             $a['relationship'] = $v;
+        }
+        if (null !== ($v = $this->getSequence())) {
+            $a['sequence'] = $v;
         }
         if (null !== ($v = $this->getStatus())) {
             $a['status'] = $v;
@@ -752,9 +910,66 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Coverage xmlns="http://hl7.org/fhir"></Coverage>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getBeneficiary())) {
+            $v->xmlSerialize(true, $sxe->addChild('beneficiary'));
         }
-        return $sxe->saveXML();
+        if (0 < count($values = $this->getContract())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('contract'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getDependent())) {
+            $v->xmlSerialize(true, $sxe->addChild('dependent'));
+        }
+        if (null !== ($v = $this->getGrouping())) {
+            $v->xmlSerialize(true, $sxe->addChild('grouping'));
+        }
+        if (0 < count($values = $this->getIdentifier())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('identifier'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getNetwork())) {
+            $v->xmlSerialize(true, $sxe->addChild('network'));
+        }
+        if (null !== ($v = $this->getOrder())) {
+            $v->xmlSerialize(true, $sxe->addChild('order'));
+        }
+        if (0 < count($values = $this->getPayor())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('payor'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getPeriod())) {
+            $v->xmlSerialize(true, $sxe->addChild('period'));
+        }
+        if (null !== ($v = $this->getPolicyHolder())) {
+            $v->xmlSerialize(true, $sxe->addChild('policyHolder'));
+        }
+        if (null !== ($v = $this->getRelationship())) {
+            $v->xmlSerialize(true, $sxe->addChild('relationship'));
+        }
+        if (null !== ($v = $this->getSequence())) {
+            $v->xmlSerialize(true, $sxe->addChild('sequence'));
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('status'));
+        }
+        if (null !== ($v = $this->getSubscriber())) {
+            $v->xmlSerialize(true, $sxe->addChild('subscriber'));
+        }
+        if (null !== ($v = $this->getSubscriberId())) {
+            $v->xmlSerialize(true, $sxe->addChild('subscriberId'));
+        }
+        if (null !== ($v = $this->getType())) {
+            $v->xmlSerialize(true, $sxe->addChild('type'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

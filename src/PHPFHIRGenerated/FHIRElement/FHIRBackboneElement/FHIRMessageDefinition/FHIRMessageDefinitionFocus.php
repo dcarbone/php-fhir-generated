@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,8 +63,8 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\FHIRElement\FHIRCanonical;
-use PHPFHIRGenerated\FHIRElement\FHIRCode;
+use PHPFHIRGenerated\FHIRElement\FHIRReference;
+use PHPFHIRGenerated\FHIRElement\FHIRResourceType;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
 use PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt;
 
@@ -81,27 +81,27 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement implements \JsonSer
 
     /**
      * The kind of resource that must be the focus for this message.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRResourceType
      */
-    public $code = null;
+    private $code = null;
 
     /**
      * Identifies the maximum number of resources of this type that must be pointed to by a message in order for it to be valid against this MessageDefinition.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $max = null;
+    private $max = null;
 
     /**
      * Identifies the minimum number of resources of this type that must be pointed to by a message in order for it to be valid against this MessageDefinition.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
-    public $min = null;
+    private $min = null;
 
     /**
      * A profile that reflects constraints for the focal resource (and potentially for related resources).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $profile = null;
+    private $profile = null;
 
     /**
      * FHIRMessageDefinitionFocus Constructor
@@ -110,19 +110,52 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement implements \JsonSer
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['code'])) {
-                $this->setCode($data['code']);
+                $value = $data['code'];
+                if (is_array($value)) {
+                    $value = new FHIRResourceType($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRResourceType($value);
+                }
+                if (!($value instanceof FHIRResourceType)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionFocus::__construct - Property \"code\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRResourceType or data to construct type, saw ".gettype($value));
+                }
+                $this->setCode($value);
             }
             if (isset($data['max'])) {
-                $this->setMax($data['max']);
+                $value = $data['max'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionFocus::__construct - Property \"max\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setMax($value);
             }
             if (isset($data['min'])) {
-                $this->setMin($data['min']);
+                $value = $data['min'];
+                if (is_array($value)) {
+                    $value = new FHIRUnsignedInt($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUnsignedInt($value);
+                }
+                if (!($value instanceof FHIRUnsignedInt)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionFocus::__construct - Property \"min\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt or data to construct type, saw ".gettype($value));
+                }
+                $this->setMin($value);
             }
             if (isset($data['profile'])) {
-                $this->setProfile($data['profile']);
+                $value = $data['profile'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionFocus::__construct - Property \"profile\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setProfile($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -131,11 +164,12 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement implements \JsonSer
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
      * The kind of resource that must be the focus for this message.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRResourceType
      * @return $this
      */
     public function setCode($code)
@@ -144,11 +178,11 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement implements \JsonSer
             return $this; 
         }
         if (is_scalar($code)) {
-            $code = new FHIRCode($code);
+            $code = new FHIRResourceType($code);
         }
-        if (!($code instanceof FHIRCode)) {
+        if (!($code instanceof FHIRResourceType)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRMessageDefinitionFocus::setCode - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or appropriate scalar value, %s seen.',
+                'FHIRMessageDefinitionFocus::setCode - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRResourceType or appropriate scalar value, %s seen.',
                 gettype($code)
             ));
         }
@@ -158,13 +192,12 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement implements \JsonSer
 
     /**
      * The kind of resource that must be the focus for this message.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRResourceType
      */
     public function getCode()
     {
         return $this->code;
     }
-
 
     /**
      * Identifies the maximum number of resources of this type that must be pointed to by a message in order for it to be valid against this MessageDefinition.
@@ -198,7 +231,6 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement implements \JsonSer
         return $this->max;
     }
 
-
     /**
      * Identifies the minimum number of resources of this type that must be pointed to by a message in order for it to be valid against this MessageDefinition.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
@@ -231,25 +263,15 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement implements \JsonSer
         return $this->min;
     }
 
-
     /**
      * A profile that reflects constraints for the focal resource (and potentially for related resources).
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setProfile($profile)
+    public function setProfile(FHIRReference $profile = null)
     {
         if (null === $profile) {
             return $this; 
-        }
-        if (is_scalar($profile)) {
-            $profile = new FHIRCanonical($profile);
-        }
-        if (!($profile instanceof FHIRCanonical)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRMessageDefinitionFocus::setProfile - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCanonical or appropriate scalar value, %s seen.',
-                gettype($profile)
-            ));
         }
         $this->profile = $profile;
         return $this;
@@ -257,13 +279,12 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement implements \JsonSer
 
     /**
      * A profile that reflects constraints for the focal resource (and potentially for related resources).
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getProfile()
     {
         return $this->profile;
     }
-
 
     /**
      * @return string
@@ -304,9 +325,18 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement implements \JsonSer
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<MessageDefinitionFocus xmlns="http://hl7.org/fhir"></MessageDefinitionFocus>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getCode())) {
+            $v->xmlSerialize(true, $sxe->addChild('code'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getMax())) {
+            $v->xmlSerialize(true, $sxe->addChild('max'));
+        }
+        if (null !== ($v = $this->getMin())) {
+            $v->xmlSerialize(true, $sxe->addChild('min'));
+        }
+        if (null !== ($v = $this->getProfile())) {
+            $v->xmlSerialize(true, $sxe->addChild('profile'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

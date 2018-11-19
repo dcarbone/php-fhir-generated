@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStateme
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStateme
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,9 +63,8 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStateme
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\FHIRElement\FHIRReference;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
-use PHPFHIRGenerated\FHIRElement\FHIRUrl;
+use PHPFHIRGenerated\FHIRElement\FHIRUri;
 
 /**
  * A Capability Statement documents a set of capabilities (behaviors) of a FHIR Server that may be used as a statement of actual server functionality or a statement of required or desired server implementation.
@@ -79,22 +78,16 @@ class FHIRCapabilityStatementImplementation extends FHIRBackboneElement implemen
     const FHIR_TYPE_NAME = 'CapabilityStatement.Implementation';
 
     /**
-     * The organization responsible for the management of the instance and oversight of the data on the server at the specified URL.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $custodian = null;
-
-    /**
      * Information about the specific installation that this capability statement relates to.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $description = null;
+    private $description = null;
 
     /**
      * An absolute base URL for the implementation.  This forms the base for REST interfaces as well as the mailbox and document interfaces.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUrl
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $url = null;
+    private $url = null;
 
     /**
      * FHIRCapabilityStatementImplementation Constructor
@@ -103,16 +96,30 @@ class FHIRCapabilityStatementImplementation extends FHIRBackboneElement implemen
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
-            if (isset($data['custodian'])) {
-                $this->setCustodian($data['custodian']);
-            }
             if (isset($data['description'])) {
-                $this->setDescription($data['description']);
+                $value = $data['description'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementImplementation::__construct - Property \"description\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setDescription($value);
             }
             if (isset($data['url'])) {
-                $this->setUrl($data['url']);
+                $value = $data['url'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementImplementation::__construct - Property \"url\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value));
+                }
+                $this->setUrl($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -121,31 +128,8 @@ class FHIRCapabilityStatementImplementation extends FHIRBackboneElement implemen
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
-
-    /**
-     * The organization responsible for the management of the instance and oversight of the data on the server at the specified URL.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     * @return $this
-     */
-    public function setCustodian(FHIRReference $custodian = null)
-    {
-        if (null === $custodian) {
-            return $this; 
-        }
-        $this->custodian = $custodian;
-        return $this;
-    }
-
-    /**
-     * The organization responsible for the management of the instance and oversight of the data on the server at the specified URL.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getCustodian()
-    {
-        return $this->custodian;
-    }
-
 
     /**
      * Information about the specific installation that this capability statement relates to.
@@ -179,10 +163,9 @@ class FHIRCapabilityStatementImplementation extends FHIRBackboneElement implemen
         return $this->description;
     }
 
-
     /**
      * An absolute base URL for the implementation.  This forms the base for REST interfaces as well as the mailbox and document interfaces.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUrl
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
     public function setUrl($url)
@@ -191,11 +174,11 @@ class FHIRCapabilityStatementImplementation extends FHIRBackboneElement implemen
             return $this; 
         }
         if (is_scalar($url)) {
-            $url = new FHIRUrl($url);
+            $url = new FHIRUri($url);
         }
-        if (!($url instanceof FHIRUrl)) {
+        if (!($url instanceof FHIRUri)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRCapabilityStatementImplementation::setUrl - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUrl or appropriate scalar value, %s seen.',
+                'FHIRCapabilityStatementImplementation::setUrl - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or appropriate scalar value, %s seen.',
                 gettype($url)
             ));
         }
@@ -205,13 +188,12 @@ class FHIRCapabilityStatementImplementation extends FHIRBackboneElement implemen
 
     /**
      * An absolute base URL for the implementation.  This forms the base for REST interfaces as well as the mailbox and document interfaces.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUrl
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getUrl()
     {
         return $this->url;
     }
-
 
     /**
      * @return string
@@ -227,9 +209,6 @@ class FHIRCapabilityStatementImplementation extends FHIRBackboneElement implemen
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getCustodian())) {
-            $a['custodian'] = $v;
-        }
         if (null !== ($v = $this->getDescription())) {
             $a['description'] = $v;
         }
@@ -249,9 +228,12 @@ class FHIRCapabilityStatementImplementation extends FHIRBackboneElement implemen
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<CapabilityStatementImplementation xmlns="http://hl7.org/fhir"></CapabilityStatementImplementation>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getDescription())) {
+            $v->xmlSerialize(true, $sxe->addChild('description'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getUrl())) {
+            $v->xmlSerialize(true, $sxe->addChild('url'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMeasure;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMeasure;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,8 +63,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMeasure;
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
-use PHPFHIRGenerated\FHIRElement\FHIRExpression;
+use PHPFHIRGenerated\FHIRElement\FHIRIdentifier;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
 
 /**
@@ -79,22 +78,22 @@ class FHIRMeasureStratifier extends FHIRBackboneElement implements \JsonSerializ
     const FHIR_TYPE_NAME = 'Measure.Stratifier';
 
     /**
-     * Indicates a meaning for the stratifier. This can be as simple as a unique identifier, or it can establish meaning in a broader context by drawing from a terminology, allowing stratifiers to be correlated across measures.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public $code = null;
-
-    /**
-     * An expression that specifies the criteria for the stratifier. This is typically the name of an expression defined within a referenced library, but it may also be a path to a stratifier element.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRExpression
-     */
-    public $criteria = null;
-
-    /**
-     * The human readable description of this stratifier criteria.
+     * The criteria for the stratifier. This must be the name of an expression defined within a referenced library.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $description = null;
+    private $criteria = null;
+
+    /**
+     * The identifier for the stratifier used to coordinate the reported data back to this stratifier.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     */
+    private $identifier = null;
+
+    /**
+     * The path to an element that defines the stratifier, specified as a valid FHIR resource path.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    private $path = null;
 
     /**
      * FHIRMeasureStratifier Constructor
@@ -103,16 +102,40 @@ class FHIRMeasureStratifier extends FHIRBackboneElement implements \JsonSerializ
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
-            if (isset($data['code'])) {
-                $this->setCode($data['code']);
-            }
             if (isset($data['criteria'])) {
-                $this->setCriteria($data['criteria']);
+                $value = $data['criteria'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureStratifier::__construct - Property \"criteria\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setCriteria($value);
             }
-            if (isset($data['description'])) {
-                $this->setDescription($data['description']);
+            if (isset($data['identifier'])) {
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    $value = new FHIRIdentifier($value);
+                } 
+                if (!($value instanceof FHIRIdentifier)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureStratifier::__construct - Property \"identifier\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($value));
+                }
+                $this->setIdentifier($value);
+            }
+            if (isset($data['path'])) {
+                $value = $data['path'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureStratifier::__construct - Property \"path\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setPath($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -121,88 +144,95 @@ class FHIRMeasureStratifier extends FHIRBackboneElement implements \JsonSerializ
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
-     * Indicates a meaning for the stratifier. This can be as simple as a unique identifier, or it can establish meaning in a broader context by drawing from a terminology, allowing stratifiers to be correlated across measures.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * The criteria for the stratifier. This must be the name of an expression defined within a referenced library.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
-    public function setCode(FHIRCodeableConcept $code = null)
-    {
-        if (null === $code) {
-            return $this; 
-        }
-        $this->code = $code;
-        return $this;
-    }
-
-    /**
-     * Indicates a meaning for the stratifier. This can be as simple as a unique identifier, or it can establish meaning in a broader context by drawing from a terminology, allowing stratifiers to be correlated across measures.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public function getCode()
-    {
-        return $this->code;
-    }
-
-
-    /**
-     * An expression that specifies the criteria for the stratifier. This is typically the name of an expression defined within a referenced library, but it may also be a path to a stratifier element.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRExpression
-     * @return $this
-     */
-    public function setCriteria(FHIRExpression $criteria = null)
+    public function setCriteria($criteria)
     {
         if (null === $criteria) {
             return $this; 
+        }
+        if (is_scalar($criteria)) {
+            $criteria = new FHIRString($criteria);
+        }
+        if (!($criteria instanceof FHIRString)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRMeasureStratifier::setCriteria - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                gettype($criteria)
+            ));
         }
         $this->criteria = $criteria;
         return $this;
     }
 
     /**
-     * An expression that specifies the criteria for the stratifier. This is typically the name of an expression defined within a referenced library, but it may also be a path to a stratifier element.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRExpression
+     * The criteria for the stratifier. This must be the name of an expression defined within a referenced library.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getCriteria()
     {
         return $this->criteria;
     }
 
-
     /**
-     * The human readable description of this stratifier criteria.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     * The identifier for the stratifier used to coordinate the reported data back to this stratifier.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
-    public function setDescription($description)
+    public function setIdentifier(FHIRIdentifier $identifier = null)
     {
-        if (null === $description) {
+        if (null === $identifier) {
             return $this; 
         }
-        if (is_scalar($description)) {
-            $description = new FHIRString($description);
-        }
-        if (!($description instanceof FHIRString)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRMeasureStratifier::setDescription - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
-                gettype($description)
-            ));
-        }
-        $this->description = $description;
+        $this->identifier = $identifier;
         return $this;
     }
 
     /**
-     * The human readable description of this stratifier criteria.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     * The identifier for the stratifier used to coordinate the reported data back to this stratifier.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public function getDescription()
+    public function getIdentifier()
     {
-        return $this->description;
+        return $this->identifier;
     }
 
+    /**
+     * The path to an element that defines the stratifier, specified as a valid FHIR resource path.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     * @return $this
+     */
+    public function setPath($path)
+    {
+        if (null === $path) {
+            return $this; 
+        }
+        if (is_scalar($path)) {
+            $path = new FHIRString($path);
+        }
+        if (!($path instanceof FHIRString)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRMeasureStratifier::setPath - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                gettype($path)
+            ));
+        }
+        $this->path = $path;
+        return $this;
+    }
+
+    /**
+     * The path to an element that defines the stratifier, specified as a valid FHIR resource path.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getPath()
+    {
+        return $this->path;
+    }
 
     /**
      * @return string
@@ -218,14 +248,14 @@ class FHIRMeasureStratifier extends FHIRBackboneElement implements \JsonSerializ
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getCode())) {
-            $a['code'] = $v;
-        }
         if (null !== ($v = $this->getCriteria())) {
             $a['criteria'] = $v;
         }
-        if (null !== ($v = $this->getDescription())) {
-            $a['description'] = $v;
+        if (null !== ($v = $this->getIdentifier())) {
+            $a['identifier'] = $v;
+        }
+        if (null !== ($v = $this->getPath())) {
+            $a['path'] = $v;
         }
         return $a;
     }
@@ -240,9 +270,15 @@ class FHIRMeasureStratifier extends FHIRBackboneElement implements \JsonSerializ
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<MeasureStratifier xmlns="http://hl7.org/fhir"></MeasureStratifier>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getCriteria())) {
+            $v->xmlSerialize(true, $sxe->addChild('criteria'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getIdentifier())) {
+            $v->xmlSerialize(true, $sxe->addChild('identifier'));
+        }
+        if (null !== ($v = $this->getPath())) {
+            $v->xmlSerialize(true, $sxe->addChild('path'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

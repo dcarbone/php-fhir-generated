@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -82,25 +82,25 @@ class FHIRResource implements \JsonSerializable
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRId
      */
-    public $id = null;
+    private $id = null;
 
     /**
-     * A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc.
+     * A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $implicitRules = null;
+    private $implicitRules = null;
 
     /**
      * The base language in which the resource is written.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public $language = null;
+    private $language = null;
 
     /**
-     * The metadata about the resource. This is content that is maintained by the infrastructure. Changes to the content might not always be associated with version changes to the resource.
+     * The metadata about the resource. This is content that is maintained by the infrastructure. Changes to the content may not always be associated with version changes to the resource.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMeta
      */
-    public $meta = null;
+    private $meta = null;
 
     /**
      * FHIRResource Constructor
@@ -111,16 +111,50 @@ class FHIRResource implements \JsonSerializable
     {
         if (is_array($data)) {
             if (isset($data['id'])) {
-                $this->setId($data['id']);
+                $value = $data['id'];
+                if (is_array($value)) {
+                    $value = new FHIRId($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRId($value);
+                }
+                if (!($value instanceof FHIRId)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource::__construct - Property \"id\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRId or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setId($value);
             }
             if (isset($data['implicitRules'])) {
-                $this->setImplicitRules($data['implicitRules']);
+                $value = $data['implicitRules'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource::__construct - Property \"implicitRules\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setImplicitRules($value);
             }
             if (isset($data['language'])) {
-                $this->setLanguage($data['language']);
+                $value = $data['language'];
+                if (is_array($value)) {
+                    $value = new FHIRCode($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRCode($value);
+                }
+                if (!($value instanceof FHIRCode)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource::__construct - Property \"language\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setLanguage($value);
             }
             if (isset($data['meta'])) {
-                $this->setMeta($data['meta']);
+                $value = $data['meta'];
+                if (is_array($value)) {
+                    $value = new FHIRMeta($value);
+                } 
+                if (!($value instanceof FHIRMeta)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource::__construct - Property \"meta\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRMeta or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setMeta($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -163,9 +197,8 @@ class FHIRResource implements \JsonSerializable
         return $this->id;
     }
 
-
     /**
-     * A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc.
+     * A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
@@ -188,14 +221,13 @@ class FHIRResource implements \JsonSerializable
     }
 
     /**
-     * A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc.
+     * A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getImplicitRules()
     {
         return $this->implicitRules;
     }
-
 
     /**
      * The base language in which the resource is written.
@@ -229,9 +261,8 @@ class FHIRResource implements \JsonSerializable
         return $this->language;
     }
 
-
     /**
-     * The metadata about the resource. This is content that is maintained by the infrastructure. Changes to the content might not always be associated with version changes to the resource.
+     * The metadata about the resource. This is content that is maintained by the infrastructure. Changes to the content may not always be associated with version changes to the resource.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRMeta
      * @return $this
      */
@@ -245,14 +276,13 @@ class FHIRResource implements \JsonSerializable
     }
 
     /**
-     * The metadata about the resource. This is content that is maintained by the infrastructure. Changes to the content might not always be associated with version changes to the resource.
+     * The metadata about the resource. This is content that is maintained by the infrastructure. Changes to the content may not always be associated with version changes to the resource.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRMeta
      */
     public function getMeta()
     {
         return $this->meta;
     }
-
 
     /**
      * @return string
@@ -294,9 +324,18 @@ class FHIRResource implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Resource xmlns="http://hl7.org/fhir"></Resource>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getId())) {
+            $v->xmlSerialize(true, $sxe->addChild('id'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getImplicitRules())) {
+            $v->xmlSerialize(true, $sxe->addChild('implicitRules'));
+        }
+        if (null !== ($v = $this->getLanguage())) {
+            $v->xmlSerialize(true, $sxe->addChild('language'));
+        }
+        if (null !== ($v = $this->getMeta())) {
+            $v->xmlSerialize(true, $sxe->addChild('meta'));
+        }
+        return $returnSXE ? $sxe : $sxe->saveXML();
     }
 }

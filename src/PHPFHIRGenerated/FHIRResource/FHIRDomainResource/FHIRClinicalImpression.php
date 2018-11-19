@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -88,130 +88,124 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
     const FHIR_TYPE_NAME = 'ClinicalImpression';
 
     /**
+     * Action taken as part of assessment procedure.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    private $action = [];
+
+    /**
      * The clinician performing the assessment.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $assessor = null;
+    private $assessor = null;
 
     /**
      * Categorizes the type of clinical assessment performed.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $code = null;
+    private $code = null;
 
     /**
      * The encounter or episode of care this impression was created as part of.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $context = null;
+    private $context = null;
 
     /**
      * Indicates when the documentation of the assessment was complete.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $date = null;
+    private $date = null;
 
     /**
      * A summary of the context and/or cause of the assessment - why / where was it performed, and what patient events/status prompted it.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $description = null;
+    private $description = null;
 
     /**
-     * The point in time or period over which the subject was assessed.
+     * The point in time or period over which the subject was assessed. (choose any one of effective*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $effectiveDateTime = null;
+    private $effectiveDateTime = null;
 
     /**
-     * The point in time or period over which the subject was assessed.
+     * The point in time or period over which the subject was assessed. (choose any one of effective*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public $effectivePeriod = null;
+    private $effectivePeriod = null;
 
     /**
      * Specific findings or diagnoses that was considered likely or relevant to ongoing treatment.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionFinding
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionFinding[]
      */
-    public $finding = null;
+    private $finding = [];
 
     /**
-     * Business identifiers assigned to this clinical impression by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * A unique identifier assigned to the clinical impression that remains consistent regardless of what server the impression is stored on.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = null;
+    private $identifier = [];
 
     /**
-     * One or more sets of investigations (signs, symptoms, etc.). The actual grouping of investigations varies greatly depending on the type and context of the assessment. These investigations may include data generated during the assessment process, or data previously generated and recorded that is pertinent to the outcomes.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionInvestigation
+     * One or more sets of investigations (signs, symptions, etc.). The actual grouping of investigations vary greatly depending on the type and context of the assessment. These investigations may include data generated during the assessment process, or data previously generated and recorded that is pertinent to the outcomes.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionInvestigation[]
      */
-    public $investigation = null;
+    private $investigation = [];
 
     /**
      * Commentary about the impression, typically recorded after the impression itself was made, though supplemental notes by the original author could also appear.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
-    public $note = null;
+    private $note = [];
 
     /**
-     * A reference to the last assessment that was conducted on this patient. Assessments are often/usually ongoing in nature; a care provider (practitioner or team) will make new assessments on an ongoing basis as new data arises or the patient's conditions changes.
+     * A reference to the last assesment that was conducted bon this patient. Assessments are often/usually ongoing in nature; a care provider (practitioner or team) will make new assessments on an ongoing basis as new data arises or the patient's conditions changes.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $previous = null;
+    private $previous = null;
 
     /**
      * This a list of the relevant problems/conditions for a patient.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $problem = null;
+    private $problem = [];
 
     /**
      * Estimate of likely outcome.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $prognosisCodeableConcept = null;
+    private $prognosisCodeableConcept = [];
 
     /**
      * RiskAssessment expressing likely outcome.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $prognosisReference = null;
+    private $prognosisReference = [];
 
     /**
      * Reference to a specific published clinical protocol that was followed during this assessment, and/or that provides evidence in support of the diagnosis.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri[]
      */
-    public $protocol = null;
+    private $protocol = [];
 
     /**
      * Identifies the workflow status of the assessment.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRClinicalImpressionStatus
      */
-    public $status = null;
-
-    /**
-     * Captures the reason for the current state of the ClinicalImpression.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public $statusReason = null;
+    private $status = null;
 
     /**
      * The patient or group of individuals assessed as part of this record.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $subject = null;
+    private $subject = null;
 
     /**
      * A text summary of the investigations and the diagnosis.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $summary = null;
-
-    /**
-     * Information supporting the clinical impression.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $supportingInfo = null;
+    private $summary = null;
 
     /**
      * FHIRClinicalImpression Constructor
@@ -220,70 +214,272 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
+            if (isset($data['action'])) {
+                $value = $data['action'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClinicalImpression::__construct - Collection field \"action\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addAction($v);
+                    }
+                }
+            }
             if (isset($data['assessor'])) {
-                $this->setAssessor($data['assessor']);
+                $value = $data['assessor'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClinicalImpression::__construct - Property \"assessor\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setAssessor($value);
             }
             if (isset($data['code'])) {
-                $this->setCode($data['code']);
+                $value = $data['code'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClinicalImpression::__construct - Property \"code\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setCode($value);
             }
             if (isset($data['context'])) {
-                $this->setContext($data['context']);
+                $value = $data['context'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClinicalImpression::__construct - Property \"context\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setContext($value);
             }
             if (isset($data['date'])) {
-                $this->setDate($data['date']);
+                $value = $data['date'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClinicalImpression::__construct - Property \"date\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDate($value);
             }
             if (isset($data['description'])) {
-                $this->setDescription($data['description']);
+                $value = $data['description'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClinicalImpression::__construct - Property \"description\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDescription($value);
             }
             if (isset($data['effectiveDateTime'])) {
-                $this->setEffectiveDateTime($data['effectiveDateTime']);
+                $value = $data['effectiveDateTime'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClinicalImpression::__construct - Property \"effectiveDateTime\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setEffectiveDateTime($value);
             }
             if (isset($data['effectivePeriod'])) {
-                $this->setEffectivePeriod($data['effectivePeriod']);
+                $value = $data['effectivePeriod'];
+                if (is_array($value)) {
+                    $value = new FHIRPeriod($value);
+                } 
+                if (!($value instanceof FHIRPeriod)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClinicalImpression::__construct - Property \"effectivePeriod\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPeriod or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setEffectivePeriod($value);
             }
             if (isset($data['finding'])) {
-                $this->setFinding($data['finding']);
+                $value = $data['finding'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRClinicalImpressionFinding($v);
+                        } 
+                        if (!($v instanceof FHIRClinicalImpressionFinding)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClinicalImpression::__construct - Collection field \"finding\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionFinding or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addFinding($v);
+                    }
+                }
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRIdentifier($v);
+                        } 
+                        if (!($v instanceof FHIRIdentifier)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClinicalImpression::__construct - Collection field \"identifier\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addIdentifier($v);
+                    }
+                }
             }
             if (isset($data['investigation'])) {
-                $this->setInvestigation($data['investigation']);
+                $value = $data['investigation'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRClinicalImpressionInvestigation($v);
+                        } 
+                        if (!($v instanceof FHIRClinicalImpressionInvestigation)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClinicalImpression::__construct - Collection field \"investigation\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionInvestigation or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addInvestigation($v);
+                    }
+                }
             }
             if (isset($data['note'])) {
-                $this->setNote($data['note']);
+                $value = $data['note'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRAnnotation($v);
+                        } 
+                        if (!($v instanceof FHIRAnnotation)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClinicalImpression::__construct - Collection field \"note\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAnnotation or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addNote($v);
+                    }
+                }
             }
             if (isset($data['previous'])) {
-                $this->setPrevious($data['previous']);
+                $value = $data['previous'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClinicalImpression::__construct - Property \"previous\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setPrevious($value);
             }
             if (isset($data['problem'])) {
-                $this->setProblem($data['problem']);
+                $value = $data['problem'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClinicalImpression::__construct - Collection field \"problem\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addProblem($v);
+                    }
+                }
             }
             if (isset($data['prognosisCodeableConcept'])) {
-                $this->setPrognosisCodeableConcept($data['prognosisCodeableConcept']);
+                $value = $data['prognosisCodeableConcept'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClinicalImpression::__construct - Collection field \"prognosisCodeableConcept\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addPrognosisCodeableConcept($v);
+                    }
+                }
             }
             if (isset($data['prognosisReference'])) {
-                $this->setPrognosisReference($data['prognosisReference']);
+                $value = $data['prognosisReference'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClinicalImpression::__construct - Collection field \"prognosisReference\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addPrognosisReference($v);
+                    }
+                }
             }
             if (isset($data['protocol'])) {
-                $this->setProtocol($data['protocol']);
+                $value = $data['protocol'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRUri($v);
+                        }  elseif (is_scalar($v)) {
+                            $v = new FHIRUri($v);
+                        }
+                        if (!($v instanceof FHIRUri)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClinicalImpression::__construct - Collection field \"protocol\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addProtocol($v);
+                    }
+                }
             }
             if (isset($data['status'])) {
-                $this->setStatus($data['status']);
-            }
-            if (isset($data['statusReason'])) {
-                $this->setStatusReason($data['statusReason']);
+                $value = $data['status'];
+                if (is_array($value)) {
+                    $value = new FHIRClinicalImpressionStatus($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRClinicalImpressionStatus($value);
+                }
+                if (!($value instanceof FHIRClinicalImpressionStatus)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClinicalImpression::__construct - Property \"status\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRClinicalImpressionStatus or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setStatus($value);
             }
             if (isset($data['subject'])) {
-                $this->setSubject($data['subject']);
+                $value = $data['subject'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClinicalImpression::__construct - Property \"subject\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setSubject($value);
             }
             if (isset($data['summary'])) {
-                $this->setSummary($data['summary']);
-            }
-            if (isset($data['supportingInfo'])) {
-                $this->setSupportingInfo($data['supportingInfo']);
+                $value = $data['summary'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRClinicalImpression::__construct - Property \"summary\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setSummary($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -292,6 +488,30 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
                 ' seen.'
             );
         }
+        parent::__construct($data);
+    }
+
+    /**
+     * Action taken as part of assessment procedure.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return $this
+     */
+    public function addAction(FHIRReference $action = null)
+    {
+        if (null === $action) {
+            return $this; 
+        }
+        $this->action[] = $action;
+        return $this;
+    }
+
+    /**
+     * Action taken as part of assessment procedure.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getAction()
+    {
+        return $this->action;
     }
 
     /**
@@ -317,7 +537,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
         return $this->assessor;
     }
 
-
     /**
      * Categorizes the type of clinical assessment performed.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
@@ -341,7 +560,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
         return $this->code;
     }
 
-
     /**
      * The encounter or episode of care this impression was created as part of.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -364,7 +582,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
     {
         return $this->context;
     }
-
 
     /**
      * Indicates when the documentation of the assessment was complete.
@@ -398,7 +615,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
         return $this->date;
     }
 
-
     /**
      * A summary of the context and/or cause of the assessment - why / where was it performed, and what patient events/status prompted it.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -431,9 +647,8 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
         return $this->description;
     }
 
-
     /**
-     * The point in time or period over which the subject was assessed.
+     * The point in time or period over which the subject was assessed. (choose any one of effective*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      * @return $this
      */
@@ -456,7 +671,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * The point in time or period over which the subject was assessed.
+     * The point in time or period over which the subject was assessed. (choose any one of effective*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getEffectiveDateTime()
@@ -464,9 +679,8 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
         return $this->effectiveDateTime;
     }
 
-
     /**
-     * The point in time or period over which the subject was assessed.
+     * The point in time or period over which the subject was assessed. (choose any one of effective*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
      * @return $this
      */
@@ -480,7 +694,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * The point in time or period over which the subject was assessed.
+     * The point in time or period over which the subject was assessed. (choose any one of effective*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getEffectivePeriod()
@@ -488,105 +702,100 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
         return $this->effectivePeriod;
     }
 
-
     /**
      * Specific findings or diagnoses that was considered likely or relevant to ongoing treatment.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionFinding
      * @return $this
      */
-    public function setFinding(FHIRClinicalImpressionFinding $finding = null)
+    public function addFinding(FHIRClinicalImpressionFinding $finding = null)
     {
         if (null === $finding) {
             return $this; 
         }
-        $this->finding = $finding;
+        $this->finding[] = $finding;
         return $this;
     }
 
     /**
      * Specific findings or diagnoses that was considered likely or relevant to ongoing treatment.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionFinding
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionFinding[]
      */
     public function getFinding()
     {
         return $this->finding;
     }
 
-
     /**
-     * Business identifiers assigned to this clinical impression by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
+     * A unique identifier assigned to the clinical impression that remains consistent regardless of what server the impression is stored on.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
-    public function setIdentifier(FHIRIdentifier $identifier = null)
+    public function addIdentifier(FHIRIdentifier $identifier = null)
     {
         if (null === $identifier) {
             return $this; 
         }
-        $this->identifier = $identifier;
+        $this->identifier[] = $identifier;
         return $this;
     }
 
     /**
-     * Business identifiers assigned to this clinical impression by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * A unique identifier assigned to the clinical impression that remains consistent regardless of what server the impression is stored on.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
         return $this->identifier;
     }
 
-
     /**
-     * One or more sets of investigations (signs, symptoms, etc.). The actual grouping of investigations varies greatly depending on the type and context of the assessment. These investigations may include data generated during the assessment process, or data previously generated and recorded that is pertinent to the outcomes.
+     * One or more sets of investigations (signs, symptions, etc.). The actual grouping of investigations vary greatly depending on the type and context of the assessment. These investigations may include data generated during the assessment process, or data previously generated and recorded that is pertinent to the outcomes.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionInvestigation
      * @return $this
      */
-    public function setInvestigation(FHIRClinicalImpressionInvestigation $investigation = null)
+    public function addInvestigation(FHIRClinicalImpressionInvestigation $investigation = null)
     {
         if (null === $investigation) {
             return $this; 
         }
-        $this->investigation = $investigation;
+        $this->investigation[] = $investigation;
         return $this;
     }
 
     /**
-     * One or more sets of investigations (signs, symptoms, etc.). The actual grouping of investigations varies greatly depending on the type and context of the assessment. These investigations may include data generated during the assessment process, or data previously generated and recorded that is pertinent to the outcomes.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionInvestigation
+     * One or more sets of investigations (signs, symptions, etc.). The actual grouping of investigations vary greatly depending on the type and context of the assessment. These investigations may include data generated during the assessment process, or data previously generated and recorded that is pertinent to the outcomes.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionInvestigation[]
      */
     public function getInvestigation()
     {
         return $this->investigation;
     }
 
-
     /**
      * Commentary about the impression, typically recorded after the impression itself was made, though supplemental notes by the original author could also appear.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation
      * @return $this
      */
-    public function setNote(FHIRAnnotation $note = null)
+    public function addNote(FHIRAnnotation $note = null)
     {
         if (null === $note) {
             return $this; 
         }
-        $this->note = $note;
+        $this->note[] = $note;
         return $this;
     }
 
     /**
      * Commentary about the impression, typically recorded after the impression itself was made, though supplemental notes by the original author could also appear.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
         return $this->note;
     }
 
-
     /**
-     * A reference to the last assessment that was conducted on this patient. Assessments are often/usually ongoing in nature; a care provider (practitioner or team) will make new assessments on an ongoing basis as new data arises or the patient's conditions changes.
+     * A reference to the last assesment that was conducted bon this patient. Assessments are often/usually ongoing in nature; a care provider (practitioner or team) will make new assessments on an ongoing basis as new data arises or the patient's conditions changes.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
@@ -600,7 +809,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * A reference to the last assessment that was conducted on this patient. Assessments are often/usually ongoing in nature; a care provider (practitioner or team) will make new assessments on an ongoing basis as new data arises or the patient's conditions changes.
+     * A reference to the last assesment that was conducted bon this patient. Assessments are often/usually ongoing in nature; a care provider (practitioner or team) will make new assessments on an ongoing basis as new data arises or the patient's conditions changes.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getPrevious()
@@ -608,85 +817,81 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
         return $this->previous;
     }
 
-
     /**
      * This a list of the relevant problems/conditions for a patient.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setProblem(FHIRReference $problem = null)
+    public function addProblem(FHIRReference $problem = null)
     {
         if (null === $problem) {
             return $this; 
         }
-        $this->problem = $problem;
+        $this->problem[] = $problem;
         return $this;
     }
 
     /**
      * This a list of the relevant problems/conditions for a patient.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getProblem()
     {
         return $this->problem;
     }
 
-
     /**
      * Estimate of likely outcome.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setPrognosisCodeableConcept(FHIRCodeableConcept $prognosisCodeableConcept = null)
+    public function addPrognosisCodeableConcept(FHIRCodeableConcept $prognosisCodeableConcept = null)
     {
         if (null === $prognosisCodeableConcept) {
             return $this; 
         }
-        $this->prognosisCodeableConcept = $prognosisCodeableConcept;
+        $this->prognosisCodeableConcept[] = $prognosisCodeableConcept;
         return $this;
     }
 
     /**
      * Estimate of likely outcome.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getPrognosisCodeableConcept()
     {
         return $this->prognosisCodeableConcept;
     }
 
-
     /**
      * RiskAssessment expressing likely outcome.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setPrognosisReference(FHIRReference $prognosisReference = null)
+    public function addPrognosisReference(FHIRReference $prognosisReference = null)
     {
         if (null === $prognosisReference) {
             return $this; 
         }
-        $this->prognosisReference = $prognosisReference;
+        $this->prognosisReference[] = $prognosisReference;
         return $this;
     }
 
     /**
      * RiskAssessment expressing likely outcome.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getPrognosisReference()
     {
         return $this->prognosisReference;
     }
 
-
     /**
      * Reference to a specific published clinical protocol that was followed during this assessment, and/or that provides evidence in support of the diagnosis.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
-    public function setProtocol($protocol)
+    public function addProtocol($protocol)
     {
         if (null === $protocol) {
             return $this; 
@@ -696,23 +901,22 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
         }
         if (!($protocol instanceof FHIRUri)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRClinicalImpression::setProtocol - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or appropriate scalar value, %s seen.',
+                'FHIRClinicalImpression::addProtocol - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or appropriate scalar value, %s seen.',
                 gettype($protocol)
             ));
         }
-        $this->protocol = $protocol;
+        $this->protocol[] = $protocol;
         return $this;
     }
 
     /**
      * Reference to a specific published clinical protocol that was followed during this assessment, and/or that provides evidence in support of the diagnosis.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri[]
      */
     public function getProtocol()
     {
         return $this->protocol;
     }
-
 
     /**
      * Identifies the workflow status of the assessment.
@@ -746,31 +950,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
         return $this->status;
     }
 
-
-    /**
-     * Captures the reason for the current state of the ClinicalImpression.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     * @return $this
-     */
-    public function setStatusReason(FHIRCodeableConcept $statusReason = null)
-    {
-        if (null === $statusReason) {
-            return $this; 
-        }
-        $this->statusReason = $statusReason;
-        return $this;
-    }
-
-    /**
-     * Captures the reason for the current state of the ClinicalImpression.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public function getStatusReason()
-    {
-        return $this->statusReason;
-    }
-
-
     /**
      * The patient or group of individuals assessed as part of this record.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -793,7 +972,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
     {
         return $this->subject;
     }
-
 
     /**
      * A text summary of the investigations and the diagnosis.
@@ -827,31 +1005,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
         return $this->summary;
     }
 
-
-    /**
-     * Information supporting the clinical impression.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     * @return $this
-     */
-    public function setSupportingInfo(FHIRReference $supportingInfo = null)
-    {
-        if (null === $supportingInfo) {
-            return $this; 
-        }
-        $this->supportingInfo = $supportingInfo;
-        return $this;
-    }
-
-    /**
-     * Information supporting the clinical impression.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getSupportingInfo()
-    {
-        return $this->supportingInfo;
-    }
-
-
     /**
      * @return string
      */
@@ -867,6 +1020,17 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
     {
         $a = parent::jsonSerialize();
         $a['resourceType'] = self::FHIR_TYPE_NAME;
+        if (0 < count($values = $this->getAction())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['action'] = $vs;
+            }
+        }
         if (null !== ($v = $this->getAssessor())) {
             $a['assessor'] = $v;
         }
@@ -888,47 +1052,105 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
         if (null !== ($v = $this->getEffectivePeriod())) {
             $a['effectivePeriod'] = $v;
         }
-        if (null !== ($v = $this->getFinding())) {
-            $a['finding'] = $v;
+        if (0 < count($values = $this->getFinding())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['finding'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getIdentifier())) {
-            $a['identifier'] = $v;
+        if (0 < count($values = $this->getIdentifier())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['identifier'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getInvestigation())) {
-            $a['investigation'] = $v;
+        if (0 < count($values = $this->getInvestigation())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['investigation'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getNote())) {
-            $a['note'] = $v;
+        if (0 < count($values = $this->getNote())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['note'] = $vs;
+            }
         }
         if (null !== ($v = $this->getPrevious())) {
             $a['previous'] = $v;
         }
-        if (null !== ($v = $this->getProblem())) {
-            $a['problem'] = $v;
+        if (0 < count($values = $this->getProblem())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['problem'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getPrognosisCodeableConcept())) {
-            $a['prognosisCodeableConcept'] = $v;
+        if (0 < count($values = $this->getPrognosisCodeableConcept())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['prognosisCodeableConcept'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getPrognosisReference())) {
-            $a['prognosisReference'] = $v;
+        if (0 < count($values = $this->getPrognosisReference())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['prognosisReference'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getProtocol())) {
-            $a['protocol'] = $v;
+        if (0 < count($values = $this->getProtocol())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['protocol'] = $vs;
+            }
         }
         if (null !== ($v = $this->getStatus())) {
             $a['status'] = $v;
-        }
-        if (null !== ($v = $this->getStatusReason())) {
-            $a['statusReason'] = $v;
         }
         if (null !== ($v = $this->getSubject())) {
             $a['subject'] = $v;
         }
         if (null !== ($v = $this->getSummary())) {
             $a['summary'] = $v;
-        }
-        if (null !== ($v = $this->getSupportingInfo())) {
-            $a['supportingInfo'] = $v;
         }
         return $a;
     }
@@ -943,9 +1165,102 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ClinicalImpression xmlns="http://hl7.org/fhir"></ClinicalImpression>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (0 < count($values = $this->getAction())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('action'));
+                }
+            }
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getAssessor())) {
+            $v->xmlSerialize(true, $sxe->addChild('assessor'));
+        }
+        if (null !== ($v = $this->getCode())) {
+            $v->xmlSerialize(true, $sxe->addChild('code'));
+        }
+        if (null !== ($v = $this->getContext())) {
+            $v->xmlSerialize(true, $sxe->addChild('context'));
+        }
+        if (null !== ($v = $this->getDate())) {
+            $v->xmlSerialize(true, $sxe->addChild('date'));
+        }
+        if (null !== ($v = $this->getDescription())) {
+            $v->xmlSerialize(true, $sxe->addChild('description'));
+        }
+        if (null !== ($v = $this->getEffectiveDateTime())) {
+            $v->xmlSerialize(true, $sxe->addChild('effectiveDateTime'));
+        }
+        if (null !== ($v = $this->getEffectivePeriod())) {
+            $v->xmlSerialize(true, $sxe->addChild('effectivePeriod'));
+        }
+        if (0 < count($values = $this->getFinding())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('finding'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getIdentifier())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('identifier'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getInvestigation())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('investigation'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getNote())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('note'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getPrevious())) {
+            $v->xmlSerialize(true, $sxe->addChild('previous'));
+        }
+        if (0 < count($values = $this->getProblem())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('problem'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getPrognosisCodeableConcept())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('prognosisCodeableConcept'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getPrognosisReference())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('prognosisReference'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getProtocol())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('protocol'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('status'));
+        }
+        if (null !== ($v = $this->getSubject())) {
+            $v->xmlSerialize(true, $sxe->addChild('subject'));
+        }
+        if (null !== ($v = $this->getSummary())) {
+            $v->xmlSerialize(true, $sxe->addChild('summary'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

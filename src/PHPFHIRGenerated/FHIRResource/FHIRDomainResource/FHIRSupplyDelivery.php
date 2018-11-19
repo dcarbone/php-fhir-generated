@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,13 +63,13 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSupplyDelivery\FHIRSupplyDeliverySuppliedItem;
-use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTiming;
 use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
 use PHPFHIRGenerated\FHIRElement\FHIRDateTime;
 use PHPFHIRGenerated\FHIRElement\FHIRIdentifier;
 use PHPFHIRGenerated\FHIRElement\FHIRPeriod;
 use PHPFHIRGenerated\FHIRElement\FHIRReference;
 use PHPFHIRGenerated\FHIRElement\FHIRSupplyDeliveryStatus;
+use PHPFHIRGenerated\FHIRElement\FHIRTiming;
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
 /**
@@ -86,81 +86,81 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A plan, proposal or order that is fulfilled in whole or in part by this event.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $basedOn = null;
+    private $basedOn = [];
 
     /**
      * Identification of the facility/location where the Supply was shipped to, as part of the dispense event.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $destination = null;
+    private $destination = null;
 
     /**
-     * Identifier for the supply delivery event that is used to identify it across multiple disparate systems.
+     * Identifier assigned by the dispensing facility when the item(s) is dispensed.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public $identifier = null;
+    private $identifier = null;
 
     /**
-     * The date or time(s) the activity occurred.
+     * The date or time(s) the activity occurred. (choose any one of occurrence*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $occurrenceDateTime = null;
+    private $occurrenceDateTime = null;
 
     /**
-     * The date or time(s) the activity occurred.
+     * The date or time(s) the activity occurred. (choose any one of occurrence*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public $occurrencePeriod = null;
+    private $occurrencePeriod = null;
 
     /**
-     * The date or time(s) the activity occurred.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTiming
+     * The date or time(s) the activity occurred. (choose any one of occurrence*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
-    public $occurrenceTiming = null;
+    private $occurrenceTiming = null;
 
     /**
      * A larger event of which this particular event is a component or step.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $partOf = null;
+    private $partOf = [];
 
     /**
      * A link to a resource representing the person whom the delivered item is for.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $patient = null;
+    private $patient = null;
 
     /**
      * Identifies the person who picked up the Supply.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $receiver = null;
+    private $receiver = [];
 
     /**
      * A code specifying the state of the dispense event.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRSupplyDeliveryStatus
      */
-    public $status = null;
+    private $status = null;
 
     /**
      * The item that is being delivered or has been supplied.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSupplyDelivery\FHIRSupplyDeliverySuppliedItem
      */
-    public $suppliedItem = null;
+    private $suppliedItem = null;
 
     /**
      * The individual responsible for dispensing the medication, supplier or device.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $supplier = null;
+    private $supplier = null;
 
     /**
      * Indicates the type of dispensing event that is performed. Examples include: Trial Fill, Completion of Trial, Partial Fill, Emergency Fill, Samples, etc.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $type = null;
+    private $type = null;
 
     /**
      * FHIRSupplyDelivery Constructor
@@ -169,46 +169,158 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['basedOn'])) {
-                $this->setBasedOn($data['basedOn']);
+                $value = $data['basedOn'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSupplyDelivery::__construct - Collection field \"basedOn\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addBasedOn($v);
+                    }
+                }
             }
             if (isset($data['destination'])) {
-                $this->setDestination($data['destination']);
+                $value = $data['destination'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSupplyDelivery::__construct - Property \"destination\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDestination($value);
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    $value = new FHIRIdentifier($value);
+                } 
+                if (!($value instanceof FHIRIdentifier)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSupplyDelivery::__construct - Property \"identifier\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setIdentifier($value);
             }
             if (isset($data['occurrenceDateTime'])) {
-                $this->setOccurrenceDateTime($data['occurrenceDateTime']);
+                $value = $data['occurrenceDateTime'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSupplyDelivery::__construct - Property \"occurrenceDateTime\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setOccurrenceDateTime($value);
             }
             if (isset($data['occurrencePeriod'])) {
-                $this->setOccurrencePeriod($data['occurrencePeriod']);
+                $value = $data['occurrencePeriod'];
+                if (is_array($value)) {
+                    $value = new FHIRPeriod($value);
+                } 
+                if (!($value instanceof FHIRPeriod)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSupplyDelivery::__construct - Property \"occurrencePeriod\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPeriod or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setOccurrencePeriod($value);
             }
             if (isset($data['occurrenceTiming'])) {
-                $this->setOccurrenceTiming($data['occurrenceTiming']);
+                $value = $data['occurrenceTiming'];
+                if (is_array($value)) {
+                    $value = new FHIRTiming($value);
+                } 
+                if (!($value instanceof FHIRTiming)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSupplyDelivery::__construct - Property \"occurrenceTiming\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRTiming or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setOccurrenceTiming($value);
             }
             if (isset($data['partOf'])) {
-                $this->setPartOf($data['partOf']);
+                $value = $data['partOf'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSupplyDelivery::__construct - Collection field \"partOf\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addPartOf($v);
+                    }
+                }
             }
             if (isset($data['patient'])) {
-                $this->setPatient($data['patient']);
+                $value = $data['patient'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSupplyDelivery::__construct - Property \"patient\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setPatient($value);
             }
             if (isset($data['receiver'])) {
-                $this->setReceiver($data['receiver']);
+                $value = $data['receiver'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSupplyDelivery::__construct - Collection field \"receiver\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addReceiver($v);
+                    }
+                }
             }
             if (isset($data['status'])) {
-                $this->setStatus($data['status']);
+                $value = $data['status'];
+                if (is_array($value)) {
+                    $value = new FHIRSupplyDeliveryStatus($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRSupplyDeliveryStatus($value);
+                }
+                if (!($value instanceof FHIRSupplyDeliveryStatus)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSupplyDelivery::__construct - Property \"status\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRSupplyDeliveryStatus or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setStatus($value);
             }
             if (isset($data['suppliedItem'])) {
-                $this->setSuppliedItem($data['suppliedItem']);
+                $value = $data['suppliedItem'];
+                if (is_array($value)) {
+                    $value = new FHIRSupplyDeliverySuppliedItem($value);
+                } 
+                if (!($value instanceof FHIRSupplyDeliverySuppliedItem)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSupplyDelivery::__construct - Property \"suppliedItem\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSupplyDelivery\FHIRSupplyDeliverySuppliedItem or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setSuppliedItem($value);
             }
             if (isset($data['supplier'])) {
-                $this->setSupplier($data['supplier']);
+                $value = $data['supplier'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSupplyDelivery::__construct - Property \"supplier\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setSupplier($value);
             }
             if (isset($data['type'])) {
-                $this->setType($data['type']);
+                $value = $data['type'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRSupplyDelivery::__construct - Property \"type\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setType($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -217,6 +329,7 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -224,24 +337,23 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setBasedOn(FHIRReference $basedOn = null)
+    public function addBasedOn(FHIRReference $basedOn = null)
     {
         if (null === $basedOn) {
             return $this; 
         }
-        $this->basedOn = $basedOn;
+        $this->basedOn[] = $basedOn;
         return $this;
     }
 
     /**
      * A plan, proposal or order that is fulfilled in whole or in part by this event.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getBasedOn()
     {
         return $this->basedOn;
     }
-
 
     /**
      * Identification of the facility/location where the Supply was shipped to, as part of the dispense event.
@@ -266,9 +378,8 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
         return $this->destination;
     }
 
-
     /**
-     * Identifier for the supply delivery event that is used to identify it across multiple disparate systems.
+     * Identifier assigned by the dispensing facility when the item(s) is dispensed.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
@@ -282,7 +393,7 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Identifier for the supply delivery event that is used to identify it across multiple disparate systems.
+     * Identifier assigned by the dispensing facility when the item(s) is dispensed.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier()
@@ -290,9 +401,8 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
         return $this->identifier;
     }
 
-
     /**
-     * The date or time(s) the activity occurred.
+     * The date or time(s) the activity occurred. (choose any one of occurrence*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      * @return $this
      */
@@ -315,7 +425,7 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date or time(s) the activity occurred.
+     * The date or time(s) the activity occurred. (choose any one of occurrence*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getOccurrenceDateTime()
@@ -323,9 +433,8 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
         return $this->occurrenceDateTime;
     }
 
-
     /**
-     * The date or time(s) the activity occurred.
+     * The date or time(s) the activity occurred. (choose any one of occurrence*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
      * @return $this
      */
@@ -339,7 +448,7 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date or time(s) the activity occurred.
+     * The date or time(s) the activity occurred. (choose any one of occurrence*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getOccurrencePeriod()
@@ -347,10 +456,9 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
         return $this->occurrencePeriod;
     }
 
-
     /**
-     * The date or time(s) the activity occurred.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTiming
+     * The date or time(s) the activity occurred. (choose any one of occurrence*, but only one)
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRTiming
      * @return $this
      */
     public function setOccurrenceTiming(FHIRTiming $occurrenceTiming = null)
@@ -363,38 +471,36 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date or time(s) the activity occurred.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTiming
+     * The date or time(s) the activity occurred. (choose any one of occurrence*, but only one)
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public function getOccurrenceTiming()
     {
         return $this->occurrenceTiming;
     }
 
-
     /**
      * A larger event of which this particular event is a component or step.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setPartOf(FHIRReference $partOf = null)
+    public function addPartOf(FHIRReference $partOf = null)
     {
         if (null === $partOf) {
             return $this; 
         }
-        $this->partOf = $partOf;
+        $this->partOf[] = $partOf;
         return $this;
     }
 
     /**
      * A larger event of which this particular event is a component or step.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getPartOf()
     {
         return $this->partOf;
     }
-
 
     /**
      * A link to a resource representing the person whom the delivered item is for.
@@ -419,30 +525,28 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
         return $this->patient;
     }
 
-
     /**
      * Identifies the person who picked up the Supply.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setReceiver(FHIRReference $receiver = null)
+    public function addReceiver(FHIRReference $receiver = null)
     {
         if (null === $receiver) {
             return $this; 
         }
-        $this->receiver = $receiver;
+        $this->receiver[] = $receiver;
         return $this;
     }
 
     /**
      * Identifies the person who picked up the Supply.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getReceiver()
     {
         return $this->receiver;
     }
-
 
     /**
      * A code specifying the state of the dispense event.
@@ -476,7 +580,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
         return $this->status;
     }
 
-
     /**
      * The item that is being delivered or has been supplied.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSupplyDelivery\FHIRSupplyDeliverySuppliedItem
@@ -499,7 +602,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
     {
         return $this->suppliedItem;
     }
-
 
     /**
      * The individual responsible for dispensing the medication, supplier or device.
@@ -524,7 +626,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
         return $this->supplier;
     }
 
-
     /**
      * Indicates the type of dispensing event that is performed. Examples include: Trial Fill, Completion of Trial, Partial Fill, Emergency Fill, Samples, etc.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
@@ -548,7 +649,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
         return $this->type;
     }
 
-
     /**
      * @return string
      */
@@ -564,8 +664,16 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
     {
         $a = parent::jsonSerialize();
         $a['resourceType'] = self::FHIR_TYPE_NAME;
-        if (null !== ($v = $this->getBasedOn())) {
-            $a['basedOn'] = $v;
+        if (0 < count($values = $this->getBasedOn())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['basedOn'] = $vs;
+            }
         }
         if (null !== ($v = $this->getDestination())) {
             $a['destination'] = $v;
@@ -582,14 +690,30 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getOccurrenceTiming())) {
             $a['occurrenceTiming'] = $v;
         }
-        if (null !== ($v = $this->getPartOf())) {
-            $a['partOf'] = $v;
+        if (0 < count($values = $this->getPartOf())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['partOf'] = $vs;
+            }
         }
         if (null !== ($v = $this->getPatient())) {
             $a['patient'] = $v;
         }
-        if (null !== ($v = $this->getReceiver())) {
-            $a['receiver'] = $v;
+        if (0 < count($values = $this->getReceiver())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['receiver'] = $vs;
+            }
         }
         if (null !== ($v = $this->getStatus())) {
             $a['status'] = $v;
@@ -616,9 +740,57 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<SupplyDelivery xmlns="http://hl7.org/fhir"></SupplyDelivery>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (0 < count($values = $this->getBasedOn())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('basedOn'));
+                }
+            }
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getDestination())) {
+            $v->xmlSerialize(true, $sxe->addChild('destination'));
+        }
+        if (null !== ($v = $this->getIdentifier())) {
+            $v->xmlSerialize(true, $sxe->addChild('identifier'));
+        }
+        if (null !== ($v = $this->getOccurrenceDateTime())) {
+            $v->xmlSerialize(true, $sxe->addChild('occurrenceDateTime'));
+        }
+        if (null !== ($v = $this->getOccurrencePeriod())) {
+            $v->xmlSerialize(true, $sxe->addChild('occurrencePeriod'));
+        }
+        if (null !== ($v = $this->getOccurrenceTiming())) {
+            $v->xmlSerialize(true, $sxe->addChild('occurrenceTiming'));
+        }
+        if (0 < count($values = $this->getPartOf())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('partOf'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getPatient())) {
+            $v->xmlSerialize(true, $sxe->addChild('patient'));
+        }
+        if (0 < count($values = $this->getReceiver())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('receiver'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('status'));
+        }
+        if (null !== ($v = $this->getSuppliedItem())) {
+            $v->xmlSerialize(true, $sxe->addChild('suppliedItem'));
+        }
+        if (null !== ($v = $this->getSupplier())) {
+            $v->xmlSerialize(true, $sxe->addChild('supplier'));
+        }
+        if (null !== ($v = $this->getType())) {
+            $v->xmlSerialize(true, $sxe->addChild('type'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

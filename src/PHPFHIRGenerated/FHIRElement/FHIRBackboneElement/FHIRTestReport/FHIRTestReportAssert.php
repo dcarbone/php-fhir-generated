@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -82,19 +82,19 @@ class FHIRTestReportAssert extends FHIRBackboneElement implements \JsonSerializa
      * A link to further details on the result.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $detail = null;
+    private $detail = null;
 
     /**
      * An explanatory message associated with the result.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public $message = null;
+    private $message = null;
 
     /**
      * The result of this assertion.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTestReportActionResult
      */
-    public $result = null;
+    private $result = null;
 
     /**
      * FHIRTestReportAssert Constructor
@@ -103,16 +103,42 @@ class FHIRTestReportAssert extends FHIRBackboneElement implements \JsonSerializa
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['detail'])) {
-                $this->setDetail($data['detail']);
+                $value = $data['detail'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportAssert::__construct - Property \"detail\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDetail($value);
             }
             if (isset($data['message'])) {
-                $this->setMessage($data['message']);
+                $value = $data['message'];
+                if (is_array($value)) {
+                    $value = new FHIRMarkdown($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRMarkdown($value);
+                }
+                if (!($value instanceof FHIRMarkdown)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportAssert::__construct - Property \"message\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRMarkdown or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setMessage($value);
             }
             if (isset($data['result'])) {
-                $this->setResult($data['result']);
+                $value = $data['result'];
+                if (is_array($value)) {
+                    $value = new FHIRTestReportActionResult($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRTestReportActionResult($value);
+                }
+                if (!($value instanceof FHIRTestReportActionResult)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportAssert::__construct - Property \"result\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRTestReportActionResult or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setResult($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -121,6 +147,7 @@ class FHIRTestReportAssert extends FHIRBackboneElement implements \JsonSerializa
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -155,7 +182,6 @@ class FHIRTestReportAssert extends FHIRBackboneElement implements \JsonSerializa
         return $this->detail;
     }
 
-
     /**
      * An explanatory message associated with the result.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRMarkdown
@@ -188,7 +214,6 @@ class FHIRTestReportAssert extends FHIRBackboneElement implements \JsonSerializa
         return $this->message;
     }
 
-
     /**
      * The result of this assertion.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRTestReportActionResult
@@ -220,7 +245,6 @@ class FHIRTestReportAssert extends FHIRBackboneElement implements \JsonSerializa
     {
         return $this->result;
     }
-
 
     /**
      * @return string
@@ -258,9 +282,15 @@ class FHIRTestReportAssert extends FHIRBackboneElement implements \JsonSerializa
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<TestReportAssert xmlns="http://hl7.org/fhir"></TestReportAssert>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getDetail())) {
+            $v->xmlSerialize(true, $sxe->addChild('detail'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getMessage())) {
+            $v->xmlSerialize(true, $sxe->addChild('message'));
+        }
+        if (null !== ($v = $this->getResult())) {
+            $v->xmlSerialize(true, $sxe->addChild('result'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

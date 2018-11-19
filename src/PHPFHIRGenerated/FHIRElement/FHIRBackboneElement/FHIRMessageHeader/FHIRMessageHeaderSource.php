@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMessageHeader;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMessageHeader;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -65,7 +65,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMessageHeader;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 use PHPFHIRGenerated\FHIRElement\FHIRContactPoint;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
-use PHPFHIRGenerated\FHIRElement\FHIRUrl;
+use PHPFHIRGenerated\FHIRElement\FHIRUri;
 
 /**
  * The header for a message exchange that is either requesting or responding to an action.  The reference(s) that are the subject of the action as well as other information related to the action are typically transmitted in a bundle in which the MessageHeader resource instance is the first resource in the bundle.
@@ -82,31 +82,31 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement implements \JsonSerial
      * An e-mail, phone, website or other contact point to use to resolve issues with message communications.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRContactPoint
      */
-    public $contact = null;
+    private $contact = null;
 
     /**
      * Identifies the routing target to send acknowledgements to.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUrl
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $endpoint = null;
+    private $endpoint = null;
 
     /**
      * Human-readable name for the source system.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $name = null;
+    private $name = null;
 
     /**
      * May include configuration or other information useful in debugging.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $software = null;
+    private $software = null;
 
     /**
      * Can convey versions of multiple systems in situations where a message passes through multiple hands.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $version = null;
+    private $version = null;
 
     /**
      * FHIRMessageHeaderSource Constructor
@@ -115,22 +115,64 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement implements \JsonSerial
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['contact'])) {
-                $this->setContact($data['contact']);
+                $value = $data['contact'];
+                if (is_array($value)) {
+                    $value = new FHIRContactPoint($value);
+                } 
+                if (!($value instanceof FHIRContactPoint)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderSource::__construct - Property \"contact\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRContactPoint or data to construct type, saw ".gettype($value));
+                }
+                $this->setContact($value);
             }
             if (isset($data['endpoint'])) {
-                $this->setEndpoint($data['endpoint']);
+                $value = $data['endpoint'];
+                if (is_array($value)) {
+                    $value = new FHIRUri($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRUri($value);
+                }
+                if (!($value instanceof FHIRUri)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderSource::__construct - Property \"endpoint\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($value));
+                }
+                $this->setEndpoint($value);
             }
             if (isset($data['name'])) {
-                $this->setName($data['name']);
+                $value = $data['name'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderSource::__construct - Property \"name\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setName($value);
             }
             if (isset($data['software'])) {
-                $this->setSoftware($data['software']);
+                $value = $data['software'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderSource::__construct - Property \"software\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setSoftware($value);
             }
             if (isset($data['version'])) {
-                $this->setVersion($data['version']);
+                $value = $data['version'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderSource::__construct - Property \"version\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setVersion($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -139,6 +181,7 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement implements \JsonSerial
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -164,10 +207,9 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement implements \JsonSerial
         return $this->contact;
     }
 
-
     /**
      * Identifies the routing target to send acknowledgements to.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUrl
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
     public function setEndpoint($endpoint)
@@ -176,11 +218,11 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement implements \JsonSerial
             return $this; 
         }
         if (is_scalar($endpoint)) {
-            $endpoint = new FHIRUrl($endpoint);
+            $endpoint = new FHIRUri($endpoint);
         }
-        if (!($endpoint instanceof FHIRUrl)) {
+        if (!($endpoint instanceof FHIRUri)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRMessageHeaderSource::setEndpoint - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUrl or appropriate scalar value, %s seen.',
+                'FHIRMessageHeaderSource::setEndpoint - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or appropriate scalar value, %s seen.',
                 gettype($endpoint)
             ));
         }
@@ -190,13 +232,12 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Identifies the routing target to send acknowledgements to.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUrl
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getEndpoint()
     {
         return $this->endpoint;
     }
-
 
     /**
      * Human-readable name for the source system.
@@ -230,7 +271,6 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement implements \JsonSerial
         return $this->name;
     }
 
-
     /**
      * May include configuration or other information useful in debugging.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -263,7 +303,6 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement implements \JsonSerial
         return $this->software;
     }
 
-
     /**
      * Can convey versions of multiple systems in situations where a message passes through multiple hands.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -295,7 +334,6 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement implements \JsonSerial
     {
         return $this->version;
     }
-
 
     /**
      * @return string
@@ -339,9 +377,21 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement implements \JsonSerial
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<MessageHeaderSource xmlns="http://hl7.org/fhir"></MessageHeaderSource>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getContact())) {
+            $v->xmlSerialize(true, $sxe->addChild('contact'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getEndpoint())) {
+            $v->xmlSerialize(true, $sxe->addChild('endpoint'));
+        }
+        if (null !== ($v = $this->getName())) {
+            $v->xmlSerialize(true, $sxe->addChild('name'));
+        }
+        if (null !== ($v = $this->getSoftware())) {
+            $v->xmlSerialize(true, $sxe->addChild('software'));
+        }
+        if (null !== ($v = $this->getVersion())) {
+            $v->xmlSerialize(true, $sxe->addChild('version'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

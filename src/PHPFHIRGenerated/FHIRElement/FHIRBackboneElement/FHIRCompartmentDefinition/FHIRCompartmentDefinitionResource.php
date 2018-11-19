@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCompartmentDefini
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCompartmentDefini
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,7 +63,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCompartmentDefini
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\FHIRElement\FHIRCode;
+use PHPFHIRGenerated\FHIRElement\FHIRResourceType;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
 
 /**
@@ -79,21 +79,21 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement implements \
 
     /**
      * The name of a resource supported by the server.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRResourceType
      */
-    public $code = null;
+    private $code = null;
 
     /**
      * Additional documentation about the resource and compartment.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $documentation = null;
+    private $documentation = null;
 
     /**
      * The name of a search parameter that represents the link to the compartment. More than one may be listed because a resource may be linked to a compartment in more than one way,.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public $param = null;
+    private $param = [];
 
     /**
      * FHIRCompartmentDefinitionResource Constructor
@@ -102,16 +102,48 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement implements \
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['code'])) {
-                $this->setCode($data['code']);
+                $value = $data['code'];
+                if (is_array($value)) {
+                    $value = new FHIRResourceType($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRResourceType($value);
+                }
+                if (!($value instanceof FHIRResourceType)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCompartmentDefinition\FHIRCompartmentDefinitionResource::__construct - Property \"code\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRResourceType or data to construct type, saw ".gettype($value));
+                }
+                $this->setCode($value);
             }
             if (isset($data['documentation'])) {
-                $this->setDocumentation($data['documentation']);
+                $value = $data['documentation'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCompartmentDefinition\FHIRCompartmentDefinitionResource::__construct - Property \"documentation\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setDocumentation($value);
             }
             if (isset($data['param'])) {
-                $this->setParam($data['param']);
+                $value = $data['param'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRString($v);
+                        }  elseif (is_scalar($v)) {
+                            $v = new FHIRString($v);
+                        }
+                        if (!($v instanceof FHIRString)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCompartmentDefinition\FHIRCompartmentDefinitionResource::__construct - Collection field \"param\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addParam($v);
+                    }
+                }
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -120,11 +152,12 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement implements \
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
      * The name of a resource supported by the server.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRResourceType
      * @return $this
      */
     public function setCode($code)
@@ -133,11 +166,11 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement implements \
             return $this; 
         }
         if (is_scalar($code)) {
-            $code = new FHIRCode($code);
+            $code = new FHIRResourceType($code);
         }
-        if (!($code instanceof FHIRCode)) {
+        if (!($code instanceof FHIRResourceType)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRCompartmentDefinitionResource::setCode - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or appropriate scalar value, %s seen.',
+                'FHIRCompartmentDefinitionResource::setCode - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRResourceType or appropriate scalar value, %s seen.',
                 gettype($code)
             ));
         }
@@ -147,13 +180,12 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement implements \
 
     /**
      * The name of a resource supported by the server.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRResourceType
      */
     public function getCode()
     {
         return $this->code;
     }
-
 
     /**
      * Additional documentation about the resource and compartment.
@@ -187,13 +219,12 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement implements \
         return $this->documentation;
     }
 
-
     /**
      * The name of a search parameter that represents the link to the compartment. More than one may be listed because a resource may be linked to a compartment in more than one way,.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
-    public function setParam($param)
+    public function addParam($param)
     {
         if (null === $param) {
             return $this; 
@@ -203,23 +234,22 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement implements \
         }
         if (!($param instanceof FHIRString)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRCompartmentDefinitionResource::setParam - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                'FHIRCompartmentDefinitionResource::addParam - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
                 gettype($param)
             ));
         }
-        $this->param = $param;
+        $this->param[] = $param;
         return $this;
     }
 
     /**
      * The name of a search parameter that represents the link to the compartment. More than one may be listed because a resource may be linked to a compartment in more than one way,.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
     public function getParam()
     {
         return $this->param;
     }
-
 
     /**
      * @return string
@@ -241,8 +271,16 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement implements \
         if (null !== ($v = $this->getDocumentation())) {
             $a['documentation'] = $v;
         }
-        if (null !== ($v = $this->getParam())) {
-            $a['param'] = $v;
+        if (0 < count($values = $this->getParam())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['param'] = $vs;
+            }
         }
         return $a;
     }
@@ -257,9 +295,19 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement implements \
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<CompartmentDefinitionResource xmlns="http://hl7.org/fhir"></CompartmentDefinitionResource>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getCode())) {
+            $v->xmlSerialize(true, $sxe->addChild('code'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getDocumentation())) {
+            $v->xmlSerialize(true, $sxe->addChild('documentation'));
+        }
+        if (0 < count($values = $this->getParam())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('param'));
+                }
+            }
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

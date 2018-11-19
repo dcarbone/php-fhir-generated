@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -65,6 +65,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 use PHPFHIRGenerated\FHIRElement\FHIRBase64Binary;
 use PHPFHIRGenerated\FHIRElement\FHIRCoding;
+use PHPFHIRGenerated\FHIRElement\FHIRIdentifier;
 use PHPFHIRGenerated\FHIRElement\FHIRReference;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
 
@@ -83,55 +84,61 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
      * Text that describes the entity in more detail.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $description = null;
+    private $description = null;
 
     /**
      * Tagged value pairs for conveying additional information about the entity.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventDetail
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventDetail[]
      */
-    public $detail = null;
+    private $detail = [];
+
+    /**
+     * Identifies a specific instance of the entity. The reference should always be version specific.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     */
+    private $identifier = null;
 
     /**
      * Identifier for the data life-cycle stage for the entity.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
-    public $lifecycle = null;
+    private $lifecycle = null;
 
     /**
      * A name of the entity in the audit event.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $name = null;
+    private $name = null;
 
     /**
      * The query parameters for a query-type entities.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
      */
-    public $query = null;
-
-    /**
-     * Code representing the role the entity played in the event being audited.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
-     */
-    public $role = null;
-
-    /**
-     * Security labels for the identified entity.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
-     */
-    public $securityLabel = null;
-
-    /**
-     * The type of the object that was involved in this audit event.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
-     */
-    public $type = null;
+    private $query = null;
 
     /**
      * Identifies a specific instance of the entity. The reference should be version specific.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $what = null;
+    private $reference = null;
+
+    /**
+     * Code representing the role the entity played in the event being audited.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     */
+    private $role = null;
+
+    /**
+     * Security labels for the identified entity.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
+     */
+    private $securityLabel = [];
+
+    /**
+     * The type of the object that was involved in this audit event.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     */
+    private $type = null;
 
     /**
      * FHIRAuditEventEntity Constructor
@@ -140,34 +147,124 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['description'])) {
-                $this->setDescription($data['description']);
+                $value = $data['description'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventEntity::__construct - Property \"description\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDescription($value);
             }
             if (isset($data['detail'])) {
-                $this->setDetail($data['detail']);
+                $value = $data['detail'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRAuditEventDetail($v);
+                        } 
+                        if (!($v instanceof FHIRAuditEventDetail)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventEntity::__construct - Collection field \"detail\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventDetail or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addDetail($v);
+                    }
+                }
+            }
+            if (isset($data['identifier'])) {
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    $value = new FHIRIdentifier($value);
+                } 
+                if (!($value instanceof FHIRIdentifier)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventEntity::__construct - Property \"identifier\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setIdentifier($value);
             }
             if (isset($data['lifecycle'])) {
-                $this->setLifecycle($data['lifecycle']);
+                $value = $data['lifecycle'];
+                if (is_array($value)) {
+                    $value = new FHIRCoding($value);
+                } 
+                if (!($value instanceof FHIRCoding)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventEntity::__construct - Property \"lifecycle\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCoding or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setLifecycle($value);
             }
             if (isset($data['name'])) {
-                $this->setName($data['name']);
+                $value = $data['name'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventEntity::__construct - Property \"name\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setName($value);
             }
             if (isset($data['query'])) {
-                $this->setQuery($data['query']);
+                $value = $data['query'];
+                if (is_array($value)) {
+                    $value = new FHIRBase64Binary($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBase64Binary($value);
+                }
+                if (!($value instanceof FHIRBase64Binary)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventEntity::__construct - Property \"query\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setQuery($value);
+            }
+            if (isset($data['reference'])) {
+                $value = $data['reference'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventEntity::__construct - Property \"reference\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setReference($value);
             }
             if (isset($data['role'])) {
-                $this->setRole($data['role']);
+                $value = $data['role'];
+                if (is_array($value)) {
+                    $value = new FHIRCoding($value);
+                } 
+                if (!($value instanceof FHIRCoding)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventEntity::__construct - Property \"role\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCoding or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setRole($value);
             }
             if (isset($data['securityLabel'])) {
-                $this->setSecurityLabel($data['securityLabel']);
+                $value = $data['securityLabel'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCoding($v);
+                        } 
+                        if (!($v instanceof FHIRCoding)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventEntity::__construct - Collection field \"securityLabel\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCoding or data to construct type, saw ".gettype($v)); 
+                        }
+                        $this->addSecurityLabel($v);
+                    }
+                }
             }
             if (isset($data['type'])) {
-                $this->setType($data['type']);
-            }
-            if (isset($data['what'])) {
-                $this->setWhat($data['what']);
+                $value = $data['type'];
+                if (is_array($value)) {
+                    $value = new FHIRCoding($value);
+                } 
+                if (!($value instanceof FHIRCoding)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventEntity::__construct - Property \"type\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCoding or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setType($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -176,6 +273,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -210,30 +308,51 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
         return $this->description;
     }
 
-
     /**
      * Tagged value pairs for conveying additional information about the entity.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventDetail
      * @return $this
      */
-    public function setDetail(FHIRAuditEventDetail $detail = null)
+    public function addDetail(FHIRAuditEventDetail $detail = null)
     {
         if (null === $detail) {
             return $this; 
         }
-        $this->detail = $detail;
+        $this->detail[] = $detail;
         return $this;
     }
 
     /**
      * Tagged value pairs for conveying additional information about the entity.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventDetail
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventDetail[]
      */
     public function getDetail()
     {
         return $this->detail;
     }
 
+    /**
+     * Identifies a specific instance of the entity. The reference should always be version specific.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @return $this
+     */
+    public function setIdentifier(FHIRIdentifier $identifier = null)
+    {
+        if (null === $identifier) {
+            return $this; 
+        }
+        $this->identifier = $identifier;
+        return $this;
+    }
+
+    /**
+     * Identifies a specific instance of the entity. The reference should always be version specific.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     */
+    public function getIdentifier()
+    {
+        return $this->identifier;
+    }
 
     /**
      * Identifier for the data life-cycle stage for the entity.
@@ -257,7 +376,6 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
     {
         return $this->lifecycle;
     }
-
 
     /**
      * A name of the entity in the audit event.
@@ -291,7 +409,6 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
         return $this->name;
     }
 
-
     /**
      * The query parameters for a query-type entities.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
@@ -324,6 +441,28 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
         return $this->query;
     }
 
+    /**
+     * Identifies a specific instance of the entity. The reference should be version specific.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return $this
+     */
+    public function setReference(FHIRReference $reference = null)
+    {
+        if (null === $reference) {
+            return $this; 
+        }
+        $this->reference = $reference;
+        return $this;
+    }
+
+    /**
+     * Identifies a specific instance of the entity. The reference should be version specific.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getReference()
+    {
+        return $this->reference;
+    }
 
     /**
      * Code representing the role the entity played in the event being audited.
@@ -348,30 +487,28 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
         return $this->role;
     }
 
-
     /**
      * Security labels for the identified entity.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
      * @return $this
      */
-    public function setSecurityLabel(FHIRCoding $securityLabel = null)
+    public function addSecurityLabel(FHIRCoding $securityLabel = null)
     {
         if (null === $securityLabel) {
             return $this; 
         }
-        $this->securityLabel = $securityLabel;
+        $this->securityLabel[] = $securityLabel;
         return $this;
     }
 
     /**
      * Security labels for the identified entity.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
     public function getSecurityLabel()
     {
         return $this->securityLabel;
     }
-
 
     /**
      * The type of the object that was involved in this audit event.
@@ -396,31 +533,6 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
         return $this->type;
     }
 
-
-    /**
-     * Identifies a specific instance of the entity. The reference should be version specific.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     * @return $this
-     */
-    public function setWhat(FHIRReference $what = null)
-    {
-        if (null === $what) {
-            return $this; 
-        }
-        $this->what = $what;
-        return $this;
-    }
-
-    /**
-     * Identifies a specific instance of the entity. The reference should be version specific.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getWhat()
-    {
-        return $this->what;
-    }
-
-
     /**
      * @return string
      */
@@ -438,8 +550,19 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
         if (null !== ($v = $this->getDescription())) {
             $a['description'] = $v;
         }
-        if (null !== ($v = $this->getDetail())) {
-            $a['detail'] = $v;
+        if (0 < count($values = $this->getDetail())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['detail'] = $vs;
+            }
+        }
+        if (null !== ($v = $this->getIdentifier())) {
+            $a['identifier'] = $v;
         }
         if (null !== ($v = $this->getLifecycle())) {
             $a['lifecycle'] = $v;
@@ -450,17 +573,25 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
         if (null !== ($v = $this->getQuery())) {
             $a['query'] = $v;
         }
+        if (null !== ($v = $this->getReference())) {
+            $a['reference'] = $v;
+        }
         if (null !== ($v = $this->getRole())) {
             $a['role'] = $v;
         }
-        if (null !== ($v = $this->getSecurityLabel())) {
-            $a['securityLabel'] = $v;
+        if (0 < count($values = $this->getSecurityLabel())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['securityLabel'] = $vs;
+            }
         }
         if (null !== ($v = $this->getType())) {
             $a['type'] = $v;
-        }
-        if (null !== ($v = $this->getWhat())) {
-            $a['what'] = $v;
         }
         return $a;
     }
@@ -475,9 +606,44 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<AuditEventEntity xmlns="http://hl7.org/fhir"></AuditEventEntity>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getDescription())) {
+            $v->xmlSerialize(true, $sxe->addChild('description'));
         }
-        return $sxe->saveXML();
+        if (0 < count($values = $this->getDetail())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('detail'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getIdentifier())) {
+            $v->xmlSerialize(true, $sxe->addChild('identifier'));
+        }
+        if (null !== ($v = $this->getLifecycle())) {
+            $v->xmlSerialize(true, $sxe->addChild('lifecycle'));
+        }
+        if (null !== ($v = $this->getName())) {
+            $v->xmlSerialize(true, $sxe->addChild('name'));
+        }
+        if (null !== ($v = $this->getQuery())) {
+            $v->xmlSerialize(true, $sxe->addChild('query'));
+        }
+        if (null !== ($v = $this->getReference())) {
+            $v->xmlSerialize(true, $sxe->addChild('reference'));
+        }
+        if (null !== ($v = $this->getRole())) {
+            $v->xmlSerialize(true, $sxe->addChild('role'));
+        }
+        if (0 < count($values = $this->getSecurityLabel())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('securityLabel'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getType())) {
+            $v->xmlSerialize(true, $sxe->addChild('type'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

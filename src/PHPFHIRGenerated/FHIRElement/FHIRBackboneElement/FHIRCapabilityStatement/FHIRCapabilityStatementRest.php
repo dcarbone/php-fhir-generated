@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStateme
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStateme
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,9 +63,9 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStateme
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\FHIRElement\FHIRCanonical;
-use PHPFHIRGenerated\FHIRElement\FHIRMarkdown;
 use PHPFHIRGenerated\FHIRElement\FHIRRestfulCapabilityMode;
+use PHPFHIRGenerated\FHIRElement\FHIRString;
+use PHPFHIRGenerated\FHIRElement\FHIRUri;
 
 /**
  * A Capability Statement documents a set of capabilities (behaviors) of a FHIR Server that may be used as a statement of actual server functionality or a statement of required or desired server implementation.
@@ -80,51 +80,51 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
 
     /**
      * An absolute URI which is a reference to the definition of a compartment that the system supports. The reference is to a CompartmentDefinition resource by its canonical URL .
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri[]
      */
-    public $compartment = null;
+    private $compartment = [];
 
     /**
      * Information about the system's restful capabilities that apply across all applications, such as security.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $documentation = null;
+    private $documentation = null;
 
     /**
      * A specification of restful operations supported by the system.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction1
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction1[]
      */
-    public $interaction = null;
+    private $interaction = [];
 
     /**
      * Identifies whether this portion of the statement is describing the ability to initiate or receive restful operations.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRestfulCapabilityMode
      */
-    public $mode = null;
+    private $mode = null;
 
     /**
      * Definition of an operation or a named query together with its parameters and their meaning and type.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementOperation
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementOperation[]
      */
-    public $operation = null;
+    private $operation = [];
 
     /**
      * A specification of the restful capabilities of the solution for a specific resource type.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementResource
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementResource[]
      */
-    public $resource = null;
+    private $resource = [];
 
     /**
      * Search parameters that are supported for searching all resources for implementations to support and/or make use of - either references to ones defined in the specification, or additional ones defined for/by the implementation.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSearchParam
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSearchParam[]
      */
-    public $searchParam = null;
+    private $searchParam = [];
 
     /**
      * Information about security implementation from an interface perspective - what a client needs to know.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSecurity
      */
-    public $security = null;
+    private $security = null;
 
     /**
      * FHIRCapabilityStatementRest Constructor
@@ -133,31 +133,122 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['compartment'])) {
-                $this->setCompartment($data['compartment']);
+                $value = $data['compartment'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRUri($v);
+                        }  elseif (is_scalar($v)) {
+                            $v = new FHIRUri($v);
+                        }
+                        if (!($v instanceof FHIRUri)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest::__construct - Collection field \"compartment\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addCompartment($v);
+                    }
+                }
             }
             if (isset($data['documentation'])) {
-                $this->setDocumentation($data['documentation']);
+                $value = $data['documentation'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest::__construct - Property \"documentation\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setDocumentation($value);
             }
             if (isset($data['interaction'])) {
-                $this->setInteraction($data['interaction']);
+                $value = $data['interaction'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCapabilityStatementInteraction1($v);
+                        } 
+                        if (!($v instanceof FHIRCapabilityStatementInteraction1)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest::__construct - Collection field \"interaction\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction1 or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addInteraction($v);
+                    }
+                }
             }
             if (isset($data['mode'])) {
-                $this->setMode($data['mode']);
+                $value = $data['mode'];
+                if (is_array($value)) {
+                    $value = new FHIRRestfulCapabilityMode($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRRestfulCapabilityMode($value);
+                }
+                if (!($value instanceof FHIRRestfulCapabilityMode)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest::__construct - Property \"mode\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRRestfulCapabilityMode or data to construct type, saw ".gettype($value));
+                }
+                $this->setMode($value);
             }
             if (isset($data['operation'])) {
-                $this->setOperation($data['operation']);
+                $value = $data['operation'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCapabilityStatementOperation($v);
+                        } 
+                        if (!($v instanceof FHIRCapabilityStatementOperation)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest::__construct - Collection field \"operation\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementOperation or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addOperation($v);
+                    }
+                }
             }
             if (isset($data['resource'])) {
-                $this->setResource($data['resource']);
+                $value = $data['resource'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCapabilityStatementResource($v);
+                        } 
+                        if (!($v instanceof FHIRCapabilityStatementResource)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest::__construct - Collection field \"resource\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementResource or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addResource($v);
+                    }
+                }
             }
             if (isset($data['searchParam'])) {
-                $this->setSearchParam($data['searchParam']);
+                $value = $data['searchParam'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCapabilityStatementSearchParam($v);
+                        } 
+                        if (!($v instanceof FHIRCapabilityStatementSearchParam)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest::__construct - Collection field \"searchParam\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSearchParam or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addSearchParam($v);
+                    }
+                }
             }
             if (isset($data['security'])) {
-                $this->setSecurity($data['security']);
+                $value = $data['security'];
+                if (is_array($value)) {
+                    $value = new FHIRCapabilityStatementSecurity($value);
+                } 
+                if (!($value instanceof FHIRCapabilityStatementSecurity)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest::__construct - Property \"security\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSecurity or data to construct type, saw ".gettype($value));
+                }
+                $this->setSecurity($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -166,44 +257,44 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
      * An absolute URI which is a reference to the definition of a compartment that the system supports. The reference is to a CompartmentDefinition resource by its canonical URL .
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
      * @return $this
      */
-    public function setCompartment($compartment)
+    public function addCompartment($compartment)
     {
         if (null === $compartment) {
             return $this; 
         }
         if (is_scalar($compartment)) {
-            $compartment = new FHIRCanonical($compartment);
+            $compartment = new FHIRUri($compartment);
         }
-        if (!($compartment instanceof FHIRCanonical)) {
+        if (!($compartment instanceof FHIRUri)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRCapabilityStatementRest::setCompartment - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCanonical or appropriate scalar value, %s seen.',
+                'FHIRCapabilityStatementRest::addCompartment - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or appropriate scalar value, %s seen.',
                 gettype($compartment)
             ));
         }
-        $this->compartment = $compartment;
+        $this->compartment[] = $compartment;
         return $this;
     }
 
     /**
      * An absolute URI which is a reference to the definition of a compartment that the system supports. The reference is to a CompartmentDefinition resource by its canonical URL .
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri[]
      */
     public function getCompartment()
     {
         return $this->compartment;
     }
 
-
     /**
      * Information about the system's restful capabilities that apply across all applications, such as security.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRMarkdown
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
     public function setDocumentation($documentation)
@@ -212,11 +303,11 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
             return $this; 
         }
         if (is_scalar($documentation)) {
-            $documentation = new FHIRMarkdown($documentation);
+            $documentation = new FHIRString($documentation);
         }
-        if (!($documentation instanceof FHIRMarkdown)) {
+        if (!($documentation instanceof FHIRString)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRCapabilityStatementRest::setDocumentation - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRMarkdown or appropriate scalar value, %s seen.',
+                'FHIRCapabilityStatementRest::setDocumentation - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
                 gettype($documentation)
             ));
         }
@@ -226,37 +317,35 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Information about the system's restful capabilities that apply across all applications, such as security.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRMarkdown
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getDocumentation()
     {
         return $this->documentation;
     }
 
-
     /**
      * A specification of restful operations supported by the system.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction1
      * @return $this
      */
-    public function setInteraction(FHIRCapabilityStatementInteraction1 $interaction = null)
+    public function addInteraction(FHIRCapabilityStatementInteraction1 $interaction = null)
     {
         if (null === $interaction) {
             return $this; 
         }
-        $this->interaction = $interaction;
+        $this->interaction[] = $interaction;
         return $this;
     }
 
     /**
      * A specification of restful operations supported by the system.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction1
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction1[]
      */
     public function getInteraction()
     {
         return $this->interaction;
     }
-
 
     /**
      * Identifies whether this portion of the statement is describing the ability to initiate or receive restful operations.
@@ -290,78 +379,74 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
         return $this->mode;
     }
 
-
     /**
      * Definition of an operation or a named query together with its parameters and their meaning and type.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementOperation
      * @return $this
      */
-    public function setOperation(FHIRCapabilityStatementOperation $operation = null)
+    public function addOperation(FHIRCapabilityStatementOperation $operation = null)
     {
         if (null === $operation) {
             return $this; 
         }
-        $this->operation = $operation;
+        $this->operation[] = $operation;
         return $this;
     }
 
     /**
      * Definition of an operation or a named query together with its parameters and their meaning and type.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementOperation
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementOperation[]
      */
     public function getOperation()
     {
         return $this->operation;
     }
 
-
     /**
      * A specification of the restful capabilities of the solution for a specific resource type.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementResource
      * @return $this
      */
-    public function setResource(FHIRCapabilityStatementResource $resource = null)
+    public function addResource(FHIRCapabilityStatementResource $resource = null)
     {
         if (null === $resource) {
             return $this; 
         }
-        $this->resource = $resource;
+        $this->resource[] = $resource;
         return $this;
     }
 
     /**
      * A specification of the restful capabilities of the solution for a specific resource type.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementResource
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementResource[]
      */
     public function getResource()
     {
         return $this->resource;
     }
 
-
     /**
      * Search parameters that are supported for searching all resources for implementations to support and/or make use of - either references to ones defined in the specification, or additional ones defined for/by the implementation.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSearchParam
      * @return $this
      */
-    public function setSearchParam(FHIRCapabilityStatementSearchParam $searchParam = null)
+    public function addSearchParam(FHIRCapabilityStatementSearchParam $searchParam = null)
     {
         if (null === $searchParam) {
             return $this; 
         }
-        $this->searchParam = $searchParam;
+        $this->searchParam[] = $searchParam;
         return $this;
     }
 
     /**
      * Search parameters that are supported for searching all resources for implementations to support and/or make use of - either references to ones defined in the specification, or additional ones defined for/by the implementation.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSearchParam
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSearchParam[]
      */
     public function getSearchParam()
     {
         return $this->searchParam;
     }
-
 
     /**
      * Information about security implementation from an interface perspective - what a client needs to know.
@@ -386,7 +471,6 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
         return $this->security;
     }
 
-
     /**
      * @return string
      */
@@ -401,26 +485,66 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getCompartment())) {
-            $a['compartment'] = $v;
+        if (0 < count($values = $this->getCompartment())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['compartment'] = $vs;
+            }
         }
         if (null !== ($v = $this->getDocumentation())) {
             $a['documentation'] = $v;
         }
-        if (null !== ($v = $this->getInteraction())) {
-            $a['interaction'] = $v;
+        if (0 < count($values = $this->getInteraction())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['interaction'] = $vs;
+            }
         }
         if (null !== ($v = $this->getMode())) {
             $a['mode'] = $v;
         }
-        if (null !== ($v = $this->getOperation())) {
-            $a['operation'] = $v;
+        if (0 < count($values = $this->getOperation())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['operation'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getResource())) {
-            $a['resource'] = $v;
+        if (0 < count($values = $this->getResource())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['resource'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getSearchParam())) {
-            $a['searchParam'] = $v;
+        if (0 < count($values = $this->getSearchParam())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['searchParam'] = $vs;
+            }
         }
         if (null !== ($v = $this->getSecurity())) {
             $a['security'] = $v;
@@ -438,9 +562,50 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<CapabilityStatementRest xmlns="http://hl7.org/fhir"></CapabilityStatementRest>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (0 < count($values = $this->getCompartment())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('compartment'));
+                }
+            }
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getDocumentation())) {
+            $v->xmlSerialize(true, $sxe->addChild('documentation'));
+        }
+        if (0 < count($values = $this->getInteraction())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('interaction'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getMode())) {
+            $v->xmlSerialize(true, $sxe->addChild('mode'));
+        }
+        if (0 < count($values = $this->getOperation())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('operation'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getResource())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('resource'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getSearchParam())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('searchParam'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getSecurity())) {
+            $v->xmlSerialize(true, $sxe->addChild('security'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

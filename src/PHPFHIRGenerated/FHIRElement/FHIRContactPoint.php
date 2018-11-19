@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -80,31 +80,31 @@ class FHIRContactPoint extends FHIRElement implements \JsonSerializable
      * Time period when the contact point was/is in use.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public $period = null;
+    private $period = null;
 
     /**
-     * Specifies a preferred order in which to use a set of contacts. ContactPoints with lower rank values are more preferred than those with higher rank values.
+     * Specifies a preferred order in which to use a set of contacts. Contacts are ranked with lower values coming before higher values.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
-    public $rank = null;
+    private $rank = null;
 
     /**
      * Telecommunications form for contact point - what communications system is required to make use of the contact.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRContactPointSystem
      */
-    public $system = null;
+    private $system = null;
 
     /**
      * Identifies the purpose for the contact point.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRContactPointUse
      */
-    public $use = null;
+    private $use = null;
 
     /**
      * The actual contact point details, in a form that is meaningful to the designated communication system (i.e. phone number or email address).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $value = null;
+    private $value = null;
 
     /**
      * FHIRContactPoint Constructor
@@ -113,22 +113,64 @@ class FHIRContactPoint extends FHIRElement implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['period'])) {
-                $this->setPeriod($data['period']);
+                $value = $data['period'];
+                if (is_array($value)) {
+                    $value = new FHIRPeriod($value);
+                } 
+                if (!($value instanceof FHIRPeriod)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRContactPoint::__construct - Property \"period\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPeriod or data to construct type, saw ".gettype($value));
+                }
+                $this->setPeriod($value);
             }
             if (isset($data['rank'])) {
-                $this->setRank($data['rank']);
+                $value = $data['rank'];
+                if (is_array($value)) {
+                    $value = new FHIRPositiveInt($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRPositiveInt($value);
+                }
+                if (!($value instanceof FHIRPositiveInt)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRContactPoint::__construct - Property \"rank\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt or data to construct type, saw ".gettype($value));
+                }
+                $this->setRank($value);
             }
             if (isset($data['system'])) {
-                $this->setSystem($data['system']);
+                $value = $data['system'];
+                if (is_array($value)) {
+                    $value = new FHIRContactPointSystem($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRContactPointSystem($value);
+                }
+                if (!($value instanceof FHIRContactPointSystem)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRContactPoint::__construct - Property \"system\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRContactPointSystem or data to construct type, saw ".gettype($value));
+                }
+                $this->setSystem($value);
             }
             if (isset($data['use'])) {
-                $this->setUse($data['use']);
+                $value = $data['use'];
+                if (is_array($value)) {
+                    $value = new FHIRContactPointUse($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRContactPointUse($value);
+                }
+                if (!($value instanceof FHIRContactPointUse)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRContactPoint::__construct - Property \"use\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRContactPointUse or data to construct type, saw ".gettype($value));
+                }
+                $this->setUse($value);
             }
             if (isset($data['value'])) {
-                $this->setValue($data['value']);
+                $value = $data['value'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRContactPoint::__construct - Property \"value\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setValue($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -137,6 +179,7 @@ class FHIRContactPoint extends FHIRElement implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -162,9 +205,8 @@ class FHIRContactPoint extends FHIRElement implements \JsonSerializable
         return $this->period;
     }
 
-
     /**
-     * Specifies a preferred order in which to use a set of contacts. ContactPoints with lower rank values are more preferred than those with higher rank values.
+     * Specifies a preferred order in which to use a set of contacts. Contacts are ranked with lower values coming before higher values.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      * @return $this
      */
@@ -187,14 +229,13 @@ class FHIRContactPoint extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a preferred order in which to use a set of contacts. ContactPoints with lower rank values are more preferred than those with higher rank values.
+     * Specifies a preferred order in which to use a set of contacts. Contacts are ranked with lower values coming before higher values.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
     public function getRank()
     {
         return $this->rank;
     }
-
 
     /**
      * Telecommunications form for contact point - what communications system is required to make use of the contact.
@@ -228,7 +269,6 @@ class FHIRContactPoint extends FHIRElement implements \JsonSerializable
         return $this->system;
     }
 
-
     /**
      * Identifies the purpose for the contact point.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContactPointUse
@@ -261,7 +301,6 @@ class FHIRContactPoint extends FHIRElement implements \JsonSerializable
         return $this->use;
     }
 
-
     /**
      * The actual contact point details, in a form that is meaningful to the designated communication system (i.e. phone number or email address).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -293,7 +332,6 @@ class FHIRContactPoint extends FHIRElement implements \JsonSerializable
     {
         return $this->value;
     }
-
 
     /**
      * @return string
@@ -337,9 +375,21 @@ class FHIRContactPoint extends FHIRElement implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ContactPoint xmlns="http://hl7.org/fhir"></ContactPoint>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getPeriod())) {
+            $v->xmlSerialize(true, $sxe->addChild('period'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getRank())) {
+            $v->xmlSerialize(true, $sxe->addChild('rank'));
+        }
+        if (null !== ($v = $this->getSystem())) {
+            $v->xmlSerialize(true, $sxe->addChild('system'));
+        }
+        if (null !== ($v = $this->getUse())) {
+            $v->xmlSerialize(true, $sxe->addChild('use'));
+        }
+        if (null !== ($v = $this->getValue())) {
+            $v->xmlSerialize(true, $sxe->addChild('value'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

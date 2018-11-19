@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImplementationGui
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImplementationGui
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -80,13 +80,19 @@ class FHIRImplementationGuidePackage extends FHIRBackboneElement implements \Jso
      * Human readable text describing the package.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $description = null;
+    private $description = null;
 
     /**
-     * The human-readable title to display for the package of resources when rendering the implementation guide.
+     * The name for the group, as used in page.package.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $name = null;
+    private $name = null;
+
+    /**
+     * A resource that is part of the implementation guide. Conformance resources (value set, structure definition, capability statements etc.) are obvious candidates for inclusion, but any kind of resource can be included as an example resource.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideResource[]
+     */
+    private $resource = [];
 
     /**
      * FHIRImplementationGuidePackage Constructor
@@ -95,13 +101,46 @@ class FHIRImplementationGuidePackage extends FHIRBackboneElement implements \Jso
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['description'])) {
-                $this->setDescription($data['description']);
+                $value = $data['description'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePackage::__construct - Property \"description\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setDescription($value);
             }
             if (isset($data['name'])) {
-                $this->setName($data['name']);
+                $value = $data['name'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePackage::__construct - Property \"name\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setName($value);
+            }
+            if (isset($data['resource'])) {
+                $value = $data['resource'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRImplementationGuideResource($v);
+                        } 
+                        if (!($v instanceof FHIRImplementationGuideResource)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePackage::__construct - Collection field \"resource\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideResource or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addResource($v);
+                    }
+                }
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -110,6 +149,7 @@ class FHIRImplementationGuidePackage extends FHIRBackboneElement implements \Jso
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -144,9 +184,8 @@ class FHIRImplementationGuidePackage extends FHIRBackboneElement implements \Jso
         return $this->description;
     }
 
-
     /**
-     * The human-readable title to display for the package of resources when rendering the implementation guide.
+     * The name for the group, as used in page.package.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
@@ -169,7 +208,7 @@ class FHIRImplementationGuidePackage extends FHIRBackboneElement implements \Jso
     }
 
     /**
-     * The human-readable title to display for the package of resources when rendering the implementation guide.
+     * The name for the group, as used in page.package.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getName()
@@ -177,6 +216,28 @@ class FHIRImplementationGuidePackage extends FHIRBackboneElement implements \Jso
         return $this->name;
     }
 
+    /**
+     * A resource that is part of the implementation guide. Conformance resources (value set, structure definition, capability statements etc.) are obvious candidates for inclusion, but any kind of resource can be included as an example resource.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideResource
+     * @return $this
+     */
+    public function addResource(FHIRImplementationGuideResource $resource = null)
+    {
+        if (null === $resource) {
+            return $this; 
+        }
+        $this->resource[] = $resource;
+        return $this;
+    }
+
+    /**
+     * A resource that is part of the implementation guide. Conformance resources (value set, structure definition, capability statements etc.) are obvious candidates for inclusion, but any kind of resource can be included as an example resource.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideResource[]
+     */
+    public function getResource()
+    {
+        return $this->resource;
+    }
 
     /**
      * @return string
@@ -198,6 +259,17 @@ class FHIRImplementationGuidePackage extends FHIRBackboneElement implements \Jso
         if (null !== ($v = $this->getName())) {
             $a['name'] = $v;
         }
+        if (0 < count($values = $this->getResource())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['resource'] = $vs;
+            }
+        }
         return $a;
     }
 
@@ -211,9 +283,19 @@ class FHIRImplementationGuidePackage extends FHIRBackboneElement implements \Jso
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ImplementationGuidePackage xmlns="http://hl7.org/fhir"></ImplementationGuidePackage>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getDescription())) {
+            $v->xmlSerialize(true, $sxe->addChild('description'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getName())) {
+            $v->xmlSerialize(true, $sxe->addChild('name'));
+        }
+        if (0 < count($values = $this->getResource())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('resource'));
+                }
+            }
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

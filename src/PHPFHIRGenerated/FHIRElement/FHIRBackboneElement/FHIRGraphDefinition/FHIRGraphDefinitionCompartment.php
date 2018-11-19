@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -65,7 +65,6 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 use PHPFHIRGenerated\FHIRElement\FHIRCompartmentType;
 use PHPFHIRGenerated\FHIRElement\FHIRGraphCompartmentRule;
-use PHPFHIRGenerated\FHIRElement\FHIRGraphCompartmentUse;
 use PHPFHIRGenerated\FHIRElement\FHIRString;
 
 /**
@@ -83,31 +82,25 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement implements \Jso
      * Identifies the compartment.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCompartmentType
      */
-    public $code = null;
+    private $code = null;
 
     /**
      * Documentation for FHIRPath expression.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $description = null;
+    private $description = null;
 
     /**
      * Custom rule, as a FHIRPath expression.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $expression = null;
+    private $expression = null;
 
     /**
      * identical | matching | different | no-rule | custom.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRGraphCompartmentRule
      */
-    public $rule = null;
-
-    /**
-     * Defines how the compartment rule is used - whether it it is used to test whether resources are subject to the rule, or whether it is a rule that must be followed.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRGraphCompartmentUse
-     */
-    public $use = null;
+    private $rule = null;
 
     /**
      * FHIRGraphDefinitionCompartment Constructor
@@ -116,22 +109,54 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement implements \Jso
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['code'])) {
-                $this->setCode($data['code']);
+                $value = $data['code'];
+                if (is_array($value)) {
+                    $value = new FHIRCompartmentType($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRCompartmentType($value);
+                }
+                if (!($value instanceof FHIRCompartmentType)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionCompartment::__construct - Property \"code\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCompartmentType or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setCode($value);
             }
             if (isset($data['description'])) {
-                $this->setDescription($data['description']);
+                $value = $data['description'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionCompartment::__construct - Property \"description\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setDescription($value);
             }
             if (isset($data['expression'])) {
-                $this->setExpression($data['expression']);
+                $value = $data['expression'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionCompartment::__construct - Property \"expression\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setExpression($value);
             }
             if (isset($data['rule'])) {
-                $this->setRule($data['rule']);
-            }
-            if (isset($data['use'])) {
-                $this->setUse($data['use']);
+                $value = $data['rule'];
+                if (is_array($value)) {
+                    $value = new FHIRGraphCompartmentRule($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRGraphCompartmentRule($value);
+                }
+                if (!($value instanceof FHIRGraphCompartmentRule)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionCompartment::__construct - Property \"rule\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRGraphCompartmentRule or data to construct type, saw ".gettype($value)); 
+                }
+                $this->setRule($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -140,6 +165,7 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement implements \Jso
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -174,7 +200,6 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement implements \Jso
         return $this->code;
     }
 
-
     /**
      * Documentation for FHIRPath expression.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -206,7 +231,6 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement implements \Jso
     {
         return $this->description;
     }
-
 
     /**
      * Custom rule, as a FHIRPath expression.
@@ -240,7 +264,6 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement implements \Jso
         return $this->expression;
     }
 
-
     /**
      * identical | matching | different | no-rule | custom.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRGraphCompartmentRule
@@ -273,40 +296,6 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement implements \Jso
         return $this->rule;
     }
 
-
-    /**
-     * Defines how the compartment rule is used - whether it it is used to test whether resources are subject to the rule, or whether it is a rule that must be followed.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRGraphCompartmentUse
-     * @return $this
-     */
-    public function setUse($use)
-    {
-        if (null === $use) {
-            return $this; 
-        }
-        if (is_scalar($use)) {
-            $use = new FHIRGraphCompartmentUse($use);
-        }
-        if (!($use instanceof FHIRGraphCompartmentUse)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRGraphDefinitionCompartment::setUse - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRGraphCompartmentUse or appropriate scalar value, %s seen.',
-                gettype($use)
-            ));
-        }
-        $this->use = $use;
-        return $this;
-    }
-
-    /**
-     * Defines how the compartment rule is used - whether it it is used to test whether resources are subject to the rule, or whether it is a rule that must be followed.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRGraphCompartmentUse
-     */
-    public function getUse()
-    {
-        return $this->use;
-    }
-
-
     /**
      * @return string
      */
@@ -333,9 +322,6 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement implements \Jso
         if (null !== ($v = $this->getRule())) {
             $a['rule'] = $v;
         }
-        if (null !== ($v = $this->getUse())) {
-            $a['use'] = $v;
-        }
         return $a;
     }
 
@@ -349,9 +335,18 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement implements \Jso
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<GraphDefinitionCompartment xmlns="http://hl7.org/fhir"></GraphDefinitionCompartment>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getCode())) {
+            $v->xmlSerialize(true, $sxe->addChild('code'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getDescription())) {
+            $v->xmlSerialize(true, $sxe->addChild('description'));
+        }
+        if (null !== ($v = $this->getExpression())) {
+            $v->xmlSerialize(true, $sxe->addChild('expression'));
+        }
+        if (null !== ($v = $this->getRule())) {
+            $v->xmlSerialize(true, $sxe->addChild('rule'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

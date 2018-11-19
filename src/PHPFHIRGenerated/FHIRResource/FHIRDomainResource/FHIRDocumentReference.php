@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -62,12 +62,12 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * 
  */
 
-use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceAgent;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceContent;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceContext;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceRelatesTo;
 use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
 use PHPFHIRGenerated\FHIRElement\FHIRCompositionStatus;
+use PHPFHIRGenerated\FHIRElement\FHIRDateTime;
 use PHPFHIRGenerated\FHIRElement\FHIRDocumentReferenceStatus;
 use PHPFHIRGenerated\FHIRElement\FHIRIdentifier;
 use PHPFHIRGenerated\FHIRElement\FHIRInstant;
@@ -88,100 +88,106 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
     const FHIR_TYPE_NAME = 'DocumentReference';
 
     /**
-     * An actor taking an active role in the document.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceAgent
-     */
-    public $agent = null;
-
-    /**
      * Which person or organization authenticates that this document is valid.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $authenticator = null;
+    private $authenticator = null;
+
+    /**
+     * Identifies who is responsible for adding the information to the document.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    private $author = [];
 
     /**
      * A categorization for the type of document referenced - helps for indexing and searching. This may be implied by or derived from the code specified in the DocumentReference.type.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $category = null;
+    private $class = null;
 
     /**
      * The document and format referenced. There may be multiple content element repetitions, each with a different format.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceContent
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceContent[]
      */
-    public $content = null;
+    private $content = [];
 
     /**
      * The clinical context in which the document was prepared.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceContext
      */
-    public $context = null;
+    private $context = null;
+
+    /**
+     * When the document was created.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     */
+    private $created = null;
 
     /**
      * Identifies the organization or group who is responsible for ongoing maintenance of and access to the document.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $custodian = null;
+    private $custodian = null;
 
     /**
-     * When the document reference was created.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRInstant
-     */
-    public $date = null;
-
-    /**
-     * Human-readable description of the source document.
+     * Human-readable description of the source document. This is sometimes known as the "title".
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $description = null;
+    private $description = null;
 
     /**
      * The status of the underlying document.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCompositionStatus
      */
-    public $docStatus = null;
+    private $docStatus = null;
 
     /**
      * Other identifiers associated with the document, including version independent identifiers.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = null;
+    private $identifier = [];
+
+    /**
+     * When the document reference was created.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRInstant
+     */
+    private $indexed = null;
 
     /**
      * Document identifier as assigned by the source of the document. This identifier is specific to this version of the document. This unique identifier may be used elsewhere to identify this version of the document.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public $masterIdentifier = null;
+    private $masterIdentifier = null;
 
     /**
      * Relationships that this document has with other document references that already exist.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceRelatesTo
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceRelatesTo[]
      */
-    public $relatesTo = null;
+    private $relatesTo = [];
 
     /**
      * A set of Security-Tag codes specifying the level of privacy/security of the Document. Note that DocumentReference.meta.security contains the security labels of the "reference" to the document, while DocumentReference.securityLabel contains a snapshot of the security labels on the document the reference refers to.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $securityLabel = null;
+    private $securityLabel = [];
 
     /**
      * The status of this document reference.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDocumentReferenceStatus
      */
-    public $status = null;
+    private $status = null;
 
     /**
      * Who or what the document is about. The document can be about a person, (patient or healthcare practitioner), a device (e.g. a machine) or even a group of subjects (such as a document about a herd of farm animals, or a set of patients that share a common exposure).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $subject = null;
+    private $subject = null;
 
     /**
      * Specifies the particular kind of document referenced  (e.g. History and Physical, Discharge Summary, Progress Note). This usually equates to the purpose of making the document referenced.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $type = null;
+    private $type = null;
 
     /**
      * FHIRDocumentReference Constructor
@@ -190,55 +196,216 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
-            if (isset($data['agent'])) {
-                $this->setAgent($data['agent']);
-            }
             if (isset($data['authenticator'])) {
-                $this->setAuthenticator($data['authenticator']);
+                $value = $data['authenticator'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDocumentReference::__construct - Property \"authenticator\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setAuthenticator($value);
             }
-            if (isset($data['category'])) {
-                $this->setCategory($data['category']);
+            if (isset($data['author'])) {
+                $value = $data['author'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDocumentReference::__construct - Collection field \"author\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addAuthor($v);
+                    }
+                }
+            }
+            if (isset($data['class'])) {
+                $value = $data['class'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDocumentReference::__construct - Property \"class\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setClass($value);
             }
             if (isset($data['content'])) {
-                $this->setContent($data['content']);
+                $value = $data['content'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRDocumentReferenceContent($v);
+                        } 
+                        if (!($v instanceof FHIRDocumentReferenceContent)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDocumentReference::__construct - Collection field \"content\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceContent or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addContent($v);
+                    }
+                }
             }
             if (isset($data['context'])) {
-                $this->setContext($data['context']);
+                $value = $data['context'];
+                if (is_array($value)) {
+                    $value = new FHIRDocumentReferenceContext($value);
+                } 
+                if (!($value instanceof FHIRDocumentReferenceContext)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDocumentReference::__construct - Property \"context\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceContext or data to construct type, saw ".gettype($value));
+                }
+                $this->setContext($value);
+            }
+            if (isset($data['created'])) {
+                $value = $data['created'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDocumentReference::__construct - Property \"created\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value));
+                }
+                $this->setCreated($value);
             }
             if (isset($data['custodian'])) {
-                $this->setCustodian($data['custodian']);
-            }
-            if (isset($data['date'])) {
-                $this->setDate($data['date']);
+                $value = $data['custodian'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDocumentReference::__construct - Property \"custodian\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setCustodian($value);
             }
             if (isset($data['description'])) {
-                $this->setDescription($data['description']);
+                $value = $data['description'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDocumentReference::__construct - Property \"description\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setDescription($value);
             }
             if (isset($data['docStatus'])) {
-                $this->setDocStatus($data['docStatus']);
+                $value = $data['docStatus'];
+                if (is_array($value)) {
+                    $value = new FHIRCompositionStatus($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRCompositionStatus($value);
+                }
+                if (!($value instanceof FHIRCompositionStatus)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDocumentReference::__construct - Property \"docStatus\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCompositionStatus or data to construct type, saw ".gettype($value));
+                }
+                $this->setDocStatus($value);
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRIdentifier($v);
+                        } 
+                        if (!($v instanceof FHIRIdentifier)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDocumentReference::__construct - Collection field \"identifier\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addIdentifier($v);
+                    }
+                }
+            }
+            if (isset($data['indexed'])) {
+                $value = $data['indexed'];
+                if (is_array($value)) {
+                    $value = new FHIRInstant($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRInstant($value);
+                }
+                if (!($value instanceof FHIRInstant)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDocumentReference::__construct - Property \"indexed\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRInstant or data to construct type, saw ".gettype($value));
+                }
+                $this->setIndexed($value);
             }
             if (isset($data['masterIdentifier'])) {
-                $this->setMasterIdentifier($data['masterIdentifier']);
+                $value = $data['masterIdentifier'];
+                if (is_array($value)) {
+                    $value = new FHIRIdentifier($value);
+                } 
+                if (!($value instanceof FHIRIdentifier)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDocumentReference::__construct - Property \"masterIdentifier\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($value));
+                }
+                $this->setMasterIdentifier($value);
             }
             if (isset($data['relatesTo'])) {
-                $this->setRelatesTo($data['relatesTo']);
+                $value = $data['relatesTo'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRDocumentReferenceRelatesTo($v);
+                        } 
+                        if (!($v instanceof FHIRDocumentReferenceRelatesTo)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDocumentReference::__construct - Collection field \"relatesTo\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceRelatesTo or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addRelatesTo($v);
+                    }
+                }
             }
             if (isset($data['securityLabel'])) {
-                $this->setSecurityLabel($data['securityLabel']);
+                $value = $data['securityLabel'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRCodeableConcept($v);
+                        } 
+                        if (!($v instanceof FHIRCodeableConcept)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDocumentReference::__construct - Collection field \"securityLabel\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addSecurityLabel($v);
+                    }
+                }
             }
             if (isset($data['status'])) {
-                $this->setStatus($data['status']);
+                $value = $data['status'];
+                if (is_array($value)) {
+                    $value = new FHIRDocumentReferenceStatus($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDocumentReferenceStatus($value);
+                }
+                if (!($value instanceof FHIRDocumentReferenceStatus)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDocumentReference::__construct - Property \"status\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDocumentReferenceStatus or data to construct type, saw ".gettype($value));
+                }
+                $this->setStatus($value);
             }
             if (isset($data['subject'])) {
-                $this->setSubject($data['subject']);
+                $value = $data['subject'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDocumentReference::__construct - Property \"subject\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setSubject($value);
             }
             if (isset($data['type'])) {
-                $this->setType($data['type']);
+                $value = $data['type'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRDocumentReference::__construct - Property \"type\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setType($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -247,31 +414,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
-
-    /**
-     * An actor taking an active role in the document.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceAgent
-     * @return $this
-     */
-    public function setAgent(FHIRDocumentReferenceAgent $agent = null)
-    {
-        if (null === $agent) {
-            return $this; 
-        }
-        $this->agent = $agent;
-        return $this;
-    }
-
-    /**
-     * An actor taking an active role in the document.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceAgent
-     */
-    public function getAgent()
-    {
-        return $this->agent;
-    }
-
 
     /**
      * Which person or organization authenticates that this document is valid.
@@ -296,18 +440,40 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
         return $this->authenticator;
     }
 
+    /**
+     * Identifies who is responsible for adding the information to the document.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return $this
+     */
+    public function addAuthor(FHIRReference $author = null)
+    {
+        if (null === $author) {
+            return $this; 
+        }
+        $this->author[] = $author;
+        return $this;
+    }
+
+    /**
+     * Identifies who is responsible for adding the information to the document.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getAuthor()
+    {
+        return $this->author;
+    }
 
     /**
      * A categorization for the type of document referenced - helps for indexing and searching. This may be implied by or derived from the code specified in the DocumentReference.type.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setCategory(FHIRCodeableConcept $category = null)
+    public function setClass(FHIRCodeableConcept $class = null)
     {
-        if (null === $category) {
+        if (null === $class) {
             return $this; 
         }
-        $this->category = $category;
+        $this->class = $class;
         return $this;
     }
 
@@ -315,35 +481,33 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
      * A categorization for the type of document referenced - helps for indexing and searching. This may be implied by or derived from the code specified in the DocumentReference.type.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getCategory()
+    public function getClass()
     {
-        return $this->category;
+        return $this->class;
     }
-
 
     /**
      * The document and format referenced. There may be multiple content element repetitions, each with a different format.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceContent
      * @return $this
      */
-    public function setContent(FHIRDocumentReferenceContent $content = null)
+    public function addContent(FHIRDocumentReferenceContent $content = null)
     {
         if (null === $content) {
             return $this; 
         }
-        $this->content = $content;
+        $this->content[] = $content;
         return $this;
     }
 
     /**
      * The document and format referenced. There may be multiple content element repetitions, each with a different format.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceContent
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceContent[]
      */
     public function getContent()
     {
         return $this->content;
     }
-
 
     /**
      * The clinical context in which the document was prepared.
@@ -368,6 +532,37 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
         return $this->context;
     }
 
+    /**
+     * When the document was created.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     * @return $this
+     */
+    public function setCreated($created)
+    {
+        if (null === $created) {
+            return $this; 
+        }
+        if (is_scalar($created)) {
+            $created = new FHIRDateTime($created);
+        }
+        if (!($created instanceof FHIRDateTime)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRDocumentReference::setCreated - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or appropriate scalar value, %s seen.',
+                gettype($created)
+            ));
+        }
+        $this->created = $created;
+        return $this;
+    }
+
+    /**
+     * When the document was created.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     */
+    public function getCreated()
+    {
+        return $this->created;
+    }
 
     /**
      * Identifies the organization or group who is responsible for ongoing maintenance of and access to the document.
@@ -392,42 +587,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
         return $this->custodian;
     }
 
-
     /**
-     * When the document reference was created.
-     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRInstant
-     * @return $this
-     */
-    public function setDate($date)
-    {
-        if (null === $date) {
-            return $this; 
-        }
-        if (is_scalar($date)) {
-            $date = new FHIRInstant($date);
-        }
-        if (!($date instanceof FHIRInstant)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRDocumentReference::setDate - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRInstant or appropriate scalar value, %s seen.',
-                gettype($date)
-            ));
-        }
-        $this->date = $date;
-        return $this;
-    }
-
-    /**
-     * When the document reference was created.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRInstant
-     */
-    public function getDate()
-    {
-        return $this->date;
-    }
-
-
-    /**
-     * Human-readable description of the source document.
+     * Human-readable description of the source document. This is sometimes known as the "title".
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
@@ -450,14 +611,13 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * Human-readable description of the source document.
+     * Human-readable description of the source document. This is sometimes known as the "title".
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getDescription()
     {
         return $this->description;
     }
-
 
     /**
      * The status of the underlying document.
@@ -491,30 +651,60 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
         return $this->docStatus;
     }
 
-
     /**
      * Other identifiers associated with the document, including version independent identifiers.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
-    public function setIdentifier(FHIRIdentifier $identifier = null)
+    public function addIdentifier(FHIRIdentifier $identifier = null)
     {
         if (null === $identifier) {
             return $this; 
         }
-        $this->identifier = $identifier;
+        $this->identifier[] = $identifier;
         return $this;
     }
 
     /**
      * Other identifiers associated with the document, including version independent identifiers.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
         return $this->identifier;
     }
 
+    /**
+     * When the document reference was created.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRInstant
+     * @return $this
+     */
+    public function setIndexed($indexed)
+    {
+        if (null === $indexed) {
+            return $this; 
+        }
+        if (is_scalar($indexed)) {
+            $indexed = new FHIRInstant($indexed);
+        }
+        if (!($indexed instanceof FHIRInstant)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRDocumentReference::setIndexed - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRInstant or appropriate scalar value, %s seen.',
+                gettype($indexed)
+            ));
+        }
+        $this->indexed = $indexed;
+        return $this;
+    }
+
+    /**
+     * When the document reference was created.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRInstant
+     */
+    public function getIndexed()
+    {
+        return $this->indexed;
+    }
 
     /**
      * Document identifier as assigned by the source of the document. This identifier is specific to this version of the document. This unique identifier may be used elsewhere to identify this version of the document.
@@ -539,54 +729,51 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
         return $this->masterIdentifier;
     }
 
-
     /**
      * Relationships that this document has with other document references that already exist.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceRelatesTo
      * @return $this
      */
-    public function setRelatesTo(FHIRDocumentReferenceRelatesTo $relatesTo = null)
+    public function addRelatesTo(FHIRDocumentReferenceRelatesTo $relatesTo = null)
     {
         if (null === $relatesTo) {
             return $this; 
         }
-        $this->relatesTo = $relatesTo;
+        $this->relatesTo[] = $relatesTo;
         return $this;
     }
 
     /**
      * Relationships that this document has with other document references that already exist.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceRelatesTo
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceRelatesTo[]
      */
     public function getRelatesTo()
     {
         return $this->relatesTo;
     }
 
-
     /**
      * A set of Security-Tag codes specifying the level of privacy/security of the Document. Note that DocumentReference.meta.security contains the security labels of the "reference" to the document, while DocumentReference.securityLabel contains a snapshot of the security labels on the document the reference refers to.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      * @return $this
      */
-    public function setSecurityLabel(FHIRCodeableConcept $securityLabel = null)
+    public function addSecurityLabel(FHIRCodeableConcept $securityLabel = null)
     {
         if (null === $securityLabel) {
             return $this; 
         }
-        $this->securityLabel = $securityLabel;
+        $this->securityLabel[] = $securityLabel;
         return $this;
     }
 
     /**
      * A set of Security-Tag codes specifying the level of privacy/security of the Document. Note that DocumentReference.meta.security contains the security labels of the "reference" to the document, while DocumentReference.securityLabel contains a snapshot of the security labels on the document the reference refers to.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getSecurityLabel()
     {
         return $this->securityLabel;
     }
-
 
     /**
      * The status of this document reference.
@@ -620,7 +807,6 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
         return $this->status;
     }
 
-
     /**
      * Who or what the document is about. The document can be about a person, (patient or healthcare practitioner), a device (e.g. a machine) or even a group of subjects (such as a document about a herd of farm animals, or a set of patients that share a common exposure).
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -643,7 +829,6 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
     {
         return $this->subject;
     }
-
 
     /**
      * Specifies the particular kind of document referenced  (e.g. History and Physical, Discharge Summary, Progress Note). This usually equates to the purpose of making the document referenced.
@@ -668,7 +853,6 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
         return $this->type;
     }
 
-
     /**
      * @return string
      */
@@ -684,26 +868,42 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
     {
         $a = parent::jsonSerialize();
         $a['resourceType'] = self::FHIR_TYPE_NAME;
-        if (null !== ($v = $this->getAgent())) {
-            $a['agent'] = $v;
-        }
         if (null !== ($v = $this->getAuthenticator())) {
             $a['authenticator'] = $v;
         }
-        if (null !== ($v = $this->getCategory())) {
-            $a['category'] = $v;
+        if (0 < count($values = $this->getAuthor())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['author'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getContent())) {
-            $a['content'] = $v;
+        if (null !== ($v = $this->getClass())) {
+            $a['class'] = $v;
+        }
+        if (0 < count($values = $this->getContent())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['content'] = $vs;
+            }
         }
         if (null !== ($v = $this->getContext())) {
             $a['context'] = $v;
         }
+        if (null !== ($v = $this->getCreated())) {
+            $a['created'] = $v;
+        }
         if (null !== ($v = $this->getCustodian())) {
             $a['custodian'] = $v;
-        }
-        if (null !== ($v = $this->getDate())) {
-            $a['date'] = $v;
         }
         if (null !== ($v = $this->getDescription())) {
             $a['description'] = $v;
@@ -711,17 +911,44 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
         if (null !== ($v = $this->getDocStatus())) {
             $a['docStatus'] = $v;
         }
-        if (null !== ($v = $this->getIdentifier())) {
-            $a['identifier'] = $v;
+        if (0 < count($values = $this->getIdentifier())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['identifier'] = $vs;
+            }
+        }
+        if (null !== ($v = $this->getIndexed())) {
+            $a['indexed'] = $v;
         }
         if (null !== ($v = $this->getMasterIdentifier())) {
             $a['masterIdentifier'] = $v;
         }
-        if (null !== ($v = $this->getRelatesTo())) {
-            $a['relatesTo'] = $v;
+        if (0 < count($values = $this->getRelatesTo())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['relatesTo'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getSecurityLabel())) {
-            $a['securityLabel'] = $v;
+        if (0 < count($values = $this->getSecurityLabel())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['securityLabel'] = $vs;
+            }
         }
         if (null !== ($v = $this->getStatus())) {
             $a['status'] = $v;
@@ -745,9 +972,77 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<DocumentReference xmlns="http://hl7.org/fhir"></DocumentReference>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getAuthenticator())) {
+            $v->xmlSerialize(true, $sxe->addChild('authenticator'));
         }
-        return $sxe->saveXML();
+        if (0 < count($values = $this->getAuthor())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('author'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getClass())) {
+            $v->xmlSerialize(true, $sxe->addChild('class'));
+        }
+        if (0 < count($values = $this->getContent())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('content'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getContext())) {
+            $v->xmlSerialize(true, $sxe->addChild('context'));
+        }
+        if (null !== ($v = $this->getCreated())) {
+            $v->xmlSerialize(true, $sxe->addChild('created'));
+        }
+        if (null !== ($v = $this->getCustodian())) {
+            $v->xmlSerialize(true, $sxe->addChild('custodian'));
+        }
+        if (null !== ($v = $this->getDescription())) {
+            $v->xmlSerialize(true, $sxe->addChild('description'));
+        }
+        if (null !== ($v = $this->getDocStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('docStatus'));
+        }
+        if (0 < count($values = $this->getIdentifier())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('identifier'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getIndexed())) {
+            $v->xmlSerialize(true, $sxe->addChild('indexed'));
+        }
+        if (null !== ($v = $this->getMasterIdentifier())) {
+            $v->xmlSerialize(true, $sxe->addChild('masterIdentifier'));
+        }
+        if (0 < count($values = $this->getRelatesTo())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('relatesTo'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getSecurityLabel())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('securityLabel'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('status'));
+        }
+        if (null !== ($v = $this->getSubject())) {
+            $v->xmlSerialize(true, $sxe->addChild('subject'));
+        }
+        if (null !== ($v = $this->getType())) {
+            $v->xmlSerialize(true, $sxe->addChild('type'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

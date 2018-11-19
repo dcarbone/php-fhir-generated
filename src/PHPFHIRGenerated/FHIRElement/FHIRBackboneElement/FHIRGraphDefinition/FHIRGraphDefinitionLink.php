@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -81,37 +81,37 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement implements \JsonSerial
      * Information about why this link is of interest in this graph definition.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $description = null;
+    private $description = null;
 
     /**
      * Maximum occurrences for this link.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $max = null;
+    private $max = null;
 
     /**
      * Minimum occurrences for this link.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
-    public $min = null;
+    private $min = null;
 
     /**
-     * A FHIR expression that identifies one of FHIR References to other resources.
+     * Path in the resource that contains the link.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $path = null;
+    private $path = null;
 
     /**
      * Which slice (if profiled).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $sliceName = null;
+    private $sliceName = null;
 
     /**
      * Potential target for the link.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionTarget
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionTarget[]
      */
-    public $target = null;
+    private $target = [];
 
     /**
      * FHIRGraphDefinitionLink Constructor
@@ -120,25 +120,82 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement implements \JsonSerial
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['description'])) {
-                $this->setDescription($data['description']);
+                $value = $data['description'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionLink::__construct - Property \"description\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setDescription($value);
             }
             if (isset($data['max'])) {
-                $this->setMax($data['max']);
+                $value = $data['max'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionLink::__construct - Property \"max\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setMax($value);
             }
             if (isset($data['min'])) {
-                $this->setMin($data['min']);
+                $value = $data['min'];
+                if (is_array($value)) {
+                    $value = new FHIRInteger($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRInteger($value);
+                }
+                if (!($value instanceof FHIRInteger)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionLink::__construct - Property \"min\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRInteger or data to construct type, saw ".gettype($value));
+                }
+                $this->setMin($value);
             }
             if (isset($data['path'])) {
-                $this->setPath($data['path']);
+                $value = $data['path'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionLink::__construct - Property \"path\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setPath($value);
             }
             if (isset($data['sliceName'])) {
-                $this->setSliceName($data['sliceName']);
+                $value = $data['sliceName'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionLink::__construct - Property \"sliceName\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setSliceName($value);
             }
             if (isset($data['target'])) {
-                $this->setTarget($data['target']);
+                $value = $data['target'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRGraphDefinitionTarget($v);
+                        } 
+                        if (!($v instanceof FHIRGraphDefinitionTarget)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionLink::__construct - Collection field \"target\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionTarget or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addTarget($v);
+                    }
+                }
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -147,6 +204,7 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement implements \JsonSerial
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
@@ -181,7 +239,6 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement implements \JsonSerial
         return $this->description;
     }
 
-
     /**
      * Maximum occurrences for this link.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
@@ -213,7 +270,6 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement implements \JsonSerial
     {
         return $this->max;
     }
-
 
     /**
      * Minimum occurrences for this link.
@@ -247,9 +303,8 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement implements \JsonSerial
         return $this->min;
     }
 
-
     /**
-     * A FHIR expression that identifies one of FHIR References to other resources.
+     * Path in the resource that contains the link.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
@@ -272,14 +327,13 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * A FHIR expression that identifies one of FHIR References to other resources.
+     * Path in the resource that contains the link.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getPath()
     {
         return $this->path;
     }
-
 
     /**
      * Which slice (if profiled).
@@ -313,30 +367,28 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement implements \JsonSerial
         return $this->sliceName;
     }
 
-
     /**
      * Potential target for the link.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionTarget
      * @return $this
      */
-    public function setTarget(FHIRGraphDefinitionTarget $target = null)
+    public function addTarget(FHIRGraphDefinitionTarget $target = null)
     {
         if (null === $target) {
             return $this; 
         }
-        $this->target = $target;
+        $this->target[] = $target;
         return $this;
     }
 
     /**
      * Potential target for the link.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionTarget
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionTarget[]
      */
     public function getTarget()
     {
         return $this->target;
     }
-
 
     /**
      * @return string
@@ -367,8 +419,16 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement implements \JsonSerial
         if (null !== ($v = $this->getSliceName())) {
             $a['sliceName'] = $v;
         }
-        if (null !== ($v = $this->getTarget())) {
-            $a['target'] = $v;
+        if (0 < count($values = $this->getTarget())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['target'] = $vs;
+            }
         }
         return $a;
     }
@@ -383,9 +443,28 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement implements \JsonSerial
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<GraphDefinitionLink xmlns="http://hl7.org/fhir"></GraphDefinitionLink>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getDescription())) {
+            $v->xmlSerialize(true, $sxe->addChild('description'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getMax())) {
+            $v->xmlSerialize(true, $sxe->addChild('max'));
+        }
+        if (null !== ($v = $this->getMin())) {
+            $v->xmlSerialize(true, $sxe->addChild('min'));
+        }
+        if (null !== ($v = $this->getPath())) {
+            $v->xmlSerialize(true, $sxe->addChild('path'));
+        }
+        if (null !== ($v = $this->getSliceName())) {
+            $v->xmlSerialize(true, $sxe->addChild('sliceName'));
+        }
+        if (0 < count($values = $this->getTarget())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('target'));
+                }
+            }
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

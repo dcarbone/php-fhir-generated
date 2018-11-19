@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -65,6 +65,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 use PHPFHIRGenerated\FHIRElement\FHIRAddress;
 use PHPFHIRGenerated\FHIRElement\FHIRAdministrativeGender;
 use PHPFHIRGenerated\FHIRElement\FHIRAttachment;
+use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientAnimal;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientCommunication;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientContact;
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientLink;
@@ -92,117 +93,118 @@ class FHIRPatient extends FHIRDomainResource implements \JsonSerializable
     const FHIR_TYPE_NAME = 'Patient';
 
     /**
-     * Whether this patient record is in active use. 
-Many systems use this property to mark as non-current patients, such as those that have not been seen for a period of time based on an organization's business rules.
-
-It is often used to filter patient lists to exclude inactive patients
-
-Deceased patients may also be marked as inactive for the same reasons, but may be active for some time after death.
+     * Whether this patient record is in active use.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $active = null;
+    private $active = null;
 
     /**
-     * An address for the individual.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRAddress
+     * Addresses for the individual.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRAddress[]
      */
-    public $address = null;
+    private $address = [];
+
+    /**
+     * This patient is known to be an animal.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientAnimal
+     */
+    private $animal = null;
 
     /**
      * The date of birth for the individual.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
-    public $birthDate = null;
+    private $birthDate = null;
 
     /**
-     * A language which may be used to communicate with the patient about his or her health.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientCommunication
+     * Languages which may be used to communicate with the patient about his or her health.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientCommunication[]
      */
-    public $communication = null;
+    private $communication = [];
 
     /**
      * A contact party (e.g. guardian, partner, friend) for the patient.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientContact
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientContact[]
      */
-    public $contact = null;
+    private $contact = [];
 
     /**
-     * Indicates if the individual is deceased or not.
+     * Indicates if the individual is deceased or not. (choose any one of deceased*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $deceasedBoolean = null;
+    private $deceasedBoolean = null;
 
     /**
-     * Indicates if the individual is deceased or not.
+     * Indicates if the individual is deceased or not. (choose any one of deceased*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $deceasedDateTime = null;
+    private $deceasedDateTime = null;
 
     /**
      * Administrative Gender - the gender that the patient is considered to have for administration and record keeping purposes.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAdministrativeGender
      */
-    public $gender = null;
+    private $gender = null;
 
     /**
      * Patient's nominated care provider.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $generalPractitioner = null;
+    private $generalPractitioner = [];
 
     /**
      * An identifier for this patient.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = null;
+    private $identifier = [];
 
     /**
      * Link to another patient resource that concerns the same actual patient.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientLink
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientLink[]
      */
-    public $link = null;
+    private $link = [];
 
     /**
      * Organization that is the custodian of the patient record.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $managingOrganization = null;
+    private $managingOrganization = null;
 
     /**
      * This field contains a patient's most recent marital (civil) status.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $maritalStatus = null;
+    private $maritalStatus = null;
 
     /**
-     * Indicates whether the patient is part of a multiple (boolean) or indicates the actual birth order (integer).
+     * Indicates whether the patient is part of a multiple (bool) or indicates the actual birth order (integer). (choose any one of multipleBirth*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $multipleBirthBoolean = null;
+    private $multipleBirthBoolean = null;
 
     /**
-     * Indicates whether the patient is part of a multiple (boolean) or indicates the actual birth order (integer).
+     * Indicates whether the patient is part of a multiple (bool) or indicates the actual birth order (integer). (choose any one of multipleBirth*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
-    public $multipleBirthInteger = null;
+    private $multipleBirthInteger = null;
 
     /**
      * A name associated with the individual.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRHumanName
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRHumanName[]
      */
-    public $name = null;
+    private $name = [];
 
     /**
      * Image of the patient.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment[]
      */
-    public $photo = null;
+    private $photo = [];
 
     /**
      * A contact detail (e.g. a telephone number or an email address) by which the individual may be contacted.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactPoint
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactPoint[]
      */
-    public $telecom = null;
+    private $telecom = [];
 
     /**
      * FHIRPatient Constructor
@@ -211,61 +213,264 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['active'])) {
-                $this->setActive($data['active']);
+                $value = $data['active'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPatient::__construct - Property \"active\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value));
+                }
+                $this->setActive($value);
             }
             if (isset($data['address'])) {
-                $this->setAddress($data['address']);
+                $value = $data['address'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRAddress($v);
+                        } 
+                        if (!($v instanceof FHIRAddress)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPatient::__construct - Collection field \"address\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAddress or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addAddress($v);
+                    }
+                }
+            }
+            if (isset($data['animal'])) {
+                $value = $data['animal'];
+                if (is_array($value)) {
+                    $value = new FHIRPatientAnimal($value);
+                } 
+                if (!($value instanceof FHIRPatientAnimal)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPatient::__construct - Property \"animal\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientAnimal or data to construct type, saw ".gettype($value));
+                }
+                $this->setAnimal($value);
             }
             if (isset($data['birthDate'])) {
-                $this->setBirthDate($data['birthDate']);
+                $value = $data['birthDate'];
+                if (is_array($value)) {
+                    $value = new FHIRDate($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDate($value);
+                }
+                if (!($value instanceof FHIRDate)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPatient::__construct - Property \"birthDate\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDate or data to construct type, saw ".gettype($value));
+                }
+                $this->setBirthDate($value);
             }
             if (isset($data['communication'])) {
-                $this->setCommunication($data['communication']);
+                $value = $data['communication'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRPatientCommunication($v);
+                        } 
+                        if (!($v instanceof FHIRPatientCommunication)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPatient::__construct - Collection field \"communication\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientCommunication or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addCommunication($v);
+                    }
+                }
             }
             if (isset($data['contact'])) {
-                $this->setContact($data['contact']);
+                $value = $data['contact'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRPatientContact($v);
+                        } 
+                        if (!($v instanceof FHIRPatientContact)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPatient::__construct - Collection field \"contact\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientContact or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addContact($v);
+                    }
+                }
             }
             if (isset($data['deceasedBoolean'])) {
-                $this->setDeceasedBoolean($data['deceasedBoolean']);
+                $value = $data['deceasedBoolean'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPatient::__construct - Property \"deceasedBoolean\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value));
+                }
+                $this->setDeceasedBoolean($value);
             }
             if (isset($data['deceasedDateTime'])) {
-                $this->setDeceasedDateTime($data['deceasedDateTime']);
+                $value = $data['deceasedDateTime'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPatient::__construct - Property \"deceasedDateTime\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value));
+                }
+                $this->setDeceasedDateTime($value);
             }
             if (isset($data['gender'])) {
-                $this->setGender($data['gender']);
+                $value = $data['gender'];
+                if (is_array($value)) {
+                    $value = new FHIRAdministrativeGender($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRAdministrativeGender($value);
+                }
+                if (!($value instanceof FHIRAdministrativeGender)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPatient::__construct - Property \"gender\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAdministrativeGender or data to construct type, saw ".gettype($value));
+                }
+                $this->setGender($value);
             }
             if (isset($data['generalPractitioner'])) {
-                $this->setGeneralPractitioner($data['generalPractitioner']);
+                $value = $data['generalPractitioner'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRReference($v);
+                        } 
+                        if (!($v instanceof FHIRReference)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPatient::__construct - Collection field \"generalPractitioner\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addGeneralPractitioner($v);
+                    }
+                }
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRIdentifier($v);
+                        } 
+                        if (!($v instanceof FHIRIdentifier)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPatient::__construct - Collection field \"identifier\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addIdentifier($v);
+                    }
+                }
             }
             if (isset($data['link'])) {
-                $this->setLink($data['link']);
+                $value = $data['link'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRPatientLink($v);
+                        } 
+                        if (!($v instanceof FHIRPatientLink)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPatient::__construct - Collection field \"link\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientLink or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addLink($v);
+                    }
+                }
             }
             if (isset($data['managingOrganization'])) {
-                $this->setManagingOrganization($data['managingOrganization']);
+                $value = $data['managingOrganization'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPatient::__construct - Property \"managingOrganization\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setManagingOrganization($value);
             }
             if (isset($data['maritalStatus'])) {
-                $this->setMaritalStatus($data['maritalStatus']);
+                $value = $data['maritalStatus'];
+                if (is_array($value)) {
+                    $value = new FHIRCodeableConcept($value);
+                } 
+                if (!($value instanceof FHIRCodeableConcept)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPatient::__construct - Property \"maritalStatus\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept or data to construct type, saw ".gettype($value));
+                }
+                $this->setMaritalStatus($value);
             }
             if (isset($data['multipleBirthBoolean'])) {
-                $this->setMultipleBirthBoolean($data['multipleBirthBoolean']);
+                $value = $data['multipleBirthBoolean'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPatient::__construct - Property \"multipleBirthBoolean\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value));
+                }
+                $this->setMultipleBirthBoolean($value);
             }
             if (isset($data['multipleBirthInteger'])) {
-                $this->setMultipleBirthInteger($data['multipleBirthInteger']);
+                $value = $data['multipleBirthInteger'];
+                if (is_array($value)) {
+                    $value = new FHIRInteger($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRInteger($value);
+                }
+                if (!($value instanceof FHIRInteger)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPatient::__construct - Property \"multipleBirthInteger\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRInteger or data to construct type, saw ".gettype($value));
+                }
+                $this->setMultipleBirthInteger($value);
             }
             if (isset($data['name'])) {
-                $this->setName($data['name']);
+                $value = $data['name'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRHumanName($v);
+                        } 
+                        if (!($v instanceof FHIRHumanName)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPatient::__construct - Collection field \"name\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRHumanName or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addName($v);
+                    }
+                }
             }
             if (isset($data['photo'])) {
-                $this->setPhoto($data['photo']);
+                $value = $data['photo'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRAttachment($v);
+                        } 
+                        if (!($v instanceof FHIRAttachment)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPatient::__construct - Collection field \"photo\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRAttachment or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addPhoto($v);
+                    }
+                }
             }
             if (isset($data['telecom'])) {
-                $this->setTelecom($data['telecom']);
+                $value = $data['telecom'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRContactPoint($v);
+                        } 
+                        if (!($v instanceof FHIRContactPoint)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPatient::__construct - Collection field \"telecom\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRContactPoint or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addTelecom($v);
+                    }
+                }
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -274,15 +479,11 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
-     * Whether this patient record is in active use. 
-Many systems use this property to mark as non-current patients, such as those that have not been seen for a period of time based on an organization's business rules.
-
-It is often used to filter patient lists to exclude inactive patients
-
-Deceased patients may also be marked as inactive for the same reasons, but may be active for some time after death.
+     * Whether this patient record is in active use.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      * @return $this
      */
@@ -305,12 +506,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
     }
 
     /**
-     * Whether this patient record is in active use. 
-Many systems use this property to mark as non-current patients, such as those that have not been seen for a period of time based on an organization's business rules.
-
-It is often used to filter patient lists to exclude inactive patients
-
-Deceased patients may also be marked as inactive for the same reasons, but may be active for some time after death.
+     * Whether this patient record is in active use.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getActive()
@@ -318,30 +514,51 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
         return $this->active;
     }
 
-
     /**
-     * An address for the individual.
+     * Addresses for the individual.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRAddress
      * @return $this
      */
-    public function setAddress(FHIRAddress $address = null)
+    public function addAddress(FHIRAddress $address = null)
     {
         if (null === $address) {
             return $this; 
         }
-        $this->address = $address;
+        $this->address[] = $address;
         return $this;
     }
 
     /**
-     * An address for the individual.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAddress
+     * Addresses for the individual.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAddress[]
      */
     public function getAddress()
     {
         return $this->address;
     }
 
+    /**
+     * This patient is known to be an animal.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientAnimal
+     * @return $this
+     */
+    public function setAnimal(FHIRPatientAnimal $animal = null)
+    {
+        if (null === $animal) {
+            return $this; 
+        }
+        $this->animal = $animal;
+        return $this;
+    }
+
+    /**
+     * This patient is known to be an animal.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientAnimal
+     */
+    public function getAnimal()
+    {
+        return $this->animal;
+    }
 
     /**
      * The date of birth for the individual.
@@ -375,57 +592,54 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
         return $this->birthDate;
     }
 
-
     /**
-     * A language which may be used to communicate with the patient about his or her health.
+     * Languages which may be used to communicate with the patient about his or her health.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientCommunication
      * @return $this
      */
-    public function setCommunication(FHIRPatientCommunication $communication = null)
+    public function addCommunication(FHIRPatientCommunication $communication = null)
     {
         if (null === $communication) {
             return $this; 
         }
-        $this->communication = $communication;
+        $this->communication[] = $communication;
         return $this;
     }
 
     /**
-     * A language which may be used to communicate with the patient about his or her health.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientCommunication
+     * Languages which may be used to communicate with the patient about his or her health.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientCommunication[]
      */
     public function getCommunication()
     {
         return $this->communication;
     }
 
-
     /**
      * A contact party (e.g. guardian, partner, friend) for the patient.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientContact
      * @return $this
      */
-    public function setContact(FHIRPatientContact $contact = null)
+    public function addContact(FHIRPatientContact $contact = null)
     {
         if (null === $contact) {
             return $this; 
         }
-        $this->contact = $contact;
+        $this->contact[] = $contact;
         return $this;
     }
 
     /**
      * A contact party (e.g. guardian, partner, friend) for the patient.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientContact
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientContact[]
      */
     public function getContact()
     {
         return $this->contact;
     }
 
-
     /**
-     * Indicates if the individual is deceased or not.
+     * Indicates if the individual is deceased or not. (choose any one of deceased*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      * @return $this
      */
@@ -448,7 +662,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
     }
 
     /**
-     * Indicates if the individual is deceased or not.
+     * Indicates if the individual is deceased or not. (choose any one of deceased*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getDeceasedBoolean()
@@ -456,9 +670,8 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
         return $this->deceasedBoolean;
     }
 
-
     /**
-     * Indicates if the individual is deceased or not.
+     * Indicates if the individual is deceased or not. (choose any one of deceased*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      * @return $this
      */
@@ -481,14 +694,13 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
     }
 
     /**
-     * Indicates if the individual is deceased or not.
+     * Indicates if the individual is deceased or not. (choose any one of deceased*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getDeceasedDateTime()
     {
         return $this->deceasedDateTime;
     }
-
 
     /**
      * Administrative Gender - the gender that the patient is considered to have for administration and record keeping purposes.
@@ -522,78 +734,74 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
         return $this->gender;
     }
 
-
     /**
      * Patient's nominated care provider.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
      * @return $this
      */
-    public function setGeneralPractitioner(FHIRReference $generalPractitioner = null)
+    public function addGeneralPractitioner(FHIRReference $generalPractitioner = null)
     {
         if (null === $generalPractitioner) {
             return $this; 
         }
-        $this->generalPractitioner = $generalPractitioner;
+        $this->generalPractitioner[] = $generalPractitioner;
         return $this;
     }
 
     /**
      * Patient's nominated care provider.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getGeneralPractitioner()
     {
         return $this->generalPractitioner;
     }
 
-
     /**
      * An identifier for this patient.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
-    public function setIdentifier(FHIRIdentifier $identifier = null)
+    public function addIdentifier(FHIRIdentifier $identifier = null)
     {
         if (null === $identifier) {
             return $this; 
         }
-        $this->identifier = $identifier;
+        $this->identifier[] = $identifier;
         return $this;
     }
 
     /**
      * An identifier for this patient.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
         return $this->identifier;
     }
 
-
     /**
      * Link to another patient resource that concerns the same actual patient.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientLink
      * @return $this
      */
-    public function setLink(FHIRPatientLink $link = null)
+    public function addLink(FHIRPatientLink $link = null)
     {
         if (null === $link) {
             return $this; 
         }
-        $this->link = $link;
+        $this->link[] = $link;
         return $this;
     }
 
     /**
      * Link to another patient resource that concerns the same actual patient.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientLink
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientLink[]
      */
     public function getLink()
     {
         return $this->link;
     }
-
 
     /**
      * Organization that is the custodian of the patient record.
@@ -618,7 +826,6 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
         return $this->managingOrganization;
     }
 
-
     /**
      * This field contains a patient's most recent marital (civil) status.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
@@ -642,9 +849,8 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
         return $this->maritalStatus;
     }
 
-
     /**
-     * Indicates whether the patient is part of a multiple (boolean) or indicates the actual birth order (integer).
+     * Indicates whether the patient is part of a multiple (bool) or indicates the actual birth order (integer). (choose any one of multipleBirth*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      * @return $this
      */
@@ -667,7 +873,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
     }
 
     /**
-     * Indicates whether the patient is part of a multiple (boolean) or indicates the actual birth order (integer).
+     * Indicates whether the patient is part of a multiple (bool) or indicates the actual birth order (integer). (choose any one of multipleBirth*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getMultipleBirthBoolean()
@@ -675,9 +881,8 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
         return $this->multipleBirthBoolean;
     }
 
-
     /**
-     * Indicates whether the patient is part of a multiple (boolean) or indicates the actual birth order (integer).
+     * Indicates whether the patient is part of a multiple (bool) or indicates the actual birth order (integer). (choose any one of multipleBirth*, but only one)
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRInteger
      * @return $this
      */
@@ -700,7 +905,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
     }
 
     /**
-     * Indicates whether the patient is part of a multiple (boolean) or indicates the actual birth order (integer).
+     * Indicates whether the patient is part of a multiple (bool) or indicates the actual birth order (integer). (choose any one of multipleBirth*, but only one)
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public function getMultipleBirthInteger()
@@ -708,78 +913,74 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
         return $this->multipleBirthInteger;
     }
 
-
     /**
      * A name associated with the individual.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRHumanName
      * @return $this
      */
-    public function setName(FHIRHumanName $name = null)
+    public function addName(FHIRHumanName $name = null)
     {
         if (null === $name) {
             return $this; 
         }
-        $this->name = $name;
+        $this->name[] = $name;
         return $this;
     }
 
     /**
      * A name associated with the individual.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRHumanName
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRHumanName[]
      */
     public function getName()
     {
         return $this->name;
     }
 
-
     /**
      * Image of the patient.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRAttachment
      * @return $this
      */
-    public function setPhoto(FHIRAttachment $photo = null)
+    public function addPhoto(FHIRAttachment $photo = null)
     {
         if (null === $photo) {
             return $this; 
         }
-        $this->photo = $photo;
+        $this->photo[] = $photo;
         return $this;
     }
 
     /**
      * Image of the patient.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAttachment
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRAttachment[]
      */
     public function getPhoto()
     {
         return $this->photo;
     }
 
-
     /**
      * A contact detail (e.g. a telephone number or an email address) by which the individual may be contacted.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContactPoint
      * @return $this
      */
-    public function setTelecom(FHIRContactPoint $telecom = null)
+    public function addTelecom(FHIRContactPoint $telecom = null)
     {
         if (null === $telecom) {
             return $this; 
         }
-        $this->telecom = $telecom;
+        $this->telecom[] = $telecom;
         return $this;
     }
 
     /**
      * A contact detail (e.g. a telephone number or an email address) by which the individual may be contacted.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactPoint
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactPoint[]
      */
     public function getTelecom()
     {
         return $this->telecom;
     }
-
 
     /**
      * @return string
@@ -799,17 +1000,44 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
         if (null !== ($v = $this->getActive())) {
             $a['active'] = $v;
         }
-        if (null !== ($v = $this->getAddress())) {
-            $a['address'] = $v;
+        if (0 < count($values = $this->getAddress())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['address'] = $vs;
+            }
+        }
+        if (null !== ($v = $this->getAnimal())) {
+            $a['animal'] = $v;
         }
         if (null !== ($v = $this->getBirthDate())) {
             $a['birthDate'] = $v;
         }
-        if (null !== ($v = $this->getCommunication())) {
-            $a['communication'] = $v;
+        if (0 < count($values = $this->getCommunication())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['communication'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getContact())) {
-            $a['contact'] = $v;
+        if (0 < count($values = $this->getContact())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['contact'] = $vs;
+            }
         }
         if (null !== ($v = $this->getDeceasedBoolean())) {
             $a['deceasedBoolean'] = $v;
@@ -820,14 +1048,38 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
         if (null !== ($v = $this->getGender())) {
             $a['gender'] = $v;
         }
-        if (null !== ($v = $this->getGeneralPractitioner())) {
-            $a['generalPractitioner'] = $v;
+        if (0 < count($values = $this->getGeneralPractitioner())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['generalPractitioner'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getIdentifier())) {
-            $a['identifier'] = $v;
+        if (0 < count($values = $this->getIdentifier())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['identifier'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getLink())) {
-            $a['link'] = $v;
+        if (0 < count($values = $this->getLink())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['link'] = $vs;
+            }
         }
         if (null !== ($v = $this->getManagingOrganization())) {
             $a['managingOrganization'] = $v;
@@ -841,14 +1093,38 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
         if (null !== ($v = $this->getMultipleBirthInteger())) {
             $a['multipleBirthInteger'] = $v;
         }
-        if (null !== ($v = $this->getName())) {
-            $a['name'] = $v;
+        if (0 < count($values = $this->getName())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['name'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getPhoto())) {
-            $a['photo'] = $v;
+        if (0 < count($values = $this->getPhoto())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['photo'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getTelecom())) {
-            $a['telecom'] = $v;
+        if (0 < count($values = $this->getTelecom())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['telecom'] = $vs;
+            }
         }
         return $a;
     }
@@ -863,9 +1139,99 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Patient xmlns="http://hl7.org/fhir"></Patient>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getActive())) {
+            $v->xmlSerialize(true, $sxe->addChild('active'));
         }
-        return $sxe->saveXML();
+        if (0 < count($values = $this->getAddress())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('address'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getAnimal())) {
+            $v->xmlSerialize(true, $sxe->addChild('animal'));
+        }
+        if (null !== ($v = $this->getBirthDate())) {
+            $v->xmlSerialize(true, $sxe->addChild('birthDate'));
+        }
+        if (0 < count($values = $this->getCommunication())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('communication'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getContact())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('contact'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getDeceasedBoolean())) {
+            $v->xmlSerialize(true, $sxe->addChild('deceasedBoolean'));
+        }
+        if (null !== ($v = $this->getDeceasedDateTime())) {
+            $v->xmlSerialize(true, $sxe->addChild('deceasedDateTime'));
+        }
+        if (null !== ($v = $this->getGender())) {
+            $v->xmlSerialize(true, $sxe->addChild('gender'));
+        }
+        if (0 < count($values = $this->getGeneralPractitioner())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('generalPractitioner'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getIdentifier())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('identifier'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getLink())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('link'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getManagingOrganization())) {
+            $v->xmlSerialize(true, $sxe->addChild('managingOrganization'));
+        }
+        if (null !== ($v = $this->getMaritalStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('maritalStatus'));
+        }
+        if (null !== ($v = $this->getMultipleBirthBoolean())) {
+            $v->xmlSerialize(true, $sxe->addChild('multipleBirthBoolean'));
+        }
+        if (null !== ($v = $this->getMultipleBirthInteger())) {
+            $v->xmlSerialize(true, $sxe->addChild('multipleBirthInteger'));
+        }
+        if (0 < count($values = $this->getName())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('name'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getPhoto())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('photo'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getTelecom())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('telecom'));
+                }
+            }
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }

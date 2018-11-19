@@ -6,7 +6,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 9th, 2018
+ * Class creation date: November 19th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -86,88 +86,94 @@ class FHIRProcessRequest extends FHIRDomainResource implements \JsonSerializable
     const FHIR_TYPE_NAME = 'ProcessRequest';
 
     /**
-     * The type of processing action being requested, for example Reversal, Readjudication, StatusRequest, PendedRequest.
+     * The type of processing action being requested, for example Reversal, Readjudication, StatusRequest,PendedRequest.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRActionList
      */
-    public $action = null;
+    private $action = null;
 
     /**
      * The date when this resource was created.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $created = null;
+    private $created = null;
 
     /**
      * Names of resource types to exclude.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public $exclude = null;
+    private $exclude = [];
 
     /**
      * The ProcessRequest business identifier.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = null;
+    private $identifier = [];
 
     /**
      * Names of resource types to include.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public $include = null;
+    private $include = [];
 
     /**
      * List of top level items to be re-adjudicated, if none specified then the entire submission is re-adjudicated.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProcessRequest\FHIRProcessRequestItem
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProcessRequest\FHIRProcessRequestItem[]
      */
-    public $item = null;
+    private $item = [];
 
     /**
      * If true remove all history excluding audit.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $nullify = null;
+    private $nullify = null;
+
+    /**
+     * The organization which is responsible for the action speccified in this request.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    private $organization = null;
 
     /**
      * A period of time during which the fulfilling resources would have been created.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public $period = null;
+    private $period = null;
 
     /**
      * The practitioner who is responsible for the action specified in this request.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $provider = null;
+    private $provider = null;
 
     /**
      * A reference to supply which authenticates the process.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $reference = null;
+    private $reference = null;
 
     /**
      * Reference of resource which is the target or subject of this action.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $request = null;
+    private $request = null;
 
     /**
      * Reference of a prior response to resource which is the target or subject of this action.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $response = null;
+    private $response = null;
 
     /**
      * The status of the resource instance.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRFinancialResourceStatusCodes
      */
-    public $status = null;
+    private $status = null;
 
     /**
      * The organization which is the target of the request.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $target = null;
+    private $target = null;
 
     /**
      * FHIRProcessRequest Constructor
@@ -176,49 +182,194 @@ class FHIRProcessRequest extends FHIRDomainResource implements \JsonSerializable
      */
     public function __construct($data = null)
     {
-        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['action'])) {
-                $this->setAction($data['action']);
+                $value = $data['action'];
+                if (is_array($value)) {
+                    $value = new FHIRActionList($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRActionList($value);
+                }
+                if (!($value instanceof FHIRActionList)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcessRequest::__construct - Property \"action\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRActionList or data to construct type, saw ".gettype($value));
+                }
+                $this->setAction($value);
             }
             if (isset($data['created'])) {
-                $this->setCreated($data['created']);
+                $value = $data['created'];
+                if (is_array($value)) {
+                    $value = new FHIRDateTime($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRDateTime($value);
+                }
+                if (!($value instanceof FHIRDateTime)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcessRequest::__construct - Property \"created\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or data to construct type, saw ".gettype($value));
+                }
+                $this->setCreated($value);
             }
             if (isset($data['exclude'])) {
-                $this->setExclude($data['exclude']);
+                $value = $data['exclude'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRString($v);
+                        }  elseif (is_scalar($v)) {
+                            $v = new FHIRString($v);
+                        }
+                        if (!($v instanceof FHIRString)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcessRequest::__construct - Collection field \"exclude\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addExclude($v);
+                    }
+                }
             }
             if (isset($data['identifier'])) {
-                $this->setIdentifier($data['identifier']);
+                $value = $data['identifier'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRIdentifier($v);
+                        } 
+                        if (!($v instanceof FHIRIdentifier)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcessRequest::__construct - Collection field \"identifier\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRIdentifier or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addIdentifier($v);
+                    }
+                }
             }
             if (isset($data['include'])) {
-                $this->setInclude($data['include']);
+                $value = $data['include'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRString($v);
+                        }  elseif (is_scalar($v)) {
+                            $v = new FHIRString($v);
+                        }
+                        if (!($v instanceof FHIRString)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcessRequest::__construct - Collection field \"include\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addInclude($v);
+                    }
+                }
             }
             if (isset($data['item'])) {
-                $this->setItem($data['item']);
+                $value = $data['item'];
+                if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if (null === $v) {
+                            continue;
+                        } elseif (is_array($v)) {
+                            $v = new FHIRProcessRequestItem($v);
+                        } 
+                        if (!($v instanceof FHIRProcessRequestItem)) {
+                            throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcessRequest::__construct - Collection field \"item\" offset {$i} must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProcessRequest\FHIRProcessRequestItem or data to construct type, saw ".gettype($v));
+                        }
+                        $this->addItem($v);
+                    }
+                }
             }
             if (isset($data['nullify'])) {
-                $this->setNullify($data['nullify']);
+                $value = $data['nullify'];
+                if (is_array($value)) {
+                    $value = new FHIRBoolean($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRBoolean($value);
+                }
+                if (!($value instanceof FHIRBoolean)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcessRequest::__construct - Property \"nullify\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or data to construct type, saw ".gettype($value));
+                }
+                $this->setNullify($value);
+            }
+            if (isset($data['organization'])) {
+                $value = $data['organization'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcessRequest::__construct - Property \"organization\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setOrganization($value);
             }
             if (isset($data['period'])) {
-                $this->setPeriod($data['period']);
+                $value = $data['period'];
+                if (is_array($value)) {
+                    $value = new FHIRPeriod($value);
+                } 
+                if (!($value instanceof FHIRPeriod)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcessRequest::__construct - Property \"period\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRPeriod or data to construct type, saw ".gettype($value));
+                }
+                $this->setPeriod($value);
             }
             if (isset($data['provider'])) {
-                $this->setProvider($data['provider']);
+                $value = $data['provider'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcessRequest::__construct - Property \"provider\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setProvider($value);
             }
             if (isset($data['reference'])) {
-                $this->setReference($data['reference']);
+                $value = $data['reference'];
+                if (is_array($value)) {
+                    $value = new FHIRString($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRString($value);
+                }
+                if (!($value instanceof FHIRString)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcessRequest::__construct - Property \"reference\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or data to construct type, saw ".gettype($value));
+                }
+                $this->setReference($value);
             }
             if (isset($data['request'])) {
-                $this->setRequest($data['request']);
+                $value = $data['request'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcessRequest::__construct - Property \"request\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setRequest($value);
             }
             if (isset($data['response'])) {
-                $this->setResponse($data['response']);
+                $value = $data['response'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcessRequest::__construct - Property \"response\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setResponse($value);
             }
             if (isset($data['status'])) {
-                $this->setStatus($data['status']);
+                $value = $data['status'];
+                if (is_array($value)) {
+                    $value = new FHIRFinancialResourceStatusCodes($value);
+                }  elseif (is_scalar($value)) {
+                    $value = new FHIRFinancialResourceStatusCodes($value);
+                }
+                if (!($value instanceof FHIRFinancialResourceStatusCodes)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcessRequest::__construct - Property \"status\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRFinancialResourceStatusCodes or data to construct type, saw ".gettype($value));
+                }
+                $this->setStatus($value);
             }
             if (isset($data['target'])) {
-                $this->setTarget($data['target']);
+                $value = $data['target'];
+                if (is_array($value)) {
+                    $value = new FHIRReference($value);
+                } 
+                if (!($value instanceof FHIRReference)) {
+                    throw new \InvalidArgumentException("\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcessRequest::__construct - Property \"target\" must either be instance of \PHPFHIRGenerated\FHIRElement\FHIRReference or data to construct type, saw ".gettype($value));
+                }
+                $this->setTarget($value);
             }
         } else if (null !== $data) {
             throw new \InvalidArgumentException(
@@ -227,10 +378,11 @@ class FHIRProcessRequest extends FHIRDomainResource implements \JsonSerializable
                 ' seen.'
             );
         }
+        parent::__construct($data);
     }
 
     /**
-     * The type of processing action being requested, for example Reversal, Readjudication, StatusRequest, PendedRequest.
+     * The type of processing action being requested, for example Reversal, Readjudication, StatusRequest,PendedRequest.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRActionList
      * @return $this
      */
@@ -253,14 +405,13 @@ class FHIRProcessRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The type of processing action being requested, for example Reversal, Readjudication, StatusRequest, PendedRequest.
+     * The type of processing action being requested, for example Reversal, Readjudication, StatusRequest,PendedRequest.
      * @return null|\PHPFHIRGenerated\FHIRElement\FHIRActionList
      */
     public function getAction()
     {
         return $this->action;
     }
-
 
     /**
      * The date when this resource was created.
@@ -294,13 +445,12 @@ class FHIRProcessRequest extends FHIRDomainResource implements \JsonSerializable
         return $this->created;
     }
 
-
     /**
      * Names of resource types to exclude.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
-    public function setExclude($exclude)
+    public function addExclude($exclude)
     {
         if (null === $exclude) {
             return $this; 
@@ -310,54 +460,52 @@ class FHIRProcessRequest extends FHIRDomainResource implements \JsonSerializable
         }
         if (!($exclude instanceof FHIRString)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRProcessRequest::setExclude - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                'FHIRProcessRequest::addExclude - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
                 gettype($exclude)
             ));
         }
-        $this->exclude = $exclude;
+        $this->exclude[] = $exclude;
         return $this;
     }
 
     /**
      * Names of resource types to exclude.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
     public function getExclude()
     {
         return $this->exclude;
     }
 
-
     /**
      * The ProcessRequest business identifier.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      * @return $this
      */
-    public function setIdentifier(FHIRIdentifier $identifier = null)
+    public function addIdentifier(FHIRIdentifier $identifier = null)
     {
         if (null === $identifier) {
             return $this; 
         }
-        $this->identifier = $identifier;
+        $this->identifier[] = $identifier;
         return $this;
     }
 
     /**
      * The ProcessRequest business identifier.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
         return $this->identifier;
     }
 
-
     /**
      * Names of resource types to include.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
-    public function setInclude($include)
+    public function addInclude($include)
     {
         if (null === $include) {
             return $this; 
@@ -367,47 +515,45 @@ class FHIRProcessRequest extends FHIRDomainResource implements \JsonSerializable
         }
         if (!($include instanceof FHIRString)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRProcessRequest::setInclude - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                'FHIRProcessRequest::addInclude - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
                 gettype($include)
             ));
         }
-        $this->include = $include;
+        $this->include[] = $include;
         return $this;
     }
 
     /**
      * Names of resource types to include.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
     public function getInclude()
     {
         return $this->include;
     }
 
-
     /**
      * List of top level items to be re-adjudicated, if none specified then the entire submission is re-adjudicated.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProcessRequest\FHIRProcessRequestItem
      * @return $this
      */
-    public function setItem(FHIRProcessRequestItem $item = null)
+    public function addItem(FHIRProcessRequestItem $item = null)
     {
         if (null === $item) {
             return $this; 
         }
-        $this->item = $item;
+        $this->item[] = $item;
         return $this;
     }
 
     /**
      * List of top level items to be re-adjudicated, if none specified then the entire submission is re-adjudicated.
-     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProcessRequest\FHIRProcessRequestItem
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRProcessRequest\FHIRProcessRequestItem[]
      */
     public function getItem()
     {
         return $this->item;
     }
-
 
     /**
      * If true remove all history excluding audit.
@@ -441,6 +587,28 @@ class FHIRProcessRequest extends FHIRDomainResource implements \JsonSerializable
         return $this->nullify;
     }
 
+    /**
+     * The organization which is responsible for the action speccified in this request.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return $this
+     */
+    public function setOrganization(FHIRReference $organization = null)
+    {
+        if (null === $organization) {
+            return $this; 
+        }
+        $this->organization = $organization;
+        return $this;
+    }
+
+    /**
+     * The organization which is responsible for the action speccified in this request.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getOrganization()
+    {
+        return $this->organization;
+    }
 
     /**
      * A period of time during which the fulfilling resources would have been created.
@@ -465,7 +633,6 @@ class FHIRProcessRequest extends FHIRDomainResource implements \JsonSerializable
         return $this->period;
     }
 
-
     /**
      * The practitioner who is responsible for the action specified in this request.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -488,7 +655,6 @@ class FHIRProcessRequest extends FHIRDomainResource implements \JsonSerializable
     {
         return $this->provider;
     }
-
 
     /**
      * A reference to supply which authenticates the process.
@@ -522,7 +688,6 @@ class FHIRProcessRequest extends FHIRDomainResource implements \JsonSerializable
         return $this->reference;
     }
 
-
     /**
      * Reference of resource which is the target or subject of this action.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -546,7 +711,6 @@ class FHIRProcessRequest extends FHIRDomainResource implements \JsonSerializable
         return $this->request;
     }
 
-
     /**
      * Reference of a prior response to resource which is the target or subject of this action.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -569,7 +733,6 @@ class FHIRProcessRequest extends FHIRDomainResource implements \JsonSerializable
     {
         return $this->response;
     }
-
 
     /**
      * The status of the resource instance.
@@ -603,7 +766,6 @@ class FHIRProcessRequest extends FHIRDomainResource implements \JsonSerializable
         return $this->status;
     }
 
-
     /**
      * The organization which is the target of the request.
      * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -627,7 +789,6 @@ class FHIRProcessRequest extends FHIRDomainResource implements \JsonSerializable
         return $this->target;
     }
 
-
     /**
      * @return string
      */
@@ -649,20 +810,55 @@ class FHIRProcessRequest extends FHIRDomainResource implements \JsonSerializable
         if (null !== ($v = $this->getCreated())) {
             $a['created'] = $v;
         }
-        if (null !== ($v = $this->getExclude())) {
-            $a['exclude'] = $v;
+        if (0 < count($values = $this->getExclude())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['exclude'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getIdentifier())) {
-            $a['identifier'] = $v;
+        if (0 < count($values = $this->getIdentifier())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['identifier'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getInclude())) {
-            $a['include'] = $v;
+        if (0 < count($values = $this->getInclude())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['include'] = $vs;
+            }
         }
-        if (null !== ($v = $this->getItem())) {
-            $a['item'] = $v;
+        if (0 < count($values = $this->getItem())) {
+            $vs = [];
+            foreach($values as $value) {
+                if (null !== $value) {
+                    $vs[] = $value;
+                }
+            }
+            if (0 < count($vs)) {
+                $a['item'] = $vs;
+            }
         }
         if (null !== ($v = $this->getNullify())) {
             $a['nullify'] = $v;
+        }
+        if (null !== ($v = $this->getOrganization())) {
+            $a['organization'] = $v;
         }
         if (null !== ($v = $this->getPeriod())) {
             $a['period'] = $v;
@@ -698,9 +894,67 @@ class FHIRProcessRequest extends FHIRDomainResource implements \JsonSerializable
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ProcessRequest xmlns="http://hl7.org/fhir"></ProcessRequest>');
         }
-        if ($returnSXE) {
-            return $sxe;
+        if (null !== ($v = $this->getAction())) {
+            $v->xmlSerialize(true, $sxe->addChild('action'));
         }
-        return $sxe->saveXML();
+        if (null !== ($v = $this->getCreated())) {
+            $v->xmlSerialize(true, $sxe->addChild('created'));
+        }
+        if (0 < count($values = $this->getExclude())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('exclude'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getIdentifier())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('identifier'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getInclude())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('include'));
+                }
+            }
+        }
+        if (0 < count($values = $this->getItem())) {
+            foreach($values as $v) {
+                if (null !== $v) {
+                    $v->xmlSerialize(true, $sxe->addChild('item'));
+                }
+            }
+        }
+        if (null !== ($v = $this->getNullify())) {
+            $v->xmlSerialize(true, $sxe->addChild('nullify'));
+        }
+        if (null !== ($v = $this->getOrganization())) {
+            $v->xmlSerialize(true, $sxe->addChild('organization'));
+        }
+        if (null !== ($v = $this->getPeriod())) {
+            $v->xmlSerialize(true, $sxe->addChild('period'));
+        }
+        if (null !== ($v = $this->getProvider())) {
+            $v->xmlSerialize(true, $sxe->addChild('provider'));
+        }
+        if (null !== ($v = $this->getReference())) {
+            $v->xmlSerialize(true, $sxe->addChild('reference'));
+        }
+        if (null !== ($v = $this->getRequest())) {
+            $v->xmlSerialize(true, $sxe->addChild('request'));
+        }
+        if (null !== ($v = $this->getResponse())) {
+            $v->xmlSerialize(true, $sxe->addChild('response'));
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $v->xmlSerialize(true, $sxe->addChild('status'));
+        }
+        if (null !== ($v = $this->getTarget())) {
+            $v->xmlSerialize(true, $sxe->addChild('target'));
+        }
+        return parent::xmlSerialize($returnSXE, $sxe);
     }
 }
