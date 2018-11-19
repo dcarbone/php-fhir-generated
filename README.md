@@ -7,7 +7,12 @@ Pre-generated classes from dcarbone/php-fhir
 - Resources: [https://build.fhir.org/resourcelist.html](https://build.fhir.org/resourcelist.html)
 
 `feature/refactor` will contain the latest output from `dcarbone/php-fhir` branch `feature/refactor` based upon the latest (at time of generation) version
-of FHIR.  Use at your own risk.
+of FHIR.
+
+# IN ACTIVE DEVELOPMENT
+
+This branch contains output from an entirely re-written version of the generator where very limited backwards
+compatibility will be guaranteed.
 
 ## Usage
 
