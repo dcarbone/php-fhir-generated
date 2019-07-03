@@ -2,13 +2,11 @@
 
 namespace DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDevice;
 
-include_once __DIR__.'/../../../constants.php';
-
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: June 30th, 2019 14:05+0000
+ * Class creation date: July 3rd, 2019 15:33+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -69,6 +67,8 @@ use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBase64Binary;
 use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRUDIEntryType;
 use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRUri;
+use DCarbone\PHPFHIRGenerated\PHPFHIRConstants;
+use DCarbone\PHPFHIRGenerated\PHPFHIRTypeInterface;
 
 /**
  * A type of a manufactured item that is used in the provision of healthcare
@@ -81,7 +81,7 @@ use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRUri;
 class FHIRDeviceUdiCarrier extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
-    const FHIR_TYPE_NAME = FHIR_TYPE_NAME_DEVICE_DOT_UDI_CARRIER;
+    const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_DEVICE_DOT_UDI_CARRIER;
 
     const FIELD_CARRIER_AIDC = 'carrierAIDC';
     const FIELD_CARRIER_AIDC_EXT = '_carrierAIDC';
@@ -515,7 +515,7 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceUdiCarrier $type
      * @return null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceUdiCarrier
      */
-    public static function xmlUnserialize($sxe = null, $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
     {
         if (null === $sxe) {
             return null;
@@ -651,7 +651,7 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
             $a[self::FIELD_JURISDICTION] = (string)$v;
             $a[self::FIELD_JURISDICTION_EXT] = $v;
         }
-        return [FHIR_JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
     }
 
     /**

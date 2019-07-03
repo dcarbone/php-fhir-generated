@@ -2,13 +2,11 @@
 
 namespace DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductContraindication;
 
-include_once __DIR__.'/../../../constants.php';
-
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: June 30th, 2019 14:05+0000
+ * Class creation date: July 3rd, 2019 15:33+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -67,6 +65,8 @@ include_once __DIR__.'/../../../constants.php';
 use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\PHPFHIRConstants;
+use DCarbone\PHPFHIRGenerated\PHPFHIRTypeInterface;
 
 /**
  * The clinical particulars - indications, contraindications etc. of a medicinal
@@ -78,7 +78,7 @@ use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRReference;
 class FHIRMedicinalProductContraindicationOtherTherapy extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
-    const FHIR_TYPE_NAME = FHIR_TYPE_NAME_MEDICINAL_PRODUCT_CONTRAINDICATION_DOT_OTHER_THERAPY;
+    const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_CONTRAINDICATION_DOT_OTHER_THERAPY;
 
     const FIELD_MEDICATION_CODEABLE_CONCEPT = 'medicationCodeableConcept';
     const FIELD_MEDICATION_REFERENCE = 'medicationReference';
@@ -280,7 +280,7 @@ class FHIRMedicinalProductContraindicationOtherTherapy extends FHIRBackboneEleme
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductContraindication\FHIRMedicinalProductContraindicationOtherTherapy $type
      * @return null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductContraindication\FHIRMedicinalProductContraindicationOtherTherapy
      */
-    public static function xmlUnserialize($sxe = null, $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
     {
         if (null === $sxe) {
             return null;
@@ -354,7 +354,7 @@ class FHIRMedicinalProductContraindicationOtherTherapy extends FHIRBackboneEleme
         if (null !== ($v = $this->getTherapyRelationshipType())) {
             $a[self::FIELD_THERAPY_RELATIONSHIP_TYPE] = $v;
         }
-        return [FHIR_JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
     }
 
     /**

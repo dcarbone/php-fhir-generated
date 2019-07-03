@@ -2,13 +2,11 @@
 
 namespace DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRContract;
 
-include_once __DIR__.'/../../../constants.php';
-
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: June 30th, 2019 14:05+0000
+ * Class creation date: July 3rd, 2019 15:33+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -70,6 +68,8 @@ use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRContractResourcePublicationStatusC
 use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRDateTime;
 use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRMarkdown;
 use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\PHPFHIRConstants;
+use DCarbone\PHPFHIRGenerated\PHPFHIRTypeInterface;
 
 /**
  * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a
@@ -81,7 +81,7 @@ use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRReference;
 class FHIRContractContentDefinition extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
-    const FHIR_TYPE_NAME = FHIR_TYPE_NAME_CONTRACT_DOT_CONTENT_DEFINITION;
+    const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_CONTENT_DEFINITION;
 
     const FIELD_COPYRIGHT = 'copyright';
     const FIELD_COPYRIGHT_EXT = '_copyright';
@@ -482,7 +482,7 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractContentDefinition $type
      * @return null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractContentDefinition
      */
-    public static function xmlUnserialize($sxe = null, $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
     {
         if (null === $sxe) {
             return null;
@@ -597,7 +597,7 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;
         }
-        return [FHIR_JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
     }
 
     /**

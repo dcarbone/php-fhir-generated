@@ -2,13 +2,11 @@
 
 namespace DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit;
 
-include_once __DIR__.'/../../../constants.php';
-
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: June 30th, 2019 14:05+0000
+ * Class creation date: July 3rd, 2019 15:33+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -68,6 +66,8 @@ use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRMoney;
+use DCarbone\PHPFHIRGenerated\PHPFHIRConstants;
+use DCarbone\PHPFHIRGenerated\PHPFHIRTypeInterface;
 
 /**
  * This resource provides: the claim details; adjudication details from the
@@ -80,7 +80,7 @@ use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRMoney;
 class FHIRExplanationOfBenefitAdjudication extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
-    const FHIR_TYPE_NAME = FHIR_TYPE_NAME_EXPLANATION_OF_BENEFIT_DOT_ADJUDICATION;
+    const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_EXPLANATION_OF_BENEFIT_DOT_ADJUDICATION;
 
     const FIELD_AMOUNT = 'amount';
     const FIELD_CATEGORY = 'category';
@@ -351,7 +351,7 @@ class FHIRExplanationOfBenefitAdjudication extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitAdjudication $type
      * @return null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitAdjudication
      */
-    public static function xmlUnserialize($sxe = null, $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
     {
         if (null === $sxe) {
             return null;
@@ -441,7 +441,7 @@ class FHIRExplanationOfBenefitAdjudication extends FHIRBackboneElement
             $a[self::FIELD_VALUE] = (string)$v;
             $a[self::FIELD_VALUE_EXT] = $v;
         }
-        return [FHIR_JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
     }
 
     /**

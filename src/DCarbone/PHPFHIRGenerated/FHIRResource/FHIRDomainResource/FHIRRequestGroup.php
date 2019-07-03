@@ -2,13 +2,11 @@
 
 namespace DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
-include_once __DIR__.'/../../constants.php';
-
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: June 30th, 2019 14:05+0000
+ * Class creation date: July 3rd, 2019 15:33+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -76,7 +74,9 @@ use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRRequestPriority;
 use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRRequestStatus;
 use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
+use DCarbone\PHPFHIRGenerated\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\PHPFHIRContainedTypeInterface;
+use DCarbone\PHPFHIRGenerated\PHPFHIRTypeInterface;
 
 /**
  * A group of related requests that can be used to capture intended activities that
@@ -89,7 +89,7 @@ use DCarbone\PHPFHIRGenerated\PHPFHIRContainedTypeInterface;
 class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterface
 {
     // name of FHIR type this class describes
-    const FHIR_TYPE_NAME = FHIR_TYPE_NAME_REQUEST_GROUP;
+    const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_REQUEST_GROUP;
 
     const FIELD_ACTION = 'action';
     const FIELD_AUTHOR = 'author';
@@ -1404,7 +1404,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRequestGroup $type
      * @return null|\DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRRequestGroup
      */
-    public static function xmlUnserialize($sxe = null, $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
     {
         if (null === $sxe) {
             return null;
@@ -1717,7 +1717,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
         if (null !== ($v = $this->getSubject())) {
             $a[self::FIELD_SUBJECT] = $v;
         }
-        return [FHIR_JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
     }
 
     /**

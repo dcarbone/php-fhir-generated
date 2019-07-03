@@ -2,13 +2,11 @@
 
 namespace DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent;
 
-include_once __DIR__.'/../../../constants.php';
-
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: June 30th, 2019 14:05+0000
+ * Class creation date: July 3rd, 2019 15:33+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -71,6 +69,8 @@ use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRCoding;
 use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRUri;
+use DCarbone\PHPFHIRGenerated\PHPFHIRConstants;
+use DCarbone\PHPFHIRGenerated\PHPFHIRTypeInterface;
 
 /**
  * A record of an event made for purposes of maintaining a security log. Typical
@@ -83,7 +83,7 @@ use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRUri;
 class FHIRAuditEventAgent extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
-    const FHIR_TYPE_NAME = FHIR_TYPE_NAME_AUDIT_EVENT_DOT_AGENT;
+    const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_AUDIT_EVENT_DOT_AGENT;
 
     const FIELD_ALT_ID = 'altId';
     const FIELD_ALT_ID_EXT = '_altId';
@@ -862,7 +862,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventAgent $type
      * @return null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventAgent
      */
-    public static function xmlUnserialize($sxe = null, $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
     {
         if (null === $sxe) {
             return null;
@@ -1067,7 +1067,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
         if (null !== ($v = $this->getWho())) {
             $a[self::FIELD_WHO] = $v;
         }
-        return [FHIR_JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
     }
 
     /**

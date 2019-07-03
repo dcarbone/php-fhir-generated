@@ -2,13 +2,11 @@
 
 namespace DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial;
 
-include_once __DIR__.'/../../../constants.php';
-
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: June 30th, 2019 14:05+0000
+ * Class creation date: July 3rd, 2019 15:33+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -67,6 +65,8 @@ include_once __DIR__.'/../../../constants.php';
 use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\PHPFHIRConstants;
+use DCarbone\PHPFHIRGenerated\PHPFHIRTypeInterface;
 
 /**
  * Source material shall capture information on the taxonomic and anatomical
@@ -89,7 +89,7 @@ use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRString;
 class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
-    const FHIR_TYPE_NAME = FHIR_TYPE_NAME_SUBSTANCE_SOURCE_MATERIAL_DOT_HYBRID;
+    const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SOURCE_MATERIAL_DOT_HYBRID;
 
     const FIELD_HYBRID_TYPE = 'hybridType';
     const FIELD_MATERNAL_ORGANISM_ID = 'maternalOrganismId';
@@ -448,7 +448,7 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialHybrid $type
      * @return null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialHybrid
      */
-    public static function xmlUnserialize($sxe = null, $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
     {
         if (null === $sxe) {
             return null;
@@ -568,7 +568,7 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
             $a[self::FIELD_PATERNAL_ORGANISM_NAME] = (string)$v;
             $a[self::FIELD_PATERNAL_ORGANISM_NAME_EXT] = $v;
         }
-        return [FHIR_JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
     }
 
     /**

@@ -2,13 +2,11 @@
 
 namespace DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSubstanceReferenceInformation;
 
-include_once __DIR__.'/../../../constants.php';
-
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: June 30th, 2019 14:05+0000
+ * Class creation date: July 3rd, 2019 15:33+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -67,6 +65,8 @@ include_once __DIR__.'/../../../constants.php';
 use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\PHPFHIRConstants;
+use DCarbone\PHPFHIRGenerated\PHPFHIRTypeInterface;
 
 /**
  * Todo.
@@ -77,7 +77,7 @@ use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRReference;
 class FHIRSubstanceReferenceInformationClassification extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
-    const FHIR_TYPE_NAME = FHIR_TYPE_NAME_SUBSTANCE_REFERENCE_INFORMATION_DOT_CLASSIFICATION;
+    const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SUBSTANCE_REFERENCE_INFORMATION_DOT_CLASSIFICATION;
 
     const FIELD_CLASSIFICATION = 'classification';
     const FIELD_DOMAIN = 'domain';
@@ -385,7 +385,7 @@ class FHIRSubstanceReferenceInformationClassification extends FHIRBackboneElemen
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationClassification $type
      * @return null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationClassification
      */
-    public static function xmlUnserialize($sxe = null, $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
     {
         if (null === $sxe) {
             return null;
@@ -482,7 +482,7 @@ class FHIRSubstanceReferenceInformationClassification extends FHIRBackboneElemen
         if ([] !== ($vs = $this->getSubtype())) {
             $a[self::FIELD_SUBTYPE] = $vs;
         }
-        return [FHIR_JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
     }
 
     /**

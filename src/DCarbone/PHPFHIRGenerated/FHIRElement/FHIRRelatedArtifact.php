@@ -2,13 +2,11 @@
 
 namespace DCarbone\PHPFHIRGenerated\FHIRElement;
 
-include_once __DIR__.'/../constants.php';
-
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: June 30th, 2019 14:05+0000
+ * Class creation date: July 3rd, 2019 15:33+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -65,6 +63,8 @@ include_once __DIR__.'/../constants.php';
  */
 
 use DCarbone\PHPFHIRGenerated\FHIRElement;
+use DCarbone\PHPFHIRGenerated\PHPFHIRConstants;
+use DCarbone\PHPFHIRGenerated\PHPFHIRTypeInterface;
 
 /**
  * Related artifacts such as additional documentation, justification, or
@@ -78,7 +78,7 @@ use DCarbone\PHPFHIRGenerated\FHIRElement;
 class FHIRRelatedArtifact extends FHIRElement
 {
     // name of FHIR type this class describes
-    const FHIR_TYPE_NAME = FHIR_TYPE_NAME_RELATED_ARTIFACT;
+    const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_RELATED_ARTIFACT;
 
     const FIELD_CITATION = 'citation';
     const FIELD_CITATION_EXT = '_citation';
@@ -552,7 +552,7 @@ class FHIRRelatedArtifact extends FHIRElement
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact $type
      * @return null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact
      */
-    public static function xmlUnserialize($sxe = null, $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
     {
         if (null === $sxe) {
             return null;
@@ -697,7 +697,7 @@ class FHIRRelatedArtifact extends FHIRElement
             $a[self::FIELD_URL] = (string)$v;
             $a[self::FIELD_URL_EXT] = $v;
         }
-        return [FHIR_JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
     }
 
     /**

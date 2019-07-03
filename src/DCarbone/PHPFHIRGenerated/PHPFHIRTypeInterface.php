@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: June 30th, 2019 14:05+0000
+ * Class creation date: July 3rd, 2019 15:33+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,10 +80,10 @@ interface PHPFHIRTypeInterface extends \JsonSerializable {
 
     /**
      * @param \SimpleXMLElement|string|null \$sxe
-     * @param null|\HL7\FHIR\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRObservation $type
-     * @return null|\HL7\FHIR\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRObservation
+     * @param null|\DCarbone\PHPFHIRGenerated\PHPFHIRTypeInterface $type
+     * @return null|static
      */
-    public static function xmlUnserialize($sxe = null, $type = null);
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null);
 
     /**
      * @param null|\SimpleXMLElement \$sxe

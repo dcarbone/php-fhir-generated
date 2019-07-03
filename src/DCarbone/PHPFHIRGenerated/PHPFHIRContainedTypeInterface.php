@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: June 30th, 2019 14:05+0000
+ * Class creation date: July 3rd, 2019 15:33+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,8 +63,7 @@ namespace DCarbone\PHPFHIRGenerated;
  */
 
 /**
- * Interface PHPFHIRContainedTypeInterface
- *
+ * Interface PHPFHIRContainedTypeInterface *
  * This interface is applied to any class that is containable within a 
  * @package \DCarbone\PHPFHIRGenerated
  */

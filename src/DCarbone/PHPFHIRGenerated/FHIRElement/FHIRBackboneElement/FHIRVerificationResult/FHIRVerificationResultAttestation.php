@@ -2,13 +2,11 @@
 
 namespace DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRVerificationResult;
 
-include_once __DIR__.'/../../../constants.php';
-
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: June 30th, 2019 14:05+0000
+ * Class creation date: July 3rd, 2019 15:33+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -70,6 +68,8 @@ use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRDate;
 use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRSignature;
 use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\PHPFHIRConstants;
+use DCarbone\PHPFHIRGenerated\PHPFHIRTypeInterface;
 
 /**
  * Describes validation requirements, source(s), status and dates for one or more
@@ -81,7 +81,7 @@ use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRString;
 class FHIRVerificationResultAttestation extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
-    const FHIR_TYPE_NAME = FHIR_TYPE_NAME_VERIFICATION_RESULT_DOT_ATTESTATION;
+    const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_VERIFICATION_RESULT_DOT_ATTESTATION;
 
     const FIELD_COMMUNICATION_METHOD = 'communicationMethod';
     const FIELD_DATE = 'date';
@@ -591,7 +591,7 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultAttestation $type
      * @return null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultAttestation
      */
-    public static function xmlUnserialize($sxe = null, $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
     {
         if (null === $sxe) {
             return null;
@@ -731,7 +731,7 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
         if (null !== ($v = $this->getWho())) {
             $a[self::FIELD_WHO] = $v;
         }
-        return [FHIR_JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
     }
 
     /**

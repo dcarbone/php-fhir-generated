@@ -2,13 +2,11 @@
 
 namespace DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
-include_once __DIR__.'/../../constants.php';
-
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: June 30th, 2019 14:05+0000
+ * Class creation date: July 3rd, 2019 15:33+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -75,7 +73,9 @@ use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRUsageContext;
 use DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
+use DCarbone\PHPFHIRGenerated\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\PHPFHIRContainedTypeInterface;
+use DCarbone\PHPFHIRGenerated\PHPFHIRTypeInterface;
 
 /**
  * A compartment definition that defines how resources are accessed on a server.
@@ -87,7 +87,7 @@ use DCarbone\PHPFHIRGenerated\PHPFHIRContainedTypeInterface;
 class FHIRCompartmentDefinition extends FHIRDomainResource implements PHPFHIRContainedTypeInterface
 {
     // name of FHIR type this class describes
-    const FHIR_TYPE_NAME = FHIR_TYPE_NAME_COMPARTMENT_DEFINITION;
+    const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_COMPARTMENT_DEFINITION;
 
     const FIELD_CODE = 'code';
     const FIELD_CONTACT = 'contact';
@@ -1143,7 +1143,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements PHPFHIRCon
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCompartmentDefinition $type
      * @return null|\DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRCompartmentDefinition
      */
-    public static function xmlUnserialize($sxe = null, $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
     {
         if (null === $sxe) {
             return null;
@@ -1400,7 +1400,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements PHPFHIRCon
             $a[self::FIELD_VERSION] = (string)$v;
             $a[self::FIELD_VERSION_EXT] = $v;
         }
-        return [FHIR_JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
     }
 
     /**

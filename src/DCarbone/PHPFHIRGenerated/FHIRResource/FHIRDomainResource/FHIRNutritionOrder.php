@@ -2,13 +2,11 @@
 
 namespace DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
-include_once __DIR__.'/../../constants.php';
-
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: June 30th, 2019 14:05+0000
+ * Class creation date: July 3rd, 2019 15:33+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -77,7 +75,9 @@ use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRRequestIntent;
 use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRRequestStatus;
 use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
+use DCarbone\PHPFHIRGenerated\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\PHPFHIRContainedTypeInterface;
+use DCarbone\PHPFHIRGenerated\PHPFHIRTypeInterface;
 
 /**
  * A request to supply a diet, formula feeding (enteral) or oral nutritional
@@ -90,7 +90,7 @@ use DCarbone\PHPFHIRGenerated\PHPFHIRContainedTypeInterface;
 class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedTypeInterface
 {
     // name of FHIR type this class describes
-    const FHIR_TYPE_NAME = FHIR_TYPE_NAME_NUTRITION_ORDER;
+    const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_NUTRITION_ORDER;
 
     const FIELD_ALLERGY_INTOLERANCE = 'allergyIntolerance';
     const FIELD_DATE_TIME = 'dateTime';
@@ -1431,7 +1431,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRNutritionOrder $type
      * @return null|\DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRNutritionOrder
      */
-    public static function xmlUnserialize($sxe = null, $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
     {
         if (null === $sxe) {
             return null;
@@ -1752,7 +1752,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
         if ([] !== ($vs = $this->getSupplement())) {
             $a[self::FIELD_SUPPLEMENT] = $vs;
         }
-        return [FHIR_JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
     }
 
     /**

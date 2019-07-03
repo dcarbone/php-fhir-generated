@@ -2,13 +2,11 @@
 
 namespace DCarbone\PHPFHIRGenerated;
 
-include_once __DIR__.'/constants.php';
-
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: June 30th, 2019 14:05+0000
+ * Class creation date: July 3rd, 2019 15:33+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -71,7 +69,7 @@ include_once __DIR__.'/constants.php';
 class FHIRUnitsOfTimeList implements PHPFHIRTypeInterface
 {
     // name of FHIR type this class describes
-    const FHIR_TYPE_NAME = 'UnitsOfTime-list';
+    const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_UNITS_OF_TIME_HYPHEN_LIST;
 
     const FIELD_VALUE = 'value';
 
@@ -157,7 +155,7 @@ class FHIRUnitsOfTimeList implements PHPFHIRTypeInterface
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRUnitsOfTimeList $type
      * @return null|\DCarbone\PHPFHIRGenerated\FHIRUnitsOfTimeList
      */
-    public static function xmlUnserialize($sxe = null, $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
     {
         if (null === $sxe) {
             return null;

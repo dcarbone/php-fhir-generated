@@ -2,13 +2,11 @@
 
 namespace DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
-include_once __DIR__.'/../../constants.php';
-
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: June 30th, 2019 14:05+0000
+ * Class creation date: July 3rd, 2019 15:33+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -74,6 +72,8 @@ use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRPeriod;
 use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
+use DCarbone\PHPFHIRGenerated\PHPFHIRConstants;
+use DCarbone\PHPFHIRGenerated\PHPFHIRTypeInterface;
 
 /**
  * This resource provides the target, request and response, and action details for
@@ -86,7 +86,7 @@ use DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 class FHIRProcessRequest extends FHIRDomainResource
 {
     // name of FHIR type this class describes
-    const FHIR_TYPE_NAME = FHIR_TYPE_NAME_PROCESS_REQUEST;
+    const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PROCESS_REQUEST;
 
     const FIELD_ACTION = 'action';
     const FIELD_CREATED = 'created';
@@ -1026,7 +1026,7 @@ class FHIRProcessRequest extends FHIRDomainResource
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcessRequest $type
      * @return null|\DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRProcessRequest
      */
-    public static function xmlUnserialize($sxe = null, $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
     {
         if (null === $sxe) {
             return null;
@@ -1282,7 +1282,7 @@ class FHIRProcessRequest extends FHIRDomainResource
         if (null !== ($v = $this->getTarget())) {
             $a[self::FIELD_TARGET] = $v;
         }
-        return [FHIR_JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
     }
 
     /**

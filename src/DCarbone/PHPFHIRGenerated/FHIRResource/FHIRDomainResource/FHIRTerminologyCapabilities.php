@@ -2,13 +2,11 @@
 
 namespace DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
-include_once __DIR__.'/../../constants.php';
-
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: June 30th, 2019 14:05+0000
+ * Class creation date: July 3rd, 2019 15:33+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,7 +81,9 @@ use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRUsageContext;
 use DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
+use DCarbone\PHPFHIRGenerated\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\PHPFHIRContainedTypeInterface;
+use DCarbone\PHPFHIRGenerated\PHPFHIRTypeInterface;
 
 /**
  * A TerminologyCapabilities resource documents a set of capabilities (behaviors)
@@ -97,7 +97,7 @@ use DCarbone\PHPFHIRGenerated\PHPFHIRContainedTypeInterface;
 class FHIRTerminologyCapabilities extends FHIRDomainResource implements PHPFHIRContainedTypeInterface
 {
     // name of FHIR type this class describes
-    const FHIR_TYPE_NAME = FHIR_TYPE_NAME_TERMINOLOGY_CAPABILITIES;
+    const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_TERMINOLOGY_CAPABILITIES;
 
     const FIELD_CLOSURE = 'closure';
     const FIELD_CODE_SEARCH = 'codeSearch';
@@ -1783,7 +1783,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements PHPFHIRC
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTerminologyCapabilities $type
      * @return null|\DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRTerminologyCapabilities
      */
-    public static function xmlUnserialize($sxe = null, $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
     {
         if (null === $sxe) {
             return null;
@@ -2151,7 +2151,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements PHPFHIRC
             $a[self::FIELD_VERSION] = (string)$v;
             $a[self::FIELD_VERSION_EXT] = $v;
         }
-        return [FHIR_JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
     }
 
     /**
