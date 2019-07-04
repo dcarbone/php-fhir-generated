@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 4th, 2019 21:57+0000
+ * Class creation date: July 4th, 2019 22:05+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -169,18 +169,20 @@ class FHIRDomainResource extends FHIRResource
         parent::__construct($data);
         if (isset($data[self::FIELD_CONTAINED])) {
             if (is_array($data[self::FIELD_CONTAINED])) {
-                $this->setContained($data[self::FIELD_CONTAINED]);
+                if (is_int(key($data[self::FIELD_CONTAINED]))) {
+                    $this->setContained($data[self::FIELD_CONTAINED]);
+                } else {
+                    $typeClass = PHPFHIRTypeMap::getContainedTypeFromArray($data[self::FIELD_CONTAINED]);
+                    if (null === $typeClass) {
+                        throw new \InvalidArgumentException(sprintf(
+                            'FHIRDomainResource - Unable to determine class for field "contained" from value: %s',
+                            json_encode($data[self::FIELD_CONTAINED])
+                        ));
+                    }
+                    $this->addContained(new $typeClass($data[self::FIELD_CONTAINED]));
+                }
             } else if ($data[self::FIELD_CONTAINED] instanceof PHPFHIRContainedTypeInterface) {
                 $this->addContained($data[self::FIELD_CONTAINED]);
-            } else {
-                $typeClass = PHPFHIRTypeMap::getContainedTypeFromArray($data[self::FIELD_CONTAINED]);
-                if (null === $typeClass) {
-                    throw new \InvalidArgumentException(sprintf(
-                        'FHIRDomainResource - Unable to determine class for field "contained" from value: %s',
-                        json_encode($data[self::FIELD_CONTAINED])
-                    ));
-                }
-                $this->addContained(new $typeClass($data[self::FIELD_CONTAINED]));
             }
         }
         if (isset($data[self::FIELD_EXTENSION])) {
