@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 3rd, 2019 15:33+0000
+ * Class creation date: July 4th, 2019 21:57+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -169,35 +169,7 @@ class FHIRDomainResource extends FHIRResource
         parent::__construct($data);
         if (isset($data[self::FIELD_CONTAINED])) {
             if (is_array($data[self::FIELD_CONTAINED])) {
-                foreach($data[self::FIELD_CONTAINED] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if (is_object($v)) {
-                        if ($v instanceof PHPFHIRContainedTypeInterface) {
-                            $this->addContained($v);
-                        } else {
-                            throw new \InvalidArgumentException(sprintf(
-                                'FHIRDomainResource - Field "contained" must be an array of objects implementing PHPFHIRContainedTypeInterface, object of type %s seen',
-                                get_class($v)
-                            ));
-                        }
-                    } else if (is_array($v)) {
-                        $typeClass = PHPFHIRTypeMap::getContainedTypeFromArray($v);
-                        if (null === $typeClass) {
-                            throw new \InvalidArgumentException(sprintf(
-                                'FHIRDomainResource - Unable to determine class for field "contained" from value: %s',
-                                json_encode($v)
-                            ));
-                        }
-                        $this->addContained(new $typeClass($v));
-                    } else {
-                        throw new \InvalidArgumentException(sprintf(
-                            'FHIRDomainResource - Unable to determine class for field "contained" from value: %s',
-                            json_encode($v)
-                        ));
-                    }
-                }
+                $this->setContained($data[self::FIELD_CONTAINED]);
             } else if ($data[self::FIELD_CONTAINED] instanceof PHPFHIRContainedTypeInterface) {
                 $this->addContained($data[self::FIELD_CONTAINED]);
             } else {
@@ -305,10 +277,32 @@ class FHIRDomainResource extends FHIRResource
             return $this;
         }
         foreach($contained as $v) {
-            if ($v instanceof FHIRResourceContainer) {
-                $this->addContained($v);
+            if (null === $v) {
+                continue;
+            }
+            if (is_object($v)) {
+                if ($v instanceof PHPFHIRContainedTypeInterface) {
+                    $this->addContained($v);
+                } else {
+                    throw new \InvalidArgumentException(sprintf(
+                        'FHIRDomainResource - Field "contained" must be an array of objects implementing PHPFHIRContainedTypeInterface, object of type %s seen',
+                        get_class($v)
+                    ));
+                }
+            } else if (is_array($v)) {
+                $typeClass = PHPFHIRTypeMap::getContainedTypeFromArray($v);
+                if (null === $typeClass) {
+                    throw new \InvalidArgumentException(sprintf(
+                        'FHIRDomainResource - Unable to determine class for field "contained" from value: %s',
+                        json_encode($v)
+                    ));
+                }
+                $this->addContained(new $typeClass($v));
             } else {
-                $this->addContained(new FHIRResourceContainer($v));
+                throw new \InvalidArgumentException(sprintf(
+                    'FHIRDomainResource - Unable to determine class for field "contained" from value: %s',
+                    json_encode($v)
+                ));
             }
         }
         return $this;

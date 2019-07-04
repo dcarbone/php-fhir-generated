@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSupplyDe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 3rd, 2019 15:33+0000
+ * Class creation date: July 4th, 2019 21:57+0000
  * 
  * PHPFHIR Copyright:
  * 
