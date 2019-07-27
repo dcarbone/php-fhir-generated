@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 4th, 2019 22:05+0000
+ * Class creation date: July 27th, 2019 15:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1454,24 +1454,22 @@ abstract class PHPFHIRTypeMap
 
     /**
      * @param \SimpleXMLElement $sxe Parent element containing inline resource
-     * @return object|null
+     * @return \DCarbone\PHPFHIRGenerated\PHPFHIRContainedTypeInterface|null
      */
     public static function getContainedTypeFromXML(\SimpleXMLElement $sxe)
     {
-        foreach($sxe->children() as $child) {
-            $typeName = $child->getName();
-            $className = self::getContainedTypeClassName($typeName);
-            if (null === $className) {
-                throw self::createdInvalidContainedTypeException($typeName);
-            }
-            return $className::xmlUnserialize($child);
+        $typeName = $sxe->getName();
+        $className = self::getContainedTypeClassName($typeName);
+        if (null === $className) {
+            throw self::createdInvalidContainedTypeException($typeName);
         }
-        return null;
+        /** @var \DCarbone\PHPFHIRGenerated\PHPFHIRContainedTypeInterface $className */
+        return $className::xmlUnserialize($sxe);
     }
 
     /**
      * @param array|null $data
-     * @return object|null
+     * @return \DCarbone\PHPFHIRGenerated\PHPFHIRContainedTypeInterface|null
      */
     public static function getContainedTypeFromArray($data)
     {

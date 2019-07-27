@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRBundle;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 4th, 2019 22:05+0000
+ * Class creation date: July 27th, 2019 15:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -515,7 +515,7 @@ class FHIRBundleEntry extends FHIRBackboneElement
             $type->setRequest(FHIRBundleRequest::xmlUnserialize($children->request));
         }
         if (isset($children->resource)) {
-            $type->setResource(FHIRResourceContainer::xmlUnserialize($children->resource));
+            $type->setResource(PHPFHIRTypeMap::getContainedTypeFromXML($child$children->resource));
         }
         if (isset($children->response)) {
             $type->setResponse(FHIRBundleResponse::xmlUnserialize($children->response));
