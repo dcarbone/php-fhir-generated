@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRDosage;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 27th, 2019 15:22+0000
+ * Class creation date: July 27th, 2019 15:55+0000
  * 
  * PHPFHIR Copyright:
  * 
