@@ -24,9 +24,6 @@
     "ext-simplexml": "*"
   },
   "autoload": {
-    "files": [
-      "src/DCarbone/PHPFHIRGenerated/constants.php"
-    ],
     "psr-0": {
       "PHPFHIRGenerated\\": "./src"
     }
