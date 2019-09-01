@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRNamingSy
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 17th, 2019 18:15+0000
+ * Class creation date: September 1st, 2019 15:45+0000
  * 
  * PHPFHIR Copyright:
  * 
