@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 1st, 2019 15:50+0000
+ * Class creation date: September 7th, 2019 20:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1587,7 +1587,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
     }
 
     /**
-     * @param \SimpleXMLElement|string|null \$sxe
+     * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImagingStudy $type
      * @return null|\DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImagingStudy
      */
@@ -1608,7 +1608,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
             throw new \InvalidArgumentException(sprintf('FHIRImagingStudy::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRDomainResource::xmlUnserialize(\$sxe, new FHIRImagingStudy);
+            $type = FHIRDomainResource::xmlUnserialize($sxe, new FHIRImagingStudy);
         } elseif (!is_object($type) || !($type instanceof FHIRImagingStudy)) {
             throw new \RuntimeException(sprintf(
                 'FHIRImagingStudy::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRImagingStudy or null, %s seen.',
@@ -1713,7 +1713,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
     }
 
     /**
-     * @param null|\SimpleXMLElement \$sxe
+     * @param null|\SimpleXMLElement $sxe
      * @return \SimpleXMLElement
      */
     public function xmlSerialize(\SimpleXMLElement $sxe = null)

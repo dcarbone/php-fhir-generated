@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMessageD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 1st, 2019 15:50+0000
+ * Class creation date: September 7th, 2019 20:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -378,7 +378,7 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null \$sxe
+     * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionFocus $type
      * @return null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionFocus
      */
@@ -399,7 +399,7 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIRMessageDefinitionFocus::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize(\$sxe, new FHIRMessageDefinitionFocus);
+            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIRMessageDefinitionFocus);
         } elseif (!is_object($type) || !($type instanceof FHIRMessageDefinitionFocus)) {
             throw new \RuntimeException(sprintf(
                 'FHIRMessageDefinitionFocus::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionFocus or null, %s seen.',
@@ -436,7 +436,7 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
     }
 
     /**
-     * @param null|\SimpleXMLElement \$sxe
+     * @param null|\SimpleXMLElement $sxe
      * @return \SimpleXMLElement
      */
     public function xmlSerialize(\SimpleXMLElement $sxe = null)

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanat
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 1st, 2019 15:50+0000
+ * Class creation date: September 7th, 2019 20:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -335,7 +335,7 @@ class FHIRExplanationOfBenefitInsurance extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null \$sxe
+     * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitInsurance $type
      * @return null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitInsurance
      */
@@ -356,7 +356,7 @@ class FHIRExplanationOfBenefitInsurance extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIRExplanationOfBenefitInsurance::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize(\$sxe, new FHIRExplanationOfBenefitInsurance);
+            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIRExplanationOfBenefitInsurance);
         } elseif (!is_object($type) || !($type instanceof FHIRExplanationOfBenefitInsurance)) {
             throw new \RuntimeException(sprintf(
                 'FHIRExplanationOfBenefitInsurance::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitInsurance or null, %s seen.',
@@ -386,7 +386,7 @@ class FHIRExplanationOfBenefitInsurance extends FHIRBackboneElement
     }
 
     /**
-     * @param null|\SimpleXMLElement \$sxe
+     * @param null|\SimpleXMLElement $sxe
      * @return \SimpleXMLElement
      */
     public function xmlSerialize(\SimpleXMLElement $sxe = null)

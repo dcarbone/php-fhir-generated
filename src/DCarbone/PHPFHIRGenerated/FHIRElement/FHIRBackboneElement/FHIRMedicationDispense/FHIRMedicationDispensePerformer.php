@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMedicati
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 1st, 2019 15:50+0000
+ * Class creation date: September 7th, 2019 20:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -217,7 +217,7 @@ class FHIRMedicationDispensePerformer extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null \$sxe
+     * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispensePerformer $type
      * @return null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispensePerformer
      */
@@ -238,7 +238,7 @@ class FHIRMedicationDispensePerformer extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIRMedicationDispensePerformer::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize(\$sxe, new FHIRMedicationDispensePerformer);
+            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIRMedicationDispensePerformer);
         } elseif (!is_object($type) || !($type instanceof FHIRMedicationDispensePerformer)) {
             throw new \RuntimeException(sprintf(
                 'FHIRMedicationDispensePerformer::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispensePerformer or null, %s seen.',
@@ -257,7 +257,7 @@ class FHIRMedicationDispensePerformer extends FHIRBackboneElement
     }
 
     /**
-     * @param null|\SimpleXMLElement \$sxe
+     * @param null|\SimpleXMLElement $sxe
      * @return \SimpleXMLElement
      */
     public function xmlSerialize(\SimpleXMLElement $sxe = null)

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRUserSess
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 1st, 2019 15:50+0000
+ * Class creation date: September 7th, 2019 20:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,7 +63,7 @@ namespace DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRUserSess
  */
 
 use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRUserSessionStatus;
+use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRUserSessionStatus as FHIRUserSessionStatus1;
 use DCarbone\PHPFHIRGenerated\FHIRElement\FHIRUserSessionStatusSource;
 use DCarbone\PHPFHIRGenerated\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\PHPFHIRTypeInterface;
@@ -199,7 +199,7 @@ class FHIRUserSessionStatus extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null \$sxe
+     * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRUserSession\FHIRUserSessionStatus $type
      * @return null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRUserSession\FHIRUserSessionStatus
      */
@@ -220,7 +220,7 @@ class FHIRUserSessionStatus extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIRUserSessionStatus::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize(\$sxe, new FHIRUserSessionStatus);
+            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIRUserSessionStatus);
         } elseif (!is_object($type) || !($type instanceof FHIRUserSessionStatus)) {
             throw new \RuntimeException(sprintf(
                 'FHIRUserSessionStatus::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRUserSession\FHIRUserSessionStatus or null, %s seen.',
@@ -239,7 +239,7 @@ class FHIRUserSessionStatus extends FHIRBackboneElement
     }
 
     /**
-     * @param null|\SimpleXMLElement \$sxe
+     * @param null|\SimpleXMLElement $sxe
      * @return \SimpleXMLElement
      */
     public function xmlSerialize(\SimpleXMLElement $sxe = null)

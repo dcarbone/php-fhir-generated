@@ -23,9 +23,12 @@
     "ext-json": "*",
     "ext-simplexml": "*"
   },
+  "require-dev": {
+    "phpunit/phpunit": "@stable"
+  },
   "autoload": {
     "psr-0": {
-      "PHPFHIRGenerated\\": "./src"
+      "DCarbone\\PHPFHIRGenerated\\": "./src"
     }
   }
 }

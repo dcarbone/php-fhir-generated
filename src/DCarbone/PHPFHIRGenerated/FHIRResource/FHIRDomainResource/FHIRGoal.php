@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 1st, 2019 15:50+0000
+ * Class creation date: September 7th, 2019 20:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1301,7 +1301,7 @@ class FHIRGoal extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     }
 
     /**
-     * @param \SimpleXMLElement|string|null \$sxe
+     * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRGoal $type
      * @return null|\DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRGoal
      */
@@ -1322,7 +1322,7 @@ class FHIRGoal extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
             throw new \InvalidArgumentException(sprintf('FHIRGoal::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRDomainResource::xmlUnserialize(\$sxe, new FHIRGoal);
+            $type = FHIRDomainResource::xmlUnserialize($sxe, new FHIRGoal);
         } elseif (!is_object($type) || !($type instanceof FHIRGoal)) {
             throw new \RuntimeException(sprintf(
                 'FHIRGoal::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRGoal or null, %s seen.',
@@ -1409,7 +1409,7 @@ class FHIRGoal extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     }
 
     /**
-     * @param null|\SimpleXMLElement \$sxe
+     * @param null|\SimpleXMLElement $sxe
      * @return \SimpleXMLElement
      */
     public function xmlSerialize(\SimpleXMLElement $sxe = null)

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 1st, 2019 15:50+0000
+ * Class creation date: September 7th, 2019 20:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1148,7 +1148,7 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements PH
     }
 
     /**
-     * @param \SimpleXMLElement|string|null \$sxe
+     * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductAuthorization $type
      * @return null|\DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductAuthorization
      */
@@ -1169,7 +1169,7 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements PH
             throw new \InvalidArgumentException(sprintf('FHIRMedicinalProductAuthorization::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRDomainResource::xmlUnserialize(\$sxe, new FHIRMedicinalProductAuthorization);
+            $type = FHIRDomainResource::xmlUnserialize($sxe, new FHIRMedicinalProductAuthorization);
         } elseif (!is_object($type) || !($type instanceof FHIRMedicinalProductAuthorization)) {
             throw new \RuntimeException(sprintf(
                 'FHIRMedicinalProductAuthorization::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRMedicinalProductAuthorization or null, %s seen.',
@@ -1250,7 +1250,7 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements PH
     }
 
     /**
-     * @param null|\SimpleXMLElement \$sxe
+     * @param null|\SimpleXMLElement $sxe
      * @return \SimpleXMLElement
      */
     public function xmlSerialize(\SimpleXMLElement $sxe = null)

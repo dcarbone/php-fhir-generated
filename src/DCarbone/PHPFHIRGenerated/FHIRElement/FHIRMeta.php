@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 1st, 2019 15:50+0000
+ * Class creation date: September 7th, 2019 20:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -617,7 +617,7 @@ class FHIRMeta extends FHIRElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null \$sxe
+     * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRMeta $type
      * @return null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRMeta
      */
@@ -638,7 +638,7 @@ class FHIRMeta extends FHIRElement
             throw new \InvalidArgumentException(sprintf('FHIRMeta::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRElement::xmlUnserialize(\$sxe, new FHIRMeta);
+            $type = FHIRElement::xmlUnserialize($sxe, new FHIRMeta);
         } elseif (!is_object($type) || !($type instanceof FHIRMeta)) {
             throw new \RuntimeException(sprintf(
                 'FHIRMeta::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\FHIRElement\FHIRMeta or null, %s seen.',
@@ -687,7 +687,7 @@ class FHIRMeta extends FHIRElement
     }
 
     /**
-     * @param null|\SimpleXMLElement \$sxe
+     * @param null|\SimpleXMLElement $sxe
      * @return \SimpleXMLElement
      */
     public function xmlSerialize(\SimpleXMLElement $sxe = null)

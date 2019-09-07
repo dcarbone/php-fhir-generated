@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 1st, 2019 15:50+0000
+ * Class creation date: September 7th, 2019 20:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -857,7 +857,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
     }
 
     /**
-     * @param \SimpleXMLElement|string|null \$sxe
+     * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRBiologicallyDerivedProduct $type
      * @return null|\DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRBiologicallyDerivedProduct
      */
@@ -878,7 +878,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
             throw new \InvalidArgumentException(sprintf('FHIRBiologicallyDerivedProduct::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRDomainResource::xmlUnserialize(\$sxe, new FHIRBiologicallyDerivedProduct);
+            $type = FHIRDomainResource::xmlUnserialize($sxe, new FHIRBiologicallyDerivedProduct);
         } elseif (!is_object($type) || !($type instanceof FHIRBiologicallyDerivedProduct)) {
             throw new \RuntimeException(sprintf(
                 'FHIRBiologicallyDerivedProduct::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRBiologicallyDerivedProduct or null, %s seen.',
@@ -937,7 +937,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
     }
 
     /**
-     * @param null|\SimpleXMLElement \$sxe
+     * @param null|\SimpleXMLElement $sxe
      * @return \SimpleXMLElement
      */
     public function xmlSerialize(\SimpleXMLElement $sxe = null)

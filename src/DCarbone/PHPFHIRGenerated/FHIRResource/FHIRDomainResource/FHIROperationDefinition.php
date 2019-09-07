@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 1st, 2019 15:50+0000
+ * Class creation date: September 7th, 2019 20:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -2038,7 +2038,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
     }
 
     /**
-     * @param \SimpleXMLElement|string|null \$sxe
+     * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROperationDefinition $type
      * @return null|\DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROperationDefinition
      */
@@ -2059,7 +2059,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
             throw new \InvalidArgumentException(sprintf('FHIROperationDefinition::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRDomainResource::xmlUnserialize(\$sxe, new FHIROperationDefinition);
+            $type = FHIRDomainResource::xmlUnserialize($sxe, new FHIROperationDefinition);
         } elseif (!is_object($type) || !($type instanceof FHIROperationDefinition)) {
             throw new \RuntimeException(sprintf(
                 'FHIROperationDefinition::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIROperationDefinition or null, %s seen.',
@@ -2219,7 +2219,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
     }
 
     /**
-     * @param null|\SimpleXMLElement \$sxe
+     * @param null|\SimpleXMLElement $sxe
      * @return \SimpleXMLElement
      */
     public function xmlSerialize(\SimpleXMLElement $sxe = null)

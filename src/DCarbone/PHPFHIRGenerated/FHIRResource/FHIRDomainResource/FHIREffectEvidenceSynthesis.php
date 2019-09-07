@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 1st, 2019 15:50+0000
+ * Class creation date: September 7th, 2019 20:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -2579,7 +2579,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
     }
 
     /**
-     * @param \SimpleXMLElement|string|null \$sxe
+     * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis $type
      * @return null|\DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
      */
@@ -2600,7 +2600,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
             throw new \InvalidArgumentException(sprintf('FHIREffectEvidenceSynthesis::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRDomainResource::xmlUnserialize(\$sxe, new FHIREffectEvidenceSynthesis);
+            $type = FHIRDomainResource::xmlUnserialize($sxe, new FHIREffectEvidenceSynthesis);
         } elseif (!is_object($type) || !($type instanceof FHIREffectEvidenceSynthesis)) {
             throw new \RuntimeException(sprintf(
                 'FHIREffectEvidenceSynthesis::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis or null, %s seen.',
@@ -2770,7 +2770,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
     }
 
     /**
-     * @param null|\SimpleXMLElement \$sxe
+     * @param null|\SimpleXMLElement $sxe
      * @return \SimpleXMLElement
      */
     public function xmlSerialize(\SimpleXMLElement $sxe = null)

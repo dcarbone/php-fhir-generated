@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIREpisodeO
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 1st, 2019 15:50+0000
+ * Class creation date: September 7th, 2019 20:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -280,7 +280,7 @@ class FHIREpisodeOfCareDiagnosis extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null \$sxe
+     * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIREpisodeOfCare\FHIREpisodeOfCareDiagnosis $type
      * @return null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIREpisodeOfCare\FHIREpisodeOfCareDiagnosis
      */
@@ -301,7 +301,7 @@ class FHIREpisodeOfCareDiagnosis extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIREpisodeOfCareDiagnosis::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize(\$sxe, new FHIREpisodeOfCareDiagnosis);
+            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIREpisodeOfCareDiagnosis);
         } elseif (!is_object($type) || !($type instanceof FHIREpisodeOfCareDiagnosis)) {
             throw new \RuntimeException(sprintf(
                 'FHIREpisodeOfCareDiagnosis::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIREpisodeOfCare\FHIREpisodeOfCareDiagnosis or null, %s seen.',
@@ -326,7 +326,7 @@ class FHIREpisodeOfCareDiagnosis extends FHIRBackboneElement
     }
 
     /**
-     * @param null|\SimpleXMLElement \$sxe
+     * @param null|\SimpleXMLElement $sxe
      * @return \SimpleXMLElement
      */
     public function xmlSerialize(\SimpleXMLElement $sxe = null)

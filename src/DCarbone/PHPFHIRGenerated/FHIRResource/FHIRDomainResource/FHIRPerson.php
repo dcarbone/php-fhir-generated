@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 1st, 2019 15:50+0000
+ * Class creation date: September 7th, 2019 20:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -823,7 +823,7 @@ class FHIRPerson extends FHIRDomainResource implements PHPFHIRContainedTypeInter
     }
 
     /**
-     * @param \SimpleXMLElement|string|null \$sxe
+     * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPerson $type
      * @return null|\DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPerson
      */
@@ -844,7 +844,7 @@ class FHIRPerson extends FHIRDomainResource implements PHPFHIRContainedTypeInter
             throw new \InvalidArgumentException(sprintf('FHIRPerson::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRDomainResource::xmlUnserialize(\$sxe, new FHIRPerson);
+            $type = FHIRDomainResource::xmlUnserialize($sxe, new FHIRPerson);
         } elseif (!is_object($type) || !($type instanceof FHIRPerson)) {
             throw new \RuntimeException(sprintf(
                 'FHIRPerson::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPerson or null, %s seen.',
@@ -903,7 +903,7 @@ class FHIRPerson extends FHIRDomainResource implements PHPFHIRContainedTypeInter
     }
 
     /**
-     * @param null|\SimpleXMLElement \$sxe
+     * @param null|\SimpleXMLElement $sxe
      * @return \SimpleXMLElement
      */
     public function xmlSerialize(\SimpleXMLElement $sxe = null)

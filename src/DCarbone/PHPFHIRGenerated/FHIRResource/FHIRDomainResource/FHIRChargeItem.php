@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 1st, 2019 15:50+0000
+ * Class creation date: September 7th, 2019 20:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -2108,7 +2108,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     }
 
     /**
-     * @param \SimpleXMLElement|string|null \$sxe
+     * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRChargeItem $type
      * @return null|\DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRChargeItem
      */
@@ -2129,7 +2129,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
             throw new \InvalidArgumentException(sprintf('FHIRChargeItem::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRDomainResource::xmlUnserialize(\$sxe, new FHIRChargeItem);
+            $type = FHIRDomainResource::xmlUnserialize($sxe, new FHIRChargeItem);
         } elseif (!is_object($type) || !($type instanceof FHIRChargeItem)) {
             throw new \RuntimeException(sprintf(
                 'FHIRChargeItem::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRChargeItem or null, %s seen.',
@@ -2269,7 +2269,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     }
 
     /**
-     * @param null|\SimpleXMLElement \$sxe
+     * @param null|\SimpleXMLElement $sxe
      * @return \SimpleXMLElement
      */
     public function xmlSerialize(\SimpleXMLElement $sxe = null)

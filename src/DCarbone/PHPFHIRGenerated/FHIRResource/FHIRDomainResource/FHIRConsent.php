@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 1st, 2019 15:50+0000
+ * Class creation date: September 7th, 2019 20:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1094,7 +1094,7 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     }
 
     /**
-     * @param \SimpleXMLElement|string|null \$sxe
+     * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRConsent $type
      * @return null|\DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRConsent
      */
@@ -1115,7 +1115,7 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
             throw new \InvalidArgumentException(sprintf('FHIRConsent::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRDomainResource::xmlUnserialize(\$sxe, new FHIRConsent);
+            $type = FHIRDomainResource::xmlUnserialize($sxe, new FHIRConsent);
         } elseif (!is_object($type) || !($type instanceof FHIRConsent)) {
             throw new \RuntimeException(sprintf(
                 'FHIRConsent::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRConsent or null, %s seen.',
@@ -1185,7 +1185,7 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     }
 
     /**
-     * @param null|\SimpleXMLElement \$sxe
+     * @param null|\SimpleXMLElement $sxe
      * @return \SimpleXMLElement
      */
     public function xmlSerialize(\SimpleXMLElement $sxe = null)

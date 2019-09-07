@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 1st, 2019 15:50+0000
+ * Class creation date: September 7th, 2019 20:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -142,7 +142,7 @@ class FHIRProcessOutcomeCodes extends FHIRElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null \$sxe
+     * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRProcessOutcomeCodes $type
      * @return null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRProcessOutcomeCodes
      */
@@ -163,7 +163,7 @@ class FHIRProcessOutcomeCodes extends FHIRElement
             throw new \InvalidArgumentException(sprintf('FHIRProcessOutcomeCodes::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRElement::xmlUnserialize(\$sxe, new FHIRProcessOutcomeCodes);
+            $type = FHIRElement::xmlUnserialize($sxe, new FHIRProcessOutcomeCodes);
         } elseif (!is_object($type) || !($type instanceof FHIRProcessOutcomeCodes)) {
             throw new \RuntimeException(sprintf(
                 'FHIRProcessOutcomeCodes::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\FHIRElement\FHIRProcessOutcomeCodes or null, %s seen.',
@@ -182,7 +182,7 @@ class FHIRProcessOutcomeCodes extends FHIRElement
     }
 
     /**
-     * @param null|\SimpleXMLElement \$sxe
+     * @param null|\SimpleXMLElement $sxe
      * @return \SimpleXMLElement
      */
     public function xmlSerialize(\SimpleXMLElement $sxe = null)

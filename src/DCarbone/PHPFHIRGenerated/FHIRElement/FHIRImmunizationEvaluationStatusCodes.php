@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 1st, 2019 15:50+0000
+ * Class creation date: September 7th, 2019 20:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -142,7 +142,7 @@ class FHIRImmunizationEvaluationStatusCodes extends FHIRElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null \$sxe
+     * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRImmunizationEvaluationStatusCodes $type
      * @return null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRImmunizationEvaluationStatusCodes
      */
@@ -163,7 +163,7 @@ class FHIRImmunizationEvaluationStatusCodes extends FHIRElement
             throw new \InvalidArgumentException(sprintf('FHIRImmunizationEvaluationStatusCodes::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRElement::xmlUnserialize(\$sxe, new FHIRImmunizationEvaluationStatusCodes);
+            $type = FHIRElement::xmlUnserialize($sxe, new FHIRImmunizationEvaluationStatusCodes);
         } elseif (!is_object($type) || !($type instanceof FHIRImmunizationEvaluationStatusCodes)) {
             throw new \RuntimeException(sprintf(
                 'FHIRImmunizationEvaluationStatusCodes::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\FHIRElement\FHIRImmunizationEvaluationStatusCodes or null, %s seen.',
@@ -182,7 +182,7 @@ class FHIRImmunizationEvaluationStatusCodes extends FHIRElement
     }
 
     /**
-     * @param null|\SimpleXMLElement \$sxe
+     * @param null|\SimpleXMLElement $sxe
      * @return \SimpleXMLElement
      */
     public function xmlSerialize(\SimpleXMLElement $sxe = null)
