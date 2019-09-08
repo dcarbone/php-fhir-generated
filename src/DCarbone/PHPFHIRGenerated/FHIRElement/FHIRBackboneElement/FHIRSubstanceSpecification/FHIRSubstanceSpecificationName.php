@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSubstanc
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 7th, 2019 20:23+0000
+ * Class creation date: September 8th, 2019 00:59+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -344,31 +344,31 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
         if (isset($data[self::FIELD_SYNONYM])) {
             if (is_array($data[self::FIELD_SYNONYM])) {
                 foreach($data[self::FIELD_SYNONYM] as $v) {
-                    if ($v instanceof FHIRSubstanceSpecificationName) {
+                    if ($v instanceof FHIRSubstanceSpecificationName1) {
                         $this->addSynonym($v);
                     } else {
-                        $this->addSynonym(new FHIRSubstanceSpecificationName($v));
+                        $this->addSynonym(new FHIRSubstanceSpecificationName1($v));
                     }
                 }
-            } else if ($data[self::FIELD_SYNONYM] instanceof FHIRSubstanceSpecificationName) {
+            } else if ($data[self::FIELD_SYNONYM] instanceof FHIRSubstanceSpecificationName1) {
                 $this->addSynonym($data[self::FIELD_SYNONYM]);
             } else {
-                $this->addSynonym(new FHIRSubstanceSpecificationName($data[self::FIELD_SYNONYM]));
+                $this->addSynonym(new FHIRSubstanceSpecificationName1($data[self::FIELD_SYNONYM]));
             }
         }
         if (isset($data[self::FIELD_TRANSLATION])) {
             if (is_array($data[self::FIELD_TRANSLATION])) {
                 foreach($data[self::FIELD_TRANSLATION] as $v) {
-                    if ($v instanceof FHIRSubstanceSpecificationName) {
+                    if ($v instanceof FHIRSubstanceSpecificationName1) {
                         $this->addTranslation($v);
                     } else {
-                        $this->addTranslation(new FHIRSubstanceSpecificationName($v));
+                        $this->addTranslation(new FHIRSubstanceSpecificationName1($v));
                     }
                 }
-            } else if ($data[self::FIELD_TRANSLATION] instanceof FHIRSubstanceSpecificationName) {
+            } else if ($data[self::FIELD_TRANSLATION] instanceof FHIRSubstanceSpecificationName1) {
                 $this->addTranslation($data[self::FIELD_TRANSLATION]);
             } else {
-                $this->addTranslation(new FHIRSubstanceSpecificationName($data[self::FIELD_TRANSLATION]));
+                $this->addTranslation(new FHIRSubstanceSpecificationName1($data[self::FIELD_TRANSLATION]));
             }
         }
         if (isset($data[self::FIELD_TYPE])) {
@@ -805,7 +805,7 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationName $synonym
      * @return \DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationName
      */
-    public function addSynonym(FHIRSubstanceSpecificationName $synonym = null)
+    public function addSynonym(FHIRSubstanceSpecificationName1 $synonym = null)
     {
         $this->synonym[] = $synonym;
         return $this;
@@ -827,10 +827,10 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
             return $this;
         }
         foreach($synonym as $v) {
-            if ($v instanceof FHIRSubstanceSpecificationName) {
+            if ($v instanceof FHIRSubstanceSpecificationName1) {
                 $this->addSynonym($v);
             } else {
-                $this->addSynonym(new FHIRSubstanceSpecificationName($v));
+                $this->addSynonym(new FHIRSubstanceSpecificationName1($v));
             }
         }
         return $this;
@@ -858,7 +858,7 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationName $translation
      * @return \DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationName
      */
-    public function addTranslation(FHIRSubstanceSpecificationName $translation = null)
+    public function addTranslation(FHIRSubstanceSpecificationName1 $translation = null)
     {
         $this->translation[] = $translation;
         return $this;
@@ -880,10 +880,10 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
             return $this;
         }
         foreach($translation as $v) {
-            if ($v instanceof FHIRSubstanceSpecificationName) {
+            if ($v instanceof FHIRSubstanceSpecificationName1) {
                 $this->addTranslation($v);
             } else {
-                $this->addTranslation(new FHIRSubstanceSpecificationName($v));
+                $this->addTranslation(new FHIRSubstanceSpecificationName1($v));
             }
         }
         return $this;
@@ -994,12 +994,12 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
         }
         if (isset($children->synonym)) {
             foreach($children->synonym as $child) {
-                $type->addSynonym(FHIRSubstanceSpecificationName::xmlUnserialize($child));
+                $type->addSynonym(FHIRSubstanceSpecificationName1::xmlUnserialize($child));
             }
         }
         if (isset($children->translation)) {
             foreach($children->translation as $child) {
-                $type->addTranslation(FHIRSubstanceSpecificationName::xmlUnserialize($child));
+                $type->addTranslation(FHIRSubstanceSpecificationName1::xmlUnserialize($child));
             }
         }
         if (isset($children->type)) {

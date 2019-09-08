@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperatio
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 7th, 2019 20:23+0000
+ * Class creation date: September 8th, 2019 00:59+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -305,16 +305,16 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
         if (isset($data[self::FIELD_PART])) {
             if (is_array($data[self::FIELD_PART])) {
                 foreach($data[self::FIELD_PART] as $v) {
-                    if ($v instanceof FHIROperationDefinitionParameter) {
+                    if ($v instanceof FHIROperationDefinitionParameter1) {
                         $this->addPart($v);
                     } else {
-                        $this->addPart(new FHIROperationDefinitionParameter($v));
+                        $this->addPart(new FHIROperationDefinitionParameter1($v));
                     }
                 }
-            } else if ($data[self::FIELD_PART] instanceof FHIROperationDefinitionParameter) {
+            } else if ($data[self::FIELD_PART] instanceof FHIROperationDefinitionParameter1) {
                 $this->addPart($data[self::FIELD_PART]);
             } else {
-                $this->addPart(new FHIROperationDefinitionParameter($data[self::FIELD_PART]));
+                $this->addPart(new FHIROperationDefinitionParameter1($data[self::FIELD_PART]));
             }
         }
         if (isset($data[self::FIELD_REFERENCED_FROM])) {
@@ -598,7 +598,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter $part
      * @return \DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter
      */
-    public function addPart(FHIROperationDefinitionParameter $part = null)
+    public function addPart(FHIROperationDefinitionParameter1 $part = null)
     {
         $this->part[] = $part;
         return $this;
@@ -620,10 +620,10 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
             return $this;
         }
         foreach($part as $v) {
-            if ($v instanceof FHIROperationDefinitionParameter) {
+            if ($v instanceof FHIROperationDefinitionParameter1) {
                 $this->addPart($v);
             } else {
-                $this->addPart(new FHIROperationDefinitionParameter($v));
+                $this->addPart(new FHIROperationDefinitionParameter1($v));
             }
         }
         return $this;
@@ -929,7 +929,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
         }
         if (isset($children->part)) {
             foreach($children->part as $child) {
-                $type->addPart(FHIROperationDefinitionParameter::xmlUnserialize($child));
+                $type->addPart(FHIROperationDefinitionParameter1::xmlUnserialize($child));
             }
         }
         if (isset($children->referencedFrom)) {

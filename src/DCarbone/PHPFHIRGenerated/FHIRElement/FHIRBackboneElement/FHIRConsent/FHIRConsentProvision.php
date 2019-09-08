@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConsent;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 7th, 2019 20:23+0000
+ * Class creation date: September 8th, 2019 00:59+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -333,16 +333,16 @@ class FHIRConsentProvision extends FHIRBackboneElement
         if (isset($data[self::FIELD_PROVISION])) {
             if (is_array($data[self::FIELD_PROVISION])) {
                 foreach($data[self::FIELD_PROVISION] as $v) {
-                    if ($v instanceof FHIRConsentProvision) {
+                    if ($v instanceof FHIRConsentProvision1) {
                         $this->addProvision($v);
                     } else {
-                        $this->addProvision(new FHIRConsentProvision($v));
+                        $this->addProvision(new FHIRConsentProvision1($v));
                     }
                 }
-            } else if ($data[self::FIELD_PROVISION] instanceof FHIRConsentProvision) {
+            } else if ($data[self::FIELD_PROVISION] instanceof FHIRConsentProvision1) {
                 $this->addProvision($data[self::FIELD_PROVISION]);
             } else {
-                $this->addProvision(new FHIRConsentProvision($data[self::FIELD_PROVISION]));
+                $this->addProvision(new FHIRConsentProvision1($data[self::FIELD_PROVISION]));
             }
         }
         if (isset($data[self::FIELD_PURPOSE])) {
@@ -773,7 +773,7 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentProvision $provision
      * @return \DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentProvision
      */
-    public function addProvision(FHIRConsentProvision $provision = null)
+    public function addProvision(FHIRConsentProvision1 $provision = null)
     {
         $this->provision[] = $provision;
         return $this;
@@ -796,10 +796,10 @@ class FHIRConsentProvision extends FHIRBackboneElement
             return $this;
         }
         foreach($provision as $v) {
-            if ($v instanceof FHIRConsentProvision) {
+            if ($v instanceof FHIRConsentProvision1) {
                 $this->addProvision($v);
             } else {
-                $this->addProvision(new FHIRConsentProvision($v));
+                $this->addProvision(new FHIRConsentProvision1($v));
             }
         }
         return $this;
@@ -1019,7 +1019,7 @@ class FHIRConsentProvision extends FHIRBackboneElement
         }
         if (isset($children->provision)) {
             foreach($children->provision as $child) {
-                $type->addProvision(FHIRConsentProvision::xmlUnserialize($child));
+                $type->addProvision(FHIRConsentProvision1::xmlUnserialize($child));
             }
         }
         if (isset($children->purpose)) {

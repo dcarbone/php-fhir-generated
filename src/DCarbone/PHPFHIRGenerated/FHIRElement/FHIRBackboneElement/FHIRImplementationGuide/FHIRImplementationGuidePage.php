@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImplemen
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 7th, 2019 20:23+0000
+ * Class creation date: September 8th, 2019 00:59+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -193,16 +193,16 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
         if (isset($data[self::FIELD_PAGE])) {
             if (is_array($data[self::FIELD_PAGE])) {
                 foreach($data[self::FIELD_PAGE] as $v) {
-                    if ($v instanceof FHIRImplementationGuidePage) {
+                    if ($v instanceof FHIRImplementationGuidePage1) {
                         $this->addPage($v);
                     } else {
-                        $this->addPage(new FHIRImplementationGuidePage($v));
+                        $this->addPage(new FHIRImplementationGuidePage1($v));
                     }
                 }
-            } else if ($data[self::FIELD_PAGE] instanceof FHIRImplementationGuidePage) {
+            } else if ($data[self::FIELD_PAGE] instanceof FHIRImplementationGuidePage1) {
                 $this->addPage($data[self::FIELD_PAGE]);
             } else {
-                $this->addPage(new FHIRImplementationGuidePage($data[self::FIELD_PAGE]));
+                $this->addPage(new FHIRImplementationGuidePage1($data[self::FIELD_PAGE]));
             }
         }
         if (isset($data[self::FIELD_TITLE])) {
@@ -349,7 +349,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage $page
      * @return \DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage
      */
-    public function addPage(FHIRImplementationGuidePage $page = null)
+    public function addPage(FHIRImplementationGuidePage1 $page = null)
     {
         $this->page[] = $page;
         return $this;
@@ -373,10 +373,10 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
             return $this;
         }
         foreach($page as $v) {
-            if ($v instanceof FHIRImplementationGuidePage) {
+            if ($v instanceof FHIRImplementationGuidePage1) {
                 $this->addPage($v);
             } else {
-                $this->addPage(new FHIRImplementationGuidePage($v));
+                $this->addPage(new FHIRImplementationGuidePage1($v));
             }
         }
         return $this;
@@ -467,7 +467,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
         }
         if (isset($children->page)) {
             foreach($children->page as $child) {
-                $type->addPage(FHIRImplementationGuidePage::xmlUnserialize($child));
+                $type->addPage(FHIRImplementationGuidePage1::xmlUnserialize($child));
             }
         }
         if (isset($attributes->title)) {

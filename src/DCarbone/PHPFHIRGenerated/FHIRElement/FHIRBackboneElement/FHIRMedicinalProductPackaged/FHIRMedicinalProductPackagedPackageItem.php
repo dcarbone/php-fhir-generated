@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMedicina
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 7th, 2019 20:23+0000
+ * Class creation date: September 8th, 2019 00:59+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -360,16 +360,16 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
         if (isset($data[self::FIELD_PACKAGE_ITEM])) {
             if (is_array($data[self::FIELD_PACKAGE_ITEM])) {
                 foreach($data[self::FIELD_PACKAGE_ITEM] as $v) {
-                    if ($v instanceof FHIRMedicinalProductPackagedPackageItem) {
+                    if ($v instanceof FHIRMedicinalProductPackagedPackageItem1) {
                         $this->addPackageItem($v);
                     } else {
-                        $this->addPackageItem(new FHIRMedicinalProductPackagedPackageItem($v));
+                        $this->addPackageItem(new FHIRMedicinalProductPackagedPackageItem1($v));
                     }
                 }
-            } else if ($data[self::FIELD_PACKAGE_ITEM] instanceof FHIRMedicinalProductPackagedPackageItem) {
+            } else if ($data[self::FIELD_PACKAGE_ITEM] instanceof FHIRMedicinalProductPackagedPackageItem1) {
                 $this->addPackageItem($data[self::FIELD_PACKAGE_ITEM]);
             } else {
-                $this->addPackageItem(new FHIRMedicinalProductPackagedPackageItem($data[self::FIELD_PACKAGE_ITEM]));
+                $this->addPackageItem(new FHIRMedicinalProductPackagedPackageItem1($data[self::FIELD_PACKAGE_ITEM]));
             }
         }
         if (isset($data[self::FIELD_PHYSICAL_CHARACTERISTICS])) {
@@ -842,7 +842,7 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPackaged\FHIRMedicinalProductPackagedPackageItem $packageItem
      * @return \DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPackaged\FHIRMedicinalProductPackagedPackageItem
      */
-    public function addPackageItem(FHIRMedicinalProductPackagedPackageItem $packageItem = null)
+    public function addPackageItem(FHIRMedicinalProductPackagedPackageItem1 $packageItem = null)
     {
         $this->packageItem[] = $packageItem;
         return $this;
@@ -863,10 +863,10 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
             return $this;
         }
         foreach($packageItem as $v) {
-            if ($v instanceof FHIRMedicinalProductPackagedPackageItem) {
+            if ($v instanceof FHIRMedicinalProductPackagedPackageItem1) {
                 $this->addPackageItem($v);
             } else {
-                $this->addPackageItem(new FHIRMedicinalProductPackagedPackageItem($v));
+                $this->addPackageItem(new FHIRMedicinalProductPackagedPackageItem1($v));
             }
         }
         return $this;
@@ -1099,7 +1099,7 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
         }
         if (isset($children->packageItem)) {
             foreach($children->packageItem as $child) {
-                $type->addPackageItem(FHIRMedicinalProductPackagedPackageItem::xmlUnserialize($child));
+                $type->addPackageItem(FHIRMedicinalProductPackagedPackageItem1::xmlUnserialize($child));
             }
         }
         if (isset($children->physicalCharacteristics)) {

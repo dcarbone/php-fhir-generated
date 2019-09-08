@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 7th, 2019 20:23+0000
+ * Class creation date: September 8th, 2019 00:59+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -244,16 +244,16 @@ class FHIRValueSetContains extends FHIRBackboneElement
         if (isset($data[self::FIELD_CONTAINS])) {
             if (is_array($data[self::FIELD_CONTAINS])) {
                 foreach($data[self::FIELD_CONTAINS] as $v) {
-                    if ($v instanceof FHIRValueSetContains) {
+                    if ($v instanceof FHIRValueSetContains1) {
                         $this->addContains($v);
                     } else {
-                        $this->addContains(new FHIRValueSetContains($v));
+                        $this->addContains(new FHIRValueSetContains1($v));
                     }
                 }
-            } else if ($data[self::FIELD_CONTAINS] instanceof FHIRValueSetContains) {
+            } else if ($data[self::FIELD_CONTAINS] instanceof FHIRValueSetContains1) {
                 $this->addContains($data[self::FIELD_CONTAINS]);
             } else {
-                $this->addContains(new FHIRValueSetContains($data[self::FIELD_CONTAINS]));
+                $this->addContains(new FHIRValueSetContains1($data[self::FIELD_CONTAINS]));
             }
         }
         if (isset($data[self::FIELD_DESIGNATION])) {
@@ -437,7 +437,7 @@ class FHIRValueSetContains extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains $contains
      * @return \DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains
      */
-    public function addContains(FHIRValueSetContains $contains = null)
+    public function addContains(FHIRValueSetContains1 $contains = null)
     {
         $this->contains[] = $contains;
         return $this;
@@ -461,10 +461,10 @@ class FHIRValueSetContains extends FHIRBackboneElement
             return $this;
         }
         foreach($contains as $v) {
-            if ($v instanceof FHIRValueSetContains) {
+            if ($v instanceof FHIRValueSetContains1) {
                 $this->addContains($v);
             } else {
-                $this->addContains(new FHIRValueSetContains($v));
+                $this->addContains(new FHIRValueSetContains1($v));
             }
         }
         return $this;
@@ -746,7 +746,7 @@ class FHIRValueSetContains extends FHIRBackboneElement
         }
         if (isset($children->contains)) {
             foreach($children->contains as $child) {
-                $type->addContains(FHIRValueSetContains::xmlUnserialize($child));
+                $type->addContains(FHIRValueSetContains1::xmlUnserialize($child));
             }
         }
         if (isset($children->designation)) {

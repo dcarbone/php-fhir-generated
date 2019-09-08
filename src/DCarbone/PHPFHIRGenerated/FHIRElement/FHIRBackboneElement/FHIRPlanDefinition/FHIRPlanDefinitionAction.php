@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPlanDefi
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 7th, 2019 20:23+0000
+ * Class creation date: September 8th, 2019 00:59+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -588,16 +588,16 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
         if (isset($data[self::FIELD_ACTION])) {
             if (is_array($data[self::FIELD_ACTION])) {
                 foreach($data[self::FIELD_ACTION] as $v) {
-                    if ($v instanceof FHIRPlanDefinitionAction) {
+                    if ($v instanceof FHIRPlanDefinitionAction1) {
                         $this->addAction($v);
                     } else {
-                        $this->addAction(new FHIRPlanDefinitionAction($v));
+                        $this->addAction(new FHIRPlanDefinitionAction1($v));
                     }
                 }
-            } else if ($data[self::FIELD_ACTION] instanceof FHIRPlanDefinitionAction) {
+            } else if ($data[self::FIELD_ACTION] instanceof FHIRPlanDefinitionAction1) {
                 $this->addAction($data[self::FIELD_ACTION]);
             } else {
-                $this->addAction(new FHIRPlanDefinitionAction($data[self::FIELD_ACTION]));
+                $this->addAction(new FHIRPlanDefinitionAction1($data[self::FIELD_ACTION]));
             }
         }
         if (isset($data[self::FIELD_CARDINALITY_BEHAVIOR])) {
@@ -1008,7 +1008,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction $action
      * @return \DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
      */
-    public function addAction(FHIRPlanDefinitionAction $action = null)
+    public function addAction(FHIRPlanDefinitionAction1 $action = null)
     {
         $this->action[] = $action;
         return $this;
@@ -1035,10 +1035,10 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
             return $this;
         }
         foreach($action as $v) {
-            if ($v instanceof FHIRPlanDefinitionAction) {
+            if ($v instanceof FHIRPlanDefinitionAction1) {
                 $this->addAction($v);
             } else {
-                $this->addAction(new FHIRPlanDefinitionAction($v));
+                $this->addAction(new FHIRPlanDefinitionAction1($v));
             }
         }
         return $this;
@@ -2539,7 +2539,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
         $children = $sxe->children();
         if (isset($children->action)) {
             foreach($children->action as $child) {
-                $type->addAction(FHIRPlanDefinitionAction::xmlUnserialize($child));
+                $type->addAction(FHIRPlanDefinitionAction1::xmlUnserialize($child));
             }
         }
         if (isset($children->cardinalityBehavior)) {

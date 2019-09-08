@@ -5,17 +5,19 @@
         bootstrap="vendor/autoload.php"
         colors="true"
 >
-    <testsuite name="Primitives">
-        <directory>./src/DCarbone/PHPFHIRGenerated/PHPFHIRTests</directory>
-        <exclude>./src/DCarbone/PHPFHIRGenerated/PHPFHIRTests/FHIRElement</exclude>
-        <exclude>./src/DCarbone/PHPFHIRGenerated/PHPFHIRTests/FHIRResource</exclude>
-    </testsuite>
-    <testsuite name="Elements">
-        <directory>./src/DCarbone/PHPFHIRGenerated/PHPFHIRTests/FHIRElement</directory>
-    </testsuite>
-    <testsuite name="Resources">
-        <directory>./src/DCarbone/PHPFHIRGenerated/PHPFHIRTests/FHIRResource</directory>
-    </testsuite>
+    <testsuites>
+        <testsuite name="Primitives">
+            <directory>./src/DCarbone/PHPFHIRGenerated/PHPFHIRTests</directory>
+            <exclude>./src/DCarbone/PHPFHIRGenerated/PHPFHIRTests/FHIRElement</exclude>
+            <exclude>./src/DCarbone/PHPFHIRGenerated/PHPFHIRTests/FHIRResource</exclude>
+        </testsuite>
+        <testsuite name="Elements">
+            <directory>./src/DCarbone/PHPFHIRGenerated/PHPFHIRTests/FHIRElement</directory>
+        </testsuite>
+        <testsuite name="Resources">
+            <directory>./src/DCarbone/PHPFHIRGenerated/PHPFHIRTests/FHIRResource</directory>
+        </testsuite>
+    </testsuites>
     <filter>
         <whitelist addUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">./src</directory>

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 7th, 2019 20:23+0000
+ * Class creation date: September 8th, 2019 00:59+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,7 +81,7 @@ class FHIRNarrative extends FHIRElement
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_NARRATIVE;
 
-    const FIELD__ = '';
+    const FIELD_DIV = 'div';
     const FIELD_STATUS = 'status';
 
     /**
@@ -89,7 +89,7 @@ class FHIRNarrative extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\FHIRStringPrimitive
      */
-    private $ = null;
+    private $div = null;
 
     /**
      * The status of a resource narrative.
@@ -119,8 +119,8 @@ class FHIRNarrative extends FHIRElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD__])) {
-            $this->set($data[self::FIELD__]);
+        if (isset($data[self::FIELD_DIV])) {
+            $this->setDiv($data[self::FIELD_DIV]);
         }
         if (isset($data[self::FIELD_STATUS])) {
             if ($data[self::FIELD_STATUS] instanceof FHIRNarrativeStatus) {
@@ -144,28 +144,28 @@ class FHIRNarrative extends FHIRElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\FHIRStringPrimitive
      */
-    public function get()
+    public function getDiv()
     {
-        return $this->;
+        return $this->div;
     }
 
     /**
      * The actual narrative content, a stripped down version of XHTML.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\FHIRStringPrimitive $
+     * @param null|\DCarbone\PHPFHIRGenerated\FHIRStringPrimitive $div
      * @return \DCarbone\PHPFHIRGenerated\FHIRElement\FHIRNarrative
      */
-    public function set($ = null)
+    public function setDiv($div = null)
     {
-        if (null === $) {
-            $this-> = null;
+        if (null === $div) {
+            $this->div = null;
             return $this;
         }
-        if ($ instanceof FHIRStringPrimitive) {
-            $this-> = $;
+        if ($div instanceof FHIRStringPrimitive) {
+            $this->div = $div;
             return $this;
         }
-        $this-> = new FHIRStringPrimitive($);
+        $this->div = new FHIRStringPrimitive($div);
         return $this;
     }
 
@@ -232,11 +232,11 @@ class FHIRNarrative extends FHIRElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->)) {
-            $type->set((string)$attributes->);
+        if (isset($attributes->div)) {
+            $type->setDiv((string)$attributes->div);
         }
-        if (isset($children->)) {
-            $type->set(FHIRStringPrimitive::xmlUnserialize($children->));
+        if (isset($children->div)) {
+            $type->setDiv(FHIRStringPrimitive::xmlUnserialize($children->div));
         }
         if (isset($children->status)) {
             $type->setStatus(FHIRNarrativeStatus::xmlUnserialize($children->status));
@@ -253,9 +253,9 @@ class FHIRNarrative extends FHIRElement
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Narrative xmlns="http://hl7.org/fhir"></Narrative>');
         }
-        if (null !== ($v = $this->get())) {
-            $sxe->addAttribute(self::FIELD__, (string)$v);
-            $v->xmlSerialize($sxe->addChild(self::FIELD__));
+        if (null !== ($v = $this->getDiv())) {
+            $sxe->addAttribute(self::FIELD_DIV, (string)$v);
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DIV));
         }
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS));
@@ -269,8 +269,8 @@ class FHIRNarrative extends FHIRElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->get())) {
-            $a[self::FIELD__] = $v;
+        if (null !== ($v = $this->getDiv())) {
+            $a[self::FIELD_DIV] = $v;
         }
         if (null !== ($v = $this->getStatus())) {
             $a[self::FIELD_STATUS] = $v;

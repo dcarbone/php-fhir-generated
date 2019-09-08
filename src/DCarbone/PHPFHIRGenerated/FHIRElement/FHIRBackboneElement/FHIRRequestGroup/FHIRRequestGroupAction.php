@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestG
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 7th, 2019 20:23+0000
+ * Class creation date: September 8th, 2019 00:59+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -424,16 +424,16 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
         if (isset($data[self::FIELD_ACTION])) {
             if (is_array($data[self::FIELD_ACTION])) {
                 foreach($data[self::FIELD_ACTION] as $v) {
-                    if ($v instanceof FHIRRequestGroupAction) {
+                    if ($v instanceof FHIRRequestGroupAction1) {
                         $this->addAction($v);
                     } else {
-                        $this->addAction(new FHIRRequestGroupAction($v));
+                        $this->addAction(new FHIRRequestGroupAction1($v));
                     }
                 }
-            } else if ($data[self::FIELD_ACTION] instanceof FHIRRequestGroupAction) {
+            } else if ($data[self::FIELD_ACTION] instanceof FHIRRequestGroupAction1) {
                 $this->addAction($data[self::FIELD_ACTION]);
             } else {
-                $this->addAction(new FHIRRequestGroupAction($data[self::FIELD_ACTION]));
+                $this->addAction(new FHIRRequestGroupAction1($data[self::FIELD_ACTION]));
             }
         }
         if (isset($data[self::FIELD_CARDINALITY_BEHAVIOR])) {
@@ -694,7 +694,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction $action
      * @return \DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction
      */
-    public function addAction(FHIRRequestGroupAction $action = null)
+    public function addAction(FHIRRequestGroupAction1 $action = null)
     {
         $this->action[] = $action;
         return $this;
@@ -716,10 +716,10 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
             return $this;
         }
         foreach($action as $v) {
-            if ($v instanceof FHIRRequestGroupAction) {
+            if ($v instanceof FHIRRequestGroupAction1) {
                 $this->addAction($v);
             } else {
-                $this->addAction(new FHIRRequestGroupAction($v));
+                $this->addAction(new FHIRRequestGroupAction1($v));
             }
         }
         return $this;
@@ -1659,7 +1659,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
         $children = $sxe->children();
         if (isset($children->action)) {
             foreach($children->action as $child) {
-                $type->addAction(FHIRRequestGroupAction::xmlUnserialize($child));
+                $type->addAction(FHIRRequestGroupAction1::xmlUnserialize($child));
             }
         }
         if (isset($children->cardinalityBehavior)) {

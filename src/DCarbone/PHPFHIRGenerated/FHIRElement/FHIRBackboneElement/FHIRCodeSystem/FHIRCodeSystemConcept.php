@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSyst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 7th, 2019 20:23+0000
+ * Class creation date: September 8th, 2019 00:59+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -197,16 +197,16 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
         if (isset($data[self::FIELD_CONCEPT])) {
             if (is_array($data[self::FIELD_CONCEPT])) {
                 foreach($data[self::FIELD_CONCEPT] as $v) {
-                    if ($v instanceof FHIRCodeSystemConcept) {
+                    if ($v instanceof FHIRCodeSystemConcept1) {
                         $this->addConcept($v);
                     } else {
-                        $this->addConcept(new FHIRCodeSystemConcept($v));
+                        $this->addConcept(new FHIRCodeSystemConcept1($v));
                     }
                 }
-            } else if ($data[self::FIELD_CONCEPT] instanceof FHIRCodeSystemConcept) {
+            } else if ($data[self::FIELD_CONCEPT] instanceof FHIRCodeSystemConcept1) {
                 $this->addConcept($data[self::FIELD_CONCEPT]);
             } else {
-                $this->addConcept(new FHIRCodeSystemConcept($data[self::FIELD_CONCEPT]));
+                $this->addConcept(new FHIRCodeSystemConcept1($data[self::FIELD_CONCEPT]));
             }
         }
         if (isset($data[self::FIELD_DEFINITION])) {
@@ -343,7 +343,7 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept $concept
      * @return \DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept
      */
-    public function addConcept(FHIRCodeSystemConcept $concept = null)
+    public function addConcept(FHIRCodeSystemConcept1 $concept = null)
     {
         $this->concept[] = $concept;
         return $this;
@@ -368,10 +368,10 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
             return $this;
         }
         foreach($concept as $v) {
-            if ($v instanceof FHIRCodeSystemConcept) {
+            if ($v instanceof FHIRCodeSystemConcept1) {
                 $this->addConcept($v);
             } else {
-                $this->addConcept(new FHIRCodeSystemConcept($v));
+                $this->addConcept(new FHIRCodeSystemConcept1($v));
             }
         }
         return $this;
@@ -615,7 +615,7 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
         }
         if (isset($children->concept)) {
             foreach($children->concept as $child) {
-                $type->addConcept(FHIRCodeSystemConcept::xmlUnserialize($child));
+                $type->addConcept(FHIRCodeSystemConcept1::xmlUnserialize($child));
             }
         }
         if (isset($attributes->definition)) {

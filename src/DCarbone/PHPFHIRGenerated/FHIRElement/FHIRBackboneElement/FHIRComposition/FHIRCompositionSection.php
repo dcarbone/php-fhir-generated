@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRComposit
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 7th, 2019 20:23+0000
+ * Class creation date: September 8th, 2019 00:59+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -323,16 +323,16 @@ class FHIRCompositionSection extends FHIRBackboneElement
         if (isset($data[self::FIELD_SECTION])) {
             if (is_array($data[self::FIELD_SECTION])) {
                 foreach($data[self::FIELD_SECTION] as $v) {
-                    if ($v instanceof FHIRCompositionSection) {
+                    if ($v instanceof FHIRCompositionSection1) {
                         $this->addSection($v);
                     } else {
-                        $this->addSection(new FHIRCompositionSection($v));
+                        $this->addSection(new FHIRCompositionSection1($v));
                     }
                 }
-            } else if ($data[self::FIELD_SECTION] instanceof FHIRCompositionSection) {
+            } else if ($data[self::FIELD_SECTION] instanceof FHIRCompositionSection1) {
                 $this->addSection($data[self::FIELD_SECTION]);
             } else {
-                $this->addSection(new FHIRCompositionSection($data[self::FIELD_SECTION]));
+                $this->addSection(new FHIRCompositionSection1($data[self::FIELD_SECTION]));
             }
         }
         if (isset($data[self::FIELD_TEXT])) {
@@ -696,7 +696,7 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection $section
      * @return \DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection
      */
-    public function addSection(FHIRCompositionSection $section = null)
+    public function addSection(FHIRCompositionSection1 $section = null)
     {
         $this->section[] = $section;
         return $this;
@@ -725,10 +725,10 @@ class FHIRCompositionSection extends FHIRBackboneElement
             return $this;
         }
         foreach($section as $v) {
-            if ($v instanceof FHIRCompositionSection) {
+            if ($v instanceof FHIRCompositionSection1) {
                 $this->addSection($v);
             } else {
-                $this->addSection(new FHIRCompositionSection($v));
+                $this->addSection(new FHIRCompositionSection1($v));
             }
         }
         return $this;
@@ -870,7 +870,7 @@ class FHIRCompositionSection extends FHIRBackboneElement
         }
         if (isset($children->section)) {
             foreach($children->section as $child) {
-                $type->addSection(FHIRCompositionSection::xmlUnserialize($child));
+                $type->addSection(FHIRCompositionSection1::xmlUnserialize($child));
             }
         }
         if (isset($children->text)) {

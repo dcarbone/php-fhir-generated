@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestion
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 7th, 2019 20:23+0000
+ * Class creation date: September 8th, 2019 00:59+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -194,16 +194,16 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement
         if (isset($data[self::FIELD_ITEM])) {
             if (is_array($data[self::FIELD_ITEM])) {
                 foreach($data[self::FIELD_ITEM] as $v) {
-                    if ($v instanceof FHIRQuestionnaireResponseItem) {
+                    if ($v instanceof FHIRQuestionnaireResponseItem1) {
                         $this->addItem($v);
                     } else {
-                        $this->addItem(new FHIRQuestionnaireResponseItem($v));
+                        $this->addItem(new FHIRQuestionnaireResponseItem1($v));
                     }
                 }
-            } else if ($data[self::FIELD_ITEM] instanceof FHIRQuestionnaireResponseItem) {
+            } else if ($data[self::FIELD_ITEM] instanceof FHIRQuestionnaireResponseItem1) {
                 $this->addItem($data[self::FIELD_ITEM]);
             } else {
-                $this->addItem(new FHIRQuestionnaireResponseItem($data[self::FIELD_ITEM]));
+                $this->addItem(new FHIRQuestionnaireResponseItem1($data[self::FIELD_ITEM]));
             }
         }
         if (isset($data[self::FIELD_LINK_ID])) {
@@ -360,7 +360,7 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem $item
      * @return \DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem
      */
-    public function addItem(FHIRQuestionnaireResponseItem $item = null)
+    public function addItem(FHIRQuestionnaireResponseItem1 $item = null)
     {
         $this->item[] = $item;
         return $this;
@@ -383,10 +383,10 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement
             return $this;
         }
         foreach($item as $v) {
-            if ($v instanceof FHIRQuestionnaireResponseItem) {
+            if ($v instanceof FHIRQuestionnaireResponseItem1) {
                 $this->addItem($v);
             } else {
-                $this->addItem(new FHIRQuestionnaireResponseItem($v));
+                $this->addItem(new FHIRQuestionnaireResponseItem1($v));
             }
         }
         return $this;
@@ -516,7 +516,7 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement
         }
         if (isset($children->item)) {
             foreach($children->item as $child) {
-                $type->addItem(FHIRQuestionnaireResponseItem::xmlUnserialize($child));
+                $type->addItem(FHIRQuestionnaireResponseItem1::xmlUnserialize($child));
             }
         }
         if (isset($attributes->linkId)) {

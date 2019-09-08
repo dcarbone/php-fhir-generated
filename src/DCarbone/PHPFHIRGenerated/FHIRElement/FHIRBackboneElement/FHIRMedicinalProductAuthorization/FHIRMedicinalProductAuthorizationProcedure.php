@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMedicina
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 7th, 2019 20:23+0000
+ * Class creation date: September 8th, 2019 00:59+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -165,16 +165,16 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
         if (isset($data[self::FIELD_APPLICATION])) {
             if (is_array($data[self::FIELD_APPLICATION])) {
                 foreach($data[self::FIELD_APPLICATION] as $v) {
-                    if ($v instanceof FHIRMedicinalProductAuthorizationProcedure) {
+                    if ($v instanceof FHIRMedicinalProductAuthorizationProcedure1) {
                         $this->addApplication($v);
                     } else {
-                        $this->addApplication(new FHIRMedicinalProductAuthorizationProcedure($v));
+                        $this->addApplication(new FHIRMedicinalProductAuthorizationProcedure1($v));
                     }
                 }
-            } else if ($data[self::FIELD_APPLICATION] instanceof FHIRMedicinalProductAuthorizationProcedure) {
+            } else if ($data[self::FIELD_APPLICATION] instanceof FHIRMedicinalProductAuthorizationProcedure1) {
                 $this->addApplication($data[self::FIELD_APPLICATION]);
             } else {
-                $this->addApplication(new FHIRMedicinalProductAuthorizationProcedure($data[self::FIELD_APPLICATION]));
+                $this->addApplication(new FHIRMedicinalProductAuthorizationProcedure1($data[self::FIELD_APPLICATION]));
             }
         }
         if (isset($data[self::FIELD_DATE_DATE_TIME])) {
@@ -240,7 +240,7 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure $application
      * @return \DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure
      */
-    public function addApplication(FHIRMedicinalProductAuthorizationProcedure $application = null)
+    public function addApplication(FHIRMedicinalProductAuthorizationProcedure1 $application = null)
     {
         $this->application[] = $application;
         return $this;
@@ -261,10 +261,10 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
             return $this;
         }
         foreach($application as $v) {
-            if ($v instanceof FHIRMedicinalProductAuthorizationProcedure) {
+            if ($v instanceof FHIRMedicinalProductAuthorizationProcedure1) {
                 $this->addApplication($v);
             } else {
-                $this->addApplication(new FHIRMedicinalProductAuthorizationProcedure($v));
+                $this->addApplication(new FHIRMedicinalProductAuthorizationProcedure1($v));
             }
         }
         return $this;
@@ -441,7 +441,7 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
         $children = $sxe->children();
         if (isset($children->application)) {
             foreach($children->application as $child) {
-                $type->addApplication(FHIRMedicinalProductAuthorizationProcedure::xmlUnserialize($child));
+                $type->addApplication(FHIRMedicinalProductAuthorizationProcedure1::xmlUnserialize($child));
             }
         }
         if (isset($attributes->dateDateTime)) {

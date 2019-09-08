@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRParamete
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 7th, 2019 20:23+0000
+ * Class creation date: September 8th, 2019 00:59+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -854,16 +854,16 @@ class FHIRParametersParameter extends FHIRBackboneElement
         if (isset($data[self::FIELD_PART])) {
             if (is_array($data[self::FIELD_PART])) {
                 foreach($data[self::FIELD_PART] as $v) {
-                    if ($v instanceof FHIRParametersParameter) {
+                    if ($v instanceof FHIRParametersParameter1) {
                         $this->addPart($v);
                     } else {
-                        $this->addPart(new FHIRParametersParameter($v));
+                        $this->addPart(new FHIRParametersParameter1($v));
                     }
                 }
-            } else if ($data[self::FIELD_PART] instanceof FHIRParametersParameter) {
+            } else if ($data[self::FIELD_PART] instanceof FHIRParametersParameter1) {
                 $this->addPart($data[self::FIELD_PART]);
             } else {
-                $this->addPart(new FHIRParametersParameter($data[self::FIELD_PART]));
+                $this->addPart(new FHIRParametersParameter1($data[self::FIELD_PART]));
             }
         }
         if (isset($data[self::FIELD_RESOURCE])) {
@@ -1402,7 +1402,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter $part
      * @return \DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter
      */
-    public function addPart(FHIRParametersParameter $part = null)
+    public function addPart(FHIRParametersParameter1 $part = null)
     {
         $this->part[] = $part;
         return $this;
@@ -1425,10 +1425,10 @@ class FHIRParametersParameter extends FHIRBackboneElement
             return $this;
         }
         foreach($part as $v) {
-            if ($v instanceof FHIRParametersParameter) {
+            if ($v instanceof FHIRParametersParameter1) {
                 $this->addPart($v);
             } else {
-                $this->addPart(new FHIRParametersParameter($v));
+                $this->addPart(new FHIRParametersParameter1($v));
             }
         }
         return $this;
@@ -3221,7 +3221,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
         }
         if (isset($children->part)) {
             foreach($children->part as $child) {
-                $type->addPart(FHIRParametersParameter::xmlUnserialize($child));
+                $type->addPart(FHIRParametersParameter1::xmlUnserialize($child));
             }
         }
         if (isset($children->resource)) {

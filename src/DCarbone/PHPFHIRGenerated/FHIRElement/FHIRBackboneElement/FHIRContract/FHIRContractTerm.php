@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRContract
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 7th, 2019 20:23+0000
+ * Class creation date: September 8th, 2019 00:59+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -306,16 +306,16 @@ class FHIRContractTerm extends FHIRBackboneElement
         if (isset($data[self::FIELD_GROUP])) {
             if (is_array($data[self::FIELD_GROUP])) {
                 foreach($data[self::FIELD_GROUP] as $v) {
-                    if ($v instanceof FHIRContractTerm) {
+                    if ($v instanceof FHIRContractTerm1) {
                         $this->addGroup($v);
                     } else {
-                        $this->addGroup(new FHIRContractTerm($v));
+                        $this->addGroup(new FHIRContractTerm1($v));
                     }
                 }
-            } else if ($data[self::FIELD_GROUP] instanceof FHIRContractTerm) {
+            } else if ($data[self::FIELD_GROUP] instanceof FHIRContractTerm1) {
                 $this->addGroup($data[self::FIELD_GROUP]);
             } else {
-                $this->addGroup(new FHIRContractTerm($data[self::FIELD_GROUP]));
+                $this->addGroup(new FHIRContractTerm1($data[self::FIELD_GROUP]));
             }
         }
         if (isset($data[self::FIELD_IDENTIFIER])) {
@@ -570,7 +570,7 @@ class FHIRContractTerm extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractTerm $group
      * @return \DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractTerm
      */
-    public function addGroup(FHIRContractTerm $group = null)
+    public function addGroup(FHIRContractTerm1 $group = null)
     {
         $this->group[] = $group;
         return $this;
@@ -592,10 +592,10 @@ class FHIRContractTerm extends FHIRBackboneElement
             return $this;
         }
         foreach($group as $v) {
-            if ($v instanceof FHIRContractTerm) {
+            if ($v instanceof FHIRContractTerm1) {
                 $this->addGroup($v);
             } else {
-                $this->addGroup(new FHIRContractTerm($v));
+                $this->addGroup(new FHIRContractTerm1($v));
             }
         }
         return $this;
@@ -977,7 +977,7 @@ class FHIRContractTerm extends FHIRBackboneElement
         }
         if (isset($children->group)) {
             foreach($children->group as $child) {
-                $type->addGroup(FHIRContractTerm::xmlUnserialize($child));
+                $type->addGroup(FHIRContractTerm1::xmlUnserialize($child));
             }
         }
         if (isset($children->identifier)) {

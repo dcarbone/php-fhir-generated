@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRUserSess
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 7th, 2019 20:23+0000
+ * Class creation date: September 8th, 2019 00:59+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -119,10 +119,10 @@ class FHIRUserSessionStatus extends FHIRBackboneElement
         }
         parent::__construct($data);
         if (isset($data[self::FIELD_CODE])) {
-            if ($data[self::FIELD_CODE] instanceof FHIRUserSessionStatus) {
+            if ($data[self::FIELD_CODE] instanceof FHIRUserSessionStatus1) {
                 $this->setCode($data[self::FIELD_CODE]);
             } else {
-                $this->setCode(new FHIRUserSessionStatus($data[self::FIELD_CODE]));
+                $this->setCode(new FHIRUserSessionStatus1($data[self::FIELD_CODE]));
             }
         }
         if (isset($data[self::FIELD_SOURCE])) {
@@ -164,7 +164,7 @@ class FHIRUserSessionStatus extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRUserSessionStatus $code
      * @return \DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRUserSession\FHIRUserSessionStatus
      */
-    public function setCode(FHIRUserSessionStatus $code = null)
+    public function setCode(FHIRUserSessionStatus1 $code = null)
     {
         $this->code = $code;
         return $this;
@@ -230,7 +230,7 @@ class FHIRUserSessionStatus extends FHIRBackboneElement
         $attributes = $sxe->attributes();
         $children = $sxe->children();
         if (isset($children->code)) {
-            $type->setCode(FHIRUserSessionStatus::xmlUnserialize($children->code));
+            $type->setCode(FHIRUserSessionStatus1::xmlUnserialize($children->code));
         }
         if (isset($children->source)) {
             $type->setSource(FHIRUserSessionStatusSource::xmlUnserialize($children->source));
