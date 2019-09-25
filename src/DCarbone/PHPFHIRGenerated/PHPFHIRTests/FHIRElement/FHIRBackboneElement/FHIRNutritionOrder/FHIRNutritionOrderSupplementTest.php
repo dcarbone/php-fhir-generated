@@ -5,7 +5,7 @@ namespace DCarbone\PHPFHIRGenerated\PHPFHIRTests\FHIRElement\FHIRBackboneElement
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 8th, 2019 00:59+0000
+ * Class creation date: September 25th, 2019 18:19+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -75,5 +75,6 @@ class FHIRNutritionOrderSupplementTest extends TestCase
     {
         $type = new FHIRNutritionOrderSupplement();
         $this->assertInstanceOf('\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderSupplement', $type);
+        unset($type);
     }
 }
