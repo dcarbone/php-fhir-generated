@@ -5,7 +5,7 @@ namespace DCarbone\PHPFHIRGenerated\PHPFHIRTests\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 25th, 2019 18:19+0000
+ * Class creation date: September 25th, 2019 23:41+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -75,6 +75,5 @@ class FHIRClinicalImpressionStatusTest extends TestCase
     {
         $type = new FHIRClinicalImpressionStatus();
         $this->assertInstanceOf('\DCarbone\PHPFHIRGenerated\FHIRElement\FHIRClinicalImpressionStatus', $type);
-        unset($type);
     }
 }

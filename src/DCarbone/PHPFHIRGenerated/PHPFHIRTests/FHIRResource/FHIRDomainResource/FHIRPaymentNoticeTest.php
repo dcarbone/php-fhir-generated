@@ -5,7 +5,7 @@ namespace DCarbone\PHPFHIRGenerated\PHPFHIRTests\FHIRResource\FHIRDomainResource
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 25th, 2019 18:19+0000
+ * Class creation date: September 25th, 2019 23:41+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -75,6 +75,5 @@ class FHIRPaymentNoticeTest extends TestCase
     {
         $type = new FHIRPaymentNotice();
         $this->assertInstanceOf('\DCarbone\PHPFHIRGenerated\FHIRResource\FHIRDomainResource\FHIRPaymentNotice', $type);
-        unset($type);
     }
 }

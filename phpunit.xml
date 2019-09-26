@@ -17,8 +17,9 @@
         <testsuite name="Resources">
             <directory>./src/DCarbone/PHPFHIRGenerated/PHPFHIRTests/FHIRResource</directory>
         </testsuite>
-        <testsuite name="Constants">
+        <testsuite name="Static">
             <file>./src/DCarbone/PHPFHIRGenerated/PHPFHIRTests/PHPFHIRConstantsTest.php</file>
+            <file>./src/DCarbone/PHPFHIRGenerated/PHPFHIRTests/PHPFHIRTypeMapTest.php</file>
         </testsuite>
     </testsuites>
     <filter>
