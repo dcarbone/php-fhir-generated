@@ -24,6 +24,10 @@
     "ext-simplexml": "*"
   },
   "require-dev": {
+    "ext-libxml": "*",
+    "ext-json": "*",
+    "ext-simplexml": "*",
+    "ext-curl": "*",
     "phpunit/phpunit": "@stable"
   },
   "autoload": {
