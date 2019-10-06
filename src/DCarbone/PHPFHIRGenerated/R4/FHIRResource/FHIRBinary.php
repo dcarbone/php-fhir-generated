@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:58+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -101,7 +101,6 @@ class FHIRBinary extends FHIRResource implements PHPFHIRContainedTypeInterface
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode
      */
     private $contentType = null;
-
     /**
      * A stream of bytes
      * A stream of bytes, base64 encoded
@@ -112,7 +111,6 @@ class FHIRBinary extends FHIRResource implements PHPFHIRContainedTypeInterface
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBase64Binary
      */
     private $data = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -371,7 +369,7 @@ class FHIRBinary extends FHIRResource implements PHPFHIRContainedTypeInterface
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Binary xmlns="http://hl7.org/fhir"></Binary>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getContentType())) {
             $sxe->addAttribute(self::FIELD_CONTENT_TYPE, (string)$v);
             if (null !== $v->getId() || [] !== $v->getExtension()) {

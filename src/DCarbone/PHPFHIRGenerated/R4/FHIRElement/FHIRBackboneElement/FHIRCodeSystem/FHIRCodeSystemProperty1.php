@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCodeS
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:58+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -113,7 +113,6 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode
      */
     private $code = null;
-
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -123,7 +122,6 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     private $valueBoolean = null;
-
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
@@ -135,7 +133,6 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode
      */
     private $valueCode = null;
-
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
@@ -146,7 +143,6 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding
      */
     private $valueCoding = null;
-
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
@@ -160,7 +156,6 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     private $valueDateTime = null;
-
     /**
      * A rational number with implicit precision
      * Do not use an IEEE type floating point type, instead use something that works
@@ -172,7 +167,6 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
     private $valueDecimal = null;
-
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
@@ -183,7 +177,6 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
     private $valueInteger = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -706,7 +699,7 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<CodeSystemProperty1 xmlns="http://hl7.org/fhir"></CodeSystemProperty1>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getCode())) {
             $sxe->addAttribute(self::FIELD_CODE, (string)$v);
             if (null !== $v->getId() || [] !== $v->getExtension()) {

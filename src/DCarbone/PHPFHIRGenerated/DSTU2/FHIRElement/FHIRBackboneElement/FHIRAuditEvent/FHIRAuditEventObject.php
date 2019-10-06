@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRAu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:57+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -108,7 +108,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     private $description = null;
-
     /**
      * A record of an event made for purposes of maintaining a security log. Typical
      * uses include detection of intrusion attempts and monitoring for inappropriate
@@ -119,7 +118,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventDetail[]
      */
     private $detail = [];
-
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -131,7 +129,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier
      */
     private $identifier = null;
-
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
@@ -142,7 +139,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
      */
     private $lifecycle = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -154,7 +150,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     private $name = null;
-
     /**
      * A stream of bytes
      * A stream of bytes, base64 encoded
@@ -165,7 +160,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBase64Binary
      */
     private $query = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -177,7 +171,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     private $reference = null;
-
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
@@ -189,7 +182,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
      */
     private $role = null;
-
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
@@ -200,7 +192,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding[]
      */
     private $securityLabel = [];
-
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
@@ -809,7 +800,7 @@ class FHIRAuditEventObject extends FHIRBackboneElement
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<AuditEventObject xmlns="http://hl7.org/fhir"></AuditEventObject>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getDescription())) {
             $sxe->addAttribute(self::FIELD_DESCRIPTION, (string)$v);
             if (null !== $v->getId() || [] !== $v->getExtension()) {

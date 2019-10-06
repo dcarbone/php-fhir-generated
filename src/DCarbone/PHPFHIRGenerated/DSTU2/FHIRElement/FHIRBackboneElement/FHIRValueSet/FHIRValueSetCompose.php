@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRVa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:57+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -91,7 +91,6 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude[]
      */
     private $exclude = [];
-
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -103,7 +102,6 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri[]
      */
     private $import = [];
-
     /**
      * A value set specifies a set of codes drawn from one or more code systems.
      *
@@ -419,7 +417,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ValueSetCompose xmlns="http://hl7.org/fhir"></ValueSetCompose>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
 
         if ([] !== ($vs = $this->getExclude())) {
             foreach($vs as $v) {

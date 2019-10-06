@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:57+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -121,7 +121,6 @@ class FHIRSequence extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger
      */
     private $coordinateSystem = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -132,7 +131,6 @@ class FHIRSequence extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     private $device = null;
-
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -144,7 +142,6 @@ class FHIRSequence extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[]
      */
     private $identifier = [];
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -157,7 +154,6 @@ class FHIRSequence extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     private $observedSeq = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -168,7 +164,6 @@ class FHIRSequence extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     private $patient = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -179,7 +174,6 @@ class FHIRSequence extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     private $performer = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -190,7 +184,6 @@ class FHIRSequence extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     private $pointer = [];
-
     /**
      * Raw data describing a biological sequence.
      *
@@ -201,7 +194,6 @@ class FHIRSequence extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceQuality[]
      */
     private $quality = [];
-
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
@@ -214,7 +206,6 @@ class FHIRSequence extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
      */
     private $quantity = null;
-
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
@@ -226,7 +217,6 @@ class FHIRSequence extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger
      */
     private $readCoverage = null;
-
     /**
      * Raw data describing a biological sequence.
      *
@@ -236,7 +226,6 @@ class FHIRSequence extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceReferenceSeq
      */
     private $referenceSeq = null;
-
     /**
      * Raw data describing a biological sequence.
      *
@@ -246,7 +235,6 @@ class FHIRSequence extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRepository[]
      */
     private $repository = [];
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -257,7 +245,6 @@ class FHIRSequence extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     private $specimen = null;
-
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
@@ -269,7 +256,6 @@ class FHIRSequence extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCode
      */
     private $type = null;
-
     /**
      * Raw data describing a biological sequence.
      *
@@ -1216,7 +1202,7 @@ class FHIRSequence extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Sequence xmlns="http://hl7.org/fhir"></Sequence>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getCoordinateSystem())) {
             $sxe->addAttribute(self::FIELD_COORDINATE_SYSTEM, (string)$v);
             if (null !== $v->getId() || [] !== $v->getExtension()) {

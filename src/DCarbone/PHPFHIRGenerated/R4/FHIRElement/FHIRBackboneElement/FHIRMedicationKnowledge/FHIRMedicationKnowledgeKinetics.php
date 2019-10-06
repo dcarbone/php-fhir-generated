@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:58+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -95,7 +95,6 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity[]
      */
     private $areaUnderCurve = [];
-
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
@@ -107,7 +106,6 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     private $halfLifePeriod = null;
-
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
@@ -396,7 +394,7 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<MedicationKnowledgeKinetics xmlns="http://hl7.org/fhir"></MedicationKnowledgeKinetics>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
 
         if ([] !== ($vs = $this->getAreaUnderCurve())) {
             foreach($vs as $v) {

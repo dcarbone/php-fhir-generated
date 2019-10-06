@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIROb
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:57+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -100,7 +100,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRRange
      */
     private $age = null;
-
     /**
      * The value of the high bound of the reference range. The high bound of the
      * reference range endpoint is inclusive of the value (e.g. reference range is >=5
@@ -110,7 +109,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     private $high = null;
-
     /**
      * The value of the low bound of the reference range. The low bound of the
      * reference range endpoint is inclusive of the value (e.g. reference range is >=5
@@ -120,7 +118,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     private $low = null;
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -132,7 +129,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
     private $meaning = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -435,7 +431,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ObservationReferenceRange xmlns="http://hl7.org/fhir"></ObservationReferenceRange>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getAge())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AGE));

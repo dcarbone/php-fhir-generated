@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRQue
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:57+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -127,7 +127,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAttachment
      */
     private $answerAttachment = null;
-
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -138,7 +137,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     private $answerBoolean = null;
-
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
@@ -150,7 +148,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding
      */
     private $answerCoding = null;
-
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
@@ -163,7 +160,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate
      */
     private $answerDate = null;
-
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
@@ -178,7 +174,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
     private $answerDateTime = null;
-
     /**
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
@@ -191,7 +186,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
      */
     private $answerDecimal = null;
-
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
@@ -203,7 +197,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger
      */
     private $answerInteger = null;
-
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
@@ -217,7 +210,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
      */
     private $answerQuantity = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -229,7 +221,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     private $answerReference = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -241,7 +232,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     private $answerString = null;
-
     /**
      * A time during the day, with no date specified
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -252,7 +242,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTime
      */
     private $answerTime = null;
-
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -264,7 +253,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
     private $answerUri = null;
-
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -275,7 +263,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     private $hasAnswer = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -1113,7 +1100,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<QuestionnaireEnableWhen xmlns="http://hl7.org/fhir"></QuestionnaireEnableWhen>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getAnswerAttachment())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_ATTACHMENT));

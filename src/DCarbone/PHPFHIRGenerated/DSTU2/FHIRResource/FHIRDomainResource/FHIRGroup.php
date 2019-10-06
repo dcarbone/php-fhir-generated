@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:57+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -111,7 +111,6 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
     private $actual = null;
-
     /**
      * Represents a defined collection of entities that may be discussed or acted upon
      * collectively but which are not expected to act collectively and are not formally
@@ -122,7 +121,6 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRGroup\FHIRGroupCharacteristic[]
      */
     private $characteristic = [];
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -135,7 +133,6 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
     private $code = null;
-
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -146,7 +143,6 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier[]
      */
     private $identifier = [];
-
     /**
      * Represents a defined collection of entities that may be discussed or acted upon
      * collectively but which are not expected to act collectively and are not formally
@@ -157,7 +153,6 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRGroup\FHIRGroupMember[]
      */
     private $member = [];
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -168,7 +163,6 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     private $name = null;
-
     /**
      * An integer with a value that is not negative (e.g. >= 0)
      * If the element is present, it must have either a @value, an @id referenced from
@@ -179,7 +173,6 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUnsignedInt
      */
     private $quantity = null;
-
     /**
      * Types of resources that are part of group
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -737,7 +730,7 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Group xmlns="http://hl7.org/fhir"></Group>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getActual())) {
             $sxe->addAttribute(self::FIELD_ACTUAL, (string)$v);
             if (null !== $v->getId() || [] !== $v->getExtension()) {

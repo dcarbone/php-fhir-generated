@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapab
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:58+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -126,7 +126,6 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     private $conditionalCreate = null;
-
     /**
      * A code that indicates how the server supports conditional delete.
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -136,7 +135,6 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRConditionalDeleteStatus
      */
     private $conditionalDelete = null;
-
     /**
      * A code that indicates how the server supports conditional read.
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -146,7 +144,6 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRConditionalReadStatus
      */
     private $conditionalRead = null;
-
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -156,7 +153,6 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     private $conditionalUpdate = null;
-
     /**
      * A string that may contain Github Flavored Markdown syntax for optional
      * processing by a mark down presentation engine
@@ -171,7 +167,6 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     private $documentation = null;
-
     /**
      * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
      * Server for a particular version of FHIR that may be used as a statement of
@@ -183,7 +178,6 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction[]
      */
     private $interaction = [];
-
     /**
      * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
      * Server for a particular version of FHIR that may be used as a statement of
@@ -197,7 +191,6 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementOperation[]
      */
     private $operation = [];
-
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
@@ -212,7 +205,6 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
     private $profile = null;
-
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -223,7 +215,6 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     private $readHistory = null;
-
     /**
      * A set of flags that defines how references are supported.
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -233,7 +224,6 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReferenceHandlingPolicy[]
      */
     private $referencePolicy = [];
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -244,7 +234,6 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
      */
     private $searchInclude = [];
-
     /**
      * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
      * Server for a particular version of FHIR that may be used as a statement of
@@ -258,7 +247,6 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSearchParam[]
      */
     private $searchParam = [];
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -269,7 +257,6 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
      */
     private $searchRevInclude = [];
-
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
@@ -287,7 +274,6 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[]
      */
     private $supportedProfile = [];
-
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
@@ -299,7 +285,6 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode
      */
     private $type = null;
-
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -312,7 +297,6 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     private $updateCreate = null;
-
     /**
      * How the system supports versioning for a resource.
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -1556,7 +1540,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<CapabilityStatementResource xmlns="http://hl7.org/fhir"></CapabilityStatementResource>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getConditionalCreate())) {
             $sxe->addAttribute(self::FIELD_CONDITIONAL_CREATE, (string)$v);
             if (null !== $v->getId() || [] !== $v->getExtension()) {

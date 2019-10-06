@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTestR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:58+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,7 +88,6 @@ class FHIRTestReportAction1 extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportAssert
      */
     private $assert = null;
-
     /**
      * A summary of information based on the results of executing a TestScript.
      *
@@ -239,7 +238,7 @@ class FHIRTestReportAction1 extends FHIRBackboneElement
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<TestReportAction1 xmlns="http://hl7.org/fhir"></TestReportAction1>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getAssert())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ASSERT));

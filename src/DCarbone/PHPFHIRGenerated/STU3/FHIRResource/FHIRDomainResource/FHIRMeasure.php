@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:57+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -168,7 +168,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate
      */
     private $approvalDate = null;
-
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
      * presentation engine
@@ -186,7 +185,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
     private $clinicalRecommendationStatement = null;
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -199,7 +197,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     private $compositeScoring = null;
-
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
@@ -211,7 +208,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactDetail[]
      */
     private $contact = [];
-
     /**
      * A contributor to the content of a knowledge asset, including authors, editors,
      * reviewers, and endorsers.
@@ -224,7 +220,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContributor[]
      */
     private $contributor = [];
-
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
      * presentation engine
@@ -243,7 +238,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
     private $copyright = null;
-
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
@@ -260,7 +254,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
     private $date = null;
-
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
      * presentation engine
@@ -277,7 +270,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown[]
      */
     private $definition = [];
-
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
      * presentation engine
@@ -295,7 +287,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
     private $description = null;
-
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
      * presentation engine
@@ -313,7 +304,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
     private $disclaimer = null;
-
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
@@ -325,7 +315,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
     private $effectivePeriod = null;
-
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -337,7 +326,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     private $experimental = null;
-
     /**
      * The Measure resource provides the definition of a quality measure.
      *
@@ -346,7 +334,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureGroup[]
      */
     private $group = [];
-
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
      * presentation engine
@@ -364,7 +351,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
     private $guidance = null;
-
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -377,7 +363,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[]
      */
     private $identifier = [];
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -390,7 +375,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     private $improvementNotation = null;
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -402,7 +386,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     private $jurisdiction = [];
-
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
@@ -415,7 +398,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate
      */
     private $lastReviewDate = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -427,7 +409,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     private $library = [];
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -440,7 +421,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     private $name = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -451,7 +431,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     private $publisher = null;
-
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
      * presentation engine
@@ -469,7 +448,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
     private $purpose = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -481,7 +459,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     private $rateAggregation = null;
-
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
      * presentation engine
@@ -500,7 +477,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
     private $rationale = null;
-
     /**
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
@@ -513,7 +489,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRelatedArtifact[]
      */
     private $relatedArtifact = [];
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -526,7 +501,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     private $riskAdjustment = null;
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -540,7 +514,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     private $scoring = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -551,7 +524,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     private $set = null;
-
     /**
      * If the element is present, it must have either a @value, an @id, or extensions
      *
@@ -560,7 +532,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPublicationStatus
      */
     private $status = null;
-
     /**
      * The Measure resource provides the definition of a quality measure.
      *
@@ -571,7 +542,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureSupplementalData[]
      */
     private $supplementalData = [];
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -582,7 +552,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     private $title = null;
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -596,7 +565,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     private $topic = [];
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -609,7 +577,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     private $type = [];
-
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -624,7 +591,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
     private $url = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -635,7 +601,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     private $usage = null;
-
     /**
      * Specifies clinical/business/etc metadata that can be used to retrieve, index
      * and/or categorize an artifact. This metadata can either be specific to the
@@ -651,7 +616,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUsageContext[]
      */
     private $useContext = [];
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -3248,7 +3212,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Measure xmlns="http://hl7.org/fhir"></Measure>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getApprovalDate())) {
             $sxe->addAttribute(self::FIELD_APPROVAL_DATE, (string)$v);
             if (null !== $v->getId() || [] !== $v->getExtension()) {

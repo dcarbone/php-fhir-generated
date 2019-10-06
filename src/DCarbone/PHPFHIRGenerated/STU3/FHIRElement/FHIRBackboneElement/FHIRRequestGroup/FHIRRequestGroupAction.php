@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRReq
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:57+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -130,7 +130,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction[]
      */
     private $action = [];
-
     /**
      * Defines behavior for an action or a group for how many times that item may be
      * repeated
@@ -141,7 +140,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionCardinalityBehavior
      */
     private $cardinalityBehavior = null;
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -154,7 +152,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     private $code = [];
-
     /**
      * A group of related requests that can be used to capture intended activities that
      * have inter-dependencies such as "give this medication after that one".
@@ -165,7 +162,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupCondition[]
      */
     private $condition = [];
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -177,7 +173,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     private $description = null;
-
     /**
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
@@ -191,7 +186,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRelatedArtifact[]
      */
     private $documentation = [];
-
     /**
      * Defines organization behavior of a group
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -201,7 +195,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionGroupingBehavior
      */
     private $groupingBehavior = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -212,7 +205,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     private $label = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -223,7 +215,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     private $participant = [];
-
     /**
      * Defines selection frequency behavior for an action or group
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -233,7 +224,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionPrecheckBehavior
      */
     private $precheckBehavior = null;
-
     /**
      * A group of related requests that can be used to capture intended activities that
      * have inter-dependencies such as "give this medication after that one".
@@ -244,7 +234,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupRelatedAction[]
      */
     private $relatedAction = [];
-
     /**
      * Defines requiredness behavior for selecting an action or an action group
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -254,7 +243,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionRequiredBehavior
      */
     private $requiredBehavior = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -265,7 +253,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     private $resource = null;
-
     /**
      * Defines selection behavior of a group
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -275,7 +262,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionSelectionBehavior
      */
     private $selectionBehavior = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -288,7 +274,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     private $textEquivalent = null;
-
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
@@ -302,7 +287,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
     private $timingDateTime = null;
-
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
@@ -313,7 +297,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRDuration
      */
     private $timingDuration = null;
-
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
@@ -324,7 +307,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
     private $timingPeriod = null;
-
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
@@ -335,7 +317,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRange
      */
     private $timingRange = null;
-
     /**
      * Specifies an event that may occur multiple times. Timing schedules are used to
      * record when things are planned, expected or requested to occur. The most common
@@ -350,7 +331,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming
      */
     private $timingTiming = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -361,7 +341,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     private $title = null;
-
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
@@ -1642,7 +1621,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<RequestGroupAction xmlns="http://hl7.org/fhir"></RequestGroupAction>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
 
         if ([] !== ($vs = $this->getAction())) {
             foreach($vs as $v) {

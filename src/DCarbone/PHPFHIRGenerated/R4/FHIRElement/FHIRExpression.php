@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:58+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -102,7 +102,6 @@ class FHIRExpression extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     private $description = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -113,7 +112,6 @@ class FHIRExpression extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     private $expression = null;
-
     /**
      * The media type of the expression language.
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -123,7 +121,6 @@ class FHIRExpression extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpressionLanguage
      */
     private $language = null;
-
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
@@ -138,7 +135,6 @@ class FHIRExpression extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId
      */
     private $name = null;
-
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -491,7 +487,7 @@ class FHIRExpression extends FHIRElement
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Expression xmlns="http://hl7.org/fhir"></Expression>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getDescription())) {
             $sxe->addAttribute(self::FIELD_DESCRIPTION, (string)$v);
             if (null !== $v->getId() || [] !== $v->getExtension()) {

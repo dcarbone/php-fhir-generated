@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:57+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -133,7 +133,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
     private $assertedDate = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -144,7 +143,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     private $asserter = null;
-
     /**
      * Category of an identified substance.
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -154,7 +152,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAllergyIntoleranceCategory[]
      */
     private $category = [];
-
     /**
      * The clinical status of the allergy or intolerance.
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -164,7 +161,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAllergyIntoleranceClinicalStatus
      */
     private $clinicalStatus = null;
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -182,7 +178,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     private $code = null;
-
     /**
      * Estimate of the potential clinical harm, or seriousness, of a reaction to an
      * identified substance.
@@ -194,7 +189,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAllergyIntoleranceCriticality
      */
     private $criticality = null;
-
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -208,7 +202,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[]
      */
     private $identifier = [];
-
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
@@ -223,7 +216,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
     private $lastOccurrence = null;
-
     /**
      * A text note which also contains information about who made the statement and
      * when.
@@ -236,7 +228,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation[]
      */
     private $note = [];
-
     /**
      * A duration of time during which an organism (or a process) has existed.
      * If the element is present, it must have a value for at least one of the defined
@@ -248,7 +239,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRAge
      */
     private $onsetAge = null;
-
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
@@ -263,7 +253,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
     private $onsetDateTime = null;
-
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
@@ -275,7 +264,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
     private $onsetPeriod = null;
-
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
@@ -287,7 +275,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRange
      */
     private $onsetRange = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -299,7 +286,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     private $onsetString = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -310,7 +296,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     private $patient = null;
-
     /**
      * Risk of harmful or undesirable, physiological response which is unique to an
      * individual and associated with exposure to a substance.
@@ -321,7 +306,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRAllergyIntolerance\FHIRAllergyIntoleranceReaction[]
      */
     private $reaction = [];
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -332,7 +316,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     private $recorder = null;
-
     /**
      * Identification of the underlying physiological mechanism for a Reaction Risk.
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -342,7 +325,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAllergyIntoleranceType
      */
     private $type = null;
-
     /**
      * Assertion about certainty associated with a propensity, or potential risk, of a
      * reaction to the identified substance.
@@ -1450,7 +1432,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<AllergyIntolerance xmlns="http://hl7.org/fhir"></AllergyIntolerance>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getAssertedDate())) {
             $sxe->addAttribute(self::FIELD_ASSERTED_DATE, (string)$v);
             if (null !== $v->getId() || [] !== $v->getExtension()) {

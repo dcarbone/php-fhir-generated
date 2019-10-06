@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:58+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -105,7 +105,6 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleEntry[]
      */
     private $entry = [];
-
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -118,7 +117,6 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
     private $identifier = null;
-
     /**
      * A container for a collection of resources.
      *
@@ -127,7 +125,6 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleLink[]
      */
     private $link = [];
-
     /**
      * A signature along with supporting context. The signature may be a digital
      * signature that is cryptographic in nature, or some other signature acceptable to
@@ -142,7 +139,6 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSignature
      */
     private $signature = null;
-
     /**
      * An instant in time - known at least to the second
      * Note: This is intended for where precisely observed times are required,
@@ -157,7 +153,6 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant
      */
     private $timestamp = null;
-
     /**
      * An integer with a value that is not negative (e.g. >= 0)
      * If the element is present, it must have either a @value, an @id referenced from
@@ -171,7 +166,6 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt
      */
     private $total = null;
-
     /**
      * Indicates the purpose of a bundle - how it is intended to be used.
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -650,7 +644,7 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Bundle xmlns="http://hl7.org/fhir"></Bundle>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
 
         if ([] !== ($vs = $this->getEntry())) {
             foreach($vs as $v) {

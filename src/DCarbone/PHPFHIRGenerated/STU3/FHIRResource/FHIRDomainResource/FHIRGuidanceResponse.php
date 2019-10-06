@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:57+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -118,7 +118,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     private $context = null;
-
     /**
      * Describes a required data item for evaluation in terms of the type of data, and
      * optional code or date-based filters of the data.
@@ -133,7 +132,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDataRequirement[]
      */
     private $dataRequirement = [];
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -146,7 +144,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     private $evaluationMessage = [];
-
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -157,7 +154,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
      */
     private $identifier = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -168,7 +164,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     private $module = null;
-
     /**
      * A text note which also contains information about who made the statement and
      * when.
@@ -180,7 +175,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation[]
      */
     private $note = [];
-
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
@@ -194,7 +188,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
     private $occurrenceDateTime = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -209,7 +202,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     private $outputParameters = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -220,7 +212,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     private $performer = null;
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -235,7 +226,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     private $reasonCodeableConcept = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -249,7 +239,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     private $reasonReference = null;
-
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
@@ -265,7 +254,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId
      */
     private $requestId = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -276,7 +264,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     private $result = null;
-
     /**
      * The status of a guidance response
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -293,7 +280,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRGuidanceResponseStatus
      */
     private $status = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -1187,7 +1173,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<GuidanceResponse xmlns="http://hl7.org/fhir"></GuidanceResponse>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getContext())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CONTEXT));

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:57+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -109,7 +109,6 @@ class FHIRAttachment extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode
      */
     private $contentType = null;
-
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
@@ -123,7 +122,6 @@ class FHIRAttachment extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
     private $creation = null;
-
     /**
      * A stream of bytes
      * A stream of bytes, base64 encoded
@@ -135,7 +133,6 @@ class FHIRAttachment extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBase64Binary
      */
     private $data = null;
-
     /**
      * A stream of bytes
      * A stream of bytes, base64 encoded
@@ -146,7 +143,6 @@ class FHIRAttachment extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBase64Binary
      */
     private $hash = null;
-
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
@@ -159,7 +155,6 @@ class FHIRAttachment extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode
      */
     private $language = null;
-
     /**
      * An integer with a value that is not negative (e.g. >= 0)
      * If the element is present, it must have either a @value, an @id referenced from
@@ -170,7 +165,6 @@ class FHIRAttachment extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUnsignedInt
      */
     private $size = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -181,7 +175,6 @@ class FHIRAttachment extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     private $title = null;
-
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -728,7 +721,7 @@ class FHIRAttachment extends FHIRElement
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Attachment xmlns="http://hl7.org/fhir"></Attachment>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getContentType())) {
             $sxe->addAttribute(self::FIELD_CONTENT_TYPE, (string)$v);
             if (null !== $v->getId() || [] !== $v->getExtension()) {

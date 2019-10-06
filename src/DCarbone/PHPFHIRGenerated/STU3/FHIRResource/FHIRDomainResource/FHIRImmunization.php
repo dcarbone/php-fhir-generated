@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:57+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -135,7 +135,6 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
     private $date = null;
-
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
@@ -148,7 +147,6 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
      */
     private $doseQuantity = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -160,7 +158,6 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     private $encounter = null;
-
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
@@ -172,7 +169,6 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate
      */
     private $expirationDate = null;
-
     /**
      * Describes the event of a patient being administered a vaccination or a record of
      * a vaccination as reported by a patient, a clinician or another party and may
@@ -183,7 +179,6 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationExplanation
      */
     private $explanation = null;
-
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -194,7 +189,6 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[]
      */
     private $identifier = [];
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -205,7 +199,6 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     private $location = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -216,7 +209,6 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     private $lotNumber = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -227,7 +219,6 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     private $manufacturer = null;
-
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -237,7 +228,6 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     private $notGiven = null;
-
     /**
      * A text note which also contains information about who made the statement and
      * when.
@@ -250,7 +240,6 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation[]
      */
     private $note = [];
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -261,7 +250,6 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     private $patient = null;
-
     /**
      * Describes the event of a patient being administered a vaccination or a record of
      * a vaccination as reported by a patient, a clinician or another party and may
@@ -272,7 +260,6 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationPractitioner[]
      */
     private $practitioner = [];
-
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -284,7 +271,6 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     private $primarySource = null;
-
     /**
      * Describes the event of a patient being administered a vaccination or a record of
      * a vaccination as reported by a patient, a clinician or another party and may
@@ -296,7 +282,6 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationReaction[]
      */
     private $reaction = [];
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -309,7 +294,6 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     private $reportOrigin = null;
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -321,7 +305,6 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     private $route = null;
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -333,7 +316,6 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     private $site = null;
-
     /**
      * A set of codes indicating the current status of an Immunization
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -343,7 +325,6 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRImmunizationStatusCodes
      */
     private $status = null;
-
     /**
      * Describes the event of a patient being administered a vaccination or a record of
      * a vaccination as reported by a patient, a clinician or another party and may
@@ -355,7 +336,6 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationVaccinationProtocol[]
      */
     private $vaccinationProtocol = [];
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -1571,7 +1551,7 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Immunization xmlns="http://hl7.org/fhir"></Immunization>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getDate())) {
             $sxe->addAttribute(self::FIELD_DATE, (string)$v);
             if (null !== $v->getId() || [] !== $v->getExtension()) {

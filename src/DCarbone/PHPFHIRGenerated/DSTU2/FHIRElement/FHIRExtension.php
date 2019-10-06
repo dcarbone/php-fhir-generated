@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:57+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -137,7 +137,6 @@ class FHIRExtension extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRUriPrimitive
      */
     private $url = null;
-
     /**
      * There is a variety of postal address formats defined around the world. This
      * format defines a superset that is the basis for all addresses around the world.
@@ -150,7 +149,6 @@ class FHIRExtension extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAddress
      */
     private $valueAddress = null;
-
     /**
      * A text note which also contains information about who made the statement and
      * when.
@@ -163,7 +161,6 @@ class FHIRExtension extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAnnotation
      */
     private $valueAnnotation = null;
-
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
@@ -175,7 +172,6 @@ class FHIRExtension extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAttachment
      */
     private $valueAttachment = null;
-
     /**
      * A stream of bytes
      * A stream of bytes, base64 encoded
@@ -187,7 +183,6 @@ class FHIRExtension extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBase64Binary
      */
     private $valueBase64Binary = null;
-
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -198,7 +193,6 @@ class FHIRExtension extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
     private $valueBoolean = null;
-
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
@@ -211,7 +205,6 @@ class FHIRExtension extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode
      */
     private $valueCode = null;
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -224,7 +217,6 @@ class FHIRExtension extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
     private $valueCodeableConcept = null;
-
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
@@ -236,7 +228,6 @@ class FHIRExtension extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
      */
     private $valueCoding = null;
-
     /**
      * Details for all kinds of technology mediated contact points for a person or
      * organization, including telephone, email, etc.
@@ -249,7 +240,6 @@ class FHIRExtension extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRContactPoint
      */
     private $valueContactPoint = null;
-
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
@@ -262,7 +252,6 @@ class FHIRExtension extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDate
      */
     private $valueDate = null;
-
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
@@ -277,7 +266,6 @@ class FHIRExtension extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
     private $valueDateTime = null;
-
     /**
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
@@ -290,7 +278,6 @@ class FHIRExtension extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDecimal
      */
     private $valueDecimal = null;
-
     /**
      * A human's name with the ability to identify parts and usage.
      * If the element is present, it must have a value for at least one of the defined
@@ -302,7 +289,6 @@ class FHIRExtension extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRHumanName
      */
     private $valueHumanName = null;
-
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
@@ -317,7 +303,6 @@ class FHIRExtension extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRId
      */
     private $valueId = null;
-
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -329,7 +314,6 @@ class FHIRExtension extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier
      */
     private $valueIdentifier = null;
-
     /**
      * An instant in time - known at least to the second
      * Note: This is intended for precisely observed times, typically system logs etc.,
@@ -343,7 +327,6 @@ class FHIRExtension extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRInstant
      */
     private $valueInstant = null;
-
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
@@ -355,7 +338,6 @@ class FHIRExtension extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRInteger
      */
     private $valueInteger = null;
-
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
      * presentation engine
@@ -373,7 +355,6 @@ class FHIRExtension extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRMarkdown
      */
     private $valueMarkdown = null;
-
     /**
      * The metadata about a resource. This is content in the resource that is
      * maintained by the infrastructure. Changes to the content may not always be
@@ -387,7 +368,6 @@ class FHIRExtension extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRMeta
      */
     private $valueMeta = null;
-
     /**
      * An oid represented as a URI
      * RFC 3001. See also ISO/IEC 8824:1990 €
@@ -400,7 +380,6 @@ class FHIRExtension extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIROid
      */
     private $valueOid = null;
-
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
@@ -412,7 +391,6 @@ class FHIRExtension extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod
      */
     private $valuePeriod = null;
-
     /**
      * An integer with a value that is positive (e.g. >0)
      * If the element is present, it must have either a @value, an @id referenced from
@@ -424,7 +402,6 @@ class FHIRExtension extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPositiveInt
      */
     private $valuePositiveInt = null;
-
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
@@ -438,7 +415,6 @@ class FHIRExtension extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity
      */
     private $valueQuantity = null;
-
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
@@ -450,7 +426,6 @@ class FHIRExtension extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRRange
      */
     private $valueRange = null;
-
     /**
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
@@ -463,7 +438,6 @@ class FHIRExtension extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRRatio
      */
     private $valueRatio = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -475,7 +449,6 @@ class FHIRExtension extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     private $valueReference = null;
-
     /**
      * A series of measurements taken by a device, with upper and lower limits. There
      * may be more than one dimension in the data.
@@ -488,7 +461,6 @@ class FHIRExtension extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRSampledData
      */
     private $valueSampledData = null;
-
     /**
      * A digital signature along with supporting context. The signature may be
      * electronic/cryptographic in nature, or a graphical image representing a
@@ -503,7 +475,6 @@ class FHIRExtension extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRSignature
      */
     private $valueSignature = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -515,7 +486,6 @@ class FHIRExtension extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     private $valueString = null;
-
     /**
      * A time during the day, with no date specified
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -526,7 +496,6 @@ class FHIRExtension extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRTime
      */
     private $valueTime = null;
-
     /**
      * Specifies an event that may occur multiple times. Timing schedules are used to
      * record when things are expected or requested to occur. The most common usage is
@@ -541,7 +510,6 @@ class FHIRExtension extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRTiming
      */
     private $valueTiming = null;
-
     /**
      * An integer with a value that is not negative (e.g. >= 0)
      * If the element is present, it must have either a @value, an @id referenced from
@@ -553,7 +521,6 @@ class FHIRExtension extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUnsignedInt
      */
     private $valueUnsignedInt = null;
-
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -565,7 +532,6 @@ class FHIRExtension extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri
      */
     private $valueUri = null;
-
     /**
      * A UUID, represented as a URI
      * See The Open Group, CDE 1.1 Remote Procedure Call specification, Appendix A.
@@ -2449,7 +2415,7 @@ class FHIRExtension extends FHIRElement
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Extension xmlns="http://hl7.org/fhir"></Extension>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getUrl())) {
             $sxe->addAttribute(self::FIELD_URL, (string)$v);
             $v->xmlSerialize($sxe->addChild(self::FIELD_URL));

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:58+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -123,7 +123,6 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements PHPFHIRContaine
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     private $additionalMonitoringIndicator = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -134,7 +133,6 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements PHPFHIRContaine
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     private $attachedDocument = [];
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -145,7 +143,6 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements PHPFHIRContaine
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     private $clinicalTrial = [];
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -158,7 +155,6 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements PHPFHIRContaine
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     private $combinedPharmaceuticalDoseForm = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -169,7 +165,6 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements PHPFHIRContaine
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     private $contact = [];
-
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -182,7 +177,6 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements PHPFHIRContaine
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
     private $crossReference = [];
-
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
@@ -193,7 +187,6 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements PHPFHIRContaine
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding
      */
     private $domain = null;
-
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -205,7 +198,6 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements PHPFHIRContaine
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
     private $identifier = [];
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -218,7 +210,6 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements PHPFHIRContaine
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     private $legalStatusOfSupply = null;
-
     /**
      * Detailed definition of a medicinal product, typically for uses other than direct
      * patient care (e.g. regulatory use).
@@ -229,7 +220,6 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements PHPFHIRContaine
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProduct\FHIRMedicinalProductManufacturingBusinessOperation[]
      */
     private $manufacturingBusinessOperation = [];
-
     /**
      * The marketing status describes the date when a medicinal product is actually put
      * on the market or the date as of which it is no longer available.
@@ -242,7 +232,6 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements PHPFHIRContaine
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMarketingStatus[]
      */
     private $marketingStatus = [];
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -254,7 +243,6 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements PHPFHIRContaine
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     private $masterFile = [];
-
     /**
      * Detailed definition of a medicinal product, typically for uses other than direct
      * patient care (e.g. regulatory use).
@@ -264,7 +252,6 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements PHPFHIRContaine
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProduct\FHIRMedicinalProductName[]
      */
     private $name = [];
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -275,7 +262,6 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements PHPFHIRContaine
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     private $packagedMedicinalProduct = [];
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -287,7 +273,6 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements PHPFHIRContaine
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     private $paediatricUseIndicator = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -298,7 +283,6 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements PHPFHIRContaine
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     private $pharmaceuticalProduct = [];
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -310,7 +294,6 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements PHPFHIRContaine
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     private $productClassification = [];
-
     /**
      * Detailed definition of a medicinal product, typically for uses other than direct
      * patient care (e.g. regulatory use).
@@ -321,7 +304,6 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements PHPFHIRContaine
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProduct\FHIRMedicinalProductSpecialDesignation[]
      */
     private $specialDesignation = [];
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -333,7 +315,6 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements PHPFHIRContaine
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
      */
     private $specialMeasures = [];
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -1774,7 +1755,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements PHPFHIRContaine
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<MedicinalProduct xmlns="http://hl7.org/fhir"></MedicinalProduct>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getAdditionalMonitoringIndicator())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ADDITIONAL_MONITORING_INDICATOR));

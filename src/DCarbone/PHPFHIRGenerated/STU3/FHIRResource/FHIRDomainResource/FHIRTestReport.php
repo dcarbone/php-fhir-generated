@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:57+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -118,7 +118,6 @@ class FHIRTestReport extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
      */
     private $identifier = null;
-
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
@@ -132,7 +131,6 @@ class FHIRTestReport extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
     private $issued = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -143,7 +141,6 @@ class FHIRTestReport extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     private $name = null;
-
     /**
      * A summary of information based on the results of executing a TestScript.
      *
@@ -153,7 +150,6 @@ class FHIRTestReport extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportParticipant[]
      */
     private $participant = [];
-
     /**
      * The reported execution result.
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -163,7 +159,6 @@ class FHIRTestReport extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTestReportResult
      */
     private $result = null;
-
     /**
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
@@ -176,7 +171,6 @@ class FHIRTestReport extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
      */
     private $score = null;
-
     /**
      * A summary of information based on the results of executing a TestScript.
      *
@@ -186,7 +180,6 @@ class FHIRTestReport extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportSetup
      */
     private $setup = null;
-
     /**
      * The current status of the test report.
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -196,7 +189,6 @@ class FHIRTestReport extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTestReportStatus
      */
     private $status = null;
-
     /**
      * A summary of information based on the results of executing a TestScript.
      *
@@ -206,7 +198,6 @@ class FHIRTestReport extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportTeardown
      */
     private $teardown = null;
-
     /**
      * A summary of information based on the results of executing a TestScript.
      *
@@ -215,7 +206,6 @@ class FHIRTestReport extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportTest[]
      */
     private $test = [];
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -227,7 +217,6 @@ class FHIRTestReport extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     private $testScript = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -921,7 +910,7 @@ class FHIRTestReport extends FHIRDomainResource implements PHPFHIRContainedTypeI
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<TestReport xmlns="http://hl7.org/fhir"></TestReport>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getIdentifier())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER));

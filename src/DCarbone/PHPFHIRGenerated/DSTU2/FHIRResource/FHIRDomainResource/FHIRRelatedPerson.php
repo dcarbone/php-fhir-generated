@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:57+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -115,7 +115,6 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAddress[]
      */
     private $address = [];
-
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
@@ -127,7 +126,6 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDate
      */
     private $birthDate = null;
-
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
@@ -140,7 +138,6 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode
      */
     private $gender = null;
-
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -151,7 +148,6 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier[]
      */
     private $identifier = [];
-
     /**
      * A human's name with the ability to identify parts and usage.
      * If the element is present, it must have a value for at least one of the defined
@@ -162,7 +158,6 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRHumanName
      */
     private $name = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -173,7 +168,6 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     private $patient = null;
-
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
@@ -185,7 +179,6 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod
      */
     private $period = null;
-
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
@@ -196,7 +189,6 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAttachment[]
      */
     private $photo = [];
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -208,7 +200,6 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
     private $relationship = null;
-
     /**
      * Details for all kinds of technology mediated contact points for a person or
      * organization, including telephone, email, etc.
@@ -882,7 +873,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<RelatedPerson xmlns="http://hl7.org/fhir"></RelatedPerson>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
 
         if ([] !== ($vs = $this->getAddress())) {
             foreach($vs as $v) {

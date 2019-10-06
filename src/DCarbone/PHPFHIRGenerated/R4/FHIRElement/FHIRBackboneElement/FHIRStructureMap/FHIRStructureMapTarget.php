@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStruc
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:58+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -108,7 +108,6 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId
      */
     private $context = null;
-
     /**
      * How to interpret the context.
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -118,7 +117,6 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRStructureMapContextType
      */
     private $contextType = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -129,7 +127,6 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     private $element = null;
-
     /**
      * If field is a list, how to manage the production.
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -139,7 +136,6 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRStructureMapTargetListMode[]
      */
     private $listMode = [];
-
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
@@ -153,7 +149,6 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId
      */
     private $listRuleId = null;
-
     /**
      * A Map of relationships between 2 structures that can be used to transform data.
      *
@@ -162,7 +157,6 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapParameter[]
      */
     private $parameter = [];
-
     /**
      * How data is copied/created.
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -172,7 +166,6 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRStructureMapTransform
      */
     private $transform = null;
-
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
@@ -717,7 +710,7 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<StructureMapTarget xmlns="http://hl7.org/fhir"></StructureMapTarget>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getContext())) {
             $sxe->addAttribute(self::FIELD_CONTEXT, (string)$v);
             if (null !== $v->getId() || [] !== $v->getExtension()) {

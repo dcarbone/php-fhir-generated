@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:57+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -130,7 +130,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     private $active = null;
-
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -142,7 +141,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     private $appointmentRequired = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -155,7 +153,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     private $availabilityExceptions = null;
-
     /**
      * The details of a healthcare service available at a location.
      *
@@ -164,7 +161,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceAvailableTime[]
      */
     private $availableTime = [];
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -176,7 +172,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     private $category = null;
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -188,7 +183,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     private $characteristic = [];
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -201,7 +195,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     private $comment = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -213,7 +206,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     private $coverageArea = [];
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -226,7 +218,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     private $eligibility = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -237,7 +228,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     private $eligibilityNote = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -249,7 +239,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     private $endpoint = [];
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -260,7 +249,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     private $extraDetails = null;
-
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -271,7 +259,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[]
      */
     private $identifier = [];
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -282,7 +269,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     private $location = [];
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -294,7 +280,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     private $name = null;
-
     /**
      * The details of a healthcare service available at a location.
      *
@@ -304,7 +289,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceNotAvailable[]
      */
     private $notAvailable = [];
-
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
@@ -316,7 +300,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAttachment
      */
     private $photo = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -327,7 +310,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString[]
      */
     private $programName = [];
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -338,7 +320,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     private $providedBy = null;
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -351,7 +332,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     private $referralMethod = [];
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -364,7 +344,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     private $serviceProvisionCode = [];
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -377,7 +356,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     private $specialty = [];
-
     /**
      * Details for all kinds of technology mediated contact points for a person or
      * organization, including telephone, email, etc.
@@ -389,7 +367,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactPoint[]
      */
     private $telecom = [];
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -2071,7 +2048,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<HealthcareService xmlns="http://hl7.org/fhir"></HealthcareService>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getActive())) {
             $sxe->addAttribute(self::FIELD_ACTIVE, (string)$v);
             if (null !== $v->getId() || [] !== $v->getExtension()) {

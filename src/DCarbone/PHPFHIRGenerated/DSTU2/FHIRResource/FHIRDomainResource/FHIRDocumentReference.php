@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:57+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -121,7 +121,6 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     private $authenticator = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -132,7 +131,6 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
      */
     private $author = [];
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -146,7 +144,6 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
     private $class = null;
-
     /**
      * A reference to a document .
      *
@@ -156,7 +153,6 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceContent[]
      */
     private $content = [];
-
     /**
      * A reference to a document .
      *
@@ -165,7 +161,6 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceContext
      */
     private $context = null;
-
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
@@ -179,7 +174,6 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
     private $created = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -191,7 +185,6 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     private $custodian = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -203,7 +196,6 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     private $description = null;
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -215,7 +207,6 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
     private $docStatus = null;
-
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -227,7 +218,6 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier[]
      */
     private $identifier = [];
-
     /**
      * An instant in time - known at least to the second
      * Note: This is intended for precisely observed times, typically system logs etc.,
@@ -240,7 +230,6 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRInstant
      */
     private $indexed = null;
-
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -253,7 +242,6 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier
      */
     private $masterIdentifier = null;
-
     /**
      * A reference to a document .
      *
@@ -263,7 +251,6 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceRelatesTo[]
      */
     private $relatesTo = [];
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -279,7 +266,6 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[]
      */
     private $securityLabel = [];
-
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
@@ -291,7 +277,6 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode
      */
     private $status = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -305,7 +290,6 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     private $subject = null;
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -1361,7 +1345,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<DocumentReference xmlns="http://hl7.org/fhir"></DocumentReference>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getAuthenticator())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AUTHENTICATOR));

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:57+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -111,7 +111,6 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     private $actualArm = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -123,7 +122,6 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     private $assignedArm = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -134,7 +132,6 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     private $consent = null;
-
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -145,7 +142,6 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
      */
     private $identifier = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -156,7 +152,6 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     private $individual = null;
-
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
@@ -167,7 +162,6 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
     private $period = null;
-
     /**
      * Indicates the progression of a study subject through a study
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -177,7 +171,6 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResearchSubjectStatus
      */
     private $status = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -612,7 +605,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ResearchSubject xmlns="http://hl7.org/fhir"></ResearchSubject>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getActualArm())) {
             $sxe->addAttribute(self::FIELD_ACTUAL_ARM, (string)$v);
             if (null !== $v->getId() || [] !== $v->getExtension()) {

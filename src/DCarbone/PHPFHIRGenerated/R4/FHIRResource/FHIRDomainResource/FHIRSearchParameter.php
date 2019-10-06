@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:58+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -151,7 +151,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode[]
      */
     private $base = [];
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -167,7 +166,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
      */
     private $chain = [];
-
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
@@ -180,7 +178,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode
      */
     private $code = null;
-
     /**
      * What Search Comparator Codes are supported in search.
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -190,7 +187,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSearchComparator[]
      */
     private $comparator = [];
-
     /**
      * A search parameter that defines a named search item that can be used to
      * search/filter on a resource.
@@ -200,7 +196,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSearchParameter\FHIRSearchParameterComponent[]
      */
     private $component = [];
-
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
@@ -212,7 +207,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
     private $contact = [];
-
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
@@ -229,7 +223,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     private $date = null;
-
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
@@ -245,7 +238,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
     private $derivedFrom = null;
-
     /**
      * A string that may contain Github Flavored Markdown syntax for optional
      * processing by a mark down presentation engine
@@ -260,7 +252,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     private $description = null;
-
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -272,7 +263,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     private $experimental = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -283,7 +273,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     private $expression = null;
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -296,7 +285,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     private $jurisdiction = [];
-
     /**
      * A supported modifier for a search parameter.
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -306,7 +294,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSearchModifierCode[]
      */
     private $modifier = [];
-
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -317,7 +304,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     private $multipleAnd = null;
-
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -328,7 +314,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     private $multipleOr = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -341,7 +326,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     private $name = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -352,7 +336,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     private $publisher = null;
-
     /**
      * A string that may contain Github Flavored Markdown syntax for optional
      * processing by a mark down presentation engine
@@ -368,7 +351,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     private $purpose = null;
-
     /**
      * If the element is present, it must have either a @value, an @id, or extensions
      *
@@ -378,7 +360,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPublicationStatus
      */
     private $status = null;
-
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
@@ -390,7 +371,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode[]
      */
     private $target = [];
-
     /**
      * If the element is present, it must have either a @value, an @id, or extensions
      *
@@ -400,7 +380,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSearchParamType
      */
     private $type = null;
-
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -416,7 +395,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
     private $url = null;
-
     /**
      * Specifies clinical/business/etc. metadata that can be used to retrieve, index
      * and/or categorize an artifact. This metadata can either be specific to the
@@ -434,7 +412,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext[]
      */
     private $useContext = [];
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -450,7 +427,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     private $version = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -461,7 +437,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     private $xpath = null;
-
     /**
      * How a search parameter relates to the set of elements returned by evaluating its
      * xpath query.
@@ -2295,7 +2270,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<SearchParameter xmlns="http://hl7.org/fhir"></SearchParameter>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
         if ([] !== ($vs = $this->getBase())) {
             $first = true;
             foreach($vs as $v) {

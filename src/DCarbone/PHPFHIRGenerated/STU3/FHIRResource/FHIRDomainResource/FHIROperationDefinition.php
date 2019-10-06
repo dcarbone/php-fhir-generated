@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:57+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -143,7 +143,6 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     private $base = null;
-
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
@@ -155,7 +154,6 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCode
      */
     private $code = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -166,7 +164,6 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     private $comment = null;
-
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
@@ -178,7 +175,6 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactDetail[]
      */
     private $contact = [];
-
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
@@ -195,7 +191,6 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
     private $date = null;
-
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
      * presentation engine
@@ -213,7 +208,6 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
     private $description = null;
-
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -225,7 +219,6 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     private $experimental = null;
-
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -237,7 +230,6 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     private $idempotent = null;
-
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -248,7 +240,6 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     private $instance = null;
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -261,7 +252,6 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     private $jurisdiction = [];
-
     /**
      * Whether an operation is a normal operation or a query.
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -271,7 +261,6 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIROperationKind
      */
     private $kind = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -284,7 +273,6 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     private $name = null;
-
     /**
      * A formal computable definition of an operation (on the RESTful interface) or a
      * named query (using the search interaction).
@@ -296,7 +284,6 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionOverload[]
      */
     private $overload = [];
-
     /**
      * A formal computable definition of an operation (on the RESTful interface) or a
      * named query (using the search interaction).
@@ -306,7 +293,6 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter[]
      */
     private $parameter = [];
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -318,7 +304,6 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     private $publisher = null;
-
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
      * presentation engine
@@ -336,7 +321,6 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
     private $purpose = null;
-
     /**
      * The kind of activity the definition is describing
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -346,7 +330,6 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType[]
      */
     private $resource = [];
-
     /**
      * If the element is present, it must have either a @value, an @id, or extensions
      *
@@ -356,7 +339,6 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPublicationStatus
      */
     private $status = null;
-
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -367,7 +349,6 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     private $system = null;
-
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -379,7 +360,6 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     private $type = null;
-
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -395,7 +375,6 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
     private $url = null;
-
     /**
      * Specifies clinical/business/etc metadata that can be used to retrieve, index
      * and/or categorize an artifact. This metadata can either be specific to the
@@ -411,7 +390,6 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUsageContext[]
      */
     private $useContext = [];
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -1953,7 +1931,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<OperationDefinition xmlns="http://hl7.org/fhir"></OperationDefinition>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getBase())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_BASE));

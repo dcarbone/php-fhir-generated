@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:58+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -112,7 +112,6 @@ class FHIRItemInstance extends FHIRDomainResource
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     private $carrierAIDC = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -123,7 +122,6 @@ class FHIRItemInstance extends FHIRDomainResource
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     private $carrierHRF = null;
-
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
@@ -138,7 +136,6 @@ class FHIRItemInstance extends FHIRDomainResource
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
     private $count = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -150,7 +147,6 @@ class FHIRItemInstance extends FHIRDomainResource
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     private $currentSWVersion = null;
-
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
@@ -164,7 +160,6 @@ class FHIRItemInstance extends FHIRDomainResource
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     private $expiryDate = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -175,7 +170,6 @@ class FHIRItemInstance extends FHIRDomainResource
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     private $location = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -186,7 +180,6 @@ class FHIRItemInstance extends FHIRDomainResource
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     private $lotNumber = null;
-
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
@@ -202,7 +195,6 @@ class FHIRItemInstance extends FHIRDomainResource
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     private $manufactureDate = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -213,7 +205,6 @@ class FHIRItemInstance extends FHIRDomainResource
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     private $serialNumber = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -850,7 +841,7 @@ class FHIRItemInstance extends FHIRDomainResource
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ItemInstance xmlns="http://hl7.org/fhir"></ItemInstance>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getCarrierAIDC())) {
             $sxe->addAttribute(self::FIELD_CARRIER_AIDC, (string)$v);
             if (null !== $v->getId() || [] !== $v->getExtension()) {

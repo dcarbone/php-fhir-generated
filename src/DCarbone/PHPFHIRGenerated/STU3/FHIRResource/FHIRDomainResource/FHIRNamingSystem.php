@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:57+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -123,7 +123,6 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactDetail[]
      */
     private $contact = [];
-
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
@@ -140,7 +139,6 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
     private $date = null;
-
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
      * presentation engine
@@ -159,7 +157,6 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
     private $description = null;
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -171,7 +168,6 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     private $jurisdiction = [];
-
     /**
      * Identifies the purpose of the naming system.
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -182,7 +178,6 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRNamingSystemType
      */
     private $kind = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -195,7 +190,6 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     private $name = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -206,7 +200,6 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     private $publisher = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -218,7 +211,6 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     private $replacedBy = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -230,7 +222,6 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     private $responsible = null;
-
     /**
      * If the element is present, it must have either a @value, an @id, or extensions
      *
@@ -240,7 +231,6 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPublicationStatus
      */
     private $status = null;
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -253,7 +243,6 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     private $type = null;
-
     /**
      * A curated namespace that issues unique symbols within that namespace for the
      * identification of concepts, people, devices, etc. Represents a "System" used
@@ -265,7 +254,6 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRNamingSystem\FHIRNamingSystemUniqueId[]
      */
     private $uniqueId = [];
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -277,7 +265,6 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     private $usage = null;
-
     /**
      * Specifies clinical/business/etc metadata that can be used to retrieve, index
      * and/or categorize an artifact. This metadata can either be specific to the
@@ -1227,7 +1214,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<NamingSystem xmlns="http://hl7.org/fhir"></NamingSystem>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
 
         if ([] !== ($vs = $this->getContact())) {
             foreach($vs as $v) {

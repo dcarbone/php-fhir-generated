@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREvide
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:58+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -126,7 +126,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
     private $definitionCanonical = null;
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -141,7 +140,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     private $definitionCodeableConcept = null;
-
     /**
      * Describes a required data item for evaluation in terms of the type of data, and
      * optional code or date-based filters of the data.
@@ -156,7 +154,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement
      */
     private $definitionDataRequirement = null;
-
     /**
      * A expression that is evaluated in a specified context and returns a value. The
      * context of use of the expression must specify the context in which the
@@ -172,7 +169,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression
      */
     private $definitionExpression = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -186,7 +182,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     private $definitionReference = null;
-
     /**
      * A description of a triggering event. Triggering events can be named events, data
      * events, or periodic, as determined by the type element.
@@ -201,7 +196,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTriggerDefinition
      */
     private $definitionTriggerDefinition = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -213,7 +207,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     private $description = null;
-
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -223,7 +216,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     private $exclude = null;
-
     /**
      * Possible group measure aggregates (E.g. Mean, Median).
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -233,7 +225,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRGroupMeasure
      */
     private $groupMeasure = null;
-
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
@@ -248,7 +239,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     private $participantEffectiveDateTime = null;
-
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
@@ -260,7 +250,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     private $participantEffectiveDuration = null;
-
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
@@ -272,7 +261,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
     private $participantEffectivePeriod = null;
-
     /**
      * Specifies an event that may occur multiple times. Timing schedules are used to
      * record when things are planned, expected or requested to occur. The most common
@@ -288,7 +276,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
     private $participantEffectiveTiming = null;
-
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
@@ -299,7 +286,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     private $timeFromStart = null;
-
     /**
      * Specifies clinical/business/etc. metadata that can be used to retrieve, index
      * and/or categorize an artifact. This metadata can either be specific to the
@@ -1164,7 +1150,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<EvidenceVariableCharacteristic xmlns="http://hl7.org/fhir"></EvidenceVariableCharacteristic>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getDefinitionCanonical())) {
             $sxe->addAttribute(self::FIELD_DEFINITION_CANONICAL, (string)$v);
             if (null !== $v->getId() || [] !== $v->getExtension()) {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:57+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -76,6 +76,32 @@ class FHIRDuration extends FHIRQuantity
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_DURATION;
 
     /**
+     * FHIRDuration Constructor
+     * @param null|array $data
+     */
+    public function __construct($data = null)
+    {
+        if (null === $data || [] === $data) {
+            return;
+        }
+        if (!is_array($data)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRDuration::_construct - $data expected to be null or array, %s seen',
+                gettype($data)
+            ));
+        }
+        parent::__construct($data);
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRTypeName()
+    {
+        return self::FHIR_TYPE_NAME;
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRDuration $type
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRDuration
@@ -116,7 +142,7 @@ class FHIRDuration extends FHIRQuantity
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Duration xmlns="http://hl7.org/fhir"></Duration>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
         return $sxe;
     }
 

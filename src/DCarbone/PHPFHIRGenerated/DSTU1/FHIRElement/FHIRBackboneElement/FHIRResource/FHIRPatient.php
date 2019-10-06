@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 19:59+0000
+ * Class creation date: October 6th, 2019 09:03+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1578,7 +1578,7 @@ class FHIRPatient extends FHIRResource implements PHPFHIRContainedTypeInterface
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Patient xmlns="http://hl7.org/fhir"></Patient>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getActive())) {
             $sxe->addAttribute(self::FIELD_ACTIVE, (string)$v);
             if (null !== $v->getId() || [] !== $v->getExtension()) {

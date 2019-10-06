@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREffec
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:58+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -101,7 +101,6 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     private $description = null;
-
     /**
      * The EffectEvidenceSynthesis resource describes the difference in an outcome
      * between exposures states in a population where the effect estimate is derived
@@ -112,7 +111,6 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisPrecisionEstimate[]
      */
     private $precisionEstimate = [];
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -124,7 +122,6 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     private $type = null;
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -136,7 +133,6 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     private $unitOfMeasure = null;
-
     /**
      * A rational number with implicit precision
      * Do not use an IEEE type floating point type, instead use something that works
@@ -148,7 +144,6 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
     private $value = null;
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -546,7 +541,7 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<EffectEvidenceSynthesisEffectEstimate xmlns="http://hl7.org/fhir"></EffectEvidenceSynthesisEffectEstimate>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getDescription())) {
             $sxe->addAttribute(self::FIELD_DESCRIPTION, (string)$v);
             if (null !== $v->getId() || [] !== $v->getExtension()) {

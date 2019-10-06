@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:58+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -154,7 +154,6 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     private $asNeededBoolean = null;
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -168,7 +167,6 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     private $asNeededCodeableConcept = null;
-
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
@@ -182,7 +180,6 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     private $authoredOn = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -193,7 +190,6 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     private $basedOn = [];
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -206,7 +202,6 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     private $bodySite = [];
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -219,7 +214,6 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     private $category = [];
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -232,7 +226,6 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     private $code = null;
-
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -243,7 +236,6 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     private $doNotPerform = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -255,7 +247,6 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     private $encounter = null;
-
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -268,7 +259,6 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
     private $identifier = [];
-
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
@@ -281,7 +271,6 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[]
      */
     private $instantiatesCanonical = [];
-
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -293,7 +282,6 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri[]
      */
     private $instantiatesUri = [];
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -305,7 +293,6 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     private $insurance = [];
-
     /**
      * Codes indicating the degree of authority/intentionality associated with a
      * request.
@@ -316,7 +303,6 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRequestIntent
      */
     private $intent = null;
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -329,7 +315,6 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     private $locationCode = [];
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -341,7 +326,6 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     private $locationReference = [];
-
     /**
      * A text note which also contains information about who made the statement and
      * when.
@@ -354,7 +338,6 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation[]
      */
     private $note = [];
-
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
@@ -369,7 +352,6 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     private $occurrenceDateTime = null;
-
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
@@ -381,7 +363,6 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
     private $occurrencePeriod = null;
-
     /**
      * Specifies an event that may occur multiple times. Timing schedules are used to
      * record when things are planned, expected or requested to occur. The most common
@@ -397,7 +378,6 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
     private $occurrenceTiming = null;
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -412,7 +392,6 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     private $orderDetail = [];
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -423,7 +402,6 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     private $patientInstruction = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -435,7 +413,6 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     private $performer = [];
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -447,7 +424,6 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     private $performerType = null;
-
     /**
      * Identifies the level of importance to be assigned to actioning the request.
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -458,7 +434,6 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRequestPriority
      */
     private $priority = null;
-
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
@@ -474,7 +449,6 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
     private $quantityQuantity = null;
-
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
@@ -488,7 +462,6 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
     private $quantityRange = null;
-
     /**
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
@@ -503,7 +476,6 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
      */
     private $quantityRatio = null;
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -517,7 +489,6 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     private $reasonCode = [];
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -529,7 +500,6 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     private $reasonReference = [];
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -540,7 +510,6 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     private $relevantHistory = [];
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -552,7 +521,6 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     private $replaces = [];
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -564,7 +532,6 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     private $requester = null;
-
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -578,7 +545,6 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
     private $requisition = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -589,7 +555,6 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     private $specimen = [];
-
     /**
      * Indicates whether the plan is currently being acted upon, represents future
      * intentions or is now a historical record.
@@ -600,7 +565,6 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRequestStatus
      */
     private $status = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -613,7 +577,6 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     private $subject = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -3155,7 +3118,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ServiceRequest xmlns="http://hl7.org/fhir"></ServiceRequest>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getAsNeededBoolean())) {
             $sxe->addAttribute(self::FIELD_AS_NEEDED_BOOLEAN, (string)$v);
             if (null !== $v->getId() || [] !== $v->getExtension()) {

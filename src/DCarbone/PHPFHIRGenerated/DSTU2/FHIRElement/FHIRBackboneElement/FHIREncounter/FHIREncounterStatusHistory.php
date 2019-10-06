@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIREn
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:57+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -93,7 +93,6 @@ class FHIREncounterStatusHistory extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod
      */
     private $period = null;
-
     /**
      * Current state of the encounter
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -251,7 +250,7 @@ class FHIREncounterStatusHistory extends FHIRBackboneElement
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<EncounterStatusHistory xmlns="http://hl7.org/fhir"></EncounterStatusHistory>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getPeriod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PERIOD));

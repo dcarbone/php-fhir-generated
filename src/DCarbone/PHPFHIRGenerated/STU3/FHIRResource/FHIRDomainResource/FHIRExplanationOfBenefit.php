@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:57+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -156,7 +156,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitAccident
      */
     private $accident = null;
-
     /**
      * This resource provides: the claim details; adjudication details from the
      * processing of a Claim; and optionally account balance information, for informing
@@ -167,7 +166,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitAddItem[]
      */
     private $addItem = [];
-
     /**
      * This resource provides: the claim details; adjudication details from the
      * processing of a Claim; and optionally account balance information, for informing
@@ -178,7 +176,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitBenefitBalance[]
      */
     private $benefitBalance = [];
-
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
@@ -189,7 +186,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
     private $billablePeriod = null;
-
     /**
      * This resource provides: the claim details; adjudication details from the
      * processing of a Claim; and optionally account balance information, for informing
@@ -201,7 +197,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitCareTeam[]
      */
     private $careTeam = [];
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -213,7 +208,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     private $claim = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -225,7 +219,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     private $claimResponse = null;
-
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
@@ -239,7 +232,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
     private $created = null;
-
     /**
      * This resource provides: the claim details; adjudication details from the
      * processing of a Claim; and optionally account balance information, for informing
@@ -250,7 +242,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitDiagnosis[]
      */
     private $diagnosis = [];
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -261,7 +252,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     private $disposition = null;
-
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
@@ -273,7 +263,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
     private $employmentImpacted = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -284,7 +273,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     private $enterer = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -295,7 +283,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     private $facility = null;
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -307,7 +294,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     private $form = null;
-
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
@@ -319,7 +305,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
     private $hospitalization = null;
-
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -330,7 +315,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[]
      */
     private $identifier = [];
-
     /**
      * This resource provides: the claim details; adjudication details from the
      * processing of a Claim; and optionally account balance information, for informing
@@ -343,7 +327,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitInformation[]
      */
     private $information = [];
-
     /**
      * This resource provides: the claim details; adjudication details from the
      * processing of a Claim; and optionally account balance information, for informing
@@ -354,7 +337,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitInsurance
      */
     private $insurance = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -365,7 +347,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     private $insurer = null;
-
     /**
      * This resource provides: the claim details; adjudication details from the
      * processing of a Claim; and optionally account balance information, for informing
@@ -376,7 +357,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitItem[]
      */
     private $item = [];
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -387,7 +367,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     private $organization = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -404,7 +383,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     private $originalPrescription = null;
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -416,7 +394,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     private $outcome = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -427,7 +404,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     private $patient = null;
-
     /**
      * This resource provides: the claim details; adjudication details from the
      * processing of a Claim; and optionally account balance information, for informing
@@ -438,7 +414,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitPayee
      */
     private $payee = null;
-
     /**
      * This resource provides: the claim details; adjudication details from the
      * processing of a Claim; and optionally account balance information, for informing
@@ -449,7 +424,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitPayment
      */
     private $payment = null;
-
     /**
      * An integer with a value that is positive (e.g. >0)
      * If the element is present, it must have either a @value, an @id referenced from
@@ -460,7 +434,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPositiveInt
      */
     private $precedence = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -471,7 +444,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     private $prescription = null;
-
     /**
      * This resource provides: the claim details; adjudication details from the
      * processing of a Claim; and optionally account balance information, for informing
@@ -482,7 +454,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitProcedure[]
      */
     private $procedure = [];
-
     /**
      * This resource provides: the claim details; adjudication details from the
      * processing of a Claim; and optionally account balance information, for informing
@@ -493,7 +464,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitProcessNote[]
      */
     private $processNote = [];
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -504,7 +474,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     private $provider = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -516,7 +485,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     private $referral = null;
-
     /**
      * This resource provides: the claim details; adjudication details from the
      * processing of a Claim; and optionally account balance information, for informing
@@ -528,7 +496,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitRelated[]
      */
     private $related = [];
-
     /**
      * A code specifying the state of the resource instance.
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -538,7 +505,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExplanationOfBenefitStatus
      */
     private $status = null;
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -551,7 +517,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     private $subType = [];
-
     /**
      * An amount of economic utility in some recognized currency.
      * If the element is present, it must have a value for at least one of the defined
@@ -563,7 +528,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRMoney
      */
     private $totalBenefit = null;
-
     /**
      * An amount of economic utility in some recognized currency.
      * If the element is present, it must have a value for at least one of the defined
@@ -574,7 +538,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRMoney
      */
     private $totalCost = null;
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -586,7 +549,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     private $type = null;
-
     /**
      * An amount of economic utility in some recognized currency.
      * If the element is present, it must have a value for at least one of the defined
@@ -2726,7 +2688,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ExplanationOfBenefit xmlns="http://hl7.org/fhir"></ExplanationOfBenefit>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getAccident())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ACCIDENT));

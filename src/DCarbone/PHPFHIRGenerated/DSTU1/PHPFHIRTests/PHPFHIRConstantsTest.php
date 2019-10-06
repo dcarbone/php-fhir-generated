@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTests;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 19:59+0000
+ * Class creation date: October 6th, 2019 09:03+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1919,10 +1919,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline', PHPFHIRConstants::TYPE_CLASS_RESOURCE_DOT_INLINE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU1_FHIRResourceNamesPlusBinary()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU1_FHIRResourceType_FHIRResourceNamesPlusBinary()
     {
         $this->assertEquals('ResourceNamesPlusBinary', PHPFHIRConstants::TYPE_NAME_RESOURCE_NAMES_PLUS_BINARY);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceNamesPlusBinary', PHPFHIRConstants::TYPE_CLASS_RESOURCE_NAMES_PLUS_BINARY);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceType\FHIRResourceNamesPlusBinary', PHPFHIRConstants::TYPE_CLASS_RESOURCE_NAMES_PLUS_BINARY);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU1_FHIRElement_FHIRResourceProfileStatus()

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:58+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -128,7 +128,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioActor[]
      */
     private $actor = [];
-
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
@@ -140,7 +139,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
     private $contact = [];
-
     /**
      * A string that may contain Github Flavored Markdown syntax for optional
      * processing by a mark down presentation engine
@@ -157,7 +155,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     private $copyright = null;
-
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
@@ -174,7 +171,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     private $date = null;
-
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -186,7 +182,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     private $experimental = null;
-
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -200,7 +195,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
     private $identifier = [];
-
     /**
      * Example of workflow instance.
      *
@@ -209,7 +203,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioInstance[]
      */
     private $instance = [];
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -222,7 +215,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     private $jurisdiction = [];
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -235,7 +227,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     private $name = null;
-
     /**
      * Example of workflow instance.
      *
@@ -244,7 +235,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioProcess[]
      */
     private $process = [];
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -255,7 +245,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     private $publisher = null;
-
     /**
      * A string that may contain Github Flavored Markdown syntax for optional
      * processing by a mark down presentation engine
@@ -272,7 +261,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     private $purpose = null;
-
     /**
      * If the element is present, it must have either a @value, an @id, or extensions
      *
@@ -282,7 +270,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPublicationStatus
      */
     private $status = null;
-
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -298,7 +285,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
     private $url = null;
-
     /**
      * Specifies clinical/business/etc. metadata that can be used to retrieve, index
      * and/or categorize an artifact. This metadata can either be specific to the
@@ -316,7 +302,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext[]
      */
     private $useContext = [];
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -332,7 +317,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     private $version = null;
-
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
@@ -1612,7 +1596,7 @@ class FHIRExampleScenario extends FHIRDomainResource implements PHPFHIRContained
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ExampleScenario xmlns="http://hl7.org/fhir"></ExampleScenario>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
 
         if ([] !== ($vs = $this->getActor())) {
             foreach($vs as $v) {

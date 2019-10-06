@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:58+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -113,7 +113,6 @@ class FHIRProcessResponse extends FHIRDomainResource
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     private $communicationRequest = [];
-
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
@@ -127,7 +126,6 @@ class FHIRProcessResponse extends FHIRDomainResource
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     private $created = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -138,7 +136,6 @@ class FHIRProcessResponse extends FHIRDomainResource
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     private $disposition = null;
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -150,7 +147,6 @@ class FHIRProcessResponse extends FHIRDomainResource
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     private $error = [];
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -162,7 +158,6 @@ class FHIRProcessResponse extends FHIRDomainResource
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     private $form = null;
-
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -174,7 +169,6 @@ class FHIRProcessResponse extends FHIRDomainResource
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
     private $identifier = [];
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -185,7 +179,6 @@ class FHIRProcessResponse extends FHIRDomainResource
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     private $organization = null;
-
     /**
      * Local status of outcome codes.
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -195,7 +188,6 @@ class FHIRProcessResponse extends FHIRDomainResource
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRProcessOutcomeCodes
      */
     private $outcome = null;
-
     /**
      * This resource provides processing status, errors and notes from the processing
      * of a resource.
@@ -206,7 +198,6 @@ class FHIRProcessResponse extends FHIRDomainResource
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProcessResponse\FHIRProcessResponseProcessNote[]
      */
     private $processNote = [];
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -217,7 +208,6 @@ class FHIRProcessResponse extends FHIRDomainResource
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     private $request = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -228,7 +218,6 @@ class FHIRProcessResponse extends FHIRDomainResource
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     private $requestProvider = null;
-
     /**
      * A code specifying the state of the resource instance.
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -977,7 +966,7 @@ class FHIRProcessResponse extends FHIRDomainResource
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<ProcessResponse xmlns="http://hl7.org/fhir"></ProcessResponse>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
 
         if ([] !== ($vs = $this->getCommunicationRequest())) {
             foreach($vs as $v) {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 19:59+0000
+ * Class creation date: October 6th, 2019 09:03+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -440,9 +440,9 @@ abstract class PHPFHIRAutoloader
         'DCarbone\PHPFHIRGenerated\DSTU1\FHIRQuestionnaireStatusList' => 'FHIRQuestionnaireStatusList.php',
         'DCarbone\PHPFHIRGenerated\DSTU1\FHIRReactionSeverityList' => 'FHIRReactionSeverityList.php',
         'DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline' => 'FHIRResourceInline.php',
-        'DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceNamesPlusBinary' => 'FHIRResourceNamesPlusBinary.php',
         'DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceProfileStatusList' => 'FHIRResourceProfileStatusList.php',
         'DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceType' => 'FHIRResourceType.php',
+        'DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceType\FHIRResourceNamesPlusBinary' => 'FHIRResourceType/FHIRResourceNamesPlusBinary.php',
         'DCarbone\PHPFHIRGenerated\DSTU1\FHIRResponseTypeList' => 'FHIRResponseTypeList.php',
         'DCarbone\PHPFHIRGenerated\DSTU1\FHIRRestfulConformanceModeList' => 'FHIRRestfulConformanceModeList.php',
         'DCarbone\PHPFHIRGenerated\DSTU1\FHIRRestfulOperationSystemList' => 'FHIRRestfulOperationSystemList.php',

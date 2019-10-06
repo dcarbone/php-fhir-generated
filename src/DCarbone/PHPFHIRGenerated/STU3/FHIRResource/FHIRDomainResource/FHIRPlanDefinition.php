@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:57+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -150,7 +150,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction[]
      */
     private $action = [];
-
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
@@ -163,7 +162,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate
      */
     private $approvalDate = null;
-
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
@@ -175,7 +173,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactDetail[]
      */
     private $contact = [];
-
     /**
      * A contributor to the content of a knowledge asset, including authors, editors,
      * reviewers, and endorsers.
@@ -188,7 +185,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContributor[]
      */
     private $contributor = [];
-
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
      * presentation engine
@@ -207,7 +203,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
     private $copyright = null;
-
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
@@ -224,7 +219,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
     private $date = null;
-
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
      * presentation engine
@@ -242,7 +236,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
     private $description = null;
-
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
@@ -254,7 +247,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
     private $effectivePeriod = null;
-
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -266,7 +258,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     private $experimental = null;
-
     /**
      * This resource allows for the definition of various types of plans as a sharable,
      * consumable, and executable artifact. The resource is general enough to support
@@ -280,7 +271,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionGoal[]
      */
     private $goal = [];
-
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -293,7 +283,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[]
      */
     private $identifier = [];
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -306,7 +295,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     private $jurisdiction = [];
-
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
@@ -319,7 +307,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate
      */
     private $lastReviewDate = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -331,7 +318,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     private $library = [];
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -344,7 +330,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     private $name = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -355,7 +340,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     private $publisher = null;
-
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
      * presentation engine
@@ -373,7 +357,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
     private $purpose = null;
-
     /**
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
@@ -386,7 +369,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRelatedArtifact[]
      */
     private $relatedArtifact = [];
-
     /**
      * If the element is present, it must have either a @value, an @id, or extensions
      *
@@ -396,7 +378,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPublicationStatus
      */
     private $status = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -407,7 +388,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     private $title = null;
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -421,7 +401,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     private $topic = [];
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -434,7 +413,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     private $type = null;
-
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -450,7 +428,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
     private $url = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -461,7 +438,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     private $usage = null;
-
     /**
      * Specifies clinical/business/etc metadata that can be used to retrieve, index
      * and/or categorize an artifact. This metadata can either be specific to the
@@ -477,7 +453,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements PHPFHIRContainedT
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUsageContext[]
      */
     private $useContext = [];
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -2343,7 +2318,7 @@ class FHIRPlanDefinition extends FHIRDomainResource implements PHPFHIRContainedT
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<PlanDefinition xmlns="http://hl7.org/fhir"></PlanDefinition>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
 
         if ([] !== ($vs = $this->getAction())) {
             foreach($vs as $v) {

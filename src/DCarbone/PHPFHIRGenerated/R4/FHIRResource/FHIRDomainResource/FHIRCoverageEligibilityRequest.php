@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:58+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -125,7 +125,6 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     private $created = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -136,7 +135,6 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     private $enterer = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -147,7 +145,6 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     private $facility = null;
-
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -159,7 +156,6 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
     private $identifier = [];
-
     /**
      * The CoverageEligibilityRequest provides patient and insurance coverage
      * information to an insurer for them to respond, in the form of an
@@ -173,7 +169,6 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestInsurance[]
      */
     private $insurance = [];
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -185,7 +180,6 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     private $insurer = null;
-
     /**
      * The CoverageEligibilityRequest provides patient and insurance coverage
      * information to an insurer for them to respond, in the form of an
@@ -199,7 +193,6 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestItem[]
      */
     private $item = [];
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -211,7 +204,6 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     private $patient = null;
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -223,7 +215,6 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     private $priority = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -234,7 +225,6 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     private $provider = null;
-
     /**
      * A code specifying the types of information being requested.
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -248,7 +238,6 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIREligibilityRequestPurpose[]
      */
     private $purpose = [];
-
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
@@ -261,7 +250,6 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
     private $servicedDate = null;
-
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
@@ -273,7 +261,6 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
     private $servicedPeriod = null;
-
     /**
      * A code specifying the state of the resource instance.
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -283,7 +270,6 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRFinancialResourceStatusCodes
      */
     private $status = null;
-
     /**
      * The CoverageEligibilityRequest provides patient and insurance coverage
      * information to an insurer for them to respond, in the form of an
@@ -1234,7 +1220,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<CoverageEligibilityRequest xmlns="http://hl7.org/fhir"></CoverageEligibilityRequest>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getCreated())) {
             $sxe->addAttribute(self::FIELD_CREATED, (string)$v);
             if (null !== $v->getId() || [] !== $v->getExtension()) {

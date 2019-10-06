@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:58+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -143,7 +143,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactPoint[]
      */
     private $contact = [];
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -154,7 +153,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     private $definition = null;
-
     /**
      * A type of a manufactured item that is used in the provision of healthcare
      * without being substantially changed through that activity. The device may be a
@@ -168,7 +166,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceDeviceName[]
      */
     private $deviceName = [];
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -180,7 +177,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     private $distinctIdentifier = null;
-
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
@@ -195,7 +191,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     private $expirationDate = null;
-
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -208,7 +203,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
     private $identifier = [];
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -219,7 +213,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     private $location = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -230,7 +223,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     private $lotNumber = null;
-
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
@@ -244,7 +236,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     private $manufactureDate = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -255,7 +246,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     private $manufacturer = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -266,7 +256,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     private $modelNumber = null;
-
     /**
      * A text note which also contains information about who made the statement and
      * when.
@@ -279,7 +268,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation[]
      */
     private $note = [];
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -291,7 +279,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     private $owner = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -302,7 +289,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     private $parent = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -313,7 +299,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     private $partNumber = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -324,7 +309,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     private $patient = null;
-
     /**
      * A type of a manufactured item that is used in the provision of healthcare
      * without being substantially changed through that activity. The device may be a
@@ -336,7 +320,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceProperty[]
      */
     private $property = [];
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -349,7 +332,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     private $safety = [];
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -360,7 +342,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     private $serialNumber = null;
-
     /**
      * A type of a manufactured item that is used in the provision of healthcare
      * without being substantially changed through that activity. The device may be a
@@ -372,7 +353,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceSpecialization[]
      */
     private $specialization = [];
-
     /**
      * The availability status of the device.
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -382,7 +362,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRFHIRDeviceStatus
      */
     private $status = null;
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -394,7 +373,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     private $statusReason = [];
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -406,7 +384,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     private $type = null;
-
     /**
      * A type of a manufactured item that is used in the provision of healthcare
      * without being substantially changed through that activity. The device may be a
@@ -420,7 +397,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceUdiCarrier[]
      */
     private $udiCarrier = [];
-
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -431,7 +407,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
     private $url = null;
-
     /**
      * A type of a manufactured item that is used in the provision of healthcare
      * without being substantially changed through that activity. The device may be a
@@ -2125,7 +2100,7 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Device xmlns="http://hl7.org/fhir"></Device>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
 
         if ([] !== ($vs = $this->getContact())) {
             foreach($vs as $v) {

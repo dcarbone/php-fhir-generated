@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:57+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -121,7 +121,6 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     private $appointment = null;
-
     /**
      * Classification of the encounter
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -131,7 +130,6 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIREncounterClass
      */
     private $class = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -148,7 +146,6 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
      */
     private $episodeOfCare = [];
-
     /**
      * An interaction between a patient and healthcare provider(s) for the purpose of
      * providing healthcare service(s) or assessing the health status of a patient.
@@ -158,7 +155,6 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterHospitalization
      */
     private $hospitalization = null;
-
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -169,7 +165,6 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier[]
      */
     private $identifier = [];
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -180,7 +175,6 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
      */
     private $incomingReferral = [];
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -194,7 +188,6 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
      */
     private $indication = [];
-
     /**
      * Quantity of time the encounter lasted. This excludes the time during leaves of
      * absence.
@@ -202,7 +195,6 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRDuration
      */
     private $length = null;
-
     /**
      * An interaction between a patient and healthcare provider(s) for the purpose of
      * providing healthcare service(s) or assessing the health status of a patient.
@@ -212,7 +204,6 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterLocation[]
      */
     private $location = [];
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -224,7 +215,6 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     private $partOf = null;
-
     /**
      * An interaction between a patient and healthcare provider(s) for the purpose of
      * providing healthcare service(s) or assessing the health status of a patient.
@@ -234,7 +224,6 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterParticipant[]
      */
     private $participant = [];
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -245,7 +234,6 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     private $patient = null;
-
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
@@ -256,7 +244,6 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod
      */
     private $period = null;
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -268,7 +255,6 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
     private $priority = null;
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -281,7 +267,6 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[]
      */
     private $reason = [];
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -296,7 +281,6 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     private $serviceProvider = null;
-
     /**
      * Current state of the encounter
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -306,7 +290,6 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIREncounterState
      */
     private $status = null;
-
     /**
      * An interaction between a patient and healthcare provider(s) for the purpose of
      * providing healthcare service(s) or assessing the health status of a patient.
@@ -318,7 +301,6 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterStatusHistory[]
      */
     private $statusHistory = [];
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -1521,7 +1503,7 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Encounter xmlns="http://hl7.org/fhir"></Encounter>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getAppointment())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_APPOINTMENT));

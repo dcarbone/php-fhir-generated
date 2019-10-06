@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:58+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -195,7 +195,7 @@ class FHIRSampledDataDataType extends FHIRElement
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<SampledDataDataType xmlns="http://hl7.org/fhir"></SampledDataDataType>');
         }
-        parent::xmlSerialize(true, $sxe);
+        parent::xmlSerialize($sxe);
         $sxe->addAttribute(self::FIELD_VALUE, (string)$this);
         return $sxe;
     }

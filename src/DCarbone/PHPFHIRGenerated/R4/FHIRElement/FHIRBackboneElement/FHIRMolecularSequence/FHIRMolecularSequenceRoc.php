@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolec
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:58+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -105,7 +105,6 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal[]
      */
     private $fMeasure = [];
-
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
@@ -117,7 +116,6 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger[]
      */
     private $numFN = [];
-
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
@@ -129,7 +127,6 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger[]
      */
     private $numFP = [];
-
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
@@ -141,7 +138,6 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger[]
      */
     private $numTP = [];
-
     /**
      * A rational number with implicit precision
      * Do not use an IEEE type floating point type, instead use something that works
@@ -153,7 +149,6 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal[]
      */
     private $precision = [];
-
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
@@ -164,7 +159,6 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger[]
      */
     private $score = [];
-
     /**
      * A rational number with implicit precision
      * Do not use an IEEE type floating point type, instead use something that works
@@ -922,7 +916,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<MolecularSequenceRoc xmlns="http://hl7.org/fhir"></MolecularSequenceRoc>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
         if ([] !== ($vs = $this->getFMeasure())) {
             $first = true;
             foreach($vs as $v) {

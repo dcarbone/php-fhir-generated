@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:58+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -99,7 +99,6 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements PH
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationClassification[]
      */
     private $classification = [];
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -110,7 +109,6 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements PH
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     private $comment = null;
-
     /**
      * Todo.
      *
@@ -119,7 +117,6 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements PH
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationGene[]
      */
     private $gene = [];
-
     /**
      * Todo.
      *
@@ -128,7 +125,6 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements PH
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationGeneElement[]
      */
     private $geneElement = [];
-
     /**
      * Todo.
      *
@@ -543,7 +539,7 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements PH
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<SubstanceReferenceInformation xmlns="http://hl7.org/fhir"></SubstanceReferenceInformation>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
 
         if ([] !== ($vs = $this->getClassification())) {
             foreach($vs as $v) {

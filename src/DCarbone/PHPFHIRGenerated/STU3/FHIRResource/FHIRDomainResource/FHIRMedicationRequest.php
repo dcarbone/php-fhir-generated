@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:57+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -136,7 +136,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
     private $authoredOn = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -148,7 +147,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     private $basedOn = [];
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -161,7 +159,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     private $category = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -174,7 +171,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     private $context = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -185,7 +181,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     private $definition = [];
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -198,7 +193,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     private $detectedIssue = [];
-
     /**
      * An order or request for both supply of the medication and the instructions for
      * administration of the medication to a patient. The resource is called
@@ -215,7 +209,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMedicationRequest\FHIRMedicationRequestDispenseRequest
      */
     private $dispenseRequest = null;
-
     /**
      * Indicates how the medication is/was taken or should be taken by the patient.
      * If the element is present, it must have a value for at least one of the defined
@@ -226,7 +219,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDosage[]
      */
     private $dosageInstruction = [];
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -240,7 +232,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     private $eventHistory = [];
-
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -253,7 +244,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
      */
     private $groupIdentifier = null;
-
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -269,7 +259,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[]
      */
     private $identifier = [];
-
     /**
      * The kind of medication order
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -279,7 +268,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMedicationRequestIntent
      */
     private $intent = null;
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -294,7 +282,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     private $medicationCodeableConcept = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -308,7 +295,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     private $medicationReference = null;
-
     /**
      * A text note which also contains information about who made the statement and
      * when.
@@ -321,7 +307,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation[]
      */
     private $note = [];
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -333,7 +318,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     private $priorPrescription = null;
-
     /**
      * Identifies the level of importance to be assigned to actioning the request
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -344,7 +328,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMedicationRequestPriority
      */
     private $priority = null;
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -356,7 +339,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     private $reasonCode = [];
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -367,7 +349,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     private $reasonReference = [];
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -379,7 +360,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     private $recorder = null;
-
     /**
      * An order or request for both supply of the medication and the instructions for
      * administration of the medication to a patient. The resource is called
@@ -393,7 +373,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMedicationRequest\FHIRMedicationRequestRequester
      */
     private $requester = null;
-
     /**
      * A coded concept specifying the state of the prescribing event. Describes the
      * lifecycle of the prescription
@@ -405,7 +384,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMedicationRequestStatus
      */
     private $status = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -417,7 +395,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     private $subject = null;
-
     /**
      * An order or request for both supply of the medication and the instructions for
      * administration of the medication to a patient. The resource is called
@@ -433,7 +410,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMedicationRequest\FHIRMedicationRequestSubstitution
      */
     private $substitution = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -2004,7 +1980,7 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<MedicationRequest xmlns="http://hl7.org/fhir"></MedicationRequest>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getAuthoredOn())) {
             $sxe->addAttribute(self::FIELD_AUTHORED_ON, (string)$v);
             if (null !== $v->getId() || [] !== $v->getExtension()) {

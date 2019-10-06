@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:57+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -111,7 +111,6 @@ class FHIRDiagnosticOrder extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     private $encounter = null;
-
     /**
      * A record of a request for a diagnostic investigation service to be performed.
      *
@@ -122,7 +121,6 @@ class FHIRDiagnosticOrder extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRDiagnosticOrder\FHIRDiagnosticOrderEvent[]
      */
     private $event = [];
-
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -134,7 +132,6 @@ class FHIRDiagnosticOrder extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier[]
      */
     private $identifier = [];
-
     /**
      * A record of a request for a diagnostic investigation service to be performed.
      *
@@ -145,7 +142,6 @@ class FHIRDiagnosticOrder extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRDiagnosticOrder\FHIRDiagnosticOrderItem[]
      */
     private $item = [];
-
     /**
      * A text note which also contains information about who made the statement and
      * when.
@@ -158,7 +154,6 @@ class FHIRDiagnosticOrder extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAnnotation[]
      */
     private $note = [];
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -169,7 +164,6 @@ class FHIRDiagnosticOrder extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     private $orderer = null;
-
     /**
      * The clinical priority of a diagnostic order.
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -179,7 +173,6 @@ class FHIRDiagnosticOrder extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDiagnosticOrderPriority
      */
     private $priority = null;
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -193,7 +186,6 @@ class FHIRDiagnosticOrder extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[]
      */
     private $reason = [];
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -204,7 +196,6 @@ class FHIRDiagnosticOrder extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
      */
     private $specimen = [];
-
     /**
      * The status of a diagnostic order.
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -214,7 +205,6 @@ class FHIRDiagnosticOrder extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDiagnosticOrderStatus
      */
     private $status = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -228,7 +218,6 @@ class FHIRDiagnosticOrder extends FHIRDomainResource implements PHPFHIRContained
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     private $subject = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -1075,7 +1064,7 @@ class FHIRDiagnosticOrder extends FHIRDomainResource implements PHPFHIRContained
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<DiagnosticOrder xmlns="http://hl7.org/fhir"></DiagnosticOrder>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getEncounter())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ENCOUNTER));

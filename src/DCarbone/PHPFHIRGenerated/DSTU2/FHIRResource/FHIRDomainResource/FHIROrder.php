@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:57+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -108,7 +108,6 @@ class FHIROrder extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
     private $date = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -119,7 +118,6 @@ class FHIROrder extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
      */
     private $detail = [];
-
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -130,7 +128,6 @@ class FHIROrder extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier[]
      */
     private $identifier = [];
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -142,7 +139,6 @@ class FHIROrder extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
     private $reasonCodeableConcept = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -153,7 +149,6 @@ class FHIROrder extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     private $reasonReference = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -164,7 +159,6 @@ class FHIROrder extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     private $source = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -175,7 +169,6 @@ class FHIROrder extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     private $subject = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -186,7 +179,6 @@ class FHIROrder extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     private $target = null;
-
     /**
      * A request to perform an action.
      *
@@ -717,7 +709,7 @@ class FHIROrder extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Order xmlns="http://hl7.org/fhir"></Order>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getDate())) {
             $sxe->addAttribute(self::FIELD_DATE, (string)$v);
             if (null !== $v->getId() || [] !== $v->getExtension()) {

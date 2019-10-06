@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRBun
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:57+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -103,7 +103,6 @@ class FHIRBundleEntry extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
     private $fullUrl = null;
-
     /**
      * A container for a collection of resources.
      *
@@ -112,7 +111,6 @@ class FHIRBundleEntry extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleLink[]
      */
     private $link = [];
-
     /**
      * A container for a collection of resources.
      *
@@ -122,14 +120,12 @@ class FHIRBundleEntry extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleRequest
      */
     private $request = null;
-
     /**
      * The Resources for the entry.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\PHPFHIRContainedTypeInterface
      */
     private $resource = null;
-
     /**
      * A container for a collection of resources.
      *
@@ -139,7 +135,6 @@ class FHIRBundleEntry extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleResponse
      */
     private $response = null;
-
     /**
      * A container for a collection of resources.
      *
@@ -529,7 +524,7 @@ class FHIRBundleEntry extends FHIRBackboneElement
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<BundleEntry xmlns="http://hl7.org/fhir"></BundleEntry>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getFullUrl())) {
             $sxe->addAttribute(self::FIELD_FULL_URL, (string)$v);
             if (null !== $v->getId() || [] !== $v->getExtension()) {

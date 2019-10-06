@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 5th, 2019 12:57+0000
+ * Class creation date: October 6th, 2019 09:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -119,7 +119,6 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     private $comment = null;
-
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -132,7 +131,6 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     private $description = null;
-
     /**
      * An instant in time - known at least to the second
      * Note: This is intended for precisely observed times, typically system logs etc.,
@@ -145,7 +143,6 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRInstant
      */
     private $end = null;
-
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
@@ -159,7 +156,6 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier[]
      */
     private $identifier = [];
-
     /**
      * An integer with a value that is positive (e.g. >0)
      * If the element is present, it must have either a @value, an @id referenced from
@@ -172,7 +168,6 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPositiveInt
      */
     private $minutesDuration = null;
-
     /**
      * A booking of a healthcare event among patient(s), practitioner(s), related
      * person(s) and/or device(s) for a specific date/time. This may result in one or
@@ -183,7 +178,6 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentParticipant[]
      */
     private $participant = [];
-
     /**
      * An integer with a value that is not negative (e.g. >= 0)
      * If the element is present, it must have either a @value, an @id referenced from
@@ -196,7 +190,6 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUnsignedInt
      */
     private $priority = null;
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -209,7 +202,6 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
     private $reason = null;
-
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -222,7 +214,6 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
      */
     private $slot = [];
-
     /**
      * An instant in time - known at least to the second
      * Note: This is intended for precisely observed times, typically system logs etc.,
@@ -235,7 +226,6 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRInstant
      */
     private $start = null;
-
     /**
      * The free/busy status of an appointment.
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -247,7 +237,6 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAppointmentStatus
      */
     private $status = null;
-
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -1059,7 +1048,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement('<Appointment xmlns="http://hl7.org/fhir"></Appointment>');
         }
-    parent::xmlSerialize($sxe);
+        parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getComment())) {
             $sxe->addAttribute(self::FIELD_COMMENT, (string)$v);
             if (null !== $v->getId() || [] !== $v->getExtension()) {
