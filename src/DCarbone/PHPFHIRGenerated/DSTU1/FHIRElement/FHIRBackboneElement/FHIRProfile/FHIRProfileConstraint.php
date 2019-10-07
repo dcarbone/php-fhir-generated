@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRPr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:03+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -76,6 +76,9 @@ class FHIRProfileConstraint extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PROFILE_DOT_CONSTRAINT;
+
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_HUMAN = 'human';
     const FIELD_HUMAN_EXT = '_human';
@@ -221,6 +224,27 @@ class FHIRProfileConstraint extends FHIRBackboneElement
     {
         return self::FHIR_TYPE_NAME;
     }
+
+    /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<ProfileConstraint{$xmlns}></ProfileConstraint>";
+    }
+
 
     /**
      * A sequence of Unicode characters
@@ -413,16 +437,17 @@ class FHIRProfileConstraint extends FHIRBackboneElement
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileConstraint $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileConstraint
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRProfileConstraint::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -438,6 +463,13 @@ class FHIRProfileConstraint extends FHIRBackboneElement
                 'FHIRProfileConstraint::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileConstraint or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -473,41 +505,30 @@ class FHIRProfileConstraint extends FHIRBackboneElement
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<ProfileConstraint xmlns="http://hl7.org/fhir"></ProfileConstraint>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getHuman())) {
-            $sxe->addAttribute(self::FIELD_HUMAN, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_HUMAN));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_HUMAN, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getKey())) {
-            $sxe->addAttribute(self::FIELD_KEY, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_KEY));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_KEY, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getName())) {
-            $sxe->addAttribute(self::FIELD_NAME, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_NAME));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_NAME, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getSeverity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SEVERITY));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SEVERITY, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getXpath())) {
-            $sxe->addAttribute(self::FIELD_XPATH, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_XPATH));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_XPATH, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

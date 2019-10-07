@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -72,6 +72,9 @@ class FHIRPositiveIntPrimitive implements PHPFHIRTypeInterface
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_POSITIVE_INT_HYPHEN_PRIMITIVE;
 
     const FIELD_VALUE = 'value';
+
+    /** @var string */
+    private $_xmlns = '';
 
     /** @var null|integer */
     private $value = null;
@@ -139,6 +142,27 @@ class FHIRPositiveIntPrimitive implements PHPFHIRTypeInterface
     }
 
     /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<positiveInt_primitive{$xmlns}></positiveInt_primitive>";
+    }
+
+
+    /**
      * @return null|
      */
     public function getValue()
@@ -149,16 +173,17 @@ class FHIRPositiveIntPrimitive implements PHPFHIRTypeInterface
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRPositiveIntPrimitive $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRPositiveIntPrimitive
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRPositiveIntPrimitive::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -175,28 +200,34 @@ class FHIRPositiveIntPrimitive implements PHPFHIRTypeInterface
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
+        }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
         if (isset($attributes->value)) {
-            return $type->setValue((string)$attributes->value);
-        }
-        if (isset($children->value)) {
-            return $type->setValue((string)$children->value);
-        }
-        if ('' !== ($v = (string)$sxe)) {
-            return $type->setValue($v);
+            $type->setValue((string)$attributes->value);
+        } elseif (isset($children->value)) {
+            $type->setValue((string)$children->value);
+        } elseif ('' !== ($v = (string)$sxe)) {
+            $type->setValue($v);
         }
         return $type;
     }
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<positiveInt_primitive xmlns="http://hl7.org/fhir"></positiveInt_primitive>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         $sxe->addAttribute(self::FIELD_VALUE, (string)$this);
         return $sxe;

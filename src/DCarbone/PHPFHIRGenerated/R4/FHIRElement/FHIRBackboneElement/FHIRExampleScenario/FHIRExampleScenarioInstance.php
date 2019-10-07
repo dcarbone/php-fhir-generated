@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExamp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,6 +79,9 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_EXAMPLE_SCENARIO_DOT_INSTANCE;
+
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CONTAINED_INSTANCE = 'containedInstance';
     const FIELD_DESCRIPTION = 'description';
@@ -245,6 +248,27 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
     {
         return self::FHIR_TYPE_NAME;
     }
+
+    /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<ExampleScenarioInstance{$xmlns}></ExampleScenarioInstance>";
+    }
+
 
     /**
      * Example of workflow instance.
@@ -510,16 +534,17 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioInstance $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioInstance
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRExampleScenarioInstance::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -535,6 +560,13 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
                 'FHIRExampleScenarioInstance::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioInstance or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -577,12 +609,13 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<ExampleScenarioInstance xmlns="http://hl7.org/fhir"></ExampleScenarioInstance>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
@@ -591,30 +624,20 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CONTAINED_INSTANCE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_CONTAINED_INSTANCE, null, $v->getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getDescription())) {
-            $sxe->addAttribute(self::FIELD_DESCRIPTION, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DESCRIPTION));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DESCRIPTION, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getName())) {
-            $sxe->addAttribute(self::FIELD_NAME, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_NAME));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_NAME, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getResourceId())) {
-            $sxe->addAttribute(self::FIELD_RESOURCE_ID, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_RESOURCE_ID));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_RESOURCE_ID, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getResourceType())) {
-            $sxe->addAttribute(self::FIELD_RESOURCE_TYPE, (string)$v);
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RESOURCE_TYPE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_RESOURCE_TYPE, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getVersion())) {
@@ -622,7 +645,7 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_VERSION));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_VERSION, null, $v->getFHIRXMLNamespace()));
             }
         }
         return $sxe;

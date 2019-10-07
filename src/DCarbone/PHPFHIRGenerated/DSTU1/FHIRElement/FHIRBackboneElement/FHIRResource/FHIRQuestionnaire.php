@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:03+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,6 +82,9 @@ class FHIRQuestionnaire extends FHIRResource implements PHPFHIRContainedTypeInte
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE;
+
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_AUTHOR = 'author';
     const FIELD_AUTHORED = 'authored';
@@ -299,6 +302,27 @@ class FHIRQuestionnaire extends FHIRResource implements PHPFHIRContainedTypeInte
     {
         return self::FHIR_TYPE_NAME;
     }
+
+    /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<Questionnaire{$xmlns}></Questionnaire>";
+    }
+
 
     /**
      * A reference from one resource to another.
@@ -636,16 +660,17 @@ class FHIRQuestionnaire extends FHIRResource implements PHPFHIRContainedTypeInte
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRQuestionnaire $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRQuestionnaire
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRQuestionnaire::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -661,6 +686,13 @@ class FHIRQuestionnaire extends FHIRResource implements PHPFHIRContainedTypeInte
                 'FHIRQuestionnaire::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRQuestionnaire or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -701,31 +733,29 @@ class FHIRQuestionnaire extends FHIRResource implements PHPFHIRContainedTypeInte
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<Questionnaire xmlns="http://hl7.org/fhir"></Questionnaire>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getAuthor())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_AUTHOR));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_AUTHOR, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getAuthored())) {
-            $sxe->addAttribute(self::FIELD_AUTHORED, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_AUTHORED));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_AUTHORED, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getEncounter())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ENCOUNTER));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ENCOUNTER, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getGroup())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_GROUP));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_GROUP, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getIdentifier())) {
@@ -733,24 +763,24 @@ class FHIRQuestionnaire extends FHIRResource implements PHPFHIRContainedTypeInte
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getName())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_NAME));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_NAME, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getSource())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getStatus())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getSubject())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBJECT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBJECT, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

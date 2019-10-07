@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:03+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -76,6 +76,9 @@ class FHIRConformanceRest extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONFORMANCE_DOT_REST;
+
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_DOCUMENT_MAILBOX = 'documentMailbox';
     const FIELD_DOCUMENT_MAILBOX_EXT = '_documentMailbox';
@@ -282,6 +285,27 @@ class FHIRConformanceRest extends FHIRBackboneElement
     }
 
     /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<ConformanceRest{$xmlns}></ConformanceRest>";
+    }
+
+
+    /**
      * String of characters used to identify a name or a resource
      * If the element is present, it must have either a @value, an @id, or extensions
      *
@@ -314,14 +338,14 @@ class FHIRConformanceRest extends FHIRBackboneElement
     public function addDocumentMailbox($documentMailbox = null)
     {
         if (null === $documentMailbox) {
-            $this->documentMailbox = null;
+            $this->documentMailbox = [];
             return $this;
         }
         if ($documentMailbox instanceof FHIRUri) {
-            $this->documentMailbox = $documentMailbox;
+            $this->documentMailbox[] = $documentMailbox;
             return $this;
         }
-        $this->documentMailbox = new FHIRUri($documentMailbox);
+        $this->documentMailbox[] = new FHIRUri($documentMailbox);
         return $this;
     }
 
@@ -626,16 +650,17 @@ class FHIRConformanceRest extends FHIRBackboneElement
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceRest $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceRest
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRConformanceRest::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -651,6 +676,13 @@ class FHIRConformanceRest extends FHIRBackboneElement
                 'FHIRConformanceRest::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceRest or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -694,40 +726,29 @@ class FHIRConformanceRest extends FHIRBackboneElement
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<ConformanceRest xmlns="http://hl7.org/fhir"></ConformanceRest>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if ([] !== ($vs = $this->getDocumentMailbox())) {
-            $first = true;
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                if ($first) {
-                    $sxe->addAttribute(self::FIELD_DOCUMENT_MAILBOX, (string)$v);
-                    if (null !== $v->getId() || [] !== $v->getExtension()) {
-                        $v->xmlSerialize($sxe->addChild(self::FIELD_DOCUMENT_MAILBOX));
-                    }
-                    $first = false;
-                } else {
-                    $v->xmlSerialize($sxe->addChild(self::FIELD_DOCUMENT_MAILBOX));
-                }
+                $v->xmlSerialize($sxe->addChild(self::FIELD_DOCUMENT_MAILBOX, null, $v->getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getDocumentation())) {
-            $sxe->addAttribute(self::FIELD_DOCUMENTATION, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DOCUMENTATION));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DOCUMENTATION, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getMode())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MODE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MODE, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getOperation())) {
@@ -735,7 +756,7 @@ class FHIRConformanceRest extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_OPERATION));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_OPERATION, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -744,7 +765,7 @@ class FHIRConformanceRest extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_QUERY));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_QUERY, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -753,12 +774,12 @@ class FHIRConformanceRest extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_RESOURCE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_RESOURCE, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getSecurity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SECURITY));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SECURITY, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

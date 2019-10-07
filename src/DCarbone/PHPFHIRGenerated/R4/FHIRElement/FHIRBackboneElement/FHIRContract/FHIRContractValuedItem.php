@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,6 +87,9 @@ class FHIRContractValuedItem extends FHIRBackboneElement
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_VALUED_ITEM;
 
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
+
     const FIELD_EFFECTIVE_TIME = 'effectiveTime';
     const FIELD_EFFECTIVE_TIME_EXT = '_effectiveTime';
     const FIELD_ENTITY_CODEABLE_CONCEPT = 'entityCodeableConcept';
@@ -130,8 +133,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Specific type of Contract Valued Item that may be priced. (choose any one of
-     * entity*, but only one)
+     * Specific type of Contract Valued Item that may be priced.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -141,8 +143,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Specific type of Contract Valued Item that may be priced. (choose any one of
-     * entity*, but only one)
+     * Specific type of Contract Valued Item that may be priced.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -474,6 +475,27 @@ class FHIRContractValuedItem extends FHIRBackboneElement
     }
 
     /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<ContractValuedItem{$xmlns}></ContractValuedItem>";
+    }
+
+
+    /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
@@ -525,8 +547,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Specific type of Contract Valued Item that may be priced. (choose any one of
-     * entity*, but only one)
+     * Specific type of Contract Valued Item that may be priced.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -541,8 +562,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Specific type of Contract Valued Item that may be priced. (choose any one of
-     * entity*, but only one)
+     * Specific type of Contract Valued Item that may be priced.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $entityCodeableConcept
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractValuedItem
@@ -558,8 +578,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Specific type of Contract Valued Item that may be priced. (choose any one of
-     * entity*, but only one)
+     * Specific type of Contract Valued Item that may be priced.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -573,8 +592,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Specific type of Contract Valued Item that may be priced. (choose any one of
-     * entity*, but only one)
+     * Specific type of Contract Valued Item that may be priced.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $entityReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractValuedItem
@@ -690,14 +708,14 @@ class FHIRContractValuedItem extends FHIRBackboneElement
     public function addLinkId($linkId = null)
     {
         if (null === $linkId) {
-            $this->linkId = null;
+            $this->linkId = [];
             return $this;
         }
         if ($linkId instanceof FHIRString) {
-            $this->linkId = $linkId;
+            $this->linkId[] = $linkId;
             return $this;
         }
-        $this->linkId = new FHIRString($linkId);
+        $this->linkId[] = new FHIRString($linkId);
         return $this;
     }
 
@@ -1017,14 +1035,14 @@ class FHIRContractValuedItem extends FHIRBackboneElement
     public function addSecurityLabelNumber($securityLabelNumber = null)
     {
         if (null === $securityLabelNumber) {
-            $this->securityLabelNumber = null;
+            $this->securityLabelNumber = [];
             return $this;
         }
         if ($securityLabelNumber instanceof FHIRUnsignedInt) {
-            $this->securityLabelNumber = $securityLabelNumber;
+            $this->securityLabelNumber[] = $securityLabelNumber;
             return $this;
         }
-        $this->securityLabelNumber = new FHIRUnsignedInt($securityLabelNumber);
+        $this->securityLabelNumber[] = new FHIRUnsignedInt($securityLabelNumber);
         return $this;
     }
 
@@ -1088,16 +1106,17 @@ class FHIRContractValuedItem extends FHIRBackboneElement
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractValuedItem $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractValuedItem
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRContractValuedItem::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -1113,6 +1132,13 @@ class FHIRContractValuedItem extends FHIRBackboneElement
                 'FHIRContractValuedItem::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractValuedItem or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -1191,109 +1217,77 @@ class FHIRContractValuedItem extends FHIRBackboneElement
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<ContractValuedItem xmlns="http://hl7.org/fhir"></ContractValuedItem>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getEffectiveTime())) {
-            $sxe->addAttribute(self::FIELD_EFFECTIVE_TIME, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_EFFECTIVE_TIME));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EFFECTIVE_TIME, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getEntityCodeableConcept())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ENTITY_CODEABLE_CONCEPT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ENTITY_CODEABLE_CONCEPT, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getEntityReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ENTITY_REFERENCE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ENTITY_REFERENCE, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getFactor())) {
-            $sxe->addAttribute(self::FIELD_FACTOR, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_FACTOR));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FACTOR, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getIdentifier())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->getFHIRXMLNamespace()));
         }
         if ([] !== ($vs = $this->getLinkId())) {
-            $first = true;
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                if ($first) {
-                    $sxe->addAttribute(self::FIELD_LINK_ID, (string)$v);
-                    if (null !== $v->getId() || [] !== $v->getExtension()) {
-                        $v->xmlSerialize($sxe->addChild(self::FIELD_LINK_ID));
-                    }
-                    $first = false;
-                } else {
-                    $v->xmlSerialize($sxe->addChild(self::FIELD_LINK_ID));
-                }
+                $v->xmlSerialize($sxe->addChild(self::FIELD_LINK_ID, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getNet())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_NET));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_NET, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getPayment())) {
-            $sxe->addAttribute(self::FIELD_PAYMENT, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PAYMENT));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PAYMENT, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getPaymentDate())) {
-            $sxe->addAttribute(self::FIELD_PAYMENT_DATE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PAYMENT_DATE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PAYMENT_DATE, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getPoints())) {
-            $sxe->addAttribute(self::FIELD_POINTS, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_POINTS));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_POINTS, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getRecipient())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RECIPIENT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_RECIPIENT, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getResponsible())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RESPONSIBLE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_RESPONSIBLE, null, $v->getFHIRXMLNamespace()));
         }
         if ([] !== ($vs = $this->getSecurityLabelNumber())) {
-            $first = true;
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                if ($first) {
-                    $sxe->addAttribute(self::FIELD_SECURITY_LABEL_NUMBER, (string)$v);
-                    if (null !== $v->getId() || [] !== $v->getExtension()) {
-                        $v->xmlSerialize($sxe->addChild(self::FIELD_SECURITY_LABEL_NUMBER));
-                    }
-                    $first = false;
-                } else {
-                    $v->xmlSerialize($sxe->addChild(self::FIELD_SECURITY_LABEL_NUMBER));
-                }
+                $v->xmlSerialize($sxe->addChild(self::FIELD_SECURITY_LABEL_NUMBER, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getUnitPrice())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_UNIT_PRICE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_UNIT_PRICE, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

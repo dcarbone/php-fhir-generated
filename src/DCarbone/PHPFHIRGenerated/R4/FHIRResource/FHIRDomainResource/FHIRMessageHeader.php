@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -90,6 +90,9 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MESSAGE_HEADER;
 
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
+
     const FIELD_AUTHOR = 'author';
     const FIELD_DEFINITION = 'definition';
     const FIELD_DEFINITION_EXT = '_definition';
@@ -159,7 +162,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
      * Code that identifies the event this message represents and connects it with its
      * definition. Events defined as part of the FHIR specification have the system
      * value "http://terminology.hl7.org/CodeSystem/message-events". Alternatively uri
-     * to the EventDefinition. (choose any one of event*, but only one)
+     * to the EventDefinition.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding
      */
@@ -172,7 +175,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
      * Code that identifies the event this message represents and connects it with its
      * definition. Events defined as part of the FHIR specification have the system
      * value "http://terminology.hl7.org/CodeSystem/message-events". Alternatively uri
-     * to the EventDefinition. (choose any one of event*, but only one)
+     * to the EventDefinition.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
@@ -383,6 +386,27 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
     }
 
     /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<MessageHeader{$xmlns}></MessageHeader>";
+    }
+
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
@@ -557,7 +581,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
      * Code that identifies the event this message represents and connects it with its
      * definition. Events defined as part of the FHIR specification have the system
      * value "http://terminology.hl7.org/CodeSystem/message-events". Alternatively uri
-     * to the EventDefinition. (choose any one of event*, but only one)
+     * to the EventDefinition.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding
      */
@@ -574,7 +598,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
      * Code that identifies the event this message represents and connects it with its
      * definition. Events defined as part of the FHIR specification have the system
      * value "http://terminology.hl7.org/CodeSystem/message-events". Alternatively uri
-     * to the EventDefinition. (choose any one of event*, but only one)
+     * to the EventDefinition.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding $eventCoding
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMessageHeader
@@ -593,7 +617,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
      * Code that identifies the event this message represents and connects it with its
      * definition. Events defined as part of the FHIR specification have the system
      * value "http://terminology.hl7.org/CodeSystem/message-events". Alternatively uri
-     * to the EventDefinition. (choose any one of event*, but only one)
+     * to the EventDefinition.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
@@ -610,7 +634,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
      * Code that identifies the event this message represents and connects it with its
      * definition. Events defined as part of the FHIR specification have the system
      * value "http://terminology.hl7.org/CodeSystem/message-events". Alternatively uri
-     * to the EventDefinition. (choose any one of event*, but only one)
+     * to the EventDefinition.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri $eventUri
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMessageHeader
@@ -855,16 +879,17 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMessageHeader $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMessageHeader
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRMessageHeader::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -880,6 +905,13 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
                 'FHIRMessageHeader::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMessageHeader or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -934,23 +966,21 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<MessageHeader xmlns="http://hl7.org/fhir"></MessageHeader>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getAuthor())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_AUTHOR));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_AUTHOR, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDefinition())) {
-            $sxe->addAttribute(self::FIELD_DEFINITION, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINITION));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINITION, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getDestination())) {
@@ -958,22 +988,19 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DESTINATION));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_DESTINATION, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getEnterer())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ENTERER));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ENTERER, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getEventCoding())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EVENT_CODING));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EVENT_CODING, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getEventUri())) {
-            $sxe->addAttribute(self::FIELD_EVENT_URI, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_EVENT_URI));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EVENT_URI, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getFocus())) {
@@ -981,28 +1008,28 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_FOCUS));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_FOCUS, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getReason())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REASON));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_REASON, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getResponse())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RESPONSE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_RESPONSE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getResponsible())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RESPONSIBLE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_RESPONSIBLE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getSender())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SENDER));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SENDER, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getSource())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

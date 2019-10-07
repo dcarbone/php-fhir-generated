@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,6 +83,9 @@ class FHIRContractTerm extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_TERM;
+
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ACTION = 'action';
     const FIELD_ACTION_REASON = 'actionReason';
@@ -385,6 +388,27 @@ class FHIRContractTerm extends FHIRBackboneElement
     {
         return self::FHIR_TYPE_NAME;
     }
+
+    /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<ContractTerm{$xmlns}></ContractTerm>";
+    }
+
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -906,16 +930,17 @@ class FHIRContractTerm extends FHIRBackboneElement
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractTerm $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractTerm
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRContractTerm::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -931,6 +956,13 @@ class FHIRContractTerm extends FHIRBackboneElement
                 'FHIRContractTerm::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractTerm or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -991,12 +1023,13 @@ class FHIRContractTerm extends FHIRBackboneElement
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<ContractTerm xmlns="http://hl7.org/fhir"></ContractTerm>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
@@ -1005,7 +1038,7 @@ class FHIRContractTerm extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ACTION));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_ACTION, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -1014,7 +1047,7 @@ class FHIRContractTerm extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ACTION_REASON));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_ACTION_REASON, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -1023,12 +1056,12 @@ class FHIRContractTerm extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ACTOR));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_ACTOR, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getApplies())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_APPLIES));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_APPLIES, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getGroup())) {
@@ -1036,36 +1069,30 @@ class FHIRContractTerm extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_GROUP));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_GROUP, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getIdentifier())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getIssued())) {
-            $sxe->addAttribute(self::FIELD_ISSUED, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ISSUED));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ISSUED, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getSubType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SUB_TYPE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SUB_TYPE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getSubject())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBJECT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBJECT, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getText())) {
-            $sxe->addAttribute(self::FIELD_TEXT, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_TEXT));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TEXT, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getValuedItem())) {
@@ -1073,7 +1100,7 @@ class FHIRContractTerm extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_VALUED_ITEM));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_VALUED_ITEM, null, $v->getFHIRXMLNamespace()));
             }
         }
         return $sxe;

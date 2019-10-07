@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,6 +86,9 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements PHPFHIRContai
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_DEVICE_USE_STATEMENT;
+
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_BODY_SITE_CODEABLE_CONCEPT = 'bodySiteCodeableConcept';
     const FIELD_BODY_SITE_REFERENCE = 'bodySiteReference';
@@ -391,6 +394,27 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements PHPFHIRContai
     }
 
     /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<DeviceUseStatement{$xmlns}></DeviceUseStatement>";
+    }
+
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -632,14 +656,14 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements PHPFHIRContai
     public function addNotes($notes = null)
     {
         if (null === $notes) {
-            $this->notes = null;
+            $this->notes = [];
             return $this;
         }
         if ($notes instanceof FHIRString) {
-            $this->notes = $notes;
+            $this->notes[] = $notes;
             return $this;
         }
-        $this->notes = new FHIRString($notes);
+        $this->notes[] = new FHIRString($notes);
         return $this;
     }
 
@@ -888,16 +912,17 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements PHPFHIRContai
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRDeviceUseStatement $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRDeviceUseStatement
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRDeviceUseStatement::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -913,6 +938,13 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements PHPFHIRContai
                 'FHIRDeviceUseStatement::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRDeviceUseStatement or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -972,25 +1004,26 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements PHPFHIRContai
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<DeviceUseStatement xmlns="http://hl7.org/fhir"></DeviceUseStatement>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getBodySiteCodeableConcept())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_BODY_SITE_CODEABLE_CONCEPT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_BODY_SITE_CODEABLE_CONCEPT, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getBodySiteReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_BODY_SITE_REFERENCE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_BODY_SITE_REFERENCE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDevice())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEVICE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEVICE, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getIdentifier())) {
@@ -998,7 +1031,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements PHPFHIRContai
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -1007,53 +1040,38 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements PHPFHIRContai
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_INDICATION));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_INDICATION, null, $v->getFHIRXMLNamespace()));
             }
         }
         if ([] !== ($vs = $this->getNotes())) {
-            $first = true;
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                if ($first) {
-                    $sxe->addAttribute(self::FIELD_NOTES, (string)$v);
-                    if (null !== $v->getId() || [] !== $v->getExtension()) {
-                        $v->xmlSerialize($sxe->addChild(self::FIELD_NOTES));
-                    }
-                    $first = false;
-                } else {
-                    $v->xmlSerialize($sxe->addChild(self::FIELD_NOTES));
-                }
+                $v->xmlSerialize($sxe->addChild(self::FIELD_NOTES, null, $v->getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getRecordedOn())) {
-            $sxe->addAttribute(self::FIELD_RECORDED_ON, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_RECORDED_ON));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_RECORDED_ON, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getSubject())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBJECT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBJECT, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getTimingDateTime())) {
-            $sxe->addAttribute(self::FIELD_TIMING_DATE_TIME, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_TIMING_DATE_TIME));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TIMING_DATE_TIME, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getTimingPeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TIMING_PERIOD));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TIMING_PERIOD, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getTimingTiming())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TIMING_TIMING));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TIMING_TIMING, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getWhenUsed())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_WHEN_USED));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_WHEN_USED, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

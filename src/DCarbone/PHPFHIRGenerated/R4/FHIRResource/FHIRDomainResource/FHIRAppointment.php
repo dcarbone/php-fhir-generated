@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -91,6 +91,9 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_APPOINTMENT;
+
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_APPOINTMENT_TYPE = 'appointmentType';
     const FIELD_BASED_ON = 'basedOn';
@@ -703,6 +706,27 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
     {
         return self::FHIR_TYPE_NAME;
     }
+
+    /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<Appointment{$xmlns}></Appointment>";
+    }
+
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -1843,16 +1867,17 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRAppointment $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRAppointment
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRAppointment::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -1868,6 +1893,13 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
                 'FHIRAppointment::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRAppointment or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -1988,17 +2020,18 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<Appointment xmlns="http://hl7.org/fhir"></Appointment>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getAppointmentType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_APPOINTMENT_TYPE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_APPOINTMENT_TYPE, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getBasedOn())) {
@@ -2006,36 +2039,24 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_BASED_ON));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_BASED_ON, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getCancelationReason())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CANCELATION_REASON));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CANCELATION_REASON, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getComment())) {
-            $sxe->addAttribute(self::FIELD_COMMENT, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_COMMENT));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_COMMENT, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getCreated())) {
-            $sxe->addAttribute(self::FIELD_CREATED, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CREATED));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CREATED, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDescription())) {
-            $sxe->addAttribute(self::FIELD_DESCRIPTION, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DESCRIPTION));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DESCRIPTION, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getEnd())) {
-            $sxe->addAttribute(self::FIELD_END, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_END));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_END, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getIdentifier())) {
@@ -2043,14 +2064,11 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getMinutesDuration())) {
-            $sxe->addAttribute(self::FIELD_MINUTES_DURATION, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_MINUTES_DURATION));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MINUTES_DURATION, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getParticipant())) {
@@ -2058,20 +2076,14 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PARTICIPANT));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_PARTICIPANT, null, $v->getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getPatientInstruction())) {
-            $sxe->addAttribute(self::FIELD_PATIENT_INSTRUCTION, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PATIENT_INSTRUCTION));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PATIENT_INSTRUCTION, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getPriority())) {
-            $sxe->addAttribute(self::FIELD_PRIORITY, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PRIORITY));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PRIORITY, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getReasonCode())) {
@@ -2079,7 +2091,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_REASON_CODE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_REASON_CODE, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -2088,7 +2100,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_REASON_REFERENCE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_REASON_REFERENCE, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -2097,7 +2109,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_REQUESTED_PERIOD));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_REQUESTED_PERIOD, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -2106,7 +2118,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SERVICE_CATEGORY));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_SERVICE_CATEGORY, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -2115,7 +2127,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SERVICE_TYPE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_SERVICE_TYPE, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -2124,7 +2136,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SLOT));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_SLOT, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -2133,18 +2145,15 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SPECIALTY));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_SPECIALTY, null, $v->getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getStart())) {
-            $sxe->addAttribute(self::FIELD_START, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_START));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_START, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getStatus())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getSupportingInformation())) {
@@ -2152,7 +2161,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SUPPORTING_INFORMATION));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_SUPPORTING_INFORMATION, null, $v->getFHIRXMLNamespace()));
             }
         }
         return $sxe;

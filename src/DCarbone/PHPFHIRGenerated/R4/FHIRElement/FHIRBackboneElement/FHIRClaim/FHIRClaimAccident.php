@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,6 +83,9 @@ class FHIRClaimAccident extends FHIRBackboneElement
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CLAIM_DOT_ACCIDENT;
 
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
+
     const FIELD_DATE = 'date';
     const FIELD_DATE_EXT = '_date';
     const FIELD_LOCATION_ADDRESS = 'locationAddress';
@@ -110,8 +113,7 @@ class FHIRClaimAccident extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The physical location of the accident event. (choose any one of location*, but
-     * only one)
+     * The physical location of the accident event.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddress
      */
@@ -121,8 +123,7 @@ class FHIRClaimAccident extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The physical location of the accident event. (choose any one of location*, but
-     * only one)
+     * The physical location of the accident event.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -201,6 +202,27 @@ class FHIRClaimAccident extends FHIRBackboneElement
     }
 
     /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<ClaimAccident{$xmlns}></ClaimAccident>";
+    }
+
+
+    /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
@@ -251,8 +273,7 @@ class FHIRClaimAccident extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The physical location of the accident event. (choose any one of location*, but
-     * only one)
+     * The physical location of the accident event.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddress
      */
@@ -270,8 +291,7 @@ class FHIRClaimAccident extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The physical location of the accident event. (choose any one of location*, but
-     * only one)
+     * The physical location of the accident event.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddress $locationAddress
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimAccident
@@ -287,8 +307,7 @@ class FHIRClaimAccident extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The physical location of the accident event. (choose any one of location*, but
-     * only one)
+     * The physical location of the accident event.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -302,8 +321,7 @@ class FHIRClaimAccident extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The physical location of the accident event. (choose any one of location*, but
-     * only one)
+     * The physical location of the accident event.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $locationReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimAccident
@@ -353,16 +371,17 @@ class FHIRClaimAccident extends FHIRBackboneElement
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimAccident $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimAccident
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRClaimAccident::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -378,6 +397,13 @@ class FHIRClaimAccident extends FHIRBackboneElement
                 'FHIRClaimAccident::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimAccident or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -401,31 +427,29 @@ class FHIRClaimAccident extends FHIRBackboneElement
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<ClaimAccident xmlns="http://hl7.org/fhir"></ClaimAccident>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getDate())) {
-            $sxe->addAttribute(self::FIELD_DATE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DATE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DATE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getLocationAddress())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_LOCATION_ADDRESS));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_LOCATION_ADDRESS, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getLocationReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_LOCATION_REFERENCE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_LOCATION_REFERENCE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

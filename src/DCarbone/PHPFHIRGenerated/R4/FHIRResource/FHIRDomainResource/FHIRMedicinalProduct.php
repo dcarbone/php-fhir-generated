@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,6 +88,9 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements PHPFHIRContaine
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT;
+
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ADDITIONAL_MONITORING_INDICATOR = 'additionalMonitoringIndicator';
     const FIELD_ATTACHED_DOCUMENT = 'attachedDocument';
@@ -611,6 +614,27 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements PHPFHIRContaine
     {
         return self::FHIR_TYPE_NAME;
     }
+
+    /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<MedicinalProduct{$xmlns}></MedicinalProduct>";
+    }
+
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -1551,14 +1575,14 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements PHPFHIRContaine
     public function addSpecialMeasures($specialMeasures = null)
     {
         if (null === $specialMeasures) {
-            $this->specialMeasures = null;
+            $this->specialMeasures = [];
             return $this;
         }
         if ($specialMeasures instanceof FHIRString) {
-            $this->specialMeasures = $specialMeasures;
+            $this->specialMeasures[] = $specialMeasures;
             return $this;
         }
-        $this->specialMeasures = new FHIRString($specialMeasures);
+        $this->specialMeasures[] = new FHIRString($specialMeasures);
         return $this;
     }
 
@@ -1624,16 +1648,17 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProduct $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProduct
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRMedicinalProduct::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -1649,6 +1674,13 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements PHPFHIRContaine
                 'FHIRMedicinalProduct::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProduct or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -1748,17 +1780,18 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements PHPFHIRContaine
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<MedicinalProduct xmlns="http://hl7.org/fhir"></MedicinalProduct>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getAdditionalMonitoringIndicator())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ADDITIONAL_MONITORING_INDICATOR));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ADDITIONAL_MONITORING_INDICATOR, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getAttachedDocument())) {
@@ -1766,7 +1799,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements PHPFHIRContaine
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ATTACHED_DOCUMENT));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_ATTACHED_DOCUMENT, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -1775,12 +1808,12 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements PHPFHIRContaine
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CLINICAL_TRIAL));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_CLINICAL_TRIAL, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getCombinedPharmaceuticalDoseForm())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_COMBINED_PHARMACEUTICAL_DOSE_FORM));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_COMBINED_PHARMACEUTICAL_DOSE_FORM, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getContact())) {
@@ -1788,7 +1821,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements PHPFHIRContaine
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CONTACT));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_CONTACT, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -1797,12 +1830,12 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements PHPFHIRContaine
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CROSS_REFERENCE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_CROSS_REFERENCE, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getDomain())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DOMAIN));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DOMAIN, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getIdentifier())) {
@@ -1810,12 +1843,12 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements PHPFHIRContaine
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getLegalStatusOfSupply())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_LEGAL_STATUS_OF_SUPPLY));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_LEGAL_STATUS_OF_SUPPLY, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getManufacturingBusinessOperation())) {
@@ -1823,7 +1856,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements PHPFHIRContaine
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_MANUFACTURING_BUSINESS_OPERATION));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_MANUFACTURING_BUSINESS_OPERATION, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -1832,7 +1865,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements PHPFHIRContaine
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_MARKETING_STATUS));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_MARKETING_STATUS, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -1841,7 +1874,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements PHPFHIRContaine
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_MASTER_FILE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_MASTER_FILE, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -1850,7 +1883,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements PHPFHIRContaine
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_NAME));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_NAME, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -1859,12 +1892,12 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements PHPFHIRContaine
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PACKAGED_MEDICINAL_PRODUCT));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_PACKAGED_MEDICINAL_PRODUCT, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getPaediatricUseIndicator())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PAEDIATRIC_USE_INDICATOR));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PAEDIATRIC_USE_INDICATOR, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getPharmaceuticalProduct())) {
@@ -1872,7 +1905,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements PHPFHIRContaine
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PHARMACEUTICAL_PRODUCT));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_PHARMACEUTICAL_PRODUCT, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -1881,7 +1914,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements PHPFHIRContaine
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PRODUCT_CLASSIFICATION));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_PRODUCT_CLASSIFICATION, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -1890,29 +1923,20 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements PHPFHIRContaine
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SPECIAL_DESIGNATION));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_SPECIAL_DESIGNATION, null, $v->getFHIRXMLNamespace()));
             }
         }
         if ([] !== ($vs = $this->getSpecialMeasures())) {
-            $first = true;
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                if ($first) {
-                    $sxe->addAttribute(self::FIELD_SPECIAL_MEASURES, (string)$v);
-                    if (null !== $v->getId() || [] !== $v->getExtension()) {
-                        $v->xmlSerialize($sxe->addChild(self::FIELD_SPECIAL_MEASURES));
-                    }
-                    $first = false;
-                } else {
-                    $v->xmlSerialize($sxe->addChild(self::FIELD_SPECIAL_MEASURES));
-                }
+                $v->xmlSerialize($sxe->addChild(self::FIELD_SPECIAL_MEASURES, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

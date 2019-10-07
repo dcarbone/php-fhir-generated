@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -94,6 +94,9 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PROCEDURE;
+
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ASSERTER = 'asserter';
     const FIELD_BASED_ON = 'basedOn';
@@ -337,8 +340,7 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * Estimated or actual date, date-time, period, or age when the procedure was
      * performed. Allows a period to support complex procedures that span more than one
-     * date, and also allows for the length of the procedure to be captured. (choose
-     * any one of performed*, but only one)
+     * date, and also allows for the length of the procedure to be captured.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
@@ -353,8 +355,7 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * Estimated or actual date, date-time, period, or age when the procedure was
      * performed. Allows a period to support complex procedures that span more than one
-     * date, and also allows for the length of the procedure to be captured. (choose
-     * any one of performed*, but only one)
+     * date, and also allows for the length of the procedure to be captured.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -366,8 +367,7 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * Estimated or actual date, date-time, period, or age when the procedure was
      * performed. Allows a period to support complex procedures that span more than one
-     * date, and also allows for the length of the procedure to be captured. (choose
-     * any one of performed*, but only one)
+     * date, and also allows for the length of the procedure to be captured.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -379,8 +379,7 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * Estimated or actual date, date-time, period, or age when the procedure was
      * performed. Allows a period to support complex procedures that span more than one
-     * date, and also allows for the length of the procedure to be captured. (choose
-     * any one of performed*, but only one)
+     * date, and also allows for the length of the procedure to be captured.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -392,8 +391,7 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * Estimated or actual date, date-time, period, or age when the procedure was
      * performed. Allows a period to support complex procedures that span more than one
-     * date, and also allows for the length of the procedure to be captured. (choose
-     * any one of performed*, but only one)
+     * date, and also allows for the length of the procedure to be captured.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -913,6 +911,27 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
     {
         return self::FHIR_TYPE_NAME;
     }
+
+    /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<Procedure{$xmlns}></Procedure>";
+    }
+
 
     /**
      * A reference from one resource to another.
@@ -1515,14 +1534,14 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
     public function addInstantiatesCanonical($instantiatesCanonical = null)
     {
         if (null === $instantiatesCanonical) {
-            $this->instantiatesCanonical = null;
+            $this->instantiatesCanonical = [];
             return $this;
         }
         if ($instantiatesCanonical instanceof FHIRCanonical) {
-            $this->instantiatesCanonical = $instantiatesCanonical;
+            $this->instantiatesCanonical[] = $instantiatesCanonical;
             return $this;
         }
-        $this->instantiatesCanonical = new FHIRCanonical($instantiatesCanonical);
+        $this->instantiatesCanonical[] = new FHIRCanonical($instantiatesCanonical);
         return $this;
     }
 
@@ -1583,14 +1602,14 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
     public function addInstantiatesUri($instantiatesUri = null)
     {
         if (null === $instantiatesUri) {
-            $this->instantiatesUri = null;
+            $this->instantiatesUri = [];
             return $this;
         }
         if ($instantiatesUri instanceof FHIRUri) {
-            $this->instantiatesUri = $instantiatesUri;
+            $this->instantiatesUri[] = $instantiatesUri;
             return $this;
         }
-        $this->instantiatesUri = new FHIRUri($instantiatesUri);
+        $this->instantiatesUri[] = new FHIRUri($instantiatesUri);
         return $this;
     }
 
@@ -1809,8 +1828,7 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * Estimated or actual date, date-time, period, or age when the procedure was
      * performed. Allows a period to support complex procedures that span more than one
-     * date, and also allows for the length of the procedure to be captured. (choose
-     * any one of performed*, but only one)
+     * date, and also allows for the length of the procedure to be captured.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
@@ -1826,8 +1844,7 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * Estimated or actual date, date-time, period, or age when the procedure was
      * performed. Allows a period to support complex procedures that span more than one
-     * date, and also allows for the length of the procedure to be captured. (choose
-     * any one of performed*, but only one)
+     * date, and also allows for the length of the procedure to be captured.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge $performedAge
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRProcedure
@@ -1848,8 +1865,7 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * Estimated or actual date, date-time, period, or age when the procedure was
      * performed. Allows a period to support complex procedures that span more than one
-     * date, and also allows for the length of the procedure to be captured. (choose
-     * any one of performed*, but only one)
+     * date, and also allows for the length of the procedure to be captured.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -1868,8 +1884,7 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * Estimated or actual date, date-time, period, or age when the procedure was
      * performed. Allows a period to support complex procedures that span more than one
-     * date, and also allows for the length of the procedure to be captured. (choose
-     * any one of performed*, but only one)
+     * date, and also allows for the length of the procedure to be captured.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $performedDateTime
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRProcedure
@@ -1895,8 +1910,7 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * Estimated or actual date, date-time, period, or age when the procedure was
      * performed. Allows a period to support complex procedures that span more than one
-     * date, and also allows for the length of the procedure to be captured. (choose
-     * any one of performed*, but only one)
+     * date, and also allows for the length of the procedure to be captured.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -1912,8 +1926,7 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * Estimated or actual date, date-time, period, or age when the procedure was
      * performed. Allows a period to support complex procedures that span more than one
-     * date, and also allows for the length of the procedure to be captured. (choose
-     * any one of performed*, but only one)
+     * date, and also allows for the length of the procedure to be captured.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $performedPeriod
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRProcedure
@@ -1931,8 +1944,7 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * Estimated or actual date, date-time, period, or age when the procedure was
      * performed. Allows a period to support complex procedures that span more than one
-     * date, and also allows for the length of the procedure to be captured. (choose
-     * any one of performed*, but only one)
+     * date, and also allows for the length of the procedure to be captured.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -1948,8 +1960,7 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * Estimated or actual date, date-time, period, or age when the procedure was
      * performed. Allows a period to support complex procedures that span more than one
-     * date, and also allows for the length of the procedure to be captured. (choose
-     * any one of performed*, but only one)
+     * date, and also allows for the length of the procedure to be captured.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange $performedRange
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRProcedure
@@ -1967,8 +1978,7 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * Estimated or actual date, date-time, period, or age when the procedure was
      * performed. Allows a period to support complex procedures that span more than one
-     * date, and also allows for the length of the procedure to be captured. (choose
-     * any one of performed*, but only one)
+     * date, and also allows for the length of the procedure to be captured.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -1984,8 +1994,7 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * Estimated or actual date, date-time, period, or age when the procedure was
      * performed. Allows a period to support complex procedures that span more than one
-     * date, and also allows for the length of the procedure to be captured. (choose
-     * any one of performed*, but only one)
+     * date, and also allows for the length of the procedure to be captured.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $performedString
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRProcedure
@@ -2477,16 +2486,17 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRProcedure $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRProcedure
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRProcedure::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -2502,6 +2512,13 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
                 'FHIRProcedure::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRProcedure or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -2652,17 +2669,18 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<Procedure xmlns="http://hl7.org/fhir"></Procedure>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getAsserter())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ASSERTER));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ASSERTER, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getBasedOn())) {
@@ -2670,7 +2688,7 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_BASED_ON));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_BASED_ON, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -2679,16 +2697,16 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_BODY_SITE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_BODY_SITE, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getCategory())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CATEGORY));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CATEGORY, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getCode())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CODE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getComplication())) {
@@ -2696,7 +2714,7 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_COMPLICATION));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_COMPLICATION, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -2705,12 +2723,12 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_COMPLICATION_DETAIL));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_COMPLICATION_DETAIL, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getEncounter())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ENCOUNTER));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ENCOUNTER, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getFocalDevice())) {
@@ -2718,7 +2736,7 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_FOCAL_DEVICE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_FOCAL_DEVICE, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -2727,7 +2745,7 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_FOLLOW_UP));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_FOLLOW_UP, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -2736,46 +2754,28 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->getFHIRXMLNamespace()));
             }
         }
         if ([] !== ($vs = $this->getInstantiatesCanonical())) {
-            $first = true;
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                if ($first) {
-                    $sxe->addAttribute(self::FIELD_INSTANTIATES_CANONICAL, (string)$v);
-                    if (null !== $v->getId() || [] !== $v->getExtension()) {
-                        $v->xmlSerialize($sxe->addChild(self::FIELD_INSTANTIATES_CANONICAL));
-                    }
-                    $first = false;
-                } else {
-                    $v->xmlSerialize($sxe->addChild(self::FIELD_INSTANTIATES_CANONICAL));
-                }
+                $v->xmlSerialize($sxe->addChild(self::FIELD_INSTANTIATES_CANONICAL, null, $v->getFHIRXMLNamespace()));
             }
         }
         if ([] !== ($vs = $this->getInstantiatesUri())) {
-            $first = true;
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                if ($first) {
-                    $sxe->addAttribute(self::FIELD_INSTANTIATES_URI, (string)$v);
-                    if (null !== $v->getId() || [] !== $v->getExtension()) {
-                        $v->xmlSerialize($sxe->addChild(self::FIELD_INSTANTIATES_URI));
-                    }
-                    $first = false;
-                } else {
-                    $v->xmlSerialize($sxe->addChild(self::FIELD_INSTANTIATES_URI));
-                }
+                $v->xmlSerialize($sxe->addChild(self::FIELD_INSTANTIATES_URI, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getLocation())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_LOCATION));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_LOCATION, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getNote())) {
@@ -2783,12 +2783,12 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_NOTE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_NOTE, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getOutcome())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_OUTCOME));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_OUTCOME, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getPartOf())) {
@@ -2796,32 +2796,26 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PART_OF));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_PART_OF, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getPerformedAge())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PERFORMED_AGE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PERFORMED_AGE, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getPerformedDateTime())) {
-            $sxe->addAttribute(self::FIELD_PERFORMED_DATE_TIME, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PERFORMED_DATE_TIME));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PERFORMED_DATE_TIME, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getPerformedPeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PERFORMED_PERIOD));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PERFORMED_PERIOD, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getPerformedRange())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PERFORMED_RANGE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PERFORMED_RANGE, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getPerformedString())) {
-            $sxe->addAttribute(self::FIELD_PERFORMED_STRING, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PERFORMED_STRING));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PERFORMED_STRING, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getPerformer())) {
@@ -2829,7 +2823,7 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PERFORMER));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_PERFORMER, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -2838,7 +2832,7 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_REASON_CODE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_REASON_CODE, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -2847,12 +2841,12 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_REASON_REFERENCE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_REASON_REFERENCE, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getRecorder())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RECORDER));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_RECORDER, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getReport())) {
@@ -2860,20 +2854,20 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_REPORT));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_REPORT, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getStatus())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getStatusReason())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS_REASON));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS_REASON, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getSubject())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBJECT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBJECT, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getUsedCode())) {
@@ -2881,7 +2875,7 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_USED_CODE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_USED_CODE, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -2890,7 +2884,7 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_USED_REFERENCE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_USED_REFERENCE, null, $v->getFHIRXMLNamespace()));
             }
         }
         return $sxe;

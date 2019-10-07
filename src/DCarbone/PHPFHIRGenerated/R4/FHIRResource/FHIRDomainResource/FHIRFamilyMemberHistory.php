@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -95,6 +95,9 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_FAMILY_MEMBER_HISTORY;
 
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
+
     const FIELD_AGE_AGE = 'ageAge';
     const FIELD_AGE_RANGE = 'ageRange';
     const FIELD_AGE_STRING = 'ageString';
@@ -139,7 +142,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The age of the relative at the time the family member history is recorded.
-     * (choose any one of age*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
@@ -150,7 +152,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The age of the relative at the time the family member history is recorded.
-     * (choose any one of age*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -161,7 +162,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The age of the relative at the time the family member history is recorded.
-     * (choose any one of age*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -172,8 +172,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The actual or approximate date of birth of the relative. (choose any one of
-     * born*, but only one)
+     * The actual or approximate date of birth of the relative.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
@@ -183,8 +182,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The actual or approximate date of birth of the relative. (choose any one of
-     * born*, but only one)
+     * The actual or approximate date of birth of the relative.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -194,8 +192,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The actual or approximate date of birth of the relative. (choose any one of
-     * born*, but only one)
+     * The actual or approximate date of birth of the relative.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -243,8 +240,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
-     * death for the family member history record. (choose any one of deceased*, but
-     * only one)
+     * death for the family member history record.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
@@ -254,8 +250,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
-     * death for the family member history record. (choose any one of deceased*, but
-     * only one)
+     * death for the family member history record.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
@@ -267,8 +262,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
-     * death for the family member history record. (choose any one of deceased*, but
-     * only one)
+     * death for the family member history record.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
@@ -279,8 +273,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
-     * death for the family member history record. (choose any one of deceased*, but
-     * only one)
+     * death for the family member history record.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -291,8 +284,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
-     * death for the family member history record. (choose any one of deceased*, but
-     * only one)
+     * death for the family member history record.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -757,12 +749,32 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
     }
 
     /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<FamilyMemberHistory{$xmlns}></FamilyMemberHistory>";
+    }
+
+
+    /**
      * A duration of time during which an organism (or a process) has existed.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The age of the relative at the time the family member history is recorded.
-     * (choose any one of age*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
@@ -777,7 +789,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The age of the relative at the time the family member history is recorded.
-     * (choose any one of age*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge $ageAge
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
@@ -794,7 +805,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The age of the relative at the time the family member history is recorded.
-     * (choose any one of age*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -809,7 +819,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The age of the relative at the time the family member history is recorded.
-     * (choose any one of age*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange $ageRange
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
@@ -826,7 +835,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The age of the relative at the time the family member history is recorded.
-     * (choose any one of age*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -841,7 +849,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The age of the relative at the time the family member history is recorded.
-     * (choose any one of age*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $ageString
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
@@ -866,8 +873,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The actual or approximate date of birth of the relative. (choose any one of
-     * born*, but only one)
+     * The actual or approximate date of birth of the relative.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
@@ -882,8 +888,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The actual or approximate date of birth of the relative. (choose any one of
-     * born*, but only one)
+     * The actual or approximate date of birth of the relative.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate $bornDate
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
@@ -907,8 +912,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The actual or approximate date of birth of the relative. (choose any one of
-     * born*, but only one)
+     * The actual or approximate date of birth of the relative.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -922,8 +926,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The actual or approximate date of birth of the relative. (choose any one of
-     * born*, but only one)
+     * The actual or approximate date of birth of the relative.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $bornPeriod
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
@@ -939,8 +942,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The actual or approximate date of birth of the relative. (choose any one of
-     * born*, but only one)
+     * The actual or approximate date of birth of the relative.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -954,8 +956,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The actual or approximate date of birth of the relative. (choose any one of
-     * born*, but only one)
+     * The actual or approximate date of birth of the relative.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $bornString
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
@@ -1120,8 +1121,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
-     * death for the family member history record. (choose any one of deceased*, but
-     * only one)
+     * death for the family member history record.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
@@ -1136,8 +1136,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
-     * death for the family member history record. (choose any one of deceased*, but
-     * only one)
+     * death for the family member history record.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge $deceasedAge
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
@@ -1153,8 +1152,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
-     * death for the family member history record. (choose any one of deceased*, but
-     * only one)
+     * death for the family member history record.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
@@ -1168,8 +1166,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
-     * death for the family member history record. (choose any one of deceased*, but
-     * only one)
+     * death for the family member history record.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $deceasedBoolean
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
@@ -1195,8 +1192,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
-     * death for the family member history record. (choose any one of deceased*, but
-     * only one)
+     * death for the family member history record.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
@@ -1212,8 +1208,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
-     * death for the family member history record. (choose any one of deceased*, but
-     * only one)
+     * death for the family member history record.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate $deceasedDate
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
@@ -1238,8 +1233,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
-     * death for the family member history record. (choose any one of deceased*, but
-     * only one)
+     * death for the family member history record.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -1254,8 +1248,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
-     * death for the family member history record. (choose any one of deceased*, but
-     * only one)
+     * death for the family member history record.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange $deceasedRange
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
@@ -1272,8 +1265,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
-     * death for the family member history record. (choose any one of deceased*, but
-     * only one)
+     * death for the family member history record.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -1288,8 +1280,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
-     * death for the family member history record. (choose any one of deceased*, but
-     * only one)
+     * death for the family member history record.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $deceasedString
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
@@ -1440,14 +1431,14 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
     public function addInstantiatesCanonical($instantiatesCanonical = null)
     {
         if (null === $instantiatesCanonical) {
-            $this->instantiatesCanonical = null;
+            $this->instantiatesCanonical = [];
             return $this;
         }
         if ($instantiatesCanonical instanceof FHIRCanonical) {
-            $this->instantiatesCanonical = $instantiatesCanonical;
+            $this->instantiatesCanonical[] = $instantiatesCanonical;
             return $this;
         }
-        $this->instantiatesCanonical = new FHIRCanonical($instantiatesCanonical);
+        $this->instantiatesCanonical[] = new FHIRCanonical($instantiatesCanonical);
         return $this;
     }
 
@@ -1510,14 +1501,14 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
     public function addInstantiatesUri($instantiatesUri = null)
     {
         if (null === $instantiatesUri) {
-            $this->instantiatesUri = null;
+            $this->instantiatesUri = [];
             return $this;
         }
         if ($instantiatesUri instanceof FHIRUri) {
-            $this->instantiatesUri = $instantiatesUri;
+            $this->instantiatesUri[] = $instantiatesUri;
             return $this;
         }
-        $this->instantiatesUri = new FHIRUri($instantiatesUri);
+        $this->instantiatesUri[] = new FHIRUri($instantiatesUri);
         return $this;
     }
 
@@ -1901,16 +1892,17 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRFamilyMemberHistory::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -1926,6 +1918,13 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
                 'FHIRFamilyMemberHistory::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -2059,43 +2058,35 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<FamilyMemberHistory xmlns="http://hl7.org/fhir"></FamilyMemberHistory>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getAgeAge())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_AGE_AGE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_AGE_AGE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getAgeRange())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_AGE_RANGE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_AGE_RANGE, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getAgeString())) {
-            $sxe->addAttribute(self::FIELD_AGE_STRING, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_AGE_STRING));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_AGE_STRING, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getBornDate())) {
-            $sxe->addAttribute(self::FIELD_BORN_DATE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_BORN_DATE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_BORN_DATE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getBornPeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_BORN_PERIOD));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_BORN_PERIOD, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getBornString())) {
-            $sxe->addAttribute(self::FIELD_BORN_STRING, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_BORN_STRING));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_BORN_STRING, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getCondition())) {
@@ -2103,50 +2094,35 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CONDITION));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_CONDITION, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getDataAbsentReason())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DATA_ABSENT_REASON));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DATA_ABSENT_REASON, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDate())) {
-            $sxe->addAttribute(self::FIELD_DATE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DATE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DATE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDeceasedAge())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DECEASED_AGE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DECEASED_AGE, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDeceasedBoolean())) {
-            $sxe->addAttribute(self::FIELD_DECEASED_BOOLEAN, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DECEASED_BOOLEAN));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DECEASED_BOOLEAN, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDeceasedDate())) {
-            $sxe->addAttribute(self::FIELD_DECEASED_DATE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DECEASED_DATE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DECEASED_DATE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDeceasedRange())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DECEASED_RANGE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DECEASED_RANGE, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDeceasedString())) {
-            $sxe->addAttribute(self::FIELD_DECEASED_STRING, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DECEASED_STRING));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DECEASED_STRING, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getEstimatedAge())) {
-            $sxe->addAttribute(self::FIELD_ESTIMATED_AGE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ESTIMATED_AGE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ESTIMATED_AGE, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getIdentifier())) {
@@ -2154,48 +2130,27 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->getFHIRXMLNamespace()));
             }
         }
         if ([] !== ($vs = $this->getInstantiatesCanonical())) {
-            $first = true;
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                if ($first) {
-                    $sxe->addAttribute(self::FIELD_INSTANTIATES_CANONICAL, (string)$v);
-                    if (null !== $v->getId() || [] !== $v->getExtension()) {
-                        $v->xmlSerialize($sxe->addChild(self::FIELD_INSTANTIATES_CANONICAL));
-                    }
-                    $first = false;
-                } else {
-                    $v->xmlSerialize($sxe->addChild(self::FIELD_INSTANTIATES_CANONICAL));
-                }
+                $v->xmlSerialize($sxe->addChild(self::FIELD_INSTANTIATES_CANONICAL, null, $v->getFHIRXMLNamespace()));
             }
         }
         if ([] !== ($vs = $this->getInstantiatesUri())) {
-            $first = true;
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                if ($first) {
-                    $sxe->addAttribute(self::FIELD_INSTANTIATES_URI, (string)$v);
-                    if (null !== $v->getId() || [] !== $v->getExtension()) {
-                        $v->xmlSerialize($sxe->addChild(self::FIELD_INSTANTIATES_URI));
-                    }
-                    $first = false;
-                } else {
-                    $v->xmlSerialize($sxe->addChild(self::FIELD_INSTANTIATES_URI));
-                }
+                $v->xmlSerialize($sxe->addChild(self::FIELD_INSTANTIATES_URI, null, $v->getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getName())) {
-            $sxe->addAttribute(self::FIELD_NAME, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_NAME));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_NAME, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getNote())) {
@@ -2203,12 +2158,12 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_NOTE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_NOTE, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getPatient())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATIENT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PATIENT, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getReasonCode())) {
@@ -2216,7 +2171,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_REASON_CODE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_REASON_CODE, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -2225,20 +2180,20 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_REASON_REFERENCE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_REASON_REFERENCE, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getRelationship())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RELATIONSHIP));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_RELATIONSHIP, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getSex())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SEX));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SEX, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getStatus())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

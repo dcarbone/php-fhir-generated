@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -93,6 +93,9 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_DEVICE_REQUEST;
 
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
+
     const FIELD_AUTHORED_ON = 'authoredOn';
     const FIELD_AUTHORED_ON_EXT = '_authoredOn';
     const FIELD_BASED_ON = 'basedOn';
@@ -154,7 +157,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The details of the device to be used. (choose any one of code*, but only one)
+     * The details of the device to be used.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -164,7 +167,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The details of the device to be used. (choose any one of code*, but only one)
+     * The details of the device to be used.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -269,7 +272,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * The timing schedule for the use of the device. The Schedule data type allows
      * many different expressions, for example. "Every 8 hours"; "Three times a day";
      * "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17
-     * Oct 2013 and 1 Nov 2013". (choose any one of occurrence*, but only one)
+     * Oct 2013 and 1 Nov 2013".
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -282,7 +285,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * The timing schedule for the use of the device. The Schedule data type allows
      * many different expressions, for example. "Every 8 hours"; "Three times a day";
      * "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17
-     * Oct 2013 and 1 Nov 2013". (choose any one of occurrence*, but only one)
+     * Oct 2013 and 1 Nov 2013".
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -299,7 +302,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * The timing schedule for the use of the device. The Schedule data type allows
      * many different expressions, for example. "Every 8 hours"; "Three times a day";
      * "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17
-     * Oct 2013 and 1 Nov 2013". (choose any one of occurrence*, but only one)
+     * Oct 2013 and 1 Nov 2013".
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
@@ -767,6 +770,27 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
     }
 
     /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<DeviceRequest{$xmlns}></DeviceRequest>";
+    }
+
+
+    /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
@@ -872,7 +896,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The details of the device to be used. (choose any one of code*, but only one)
+     * The details of the device to be used.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -887,7 +911,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The details of the device to be used. (choose any one of code*, but only one)
+     * The details of the device to be used.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $codeCodeableConcept
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceRequest
@@ -903,7 +927,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The details of the device to be used. (choose any one of code*, but only one)
+     * The details of the device to be used.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -917,7 +941,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The details of the device to be used. (choose any one of code*, but only one)
+     * The details of the device to be used.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $codeReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceRequest
@@ -1080,14 +1104,14 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
     public function addInstantiatesCanonical($instantiatesCanonical = null)
     {
         if (null === $instantiatesCanonical) {
-            $this->instantiatesCanonical = null;
+            $this->instantiatesCanonical = [];
             return $this;
         }
         if ($instantiatesCanonical instanceof FHIRCanonical) {
-            $this->instantiatesCanonical = $instantiatesCanonical;
+            $this->instantiatesCanonical[] = $instantiatesCanonical;
             return $this;
         }
-        $this->instantiatesCanonical = new FHIRCanonical($instantiatesCanonical);
+        $this->instantiatesCanonical[] = new FHIRCanonical($instantiatesCanonical);
         return $this;
     }
 
@@ -1148,14 +1172,14 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
     public function addInstantiatesUri($instantiatesUri = null)
     {
         if (null === $instantiatesUri) {
-            $this->instantiatesUri = null;
+            $this->instantiatesUri = [];
             return $this;
         }
         if ($instantiatesUri instanceof FHIRUri) {
-            $this->instantiatesUri = $instantiatesUri;
+            $this->instantiatesUri[] = $instantiatesUri;
             return $this;
         }
-        $this->instantiatesUri = new FHIRUri($instantiatesUri);
+        $this->instantiatesUri[] = new FHIRUri($instantiatesUri);
         return $this;
     }
 
@@ -1351,7 +1375,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * The timing schedule for the use of the device. The Schedule data type allows
      * many different expressions, for example. "Every 8 hours"; "Three times a day";
      * "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17
-     * Oct 2013 and 1 Nov 2013". (choose any one of occurrence*, but only one)
+     * Oct 2013 and 1 Nov 2013".
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -1371,7 +1395,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * The timing schedule for the use of the device. The Schedule data type allows
      * many different expressions, for example. "Every 8 hours"; "Three times a day";
      * "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17
-     * Oct 2013 and 1 Nov 2013". (choose any one of occurrence*, but only one)
+     * Oct 2013 and 1 Nov 2013".
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $occurrenceDateTime
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceRequest
@@ -1398,7 +1422,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * The timing schedule for the use of the device. The Schedule data type allows
      * many different expressions, for example. "Every 8 hours"; "Three times a day";
      * "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17
-     * Oct 2013 and 1 Nov 2013". (choose any one of occurrence*, but only one)
+     * Oct 2013 and 1 Nov 2013".
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -1415,7 +1439,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * The timing schedule for the use of the device. The Schedule data type allows
      * many different expressions, for example. "Every 8 hours"; "Three times a day";
      * "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17
-     * Oct 2013 and 1 Nov 2013". (choose any one of occurrence*, but only one)
+     * Oct 2013 and 1 Nov 2013".
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $occurrencePeriod
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceRequest
@@ -1438,7 +1462,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * The timing schedule for the use of the device. The Schedule data type allows
      * many different expressions, for example. "Every 8 hours"; "Three times a day";
      * "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17
-     * Oct 2013 and 1 Nov 2013". (choose any one of occurrence*, but only one)
+     * Oct 2013 and 1 Nov 2013".
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
@@ -1459,7 +1483,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * The timing schedule for the use of the device. The Schedule data type allows
      * many different expressions, for example. "Every 8 hours"; "Three times a day";
      * "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17
-     * Oct 2013 and 1 Nov 2013". (choose any one of occurrence*, but only one)
+     * Oct 2013 and 1 Nov 2013".
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming $occurrenceTiming
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceRequest
@@ -2005,16 +2029,17 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceRequest $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceRequest
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRDeviceRequest::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -2030,6 +2055,13 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
                 'FHIRDeviceRequest::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceRequest or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -2155,19 +2187,17 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<DeviceRequest xmlns="http://hl7.org/fhir"></DeviceRequest>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getAuthoredOn())) {
-            $sxe->addAttribute(self::FIELD_AUTHORED_ON, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_AUTHORED_ON));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_AUTHORED_ON, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getBasedOn())) {
@@ -2175,24 +2205,24 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_BASED_ON));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_BASED_ON, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getCodeCodeableConcept())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CODE_CODEABLE_CONCEPT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CODE_CODEABLE_CONCEPT, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getCodeReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CODE_REFERENCE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CODE_REFERENCE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getEncounter())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ENCOUNTER));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ENCOUNTER, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getGroupIdentifier())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_GROUP_IDENTIFIER));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_GROUP_IDENTIFIER, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getIdentifier())) {
@@ -2200,41 +2230,23 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->getFHIRXMLNamespace()));
             }
         }
         if ([] !== ($vs = $this->getInstantiatesCanonical())) {
-            $first = true;
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                if ($first) {
-                    $sxe->addAttribute(self::FIELD_INSTANTIATES_CANONICAL, (string)$v);
-                    if (null !== $v->getId() || [] !== $v->getExtension()) {
-                        $v->xmlSerialize($sxe->addChild(self::FIELD_INSTANTIATES_CANONICAL));
-                    }
-                    $first = false;
-                } else {
-                    $v->xmlSerialize($sxe->addChild(self::FIELD_INSTANTIATES_CANONICAL));
-                }
+                $v->xmlSerialize($sxe->addChild(self::FIELD_INSTANTIATES_CANONICAL, null, $v->getFHIRXMLNamespace()));
             }
         }
         if ([] !== ($vs = $this->getInstantiatesUri())) {
-            $first = true;
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                if ($first) {
-                    $sxe->addAttribute(self::FIELD_INSTANTIATES_URI, (string)$v);
-                    if (null !== $v->getId() || [] !== $v->getExtension()) {
-                        $v->xmlSerialize($sxe->addChild(self::FIELD_INSTANTIATES_URI));
-                    }
-                    $first = false;
-                } else {
-                    $v->xmlSerialize($sxe->addChild(self::FIELD_INSTANTIATES_URI));
-                }
+                $v->xmlSerialize($sxe->addChild(self::FIELD_INSTANTIATES_URI, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -2243,12 +2255,12 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_INSURANCE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_INSURANCE, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getIntent())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_INTENT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_INTENT, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getNote())) {
@@ -2256,22 +2268,19 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_NOTE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_NOTE, null, $v->getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getOccurrenceDateTime())) {
-            $sxe->addAttribute(self::FIELD_OCCURRENCE_DATE_TIME, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_OCCURRENCE_DATE_TIME));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_OCCURRENCE_DATE_TIME, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getOccurrencePeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_OCCURRENCE_PERIOD));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_OCCURRENCE_PERIOD, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getOccurrenceTiming())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_OCCURRENCE_TIMING));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_OCCURRENCE_TIMING, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getParameter())) {
@@ -2279,16 +2288,16 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PARAMETER));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_PARAMETER, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getPerformer())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PERFORMER));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PERFORMER, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getPerformerType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PERFORMER_TYPE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PERFORMER_TYPE, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getPriorRequest())) {
@@ -2296,12 +2305,12 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PRIOR_REQUEST));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_PRIOR_REQUEST, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getPriority())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PRIORITY));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PRIORITY, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getReasonCode())) {
@@ -2309,7 +2318,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_REASON_CODE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_REASON_CODE, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -2318,7 +2327,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_REASON_REFERENCE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_REASON_REFERENCE, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -2327,20 +2336,20 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_RELEVANT_HISTORY));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_RELEVANT_HISTORY, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getRequester())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REQUESTER));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_REQUESTER, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getStatus())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getSubject())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBJECT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBJECT, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getSupportingInfo())) {
@@ -2348,7 +2357,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SUPPORTING_INFO));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_SUPPORTING_INFO, null, $v->getFHIRXMLNamespace()));
             }
         }
         return $sxe;

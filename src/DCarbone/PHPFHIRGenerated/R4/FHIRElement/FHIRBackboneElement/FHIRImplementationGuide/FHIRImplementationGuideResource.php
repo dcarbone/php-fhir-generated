@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImple
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,6 +86,9 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_IMPLEMENTATION_GUIDE_DOT_RESOURCE;
 
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
+
     const FIELD_DESCRIPTION = 'description';
     const FIELD_DESCRIPTION_EXT = '_description';
     const FIELD_EXAMPLE_BOOLEAN = 'exampleBoolean';
@@ -116,7 +119,7 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      *
      * If true or a reference, indicates the resource is an example instance. If a
      * reference is present, indicates that the example is an example of the specified
-     * profile. (choose any one of example*, but only one)
+     * profile.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
@@ -129,7 +132,7 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      *
      * If true or a reference, indicates the resource is an example instance. If a
      * reference is present, indicates that the example is an example of the specified
-     * profile. (choose any one of example*, but only one)
+     * profile.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
@@ -288,6 +291,27 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
     }
 
     /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<ImplementationGuideResource{$xmlns}></ImplementationGuideResource>";
+    }
+
+
+    /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -333,7 +357,7 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      *
      * If true or a reference, indicates the resource is an example instance. If a
      * reference is present, indicates that the example is an example of the specified
-     * profile. (choose any one of example*, but only one)
+     * profile.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
@@ -348,7 +372,7 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      *
      * If true or a reference, indicates the resource is an example instance. If a
      * reference is present, indicates that the example is an example of the specified
-     * profile. (choose any one of example*, but only one)
+     * profile.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $exampleBoolean
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideResource
@@ -375,7 +399,7 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      *
      * If true or a reference, indicates the resource is an example instance. If a
      * reference is present, indicates that the example is an example of the specified
-     * profile. (choose any one of example*, but only one)
+     * profile.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
@@ -392,7 +416,7 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      *
      * If true or a reference, indicates the resource is an example instance. If a
      * reference is present, indicates that the example is an example of the specified
-     * profile. (choose any one of example*, but only one)
+     * profile.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical $exampleCanonical
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideResource
@@ -584,16 +608,17 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideResource $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideResource
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRImplementationGuideResource::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -609,6 +634,13 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
                 'FHIRImplementationGuideResource::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideResource or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -655,31 +687,23 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<ImplementationGuideResource xmlns="http://hl7.org/fhir"></ImplementationGuideResource>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getDescription())) {
-            $sxe->addAttribute(self::FIELD_DESCRIPTION, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DESCRIPTION));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DESCRIPTION, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getExampleBoolean())) {
-            $sxe->addAttribute(self::FIELD_EXAMPLE_BOOLEAN, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_BOOLEAN));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_BOOLEAN, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getExampleCanonical())) {
-            $sxe->addAttribute(self::FIELD_EXAMPLE_CANONICAL, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_CANONICAL));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_CANONICAL, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getFhirVersion())) {
@@ -687,24 +711,18 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_FHIR_VERSION));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_FHIR_VERSION, null, $v->getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getGroupingId())) {
-            $sxe->addAttribute(self::FIELD_GROUPING_ID, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_GROUPING_ID));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_GROUPING_ID, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getName())) {
-            $sxe->addAttribute(self::FIELD_NAME, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_NAME));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_NAME, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REFERENCE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_REFERENCE, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

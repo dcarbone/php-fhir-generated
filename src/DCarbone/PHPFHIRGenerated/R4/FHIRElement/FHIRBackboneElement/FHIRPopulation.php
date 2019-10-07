@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,6 +81,9 @@ class FHIRPopulation extends FHIRBackboneElement
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_POPULATION;
 
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
+
     const FIELD_AGE_CODEABLE_CONCEPT = 'ageCodeableConcept';
     const FIELD_AGE_RANGE = 'ageRange';
     const FIELD_GENDER = 'gender';
@@ -93,7 +96,7 @@ class FHIRPopulation extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The age of the specific population. (choose any one of age*, but only one)
+     * The age of the specific population.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -103,7 +106,7 @@ class FHIRPopulation extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The age of the specific population. (choose any one of age*, but only one)
+     * The age of the specific population.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -205,12 +208,33 @@ class FHIRPopulation extends FHIRBackboneElement
     }
 
     /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<Population{$xmlns}></Population>";
+    }
+
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The age of the specific population. (choose any one of age*, but only one)
+     * The age of the specific population.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -225,7 +249,7 @@ class FHIRPopulation extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The age of the specific population. (choose any one of age*, but only one)
+     * The age of the specific population.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $ageCodeableConcept
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPopulation
@@ -241,7 +265,7 @@ class FHIRPopulation extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The age of the specific population. (choose any one of age*, but only one)
+     * The age of the specific population.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -255,7 +279,7 @@ class FHIRPopulation extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The age of the specific population. (choose any one of age*, but only one)
+     * The age of the specific population.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange $ageRange
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPopulation
@@ -367,16 +391,17 @@ class FHIRPopulation extends FHIRBackboneElement
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPopulation $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPopulation
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRPopulation::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -392,6 +417,13 @@ class FHIRPopulation extends FHIRBackboneElement
                 'FHIRPopulation::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPopulation or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -415,33 +447,34 @@ class FHIRPopulation extends FHIRBackboneElement
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<Population xmlns="http://hl7.org/fhir"></Population>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getAgeCodeableConcept())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_AGE_CODEABLE_CONCEPT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_AGE_CODEABLE_CONCEPT, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getAgeRange())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_AGE_RANGE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_AGE_RANGE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getGender())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_GENDER));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_GENDER, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getPhysiologicalCondition())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PHYSIOLOGICAL_CONDITION));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PHYSIOLOGICAL_CONDITION, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getRace())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RACE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_RACE, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

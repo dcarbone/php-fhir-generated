@@ -5,7 +5,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTests\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -95,7 +95,11 @@ class FHIRCommunicationRequestTest extends TestCase
         $err = curl_error($ch);
         curl_close($ch);
         $this->assertEmpty($err, sprintf('curl error seen: %s', $err));
-        $this->assertIsString($res);
+        if (method_exists($this, 'assertIsString')) {
+            $this->assertIsString($res);
+        } else {
+            $this->assertInternalType('string', $res);
+        }
         return $res;
     }
 
@@ -103,6 +107,15 @@ class FHIRCommunicationRequestTest extends TestCase
     public function testXML()
     {
         $xml = $this->fetchResource('xml');
+        try {
+            $type = FHIRCommunicationRequest::xmlUnserialize($xml);
+        } catch (\Exception $e) {
+            $this->fail(sprintf(
+                'Error building type "Bundle" from XML: %s; Returned XML: %s',
+                $e->getMessage(),
+                $xml
+            ));
+        }
         $bundle = FHIRBundle::xmlUnserialize($xml);
         $this->assertInstanceOf('\DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRBundle', $bundle);
         if (0 === count($bundle->getEntry())) {
@@ -115,7 +128,15 @@ class FHIRCommunicationRequestTest extends TestCase
         $this->assertCount(1, $bundle->getEntry());
         $entry = $bundle->getEntry()[0]->getResource();
         $xml2 = $entry->xmlSerialize()->saveXML();
-        $type = FHIRCommunicationRequest::xmlUnserialize($xml2);
+        try {
+            $type = FHIRCommunicationRequest::xmlUnserialize($xml2);
+        } catch (\Exception $e) {
+            $this->fail(sprintf(
+                'Error building type "CommunicationRequest" from XML: %s; Returned XML: %s',
+                $e->getMessage(),
+                $xml2
+            ));
+        }
         $this->assertInstanceOf('\DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest', $type);
         $this->assertEquals($entry->xmlSerialize()->saveXML(), $type->xmlSerialize()->saveXML());
     }

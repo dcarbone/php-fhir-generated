@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -90,6 +90,9 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_GUIDANCE_RESPONSE;
 
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
+
     const FIELD_DATA_REQUIREMENT = 'dataRequirement';
     const FIELD_ENCOUNTER = 'encounter';
     const FIELD_EVALUATION_MESSAGE = 'evaluationMessage';
@@ -166,7 +169,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * the Narrative, or extensions
      *
      * An identifier, CodeableConcept or canonical reference to the guidance that was
-     * requested. (choose any one of module*, but only one)
+     * requested.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
@@ -178,7 +181,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an @id referenced from the Narrative, or extensions
      *
      * An identifier, CodeableConcept or canonical reference to the guidance that was
-     * requested. (choose any one of module*, but only one)
+     * requested.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -189,7 +192,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * An identifier, CodeableConcept or canonical reference to the guidance that was
-     * requested. (choose any one of module*, but only one)
+     * requested.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
@@ -525,6 +528,27 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
     }
 
     /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<GuidanceResponse{$xmlns}></GuidanceResponse>";
+    }
+
+
+    /**
      * Describes a required data item for evaluation in terms of the type of data, and
      * optional code or date-based filters of the data.
      * If the element is present, it must have a value for at least one of the defined
@@ -752,7 +776,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * the Narrative, or extensions
      *
      * An identifier, CodeableConcept or canonical reference to the guidance that was
-     * requested. (choose any one of module*, but only one)
+     * requested.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
@@ -768,7 +792,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * the Narrative, or extensions
      *
      * An identifier, CodeableConcept or canonical reference to the guidance that was
-     * requested. (choose any one of module*, but only one)
+     * requested.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical $moduleCanonical
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGuidanceResponse
@@ -794,7 +818,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an @id referenced from the Narrative, or extensions
      *
      * An identifier, CodeableConcept or canonical reference to the guidance that was
-     * requested. (choose any one of module*, but only one)
+     * requested.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -810,7 +834,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an @id referenced from the Narrative, or extensions
      *
      * An identifier, CodeableConcept or canonical reference to the guidance that was
-     * requested. (choose any one of module*, but only one)
+     * requested.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $moduleCodeableConcept
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGuidanceResponse
@@ -827,7 +851,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * An identifier, CodeableConcept or canonical reference to the guidance that was
-     * requested. (choose any one of module*, but only one)
+     * requested.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
@@ -842,7 +866,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * An identifier, CodeableConcept or canonical reference to the guidance that was
-     * requested. (choose any one of module*, but only one)
+     * requested.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri $moduleUri
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGuidanceResponse
@@ -1297,16 +1321,17 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGuidanceResponse $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGuidanceResponse
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRGuidanceResponse::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -1322,6 +1347,13 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
                 'FHIRGuidanceResponse::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGuidanceResponse or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -1402,12 +1434,13 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<GuidanceResponse xmlns="http://hl7.org/fhir"></GuidanceResponse>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
@@ -1416,12 +1449,12 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DATA_REQUIREMENT));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_DATA_REQUIREMENT, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getEncounter())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ENCOUNTER));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ENCOUNTER, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getEvaluationMessage())) {
@@ -1429,7 +1462,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_EVALUATION_MESSAGE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_EVALUATION_MESSAGE, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -1438,24 +1471,18 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getModuleCanonical())) {
-            $sxe->addAttribute(self::FIELD_MODULE_CANONICAL, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_MODULE_CANONICAL));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MODULE_CANONICAL, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getModuleCodeableConcept())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MODULE_CODEABLE_CONCEPT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MODULE_CODEABLE_CONCEPT, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getModuleUri())) {
-            $sxe->addAttribute(self::FIELD_MODULE_URI, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_MODULE_URI));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MODULE_URI, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getNote())) {
@@ -1463,22 +1490,19 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_NOTE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_NOTE, null, $v->getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getOccurrenceDateTime())) {
-            $sxe->addAttribute(self::FIELD_OCCURRENCE_DATE_TIME, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_OCCURRENCE_DATE_TIME));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_OCCURRENCE_DATE_TIME, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getOutputParameters())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_OUTPUT_PARAMETERS));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_OUTPUT_PARAMETERS, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getPerformer())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PERFORMER));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PERFORMER, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getReasonCode())) {
@@ -1486,7 +1510,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_REASON_CODE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_REASON_CODE, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -1495,24 +1519,24 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_REASON_REFERENCE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_REASON_REFERENCE, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getRequestIdentifier())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REQUEST_IDENTIFIER));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_REQUEST_IDENTIFIER, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getResult())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RESULT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_RESULT, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getStatus())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getSubject())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBJECT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBJECT, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

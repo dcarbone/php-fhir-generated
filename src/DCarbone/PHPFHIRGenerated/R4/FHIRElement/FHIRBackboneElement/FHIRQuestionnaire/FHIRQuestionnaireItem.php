@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuest
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,6 +86,9 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_DOT_ITEM;
+
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ANSWER_OPTION = 'answerOption';
     const FIELD_ANSWER_VALUE_SET = 'answerValueSet';
@@ -519,6 +522,27 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
     {
         return self::FHIR_TYPE_NAME;
     }
+
+    /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<QuestionnaireItem{$xmlns}></QuestionnaireItem>";
+    }
+
 
     /**
      * A structured set of questions intended to guide the collection of answers from
@@ -1254,16 +1278,17 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRQuestionnaireItem::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -1279,6 +1304,13 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
                 'FHIRQuestionnaireItem::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -1372,12 +1404,13 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<QuestionnaireItem xmlns="http://hl7.org/fhir"></QuestionnaireItem>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
@@ -1386,14 +1419,11 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_OPTION));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_OPTION, null, $v->getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getAnswerValueSet())) {
-            $sxe->addAttribute(self::FIELD_ANSWER_VALUE_SET, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_VALUE_SET));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_VALUE_SET, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getCode())) {
@@ -1401,18 +1431,15 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CODE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getDefinition())) {
-            $sxe->addAttribute(self::FIELD_DEFINITION, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINITION));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINITION, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getEnableBehavior())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ENABLE_BEHAVIOR));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ENABLE_BEHAVIOR, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getEnableWhen())) {
@@ -1420,7 +1447,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ENABLE_WHEN));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_ENABLE_WHEN, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -1429,7 +1456,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_INITIAL));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_INITIAL, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -1438,54 +1465,33 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ITEM));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_ITEM, null, $v->getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getLinkId())) {
-            $sxe->addAttribute(self::FIELD_LINK_ID, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_LINK_ID));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_LINK_ID, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMaxLength())) {
-            $sxe->addAttribute(self::FIELD_MAX_LENGTH, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_LENGTH));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_LENGTH, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getPrefix())) {
-            $sxe->addAttribute(self::FIELD_PREFIX, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PREFIX));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PREFIX, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getReadOnly())) {
-            $sxe->addAttribute(self::FIELD_READ_ONLY, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_READ_ONLY));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_READ_ONLY, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getRepeats())) {
-            $sxe->addAttribute(self::FIELD_REPEATS, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_REPEATS));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_REPEATS, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getRequired())) {
-            $sxe->addAttribute(self::FIELD_REQUIRED, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_REQUIRED));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_REQUIRED, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getText())) {
-            $sxe->addAttribute(self::FIELD_TEXT, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_TEXT));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TEXT, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

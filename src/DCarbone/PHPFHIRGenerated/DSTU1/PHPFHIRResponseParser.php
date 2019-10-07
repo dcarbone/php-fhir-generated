@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:03+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -177,12 +177,13 @@ class PHPFHIRResponseParser
 
     /**
      * @param string $input
+     * @param null|int $libxmlOpts
      * @return \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface|null
      */
-    protected function parseStringXMLInput($input)
+    protected function parseStringXMLInput($input, $libxmlOpts = 591872)
     {
         libxml_use_internal_errors(true);
-        $sxe = new \SimpleXMLElement($input);
+        $sxe = new \SimpleXMLElement($input, $libxmlOpts);
         $err = libxml_get_last_error();
         libxml_use_internal_errors(false);
         if ($sxe instanceof \SimpleXMLElement) {

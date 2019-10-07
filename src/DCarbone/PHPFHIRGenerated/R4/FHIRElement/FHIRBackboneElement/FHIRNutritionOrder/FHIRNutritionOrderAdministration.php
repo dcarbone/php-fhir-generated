@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRNutri
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,6 +81,9 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_NUTRITION_ORDER_DOT_ADMINISTRATION;
 
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
+
     const FIELD_QUANTITY = 'quantity';
     const FIELD_RATE_QUANTITY = 'rateQuantity';
     const FIELD_RATE_RATIO = 'rateRatio';
@@ -107,7 +110,7 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour,
-     * according to the specified schedule. (choose any one of rate*, but only one)
+     * according to the specified schedule.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -119,7 +122,7 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour,
-     * according to the specified schedule. (choose any one of rate*, but only one)
+     * according to the specified schedule.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
      */
@@ -195,6 +198,27 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
     }
 
     /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<NutritionOrderAdministration{$xmlns}></NutritionOrderAdministration>";
+    }
+
+
+    /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
@@ -238,7 +262,7 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour,
-     * according to the specified schedule. (choose any one of rate*, but only one)
+     * according to the specified schedule.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -255,7 +279,7 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour,
-     * according to the specified schedule. (choose any one of rate*, but only one)
+     * according to the specified schedule.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $rateQuantity
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdministration
@@ -273,7 +297,7 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour,
-     * according to the specified schedule. (choose any one of rate*, but only one)
+     * according to the specified schedule.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
      */
@@ -289,7 +313,7 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour,
-     * according to the specified schedule. (choose any one of rate*, but only one)
+     * according to the specified schedule.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio $rateRatio
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdministration
@@ -343,16 +367,17 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdministration $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdministration
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRNutritionOrderAdministration::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -368,6 +393,13 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
                 'FHIRNutritionOrderAdministration::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdministration or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -388,29 +420,30 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<NutritionOrderAdministration xmlns="http://hl7.org/fhir"></NutritionOrderAdministration>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getRateQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RATE_QUANTITY));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_RATE_QUANTITY, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getRateRatio())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RATE_RATIO));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_RATE_RATIO, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getSchedule())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SCHEDULE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SCHEDULE, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

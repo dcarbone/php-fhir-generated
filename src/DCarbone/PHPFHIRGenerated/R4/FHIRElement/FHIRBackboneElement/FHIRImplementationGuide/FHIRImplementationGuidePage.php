@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImple
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,6 +84,9 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_IMPLEMENTATION_GUIDE_DOT_PAGE;
 
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
+
     const FIELD_GENERATION = 'generation';
     const FIELD_NAME_REFERENCE = 'nameReference';
     const FIELD_NAME_URL = 'nameUrl';
@@ -106,7 +109,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The source address for the page. (choose any one of name*, but only one)
+     * The source address for the page.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -116,7 +119,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * The source address for the page. (choose any one of name*, but only one)
+     * The source address for the page.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUrl
      */
@@ -224,6 +227,27 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
     }
 
     /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<ImplementationGuidePage{$xmlns}></ImplementationGuidePage>";
+    }
+
+
+    /**
      * A code that indicates how the page is generated.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
@@ -256,7 +280,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The source address for the page. (choose any one of name*, but only one)
+     * The source address for the page.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -270,7 +294,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The source address for the page. (choose any one of name*, but only one)
+     * The source address for the page.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $nameReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage
@@ -286,7 +310,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * The source address for the page. (choose any one of name*, but only one)
+     * The source address for the page.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUrl
      */
@@ -300,7 +324,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * The source address for the page. (choose any one of name*, but only one)
+     * The source address for the page.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUrl $nameUrl
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage
@@ -421,16 +445,17 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRImplementationGuidePage::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -446,6 +471,13 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
                 'FHIRImplementationGuidePage::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -477,27 +509,25 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<ImplementationGuidePage xmlns="http://hl7.org/fhir"></ImplementationGuidePage>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getGeneration())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_GENERATION));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_GENERATION, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getNameReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_NAME_REFERENCE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_NAME_REFERENCE, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getNameUrl())) {
-            $sxe->addAttribute(self::FIELD_NAME_URL, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_NAME_URL));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_NAME_URL, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getPage())) {
@@ -505,14 +535,11 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PAGE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_PAGE, null, $v->getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getTitle())) {
-            $sxe->addAttribute(self::FIELD_TITLE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_TITLE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TITLE, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

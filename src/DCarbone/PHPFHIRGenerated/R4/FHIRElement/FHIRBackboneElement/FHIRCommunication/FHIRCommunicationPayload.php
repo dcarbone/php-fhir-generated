@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCommu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,6 +82,9 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_COMMUNICATION_DOT_PAYLOAD;
 
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
+
     const FIELD_CONTENT_ATTACHMENT = 'contentAttachment';
     const FIELD_CONTENT_REFERENCE = 'contentReference';
     const FIELD_CONTENT_STRING = 'contentString';
@@ -93,7 +96,7 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A communicated content (or for multi-part communications, one portion of the
-     * communication). (choose any one of content*, but only one)
+     * communication).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
      */
@@ -104,7 +107,7 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A communicated content (or for multi-part communications, one portion of the
-     * communication). (choose any one of content*, but only one)
+     * communication).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -115,7 +118,7 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * A communicated content (or for multi-part communications, one portion of the
-     * communication). (choose any one of content*, but only one)
+     * communication).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -174,12 +177,33 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
     }
 
     /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<CommunicationPayload{$xmlns}></CommunicationPayload>";
+    }
+
+
+    /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A communicated content (or for multi-part communications, one portion of the
-     * communication). (choose any one of content*, but only one)
+     * communication).
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
      */
@@ -194,7 +218,7 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A communicated content (or for multi-part communications, one portion of the
-     * communication). (choose any one of content*, but only one)
+     * communication).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment $contentAttachment
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCommunication\FHIRCommunicationPayload
@@ -211,7 +235,7 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A communicated content (or for multi-part communications, one portion of the
-     * communication). (choose any one of content*, but only one)
+     * communication).
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -226,7 +250,7 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A communicated content (or for multi-part communications, one portion of the
-     * communication). (choose any one of content*, but only one)
+     * communication).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $contentReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCommunication\FHIRCommunicationPayload
@@ -243,7 +267,7 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * A communicated content (or for multi-part communications, one portion of the
-     * communication). (choose any one of content*, but only one)
+     * communication).
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -258,7 +282,7 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * A communicated content (or for multi-part communications, one portion of the
-     * communication). (choose any one of content*, but only one)
+     * communication).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $contentString
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCommunication\FHIRCommunicationPayload
@@ -280,16 +304,17 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCommunication\FHIRCommunicationPayload $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCommunication\FHIRCommunicationPayload
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRCommunicationPayload::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -305,6 +330,13 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
                 'FHIRCommunicationPayload::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCommunication\FHIRCommunicationPayload or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -325,27 +357,25 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<CommunicationPayload xmlns="http://hl7.org/fhir"></CommunicationPayload>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getContentAttachment())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CONTENT_ATTACHMENT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CONTENT_ATTACHMENT, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getContentReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CONTENT_REFERENCE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CONTENT_REFERENCE, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getContentString())) {
-            $sxe->addAttribute(self::FIELD_CONTENT_STRING, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CONTENT_STRING));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CONTENT_STRING, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

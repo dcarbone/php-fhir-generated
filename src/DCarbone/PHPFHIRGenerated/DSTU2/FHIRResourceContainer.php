@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -165,6 +165,9 @@ class FHIRResourceContainer implements PHPFHIRTypeInterface
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_RESOURCE_CONTAINER;
+
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ACCOUNT = 'Account';
     const FIELD_ALLERGY_INTOLERANCE = 'AllergyIntolerance';
@@ -1865,6 +1868,27 @@ class FHIRResourceContainer implements PHPFHIRTypeInterface
     {
         return self::FHIR_TYPE_NAME;
     }
+
+    /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<ResourceContainer{$xmlns}></ResourceContainer>";
+    }
+
 
     /**
      * A financial tool for tracking value accrued for a particular purpose. In the
@@ -4463,16 +4487,17 @@ class FHIRResourceContainer implements PHPFHIRTypeInterface
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRResourceContainer $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRResourceContainer
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRResourceContainer::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -4488,6 +4513,13 @@ class FHIRResourceContainer implements PHPFHIRTypeInterface
                 'FHIRResourceContainer::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResourceContainer or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -4778,294 +4810,295 @@ class FHIRResourceContainer implements PHPFHIRTypeInterface
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null !== ($v = $this->getAccount())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getAllergyIntolerance())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getAppointment())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getAppointmentResponse())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getAuditEvent())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getBasic())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getBinary())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getBodySite())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getBundle())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getCarePlan())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getClaim())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getClaimResponse())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getClinicalImpression())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getCommunication())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getCommunicationRequest())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getComposition())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getConceptMap())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getCondition())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getConformance())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getContract())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getCoverage())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getDataElement())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getDetectedIssue())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getDevice())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getDeviceComponent())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getDeviceMetric())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getDeviceUseRequest())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getDeviceUseStatement())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getDiagnosticOrder())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getDiagnosticReport())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getDocumentManifest())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getDocumentReference())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getEligibilityRequest())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getEligibilityResponse())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getEncounter())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getEnrollmentRequest())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getEnrollmentResponse())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getEpisodeOfCare())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getExplanationOfBenefit())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getFamilyMemberHistory())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getFlag())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getGoal())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getGroup())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getHealthcareService())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getImagingObjectSelection())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getImagingStudy())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getImmunization())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getImmunizationRecommendation())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getImplementationGuide())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getList())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getLocation())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getMedia())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getMedication())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getMedicationAdministration())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getMedicationDispense())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getMedicationOrder())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getMedicationStatement())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getMessageHeader())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getNamingSystem())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getNutritionOrder())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getObservation())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getOperationDefinition())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getOperationOutcome())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getOrder())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getOrderResponse())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getOrganization())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getParameters())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getPatient())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getPaymentNotice())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getPaymentReconciliation())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getPerson())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getPractitioner())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getProcedure())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getProcedureRequest())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getProcessRequest())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getProcessResponse())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getProvenance())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getQuestionnaire())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getQuestionnaireResponse())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getReferralRequest())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getRelatedPerson())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getRiskAssessment())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getSchedule())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getSearchParameter())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getSlot())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getSpecimen())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getStructureDefinition())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getSubscription())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getSubstance())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getSupplyDelivery())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getSupplyRequest())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getTestScript())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getValueSet())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null !== ($v = $this->getVisionPrescription())) {
-            return $v->xmlSerialize($sxe);
+            return $v->xmlSerialize($sxe, $libxmlOpts);
         }
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<ResourceContainer xmlns="http://hl7.org/fhir"></ResourceContainer>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         return $sxe;
     }

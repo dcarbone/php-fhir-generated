@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTermi
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,6 +81,9 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_TERMINOLOGY_CAPABILITIES_DOT_VERSION;
+
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CODE = 'code';
     const FIELD_CODE_EXT = '_code';
@@ -276,6 +279,27 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
     {
         return self::FHIR_TYPE_NAME;
     }
+
+    /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<TerminologyCapabilitiesVersion{$xmlns}></TerminologyCapabilitiesVersion>";
+    }
+
 
     /**
      * A sequence of Unicode characters
@@ -474,14 +498,14 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
     public function addLanguage($language = null)
     {
         if (null === $language) {
-            $this->language = null;
+            $this->language = [];
             return $this;
         }
         if ($language instanceof FHIRCode) {
-            $this->language = $language;
+            $this->language[] = $language;
             return $this;
         }
-        $this->language = new FHIRCode($language);
+        $this->language[] = new FHIRCode($language);
         return $this;
     }
 
@@ -541,14 +565,14 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
     public function addProperty($property = null)
     {
         if (null === $property) {
-            $this->property = null;
+            $this->property = [];
             return $this;
         }
         if ($property instanceof FHIRCode) {
-            $this->property = $property;
+            $this->property[] = $property;
             return $this;
         }
-        $this->property = new FHIRCode($property);
+        $this->property[] = new FHIRCode($property);
         return $this;
     }
 
@@ -582,16 +606,17 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesVersion $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesVersion
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRTerminologyCapabilitiesVersion::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -607,6 +632,13 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
                 'FHIRTerminologyCapabilitiesVersion::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesVersion or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -654,25 +686,20 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<TerminologyCapabilitiesVersion xmlns="http://hl7.org/fhir"></TerminologyCapabilitiesVersion>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getCode())) {
-            $sxe->addAttribute(self::FIELD_CODE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CODE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getCompositional())) {
-            $sxe->addAttribute(self::FIELD_COMPOSITIONAL, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_COMPOSITIONAL));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_COMPOSITIONAL, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getFilter())) {
@@ -680,47 +707,26 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_FILTER));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_FILTER, null, $v->getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getIsDefault())) {
-            $sxe->addAttribute(self::FIELD_IS_DEFAULT, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_IS_DEFAULT));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_IS_DEFAULT, null, $v->getFHIRXMLNamespace()));
         }
         if ([] !== ($vs = $this->getLanguage())) {
-            $first = true;
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                if ($first) {
-                    $sxe->addAttribute(self::FIELD_LANGUAGE, (string)$v);
-                    if (null !== $v->getId() || [] !== $v->getExtension()) {
-                        $v->xmlSerialize($sxe->addChild(self::FIELD_LANGUAGE));
-                    }
-                    $first = false;
-                } else {
-                    $v->xmlSerialize($sxe->addChild(self::FIELD_LANGUAGE));
-                }
+                $v->xmlSerialize($sxe->addChild(self::FIELD_LANGUAGE, null, $v->getFHIRXMLNamespace()));
             }
         }
         if ([] !== ($vs = $this->getProperty())) {
-            $first = true;
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                if ($first) {
-                    $sxe->addAttribute(self::FIELD_PROPERTY, (string)$v);
-                    if (null !== $v->getId() || [] !== $v->getExtension()) {
-                        $v->xmlSerialize($sxe->addChild(self::FIELD_PROPERTY));
-                    }
-                    $first = false;
-                } else {
-                    $v->xmlSerialize($sxe->addChild(self::FIELD_PROPERTY));
-                }
+                $v->xmlSerialize($sxe->addChild(self::FIELD_PROPERTY, null, $v->getFHIRXMLNamespace()));
             }
         }
         return $sxe;

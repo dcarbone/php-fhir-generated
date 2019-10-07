@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,6 +85,9 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements PHPFHIRC
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_ORGANIZATION_AFFILIATION;
+
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ACTIVE = 'active';
     const FIELD_ACTIVE_EXT = '_active';
@@ -406,6 +409,27 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements PHPFHIRC
     {
         return self::FHIR_TYPE_NAME;
     }
+
+    /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<OrganizationAffiliation{$xmlns}></OrganizationAffiliation>";
+    }
+
 
     /**
      * Value of "true" or "false"
@@ -1006,16 +1030,17 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements PHPFHIRC
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIROrganizationAffiliation $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIROrganizationAffiliation
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIROrganizationAffiliation::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -1031,6 +1056,13 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements PHPFHIRC
                 'FHIROrganizationAffiliation::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIROrganizationAffiliation or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -1094,19 +1126,17 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements PHPFHIRC
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<OrganizationAffiliation xmlns="http://hl7.org/fhir"></OrganizationAffiliation>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getActive())) {
-            $sxe->addAttribute(self::FIELD_ACTIVE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ACTIVE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ACTIVE, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getCode())) {
@@ -1114,7 +1144,7 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements PHPFHIRC
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CODE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -1123,7 +1153,7 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements PHPFHIRC
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ENDPOINT));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_ENDPOINT, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -1132,7 +1162,7 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements PHPFHIRC
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_HEALTHCARE_SERVICE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_HEALTHCARE_SERVICE, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -1141,7 +1171,7 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements PHPFHIRC
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -1150,7 +1180,7 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements PHPFHIRC
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_LOCATION));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_LOCATION, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -1159,20 +1189,20 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements PHPFHIRC
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_NETWORK));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_NETWORK, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getOrganization())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ORGANIZATION));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ORGANIZATION, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getParticipatingOrganization())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PARTICIPATING_ORGANIZATION));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PARTICIPATING_ORGANIZATION, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getPeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PERIOD));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PERIOD, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getSpecialty())) {
@@ -1180,7 +1210,7 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements PHPFHIRC
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SPECIALTY));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_SPECIALTY, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -1189,7 +1219,7 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements PHPFHIRC
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_TELECOM));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_TELECOM, null, $v->getFHIRXMLNamespace()));
             }
         }
         return $sxe;

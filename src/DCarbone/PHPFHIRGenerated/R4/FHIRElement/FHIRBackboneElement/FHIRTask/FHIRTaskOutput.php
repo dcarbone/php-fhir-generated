@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -126,6 +126,9 @@ class FHIRTaskOutput extends FHIRBackboneElement
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_TASK_DOT_OUTPUT;
 
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
+
     const FIELD_TYPE = 'type';
     const FIELD_VALUE_ADDRESS = 'valueAddress';
     const FIELD_VALUE_AGE = 'valueAge';
@@ -216,8 +219,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddress
      */
@@ -227,8 +229,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
@@ -239,8 +240,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation
      */
@@ -250,8 +250,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
      */
@@ -261,8 +260,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * A stream of bytes, base64 encoded
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBase64Binary
      */
@@ -271,8 +269,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
@@ -283,8 +280,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
@@ -295,8 +291,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode
      */
@@ -307,8 +302,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -318,8 +312,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding
      */
@@ -329,8 +322,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail
      */
@@ -341,8 +333,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactPoint
      */
@@ -353,8 +344,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContributor
      */
@@ -366,8 +356,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRCount
      */
@@ -378,8 +367,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement
      */
@@ -390,8 +378,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
@@ -404,8 +391,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -416,8 +402,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
@@ -427,8 +412,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDistance
      */
@@ -438,8 +422,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDosage
      */
@@ -449,8 +432,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
@@ -462,8 +444,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression
      */
@@ -473,8 +454,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRHumanName
      */
@@ -487,8 +467,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId
      */
@@ -499,8 +478,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
@@ -513,8 +491,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * below. Time zone is always required
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant
      */
@@ -524,8 +501,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * 32 bit number; for values larger than this, use decimal
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
@@ -539,8 +515,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
@@ -550,8 +525,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney
      */
@@ -562,8 +536,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIROid
      */
@@ -575,8 +548,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRParameterDefinition
      */
@@ -586,8 +558,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -597,8 +568,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
      */
@@ -610,8 +580,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -621,8 +590,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -633,8 +601,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
      */
@@ -644,8 +611,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -656,8 +622,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRelatedArtifact
      */
@@ -668,8 +633,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSampledData
      */
@@ -683,8 +647,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSignature
      */
@@ -694,8 +657,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -704,8 +666,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * A time during the day, with no date specified
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTime
      */
@@ -719,8 +680,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
@@ -731,8 +691,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTriggerDefinition
      */
@@ -742,8 +701,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt
      */
@@ -753,8 +711,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
@@ -764,8 +721,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUrl
      */
@@ -778,8 +734,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext
      */
@@ -790,8 +745,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUuid
      */
@@ -1269,6 +1223,27 @@ class FHIRTaskOutput extends FHIRBackboneElement
     }
 
     /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<TaskOutput{$xmlns}></TaskOutput>";
+    }
+
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -1309,8 +1284,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddress
      */
@@ -1328,8 +1302,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddress $valueAddress
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -1345,8 +1318,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
@@ -1360,8 +1332,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge $valueAge
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -1378,8 +1349,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation
      */
@@ -1394,8 +1364,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation $valueAnnotation
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -1411,8 +1380,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
      */
@@ -1426,8 +1394,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment $valueAttachment
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -1443,8 +1410,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * A stream of bytes, base64 encoded
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBase64Binary
      */
@@ -1458,8 +1424,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * A stream of bytes, base64 encoded
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBase64Binary $valueBase64Binary
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -1482,8 +1447,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
@@ -1496,8 +1460,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $valueBoolean
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -1522,8 +1485,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
@@ -1538,8 +1500,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical $valueCanonical
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -1564,8 +1525,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode
      */
@@ -1580,8 +1540,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode $valueCode
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -1606,8 +1565,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -1622,8 +1580,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $valueCodeableConcept
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -1639,8 +1596,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding
      */
@@ -1654,8 +1610,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding $valueCoding
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -1671,8 +1626,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail
      */
@@ -1686,8 +1640,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail $valueContactDetail
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -1704,8 +1657,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactPoint
      */
@@ -1720,8 +1672,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactPoint $valueContactPoint
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -1738,8 +1689,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContributor
      */
@@ -1754,8 +1704,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContributor $valueContributor
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -1773,8 +1722,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRCount
      */
@@ -1790,8 +1738,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRCount $valueCount
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -1808,8 +1755,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement
      */
@@ -1824,8 +1770,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement $valueDataRequirement
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -1842,8 +1787,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
@@ -1858,8 +1802,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate $valueDate
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -1886,8 +1829,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -1904,8 +1846,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $valueDateTime
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -1930,8 +1871,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
@@ -1946,8 +1886,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal $valueDecimal
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -1971,8 +1910,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDistance
      */
@@ -1986,8 +1924,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDistance $valueDistance
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -2003,8 +1940,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDosage
      */
@@ -2018,8 +1954,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDosage $valueDosage
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -2035,8 +1970,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
@@ -2050,8 +1984,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration $valueDuration
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -2069,8 +2002,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression
      */
@@ -2086,8 +2018,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression $valueExpression
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -2103,8 +2034,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRHumanName
      */
@@ -2118,8 +2048,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRHumanName $valueHumanName
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -2138,8 +2067,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId
      */
@@ -2156,8 +2084,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId $valueId
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -2182,8 +2109,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
@@ -2198,8 +2124,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $valueIdentifier
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -2218,8 +2143,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * below. Time zone is always required
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant
      */
@@ -2236,8 +2160,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * below. Time zone is always required
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant $valueInstant
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -2261,8 +2184,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * 32 bit number; for values larger than this, use decimal
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
@@ -2276,8 +2198,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * 32 bit number; for values larger than this, use decimal
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $valueInteger
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -2305,8 +2226,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
@@ -2324,8 +2244,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown $valueMarkdown
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -2349,8 +2268,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney
      */
@@ -2364,8 +2282,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney $valueMoney
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -2382,8 +2299,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIROid
      */
@@ -2398,8 +2314,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIROid $valueOid
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -2425,8 +2340,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRParameterDefinition
      */
@@ -2442,8 +2356,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRParameterDefinition $valueParameterDefinition
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -2459,8 +2372,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -2474,8 +2386,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $valuePeriod
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -2491,8 +2402,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
      */
@@ -2506,8 +2416,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt $valuePositiveInt
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -2533,8 +2442,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -2550,8 +2458,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $valueQuantity
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -2567,8 +2474,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -2582,8 +2488,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange $valueRange
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -2600,8 +2505,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
      */
@@ -2616,8 +2520,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio $valueRatio
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -2633,8 +2536,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -2648,8 +2550,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $valueReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -2666,8 +2567,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRelatedArtifact
      */
@@ -2682,8 +2582,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRelatedArtifact $valueRelatedArtifact
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -2700,8 +2599,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSampledData
      */
@@ -2716,8 +2614,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSampledData $valueSampledData
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -2737,8 +2634,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSignature
      */
@@ -2756,8 +2652,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSignature $valueSignature
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -2773,8 +2668,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -2788,8 +2682,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $valueString
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -2812,8 +2705,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * A time during the day, with no date specified
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTime
      */
@@ -2826,8 +2718,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * A time during the day, with no date specified
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTime $valueTime
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -2855,8 +2746,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
@@ -2874,8 +2764,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming $valueTiming
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -2892,8 +2781,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTriggerDefinition
      */
@@ -2908,8 +2796,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTriggerDefinition $valueTriggerDefinition
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -2925,8 +2812,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt
      */
@@ -2940,8 +2826,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt $valueUnsignedInt
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -2965,8 +2850,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
@@ -2980,8 +2864,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri $valueUri
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -3005,8 +2888,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUrl
      */
@@ -3020,8 +2902,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUrl $valueUrl
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -3048,8 +2929,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext
      */
@@ -3066,8 +2946,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext $valueUsageContext
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -3084,8 +2963,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUuid
      */
@@ -3100,8 +2978,7 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * The value of the Output parameter as a basic type. (choose any one of value*,
-     * but only one)
+     * The value of the Output parameter as a basic type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUuid $valueUuid
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
@@ -3123,16 +3000,17 @@ class FHIRTaskOutput extends FHIRBackboneElement
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRTaskOutput::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -3148,6 +3026,13 @@ class FHIRTaskOutput extends FHIRBackboneElement
                 'FHIRTaskOutput::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -3363,251 +3248,195 @@ class FHIRTaskOutput extends FHIRBackboneElement
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<TaskOutput xmlns="http://hl7.org/fhir"></TaskOutput>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getValueAddress())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_ADDRESS));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_ADDRESS, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getValueAge())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_AGE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_AGE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getValueAnnotation())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_ANNOTATION));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_ANNOTATION, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getValueAttachment())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_ATTACHMENT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_ATTACHMENT, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getValueBase64Binary())) {
-            $sxe->addAttribute(self::FIELD_VALUE_BASE_64BINARY, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_BASE_64BINARY));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_BASE_64BINARY, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getValueBoolean())) {
-            $sxe->addAttribute(self::FIELD_VALUE_BOOLEAN, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_BOOLEAN));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_BOOLEAN, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getValueCanonical())) {
-            $sxe->addAttribute(self::FIELD_VALUE_CANONICAL, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_CANONICAL));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_CANONICAL, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getValueCode())) {
-            $sxe->addAttribute(self::FIELD_VALUE_CODE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_CODE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_CODE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getValueCodeableConcept())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_CODEABLE_CONCEPT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_CODEABLE_CONCEPT, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getValueCoding())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_CODING));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_CODING, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getValueContactDetail())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_CONTACT_DETAIL));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_CONTACT_DETAIL, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getValueContactPoint())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_CONTACT_POINT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_CONTACT_POINT, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getValueContributor())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_CONTRIBUTOR));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_CONTRIBUTOR, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getValueCount())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_COUNT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_COUNT, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getValueDataRequirement())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_DATA_REQUIREMENT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_DATA_REQUIREMENT, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getValueDate())) {
-            $sxe->addAttribute(self::FIELD_VALUE_DATE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_DATE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_DATE, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getValueDateTime())) {
-            $sxe->addAttribute(self::FIELD_VALUE_DATE_TIME, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_DATE_TIME));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_DATE_TIME, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getValueDecimal())) {
-            $sxe->addAttribute(self::FIELD_VALUE_DECIMAL, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_DECIMAL));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_DECIMAL, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getValueDistance())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_DISTANCE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_DISTANCE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getValueDosage())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_DOSAGE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_DOSAGE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getValueDuration())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_DURATION));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_DURATION, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getValueExpression())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_EXPRESSION));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_EXPRESSION, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getValueHumanName())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_HUMAN_NAME));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_HUMAN_NAME, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getValueId())) {
-            $sxe->addAttribute(self::FIELD_VALUE_ID, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_ID));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_ID, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getValueIdentifier())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_IDENTIFIER));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_IDENTIFIER, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getValueInstant())) {
-            $sxe->addAttribute(self::FIELD_VALUE_INSTANT, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_INSTANT));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_INSTANT, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getValueInteger())) {
-            $sxe->addAttribute(self::FIELD_VALUE_INTEGER, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_INTEGER));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_INTEGER, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getValueMarkdown())) {
-            $sxe->addAttribute(self::FIELD_VALUE_MARKDOWN, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_MARKDOWN));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_MARKDOWN, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getValueMoney())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_MONEY));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_MONEY, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getValueOid())) {
-            $sxe->addAttribute(self::FIELD_VALUE_OID, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_OID));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_OID, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getValueParameterDefinition())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_PARAMETER_DEFINITION));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_PARAMETER_DEFINITION, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getValuePeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_PERIOD));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_PERIOD, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getValuePositiveInt())) {
-            $sxe->addAttribute(self::FIELD_VALUE_POSITIVE_INT, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_POSITIVE_INT));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_POSITIVE_INT, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getValueQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_QUANTITY));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_QUANTITY, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getValueRange())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_RANGE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_RANGE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getValueRatio())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_RATIO));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_RATIO, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getValueReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_REFERENCE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_REFERENCE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getValueRelatedArtifact())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_RELATED_ARTIFACT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_RELATED_ARTIFACT, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getValueSampledData())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_SAMPLED_DATA));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_SAMPLED_DATA, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getValueSignature())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_SIGNATURE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_SIGNATURE, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getValueString())) {
-            $sxe->addAttribute(self::FIELD_VALUE_STRING, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_STRING));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_STRING, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getValueTime())) {
-            $sxe->addAttribute(self::FIELD_VALUE_TIME, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_TIME));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_TIME, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getValueTiming())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_TIMING));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_TIMING, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getValueTriggerDefinition())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_TRIGGER_DEFINITION));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_TRIGGER_DEFINITION, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getValueUnsignedInt())) {
-            $sxe->addAttribute(self::FIELD_VALUE_UNSIGNED_INT, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_UNSIGNED_INT));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_UNSIGNED_INT, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getValueUri())) {
-            $sxe->addAttribute(self::FIELD_VALUE_URI, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_URI));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_URI, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getValueUrl())) {
-            $sxe->addAttribute(self::FIELD_VALUE_URL, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_URL));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_URL, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getValueUsageContext())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_USAGE_CONTEXT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_USAGE_CONTEXT, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getValueUuid())) {
-            $sxe->addAttribute(self::FIELD_VALUE_UUID, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_UUID));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_UUID, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

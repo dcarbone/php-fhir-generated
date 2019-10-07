@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,6 +81,9 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_DOT_MANUFACTURING_BUSINESS_OPERATION;
+
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_AUTHORISATION_REFERENCE_NUMBER = 'authorisationReferenceNumber';
     const FIELD_CONFIDENTIALITY_INDICATOR = 'confidentialityIndicator';
@@ -237,6 +240,27 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
     {
         return self::FHIR_TYPE_NAME;
     }
+
+    /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<MedicinalProductManufacturingBusinessOperation{$xmlns}></MedicinalProductManufacturingBusinessOperation>";
+    }
+
 
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
@@ -467,16 +491,17 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProduct\FHIRMedicinalProductManufacturingBusinessOperation $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProduct\FHIRMedicinalProductManufacturingBusinessOperation
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRMedicinalProductManufacturingBusinessOperation::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -492,6 +517,13 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
                 'FHIRMedicinalProductManufacturingBusinessOperation::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProduct\FHIRMedicinalProductManufacturingBusinessOperation or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -523,27 +555,25 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<MedicinalProductManufacturingBusinessOperation xmlns="http://hl7.org/fhir"></MedicinalProductManufacturingBusinessOperation>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getAuthorisationReferenceNumber())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_AUTHORISATION_REFERENCE_NUMBER));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_AUTHORISATION_REFERENCE_NUMBER, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getConfidentialityIndicator())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CONFIDENTIALITY_INDICATOR));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CONFIDENTIALITY_INDICATOR, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getEffectiveDate())) {
-            $sxe->addAttribute(self::FIELD_EFFECTIVE_DATE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_EFFECTIVE_DATE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EFFECTIVE_DATE, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getManufacturer())) {
@@ -551,16 +581,16 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_MANUFACTURER));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_MANUFACTURER, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getOperationType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_OPERATION_TYPE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_OPERATION_TYPE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getRegulator())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REGULATOR));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_REGULATOR, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

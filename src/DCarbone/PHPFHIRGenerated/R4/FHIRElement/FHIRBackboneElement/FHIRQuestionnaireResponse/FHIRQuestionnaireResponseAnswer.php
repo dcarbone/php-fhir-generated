@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuest
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -91,6 +91,9 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_RESPONSE_DOT_ANSWER;
 
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
+
     const FIELD_ITEM = 'item';
     const FIELD_VALUE_ATTACHMENT = 'valueAttachment';
     const FIELD_VALUE_BOOLEAN = 'valueBoolean';
@@ -129,7 +132,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
      */
@@ -139,7 +141,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
@@ -150,7 +151,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding
      */
@@ -162,7 +162,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
@@ -176,7 +175,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -188,7 +186,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
@@ -199,7 +196,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
@@ -212,7 +208,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -223,7 +218,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -234,7 +228,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -244,7 +237,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTime
      */
@@ -255,7 +247,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
@@ -427,6 +418,27 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
     }
 
     /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<QuestionnaireResponseAnswer{$xmlns}></QuestionnaireResponseAnswer>";
+    }
+
+
+    /**
      * A structured set of questions and their answers. The questions are ordered and
      * grouped into coherent subsets, corresponding to the structure of the grouping of
      * the questionnaire being responded to.
@@ -488,7 +500,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
      */
@@ -503,7 +514,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment $valueAttachment
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer
@@ -519,7 +529,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
@@ -533,7 +542,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $valueBoolean
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer
@@ -558,7 +566,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding
      */
@@ -573,7 +580,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding $valueCoding
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer
@@ -591,7 +597,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
@@ -607,7 +612,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate $valueDate
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer
@@ -635,7 +639,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -653,7 +656,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $valueDateTime
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer
@@ -679,7 +681,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
@@ -695,7 +696,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal $valueDecimal
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer
@@ -720,7 +720,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
@@ -735,7 +734,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $valueInteger
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer
@@ -762,7 +760,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -779,7 +776,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $valueQuantity
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer
@@ -796,7 +792,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -811,7 +806,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $valueReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer
@@ -828,7 +822,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -843,7 +836,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $valueString
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer
@@ -867,7 +859,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTime
      */
@@ -881,7 +872,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTime $valueTime
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer
@@ -906,7 +896,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
@@ -921,7 +910,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri $valueUri
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer
@@ -943,16 +931,17 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRQuestionnaireResponseAnswer::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -968,6 +957,13 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
                 'FHIRQuestionnaireResponseAnswer::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -1041,12 +1037,13 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<QuestionnaireResponseAnswer xmlns="http://hl7.org/fhir"></QuestionnaireResponseAnswer>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
@@ -1055,72 +1052,48 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ITEM));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_ITEM, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getValueAttachment())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_ATTACHMENT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_ATTACHMENT, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getValueBoolean())) {
-            $sxe->addAttribute(self::FIELD_VALUE_BOOLEAN, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_BOOLEAN));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_BOOLEAN, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getValueCoding())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_CODING));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_CODING, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getValueDate())) {
-            $sxe->addAttribute(self::FIELD_VALUE_DATE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_DATE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_DATE, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getValueDateTime())) {
-            $sxe->addAttribute(self::FIELD_VALUE_DATE_TIME, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_DATE_TIME));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_DATE_TIME, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getValueDecimal())) {
-            $sxe->addAttribute(self::FIELD_VALUE_DECIMAL, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_DECIMAL));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_DECIMAL, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getValueInteger())) {
-            $sxe->addAttribute(self::FIELD_VALUE_INTEGER, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_INTEGER));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_INTEGER, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getValueQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_QUANTITY));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_QUANTITY, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getValueReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_REFERENCE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_REFERENCE, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getValueString())) {
-            $sxe->addAttribute(self::FIELD_VALUE_STRING, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_STRING));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_STRING, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getValueTime())) {
-            $sxe->addAttribute(self::FIELD_VALUE_TIME, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_TIME));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_TIME, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getValueUri())) {
-            $sxe->addAttribute(self::FIELD_VALUE_URI, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_URI));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_URI, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

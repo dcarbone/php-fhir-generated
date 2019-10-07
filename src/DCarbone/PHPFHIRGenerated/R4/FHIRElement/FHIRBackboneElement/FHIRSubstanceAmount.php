@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -89,6 +89,9 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SUBSTANCE_AMOUNT;
 
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
+
     const FIELD_AMOUNT_QUANTITY = 'amountQuantity';
     const FIELD_AMOUNT_RANGE = 'amountRange';
     const FIELD_AMOUNT_STRING = 'amountString';
@@ -107,8 +110,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      *
      * Used to capture quantitative values for a variety of elements. If only limits
      * are given, the arithmetic mean would be the average. If only a single definite
-     * value for a given element is given, it would be captured in this field. (choose
-     * any one of amount*, but only one)
+     * value for a given element is given, it would be captured in this field.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -120,8 +122,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      *
      * Used to capture quantitative values for a variety of elements. If only limits
      * are given, the arithmetic mean would be the average. If only a single definite
-     * value for a given element is given, it would be captured in this field. (choose
-     * any one of amount*, but only one)
+     * value for a given element is given, it would be captured in this field.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -133,8 +134,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      *
      * Used to capture quantitative values for a variety of elements. If only limits
      * are given, the arithmetic mean would be the average. If only a single definite
-     * value for a given element is given, it would be captured in this field. (choose
-     * any one of amount*, but only one)
+     * value for a given element is given, it would be captured in this field.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -261,6 +261,27 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
     }
 
     /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<SubstanceAmount{$xmlns}></SubstanceAmount>";
+    }
+
+
+    /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
@@ -269,8 +290,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      *
      * Used to capture quantitative values for a variety of elements. If only limits
      * are given, the arithmetic mean would be the average. If only a single definite
-     * value for a given element is given, it would be captured in this field. (choose
-     * any one of amount*, but only one)
+     * value for a given element is given, it would be captured in this field.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -288,8 +308,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      *
      * Used to capture quantitative values for a variety of elements. If only limits
      * are given, the arithmetic mean would be the average. If only a single definite
-     * value for a given element is given, it would be captured in this field. (choose
-     * any one of amount*, but only one)
+     * value for a given element is given, it would be captured in this field.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $amountQuantity
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceAmount
@@ -307,8 +326,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      *
      * Used to capture quantitative values for a variety of elements. If only limits
      * are given, the arithmetic mean would be the average. If only a single definite
-     * value for a given element is given, it would be captured in this field. (choose
-     * any one of amount*, but only one)
+     * value for a given element is given, it would be captured in this field.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -324,8 +342,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      *
      * Used to capture quantitative values for a variety of elements. If only limits
      * are given, the arithmetic mean would be the average. If only a single definite
-     * value for a given element is given, it would be captured in this field. (choose
-     * any one of amount*, but only one)
+     * value for a given element is given, it would be captured in this field.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange $amountRange
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceAmount
@@ -343,8 +360,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      *
      * Used to capture quantitative values for a variety of elements. If only limits
      * are given, the arithmetic mean would be the average. If only a single definite
-     * value for a given element is given, it would be captured in this field. (choose
-     * any one of amount*, but only one)
+     * value for a given element is given, it would be captured in this field.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -360,8 +376,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      *
      * Used to capture quantitative values for a variety of elements. If only limits
      * are given, the arithmetic mean would be the average. If only a single definite
-     * value for a given element is given, it would be captured in this field. (choose
-     * any one of amount*, but only one)
+     * value for a given element is given, it would be captured in this field.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $amountString
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceAmount
@@ -505,16 +520,17 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceAmount $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceAmount
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRSubstanceAmount::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -530,6 +546,13 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
                 'FHIRSubstanceAmount::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceAmount or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -562,41 +585,36 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<SubstanceAmount xmlns="http://hl7.org/fhir"></SubstanceAmount>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getAmountQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_AMOUNT_QUANTITY));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_AMOUNT_QUANTITY, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getAmountRange())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_AMOUNT_RANGE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_AMOUNT_RANGE, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getAmountString())) {
-            $sxe->addAttribute(self::FIELD_AMOUNT_STRING, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_AMOUNT_STRING));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_AMOUNT_STRING, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getAmountText())) {
-            $sxe->addAttribute(self::FIELD_AMOUNT_TEXT, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_AMOUNT_TEXT));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_AMOUNT_TEXT, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getAmountType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_AMOUNT_TYPE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_AMOUNT_TYPE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getReferenceRange())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REFERENCE_RANGE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_REFERENCE_RANGE, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

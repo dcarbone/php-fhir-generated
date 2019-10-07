@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -106,6 +106,9 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICATION_STATEMENT;
 
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
+
     const FIELD_BASED_ON = 'basedOn';
     const FIELD_CATEGORY = 'category';
     const FIELD_CONTEXT = 'context';
@@ -204,8 +207,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      *
      * The interval of time during which it is being asserted that the patient
      * is/was/will be taking the medication (or was not taking, when the
-     * MedicationStatement.taken element is No). (choose any one of effective*, but
-     * only one)
+     * MedicationStatement.taken element is No).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -217,8 +219,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      *
      * The interval of time during which it is being asserted that the patient
      * is/was/will be taking the medication (or was not taking, when the
-     * MedicationStatement.taken element is No). (choose any one of effective*, but
-     * only one)
+     * MedicationStatement.taken element is No).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -259,7 +260,6 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      * Identifies the medication being administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
      * carrying a code that identifies the medication from a known list of medications.
-     * (choose any one of medication*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -272,7 +272,6 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      * Identifies the medication being administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
      * carrying a code that identifies the medication from a known list of medications.
-     * (choose any one of medication*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -595,6 +594,27 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
     }
 
     /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<MedicationStatement{$xmlns}></MedicationStatement>";
+    }
+
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
@@ -883,8 +903,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      *
      * The interval of time during which it is being asserted that the patient
      * is/was/will be taking the medication (or was not taking, when the
-     * MedicationStatement.taken element is No). (choose any one of effective*, but
-     * only one)
+     * MedicationStatement.taken element is No).
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -903,8 +922,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      *
      * The interval of time during which it is being asserted that the patient
      * is/was/will be taking the medication (or was not taking, when the
-     * MedicationStatement.taken element is No). (choose any one of effective*, but
-     * only one)
+     * MedicationStatement.taken element is No).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $effectiveDateTime
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationStatement
@@ -930,8 +948,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      *
      * The interval of time during which it is being asserted that the patient
      * is/was/will be taking the medication (or was not taking, when the
-     * MedicationStatement.taken element is No). (choose any one of effective*, but
-     * only one)
+     * MedicationStatement.taken element is No).
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -947,8 +964,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      *
      * The interval of time during which it is being asserted that the patient
      * is/was/will be taking the medication (or was not taking, when the
-     * MedicationStatement.taken element is No). (choose any one of effective*, but
-     * only one)
+     * MedicationStatement.taken element is No).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $effectivePeriod
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationStatement
@@ -1073,7 +1089,6 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      * Identifies the medication being administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
      * carrying a code that identifies the medication from a known list of medications.
-     * (choose any one of medication*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -1091,7 +1106,6 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      * Identifies the medication being administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
      * carrying a code that identifies the medication from a known list of medications.
-     * (choose any one of medication*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $medicationCodeableConcept
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationStatement
@@ -1110,7 +1124,6 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      * Identifies the medication being administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
      * carrying a code that identifies the medication from a known list of medications.
-     * (choose any one of medication*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -1127,7 +1140,6 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      * Identifies the medication being administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
      * carrying a code that identifies the medication from a known list of medications.
-     * (choose any one of medication*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $medicationReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationStatement
@@ -1495,16 +1507,17 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationStatement $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationStatement
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRMedicationStatement::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -1520,6 +1533,13 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
                 'FHIRMedicationStatement::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationStatement or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -1609,12 +1629,13 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<MedicationStatement xmlns="http://hl7.org/fhir"></MedicationStatement>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
@@ -1623,22 +1644,19 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_BASED_ON));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_BASED_ON, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getCategory())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CATEGORY));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CATEGORY, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getContext())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CONTEXT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CONTEXT, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDateAsserted())) {
-            $sxe->addAttribute(self::FIELD_DATE_ASSERTED, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DATE_ASSERTED));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DATE_ASSERTED, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getDerivedFrom())) {
@@ -1646,7 +1664,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DERIVED_FROM));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_DERIVED_FROM, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -1655,18 +1673,15 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DOSAGE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_DOSAGE, null, $v->getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getEffectiveDateTime())) {
-            $sxe->addAttribute(self::FIELD_EFFECTIVE_DATE_TIME, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_EFFECTIVE_DATE_TIME));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EFFECTIVE_DATE_TIME, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getEffectivePeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EFFECTIVE_PERIOD));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EFFECTIVE_PERIOD, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getIdentifier())) {
@@ -1674,20 +1689,20 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getInformationSource())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_INFORMATION_SOURCE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_INFORMATION_SOURCE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getMedicationCodeableConcept())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MEDICATION_CODEABLE_CONCEPT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MEDICATION_CODEABLE_CONCEPT, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getMedicationReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MEDICATION_REFERENCE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MEDICATION_REFERENCE, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getNote())) {
@@ -1695,7 +1710,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_NOTE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_NOTE, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -1704,7 +1719,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PART_OF));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_PART_OF, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -1713,7 +1728,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_REASON_CODE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_REASON_CODE, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -1722,12 +1737,12 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_REASON_REFERENCE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_REASON_REFERENCE, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getStatus())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getStatusReason())) {
@@ -1735,12 +1750,12 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS_REASON));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS_REASON, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getSubject())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBJECT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBJECT, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

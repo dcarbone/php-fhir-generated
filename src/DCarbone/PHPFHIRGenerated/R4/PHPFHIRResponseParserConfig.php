@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -69,18 +69,18 @@ namespace DCarbone\PHPFHIRGenerated\R4;
 class PHPFHIRResponseParserConfig implements \JsonSerializable
 {
     const KEY_REGISTER_AUTOLOADER = 'registerAutoloader';
-    const KEY_SIMPLEXML_FLAGS = 'simpleXMLFlags';
+    const KEY_LIBXML_OPTS         = 'libxmlOpts';
 
     /** @var array */
     private static $_keysWithDefaults = [
         self::KEY_REGISTER_AUTOLOADER => false,
-        self::KEY_SIMPLEXML_FLAGS => 73728, // LIBXML_COMPACT | LIBXML_NSCLEAN
+        self::KEY_LIBXML_OPTS => 591872,
     ];
 
     /** @var bool */
     private $registerAutoloader;
     /** @var int */
-    private $simpleXMLFlags;
+    private $libxmlOpts;
 
     /**
      * PHPFHIRResponseParserConfig Constructor
@@ -115,17 +115,17 @@ class PHPFHIRResponseParserConfig implements \JsonSerializable
     }
 
     /**
-     * @param int $simpleXMLFlags
+     * @param int $libxmlOpts
      */
-    public function setSimpleXMLFlags($simpleXMLFlags)
+    public function setLibxmlOpts($libxmlOpts)
     {
-        $this->simpleXMLFlags = (int)$simpleXMLFlags;
+        $this->simpleXMLFlags = (int)$libxmlOpts;
     }
 
     /**
      * @return int
      */
-    public function getSimpleXMLFlags()
+    public function getLibxmlOpts()
     {
         return $this->simpleXMLFlags;
     }

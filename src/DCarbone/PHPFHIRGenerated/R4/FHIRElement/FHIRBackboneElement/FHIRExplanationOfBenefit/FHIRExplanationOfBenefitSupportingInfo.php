@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExpla
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -89,6 +89,9 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_EXPLANATION_OF_BENEFIT_DOT_SUPPORTING_INFO;
 
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
+
     const FIELD_CATEGORY = 'category';
     const FIELD_CODE = 'code';
     const FIELD_REASON = 'reason';
@@ -157,8 +160,7 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The date when or period to which this information refers. (choose any one of
-     * timing*, but only one)
+     * The date when or period to which this information refers.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
@@ -168,8 +170,7 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The date when or period to which this information refers. (choose any one of
-     * timing*, but only one)
+     * The date when or period to which this information refers.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -180,8 +181,7 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Additional data or information such as resources, documents, images etc.
-     * including references to the data or the actual inclusion of the data. (choose
-     * any one of value*, but only one)
+     * including references to the data or the actual inclusion of the data.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
      */
@@ -191,8 +191,7 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * Additional data or information such as resources, documents, images etc.
-     * including references to the data or the actual inclusion of the data. (choose
-     * any one of value*, but only one)
+     * including references to the data or the actual inclusion of the data.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
@@ -205,8 +204,7 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Additional data or information such as resources, documents, images etc.
-     * including references to the data or the actual inclusion of the data. (choose
-     * any one of value*, but only one)
+     * including references to the data or the actual inclusion of the data.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -217,8 +215,7 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Additional data or information such as resources, documents, images etc.
-     * including references to the data or the actual inclusion of the data. (choose
-     * any one of value*, but only one)
+     * including references to the data or the actual inclusion of the data.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -229,8 +226,7 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * Additional data or information such as resources, documents, images etc.
-     * including references to the data or the actual inclusion of the data. (choose
-     * any one of value*, but only one)
+     * including references to the data or the actual inclusion of the data.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -358,6 +354,27 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
     {
         return self::FHIR_TYPE_NAME;
     }
+
+    /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<ExplanationOfBenefitSupportingInfo{$xmlns}></ExplanationOfBenefitSupportingInfo>";
+    }
+
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -505,8 +522,7 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The date when or period to which this information refers. (choose any one of
-     * timing*, but only one)
+     * The date when or period to which this information refers.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
@@ -521,8 +537,7 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The date when or period to which this information refers. (choose any one of
-     * timing*, but only one)
+     * The date when or period to which this information refers.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate $timingDate
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitSupportingInfo
@@ -546,8 +561,7 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The date when or period to which this information refers. (choose any one of
-     * timing*, but only one)
+     * The date when or period to which this information refers.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -561,8 +575,7 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The date when or period to which this information refers. (choose any one of
-     * timing*, but only one)
+     * The date when or period to which this information refers.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $timingPeriod
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitSupportingInfo
@@ -579,8 +592,7 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Additional data or information such as resources, documents, images etc.
-     * including references to the data or the actual inclusion of the data. (choose
-     * any one of value*, but only one)
+     * including references to the data or the actual inclusion of the data.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
      */
@@ -595,8 +607,7 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Additional data or information such as resources, documents, images etc.
-     * including references to the data or the actual inclusion of the data. (choose
-     * any one of value*, but only one)
+     * including references to the data or the actual inclusion of the data.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment $valueAttachment
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitSupportingInfo
@@ -612,8 +623,7 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * Additional data or information such as resources, documents, images etc.
-     * including references to the data or the actual inclusion of the data. (choose
-     * any one of value*, but only one)
+     * including references to the data or the actual inclusion of the data.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
@@ -627,8 +637,7 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * Additional data or information such as resources, documents, images etc.
-     * including references to the data or the actual inclusion of the data. (choose
-     * any one of value*, but only one)
+     * including references to the data or the actual inclusion of the data.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $valueBoolean
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitSupportingInfo
@@ -655,8 +664,7 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Additional data or information such as resources, documents, images etc.
-     * including references to the data or the actual inclusion of the data. (choose
-     * any one of value*, but only one)
+     * including references to the data or the actual inclusion of the data.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -673,8 +681,7 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Additional data or information such as resources, documents, images etc.
-     * including references to the data or the actual inclusion of the data. (choose
-     * any one of value*, but only one)
+     * including references to the data or the actual inclusion of the data.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $valueQuantity
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitSupportingInfo
@@ -691,8 +698,7 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Additional data or information such as resources, documents, images etc.
-     * including references to the data or the actual inclusion of the data. (choose
-     * any one of value*, but only one)
+     * including references to the data or the actual inclusion of the data.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -707,8 +713,7 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Additional data or information such as resources, documents, images etc.
-     * including references to the data or the actual inclusion of the data. (choose
-     * any one of value*, but only one)
+     * including references to the data or the actual inclusion of the data.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $valueReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitSupportingInfo
@@ -725,8 +730,7 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * Additional data or information such as resources, documents, images etc.
-     * including references to the data or the actual inclusion of the data. (choose
-     * any one of value*, but only one)
+     * including references to the data or the actual inclusion of the data.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -741,8 +745,7 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * Additional data or information such as resources, documents, images etc.
-     * including references to the data or the actual inclusion of the data. (choose
-     * any one of value*, but only one)
+     * including references to the data or the actual inclusion of the data.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $valueString
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitSupportingInfo
@@ -764,16 +767,17 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitSupportingInfo $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitSupportingInfo
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRExplanationOfBenefitSupportingInfo::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -789,6 +793,13 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
                 'FHIRExplanationOfBenefitSupportingInfo::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitSupportingInfo or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -842,65 +853,54 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<ExplanationOfBenefitSupportingInfo xmlns="http://hl7.org/fhir"></ExplanationOfBenefitSupportingInfo>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getCategory())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CATEGORY));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CATEGORY, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getCode())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CODE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getReason())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REASON));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_REASON, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getSequence())) {
-            $sxe->addAttribute(self::FIELD_SEQUENCE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SEQUENCE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SEQUENCE, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getTimingDate())) {
-            $sxe->addAttribute(self::FIELD_TIMING_DATE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_TIMING_DATE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TIMING_DATE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getTimingPeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TIMING_PERIOD));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TIMING_PERIOD, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getValueAttachment())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_ATTACHMENT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_ATTACHMENT, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getValueBoolean())) {
-            $sxe->addAttribute(self::FIELD_VALUE_BOOLEAN, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_BOOLEAN));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_BOOLEAN, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getValueQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_QUANTITY));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_QUANTITY, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getValueReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_REFERENCE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_REFERENCE, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getValueString())) {
-            $sxe->addAttribute(self::FIELD_VALUE_STRING, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_STRING));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_STRING, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

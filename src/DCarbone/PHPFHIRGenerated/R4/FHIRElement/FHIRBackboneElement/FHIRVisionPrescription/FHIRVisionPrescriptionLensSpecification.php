@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVisio
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,6 +84,9 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_VISION_PRESCRIPTION_DOT_LENS_SPECIFICATION;
+
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ADD = 'add';
     const FIELD_ADD_EXT = '_add';
@@ -443,6 +446,27 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
     {
         return self::FHIR_TYPE_NAME;
     }
+
+    /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<VisionPrescriptionLensSpecification{$xmlns}></VisionPrescriptionLensSpecification>";
+    }
+
 
     /**
      * A rational number with implicit precision
@@ -1009,16 +1033,17 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionLensSpecification $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionLensSpecification
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRVisionPrescriptionLensSpecification::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -1034,6 +1059,13 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
                 'FHIRVisionPrescriptionLensSpecification::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionLensSpecification or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -1115,63 +1147,43 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<VisionPrescriptionLensSpecification xmlns="http://hl7.org/fhir"></VisionPrescriptionLensSpecification>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getAdd())) {
-            $sxe->addAttribute(self::FIELD_ADD, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ADD));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ADD, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getAxis())) {
-            $sxe->addAttribute(self::FIELD_AXIS, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_AXIS));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_AXIS, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getBackCurve())) {
-            $sxe->addAttribute(self::FIELD_BACK_CURVE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_BACK_CURVE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_BACK_CURVE, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getBrand())) {
-            $sxe->addAttribute(self::FIELD_BRAND, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_BRAND));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_BRAND, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getColor())) {
-            $sxe->addAttribute(self::FIELD_COLOR, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_COLOR));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_COLOR, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getCylinder())) {
-            $sxe->addAttribute(self::FIELD_CYLINDER, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CYLINDER));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CYLINDER, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDiameter())) {
-            $sxe->addAttribute(self::FIELD_DIAMETER, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DIAMETER));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DIAMETER, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDuration())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DURATION));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DURATION, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getEye())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EYE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EYE, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getNote())) {
@@ -1179,14 +1191,11 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_NOTE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_NOTE, null, $v->getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getPower())) {
-            $sxe->addAttribute(self::FIELD_POWER, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_POWER));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_POWER, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getPrism())) {
@@ -1194,18 +1203,15 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PRISM));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_PRISM, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getProduct())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PRODUCT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PRODUCT, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getSphere())) {
-            $sxe->addAttribute(self::FIELD_SPHERE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SPHERE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SPHERE, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

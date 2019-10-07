@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRStr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -115,6 +115,9 @@ class FHIRStructureMapSource extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE;
+
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CHECK = 'check';
     const FIELD_CHECK_EXT = '_check';
@@ -1181,6 +1184,27 @@ class FHIRStructureMapSource extends FHIRBackboneElement
     {
         return self::FHIR_TYPE_NAME;
     }
+
+    /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<StructureMapSource{$xmlns}></StructureMapSource>";
+    }
+
 
     /**
      * A sequence of Unicode characters
@@ -2883,16 +2907,17 @@ class FHIRStructureMapSource extends FHIRBackboneElement
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRStructureMapSource::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -2908,6 +2933,13 @@ class FHIRStructureMapSource extends FHIRBackboneElement
                 'FHIRStructureMapSource::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -3129,249 +3161,178 @@ class FHIRStructureMapSource extends FHIRBackboneElement
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<StructureMapSource xmlns="http://hl7.org/fhir"></StructureMapSource>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getCheck())) {
-            $sxe->addAttribute(self::FIELD_CHECK, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CHECK));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CHECK, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getCondition())) {
-            $sxe->addAttribute(self::FIELD_CONDITION, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CONDITION));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CONDITION, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getContext())) {
-            $sxe->addAttribute(self::FIELD_CONTEXT, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CONTEXT));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CONTEXT, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDefaultValueAddress())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_ADDRESS));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_ADDRESS, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDefaultValueAge())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_AGE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_AGE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDefaultValueAnnotation())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_ANNOTATION));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_ANNOTATION, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDefaultValueAttachment())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_ATTACHMENT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_ATTACHMENT, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDefaultValueBase64Binary())) {
-            $sxe->addAttribute(self::FIELD_DEFAULT_VALUE_BASE_64BINARY, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_BASE_64BINARY));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_BASE_64BINARY, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDefaultValueBoolean())) {
-            $sxe->addAttribute(self::FIELD_DEFAULT_VALUE_BOOLEAN, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_BOOLEAN));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_BOOLEAN, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDefaultValueCode())) {
-            $sxe->addAttribute(self::FIELD_DEFAULT_VALUE_CODE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_CODE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_CODE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDefaultValueCodeableConcept())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_CODEABLE_CONCEPT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_CODEABLE_CONCEPT, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDefaultValueCoding())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_CODING));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_CODING, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDefaultValueContactPoint())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_CONTACT_POINT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_CONTACT_POINT, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDefaultValueCount())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_COUNT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_COUNT, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDefaultValueDate())) {
-            $sxe->addAttribute(self::FIELD_DEFAULT_VALUE_DATE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_DATE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_DATE, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDefaultValueDateTime())) {
-            $sxe->addAttribute(self::FIELD_DEFAULT_VALUE_DATE_TIME, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_DATE_TIME));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_DATE_TIME, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDefaultValueDecimal())) {
-            $sxe->addAttribute(self::FIELD_DEFAULT_VALUE_DECIMAL, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_DECIMAL));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_DECIMAL, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDefaultValueDistance())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_DISTANCE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_DISTANCE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDefaultValueDuration())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_DURATION));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_DURATION, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDefaultValueHumanName())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_HUMAN_NAME));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_HUMAN_NAME, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDefaultValueId())) {
-            $sxe->addAttribute(self::FIELD_DEFAULT_VALUE_ID, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_ID));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_ID, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDefaultValueIdentifier())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_IDENTIFIER));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_IDENTIFIER, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDefaultValueInstant())) {
-            $sxe->addAttribute(self::FIELD_DEFAULT_VALUE_INSTANT, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_INSTANT));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_INSTANT, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDefaultValueInteger())) {
-            $sxe->addAttribute(self::FIELD_DEFAULT_VALUE_INTEGER, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_INTEGER));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_INTEGER, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDefaultValueMarkdown())) {
-            $sxe->addAttribute(self::FIELD_DEFAULT_VALUE_MARKDOWN, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_MARKDOWN));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_MARKDOWN, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDefaultValueMeta())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_META));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_META, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDefaultValueMoney())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_MONEY));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_MONEY, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDefaultValueOid())) {
-            $sxe->addAttribute(self::FIELD_DEFAULT_VALUE_OID, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_OID));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_OID, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDefaultValuePeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_PERIOD));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_PERIOD, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDefaultValuePositiveInt())) {
-            $sxe->addAttribute(self::FIELD_DEFAULT_VALUE_POSITIVE_INT, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_POSITIVE_INT));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_POSITIVE_INT, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDefaultValueQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_QUANTITY));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_QUANTITY, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDefaultValueRange())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_RANGE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_RANGE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDefaultValueRatio())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_RATIO));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_RATIO, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDefaultValueReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_REFERENCE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_REFERENCE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDefaultValueSampledData())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_SAMPLED_DATA));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_SAMPLED_DATA, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDefaultValueSignature())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_SIGNATURE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_SIGNATURE, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDefaultValueString())) {
-            $sxe->addAttribute(self::FIELD_DEFAULT_VALUE_STRING, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_STRING));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_STRING, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDefaultValueTime())) {
-            $sxe->addAttribute(self::FIELD_DEFAULT_VALUE_TIME, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_TIME));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_TIME, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDefaultValueTiming())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_TIMING));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_TIMING, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDefaultValueUnsignedInt())) {
-            $sxe->addAttribute(self::FIELD_DEFAULT_VALUE_UNSIGNED_INT, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_UNSIGNED_INT));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_UNSIGNED_INT, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDefaultValueUri())) {
-            $sxe->addAttribute(self::FIELD_DEFAULT_VALUE_URI, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_URI));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_URI, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getElement())) {
-            $sxe->addAttribute(self::FIELD_ELEMENT, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ELEMENT));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ELEMENT, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getListMode())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_LIST_MODE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_LIST_MODE, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMax())) {
-            $sxe->addAttribute(self::FIELD_MAX, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_MAX));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMin())) {
-            $sxe->addAttribute(self::FIELD_MIN, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_MIN));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getType())) {
-            $sxe->addAttribute(self::FIELD_TYPE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getVariable())) {
-            $sxe->addAttribute(self::FIELD_VARIABLE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_VARIABLE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VARIABLE, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

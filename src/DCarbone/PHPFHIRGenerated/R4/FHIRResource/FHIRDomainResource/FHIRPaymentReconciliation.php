@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -91,6 +91,9 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PAYMENT_RECONCILIATION;
+
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CREATED = 'created';
     const FIELD_CREATED_EXT = '_created';
@@ -435,6 +438,27 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
     {
         return self::FHIR_TYPE_NAME;
     }
+
+    /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<PaymentReconciliation{$xmlns}></PaymentReconciliation>";
+    }
+
 
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
@@ -998,16 +1022,17 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPaymentReconciliation $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPaymentReconciliation
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRPaymentReconciliation::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -1023,6 +1048,13 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
                 'FHIRPaymentReconciliation::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPaymentReconciliation or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -1091,19 +1123,17 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<PaymentReconciliation xmlns="http://hl7.org/fhir"></PaymentReconciliation>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getCreated())) {
-            $sxe->addAttribute(self::FIELD_CREATED, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CREATED));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CREATED, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getDetail())) {
@@ -1111,18 +1141,15 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DETAIL));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_DETAIL, null, $v->getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getDisposition())) {
-            $sxe->addAttribute(self::FIELD_DISPOSITION, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DISPOSITION));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DISPOSITION, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getFormCode())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FORM_CODE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FORM_CODE, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getIdentifier())) {
@@ -1130,34 +1157,31 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getOutcome())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_OUTCOME));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_OUTCOME, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getPaymentAmount())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PAYMENT_AMOUNT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PAYMENT_AMOUNT, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getPaymentDate())) {
-            $sxe->addAttribute(self::FIELD_PAYMENT_DATE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PAYMENT_DATE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PAYMENT_DATE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getPaymentIdentifier())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PAYMENT_IDENTIFIER));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PAYMENT_IDENTIFIER, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getPaymentIssuer())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PAYMENT_ISSUER));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PAYMENT_ISSUER, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getPeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PERIOD));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PERIOD, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getProcessNote())) {
@@ -1165,20 +1189,20 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PROCESS_NOTE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_PROCESS_NOTE, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getRequest())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REQUEST));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_REQUEST, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getRequestor())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REQUESTOR));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_REQUESTOR, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getStatus())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

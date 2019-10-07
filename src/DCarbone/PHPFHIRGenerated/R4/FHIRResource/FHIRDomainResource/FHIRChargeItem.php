@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -97,6 +97,9 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CHARGE_ITEM;
+
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ACCOUNT = 'account';
     const FIELD_BODYSITE = 'bodysite';
@@ -273,8 +276,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * Date/time(s) or duration when the charged service was applied. (choose any one
-     * of occurrence*, but only one)
+     * Date/time(s) or duration when the charged service was applied.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -284,8 +286,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Date/time(s) or duration when the charged service was applied. (choose any one
-     * of occurrence*, but only one)
+     * Date/time(s) or duration when the charged service was applied.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -299,8 +300,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Date/time(s) or duration when the charged service was applied. (choose any one
-     * of occurrence*, but only one)
+     * Date/time(s) or duration when the charged service was applied.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
@@ -366,7 +366,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Identifies the device, food, drug or other product being charged either by type
-     * code or reference to an instance. (choose any one of product*, but only one)
+     * code or reference to an instance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -377,7 +377,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Identifies the device, food, drug or other product being charged either by type
-     * code or reference to an instance. (choose any one of product*, but only one)
+     * code or reference to an instance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -807,6 +807,27 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     }
 
     /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<ChargeItem{$xmlns}></ChargeItem>";
+    }
+
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
@@ -1044,14 +1065,14 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     public function addDefinitionCanonical($definitionCanonical = null)
     {
         if (null === $definitionCanonical) {
-            $this->definitionCanonical = null;
+            $this->definitionCanonical = [];
             return $this;
         }
         if ($definitionCanonical instanceof FHIRCanonical) {
-            $this->definitionCanonical = $definitionCanonical;
+            $this->definitionCanonical[] = $definitionCanonical;
             return $this;
         }
-        $this->definitionCanonical = new FHIRCanonical($definitionCanonical);
+        $this->definitionCanonical[] = new FHIRCanonical($definitionCanonical);
         return $this;
     }
 
@@ -1112,14 +1133,14 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     public function addDefinitionUri($definitionUri = null)
     {
         if (null === $definitionUri) {
-            $this->definitionUri = null;
+            $this->definitionUri = [];
             return $this;
         }
         if ($definitionUri instanceof FHIRUri) {
-            $this->definitionUri = $definitionUri;
+            $this->definitionUri[] = $definitionUri;
             return $this;
         }
-        $this->definitionUri = new FHIRUri($definitionUri);
+        $this->definitionUri[] = new FHIRUri($definitionUri);
         return $this;
     }
 
@@ -1390,8 +1411,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * Date/time(s) or duration when the charged service was applied. (choose any one
-     * of occurrence*, but only one)
+     * Date/time(s) or duration when the charged service was applied.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -1408,8 +1428,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * Date/time(s) or duration when the charged service was applied. (choose any one
-     * of occurrence*, but only one)
+     * Date/time(s) or duration when the charged service was applied.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $occurrenceDateTime
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRChargeItem
@@ -1433,8 +1452,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Date/time(s) or duration when the charged service was applied. (choose any one
-     * of occurrence*, but only one)
+     * Date/time(s) or duration when the charged service was applied.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -1448,8 +1466,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Date/time(s) or duration when the charged service was applied. (choose any one
-     * of occurrence*, but only one)
+     * Date/time(s) or duration when the charged service was applied.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $occurrencePeriod
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRChargeItem
@@ -1469,8 +1486,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Date/time(s) or duration when the charged service was applied. (choose any one
-     * of occurrence*, but only one)
+     * Date/time(s) or duration when the charged service was applied.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
@@ -1488,8 +1504,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Date/time(s) or duration when the charged service was applied. (choose any one
-     * of occurrence*, but only one)
+     * Date/time(s) or duration when the charged service was applied.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming $occurrenceTiming
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRChargeItem
@@ -1727,7 +1742,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Identifies the device, food, drug or other product being charged either by type
-     * code or reference to an instance. (choose any one of product*, but only one)
+     * code or reference to an instance.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -1743,7 +1758,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Identifies the device, food, drug or other product being charged either by type
-     * code or reference to an instance. (choose any one of product*, but only one)
+     * code or reference to an instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $productCodeableConcept
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRChargeItem
@@ -1760,7 +1775,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Identifies the device, food, drug or other product being charged either by type
-     * code or reference to an instance. (choose any one of product*, but only one)
+     * code or reference to an instance.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -1775,7 +1790,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Identifies the device, food, drug or other product being charged either by type
-     * code or reference to an instance. (choose any one of product*, but only one)
+     * code or reference to an instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $productReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRChargeItem
@@ -2082,16 +2097,17 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRChargeItem $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRChargeItem
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRChargeItem::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -2107,6 +2123,13 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
                 'FHIRChargeItem::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRChargeItem or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -2242,12 +2265,13 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<ChargeItem xmlns="http://hl7.org/fhir"></ChargeItem>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
@@ -2256,7 +2280,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ACCOUNT));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_ACCOUNT, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -2265,70 +2289,46 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_BODYSITE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_BODYSITE, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getCode())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CODE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getContext())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CONTEXT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CONTEXT, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getCostCenter())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_COST_CENTER));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_COST_CENTER, null, $v->getFHIRXMLNamespace()));
         }
         if ([] !== ($vs = $this->getDefinitionCanonical())) {
-            $first = true;
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                if ($first) {
-                    $sxe->addAttribute(self::FIELD_DEFINITION_CANONICAL, (string)$v);
-                    if (null !== $v->getId() || [] !== $v->getExtension()) {
-                        $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINITION_CANONICAL));
-                    }
-                    $first = false;
-                } else {
-                    $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINITION_CANONICAL));
-                }
+                $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINITION_CANONICAL, null, $v->getFHIRXMLNamespace()));
             }
         }
         if ([] !== ($vs = $this->getDefinitionUri())) {
-            $first = true;
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                if ($first) {
-                    $sxe->addAttribute(self::FIELD_DEFINITION_URI, (string)$v);
-                    if (null !== $v->getId() || [] !== $v->getExtension()) {
-                        $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINITION_URI));
-                    }
-                    $first = false;
-                } else {
-                    $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINITION_URI));
-                }
+                $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINITION_URI, null, $v->getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getEnteredDate())) {
-            $sxe->addAttribute(self::FIELD_ENTERED_DATE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ENTERED_DATE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ENTERED_DATE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getEnterer())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ENTERER));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ENTERER, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getFactorOverride())) {
-            $sxe->addAttribute(self::FIELD_FACTOR_OVERRIDE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_FACTOR_OVERRIDE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FACTOR_OVERRIDE, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getIdentifier())) {
@@ -2336,7 +2336,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -2345,28 +2345,22 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_NOTE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_NOTE, null, $v->getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getOccurrenceDateTime())) {
-            $sxe->addAttribute(self::FIELD_OCCURRENCE_DATE_TIME, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_OCCURRENCE_DATE_TIME));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_OCCURRENCE_DATE_TIME, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getOccurrencePeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_OCCURRENCE_PERIOD));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_OCCURRENCE_PERIOD, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getOccurrenceTiming())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_OCCURRENCE_TIMING));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_OCCURRENCE_TIMING, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getOverrideReason())) {
-            $sxe->addAttribute(self::FIELD_OVERRIDE_REASON, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_OVERRIDE_REASON));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_OVERRIDE_REASON, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getPartOf())) {
@@ -2374,7 +2368,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PART_OF));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_PART_OF, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -2383,28 +2377,28 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PERFORMER));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_PERFORMER, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getPerformingOrganization())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PERFORMING_ORGANIZATION));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PERFORMING_ORGANIZATION, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getPriceOverride())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PRICE_OVERRIDE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PRICE_OVERRIDE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getProductCodeableConcept())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PRODUCT_CODEABLE_CONCEPT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PRODUCT_CODEABLE_CONCEPT, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getProductReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PRODUCT_REFERENCE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PRODUCT_REFERENCE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getReason())) {
@@ -2412,12 +2406,12 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_REASON));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_REASON, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getRequestingOrganization())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REQUESTING_ORGANIZATION));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_REQUESTING_ORGANIZATION, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getService())) {
@@ -2425,16 +2419,16 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SERVICE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_SERVICE, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getStatus())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getSubject())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBJECT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBJECT, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getSupportingInformation())) {
@@ -2442,7 +2436,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SUPPORTING_INFORMATION));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_SUPPORTING_INFORMATION, null, $v->getFHIRXMLNamespace()));
             }
         }
         return $sxe;

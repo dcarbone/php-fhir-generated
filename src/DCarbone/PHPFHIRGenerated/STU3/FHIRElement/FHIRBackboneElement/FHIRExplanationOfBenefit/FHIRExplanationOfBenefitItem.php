@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,6 +87,9 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_EXPLANATION_OF_BENEFIT_DOT_ITEM;
+
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ADJUDICATION = 'adjudication';
     const FIELD_BODY_SITE = 'bodySite';
@@ -771,6 +774,27 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
     }
 
     /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<ExplanationOfBenefitItem{$xmlns}></ExplanationOfBenefitItem>";
+    }
+
+
+    /**
      * This resource provides: the claim details; adjudication details from the
      * processing of a Claim; and optionally account balance information, for informing
      * the subscriber of the benefits provided.
@@ -885,14 +909,14 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
     public function addCareTeamLinkId($careTeamLinkId = null)
     {
         if (null === $careTeamLinkId) {
-            $this->careTeamLinkId = null;
+            $this->careTeamLinkId = [];
             return $this;
         }
         if ($careTeamLinkId instanceof FHIRPositiveInt) {
-            $this->careTeamLinkId = $careTeamLinkId;
+            $this->careTeamLinkId[] = $careTeamLinkId;
             return $this;
         }
-        $this->careTeamLinkId = new FHIRPositiveInt($careTeamLinkId);
+        $this->careTeamLinkId[] = new FHIRPositiveInt($careTeamLinkId);
         return $this;
     }
 
@@ -1039,14 +1063,14 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
     public function addDiagnosisLinkId($diagnosisLinkId = null)
     {
         if (null === $diagnosisLinkId) {
-            $this->diagnosisLinkId = null;
+            $this->diagnosisLinkId = [];
             return $this;
         }
         if ($diagnosisLinkId instanceof FHIRPositiveInt) {
-            $this->diagnosisLinkId = $diagnosisLinkId;
+            $this->diagnosisLinkId[] = $diagnosisLinkId;
             return $this;
         }
-        $this->diagnosisLinkId = new FHIRPositiveInt($diagnosisLinkId);
+        $this->diagnosisLinkId[] = new FHIRPositiveInt($diagnosisLinkId);
         return $this;
     }
 
@@ -1205,14 +1229,14 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
     public function addInformationLinkId($informationLinkId = null)
     {
         if (null === $informationLinkId) {
-            $this->informationLinkId = null;
+            $this->informationLinkId = [];
             return $this;
         }
         if ($informationLinkId instanceof FHIRPositiveInt) {
-            $this->informationLinkId = $informationLinkId;
+            $this->informationLinkId[] = $informationLinkId;
             return $this;
         }
-        $this->informationLinkId = new FHIRPositiveInt($informationLinkId);
+        $this->informationLinkId[] = new FHIRPositiveInt($informationLinkId);
         return $this;
     }
 
@@ -1471,14 +1495,14 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
     public function addNoteNumber($noteNumber = null)
     {
         if (null === $noteNumber) {
-            $this->noteNumber = null;
+            $this->noteNumber = [];
             return $this;
         }
         if ($noteNumber instanceof FHIRPositiveInt) {
-            $this->noteNumber = $noteNumber;
+            $this->noteNumber[] = $noteNumber;
             return $this;
         }
-        $this->noteNumber = new FHIRPositiveInt($noteNumber);
+        $this->noteNumber[] = new FHIRPositiveInt($noteNumber);
         return $this;
     }
 
@@ -1535,14 +1559,14 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
     public function addProcedureLinkId($procedureLinkId = null)
     {
         if (null === $procedureLinkId) {
-            $this->procedureLinkId = null;
+            $this->procedureLinkId = [];
             return $this;
         }
         if ($procedureLinkId instanceof FHIRPositiveInt) {
-            $this->procedureLinkId = $procedureLinkId;
+            $this->procedureLinkId[] = $procedureLinkId;
             return $this;
         }
-        $this->procedureLinkId = new FHIRPositiveInt($procedureLinkId);
+        $this->procedureLinkId[] = new FHIRPositiveInt($procedureLinkId);
         return $this;
     }
 
@@ -2000,16 +2024,17 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitItem $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitItem
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRExplanationOfBenefitItem::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -2025,6 +2050,13 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
                 'FHIRExplanationOfBenefitItem::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitItem or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -2159,12 +2191,13 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<ExplanationOfBenefitItem xmlns="http://hl7.org/fhir"></ExplanationOfBenefitItem>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
@@ -2173,33 +2206,24 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ADJUDICATION));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_ADJUDICATION, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getBodySite())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_BODY_SITE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_BODY_SITE, null, $v->getFHIRXMLNamespace()));
         }
         if ([] !== ($vs = $this->getCareTeamLinkId())) {
-            $first = true;
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                if ($first) {
-                    $sxe->addAttribute(self::FIELD_CARE_TEAM_LINK_ID, (string)$v);
-                    if (null !== $v->getId() || [] !== $v->getExtension()) {
-                        $v->xmlSerialize($sxe->addChild(self::FIELD_CARE_TEAM_LINK_ID));
-                    }
-                    $first = false;
-                } else {
-                    $v->xmlSerialize($sxe->addChild(self::FIELD_CARE_TEAM_LINK_ID));
-                }
+                $v->xmlSerialize($sxe->addChild(self::FIELD_CARE_TEAM_LINK_ID, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getCategory())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CATEGORY));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CATEGORY, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getDetail())) {
@@ -2207,24 +2231,15 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DETAIL));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_DETAIL, null, $v->getFHIRXMLNamespace()));
             }
         }
         if ([] !== ($vs = $this->getDiagnosisLinkId())) {
-            $first = true;
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                if ($first) {
-                    $sxe->addAttribute(self::FIELD_DIAGNOSIS_LINK_ID, (string)$v);
-                    if (null !== $v->getId() || [] !== $v->getExtension()) {
-                        $v->xmlSerialize($sxe->addChild(self::FIELD_DIAGNOSIS_LINK_ID));
-                    }
-                    $first = false;
-                } else {
-                    $v->xmlSerialize($sxe->addChild(self::FIELD_DIAGNOSIS_LINK_ID));
-                }
+                $v->xmlSerialize($sxe->addChild(self::FIELD_DIAGNOSIS_LINK_ID, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -2233,43 +2248,31 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ENCOUNTER));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_ENCOUNTER, null, $v->getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getFactor())) {
-            $sxe->addAttribute(self::FIELD_FACTOR, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_FACTOR));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FACTOR, null, $v->getFHIRXMLNamespace()));
         }
         if ([] !== ($vs = $this->getInformationLinkId())) {
-            $first = true;
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                if ($first) {
-                    $sxe->addAttribute(self::FIELD_INFORMATION_LINK_ID, (string)$v);
-                    if (null !== $v->getId() || [] !== $v->getExtension()) {
-                        $v->xmlSerialize($sxe->addChild(self::FIELD_INFORMATION_LINK_ID));
-                    }
-                    $first = false;
-                } else {
-                    $v->xmlSerialize($sxe->addChild(self::FIELD_INFORMATION_LINK_ID));
-                }
+                $v->xmlSerialize($sxe->addChild(self::FIELD_INFORMATION_LINK_ID, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getLocationAddress())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_LOCATION_ADDRESS));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_LOCATION_ADDRESS, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getLocationCodeableConcept())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_LOCATION_CODEABLE_CONCEPT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_LOCATION_CODEABLE_CONCEPT, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getLocationReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_LOCATION_REFERENCE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_LOCATION_REFERENCE, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getModifier())) {
@@ -2277,45 +2280,27 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_MODIFIER));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_MODIFIER, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getNet())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_NET));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_NET, null, $v->getFHIRXMLNamespace()));
         }
         if ([] !== ($vs = $this->getNoteNumber())) {
-            $first = true;
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                if ($first) {
-                    $sxe->addAttribute(self::FIELD_NOTE_NUMBER, (string)$v);
-                    if (null !== $v->getId() || [] !== $v->getExtension()) {
-                        $v->xmlSerialize($sxe->addChild(self::FIELD_NOTE_NUMBER));
-                    }
-                    $first = false;
-                } else {
-                    $v->xmlSerialize($sxe->addChild(self::FIELD_NOTE_NUMBER));
-                }
+                $v->xmlSerialize($sxe->addChild(self::FIELD_NOTE_NUMBER, null, $v->getFHIRXMLNamespace()));
             }
         }
         if ([] !== ($vs = $this->getProcedureLinkId())) {
-            $first = true;
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                if ($first) {
-                    $sxe->addAttribute(self::FIELD_PROCEDURE_LINK_ID, (string)$v);
-                    if (null !== $v->getId() || [] !== $v->getExtension()) {
-                        $v->xmlSerialize($sxe->addChild(self::FIELD_PROCEDURE_LINK_ID));
-                    }
-                    $first = false;
-                } else {
-                    $v->xmlSerialize($sxe->addChild(self::FIELD_PROCEDURE_LINK_ID));
-                }
+                $v->xmlSerialize($sxe->addChild(self::FIELD_PROCEDURE_LINK_ID, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -2324,36 +2309,30 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PROGRAM_CODE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_PROGRAM_CODE, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getRevenue())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REVENUE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_REVENUE, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getSequence())) {
-            $sxe->addAttribute(self::FIELD_SEQUENCE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SEQUENCE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SEQUENCE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getService())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SERVICE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SERVICE, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getServicedDate())) {
-            $sxe->addAttribute(self::FIELD_SERVICED_DATE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SERVICED_DATE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SERVICED_DATE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getServicedPeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SERVICED_PERIOD));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SERVICED_PERIOD, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getSubSite())) {
@@ -2361,7 +2340,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SUB_SITE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_SUB_SITE, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -2370,12 +2349,12 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_UDI));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_UDI, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getUnitPrice())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_UNIT_PRICE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_UNIT_PRICE, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

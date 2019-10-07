@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpeci
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,6 +79,9 @@ class FHIRSpecimenDefinitionAdditive extends FHIRBackboneElement
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SPECIMEN_DEFINITION_DOT_ADDITIVE;
 
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
+
     const FIELD_ADDITIVE_CODEABLE_CONCEPT = 'additiveCodeableConcept';
     const FIELD_ADDITIVE_REFERENCE = 'additiveReference';
 
@@ -89,8 +92,7 @@ class FHIRSpecimenDefinitionAdditive extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Substance introduced in the kind of container to preserve, maintain or enhance
-     * the specimen. Examples: Formalin, Citrate, EDTA. (choose any one of additive*,
-     * but only one)
+     * the specimen. Examples: Formalin, Citrate, EDTA.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -101,8 +103,7 @@ class FHIRSpecimenDefinitionAdditive extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Substance introduced in the kind of container to preserve, maintain or enhance
-     * the specimen. Examples: Formalin, Citrate, EDTA. (choose any one of additive*,
-     * but only one)
+     * the specimen. Examples: Formalin, Citrate, EDTA.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -149,14 +150,34 @@ class FHIRSpecimenDefinitionAdditive extends FHIRBackboneElement
     }
 
     /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<SpecimenDefinitionAdditive{$xmlns}></SpecimenDefinitionAdditive>";
+    }
+
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Substance introduced in the kind of container to preserve, maintain or enhance
-     * the specimen. Examples: Formalin, Citrate, EDTA. (choose any one of additive*,
-     * but only one)
+     * the specimen. Examples: Formalin, Citrate, EDTA.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -172,8 +193,7 @@ class FHIRSpecimenDefinitionAdditive extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Substance introduced in the kind of container to preserve, maintain or enhance
-     * the specimen. Examples: Formalin, Citrate, EDTA. (choose any one of additive*,
-     * but only one)
+     * the specimen. Examples: Formalin, Citrate, EDTA.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $additiveCodeableConcept
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionAdditive
@@ -190,8 +210,7 @@ class FHIRSpecimenDefinitionAdditive extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Substance introduced in the kind of container to preserve, maintain or enhance
-     * the specimen. Examples: Formalin, Citrate, EDTA. (choose any one of additive*,
-     * but only one)
+     * the specimen. Examples: Formalin, Citrate, EDTA.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -206,8 +225,7 @@ class FHIRSpecimenDefinitionAdditive extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Substance introduced in the kind of container to preserve, maintain or enhance
-     * the specimen. Examples: Formalin, Citrate, EDTA. (choose any one of additive*,
-     * but only one)
+     * the specimen. Examples: Formalin, Citrate, EDTA.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $additiveReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionAdditive
@@ -221,16 +239,17 @@ class FHIRSpecimenDefinitionAdditive extends FHIRBackboneElement
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionAdditive $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionAdditive
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRSpecimenDefinitionAdditive::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -247,6 +266,13 @@ class FHIRSpecimenDefinitionAdditive extends FHIRBackboneElement
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
+        }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
         if (isset($children->additiveCodeableConcept)) {
@@ -260,21 +286,22 @@ class FHIRSpecimenDefinitionAdditive extends FHIRBackboneElement
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<SpecimenDefinitionAdditive xmlns="http://hl7.org/fhir"></SpecimenDefinitionAdditive>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getAdditiveCodeableConcept())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ADDITIVE_CODEABLE_CONCEPT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ADDITIVE_CODEABLE_CONCEPT, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getAdditiveReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ADDITIVE_REFERENCE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ADDITIVE_REFERENCE, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,6 +79,9 @@ class FHIRMedicinalProductIngredientReferenceStrength extends FHIRBackboneElemen
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_INGREDIENT_DOT_REFERENCE_STRENGTH;
+
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_COUNTRY = 'country';
     const FIELD_MEASUREMENT_POINT = 'measurementPoint';
@@ -215,6 +218,27 @@ class FHIRMedicinalProductIngredientReferenceStrength extends FHIRBackboneElemen
     {
         return self::FHIR_TYPE_NAME;
     }
+
+    /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<MedicinalProductIngredientReferenceStrength{$xmlns}></MedicinalProductIngredientReferenceStrength>";
+    }
+
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -412,16 +436,17 @@ class FHIRMedicinalProductIngredientReferenceStrength extends FHIRBackboneElemen
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientReferenceStrength $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientReferenceStrength
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRMedicinalProductIngredientReferenceStrength::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -437,6 +462,13 @@ class FHIRMedicinalProductIngredientReferenceStrength extends FHIRBackboneElemen
                 'FHIRMedicinalProductIngredientReferenceStrength::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientReferenceStrength or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -465,12 +497,13 @@ class FHIRMedicinalProductIngredientReferenceStrength extends FHIRBackboneElemen
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<MedicinalProductIngredientReferenceStrength xmlns="http://hl7.org/fhir"></MedicinalProductIngredientReferenceStrength>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
@@ -479,26 +512,23 @@ class FHIRMedicinalProductIngredientReferenceStrength extends FHIRBackboneElemen
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_COUNTRY));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_COUNTRY, null, $v->getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getMeasurementPoint())) {
-            $sxe->addAttribute(self::FIELD_MEASUREMENT_POINT, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_MEASUREMENT_POINT));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MEASUREMENT_POINT, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getStrength())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_STRENGTH));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_STRENGTH, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getStrengthLowLimit())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_STRENGTH_LOW_LIMIT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_STRENGTH_LOW_LIMIT, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getSubstance())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBSTANCE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBSTANCE, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVerif
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,6 +82,9 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_VERIFICATION_RESULT_DOT_ATTESTATION;
+
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_COMMUNICATION_METHOD = 'communicationMethod';
     const FIELD_DATE = 'date';
@@ -286,6 +289,27 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
     {
         return self::FHIR_TYPE_NAME;
     }
+
+    /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<VerificationResultAttestation{$xmlns}></VerificationResultAttestation>";
+    }
+
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -582,16 +606,17 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultAttestation $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultAttestation
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRVerificationResultAttestation::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -607,6 +632,13 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
                 'FHIRVerificationResultAttestation::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultAttestation or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -648,51 +680,43 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<VerificationResultAttestation xmlns="http://hl7.org/fhir"></VerificationResultAttestation>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getCommunicationMethod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_COMMUNICATION_METHOD));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_COMMUNICATION_METHOD, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDate())) {
-            $sxe->addAttribute(self::FIELD_DATE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DATE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DATE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getOnBehalfOf())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ON_BEHALF_OF));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ON_BEHALF_OF, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getProxyIdentityCertificate())) {
-            $sxe->addAttribute(self::FIELD_PROXY_IDENTITY_CERTIFICATE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PROXY_IDENTITY_CERTIFICATE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PROXY_IDENTITY_CERTIFICATE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getProxySignature())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PROXY_SIGNATURE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PROXY_SIGNATURE, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getSourceIdentityCertificate())) {
-            $sxe->addAttribute(self::FIELD_SOURCE_IDENTITY_CERTIFICATE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE_IDENTITY_CERTIFICATE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE_IDENTITY_CERTIFICATE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getSourceSignature())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE_SIGNATURE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE_SIGNATURE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getWho())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_WHO));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_WHO, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

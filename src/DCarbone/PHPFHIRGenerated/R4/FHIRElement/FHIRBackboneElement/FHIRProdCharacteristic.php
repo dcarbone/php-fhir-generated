@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,6 +83,9 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PROD_CHARACTERISTIC;
+
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_COLOR = 'color';
     const FIELD_COLOR_EXT = '_color';
@@ -392,6 +395,27 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
     }
 
     /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<ProdCharacteristic{$xmlns}></ProdCharacteristic>";
+    }
+
+
+    /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a @value, an @id, or extensions
@@ -420,14 +444,14 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
     public function addColor($color = null)
     {
         if (null === $color) {
-            $this->color = null;
+            $this->color = [];
             return $this;
         }
         if ($color instanceof FHIRString) {
-            $this->color = $color;
+            $this->color[] = $color;
             return $this;
         }
-        $this->color = new FHIRString($color);
+        $this->color[] = new FHIRString($color);
         return $this;
     }
 
@@ -664,14 +688,14 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
     public function addImprint($imprint = null)
     {
         if (null === $imprint) {
-            $this->imprint = null;
+            $this->imprint = [];
             return $this;
         }
         if ($imprint instanceof FHIRString) {
-            $this->imprint = $imprint;
+            $this->imprint[] = $imprint;
             return $this;
         }
-        $this->imprint = new FHIRString($imprint);
+        $this->imprint[] = new FHIRString($imprint);
         return $this;
     }
 
@@ -898,16 +922,17 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRProdCharacteristic::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -923,6 +948,13 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
                 'FHIRProdCharacteristic::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -979,42 +1011,34 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<ProdCharacteristic xmlns="http://hl7.org/fhir"></ProdCharacteristic>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if ([] !== ($vs = $this->getColor())) {
-            $first = true;
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                if ($first) {
-                    $sxe->addAttribute(self::FIELD_COLOR, (string)$v);
-                    if (null !== $v->getId() || [] !== $v->getExtension()) {
-                        $v->xmlSerialize($sxe->addChild(self::FIELD_COLOR));
-                    }
-                    $first = false;
-                } else {
-                    $v->xmlSerialize($sxe->addChild(self::FIELD_COLOR));
-                }
+                $v->xmlSerialize($sxe->addChild(self::FIELD_COLOR, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getDepth())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEPTH));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEPTH, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getExternalDiameter())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXTERNAL_DIAMETER));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EXTERNAL_DIAMETER, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getHeight())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_HEIGHT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_HEIGHT, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getImage())) {
@@ -1022,47 +1046,35 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_IMAGE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_IMAGE, null, $v->getFHIRXMLNamespace()));
             }
         }
         if ([] !== ($vs = $this->getImprint())) {
-            $first = true;
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                if ($first) {
-                    $sxe->addAttribute(self::FIELD_IMPRINT, (string)$v);
-                    if (null !== $v->getId() || [] !== $v->getExtension()) {
-                        $v->xmlSerialize($sxe->addChild(self::FIELD_IMPRINT));
-                    }
-                    $first = false;
-                } else {
-                    $v->xmlSerialize($sxe->addChild(self::FIELD_IMPRINT));
-                }
+                $v->xmlSerialize($sxe->addChild(self::FIELD_IMPRINT, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getNominalVolume())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_NOMINAL_VOLUME));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_NOMINAL_VOLUME, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getScoring())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SCORING));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SCORING, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getShape())) {
-            $sxe->addAttribute(self::FIELD_SHAPE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SHAPE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SHAPE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getWeight())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_WEIGHT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_WEIGHT, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getWidth())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_WIDTH));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_WIDTH, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

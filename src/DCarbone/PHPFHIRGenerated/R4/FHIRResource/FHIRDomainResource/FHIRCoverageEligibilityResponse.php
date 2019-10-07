@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -91,6 +91,9 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_COVERAGE_ELIGIBILITY_RESPONSE;
+
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CREATED = 'created';
     const FIELD_CREATED_EXT = '_created';
@@ -258,7 +261,7 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The date or dates when the enclosed suite of services were performed or
-     * completed. (choose any one of serviced*, but only one)
+     * completed.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
@@ -269,7 +272,7 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The date or dates when the enclosed suite of services were performed or
-     * completed. (choose any one of serviced*, but only one)
+     * completed.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -473,6 +476,27 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
     {
         return self::FHIR_TYPE_NAME;
     }
+
+    /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<CoverageEligibilityResponse{$xmlns}></CoverageEligibilityResponse>";
+    }
+
 
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
@@ -1018,7 +1042,7 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The date or dates when the enclosed suite of services were performed or
-     * completed. (choose any one of serviced*, but only one)
+     * completed.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
@@ -1034,7 +1058,7 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The date or dates when the enclosed suite of services were performed or
-     * completed. (choose any one of serviced*, but only one)
+     * completed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate $servicedDate
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCoverageEligibilityResponse
@@ -1059,7 +1083,7 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The date or dates when the enclosed suite of services were performed or
-     * completed. (choose any one of serviced*, but only one)
+     * completed.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -1074,7 +1098,7 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The date or dates when the enclosed suite of services were performed or
-     * completed. (choose any one of serviced*, but only one)
+     * completed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $servicedPeriod
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCoverageEligibilityResponse
@@ -1116,16 +1140,17 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCoverageEligibilityResponse $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCoverageEligibilityResponse
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRCoverageEligibilityResponse::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -1141,6 +1166,13 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
                 'FHIRCoverageEligibilityResponse::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCoverageEligibilityResponse or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -1217,25 +1249,20 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<CoverageEligibilityResponse xmlns="http://hl7.org/fhir"></CoverageEligibilityResponse>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getCreated())) {
-            $sxe->addAttribute(self::FIELD_CREATED, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CREATED));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CREATED, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDisposition())) {
-            $sxe->addAttribute(self::FIELD_DISPOSITION, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DISPOSITION));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DISPOSITION, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getError())) {
@@ -1243,12 +1270,12 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ERROR));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_ERROR, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getForm())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FORM));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FORM, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getIdentifier())) {
@@ -1256,7 +1283,7 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -1265,26 +1292,23 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_INSURANCE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_INSURANCE, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getInsurer())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_INSURER));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_INSURER, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getOutcome())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_OUTCOME));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_OUTCOME, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getPatient())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATIENT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PATIENT, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getPreAuthRef())) {
-            $sxe->addAttribute(self::FIELD_PRE_AUTH_REF, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PRE_AUTH_REF));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PRE_AUTH_REF, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getPurpose())) {
@@ -1292,30 +1316,27 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PURPOSE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_PURPOSE, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getRequest())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REQUEST));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_REQUEST, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getRequestor())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REQUESTOR));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_REQUESTOR, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getServicedDate())) {
-            $sxe->addAttribute(self::FIELD_SERVICED_DATE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SERVICED_DATE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SERVICED_DATE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getServicedPeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SERVICED_PERIOD));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SERVICED_PERIOD, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getStatus())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

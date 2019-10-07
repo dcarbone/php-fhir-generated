@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpeci
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,6 +81,9 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SPECIMEN_DEFINITION_DOT_TYPE_TESTED;
+
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CONTAINER = 'container';
     const FIELD_HANDLING = 'handling';
@@ -280,6 +283,27 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
     {
         return self::FHIR_TYPE_NAME;
     }
+
+    /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<SpecimenDefinitionTypeTested{$xmlns}></SpecimenDefinitionTypeTested>";
+    }
+
 
     /**
      * A kind of specimen with associated set of requirements.
@@ -590,16 +614,17 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionTypeTested $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionTypeTested
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRSpecimenDefinitionTypeTested::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -615,6 +640,13 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
                 'FHIRSpecimenDefinitionTypeTested::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionTypeTested or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -657,17 +689,18 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<SpecimenDefinitionTypeTested xmlns="http://hl7.org/fhir"></SpecimenDefinitionTypeTested>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getContainer())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CONTAINER));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CONTAINER, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getHandling())) {
@@ -675,18 +708,15 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_HANDLING));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_HANDLING, null, $v->getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getIsDerived())) {
-            $sxe->addAttribute(self::FIELD_IS_DERIVED, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_IS_DERIVED));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_IS_DERIVED, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getPreference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PREFERENCE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PREFERENCE, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getRejectionCriterion())) {
@@ -694,22 +724,19 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_REJECTION_CRITERION));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_REJECTION_CRITERION, null, $v->getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getRequirement())) {
-            $sxe->addAttribute(self::FIELD_REQUIREMENT, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_REQUIREMENT));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_REQUIREMENT, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getRetentionTime())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RETENTION_TIME));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_RETENTION_TIME, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

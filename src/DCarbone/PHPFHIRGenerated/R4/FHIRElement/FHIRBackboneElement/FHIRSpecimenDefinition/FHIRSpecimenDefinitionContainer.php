@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpeci
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,6 +79,9 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SPECIMEN_DEFINITION_DOT_CONTAINER;
+
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ADDITIVE = 'additive';
     const FIELD_CAP = 'cap';
@@ -153,8 +156,7 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The minimum volume to be conditioned in the container. (choose any one of
-     * minimumVolume*, but only one)
+     * The minimum volume to be conditioned in the container.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -164,8 +166,7 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The minimum volume to be conditioned in the container. (choose any one of
-     * minimumVolume*, but only one)
+     * The minimum volume to be conditioned in the container.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -304,6 +305,27 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
     {
         return self::FHIR_TYPE_NAME;
     }
+
+    /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<SpecimenDefinitionContainer{$xmlns}></SpecimenDefinitionContainer>";
+    }
+
 
     /**
      * A kind of specimen with associated set of requirements.
@@ -501,8 +523,7 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The minimum volume to be conditioned in the container. (choose any one of
-     * minimumVolume*, but only one)
+     * The minimum volume to be conditioned in the container.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -518,8 +539,7 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The minimum volume to be conditioned in the container. (choose any one of
-     * minimumVolume*, but only one)
+     * The minimum volume to be conditioned in the container.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $minimumVolumeQuantity
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionContainer
@@ -535,8 +555,7 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The minimum volume to be conditioned in the container. (choose any one of
-     * minimumVolume*, but only one)
+     * The minimum volume to be conditioned in the container.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -550,8 +569,7 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The minimum volume to be conditioned in the container. (choose any one of
-     * minimumVolume*, but only one)
+     * The minimum volume to be conditioned in the container.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $minimumVolumeString
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionContainer
@@ -645,16 +663,17 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionContainer $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionContainer
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRSpecimenDefinitionContainer::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -670,6 +689,13 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
                 'FHIRSpecimenDefinitionContainer::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionContainer or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -716,12 +742,13 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<SpecimenDefinitionContainer xmlns="http://hl7.org/fhir"></SpecimenDefinitionContainer>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
@@ -730,46 +757,37 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ADDITIVE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_ADDITIVE, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getCap())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CAP));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CAP, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getCapacity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CAPACITY));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CAPACITY, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDescription())) {
-            $sxe->addAttribute(self::FIELD_DESCRIPTION, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DESCRIPTION));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DESCRIPTION, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getMaterial())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MATERIAL));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MATERIAL, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getMinimumVolumeQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MINIMUM_VOLUME_QUANTITY));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MINIMUM_VOLUME_QUANTITY, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMinimumVolumeString())) {
-            $sxe->addAttribute(self::FIELD_MINIMUM_VOLUME_STRING, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_MINIMUM_VOLUME_STRING));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MINIMUM_VOLUME_STRING, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getPreparation())) {
-            $sxe->addAttribute(self::FIELD_PREPARATION, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PREPARATION));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PREPARATION, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

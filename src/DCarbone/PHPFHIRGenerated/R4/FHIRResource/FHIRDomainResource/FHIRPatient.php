@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -95,6 +95,9 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PATIENT;
 
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
+
     const FIELD_ACTIVE = 'active';
     const FIELD_ACTIVE_EXT = '_active';
     const FIELD_ADDRESS = 'address';
@@ -181,8 +184,7 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * Value of "true" or "false"
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * Indicates if the individual is deceased or not. (choose any one of deceased*,
-     * but only one)
+     * Indicates if the individual is deceased or not.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
@@ -195,8 +197,7 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * Indicates if the individual is deceased or not. (choose any one of deceased*,
-     * but only one)
+     * Indicates if the individual is deceased or not.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -266,7 +267,7 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * Indicates whether the patient is part of a multiple (boolean) or indicates the
-     * actual birth order (integer). (choose any one of multipleBirth*, but only one)
+     * actual birth order (integer).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
@@ -277,7 +278,7 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * Indicates whether the patient is part of a multiple (boolean) or indicates the
-     * actual birth order (integer). (choose any one of multipleBirth*, but only one)
+     * actual birth order (integer).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
@@ -570,6 +571,27 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     }
 
     /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<Patient{$xmlns}></Patient>";
+    }
+
+
+    /**
      * Value of "true" or "false"
      * If the element is present, it must have either a @value, an @id, or extensions
      *
@@ -834,8 +856,7 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * Value of "true" or "false"
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * Indicates if the individual is deceased or not. (choose any one of deceased*,
-     * but only one)
+     * Indicates if the individual is deceased or not.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
@@ -848,8 +869,7 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * Value of "true" or "false"
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * Indicates if the individual is deceased or not. (choose any one of deceased*,
-     * but only one)
+     * Indicates if the individual is deceased or not.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $deceasedBoolean
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPatient
@@ -876,8 +896,7 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * Indicates if the individual is deceased or not. (choose any one of deceased*,
-     * but only one)
+     * Indicates if the individual is deceased or not.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -894,8 +913,7 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * Indicates if the individual is deceased or not. (choose any one of deceased*,
-     * but only one)
+     * Indicates if the individual is deceased or not.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $deceasedDateTime
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPatient
@@ -1177,7 +1195,7 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * Indicates whether the patient is part of a multiple (boolean) or indicates the
-     * actual birth order (integer). (choose any one of multipleBirth*, but only one)
+     * actual birth order (integer).
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
@@ -1191,7 +1209,7 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * Indicates whether the patient is part of a multiple (boolean) or indicates the
-     * actual birth order (integer). (choose any one of multipleBirth*, but only one)
+     * actual birth order (integer).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $multipleBirthBoolean
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPatient
@@ -1216,7 +1234,7 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * Indicates whether the patient is part of a multiple (boolean) or indicates the
-     * actual birth order (integer). (choose any one of multipleBirth*, but only one)
+     * actual birth order (integer).
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
@@ -1231,7 +1249,7 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * Indicates whether the patient is part of a multiple (boolean) or indicates the
-     * actual birth order (integer). (choose any one of multipleBirth*, but only one)
+     * actual birth order (integer).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $multipleBirthInteger
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPatient
@@ -1427,16 +1445,17 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPatient $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPatient
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRPatient::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -1452,6 +1471,13 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
                 'FHIRPatient::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPatient or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -1550,19 +1576,17 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<Patient xmlns="http://hl7.org/fhir"></Patient>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getActive())) {
-            $sxe->addAttribute(self::FIELD_ACTIVE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ACTIVE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ACTIVE, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getAddress())) {
@@ -1570,14 +1594,11 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ADDRESS));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_ADDRESS, null, $v->getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getBirthDate())) {
-            $sxe->addAttribute(self::FIELD_BIRTH_DATE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_BIRTH_DATE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_BIRTH_DATE, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getCommunication())) {
@@ -1585,7 +1606,7 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_COMMUNICATION));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_COMMUNICATION, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -1594,24 +1615,18 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CONTACT));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_CONTACT, null, $v->getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getDeceasedBoolean())) {
-            $sxe->addAttribute(self::FIELD_DECEASED_BOOLEAN, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DECEASED_BOOLEAN));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DECEASED_BOOLEAN, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDeceasedDateTime())) {
-            $sxe->addAttribute(self::FIELD_DECEASED_DATE_TIME, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DECEASED_DATE_TIME));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DECEASED_DATE_TIME, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getGender())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_GENDER));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_GENDER, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getGeneralPractitioner())) {
@@ -1619,7 +1634,7 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_GENERAL_PRACTITIONER));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_GENERAL_PRACTITIONER, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -1628,7 +1643,7 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -1637,28 +1652,22 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_LINK));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_LINK, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getManagingOrganization())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MANAGING_ORGANIZATION));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MANAGING_ORGANIZATION, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getMaritalStatus())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MARITAL_STATUS));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MARITAL_STATUS, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMultipleBirthBoolean())) {
-            $sxe->addAttribute(self::FIELD_MULTIPLE_BIRTH_BOOLEAN, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_MULTIPLE_BIRTH_BOOLEAN));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MULTIPLE_BIRTH_BOOLEAN, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMultipleBirthInteger())) {
-            $sxe->addAttribute(self::FIELD_MULTIPLE_BIRTH_INTEGER, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_MULTIPLE_BIRTH_INTEGER));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MULTIPLE_BIRTH_INTEGER, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getName())) {
@@ -1666,7 +1675,7 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_NAME));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_NAME, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -1675,7 +1684,7 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PHOTO));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_PHOTO, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -1684,7 +1693,7 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_TELECOM));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_TELECOM, null, $v->getFHIRXMLNamespace()));
             }
         }
         return $sxe;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,6 +80,9 @@ class FHIRMeta extends FHIRElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_META;
+
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_LAST_UPDATED = 'lastUpdated';
     const FIELD_LAST_UPDATED_EXT = '_lastUpdated';
@@ -284,6 +287,27 @@ class FHIRMeta extends FHIRElement
     }
 
     /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<Meta{$xmlns}></Meta>";
+    }
+
+
+    /**
      * An instant in time - known at least to the second
      * Note: This is intended for where precisely observed times are required,
      * typically system logs etc., and not human-reported times - for them, see date
@@ -360,14 +384,14 @@ class FHIRMeta extends FHIRElement
     public function addProfile($profile = null)
     {
         if (null === $profile) {
-            $this->profile = null;
+            $this->profile = [];
             return $this;
         }
         if ($profile instanceof FHIRCanonical) {
-            $this->profile = $profile;
+            $this->profile[] = $profile;
             return $this;
         }
-        $this->profile = new FHIRCanonical($profile);
+        $this->profile[] = new FHIRCanonical($profile);
         return $this;
     }
 
@@ -614,16 +638,17 @@ class FHIRMeta extends FHIRElement
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMeta $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMeta
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRMeta::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -639,6 +664,13 @@ class FHIRMeta extends FHIRElement
                 'FHIRMeta::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMeta or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -683,35 +715,24 @@ class FHIRMeta extends FHIRElement
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<Meta xmlns="http://hl7.org/fhir"></Meta>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getLastUpdated())) {
-            $sxe->addAttribute(self::FIELD_LAST_UPDATED, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_LAST_UPDATED));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_LAST_UPDATED, null, $v->getFHIRXMLNamespace()));
         }
         if ([] !== ($vs = $this->getProfile())) {
-            $first = true;
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                if ($first) {
-                    $sxe->addAttribute(self::FIELD_PROFILE, (string)$v);
-                    if (null !== $v->getId() || [] !== $v->getExtension()) {
-                        $v->xmlSerialize($sxe->addChild(self::FIELD_PROFILE));
-                    }
-                    $first = false;
-                } else {
-                    $v->xmlSerialize($sxe->addChild(self::FIELD_PROFILE));
-                }
+                $v->xmlSerialize($sxe->addChild(self::FIELD_PROFILE, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -720,14 +741,11 @@ class FHIRMeta extends FHIRElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SECURITY));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_SECURITY, null, $v->getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getSource())) {
-            $sxe->addAttribute(self::FIELD_SOURCE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getTag())) {
@@ -735,14 +753,11 @@ class FHIRMeta extends FHIRElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_TAG));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_TAG, null, $v->getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getVersionId())) {
-            $sxe->addAttribute(self::FIELD_VERSION_ID, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_VERSION_ID));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VERSION_ID, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

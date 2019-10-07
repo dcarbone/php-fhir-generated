@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuest
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -90,6 +90,9 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_DOT_ENABLE_WHEN;
 
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
+
     const FIELD_ANSWER_BOOLEAN = 'answerBoolean';
     const FIELD_ANSWER_BOOLEAN_EXT = '_answerBoolean';
     const FIELD_ANSWER_CODING = 'answerCoding';
@@ -116,7 +119,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * A value that the referenced question is tested using the specified operator in
-     * order for the item to be enabled. (choose any one of answer*, but only one)
+     * order for the item to be enabled.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
@@ -127,7 +130,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A value that the referenced question is tested using the specified operator in
-     * order for the item to be enabled. (choose any one of answer*, but only one)
+     * order for the item to be enabled.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding
      */
@@ -139,7 +142,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * A value that the referenced question is tested using the specified operator in
-     * order for the item to be enabled. (choose any one of answer*, but only one)
+     * order for the item to be enabled.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
@@ -153,7 +156,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * A value that the referenced question is tested using the specified operator in
-     * order for the item to be enabled. (choose any one of answer*, but only one)
+     * order for the item to be enabled.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -165,7 +168,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * A value that the referenced question is tested using the specified operator in
-     * order for the item to be enabled. (choose any one of answer*, but only one)
+     * order for the item to be enabled.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
@@ -176,7 +179,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * A value that the referenced question is tested using the specified operator in
-     * order for the item to be enabled. (choose any one of answer*, but only one)
+     * order for the item to be enabled.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
@@ -189,7 +192,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A value that the referenced question is tested using the specified operator in
-     * order for the item to be enabled. (choose any one of answer*, but only one)
+     * order for the item to be enabled.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -200,7 +203,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A value that the referenced question is tested using the specified operator in
-     * order for the item to be enabled. (choose any one of answer*, but only one)
+     * order for the item to be enabled.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -211,7 +214,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * A value that the referenced question is tested using the specified operator in
-     * order for the item to be enabled. (choose any one of answer*, but only one)
+     * order for the item to be enabled.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -221,7 +224,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * A value that the referenced question is tested using the specified operator in
-     * order for the item to be enabled. (choose any one of answer*, but only one)
+     * order for the item to be enabled.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTime
      */
@@ -398,11 +401,32 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
     }
 
     /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<QuestionnaireEnableWhen{$xmlns}></QuestionnaireEnableWhen>";
+    }
+
+
+    /**
      * Value of "true" or "false"
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * A value that the referenced question is tested using the specified operator in
-     * order for the item to be enabled. (choose any one of answer*, but only one)
+     * order for the item to be enabled.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
@@ -416,7 +440,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * A value that the referenced question is tested using the specified operator in
-     * order for the item to be enabled. (choose any one of answer*, but only one)
+     * order for the item to be enabled.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $answerBoolean
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen
@@ -441,7 +465,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A value that the referenced question is tested using the specified operator in
-     * order for the item to be enabled. (choose any one of answer*, but only one)
+     * order for the item to be enabled.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding
      */
@@ -456,7 +480,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A value that the referenced question is tested using the specified operator in
-     * order for the item to be enabled. (choose any one of answer*, but only one)
+     * order for the item to be enabled.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding $answerCoding
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen
@@ -474,7 +498,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * A value that the referenced question is tested using the specified operator in
-     * order for the item to be enabled. (choose any one of answer*, but only one)
+     * order for the item to be enabled.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
@@ -490,7 +514,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * A value that the referenced question is tested using the specified operator in
-     * order for the item to be enabled. (choose any one of answer*, but only one)
+     * order for the item to be enabled.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate $answerDate
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen
@@ -518,7 +542,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * A value that the referenced question is tested using the specified operator in
-     * order for the item to be enabled. (choose any one of answer*, but only one)
+     * order for the item to be enabled.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -536,7 +560,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * A value that the referenced question is tested using the specified operator in
-     * order for the item to be enabled. (choose any one of answer*, but only one)
+     * order for the item to be enabled.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $answerDateTime
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen
@@ -562,7 +586,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * A value that the referenced question is tested using the specified operator in
-     * order for the item to be enabled. (choose any one of answer*, but only one)
+     * order for the item to be enabled.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
@@ -578,7 +602,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * A value that the referenced question is tested using the specified operator in
-     * order for the item to be enabled. (choose any one of answer*, but only one)
+     * order for the item to be enabled.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal $answerDecimal
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen
@@ -603,7 +627,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * A value that the referenced question is tested using the specified operator in
-     * order for the item to be enabled. (choose any one of answer*, but only one)
+     * order for the item to be enabled.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
@@ -618,7 +642,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * A value that the referenced question is tested using the specified operator in
-     * order for the item to be enabled. (choose any one of answer*, but only one)
+     * order for the item to be enabled.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $answerInteger
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen
@@ -645,7 +669,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A value that the referenced question is tested using the specified operator in
-     * order for the item to be enabled. (choose any one of answer*, but only one)
+     * order for the item to be enabled.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -662,7 +686,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A value that the referenced question is tested using the specified operator in
-     * order for the item to be enabled. (choose any one of answer*, but only one)
+     * order for the item to be enabled.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $answerQuantity
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen
@@ -679,7 +703,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A value that the referenced question is tested using the specified operator in
-     * order for the item to be enabled. (choose any one of answer*, but only one)
+     * order for the item to be enabled.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -694,7 +718,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A value that the referenced question is tested using the specified operator in
-     * order for the item to be enabled. (choose any one of answer*, but only one)
+     * order for the item to be enabled.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $answerReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen
@@ -711,7 +735,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * A value that the referenced question is tested using the specified operator in
-     * order for the item to be enabled. (choose any one of answer*, but only one)
+     * order for the item to be enabled.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -726,7 +750,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * A value that the referenced question is tested using the specified operator in
-     * order for the item to be enabled. (choose any one of answer*, but only one)
+     * order for the item to be enabled.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $answerString
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen
@@ -750,7 +774,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * A value that the referenced question is tested using the specified operator in
-     * order for the item to be enabled. (choose any one of answer*, but only one)
+     * order for the item to be enabled.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTime
      */
@@ -764,7 +788,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * A value that the referenced question is tested using the specified operator in
-     * order for the item to be enabled. (choose any one of answer*, but only one)
+     * order for the item to be enabled.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTime $answerTime
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen
@@ -854,16 +878,17 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRQuestionnaireEnableWhen::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -879,6 +904,13 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
                 'FHIRQuestionnaireEnableWhen::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -947,77 +979,54 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<QuestionnaireEnableWhen xmlns="http://hl7.org/fhir"></QuestionnaireEnableWhen>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getAnswerBoolean())) {
-            $sxe->addAttribute(self::FIELD_ANSWER_BOOLEAN, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_BOOLEAN));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_BOOLEAN, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getAnswerCoding())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_CODING));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_CODING, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getAnswerDate())) {
-            $sxe->addAttribute(self::FIELD_ANSWER_DATE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_DATE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_DATE, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getAnswerDateTime())) {
-            $sxe->addAttribute(self::FIELD_ANSWER_DATE_TIME, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_DATE_TIME));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_DATE_TIME, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getAnswerDecimal())) {
-            $sxe->addAttribute(self::FIELD_ANSWER_DECIMAL, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_DECIMAL));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_DECIMAL, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getAnswerInteger())) {
-            $sxe->addAttribute(self::FIELD_ANSWER_INTEGER, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_INTEGER));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_INTEGER, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getAnswerQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_QUANTITY));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_QUANTITY, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getAnswerReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_REFERENCE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_REFERENCE, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getAnswerString())) {
-            $sxe->addAttribute(self::FIELD_ANSWER_STRING, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_STRING));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_STRING, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getAnswerTime())) {
-            $sxe->addAttribute(self::FIELD_ANSWER_TIME, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_TIME));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_TIME, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getOperator())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_OPERATOR));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_OPERATOR, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getQuestion())) {
-            $sxe->addAttribute(self::FIELD_QUESTION, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_QUESTION));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_QUESTION, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

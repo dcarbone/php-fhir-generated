@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,6 +85,9 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICATION_ADMINISTRATION_DOT_DOSAGE;
 
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
+
     const FIELD_DOSE = 'dose';
     const FIELD_METHOD = 'method';
     const FIELD_RATE_QUANTITY = 'rateQuantity';
@@ -132,8 +135,7 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * Identifies the speed with which the medication was or will be introduced into
      * the patient. Typically, the rate for an infusion e.g. 100 ml per 1 hour or 100
      * ml/hr. May also be expressed as a rate per unit of time, e.g. 500 ml per 2
-     * hours. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose
-     * any one of rate*, but only one)
+     * hours. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -147,8 +149,7 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * Identifies the speed with which the medication was or will be introduced into
      * the patient. Typically, the rate for an infusion e.g. 100 ml per 1 hour or 100
      * ml/hr. May also be expressed as a rate per unit of time, e.g. 500 ml per 2
-     * hours. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose
-     * any one of rate*, but only one)
+     * hours. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
      */
@@ -273,6 +274,27 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
     }
 
     /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<MedicationAdministrationDosage{$xmlns}></MedicationAdministrationDosage>";
+    }
+
+
+    /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
@@ -358,8 +380,7 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * Identifies the speed with which the medication was or will be introduced into
      * the patient. Typically, the rate for an infusion e.g. 100 ml per 1 hour or 100
      * ml/hr. May also be expressed as a rate per unit of time, e.g. 500 ml per 2
-     * hours. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose
-     * any one of rate*, but only one)
+     * hours. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -378,8 +399,7 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * Identifies the speed with which the medication was or will be introduced into
      * the patient. Typically, the rate for an infusion e.g. 100 ml per 1 hour or 100
      * ml/hr. May also be expressed as a rate per unit of time, e.g. 500 ml per 2
-     * hours. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose
-     * any one of rate*, but only one)
+     * hours. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $rateQuantity
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationAdministration\FHIRMedicationAdministrationDosage
@@ -399,8 +419,7 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * Identifies the speed with which the medication was or will be introduced into
      * the patient. Typically, the rate for an infusion e.g. 100 ml per 1 hour or 100
      * ml/hr. May also be expressed as a rate per unit of time, e.g. 500 ml per 2
-     * hours. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose
-     * any one of rate*, but only one)
+     * hours. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
      */
@@ -418,8 +437,7 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * Identifies the speed with which the medication was or will be introduced into
      * the patient. Typically, the rate for an infusion e.g. 100 ml per 1 hour or 100
      * ml/hr. May also be expressed as a rate per unit of time, e.g. 500 ml per 2
-     * hours. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose
-     * any one of rate*, but only one)
+     * hours. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio $rateRatio
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationAdministration\FHIRMedicationAdministrationDosage
@@ -547,16 +565,17 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationAdministration\FHIRMedicationAdministrationDosage $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationAdministration\FHIRMedicationAdministrationDosage
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRMedicationAdministrationDosage::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -572,6 +591,13 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
                 'FHIRMedicationAdministrationDosage::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationAdministration\FHIRMedicationAdministrationDosage or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -604,43 +630,41 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<MedicationAdministrationDosage xmlns="http://hl7.org/fhir"></MedicationAdministrationDosage>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getDose())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DOSE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DOSE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getMethod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_METHOD));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_METHOD, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getRateQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RATE_QUANTITY));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_RATE_QUANTITY, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getRateRatio())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RATE_RATIO));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_RATE_RATIO, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getRoute())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ROUTE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ROUTE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getSite())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SITE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SITE, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getText())) {
-            $sxe->addAttribute(self::FIELD_TEXT, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_TEXT));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TEXT, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

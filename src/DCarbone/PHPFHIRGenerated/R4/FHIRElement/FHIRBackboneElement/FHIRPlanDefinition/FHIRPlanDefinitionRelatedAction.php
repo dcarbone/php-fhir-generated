@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPlanD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,6 +84,9 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_RELATED_ACTION;
 
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
+
     const FIELD_ACTION_ID = 'actionId';
     const FIELD_ACTION_ID_EXT = '_actionId';
     const FIELD_OFFSET_DURATION = 'offsetDuration';
@@ -109,7 +112,7 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A duration or range of durations to apply to the relationship. For example,
-     * 30-60 minutes before. (choose any one of offset*, but only one)
+     * 30-60 minutes before.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
@@ -120,7 +123,7 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A duration or range of durations to apply to the relationship. For example,
-     * 30-60 minutes before. (choose any one of offset*, but only one)
+     * 30-60 minutes before.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -195,6 +198,27 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
     }
 
     /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<PlanDefinitionRelatedAction{$xmlns}></PlanDefinitionRelatedAction>";
+    }
+
+
+    /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
@@ -244,7 +268,7 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A duration or range of durations to apply to the relationship. For example,
-     * 30-60 minutes before. (choose any one of offset*, but only one)
+     * 30-60 minutes before.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
@@ -259,7 +283,7 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A duration or range of durations to apply to the relationship. For example,
-     * 30-60 minutes before. (choose any one of offset*, but only one)
+     * 30-60 minutes before.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration $offsetDuration
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionRelatedAction
@@ -276,7 +300,7 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A duration or range of durations to apply to the relationship. For example,
-     * 30-60 minutes before. (choose any one of offset*, but only one)
+     * 30-60 minutes before.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -291,7 +315,7 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A duration or range of durations to apply to the relationship. For example,
-     * 30-60 minutes before. (choose any one of offset*, but only one)
+     * 30-60 minutes before.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange $offsetRange
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionRelatedAction
@@ -333,16 +357,17 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionRelatedAction $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionRelatedAction
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRPlanDefinitionRelatedAction::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -358,6 +383,13 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
                 'FHIRPlanDefinitionRelatedAction::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionRelatedAction or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -381,31 +413,29 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<PlanDefinitionRelatedAction xmlns="http://hl7.org/fhir"></PlanDefinitionRelatedAction>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getActionId())) {
-            $sxe->addAttribute(self::FIELD_ACTION_ID, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ACTION_ID));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ACTION_ID, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getOffsetDuration())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_OFFSET_DURATION));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_OFFSET_DURATION, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getOffsetRange())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_OFFSET_RANGE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_OFFSET_RANGE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getRelationship())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RELATIONSHIP));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_RELATIONSHIP, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

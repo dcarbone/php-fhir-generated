@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,6 +85,9 @@ class FHIRDeviceComponent extends FHIRDomainResource implements PHPFHIRContained
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_DEVICE_COMPONENT;
+
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_IDENTIFIER = 'identifier';
     const FIELD_LANGUAGE_CODE = 'languageCode';
@@ -329,6 +332,27 @@ class FHIRDeviceComponent extends FHIRDomainResource implements PHPFHIRContained
     {
         return self::FHIR_TYPE_NAME;
     }
+
+    /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<DeviceComponent{$xmlns}></DeviceComponent>";
+    }
+
 
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
@@ -723,16 +747,17 @@ class FHIRDeviceComponent extends FHIRDomainResource implements PHPFHIRContained
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRDeviceComponent $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRDeviceComponent
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRDeviceComponent::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -748,6 +773,13 @@ class FHIRDeviceComponent extends FHIRDomainResource implements PHPFHIRContained
                 'FHIRDeviceComponent::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRDeviceComponent or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -793,31 +825,29 @@ class FHIRDeviceComponent extends FHIRDomainResource implements PHPFHIRContained
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<DeviceComponent xmlns="http://hl7.org/fhir"></DeviceComponent>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getIdentifier())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getLanguageCode())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_LANGUAGE_CODE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_LANGUAGE_CODE, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getLastSystemChange())) {
-            $sxe->addAttribute(self::FIELD_LAST_SYSTEM_CHANGE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_LAST_SYSTEM_CHANGE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_LAST_SYSTEM_CHANGE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getMeasurementPrinciple())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MEASUREMENT_PRINCIPLE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MEASUREMENT_PRINCIPLE, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getOperationalStatus())) {
@@ -825,16 +855,16 @@ class FHIRDeviceComponent extends FHIRDomainResource implements PHPFHIRContained
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_OPERATIONAL_STATUS));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_OPERATIONAL_STATUS, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getParameterGroup())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PARAMETER_GROUP));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PARAMETER_GROUP, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getParent())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PARENT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PARENT, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getProductionSpecification())) {
@@ -842,16 +872,16 @@ class FHIRDeviceComponent extends FHIRDomainResource implements PHPFHIRContained
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PRODUCTION_SPECIFICATION));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_PRODUCTION_SPECIFICATION, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getSource())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

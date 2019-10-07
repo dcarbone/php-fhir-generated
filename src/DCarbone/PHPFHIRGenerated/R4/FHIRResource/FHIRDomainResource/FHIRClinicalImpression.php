@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -96,6 +96,9 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CLINICAL_IMPRESSION;
 
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
+
     const FIELD_ASSESSOR = 'assessor';
     const FIELD_CODE = 'code';
     const FIELD_DATE = 'date';
@@ -176,8 +179,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The point in time or period over which the subject was assessed. (choose any one
-     * of effective*, but only one)
+     * The point in time or period over which the subject was assessed.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -187,8 +189,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The point in time or period over which the subject was assessed. (choose any one
-     * of effective*, but only one)
+     * The point in time or period over which the subject was assessed.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -641,6 +642,27 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
     }
 
     /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<ClinicalImpression{$xmlns}></ClinicalImpression>";
+    }
+
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
@@ -794,8 +816,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The point in time or period over which the subject was assessed. (choose any one
-     * of effective*, but only one)
+     * The point in time or period over which the subject was assessed.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -812,8 +833,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The point in time or period over which the subject was assessed. (choose any one
-     * of effective*, but only one)
+     * The point in time or period over which the subject was assessed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $effectiveDateTime
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRClinicalImpression
@@ -837,8 +857,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The point in time or period over which the subject was assessed. (choose any one
-     * of effective*, but only one)
+     * The point in time or period over which the subject was assessed.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -852,8 +871,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The point in time or period over which the subject was assessed. (choose any one
-     * of effective*, but only one)
+     * The point in time or period over which the subject was assessed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $effectivePeriod
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRClinicalImpression
@@ -1410,14 +1428,14 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
     public function addProtocol($protocol = null)
     {
         if (null === $protocol) {
-            $this->protocol = null;
+            $this->protocol = [];
             return $this;
         }
         if ($protocol instanceof FHIRUri) {
-            $this->protocol = $protocol;
+            $this->protocol[] = $protocol;
             return $this;
         }
-        $this->protocol = new FHIRUri($protocol);
+        $this->protocol[] = new FHIRUri($protocol);
         return $this;
     }
 
@@ -1635,16 +1653,17 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRClinicalImpression $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRClinicalImpression
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRClinicalImpression::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -1660,6 +1679,13 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
                 'FHIRClinicalImpression::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRClinicalImpression or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -1764,47 +1790,39 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<ClinicalImpression xmlns="http://hl7.org/fhir"></ClinicalImpression>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getAssessor())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ASSESSOR));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ASSESSOR, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getCode())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CODE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDate())) {
-            $sxe->addAttribute(self::FIELD_DATE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DATE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DATE, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDescription())) {
-            $sxe->addAttribute(self::FIELD_DESCRIPTION, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DESCRIPTION));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DESCRIPTION, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getEffectiveDateTime())) {
-            $sxe->addAttribute(self::FIELD_EFFECTIVE_DATE_TIME, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_EFFECTIVE_DATE_TIME));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EFFECTIVE_DATE_TIME, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getEffectivePeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EFFECTIVE_PERIOD));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EFFECTIVE_PERIOD, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getEncounter())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ENCOUNTER));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ENCOUNTER, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getFinding())) {
@@ -1812,7 +1830,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_FINDING));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_FINDING, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -1821,7 +1839,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -1830,7 +1848,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_INVESTIGATION));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_INVESTIGATION, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -1839,12 +1857,12 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_NOTE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_NOTE, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getPrevious())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PREVIOUS));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PREVIOUS, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getProblem())) {
@@ -1852,7 +1870,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PROBLEM));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_PROBLEM, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -1861,7 +1879,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PROGNOSIS_CODEABLE_CONCEPT));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_PROGNOSIS_CODEABLE_CONCEPT, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -1870,43 +1888,31 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PROGNOSIS_REFERENCE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_PROGNOSIS_REFERENCE, null, $v->getFHIRXMLNamespace()));
             }
         }
         if ([] !== ($vs = $this->getProtocol())) {
-            $first = true;
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                if ($first) {
-                    $sxe->addAttribute(self::FIELD_PROTOCOL, (string)$v);
-                    if (null !== $v->getId() || [] !== $v->getExtension()) {
-                        $v->xmlSerialize($sxe->addChild(self::FIELD_PROTOCOL));
-                    }
-                    $first = false;
-                } else {
-                    $v->xmlSerialize($sxe->addChild(self::FIELD_PROTOCOL));
-                }
+                $v->xmlSerialize($sxe->addChild(self::FIELD_PROTOCOL, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getStatus())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getStatusReason())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS_REASON));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS_REASON, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getSubject())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBJECT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBJECT, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getSummary())) {
-            $sxe->addAttribute(self::FIELD_SUMMARY, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SUMMARY));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SUMMARY, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getSupportingInfo())) {
@@ -1914,7 +1920,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SUPPORTING_INFO));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_SUPPORTING_INFO, null, $v->getFHIRXMLNamespace()));
             }
         }
         return $sxe;

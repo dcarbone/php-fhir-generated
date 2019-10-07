@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,6 +84,9 @@ class FHIRConformanceResource extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONFORMANCE_DOT_RESOURCE;
+
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CONDITIONAL_CREATE = 'conditionalCreate';
     const FIELD_CONDITIONAL_CREATE_EXT = '_conditionalCreate';
@@ -417,6 +420,27 @@ class FHIRConformanceResource extends FHIRBackboneElement
     }
 
     /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<ConformanceResource{$xmlns}></ConformanceResource>";
+    }
+
+
+    /**
      * Value of "true" or "false"
      * If the element is present, it must have either a @value, an @id, or extensions
      *
@@ -673,14 +697,14 @@ class FHIRConformanceResource extends FHIRBackboneElement
     public function addSearchInclude($searchInclude = null)
     {
         if (null === $searchInclude) {
-            $this->searchInclude = null;
+            $this->searchInclude = [];
             return $this;
         }
         if ($searchInclude instanceof FHIRString) {
-            $this->searchInclude = $searchInclude;
+            $this->searchInclude[] = $searchInclude;
             return $this;
         }
-        $this->searchInclude = new FHIRString($searchInclude);
+        $this->searchInclude[] = new FHIRString($searchInclude);
         return $this;
     }
 
@@ -799,14 +823,14 @@ class FHIRConformanceResource extends FHIRBackboneElement
     public function addSearchRevInclude($searchRevInclude = null)
     {
         if (null === $searchRevInclude) {
-            $this->searchRevInclude = null;
+            $this->searchRevInclude = [];
             return $this;
         }
         if ($searchRevInclude instanceof FHIRString) {
-            $this->searchRevInclude = $searchRevInclude;
+            $this->searchRevInclude[] = $searchRevInclude;
             return $this;
         }
-        $this->searchRevInclude = new FHIRString($searchRevInclude);
+        $this->searchRevInclude[] = new FHIRString($searchRevInclude);
         return $this;
     }
 
@@ -959,16 +983,17 @@ class FHIRConformanceResource extends FHIRBackboneElement
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRConformanceResource::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -984,6 +1009,13 @@ class FHIRConformanceResource extends FHIRBackboneElement
                 'FHIRConformanceResource::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -1057,29 +1089,24 @@ class FHIRConformanceResource extends FHIRBackboneElement
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<ConformanceResource xmlns="http://hl7.org/fhir"></ConformanceResource>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getConditionalCreate())) {
-            $sxe->addAttribute(self::FIELD_CONDITIONAL_CREATE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CONDITIONAL_CREATE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CONDITIONAL_CREATE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getConditionalDelete())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CONDITIONAL_DELETE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CONDITIONAL_DELETE, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getConditionalUpdate())) {
-            $sxe->addAttribute(self::FIELD_CONDITIONAL_UPDATE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CONDITIONAL_UPDATE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CONDITIONAL_UPDATE, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getInteraction())) {
@@ -1087,34 +1114,22 @@ class FHIRConformanceResource extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_INTERACTION));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_INTERACTION, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getProfile())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PROFILE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PROFILE, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getReadHistory())) {
-            $sxe->addAttribute(self::FIELD_READ_HISTORY, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_READ_HISTORY));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_READ_HISTORY, null, $v->getFHIRXMLNamespace()));
         }
         if ([] !== ($vs = $this->getSearchInclude())) {
-            $first = true;
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                if ($first) {
-                    $sxe->addAttribute(self::FIELD_SEARCH_INCLUDE, (string)$v);
-                    if (null !== $v->getId() || [] !== $v->getExtension()) {
-                        $v->xmlSerialize($sxe->addChild(self::FIELD_SEARCH_INCLUDE));
-                    }
-                    $first = false;
-                } else {
-                    $v->xmlSerialize($sxe->addChild(self::FIELD_SEARCH_INCLUDE));
-                }
+                $v->xmlSerialize($sxe->addChild(self::FIELD_SEARCH_INCLUDE, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -1123,41 +1138,26 @@ class FHIRConformanceResource extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SEARCH_PARAM));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_SEARCH_PARAM, null, $v->getFHIRXMLNamespace()));
             }
         }
         if ([] !== ($vs = $this->getSearchRevInclude())) {
-            $first = true;
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                if ($first) {
-                    $sxe->addAttribute(self::FIELD_SEARCH_REV_INCLUDE, (string)$v);
-                    if (null !== $v->getId() || [] !== $v->getExtension()) {
-                        $v->xmlSerialize($sxe->addChild(self::FIELD_SEARCH_REV_INCLUDE));
-                    }
-                    $first = false;
-                } else {
-                    $v->xmlSerialize($sxe->addChild(self::FIELD_SEARCH_REV_INCLUDE));
-                }
+                $v->xmlSerialize($sxe->addChild(self::FIELD_SEARCH_REV_INCLUDE, null, $v->getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getType())) {
-            $sxe->addAttribute(self::FIELD_TYPE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getUpdateCreate())) {
-            $sxe->addAttribute(self::FIELD_UPDATE_CREATE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_UPDATE_CREATE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_UPDATE_CREATE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getVersioning())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VERSIONING));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VERSIONING, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

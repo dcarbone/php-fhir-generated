@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,6 +88,9 @@ class FHIRSequence extends FHIRDomainResource implements PHPFHIRContainedTypeInt
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SEQUENCE;
+
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_COORDINATE_SYSTEM = 'coordinateSystem';
     const FIELD_COORDINATE_SYSTEM_EXT = '_coordinateSystem';
@@ -459,6 +462,27 @@ class FHIRSequence extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     {
         return self::FHIR_TYPE_NAME;
     }
+
+    /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<Sequence{$xmlns}></Sequence>";
+    }
+
 
     /**
      * A whole number
@@ -1095,16 +1119,17 @@ class FHIRSequence extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRSequence $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRSequence
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRSequence::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -1120,6 +1145,13 @@ class FHIRSequence extends FHIRDomainResource implements PHPFHIRContainedTypeInt
                 'FHIRSequence::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRSequence or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -1195,23 +1227,21 @@ class FHIRSequence extends FHIRDomainResource implements PHPFHIRContainedTypeInt
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<Sequence xmlns="http://hl7.org/fhir"></Sequence>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getCoordinateSystem())) {
-            $sxe->addAttribute(self::FIELD_COORDINATE_SYSTEM, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_COORDINATE_SYSTEM));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_COORDINATE_SYSTEM, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDevice())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEVICE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEVICE, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getIdentifier())) {
@@ -1219,22 +1249,19 @@ class FHIRSequence extends FHIRDomainResource implements PHPFHIRContainedTypeInt
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getObservedSeq())) {
-            $sxe->addAttribute(self::FIELD_OBSERVED_SEQ, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_OBSERVED_SEQ));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_OBSERVED_SEQ, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getPatient())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATIENT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PATIENT, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getPerformer())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PERFORMER));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PERFORMER, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getPointer())) {
@@ -1242,7 +1269,7 @@ class FHIRSequence extends FHIRDomainResource implements PHPFHIRContainedTypeInt
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_POINTER));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_POINTER, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -1251,22 +1278,19 @@ class FHIRSequence extends FHIRDomainResource implements PHPFHIRContainedTypeInt
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_QUALITY));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_QUALITY, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getReadCoverage())) {
-            $sxe->addAttribute(self::FIELD_READ_COVERAGE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_READ_COVERAGE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_READ_COVERAGE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getReferenceSeq())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REFERENCE_SEQ));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_REFERENCE_SEQ, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getRepository())) {
@@ -1274,18 +1298,15 @@ class FHIRSequence extends FHIRDomainResource implements PHPFHIRContainedTypeInt
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_REPOSITORY));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_REPOSITORY, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getSpecimen())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SPECIMEN));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SPECIMEN, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getType())) {
-            $sxe->addAttribute(self::FIELD_TYPE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getVariant())) {
@@ -1293,7 +1314,7 @@ class FHIRSequence extends FHIRDomainResource implements PHPFHIRContainedTypeInt
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_VARIANT));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_VARIANT, null, $v->getFHIRXMLNamespace()));
             }
         }
         return $sxe;

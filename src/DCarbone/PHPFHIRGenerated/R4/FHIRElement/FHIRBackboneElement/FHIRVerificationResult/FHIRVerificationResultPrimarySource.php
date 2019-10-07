@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVerif
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,6 +80,9 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_VERIFICATION_RESULT_DOT_PRIMARY_SOURCE;
+
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CAN_PUSH_UPDATES = 'canPushUpdates';
     const FIELD_COMMUNICATION_METHOD = 'communicationMethod';
@@ -276,6 +279,27 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
     {
         return self::FHIR_TYPE_NAME;
     }
+
+    /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<VerificationResultPrimarySource{$xmlns}></VerificationResultPrimarySource>";
+    }
+
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -606,16 +630,17 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultPrimarySource $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultPrimarySource
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRVerificationResultPrimarySource::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -631,6 +656,13 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
                 'FHIRVerificationResultPrimarySource::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultPrimarySource or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -669,17 +701,18 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<VerificationResultPrimarySource xmlns="http://hl7.org/fhir"></VerificationResultPrimarySource>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getCanPushUpdates())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CAN_PUSH_UPDATES));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CAN_PUSH_UPDATES, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getCommunicationMethod())) {
@@ -687,7 +720,7 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_COMMUNICATION_METHOD));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_COMMUNICATION_METHOD, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -696,7 +729,7 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PUSH_TYPE_AVAILABLE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_PUSH_TYPE_AVAILABLE, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -705,22 +738,19 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getValidationDate())) {
-            $sxe->addAttribute(self::FIELD_VALIDATION_DATE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_VALIDATION_DATE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALIDATION_DATE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getValidationStatus())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALIDATION_STATUS));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALIDATION_STATUS, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getWho())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_WHO));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_WHO, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,6 +78,9 @@ class FHIRTriggerDefinition extends FHIRElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_TRIGGER_DEFINITION;
+
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_EVENT_DATA = 'eventData';
     const FIELD_EVENT_NAME = 'eventName';
@@ -258,6 +261,27 @@ class FHIRTriggerDefinition extends FHIRElement
     {
         return self::FHIR_TYPE_NAME;
     }
+
+    /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<TriggerDefinition{$xmlns}></TriggerDefinition>";
+    }
+
 
     /**
      * Describes a required data item for evaluation in terms of the type of data, and
@@ -512,16 +536,17 @@ class FHIRTriggerDefinition extends FHIRElement
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTriggerDefinition $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTriggerDefinition
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRTriggerDefinition::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -537,6 +562,13 @@ class FHIRTriggerDefinition extends FHIRElement
                 'FHIRTriggerDefinition::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTriggerDefinition or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -575,47 +607,39 @@ class FHIRTriggerDefinition extends FHIRElement
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<TriggerDefinition xmlns="http://hl7.org/fhir"></TriggerDefinition>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getEventData())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EVENT_DATA));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EVENT_DATA, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getEventName())) {
-            $sxe->addAttribute(self::FIELD_EVENT_NAME, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_EVENT_NAME));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EVENT_NAME, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getEventTimingDate())) {
-            $sxe->addAttribute(self::FIELD_EVENT_TIMING_DATE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_EVENT_TIMING_DATE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EVENT_TIMING_DATE, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getEventTimingDateTime())) {
-            $sxe->addAttribute(self::FIELD_EVENT_TIMING_DATE_TIME, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_EVENT_TIMING_DATE_TIME));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EVENT_TIMING_DATE_TIME, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getEventTimingReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EVENT_TIMING_REFERENCE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EVENT_TIMING_REFERENCE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getEventTimingTiming())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EVENT_TIMING_TIMING));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EVENT_TIMING_TIMING, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

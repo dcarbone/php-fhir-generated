@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,6 +87,9 @@ class FHIRClaimItem extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CLAIM_DOT_ITEM;
+
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_BODY_SITE = 'bodySite';
     const FIELD_CARE_TEAM_SEQUENCE = 'careTeamSequence';
@@ -218,8 +221,7 @@ class FHIRClaimItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided. (choose any one of location*, but
-     * only one)
+     * Where the product or service was provided.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddress
      */
@@ -230,8 +232,7 @@ class FHIRClaimItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided. (choose any one of location*, but
-     * only one)
+     * Where the product or service was provided.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -241,8 +242,7 @@ class FHIRClaimItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided. (choose any one of location*, but
-     * only one)
+     * Where the product or service was provided.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -344,7 +344,7 @@ class FHIRClaimItem extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The date or dates when the service or product was supplied, performed or
-     * completed. (choose any one of serviced*, but only one)
+     * completed.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
@@ -355,7 +355,7 @@ class FHIRClaimItem extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The date or dates when the service or product was supplied, performed or
-     * completed. (choose any one of serviced*, but only one)
+     * completed.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -711,6 +711,27 @@ class FHIRClaimItem extends FHIRBackboneElement
     }
 
     /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<ClaimItem{$xmlns}></ClaimItem>";
+    }
+
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -769,14 +790,14 @@ class FHIRClaimItem extends FHIRBackboneElement
     public function addCareTeamSequence($careTeamSequence = null)
     {
         if (null === $careTeamSequence) {
-            $this->careTeamSequence = null;
+            $this->careTeamSequence = [];
             return $this;
         }
         if ($careTeamSequence instanceof FHIRPositiveInt) {
-            $this->careTeamSequence = $careTeamSequence;
+            $this->careTeamSequence[] = $careTeamSequence;
             return $this;
         }
-        $this->careTeamSequence = new FHIRPositiveInt($careTeamSequence);
+        $this->careTeamSequence[] = new FHIRPositiveInt($careTeamSequence);
         return $this;
     }
 
@@ -926,14 +947,14 @@ class FHIRClaimItem extends FHIRBackboneElement
     public function addDiagnosisSequence($diagnosisSequence = null)
     {
         if (null === $diagnosisSequence) {
-            $this->diagnosisSequence = null;
+            $this->diagnosisSequence = [];
             return $this;
         }
         if ($diagnosisSequence instanceof FHIRPositiveInt) {
-            $this->diagnosisSequence = $diagnosisSequence;
+            $this->diagnosisSequence[] = $diagnosisSequence;
             return $this;
         }
-        $this->diagnosisSequence = new FHIRPositiveInt($diagnosisSequence);
+        $this->diagnosisSequence[] = new FHIRPositiveInt($diagnosisSequence);
         return $this;
     }
 
@@ -1095,14 +1116,14 @@ class FHIRClaimItem extends FHIRBackboneElement
     public function addInformationSequence($informationSequence = null)
     {
         if (null === $informationSequence) {
-            $this->informationSequence = null;
+            $this->informationSequence = [];
             return $this;
         }
         if ($informationSequence instanceof FHIRPositiveInt) {
-            $this->informationSequence = $informationSequence;
+            $this->informationSequence[] = $informationSequence;
             return $this;
         }
-        $this->informationSequence = new FHIRPositiveInt($informationSequence);
+        $this->informationSequence[] = new FHIRPositiveInt($informationSequence);
         return $this;
     }
 
@@ -1142,8 +1163,7 @@ class FHIRClaimItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided. (choose any one of location*, but
-     * only one)
+     * Where the product or service was provided.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddress
      */
@@ -1161,8 +1181,7 @@ class FHIRClaimItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided. (choose any one of location*, but
-     * only one)
+     * Where the product or service was provided.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddress $locationAddress
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimItem
@@ -1179,8 +1198,7 @@ class FHIRClaimItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided. (choose any one of location*, but
-     * only one)
+     * Where the product or service was provided.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -1195,8 +1213,7 @@ class FHIRClaimItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided. (choose any one of location*, but
-     * only one)
+     * Where the product or service was provided.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $locationCodeableConcept
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimItem
@@ -1212,8 +1229,7 @@ class FHIRClaimItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided. (choose any one of location*, but
-     * only one)
+     * Where the product or service was provided.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -1227,8 +1243,7 @@ class FHIRClaimItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided. (choose any one of location*, but
-     * only one)
+     * Where the product or service was provided.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $locationReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimItem
@@ -1360,14 +1375,14 @@ class FHIRClaimItem extends FHIRBackboneElement
     public function addProcedureSequence($procedureSequence = null)
     {
         if (null === $procedureSequence) {
-            $this->procedureSequence = null;
+            $this->procedureSequence = [];
             return $this;
         }
         if ($procedureSequence instanceof FHIRPositiveInt) {
-            $this->procedureSequence = $procedureSequence;
+            $this->procedureSequence[] = $procedureSequence;
             return $this;
         }
-        $this->procedureSequence = new FHIRPositiveInt($procedureSequence);
+        $this->procedureSequence[] = new FHIRPositiveInt($procedureSequence);
         return $this;
     }
 
@@ -1603,7 +1618,7 @@ class FHIRClaimItem extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The date or dates when the service or product was supplied, performed or
-     * completed. (choose any one of serviced*, but only one)
+     * completed.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
@@ -1619,7 +1634,7 @@ class FHIRClaimItem extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The date or dates when the service or product was supplied, performed or
-     * completed. (choose any one of serviced*, but only one)
+     * completed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate $servicedDate
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimItem
@@ -1644,7 +1659,7 @@ class FHIRClaimItem extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The date or dates when the service or product was supplied, performed or
-     * completed. (choose any one of serviced*, but only one)
+     * completed.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -1659,7 +1674,7 @@ class FHIRClaimItem extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The date or dates when the service or product was supplied, performed or
-     * completed. (choose any one of serviced*, but only one)
+     * completed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $servicedPeriod
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimItem
@@ -1820,16 +1835,17 @@ class FHIRClaimItem extends FHIRBackboneElement
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimItem $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimItem
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRClaimItem::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -1845,6 +1861,13 @@ class FHIRClaimItem extends FHIRBackboneElement
                 'FHIRClaimItem::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimItem or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -1966,38 +1989,30 @@ class FHIRClaimItem extends FHIRBackboneElement
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<ClaimItem xmlns="http://hl7.org/fhir"></ClaimItem>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getBodySite())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_BODY_SITE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_BODY_SITE, null, $v->getFHIRXMLNamespace()));
         }
         if ([] !== ($vs = $this->getCareTeamSequence())) {
-            $first = true;
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                if ($first) {
-                    $sxe->addAttribute(self::FIELD_CARE_TEAM_SEQUENCE, (string)$v);
-                    if (null !== $v->getId() || [] !== $v->getExtension()) {
-                        $v->xmlSerialize($sxe->addChild(self::FIELD_CARE_TEAM_SEQUENCE));
-                    }
-                    $first = false;
-                } else {
-                    $v->xmlSerialize($sxe->addChild(self::FIELD_CARE_TEAM_SEQUENCE));
-                }
+                $v->xmlSerialize($sxe->addChild(self::FIELD_CARE_TEAM_SEQUENCE, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getCategory())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CATEGORY));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CATEGORY, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getDetail())) {
@@ -2005,24 +2020,15 @@ class FHIRClaimItem extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DETAIL));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_DETAIL, null, $v->getFHIRXMLNamespace()));
             }
         }
         if ([] !== ($vs = $this->getDiagnosisSequence())) {
-            $first = true;
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                if ($first) {
-                    $sxe->addAttribute(self::FIELD_DIAGNOSIS_SEQUENCE, (string)$v);
-                    if (null !== $v->getId() || [] !== $v->getExtension()) {
-                        $v->xmlSerialize($sxe->addChild(self::FIELD_DIAGNOSIS_SEQUENCE));
-                    }
-                    $first = false;
-                } else {
-                    $v->xmlSerialize($sxe->addChild(self::FIELD_DIAGNOSIS_SEQUENCE));
-                }
+                $v->xmlSerialize($sxe->addChild(self::FIELD_DIAGNOSIS_SEQUENCE, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -2031,43 +2037,31 @@ class FHIRClaimItem extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ENCOUNTER));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_ENCOUNTER, null, $v->getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getFactor())) {
-            $sxe->addAttribute(self::FIELD_FACTOR, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_FACTOR));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FACTOR, null, $v->getFHIRXMLNamespace()));
         }
         if ([] !== ($vs = $this->getInformationSequence())) {
-            $first = true;
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                if ($first) {
-                    $sxe->addAttribute(self::FIELD_INFORMATION_SEQUENCE, (string)$v);
-                    if (null !== $v->getId() || [] !== $v->getExtension()) {
-                        $v->xmlSerialize($sxe->addChild(self::FIELD_INFORMATION_SEQUENCE));
-                    }
-                    $first = false;
-                } else {
-                    $v->xmlSerialize($sxe->addChild(self::FIELD_INFORMATION_SEQUENCE));
-                }
+                $v->xmlSerialize($sxe->addChild(self::FIELD_INFORMATION_SEQUENCE, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getLocationAddress())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_LOCATION_ADDRESS));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_LOCATION_ADDRESS, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getLocationCodeableConcept())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_LOCATION_CODEABLE_CONCEPT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_LOCATION_CODEABLE_CONCEPT, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getLocationReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_LOCATION_REFERENCE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_LOCATION_REFERENCE, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getModifier())) {
@@ -2075,33 +2069,24 @@ class FHIRClaimItem extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_MODIFIER));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_MODIFIER, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getNet())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_NET));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_NET, null, $v->getFHIRXMLNamespace()));
         }
         if ([] !== ($vs = $this->getProcedureSequence())) {
-            $first = true;
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                if ($first) {
-                    $sxe->addAttribute(self::FIELD_PROCEDURE_SEQUENCE, (string)$v);
-                    if (null !== $v->getId() || [] !== $v->getExtension()) {
-                        $v->xmlSerialize($sxe->addChild(self::FIELD_PROCEDURE_SEQUENCE));
-                    }
-                    $first = false;
-                } else {
-                    $v->xmlSerialize($sxe->addChild(self::FIELD_PROCEDURE_SEQUENCE));
-                }
+                $v->xmlSerialize($sxe->addChild(self::FIELD_PROCEDURE_SEQUENCE, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getProductOrService())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PRODUCT_OR_SERVICE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PRODUCT_OR_SERVICE, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getProgramCode())) {
@@ -2109,32 +2094,26 @@ class FHIRClaimItem extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PROGRAM_CODE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_PROGRAM_CODE, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getRevenue())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REVENUE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_REVENUE, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getSequence())) {
-            $sxe->addAttribute(self::FIELD_SEQUENCE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SEQUENCE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SEQUENCE, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getServicedDate())) {
-            $sxe->addAttribute(self::FIELD_SERVICED_DATE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SERVICED_DATE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SERVICED_DATE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getServicedPeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SERVICED_PERIOD));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SERVICED_PERIOD, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getSubSite())) {
@@ -2142,7 +2121,7 @@ class FHIRClaimItem extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SUB_SITE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_SUB_SITE, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -2151,12 +2130,12 @@ class FHIRClaimItem extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_UDI));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_UDI, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getUnitPrice())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_UNIT_PRICE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_UNIT_PRICE, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

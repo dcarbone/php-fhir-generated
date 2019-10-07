@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,6 +82,9 @@ class FHIRDataRequirement extends FHIRElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_DATA_REQUIREMENT;
+
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CODE_FILTER = 'codeFilter';
     const FIELD_DATE_FILTER = 'dateFilter';
@@ -181,7 +184,7 @@ class FHIRDataRequirement extends FHIRElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The intended subjects of the data requirement. If this element is not provided,
-     * a Patient subject is assumed. (choose any one of subject*, but only one)
+     * a Patient subject is assumed.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -192,7 +195,7 @@ class FHIRDataRequirement extends FHIRElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The intended subjects of the data requirement. If this element is not provided,
-     * a Patient subject is assumed. (choose any one of subject*, but only one)
+     * a Patient subject is assumed.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -362,6 +365,27 @@ class FHIRDataRequirement extends FHIRElement
     {
         return self::FHIR_TYPE_NAME;
     }
+
+    /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<DataRequirement{$xmlns}></DataRequirement>";
+    }
+
 
     /**
      * Describes a required data item for evaluation in terms of the type of data, and
@@ -574,14 +598,14 @@ class FHIRDataRequirement extends FHIRElement
     public function addMustSupport($mustSupport = null)
     {
         if (null === $mustSupport) {
-            $this->mustSupport = null;
+            $this->mustSupport = [];
             return $this;
         }
         if ($mustSupport instanceof FHIRString) {
-            $this->mustSupport = $mustSupport;
+            $this->mustSupport[] = $mustSupport;
             return $this;
         }
-        $this->mustSupport = new FHIRString($mustSupport);
+        $this->mustSupport[] = new FHIRString($mustSupport);
         return $this;
     }
 
@@ -649,14 +673,14 @@ class FHIRDataRequirement extends FHIRElement
     public function addProfile($profile = null)
     {
         if (null === $profile) {
-            $this->profile = null;
+            $this->profile = [];
             return $this;
         }
         if ($profile instanceof FHIRCanonical) {
-            $this->profile = $profile;
+            $this->profile[] = $profile;
             return $this;
         }
-        $this->profile = new FHIRCanonical($profile);
+        $this->profile[] = new FHIRCanonical($profile);
         return $this;
     }
 
@@ -754,7 +778,7 @@ class FHIRDataRequirement extends FHIRElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The intended subjects of the data requirement. If this element is not provided,
-     * a Patient subject is assumed. (choose any one of subject*, but only one)
+     * a Patient subject is assumed.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -770,7 +794,7 @@ class FHIRDataRequirement extends FHIRElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The intended subjects of the data requirement. If this element is not provided,
-     * a Patient subject is assumed. (choose any one of subject*, but only one)
+     * a Patient subject is assumed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $subjectCodeableConcept
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement
@@ -787,7 +811,7 @@ class FHIRDataRequirement extends FHIRElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The intended subjects of the data requirement. If this element is not provided,
-     * a Patient subject is assumed. (choose any one of subject*, but only one)
+     * a Patient subject is assumed.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -802,7 +826,7 @@ class FHIRDataRequirement extends FHIRElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The intended subjects of the data requirement. If this element is not provided,
-     * a Patient subject is assumed. (choose any one of subject*, but only one)
+     * a Patient subject is assumed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $subjectReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement
@@ -858,16 +882,17 @@ class FHIRDataRequirement extends FHIRElement
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRDataRequirement::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -883,6 +908,13 @@ class FHIRDataRequirement extends FHIRElement
                 'FHIRDataRequirement::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -940,12 +972,13 @@ class FHIRDataRequirement extends FHIRElement
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<DataRequirement xmlns="http://hl7.org/fhir"></DataRequirement>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
@@ -954,7 +987,7 @@ class FHIRDataRequirement extends FHIRElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CODE_FILTER));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_CODE_FILTER, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -963,47 +996,26 @@ class FHIRDataRequirement extends FHIRElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DATE_FILTER));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_DATE_FILTER, null, $v->getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getLimit())) {
-            $sxe->addAttribute(self::FIELD_LIMIT, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_LIMIT));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_LIMIT, null, $v->getFHIRXMLNamespace()));
         }
         if ([] !== ($vs = $this->getMustSupport())) {
-            $first = true;
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                if ($first) {
-                    $sxe->addAttribute(self::FIELD_MUST_SUPPORT, (string)$v);
-                    if (null !== $v->getId() || [] !== $v->getExtension()) {
-                        $v->xmlSerialize($sxe->addChild(self::FIELD_MUST_SUPPORT));
-                    }
-                    $first = false;
-                } else {
-                    $v->xmlSerialize($sxe->addChild(self::FIELD_MUST_SUPPORT));
-                }
+                $v->xmlSerialize($sxe->addChild(self::FIELD_MUST_SUPPORT, null, $v->getFHIRXMLNamespace()));
             }
         }
         if ([] !== ($vs = $this->getProfile())) {
-            $first = true;
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                if ($first) {
-                    $sxe->addAttribute(self::FIELD_PROFILE, (string)$v);
-                    if (null !== $v->getId() || [] !== $v->getExtension()) {
-                        $v->xmlSerialize($sxe->addChild(self::FIELD_PROFILE));
-                    }
-                    $first = false;
-                } else {
-                    $v->xmlSerialize($sxe->addChild(self::FIELD_PROFILE));
-                }
+                $v->xmlSerialize($sxe->addChild(self::FIELD_PROFILE, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -1012,22 +1024,19 @@ class FHIRDataRequirement extends FHIRElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SORT));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_SORT, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getSubjectCodeableConcept())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBJECT_CODEABLE_CONCEPT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBJECT_CODEABLE_CONCEPT, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getSubjectReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBJECT_REFERENCE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBJECT_REFERENCE, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getType())) {
-            $sxe->addAttribute(self::FIELD_TYPE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

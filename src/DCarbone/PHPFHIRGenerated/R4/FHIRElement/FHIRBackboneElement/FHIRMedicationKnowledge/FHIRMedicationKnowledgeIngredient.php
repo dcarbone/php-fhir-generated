@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,6 +81,9 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICATION_KNOWLEDGE_DOT_INGREDIENT;
 
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
+
     const FIELD_IS_ACTIVE = 'isActive';
     const FIELD_IS_ACTIVE_EXT = '_isActive';
     const FIELD_ITEM_CODEABLE_CONCEPT = 'itemCodeableConcept';
@@ -104,7 +107,7 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The actual ingredient - either a substance (simple ingredient) or another
-     * medication. (choose any one of item*, but only one)
+     * medication.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -115,7 +118,7 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The actual ingredient - either a substance (simple ingredient) or another
-     * medication. (choose any one of item*, but only one)
+     * medication.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -194,6 +197,27 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
     }
 
     /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<MedicationKnowledgeIngredient{$xmlns}></MedicationKnowledgeIngredient>";
+    }
+
+
+    /**
      * Value of "true" or "false"
      * If the element is present, it must have either a @value, an @id, or extensions
      *
@@ -238,7 +262,7 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The actual ingredient - either a substance (simple ingredient) or another
-     * medication. (choose any one of item*, but only one)
+     * medication.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -254,7 +278,7 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The actual ingredient - either a substance (simple ingredient) or another
-     * medication. (choose any one of item*, but only one)
+     * medication.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $itemCodeableConcept
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeIngredient
@@ -271,7 +295,7 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The actual ingredient - either a substance (simple ingredient) or another
-     * medication. (choose any one of item*, but only one)
+     * medication.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -286,7 +310,7 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The actual ingredient - either a substance (simple ingredient) or another
-     * medication. (choose any one of item*, but only one)
+     * medication.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $itemReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeIngredient
@@ -336,16 +360,17 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeIngredient $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeIngredient
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRMedicationKnowledgeIngredient::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -361,6 +386,13 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
                 'FHIRMedicationKnowledgeIngredient::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeIngredient or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -384,31 +416,29 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<MedicationKnowledgeIngredient xmlns="http://hl7.org/fhir"></MedicationKnowledgeIngredient>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getIsActive())) {
-            $sxe->addAttribute(self::FIELD_IS_ACTIVE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_IS_ACTIVE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_IS_ACTIVE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getItemCodeableConcept())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ITEM_CODEABLE_CONCEPT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ITEM_CODEABLE_CONCEPT, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getItemReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ITEM_REFERENCE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ITEM_REFERENCE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getStrength())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_STRENGTH));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_STRENGTH, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

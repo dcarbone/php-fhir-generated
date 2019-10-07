@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRFamil
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,6 +85,9 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_FAMILY_MEMBER_HISTORY_DOT_CONDITION;
 
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
+
     const FIELD_CODE = 'code';
     const FIELD_CONTRIBUTED_TO_DEATH = 'contributedToDeath';
     const FIELD_CONTRIBUTED_TO_DEATH_EXT = '_contributedToDeath';
@@ -137,7 +140,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
      *
      * Either the age of onset, range of approximate age or descriptive string can be
      * recorded. For conditions with multiple occurrences, this describes the first
-     * known occurrence. (choose any one of onset*, but only one)
+     * known occurrence.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
@@ -149,7 +152,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
      *
      * Either the age of onset, range of approximate age or descriptive string can be
      * recorded. For conditions with multiple occurrences, this describes the first
-     * known occurrence. (choose any one of onset*, but only one)
+     * known occurrence.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -161,7 +164,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
      *
      * Either the age of onset, range of approximate age or descriptive string can be
      * recorded. For conditions with multiple occurrences, this describes the first
-     * known occurrence. (choose any one of onset*, but only one)
+     * known occurrence.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -173,7 +176,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
      *
      * Either the age of onset, range of approximate age or descriptive string can be
      * recorded. For conditions with multiple occurrences, this describes the first
-     * known occurrence. (choose any one of onset*, but only one)
+     * known occurrence.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -290,6 +293,27 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
     {
         return self::FHIR_TYPE_NAME;
     }
+
+    /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<FamilyMemberHistoryCondition{$xmlns}></FamilyMemberHistoryCondition>";
+    }
+
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -431,7 +455,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
      *
      * Either the age of onset, range of approximate age or descriptive string can be
      * recorded. For conditions with multiple occurrences, this describes the first
-     * known occurrence. (choose any one of onset*, but only one)
+     * known occurrence.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
@@ -447,7 +471,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
      *
      * Either the age of onset, range of approximate age or descriptive string can be
      * recorded. For conditions with multiple occurrences, this describes the first
-     * known occurrence. (choose any one of onset*, but only one)
+     * known occurrence.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge $onsetAge
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryCondition
@@ -465,7 +489,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
      *
      * Either the age of onset, range of approximate age or descriptive string can be
      * recorded. For conditions with multiple occurrences, this describes the first
-     * known occurrence. (choose any one of onset*, but only one)
+     * known occurrence.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -481,7 +505,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
      *
      * Either the age of onset, range of approximate age or descriptive string can be
      * recorded. For conditions with multiple occurrences, this describes the first
-     * known occurrence. (choose any one of onset*, but only one)
+     * known occurrence.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $onsetPeriod
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryCondition
@@ -499,7 +523,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
      *
      * Either the age of onset, range of approximate age or descriptive string can be
      * recorded. For conditions with multiple occurrences, this describes the first
-     * known occurrence. (choose any one of onset*, but only one)
+     * known occurrence.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -515,7 +539,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
      *
      * Either the age of onset, range of approximate age or descriptive string can be
      * recorded. For conditions with multiple occurrences, this describes the first
-     * known occurrence. (choose any one of onset*, but only one)
+     * known occurrence.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange $onsetRange
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryCondition
@@ -533,7 +557,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
      *
      * Either the age of onset, range of approximate age or descriptive string can be
      * recorded. For conditions with multiple occurrences, this describes the first
-     * known occurrence. (choose any one of onset*, but only one)
+     * known occurrence.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -549,7 +573,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
      *
      * Either the age of onset, range of approximate age or descriptive string can be
      * recorded. For conditions with multiple occurrences, this describes the first
-     * known occurrence. (choose any one of onset*, but only one)
+     * known occurrence.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $onsetString
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryCondition
@@ -605,16 +629,17 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryCondition $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryCondition
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRFamilyMemberHistoryCondition::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -630,6 +655,13 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
                 'FHIRFamilyMemberHistoryCondition::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryCondition or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -670,23 +702,21 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<FamilyMemberHistoryCondition xmlns="http://hl7.org/fhir"></FamilyMemberHistoryCondition>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getCode())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CODE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getContributedToDeath())) {
-            $sxe->addAttribute(self::FIELD_CONTRIBUTED_TO_DEATH, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CONTRIBUTED_TO_DEATH));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CONTRIBUTED_TO_DEATH, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getNote())) {
@@ -694,30 +724,27 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_NOTE));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_NOTE, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getOnsetAge())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ONSET_AGE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ONSET_AGE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getOnsetPeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ONSET_PERIOD));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ONSET_PERIOD, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getOnsetRange())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ONSET_RANGE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ONSET_RANGE, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getOnsetString())) {
-            $sxe->addAttribute(self::FIELD_ONSET_STRING, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ONSET_STRING));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ONSET_STRING, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getOutcome())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_OUTCOME));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_OUTCOME, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

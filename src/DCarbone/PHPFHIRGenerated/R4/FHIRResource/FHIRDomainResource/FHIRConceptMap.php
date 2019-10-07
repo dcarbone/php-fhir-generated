@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -92,6 +92,9 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONCEPT_MAP;
+
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CONTACT = 'contact';
     const FIELD_COPYRIGHT = 'copyright';
@@ -275,8 +278,7 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * the Narrative, or extensions
      *
      * Identifier for the source value set that contains the concepts that are being
-     * mapped and provides context for the mappings. (choose any one of source*, but
-     * only one)
+     * mapped and provides context for the mappings.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
@@ -287,8 +289,7 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * Identifier for the source value set that contains the concepts that are being
-     * mapped and provides context for the mappings. (choose any one of source*, but
-     * only one)
+     * mapped and provides context for the mappings.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
@@ -309,8 +310,7 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * The target value set provides context for the mappings. Note that the mapping is
      * made between concepts, not between value sets, but the value set provides
-     * important context about how the concept mapping choices are made. (choose any
-     * one of target*, but only one)
+     * important context about how the concept mapping choices are made.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
@@ -322,8 +322,7 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * The target value set provides context for the mappings. Note that the mapping is
      * made between concepts, not between value sets, but the value set provides
-     * important context about how the concept mapping choices are made. (choose any
-     * one of target*, but only one)
+     * important context about how the concept mapping choices are made.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
@@ -653,6 +652,27 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
     {
         return self::FHIR_TYPE_NAME;
     }
+
+    /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<ConceptMap{$xmlns}></ConceptMap>";
+    }
+
 
     /**
      * Specifies contact information for a person or organization.
@@ -1187,8 +1207,7 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * the Narrative, or extensions
      *
      * Identifier for the source value set that contains the concepts that are being
-     * mapped and provides context for the mappings. (choose any one of source*, but
-     * only one)
+     * mapped and provides context for the mappings.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
@@ -1204,8 +1223,7 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * the Narrative, or extensions
      *
      * Identifier for the source value set that contains the concepts that are being
-     * mapped and provides context for the mappings. (choose any one of source*, but
-     * only one)
+     * mapped and provides context for the mappings.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical $sourceCanonical
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRConceptMap
@@ -1230,8 +1248,7 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * Identifier for the source value set that contains the concepts that are being
-     * mapped and provides context for the mappings. (choose any one of source*, but
-     * only one)
+     * mapped and provides context for the mappings.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
@@ -1246,8 +1263,7 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * Identifier for the source value set that contains the concepts that are being
-     * mapped and provides context for the mappings. (choose any one of source*, but
-     * only one)
+     * mapped and provides context for the mappings.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri $sourceUri
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRConceptMap
@@ -1300,8 +1316,7 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * The target value set provides context for the mappings. Note that the mapping is
      * made between concepts, not between value sets, but the value set provides
-     * important context about how the concept mapping choices are made. (choose any
-     * one of target*, but only one)
+     * important context about how the concept mapping choices are made.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
@@ -1318,8 +1333,7 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * The target value set provides context for the mappings. Note that the mapping is
      * made between concepts, not between value sets, but the value set provides
-     * important context about how the concept mapping choices are made. (choose any
-     * one of target*, but only one)
+     * important context about how the concept mapping choices are made.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical $targetCanonical
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRConceptMap
@@ -1345,8 +1359,7 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * The target value set provides context for the mappings. Note that the mapping is
      * made between concepts, not between value sets, but the value set provides
-     * important context about how the concept mapping choices are made. (choose any
-     * one of target*, but only one)
+     * important context about how the concept mapping choices are made.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
@@ -1362,8 +1375,7 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * The target value set provides context for the mappings. Note that the mapping is
      * made between concepts, not between value sets, but the value set provides
-     * important context about how the concept mapping choices are made. (choose any
-     * one of target*, but only one)
+     * important context about how the concept mapping choices are made.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri $targetUri
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRConceptMap
@@ -1596,16 +1608,17 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRConceptMap $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRConceptMap
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRConceptMap::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -1621,6 +1634,13 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
                 'FHIRConceptMap::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRConceptMap or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -1739,12 +1759,13 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<ConceptMap xmlns="http://hl7.org/fhir"></ConceptMap>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
@@ -1753,32 +1774,20 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CONTACT));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_CONTACT, null, $v->getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getCopyright())) {
-            $sxe->addAttribute(self::FIELD_COPYRIGHT, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_COPYRIGHT));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_COPYRIGHT, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDate())) {
-            $sxe->addAttribute(self::FIELD_DATE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DATE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DATE, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDescription())) {
-            $sxe->addAttribute(self::FIELD_DESCRIPTION, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DESCRIPTION));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DESCRIPTION, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getExperimental())) {
-            $sxe->addAttribute(self::FIELD_EXPERIMENTAL, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_EXPERIMENTAL));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EXPERIMENTAL, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getGroup())) {
@@ -1786,12 +1795,12 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_GROUP));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_GROUP, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getIdentifier())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getJurisdiction())) {
@@ -1799,66 +1808,39 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_JURISDICTION));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_JURISDICTION, null, $v->getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getName())) {
-            $sxe->addAttribute(self::FIELD_NAME, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_NAME));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_NAME, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getPublisher())) {
-            $sxe->addAttribute(self::FIELD_PUBLISHER, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PUBLISHER));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PUBLISHER, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getPurpose())) {
-            $sxe->addAttribute(self::FIELD_PURPOSE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PURPOSE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PURPOSE, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getSourceCanonical())) {
-            $sxe->addAttribute(self::FIELD_SOURCE_CANONICAL, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE_CANONICAL));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE_CANONICAL, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getSourceUri())) {
-            $sxe->addAttribute(self::FIELD_SOURCE_URI, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE_URI));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE_URI, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getStatus())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getTargetCanonical())) {
-            $sxe->addAttribute(self::FIELD_TARGET_CANONICAL, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_TARGET_CANONICAL));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TARGET_CANONICAL, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getTargetUri())) {
-            $sxe->addAttribute(self::FIELD_TARGET_URI, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_TARGET_URI));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TARGET_URI, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getTitle())) {
-            $sxe->addAttribute(self::FIELD_TITLE, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_TITLE));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TITLE, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getUrl())) {
-            $sxe->addAttribute(self::FIELD_URL, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_URL));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_URL, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getUseContext())) {
@@ -1866,14 +1848,11 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_USE_CONTEXT));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_USE_CONTEXT, null, $v->getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getVersion())) {
-            $sxe->addAttribute(self::FIELD_VERSION, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_VERSION));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VERSION, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

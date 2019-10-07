@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCov
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,6 +78,9 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_COVERAGE_DOT_GROUPING;
+
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CLASS = 'class';
     const FIELD_CLASS_EXT = '_class';
@@ -405,6 +408,27 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
     {
         return self::FHIR_TYPE_NAME;
     }
+
+    /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<CoverageGrouping{$xmlns}></CoverageGrouping>";
+    }
+
 
     /**
      * A sequence of Unicode characters
@@ -887,16 +911,17 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageGrouping $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageGrouping
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRCoverageGrouping::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -912,6 +937,13 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
                 'FHIRCoverageGrouping::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageGrouping or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -992,85 +1024,50 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<CoverageGrouping xmlns="http://hl7.org/fhir"></CoverageGrouping>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getClass())) {
-            $sxe->addAttribute(self::FIELD_CLASS, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CLASS));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CLASS, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getClassDisplay())) {
-            $sxe->addAttribute(self::FIELD_CLASS_DISPLAY, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CLASS_DISPLAY));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CLASS_DISPLAY, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getGroup())) {
-            $sxe->addAttribute(self::FIELD_GROUP, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_GROUP));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_GROUP, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getGroupDisplay())) {
-            $sxe->addAttribute(self::FIELD_GROUP_DISPLAY, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_GROUP_DISPLAY));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_GROUP_DISPLAY, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getPlan())) {
-            $sxe->addAttribute(self::FIELD_PLAN, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PLAN));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PLAN, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getPlanDisplay())) {
-            $sxe->addAttribute(self::FIELD_PLAN_DISPLAY, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PLAN_DISPLAY));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PLAN_DISPLAY, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getSubClass())) {
-            $sxe->addAttribute(self::FIELD_SUB_CLASS, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SUB_CLASS));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SUB_CLASS, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getSubClassDisplay())) {
-            $sxe->addAttribute(self::FIELD_SUB_CLASS_DISPLAY, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SUB_CLASS_DISPLAY));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SUB_CLASS_DISPLAY, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getSubGroup())) {
-            $sxe->addAttribute(self::FIELD_SUB_GROUP, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SUB_GROUP));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SUB_GROUP, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getSubGroupDisplay())) {
-            $sxe->addAttribute(self::FIELD_SUB_GROUP_DISPLAY, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SUB_GROUP_DISPLAY));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SUB_GROUP_DISPLAY, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getSubPlan())) {
-            $sxe->addAttribute(self::FIELD_SUB_PLAN, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SUB_PLAN));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SUB_PLAN, null, $v->getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getSubPlanDisplay())) {
-            $sxe->addAttribute(self::FIELD_SUB_PLAN_DISPLAY, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SUB_PLAN_DISPLAY));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SUB_PLAN_DISPLAY, null, $v->getFHIRXMLNamespace()));
         }
         return $sxe;
     }

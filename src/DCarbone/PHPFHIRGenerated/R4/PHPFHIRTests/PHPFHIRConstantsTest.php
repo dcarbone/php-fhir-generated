@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\PHPFHIRTests;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -134,18 +134,6 @@ class PHPFHIRConstantsTest extends TestCase
     {
         $this->assertEquals('ActionGroupingBehavior-list', PHPFHIRConstants::TYPE_NAME_ACTION_GROUPING_BEHAVIOR_HYPHEN_LIST);
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRActionGroupingBehaviorList', PHPFHIRConstants::TYPE_CLASS_ACTION_GROUPING_BEHAVIOR_HYPHEN_LIST);
-    }
-
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_R4_FHIRElement_FHIRActionList()
-    {
-        $this->assertEquals('ActionList', PHPFHIRConstants::TYPE_NAME_ACTION_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRActionList', PHPFHIRConstants::TYPE_CLASS_ACTION_LIST);
-    }
-
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_R4_FHIRActionListList()
-    {
-        $this->assertEquals('ActionList-list', PHPFHIRConstants::TYPE_NAME_ACTION_LIST_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRActionListList', PHPFHIRConstants::TYPE_CLASS_ACTION_LIST_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_R4_FHIRElement_FHIRActionParticipantType()
@@ -3502,12 +3490,6 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRIssueTypeList', PHPFHIRConstants::TYPE_CLASS_ISSUE_TYPE_HYPHEN_LIST);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_R4_FHIRResource_FHIRDomainResource_FHIRItemInstance()
-    {
-        $this->assertEquals('ItemInstance', PHPFHIRConstants::TYPE_NAME_ITEM_INSTANCE);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRItemInstance', PHPFHIRConstants::TYPE_CLASS_ITEM_INSTANCE);
-    }
-
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_R4_FHIRResource_FHIRDomainResource_FHIRLibrary()
     {
         $this->assertEquals('Library', PHPFHIRConstants::TYPE_NAME_LIBRARY);
@@ -4030,48 +4012,6 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure', PHPFHIRConstants::TYPE_CLASS_MEDICINAL_PRODUCT_AUTHORIZATION_DOT_PROCEDURE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_R4_FHIRResource_FHIRDomainResource_FHIRMedicinalProductClinicals()
-    {
-        $this->assertEquals('MedicinalProductClinicals', PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_CLINICALS);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductClinicals', PHPFHIRConstants::TYPE_CLASS_MEDICINAL_PRODUCT_CLINICALS);
-    }
-
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_R4_FHIRElement_FHIRBackboneElement_FHIRMedicinalProductClinicals_FHIRMedicinalProductClinicalsContraindication()
-    {
-        $this->assertEquals('MedicinalProductClinicals.Contraindication', PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_CLINICALS_DOT_CONTRAINDICATION);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsContraindication', PHPFHIRConstants::TYPE_CLASS_MEDICINAL_PRODUCT_CLINICALS_DOT_CONTRAINDICATION);
-    }
-
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_R4_FHIRElement_FHIRBackboneElement_FHIRMedicinalProductClinicals_FHIRMedicinalProductClinicalsInteractions()
-    {
-        $this->assertEquals('MedicinalProductClinicals.Interactions', PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_CLINICALS_DOT_INTERACTIONS);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsInteractions', PHPFHIRConstants::TYPE_CLASS_MEDICINAL_PRODUCT_CLINICALS_DOT_INTERACTIONS);
-    }
-
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_R4_FHIRElement_FHIRBackboneElement_FHIRMedicinalProductClinicals_FHIRMedicinalProductClinicalsOtherTherapy()
-    {
-        $this->assertEquals('MedicinalProductClinicals.OtherTherapy', PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_CLINICALS_DOT_OTHER_THERAPY);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsOtherTherapy', PHPFHIRConstants::TYPE_CLASS_MEDICINAL_PRODUCT_CLINICALS_DOT_OTHER_THERAPY);
-    }
-
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_R4_FHIRElement_FHIRBackboneElement_FHIRMedicinalProductClinicals_FHIRMedicinalProductClinicalsPopulation()
-    {
-        $this->assertEquals('MedicinalProductClinicals.Population', PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_CLINICALS_DOT_POPULATION);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsPopulation', PHPFHIRConstants::TYPE_CLASS_MEDICINAL_PRODUCT_CLINICALS_DOT_POPULATION);
-    }
-
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_R4_FHIRElement_FHIRBackboneElement_FHIRMedicinalProductClinicals_FHIRMedicinalProductClinicalsTherapeuticIndication()
-    {
-        $this->assertEquals('MedicinalProductClinicals.TherapeuticIndication', PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_CLINICALS_DOT_THERAPEUTIC_INDICATION);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsTherapeuticIndication', PHPFHIRConstants::TYPE_CLASS_MEDICINAL_PRODUCT_CLINICALS_DOT_THERAPEUTIC_INDICATION);
-    }
-
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_R4_FHIRElement_FHIRBackboneElement_FHIRMedicinalProductClinicals_FHIRMedicinalProductClinicalsUndesirableEffects()
-    {
-        $this->assertEquals('MedicinalProductClinicals.UndesirableEffects', PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_CLINICALS_DOT_UNDESIRABLE_EFFECTS);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsUndesirableEffects', PHPFHIRConstants::TYPE_CLASS_MEDICINAL_PRODUCT_CLINICALS_DOT_UNDESIRABLE_EFFECTS);
-    }
-
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_R4_FHIRResource_FHIRDomainResource_FHIRMedicinalProductContraindication()
     {
         $this->assertEquals('MedicinalProductContraindication', PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_CONTRAINDICATION);
@@ -4082,18 +4022,6 @@ class PHPFHIRConstantsTest extends TestCase
     {
         $this->assertEquals('MedicinalProductContraindication.OtherTherapy', PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_CONTRAINDICATION_DOT_OTHER_THERAPY);
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductContraindication\FHIRMedicinalProductContraindicationOtherTherapy', PHPFHIRConstants::TYPE_CLASS_MEDICINAL_PRODUCT_CONTRAINDICATION_DOT_OTHER_THERAPY);
-    }
-
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_R4_FHIRResource_FHIRDomainResource_FHIRMedicinalProductDeviceSpec()
-    {
-        $this->assertEquals('MedicinalProductDeviceSpec', PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_DEVICE_SPEC);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductDeviceSpec', PHPFHIRConstants::TYPE_CLASS_MEDICINAL_PRODUCT_DEVICE_SPEC);
-    }
-
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_R4_FHIRElement_FHIRBackboneElement_FHIRMedicinalProductDeviceSpec_FHIRMedicinalProductDeviceSpecMaterial()
-    {
-        $this->assertEquals('MedicinalProductDeviceSpec.Material', PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_DEVICE_SPEC_DOT_MATERIAL);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDeviceSpec\FHIRMedicinalProductDeviceSpecMaterial', PHPFHIRConstants::TYPE_CLASS_MEDICINAL_PRODUCT_DEVICE_SPEC_DOT_MATERIAL);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_R4_FHIRResource_FHIRDomainResource_FHIRMedicinalProductIndication()
@@ -4864,42 +4792,6 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedurePerformer', PHPFHIRConstants::TYPE_CLASS_PROCEDURE_DOT_PERFORMER);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_R4_FHIRElement_FHIRProcessOutcomeCodes()
-    {
-        $this->assertEquals('ProcessOutcomeCodes', PHPFHIRConstants::TYPE_NAME_PROCESS_OUTCOME_CODES);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRProcessOutcomeCodes', PHPFHIRConstants::TYPE_CLASS_PROCESS_OUTCOME_CODES);
-    }
-
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_R4_FHIRProcessOutcomeCodesList()
-    {
-        $this->assertEquals('ProcessOutcomeCodes-list', PHPFHIRConstants::TYPE_NAME_PROCESS_OUTCOME_CODES_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRProcessOutcomeCodesList', PHPFHIRConstants::TYPE_CLASS_PROCESS_OUTCOME_CODES_HYPHEN_LIST);
-    }
-
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_R4_FHIRResource_FHIRDomainResource_FHIRProcessRequest()
-    {
-        $this->assertEquals('ProcessRequest', PHPFHIRConstants::TYPE_NAME_PROCESS_REQUEST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRProcessRequest', PHPFHIRConstants::TYPE_CLASS_PROCESS_REQUEST);
-    }
-
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_R4_FHIRElement_FHIRBackboneElement_FHIRProcessRequest_FHIRProcessRequestItem()
-    {
-        $this->assertEquals('ProcessRequest.Item', PHPFHIRConstants::TYPE_NAME_PROCESS_REQUEST_DOT_ITEM);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProcessRequest\FHIRProcessRequestItem', PHPFHIRConstants::TYPE_CLASS_PROCESS_REQUEST_DOT_ITEM);
-    }
-
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_R4_FHIRResource_FHIRDomainResource_FHIRProcessResponse()
-    {
-        $this->assertEquals('ProcessResponse', PHPFHIRConstants::TYPE_NAME_PROCESS_RESPONSE);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRProcessResponse', PHPFHIRConstants::TYPE_CLASS_PROCESS_RESPONSE);
-    }
-
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_R4_FHIRElement_FHIRBackboneElement_FHIRProcessResponse_FHIRProcessResponseProcessNote()
-    {
-        $this->assertEquals('ProcessResponse.ProcessNote', PHPFHIRConstants::TYPE_NAME_PROCESS_RESPONSE_DOT_PROCESS_NOTE);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProcessResponse\FHIRProcessResponseProcessNote', PHPFHIRConstants::TYPE_CLASS_PROCESS_RESPONSE_DOT_PROCESS_NOTE);
-    }
-
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_R4_FHIRElement_FHIRBackboneElement_FHIRProdCharacteristic()
     {
         $this->assertEquals('ProdCharacteristic', PHPFHIRConstants::TYPE_NAME_PROD_CHARACTERISTIC);
@@ -5528,60 +5420,6 @@ class PHPFHIRConstantsTest extends TestCase
     {
         $this->assertEquals('SearchParamType-list', PHPFHIRConstants::TYPE_NAME_SEARCH_PARAM_TYPE_HYPHEN_LIST);
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRSearchParamTypeList', PHPFHIRConstants::TYPE_CLASS_SEARCH_PARAM_TYPE_HYPHEN_LIST);
-    }
-
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_R4_FHIRResource_FHIRDomainResource_FHIRSequence()
-    {
-        $this->assertEquals('Sequence', PHPFHIRConstants::TYPE_NAME_SEQUENCE);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSequence', PHPFHIRConstants::TYPE_CLASS_SEQUENCE);
-    }
-
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_R4_FHIRElement_FHIRBackboneElement_FHIRSequence_FHIRSequenceInner()
-    {
-        $this->assertEquals('Sequence.Inner', PHPFHIRConstants::TYPE_NAME_SEQUENCE_DOT_INNER);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceInner', PHPFHIRConstants::TYPE_CLASS_SEQUENCE_DOT_INNER);
-    }
-
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_R4_FHIRElement_FHIRBackboneElement_FHIRSequence_FHIRSequenceOuter()
-    {
-        $this->assertEquals('Sequence.Outer', PHPFHIRConstants::TYPE_NAME_SEQUENCE_DOT_OUTER);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceOuter', PHPFHIRConstants::TYPE_CLASS_SEQUENCE_DOT_OUTER);
-    }
-
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_R4_FHIRElement_FHIRBackboneElement_FHIRSequence_FHIRSequenceQuality()
-    {
-        $this->assertEquals('Sequence.Quality', PHPFHIRConstants::TYPE_NAME_SEQUENCE_DOT_QUALITY);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceQuality', PHPFHIRConstants::TYPE_CLASS_SEQUENCE_DOT_QUALITY);
-    }
-
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_R4_FHIRElement_FHIRBackboneElement_FHIRSequence_FHIRSequenceReferenceSeq()
-    {
-        $this->assertEquals('Sequence.ReferenceSeq', PHPFHIRConstants::TYPE_NAME_SEQUENCE_DOT_REFERENCE_SEQ);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceReferenceSeq', PHPFHIRConstants::TYPE_CLASS_SEQUENCE_DOT_REFERENCE_SEQ);
-    }
-
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_R4_FHIRElement_FHIRBackboneElement_FHIRSequence_FHIRSequenceRepository()
-    {
-        $this->assertEquals('Sequence.Repository', PHPFHIRConstants::TYPE_NAME_SEQUENCE_DOT_REPOSITORY);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRepository', PHPFHIRConstants::TYPE_CLASS_SEQUENCE_DOT_REPOSITORY);
-    }
-
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_R4_FHIRElement_FHIRBackboneElement_FHIRSequence_FHIRSequenceRoc()
-    {
-        $this->assertEquals('Sequence.Roc', PHPFHIRConstants::TYPE_NAME_SEQUENCE_DOT_ROC);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRoc', PHPFHIRConstants::TYPE_CLASS_SEQUENCE_DOT_ROC);
-    }
-
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_R4_FHIRElement_FHIRBackboneElement_FHIRSequence_FHIRSequenceStructureVariant()
-    {
-        $this->assertEquals('Sequence.StructureVariant', PHPFHIRConstants::TYPE_NAME_SEQUENCE_DOT_STRUCTURE_VARIANT);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceStructureVariant', PHPFHIRConstants::TYPE_CLASS_SEQUENCE_DOT_STRUCTURE_VARIANT);
-    }
-
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_R4_FHIRElement_FHIRBackboneElement_FHIRSequence_FHIRSequenceVariant()
-    {
-        $this->assertEquals('Sequence.Variant', PHPFHIRConstants::TYPE_NAME_SEQUENCE_DOT_VARIANT);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceVariant', PHPFHIRConstants::TYPE_CLASS_SEQUENCE_DOT_VARIANT);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_R4_FHIRElement_FHIRSequenceType()
@@ -6776,48 +6614,6 @@ class PHPFHIRConstantsTest extends TestCase
     {
         $this->assertEquals('Use-list', PHPFHIRConstants::TYPE_NAME_USE_HYPHEN_LIST);
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRUseList', PHPFHIRConstants::TYPE_CLASS_USE_HYPHEN_LIST);
-    }
-
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_R4_FHIRResource_FHIRDomainResource_FHIRUserSession()
-    {
-        $this->assertEquals('UserSession', PHPFHIRConstants::TYPE_NAME_USER_SESSION);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRUserSession', PHPFHIRConstants::TYPE_CLASS_USER_SESSION);
-    }
-
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_R4_FHIRElement_FHIRBackboneElement_FHIRUserSession_FHIRUserSessionContext()
-    {
-        $this->assertEquals('UserSession.Context', PHPFHIRConstants::TYPE_NAME_USER_SESSION_DOT_CONTEXT);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRUserSession\FHIRUserSessionContext', PHPFHIRConstants::TYPE_CLASS_USER_SESSION_DOT_CONTEXT);
-    }
-
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_R4_FHIRElement_FHIRBackboneElement_FHIRUserSession_FHIRUserSessionStatus()
-    {
-        $this->assertEquals('UserSession.Status', PHPFHIRConstants::TYPE_NAME_USER_SESSION_DOT_STATUS);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRUserSession\FHIRUserSessionStatus', PHPFHIRConstants::TYPE_CLASS_USER_SESSION_DOT_STATUS);
-    }
-
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_R4_FHIRElement_FHIRUserSessionStatus()
-    {
-        $this->assertEquals('UserSessionStatus', PHPFHIRConstants::TYPE_NAME_USER_SESSION_STATUS);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUserSessionStatus', PHPFHIRConstants::TYPE_CLASS_USER_SESSION_STATUS);
-    }
-
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_R4_FHIRUserSessionStatusList()
-    {
-        $this->assertEquals('UserSessionStatus-list', PHPFHIRConstants::TYPE_NAME_USER_SESSION_STATUS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRUserSessionStatusList', PHPFHIRConstants::TYPE_CLASS_USER_SESSION_STATUS_HYPHEN_LIST);
-    }
-
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_R4_FHIRElement_FHIRUserSessionStatusSource()
-    {
-        $this->assertEquals('UserSessionStatusSource', PHPFHIRConstants::TYPE_NAME_USER_SESSION_STATUS_SOURCE);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUserSessionStatusSource', PHPFHIRConstants::TYPE_CLASS_USER_SESSION_STATUS_SOURCE);
-    }
-
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_R4_FHIRUserSessionStatusSourceList()
-    {
-        $this->assertEquals('UserSessionStatusSource-list', PHPFHIRConstants::TYPE_NAME_USER_SESSION_STATUS_SOURCE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRUserSessionStatusSourceList', PHPFHIRConstants::TYPE_CLASS_USER_SESSION_STATUS_SOURCE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_R4_FHIRElement_FHIRUuid()

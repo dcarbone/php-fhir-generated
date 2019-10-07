@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 6th, 2019 09:04+0000
+ * Class creation date: October 7th, 2019 22:31+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -89,6 +89,9 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONSENT;
+
+    /** @var string */
+    private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CATEGORY = 'category';
     const FIELD_DATE_TIME = 'dateTime';
@@ -229,7 +232,7 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * The source on which this consent statement is based. The source might be a
      * scanned original paper form, or a reference to a consent that links back to such
      * a source, a reference to a document repository (e.g. XDS) that stores the
-     * original consent document. (choose any one of source*, but only one)
+     * original consent document.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
      */
@@ -242,7 +245,7 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * The source on which this consent statement is based. The source might be a
      * scanned original paper form, or a reference to a consent that links back to such
      * a source, a reference to a document repository (e.g. XDS) that stores the
-     * original consent document. (choose any one of source*, but only one)
+     * original consent document.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -444,6 +447,27 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     {
         return self::FHIR_TYPE_NAME;
     }
+
+    /**
+     * @return string|null
+     */
+    public function getFHIRXMLNamespace()
+    {
+        return '' === $this->_xmlns ? null : $this->_xmlns;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFHIRXMLElementDefinition()
+    {
+        $xmlns = $this->getFHIRXMLNamespace();
+        if (null !== $xmlns) {
+            $xmlns = " xmlns=\"{$xmlns}\"";
+        }
+        return "<Consent{$xmlns}></Consent>";
+    }
+
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -929,7 +953,7 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * The source on which this consent statement is based. The source might be a
      * scanned original paper form, or a reference to a consent that links back to such
      * a source, a reference to a document repository (e.g. XDS) that stores the
-     * original consent document. (choose any one of source*, but only one)
+     * original consent document.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
      */
@@ -946,7 +970,7 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * The source on which this consent statement is based. The source might be a
      * scanned original paper form, or a reference to a consent that links back to such
      * a source, a reference to a document repository (e.g. XDS) that stores the
-     * original consent document. (choose any one of source*, but only one)
+     * original consent document.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment $sourceAttachment
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRConsent
@@ -965,7 +989,7 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * The source on which this consent statement is based. The source might be a
      * scanned original paper form, or a reference to a consent that links back to such
      * a source, a reference to a document repository (e.g. XDS) that stores the
-     * original consent document. (choose any one of source*, but only one)
+     * original consent document.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -982,7 +1006,7 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * The source on which this consent statement is based. The source might be a
      * scanned original paper form, or a reference to a consent that links back to such
      * a source, a reference to a document repository (e.g. XDS) that stores the
-     * original consent document. (choose any one of source*, but only one)
+     * original consent document.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $sourceReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRConsent
@@ -1083,16 +1107,17 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRConsent $type
+     * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRConsent
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null)
+    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
             return null;
         }
         if (is_string($sxe)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe);
+            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
                 throw new \DomainException(sprintf('FHIRConsent::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
@@ -1108,6 +1133,13 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
                 'FHIRConsent::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRConsent or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
+        }
+        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
+        if ([] !== $xmlNamespaces) {
+            $ns = reset($xmlNamespaces);
+            if (false !== $ns && '' !== $ns) {
+                $type->_xmlns = $ns;
+            }
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
@@ -1173,12 +1205,13 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
 
     /**
      * @param null|\SimpleXMLElement $sxe
+     * @param null|int $libxmlOpts
      * @return \SimpleXMLElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null)
+    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement('<Consent xmlns="http://hl7.org/fhir"></Consent>');
+            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
@@ -1187,14 +1220,11 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CATEGORY));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_CATEGORY, null, $v->getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getDateTime())) {
-            $sxe->addAttribute(self::FIELD_DATE_TIME, (string)$v);
-            if (null !== $v->getId() || [] !== $v->getExtension()) {
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DATE_TIME));
-            }
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DATE_TIME, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getIdentifier())) {
@@ -1202,7 +1232,7 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -1211,12 +1241,12 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ORGANIZATION));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_ORGANIZATION, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getPatient())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATIENT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PATIENT, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getPerformer())) {
@@ -1224,7 +1254,7 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PERFORMER));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_PERFORMER, null, $v->getFHIRXMLNamespace()));
             }
         }
 
@@ -1233,32 +1263,32 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_POLICY));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_POLICY, null, $v->getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getPolicyRule())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_POLICY_RULE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_POLICY_RULE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getProvision())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PROVISION));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PROVISION, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getScope())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SCOPE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SCOPE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getSourceAttachment())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE_ATTACHMENT));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE_ATTACHMENT, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getSourceReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE_REFERENCE));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE_REFERENCE, null, $v->getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getStatus())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getVerification())) {
@@ -1266,7 +1296,7 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_VERIFICATION));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_VERIFICATION, null, $v->getFHIRXMLNamespace()));
             }
         }
         return $sxe;
