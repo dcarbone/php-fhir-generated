@@ -18,11 +18,21 @@
     "php-fhir"
   ],
   "require": {
-    "php": ">=5.4.0"
+    "php": ">=5.4.0",
+    "ext-libxml": "*",
+    "ext-json": "*",
+    "ext-simplexml": "*"
+  },
+  "require-dev": {
+    "ext-libxml": "*",
+    "ext-json": "*",
+    "ext-simplexml": "*",
+    "ext-curl": "*",
+    "phpunit/phpunit": "@stable"
   },
   "autoload": {
     "psr-0": {
-      "PHPFHIRGenerated\\": "./src"
+      "DCarbone\\PHPFHIRGenerated\\": "./src"
     }
   }
 }
