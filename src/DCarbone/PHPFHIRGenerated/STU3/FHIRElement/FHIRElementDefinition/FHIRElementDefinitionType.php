@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -606,6 +606,7 @@ class FHIRElementDefinitionType extends FHIRElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if ([] !== ($vs = $this->getAggregation())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -623,6 +624,7 @@ class FHIRElementDefinitionType extends FHIRElement
         if (null !== ($v = $this->getTargetProfile())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TARGET_PROFILE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getVersioning())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_VERSIONING, null, $v->_getFHIRXMLNamespace()));
         }
@@ -636,43 +638,22 @@ class FHIRElementDefinitionType extends FHIRElement
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getAggregation())) {
-            $a[self::FIELD_AGGREGATION] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_AGGREGATION][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_AGGREGATION_EXT])) {
-                        $a[self::FIELD_AGGREGATION_EXT] = [];
-                    }
-                    $a[self::FIELD_AGGREGATION_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_AGGREGATION] = $vs;
         }
         if (null !== ($v = $this->getCode())) {
             $a[self::FIELD_CODE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_CODE_EXT] = $v;
-            }
+            $a[self::FIELD_CODE_EXT] = $v;
         }
         if (null !== ($v = $this->getProfile())) {
             $a[self::FIELD_PROFILE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PROFILE_EXT] = $v;
-            }
+            $a[self::FIELD_PROFILE_EXT] = $v;
         }
         if (null !== ($v = $this->getTargetProfile())) {
             $a[self::FIELD_TARGET_PROFILE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TARGET_PROFILE_EXT] = $v;
-            }
+            $a[self::FIELD_TARGET_PROFILE_EXT] = $v;
         }
         if (null !== ($v = $this->getVersioning())) {
-            $a[self::FIELD_VERSIONING] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VERSIONING_EXT] = $v;
-            }
+            $a[self::FIELD_VERSIONING] = $v;
         }
         return $a;
     }

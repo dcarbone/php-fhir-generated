@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDevic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -68,8 +68,6 @@ use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
-use DCarbone\PHPFHIRGenerated\R4\PHPFHIRValueContainerInterface;
-use DCarbone\PHPFHIRGenerated\R4\PHPFHIRValueContainerTrait;
 
 /**
  * A type of a manufactured item that is used in the provision of healthcare
@@ -79,10 +77,8 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRValueContainerTrait;
  * Class FHIRDeviceVersion
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDevice
  */
-class FHIRDeviceVersion extends FHIRBackboneElement implements PHPFHIRValueContainerInterface
+class FHIRDeviceVersion extends FHIRBackboneElement
 {
-    use PHPFHIRValueContainerTrait;
-
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_DEVICE_DOT_VERSION;
 
@@ -254,7 +250,6 @@ class FHIRDeviceVersion extends FHIRBackboneElement implements PHPFHIRValueConta
      */
     public function setComponent(FHIRIdentifier $component = null)
     {
-        $this->_markNonValueFieldsDefined();
         $this->component = $component;
         return $this;
     }
@@ -287,7 +282,6 @@ class FHIRDeviceVersion extends FHIRBackboneElement implements PHPFHIRValueConta
      */
     public function setType(FHIRCodeableConcept $type = null)
     {
-        $this->_markNonValueFieldsDefined();
         $this->type = $type;
         return $this;
     }
@@ -396,6 +390,7 @@ class FHIRDeviceVersion extends FHIRBackboneElement implements PHPFHIRValueConta
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getComponent())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_COMPONENT, null, $v->_getFHIRXMLNamespace()));
         }
@@ -416,19 +411,14 @@ class FHIRDeviceVersion extends FHIRBackboneElement implements PHPFHIRValueConta
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getComponent())) {
-            $a[self::FIELD_COMPONENT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_COMPONENT_EXT] = $v;
-            }
+            $a[self::FIELD_COMPONENT] = $v;
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;
         }
         if (null !== ($v = $this->getValue())) {
             $a[self::FIELD_VALUE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_EXT] = $v;
         }
         return $a;
     }

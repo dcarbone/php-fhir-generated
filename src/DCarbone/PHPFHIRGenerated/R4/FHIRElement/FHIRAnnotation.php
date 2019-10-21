@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -96,7 +96,8 @@ class FHIRAnnotation extends FHIRElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The individual responsible for making the annotation.
+     * The individual responsible for making the annotation. (choose any one of
+     * author*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -106,7 +107,8 @@ class FHIRAnnotation extends FHIRElement
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The individual responsible for making the annotation.
+     * The individual responsible for making the annotation. (choose any one of
+     * author*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -250,7 +252,8 @@ class FHIRAnnotation extends FHIRElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The individual responsible for making the annotation.
+     * The individual responsible for making the annotation. (choose any one of
+     * author*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -264,7 +267,8 @@ class FHIRAnnotation extends FHIRElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The individual responsible for making the annotation.
+     * The individual responsible for making the annotation. (choose any one of
+     * author*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $authorReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation
@@ -280,7 +284,8 @@ class FHIRAnnotation extends FHIRElement
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The individual responsible for making the annotation.
+     * The individual responsible for making the annotation. (choose any one of
+     * author*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -294,7 +299,8 @@ class FHIRAnnotation extends FHIRElement
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The individual responsible for making the annotation.
+     * The individual responsible for making the annotation. (choose any one of
+     * author*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $authorString
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation
@@ -505,21 +511,15 @@ class FHIRAnnotation extends FHIRElement
         }
         if (null !== ($v = $this->getAuthorString())) {
             $a[self::FIELD_AUTHOR_STRING] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_AUTHOR_STRING_EXT] = $v;
-            }
+            $a[self::FIELD_AUTHOR_STRING_EXT] = $v;
         }
         if (null !== ($v = $this->getText())) {
             $a[self::FIELD_TEXT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TEXT_EXT] = $v;
-            }
+            $a[self::FIELD_TEXT_EXT] = $v;
         }
         if (null !== ($v = $this->getTime())) {
             $a[self::FIELD_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_TIME_EXT] = $v;
         }
         return $a;
     }

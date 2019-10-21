@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRTe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -372,6 +372,7 @@ class FHIRTestScriptContact extends FHIRBackboneElement
         if (null !== ($v = $this->getName())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_NAME, null, $v->_getFHIRXMLNamespace()));
         }
+
         if ([] !== ($vs = $this->getTelecom())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -391,24 +392,10 @@ class FHIRTestScriptContact extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getName())) {
             $a[self::FIELD_NAME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_NAME_EXT] = $v;
-            }
+            $a[self::FIELD_NAME_EXT] = $v;
         }
         if ([] !== ($vs = $this->getTelecom())) {
-            $a[self::FIELD_TELECOM] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_TELECOM][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_TELECOM_EXT])) {
-                        $a[self::FIELD_TELECOM_EXT] = [];
-                    }
-                    $a[self::FIELD_TELECOM_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_TELECOM] = $vs;
         }
         return $a;
     }

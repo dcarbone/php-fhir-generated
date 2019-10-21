@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREpiso
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -408,9 +408,7 @@ class FHIREpisodeOfCareDiagnosis extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getRank())) {
             $a[self::FIELD_RANK] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_RANK_EXT] = $v;
-            }
+            $a[self::FIELD_RANK_EXT] = $v;
         }
         if (null !== ($v = $this->getRole())) {
             $a[self::FIELD_ROLE] = $v;

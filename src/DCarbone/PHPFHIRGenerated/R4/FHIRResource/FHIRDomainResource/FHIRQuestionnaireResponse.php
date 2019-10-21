@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1002,6 +1002,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
         if (null !== ($v = $this->getEncounter())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ENCOUNTER, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getIdentifier())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1030,6 +1031,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
         if (null !== ($v = $this->getSource())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1051,9 +1053,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
         }
         if (null !== ($v = $this->getAuthored())) {
             $a[self::FIELD_AUTHORED] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_AUTHORED_EXT] = $v;
-            }
+            $a[self::FIELD_AUTHORED_EXT] = $v;
         }
         if ([] !== ($vs = $this->getBasedOn())) {
             $a[self::FIELD_BASED_ON] = $vs;
@@ -1062,10 +1062,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
             $a[self::FIELD_ENCOUNTER] = $v;
         }
         if (null !== ($v = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_IDENTIFIER_EXT] = $v;
-            }
+            $a[self::FIELD_IDENTIFIER] = $v;
         }
         if ([] !== ($vs = $this->getItem())) {
             $a[self::FIELD_ITEM] = $vs;
@@ -1075,18 +1072,13 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
         }
         if (null !== ($v = $this->getQuestionnaire())) {
             $a[self::FIELD_QUESTIONNAIRE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_QUESTIONNAIRE_EXT] = $v;
-            }
+            $a[self::FIELD_QUESTIONNAIRE_EXT] = $v;
         }
         if (null !== ($v = $this->getSource())) {
             $a[self::FIELD_SOURCE] = $v;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_STATUS_EXT] = $v;
-            }
+            $a[self::FIELD_STATUS] = $v;
         }
         if (null !== ($v = $this->getSubject())) {
             $a[self::FIELD_SUBJECT] = $v;

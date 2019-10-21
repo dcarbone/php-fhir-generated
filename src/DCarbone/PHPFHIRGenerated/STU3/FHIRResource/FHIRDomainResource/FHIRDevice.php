@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1453,6 +1453,7 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if ([] !== ($vs = $this->getContact())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1464,6 +1465,7 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
         if (null !== ($v = $this->getExpirationDate())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_EXPIRATION_DATE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1514,6 +1516,7 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
                 $v->xmlSerialize($sxe->addChild(self::FIELD_SAFETY, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1541,67 +1544,33 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getContact())) {
-            $a[self::FIELD_CONTACT] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_CONTACT][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_CONTACT_EXT])) {
-                        $a[self::FIELD_CONTACT_EXT] = [];
-                    }
-                    $a[self::FIELD_CONTACT_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_CONTACT] = $vs;
         }
         if (null !== ($v = $this->getExpirationDate())) {
             $a[self::FIELD_EXPIRATION_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_EXPIRATION_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_EXPIRATION_DATE_EXT] = $v;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_IDENTIFIER][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_IDENTIFIER_EXT])) {
-                        $a[self::FIELD_IDENTIFIER_EXT] = [];
-                    }
-                    $a[self::FIELD_IDENTIFIER_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_IDENTIFIER] = $vs;
         }
         if (null !== ($v = $this->getLocation())) {
             $a[self::FIELD_LOCATION] = $v;
         }
         if (null !== ($v = $this->getLotNumber())) {
             $a[self::FIELD_LOT_NUMBER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_LOT_NUMBER_EXT] = $v;
-            }
+            $a[self::FIELD_LOT_NUMBER_EXT] = $v;
         }
         if (null !== ($v = $this->getManufactureDate())) {
             $a[self::FIELD_MANUFACTURE_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MANUFACTURE_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_MANUFACTURE_DATE_EXT] = $v;
         }
         if (null !== ($v = $this->getManufacturer())) {
             $a[self::FIELD_MANUFACTURER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MANUFACTURER_EXT] = $v;
-            }
+            $a[self::FIELD_MANUFACTURER_EXT] = $v;
         }
         if (null !== ($v = $this->getModel())) {
             $a[self::FIELD_MODEL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MODEL_EXT] = $v;
-            }
+            $a[self::FIELD_MODEL_EXT] = $v;
         }
         if ([] !== ($vs = $this->getNote())) {
             $a[self::FIELD_NOTE] = $vs;
@@ -1616,10 +1585,7 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
             $a[self::FIELD_SAFETY] = $vs;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_STATUS_EXT] = $v;
-            }
+            $a[self::FIELD_STATUS] = $v;
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;
@@ -1629,15 +1595,11 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
         }
         if (null !== ($v = $this->getUrl())) {
             $a[self::FIELD_URL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_URL_EXT] = $v;
-            }
+            $a[self::FIELD_URL_EXT] = $v;
         }
         if (null !== ($v = $this->getVersion())) {
             $a[self::FIELD_VERSION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VERSION_EXT] = $v;
-            }
+            $a[self::FIELD_VERSION_EXT] = $v;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

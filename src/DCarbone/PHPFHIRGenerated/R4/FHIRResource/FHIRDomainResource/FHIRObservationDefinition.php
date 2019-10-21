@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1125,6 +1125,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
         if (null !== ($v = $this->getCriticalCodedValueSet())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CRITICAL_CODED_VALUE_SET, null, $v->_getFHIRXMLNamespace()));
         }
+
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1144,6 +1145,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
         if (null !== ($v = $this->getNormalCodedValueSet())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_NORMAL_CODED_VALUE_SET, null, $v->_getFHIRXMLNamespace()));
         }
+
         if ([] !== ($vs = $this->getPermittedDataType())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1194,52 +1196,24 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
             $a[self::FIELD_CRITICAL_CODED_VALUE_SET] = $v;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_IDENTIFIER][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_IDENTIFIER_EXT])) {
-                        $a[self::FIELD_IDENTIFIER_EXT] = [];
-                    }
-                    $a[self::FIELD_IDENTIFIER_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_IDENTIFIER] = $vs;
         }
         if (null !== ($v = $this->getMethod())) {
             $a[self::FIELD_METHOD] = $v;
         }
         if (null !== ($v = $this->getMultipleResultsAllowed())) {
             $a[self::FIELD_MULTIPLE_RESULTS_ALLOWED] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MULTIPLE_RESULTS_ALLOWED_EXT] = $v;
-            }
+            $a[self::FIELD_MULTIPLE_RESULTS_ALLOWED_EXT] = $v;
         }
         if (null !== ($v = $this->getNormalCodedValueSet())) {
             $a[self::FIELD_NORMAL_CODED_VALUE_SET] = $v;
         }
         if ([] !== ($vs = $this->getPermittedDataType())) {
-            $a[self::FIELD_PERMITTED_DATA_TYPE] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_PERMITTED_DATA_TYPE][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_PERMITTED_DATA_TYPE_EXT])) {
-                        $a[self::FIELD_PERMITTED_DATA_TYPE_EXT] = [];
-                    }
-                    $a[self::FIELD_PERMITTED_DATA_TYPE_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_PERMITTED_DATA_TYPE] = $vs;
         }
         if (null !== ($v = $this->getPreferredReportName())) {
             $a[self::FIELD_PREFERRED_REPORT_NAME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PREFERRED_REPORT_NAME_EXT] = $v;
-            }
+            $a[self::FIELD_PREFERRED_REPORT_NAME_EXT] = $v;
         }
         if ([] !== ($vs = $this->getQualifiedInterval())) {
             $a[self::FIELD_QUALIFIED_INTERVAL] = $vs;

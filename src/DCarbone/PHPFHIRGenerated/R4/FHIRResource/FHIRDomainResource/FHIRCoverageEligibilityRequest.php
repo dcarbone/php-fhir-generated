@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -251,7 +251,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The date or dates when the enclosed suite of services were performed or
-     * completed.
+     * completed. (choose any one of serviced*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
@@ -262,7 +262,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The date or dates when the enclosed suite of services were performed or
-     * completed.
+     * completed. (choose any one of serviced*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -1026,7 +1026,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The date or dates when the enclosed suite of services were performed or
-     * completed.
+     * completed. (choose any one of serviced*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
@@ -1042,7 +1042,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The date or dates when the enclosed suite of services were performed or
-     * completed.
+     * completed. (choose any one of serviced*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate $servicedDate
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCoverageEligibilityRequest
@@ -1067,7 +1067,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The date or dates when the enclosed suite of services were performed or
-     * completed.
+     * completed. (choose any one of serviced*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -1082,7 +1082,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The date or dates when the enclosed suite of services were performed or
-     * completed.
+     * completed. (choose any one of serviced*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $servicedPeriod
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCoverageEligibilityRequest
@@ -1312,6 +1312,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
         if (null !== ($v = $this->getFacility())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_FACILITY, null, $v->_getFHIRXMLNamespace()));
         }
+
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1354,6 +1355,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
         if (null !== ($v = $this->getProvider())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PROVIDER, null, $v->_getFHIRXMLNamespace()));
         }
+
         if ([] !== ($vs = $this->getPurpose())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1369,6 +1371,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
         if (null !== ($v = $this->getServicedPeriod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SERVICED_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1392,9 +1395,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getCreated())) {
             $a[self::FIELD_CREATED] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_CREATED_EXT] = $v;
-            }
+            $a[self::FIELD_CREATED_EXT] = $v;
         }
         if (null !== ($v = $this->getEnterer())) {
             $a[self::FIELD_ENTERER] = $v;
@@ -1403,19 +1404,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
             $a[self::FIELD_FACILITY] = $v;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_IDENTIFIER][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_IDENTIFIER_EXT])) {
-                        $a[self::FIELD_IDENTIFIER_EXT] = [];
-                    }
-                    $a[self::FIELD_IDENTIFIER_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_IDENTIFIER] = $vs;
         }
         if ([] !== ($vs = $this->getInsurance())) {
             $a[self::FIELD_INSURANCE] = $vs;
@@ -1436,34 +1425,17 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
             $a[self::FIELD_PROVIDER] = $v;
         }
         if ([] !== ($vs = $this->getPurpose())) {
-            $a[self::FIELD_PURPOSE] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_PURPOSE][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_PURPOSE_EXT])) {
-                        $a[self::FIELD_PURPOSE_EXT] = [];
-                    }
-                    $a[self::FIELD_PURPOSE_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_PURPOSE] = $vs;
         }
         if (null !== ($v = $this->getServicedDate())) {
             $a[self::FIELD_SERVICED_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SERVICED_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_SERVICED_DATE_EXT] = $v;
         }
         if (null !== ($v = $this->getServicedPeriod())) {
             $a[self::FIELD_SERVICED_PERIOD] = $v;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_STATUS_EXT] = $v;
-            }
+            $a[self::FIELD_STATUS] = $v;
         }
         if ([] !== ($vs = $this->getSupportingInfo())) {
             $a[self::FIELD_SUPPORTING_INFO] = $vs;

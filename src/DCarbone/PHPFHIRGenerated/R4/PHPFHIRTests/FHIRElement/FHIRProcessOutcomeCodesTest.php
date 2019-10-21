@@ -1,12 +1,11 @@
 <?php
 
-namespace DCarbone\PHPFHIRGenerated\DSTU2;
-
+namespace DCarbone\PHPFHIRGenerated\R4\PHPFHIRTests\FHIRElement;
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +53,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Thu, Dec 27, 2018 22:37+1100 for FHIR v4.0.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -62,24 +61,18 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2;
  * 
  */
 
-/**
- * Interface PHPFHIRValueContainerInterface
- * @package \DCarbone\PHPFHIRGenerated\DSTU2
- */
-interface PHPFHIRValueContainerInterface
-{
-    /**
-     * When called, must mark this type as having a field other than its "value" field(s) defined
-     * @return void
-     */
-    public function _markNonValueFieldsDefined();
+use PHPUnit\Framework\TestCase;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRProcessOutcomeCodes;
 
-    /**
-     * This method must return true if the type implementing this interface has fields other
-     * than its "value" field(s) defined.
-     *
-     * Its singular purpose is to determine how to handle marshalling.
-     * @return bool
-     */
-    public function _hasNonValueFieldsDefined();
+/**
+ * Class FHIRProcessOutcomeCodesTest
+ * @package \DCarbone\PHPFHIRGenerated\R4\PHPFHIRTests\FHIRElement
+ */
+class FHIRProcessOutcomeCodesTest extends TestCase
+{
+    public function testCanConstructTypeNoArgs()
+    {
+        $type = new FHIRProcessOutcomeCodes();
+        $this->assertInstanceOf('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRProcessOutcomeCodes', $type);
+    }
 }

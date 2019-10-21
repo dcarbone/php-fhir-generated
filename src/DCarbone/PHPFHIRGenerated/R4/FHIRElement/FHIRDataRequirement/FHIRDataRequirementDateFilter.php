@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -138,7 +138,7 @@ class FHIRDataRequirementDateFilter extends FHIRElement
      * of the period boundaries. If dateTime is specified, the filter will return only
      * those data items that are equal to the specified dateTime. If a Duration is
      * specified, the filter will return only those data items that fall within
-     * Duration before now.
+     * Duration before now. (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -153,7 +153,7 @@ class FHIRDataRequirementDateFilter extends FHIRElement
      * of the period boundaries. If dateTime is specified, the filter will return only
      * those data items that are equal to the specified dateTime. If a Duration is
      * specified, the filter will return only those data items that fall within
-     * Duration before now.
+     * Duration before now. (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
@@ -168,7 +168,7 @@ class FHIRDataRequirementDateFilter extends FHIRElement
      * of the period boundaries. If dateTime is specified, the filter will return only
      * those data items that are equal to the specified dateTime. If a Duration is
      * specified, the filter will return only those data items that fall within
-     * Duration before now.
+     * Duration before now. (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -394,7 +394,7 @@ class FHIRDataRequirementDateFilter extends FHIRElement
      * of the period boundaries. If dateTime is specified, the filter will return only
      * those data items that are equal to the specified dateTime. If a Duration is
      * specified, the filter will return only those data items that fall within
-     * Duration before now.
+     * Duration before now. (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -416,7 +416,7 @@ class FHIRDataRequirementDateFilter extends FHIRElement
      * of the period boundaries. If dateTime is specified, the filter will return only
      * those data items that are equal to the specified dateTime. If a Duration is
      * specified, the filter will return only those data items that fall within
-     * Duration before now.
+     * Duration before now. (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $valueDateTime
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement\FHIRDataRequirementDateFilter
@@ -445,7 +445,7 @@ class FHIRDataRequirementDateFilter extends FHIRElement
      * of the period boundaries. If dateTime is specified, the filter will return only
      * those data items that are equal to the specified dateTime. If a Duration is
      * specified, the filter will return only those data items that fall within
-     * Duration before now.
+     * Duration before now. (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
@@ -464,7 +464,7 @@ class FHIRDataRequirementDateFilter extends FHIRElement
      * of the period boundaries. If dateTime is specified, the filter will return only
      * those data items that are equal to the specified dateTime. If a Duration is
      * specified, the filter will return only those data items that fall within
-     * Duration before now.
+     * Duration before now. (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration $valueDuration
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement\FHIRDataRequirementDateFilter
@@ -485,7 +485,7 @@ class FHIRDataRequirementDateFilter extends FHIRElement
      * of the period boundaries. If dateTime is specified, the filter will return only
      * those data items that are equal to the specified dateTime. If a Duration is
      * specified, the filter will return only those data items that fall within
-     * Duration before now.
+     * Duration before now. (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -504,7 +504,7 @@ class FHIRDataRequirementDateFilter extends FHIRElement
      * of the period boundaries. If dateTime is specified, the filter will return only
      * those data items that are equal to the specified dateTime. If a Duration is
      * specified, the filter will return only those data items that fall within
-     * Duration before now.
+     * Duration before now. (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $valuePeriod
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement\FHIRDataRequirementDateFilter
@@ -621,21 +621,15 @@ class FHIRDataRequirementDateFilter extends FHIRElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getPath())) {
             $a[self::FIELD_PATH] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PATH_EXT] = $v;
-            }
+            $a[self::FIELD_PATH_EXT] = $v;
         }
         if (null !== ($v = $this->getSearchParam())) {
             $a[self::FIELD_SEARCH_PARAM] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SEARCH_PARAM_EXT] = $v;
-            }
+            $a[self::FIELD_SEARCH_PARAM_EXT] = $v;
         }
         if (null !== ($v = $this->getValueDateTime())) {
             $a[self::FIELD_VALUE_DATE_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_DATE_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_DATE_TIME_EXT] = $v;
         }
         if (null !== ($v = $this->getValueDuration())) {
             $a[self::FIELD_VALUE_DURATION] = $v;

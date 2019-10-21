@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIROpera
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1056,6 +1056,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_REFERENCED_FROM, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getSearchType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SEARCH_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1070,6 +1071,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
         if (null !== ($v = $this->getType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getUse())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_USE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1087,27 +1089,19 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getDocumentation())) {
             $a[self::FIELD_DOCUMENTATION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DOCUMENTATION_EXT] = $v;
-            }
+            $a[self::FIELD_DOCUMENTATION_EXT] = $v;
         }
         if (null !== ($v = $this->getMax())) {
             $a[self::FIELD_MAX] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MAX_EXT] = $v;
-            }
+            $a[self::FIELD_MAX_EXT] = $v;
         }
         if (null !== ($v = $this->getMin())) {
             $a[self::FIELD_MIN] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MIN_EXT] = $v;
-            }
+            $a[self::FIELD_MIN_EXT] = $v;
         }
         if (null !== ($v = $this->getName())) {
             $a[self::FIELD_NAME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_NAME_EXT] = $v;
-            }
+            $a[self::FIELD_NAME_EXT] = $v;
         }
         if ([] !== ($vs = $this->getPart())) {
             $a[self::FIELD_PART] = $vs;
@@ -1116,10 +1110,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
             $a[self::FIELD_REFERENCED_FROM] = $vs;
         }
         if (null !== ($v = $this->getSearchType())) {
-            $a[self::FIELD_SEARCH_TYPE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SEARCH_TYPE_EXT] = $v;
-            }
+            $a[self::FIELD_SEARCH_TYPE] = $v;
         }
         if ([] !== ($vs = $this->getTargetProfile())) {
             $a[self::FIELD_TARGET_PROFILE] = [];
@@ -1128,25 +1119,15 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_TARGET_PROFILE][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_TARGET_PROFILE_EXT])) {
-                        $a[self::FIELD_TARGET_PROFILE_EXT] = [];
-                    }
-                    $a[self::FIELD_TARGET_PROFILE_EXT][] = $v;
-                }
+                $a[self::FIELD_TARGET_PROFILE_EXT][] = $v;
             }
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TYPE_EXT] = $v;
-            }
+            $a[self::FIELD_TYPE_EXT] = $v;
         }
         if (null !== ($v = $this->getUse())) {
-            $a[self::FIELD_USE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_USE_EXT] = $v;
-            }
+            $a[self::FIELD_USE] = $v;
         }
         return $a;
     }

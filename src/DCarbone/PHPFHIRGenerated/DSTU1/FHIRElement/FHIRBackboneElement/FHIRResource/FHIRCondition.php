@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1593,6 +1593,7 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
                 $v->xmlSerialize($sxe->addChild(self::FIELD_EVIDENCE, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1637,6 +1638,7 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
         if (null !== ($v = $this->getStage())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STAGE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1658,15 +1660,11 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
         }
         if (null !== ($v = $this->getAbatementBoolean())) {
             $a[self::FIELD_ABATEMENT_BOOLEAN] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ABATEMENT_BOOLEAN_EXT] = $v;
-            }
+            $a[self::FIELD_ABATEMENT_BOOLEAN_EXT] = $v;
         }
         if (null !== ($v = $this->getAbatementDate())) {
             $a[self::FIELD_ABATEMENT_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ABATEMENT_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_ABATEMENT_DATE_EXT] = $v;
         }
         if (null !== ($v = $this->getAsserter())) {
             $a[self::FIELD_ASSERTER] = $v;
@@ -1682,9 +1680,7 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
         }
         if (null !== ($v = $this->getDateAsserted())) {
             $a[self::FIELD_DATE_ASSERTED] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DATE_ASSERTED_EXT] = $v;
-            }
+            $a[self::FIELD_DATE_ASSERTED_EXT] = $v;
         }
         if (null !== ($v = $this->getEncounter())) {
             $a[self::FIELD_ENCOUNTER] = $v;
@@ -1693,37 +1689,21 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
             $a[self::FIELD_EVIDENCE] = $vs;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_IDENTIFIER][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_IDENTIFIER_EXT])) {
-                        $a[self::FIELD_IDENTIFIER_EXT] = [];
-                    }
-                    $a[self::FIELD_IDENTIFIER_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_IDENTIFIER] = $vs;
         }
         if ([] !== ($vs = $this->getLocation())) {
             $a[self::FIELD_LOCATION] = $vs;
         }
         if (null !== ($v = $this->getNotes())) {
             $a[self::FIELD_NOTES] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_NOTES_EXT] = $v;
-            }
+            $a[self::FIELD_NOTES_EXT] = $v;
         }
         if (null !== ($v = $this->getOnsetAge())) {
             $a[self::FIELD_ONSET_AGE] = $v;
         }
         if (null !== ($v = $this->getOnsetDate())) {
             $a[self::FIELD_ONSET_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ONSET_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_ONSET_DATE_EXT] = $v;
         }
         if ([] !== ($vs = $this->getRelatedItem())) {
             $a[self::FIELD_RELATED_ITEM] = $vs;
@@ -1735,10 +1715,7 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
             $a[self::FIELD_STAGE] = $v;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_STATUS_EXT] = $v;
-            }
+            $a[self::FIELD_STATUS] = $v;
         }
         if (null !== ($v = $this->getSubject())) {
             $a[self::FIELD_SUBJECT] = $v;

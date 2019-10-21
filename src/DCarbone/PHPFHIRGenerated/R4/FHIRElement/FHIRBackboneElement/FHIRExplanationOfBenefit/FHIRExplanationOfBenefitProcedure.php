@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExpla
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -115,7 +115,7 @@ class FHIRExplanationOfBenefitProcedure extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The code or reference to a Procedure resource which identifies the clinical
-     * intervention performed.
+     * intervention performed. (choose any one of procedure*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -126,7 +126,7 @@ class FHIRExplanationOfBenefitProcedure extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The code or reference to a Procedure resource which identifies the clinical
-     * intervention performed.
+     * intervention performed. (choose any one of procedure*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -345,7 +345,7 @@ class FHIRExplanationOfBenefitProcedure extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The code or reference to a Procedure resource which identifies the clinical
-     * intervention performed.
+     * intervention performed. (choose any one of procedure*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -361,7 +361,7 @@ class FHIRExplanationOfBenefitProcedure extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The code or reference to a Procedure resource which identifies the clinical
-     * intervention performed.
+     * intervention performed. (choose any one of procedure*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $procedureCodeableConcept
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitProcedure
@@ -378,7 +378,7 @@ class FHIRExplanationOfBenefitProcedure extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The code or reference to a Procedure resource which identifies the clinical
-     * intervention performed.
+     * intervention performed. (choose any one of procedure*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -393,7 +393,7 @@ class FHIRExplanationOfBenefitProcedure extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The code or reference to a Procedure resource which identifies the clinical
-     * intervention performed.
+     * intervention performed. (choose any one of procedure*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $procedureReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitProcedure
@@ -682,9 +682,7 @@ class FHIRExplanationOfBenefitProcedure extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getDate())) {
             $a[self::FIELD_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_DATE_EXT] = $v;
         }
         if (null !== ($v = $this->getProcedureCodeableConcept())) {
             $a[self::FIELD_PROCEDURE_CODEABLE_CONCEPT] = $v;
@@ -694,9 +692,7 @@ class FHIRExplanationOfBenefitProcedure extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getSequence())) {
             $a[self::FIELD_SEQUENCE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SEQUENCE_EXT] = $v;
-            }
+            $a[self::FIELD_SEQUENCE_EXT] = $v;
         }
         if ([] !== ($vs = $this->getType())) {
             $a[self::FIELD_TYPE] = $vs;

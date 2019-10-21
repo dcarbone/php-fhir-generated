@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -109,9 +109,7 @@ class FHIRPositiveIntPrimitive implements PHPFHIRTypeInterface
                     $neg = -1;
                     $value = substr($value, 1);
                 }
-                if (ctype_digit($value)) {
-                    $value = $neg * (int)$value;
-                }
+                $value = $neg * intval($value, 10);
             }
         }
         if (!is_int($value)) {
@@ -131,6 +129,15 @@ class FHIRPositiveIntPrimitive implements PHPFHIRTypeInterface
             return true;
         }
         return 0 < $value && $value <= self::INT_MAX;
+    }
+
+
+    /**
+     * @return null|
+     */
+    public function getValue()
+    {
+        return $this->value;
     }
 
     /**
@@ -175,15 +182,6 @@ class FHIRPositiveIntPrimitive implements PHPFHIRTypeInterface
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<positiveInt_primitive{$xmlns}></positiveInt_primitive>";
-    }
-
-
-    /**
-     * @return null|
-     */
-    public function getValue()
-    {
-        return $this->value;
     }
 
     /**

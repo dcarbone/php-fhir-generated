@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -112,7 +112,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      *
      * A numeric factor for the relationship, for instance to express that the salt of
      * a substance has some percentage of the active substance in relation to some
-     * other.
+     * other. (choose any one of amount*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -124,7 +124,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      *
      * A numeric factor for the relationship, for instance to express that the salt of
      * a substance has some percentage of the active substance in relation to some
-     * other.
+     * other. (choose any one of amount*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -137,7 +137,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      *
      * A numeric factor for the relationship, for instance to express that the salt of
      * a substance has some percentage of the active substance in relation to some
-     * other.
+     * other. (choose any one of amount*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
      */
@@ -160,7 +160,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      *
      * A numeric factor for the relationship, for instance to express that the salt of
      * a substance has some percentage of the active substance in relation to some
-     * other.
+     * other. (choose any one of amount*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -215,6 +215,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A pointer to another substance, as a resource or just a representational code.
+     * (choose any one of substance*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -225,6 +226,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A pointer to another substance, as a resource or just a representational code.
+     * (choose any one of substance*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -402,7 +404,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      *
      * A numeric factor for the relationship, for instance to express that the salt of
      * a substance has some percentage of the active substance in relation to some
-     * other.
+     * other. (choose any one of amount*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -420,7 +422,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      *
      * A numeric factor for the relationship, for instance to express that the salt of
      * a substance has some percentage of the active substance in relation to some
-     * other.
+     * other. (choose any one of amount*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $amountQuantity
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationRelationship
@@ -438,7 +440,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      *
      * A numeric factor for the relationship, for instance to express that the salt of
      * a substance has some percentage of the active substance in relation to some
-     * other.
+     * other. (choose any one of amount*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -454,7 +456,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      *
      * A numeric factor for the relationship, for instance to express that the salt of
      * a substance has some percentage of the active substance in relation to some
-     * other.
+     * other. (choose any one of amount*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange $amountRange
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationRelationship
@@ -473,7 +475,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      *
      * A numeric factor for the relationship, for instance to express that the salt of
      * a substance has some percentage of the active substance in relation to some
-     * other.
+     * other. (choose any one of amount*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
      */
@@ -490,7 +492,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      *
      * A numeric factor for the relationship, for instance to express that the salt of
      * a substance has some percentage of the active substance in relation to some
-     * other.
+     * other. (choose any one of amount*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio $amountRatio
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationRelationship
@@ -540,7 +542,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      *
      * A numeric factor for the relationship, for instance to express that the salt of
      * a substance has some percentage of the active substance in relation to some
-     * other.
+     * other. (choose any one of amount*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -556,7 +558,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      *
      * A numeric factor for the relationship, for instance to express that the salt of
      * a substance has some percentage of the active substance in relation to some
-     * other.
+     * other. (choose any one of amount*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $amountString
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationRelationship
@@ -742,6 +744,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A pointer to another substance, as a resource or just a representational code.
+     * (choose any one of substance*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -757,6 +760,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A pointer to another substance, as a resource or just a representational code.
+     * (choose any one of substance*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $substanceCodeableConcept
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationRelationship
@@ -773,6 +777,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A pointer to another substance, as a resource or just a representational code.
+     * (choose any one of substance*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -787,6 +792,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A pointer to another substance, as a resource or just a representational code.
+     * (choose any one of substance*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $substanceReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationRelationship
@@ -892,6 +898,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getAmountQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AMOUNT_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -948,10 +955,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAmountQuantity())) {
-            $a[self::FIELD_AMOUNT_QUANTITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_AMOUNT_QUANTITY_EXT] = $v;
-            }
+            $a[self::FIELD_AMOUNT_QUANTITY] = $v;
         }
         if (null !== ($v = $this->getAmountRange())) {
             $a[self::FIELD_AMOUNT_RANGE] = $v;
@@ -964,18 +968,14 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getAmountString())) {
             $a[self::FIELD_AMOUNT_STRING] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_AMOUNT_STRING_EXT] = $v;
-            }
+            $a[self::FIELD_AMOUNT_STRING_EXT] = $v;
         }
         if (null !== ($v = $this->getAmountType())) {
             $a[self::FIELD_AMOUNT_TYPE] = $v;
         }
         if (null !== ($v = $this->getIsDefining())) {
             $a[self::FIELD_IS_DEFINING] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_IS_DEFINING_EXT] = $v;
-            }
+            $a[self::FIELD_IS_DEFINING_EXT] = $v;
         }
         if (null !== ($v = $this->getRelationship())) {
             $a[self::FIELD_RELATIONSHIP] = $v;

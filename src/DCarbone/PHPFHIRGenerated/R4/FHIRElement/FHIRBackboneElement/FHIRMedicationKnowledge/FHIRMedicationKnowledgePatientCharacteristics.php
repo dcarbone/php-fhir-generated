@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -68,8 +68,6 @@ use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
-use DCarbone\PHPFHIRGenerated\R4\PHPFHIRValueContainerInterface;
-use DCarbone\PHPFHIRGenerated\R4\PHPFHIRValueContainerTrait;
 
 /**
  * Information about a medication that is used to support knowledge.
@@ -77,10 +75,8 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRValueContainerTrait;
  * Class FHIRMedicationKnowledgePatientCharacteristics
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge
  */
-class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement implements PHPFHIRValueContainerInterface
+class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement
 {
-    use PHPFHIRValueContainerTrait;
-
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICATION_KNOWLEDGE_DOT_PATIENT_CHARACTERISTICS;
 
@@ -100,7 +96,7 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement 
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Specific characteristic that is relevant to the administration guideline (e.g.
-     * height, weight, gender).
+     * height, weight, gender). (choose any one of characteristic*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -113,7 +109,7 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement 
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Specific characteristic that is relevant to the administration guideline (e.g.
-     * height, weight, gender).
+     * height, weight, gender). (choose any one of characteristic*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -244,7 +240,7 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement 
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Specific characteristic that is relevant to the administration guideline (e.g.
-     * height, weight, gender).
+     * height, weight, gender). (choose any one of characteristic*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -260,14 +256,13 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement 
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Specific characteristic that is relevant to the administration guideline (e.g.
-     * height, weight, gender).
+     * height, weight, gender). (choose any one of characteristic*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $characteristicCodeableConcept
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgePatientCharacteristics
      */
     public function setCharacteristicCodeableConcept(FHIRCodeableConcept $characteristicCodeableConcept = null)
     {
-        $this->_markNonValueFieldsDefined();
         $this->characteristicCodeableConcept = $characteristicCodeableConcept;
         return $this;
     }
@@ -280,7 +275,7 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement 
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Specific characteristic that is relevant to the administration guideline (e.g.
-     * height, weight, gender).
+     * height, weight, gender). (choose any one of characteristic*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -297,14 +292,13 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement 
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Specific characteristic that is relevant to the administration guideline (e.g.
-     * height, weight, gender).
+     * height, weight, gender). (choose any one of characteristic*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $characteristicQuantity
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgePatientCharacteristics
      */
     public function setCharacteristicQuantity(FHIRQuantity $characteristicQuantity = null)
     {
-        $this->_markNonValueFieldsDefined();
         $this->characteristicQuantity = $characteristicQuantity;
         return $this;
     }
@@ -445,6 +439,7 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement 
         if (null !== ($v = $this->getCharacteristicCodeableConcept())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CHARACTERISTIC_CODEABLE_CONCEPT, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getCharacteristicQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CHARACTERISTIC_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -469,10 +464,7 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement 
             $a[self::FIELD_CHARACTERISTIC_CODEABLE_CONCEPT] = $v;
         }
         if (null !== ($v = $this->getCharacteristicQuantity())) {
-            $a[self::FIELD_CHARACTERISTIC_QUANTITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_CHARACTERISTIC_QUANTITY_EXT] = $v;
-            }
+            $a[self::FIELD_CHARACTERISTIC_QUANTITY] = $v;
         }
         if ([] !== ($vs = $this->getValue())) {
             $a[self::FIELD_VALUE] = [];
@@ -481,12 +473,7 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement 
                     continue;
                 }
                 $a[self::FIELD_VALUE][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_VALUE_EXT])) {
-                        $a[self::FIELD_VALUE_EXT] = [];
-                    }
-                    $a[self::FIELD_VALUE_EXT][] = $v;
-                }
+                $a[self::FIELD_VALUE_EXT][] = $v;
             }
         }
         return $a;

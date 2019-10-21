@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -814,42 +814,32 @@ class FHIRSignature extends FHIRElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getBlob())) {
             $a[self::FIELD_BLOB] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_BLOB_EXT] = $v;
-            }
+            $a[self::FIELD_BLOB_EXT] = $v;
         }
         if (null !== ($v = $this->getContentType())) {
             $a[self::FIELD_CONTENT_TYPE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_CONTENT_TYPE_EXT] = $v;
-            }
+            $a[self::FIELD_CONTENT_TYPE_EXT] = $v;
         }
         if (null !== ($v = $this->getOnBehalfOfReference())) {
             $a[self::FIELD_ON_BEHALF_OF_REFERENCE] = $v;
         }
         if (null !== ($v = $this->getOnBehalfOfUri())) {
             $a[self::FIELD_ON_BEHALF_OF_URI] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ON_BEHALF_OF_URI_EXT] = $v;
-            }
+            $a[self::FIELD_ON_BEHALF_OF_URI_EXT] = $v;
         }
         if ([] !== ($vs = $this->getType())) {
             $a[self::FIELD_TYPE] = $vs;
         }
         if (null !== ($v = $this->getWhen())) {
             $a[self::FIELD_WHEN] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_WHEN_EXT] = $v;
-            }
+            $a[self::FIELD_WHEN_EXT] = $v;
         }
         if (null !== ($v = $this->getWhoReference())) {
             $a[self::FIELD_WHO_REFERENCE] = $v;
         }
         if (null !== ($v = $this->getWhoUri())) {
             $a[self::FIELD_WHO_URI] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_WHO_URI_EXT] = $v;
-            }
+            $a[self::FIELD_WHO_URI_EXT] = $v;
         }
         return $a;
     }

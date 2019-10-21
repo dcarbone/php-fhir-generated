@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -347,7 +347,7 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * Identifies the medication being requested. This is a link to a resource that
      * represents the medication which may be the details of the medication or simply
      * an attribute carrying a code that identifies the medication from a known list of
-     * medications.
+     * medications. (choose any one of medication*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -360,7 +360,7 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * Identifies the medication being requested. This is a link to a resource that
      * represents the medication which may be the details of the medication or simply
      * an attribute carrying a code that identifies the medication from a known list of
-     * medications.
+     * medications. (choose any one of medication*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -458,7 +458,7 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      *
      * Indicates if this record was captured as a secondary 'reported' record rather
      * than as an original primary source-of-truth record. It may also indicate the
-     * source of the report.
+     * source of the report. (choose any one of reported*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
@@ -470,7 +470,7 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      *
      * Indicates if this record was captured as a secondary 'reported' record rather
      * than as an original primary source-of-truth record. It may also indicate the
-     * source of the report.
+     * source of the report. (choose any one of reported*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -1854,7 +1854,7 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * Identifies the medication being requested. This is a link to a resource that
      * represents the medication which may be the details of the medication or simply
      * an attribute carrying a code that identifies the medication from a known list of
-     * medications.
+     * medications. (choose any one of medication*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -1872,7 +1872,7 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * Identifies the medication being requested. This is a link to a resource that
      * represents the medication which may be the details of the medication or simply
      * an attribute carrying a code that identifies the medication from a known list of
-     * medications.
+     * medications. (choose any one of medication*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $medicationCodeableConcept
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationRequest
@@ -1891,7 +1891,7 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * Identifies the medication being requested. This is a link to a resource that
      * represents the medication which may be the details of the medication or simply
      * an attribute carrying a code that identifies the medication from a known list of
-     * medications.
+     * medications. (choose any one of medication*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -1908,7 +1908,7 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * Identifies the medication being requested. This is a link to a resource that
      * represents the medication which may be the details of the medication or simply
      * an attribute carrying a code that identifies the medication from a known list of
-     * medications.
+     * medications. (choose any one of medication*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $medicationReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationRequest
@@ -2260,7 +2260,7 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      *
      * Indicates if this record was captured as a secondary 'reported' record rather
      * than as an original primary source-of-truth record. It may also indicate the
-     * source of the report.
+     * source of the report. (choose any one of reported*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
@@ -2275,7 +2275,7 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      *
      * Indicates if this record was captured as a secondary 'reported' record rather
      * than as an original primary source-of-truth record. It may also indicate the
-     * source of the report.
+     * source of the report. (choose any one of reported*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $reportedBoolean
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationRequest
@@ -2301,7 +2301,7 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      *
      * Indicates if this record was captured as a secondary 'reported' record rather
      * than as an original primary source-of-truth record. It may also indicate the
-     * source of the report.
+     * source of the report. (choose any one of reported*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -2317,7 +2317,7 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      *
      * Indicates if this record was captured as a secondary 'reported' record rather
      * than as an original primary source-of-truth record. It may also indicate the
-     * source of the report.
+     * source of the report. (choose any one of reported*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $reportedReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationRequest
@@ -2815,9 +2815,11 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
                 $v->xmlSerialize($sxe->addChild(self::FIELD_EVENT_HISTORY, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getGroupIdentifier())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_GROUP_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }
+
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -2851,6 +2853,7 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
                 $v->xmlSerialize($sxe->addChild(self::FIELD_INSURANCE, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getIntent())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_INTENT, null, $v->_getFHIRXMLNamespace()));
         }
@@ -2883,6 +2886,7 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
         if (null !== ($v = $this->getPriorPrescription())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PRIOR_PRESCRIPTION, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getPriority())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PRIORITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -2919,6 +2923,7 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
         if (null !== ($v = $this->getRequester())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_REQUESTER, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -2954,9 +2959,7 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAuthoredOn())) {
             $a[self::FIELD_AUTHORED_ON] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_AUTHORED_ON_EXT] = $v;
-            }
+            $a[self::FIELD_AUTHORED_ON_EXT] = $v;
         }
         if ([] !== ($vs = $this->getBasedOn())) {
             $a[self::FIELD_BASED_ON] = $vs;
@@ -2975,9 +2978,7 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
         }
         if (null !== ($v = $this->getDoNotPerform())) {
             $a[self::FIELD_DO_NOT_PERFORM] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DO_NOT_PERFORM_EXT] = $v;
-            }
+            $a[self::FIELD_DO_NOT_PERFORM_EXT] = $v;
         }
         if ([] !== ($vs = $this->getDosageInstruction())) {
             $a[self::FIELD_DOSAGE_INSTRUCTION] = $vs;
@@ -2989,25 +2990,10 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
             $a[self::FIELD_EVENT_HISTORY] = $vs;
         }
         if (null !== ($v = $this->getGroupIdentifier())) {
-            $a[self::FIELD_GROUP_IDENTIFIER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_GROUP_IDENTIFIER_EXT] = $v;
-            }
+            $a[self::FIELD_GROUP_IDENTIFIER] = $v;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_IDENTIFIER][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_IDENTIFIER_EXT])) {
-                        $a[self::FIELD_IDENTIFIER_EXT] = [];
-                    }
-                    $a[self::FIELD_IDENTIFIER_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_IDENTIFIER] = $vs;
         }
         if ([] !== ($vs = $this->getInstantiatesCanonical())) {
             $a[self::FIELD_INSTANTIATES_CANONICAL] = [];
@@ -3016,12 +3002,7 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
                     continue;
                 }
                 $a[self::FIELD_INSTANTIATES_CANONICAL][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_INSTANTIATES_CANONICAL_EXT])) {
-                        $a[self::FIELD_INSTANTIATES_CANONICAL_EXT] = [];
-                    }
-                    $a[self::FIELD_INSTANTIATES_CANONICAL_EXT][] = $v;
-                }
+                $a[self::FIELD_INSTANTIATES_CANONICAL_EXT][] = $v;
             }
         }
         if ([] !== ($vs = $this->getInstantiatesUri())) {
@@ -3031,22 +3012,14 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
                     continue;
                 }
                 $a[self::FIELD_INSTANTIATES_URI][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_INSTANTIATES_URI_EXT])) {
-                        $a[self::FIELD_INSTANTIATES_URI_EXT] = [];
-                    }
-                    $a[self::FIELD_INSTANTIATES_URI_EXT][] = $v;
-                }
+                $a[self::FIELD_INSTANTIATES_URI_EXT][] = $v;
             }
         }
         if ([] !== ($vs = $this->getInsurance())) {
             $a[self::FIELD_INSURANCE] = $vs;
         }
         if (null !== ($v = $this->getIntent())) {
-            $a[self::FIELD_INTENT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_INTENT_EXT] = $v;
-            }
+            $a[self::FIELD_INTENT] = $v;
         }
         if (null !== ($v = $this->getMedicationCodeableConcept())) {
             $a[self::FIELD_MEDICATION_CODEABLE_CONCEPT] = $v;
@@ -3067,10 +3040,7 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
             $a[self::FIELD_PRIOR_PRESCRIPTION] = $v;
         }
         if (null !== ($v = $this->getPriority())) {
-            $a[self::FIELD_PRIORITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PRIORITY_EXT] = $v;
-            }
+            $a[self::FIELD_PRIORITY] = $v;
         }
         if ([] !== ($vs = $this->getReasonCode())) {
             $a[self::FIELD_REASON_CODE] = $vs;
@@ -3083,9 +3053,7 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
         }
         if (null !== ($v = $this->getReportedBoolean())) {
             $a[self::FIELD_REPORTED_BOOLEAN] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_REPORTED_BOOLEAN_EXT] = $v;
-            }
+            $a[self::FIELD_REPORTED_BOOLEAN_EXT] = $v;
         }
         if (null !== ($v = $this->getReportedReference())) {
             $a[self::FIELD_REPORTED_REFERENCE] = $v;
@@ -3094,10 +3062,7 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
             $a[self::FIELD_REQUESTER] = $v;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_STATUS_EXT] = $v;
-            }
+            $a[self::FIELD_STATUS] = $v;
         }
         if (null !== ($v = $this->getStatusReason())) {
             $a[self::FIELD_STATUS_REASON] = $v;

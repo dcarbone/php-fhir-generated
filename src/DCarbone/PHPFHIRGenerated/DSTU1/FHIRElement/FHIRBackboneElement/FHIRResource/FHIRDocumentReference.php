@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1887,6 +1887,7 @@ class FHIRDocumentReference extends FHIRResource implements PHPFHIRContainedType
         if (null !== ($v = $this->getHash())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_HASH, null, $v->_getFHIRXMLNamespace()));
         }
+
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1901,6 +1902,7 @@ class FHIRDocumentReference extends FHIRResource implements PHPFHIRContainedType
         if (null !== ($v = $this->getLocation())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_LOCATION, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getMasterIdentifier())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MASTER_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1929,6 +1931,7 @@ class FHIRDocumentReference extends FHIRResource implements PHPFHIRContainedType
         if (null !== ($v = $this->getSize())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SIZE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1966,18 +1969,14 @@ class FHIRDocumentReference extends FHIRResource implements PHPFHIRContainedType
         }
         if (null !== ($v = $this->getCreated())) {
             $a[self::FIELD_CREATED] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_CREATED_EXT] = $v;
-            }
+            $a[self::FIELD_CREATED_EXT] = $v;
         }
         if (null !== ($v = $this->getCustodian())) {
             $a[self::FIELD_CUSTODIAN] = $v;
         }
         if (null !== ($v = $this->getDescription())) {
             $a[self::FIELD_DESCRIPTION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DESCRIPTION_EXT] = $v;
-            }
+            $a[self::FIELD_DESCRIPTION_EXT] = $v;
         }
         if (null !== ($v = $this->getDocStatus())) {
             $a[self::FIELD_DOC_STATUS] = $v;
@@ -1989,70 +1988,38 @@ class FHIRDocumentReference extends FHIRResource implements PHPFHIRContainedType
                     continue;
                 }
                 $a[self::FIELD_FORMAT][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_FORMAT_EXT])) {
-                        $a[self::FIELD_FORMAT_EXT] = [];
-                    }
-                    $a[self::FIELD_FORMAT_EXT][] = $v;
-                }
+                $a[self::FIELD_FORMAT_EXT][] = $v;
             }
         }
         if (null !== ($v = $this->getHash())) {
             $a[self::FIELD_HASH] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_HASH_EXT] = $v;
-            }
+            $a[self::FIELD_HASH_EXT] = $v;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_IDENTIFIER][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_IDENTIFIER_EXT])) {
-                        $a[self::FIELD_IDENTIFIER_EXT] = [];
-                    }
-                    $a[self::FIELD_IDENTIFIER_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_IDENTIFIER] = $vs;
         }
         if (null !== ($v = $this->getIndexed())) {
             $a[self::FIELD_INDEXED] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_INDEXED_EXT] = $v;
-            }
+            $a[self::FIELD_INDEXED_EXT] = $v;
         }
         if (null !== ($v = $this->getLocation())) {
             $a[self::FIELD_LOCATION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_LOCATION_EXT] = $v;
-            }
+            $a[self::FIELD_LOCATION_EXT] = $v;
         }
         if (null !== ($v = $this->getMasterIdentifier())) {
-            $a[self::FIELD_MASTER_IDENTIFIER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MASTER_IDENTIFIER_EXT] = $v;
-            }
+            $a[self::FIELD_MASTER_IDENTIFIER] = $v;
         }
         if (null !== ($v = $this->getMimeType())) {
             $a[self::FIELD_MIME_TYPE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MIME_TYPE_EXT] = $v;
-            }
+            $a[self::FIELD_MIME_TYPE_EXT] = $v;
         }
         if (null !== ($v = $this->getPolicyManager())) {
             $a[self::FIELD_POLICY_MANAGER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_POLICY_MANAGER_EXT] = $v;
-            }
+            $a[self::FIELD_POLICY_MANAGER_EXT] = $v;
         }
         if (null !== ($v = $this->getPrimaryLanguage())) {
             $a[self::FIELD_PRIMARY_LANGUAGE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PRIMARY_LANGUAGE_EXT] = $v;
-            }
+            $a[self::FIELD_PRIMARY_LANGUAGE_EXT] = $v;
         }
         if ([] !== ($vs = $this->getRelatesTo())) {
             $a[self::FIELD_RELATES_TO] = $vs;
@@ -2062,15 +2029,10 @@ class FHIRDocumentReference extends FHIRResource implements PHPFHIRContainedType
         }
         if (null !== ($v = $this->getSize())) {
             $a[self::FIELD_SIZE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SIZE_EXT] = $v;
-            }
+            $a[self::FIELD_SIZE_EXT] = $v;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_STATUS_EXT] = $v;
-            }
+            $a[self::FIELD_STATUS] = $v;
         }
         if (null !== ($v = $this->getSubject())) {
             $a[self::FIELD_SUBJECT] = $v;

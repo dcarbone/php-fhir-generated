@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExpla
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -238,7 +238,8 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided.
+     * Where the product or service was provided. (choose any one of location*, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddress
      */
@@ -249,7 +250,8 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided.
+     * Where the product or service was provided. (choose any one of location*, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -259,7 +261,8 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided.
+     * Where the product or service was provided. (choose any one of location*, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -372,7 +375,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The date or dates when the service or product was supplied, performed or
-     * completed.
+     * completed. (choose any one of serviced*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
@@ -383,7 +386,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The date or dates when the service or product was supplied, performed or
-     * completed.
+     * completed. (choose any one of serviced*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -1322,7 +1325,8 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided.
+     * Where the product or service was provided. (choose any one of location*, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddress
      */
@@ -1340,7 +1344,8 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided.
+     * Where the product or service was provided. (choose any one of location*, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddress $locationAddress
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitItem
@@ -1357,7 +1362,8 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided.
+     * Where the product or service was provided. (choose any one of location*, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -1372,7 +1378,8 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided.
+     * Where the product or service was provided. (choose any one of location*, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $locationCodeableConcept
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitItem
@@ -1388,7 +1395,8 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided.
+     * Where the product or service was provided. (choose any one of location*, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -1402,7 +1410,8 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided.
+     * Where the product or service was provided. (choose any one of location*, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $locationReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitItem
@@ -1844,7 +1853,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The date or dates when the service or product was supplied, performed or
-     * completed.
+     * completed. (choose any one of serviced*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
@@ -1860,7 +1869,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The date or dates when the service or product was supplied, performed or
-     * completed.
+     * completed. (choose any one of serviced*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate $servicedDate
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitItem
@@ -1885,7 +1894,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The date or dates when the service or product was supplied, performed or
-     * completed.
+     * completed. (choose any one of serviced*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -1900,7 +1909,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The date or dates when the service or product was supplied, performed or
-     * completed.
+     * completed. (choose any one of serviced*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $servicedPeriod
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitItem
@@ -2238,6 +2247,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if ([] !== ($vs = $this->getAdjudication())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -2320,6 +2330,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_MODIFIER, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getNet())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_NET, null, $v->_getFHIRXMLNamespace()));
         }
@@ -2352,6 +2363,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_PROGRAM_CODE, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -2387,6 +2399,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_UDI, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getUnitPrice())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_UNIT_PRICE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -2400,19 +2413,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getAdjudication())) {
-            $a[self::FIELD_ADJUDICATION] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_ADJUDICATION][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_ADJUDICATION_EXT])) {
-                        $a[self::FIELD_ADJUDICATION_EXT] = [];
-                    }
-                    $a[self::FIELD_ADJUDICATION_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_ADJUDICATION] = $vs;
         }
         if (null !== ($v = $this->getBodySite())) {
             $a[self::FIELD_BODY_SITE] = $v;
@@ -2424,12 +2425,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_CARE_TEAM_SEQUENCE][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_CARE_TEAM_SEQUENCE_EXT])) {
-                        $a[self::FIELD_CARE_TEAM_SEQUENCE_EXT] = [];
-                    }
-                    $a[self::FIELD_CARE_TEAM_SEQUENCE_EXT][] = $v;
-                }
+                $a[self::FIELD_CARE_TEAM_SEQUENCE_EXT][] = $v;
             }
         }
         if (null !== ($v = $this->getCategory())) {
@@ -2445,12 +2441,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_DIAGNOSIS_SEQUENCE][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_DIAGNOSIS_SEQUENCE_EXT])) {
-                        $a[self::FIELD_DIAGNOSIS_SEQUENCE_EXT] = [];
-                    }
-                    $a[self::FIELD_DIAGNOSIS_SEQUENCE_EXT][] = $v;
-                }
+                $a[self::FIELD_DIAGNOSIS_SEQUENCE_EXT][] = $v;
             }
         }
         if ([] !== ($vs = $this->getEncounter())) {
@@ -2458,9 +2449,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getFactor())) {
             $a[self::FIELD_FACTOR] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_FACTOR_EXT] = $v;
-            }
+            $a[self::FIELD_FACTOR_EXT] = $v;
         }
         if ([] !== ($vs = $this->getInformationSequence())) {
             $a[self::FIELD_INFORMATION_SEQUENCE] = [];
@@ -2469,12 +2458,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_INFORMATION_SEQUENCE][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_INFORMATION_SEQUENCE_EXT])) {
-                        $a[self::FIELD_INFORMATION_SEQUENCE_EXT] = [];
-                    }
-                    $a[self::FIELD_INFORMATION_SEQUENCE_EXT][] = $v;
-                }
+                $a[self::FIELD_INFORMATION_SEQUENCE_EXT][] = $v;
             }
         }
         if (null !== ($v = $this->getLocationAddress())) {
@@ -2490,10 +2474,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
             $a[self::FIELD_MODIFIER] = $vs;
         }
         if (null !== ($v = $this->getNet())) {
-            $a[self::FIELD_NET] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_NET_EXT] = $v;
-            }
+            $a[self::FIELD_NET] = $v;
         }
         if ([] !== ($vs = $this->getNoteNumber())) {
             $a[self::FIELD_NOTE_NUMBER] = [];
@@ -2502,12 +2483,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_NOTE_NUMBER][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_NOTE_NUMBER_EXT])) {
-                        $a[self::FIELD_NOTE_NUMBER_EXT] = [];
-                    }
-                    $a[self::FIELD_NOTE_NUMBER_EXT][] = $v;
-                }
+                $a[self::FIELD_NOTE_NUMBER_EXT][] = $v;
             }
         }
         if ([] !== ($vs = $this->getProcedureSequence())) {
@@ -2517,12 +2493,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_PROCEDURE_SEQUENCE][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_PROCEDURE_SEQUENCE_EXT])) {
-                        $a[self::FIELD_PROCEDURE_SEQUENCE_EXT] = [];
-                    }
-                    $a[self::FIELD_PROCEDURE_SEQUENCE_EXT][] = $v;
-                }
+                $a[self::FIELD_PROCEDURE_SEQUENCE_EXT][] = $v;
             }
         }
         if (null !== ($v = $this->getProductOrService())) {
@@ -2532,25 +2503,18 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
             $a[self::FIELD_PROGRAM_CODE] = $vs;
         }
         if (null !== ($v = $this->getQuantity())) {
-            $a[self::FIELD_QUANTITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_QUANTITY_EXT] = $v;
-            }
+            $a[self::FIELD_QUANTITY] = $v;
         }
         if (null !== ($v = $this->getRevenue())) {
             $a[self::FIELD_REVENUE] = $v;
         }
         if (null !== ($v = $this->getSequence())) {
             $a[self::FIELD_SEQUENCE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SEQUENCE_EXT] = $v;
-            }
+            $a[self::FIELD_SEQUENCE_EXT] = $v;
         }
         if (null !== ($v = $this->getServicedDate())) {
             $a[self::FIELD_SERVICED_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SERVICED_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_SERVICED_DATE_EXT] = $v;
         }
         if (null !== ($v = $this->getServicedPeriod())) {
             $a[self::FIELD_SERVICED_PERIOD] = $v;
@@ -2562,10 +2526,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
             $a[self::FIELD_UDI] = $vs;
         }
         if (null !== ($v = $this->getUnitPrice())) {
-            $a[self::FIELD_UNIT_PRICE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_UNIT_PRICE_EXT] = $v;
-            }
+            $a[self::FIELD_UNIT_PRICE] = $v;
         }
         return $a;
     }

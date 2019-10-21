@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -461,9 +461,7 @@ class FHIRResource extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getLanguage())) {
             $a[self::FIELD_LANGUAGE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_LANGUAGE_EXT] = $v;
-            }
+            $a[self::FIELD_LANGUAGE_EXT] = $v;
         }
         if (null !== ($v = $this->getText())) {
             $a[self::FIELD_TEXT] = $v;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1737,7 +1737,7 @@ class FHIRExtension extends FHIRElement
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getUrl())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_URL, null, $v->_getFHIRXMLNamespace()));
+            $sxe->addAttribute(self::FIELD_URL, (string)$v);
         }
 
         if (null !== ($v = $this->getValueAddress())) {
@@ -1764,6 +1764,7 @@ class FHIRExtension extends FHIRElement
         if (null !== ($v = $this->getValueCoding())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_CODING, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getValueContact())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_CONTACT, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1780,6 +1781,7 @@ class FHIRExtension extends FHIRElement
         if (null !== ($v = $this->getValueHumanName())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_HUMAN_NAME, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getValueIdentifier())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1793,6 +1795,7 @@ class FHIRExtension extends FHIRElement
         if (null !== ($v = $this->getValuePeriod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getValueQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1842,21 +1845,15 @@ class FHIRExtension extends FHIRElement
         }
         if (null !== ($v = $this->getValueBase64Binary())) {
             $a[self::FIELD_VALUE_BASE_64BINARY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_BASE_64BINARY_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_BASE_64BINARY_EXT] = $v;
         }
         if (null !== ($v = $this->getValueBoolean())) {
             $a[self::FIELD_VALUE_BOOLEAN] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_BOOLEAN_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_BOOLEAN_EXT] = $v;
         }
         if (null !== ($v = $this->getValueCode())) {
             $a[self::FIELD_VALUE_CODE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_CODE_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_CODE_EXT] = $v;
         }
         if (null !== ($v = $this->getValueCodeableConcept())) {
             $a[self::FIELD_VALUE_CODEABLE_CONCEPT] = $v;
@@ -1865,58 +1862,39 @@ class FHIRExtension extends FHIRElement
             $a[self::FIELD_VALUE_CODING] = $v;
         }
         if (null !== ($v = $this->getValueContact())) {
-            $a[self::FIELD_VALUE_CONTACT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_CONTACT_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_CONTACT] = $v;
         }
         if (null !== ($v = $this->getValueDate())) {
             $a[self::FIELD_VALUE_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_DATE_EXT] = $v;
         }
         if (null !== ($v = $this->getValueDateTime())) {
             $a[self::FIELD_VALUE_DATE_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_DATE_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_DATE_TIME_EXT] = $v;
         }
         if (null !== ($v = $this->getValueDecimal())) {
             $a[self::FIELD_VALUE_DECIMAL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_DECIMAL_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_DECIMAL_EXT] = $v;
         }
         if (null !== ($v = $this->getValueHumanName())) {
             $a[self::FIELD_VALUE_HUMAN_NAME] = $v;
         }
         if (null !== ($v = $this->getValueIdentifier())) {
-            $a[self::FIELD_VALUE_IDENTIFIER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_IDENTIFIER_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_IDENTIFIER] = $v;
         }
         if (null !== ($v = $this->getValueInstant())) {
             $a[self::FIELD_VALUE_INSTANT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_INSTANT_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_INSTANT_EXT] = $v;
         }
         if (null !== ($v = $this->getValueInteger())) {
             $a[self::FIELD_VALUE_INTEGER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_INTEGER_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_INTEGER_EXT] = $v;
         }
         if (null !== ($v = $this->getValuePeriod())) {
             $a[self::FIELD_VALUE_PERIOD] = $v;
         }
         if (null !== ($v = $this->getValueQuantity())) {
-            $a[self::FIELD_VALUE_QUANTITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_QUANTITY_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_QUANTITY] = $v;
         }
         if (null !== ($v = $this->getValueRange())) {
             $a[self::FIELD_VALUE_RANGE] = $v;
@@ -1935,15 +1913,11 @@ class FHIRExtension extends FHIRElement
         }
         if (null !== ($v = $this->getValueString())) {
             $a[self::FIELD_VALUE_STRING] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_STRING_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_STRING_EXT] = $v;
         }
         if (null !== ($v = $this->getValueUri())) {
             $a[self::FIELD_VALUE_URI] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_URI_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_URI_EXT] = $v;
         }
         return $a;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -614,6 +614,7 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
         if (null !== ($v = $this->getAllergenicIndicator())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ALLERGENIC_INDICATOR, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getIdentifier())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }
@@ -654,15 +655,10 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAllergenicIndicator())) {
             $a[self::FIELD_ALLERGENIC_INDICATOR] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ALLERGENIC_INDICATOR_EXT] = $v;
-            }
+            $a[self::FIELD_ALLERGENIC_INDICATOR_EXT] = $v;
         }
         if (null !== ($v = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_IDENTIFIER_EXT] = $v;
-            }
+            $a[self::FIELD_IDENTIFIER] = $v;
         }
         if ([] !== ($vs = $this->getManufacturer())) {
             $a[self::FIELD_MANUFACTURER] = $vs;

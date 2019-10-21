@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRIm
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -938,6 +938,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getAvailability())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AVAILABILITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -990,19 +991,14 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAvailability())) {
-            $a[self::FIELD_AVAILABILITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_AVAILABILITY_EXT] = $v;
-            }
+            $a[self::FIELD_AVAILABILITY] = $v;
         }
         if (null !== ($v = $this->getBodySite())) {
             $a[self::FIELD_BODY_SITE] = $v;
         }
         if (null !== ($v = $this->getDescription())) {
             $a[self::FIELD_DESCRIPTION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DESCRIPTION_EXT] = $v;
-            }
+            $a[self::FIELD_DESCRIPTION_EXT] = $v;
         }
         if ([] !== ($vs = $this->getInstance())) {
             $a[self::FIELD_INSTANCE] = $vs;
@@ -1015,33 +1011,23 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getNumber())) {
             $a[self::FIELD_NUMBER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_NUMBER_EXT] = $v;
-            }
+            $a[self::FIELD_NUMBER_EXT] = $v;
         }
         if (null !== ($v = $this->getNumberOfInstances())) {
             $a[self::FIELD_NUMBER_OF_INSTANCES] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_NUMBER_OF_INSTANCES_EXT] = $v;
-            }
+            $a[self::FIELD_NUMBER_OF_INSTANCES_EXT] = $v;
         }
         if (null !== ($v = $this->getStarted())) {
             $a[self::FIELD_STARTED] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_STARTED_EXT] = $v;
-            }
+            $a[self::FIELD_STARTED_EXT] = $v;
         }
         if (null !== ($v = $this->getUid())) {
             $a[self::FIELD_UID] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_UID_EXT] = $v;
-            }
+            $a[self::FIELD_UID_EXT] = $v;
         }
         if (null !== ($v = $this->getUrl())) {
             $a[self::FIELD_URL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_URL_EXT] = $v;
-            }
+            $a[self::FIELD_URL_EXT] = $v;
         }
         return $a;
     }

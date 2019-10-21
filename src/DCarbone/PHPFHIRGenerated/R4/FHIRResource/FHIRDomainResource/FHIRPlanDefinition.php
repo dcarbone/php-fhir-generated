@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -426,7 +426,7 @@ class FHIRPlanDefinition extends FHIRDomainResource implements PHPFHIRContainedT
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A code or group definition that describes the intended subject of the plan
-     * definition.
+     * definition. (choose any one of subject*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -437,7 +437,7 @@ class FHIRPlanDefinition extends FHIRDomainResource implements PHPFHIRContainedT
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A code or group definition that describes the intended subject of the plan
-     * definition.
+     * definition. (choose any one of subject*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -2184,7 +2184,7 @@ class FHIRPlanDefinition extends FHIRDomainResource implements PHPFHIRContainedT
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A code or group definition that describes the intended subject of the plan
-     * definition.
+     * definition. (choose any one of subject*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -2200,7 +2200,7 @@ class FHIRPlanDefinition extends FHIRDomainResource implements PHPFHIRContainedT
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A code or group definition that describes the intended subject of the plan
-     * definition.
+     * definition. (choose any one of subject*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $subjectCodeableConcept
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPlanDefinition
@@ -2217,7 +2217,7 @@ class FHIRPlanDefinition extends FHIRDomainResource implements PHPFHIRContainedT
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A code or group definition that describes the intended subject of the plan
-     * definition.
+     * definition. (choose any one of subject*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -2232,7 +2232,7 @@ class FHIRPlanDefinition extends FHIRDomainResource implements PHPFHIRContainedT
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A code or group definition that describes the intended subject of the plan
-     * definition.
+     * definition. (choose any one of subject*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $subjectReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPlanDefinition
@@ -2935,6 +2935,7 @@ class FHIRPlanDefinition extends FHIRDomainResource implements PHPFHIRContainedT
                 $v->xmlSerialize($sxe->addChild(self::FIELD_GOAL, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -2990,6 +2991,7 @@ class FHIRPlanDefinition extends FHIRDomainResource implements PHPFHIRContainedT
                 $v->xmlSerialize($sxe->addChild(self::FIELD_REVIEWER, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -3052,9 +3054,7 @@ class FHIRPlanDefinition extends FHIRDomainResource implements PHPFHIRContainedT
         }
         if (null !== ($v = $this->getApprovalDate())) {
             $a[self::FIELD_APPROVAL_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_APPROVAL_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_APPROVAL_DATE_EXT] = $v;
         }
         if ([] !== ($vs = $this->getAuthor())) {
             $a[self::FIELD_AUTHOR] = $vs;
@@ -3064,21 +3064,15 @@ class FHIRPlanDefinition extends FHIRDomainResource implements PHPFHIRContainedT
         }
         if (null !== ($v = $this->getCopyright())) {
             $a[self::FIELD_COPYRIGHT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_COPYRIGHT_EXT] = $v;
-            }
+            $a[self::FIELD_COPYRIGHT_EXT] = $v;
         }
         if (null !== ($v = $this->getDate())) {
             $a[self::FIELD_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_DATE_EXT] = $v;
         }
         if (null !== ($v = $this->getDescription())) {
             $a[self::FIELD_DESCRIPTION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DESCRIPTION_EXT] = $v;
-            }
+            $a[self::FIELD_DESCRIPTION_EXT] = $v;
         }
         if ([] !== ($vs = $this->getEditor())) {
             $a[self::FIELD_EDITOR] = $vs;
@@ -3091,36 +3085,20 @@ class FHIRPlanDefinition extends FHIRDomainResource implements PHPFHIRContainedT
         }
         if (null !== ($v = $this->getExperimental())) {
             $a[self::FIELD_EXPERIMENTAL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_EXPERIMENTAL_EXT] = $v;
-            }
+            $a[self::FIELD_EXPERIMENTAL_EXT] = $v;
         }
         if ([] !== ($vs = $this->getGoal())) {
             $a[self::FIELD_GOAL] = $vs;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_IDENTIFIER][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_IDENTIFIER_EXT])) {
-                        $a[self::FIELD_IDENTIFIER_EXT] = [];
-                    }
-                    $a[self::FIELD_IDENTIFIER_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_IDENTIFIER] = $vs;
         }
         if ([] !== ($vs = $this->getJurisdiction())) {
             $a[self::FIELD_JURISDICTION] = $vs;
         }
         if (null !== ($v = $this->getLastReviewDate())) {
             $a[self::FIELD_LAST_REVIEW_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_LAST_REVIEW_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_LAST_REVIEW_DATE_EXT] = $v;
         }
         if ([] !== ($vs = $this->getLibrary())) {
             $a[self::FIELD_LIBRARY] = [];
@@ -3129,31 +3107,20 @@ class FHIRPlanDefinition extends FHIRDomainResource implements PHPFHIRContainedT
                     continue;
                 }
                 $a[self::FIELD_LIBRARY][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_LIBRARY_EXT])) {
-                        $a[self::FIELD_LIBRARY_EXT] = [];
-                    }
-                    $a[self::FIELD_LIBRARY_EXT][] = $v;
-                }
+                $a[self::FIELD_LIBRARY_EXT][] = $v;
             }
         }
         if (null !== ($v = $this->getName())) {
             $a[self::FIELD_NAME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_NAME_EXT] = $v;
-            }
+            $a[self::FIELD_NAME_EXT] = $v;
         }
         if (null !== ($v = $this->getPublisher())) {
             $a[self::FIELD_PUBLISHER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PUBLISHER_EXT] = $v;
-            }
+            $a[self::FIELD_PUBLISHER_EXT] = $v;
         }
         if (null !== ($v = $this->getPurpose())) {
             $a[self::FIELD_PURPOSE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PURPOSE_EXT] = $v;
-            }
+            $a[self::FIELD_PURPOSE_EXT] = $v;
         }
         if ([] !== ($vs = $this->getRelatedArtifact())) {
             $a[self::FIELD_RELATED_ARTIFACT] = $vs;
@@ -3162,10 +3129,7 @@ class FHIRPlanDefinition extends FHIRDomainResource implements PHPFHIRContainedT
             $a[self::FIELD_REVIEWER] = $vs;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_STATUS_EXT] = $v;
-            }
+            $a[self::FIELD_STATUS] = $v;
         }
         if (null !== ($v = $this->getSubjectCodeableConcept())) {
             $a[self::FIELD_SUBJECT_CODEABLE_CONCEPT] = $v;
@@ -3175,15 +3139,11 @@ class FHIRPlanDefinition extends FHIRDomainResource implements PHPFHIRContainedT
         }
         if (null !== ($v = $this->getSubtitle())) {
             $a[self::FIELD_SUBTITLE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SUBTITLE_EXT] = $v;
-            }
+            $a[self::FIELD_SUBTITLE_EXT] = $v;
         }
         if (null !== ($v = $this->getTitle())) {
             $a[self::FIELD_TITLE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TITLE_EXT] = $v;
-            }
+            $a[self::FIELD_TITLE_EXT] = $v;
         }
         if ([] !== ($vs = $this->getTopic())) {
             $a[self::FIELD_TOPIC] = $vs;
@@ -3193,24 +3153,18 @@ class FHIRPlanDefinition extends FHIRDomainResource implements PHPFHIRContainedT
         }
         if (null !== ($v = $this->getUrl())) {
             $a[self::FIELD_URL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_URL_EXT] = $v;
-            }
+            $a[self::FIELD_URL_EXT] = $v;
         }
         if (null !== ($v = $this->getUsage())) {
             $a[self::FIELD_USAGE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_USAGE_EXT] = $v;
-            }
+            $a[self::FIELD_USAGE_EXT] = $v;
         }
         if ([] !== ($vs = $this->getUseContext())) {
             $a[self::FIELD_USE_CONTEXT] = $vs;
         }
         if (null !== ($v = $this->getVersion())) {
             $a[self::FIELD_VERSION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VERSION_EXT] = $v;
-            }
+            $a[self::FIELD_VERSION_EXT] = $v;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

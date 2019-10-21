@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRPr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -578,6 +578,7 @@ class FHIRProfileSearchParam extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_TARGET, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -595,15 +596,11 @@ class FHIRProfileSearchParam extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getDocumentation())) {
             $a[self::FIELD_DOCUMENTATION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DOCUMENTATION_EXT] = $v;
-            }
+            $a[self::FIELD_DOCUMENTATION_EXT] = $v;
         }
         if (null !== ($v = $this->getName())) {
             $a[self::FIELD_NAME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_NAME_EXT] = $v;
-            }
+            $a[self::FIELD_NAME_EXT] = $v;
         }
         if ([] !== ($vs = $this->getTarget())) {
             $a[self::FIELD_TARGET] = [];
@@ -612,25 +609,15 @@ class FHIRProfileSearchParam extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_TARGET][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_TARGET_EXT])) {
-                        $a[self::FIELD_TARGET_EXT] = [];
-                    }
-                    $a[self::FIELD_TARGET_EXT][] = $v;
-                }
+                $a[self::FIELD_TARGET_EXT][] = $v;
             }
         }
         if (null !== ($v = $this->getType())) {
-            $a[self::FIELD_TYPE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TYPE_EXT] = $v;
-            }
+            $a[self::FIELD_TYPE] = $v;
         }
         if (null !== ($v = $this->getXpath())) {
             $a[self::FIELD_XPATH] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_XPATH_EXT] = $v;
-            }
+            $a[self::FIELD_XPATH_EXT] = $v;
         }
         return $a;
     }

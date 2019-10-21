@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -335,6 +335,7 @@ class FHIRDataRequirementSort extends FHIRElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getDirection())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DIRECTION, null, $v->_getFHIRXMLNamespace()));
         }
@@ -351,16 +352,11 @@ class FHIRDataRequirementSort extends FHIRElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getDirection())) {
-            $a[self::FIELD_DIRECTION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DIRECTION_EXT] = $v;
-            }
+            $a[self::FIELD_DIRECTION] = $v;
         }
         if (null !== ($v = $this->getPath())) {
             $a[self::FIELD_PATH] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PATH_EXT] = $v;
-            }
+            $a[self::FIELD_PATH_EXT] = $v;
         }
         return $a;
     }

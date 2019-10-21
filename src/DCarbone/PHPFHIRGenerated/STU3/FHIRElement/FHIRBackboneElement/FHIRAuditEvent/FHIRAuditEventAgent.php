@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRAud
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1044,6 +1044,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_ROLE, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getUserId())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_USER_ID, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1058,9 +1059,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAltId())) {
             $a[self::FIELD_ALT_ID] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ALT_ID_EXT] = $v;
-            }
+            $a[self::FIELD_ALT_ID_EXT] = $v;
         }
         if (null !== ($v = $this->getLocation())) {
             $a[self::FIELD_LOCATION] = $v;
@@ -1070,9 +1069,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getName())) {
             $a[self::FIELD_NAME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_NAME_EXT] = $v;
-            }
+            $a[self::FIELD_NAME_EXT] = $v;
         }
         if (null !== ($v = $this->getNetwork())) {
             $a[self::FIELD_NETWORK] = $v;
@@ -1084,12 +1081,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_POLICY][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_POLICY_EXT])) {
-                        $a[self::FIELD_POLICY_EXT] = [];
-                    }
-                    $a[self::FIELD_POLICY_EXT][] = $v;
-                }
+                $a[self::FIELD_POLICY_EXT][] = $v;
             }
         }
         if ([] !== ($vs = $this->getPurposeOfUse())) {
@@ -1100,18 +1092,13 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getRequestor())) {
             $a[self::FIELD_REQUESTOR] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_REQUESTOR_EXT] = $v;
-            }
+            $a[self::FIELD_REQUESTOR_EXT] = $v;
         }
         if ([] !== ($vs = $this->getRole())) {
             $a[self::FIELD_ROLE] = $vs;
         }
         if (null !== ($v = $this->getUserId())) {
-            $a[self::FIELD_USER_ID] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_USER_ID_EXT] = $v;
-            }
+            $a[self::FIELD_USER_ID] = $v;
         }
         return $a;
     }

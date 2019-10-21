@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPla
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -456,6 +456,7 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
         if (null !== ($v = $this->getOffsetRange())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_OFFSET_RANGE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getRelationship())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_RELATIONSHIP, null, $v->_getFHIRXMLNamespace()));
         }
@@ -470,9 +471,7 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getActionId())) {
             $a[self::FIELD_ACTION_ID] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ACTION_ID_EXT] = $v;
-            }
+            $a[self::FIELD_ACTION_ID_EXT] = $v;
         }
         if (null !== ($v = $this->getOffsetDuration())) {
             $a[self::FIELD_OFFSET_DURATION] = $v;
@@ -481,10 +480,7 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
             $a[self::FIELD_OFFSET_RANGE] = $v;
         }
         if (null !== ($v = $this->getRelationship())) {
-            $a[self::FIELD_RELATIONSHIP] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_RELATIONSHIP_EXT] = $v;
-            }
+            $a[self::FIELD_RELATIONSHIP] = $v;
         }
         return $a;
     }

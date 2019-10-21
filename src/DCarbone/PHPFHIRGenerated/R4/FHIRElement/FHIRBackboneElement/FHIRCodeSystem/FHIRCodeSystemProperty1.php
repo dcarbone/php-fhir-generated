@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCodeS
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -120,7 +120,7 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of this property.
+     * The value of this property. (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
@@ -131,7 +131,7 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * The value of this property.
+     * The value of this property. (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode
      */
@@ -141,7 +141,7 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of this property.
+     * The value of this property. (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding
      */
@@ -154,7 +154,7 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of this property.
+     * The value of this property. (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -165,7 +165,7 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of this property.
+     * The value of this property. (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
@@ -175,7 +175,7 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement
      * 32 bit number; for values larger than this, use decimal
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of this property.
+     * The value of this property. (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
@@ -185,7 +185,7 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of this property.
+     * The value of this property. (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -389,7 +389,7 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of this property.
+     * The value of this property. (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
@@ -402,7 +402,7 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of this property.
+     * The value of this property. (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $valueBoolean
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemProperty1
@@ -427,7 +427,7 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * The value of this property.
+     * The value of this property. (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode
      */
@@ -442,7 +442,7 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * The value of this property.
+     * The value of this property. (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode $valueCode
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemProperty1
@@ -466,7 +466,7 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of this property.
+     * The value of this property. (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding
      */
@@ -480,7 +480,7 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The value of this property.
+     * The value of this property. (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding $valueCoding
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemProperty1
@@ -499,7 +499,7 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of this property.
+     * The value of this property. (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -516,7 +516,7 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of this property.
+     * The value of this property. (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $valueDateTime
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemProperty1
@@ -541,7 +541,7 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of this property.
+     * The value of this property. (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
@@ -556,7 +556,7 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of this property.
+     * The value of this property. (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal $valueDecimal
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemProperty1
@@ -580,7 +580,7 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement
      * 32 bit number; for values larger than this, use decimal
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of this property.
+     * The value of this property. (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
@@ -594,7 +594,7 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement
      * 32 bit number; for values larger than this, use decimal
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of this property.
+     * The value of this property. (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $valueInteger
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemProperty1
@@ -618,7 +618,7 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of this property.
+     * The value of this property. (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -632,7 +632,7 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of this property.
+     * The value of this property. (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $valueString
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemProperty1
@@ -786,48 +786,34 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getCode())) {
             $a[self::FIELD_CODE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_CODE_EXT] = $v;
-            }
+            $a[self::FIELD_CODE_EXT] = $v;
         }
         if (null !== ($v = $this->getValueBoolean())) {
             $a[self::FIELD_VALUE_BOOLEAN] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_BOOLEAN_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_BOOLEAN_EXT] = $v;
         }
         if (null !== ($v = $this->getValueCode())) {
             $a[self::FIELD_VALUE_CODE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_CODE_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_CODE_EXT] = $v;
         }
         if (null !== ($v = $this->getValueCoding())) {
             $a[self::FIELD_VALUE_CODING] = $v;
         }
         if (null !== ($v = $this->getValueDateTime())) {
             $a[self::FIELD_VALUE_DATE_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_DATE_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_DATE_TIME_EXT] = $v;
         }
         if (null !== ($v = $this->getValueDecimal())) {
             $a[self::FIELD_VALUE_DECIMAL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_DECIMAL_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_DECIMAL_EXT] = $v;
         }
         if (null !== ($v = $this->getValueInteger())) {
             $a[self::FIELD_VALUE_INTEGER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_INTEGER_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_INTEGER_EXT] = $v;
         }
         if (null !== ($v = $this->getValueString())) {
             $a[self::FIELD_VALUE_STRING] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_STRING_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_STRING_EXT] = $v;
         }
         return $a;
     }

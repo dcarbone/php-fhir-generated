@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1682,6 +1682,7 @@ class FHIRObservation extends FHIRResource implements PHPFHIRContainedTypeInterf
         if (null !== ($v = $this->getComments())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_COMMENTS, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getIdentifier())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1727,6 +1728,7 @@ class FHIRObservation extends FHIRResource implements PHPFHIRContainedTypeInterf
                 $v->xmlSerialize($sxe->addChild(self::FIELD_RELATED, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getReliability())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_RELIABILITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1734,6 +1736,7 @@ class FHIRObservation extends FHIRResource implements PHPFHIRContainedTypeInterf
         if (null !== ($v = $this->getSpecimen())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SPECIMEN, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1753,6 +1756,7 @@ class FHIRObservation extends FHIRResource implements PHPFHIRContainedTypeInterf
         if (null !== ($v = $this->getValuePeriod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getValueQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1778,9 +1782,7 @@ class FHIRObservation extends FHIRResource implements PHPFHIRContainedTypeInterf
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAppliesDateTime())) {
             $a[self::FIELD_APPLIES_DATE_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_APPLIES_DATE_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_APPLIES_DATE_TIME_EXT] = $v;
         }
         if (null !== ($v = $this->getAppliesPeriod())) {
             $a[self::FIELD_APPLIES_PERIOD] = $v;
@@ -1790,24 +1792,17 @@ class FHIRObservation extends FHIRResource implements PHPFHIRContainedTypeInterf
         }
         if (null !== ($v = $this->getComments())) {
             $a[self::FIELD_COMMENTS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_COMMENTS_EXT] = $v;
-            }
+            $a[self::FIELD_COMMENTS_EXT] = $v;
         }
         if (null !== ($v = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_IDENTIFIER_EXT] = $v;
-            }
+            $a[self::FIELD_IDENTIFIER] = $v;
         }
         if (null !== ($v = $this->getInterpretation())) {
             $a[self::FIELD_INTERPRETATION] = $v;
         }
         if (null !== ($v = $this->getIssued())) {
             $a[self::FIELD_ISSUED] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ISSUED_EXT] = $v;
-            }
+            $a[self::FIELD_ISSUED_EXT] = $v;
         }
         if (null !== ($v = $this->getMethod())) {
             $a[self::FIELD_METHOD] = $v;
@@ -1825,19 +1820,13 @@ class FHIRObservation extends FHIRResource implements PHPFHIRContainedTypeInterf
             $a[self::FIELD_RELATED] = $vs;
         }
         if (null !== ($v = $this->getReliability())) {
-            $a[self::FIELD_RELIABILITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_RELIABILITY_EXT] = $v;
-            }
+            $a[self::FIELD_RELIABILITY] = $v;
         }
         if (null !== ($v = $this->getSpecimen())) {
             $a[self::FIELD_SPECIMEN] = $v;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_STATUS_EXT] = $v;
-            }
+            $a[self::FIELD_STATUS] = $v;
         }
         if (null !== ($v = $this->getSubject())) {
             $a[self::FIELD_SUBJECT] = $v;
@@ -1852,10 +1841,7 @@ class FHIRObservation extends FHIRResource implements PHPFHIRContainedTypeInterf
             $a[self::FIELD_VALUE_PERIOD] = $v;
         }
         if (null !== ($v = $this->getValueQuantity())) {
-            $a[self::FIELD_VALUE_QUANTITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_QUANTITY_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_QUANTITY] = $v;
         }
         if (null !== ($v = $this->getValueRatio())) {
             $a[self::FIELD_VALUE_RATIO] = $v;
@@ -1865,9 +1851,7 @@ class FHIRObservation extends FHIRResource implements PHPFHIRContainedTypeInterf
         }
         if (null !== ($v = $this->getValueString())) {
             $a[self::FIELD_VALUE_STRING] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_STRING_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_STRING_EXT] = $v;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

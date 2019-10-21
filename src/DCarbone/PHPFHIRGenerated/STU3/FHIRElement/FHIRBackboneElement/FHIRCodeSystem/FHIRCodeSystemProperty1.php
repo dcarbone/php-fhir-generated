@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCod
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -710,42 +710,30 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getCode())) {
             $a[self::FIELD_CODE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_CODE_EXT] = $v;
-            }
+            $a[self::FIELD_CODE_EXT] = $v;
         }
         if (null !== ($v = $this->getValueBoolean())) {
             $a[self::FIELD_VALUE_BOOLEAN] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_BOOLEAN_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_BOOLEAN_EXT] = $v;
         }
         if (null !== ($v = $this->getValueCode())) {
             $a[self::FIELD_VALUE_CODE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_CODE_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_CODE_EXT] = $v;
         }
         if (null !== ($v = $this->getValueCoding())) {
             $a[self::FIELD_VALUE_CODING] = $v;
         }
         if (null !== ($v = $this->getValueDateTime())) {
             $a[self::FIELD_VALUE_DATE_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_DATE_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_DATE_TIME_EXT] = $v;
         }
         if (null !== ($v = $this->getValueInteger())) {
             $a[self::FIELD_VALUE_INTEGER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_INTEGER_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_INTEGER_EXT] = $v;
         }
         if (null !== ($v = $this->getValueString())) {
             $a[self::FIELD_VALUE_STRING] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_STRING_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_STRING_EXT] = $v;
         }
         return $a;
     }

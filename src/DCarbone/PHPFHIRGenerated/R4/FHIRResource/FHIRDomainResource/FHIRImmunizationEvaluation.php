@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -154,7 +154,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * Nominal position in a series.
+     * Nominal position in a series. (choose any one of doseNumber*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
      */
@@ -164,7 +164,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * Nominal position in a series.
+     * Nominal position in a series. (choose any one of doseNumber*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -240,7 +240,8 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * The recommended number of doses to achieve immunity.
+     * The recommended number of doses to achieve immunity. (choose any one of
+     * seriesDoses*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
      */
@@ -250,7 +251,8 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The recommended number of doses to achieve immunity.
+     * The recommended number of doses to achieve immunity. (choose any one of
+     * seriesDoses*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -633,7 +635,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * Nominal position in a series.
+     * Nominal position in a series. (choose any one of doseNumber*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
      */
@@ -647,7 +649,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * Nominal position in a series.
+     * Nominal position in a series. (choose any one of doseNumber*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt $doseNumberPositiveInt
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImmunizationEvaluation
@@ -671,7 +673,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * Nominal position in a series.
+     * Nominal position in a series. (choose any one of doseNumber*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -685,7 +687,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * Nominal position in a series.
+     * Nominal position in a series. (choose any one of doseNumber*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $doseNumberString
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImmunizationEvaluation
@@ -964,7 +966,8 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * The recommended number of doses to achieve immunity.
+     * The recommended number of doses to achieve immunity. (choose any one of
+     * seriesDoses*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
      */
@@ -978,7 +981,8 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * The recommended number of doses to achieve immunity.
+     * The recommended number of doses to achieve immunity. (choose any one of
+     * seriesDoses*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt $seriesDosesPositiveInt
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImmunizationEvaluation
@@ -1002,7 +1006,8 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The recommended number of doses to achieve immunity.
+     * The recommended number of doses to achieve immunity. (choose any one of
+     * seriesDoses*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -1016,7 +1021,8 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The recommended number of doses to achieve immunity.
+     * The recommended number of doses to achieve immunity. (choose any one of
+     * seriesDoses*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $seriesDosesString
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImmunizationEvaluation
@@ -1250,6 +1256,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
                 $v->xmlSerialize($sxe->addChild(self::FIELD_DOSE_STATUS_REASON, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1275,6 +1282,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
         if (null !== ($v = $this->getSeriesDosesString())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SERIES_DOSES_STRING, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1296,27 +1304,19 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
         }
         if (null !== ($v = $this->getDate())) {
             $a[self::FIELD_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_DATE_EXT] = $v;
         }
         if (null !== ($v = $this->getDescription())) {
             $a[self::FIELD_DESCRIPTION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DESCRIPTION_EXT] = $v;
-            }
+            $a[self::FIELD_DESCRIPTION_EXT] = $v;
         }
         if (null !== ($v = $this->getDoseNumberPositiveInt())) {
             $a[self::FIELD_DOSE_NUMBER_POSITIVE_INT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DOSE_NUMBER_POSITIVE_INT_EXT] = $v;
-            }
+            $a[self::FIELD_DOSE_NUMBER_POSITIVE_INT_EXT] = $v;
         }
         if (null !== ($v = $this->getDoseNumberString())) {
             $a[self::FIELD_DOSE_NUMBER_STRING] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DOSE_NUMBER_STRING_EXT] = $v;
-            }
+            $a[self::FIELD_DOSE_NUMBER_STRING_EXT] = $v;
         }
         if (null !== ($v = $this->getDoseStatus())) {
             $a[self::FIELD_DOSE_STATUS] = $v;
@@ -1325,19 +1325,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
             $a[self::FIELD_DOSE_STATUS_REASON] = $vs;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_IDENTIFIER][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_IDENTIFIER_EXT])) {
-                        $a[self::FIELD_IDENTIFIER_EXT] = [];
-                    }
-                    $a[self::FIELD_IDENTIFIER_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_IDENTIFIER] = $vs;
         }
         if (null !== ($v = $this->getImmunizationEvent())) {
             $a[self::FIELD_IMMUNIZATION_EVENT] = $v;
@@ -1347,27 +1335,18 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
         }
         if (null !== ($v = $this->getSeries())) {
             $a[self::FIELD_SERIES] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SERIES_EXT] = $v;
-            }
+            $a[self::FIELD_SERIES_EXT] = $v;
         }
         if (null !== ($v = $this->getSeriesDosesPositiveInt())) {
             $a[self::FIELD_SERIES_DOSES_POSITIVE_INT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SERIES_DOSES_POSITIVE_INT_EXT] = $v;
-            }
+            $a[self::FIELD_SERIES_DOSES_POSITIVE_INT_EXT] = $v;
         }
         if (null !== ($v = $this->getSeriesDosesString())) {
             $a[self::FIELD_SERIES_DOSES_STRING] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SERIES_DOSES_STRING_EXT] = $v;
-            }
+            $a[self::FIELD_SERIES_DOSES_STRING_EXT] = $v;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_STATUS_EXT] = $v;
-            }
+            $a[self::FIELD_STATUS] = $v;
         }
         if (null !== ($v = $this->getTargetDisease())) {
             $a[self::FIELD_TARGET_DISEASE] = $v;

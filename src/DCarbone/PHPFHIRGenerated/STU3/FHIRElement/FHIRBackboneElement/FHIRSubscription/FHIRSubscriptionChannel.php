@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRSub
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -522,6 +522,7 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
         if (null !== ($v = $this->getPayload())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PAYLOAD, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -536,9 +537,7 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getEndpoint())) {
             $a[self::FIELD_ENDPOINT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ENDPOINT_EXT] = $v;
-            }
+            $a[self::FIELD_ENDPOINT_EXT] = $v;
         }
         if ([] !== ($vs = $this->getHeader())) {
             $a[self::FIELD_HEADER] = [];
@@ -547,25 +546,15 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_HEADER][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_HEADER_EXT])) {
-                        $a[self::FIELD_HEADER_EXT] = [];
-                    }
-                    $a[self::FIELD_HEADER_EXT][] = $v;
-                }
+                $a[self::FIELD_HEADER_EXT][] = $v;
             }
         }
         if (null !== ($v = $this->getPayload())) {
             $a[self::FIELD_PAYLOAD] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PAYLOAD_EXT] = $v;
-            }
+            $a[self::FIELD_PAYLOAD_EXT] = $v;
         }
         if (null !== ($v = $this->getType())) {
-            $a[self::FIELD_TYPE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TYPE_EXT] = $v;
-            }
+            $a[self::FIELD_TYPE] = $v;
         }
         return $a;
     }

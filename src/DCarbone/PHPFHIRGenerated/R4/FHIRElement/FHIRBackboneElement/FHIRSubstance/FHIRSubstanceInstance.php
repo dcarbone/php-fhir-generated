@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -411,9 +411,11 @@ class FHIRSubstanceInstance extends FHIRBackboneElement
         if (null !== ($v = $this->getExpiry())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_EXPIRY, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getIdentifier())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -428,21 +430,13 @@ class FHIRSubstanceInstance extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getExpiry())) {
             $a[self::FIELD_EXPIRY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_EXPIRY_EXT] = $v;
-            }
+            $a[self::FIELD_EXPIRY_EXT] = $v;
         }
         if (null !== ($v = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_IDENTIFIER_EXT] = $v;
-            }
+            $a[self::FIELD_IDENTIFIER] = $v;
         }
         if (null !== ($v = $this->getQuantity())) {
-            $a[self::FIELD_QUANTITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_QUANTITY_EXT] = $v;
-            }
+            $a[self::FIELD_QUANTITY] = $v;
         }
         return $a;
     }

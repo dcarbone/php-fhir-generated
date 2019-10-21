@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRDo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -61,8 +61,6 @@ use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
-use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRValueContainerInterface;
-use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRValueContainerTrait;
 
 /**
  * A reference to a document.
@@ -70,10 +68,8 @@ use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRValueContainerTrait;
  * Class FHIRDocumentReferenceParameter
  * @package \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRDocumentReference
  */
-class FHIRDocumentReferenceParameter extends FHIRBackboneElement implements PHPFHIRValueContainerInterface
+class FHIRDocumentReferenceParameter extends FHIRBackboneElement
 {
-    use PHPFHIRValueContainerTrait;
-
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_DOCUMENT_REFERENCE_DOT_PARAMETER;
 
@@ -350,15 +346,11 @@ class FHIRDocumentReferenceParameter extends FHIRBackboneElement implements PHPF
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getName())) {
             $a[self::FIELD_NAME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_NAME_EXT] = $v;
-            }
+            $a[self::FIELD_NAME_EXT] = $v;
         }
         if (null !== ($v = $this->getValue())) {
             $a[self::FIELD_VALUE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_EXT] = $v;
         }
         return $a;
     }

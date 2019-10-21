@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1108,6 +1108,7 @@ class FHIREndpoint extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         if (null !== ($v = $this->getConnectionType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CONNECTION_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if ([] !== ($vs = $this->getContact())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1124,6 +1125,7 @@ class FHIREndpoint extends FHIRDomainResource implements PHPFHIRContainedTypeInt
                 $v->xmlSerialize($sxe->addChild(self::FIELD_HEADER, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1160,6 +1162,7 @@ class FHIREndpoint extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         if (null !== ($v = $this->getPeriod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1174,27 +1177,13 @@ class FHIREndpoint extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAddress())) {
             $a[self::FIELD_ADDRESS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ADDRESS_EXT] = $v;
-            }
+            $a[self::FIELD_ADDRESS_EXT] = $v;
         }
         if (null !== ($v = $this->getConnectionType())) {
             $a[self::FIELD_CONNECTION_TYPE] = $v;
         }
         if ([] !== ($vs = $this->getContact())) {
-            $a[self::FIELD_CONTACT] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_CONTACT][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_CONTACT_EXT])) {
-                        $a[self::FIELD_CONTACT_EXT] = [];
-                    }
-                    $a[self::FIELD_CONTACT_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_CONTACT] = $vs;
         }
         if ([] !== ($vs = $this->getHeader())) {
             $a[self::FIELD_HEADER] = [];
@@ -1203,37 +1192,18 @@ class FHIREndpoint extends FHIRDomainResource implements PHPFHIRContainedTypeInt
                     continue;
                 }
                 $a[self::FIELD_HEADER][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_HEADER_EXT])) {
-                        $a[self::FIELD_HEADER_EXT] = [];
-                    }
-                    $a[self::FIELD_HEADER_EXT][] = $v;
-                }
+                $a[self::FIELD_HEADER_EXT][] = $v;
             }
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_IDENTIFIER][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_IDENTIFIER_EXT])) {
-                        $a[self::FIELD_IDENTIFIER_EXT] = [];
-                    }
-                    $a[self::FIELD_IDENTIFIER_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_IDENTIFIER] = $vs;
         }
         if (null !== ($v = $this->getManagingOrganization())) {
             $a[self::FIELD_MANAGING_ORGANIZATION] = $v;
         }
         if (null !== ($v = $this->getName())) {
             $a[self::FIELD_NAME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_NAME_EXT] = $v;
-            }
+            $a[self::FIELD_NAME_EXT] = $v;
         }
         if ([] !== ($vs = $this->getPayloadMimeType())) {
             $a[self::FIELD_PAYLOAD_MIME_TYPE] = [];
@@ -1242,12 +1212,7 @@ class FHIREndpoint extends FHIRDomainResource implements PHPFHIRContainedTypeInt
                     continue;
                 }
                 $a[self::FIELD_PAYLOAD_MIME_TYPE][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_PAYLOAD_MIME_TYPE_EXT])) {
-                        $a[self::FIELD_PAYLOAD_MIME_TYPE_EXT] = [];
-                    }
-                    $a[self::FIELD_PAYLOAD_MIME_TYPE_EXT][] = $v;
-                }
+                $a[self::FIELD_PAYLOAD_MIME_TYPE_EXT][] = $v;
             }
         }
         if ([] !== ($vs = $this->getPayloadType())) {
@@ -1257,10 +1222,7 @@ class FHIREndpoint extends FHIRDomainResource implements PHPFHIRContainedTypeInt
             $a[self::FIELD_PERIOD] = $v;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_STATUS_EXT] = $v;
-            }
+            $a[self::FIELD_STATUS] = $v;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

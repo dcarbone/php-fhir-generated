@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -590,27 +590,19 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getMaternalOrganismId())) {
             $a[self::FIELD_MATERNAL_ORGANISM_ID] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MATERNAL_ORGANISM_ID_EXT] = $v;
-            }
+            $a[self::FIELD_MATERNAL_ORGANISM_ID_EXT] = $v;
         }
         if (null !== ($v = $this->getMaternalOrganismName())) {
             $a[self::FIELD_MATERNAL_ORGANISM_NAME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MATERNAL_ORGANISM_NAME_EXT] = $v;
-            }
+            $a[self::FIELD_MATERNAL_ORGANISM_NAME_EXT] = $v;
         }
         if (null !== ($v = $this->getPaternalOrganismId())) {
             $a[self::FIELD_PATERNAL_ORGANISM_ID] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PATERNAL_ORGANISM_ID_EXT] = $v;
-            }
+            $a[self::FIELD_PATERNAL_ORGANISM_ID_EXT] = $v;
         }
         if (null !== ($v = $this->getPaternalOrganismName())) {
             $a[self::FIELD_PATERNAL_ORGANISM_NAME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PATERNAL_ORGANISM_NAME_EXT] = $v;
-            }
+            $a[self::FIELD_PATERNAL_ORGANISM_NAME_EXT] = $v;
         }
         return $a;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRAdv
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -598,6 +598,7 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getCausality())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CAUSALITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -634,10 +635,7 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getCausality())) {
-            $a[self::FIELD_CAUSALITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_CAUSALITY_EXT] = $v;
-            }
+            $a[self::FIELD_CAUSALITY] = $v;
         }
         if (null !== ($v = $this->getCausalityAssessment())) {
             $a[self::FIELD_CAUSALITY_ASSESSMENT] = $v;
@@ -650,9 +648,7 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getCausalityProductRelatedness())) {
             $a[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS_EXT] = $v;
-            }
+            $a[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS_EXT] = $v;
         }
         if (null !== ($v = $this->getCausalityResult())) {
             $a[self::FIELD_CAUSALITY_RESULT] = $v;

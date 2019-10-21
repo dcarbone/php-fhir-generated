@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1865,6 +1865,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements PHPFHIRContaine
                 $v->xmlSerialize($sxe->addChild(self::FIELD_CONTACT, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if ([] !== ($vs = $this->getCrossReference())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1877,6 +1878,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements PHPFHIRContaine
         if (null !== ($v = $this->getDomain())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DOMAIN, null, $v->_getFHIRXMLNamespace()));
         }
+
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -2002,37 +2004,13 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements PHPFHIRContaine
             $a[self::FIELD_CONTACT] = $vs;
         }
         if ([] !== ($vs = $this->getCrossReference())) {
-            $a[self::FIELD_CROSS_REFERENCE] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_CROSS_REFERENCE][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_CROSS_REFERENCE_EXT])) {
-                        $a[self::FIELD_CROSS_REFERENCE_EXT] = [];
-                    }
-                    $a[self::FIELD_CROSS_REFERENCE_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_CROSS_REFERENCE] = $vs;
         }
         if (null !== ($v = $this->getDomain())) {
             $a[self::FIELD_DOMAIN] = $v;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_IDENTIFIER][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_IDENTIFIER_EXT])) {
-                        $a[self::FIELD_IDENTIFIER_EXT] = [];
-                    }
-                    $a[self::FIELD_IDENTIFIER_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_IDENTIFIER] = $vs;
         }
         if (null !== ($v = $this->getLegalStatusOfSupply())) {
             $a[self::FIELD_LEGAL_STATUS_OF_SUPPLY] = $v;
@@ -2071,12 +2049,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements PHPFHIRContaine
                     continue;
                 }
                 $a[self::FIELD_SPECIAL_MEASURES][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_SPECIAL_MEASURES_EXT])) {
-                        $a[self::FIELD_SPECIAL_MEASURES_EXT] = [];
-                    }
-                    $a[self::FIELD_SPECIAL_MEASURES_EXT][] = $v;
-                }
+                $a[self::FIELD_SPECIAL_MEASURES_EXT][] = $v;
             }
         }
         if (null !== ($v = $this->getType())) {

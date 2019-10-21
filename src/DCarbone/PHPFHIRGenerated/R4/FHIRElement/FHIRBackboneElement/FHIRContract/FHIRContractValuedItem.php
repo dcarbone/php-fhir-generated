@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -137,7 +137,8 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Specific type of Contract Valued Item that may be priced.
+     * Specific type of Contract Valued Item that may be priced. (choose any one of
+     * entity*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -147,7 +148,8 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Specific type of Contract Valued Item that may be priced.
+     * Specific type of Contract Valued Item that may be priced. (choose any one of
+     * entity*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -587,7 +589,8 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Specific type of Contract Valued Item that may be priced.
+     * Specific type of Contract Valued Item that may be priced. (choose any one of
+     * entity*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -602,7 +605,8 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Specific type of Contract Valued Item that may be priced.
+     * Specific type of Contract Valued Item that may be priced. (choose any one of
+     * entity*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $entityCodeableConcept
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractValuedItem
@@ -618,7 +622,8 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Specific type of Contract Valued Item that may be priced.
+     * Specific type of Contract Valued Item that may be priced. (choose any one of
+     * entity*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -632,7 +637,8 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Specific type of Contract Valued Item that may be priced.
+     * Specific type of Contract Valued Item that may be priced. (choose any one of
+     * entity*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $entityReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractValuedItem
@@ -1281,6 +1287,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement
         if (null !== ($v = $this->getFactor())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_FACTOR, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getIdentifier())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1292,6 +1299,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_LINK_ID, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getNet())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_NET, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1304,6 +1312,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement
         if (null !== ($v = $this->getPoints())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_POINTS, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1323,6 +1332,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_SECURITY_LABEL_NUMBER, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getUnitPrice())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_UNIT_PRICE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1337,9 +1347,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getEffectiveTime())) {
             $a[self::FIELD_EFFECTIVE_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_EFFECTIVE_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_EFFECTIVE_TIME_EXT] = $v;
         }
         if (null !== ($v = $this->getEntityCodeableConcept())) {
             $a[self::FIELD_ENTITY_CODEABLE_CONCEPT] = $v;
@@ -1349,15 +1357,10 @@ class FHIRContractValuedItem extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getFactor())) {
             $a[self::FIELD_FACTOR] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_FACTOR_EXT] = $v;
-            }
+            $a[self::FIELD_FACTOR_EXT] = $v;
         }
         if (null !== ($v = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_IDENTIFIER_EXT] = $v;
-            }
+            $a[self::FIELD_IDENTIFIER] = $v;
         }
         if ([] !== ($vs = $this->getLinkId())) {
             $a[self::FIELD_LINK_ID] = [];
@@ -1366,43 +1369,26 @@ class FHIRContractValuedItem extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_LINK_ID][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_LINK_ID_EXT])) {
-                        $a[self::FIELD_LINK_ID_EXT] = [];
-                    }
-                    $a[self::FIELD_LINK_ID_EXT][] = $v;
-                }
+                $a[self::FIELD_LINK_ID_EXT][] = $v;
             }
         }
         if (null !== ($v = $this->getNet())) {
-            $a[self::FIELD_NET] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_NET_EXT] = $v;
-            }
+            $a[self::FIELD_NET] = $v;
         }
         if (null !== ($v = $this->getPayment())) {
             $a[self::FIELD_PAYMENT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PAYMENT_EXT] = $v;
-            }
+            $a[self::FIELD_PAYMENT_EXT] = $v;
         }
         if (null !== ($v = $this->getPaymentDate())) {
             $a[self::FIELD_PAYMENT_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PAYMENT_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_PAYMENT_DATE_EXT] = $v;
         }
         if (null !== ($v = $this->getPoints())) {
             $a[self::FIELD_POINTS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_POINTS_EXT] = $v;
-            }
+            $a[self::FIELD_POINTS_EXT] = $v;
         }
         if (null !== ($v = $this->getQuantity())) {
-            $a[self::FIELD_QUANTITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_QUANTITY_EXT] = $v;
-            }
+            $a[self::FIELD_QUANTITY] = $v;
         }
         if (null !== ($v = $this->getRecipient())) {
             $a[self::FIELD_RECIPIENT] = $v;
@@ -1417,19 +1403,11 @@ class FHIRContractValuedItem extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_SECURITY_LABEL_NUMBER][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_SECURITY_LABEL_NUMBER_EXT])) {
-                        $a[self::FIELD_SECURITY_LABEL_NUMBER_EXT] = [];
-                    }
-                    $a[self::FIELD_SECURITY_LABEL_NUMBER_EXT][] = $v;
-                }
+                $a[self::FIELD_SECURITY_LABEL_NUMBER_EXT][] = $v;
             }
         }
         if (null !== ($v = $this->getUnitPrice())) {
-            $a[self::FIELD_UNIT_PRICE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_UNIT_PRICE_EXT] = $v;
-            }
+            $a[self::FIELD_UNIT_PRICE] = $v;
         }
         return $a;
     }

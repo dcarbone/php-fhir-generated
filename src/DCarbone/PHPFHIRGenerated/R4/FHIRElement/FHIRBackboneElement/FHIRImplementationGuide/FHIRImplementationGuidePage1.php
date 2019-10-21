@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImple
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -475,25 +475,16 @@ class FHIRImplementationGuidePage1 extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_ANCHOR][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_ANCHOR_EXT])) {
-                        $a[self::FIELD_ANCHOR_EXT] = [];
-                    }
-                    $a[self::FIELD_ANCHOR_EXT][] = $v;
-                }
+                $a[self::FIELD_ANCHOR_EXT][] = $v;
             }
         }
         if (null !== ($v = $this->getName())) {
             $a[self::FIELD_NAME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_NAME_EXT] = $v;
-            }
+            $a[self::FIELD_NAME_EXT] = $v;
         }
         if (null !== ($v = $this->getTitle())) {
             $a[self::FIELD_TITLE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TITLE_EXT] = $v;
-            }
+            $a[self::FIELD_TITLE_EXT] = $v;
         }
         return $a;
     }

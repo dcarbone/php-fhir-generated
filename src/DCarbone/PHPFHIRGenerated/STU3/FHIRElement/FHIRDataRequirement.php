@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -767,12 +767,7 @@ class FHIRDataRequirement extends FHIRElement
                     continue;
                 }
                 $a[self::FIELD_MUST_SUPPORT][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_MUST_SUPPORT_EXT])) {
-                        $a[self::FIELD_MUST_SUPPORT_EXT] = [];
-                    }
-                    $a[self::FIELD_MUST_SUPPORT_EXT][] = $v;
-                }
+                $a[self::FIELD_MUST_SUPPORT_EXT][] = $v;
             }
         }
         if ([] !== ($vs = $this->getProfile())) {
@@ -782,19 +777,12 @@ class FHIRDataRequirement extends FHIRElement
                     continue;
                 }
                 $a[self::FIELD_PROFILE][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_PROFILE_EXT])) {
-                        $a[self::FIELD_PROFILE_EXT] = [];
-                    }
-                    $a[self::FIELD_PROFILE_EXT][] = $v;
-                }
+                $a[self::FIELD_PROFILE_EXT][] = $v;
             }
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TYPE_EXT] = $v;
-            }
+            $a[self::FIELD_TYPE_EXT] = $v;
         }
         return $a;
     }

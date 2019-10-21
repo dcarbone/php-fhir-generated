@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObser
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -704,6 +704,7 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_APPLIES_TO, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getCategory())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CATEGORY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -714,6 +715,7 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
         if (null !== ($v = $this->getContext())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CONTEXT, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getGender())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_GENDER, null, $v->_getFHIRXMLNamespace()));
         }
@@ -741,25 +743,17 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
             $a[self::FIELD_APPLIES_TO] = $vs;
         }
         if (null !== ($v = $this->getCategory())) {
-            $a[self::FIELD_CATEGORY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_CATEGORY_EXT] = $v;
-            }
+            $a[self::FIELD_CATEGORY] = $v;
         }
         if (null !== ($v = $this->getCondition())) {
             $a[self::FIELD_CONDITION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_CONDITION_EXT] = $v;
-            }
+            $a[self::FIELD_CONDITION_EXT] = $v;
         }
         if (null !== ($v = $this->getContext())) {
             $a[self::FIELD_CONTEXT] = $v;
         }
         if (null !== ($v = $this->getGender())) {
-            $a[self::FIELD_GENDER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_GENDER_EXT] = $v;
-            }
+            $a[self::FIELD_GENDER] = $v;
         }
         if (null !== ($v = $this->getGestationalAge())) {
             $a[self::FIELD_GESTATIONAL_AGE] = $v;

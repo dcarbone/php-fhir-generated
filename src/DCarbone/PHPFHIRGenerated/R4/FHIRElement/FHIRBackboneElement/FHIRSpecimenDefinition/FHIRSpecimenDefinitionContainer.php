@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpeci
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -158,7 +158,8 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The minimum volume to be conditioned in the container.
+     * The minimum volume to be conditioned in the container. (choose any one of
+     * minimumVolume*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -168,7 +169,8 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The minimum volume to be conditioned in the container.
+     * The minimum volume to be conditioned in the container. (choose any one of
+     * minimumVolume*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -551,7 +553,8 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The minimum volume to be conditioned in the container.
+     * The minimum volume to be conditioned in the container. (choose any one of
+     * minimumVolume*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -567,7 +570,8 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The minimum volume to be conditioned in the container.
+     * The minimum volume to be conditioned in the container. (choose any one of
+     * minimumVolume*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $minimumVolumeQuantity
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionContainer
@@ -583,7 +587,8 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The minimum volume to be conditioned in the container.
+     * The minimum volume to be conditioned in the container. (choose any one of
+     * minimumVolume*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -597,7 +602,8 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The minimum volume to be conditioned in the container.
+     * The minimum volume to be conditioned in the container. (choose any one of
+     * minimumVolume*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $minimumVolumeString
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionContainer
@@ -793,6 +799,7 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
         if (null !== ($v = $this->getCap())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CAP, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getCapacity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CAPACITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -803,6 +810,7 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
         if (null !== ($v = $this->getMaterial())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MATERIAL, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getMinimumVolumeQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MINIMUM_VOLUME_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -832,37 +840,25 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
             $a[self::FIELD_CAP] = $v;
         }
         if (null !== ($v = $this->getCapacity())) {
-            $a[self::FIELD_CAPACITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_CAPACITY_EXT] = $v;
-            }
+            $a[self::FIELD_CAPACITY] = $v;
         }
         if (null !== ($v = $this->getDescription())) {
             $a[self::FIELD_DESCRIPTION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DESCRIPTION_EXT] = $v;
-            }
+            $a[self::FIELD_DESCRIPTION_EXT] = $v;
         }
         if (null !== ($v = $this->getMaterial())) {
             $a[self::FIELD_MATERIAL] = $v;
         }
         if (null !== ($v = $this->getMinimumVolumeQuantity())) {
-            $a[self::FIELD_MINIMUM_VOLUME_QUANTITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MINIMUM_VOLUME_QUANTITY_EXT] = $v;
-            }
+            $a[self::FIELD_MINIMUM_VOLUME_QUANTITY] = $v;
         }
         if (null !== ($v = $this->getMinimumVolumeString())) {
             $a[self::FIELD_MINIMUM_VOLUME_STRING] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MINIMUM_VOLUME_STRING_EXT] = $v;
-            }
+            $a[self::FIELD_MINIMUM_VOLUME_STRING_EXT] = $v;
         }
         if (null !== ($v = $this->getPreparation())) {
             $a[self::FIELD_PREPARATION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PREPARATION_EXT] = $v;
-            }
+            $a[self::FIELD_PREPARATION_EXT] = $v;
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;

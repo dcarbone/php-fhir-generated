@@ -1,12 +1,11 @@
 <?php
 
-namespace DCarbone\PHPFHIRGenerated\STU3;
-
+namespace DCarbone\PHPFHIRGenerated\R4\PHPFHIRTests\FHIRElement\FHIRBackboneElement\FHIRSequence;
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +53,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Thu, Dec 27, 2018 22:37+1100 for FHIR v4.0.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -62,27 +61,18 @@ namespace DCarbone\PHPFHIRGenerated\STU3;
  * 
  */
 
+use PHPUnit\Framework\TestCase;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceQuality;
+
 /**
- * Trait PHPFHIRValueContainerTrait
- * @package \DCarbone\PHPFHIRGenerated\STU3
+ * Class FHIRSequenceQualityTest
+ * @package \DCarbone\PHPFHIRGenerated\R4\PHPFHIRTests\FHIRElement\FHIRBackboneElement\FHIRSequence
  */
-trait PHPFHIRValueContainerTrait{
-    /** @var bool */
-    private $_nonValueFieldsDefined = false;
-
-    /**
-     * @return void
-     */
-    public function _markNonValueFieldsDefined()
+class FHIRSequenceQualityTest extends TestCase
+{
+    public function testCanConstructTypeNoArgs()
     {
-        $this->_nonValueFieldsDefined = true;
-    }
-
-    /**
-     * @return bool
-     */
-    public function _hasNonValueFieldsDefined()
-    {
-        return $this->_nonValueFieldsDefined;
+        $type = new FHIRSequenceQuality();
+        $this->assertInstanceOf('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceQuality', $type);
     }
 }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -3192,6 +3192,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
                 $v->xmlSerialize($sxe->addChild(self::FIELD_ADD_ITEM, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if ([] !== ($vs = $this->getAdjudication())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -3273,6 +3274,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
         if (null !== ($v = $this->getFundsReserveRequested())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_FUNDS_RESERVE_REQUESTED, null, $v->_getFHIRXMLNamespace()));
         }
+
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -3307,6 +3309,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
         if (null !== ($v = $this->getOriginalPrescription())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ORIGINAL_PRESCRIPTION, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getOutcome())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_OUTCOME, null, $v->_getFHIRXMLNamespace()));
         }
@@ -3385,6 +3388,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
                 $v->xmlSerialize($sxe->addChild(self::FIELD_RELATED, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -3414,6 +3418,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
         if (null !== ($v = $this->getType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getUse())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_USE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -3433,19 +3438,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
             $a[self::FIELD_ADD_ITEM] = $vs;
         }
         if ([] !== ($vs = $this->getAdjudication())) {
-            $a[self::FIELD_ADJUDICATION] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_ADJUDICATION][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_ADJUDICATION_EXT])) {
-                        $a[self::FIELD_ADJUDICATION_EXT] = [];
-                    }
-                    $a[self::FIELD_ADJUDICATION_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_ADJUDICATION] = $vs;
         }
         if ([] !== ($vs = $this->getBenefitBalance())) {
             $a[self::FIELD_BENEFIT_BALANCE] = $vs;
@@ -3467,18 +3460,14 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
         }
         if (null !== ($v = $this->getCreated())) {
             $a[self::FIELD_CREATED] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_CREATED_EXT] = $v;
-            }
+            $a[self::FIELD_CREATED_EXT] = $v;
         }
         if ([] !== ($vs = $this->getDiagnosis())) {
             $a[self::FIELD_DIAGNOSIS] = $vs;
         }
         if (null !== ($v = $this->getDisposition())) {
             $a[self::FIELD_DISPOSITION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DISPOSITION_EXT] = $v;
-            }
+            $a[self::FIELD_DISPOSITION_EXT] = $v;
         }
         if (null !== ($v = $this->getEnterer())) {
             $a[self::FIELD_ENTERER] = $v;
@@ -3499,19 +3488,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
             $a[self::FIELD_FUNDS_RESERVE_REQUESTED] = $v;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_IDENTIFIER][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_IDENTIFIER_EXT])) {
-                        $a[self::FIELD_IDENTIFIER_EXT] = [];
-                    }
-                    $a[self::FIELD_IDENTIFIER_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_IDENTIFIER] = $vs;
         }
         if ([] !== ($vs = $this->getInsurance())) {
             $a[self::FIELD_INSURANCE] = $vs;
@@ -3526,10 +3503,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
             $a[self::FIELD_ORIGINAL_PRESCRIPTION] = $v;
         }
         if (null !== ($v = $this->getOutcome())) {
-            $a[self::FIELD_OUTCOME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_OUTCOME_EXT] = $v;
-            }
+            $a[self::FIELD_OUTCOME] = $v;
         }
         if (null !== ($v = $this->getPatient())) {
             $a[self::FIELD_PATIENT] = $v;
@@ -3547,12 +3521,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
                     continue;
                 }
                 $a[self::FIELD_PRE_AUTH_REF][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_PRE_AUTH_REF_EXT])) {
-                        $a[self::FIELD_PRE_AUTH_REF_EXT] = [];
-                    }
-                    $a[self::FIELD_PRE_AUTH_REF_EXT][] = $v;
-                }
+                $a[self::FIELD_PRE_AUTH_REF_EXT][] = $v;
             }
         }
         if ([] !== ($vs = $this->getPreAuthRefPeriod())) {
@@ -3560,9 +3529,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
         }
         if (null !== ($v = $this->getPrecedence())) {
             $a[self::FIELD_PRECEDENCE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PRECEDENCE_EXT] = $v;
-            }
+            $a[self::FIELD_PRECEDENCE_EXT] = $v;
         }
         if (null !== ($v = $this->getPrescription())) {
             $a[self::FIELD_PRESCRIPTION] = $v;
@@ -3586,10 +3553,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
             $a[self::FIELD_RELATED] = $vs;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_STATUS_EXT] = $v;
-            }
+            $a[self::FIELD_STATUS] = $v;
         }
         if (null !== ($v = $this->getSubType())) {
             $a[self::FIELD_SUB_TYPE] = $v;
@@ -3604,10 +3568,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
             $a[self::FIELD_TYPE] = $v;
         }
         if (null !== ($v = $this->getUse())) {
-            $a[self::FIELD_USE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_USE_EXT] = $v;
-            }
+            $a[self::FIELD_USE] = $v;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

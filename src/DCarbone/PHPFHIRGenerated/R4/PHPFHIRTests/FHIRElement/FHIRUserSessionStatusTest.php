@@ -1,12 +1,11 @@
 <?php
 
-namespace DCarbone\PHPFHIRGenerated\DSTU1;
-
+namespace DCarbone\PHPFHIRGenerated\R4\PHPFHIRTests\FHIRElement;
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -27,7 +26,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1;
  *
  * FHIR Copyright Notice:
  *
- *   Copyright (c) 2011-2013, HL7, Inc.
+ *   Copyright (c) 2011+, HL7, Inc.
  *   All rights reserved.
  * 
  *   Redistribution and use in source and binary forms, with or without modification,
@@ -54,30 +53,26 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
+ *   Generated on Thu, Dec 27, 2018 22:37+1100 for FHIR v4.0.0
+ * 
+ *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
+ *   valid. Implementers will still need to be familiar with the content of the specification and with
+ *   any profiles that apply to the resources in order to make a conformant implementation.
+ * 
  */
+
+use PHPUnit\Framework\TestCase;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUserSessionStatus;
 
 /**
- * Trait PHPFHIRValueContainerTrait
- * @package \DCarbone\PHPFHIRGenerated\DSTU1
+ * Class FHIRUserSessionStatusTest
+ * @package \DCarbone\PHPFHIRGenerated\R4\PHPFHIRTests\FHIRElement
  */
-trait PHPFHIRValueContainerTrait{
-    /** @var bool */
-    private $_nonValueFieldsDefined = false;
-
-    /**
-     * @return void
-     */
-    public function _markNonValueFieldsDefined()
+class FHIRUserSessionStatusTest extends TestCase
+{
+    public function testCanConstructTypeNoArgs()
     {
-        $this->_nonValueFieldsDefined = true;
-    }
-
-    /**
-     * @return bool
-     */
-    public function _hasNonValueFieldsDefined()
-    {
-        return $this->_nonValueFieldsDefined;
+        $type = new FHIRUserSessionStatus();
+        $this->assertInstanceOf('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUserSessionStatus', $type);
     }
 }

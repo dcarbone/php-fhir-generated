@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -107,7 +107,7 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The actual ingredient - either a substance (simple ingredient) or another
-     * medication.
+     * medication. (choose any one of item*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -118,7 +118,7 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The actual ingredient - either a substance (simple ingredient) or another
-     * medication.
+     * medication. (choose any one of item*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -278,7 +278,7 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The actual ingredient - either a substance (simple ingredient) or another
-     * medication.
+     * medication. (choose any one of item*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -294,7 +294,7 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The actual ingredient - either a substance (simple ingredient) or another
-     * medication.
+     * medication. (choose any one of item*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $itemCodeableConcept
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeIngredient
@@ -311,7 +311,7 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The actual ingredient - either a substance (simple ingredient) or another
-     * medication.
+     * medication. (choose any one of item*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -326,7 +326,7 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The actual ingredient - either a substance (simple ingredient) or another
-     * medication.
+     * medication. (choose any one of item*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $itemReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeIngredient
@@ -468,9 +468,7 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getIsActive())) {
             $a[self::FIELD_IS_ACTIVE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_IS_ACTIVE_EXT] = $v;
-            }
+            $a[self::FIELD_IS_ACTIVE_EXT] = $v;
         }
         if (null !== ($v = $this->getItemCodeableConcept())) {
             $a[self::FIELD_ITEM_CODEABLE_CONCEPT] = $v;

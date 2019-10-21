@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRFa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1088,18 +1088,14 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getBornDate())) {
             $a[self::FIELD_BORN_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_BORN_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_BORN_DATE_EXT] = $v;
         }
         if (null !== ($v = $this->getBornPeriod())) {
             $a[self::FIELD_BORN_PERIOD] = $v;
         }
         if (null !== ($v = $this->getBornString())) {
             $a[self::FIELD_BORN_STRING] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_BORN_STRING_EXT] = $v;
-            }
+            $a[self::FIELD_BORN_STRING_EXT] = $v;
         }
         if ([] !== ($vs = $this->getCondition())) {
             $a[self::FIELD_CONDITION] = $vs;
@@ -1109,36 +1105,26 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getDeceasedBoolean())) {
             $a[self::FIELD_DECEASED_BOOLEAN] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DECEASED_BOOLEAN_EXT] = $v;
-            }
+            $a[self::FIELD_DECEASED_BOOLEAN_EXT] = $v;
         }
         if (null !== ($v = $this->getDeceasedDate())) {
             $a[self::FIELD_DECEASED_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DECEASED_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_DECEASED_DATE_EXT] = $v;
         }
         if (null !== ($v = $this->getDeceasedRange())) {
             $a[self::FIELD_DECEASED_RANGE] = $v;
         }
         if (null !== ($v = $this->getDeceasedString())) {
             $a[self::FIELD_DECEASED_STRING] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DECEASED_STRING_EXT] = $v;
-            }
+            $a[self::FIELD_DECEASED_STRING_EXT] = $v;
         }
         if (null !== ($v = $this->getName())) {
             $a[self::FIELD_NAME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_NAME_EXT] = $v;
-            }
+            $a[self::FIELD_NAME_EXT] = $v;
         }
         if (null !== ($v = $this->getNote())) {
             $a[self::FIELD_NOTE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_NOTE_EXT] = $v;
-            }
+            $a[self::FIELD_NOTE_EXT] = $v;
         }
         if (null !== ($v = $this->getRelationship())) {
             $a[self::FIELD_RELATIONSHIP] = $v;

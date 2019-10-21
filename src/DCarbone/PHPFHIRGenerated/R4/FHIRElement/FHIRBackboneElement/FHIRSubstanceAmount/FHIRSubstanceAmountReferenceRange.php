@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -333,9 +333,11 @@ class FHIRSubstanceAmountReferenceRange extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getHighLimit())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_HIGH_LIMIT, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getLowLimit())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_LOW_LIMIT, null, $v->_getFHIRXMLNamespace()));
         }
@@ -349,16 +351,10 @@ class FHIRSubstanceAmountReferenceRange extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getHighLimit())) {
-            $a[self::FIELD_HIGH_LIMIT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_HIGH_LIMIT_EXT] = $v;
-            }
+            $a[self::FIELD_HIGH_LIMIT] = $v;
         }
         if (null !== ($v = $this->getLowLimit())) {
-            $a[self::FIELD_LOW_LIMIT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_LOW_LIMIT_EXT] = $v;
-            }
+            $a[self::FIELD_LOW_LIMIT] = $v;
         }
         return $a;
     }

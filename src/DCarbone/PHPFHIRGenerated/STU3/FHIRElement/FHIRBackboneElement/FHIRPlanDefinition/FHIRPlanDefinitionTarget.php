@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPla
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -534,6 +534,7 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
         if (null !== ($v = $this->getDetailCodeableConcept())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DETAIL_CODEABLE_CONCEPT, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getDetailQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DETAIL_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -562,10 +563,7 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
             $a[self::FIELD_DETAIL_CODEABLE_CONCEPT] = $v;
         }
         if (null !== ($v = $this->getDetailQuantity())) {
-            $a[self::FIELD_DETAIL_QUANTITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DETAIL_QUANTITY_EXT] = $v;
-            }
+            $a[self::FIELD_DETAIL_QUANTITY] = $v;
         }
         if (null !== ($v = $this->getDetailRange())) {
             $a[self::FIELD_DETAIL_RANGE] = $v;

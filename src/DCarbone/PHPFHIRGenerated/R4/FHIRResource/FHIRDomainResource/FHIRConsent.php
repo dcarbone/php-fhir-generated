@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -234,7 +234,7 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * The source on which this consent statement is based. The source might be a
      * scanned original paper form, or a reference to a consent that links back to such
      * a source, a reference to a document repository (e.g. XDS) that stores the
-     * original consent document.
+     * original consent document. (choose any one of source*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
      */
@@ -247,7 +247,7 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * The source on which this consent statement is based. The source might be a
      * scanned original paper form, or a reference to a consent that links back to such
      * a source, a reference to a document repository (e.g. XDS) that stores the
-     * original consent document.
+     * original consent document. (choose any one of source*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -991,7 +991,7 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * The source on which this consent statement is based. The source might be a
      * scanned original paper form, or a reference to a consent that links back to such
      * a source, a reference to a document repository (e.g. XDS) that stores the
-     * original consent document.
+     * original consent document. (choose any one of source*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
      */
@@ -1008,7 +1008,7 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * The source on which this consent statement is based. The source might be a
      * scanned original paper form, or a reference to a consent that links back to such
      * a source, a reference to a document repository (e.g. XDS) that stores the
-     * original consent document.
+     * original consent document. (choose any one of source*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment $sourceAttachment
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRConsent
@@ -1027,7 +1027,7 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * The source on which this consent statement is based. The source might be a
      * scanned original paper form, or a reference to a consent that links back to such
      * a source, a reference to a document repository (e.g. XDS) that stores the
-     * original consent document.
+     * original consent document. (choose any one of source*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -1044,7 +1044,7 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * The source on which this consent statement is based. The source might be a
      * scanned original paper form, or a reference to a consent that links back to such
      * a source, a reference to a document repository (e.g. XDS) that stores the
-     * original consent document.
+     * original consent document. (choose any one of source*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $sourceReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRConsent
@@ -1265,6 +1265,7 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         if (null !== ($v = $this->getDateTime())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DATE_TIME, null, $v->_getFHIRXMLNamespace()));
         }
+
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1324,6 +1325,7 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         if (null !== ($v = $this->getSourceReference())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE_REFERENCE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1350,24 +1352,10 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         }
         if (null !== ($v = $this->getDateTime())) {
             $a[self::FIELD_DATE_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DATE_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_DATE_TIME_EXT] = $v;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_IDENTIFIER][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_IDENTIFIER_EXT])) {
-                        $a[self::FIELD_IDENTIFIER_EXT] = [];
-                    }
-                    $a[self::FIELD_IDENTIFIER_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_IDENTIFIER] = $vs;
         }
         if ([] !== ($vs = $this->getOrganization())) {
             $a[self::FIELD_ORGANIZATION] = $vs;
@@ -1397,10 +1385,7 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
             $a[self::FIELD_SOURCE_REFERENCE] = $v;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_STATUS_EXT] = $v;
-            }
+            $a[self::FIELD_STATUS] = $v;
         }
         if ([] !== ($vs = $this->getVerification())) {
             $a[self::FIELD_VERIFICATION] = $vs;

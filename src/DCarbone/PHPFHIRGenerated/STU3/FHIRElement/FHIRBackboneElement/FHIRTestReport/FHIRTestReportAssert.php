@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -416,6 +416,7 @@ class FHIRTestReportAssert extends FHIRBackboneElement
         if (null !== ($v = $this->getMessage())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MESSAGE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getResult())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_RESULT, null, $v->_getFHIRXMLNamespace()));
         }
@@ -430,21 +431,14 @@ class FHIRTestReportAssert extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getDetail())) {
             $a[self::FIELD_DETAIL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DETAIL_EXT] = $v;
-            }
+            $a[self::FIELD_DETAIL_EXT] = $v;
         }
         if (null !== ($v = $this->getMessage())) {
             $a[self::FIELD_MESSAGE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MESSAGE_EXT] = $v;
-            }
+            $a[self::FIELD_MESSAGE_EXT] = $v;
         }
         if (null !== ($v = $this->getResult())) {
-            $a[self::FIELD_RESULT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_RESULT_EXT] = $v;
-            }
+            $a[self::FIELD_RESULT] = $v;
         }
         return $a;
     }

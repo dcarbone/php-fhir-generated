@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -584,9 +584,7 @@ class FHIRSubstanceSpecificationCode extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getComment())) {
             $a[self::FIELD_COMMENT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_COMMENT_EXT] = $v;
-            }
+            $a[self::FIELD_COMMENT_EXT] = $v;
         }
         if ([] !== ($vs = $this->getSource())) {
             $a[self::FIELD_SOURCE] = $vs;
@@ -596,9 +594,7 @@ class FHIRSubstanceSpecificationCode extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getStatusDate())) {
             $a[self::FIELD_STATUS_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_STATUS_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_STATUS_DATE_EXT] = $v;
         }
         return $a;
     }

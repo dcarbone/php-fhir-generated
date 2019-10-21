@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -157,7 +157,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
-     * the service. For example "pain", "on flare-up", etc.
+     * the service. For example "pain", "on flare-up", etc. (choose any one of
+     * asNeeded*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
@@ -169,7 +170,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * elements, an @id referenced from the Narrative, or extensions
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
-     * the service. For example "pain", "on flare-up", etc.
+     * the service. For example "pain", "on flare-up", etc. (choose any one of
+     * asNeeded*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -353,7 +355,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The date/time at which the requested service should occur.
+     * The date/time at which the requested service should occur. (choose any one of
+     * occurrence*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -363,7 +366,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The date/time at which the requested service should occur.
+     * The date/time at which the requested service should occur. (choose any one of
+     * occurrence*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -377,7 +381,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The date/time at which the requested service should occur.
+     * The date/time at which the requested service should occur. (choose any one of
+     * occurrence*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
@@ -447,7 +452,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      *
      * An amount of service being requested which can be a quantity ( for example
      * $1,500 home modification), a ratio ( for example, 20 half day visits per month),
-     * or a range (2.0 to 1.8 Gy per fraction).
+     * or a range (2.0 to 1.8 Gy per fraction). (choose any one of quantity*, but only
+     * one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -459,7 +465,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      *
      * An amount of service being requested which can be a quantity ( for example
      * $1,500 home modification), a ratio ( for example, 20 half day visits per month),
-     * or a range (2.0 to 1.8 Gy per fraction).
+     * or a range (2.0 to 1.8 Gy per fraction). (choose any one of quantity*, but only
+     * one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -472,7 +479,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      *
      * An amount of service being requested which can be a quantity ( for example
      * $1,500 home modification), a ratio ( for example, 20 half day visits per month),
-     * or a range (2.0 to 1.8 Gy per fraction).
+     * or a range (2.0 to 1.8 Gy per fraction). (choose any one of quantity*, but only
+     * one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
      */
@@ -1152,7 +1160,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
-     * the service. For example "pain", "on flare-up", etc.
+     * the service. For example "pain", "on flare-up", etc. (choose any one of
+     * asNeeded*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
@@ -1166,7 +1175,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
-     * the service. For example "pain", "on flare-up", etc.
+     * the service. For example "pain", "on flare-up", etc. (choose any one of
+     * asNeeded*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $asNeededBoolean
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRServiceRequest
@@ -1192,7 +1202,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * elements, an @id referenced from the Narrative, or extensions
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
-     * the service. For example "pain", "on flare-up", etc.
+     * the service. For example "pain", "on flare-up", etc. (choose any one of
+     * asNeeded*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -1208,7 +1219,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * elements, an @id referenced from the Narrative, or extensions
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
-     * the service. For example "pain", "on flare-up", etc.
+     * the service. For example "pain", "on flare-up", etc. (choose any one of
+     * asNeeded*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $asNeededCodeableConcept
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRServiceRequest
@@ -2026,7 +2038,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The date/time at which the requested service should occur.
+     * The date/time at which the requested service should occur. (choose any one of
+     * occurrence*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -2043,7 +2056,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The date/time at which the requested service should occur.
+     * The date/time at which the requested service should occur. (choose any one of
+     * occurrence*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $occurrenceDateTime
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRServiceRequest
@@ -2067,7 +2081,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The date/time at which the requested service should occur.
+     * The date/time at which the requested service should occur. (choose any one of
+     * occurrence*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -2081,7 +2096,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The date/time at which the requested service should occur.
+     * The date/time at which the requested service should occur. (choose any one of
+     * occurrence*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $occurrencePeriod
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRServiceRequest
@@ -2101,7 +2117,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The date/time at which the requested service should occur.
+     * The date/time at which the requested service should occur. (choose any one of
+     * occurrence*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
@@ -2119,7 +2136,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The date/time at which the requested service should occur.
+     * The date/time at which the requested service should occur. (choose any one of
+     * occurrence*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming $occurrenceTiming
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRServiceRequest
@@ -2366,7 +2384,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      *
      * An amount of service being requested which can be a quantity ( for example
      * $1,500 home modification), a ratio ( for example, 20 half day visits per month),
-     * or a range (2.0 to 1.8 Gy per fraction).
+     * or a range (2.0 to 1.8 Gy per fraction). (choose any one of quantity*, but only
+     * one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -2384,7 +2403,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      *
      * An amount of service being requested which can be a quantity ( for example
      * $1,500 home modification), a ratio ( for example, 20 half day visits per month),
-     * or a range (2.0 to 1.8 Gy per fraction).
+     * or a range (2.0 to 1.8 Gy per fraction). (choose any one of quantity*, but only
+     * one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $quantityQuantity
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRServiceRequest
@@ -2402,7 +2422,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      *
      * An amount of service being requested which can be a quantity ( for example
      * $1,500 home modification), a ratio ( for example, 20 half day visits per month),
-     * or a range (2.0 to 1.8 Gy per fraction).
+     * or a range (2.0 to 1.8 Gy per fraction). (choose any one of quantity*, but only
+     * one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -2418,7 +2439,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      *
      * An amount of service being requested which can be a quantity ( for example
      * $1,500 home modification), a ratio ( for example, 20 half day visits per month),
-     * or a range (2.0 to 1.8 Gy per fraction).
+     * or a range (2.0 to 1.8 Gy per fraction). (choose any one of quantity*, but only
+     * one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange $quantityRange
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRServiceRequest
@@ -2437,7 +2459,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      *
      * An amount of service being requested which can be a quantity ( for example
      * $1,500 home modification), a ratio ( for example, 20 half day visits per month),
-     * or a range (2.0 to 1.8 Gy per fraction).
+     * or a range (2.0 to 1.8 Gy per fraction). (choose any one of quantity*, but only
+     * one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
      */
@@ -2454,7 +2477,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
      *
      * An amount of service being requested which can be a quantity ( for example
      * $1,500 home modification), a ratio ( for example, 20 half day visits per month),
-     * or a range (2.0 to 1.8 Gy per fraction).
+     * or a range (2.0 to 1.8 Gy per fraction). (choose any one of quantity*, but only
+     * one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio $quantityRatio
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRServiceRequest
@@ -3239,6 +3263,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
         if (null !== ($v = $this->getEncounter())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ENCOUNTER, null, $v->_getFHIRXMLNamespace()));
         }
+
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -3272,6 +3297,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
                 $v->xmlSerialize($sxe->addChild(self::FIELD_INSURANCE, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getIntent())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_INTENT, null, $v->_getFHIRXMLNamespace()));
         }
@@ -3338,9 +3364,11 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
         if (null !== ($v = $this->getPerformerType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PERFORMER_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getPriority())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PRIORITY, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getQuantityQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -3392,6 +3420,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
         if (null !== ($v = $this->getRequester())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_REQUESTER, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getRequisition())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_REQUISITION, null, $v->_getFHIRXMLNamespace()));
         }
@@ -3404,6 +3433,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
                 $v->xmlSerialize($sxe->addChild(self::FIELD_SPECIMEN, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -3431,18 +3461,14 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAsNeededBoolean())) {
             $a[self::FIELD_AS_NEEDED_BOOLEAN] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_AS_NEEDED_BOOLEAN_EXT] = $v;
-            }
+            $a[self::FIELD_AS_NEEDED_BOOLEAN_EXT] = $v;
         }
         if (null !== ($v = $this->getAsNeededCodeableConcept())) {
             $a[self::FIELD_AS_NEEDED_CODEABLE_CONCEPT] = $v;
         }
         if (null !== ($v = $this->getAuthoredOn())) {
             $a[self::FIELD_AUTHORED_ON] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_AUTHORED_ON_EXT] = $v;
-            }
+            $a[self::FIELD_AUTHORED_ON_EXT] = $v;
         }
         if ([] !== ($vs = $this->getBasedOn())) {
             $a[self::FIELD_BASED_ON] = $vs;
@@ -3458,27 +3484,13 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
         }
         if (null !== ($v = $this->getDoNotPerform())) {
             $a[self::FIELD_DO_NOT_PERFORM] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DO_NOT_PERFORM_EXT] = $v;
-            }
+            $a[self::FIELD_DO_NOT_PERFORM_EXT] = $v;
         }
         if (null !== ($v = $this->getEncounter())) {
             $a[self::FIELD_ENCOUNTER] = $v;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_IDENTIFIER][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_IDENTIFIER_EXT])) {
-                        $a[self::FIELD_IDENTIFIER_EXT] = [];
-                    }
-                    $a[self::FIELD_IDENTIFIER_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_IDENTIFIER] = $vs;
         }
         if ([] !== ($vs = $this->getInstantiatesCanonical())) {
             $a[self::FIELD_INSTANTIATES_CANONICAL] = [];
@@ -3487,12 +3499,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
                     continue;
                 }
                 $a[self::FIELD_INSTANTIATES_CANONICAL][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_INSTANTIATES_CANONICAL_EXT])) {
-                        $a[self::FIELD_INSTANTIATES_CANONICAL_EXT] = [];
-                    }
-                    $a[self::FIELD_INSTANTIATES_CANONICAL_EXT][] = $v;
-                }
+                $a[self::FIELD_INSTANTIATES_CANONICAL_EXT][] = $v;
             }
         }
         if ([] !== ($vs = $this->getInstantiatesUri())) {
@@ -3502,22 +3509,14 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
                     continue;
                 }
                 $a[self::FIELD_INSTANTIATES_URI][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_INSTANTIATES_URI_EXT])) {
-                        $a[self::FIELD_INSTANTIATES_URI_EXT] = [];
-                    }
-                    $a[self::FIELD_INSTANTIATES_URI_EXT][] = $v;
-                }
+                $a[self::FIELD_INSTANTIATES_URI_EXT][] = $v;
             }
         }
         if ([] !== ($vs = $this->getInsurance())) {
             $a[self::FIELD_INSURANCE] = $vs;
         }
         if (null !== ($v = $this->getIntent())) {
-            $a[self::FIELD_INTENT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_INTENT_EXT] = $v;
-            }
+            $a[self::FIELD_INTENT] = $v;
         }
         if ([] !== ($vs = $this->getLocationCode())) {
             $a[self::FIELD_LOCATION_CODE] = $vs;
@@ -3530,9 +3529,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
         }
         if (null !== ($v = $this->getOccurrenceDateTime())) {
             $a[self::FIELD_OCCURRENCE_DATE_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_OCCURRENCE_DATE_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_OCCURRENCE_DATE_TIME_EXT] = $v;
         }
         if (null !== ($v = $this->getOccurrencePeriod())) {
             $a[self::FIELD_OCCURRENCE_PERIOD] = $v;
@@ -3545,9 +3542,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
         }
         if (null !== ($v = $this->getPatientInstruction())) {
             $a[self::FIELD_PATIENT_INSTRUCTION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PATIENT_INSTRUCTION_EXT] = $v;
-            }
+            $a[self::FIELD_PATIENT_INSTRUCTION_EXT] = $v;
         }
         if ([] !== ($vs = $this->getPerformer())) {
             $a[self::FIELD_PERFORMER] = $vs;
@@ -3556,16 +3551,10 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
             $a[self::FIELD_PERFORMER_TYPE] = $v;
         }
         if (null !== ($v = $this->getPriority())) {
-            $a[self::FIELD_PRIORITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PRIORITY_EXT] = $v;
-            }
+            $a[self::FIELD_PRIORITY] = $v;
         }
         if (null !== ($v = $this->getQuantityQuantity())) {
-            $a[self::FIELD_QUANTITY_QUANTITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_QUANTITY_QUANTITY_EXT] = $v;
-            }
+            $a[self::FIELD_QUANTITY_QUANTITY] = $v;
         }
         if (null !== ($v = $this->getQuantityRange())) {
             $a[self::FIELD_QUANTITY_RANGE] = $v;
@@ -3589,19 +3578,13 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
             $a[self::FIELD_REQUESTER] = $v;
         }
         if (null !== ($v = $this->getRequisition())) {
-            $a[self::FIELD_REQUISITION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_REQUISITION_EXT] = $v;
-            }
+            $a[self::FIELD_REQUISITION] = $v;
         }
         if ([] !== ($vs = $this->getSpecimen())) {
             $a[self::FIELD_SPECIMEN] = $vs;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_STATUS_EXT] = $v;
-            }
+            $a[self::FIELD_STATUS] = $v;
         }
         if (null !== ($v = $this->getSubject())) {
             $a[self::FIELD_SUBJECT] = $v;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRQue
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1180,6 +1180,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
         if (null !== ($v = $this->getAnswerInteger())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_INTEGER, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getAnswerQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1216,75 +1217,52 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getAnswerBoolean())) {
             $a[self::FIELD_ANSWER_BOOLEAN] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ANSWER_BOOLEAN_EXT] = $v;
-            }
+            $a[self::FIELD_ANSWER_BOOLEAN_EXT] = $v;
         }
         if (null !== ($v = $this->getAnswerCoding())) {
             $a[self::FIELD_ANSWER_CODING] = $v;
         }
         if (null !== ($v = $this->getAnswerDate())) {
             $a[self::FIELD_ANSWER_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ANSWER_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_ANSWER_DATE_EXT] = $v;
         }
         if (null !== ($v = $this->getAnswerDateTime())) {
             $a[self::FIELD_ANSWER_DATE_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ANSWER_DATE_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_ANSWER_DATE_TIME_EXT] = $v;
         }
         if (null !== ($v = $this->getAnswerDecimal())) {
             $a[self::FIELD_ANSWER_DECIMAL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ANSWER_DECIMAL_EXT] = $v;
-            }
+            $a[self::FIELD_ANSWER_DECIMAL_EXT] = $v;
         }
         if (null !== ($v = $this->getAnswerInteger())) {
             $a[self::FIELD_ANSWER_INTEGER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ANSWER_INTEGER_EXT] = $v;
-            }
+            $a[self::FIELD_ANSWER_INTEGER_EXT] = $v;
         }
         if (null !== ($v = $this->getAnswerQuantity())) {
-            $a[self::FIELD_ANSWER_QUANTITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ANSWER_QUANTITY_EXT] = $v;
-            }
+            $a[self::FIELD_ANSWER_QUANTITY] = $v;
         }
         if (null !== ($v = $this->getAnswerReference())) {
             $a[self::FIELD_ANSWER_REFERENCE] = $v;
         }
         if (null !== ($v = $this->getAnswerString())) {
             $a[self::FIELD_ANSWER_STRING] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ANSWER_STRING_EXT] = $v;
-            }
+            $a[self::FIELD_ANSWER_STRING_EXT] = $v;
         }
         if (null !== ($v = $this->getAnswerTime())) {
             $a[self::FIELD_ANSWER_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ANSWER_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_ANSWER_TIME_EXT] = $v;
         }
         if (null !== ($v = $this->getAnswerUri())) {
             $a[self::FIELD_ANSWER_URI] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ANSWER_URI_EXT] = $v;
-            }
+            $a[self::FIELD_ANSWER_URI_EXT] = $v;
         }
         if (null !== ($v = $this->getHasAnswer())) {
             $a[self::FIELD_HAS_ANSWER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_HAS_ANSWER_EXT] = $v;
-            }
+            $a[self::FIELD_HAS_ANSWER_EXT] = $v;
         }
         if (null !== ($v = $this->getQuestion())) {
             $a[self::FIELD_QUESTION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_QUESTION_EXT] = $v;
-            }
+            $a[self::FIELD_QUESTION_EXT] = $v;
         }
         return $a;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRNamin
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -69,8 +69,6 @@ use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
-use DCarbone\PHPFHIRGenerated\R4\PHPFHIRValueContainerInterface;
-use DCarbone\PHPFHIRGenerated\R4\PHPFHIRValueContainerTrait;
 
 /**
  * A curated namespace that issues unique symbols within that namespace for the
@@ -80,10 +78,8 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRValueContainerTrait;
  * Class FHIRNamingSystemUniqueId
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRNamingSystem
  */
-class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements PHPFHIRValueContainerInterface
+class FHIRNamingSystemUniqueId extends FHIRBackboneElement
 {
-    use PHPFHIRValueContainerTrait;
-
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_NAMING_SYSTEM_DOT_UNIQUE_ID;
 
@@ -342,7 +338,6 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements PHPFHIRVal
      */
     public function setPeriod(FHIRPeriod $period = null)
     {
-        $this->_markNonValueFieldsDefined();
         $this->period = $period;
         return $this;
     }
@@ -407,7 +402,6 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements PHPFHIRVal
      */
     public function setType(FHIRNamingSystemIdentifierType $type = null)
     {
-        $this->_markNonValueFieldsDefined();
         $this->type = $type;
         return $this;
     }
@@ -540,6 +534,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements PHPFHIRVal
         if (null !== ($v = $this->getPreferred())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PREFERRED, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -557,30 +552,21 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements PHPFHIRVal
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getComment())) {
             $a[self::FIELD_COMMENT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_COMMENT_EXT] = $v;
-            }
+            $a[self::FIELD_COMMENT_EXT] = $v;
         }
         if (null !== ($v = $this->getPeriod())) {
             $a[self::FIELD_PERIOD] = $v;
         }
         if (null !== ($v = $this->getPreferred())) {
             $a[self::FIELD_PREFERRED] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PREFERRED_EXT] = $v;
-            }
+            $a[self::FIELD_PREFERRED_EXT] = $v;
         }
         if (null !== ($v = $this->getType())) {
-            $a[self::FIELD_TYPE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TYPE_EXT] = $v;
-            }
+            $a[self::FIELD_TYPE] = $v;
         }
         if (null !== ($v = $this->getValue())) {
             $a[self::FIELD_VALUE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_EXT] = $v;
         }
         return $a;
     }

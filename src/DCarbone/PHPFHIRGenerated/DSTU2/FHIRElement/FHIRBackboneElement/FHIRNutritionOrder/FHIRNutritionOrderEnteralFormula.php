@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRNu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -824,9 +824,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAdditiveProductName())) {
             $a[self::FIELD_ADDITIVE_PRODUCT_NAME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ADDITIVE_PRODUCT_NAME_EXT] = $v;
-            }
+            $a[self::FIELD_ADDITIVE_PRODUCT_NAME_EXT] = $v;
         }
         if (null !== ($v = $this->getAdditiveType())) {
             $a[self::FIELD_ADDITIVE_TYPE] = $v;
@@ -836,15 +834,11 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getAdministrationInstruction())) {
             $a[self::FIELD_ADMINISTRATION_INSTRUCTION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ADMINISTRATION_INSTRUCTION_EXT] = $v;
-            }
+            $a[self::FIELD_ADMINISTRATION_INSTRUCTION_EXT] = $v;
         }
         if (null !== ($v = $this->getBaseFormulaProductName())) {
             $a[self::FIELD_BASE_FORMULA_PRODUCT_NAME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_BASE_FORMULA_PRODUCT_NAME_EXT] = $v;
-            }
+            $a[self::FIELD_BASE_FORMULA_PRODUCT_NAME_EXT] = $v;
         }
         if (null !== ($v = $this->getBaseFormulaType())) {
             $a[self::FIELD_BASE_FORMULA_TYPE] = $v;

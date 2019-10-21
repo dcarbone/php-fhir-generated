@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1263,6 +1263,7 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
                 $v->xmlSerialize($sxe->addChild(self::FIELD_PRIMARY_SOURCE, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1328,33 +1329,24 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
         }
         if (null !== ($v = $this->getLastPerformed())) {
             $a[self::FIELD_LAST_PERFORMED] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_LAST_PERFORMED_EXT] = $v;
-            }
+            $a[self::FIELD_LAST_PERFORMED_EXT] = $v;
         }
         if (null !== ($v = $this->getNeed())) {
             $a[self::FIELD_NEED] = $v;
         }
         if (null !== ($v = $this->getNextScheduled())) {
             $a[self::FIELD_NEXT_SCHEDULED] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_NEXT_SCHEDULED_EXT] = $v;
-            }
+            $a[self::FIELD_NEXT_SCHEDULED_EXT] = $v;
         }
         if ([] !== ($vs = $this->getPrimarySource())) {
             $a[self::FIELD_PRIMARY_SOURCE] = $vs;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_STATUS_EXT] = $v;
-            }
+            $a[self::FIELD_STATUS] = $v;
         }
         if (null !== ($v = $this->getStatusDate())) {
             $a[self::FIELD_STATUS_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_STATUS_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_STATUS_DATE_EXT] = $v;
         }
         if ([] !== ($vs = $this->getTarget())) {
             $a[self::FIELD_TARGET] = $vs;
@@ -1366,12 +1358,7 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
                     continue;
                 }
                 $a[self::FIELD_TARGET_LOCATION][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_TARGET_LOCATION_EXT])) {
-                        $a[self::FIELD_TARGET_LOCATION_EXT] = [];
-                    }
-                    $a[self::FIELD_TARGET_LOCATION_EXT][] = $v;
-                }
+                $a[self::FIELD_TARGET_LOCATION_EXT][] = $v;
             }
         }
         if ([] !== ($vs = $this->getValidationProcess())) {

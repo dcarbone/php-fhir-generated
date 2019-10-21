@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1524,6 +1524,7 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
         if (null !== ($v = $this->getHeight())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_HEIGHT, null, $v->_getFHIRXMLNamespace()));
         }
+
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1569,6 +1570,7 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
         if (null !== ($v = $this->getSubtype())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SUBTYPE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1605,45 +1607,25 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
         }
         if (null !== ($v = $this->getDuration())) {
             $a[self::FIELD_DURATION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DURATION_EXT] = $v;
-            }
+            $a[self::FIELD_DURATION_EXT] = $v;
         }
         if (null !== ($v = $this->getFrames())) {
             $a[self::FIELD_FRAMES] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_FRAMES_EXT] = $v;
-            }
+            $a[self::FIELD_FRAMES_EXT] = $v;
         }
         if (null !== ($v = $this->getHeight())) {
             $a[self::FIELD_HEIGHT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_HEIGHT_EXT] = $v;
-            }
+            $a[self::FIELD_HEIGHT_EXT] = $v;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_IDENTIFIER][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_IDENTIFIER_EXT])) {
-                        $a[self::FIELD_IDENTIFIER_EXT] = [];
-                    }
-                    $a[self::FIELD_IDENTIFIER_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_IDENTIFIER] = $vs;
         }
         if ([] !== ($vs = $this->getNote())) {
             $a[self::FIELD_NOTE] = $vs;
         }
         if (null !== ($v = $this->getOccurrenceDateTime())) {
             $a[self::FIELD_OCCURRENCE_DATE_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_OCCURRENCE_DATE_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_OCCURRENCE_DATE_TIME_EXT] = $v;
         }
         if (null !== ($v = $this->getOccurrencePeriod())) {
             $a[self::FIELD_OCCURRENCE_PERIOD] = $v;
@@ -1661,19 +1643,14 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
             $a[self::FIELD_SUBTYPE] = $v;
         }
         if (null !== ($v = $this->getType())) {
-            $a[self::FIELD_TYPE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TYPE_EXT] = $v;
-            }
+            $a[self::FIELD_TYPE] = $v;
         }
         if (null !== ($v = $this->getView())) {
             $a[self::FIELD_VIEW] = $v;
         }
         if (null !== ($v = $this->getWidth())) {
             $a[self::FIELD_WIDTH] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_WIDTH_EXT] = $v;
-            }
+            $a[self::FIELD_WIDTH_EXT] = $v;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

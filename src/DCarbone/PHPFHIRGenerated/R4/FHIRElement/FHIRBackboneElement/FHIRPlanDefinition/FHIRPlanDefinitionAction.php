@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPlanD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -210,6 +210,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      *
      * A reference to an ActivityDefinition that describes the action to be taken in
      * detail, or a PlanDefinition that describes a series of actions to be taken.
+     * (choose any one of definition*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
@@ -221,6 +222,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      *
      * A reference to an ActivityDefinition that describes the action to be taken in
      * detail, or a PlanDefinition that describes a series of actions to be taken.
+     * (choose any one of definition*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
@@ -396,7 +398,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A code or group definition that describes the intended subject of the action and
-     * its children, if any.
+     * its children, if any. (choose any one of subject*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -407,7 +409,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A code or group definition that describes the intended subject of the action and
-     * its children, if any.
+     * its children, if any. (choose any one of subject*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -429,7 +431,8 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed.
+     * An optional value describing when the action should be performed. (choose any
+     * one of timing*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
@@ -442,7 +445,8 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * An optional value describing when the action should be performed.
+     * An optional value describing when the action should be performed. (choose any
+     * one of timing*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -452,7 +456,8 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed.
+     * An optional value describing when the action should be performed. (choose any
+     * one of timing*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
@@ -462,7 +467,8 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed.
+     * An optional value describing when the action should be performed. (choose any
+     * one of timing*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -472,7 +478,8 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed.
+     * An optional value describing when the action should be performed. (choose any
+     * one of timing*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -486,7 +493,8 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed.
+     * An optional value describing when the action should be performed. (choose any
+     * one of timing*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
@@ -1241,6 +1249,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      *
      * A reference to an ActivityDefinition that describes the action to be taken in
      * detail, or a PlanDefinition that describes a series of actions to be taken.
+     * (choose any one of definition*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
@@ -1257,6 +1266,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      *
      * A reference to an ActivityDefinition that describes the action to be taken in
      * detail, or a PlanDefinition that describes a series of actions to be taken.
+     * (choose any one of definition*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical $definitionCanonical
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
@@ -1282,6 +1292,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      *
      * A reference to an ActivityDefinition that describes the action to be taken in
      * detail, or a PlanDefinition that describes a series of actions to be taken.
+     * (choose any one of definition*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
@@ -1297,6 +1308,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      *
      * A reference to an ActivityDefinition that describes the action to be taken in
      * detail, or a PlanDefinition that describes a series of actions to be taken.
+     * (choose any one of definition*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri $definitionUri
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
@@ -2049,7 +2061,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A code or group definition that describes the intended subject of the action and
-     * its children, if any.
+     * its children, if any. (choose any one of subject*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -2065,7 +2077,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A code or group definition that describes the intended subject of the action and
-     * its children, if any.
+     * its children, if any. (choose any one of subject*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $subjectCodeableConcept
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
@@ -2082,7 +2094,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A code or group definition that describes the intended subject of the action and
-     * its children, if any.
+     * its children, if any. (choose any one of subject*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -2097,7 +2109,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A code or group definition that describes the intended subject of the action and
-     * its children, if any.
+     * its children, if any. (choose any one of subject*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $subjectReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
@@ -2155,7 +2167,8 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed.
+     * An optional value describing when the action should be performed. (choose any
+     * one of timing*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
@@ -2169,7 +2182,8 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed.
+     * An optional value describing when the action should be performed. (choose any
+     * one of timing*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge $timingAge
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
@@ -2188,7 +2202,8 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * An optional value describing when the action should be performed.
+     * An optional value describing when the action should be performed. (choose any
+     * one of timing*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -2205,7 +2220,8 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * An optional value describing when the action should be performed.
+     * An optional value describing when the action should be performed. (choose any
+     * one of timing*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $timingDateTime
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
@@ -2229,7 +2245,8 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed.
+     * An optional value describing when the action should be performed. (choose any
+     * one of timing*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
@@ -2243,7 +2260,8 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed.
+     * An optional value describing when the action should be performed. (choose any
+     * one of timing*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration $timingDuration
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
@@ -2259,7 +2277,8 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed.
+     * An optional value describing when the action should be performed. (choose any
+     * one of timing*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -2273,7 +2292,8 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed.
+     * An optional value describing when the action should be performed. (choose any
+     * one of timing*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $timingPeriod
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
@@ -2289,7 +2309,8 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed.
+     * An optional value describing when the action should be performed. (choose any
+     * one of timing*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -2303,7 +2324,8 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed.
+     * An optional value describing when the action should be performed. (choose any
+     * one of timing*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange $timingRange
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
@@ -2323,7 +2345,8 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed.
+     * An optional value describing when the action should be performed. (choose any
+     * one of timing*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
@@ -2341,7 +2364,8 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed.
+     * An optional value describing when the action should be performed. (choose any
+     * one of timing*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming $timingTiming
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
@@ -2741,6 +2765,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_ACTION, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getCardinalityBehavior())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CARDINALITY_BEHAVIOR, null, $v->_getFHIRXMLNamespace()));
         }
@@ -2797,6 +2822,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_GOAL_ID, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getGroupingBehavior())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_GROUPING_BEHAVIOR, null, $v->_getFHIRXMLNamespace()));
         }
@@ -2827,12 +2853,14 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_PARTICIPANT, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getPrecheckBehavior())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PRECHECK_BEHAVIOR, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getPrefix())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PREFIX, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getPriority())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PRIORITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -2854,9 +2882,11 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_RELATED_ACTION, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getRequiredBehavior())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_REQUIRED_BEHAVIOR, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getSelectionBehavior())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SELECTION_BEHAVIOR, null, $v->_getFHIRXMLNamespace()));
         }
@@ -2926,10 +2956,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
             $a[self::FIELD_ACTION] = $vs;
         }
         if (null !== ($v = $this->getCardinalityBehavior())) {
-            $a[self::FIELD_CARDINALITY_BEHAVIOR] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_CARDINALITY_BEHAVIOR_EXT] = $v;
-            }
+            $a[self::FIELD_CARDINALITY_BEHAVIOR] = $v;
         }
         if ([] !== ($vs = $this->getCode())) {
             $a[self::FIELD_CODE] = $vs;
@@ -2939,21 +2966,15 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getDefinitionCanonical())) {
             $a[self::FIELD_DEFINITION_CANONICAL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DEFINITION_CANONICAL_EXT] = $v;
-            }
+            $a[self::FIELD_DEFINITION_CANONICAL_EXT] = $v;
         }
         if (null !== ($v = $this->getDefinitionUri())) {
             $a[self::FIELD_DEFINITION_URI] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DEFINITION_URI_EXT] = $v;
-            }
+            $a[self::FIELD_DEFINITION_URI_EXT] = $v;
         }
         if (null !== ($v = $this->getDescription())) {
             $a[self::FIELD_DESCRIPTION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DESCRIPTION_EXT] = $v;
-            }
+            $a[self::FIELD_DESCRIPTION_EXT] = $v;
         }
         if ([] !== ($vs = $this->getDocumentation())) {
             $a[self::FIELD_DOCUMENTATION] = $vs;
@@ -2968,19 +2989,11 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_GOAL_ID][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_GOAL_ID_EXT])) {
-                        $a[self::FIELD_GOAL_ID_EXT] = [];
-                    }
-                    $a[self::FIELD_GOAL_ID_EXT][] = $v;
-                }
+                $a[self::FIELD_GOAL_ID_EXT][] = $v;
             }
         }
         if (null !== ($v = $this->getGroupingBehavior())) {
-            $a[self::FIELD_GROUPING_BEHAVIOR] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_GROUPING_BEHAVIOR_EXT] = $v;
-            }
+            $a[self::FIELD_GROUPING_BEHAVIOR] = $v;
         }
         if ([] !== ($vs = $this->getInput())) {
             $a[self::FIELD_INPUT] = $vs;
@@ -2992,22 +3005,14 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
             $a[self::FIELD_PARTICIPANT] = $vs;
         }
         if (null !== ($v = $this->getPrecheckBehavior())) {
-            $a[self::FIELD_PRECHECK_BEHAVIOR] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PRECHECK_BEHAVIOR_EXT] = $v;
-            }
+            $a[self::FIELD_PRECHECK_BEHAVIOR] = $v;
         }
         if (null !== ($v = $this->getPrefix())) {
             $a[self::FIELD_PREFIX] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PREFIX_EXT] = $v;
-            }
+            $a[self::FIELD_PREFIX_EXT] = $v;
         }
         if (null !== ($v = $this->getPriority())) {
-            $a[self::FIELD_PRIORITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PRIORITY_EXT] = $v;
-            }
+            $a[self::FIELD_PRIORITY] = $v;
         }
         if ([] !== ($vs = $this->getReason())) {
             $a[self::FIELD_REASON] = $vs;
@@ -3016,16 +3021,10 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
             $a[self::FIELD_RELATED_ACTION] = $vs;
         }
         if (null !== ($v = $this->getRequiredBehavior())) {
-            $a[self::FIELD_REQUIRED_BEHAVIOR] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_REQUIRED_BEHAVIOR_EXT] = $v;
-            }
+            $a[self::FIELD_REQUIRED_BEHAVIOR] = $v;
         }
         if (null !== ($v = $this->getSelectionBehavior())) {
-            $a[self::FIELD_SELECTION_BEHAVIOR] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SELECTION_BEHAVIOR_EXT] = $v;
-            }
+            $a[self::FIELD_SELECTION_BEHAVIOR] = $v;
         }
         if (null !== ($v = $this->getSubjectCodeableConcept())) {
             $a[self::FIELD_SUBJECT_CODEABLE_CONCEPT] = $v;
@@ -3035,18 +3034,14 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getTextEquivalent())) {
             $a[self::FIELD_TEXT_EQUIVALENT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TEXT_EQUIVALENT_EXT] = $v;
-            }
+            $a[self::FIELD_TEXT_EQUIVALENT_EXT] = $v;
         }
         if (null !== ($v = $this->getTimingAge())) {
             $a[self::FIELD_TIMING_AGE] = $v;
         }
         if (null !== ($v = $this->getTimingDateTime())) {
             $a[self::FIELD_TIMING_DATE_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TIMING_DATE_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_TIMING_DATE_TIME_EXT] = $v;
         }
         if (null !== ($v = $this->getTimingDuration())) {
             $a[self::FIELD_TIMING_DURATION] = $v;
@@ -3062,15 +3057,11 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getTitle())) {
             $a[self::FIELD_TITLE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TITLE_EXT] = $v;
-            }
+            $a[self::FIELD_TITLE_EXT] = $v;
         }
         if (null !== ($v = $this->getTransform())) {
             $a[self::FIELD_TRANSFORM] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TRANSFORM_EXT] = $v;
-            }
+            $a[self::FIELD_TRANSFORM_EXT] = $v;
         }
         if ([] !== ($vs = $this->getTrigger())) {
             $a[self::FIELD_TRIGGER] = $vs;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConce
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -690,6 +690,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
         if (null !== ($v = $this->getComment())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_COMMENT, null, $v->_getFHIRXMLNamespace()));
         }
+
         if ([] !== ($vs = $this->getDependsOn())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -701,9 +702,11 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
         if (null !== ($v = $this->getDisplay())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DISPLAY, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getEquivalence())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_EQUIVALENCE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if ([] !== ($vs = $this->getProduct())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -723,57 +726,24 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getCode())) {
             $a[self::FIELD_CODE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_CODE_EXT] = $v;
-            }
+            $a[self::FIELD_CODE_EXT] = $v;
         }
         if (null !== ($v = $this->getComment())) {
             $a[self::FIELD_COMMENT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_COMMENT_EXT] = $v;
-            }
+            $a[self::FIELD_COMMENT_EXT] = $v;
         }
         if ([] !== ($vs = $this->getDependsOn())) {
-            $a[self::FIELD_DEPENDS_ON] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_DEPENDS_ON][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_DEPENDS_ON_EXT])) {
-                        $a[self::FIELD_DEPENDS_ON_EXT] = [];
-                    }
-                    $a[self::FIELD_DEPENDS_ON_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_DEPENDS_ON] = $vs;
         }
         if (null !== ($v = $this->getDisplay())) {
             $a[self::FIELD_DISPLAY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DISPLAY_EXT] = $v;
-            }
+            $a[self::FIELD_DISPLAY_EXT] = $v;
         }
         if (null !== ($v = $this->getEquivalence())) {
-            $a[self::FIELD_EQUIVALENCE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_EQUIVALENCE_EXT] = $v;
-            }
+            $a[self::FIELD_EQUIVALENCE] = $v;
         }
         if ([] !== ($vs = $this->getProduct())) {
-            $a[self::FIELD_PRODUCT] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_PRODUCT][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_PRODUCT_EXT])) {
-                        $a[self::FIELD_PRODUCT_EXT] = [];
-                    }
-                    $a[self::FIELD_PRODUCT_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_PRODUCT] = $vs;
         }
         return $a;
     }

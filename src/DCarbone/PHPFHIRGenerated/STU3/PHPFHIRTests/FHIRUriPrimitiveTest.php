@@ -5,7 +5,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTests;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -74,5 +74,18 @@ class FHIRUriPrimitiveTest extends TestCase
     {
         $type = new FHIRUriPrimitive();
         $this->assertInstanceOf('\DCarbone\PHPFHIRGenerated\STU3\FHIRUriPrimitive', $type);
+    }
+
+    public function testCanConstructWithString()
+    {
+        $n = new FHIRUriPrimitive('randomstring');
+        $this->assertEquals('randomstring', (string)$n);
+    }
+
+    public function testCanSetValueFromString()
+    {
+        $n = new FHIRUriPrimitive;
+        $n->setValue('randomstring');
+        $this->assertEquals('randomstring', (string)$n);
     }
 }

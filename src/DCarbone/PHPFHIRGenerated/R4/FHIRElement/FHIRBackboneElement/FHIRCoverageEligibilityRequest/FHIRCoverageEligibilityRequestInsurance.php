@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCover
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -423,18 +423,14 @@ class FHIRCoverageEligibilityRequestInsurance extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getBusinessArrangement())) {
             $a[self::FIELD_BUSINESS_ARRANGEMENT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_BUSINESS_ARRANGEMENT_EXT] = $v;
-            }
+            $a[self::FIELD_BUSINESS_ARRANGEMENT_EXT] = $v;
         }
         if (null !== ($v = $this->getCoverage())) {
             $a[self::FIELD_COVERAGE] = $v;
         }
         if (null !== ($v = $this->getFocal())) {
             $a[self::FIELD_FOCAL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_FOCAL_EXT] = $v;
-            }
+            $a[self::FIELD_FOCAL_EXT] = $v;
         }
         return $a;
     }

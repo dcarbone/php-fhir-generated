@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -280,7 +280,8 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * Date/time(s) or duration when the charged service was applied.
+     * Date/time(s) or duration when the charged service was applied. (choose any one
+     * of occurrence*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -290,7 +291,8 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Date/time(s) or duration when the charged service was applied.
+     * Date/time(s) or duration when the charged service was applied. (choose any one
+     * of occurrence*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -304,7 +306,8 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Date/time(s) or duration when the charged service was applied.
+     * Date/time(s) or duration when the charged service was applied. (choose any one
+     * of occurrence*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
@@ -370,7 +373,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Identifies the device, food, drug or other product being charged either by type
-     * code or reference to an instance.
+     * code or reference to an instance. (choose any one of product*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -381,7 +384,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Identifies the device, food, drug or other product being charged either by type
-     * code or reference to an instance.
+     * code or reference to an instance. (choose any one of product*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -1461,7 +1464,8 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * Date/time(s) or duration when the charged service was applied.
+     * Date/time(s) or duration when the charged service was applied. (choose any one
+     * of occurrence*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -1478,7 +1482,8 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * Date/time(s) or duration when the charged service was applied.
+     * Date/time(s) or duration when the charged service was applied. (choose any one
+     * of occurrence*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $occurrenceDateTime
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRChargeItem
@@ -1502,7 +1507,8 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Date/time(s) or duration when the charged service was applied.
+     * Date/time(s) or duration when the charged service was applied. (choose any one
+     * of occurrence*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -1516,7 +1522,8 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Date/time(s) or duration when the charged service was applied.
+     * Date/time(s) or duration when the charged service was applied. (choose any one
+     * of occurrence*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $occurrencePeriod
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRChargeItem
@@ -1536,7 +1543,8 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Date/time(s) or duration when the charged service was applied.
+     * Date/time(s) or duration when the charged service was applied. (choose any one
+     * of occurrence*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
@@ -1554,7 +1562,8 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Date/time(s) or duration when the charged service was applied.
+     * Date/time(s) or duration when the charged service was applied. (choose any one
+     * of occurrence*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming $occurrenceTiming
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRChargeItem
@@ -1792,7 +1801,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Identifies the device, food, drug or other product being charged either by type
-     * code or reference to an instance.
+     * code or reference to an instance. (choose any one of product*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -1808,7 +1817,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Identifies the device, food, drug or other product being charged either by type
-     * code or reference to an instance.
+     * code or reference to an instance. (choose any one of product*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $productCodeableConcept
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRChargeItem
@@ -1825,7 +1834,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Identifies the device, food, drug or other product being charged either by type
-     * code or reference to an instance.
+     * code or reference to an instance. (choose any one of product*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -1840,7 +1849,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Identifies the device, food, drug or other product being charged either by type
-     * code or reference to an instance.
+     * code or reference to an instance. (choose any one of product*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $productReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRChargeItem
@@ -2381,6 +2390,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
         if (null !== ($v = $this->getFactorOverride())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_FACTOR_OVERRIDE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -2434,6 +2444,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
         if (null !== ($v = $this->getPerformingOrganization())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PERFORMING_ORGANIZATION, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getPriceOverride())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PRICE_OVERRIDE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -2445,6 +2456,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
         if (null !== ($v = $this->getProductReference())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PRODUCT_REFERENCE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -2470,6 +2482,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
                 $v->xmlSerialize($sxe->addChild(self::FIELD_SERVICE, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -2517,12 +2530,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
                     continue;
                 }
                 $a[self::FIELD_DEFINITION_CANONICAL][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_DEFINITION_CANONICAL_EXT])) {
-                        $a[self::FIELD_DEFINITION_CANONICAL_EXT] = [];
-                    }
-                    $a[self::FIELD_DEFINITION_CANONICAL_EXT][] = $v;
-                }
+                $a[self::FIELD_DEFINITION_CANONICAL_EXT][] = $v;
             }
         }
         if ([] !== ($vs = $this->getDefinitionUri())) {
@@ -2532,52 +2540,29 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
                     continue;
                 }
                 $a[self::FIELD_DEFINITION_URI][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_DEFINITION_URI_EXT])) {
-                        $a[self::FIELD_DEFINITION_URI_EXT] = [];
-                    }
-                    $a[self::FIELD_DEFINITION_URI_EXT][] = $v;
-                }
+                $a[self::FIELD_DEFINITION_URI_EXT][] = $v;
             }
         }
         if (null !== ($v = $this->getEnteredDate())) {
             $a[self::FIELD_ENTERED_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ENTERED_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_ENTERED_DATE_EXT] = $v;
         }
         if (null !== ($v = $this->getEnterer())) {
             $a[self::FIELD_ENTERER] = $v;
         }
         if (null !== ($v = $this->getFactorOverride())) {
             $a[self::FIELD_FACTOR_OVERRIDE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_FACTOR_OVERRIDE_EXT] = $v;
-            }
+            $a[self::FIELD_FACTOR_OVERRIDE_EXT] = $v;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_IDENTIFIER][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_IDENTIFIER_EXT])) {
-                        $a[self::FIELD_IDENTIFIER_EXT] = [];
-                    }
-                    $a[self::FIELD_IDENTIFIER_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_IDENTIFIER] = $vs;
         }
         if ([] !== ($vs = $this->getNote())) {
             $a[self::FIELD_NOTE] = $vs;
         }
         if (null !== ($v = $this->getOccurrenceDateTime())) {
             $a[self::FIELD_OCCURRENCE_DATE_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_OCCURRENCE_DATE_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_OCCURRENCE_DATE_TIME_EXT] = $v;
         }
         if (null !== ($v = $this->getOccurrencePeriod())) {
             $a[self::FIELD_OCCURRENCE_PERIOD] = $v;
@@ -2587,9 +2572,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
         }
         if (null !== ($v = $this->getOverrideReason())) {
             $a[self::FIELD_OVERRIDE_REASON] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_OVERRIDE_REASON_EXT] = $v;
-            }
+            $a[self::FIELD_OVERRIDE_REASON_EXT] = $v;
         }
         if ([] !== ($vs = $this->getPartOf())) {
             $a[self::FIELD_PART_OF] = $vs;
@@ -2601,10 +2584,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
             $a[self::FIELD_PERFORMING_ORGANIZATION] = $v;
         }
         if (null !== ($v = $this->getPriceOverride())) {
-            $a[self::FIELD_PRICE_OVERRIDE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PRICE_OVERRIDE_EXT] = $v;
-            }
+            $a[self::FIELD_PRICE_OVERRIDE] = $v;
         }
         if (null !== ($v = $this->getProductCodeableConcept())) {
             $a[self::FIELD_PRODUCT_CODEABLE_CONCEPT] = $v;
@@ -2613,10 +2593,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
             $a[self::FIELD_PRODUCT_REFERENCE] = $v;
         }
         if (null !== ($v = $this->getQuantity())) {
-            $a[self::FIELD_QUANTITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_QUANTITY_EXT] = $v;
-            }
+            $a[self::FIELD_QUANTITY] = $v;
         }
         if ([] !== ($vs = $this->getReason())) {
             $a[self::FIELD_REASON] = $vs;
@@ -2628,10 +2605,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
             $a[self::FIELD_SERVICE] = $vs;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_STATUS_EXT] = $v;
-            }
+            $a[self::FIELD_STATUS] = $v;
         }
         if (null !== ($v = $this->getSubject())) {
             $a[self::FIELD_SUBJECT] = $v;

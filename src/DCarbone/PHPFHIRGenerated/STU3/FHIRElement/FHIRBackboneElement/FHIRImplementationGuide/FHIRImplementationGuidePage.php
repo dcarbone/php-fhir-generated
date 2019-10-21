@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRImp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -764,6 +764,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
         if (null !== ($v = $this->getFormat())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_FORMAT, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getKind())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_KIND, null, $v->_getFHIRXMLNamespace()));
         }
@@ -809,15 +810,10 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getFormat())) {
             $a[self::FIELD_FORMAT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_FORMAT_EXT] = $v;
-            }
+            $a[self::FIELD_FORMAT_EXT] = $v;
         }
         if (null !== ($v = $this->getKind())) {
-            $a[self::FIELD_KIND] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_KIND_EXT] = $v;
-            }
+            $a[self::FIELD_KIND] = $v;
         }
         if ([] !== ($vs = $this->getPackage())) {
             $a[self::FIELD_PACKAGE] = [];
@@ -826,12 +822,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_PACKAGE][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_PACKAGE_EXT])) {
-                        $a[self::FIELD_PACKAGE_EXT] = [];
-                    }
-                    $a[self::FIELD_PACKAGE_EXT][] = $v;
-                }
+                $a[self::FIELD_PACKAGE_EXT][] = $v;
             }
         }
         if ([] !== ($vs = $this->getPage())) {
@@ -839,15 +830,11 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getSource())) {
             $a[self::FIELD_SOURCE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SOURCE_EXT] = $v;
-            }
+            $a[self::FIELD_SOURCE_EXT] = $v;
         }
         if (null !== ($v = $this->getTitle())) {
             $a[self::FIELD_TITLE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TITLE_EXT] = $v;
-            }
+            $a[self::FIELD_TITLE_EXT] = $v;
         }
         if ([] !== ($vs = $this->getType())) {
             $a[self::FIELD_TYPE] = $vs;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -470,6 +470,7 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if ([] !== ($vs = $this->getAdjudication())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -499,19 +500,7 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getAdjudication())) {
-            $a[self::FIELD_ADJUDICATION] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_ADJUDICATION][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_ADJUDICATION_EXT])) {
-                        $a[self::FIELD_ADJUDICATION_EXT] = [];
-                    }
-                    $a[self::FIELD_ADJUDICATION_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_ADJUDICATION] = $vs;
         }
         if ([] !== ($vs = $this->getNoteNumber())) {
             $a[self::FIELD_NOTE_NUMBER] = [];
@@ -520,19 +509,12 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_NOTE_NUMBER][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_NOTE_NUMBER_EXT])) {
-                        $a[self::FIELD_NOTE_NUMBER_EXT] = [];
-                    }
-                    $a[self::FIELD_NOTE_NUMBER_EXT][] = $v;
-                }
+                $a[self::FIELD_NOTE_NUMBER_EXT][] = $v;
             }
         }
         if (null !== ($v = $this->getSubDetailSequence())) {
             $a[self::FIELD_SUB_DETAIL_SEQUENCE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SUB_DETAIL_SEQUENCE_EXT] = $v;
-            }
+            $a[self::FIELD_SUB_DETAIL_SEQUENCE_EXT] = $v;
         }
         return $a;
     }

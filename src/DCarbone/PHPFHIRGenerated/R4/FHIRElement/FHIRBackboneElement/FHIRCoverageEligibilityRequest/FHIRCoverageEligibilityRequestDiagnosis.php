@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCover
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -96,7 +96,7 @@ class FHIRCoverageEligibilityRequestDiagnosis extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The nature of illness or problem in a coded form or as a reference to an
-     * external defined Condition.
+     * external defined Condition. (choose any one of diagnosis*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -107,7 +107,7 @@ class FHIRCoverageEligibilityRequestDiagnosis extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The nature of illness or problem in a coded form or as a reference to an
-     * external defined Condition.
+     * external defined Condition. (choose any one of diagnosis*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -197,7 +197,7 @@ class FHIRCoverageEligibilityRequestDiagnosis extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The nature of illness or problem in a coded form or as a reference to an
-     * external defined Condition.
+     * external defined Condition. (choose any one of diagnosis*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -213,7 +213,7 @@ class FHIRCoverageEligibilityRequestDiagnosis extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The nature of illness or problem in a coded form or as a reference to an
-     * external defined Condition.
+     * external defined Condition. (choose any one of diagnosis*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $diagnosisCodeableConcept
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestDiagnosis
@@ -230,7 +230,7 @@ class FHIRCoverageEligibilityRequestDiagnosis extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The nature of illness or problem in a coded form or as a reference to an
-     * external defined Condition.
+     * external defined Condition. (choose any one of diagnosis*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -245,7 +245,7 @@ class FHIRCoverageEligibilityRequestDiagnosis extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The nature of illness or problem in a coded form or as a reference to an
-     * external defined Condition.
+     * external defined Condition. (choose any one of diagnosis*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $diagnosisReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestDiagnosis

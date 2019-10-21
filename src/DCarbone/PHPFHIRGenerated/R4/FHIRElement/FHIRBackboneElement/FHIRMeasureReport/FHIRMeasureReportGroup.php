@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -503,6 +503,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
         if (null !== ($v = $this->getCode())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getMeasureScore())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MEASURE_SCORE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -537,10 +538,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
             $a[self::FIELD_CODE] = $v;
         }
         if (null !== ($v = $this->getMeasureScore())) {
-            $a[self::FIELD_MEASURE_SCORE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MEASURE_SCORE_EXT] = $v;
-            }
+            $a[self::FIELD_MEASURE_SCORE] = $v;
         }
         if ([] !== ($vs = $this->getPopulation())) {
             $a[self::FIELD_POPULATION] = $vs;

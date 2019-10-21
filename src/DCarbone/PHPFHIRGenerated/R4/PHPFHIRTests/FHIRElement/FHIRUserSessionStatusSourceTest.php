@@ -1,12 +1,11 @@
 <?php
 
-namespace DCarbone\PHPFHIRGenerated\R4;
-
+namespace DCarbone\PHPFHIRGenerated\R4\PHPFHIRTests\FHIRElement;
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -62,24 +61,18 @@ namespace DCarbone\PHPFHIRGenerated\R4;
  * 
  */
 
-/**
- * Interface PHPFHIRValueContainerInterface
- * @package \DCarbone\PHPFHIRGenerated\R4
- */
-interface PHPFHIRValueContainerInterface
-{
-    /**
-     * When called, must mark this type as having a field other than its "value" field(s) defined
-     * @return void
-     */
-    public function _markNonValueFieldsDefined();
+use PHPUnit\Framework\TestCase;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUserSessionStatusSource;
 
-    /**
-     * This method must return true if the type implementing this interface has fields other
-     * than its "value" field(s) defined.
-     *
-     * Its singular purpose is to determine how to handle marshalling.
-     * @return bool
-     */
-    public function _hasNonValueFieldsDefined();
+/**
+ * Class FHIRUserSessionStatusSourceTest
+ * @package \DCarbone\PHPFHIRGenerated\R4\PHPFHIRTests\FHIRElement
+ */
+class FHIRUserSessionStatusSourceTest extends TestCase
+{
+    public function testCanConstructTypeNoArgs()
+    {
+        $type = new FHIRUserSessionStatusSource();
+        $this->assertInstanceOf('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUserSessionStatusSource', $type);
+    }
 }

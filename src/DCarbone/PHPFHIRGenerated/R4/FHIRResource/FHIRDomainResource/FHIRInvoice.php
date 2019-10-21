@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1354,6 +1354,7 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         if (null !== ($v = $this->getDate())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DATE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1400,6 +1401,7 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         if (null !== ($v = $this->getRecipient())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_RECIPIENT, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1407,9 +1409,11 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         if (null !== ($v = $this->getSubject())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SUBJECT, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getTotalGross())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TOTAL_GROSS, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getTotalNet())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TOTAL_NET, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1440,30 +1444,14 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         }
         if (null !== ($v = $this->getCancelledReason())) {
             $a[self::FIELD_CANCELLED_REASON] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_CANCELLED_REASON_EXT] = $v;
-            }
+            $a[self::FIELD_CANCELLED_REASON_EXT] = $v;
         }
         if (null !== ($v = $this->getDate())) {
             $a[self::FIELD_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_DATE_EXT] = $v;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_IDENTIFIER][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_IDENTIFIER_EXT])) {
-                        $a[self::FIELD_IDENTIFIER_EXT] = [];
-                    }
-                    $a[self::FIELD_IDENTIFIER_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_IDENTIFIER] = $vs;
         }
         if (null !== ($v = $this->getIssuer())) {
             $a[self::FIELD_ISSUER] = $v;
@@ -1479,33 +1467,22 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         }
         if (null !== ($v = $this->getPaymentTerms())) {
             $a[self::FIELD_PAYMENT_TERMS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PAYMENT_TERMS_EXT] = $v;
-            }
+            $a[self::FIELD_PAYMENT_TERMS_EXT] = $v;
         }
         if (null !== ($v = $this->getRecipient())) {
             $a[self::FIELD_RECIPIENT] = $v;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_STATUS_EXT] = $v;
-            }
+            $a[self::FIELD_STATUS] = $v;
         }
         if (null !== ($v = $this->getSubject())) {
             $a[self::FIELD_SUBJECT] = $v;
         }
         if (null !== ($v = $this->getTotalGross())) {
-            $a[self::FIELD_TOTAL_GROSS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TOTAL_GROSS_EXT] = $v;
-            }
+            $a[self::FIELD_TOTAL_GROSS] = $v;
         }
         if (null !== ($v = $this->getTotalNet())) {
-            $a[self::FIELD_TOTAL_NET] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TOTAL_NET_EXT] = $v;
-            }
+            $a[self::FIELD_TOTAL_NET] = $v;
         }
         if ([] !== ($vs = $this->getTotalPriceComponent())) {
             $a[self::FIELD_TOTAL_PRICE_COMPONENT] = $vs;

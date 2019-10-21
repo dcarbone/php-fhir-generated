@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -709,6 +709,7 @@ class FHIRSampledData extends FHIRElement
         if (null !== ($v = $this->getLowerLimit())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_LOWER_LIMIT, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getOrigin())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ORIGIN, null, $v->_getFHIRXMLNamespace()));
         }
@@ -729,45 +730,30 @@ class FHIRSampledData extends FHIRElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getData())) {
             $a[self::FIELD_DATA] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DATA_EXT] = $v;
-            }
+            $a[self::FIELD_DATA_EXT] = $v;
         }
         if (null !== ($v = $this->getDimensions())) {
             $a[self::FIELD_DIMENSIONS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DIMENSIONS_EXT] = $v;
-            }
+            $a[self::FIELD_DIMENSIONS_EXT] = $v;
         }
         if (null !== ($v = $this->getFactor())) {
             $a[self::FIELD_FACTOR] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_FACTOR_EXT] = $v;
-            }
+            $a[self::FIELD_FACTOR_EXT] = $v;
         }
         if (null !== ($v = $this->getLowerLimit())) {
             $a[self::FIELD_LOWER_LIMIT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_LOWER_LIMIT_EXT] = $v;
-            }
+            $a[self::FIELD_LOWER_LIMIT_EXT] = $v;
         }
         if (null !== ($v = $this->getOrigin())) {
-            $a[self::FIELD_ORIGIN] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ORIGIN_EXT] = $v;
-            }
+            $a[self::FIELD_ORIGIN] = $v;
         }
         if (null !== ($v = $this->getPeriod())) {
             $a[self::FIELD_PERIOD] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PERIOD_EXT] = $v;
-            }
+            $a[self::FIELD_PERIOD_EXT] = $v;
         }
         if (null !== ($v = $this->getUpperLimit())) {
             $a[self::FIELD_UPPER_LIMIT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_UPPER_LIMIT_EXT] = $v;
-            }
+            $a[self::FIELD_UPPER_LIMIT_EXT] = $v;
         }
         return $a;
     }

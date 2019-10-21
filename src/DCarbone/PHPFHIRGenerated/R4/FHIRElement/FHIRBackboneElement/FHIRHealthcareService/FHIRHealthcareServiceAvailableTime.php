@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRHealt
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -503,6 +503,7 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
         if (null !== ($v = $this->getAvailableStartTime())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AVAILABLE_START_TIME, null, $v->_getFHIRXMLNamespace()));
         }
+
         if ([] !== ($vs = $this->getDaysOfWeek())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -522,36 +523,18 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAllDay())) {
             $a[self::FIELD_ALL_DAY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ALL_DAY_EXT] = $v;
-            }
+            $a[self::FIELD_ALL_DAY_EXT] = $v;
         }
         if (null !== ($v = $this->getAvailableEndTime())) {
             $a[self::FIELD_AVAILABLE_END_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_AVAILABLE_END_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_AVAILABLE_END_TIME_EXT] = $v;
         }
         if (null !== ($v = $this->getAvailableStartTime())) {
             $a[self::FIELD_AVAILABLE_START_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_AVAILABLE_START_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_AVAILABLE_START_TIME_EXT] = $v;
         }
         if ([] !== ($vs = $this->getDaysOfWeek())) {
-            $a[self::FIELD_DAYS_OF_WEEK] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_DAYS_OF_WEEK][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_DAYS_OF_WEEK_EXT])) {
-                        $a[self::FIELD_DAYS_OF_WEEK_EXT] = [];
-                    }
-                    $a[self::FIELD_DAYS_OF_WEEK_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_DAYS_OF_WEEK] = $vs;
         }
         return $a;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -166,7 +166,8 @@ class FHIRDetectedIssue extends FHIRDomainResource implements PHPFHIRContainedTy
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The date or period when the detected issue was initially identified.
+     * The date or period when the detected issue was initially identified. (choose any
+     * one of identified*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -176,7 +177,8 @@ class FHIRDetectedIssue extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The date or period when the detected issue was initially identified.
+     * The date or period when the detected issue was initially identified. (choose any
+     * one of identified*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -652,7 +654,8 @@ class FHIRDetectedIssue extends FHIRDomainResource implements PHPFHIRContainedTy
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The date or period when the detected issue was initially identified.
+     * The date or period when the detected issue was initially identified. (choose any
+     * one of identified*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -669,7 +672,8 @@ class FHIRDetectedIssue extends FHIRDomainResource implements PHPFHIRContainedTy
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The date or period when the detected issue was initially identified.
+     * The date or period when the detected issue was initially identified. (choose any
+     * one of identified*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $identifiedDateTime
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDetectedIssue
@@ -693,7 +697,8 @@ class FHIRDetectedIssue extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The date or period when the detected issue was initially identified.
+     * The date or period when the detected issue was initially identified. (choose any
+     * one of identified*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -707,7 +712,8 @@ class FHIRDetectedIssue extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The date or period when the detected issue was initially identified.
+     * The date or period when the detected issue was initially identified. (choose any
+     * one of identified*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $identifiedPeriod
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDetectedIssue
@@ -1166,6 +1172,7 @@ class FHIRDetectedIssue extends FHIRDomainResource implements PHPFHIRContainedTy
         if (null !== ($v = $this->getIdentifiedPeriod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIED_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
+
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1199,9 +1206,11 @@ class FHIRDetectedIssue extends FHIRDomainResource implements PHPFHIRContainedTy
         if (null !== ($v = $this->getReference())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_REFERENCE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getSeverity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SEVERITY, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1222,36 +1231,20 @@ class FHIRDetectedIssue extends FHIRDomainResource implements PHPFHIRContainedTy
         }
         if (null !== ($v = $this->getDetail())) {
             $a[self::FIELD_DETAIL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DETAIL_EXT] = $v;
-            }
+            $a[self::FIELD_DETAIL_EXT] = $v;
         }
         if ([] !== ($vs = $this->getEvidence())) {
             $a[self::FIELD_EVIDENCE] = $vs;
         }
         if (null !== ($v = $this->getIdentifiedDateTime())) {
             $a[self::FIELD_IDENTIFIED_DATE_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_IDENTIFIED_DATE_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_IDENTIFIED_DATE_TIME_EXT] = $v;
         }
         if (null !== ($v = $this->getIdentifiedPeriod())) {
             $a[self::FIELD_IDENTIFIED_PERIOD] = $v;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_IDENTIFIER][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_IDENTIFIER_EXT])) {
-                        $a[self::FIELD_IDENTIFIER_EXT] = [];
-                    }
-                    $a[self::FIELD_IDENTIFIER_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_IDENTIFIER] = $vs;
         }
         if ([] !== ($vs = $this->getImplicated())) {
             $a[self::FIELD_IMPLICATED] = $vs;
@@ -1264,21 +1257,13 @@ class FHIRDetectedIssue extends FHIRDomainResource implements PHPFHIRContainedTy
         }
         if (null !== ($v = $this->getReference())) {
             $a[self::FIELD_REFERENCE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_REFERENCE_EXT] = $v;
-            }
+            $a[self::FIELD_REFERENCE_EXT] = $v;
         }
         if (null !== ($v = $this->getSeverity())) {
-            $a[self::FIELD_SEVERITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SEVERITY_EXT] = $v;
-            }
+            $a[self::FIELD_SEVERITY] = $v;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_STATUS_EXT] = $v;
-            }
+            $a[self::FIELD_STATUS] = $v;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -102,7 +102,8 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Indication for use that apply to the specific administration guidelines.
+     * Indication for use that apply to the specific administration guidelines. (choose
+     * any one of indication*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -112,7 +113,8 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Indication for use that apply to the specific administration guidelines.
+     * Indication for use that apply to the specific administration guidelines. (choose
+     * any one of indication*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -297,7 +299,8 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Indication for use that apply to the specific administration guidelines.
+     * Indication for use that apply to the specific administration guidelines. (choose
+     * any one of indication*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -312,7 +315,8 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Indication for use that apply to the specific administration guidelines.
+     * Indication for use that apply to the specific administration guidelines. (choose
+     * any one of indication*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $indicationCodeableConcept
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeAdministrationGuidelines
@@ -328,7 +332,8 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Indication for use that apply to the specific administration guidelines.
+     * Indication for use that apply to the specific administration guidelines. (choose
+     * any one of indication*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -342,7 +347,8 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Indication for use that apply to the specific administration guidelines.
+     * Indication for use that apply to the specific administration guidelines. (choose
+     * any one of indication*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $indicationReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeAdministrationGuidelines
@@ -493,6 +499,7 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
         if (null !== ($v = $this->getIndicationReference())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_INDICATION_REFERENCE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if ([] !== ($vs = $this->getPatientCharacteristics())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -520,19 +527,7 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
             $a[self::FIELD_INDICATION_REFERENCE] = $v;
         }
         if ([] !== ($vs = $this->getPatientCharacteristics())) {
-            $a[self::FIELD_PATIENT_CHARACTERISTICS] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_PATIENT_CHARACTERISTICS][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_PATIENT_CHARACTERISTICS_EXT])) {
-                        $a[self::FIELD_PATIENT_CHARACTERISTICS_EXT] = [];
-                    }
-                    $a[self::FIELD_PATIENT_CHARACTERISTICS_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_PATIENT_CHARACTERISTICS] = $vs;
         }
         return $a;
     }

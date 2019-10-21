@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -67,8 +67,6 @@ use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
-use DCarbone\PHPFHIRGenerated\R4\PHPFHIRValueContainerInterface;
-use DCarbone\PHPFHIRGenerated\R4\PHPFHIRValueContainerTrait;
 
 /**
  * The MeasureReport resource contains the results of the calculation of a measure;
@@ -77,10 +75,8 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRValueContainerTrait;
  * Class FHIRMeasureReportStratum
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasureReport
  */
-class FHIRMeasureReportStratum extends FHIRBackboneElement implements PHPFHIRValueContainerInterface
+class FHIRMeasureReportStratum extends FHIRBackboneElement
 {
-    use PHPFHIRValueContainerTrait;
-
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEASURE_REPORT_DOT_STRATUM;
 
@@ -348,7 +344,6 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements PHPFHIRVal
      */
     public function setMeasureScore(FHIRQuantity $measureScore = null)
     {
-        $this->_markNonValueFieldsDefined();
         $this->measureScore = $measureScore;
         return $this;
     }
@@ -515,6 +510,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements PHPFHIRVal
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if ([] !== ($vs = $this->getComponent())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -523,6 +519,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements PHPFHIRVal
                 $v->xmlSerialize($sxe->addChild(self::FIELD_COMPONENT, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getMeasureScore())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MEASURE_SCORE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -549,25 +546,10 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements PHPFHIRVal
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getComponent())) {
-            $a[self::FIELD_COMPONENT] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_COMPONENT][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_COMPONENT_EXT])) {
-                        $a[self::FIELD_COMPONENT_EXT] = [];
-                    }
-                    $a[self::FIELD_COMPONENT_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_COMPONENT] = $vs;
         }
         if (null !== ($v = $this->getMeasureScore())) {
-            $a[self::FIELD_MEASURE_SCORE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MEASURE_SCORE_EXT] = $v;
-            }
+            $a[self::FIELD_MEASURE_SCORE] = $v;
         }
         if ([] !== ($vs = $this->getPopulation())) {
             $a[self::FIELD_POPULATION] = $vs;

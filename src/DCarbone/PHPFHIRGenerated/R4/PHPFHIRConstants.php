@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -73,7 +73,7 @@ abstract class PHPFHIRConstants
     const SOURCE_GENERATION_DATE = 'Thu, Dec 27, 2018 22:37+1100';
 
     // PHPFHIR
-    const CODE_GENERATION_DATE = 'October 21st, 2019 04:05+0000';
+    const CODE_GENERATION_DATE = 'October 21st, 2019 23:43+0000';
 
     // Common
     const JSON_FIELD_RESOURCE_TYPE = 'resourceType';
@@ -93,6 +93,8 @@ abstract class PHPFHIRConstants
     const TYPE_NAME_ACTION_CONDITION_KIND_HYPHEN_LIST = 'ActionConditionKind-list';
     const TYPE_NAME_ACTION_GROUPING_BEHAVIOR = 'ActionGroupingBehavior';
     const TYPE_NAME_ACTION_GROUPING_BEHAVIOR_HYPHEN_LIST = 'ActionGroupingBehavior-list';
+    const TYPE_NAME_ACTION_LIST = 'ActionList';
+    const TYPE_NAME_ACTION_LIST_HYPHEN_LIST = 'ActionList-list';
     const TYPE_NAME_ACTION_PARTICIPANT_TYPE = 'ActionParticipantType';
     const TYPE_NAME_ACTION_PARTICIPANT_TYPE_HYPHEN_LIST = 'ActionParticipantType-list';
     const TYPE_NAME_ACTION_PRECHECK_BEHAVIOR = 'ActionPrecheckBehavior';
@@ -652,6 +654,7 @@ abstract class PHPFHIRConstants
     const TYPE_NAME_ISSUE_SEVERITY_HYPHEN_LIST = 'IssueSeverity-list';
     const TYPE_NAME_ISSUE_TYPE = 'IssueType';
     const TYPE_NAME_ISSUE_TYPE_HYPHEN_LIST = 'IssueType-list';
+    const TYPE_NAME_ITEM_INSTANCE = 'ItemInstance';
     const TYPE_NAME_LIBRARY = 'Library';
     const TYPE_NAME_LINKAGE = 'Linkage';
     const TYPE_NAME_LINKAGE_DOT_ITEM = 'Linkage.Item';
@@ -739,8 +742,17 @@ abstract class PHPFHIRConstants
     const TYPE_NAME_MEDICINAL_PRODUCT_AUTHORIZATION = 'MedicinalProductAuthorization';
     const TYPE_NAME_MEDICINAL_PRODUCT_AUTHORIZATION_DOT_JURISDICTIONAL_AUTHORIZATION = 'MedicinalProductAuthorization.JurisdictionalAuthorization';
     const TYPE_NAME_MEDICINAL_PRODUCT_AUTHORIZATION_DOT_PROCEDURE = 'MedicinalProductAuthorization.Procedure';
+    const TYPE_NAME_MEDICINAL_PRODUCT_CLINICALS = 'MedicinalProductClinicals';
+    const TYPE_NAME_MEDICINAL_PRODUCT_CLINICALS_DOT_CONTRAINDICATION = 'MedicinalProductClinicals.Contraindication';
+    const TYPE_NAME_MEDICINAL_PRODUCT_CLINICALS_DOT_INTERACTIONS = 'MedicinalProductClinicals.Interactions';
+    const TYPE_NAME_MEDICINAL_PRODUCT_CLINICALS_DOT_OTHER_THERAPY = 'MedicinalProductClinicals.OtherTherapy';
+    const TYPE_NAME_MEDICINAL_PRODUCT_CLINICALS_DOT_POPULATION = 'MedicinalProductClinicals.Population';
+    const TYPE_NAME_MEDICINAL_PRODUCT_CLINICALS_DOT_THERAPEUTIC_INDICATION = 'MedicinalProductClinicals.TherapeuticIndication';
+    const TYPE_NAME_MEDICINAL_PRODUCT_CLINICALS_DOT_UNDESIRABLE_EFFECTS = 'MedicinalProductClinicals.UndesirableEffects';
     const TYPE_NAME_MEDICINAL_PRODUCT_CONTRAINDICATION = 'MedicinalProductContraindication';
     const TYPE_NAME_MEDICINAL_PRODUCT_CONTRAINDICATION_DOT_OTHER_THERAPY = 'MedicinalProductContraindication.OtherTherapy';
+    const TYPE_NAME_MEDICINAL_PRODUCT_DEVICE_SPEC = 'MedicinalProductDeviceSpec';
+    const TYPE_NAME_MEDICINAL_PRODUCT_DEVICE_SPEC_DOT_MATERIAL = 'MedicinalProductDeviceSpec.Material';
     const TYPE_NAME_MEDICINAL_PRODUCT_INDICATION = 'MedicinalProductIndication';
     const TYPE_NAME_MEDICINAL_PRODUCT_INDICATION_DOT_OTHER_THERAPY = 'MedicinalProductIndication.OtherTherapy';
     const TYPE_NAME_MEDICINAL_PRODUCT_INGREDIENT = 'MedicinalProductIngredient';
@@ -869,6 +881,12 @@ abstract class PHPFHIRConstants
     const TYPE_NAME_PROCEDURE = 'Procedure';
     const TYPE_NAME_PROCEDURE_DOT_FOCAL_DEVICE = 'Procedure.FocalDevice';
     const TYPE_NAME_PROCEDURE_DOT_PERFORMER = 'Procedure.Performer';
+    const TYPE_NAME_PROCESS_OUTCOME_CODES = 'ProcessOutcomeCodes';
+    const TYPE_NAME_PROCESS_OUTCOME_CODES_HYPHEN_LIST = 'ProcessOutcomeCodes-list';
+    const TYPE_NAME_PROCESS_REQUEST = 'ProcessRequest';
+    const TYPE_NAME_PROCESS_REQUEST_DOT_ITEM = 'ProcessRequest.Item';
+    const TYPE_NAME_PROCESS_RESPONSE = 'ProcessResponse';
+    const TYPE_NAME_PROCESS_RESPONSE_DOT_PROCESS_NOTE = 'ProcessResponse.ProcessNote';
     const TYPE_NAME_PROD_CHARACTERISTIC = 'ProdCharacteristic';
     const TYPE_NAME_PRODUCT_SHELF_LIFE = 'ProductShelfLife';
     const TYPE_NAME_PROPERTY_REPRESENTATION = 'PropertyRepresentation';
@@ -974,6 +992,15 @@ abstract class PHPFHIRConstants
     const TYPE_NAME_SEARCH_PARAMETER_DOT_COMPONENT = 'SearchParameter.Component';
     const TYPE_NAME_SEARCH_PARAM_TYPE = 'SearchParamType';
     const TYPE_NAME_SEARCH_PARAM_TYPE_HYPHEN_LIST = 'SearchParamType-list';
+    const TYPE_NAME_SEQUENCE = 'Sequence';
+    const TYPE_NAME_SEQUENCE_DOT_INNER = 'Sequence.Inner';
+    const TYPE_NAME_SEQUENCE_DOT_OUTER = 'Sequence.Outer';
+    const TYPE_NAME_SEQUENCE_DOT_QUALITY = 'Sequence.Quality';
+    const TYPE_NAME_SEQUENCE_DOT_REFERENCE_SEQ = 'Sequence.ReferenceSeq';
+    const TYPE_NAME_SEQUENCE_DOT_REPOSITORY = 'Sequence.Repository';
+    const TYPE_NAME_SEQUENCE_DOT_ROC = 'Sequence.Roc';
+    const TYPE_NAME_SEQUENCE_DOT_STRUCTURE_VARIANT = 'Sequence.StructureVariant';
+    const TYPE_NAME_SEQUENCE_DOT_VARIANT = 'Sequence.Variant';
     const TYPE_NAME_SEQUENCE_TYPE = 'sequenceType';
     const TYPE_NAME_SEQUENCE_TYPE_HYPHEN_LIST = 'sequenceType-list';
     const TYPE_NAME_SERVICE_REQUEST = 'ServiceRequest';
@@ -1173,6 +1200,13 @@ abstract class PHPFHIRConstants
     const TYPE_NAME_USAGE_CONTEXT = 'UsageContext';
     const TYPE_NAME_USE = 'Use';
     const TYPE_NAME_USE_HYPHEN_LIST = 'Use-list';
+    const TYPE_NAME_USER_SESSION = 'UserSession';
+    const TYPE_NAME_USER_SESSION_DOT_CONTEXT = 'UserSession.Context';
+    const TYPE_NAME_USER_SESSION_DOT_STATUS = 'UserSession.Status';
+    const TYPE_NAME_USER_SESSION_STATUS = 'UserSessionStatus';
+    const TYPE_NAME_USER_SESSION_STATUS_HYPHEN_LIST = 'UserSessionStatus-list';
+    const TYPE_NAME_USER_SESSION_STATUS_SOURCE = 'UserSessionStatusSource';
+    const TYPE_NAME_USER_SESSION_STATUS_SOURCE_HYPHEN_LIST = 'UserSessionStatusSource-list';
     const TYPE_NAME_UUID = 'uuid';
     const TYPE_NAME_UUID_HYPHEN_PRIMITIVE = 'uuid-primitive';
     const TYPE_NAME_VALUE_SET = 'ValueSet';
@@ -1214,6 +1248,8 @@ abstract class PHPFHIRConstants
     const TYPE_CLASS_ACTION_CONDITION_KIND_HYPHEN_LIST = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRActionConditionKindList';
     const TYPE_CLASS_ACTION_GROUPING_BEHAVIOR = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRActionGroupingBehavior';
     const TYPE_CLASS_ACTION_GROUPING_BEHAVIOR_HYPHEN_LIST = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRActionGroupingBehaviorList';
+    const TYPE_CLASS_ACTION_LIST = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRActionList';
+    const TYPE_CLASS_ACTION_LIST_HYPHEN_LIST = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRActionListList';
     const TYPE_CLASS_ACTION_PARTICIPANT_TYPE = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRActionParticipantType';
     const TYPE_CLASS_ACTION_PARTICIPANT_TYPE_HYPHEN_LIST = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRActionParticipantTypeList';
     const TYPE_CLASS_ACTION_PRECHECK_BEHAVIOR = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRActionPrecheckBehavior';
@@ -1773,6 +1809,7 @@ abstract class PHPFHIRConstants
     const TYPE_CLASS_ISSUE_SEVERITY_HYPHEN_LIST = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRIssueSeverityList';
     const TYPE_CLASS_ISSUE_TYPE = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRIssueType';
     const TYPE_CLASS_ISSUE_TYPE_HYPHEN_LIST = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRIssueTypeList';
+    const TYPE_CLASS_ITEM_INSTANCE = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRResource\\FHIRDomainResource\\FHIRItemInstance';
     const TYPE_CLASS_LIBRARY = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRResource\\FHIRDomainResource\\FHIRLibrary';
     const TYPE_CLASS_LINKAGE = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRResource\\FHIRDomainResource\\FHIRLinkage';
     const TYPE_CLASS_LINKAGE_DOT_ITEM = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRBackboneElement\\FHIRLinkage\\FHIRLinkageItem';
@@ -1860,8 +1897,17 @@ abstract class PHPFHIRConstants
     const TYPE_CLASS_MEDICINAL_PRODUCT_AUTHORIZATION = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRResource\\FHIRDomainResource\\FHIRMedicinalProductAuthorization';
     const TYPE_CLASS_MEDICINAL_PRODUCT_AUTHORIZATION_DOT_JURISDICTIONAL_AUTHORIZATION = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRBackboneElement\\FHIRMedicinalProductAuthorization\\FHIRMedicinalProductAuthorizationJurisdictionalAuthorization';
     const TYPE_CLASS_MEDICINAL_PRODUCT_AUTHORIZATION_DOT_PROCEDURE = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRBackboneElement\\FHIRMedicinalProductAuthorization\\FHIRMedicinalProductAuthorizationProcedure';
+    const TYPE_CLASS_MEDICINAL_PRODUCT_CLINICALS = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRResource\\FHIRDomainResource\\FHIRMedicinalProductClinicals';
+    const TYPE_CLASS_MEDICINAL_PRODUCT_CLINICALS_DOT_CONTRAINDICATION = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRBackboneElement\\FHIRMedicinalProductClinicals\\FHIRMedicinalProductClinicalsContraindication';
+    const TYPE_CLASS_MEDICINAL_PRODUCT_CLINICALS_DOT_INTERACTIONS = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRBackboneElement\\FHIRMedicinalProductClinicals\\FHIRMedicinalProductClinicalsInteractions';
+    const TYPE_CLASS_MEDICINAL_PRODUCT_CLINICALS_DOT_OTHER_THERAPY = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRBackboneElement\\FHIRMedicinalProductClinicals\\FHIRMedicinalProductClinicalsOtherTherapy';
+    const TYPE_CLASS_MEDICINAL_PRODUCT_CLINICALS_DOT_POPULATION = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRBackboneElement\\FHIRMedicinalProductClinicals\\FHIRMedicinalProductClinicalsPopulation';
+    const TYPE_CLASS_MEDICINAL_PRODUCT_CLINICALS_DOT_THERAPEUTIC_INDICATION = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRBackboneElement\\FHIRMedicinalProductClinicals\\FHIRMedicinalProductClinicalsTherapeuticIndication';
+    const TYPE_CLASS_MEDICINAL_PRODUCT_CLINICALS_DOT_UNDESIRABLE_EFFECTS = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRBackboneElement\\FHIRMedicinalProductClinicals\\FHIRMedicinalProductClinicalsUndesirableEffects';
     const TYPE_CLASS_MEDICINAL_PRODUCT_CONTRAINDICATION = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRResource\\FHIRDomainResource\\FHIRMedicinalProductContraindication';
     const TYPE_CLASS_MEDICINAL_PRODUCT_CONTRAINDICATION_DOT_OTHER_THERAPY = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRBackboneElement\\FHIRMedicinalProductContraindication\\FHIRMedicinalProductContraindicationOtherTherapy';
+    const TYPE_CLASS_MEDICINAL_PRODUCT_DEVICE_SPEC = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRResource\\FHIRDomainResource\\FHIRMedicinalProductDeviceSpec';
+    const TYPE_CLASS_MEDICINAL_PRODUCT_DEVICE_SPEC_DOT_MATERIAL = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRBackboneElement\\FHIRMedicinalProductDeviceSpec\\FHIRMedicinalProductDeviceSpecMaterial';
     const TYPE_CLASS_MEDICINAL_PRODUCT_INDICATION = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRResource\\FHIRDomainResource\\FHIRMedicinalProductIndication';
     const TYPE_CLASS_MEDICINAL_PRODUCT_INDICATION_DOT_OTHER_THERAPY = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRBackboneElement\\FHIRMedicinalProductIndication\\FHIRMedicinalProductIndicationOtherTherapy';
     const TYPE_CLASS_MEDICINAL_PRODUCT_INGREDIENT = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRResource\\FHIRDomainResource\\FHIRMedicinalProductIngredient';
@@ -1990,6 +2036,12 @@ abstract class PHPFHIRConstants
     const TYPE_CLASS_PROCEDURE = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRResource\\FHIRDomainResource\\FHIRProcedure';
     const TYPE_CLASS_PROCEDURE_DOT_FOCAL_DEVICE = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRBackboneElement\\FHIRProcedure\\FHIRProcedureFocalDevice';
     const TYPE_CLASS_PROCEDURE_DOT_PERFORMER = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRBackboneElement\\FHIRProcedure\\FHIRProcedurePerformer';
+    const TYPE_CLASS_PROCESS_OUTCOME_CODES = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRProcessOutcomeCodes';
+    const TYPE_CLASS_PROCESS_OUTCOME_CODES_HYPHEN_LIST = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRProcessOutcomeCodesList';
+    const TYPE_CLASS_PROCESS_REQUEST = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRResource\\FHIRDomainResource\\FHIRProcessRequest';
+    const TYPE_CLASS_PROCESS_REQUEST_DOT_ITEM = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRBackboneElement\\FHIRProcessRequest\\FHIRProcessRequestItem';
+    const TYPE_CLASS_PROCESS_RESPONSE = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRResource\\FHIRDomainResource\\FHIRProcessResponse';
+    const TYPE_CLASS_PROCESS_RESPONSE_DOT_PROCESS_NOTE = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRBackboneElement\\FHIRProcessResponse\\FHIRProcessResponseProcessNote';
     const TYPE_CLASS_PROD_CHARACTERISTIC = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRBackboneElement\\FHIRProdCharacteristic';
     const TYPE_CLASS_PRODUCT_SHELF_LIFE = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRBackboneElement\\FHIRProductShelfLife';
     const TYPE_CLASS_PROPERTY_REPRESENTATION = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRPropertyRepresentation';
@@ -2095,6 +2147,15 @@ abstract class PHPFHIRConstants
     const TYPE_CLASS_SEARCH_PARAMETER_DOT_COMPONENT = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRBackboneElement\\FHIRSearchParameter\\FHIRSearchParameterComponent';
     const TYPE_CLASS_SEARCH_PARAM_TYPE = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRSearchParamType';
     const TYPE_CLASS_SEARCH_PARAM_TYPE_HYPHEN_LIST = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRSearchParamTypeList';
+    const TYPE_CLASS_SEQUENCE = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRResource\\FHIRDomainResource\\FHIRSequence';
+    const TYPE_CLASS_SEQUENCE_DOT_INNER = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRBackboneElement\\FHIRSequence\\FHIRSequenceInner';
+    const TYPE_CLASS_SEQUENCE_DOT_OUTER = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRBackboneElement\\FHIRSequence\\FHIRSequenceOuter';
+    const TYPE_CLASS_SEQUENCE_DOT_QUALITY = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRBackboneElement\\FHIRSequence\\FHIRSequenceQuality';
+    const TYPE_CLASS_SEQUENCE_DOT_REFERENCE_SEQ = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRBackboneElement\\FHIRSequence\\FHIRSequenceReferenceSeq';
+    const TYPE_CLASS_SEQUENCE_DOT_REPOSITORY = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRBackboneElement\\FHIRSequence\\FHIRSequenceRepository';
+    const TYPE_CLASS_SEQUENCE_DOT_ROC = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRBackboneElement\\FHIRSequence\\FHIRSequenceRoc';
+    const TYPE_CLASS_SEQUENCE_DOT_STRUCTURE_VARIANT = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRBackboneElement\\FHIRSequence\\FHIRSequenceStructureVariant';
+    const TYPE_CLASS_SEQUENCE_DOT_VARIANT = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRBackboneElement\\FHIRSequence\\FHIRSequenceVariant';
     const TYPE_CLASS_SEQUENCE_TYPE = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRSequenceType';
     const TYPE_CLASS_SEQUENCE_TYPE_HYPHEN_LIST = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRSequenceTypeList';
     const TYPE_CLASS_SERVICE_REQUEST = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRResource\\FHIRDomainResource\\FHIRServiceRequest';
@@ -2294,6 +2355,13 @@ abstract class PHPFHIRConstants
     const TYPE_CLASS_USAGE_CONTEXT = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRUsageContext';
     const TYPE_CLASS_USE = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRUse';
     const TYPE_CLASS_USE_HYPHEN_LIST = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRUseList';
+    const TYPE_CLASS_USER_SESSION = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRResource\\FHIRDomainResource\\FHIRUserSession';
+    const TYPE_CLASS_USER_SESSION_DOT_CONTEXT = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRBackboneElement\\FHIRUserSession\\FHIRUserSessionContext';
+    const TYPE_CLASS_USER_SESSION_DOT_STATUS = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRBackboneElement\\FHIRUserSession\\FHIRUserSessionStatus';
+    const TYPE_CLASS_USER_SESSION_STATUS = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRUserSessionStatus';
+    const TYPE_CLASS_USER_SESSION_STATUS_HYPHEN_LIST = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRUserSessionStatusList';
+    const TYPE_CLASS_USER_SESSION_STATUS_SOURCE = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRUserSessionStatusSource';
+    const TYPE_CLASS_USER_SESSION_STATUS_SOURCE_HYPHEN_LIST = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRUserSessionStatusSourceList';
     const TYPE_CLASS_UUID = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRUuid';
     const TYPE_CLASS_UUID_HYPHEN_PRIMITIVE = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRUuidPrimitive';
     const TYPE_CLASS_VALUE_SET = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRResource\\FHIRDomainResource\\FHIRValueSet';

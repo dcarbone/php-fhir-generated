@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRVi
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1185,6 +1185,7 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
         if (null !== ($v = $this->getBackCurve())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_BACK_CURVE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getBase())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_BASE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1204,6 +1205,7 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
         if (null !== ($v = $this->getDuration())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DURATION, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getEye())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_EYE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1234,87 +1236,59 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAdd())) {
             $a[self::FIELD_ADD] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ADD_EXT] = $v;
-            }
+            $a[self::FIELD_ADD_EXT] = $v;
         }
         if (null !== ($v = $this->getAxis())) {
             $a[self::FIELD_AXIS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_AXIS_EXT] = $v;
-            }
+            $a[self::FIELD_AXIS_EXT] = $v;
         }
         if (null !== ($v = $this->getBackCurve())) {
             $a[self::FIELD_BACK_CURVE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_BACK_CURVE_EXT] = $v;
-            }
+            $a[self::FIELD_BACK_CURVE_EXT] = $v;
         }
         if (null !== ($v = $this->getBase())) {
-            $a[self::FIELD_BASE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_BASE_EXT] = $v;
-            }
+            $a[self::FIELD_BASE] = $v;
         }
         if (null !== ($v = $this->getBrand())) {
             $a[self::FIELD_BRAND] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_BRAND_EXT] = $v;
-            }
+            $a[self::FIELD_BRAND_EXT] = $v;
         }
         if (null !== ($v = $this->getColor())) {
             $a[self::FIELD_COLOR] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_COLOR_EXT] = $v;
-            }
+            $a[self::FIELD_COLOR_EXT] = $v;
         }
         if (null !== ($v = $this->getCylinder())) {
             $a[self::FIELD_CYLINDER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_CYLINDER_EXT] = $v;
-            }
+            $a[self::FIELD_CYLINDER_EXT] = $v;
         }
         if (null !== ($v = $this->getDiameter())) {
             $a[self::FIELD_DIAMETER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DIAMETER_EXT] = $v;
-            }
+            $a[self::FIELD_DIAMETER_EXT] = $v;
         }
         if (null !== ($v = $this->getDuration())) {
             $a[self::FIELD_DURATION] = $v;
         }
         if (null !== ($v = $this->getEye())) {
-            $a[self::FIELD_EYE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_EYE_EXT] = $v;
-            }
+            $a[self::FIELD_EYE] = $v;
         }
         if (null !== ($v = $this->getNotes())) {
             $a[self::FIELD_NOTES] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_NOTES_EXT] = $v;
-            }
+            $a[self::FIELD_NOTES_EXT] = $v;
         }
         if (null !== ($v = $this->getPower())) {
             $a[self::FIELD_POWER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_POWER_EXT] = $v;
-            }
+            $a[self::FIELD_POWER_EXT] = $v;
         }
         if (null !== ($v = $this->getPrism())) {
             $a[self::FIELD_PRISM] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PRISM_EXT] = $v;
-            }
+            $a[self::FIELD_PRISM_EXT] = $v;
         }
         if (null !== ($v = $this->getProduct())) {
             $a[self::FIELD_PRODUCT] = $v;
         }
         if (null !== ($v = $this->getSphere())) {
             $a[self::FIELD_SPHERE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SPHERE_EXT] = $v;
-            }
+            $a[self::FIELD_SPHERE_EXT] = $v;
         }
         return $a;
     }

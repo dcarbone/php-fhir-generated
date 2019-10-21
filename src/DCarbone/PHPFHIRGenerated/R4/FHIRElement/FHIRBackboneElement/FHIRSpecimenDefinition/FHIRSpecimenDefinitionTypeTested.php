@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpeci
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -737,6 +737,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
         if (null !== ($v = $this->getIsDerived())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_IS_DERIVED, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getPreference())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PREFERENCE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -777,24 +778,17 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getIsDerived())) {
             $a[self::FIELD_IS_DERIVED] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_IS_DERIVED_EXT] = $v;
-            }
+            $a[self::FIELD_IS_DERIVED_EXT] = $v;
         }
         if (null !== ($v = $this->getPreference())) {
-            $a[self::FIELD_PREFERENCE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PREFERENCE_EXT] = $v;
-            }
+            $a[self::FIELD_PREFERENCE] = $v;
         }
         if ([] !== ($vs = $this->getRejectionCriterion())) {
             $a[self::FIELD_REJECTION_CRITERION] = $vs;
         }
         if (null !== ($v = $this->getRequirement())) {
             $a[self::FIELD_REQUIREMENT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_REQUIREMENT_EXT] = $v;
-            }
+            $a[self::FIELD_REQUIREMENT_EXT] = $v;
         }
         if (null !== ($v = $this->getRetentionTime())) {
             $a[self::FIELD_RETENTION_TIME] = $v;

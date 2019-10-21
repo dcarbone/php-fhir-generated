@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRStr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -676,6 +676,7 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_RULE, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getTypeMode())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE_MODE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -690,33 +691,24 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getDocumentation())) {
             $a[self::FIELD_DOCUMENTATION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DOCUMENTATION_EXT] = $v;
-            }
+            $a[self::FIELD_DOCUMENTATION_EXT] = $v;
         }
         if (null !== ($v = $this->getExtends())) {
             $a[self::FIELD_EXTENDS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_EXTENDS_EXT] = $v;
-            }
+            $a[self::FIELD_EXTENDS_EXT] = $v;
         }
         if ([] !== ($vs = $this->getInput())) {
             $a[self::FIELD_INPUT] = $vs;
         }
         if (null !== ($v = $this->getName())) {
             $a[self::FIELD_NAME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_NAME_EXT] = $v;
-            }
+            $a[self::FIELD_NAME_EXT] = $v;
         }
         if ([] !== ($vs = $this->getRule())) {
             $a[self::FIELD_RULE] = $vs;
         }
         if (null !== ($v = $this->getTypeMode())) {
-            $a[self::FIELD_TYPE_MODE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TYPE_MODE_EXT] = $v;
-            }
+            $a[self::FIELD_TYPE_MODE] = $v;
         }
         return $a;
     }

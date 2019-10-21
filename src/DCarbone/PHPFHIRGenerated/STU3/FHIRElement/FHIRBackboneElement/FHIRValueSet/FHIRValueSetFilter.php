@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRVal
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -67,8 +67,6 @@ use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCode;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRFilterOperator;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
-use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRValueContainerInterface;
-use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRValueContainerTrait;
 
 /**
  * A value set specifies a set of codes drawn from one or more code systems.
@@ -76,10 +74,8 @@ use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRValueContainerTrait;
  * Class FHIRValueSetFilter
  * @package \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRValueSet
  */
-class FHIRValueSetFilter extends FHIRBackboneElement implements PHPFHIRValueContainerInterface
+class FHIRValueSetFilter extends FHIRBackboneElement
 {
-    use PHPFHIRValueContainerTrait;
-
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_VALUE_SET_DOT_FILTER;
 
@@ -255,7 +251,6 @@ class FHIRValueSetFilter extends FHIRBackboneElement implements PHPFHIRValueCont
      */
     public function setOp(FHIRFilterOperator $op = null)
     {
-        $this->_markNonValueFieldsDefined();
         $this->op = $op;
         return $this;
     }
@@ -415,6 +410,7 @@ class FHIRValueSetFilter extends FHIRBackboneElement implements PHPFHIRValueCont
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getOp())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_OP, null, $v->_getFHIRXMLNamespace()));
         }
@@ -434,22 +430,15 @@ class FHIRValueSetFilter extends FHIRBackboneElement implements PHPFHIRValueCont
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getOp())) {
-            $a[self::FIELD_OP] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_OP_EXT] = $v;
-            }
+            $a[self::FIELD_OP] = $v;
         }
         if (null !== ($v = $this->getProperty())) {
             $a[self::FIELD_PROPERTY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PROPERTY_EXT] = $v;
-            }
+            $a[self::FIELD_PROPERTY_EXT] = $v;
         }
         if (null !== ($v = $this->getValue())) {
             $a[self::FIELD_VALUE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_EXT] = $v;
         }
         return $a;
     }

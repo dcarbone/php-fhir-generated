@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -787,9 +787,7 @@ class FHIRMeta extends FHIRElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getLastUpdated())) {
             $a[self::FIELD_LAST_UPDATED] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_LAST_UPDATED_EXT] = $v;
-            }
+            $a[self::FIELD_LAST_UPDATED_EXT] = $v;
         }
         if ([] !== ($vs = $this->getProfile())) {
             $a[self::FIELD_PROFILE] = [];
@@ -798,12 +796,7 @@ class FHIRMeta extends FHIRElement
                     continue;
                 }
                 $a[self::FIELD_PROFILE][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_PROFILE_EXT])) {
-                        $a[self::FIELD_PROFILE_EXT] = [];
-                    }
-                    $a[self::FIELD_PROFILE_EXT][] = $v;
-                }
+                $a[self::FIELD_PROFILE_EXT][] = $v;
             }
         }
         if ([] !== ($vs = $this->getSecurity())) {
@@ -811,18 +804,14 @@ class FHIRMeta extends FHIRElement
         }
         if (null !== ($v = $this->getSource())) {
             $a[self::FIELD_SOURCE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SOURCE_EXT] = $v;
-            }
+            $a[self::FIELD_SOURCE_EXT] = $v;
         }
         if ([] !== ($vs = $this->getTag())) {
             $a[self::FIELD_TAG] = $vs;
         }
         if (null !== ($v = $this->getVersionId())) {
             $a[self::FIELD_VERSION_ID] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VERSION_ID_EXT] = $v;
-            }
+            $a[self::FIELD_VERSION_ID_EXT] = $v;
         }
         return $a;
     }

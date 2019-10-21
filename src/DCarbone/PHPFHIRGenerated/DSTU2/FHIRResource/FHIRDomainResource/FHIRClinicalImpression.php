@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1677,6 +1677,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
                 $v->xmlSerialize($sxe->addChild(self::FIELD_RULED_OUT, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1708,15 +1709,11 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
         }
         if (null !== ($v = $this->getDate())) {
             $a[self::FIELD_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_DATE_EXT] = $v;
         }
         if (null !== ($v = $this->getDescription())) {
             $a[self::FIELD_DESCRIPTION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DESCRIPTION_EXT] = $v;
-            }
+            $a[self::FIELD_DESCRIPTION_EXT] = $v;
         }
         if ([] !== ($vs = $this->getFinding())) {
             $a[self::FIELD_FINDING] = $vs;
@@ -1738,15 +1735,11 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
         }
         if (null !== ($v = $this->getPrognosis())) {
             $a[self::FIELD_PROGNOSIS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PROGNOSIS_EXT] = $v;
-            }
+            $a[self::FIELD_PROGNOSIS_EXT] = $v;
         }
         if (null !== ($v = $this->getProtocol())) {
             $a[self::FIELD_PROTOCOL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PROTOCOL_EXT] = $v;
-            }
+            $a[self::FIELD_PROTOCOL_EXT] = $v;
         }
         if ([] !== ($vs = $this->getResolved())) {
             $a[self::FIELD_RESOLVED] = $vs;
@@ -1755,16 +1748,11 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
             $a[self::FIELD_RULED_OUT] = $vs;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_STATUS_EXT] = $v;
-            }
+            $a[self::FIELD_STATUS] = $v;
         }
         if (null !== ($v = $this->getSummary())) {
             $a[self::FIELD_SUMMARY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SUMMARY_EXT] = $v;
-            }
+            $a[self::FIELD_SUMMARY_EXT] = $v;
         }
         if (null !== ($v = $this->getTriggerCodeableConcept())) {
             $a[self::FIELD_TRIGGER_CODEABLE_CONCEPT] = $v;

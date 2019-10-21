@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -807,51 +807,35 @@ class FHIRAttachment extends FHIRElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getContentType())) {
             $a[self::FIELD_CONTENT_TYPE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_CONTENT_TYPE_EXT] = $v;
-            }
+            $a[self::FIELD_CONTENT_TYPE_EXT] = $v;
         }
         if (null !== ($v = $this->getCreation())) {
             $a[self::FIELD_CREATION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_CREATION_EXT] = $v;
-            }
+            $a[self::FIELD_CREATION_EXT] = $v;
         }
         if (null !== ($v = $this->getData())) {
             $a[self::FIELD_DATA] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DATA_EXT] = $v;
-            }
+            $a[self::FIELD_DATA_EXT] = $v;
         }
         if (null !== ($v = $this->getHash())) {
             $a[self::FIELD_HASH] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_HASH_EXT] = $v;
-            }
+            $a[self::FIELD_HASH_EXT] = $v;
         }
         if (null !== ($v = $this->getLanguage())) {
             $a[self::FIELD_LANGUAGE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_LANGUAGE_EXT] = $v;
-            }
+            $a[self::FIELD_LANGUAGE_EXT] = $v;
         }
         if (null !== ($v = $this->getSize())) {
             $a[self::FIELD_SIZE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SIZE_EXT] = $v;
-            }
+            $a[self::FIELD_SIZE_EXT] = $v;
         }
         if (null !== ($v = $this->getTitle())) {
             $a[self::FIELD_TITLE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TITLE_EXT] = $v;
-            }
+            $a[self::FIELD_TITLE_EXT] = $v;
         }
         if (null !== ($v = $this->getUrl())) {
             $a[self::FIELD_URL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_URL_EXT] = $v;
-            }
+            $a[self::FIELD_URL_EXT] = $v;
         }
         return $a;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -160,6 +160,15 @@ class FHIRDateTimePrimitive implements PHPFHIRTypeInterface
         return null === $value || preg_match('/' . self::VALUE_REGEX . '/', $value);
     }
 
+
+    /**
+     * @return null|
+     */
+    public function getValue()
+    {
+        return $this->value;
+    }
+
     /**
      * @return string
      */
@@ -202,15 +211,6 @@ class FHIRDateTimePrimitive implements PHPFHIRTypeInterface
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<dateTime_primitive{$xmlns}></dateTime_primitive>";
-    }
-
-
-    /**
-     * @return null|
-     */
-    public function getValue()
-    {
-        return $this->value;
     }
 
     /**

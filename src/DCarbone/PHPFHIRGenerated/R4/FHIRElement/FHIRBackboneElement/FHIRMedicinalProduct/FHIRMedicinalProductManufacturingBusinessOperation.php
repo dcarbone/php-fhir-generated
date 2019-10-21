@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -587,6 +587,7 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getAuthorisationReferenceNumber())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AUTHORISATION_REFERENCE_NUMBER, null, $v->_getFHIRXMLNamespace()));
         }
@@ -624,19 +625,14 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAuthorisationReferenceNumber())) {
-            $a[self::FIELD_AUTHORISATION_REFERENCE_NUMBER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_AUTHORISATION_REFERENCE_NUMBER_EXT] = $v;
-            }
+            $a[self::FIELD_AUTHORISATION_REFERENCE_NUMBER] = $v;
         }
         if (null !== ($v = $this->getConfidentialityIndicator())) {
             $a[self::FIELD_CONFIDENTIALITY_INDICATOR] = $v;
         }
         if (null !== ($v = $this->getEffectiveDate())) {
             $a[self::FIELD_EFFECTIVE_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_EFFECTIVE_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_EFFECTIVE_DATE_EXT] = $v;
         }
         if ([] !== ($vs = $this->getManufacturer())) {
             $a[self::FIELD_MANUFACTURER] = $vs;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -266,7 +266,8 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * Date vaccine administered or was to be administered.
+     * Date vaccine administered or was to be administered. (choose any one of
+     * occurrence*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -276,7 +277,8 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * Date vaccine administered or was to be administered.
+     * Date vaccine administered or was to be administered. (choose any one of
+     * occurrence*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -1326,7 +1328,8 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * Date vaccine administered or was to be administered.
+     * Date vaccine administered or was to be administered. (choose any one of
+     * occurrence*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -1343,7 +1346,8 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * Date vaccine administered or was to be administered.
+     * Date vaccine administered or was to be administered. (choose any one of
+     * occurrence*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $occurrenceDateTime
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImmunization
@@ -1367,7 +1371,8 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * Date vaccine administered or was to be administered.
+     * Date vaccine administered or was to be administered. (choose any one of
+     * occurrence*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -1381,7 +1386,8 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * Date vaccine administered or was to be administered.
+     * Date vaccine administered or was to be administered. (choose any one of
+     * occurrence*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $occurrenceString
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImmunization
@@ -2289,6 +2295,7 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getDoseQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DOSE_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -2312,6 +2319,7 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
         if (null !== ($v = $this->getFundingSource())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_FUNDING_SOURCE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -2425,6 +2433,7 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
         if (null !== ($v = $this->getSite())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SITE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -2455,10 +2464,7 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getDoseQuantity())) {
-            $a[self::FIELD_DOSE_QUANTITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DOSE_QUANTITY_EXT] = $v;
-            }
+            $a[self::FIELD_DOSE_QUANTITY] = $v;
         }
         if ([] !== ($vs = $this->getEducation())) {
             $a[self::FIELD_EDUCATION] = $vs;
@@ -2468,42 +2474,24 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
         }
         if (null !== ($v = $this->getExpirationDate())) {
             $a[self::FIELD_EXPIRATION_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_EXPIRATION_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_EXPIRATION_DATE_EXT] = $v;
         }
         if (null !== ($v = $this->getFundingSource())) {
             $a[self::FIELD_FUNDING_SOURCE] = $v;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_IDENTIFIER][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_IDENTIFIER_EXT])) {
-                        $a[self::FIELD_IDENTIFIER_EXT] = [];
-                    }
-                    $a[self::FIELD_IDENTIFIER_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_IDENTIFIER] = $vs;
         }
         if (null !== ($v = $this->getIsSubpotent())) {
             $a[self::FIELD_IS_SUBPOTENT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_IS_SUBPOTENT_EXT] = $v;
-            }
+            $a[self::FIELD_IS_SUBPOTENT_EXT] = $v;
         }
         if (null !== ($v = $this->getLocation())) {
             $a[self::FIELD_LOCATION] = $v;
         }
         if (null !== ($v = $this->getLotNumber())) {
             $a[self::FIELD_LOT_NUMBER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_LOT_NUMBER_EXT] = $v;
-            }
+            $a[self::FIELD_LOT_NUMBER_EXT] = $v;
         }
         if (null !== ($v = $this->getManufacturer())) {
             $a[self::FIELD_MANUFACTURER] = $v;
@@ -2513,15 +2501,11 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
         }
         if (null !== ($v = $this->getOccurrenceDateTime())) {
             $a[self::FIELD_OCCURRENCE_DATE_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_OCCURRENCE_DATE_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_OCCURRENCE_DATE_TIME_EXT] = $v;
         }
         if (null !== ($v = $this->getOccurrenceString())) {
             $a[self::FIELD_OCCURRENCE_STRING] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_OCCURRENCE_STRING_EXT] = $v;
-            }
+            $a[self::FIELD_OCCURRENCE_STRING_EXT] = $v;
         }
         if (null !== ($v = $this->getPatient())) {
             $a[self::FIELD_PATIENT] = $v;
@@ -2531,9 +2515,7 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
         }
         if (null !== ($v = $this->getPrimarySource())) {
             $a[self::FIELD_PRIMARY_SOURCE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PRIMARY_SOURCE_EXT] = $v;
-            }
+            $a[self::FIELD_PRIMARY_SOURCE_EXT] = $v;
         }
         if ([] !== ($vs = $this->getProgramEligibility())) {
             $a[self::FIELD_PROGRAM_ELIGIBILITY] = $vs;
@@ -2552,9 +2534,7 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
         }
         if (null !== ($v = $this->getRecorded())) {
             $a[self::FIELD_RECORDED] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_RECORDED_EXT] = $v;
-            }
+            $a[self::FIELD_RECORDED_EXT] = $v;
         }
         if (null !== ($v = $this->getReportOrigin())) {
             $a[self::FIELD_REPORT_ORIGIN] = $v;
@@ -2566,10 +2546,7 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
             $a[self::FIELD_SITE] = $v;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_STATUS_EXT] = $v;
-            }
+            $a[self::FIELD_STATUS] = $v;
         }
         if (null !== ($v = $this->getStatusReason())) {
             $a[self::FIELD_STATUS_REASON] = $v;

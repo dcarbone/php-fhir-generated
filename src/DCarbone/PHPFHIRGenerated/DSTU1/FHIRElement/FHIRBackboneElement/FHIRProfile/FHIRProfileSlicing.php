@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRPr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -413,6 +413,7 @@ class FHIRProfileSlicing extends FHIRBackboneElement
         if (null !== ($v = $this->getOrdered())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ORDERED, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getRules())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_RULES, null, $v->_getFHIRXMLNamespace()));
         }
@@ -427,21 +428,14 @@ class FHIRProfileSlicing extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getDiscriminator())) {
             $a[self::FIELD_DISCRIMINATOR] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DISCRIMINATOR_EXT] = $v;
-            }
+            $a[self::FIELD_DISCRIMINATOR_EXT] = $v;
         }
         if (null !== ($v = $this->getOrdered())) {
             $a[self::FIELD_ORDERED] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ORDERED_EXT] = $v;
-            }
+            $a[self::FIELD_ORDERED_EXT] = $v;
         }
         if (null !== ($v = $this->getRules())) {
-            $a[self::FIELD_RULES] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_RULES_EXT] = $v;
-            }
+            $a[self::FIELD_RULES] = $v;
         }
         return $a;
     }

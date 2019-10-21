@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -134,7 +134,7 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * The date or estimated date that the condition resolved or went into remission.
      * This is called "abatement" because of the many overloaded connotations
      * associated with "remission" or "resolution" - Conditions are never really
-     * resolved, but they can abate.
+     * resolved, but they can abate. (choose any one of abatement*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
@@ -150,7 +150,7 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * The date or estimated date that the condition resolved or went into remission.
      * This is called "abatement" because of the many overloaded connotations
      * associated with "remission" or "resolution" - Conditions are never really
-     * resolved, but they can abate.
+     * resolved, but they can abate. (choose any one of abatement*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -163,7 +163,7 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * The date or estimated date that the condition resolved or went into remission.
      * This is called "abatement" because of the many overloaded connotations
      * associated with "remission" or "resolution" - Conditions are never really
-     * resolved, but they can abate.
+     * resolved, but they can abate. (choose any one of abatement*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -176,7 +176,7 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * The date or estimated date that the condition resolved or went into remission.
      * This is called "abatement" because of the many overloaded connotations
      * associated with "remission" or "resolution" - Conditions are never really
-     * resolved, but they can abate.
+     * resolved, but they can abate. (choose any one of abatement*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -189,7 +189,7 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * The date or estimated date that the condition resolved or went into remission.
      * This is called "abatement" because of the many overloaded connotations
      * associated with "remission" or "resolution" - Conditions are never really
-     * resolved, but they can abate.
+     * resolved, but they can abate. (choose any one of abatement*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -300,7 +300,7 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Estimated or actual date or date-time the condition began, in the opinion of the
-     * clinician.
+     * clinician. (choose any one of onset*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
@@ -314,7 +314,7 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * Estimated or actual date or date-time the condition began, in the opinion of the
-     * clinician.
+     * clinician. (choose any one of onset*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -325,7 +325,7 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Estimated or actual date or date-time the condition began, in the opinion of the
-     * clinician.
+     * clinician. (choose any one of onset*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -336,7 +336,7 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Estimated or actual date or date-time the condition began, in the opinion of the
-     * clinician.
+     * clinician. (choose any one of onset*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -347,7 +347,7 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * Estimated or actual date or date-time the condition began, in the opinion of the
-     * clinician.
+     * clinician. (choose any one of onset*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -753,7 +753,7 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * The date or estimated date that the condition resolved or went into remission.
      * This is called "abatement" because of the many overloaded connotations
      * associated with "remission" or "resolution" - Conditions are never really
-     * resolved, but they can abate.
+     * resolved, but they can abate. (choose any one of abatement*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
@@ -770,7 +770,7 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * The date or estimated date that the condition resolved or went into remission.
      * This is called "abatement" because of the many overloaded connotations
      * associated with "remission" or "resolution" - Conditions are never really
-     * resolved, but they can abate.
+     * resolved, but they can abate. (choose any one of abatement*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge $abatementAge
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCondition
@@ -792,7 +792,7 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * The date or estimated date that the condition resolved or went into remission.
      * This is called "abatement" because of the many overloaded connotations
      * associated with "remission" or "resolution" - Conditions are never really
-     * resolved, but they can abate.
+     * resolved, but they can abate. (choose any one of abatement*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -812,7 +812,7 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * The date or estimated date that the condition resolved or went into remission.
      * This is called "abatement" because of the many overloaded connotations
      * associated with "remission" or "resolution" - Conditions are never really
-     * resolved, but they can abate.
+     * resolved, but they can abate. (choose any one of abatement*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $abatementDateTime
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCondition
@@ -839,7 +839,7 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * The date or estimated date that the condition resolved or went into remission.
      * This is called "abatement" because of the many overloaded connotations
      * associated with "remission" or "resolution" - Conditions are never really
-     * resolved, but they can abate.
+     * resolved, but they can abate. (choose any one of abatement*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -856,7 +856,7 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * The date or estimated date that the condition resolved or went into remission.
      * This is called "abatement" because of the many overloaded connotations
      * associated with "remission" or "resolution" - Conditions are never really
-     * resolved, but they can abate.
+     * resolved, but they can abate. (choose any one of abatement*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $abatementPeriod
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCondition
@@ -875,7 +875,7 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * The date or estimated date that the condition resolved or went into remission.
      * This is called "abatement" because of the many overloaded connotations
      * associated with "remission" or "resolution" - Conditions are never really
-     * resolved, but they can abate.
+     * resolved, but they can abate. (choose any one of abatement*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -892,7 +892,7 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * The date or estimated date that the condition resolved or went into remission.
      * This is called "abatement" because of the many overloaded connotations
      * associated with "remission" or "resolution" - Conditions are never really
-     * resolved, but they can abate.
+     * resolved, but they can abate. (choose any one of abatement*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange $abatementRange
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCondition
@@ -911,7 +911,7 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * The date or estimated date that the condition resolved or went into remission.
      * This is called "abatement" because of the many overloaded connotations
      * associated with "remission" or "resolution" - Conditions are never really
-     * resolved, but they can abate.
+     * resolved, but they can abate. (choose any one of abatement*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -928,7 +928,7 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * The date or estimated date that the condition resolved or went into remission.
      * This is called "abatement" because of the many overloaded connotations
      * associated with "remission" or "resolution" - Conditions are never really
-     * resolved, but they can abate.
+     * resolved, but they can abate. (choose any one of abatement*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $abatementString
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCondition
@@ -1380,7 +1380,7 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Estimated or actual date or date-time the condition began, in the opinion of the
-     * clinician.
+     * clinician. (choose any one of onset*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
@@ -1395,7 +1395,7 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Estimated or actual date or date-time the condition began, in the opinion of the
-     * clinician.
+     * clinician. (choose any one of onset*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge $onsetAge
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCondition
@@ -1415,7 +1415,7 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * Estimated or actual date or date-time the condition began, in the opinion of the
-     * clinician.
+     * clinician. (choose any one of onset*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -1433,7 +1433,7 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * Estimated or actual date or date-time the condition began, in the opinion of the
-     * clinician.
+     * clinician. (choose any one of onset*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $onsetDateTime
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCondition
@@ -1458,7 +1458,7 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Estimated or actual date or date-time the condition began, in the opinion of the
-     * clinician.
+     * clinician. (choose any one of onset*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -1473,7 +1473,7 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Estimated or actual date or date-time the condition began, in the opinion of the
-     * clinician.
+     * clinician. (choose any one of onset*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $onsetPeriod
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCondition
@@ -1490,7 +1490,7 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Estimated or actual date or date-time the condition began, in the opinion of the
-     * clinician.
+     * clinician. (choose any one of onset*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -1505,7 +1505,7 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Estimated or actual date or date-time the condition began, in the opinion of the
-     * clinician.
+     * clinician. (choose any one of onset*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange $onsetRange
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCondition
@@ -1522,7 +1522,7 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * Estimated or actual date or date-time the condition began, in the opinion of the
-     * clinician.
+     * clinician. (choose any one of onset*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -1537,7 +1537,7 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * Estimated or actual date or date-time the condition began, in the opinion of the
-     * clinician.
+     * clinician. (choose any one of onset*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $onsetString
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCondition
@@ -1998,6 +1998,7 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
                 $v->xmlSerialize($sxe->addChild(self::FIELD_EVIDENCE, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -2075,9 +2076,7 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
         }
         if (null !== ($v = $this->getAbatementDateTime())) {
             $a[self::FIELD_ABATEMENT_DATE_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ABATEMENT_DATE_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_ABATEMENT_DATE_TIME_EXT] = $v;
         }
         if (null !== ($v = $this->getAbatementPeriod())) {
             $a[self::FIELD_ABATEMENT_PERIOD] = $v;
@@ -2087,9 +2086,7 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
         }
         if (null !== ($v = $this->getAbatementString())) {
             $a[self::FIELD_ABATEMENT_STRING] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ABATEMENT_STRING_EXT] = $v;
-            }
+            $a[self::FIELD_ABATEMENT_STRING_EXT] = $v;
         }
         if (null !== ($v = $this->getAsserter())) {
             $a[self::FIELD_ASSERTER] = $v;
@@ -2113,19 +2110,7 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
             $a[self::FIELD_EVIDENCE] = $vs;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_IDENTIFIER][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_IDENTIFIER_EXT])) {
-                        $a[self::FIELD_IDENTIFIER_EXT] = [];
-                    }
-                    $a[self::FIELD_IDENTIFIER_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_IDENTIFIER] = $vs;
         }
         if ([] !== ($vs = $this->getNote())) {
             $a[self::FIELD_NOTE] = $vs;
@@ -2135,9 +2120,7 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
         }
         if (null !== ($v = $this->getOnsetDateTime())) {
             $a[self::FIELD_ONSET_DATE_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ONSET_DATE_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_ONSET_DATE_TIME_EXT] = $v;
         }
         if (null !== ($v = $this->getOnsetPeriod())) {
             $a[self::FIELD_ONSET_PERIOD] = $v;
@@ -2147,15 +2130,11 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
         }
         if (null !== ($v = $this->getOnsetString())) {
             $a[self::FIELD_ONSET_STRING] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ONSET_STRING_EXT] = $v;
-            }
+            $a[self::FIELD_ONSET_STRING_EXT] = $v;
         }
         if (null !== ($v = $this->getRecordedDate())) {
             $a[self::FIELD_RECORDED_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_RECORDED_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_RECORDED_DATE_EXT] = $v;
         }
         if (null !== ($v = $this->getRecorder())) {
             $a[self::FIELD_RECORDER] = $v;

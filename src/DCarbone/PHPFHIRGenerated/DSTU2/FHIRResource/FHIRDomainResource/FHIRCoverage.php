@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1160,6 +1160,7 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getBin())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_BIN, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1178,6 +1179,7 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         if (null !== ($v = $this->getGroup())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_GROUP, null, $v->_getFHIRXMLNamespace()));
         }
+
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1190,6 +1192,7 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         if (null !== ($v = $this->getIssuer())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ISSUER, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getNetwork())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_NETWORK, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1210,6 +1213,7 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         if (null !== ($v = $this->getSubscriber())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SUBSCRIBER, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getSubscriberId())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SUBSCRIBER_ID, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1227,79 +1231,48 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getBin())) {
-            $a[self::FIELD_BIN] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_BIN_EXT] = $v;
-            }
+            $a[self::FIELD_BIN] = $v;
         }
         if ([] !== ($vs = $this->getContract())) {
             $a[self::FIELD_CONTRACT] = $vs;
         }
         if (null !== ($v = $this->getDependent())) {
             $a[self::FIELD_DEPENDENT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DEPENDENT_EXT] = $v;
-            }
+            $a[self::FIELD_DEPENDENT_EXT] = $v;
         }
         if (null !== ($v = $this->getGroup())) {
             $a[self::FIELD_GROUP] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_GROUP_EXT] = $v;
-            }
+            $a[self::FIELD_GROUP_EXT] = $v;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_IDENTIFIER][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_IDENTIFIER_EXT])) {
-                        $a[self::FIELD_IDENTIFIER_EXT] = [];
-                    }
-                    $a[self::FIELD_IDENTIFIER_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_IDENTIFIER] = $vs;
         }
         if (null !== ($v = $this->getIssuer())) {
             $a[self::FIELD_ISSUER] = $v;
         }
         if (null !== ($v = $this->getNetwork())) {
-            $a[self::FIELD_NETWORK] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_NETWORK_EXT] = $v;
-            }
+            $a[self::FIELD_NETWORK] = $v;
         }
         if (null !== ($v = $this->getPeriod())) {
             $a[self::FIELD_PERIOD] = $v;
         }
         if (null !== ($v = $this->getPlan())) {
             $a[self::FIELD_PLAN] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PLAN_EXT] = $v;
-            }
+            $a[self::FIELD_PLAN_EXT] = $v;
         }
         if (null !== ($v = $this->getSequence())) {
             $a[self::FIELD_SEQUENCE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SEQUENCE_EXT] = $v;
-            }
+            $a[self::FIELD_SEQUENCE_EXT] = $v;
         }
         if (null !== ($v = $this->getSubPlan())) {
             $a[self::FIELD_SUB_PLAN] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SUB_PLAN_EXT] = $v;
-            }
+            $a[self::FIELD_SUB_PLAN_EXT] = $v;
         }
         if (null !== ($v = $this->getSubscriber())) {
             $a[self::FIELD_SUBSCRIBER] = $v;
         }
         if (null !== ($v = $this->getSubscriberId())) {
-            $a[self::FIELD_SUBSCRIBER_ID] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SUBSCRIBER_ID_EXT] = $v;
-            }
+            $a[self::FIELD_SUBSCRIBER_ID] = $v;
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;

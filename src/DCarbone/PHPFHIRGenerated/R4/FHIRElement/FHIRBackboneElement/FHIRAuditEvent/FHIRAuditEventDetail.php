@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAudit
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -106,7 +106,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
      * A stream of bytes, base64 encoded
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of the extra detail.
+     * The value of the extra detail. (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBase64Binary
      */
@@ -116,7 +116,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of the extra detail.
+     * The value of the extra detail. (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -264,7 +264,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
      * A stream of bytes, base64 encoded
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of the extra detail.
+     * The value of the extra detail. (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBase64Binary
      */
@@ -278,7 +278,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
      * A stream of bytes, base64 encoded
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of the extra detail.
+     * The value of the extra detail. (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBase64Binary $valueBase64Binary
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventDetail
@@ -302,7 +302,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of the extra detail.
+     * The value of the extra detail. (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -316,7 +316,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The value of the extra detail.
+     * The value of the extra detail. (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $valueString
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventDetail
@@ -427,21 +427,15 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TYPE_EXT] = $v;
-            }
+            $a[self::FIELD_TYPE_EXT] = $v;
         }
         if (null !== ($v = $this->getValueBase64Binary())) {
             $a[self::FIELD_VALUE_BASE_64BINARY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_BASE_64BINARY_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_BASE_64BINARY_EXT] = $v;
         }
         if (null !== ($v = $this->getValueString())) {
             $a[self::FIELD_VALUE_STRING] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_STRING_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_STRING_EXT] = $v;
         }
         return $a;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMea
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -67,8 +67,6 @@ use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
-use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRValueContainerInterface;
-use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRValueContainerTrait;
 
 /**
  * The MeasureReport resource contains the results of evaluating a measure.
@@ -76,10 +74,8 @@ use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRValueContainerTrait;
  * Class FHIRMeasureReportStratum
  * @package \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMeasureReport
  */
-class FHIRMeasureReportStratum extends FHIRBackboneElement implements PHPFHIRValueContainerInterface
+class FHIRMeasureReportStratum extends FHIRBackboneElement
 {
-    use PHPFHIRValueContainerTrait;
-
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEASURE_REPORT_DOT_STRATUM;
 
@@ -466,18 +462,14 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements PHPFHIRVal
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getMeasureScore())) {
             $a[self::FIELD_MEASURE_SCORE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MEASURE_SCORE_EXT] = $v;
-            }
+            $a[self::FIELD_MEASURE_SCORE_EXT] = $v;
         }
         if ([] !== ($vs = $this->getPopulation())) {
             $a[self::FIELD_POPULATION] = $vs;
         }
         if (null !== ($v = $this->getValue())) {
             $a[self::FIELD_VALUE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_EXT] = $v;
         }
         return $a;
     }

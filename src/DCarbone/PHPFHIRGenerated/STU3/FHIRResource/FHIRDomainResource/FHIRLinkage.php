@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -450,9 +450,7 @@ class FHIRLinkage extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getActive())) {
             $a[self::FIELD_ACTIVE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ACTIVE_EXT] = $v;
-            }
+            $a[self::FIELD_ACTIVE_EXT] = $v;
         }
         if (null !== ($v = $this->getAuthor())) {
             $a[self::FIELD_AUTHOR] = $v;

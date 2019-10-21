@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -68,8 +68,6 @@ use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
-use DCarbone\PHPFHIRGenerated\R4\PHPFHIRValueContainerInterface;
-use DCarbone\PHPFHIRGenerated\R4\PHPFHIRValueContainerTrait;
 
 /**
  * A pharmaceutical product described in terms of its composition and dose form.
@@ -77,10 +75,8 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRValueContainerTrait;
  * Class FHIRMedicinalProductPharmaceuticalWithdrawalPeriod
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPharmaceutical
  */
-class FHIRMedicinalProductPharmaceuticalWithdrawalPeriod extends FHIRBackboneElement implements PHPFHIRValueContainerInterface
+class FHIRMedicinalProductPharmaceuticalWithdrawalPeriod extends FHIRBackboneElement
 {
-    use PHPFHIRValueContainerTrait;
-
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_PHARMACEUTICAL_DOT_WITHDRAWAL_PERIOD;
 
@@ -294,7 +290,6 @@ class FHIRMedicinalProductPharmaceuticalWithdrawalPeriod extends FHIRBackboneEle
      */
     public function setTissue(FHIRCodeableConcept $tissue = null)
     {
-        $this->_markNonValueFieldsDefined();
         $this->tissue = $tissue;
         return $this;
     }
@@ -406,6 +401,7 @@ class FHIRMedicinalProductPharmaceuticalWithdrawalPeriod extends FHIRBackboneEle
         if (null !== ($v = $this->getTissue())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TISSUE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getValue())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -420,18 +416,13 @@ class FHIRMedicinalProductPharmaceuticalWithdrawalPeriod extends FHIRBackboneEle
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getSupportingInformation())) {
             $a[self::FIELD_SUPPORTING_INFORMATION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SUPPORTING_INFORMATION_EXT] = $v;
-            }
+            $a[self::FIELD_SUPPORTING_INFORMATION_EXT] = $v;
         }
         if (null !== ($v = $this->getTissue())) {
             $a[self::FIELD_TISSUE] = $v;
         }
         if (null !== ($v = $this->getValue())) {
-            $a[self::FIELD_VALUE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE] = $v;
         }
         return $a;
     }

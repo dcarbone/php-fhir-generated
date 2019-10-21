@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObser
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -487,18 +487,14 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getConversionFactor())) {
             $a[self::FIELD_CONVERSION_FACTOR] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_CONVERSION_FACTOR_EXT] = $v;
-            }
+            $a[self::FIELD_CONVERSION_FACTOR_EXT] = $v;
         }
         if (null !== ($v = $this->getCustomaryUnit())) {
             $a[self::FIELD_CUSTOMARY_UNIT] = $v;
         }
         if (null !== ($v = $this->getDecimalPrecision())) {
             $a[self::FIELD_DECIMAL_PRECISION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DECIMAL_PRECISION_EXT] = $v;
-            }
+            $a[self::FIELD_DECIMAL_PRECISION_EXT] = $v;
         }
         if (null !== ($v = $this->getUnit())) {
             $a[self::FIELD_UNIT] = $v;

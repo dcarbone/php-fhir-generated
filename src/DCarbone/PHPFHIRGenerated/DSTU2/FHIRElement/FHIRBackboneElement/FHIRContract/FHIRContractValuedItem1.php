@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -755,6 +755,7 @@ class FHIRContractValuedItem1 extends FHIRBackboneElement
         if (null !== ($v = $this->getFactor())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_FACTOR, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getIdentifier())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }
@@ -784,9 +785,7 @@ class FHIRContractValuedItem1 extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getEffectiveTime())) {
             $a[self::FIELD_EFFECTIVE_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_EFFECTIVE_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_EFFECTIVE_TIME_EXT] = $v;
         }
         if (null !== ($v = $this->getEntityCodeableConcept())) {
             $a[self::FIELD_ENTITY_CODEABLE_CONCEPT] = $v;
@@ -796,24 +795,17 @@ class FHIRContractValuedItem1 extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getFactor())) {
             $a[self::FIELD_FACTOR] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_FACTOR_EXT] = $v;
-            }
+            $a[self::FIELD_FACTOR_EXT] = $v;
         }
         if (null !== ($v = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_IDENTIFIER_EXT] = $v;
-            }
+            $a[self::FIELD_IDENTIFIER] = $v;
         }
         if (null !== ($v = $this->getNet())) {
             $a[self::FIELD_NET] = $v;
         }
         if (null !== ($v = $this->getPoints())) {
             $a[self::FIELD_POINTS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_POINTS_EXT] = $v;
-            }
+            $a[self::FIELD_POINTS_EXT] = $v;
         }
         if (null !== ($v = $this->getQuantity())) {
             $a[self::FIELD_QUANTITY] = $v;

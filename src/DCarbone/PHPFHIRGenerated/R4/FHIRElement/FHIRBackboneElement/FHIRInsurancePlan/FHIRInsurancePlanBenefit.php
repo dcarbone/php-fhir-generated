@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInsur
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -410,6 +410,7 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if ([] !== ($vs = $this->getLimit())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -435,25 +436,11 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getLimit())) {
-            $a[self::FIELD_LIMIT] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_LIMIT][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_LIMIT_EXT])) {
-                        $a[self::FIELD_LIMIT_EXT] = [];
-                    }
-                    $a[self::FIELD_LIMIT_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_LIMIT] = $vs;
         }
         if (null !== ($v = $this->getRequirement())) {
             $a[self::FIELD_REQUIREMENT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_REQUIREMENT_EXT] = $v;
-            }
+            $a[self::FIELD_REQUIREMENT_EXT] = $v;
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;

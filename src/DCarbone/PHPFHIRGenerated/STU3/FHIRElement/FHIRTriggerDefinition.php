@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -660,6 +660,7 @@ class FHIRTriggerDefinition extends FHIRElement
         if (null !== ($v = $this->getEventTimingTiming())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_EVENT_TIMING_TIMING, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -677,21 +678,15 @@ class FHIRTriggerDefinition extends FHIRElement
         }
         if (null !== ($v = $this->getEventName())) {
             $a[self::FIELD_EVENT_NAME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_EVENT_NAME_EXT] = $v;
-            }
+            $a[self::FIELD_EVENT_NAME_EXT] = $v;
         }
         if (null !== ($v = $this->getEventTimingDate())) {
             $a[self::FIELD_EVENT_TIMING_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_EVENT_TIMING_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_EVENT_TIMING_DATE_EXT] = $v;
         }
         if (null !== ($v = $this->getEventTimingDateTime())) {
             $a[self::FIELD_EVENT_TIMING_DATE_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_EVENT_TIMING_DATE_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_EVENT_TIMING_DATE_TIME_EXT] = $v;
         }
         if (null !== ($v = $this->getEventTimingReference())) {
             $a[self::FIELD_EVENT_TIMING_REFERENCE] = $v;
@@ -700,10 +695,7 @@ class FHIRTriggerDefinition extends FHIRElement
             $a[self::FIELD_EVENT_TIMING_TIMING] = $v;
         }
         if (null !== ($v = $this->getType())) {
-            $a[self::FIELD_TYPE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TYPE_EXT] = $v;
-            }
+            $a[self::FIELD_TYPE] = $v;
         }
         return $a;
     }

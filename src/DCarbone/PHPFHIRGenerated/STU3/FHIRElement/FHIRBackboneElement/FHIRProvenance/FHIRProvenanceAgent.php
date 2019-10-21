@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPro
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -638,9 +638,7 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getOnBehalfOfUri())) {
             $a[self::FIELD_ON_BEHALF_OF_URI] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ON_BEHALF_OF_URI_EXT] = $v;
-            }
+            $a[self::FIELD_ON_BEHALF_OF_URI_EXT] = $v;
         }
         if (null !== ($v = $this->getRelatedAgentType())) {
             $a[self::FIELD_RELATED_AGENT_TYPE] = $v;
@@ -653,9 +651,7 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getWhoUri())) {
             $a[self::FIELD_WHO_URI] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_WHO_URI_EXT] = $v;
-            }
+            $a[self::FIELD_WHO_URI_EXT] = $v;
         }
         return $a;
     }

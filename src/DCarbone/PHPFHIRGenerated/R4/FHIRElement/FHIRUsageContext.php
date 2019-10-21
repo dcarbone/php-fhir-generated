@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -110,7 +110,8 @@ class FHIRUsageContext extends FHIRElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code.
+     * interpretation of the value is defined by the code. (choose any one of value*,
+     * but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -123,7 +124,8 @@ class FHIRUsageContext extends FHIRElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code.
+     * interpretation of the value is defined by the code. (choose any one of value*,
+     * but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -134,7 +136,8 @@ class FHIRUsageContext extends FHIRElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code.
+     * interpretation of the value is defined by the code. (choose any one of value*,
+     * but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -145,7 +148,8 @@ class FHIRUsageContext extends FHIRElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code.
+     * interpretation of the value is defined by the code. (choose any one of value*,
+     * but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -293,7 +297,8 @@ class FHIRUsageContext extends FHIRElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code.
+     * interpretation of the value is defined by the code. (choose any one of value*,
+     * but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -309,7 +314,8 @@ class FHIRUsageContext extends FHIRElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code.
+     * interpretation of the value is defined by the code. (choose any one of value*,
+     * but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $valueCodeableConcept
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext
@@ -328,7 +334,8 @@ class FHIRUsageContext extends FHIRElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code.
+     * interpretation of the value is defined by the code. (choose any one of value*,
+     * but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -345,7 +352,8 @@ class FHIRUsageContext extends FHIRElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code.
+     * interpretation of the value is defined by the code. (choose any one of value*,
+     * but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $valueQuantity
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext
@@ -362,7 +370,8 @@ class FHIRUsageContext extends FHIRElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code.
+     * interpretation of the value is defined by the code. (choose any one of value*,
+     * but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -377,7 +386,8 @@ class FHIRUsageContext extends FHIRElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code.
+     * interpretation of the value is defined by the code. (choose any one of value*,
+     * but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange $valueRange
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext
@@ -394,7 +404,8 @@ class FHIRUsageContext extends FHIRElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code.
+     * interpretation of the value is defined by the code. (choose any one of value*,
+     * but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -409,7 +420,8 @@ class FHIRUsageContext extends FHIRElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code.
+     * interpretation of the value is defined by the code. (choose any one of value*,
+     * but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $valueReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext
@@ -497,6 +509,7 @@ class FHIRUsageContext extends FHIRElement
         if (null !== ($v = $this->getValueCodeableConcept())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_CODEABLE_CONCEPT, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getValueQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -524,10 +537,7 @@ class FHIRUsageContext extends FHIRElement
             $a[self::FIELD_VALUE_CODEABLE_CONCEPT] = $v;
         }
         if (null !== ($v = $this->getValueQuantity())) {
-            $a[self::FIELD_VALUE_QUANTITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_QUANTITY_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_QUANTITY] = $v;
         }
         if (null !== ($v = $this->getValueRange())) {
             $a[self::FIELD_VALUE_RANGE] = $v;

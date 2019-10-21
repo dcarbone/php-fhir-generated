@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -834,27 +834,21 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getLength())) {
             $a[self::FIELD_LENGTH] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_LENGTH_EXT] = $v;
-            }
+            $a[self::FIELD_LENGTH_EXT] = $v;
         }
         if ([] !== ($vs = $this->getLinkage())) {
             $a[self::FIELD_LINKAGE] = $vs;
         }
         if (null !== ($v = $this->getSequence())) {
             $a[self::FIELD_SEQUENCE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SEQUENCE_EXT] = $v;
-            }
+            $a[self::FIELD_SEQUENCE_EXT] = $v;
         }
         if (null !== ($v = $this->getSequenceAttachment())) {
             $a[self::FIELD_SEQUENCE_ATTACHMENT] = $v;
         }
         if (null !== ($v = $this->getSubunit())) {
             $a[self::FIELD_SUBUNIT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SUBUNIT_EXT] = $v;
-            }
+            $a[self::FIELD_SUBUNIT_EXT] = $v;
         }
         if ([] !== ($vs = $this->getSugar())) {
             $a[self::FIELD_SUGAR] = $vs;

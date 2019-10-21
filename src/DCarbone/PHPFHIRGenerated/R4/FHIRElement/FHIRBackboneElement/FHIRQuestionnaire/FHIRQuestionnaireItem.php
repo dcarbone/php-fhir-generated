@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuest
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1466,6 +1466,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
         if (null !== ($v = $this->getDefinition())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINITION, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getEnableBehavior())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ENABLE_BEHAVIOR, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1517,6 +1518,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
         if (null !== ($v = $this->getText())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TEXT, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1534,24 +1536,17 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getAnswerValueSet())) {
             $a[self::FIELD_ANSWER_VALUE_SET] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ANSWER_VALUE_SET_EXT] = $v;
-            }
+            $a[self::FIELD_ANSWER_VALUE_SET_EXT] = $v;
         }
         if ([] !== ($vs = $this->getCode())) {
             $a[self::FIELD_CODE] = $vs;
         }
         if (null !== ($v = $this->getDefinition())) {
             $a[self::FIELD_DEFINITION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DEFINITION_EXT] = $v;
-            }
+            $a[self::FIELD_DEFINITION_EXT] = $v;
         }
         if (null !== ($v = $this->getEnableBehavior())) {
-            $a[self::FIELD_ENABLE_BEHAVIOR] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ENABLE_BEHAVIOR_EXT] = $v;
-            }
+            $a[self::FIELD_ENABLE_BEHAVIOR] = $v;
         }
         if ([] !== ($vs = $this->getEnableWhen())) {
             $a[self::FIELD_ENABLE_WHEN] = $vs;
@@ -1564,51 +1559,34 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getLinkId())) {
             $a[self::FIELD_LINK_ID] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_LINK_ID_EXT] = $v;
-            }
+            $a[self::FIELD_LINK_ID_EXT] = $v;
         }
         if (null !== ($v = $this->getMaxLength())) {
             $a[self::FIELD_MAX_LENGTH] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MAX_LENGTH_EXT] = $v;
-            }
+            $a[self::FIELD_MAX_LENGTH_EXT] = $v;
         }
         if (null !== ($v = $this->getPrefix())) {
             $a[self::FIELD_PREFIX] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PREFIX_EXT] = $v;
-            }
+            $a[self::FIELD_PREFIX_EXT] = $v;
         }
         if (null !== ($v = $this->getReadOnly())) {
             $a[self::FIELD_READ_ONLY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_READ_ONLY_EXT] = $v;
-            }
+            $a[self::FIELD_READ_ONLY_EXT] = $v;
         }
         if (null !== ($v = $this->getRepeats())) {
             $a[self::FIELD_REPEATS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_REPEATS_EXT] = $v;
-            }
+            $a[self::FIELD_REPEATS_EXT] = $v;
         }
         if (null !== ($v = $this->getRequired())) {
             $a[self::FIELD_REQUIRED] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_REQUIRED_EXT] = $v;
-            }
+            $a[self::FIELD_REQUIRED_EXT] = $v;
         }
         if (null !== ($v = $this->getText())) {
             $a[self::FIELD_TEXT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TEXT_EXT] = $v;
-            }
+            $a[self::FIELD_TEXT_EXT] = $v;
         }
         if (null !== ($v = $this->getType())) {
-            $a[self::FIELD_TYPE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TYPE_EXT] = $v;
-            }
+            $a[self::FIELD_TYPE] = $v;
         }
         return $a;
     }

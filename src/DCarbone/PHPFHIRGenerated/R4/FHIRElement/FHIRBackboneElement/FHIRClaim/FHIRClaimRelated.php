@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -376,6 +376,7 @@ class FHIRClaimRelated extends FHIRBackboneElement
         if (null !== ($v = $this->getClaim())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CLAIM, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getReference())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_REFERENCE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -396,10 +397,7 @@ class FHIRClaimRelated extends FHIRBackboneElement
             $a[self::FIELD_CLAIM] = $v;
         }
         if (null !== ($v = $this->getReference())) {
-            $a[self::FIELD_REFERENCE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_REFERENCE_EXT] = $v;
-            }
+            $a[self::FIELD_REFERENCE] = $v;
         }
         if (null !== ($v = $this->getRelationship())) {
             $a[self::FIELD_RELATIONSHIP] = $v;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -602,6 +602,7 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
         if (null !== ($v = $this->getPublicationDate())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PUBLICATION_DATE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getPublicationStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PUBLICATION_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -628,21 +629,14 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getCopyright())) {
             $a[self::FIELD_COPYRIGHT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_COPYRIGHT_EXT] = $v;
-            }
+            $a[self::FIELD_COPYRIGHT_EXT] = $v;
         }
         if (null !== ($v = $this->getPublicationDate())) {
             $a[self::FIELD_PUBLICATION_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PUBLICATION_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_PUBLICATION_DATE_EXT] = $v;
         }
         if (null !== ($v = $this->getPublicationStatus())) {
-            $a[self::FIELD_PUBLICATION_STATUS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PUBLICATION_STATUS_EXT] = $v;
-            }
+            $a[self::FIELD_PUBLICATION_STATUS] = $v;
         }
         if (null !== ($v = $this->getPublisher())) {
             $a[self::FIELD_PUBLISHER] = $v;

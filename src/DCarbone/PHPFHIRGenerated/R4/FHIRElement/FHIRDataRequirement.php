@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -184,7 +184,7 @@ class FHIRDataRequirement extends FHIRElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The intended subjects of the data requirement. If this element is not provided,
-     * a Patient subject is assumed.
+     * a Patient subject is assumed. (choose any one of subject*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -195,7 +195,7 @@ class FHIRDataRequirement extends FHIRElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The intended subjects of the data requirement. If this element is not provided,
-     * a Patient subject is assumed.
+     * a Patient subject is assumed. (choose any one of subject*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -794,7 +794,7 @@ class FHIRDataRequirement extends FHIRElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The intended subjects of the data requirement. If this element is not provided,
-     * a Patient subject is assumed.
+     * a Patient subject is assumed. (choose any one of subject*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -810,7 +810,7 @@ class FHIRDataRequirement extends FHIRElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The intended subjects of the data requirement. If this element is not provided,
-     * a Patient subject is assumed.
+     * a Patient subject is assumed. (choose any one of subject*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $subjectCodeableConcept
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement
@@ -827,7 +827,7 @@ class FHIRDataRequirement extends FHIRElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The intended subjects of the data requirement. If this element is not provided,
-     * a Patient subject is assumed.
+     * a Patient subject is assumed. (choose any one of subject*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -842,7 +842,7 @@ class FHIRDataRequirement extends FHIRElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The intended subjects of the data requirement. If this element is not provided,
-     * a Patient subject is assumed.
+     * a Patient subject is assumed. (choose any one of subject*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $subjectReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement
@@ -1072,9 +1072,7 @@ class FHIRDataRequirement extends FHIRElement
         }
         if (null !== ($v = $this->getLimit())) {
             $a[self::FIELD_LIMIT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_LIMIT_EXT] = $v;
-            }
+            $a[self::FIELD_LIMIT_EXT] = $v;
         }
         if ([] !== ($vs = $this->getMustSupport())) {
             $a[self::FIELD_MUST_SUPPORT] = [];
@@ -1083,12 +1081,7 @@ class FHIRDataRequirement extends FHIRElement
                     continue;
                 }
                 $a[self::FIELD_MUST_SUPPORT][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_MUST_SUPPORT_EXT])) {
-                        $a[self::FIELD_MUST_SUPPORT_EXT] = [];
-                    }
-                    $a[self::FIELD_MUST_SUPPORT_EXT][] = $v;
-                }
+                $a[self::FIELD_MUST_SUPPORT_EXT][] = $v;
             }
         }
         if ([] !== ($vs = $this->getProfile())) {
@@ -1098,12 +1091,7 @@ class FHIRDataRequirement extends FHIRElement
                     continue;
                 }
                 $a[self::FIELD_PROFILE][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_PROFILE_EXT])) {
-                        $a[self::FIELD_PROFILE_EXT] = [];
-                    }
-                    $a[self::FIELD_PROFILE_EXT][] = $v;
-                }
+                $a[self::FIELD_PROFILE_EXT][] = $v;
             }
         }
         if ([] !== ($vs = $this->getSort())) {
@@ -1117,9 +1105,7 @@ class FHIRDataRequirement extends FHIRElement
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TYPE_EXT] = $v;
-            }
+            $a[self::FIELD_TYPE_EXT] = $v;
         }
         return $a;
     }

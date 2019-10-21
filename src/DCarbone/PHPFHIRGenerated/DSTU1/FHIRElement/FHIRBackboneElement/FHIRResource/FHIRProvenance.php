@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -991,9 +991,7 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
         }
         if (null !== ($v = $this->getIntegritySignature())) {
             $a[self::FIELD_INTEGRITY_SIGNATURE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_INTEGRITY_SIGNATURE_EXT] = $v;
-            }
+            $a[self::FIELD_INTEGRITY_SIGNATURE_EXT] = $v;
         }
         if (null !== ($v = $this->getLocation())) {
             $a[self::FIELD_LOCATION] = $v;
@@ -1008,12 +1006,7 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
                     continue;
                 }
                 $a[self::FIELD_POLICY][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_POLICY_EXT])) {
-                        $a[self::FIELD_POLICY_EXT] = [];
-                    }
-                    $a[self::FIELD_POLICY_EXT][] = $v;
-                }
+                $a[self::FIELD_POLICY_EXT][] = $v;
             }
         }
         if (null !== ($v = $this->getReason())) {
@@ -1021,9 +1014,7 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
         }
         if (null !== ($v = $this->getRecorded())) {
             $a[self::FIELD_RECORDED] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_RECORDED_EXT] = $v;
-            }
+            $a[self::FIELD_RECORDED_EXT] = $v;
         }
         if ([] !== ($vs = $this->getTarget())) {
             $a[self::FIELD_TARGET] = $vs;

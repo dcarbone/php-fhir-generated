@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1225,6 +1225,7 @@ class FHIRCatalogEntry extends FHIRDomainResource implements PHPFHIRContainedTyp
                 $v->xmlSerialize($sxe->addChild(self::FIELD_ADDITIONAL_CLASSIFICATION, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if ([] !== ($vs = $this->getAdditionalIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1242,6 +1243,7 @@ class FHIRCatalogEntry extends FHIRDomainResource implements PHPFHIRContainedTyp
                 $v->xmlSerialize($sxe->addChild(self::FIELD_CLASSIFICATION, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1269,6 +1271,7 @@ class FHIRCatalogEntry extends FHIRDomainResource implements PHPFHIRContainedTyp
                 $v->xmlSerialize($sxe->addChild(self::FIELD_RELATED_ENTRY, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1299,49 +1302,21 @@ class FHIRCatalogEntry extends FHIRDomainResource implements PHPFHIRContainedTyp
             $a[self::FIELD_ADDITIONAL_CLASSIFICATION] = $vs;
         }
         if ([] !== ($vs = $this->getAdditionalIdentifier())) {
-            $a[self::FIELD_ADDITIONAL_IDENTIFIER] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_ADDITIONAL_IDENTIFIER][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_ADDITIONAL_IDENTIFIER_EXT])) {
-                        $a[self::FIELD_ADDITIONAL_IDENTIFIER_EXT] = [];
-                    }
-                    $a[self::FIELD_ADDITIONAL_IDENTIFIER_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_ADDITIONAL_IDENTIFIER] = $vs;
         }
         if ([] !== ($vs = $this->getClassification())) {
             $a[self::FIELD_CLASSIFICATION] = $vs;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_IDENTIFIER][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_IDENTIFIER_EXT])) {
-                        $a[self::FIELD_IDENTIFIER_EXT] = [];
-                    }
-                    $a[self::FIELD_IDENTIFIER_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_IDENTIFIER] = $vs;
         }
         if (null !== ($v = $this->getLastUpdated())) {
             $a[self::FIELD_LAST_UPDATED] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_LAST_UPDATED_EXT] = $v;
-            }
+            $a[self::FIELD_LAST_UPDATED_EXT] = $v;
         }
         if (null !== ($v = $this->getOrderable())) {
             $a[self::FIELD_ORDERABLE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ORDERABLE_EXT] = $v;
-            }
+            $a[self::FIELD_ORDERABLE_EXT] = $v;
         }
         if (null !== ($v = $this->getReferencedItem())) {
             $a[self::FIELD_REFERENCED_ITEM] = $v;
@@ -1350,19 +1325,14 @@ class FHIRCatalogEntry extends FHIRDomainResource implements PHPFHIRContainedTyp
             $a[self::FIELD_RELATED_ENTRY] = $vs;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_STATUS_EXT] = $v;
-            }
+            $a[self::FIELD_STATUS] = $v;
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;
         }
         if (null !== ($v = $this->getValidTo())) {
             $a[self::FIELD_VALID_TO] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALID_TO_EXT] = $v;
-            }
+            $a[self::FIELD_VALID_TO_EXT] = $v;
         }
         if (null !== ($v = $this->getValidityPeriod())) {
             $a[self::FIELD_VALIDITY_PERIOD] = $v;

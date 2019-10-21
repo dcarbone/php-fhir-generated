@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -111,6 +111,15 @@ class FHIRCodePrimitive implements PHPFHIRTypeInterface
         return null === $value || (strlen($value) <= self::MAX_BYTES && preg_match('/'.self::VALUE_REGEX.'/', $value));
     }
 
+
+    /**
+     * @return null|
+     */
+    public function getValue()
+    {
+        return $this->value;
+    }
+
     /**
      * @return string
      */
@@ -153,15 +162,6 @@ class FHIRCodePrimitive implements PHPFHIRTypeInterface
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<code_primitive{$xmlns}></code_primitive>";
-    }
-
-
-    /**
-     * @return null|
-     */
-    public function getValue()
-    {
-        return $this->value;
     }
 
     /**

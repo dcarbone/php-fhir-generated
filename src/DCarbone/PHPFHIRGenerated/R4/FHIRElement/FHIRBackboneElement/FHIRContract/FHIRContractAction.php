@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -195,7 +195,7 @@ class FHIRContractAction extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * When action happens.
+     * When action happens. (choose any one of occurrence*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -205,7 +205,7 @@ class FHIRContractAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * When action happens.
+     * When action happens. (choose any one of occurrence*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -219,7 +219,7 @@ class FHIRContractAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * When action happens.
+     * When action happens. (choose any one of occurrence*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
@@ -1066,7 +1066,7 @@ class FHIRContractAction extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * When action happens.
+     * When action happens. (choose any one of occurrence*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -1083,7 +1083,7 @@ class FHIRContractAction extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * When action happens.
+     * When action happens. (choose any one of occurrence*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $occurrenceDateTime
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAction
@@ -1107,7 +1107,7 @@ class FHIRContractAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * When action happens.
+     * When action happens. (choose any one of occurrence*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -1121,7 +1121,7 @@ class FHIRContractAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * When action happens.
+     * When action happens. (choose any one of occurrence*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $occurrencePeriod
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAction
@@ -1141,7 +1141,7 @@ class FHIRContractAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * When action happens.
+     * When action happens. (choose any one of occurrence*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
@@ -1159,7 +1159,7 @@ class FHIRContractAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * When action happens.
+     * When action happens. (choose any one of occurrence*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming $occurrenceTiming
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAction
@@ -2264,19 +2264,12 @@ class FHIRContractAction extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_CONTEXT_LINK_ID][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_CONTEXT_LINK_ID_EXT])) {
-                        $a[self::FIELD_CONTEXT_LINK_ID_EXT] = [];
-                    }
-                    $a[self::FIELD_CONTEXT_LINK_ID_EXT][] = $v;
-                }
+                $a[self::FIELD_CONTEXT_LINK_ID_EXT][] = $v;
             }
         }
         if (null !== ($v = $this->getDoNotPerform())) {
             $a[self::FIELD_DO_NOT_PERFORM] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DO_NOT_PERFORM_EXT] = $v;
-            }
+            $a[self::FIELD_DO_NOT_PERFORM_EXT] = $v;
         }
         if (null !== ($v = $this->getIntent())) {
             $a[self::FIELD_INTENT] = $v;
@@ -2288,12 +2281,7 @@ class FHIRContractAction extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_LINK_ID][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_LINK_ID_EXT])) {
-                        $a[self::FIELD_LINK_ID_EXT] = [];
-                    }
-                    $a[self::FIELD_LINK_ID_EXT][] = $v;
-                }
+                $a[self::FIELD_LINK_ID_EXT][] = $v;
             }
         }
         if ([] !== ($vs = $this->getNote())) {
@@ -2301,9 +2289,7 @@ class FHIRContractAction extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getOccurrenceDateTime())) {
             $a[self::FIELD_OCCURRENCE_DATE_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_OCCURRENCE_DATE_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_OCCURRENCE_DATE_TIME_EXT] = $v;
         }
         if (null !== ($v = $this->getOccurrencePeriod())) {
             $a[self::FIELD_OCCURRENCE_PERIOD] = $v;
@@ -2321,12 +2307,7 @@ class FHIRContractAction extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_PERFORMER_LINK_ID][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_PERFORMER_LINK_ID_EXT])) {
-                        $a[self::FIELD_PERFORMER_LINK_ID_EXT] = [];
-                    }
-                    $a[self::FIELD_PERFORMER_LINK_ID_EXT][] = $v;
-                }
+                $a[self::FIELD_PERFORMER_LINK_ID_EXT][] = $v;
             }
         }
         if (null !== ($v = $this->getPerformerRole())) {
@@ -2342,12 +2323,7 @@ class FHIRContractAction extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_REASON][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_REASON_EXT])) {
-                        $a[self::FIELD_REASON_EXT] = [];
-                    }
-                    $a[self::FIELD_REASON_EXT][] = $v;
-                }
+                $a[self::FIELD_REASON_EXT][] = $v;
             }
         }
         if ([] !== ($vs = $this->getReasonCode())) {
@@ -2360,12 +2336,7 @@ class FHIRContractAction extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_REASON_LINK_ID][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_REASON_LINK_ID_EXT])) {
-                        $a[self::FIELD_REASON_LINK_ID_EXT] = [];
-                    }
-                    $a[self::FIELD_REASON_LINK_ID_EXT][] = $v;
-                }
+                $a[self::FIELD_REASON_LINK_ID_EXT][] = $v;
             }
         }
         if ([] !== ($vs = $this->getReasonReference())) {
@@ -2381,12 +2352,7 @@ class FHIRContractAction extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_REQUESTER_LINK_ID][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_REQUESTER_LINK_ID_EXT])) {
-                        $a[self::FIELD_REQUESTER_LINK_ID_EXT] = [];
-                    }
-                    $a[self::FIELD_REQUESTER_LINK_ID_EXT][] = $v;
-                }
+                $a[self::FIELD_REQUESTER_LINK_ID_EXT][] = $v;
             }
         }
         if ([] !== ($vs = $this->getSecurityLabelNumber())) {
@@ -2396,12 +2362,7 @@ class FHIRContractAction extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_SECURITY_LABEL_NUMBER][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_SECURITY_LABEL_NUMBER_EXT])) {
-                        $a[self::FIELD_SECURITY_LABEL_NUMBER_EXT] = [];
-                    }
-                    $a[self::FIELD_SECURITY_LABEL_NUMBER_EXT][] = $v;
-                }
+                $a[self::FIELD_SECURITY_LABEL_NUMBER_EXT][] = $v;
             }
         }
         if (null !== ($v = $this->getStatus())) {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -69,8 +69,6 @@ use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
-use DCarbone\PHPFHIRGenerated\R4\PHPFHIRValueContainerInterface;
-use DCarbone\PHPFHIRGenerated\R4\PHPFHIRValueContainerTrait;
 
 /**
  * The RiskEvidenceSynthesis resource describes the likelihood of an outcome in a
@@ -80,10 +78,8 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRValueContainerTrait;
  * Class FHIRRiskEvidenceSynthesisRiskEstimate
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskEvidenceSynthesis
  */
-class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement implements PHPFHIRValueContainerInterface
+class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
 {
-    use PHPFHIRValueContainerTrait;
-
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_RISK_EVIDENCE_SYNTHESIS_DOT_RISK_ESTIMATE;
 
@@ -518,7 +514,6 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement implemen
      */
     public function setType(FHIRCodeableConcept $type = null)
     {
-        $this->_markNonValueFieldsDefined();
         $this->type = $type;
         return $this;
     }
@@ -551,7 +546,6 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement implemen
      */
     public function setUnitOfMeasure(FHIRCodeableConcept $unitOfMeasure = null)
     {
-        $this->_markNonValueFieldsDefined();
         $this->unitOfMeasure = $unitOfMeasure;
         return $this;
     }
@@ -725,21 +719,15 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement implemen
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getDenominatorCount())) {
             $a[self::FIELD_DENOMINATOR_COUNT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DENOMINATOR_COUNT_EXT] = $v;
-            }
+            $a[self::FIELD_DENOMINATOR_COUNT_EXT] = $v;
         }
         if (null !== ($v = $this->getDescription())) {
             $a[self::FIELD_DESCRIPTION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DESCRIPTION_EXT] = $v;
-            }
+            $a[self::FIELD_DESCRIPTION_EXT] = $v;
         }
         if (null !== ($v = $this->getNumeratorCount())) {
             $a[self::FIELD_NUMERATOR_COUNT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_NUMERATOR_COUNT_EXT] = $v;
-            }
+            $a[self::FIELD_NUMERATOR_COUNT_EXT] = $v;
         }
         if ([] !== ($vs = $this->getPrecisionEstimate())) {
             $a[self::FIELD_PRECISION_ESTIMATE] = $vs;
@@ -752,9 +740,7 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement implemen
         }
         if (null !== ($v = $this->getValue())) {
             $a[self::FIELD_VALUE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_EXT] = $v;
         }
         return $a;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -130,7 +130,7 @@ class FHIRDosage extends FHIRBackboneElement
      *
      * Indicates whether the Medication is only taken when needed within a specific
      * dosing schedule (Boolean option), or it indicates the precondition for taking
-     * the Medication (CodeableConcept).
+     * the Medication (CodeableConcept). (choose any one of asNeeded*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
@@ -143,7 +143,7 @@ class FHIRDosage extends FHIRBackboneElement
      *
      * Indicates whether the Medication is only taken when needed within a specific
      * dosing schedule (Boolean option), or it indicates the precondition for taking
-     * the Medication (CodeableConcept).
+     * the Medication (CodeableConcept). (choose any one of asNeeded*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -553,7 +553,7 @@ class FHIRDosage extends FHIRBackboneElement
      *
      * Indicates whether the Medication is only taken when needed within a specific
      * dosing schedule (Boolean option), or it indicates the precondition for taking
-     * the Medication (CodeableConcept).
+     * the Medication (CodeableConcept). (choose any one of asNeeded*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
@@ -568,7 +568,7 @@ class FHIRDosage extends FHIRBackboneElement
      *
      * Indicates whether the Medication is only taken when needed within a specific
      * dosing schedule (Boolean option), or it indicates the precondition for taking
-     * the Medication (CodeableConcept).
+     * the Medication (CodeableConcept). (choose any one of asNeeded*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $asNeededBoolean
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDosage
@@ -595,7 +595,7 @@ class FHIRDosage extends FHIRBackboneElement
      *
      * Indicates whether the Medication is only taken when needed within a specific
      * dosing schedule (Boolean option), or it indicates the precondition for taking
-     * the Medication (CodeableConcept).
+     * the Medication (CodeableConcept). (choose any one of asNeeded*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -612,7 +612,7 @@ class FHIRDosage extends FHIRBackboneElement
      *
      * Indicates whether the Medication is only taken when needed within a specific
      * dosing schedule (Boolean option), or it indicates the precondition for taking
-     * the Medication (CodeableConcept).
+     * the Medication (CodeableConcept). (choose any one of asNeeded*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $asNeededCodeableConcept
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDosage
@@ -1166,9 +1166,11 @@ class FHIRDosage extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_DOSE_AND_RATE, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getMaxDosePerAdministration())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_DOSE_PER_ADMINISTRATION, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getMaxDosePerLifetime())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_DOSE_PER_LIFETIME, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1215,9 +1217,7 @@ class FHIRDosage extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getAsNeededBoolean())) {
             $a[self::FIELD_AS_NEEDED_BOOLEAN] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_AS_NEEDED_BOOLEAN_EXT] = $v;
-            }
+            $a[self::FIELD_AS_NEEDED_BOOLEAN_EXT] = $v;
         }
         if (null !== ($v = $this->getAsNeededCodeableConcept())) {
             $a[self::FIELD_AS_NEEDED_CODEABLE_CONCEPT] = $v;
@@ -1226,16 +1226,10 @@ class FHIRDosage extends FHIRBackboneElement
             $a[self::FIELD_DOSE_AND_RATE] = $vs;
         }
         if (null !== ($v = $this->getMaxDosePerAdministration())) {
-            $a[self::FIELD_MAX_DOSE_PER_ADMINISTRATION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MAX_DOSE_PER_ADMINISTRATION_EXT] = $v;
-            }
+            $a[self::FIELD_MAX_DOSE_PER_ADMINISTRATION] = $v;
         }
         if (null !== ($v = $this->getMaxDosePerLifetime())) {
-            $a[self::FIELD_MAX_DOSE_PER_LIFETIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MAX_DOSE_PER_LIFETIME_EXT] = $v;
-            }
+            $a[self::FIELD_MAX_DOSE_PER_LIFETIME] = $v;
         }
         if (null !== ($v = $this->getMaxDosePerPeriod())) {
             $a[self::FIELD_MAX_DOSE_PER_PERIOD] = $v;
@@ -1245,27 +1239,21 @@ class FHIRDosage extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getPatientInstruction())) {
             $a[self::FIELD_PATIENT_INSTRUCTION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PATIENT_INSTRUCTION_EXT] = $v;
-            }
+            $a[self::FIELD_PATIENT_INSTRUCTION_EXT] = $v;
         }
         if (null !== ($v = $this->getRoute())) {
             $a[self::FIELD_ROUTE] = $v;
         }
         if (null !== ($v = $this->getSequence())) {
             $a[self::FIELD_SEQUENCE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SEQUENCE_EXT] = $v;
-            }
+            $a[self::FIELD_SEQUENCE_EXT] = $v;
         }
         if (null !== ($v = $this->getSite())) {
             $a[self::FIELD_SITE] = $v;
         }
         if (null !== ($v = $this->getText())) {
             $a[self::FIELD_TEXT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TEXT_EXT] = $v;
-            }
+            $a[self::FIELD_TEXT_EXT] = $v;
         }
         if (null !== ($v = $this->getTiming())) {
             $a[self::FIELD_TIMING] = $v;

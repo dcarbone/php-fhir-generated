@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -92,7 +92,7 @@ class FHIRContractRule extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Computable Contract conveyed using a policy rule language (e.g. XACML, DKAL,
-     * SecPal).
+     * SecPal). (choose any one of content*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
      */
@@ -103,7 +103,7 @@ class FHIRContractRule extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Computable Contract conveyed using a policy rule language (e.g. XACML, DKAL,
-     * SecPal).
+     * SecPal). (choose any one of content*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -192,7 +192,7 @@ class FHIRContractRule extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Computable Contract conveyed using a policy rule language (e.g. XACML, DKAL,
-     * SecPal).
+     * SecPal). (choose any one of content*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
      */
@@ -207,7 +207,7 @@ class FHIRContractRule extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Computable Contract conveyed using a policy rule language (e.g. XACML, DKAL,
-     * SecPal).
+     * SecPal). (choose any one of content*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment $contentAttachment
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractRule
@@ -224,7 +224,7 @@ class FHIRContractRule extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Computable Contract conveyed using a policy rule language (e.g. XACML, DKAL,
-     * SecPal).
+     * SecPal). (choose any one of content*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -239,7 +239,7 @@ class FHIRContractRule extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Computable Contract conveyed using a policy rule language (e.g. XACML, DKAL,
-     * SecPal).
+     * SecPal). (choose any one of content*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $contentReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractRule

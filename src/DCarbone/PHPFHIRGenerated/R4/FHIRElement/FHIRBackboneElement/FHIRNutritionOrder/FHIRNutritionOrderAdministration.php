@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRNutri
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -112,7 +112,7 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour,
-     * according to the specified schedule.
+     * according to the specified schedule. (choose any one of rate*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -124,7 +124,7 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour,
-     * according to the specified schedule.
+     * according to the specified schedule. (choose any one of rate*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
      */
@@ -290,7 +290,7 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour,
-     * according to the specified schedule.
+     * according to the specified schedule. (choose any one of rate*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -307,7 +307,7 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour,
-     * according to the specified schedule.
+     * according to the specified schedule. (choose any one of rate*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $rateQuantity
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdministration
@@ -325,7 +325,7 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour,
-     * according to the specified schedule.
+     * according to the specified schedule. (choose any one of rate*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
      */
@@ -341,7 +341,7 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour,
-     * according to the specified schedule.
+     * according to the specified schedule. (choose any one of rate*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio $rateRatio
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdministration
@@ -458,9 +458,11 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getRateQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_RATE_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -482,16 +484,10 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getQuantity())) {
-            $a[self::FIELD_QUANTITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_QUANTITY_EXT] = $v;
-            }
+            $a[self::FIELD_QUANTITY] = $v;
         }
         if (null !== ($v = $this->getRateQuantity())) {
-            $a[self::FIELD_RATE_QUANTITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_RATE_QUANTITY_EXT] = $v;
-            }
+            $a[self::FIELD_RATE_QUANTITY] = $v;
         }
         if (null !== ($v = $this->getRateRatio())) {
             $a[self::FIELD_RATE_RATIO] = $v;

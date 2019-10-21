@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTermi
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -597,30 +597,22 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getHierarchical())) {
             $a[self::FIELD_HIERARCHICAL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_HIERARCHICAL_EXT] = $v;
-            }
+            $a[self::FIELD_HIERARCHICAL_EXT] = $v;
         }
         if (null !== ($v = $this->getIncomplete())) {
             $a[self::FIELD_INCOMPLETE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_INCOMPLETE_EXT] = $v;
-            }
+            $a[self::FIELD_INCOMPLETE_EXT] = $v;
         }
         if (null !== ($v = $this->getPaging())) {
             $a[self::FIELD_PAGING] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PAGING_EXT] = $v;
-            }
+            $a[self::FIELD_PAGING_EXT] = $v;
         }
         if ([] !== ($vs = $this->getParameter())) {
             $a[self::FIELD_PARAMETER] = $vs;
         }
         if (null !== ($v = $this->getTextFilter())) {
             $a[self::FIELD_TEXT_FILTER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TEXT_FILTER_EXT] = $v;
-            }
+            $a[self::FIELD_TEXT_FILTER_EXT] = $v;
         }
         return $a;
     }

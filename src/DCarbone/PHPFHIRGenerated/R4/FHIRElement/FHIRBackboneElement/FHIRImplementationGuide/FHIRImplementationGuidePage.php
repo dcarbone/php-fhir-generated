@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImple
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -110,7 +110,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The source address for the page.
+     * The source address for the page. (choose any one of name*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -120,7 +120,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * The source address for the page.
+     * The source address for the page. (choose any one of name*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUrl
      */
@@ -302,7 +302,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The source address for the page.
+     * The source address for the page. (choose any one of name*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -316,7 +316,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The source address for the page.
+     * The source address for the page. (choose any one of name*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $nameReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage
@@ -332,7 +332,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * The source address for the page.
+     * The source address for the page. (choose any one of name*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUrl
      */
@@ -346,7 +346,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * The source address for the page.
+     * The source address for the page. (choose any one of name*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUrl $nameUrl
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage
@@ -541,6 +541,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getGeneration())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_GENERATION, null, $v->_getFHIRXMLNamespace()));
         }
@@ -573,28 +574,21 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getGeneration())) {
-            $a[self::FIELD_GENERATION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_GENERATION_EXT] = $v;
-            }
+            $a[self::FIELD_GENERATION] = $v;
         }
         if (null !== ($v = $this->getNameReference())) {
             $a[self::FIELD_NAME_REFERENCE] = $v;
         }
         if (null !== ($v = $this->getNameUrl())) {
             $a[self::FIELD_NAME_URL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_NAME_URL_EXT] = $v;
-            }
+            $a[self::FIELD_NAME_URL_EXT] = $v;
         }
         if ([] !== ($vs = $this->getPage())) {
             $a[self::FIELD_PAGE] = $vs;
         }
         if (null !== ($v = $this->getTitle())) {
             $a[self::FIELD_TITLE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TITLE_EXT] = $v;
-            }
+            $a[self::FIELD_TITLE_EXT] = $v;
         }
         return $a;
     }

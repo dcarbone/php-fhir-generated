@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -179,7 +179,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements PHPFHIR
      * A specific date/time or interval of time during which the administration took
      * place (or did not take place, when the 'notGiven' attribute is true). For many
      * administrations, such as swallowing a tablet the use of dateTime is more
-     * appropriate.
+     * appropriate. (choose any one of effective*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -192,7 +192,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements PHPFHIR
      * A specific date/time or interval of time during which the administration took
      * place (or did not take place, when the 'notGiven' attribute is true). For many
      * administrations, such as swallowing a tablet the use of dateTime is more
-     * appropriate.
+     * appropriate. (choose any one of effective*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -243,6 +243,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements PHPFHIR
      * Identifies the medication that was administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
      * carrying a code that identifies the medication from a known list of medications.
+     * (choose any one of medication*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -255,6 +256,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements PHPFHIR
      * Identifies the medication that was administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
      * carrying a code that identifies the medication from a known list of medications.
+     * (choose any one of medication*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -872,7 +874,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements PHPFHIR
      * A specific date/time or interval of time during which the administration took
      * place (or did not take place, when the 'notGiven' attribute is true). For many
      * administrations, such as swallowing a tablet the use of dateTime is more
-     * appropriate.
+     * appropriate. (choose any one of effective*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -892,7 +894,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements PHPFHIR
      * A specific date/time or interval of time during which the administration took
      * place (or did not take place, when the 'notGiven' attribute is true). For many
      * administrations, such as swallowing a tablet the use of dateTime is more
-     * appropriate.
+     * appropriate. (choose any one of effective*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $effectiveDateTime
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationAdministration
@@ -919,7 +921,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements PHPFHIR
      * A specific date/time or interval of time during which the administration took
      * place (or did not take place, when the 'notGiven' attribute is true). For many
      * administrations, such as swallowing a tablet the use of dateTime is more
-     * appropriate.
+     * appropriate. (choose any one of effective*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -936,7 +938,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements PHPFHIR
      * A specific date/time or interval of time during which the administration took
      * place (or did not take place, when the 'notGiven' attribute is true). For many
      * administrations, such as swallowing a tablet the use of dateTime is more
-     * appropriate.
+     * appropriate. (choose any one of effective*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $effectivePeriod
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationAdministration
@@ -1153,6 +1155,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements PHPFHIR
      * Identifies the medication that was administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
      * carrying a code that identifies the medication from a known list of medications.
+     * (choose any one of medication*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -1170,6 +1173,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements PHPFHIR
      * Identifies the medication that was administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
      * carrying a code that identifies the medication from a known list of medications.
+     * (choose any one of medication*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $medicationCodeableConcept
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationAdministration
@@ -1188,6 +1192,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements PHPFHIR
      * Identifies the medication that was administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
      * carrying a code that identifies the medication from a known list of medications.
+     * (choose any one of medication*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -1204,6 +1209,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements PHPFHIR
      * Identifies the medication that was administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
      * carrying a code that identifies the medication from a known list of medications.
+     * (choose any one of medication*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $medicationReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationAdministration
@@ -1921,6 +1927,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements PHPFHIR
                 $v->xmlSerialize($sxe->addChild(self::FIELD_EVENT_HISTORY, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -2042,9 +2049,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements PHPFHIR
         }
         if (null !== ($v = $this->getEffectiveDateTime())) {
             $a[self::FIELD_EFFECTIVE_DATE_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_EFFECTIVE_DATE_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_EFFECTIVE_DATE_TIME_EXT] = $v;
         }
         if (null !== ($v = $this->getEffectivePeriod())) {
             $a[self::FIELD_EFFECTIVE_PERIOD] = $v;
@@ -2053,19 +2058,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements PHPFHIR
             $a[self::FIELD_EVENT_HISTORY] = $vs;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_IDENTIFIER][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_IDENTIFIER_EXT])) {
-                        $a[self::FIELD_IDENTIFIER_EXT] = [];
-                    }
-                    $a[self::FIELD_IDENTIFIER_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_IDENTIFIER] = $vs;
         }
         if ([] !== ($vs = $this->getInstantiates())) {
             $a[self::FIELD_INSTANTIATES] = [];
@@ -2074,12 +2067,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements PHPFHIR
                     continue;
                 }
                 $a[self::FIELD_INSTANTIATES][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_INSTANTIATES_EXT])) {
-                        $a[self::FIELD_INSTANTIATES_EXT] = [];
-                    }
-                    $a[self::FIELD_INSTANTIATES_EXT][] = $v;
-                }
+                $a[self::FIELD_INSTANTIATES_EXT][] = $v;
             }
         }
         if (null !== ($v = $this->getMedicationCodeableConcept())) {
@@ -2108,9 +2096,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements PHPFHIR
         }
         if (null !== ($v = $this->getStatus())) {
             $a[self::FIELD_STATUS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_STATUS_EXT] = $v;
-            }
+            $a[self::FIELD_STATUS_EXT] = $v;
         }
         if ([] !== ($vs = $this->getStatusReason())) {
             $a[self::FIELD_STATUS_REASON] = $vs;

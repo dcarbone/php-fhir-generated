@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -90,6 +90,8 @@ class FHIRDomainResource extends FHIRResource
     const FIELD_TEXT = 'text';
 
     /**
+     * (choose any one of the elements, but only one)
+     *
      * These resources do not have an independent existence apart from the resource
      * that contains them - they cannot be identified independently, and nor can they
      * have their own independent transaction scope.
@@ -268,6 +270,8 @@ class FHIRDomainResource extends FHIRResource
 
 
     /**
+     * (choose any one of the elements, but only one)
+     *
      * These resources do not have an independent existence apart from the resource
      * that contains them - they cannot be identified independently, and nor can they
      * have their own independent transaction scope.
@@ -280,6 +284,8 @@ class FHIRDomainResource extends FHIRResource
     }
 
     /**
+     * (choose any one of the elements, but only one)
+     *
      * These resources do not have an independent existence apart from the resource
      * that contains them - they cannot be identified independently, and nor can they
      * have their own independent transaction scope.
@@ -294,6 +300,8 @@ class FHIRDomainResource extends FHIRResource
     }
 
     /**
+     * (choose any one of the elements, but only one)
+     *
      * These resources do not have an independent existence apart from the resource
      * that contains them - they cannot be identified independently, and nor can they
      * have their own independent transaction scope.

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -92,7 +92,8 @@ class FHIRContractFriendly extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Human readable rendering of this Contract in a format and representation
-     * intended to enhance comprehension and ensure understandability.
+     * intended to enhance comprehension and ensure understandability. (choose any one
+     * of content*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
      */
@@ -103,7 +104,8 @@ class FHIRContractFriendly extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Human readable rendering of this Contract in a format and representation
-     * intended to enhance comprehension and ensure understandability.
+     * intended to enhance comprehension and ensure understandability. (choose any one
+     * of content*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -192,7 +194,8 @@ class FHIRContractFriendly extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Human readable rendering of this Contract in a format and representation
-     * intended to enhance comprehension and ensure understandability.
+     * intended to enhance comprehension and ensure understandability. (choose any one
+     * of content*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
      */
@@ -207,7 +210,8 @@ class FHIRContractFriendly extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Human readable rendering of this Contract in a format and representation
-     * intended to enhance comprehension and ensure understandability.
+     * intended to enhance comprehension and ensure understandability. (choose any one
+     * of content*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment $contentAttachment
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractFriendly
@@ -224,7 +228,8 @@ class FHIRContractFriendly extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Human readable rendering of this Contract in a format and representation
-     * intended to enhance comprehension and ensure understandability.
+     * intended to enhance comprehension and ensure understandability. (choose any one
+     * of content*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -239,7 +244,8 @@ class FHIRContractFriendly extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Human readable rendering of this Contract in a format and representation
-     * intended to enhance comprehension and ensure understandability.
+     * intended to enhance comprehension and ensure understandability. (choose any one
+     * of content*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $contentReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractFriendly

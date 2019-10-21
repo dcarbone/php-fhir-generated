@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpeci
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -134,7 +134,7 @@ class FHIRSpecimenProcessing extends FHIRBackboneElement
      *
      * A record of the time or period when the specimen processing occurred. For
      * example the time of sample fixation or the period of time the sample was in
-     * formalin.
+     * formalin. (choose any one of time*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -146,7 +146,7 @@ class FHIRSpecimenProcessing extends FHIRBackboneElement
      *
      * A record of the time or period when the specimen processing occurred. For
      * example the time of sample fixation or the period of time the sample was in
-     * formalin.
+     * formalin. (choose any one of time*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -404,7 +404,7 @@ class FHIRSpecimenProcessing extends FHIRBackboneElement
      *
      * A record of the time or period when the specimen processing occurred. For
      * example the time of sample fixation or the period of time the sample was in
-     * formalin.
+     * formalin. (choose any one of time*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -423,7 +423,7 @@ class FHIRSpecimenProcessing extends FHIRBackboneElement
      *
      * A record of the time or period when the specimen processing occurred. For
      * example the time of sample fixation or the period of time the sample was in
-     * formalin.
+     * formalin. (choose any one of time*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $timeDateTime
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenProcessing
@@ -449,7 +449,7 @@ class FHIRSpecimenProcessing extends FHIRBackboneElement
      *
      * A record of the time or period when the specimen processing occurred. For
      * example the time of sample fixation or the period of time the sample was in
-     * formalin.
+     * formalin. (choose any one of time*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -465,7 +465,7 @@ class FHIRSpecimenProcessing extends FHIRBackboneElement
      *
      * A record of the time or period when the specimen processing occurred. For
      * example the time of sample fixation or the period of time the sample was in
-     * formalin.
+     * formalin. (choose any one of time*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $timePeriod
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenProcessing
@@ -590,18 +590,14 @@ class FHIRSpecimenProcessing extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getDescription())) {
             $a[self::FIELD_DESCRIPTION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DESCRIPTION_EXT] = $v;
-            }
+            $a[self::FIELD_DESCRIPTION_EXT] = $v;
         }
         if (null !== ($v = $this->getProcedure())) {
             $a[self::FIELD_PROCEDURE] = $v;
         }
         if (null !== ($v = $this->getTimeDateTime())) {
             $a[self::FIELD_TIME_DATE_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TIME_DATE_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_TIME_DATE_TIME_EXT] = $v;
         }
         if (null !== ($v = $this->getTimePeriod())) {
             $a[self::FIELD_TIME_PERIOD] = $v;

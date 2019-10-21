@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1834,6 +1834,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
         if (null !== ($v = $this->getForm())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_FORM, null, $v->_getFHIRXMLNamespace()));
         }
+
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1890,6 +1891,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
         if (null !== ($v = $this->getPaymentDate())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PAYMENT_DATE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getPaymentRef())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PAYMENT_REF, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1942,15 +1944,11 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
         }
         if (null !== ($v = $this->getCreated())) {
             $a[self::FIELD_CREATED] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_CREATED_EXT] = $v;
-            }
+            $a[self::FIELD_CREATED_EXT] = $v;
         }
         if (null !== ($v = $this->getDisposition())) {
             $a[self::FIELD_DISPOSITION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DISPOSITION_EXT] = $v;
-            }
+            $a[self::FIELD_DISPOSITION_EXT] = $v;
         }
         if ([] !== ($vs = $this->getError())) {
             $a[self::FIELD_ERROR] = $vs;
@@ -1959,19 +1957,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
             $a[self::FIELD_FORM] = $v;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_IDENTIFIER][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_IDENTIFIER_EXT])) {
-                        $a[self::FIELD_IDENTIFIER_EXT] = [];
-                    }
-                    $a[self::FIELD_IDENTIFIER_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_IDENTIFIER] = $vs;
         }
         if ([] !== ($vs = $this->getItem())) {
             $a[self::FIELD_ITEM] = $vs;
@@ -1987,9 +1973,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
         }
         if (null !== ($v = $this->getOutcome())) {
             $a[self::FIELD_OUTCOME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_OUTCOME_EXT] = $v;
-            }
+            $a[self::FIELD_OUTCOME_EXT] = $v;
         }
         if (null !== ($v = $this->getPayeeType())) {
             $a[self::FIELD_PAYEE_TYPE] = $v;
@@ -2005,15 +1989,10 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
         }
         if (null !== ($v = $this->getPaymentDate())) {
             $a[self::FIELD_PAYMENT_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PAYMENT_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_PAYMENT_DATE_EXT] = $v;
         }
         if (null !== ($v = $this->getPaymentRef())) {
-            $a[self::FIELD_PAYMENT_REF] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PAYMENT_REF_EXT] = $v;
-            }
+            $a[self::FIELD_PAYMENT_REF] = $v;
         }
         if (null !== ($v = $this->getRequest())) {
             $a[self::FIELD_REQUEST] = $v;

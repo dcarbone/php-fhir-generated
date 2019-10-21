@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolec
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1039,12 +1039,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_F_MEASURE][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_F_MEASURE_EXT])) {
-                        $a[self::FIELD_F_MEASURE_EXT] = [];
-                    }
-                    $a[self::FIELD_F_MEASURE_EXT][] = $v;
-                }
+                $a[self::FIELD_F_MEASURE_EXT][] = $v;
             }
         }
         if ([] !== ($vs = $this->getNumFN())) {
@@ -1054,12 +1049,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_NUM_FN][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_NUM_FN_EXT])) {
-                        $a[self::FIELD_NUM_FN_EXT] = [];
-                    }
-                    $a[self::FIELD_NUM_FN_EXT][] = $v;
-                }
+                $a[self::FIELD_NUM_FN_EXT][] = $v;
             }
         }
         if ([] !== ($vs = $this->getNumFP())) {
@@ -1069,12 +1059,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_NUM_FP][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_NUM_FP_EXT])) {
-                        $a[self::FIELD_NUM_FP_EXT] = [];
-                    }
-                    $a[self::FIELD_NUM_FP_EXT][] = $v;
-                }
+                $a[self::FIELD_NUM_FP_EXT][] = $v;
             }
         }
         if ([] !== ($vs = $this->getNumTP())) {
@@ -1084,12 +1069,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_NUM_TP][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_NUM_TP_EXT])) {
-                        $a[self::FIELD_NUM_TP_EXT] = [];
-                    }
-                    $a[self::FIELD_NUM_TP_EXT][] = $v;
-                }
+                $a[self::FIELD_NUM_TP_EXT][] = $v;
             }
         }
         if ([] !== ($vs = $this->getPrecision())) {
@@ -1099,12 +1079,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_PRECISION][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_PRECISION_EXT])) {
-                        $a[self::FIELD_PRECISION_EXT] = [];
-                    }
-                    $a[self::FIELD_PRECISION_EXT][] = $v;
-                }
+                $a[self::FIELD_PRECISION_EXT][] = $v;
             }
         }
         if ([] !== ($vs = $this->getScore())) {
@@ -1114,12 +1089,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_SCORE][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_SCORE_EXT])) {
-                        $a[self::FIELD_SCORE_EXT] = [];
-                    }
-                    $a[self::FIELD_SCORE_EXT][] = $v;
-                }
+                $a[self::FIELD_SCORE_EXT][] = $v;
             }
         }
         if ([] !== ($vs = $this->getSensitivity())) {
@@ -1129,12 +1099,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_SENSITIVITY][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_SENSITIVITY_EXT])) {
-                        $a[self::FIELD_SENSITIVITY_EXT] = [];
-                    }
-                    $a[self::FIELD_SENSITIVITY_EXT][] = $v;
-                }
+                $a[self::FIELD_SENSITIVITY_EXT][] = $v;
             }
         }
         return $a;

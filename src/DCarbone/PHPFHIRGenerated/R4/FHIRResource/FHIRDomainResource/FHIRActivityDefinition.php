@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -514,7 +514,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Identifies the food, drug or other product being consumed or supplied in the
-     * activity.
+     * activity. (choose any one of product*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -525,7 +525,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Identifies the food, drug or other product being consumed or supplied in the
-     * activity.
+     * activity. (choose any one of product*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -630,7 +630,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A code or group definition that describes the intended subject of the activity
-     * being defined.
+     * being defined. (choose any one of subject*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -641,7 +641,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A code or group definition that describes the intended subject of the activity
-     * being defined.
+     * being defined. (choose any one of subject*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -663,6 +663,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
+     * (choose any one of timing*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
@@ -676,6 +677,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
+     * (choose any one of timing*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -686,6 +688,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
+     * (choose any one of timing*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
@@ -696,6 +699,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
+     * (choose any one of timing*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -706,6 +710,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
+     * (choose any one of timing*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -720,6 +725,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
+     * (choose any one of timing*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
@@ -2881,7 +2887,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Identifies the food, drug or other product being consumed or supplied in the
-     * activity.
+     * activity. (choose any one of product*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -2897,7 +2903,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Identifies the food, drug or other product being consumed or supplied in the
-     * activity.
+     * activity. (choose any one of product*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $productCodeableConcept
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
@@ -2914,7 +2920,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Identifies the food, drug or other product being consumed or supplied in the
-     * activity.
+     * activity. (choose any one of product*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -2929,7 +2935,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Identifies the food, drug or other product being consumed or supplied in the
-     * activity.
+     * activity. (choose any one of product*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $productReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
@@ -3319,7 +3325,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A code or group definition that describes the intended subject of the activity
-     * being defined.
+     * being defined. (choose any one of subject*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -3335,7 +3341,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A code or group definition that describes the intended subject of the activity
-     * being defined.
+     * being defined. (choose any one of subject*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $subjectCodeableConcept
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
@@ -3352,7 +3358,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A code or group definition that describes the intended subject of the activity
-     * being defined.
+     * being defined. (choose any one of subject*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -3367,7 +3373,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A code or group definition that describes the intended subject of the activity
-     * being defined.
+     * being defined. (choose any one of subject*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $subjectReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
@@ -3424,6 +3430,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
+     * (choose any one of timing*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
@@ -3438,6 +3445,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
+     * (choose any one of timing*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge $timingAge
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
@@ -3457,6 +3465,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
+     * (choose any one of timing*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -3474,6 +3483,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
+     * (choose any one of timing*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $timingDateTime
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
@@ -3498,6 +3508,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
+     * (choose any one of timing*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
@@ -3512,6 +3523,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
+     * (choose any one of timing*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration $timingDuration
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
@@ -3528,6 +3540,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
+     * (choose any one of timing*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -3542,6 +3555,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
+     * (choose any one of timing*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $timingPeriod
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
@@ -3558,6 +3572,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
+     * (choose any one of timing*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -3572,6 +3587,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
+     * (choose any one of timing*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange $timingRange
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
@@ -3592,6 +3608,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
+     * (choose any one of timing*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
@@ -3610,6 +3627,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
+     * (choose any one of timing*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming $timingTiming
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
@@ -4385,6 +4403,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
         if (null !== ($v = $this->getExperimental())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_EXPERIMENTAL, null, $v->_getFHIRXMLNamespace()));
         }
+
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -4393,6 +4412,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
                 $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getIntent())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_INTENT, null, $v->_getFHIRXMLNamespace()));
         }
@@ -4405,6 +4425,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
                 $v->xmlSerialize($sxe->addChild(self::FIELD_JURISDICTION, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getKind())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_KIND, null, $v->_getFHIRXMLNamespace()));
         }
@@ -4453,6 +4474,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
                 $v->xmlSerialize($sxe->addChild(self::FIELD_PARTICIPANT, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getPriority())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PRIORITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -4473,6 +4495,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
         if (null !== ($v = $this->getPurpose())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PURPOSE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -4503,6 +4526,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
                 $v->xmlSerialize($sxe->addChild(self::FIELD_SPECIMEN_REQUIREMENT, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -4584,9 +4608,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getApprovalDate())) {
             $a[self::FIELD_APPROVAL_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_APPROVAL_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_APPROVAL_DATE_EXT] = $v;
         }
         if ([] !== ($vs = $this->getAuthor())) {
             $a[self::FIELD_AUTHOR] = $vs;
@@ -4602,27 +4624,19 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
         }
         if (null !== ($v = $this->getCopyright())) {
             $a[self::FIELD_COPYRIGHT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_COPYRIGHT_EXT] = $v;
-            }
+            $a[self::FIELD_COPYRIGHT_EXT] = $v;
         }
         if (null !== ($v = $this->getDate())) {
             $a[self::FIELD_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_DATE_EXT] = $v;
         }
         if (null !== ($v = $this->getDescription())) {
             $a[self::FIELD_DESCRIPTION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DESCRIPTION_EXT] = $v;
-            }
+            $a[self::FIELD_DESCRIPTION_EXT] = $v;
         }
         if (null !== ($v = $this->getDoNotPerform())) {
             $a[self::FIELD_DO_NOT_PERFORM] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DO_NOT_PERFORM_EXT] = $v;
-            }
+            $a[self::FIELD_DO_NOT_PERFORM_EXT] = $v;
         }
         if ([] !== ($vs = $this->getDosage())) {
             $a[self::FIELD_DOSAGE] = $vs;
@@ -4641,45 +4655,23 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
         }
         if (null !== ($v = $this->getExperimental())) {
             $a[self::FIELD_EXPERIMENTAL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_EXPERIMENTAL_EXT] = $v;
-            }
+            $a[self::FIELD_EXPERIMENTAL_EXT] = $v;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_IDENTIFIER][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_IDENTIFIER_EXT])) {
-                        $a[self::FIELD_IDENTIFIER_EXT] = [];
-                    }
-                    $a[self::FIELD_IDENTIFIER_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_IDENTIFIER] = $vs;
         }
         if (null !== ($v = $this->getIntent())) {
-            $a[self::FIELD_INTENT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_INTENT_EXT] = $v;
-            }
+            $a[self::FIELD_INTENT] = $v;
         }
         if ([] !== ($vs = $this->getJurisdiction())) {
             $a[self::FIELD_JURISDICTION] = $vs;
         }
         if (null !== ($v = $this->getKind())) {
-            $a[self::FIELD_KIND] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_KIND_EXT] = $v;
-            }
+            $a[self::FIELD_KIND] = $v;
         }
         if (null !== ($v = $this->getLastReviewDate())) {
             $a[self::FIELD_LAST_REVIEW_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_LAST_REVIEW_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_LAST_REVIEW_DATE_EXT] = $v;
         }
         if ([] !== ($vs = $this->getLibrary())) {
             $a[self::FIELD_LIBRARY] = [];
@@ -4688,12 +4680,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
                     continue;
                 }
                 $a[self::FIELD_LIBRARY][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_LIBRARY_EXT])) {
-                        $a[self::FIELD_LIBRARY_EXT] = [];
-                    }
-                    $a[self::FIELD_LIBRARY_EXT][] = $v;
-                }
+                $a[self::FIELD_LIBRARY_EXT][] = $v;
             }
         }
         if (null !== ($v = $this->getLocation())) {
@@ -4701,9 +4688,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
         }
         if (null !== ($v = $this->getName())) {
             $a[self::FIELD_NAME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_NAME_EXT] = $v;
-            }
+            $a[self::FIELD_NAME_EXT] = $v;
         }
         if ([] !== ($vs = $this->getObservationRequirement())) {
             $a[self::FIELD_OBSERVATION_REQUIREMENT] = $vs;
@@ -4715,10 +4700,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
             $a[self::FIELD_PARTICIPANT] = $vs;
         }
         if (null !== ($v = $this->getPriority())) {
-            $a[self::FIELD_PRIORITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PRIORITY_EXT] = $v;
-            }
+            $a[self::FIELD_PRIORITY] = $v;
         }
         if (null !== ($v = $this->getProductCodeableConcept())) {
             $a[self::FIELD_PRODUCT_CODEABLE_CONCEPT] = $v;
@@ -4728,27 +4710,18 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
         }
         if (null !== ($v = $this->getProfile())) {
             $a[self::FIELD_PROFILE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PROFILE_EXT] = $v;
-            }
+            $a[self::FIELD_PROFILE_EXT] = $v;
         }
         if (null !== ($v = $this->getPublisher())) {
             $a[self::FIELD_PUBLISHER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PUBLISHER_EXT] = $v;
-            }
+            $a[self::FIELD_PUBLISHER_EXT] = $v;
         }
         if (null !== ($v = $this->getPurpose())) {
             $a[self::FIELD_PURPOSE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PURPOSE_EXT] = $v;
-            }
+            $a[self::FIELD_PURPOSE_EXT] = $v;
         }
         if (null !== ($v = $this->getQuantity())) {
-            $a[self::FIELD_QUANTITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_QUANTITY_EXT] = $v;
-            }
+            $a[self::FIELD_QUANTITY] = $v;
         }
         if ([] !== ($vs = $this->getRelatedArtifact())) {
             $a[self::FIELD_RELATED_ARTIFACT] = $vs;
@@ -4760,10 +4733,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
             $a[self::FIELD_SPECIMEN_REQUIREMENT] = $vs;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_STATUS_EXT] = $v;
-            }
+            $a[self::FIELD_STATUS] = $v;
         }
         if (null !== ($v = $this->getSubjectCodeableConcept())) {
             $a[self::FIELD_SUBJECT_CODEABLE_CONCEPT] = $v;
@@ -4773,18 +4743,14 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
         }
         if (null !== ($v = $this->getSubtitle())) {
             $a[self::FIELD_SUBTITLE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SUBTITLE_EXT] = $v;
-            }
+            $a[self::FIELD_SUBTITLE_EXT] = $v;
         }
         if (null !== ($v = $this->getTimingAge())) {
             $a[self::FIELD_TIMING_AGE] = $v;
         }
         if (null !== ($v = $this->getTimingDateTime())) {
             $a[self::FIELD_TIMING_DATE_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TIMING_DATE_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_TIMING_DATE_TIME_EXT] = $v;
         }
         if (null !== ($v = $this->getTimingDuration())) {
             $a[self::FIELD_TIMING_DURATION] = $v;
@@ -4800,39 +4766,29 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
         }
         if (null !== ($v = $this->getTitle())) {
             $a[self::FIELD_TITLE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TITLE_EXT] = $v;
-            }
+            $a[self::FIELD_TITLE_EXT] = $v;
         }
         if ([] !== ($vs = $this->getTopic())) {
             $a[self::FIELD_TOPIC] = $vs;
         }
         if (null !== ($v = $this->getTransform())) {
             $a[self::FIELD_TRANSFORM] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TRANSFORM_EXT] = $v;
-            }
+            $a[self::FIELD_TRANSFORM_EXT] = $v;
         }
         if (null !== ($v = $this->getUrl())) {
             $a[self::FIELD_URL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_URL_EXT] = $v;
-            }
+            $a[self::FIELD_URL_EXT] = $v;
         }
         if (null !== ($v = $this->getUsage())) {
             $a[self::FIELD_USAGE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_USAGE_EXT] = $v;
-            }
+            $a[self::FIELD_USAGE_EXT] = $v;
         }
         if ([] !== ($vs = $this->getUseContext())) {
             $a[self::FIELD_USE_CONTEXT] = $vs;
         }
         if (null !== ($v = $this->getVersion())) {
             $a[self::FIELD_VERSION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VERSION_EXT] = $v;
-            }
+            $a[self::FIELD_VERSION_EXT] = $v;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

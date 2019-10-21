@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -140,7 +140,8 @@ class FHIRTriggerDefinition extends FHIRElement
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The timing of the event (if this is a periodic trigger).
+     * The timing of the event (if this is a periodic trigger). (choose any one of
+     * timing*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
@@ -153,7 +154,8 @@ class FHIRTriggerDefinition extends FHIRElement
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The timing of the event (if this is a periodic trigger).
+     * The timing of the event (if this is a periodic trigger). (choose any one of
+     * timing*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -163,7 +165,8 @@ class FHIRTriggerDefinition extends FHIRElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The timing of the event (if this is a periodic trigger).
+     * The timing of the event (if this is a periodic trigger). (choose any one of
+     * timing*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -177,7 +180,8 @@ class FHIRTriggerDefinition extends FHIRElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The timing of the event (if this is a periodic trigger).
+     * The timing of the event (if this is a periodic trigger). (choose any one of
+     * timing*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
@@ -485,7 +489,8 @@ class FHIRTriggerDefinition extends FHIRElement
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The timing of the event (if this is a periodic trigger).
+     * The timing of the event (if this is a periodic trigger). (choose any one of
+     * timing*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
@@ -500,7 +505,8 @@ class FHIRTriggerDefinition extends FHIRElement
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The timing of the event (if this is a periodic trigger).
+     * The timing of the event (if this is a periodic trigger). (choose any one of
+     * timing*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate $timingDate
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTriggerDefinition
@@ -527,7 +533,8 @@ class FHIRTriggerDefinition extends FHIRElement
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The timing of the event (if this is a periodic trigger).
+     * The timing of the event (if this is a periodic trigger). (choose any one of
+     * timing*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -544,7 +551,8 @@ class FHIRTriggerDefinition extends FHIRElement
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The timing of the event (if this is a periodic trigger).
+     * The timing of the event (if this is a periodic trigger). (choose any one of
+     * timing*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $timingDateTime
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTriggerDefinition
@@ -568,7 +576,8 @@ class FHIRTriggerDefinition extends FHIRElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The timing of the event (if this is a periodic trigger).
+     * The timing of the event (if this is a periodic trigger). (choose any one of
+     * timing*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -582,7 +591,8 @@ class FHIRTriggerDefinition extends FHIRElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The timing of the event (if this is a periodic trigger).
+     * The timing of the event (if this is a periodic trigger). (choose any one of
+     * timing*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $timingReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTriggerDefinition
@@ -602,7 +612,8 @@ class FHIRTriggerDefinition extends FHIRElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The timing of the event (if this is a periodic trigger).
+     * The timing of the event (if this is a periodic trigger). (choose any one of
+     * timing*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
@@ -620,7 +631,8 @@ class FHIRTriggerDefinition extends FHIRElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The timing of the event (if this is a periodic trigger).
+     * The timing of the event (if this is a periodic trigger). (choose any one of
+     * timing*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming $timingTiming
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTriggerDefinition
@@ -778,6 +790,7 @@ class FHIRTriggerDefinition extends FHIRElement
         if (null !== ($v = $this->getTimingTiming())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TIMING_TIMING, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -798,21 +811,15 @@ class FHIRTriggerDefinition extends FHIRElement
         }
         if (null !== ($v = $this->getName())) {
             $a[self::FIELD_NAME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_NAME_EXT] = $v;
-            }
+            $a[self::FIELD_NAME_EXT] = $v;
         }
         if (null !== ($v = $this->getTimingDate())) {
             $a[self::FIELD_TIMING_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TIMING_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_TIMING_DATE_EXT] = $v;
         }
         if (null !== ($v = $this->getTimingDateTime())) {
             $a[self::FIELD_TIMING_DATE_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TIMING_DATE_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_TIMING_DATE_TIME_EXT] = $v;
         }
         if (null !== ($v = $this->getTimingReference())) {
             $a[self::FIELD_TIMING_REFERENCE] = $v;
@@ -821,10 +828,7 @@ class FHIRTriggerDefinition extends FHIRElement
             $a[self::FIELD_TIMING_TIMING] = $v;
         }
         if (null !== ($v = $this->getType())) {
-            $a[self::FIELD_TYPE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TYPE_EXT] = $v;
-            }
+            $a[self::FIELD_TYPE] = $v;
         }
         return $a;
     }

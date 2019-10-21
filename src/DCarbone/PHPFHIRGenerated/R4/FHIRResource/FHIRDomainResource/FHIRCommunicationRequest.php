@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -250,7 +250,8 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The time when this communication is to occur.
+     * The time when this communication is to occur. (choose any one of occurrence*,
+     * but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -260,7 +261,8 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The time when this communication is to occur.
+     * The time when this communication is to occur. (choose any one of occurrence*,
+     * but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -1261,7 +1263,8 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The time when this communication is to occur.
+     * The time when this communication is to occur. (choose any one of occurrence*,
+     * but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -1278,7 +1281,8 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The time when this communication is to occur.
+     * The time when this communication is to occur. (choose any one of occurrence*,
+     * but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $occurrenceDateTime
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest
@@ -1302,7 +1306,8 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The time when this communication is to occur.
+     * The time when this communication is to occur. (choose any one of occurrence*,
+     * but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -1316,7 +1321,8 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The time when this communication is to occur.
+     * The time when this communication is to occur. (choose any one of occurrence*,
+     * but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $occurrencePeriod
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest
@@ -1990,9 +1996,11 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
         if (null !== ($v = $this->getEncounter())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ENCOUNTER, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getGroupIdentifier())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_GROUP_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }
+
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -2035,6 +2043,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
                 $v->xmlSerialize($sxe->addChild(self::FIELD_PAYLOAD, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getPriority())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PRIORITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -2082,6 +2091,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
         if (null !== ($v = $this->getSender())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SENDER, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -2107,9 +2117,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
         }
         if (null !== ($v = $this->getAuthoredOn())) {
             $a[self::FIELD_AUTHORED_ON] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_AUTHORED_ON_EXT] = $v;
-            }
+            $a[self::FIELD_AUTHORED_ON_EXT] = $v;
         }
         if ([] !== ($vs = $this->getBasedOn())) {
             $a[self::FIELD_BASED_ON] = $vs;
@@ -2119,33 +2127,16 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
         }
         if (null !== ($v = $this->getDoNotPerform())) {
             $a[self::FIELD_DO_NOT_PERFORM] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DO_NOT_PERFORM_EXT] = $v;
-            }
+            $a[self::FIELD_DO_NOT_PERFORM_EXT] = $v;
         }
         if (null !== ($v = $this->getEncounter())) {
             $a[self::FIELD_ENCOUNTER] = $v;
         }
         if (null !== ($v = $this->getGroupIdentifier())) {
-            $a[self::FIELD_GROUP_IDENTIFIER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_GROUP_IDENTIFIER_EXT] = $v;
-            }
+            $a[self::FIELD_GROUP_IDENTIFIER] = $v;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_IDENTIFIER][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_IDENTIFIER_EXT])) {
-                        $a[self::FIELD_IDENTIFIER_EXT] = [];
-                    }
-                    $a[self::FIELD_IDENTIFIER_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_IDENTIFIER] = $vs;
         }
         if ([] !== ($vs = $this->getMedium())) {
             $a[self::FIELD_MEDIUM] = $vs;
@@ -2155,9 +2146,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
         }
         if (null !== ($v = $this->getOccurrenceDateTime())) {
             $a[self::FIELD_OCCURRENCE_DATE_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_OCCURRENCE_DATE_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_OCCURRENCE_DATE_TIME_EXT] = $v;
         }
         if (null !== ($v = $this->getOccurrencePeriod())) {
             $a[self::FIELD_OCCURRENCE_PERIOD] = $v;
@@ -2166,10 +2155,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
             $a[self::FIELD_PAYLOAD] = $vs;
         }
         if (null !== ($v = $this->getPriority())) {
-            $a[self::FIELD_PRIORITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PRIORITY_EXT] = $v;
-            }
+            $a[self::FIELD_PRIORITY] = $v;
         }
         if ([] !== ($vs = $this->getReasonCode())) {
             $a[self::FIELD_REASON_CODE] = $vs;
@@ -2190,10 +2176,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
             $a[self::FIELD_SENDER] = $v;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_STATUS_EXT] = $v;
-            }
+            $a[self::FIELD_STATUS] = $v;
         }
         if (null !== ($v = $this->getStatusReason())) {
             $a[self::FIELD_STATUS_REASON] = $v;

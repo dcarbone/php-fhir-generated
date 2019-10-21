@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskA
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -116,7 +116,8 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * Indicates how likely the outcome is (in the specified timeframe).
+     * Indicates how likely the outcome is (in the specified timeframe). (choose any
+     * one of probability*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
@@ -126,7 +127,8 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Indicates how likely the outcome is (in the specified timeframe).
+     * Indicates how likely the outcome is (in the specified timeframe). (choose any
+     * one of probability*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -173,7 +175,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Indicates the period of time or age range of the subject to which the specified
-     * probability applies.
+     * probability applies. (choose any one of when*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -184,7 +186,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Indicates the period of time or age range of the subject to which the specified
-     * probability applies.
+     * probability applies. (choose any one of when*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -364,7 +366,8 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * Indicates how likely the outcome is (in the specified timeframe).
+     * Indicates how likely the outcome is (in the specified timeframe). (choose any
+     * one of probability*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
@@ -379,7 +382,8 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * Indicates how likely the outcome is (in the specified timeframe).
+     * Indicates how likely the outcome is (in the specified timeframe). (choose any
+     * one of probability*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal $probabilityDecimal
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction
@@ -403,7 +407,8 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Indicates how likely the outcome is (in the specified timeframe).
+     * Indicates how likely the outcome is (in the specified timeframe). (choose any
+     * one of probability*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -417,7 +422,8 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Indicates how likely the outcome is (in the specified timeframe).
+     * Indicates how likely the outcome is (in the specified timeframe). (choose any
+     * one of probability*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange $probabilityRange
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction
@@ -552,7 +558,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Indicates the period of time or age range of the subject to which the specified
-     * probability applies.
+     * probability applies. (choose any one of when*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -567,7 +573,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Indicates the period of time or age range of the subject to which the specified
-     * probability applies.
+     * probability applies. (choose any one of when*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $whenPeriod
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction
@@ -584,7 +590,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Indicates the period of time or age range of the subject to which the specified
-     * probability applies.
+     * probability applies. (choose any one of when*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -599,7 +605,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Indicates the period of time or age range of the subject to which the specified
-     * probability applies.
+     * probability applies. (choose any one of when*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange $whenRange
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction
@@ -740,9 +746,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getProbabilityDecimal())) {
             $a[self::FIELD_PROBABILITY_DECIMAL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PROBABILITY_DECIMAL_EXT] = $v;
-            }
+            $a[self::FIELD_PROBABILITY_DECIMAL_EXT] = $v;
         }
         if (null !== ($v = $this->getProbabilityRange())) {
             $a[self::FIELD_PROBABILITY_RANGE] = $v;
@@ -752,15 +756,11 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getRationale())) {
             $a[self::FIELD_RATIONALE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_RATIONALE_EXT] = $v;
-            }
+            $a[self::FIELD_RATIONALE_EXT] = $v;
         }
         if (null !== ($v = $this->getRelativeRisk())) {
             $a[self::FIELD_RELATIVE_RISK] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_RELATIVE_RISK_EXT] = $v;
-            }
+            $a[self::FIELD_RELATIVE_RISK_EXT] = $v;
         }
         if (null !== ($v = $this->getWhenPeriod())) {
             $a[self::FIELD_WHEN_PERIOD] = $v;

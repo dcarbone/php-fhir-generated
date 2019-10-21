@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -194,7 +194,8 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided.
+     * Where the product or service was provided. (choose any one of location*, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddress
      */
@@ -205,7 +206,8 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided.
+     * Where the product or service was provided. (choose any one of location*, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -215,7 +217,8 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided.
+     * Where the product or service was provided. (choose any one of location*, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -307,7 +310,7 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The date or dates when the service or product was supplied, performed or
-     * completed.
+     * completed. (choose any one of serviced*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
@@ -318,7 +321,7 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The date or dates when the service or product was supplied, performed or
-     * completed.
+     * completed. (choose any one of serviced*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -1029,7 +1032,8 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided.
+     * Where the product or service was provided. (choose any one of location*, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddress
      */
@@ -1047,7 +1051,8 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided.
+     * Where the product or service was provided. (choose any one of location*, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddress $locationAddress
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAddItem
@@ -1064,7 +1069,8 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided.
+     * Where the product or service was provided. (choose any one of location*, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -1079,7 +1085,8 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided.
+     * Where the product or service was provided. (choose any one of location*, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $locationCodeableConcept
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAddItem
@@ -1095,7 +1102,8 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided.
+     * Where the product or service was provided. (choose any one of location*, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -1109,7 +1117,8 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided.
+     * Where the product or service was provided. (choose any one of location*, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $locationReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAddItem
@@ -1473,7 +1482,7 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The date or dates when the service or product was supplied, performed or
-     * completed.
+     * completed. (choose any one of serviced*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
@@ -1489,7 +1498,7 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The date or dates when the service or product was supplied, performed or
-     * completed.
+     * completed. (choose any one of serviced*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate $servicedDate
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAddItem
@@ -1514,7 +1523,7 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The date or dates when the service or product was supplied, performed or
-     * completed.
+     * completed. (choose any one of serviced*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -1529,7 +1538,7 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The date or dates when the service or product was supplied, performed or
-     * completed.
+     * completed. (choose any one of serviced*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $servicedPeriod
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAddItem
@@ -1853,6 +1862,7 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if ([] !== ($vs = $this->getAdjudication())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1914,6 +1924,7 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_MODIFIER, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getNet())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_NET, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1947,6 +1958,7 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_PROVIDER, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1974,6 +1986,7 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_SUBDETAIL_SEQUENCE, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getUnitPrice())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_UNIT_PRICE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1987,19 +2000,7 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getAdjudication())) {
-            $a[self::FIELD_ADJUDICATION] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_ADJUDICATION][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_ADJUDICATION_EXT])) {
-                        $a[self::FIELD_ADJUDICATION_EXT] = [];
-                    }
-                    $a[self::FIELD_ADJUDICATION_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_ADJUDICATION] = $vs;
         }
         if (null !== ($v = $this->getBodySite())) {
             $a[self::FIELD_BODY_SITE] = $v;
@@ -2014,19 +2015,12 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_DETAIL_SEQUENCE][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_DETAIL_SEQUENCE_EXT])) {
-                        $a[self::FIELD_DETAIL_SEQUENCE_EXT] = [];
-                    }
-                    $a[self::FIELD_DETAIL_SEQUENCE_EXT][] = $v;
-                }
+                $a[self::FIELD_DETAIL_SEQUENCE_EXT][] = $v;
             }
         }
         if (null !== ($v = $this->getFactor())) {
             $a[self::FIELD_FACTOR] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_FACTOR_EXT] = $v;
-            }
+            $a[self::FIELD_FACTOR_EXT] = $v;
         }
         if ([] !== ($vs = $this->getItemSequence())) {
             $a[self::FIELD_ITEM_SEQUENCE] = [];
@@ -2035,12 +2029,7 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_ITEM_SEQUENCE][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_ITEM_SEQUENCE_EXT])) {
-                        $a[self::FIELD_ITEM_SEQUENCE_EXT] = [];
-                    }
-                    $a[self::FIELD_ITEM_SEQUENCE_EXT][] = $v;
-                }
+                $a[self::FIELD_ITEM_SEQUENCE_EXT][] = $v;
             }
         }
         if (null !== ($v = $this->getLocationAddress())) {
@@ -2056,10 +2045,7 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
             $a[self::FIELD_MODIFIER] = $vs;
         }
         if (null !== ($v = $this->getNet())) {
-            $a[self::FIELD_NET] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_NET_EXT] = $v;
-            }
+            $a[self::FIELD_NET] = $v;
         }
         if ([] !== ($vs = $this->getNoteNumber())) {
             $a[self::FIELD_NOTE_NUMBER] = [];
@@ -2068,12 +2054,7 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_NOTE_NUMBER][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_NOTE_NUMBER_EXT])) {
-                        $a[self::FIELD_NOTE_NUMBER_EXT] = [];
-                    }
-                    $a[self::FIELD_NOTE_NUMBER_EXT][] = $v;
-                }
+                $a[self::FIELD_NOTE_NUMBER_EXT][] = $v;
             }
         }
         if (null !== ($v = $this->getProductOrService())) {
@@ -2086,16 +2067,11 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
             $a[self::FIELD_PROVIDER] = $vs;
         }
         if (null !== ($v = $this->getQuantity())) {
-            $a[self::FIELD_QUANTITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_QUANTITY_EXT] = $v;
-            }
+            $a[self::FIELD_QUANTITY] = $v;
         }
         if (null !== ($v = $this->getServicedDate())) {
             $a[self::FIELD_SERVICED_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SERVICED_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_SERVICED_DATE_EXT] = $v;
         }
         if (null !== ($v = $this->getServicedPeriod())) {
             $a[self::FIELD_SERVICED_PERIOD] = $v;
@@ -2110,19 +2086,11 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_SUBDETAIL_SEQUENCE][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_SUBDETAIL_SEQUENCE_EXT])) {
-                        $a[self::FIELD_SUBDETAIL_SEQUENCE_EXT] = [];
-                    }
-                    $a[self::FIELD_SUBDETAIL_SEQUENCE_EXT][] = $v;
-                }
+                $a[self::FIELD_SUBDETAIL_SEQUENCE_EXT][] = $v;
             }
         }
         if (null !== ($v = $this->getUnitPrice())) {
-            $a[self::FIELD_UNIT_PRICE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_UNIT_PRICE_EXT] = $v;
-            }
+            $a[self::FIELD_UNIT_PRICE] = $v;
         }
         return $a;
     }

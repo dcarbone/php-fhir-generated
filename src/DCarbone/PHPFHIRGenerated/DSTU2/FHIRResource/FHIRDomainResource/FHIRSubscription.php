@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -818,6 +818,7 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
         if (null !== ($v = $this->getChannel())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CHANNEL, null, $v->_getFHIRXMLNamespace()));
         }
+
         if ([] !== ($vs = $this->getContact())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -838,6 +839,7 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
         if (null !== ($v = $this->getReason())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_REASON, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -863,49 +865,26 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
             $a[self::FIELD_CHANNEL] = $v;
         }
         if ([] !== ($vs = $this->getContact())) {
-            $a[self::FIELD_CONTACT] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_CONTACT][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_CONTACT_EXT])) {
-                        $a[self::FIELD_CONTACT_EXT] = [];
-                    }
-                    $a[self::FIELD_CONTACT_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_CONTACT] = $vs;
         }
         if (null !== ($v = $this->getCriteria())) {
             $a[self::FIELD_CRITERIA] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_CRITERIA_EXT] = $v;
-            }
+            $a[self::FIELD_CRITERIA_EXT] = $v;
         }
         if (null !== ($v = $this->getEnd())) {
             $a[self::FIELD_END] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_END_EXT] = $v;
-            }
+            $a[self::FIELD_END_EXT] = $v;
         }
         if (null !== ($v = $this->getError())) {
             $a[self::FIELD_ERROR] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ERROR_EXT] = $v;
-            }
+            $a[self::FIELD_ERROR_EXT] = $v;
         }
         if (null !== ($v = $this->getReason())) {
             $a[self::FIELD_REASON] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_REASON_EXT] = $v;
-            }
+            $a[self::FIELD_REASON_EXT] = $v;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_STATUS_EXT] = $v;
-            }
+            $a[self::FIELD_STATUS] = $v;
         }
         if ([] !== ($vs = $this->getTag())) {
             $a[self::FIELD_TAG] = $vs;

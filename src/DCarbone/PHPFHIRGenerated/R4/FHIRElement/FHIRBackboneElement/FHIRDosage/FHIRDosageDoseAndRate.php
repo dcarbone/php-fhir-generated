@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDosag
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -102,7 +102,7 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Amount of medication per dose.
+     * Amount of medication per dose. (choose any one of dose*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -112,7 +112,7 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Amount of medication per dose.
+     * Amount of medication per dose. (choose any one of dose*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -124,7 +124,7 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Amount of medication per unit of time.
+     * Amount of medication per unit of time. (choose any one of rate*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -134,7 +134,7 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Amount of medication per unit of time.
+     * Amount of medication per unit of time. (choose any one of rate*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -145,7 +145,7 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Amount of medication per unit of time.
+     * Amount of medication per unit of time. (choose any one of rate*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
      */
@@ -284,7 +284,7 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Amount of medication per dose.
+     * Amount of medication per dose. (choose any one of dose*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -300,7 +300,7 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Amount of medication per dose.
+     * Amount of medication per dose. (choose any one of dose*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $doseQuantity
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDosage\FHIRDosageDoseAndRate
@@ -316,7 +316,7 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Amount of medication per dose.
+     * Amount of medication per dose. (choose any one of dose*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -330,7 +330,7 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Amount of medication per dose.
+     * Amount of medication per dose. (choose any one of dose*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange $doseRange
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDosage\FHIRDosageDoseAndRate
@@ -348,7 +348,7 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Amount of medication per unit of time.
+     * Amount of medication per unit of time. (choose any one of rate*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -364,7 +364,7 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Amount of medication per unit of time.
+     * Amount of medication per unit of time. (choose any one of rate*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $rateQuantity
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDosage\FHIRDosageDoseAndRate
@@ -380,7 +380,7 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Amount of medication per unit of time.
+     * Amount of medication per unit of time. (choose any one of rate*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -394,7 +394,7 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Amount of medication per unit of time.
+     * Amount of medication per unit of time. (choose any one of rate*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange $rateRange
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDosage\FHIRDosageDoseAndRate
@@ -411,7 +411,7 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Amount of medication per unit of time.
+     * Amount of medication per unit of time. (choose any one of rate*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
      */
@@ -426,7 +426,7 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Amount of medication per unit of time.
+     * Amount of medication per unit of time. (choose any one of rate*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio $rateRatio
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDosage\FHIRDosageDoseAndRate
@@ -541,6 +541,7 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getDoseQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DOSE_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -548,6 +549,7 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
         if (null !== ($v = $this->getDoseRange())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DOSE_RANGE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getRateQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_RATE_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -573,19 +575,13 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getDoseQuantity())) {
-            $a[self::FIELD_DOSE_QUANTITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DOSE_QUANTITY_EXT] = $v;
-            }
+            $a[self::FIELD_DOSE_QUANTITY] = $v;
         }
         if (null !== ($v = $this->getDoseRange())) {
             $a[self::FIELD_DOSE_RANGE] = $v;
         }
         if (null !== ($v = $this->getRateQuantity())) {
-            $a[self::FIELD_RATE_QUANTITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_RATE_QUANTITY_EXT] = $v;
-            }
+            $a[self::FIELD_RATE_QUANTITY] = $v;
         }
         if (null !== ($v = $this->getRateRange())) {
             $a[self::FIELD_RATE_RANGE] = $v;

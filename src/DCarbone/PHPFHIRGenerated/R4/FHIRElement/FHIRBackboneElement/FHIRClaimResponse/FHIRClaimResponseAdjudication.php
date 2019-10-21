@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -68,8 +68,6 @@ use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
-use DCarbone\PHPFHIRGenerated\R4\PHPFHIRValueContainerInterface;
-use DCarbone\PHPFHIRGenerated\R4\PHPFHIRValueContainerTrait;
 
 /**
  * This resource provides the adjudication details from the processing of a Claim
@@ -78,10 +76,8 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRValueContainerTrait;
  * Class FHIRClaimResponseAdjudication
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse
  */
-class FHIRClaimResponseAdjudication extends FHIRBackboneElement implements PHPFHIRValueContainerInterface
+class FHIRClaimResponseAdjudication extends FHIRBackboneElement
 {
-    use PHPFHIRValueContainerTrait;
-
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE_DOT_ADJUDICATION;
 
@@ -276,7 +272,6 @@ class FHIRClaimResponseAdjudication extends FHIRBackboneElement implements PHPFH
      */
     public function setAmount(FHIRMoney $amount = null)
     {
-        $this->_markNonValueFieldsDefined();
         $this->amount = $amount;
         return $this;
     }
@@ -317,7 +312,6 @@ class FHIRClaimResponseAdjudication extends FHIRBackboneElement implements PHPFH
      */
     public function setCategory(FHIRCodeableConcept $category = null)
     {
-        $this->_markNonValueFieldsDefined();
         $this->category = $category;
         return $this;
     }
@@ -352,7 +346,6 @@ class FHIRClaimResponseAdjudication extends FHIRBackboneElement implements PHPFH
      */
     public function setReason(FHIRCodeableConcept $reason = null)
     {
-        $this->_markNonValueFieldsDefined();
         $this->reason = $reason;
         return $this;
     }
@@ -468,6 +461,7 @@ class FHIRClaimResponseAdjudication extends FHIRBackboneElement implements PHPFH
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getAmount())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AMOUNT, null, $v->_getFHIRXMLNamespace()));
         }
@@ -492,10 +486,7 @@ class FHIRClaimResponseAdjudication extends FHIRBackboneElement implements PHPFH
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAmount())) {
-            $a[self::FIELD_AMOUNT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_AMOUNT_EXT] = $v;
-            }
+            $a[self::FIELD_AMOUNT] = $v;
         }
         if (null !== ($v = $this->getCategory())) {
             $a[self::FIELD_CATEGORY] = $v;
@@ -505,9 +496,7 @@ class FHIRClaimResponseAdjudication extends FHIRBackboneElement implements PHPFH
         }
         if (null !== ($v = $this->getValue())) {
             $a[self::FIELD_VALUE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_EXT] = $v;
         }
         return $a;
     }

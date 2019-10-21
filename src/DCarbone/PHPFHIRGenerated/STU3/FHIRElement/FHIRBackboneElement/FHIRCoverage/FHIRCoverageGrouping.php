@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCov
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1097,75 +1097,51 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getClass())) {
             $a[self::FIELD_CLASS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_CLASS_EXT] = $v;
-            }
+            $a[self::FIELD_CLASS_EXT] = $v;
         }
         if (null !== ($v = $this->getClassDisplay())) {
             $a[self::FIELD_CLASS_DISPLAY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_CLASS_DISPLAY_EXT] = $v;
-            }
+            $a[self::FIELD_CLASS_DISPLAY_EXT] = $v;
         }
         if (null !== ($v = $this->getGroup())) {
             $a[self::FIELD_GROUP] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_GROUP_EXT] = $v;
-            }
+            $a[self::FIELD_GROUP_EXT] = $v;
         }
         if (null !== ($v = $this->getGroupDisplay())) {
             $a[self::FIELD_GROUP_DISPLAY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_GROUP_DISPLAY_EXT] = $v;
-            }
+            $a[self::FIELD_GROUP_DISPLAY_EXT] = $v;
         }
         if (null !== ($v = $this->getPlan())) {
             $a[self::FIELD_PLAN] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PLAN_EXT] = $v;
-            }
+            $a[self::FIELD_PLAN_EXT] = $v;
         }
         if (null !== ($v = $this->getPlanDisplay())) {
             $a[self::FIELD_PLAN_DISPLAY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PLAN_DISPLAY_EXT] = $v;
-            }
+            $a[self::FIELD_PLAN_DISPLAY_EXT] = $v;
         }
         if (null !== ($v = $this->getSubClass())) {
             $a[self::FIELD_SUB_CLASS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SUB_CLASS_EXT] = $v;
-            }
+            $a[self::FIELD_SUB_CLASS_EXT] = $v;
         }
         if (null !== ($v = $this->getSubClassDisplay())) {
             $a[self::FIELD_SUB_CLASS_DISPLAY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SUB_CLASS_DISPLAY_EXT] = $v;
-            }
+            $a[self::FIELD_SUB_CLASS_DISPLAY_EXT] = $v;
         }
         if (null !== ($v = $this->getSubGroup())) {
             $a[self::FIELD_SUB_GROUP] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SUB_GROUP_EXT] = $v;
-            }
+            $a[self::FIELD_SUB_GROUP_EXT] = $v;
         }
         if (null !== ($v = $this->getSubGroupDisplay())) {
             $a[self::FIELD_SUB_GROUP_DISPLAY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SUB_GROUP_DISPLAY_EXT] = $v;
-            }
+            $a[self::FIELD_SUB_GROUP_DISPLAY_EXT] = $v;
         }
         if (null !== ($v = $this->getSubPlan())) {
             $a[self::FIELD_SUB_PLAN] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SUB_PLAN_EXT] = $v;
-            }
+            $a[self::FIELD_SUB_PLAN_EXT] = $v;
         }
         if (null !== ($v = $this->getSubPlanDisplay())) {
             $a[self::FIELD_SUB_PLAN_DISPLAY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SUB_PLAN_DISPLAY_EXT] = $v;
-            }
+            $a[self::FIELD_SUB_PLAN_DISPLAY_EXT] = $v;
         }
         return $a;
     }

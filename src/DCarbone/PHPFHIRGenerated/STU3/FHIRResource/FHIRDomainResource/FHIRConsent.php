@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1805,6 +1805,7 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
                 $v->xmlSerialize($sxe->addChild(self::FIELD_EXCEPT, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getIdentifier())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1859,6 +1860,7 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         if (null !== ($v = $this->getSourceAttachment())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE_ATTACHMENT, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getSourceIdentifier())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1866,6 +1868,7 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         if (null !== ($v = $this->getSourceReference())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE_REFERENCE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1898,18 +1901,13 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         }
         if (null !== ($v = $this->getDateTime())) {
             $a[self::FIELD_DATE_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DATE_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_DATE_TIME_EXT] = $v;
         }
         if ([] !== ($vs = $this->getExcept())) {
             $a[self::FIELD_EXCEPT] = $vs;
         }
         if (null !== ($v = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_IDENTIFIER_EXT] = $v;
-            }
+            $a[self::FIELD_IDENTIFIER] = $v;
         }
         if ([] !== ($vs = $this->getOrganization())) {
             $a[self::FIELD_ORGANIZATION] = $vs;
@@ -1925,9 +1923,7 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         }
         if (null !== ($v = $this->getPolicyRule())) {
             $a[self::FIELD_POLICY_RULE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_POLICY_RULE_EXT] = $v;
-            }
+            $a[self::FIELD_POLICY_RULE_EXT] = $v;
         }
         if ([] !== ($vs = $this->getPurpose())) {
             $a[self::FIELD_PURPOSE] = $vs;
@@ -1939,19 +1935,13 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
             $a[self::FIELD_SOURCE_ATTACHMENT] = $v;
         }
         if (null !== ($v = $this->getSourceIdentifier())) {
-            $a[self::FIELD_SOURCE_IDENTIFIER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SOURCE_IDENTIFIER_EXT] = $v;
-            }
+            $a[self::FIELD_SOURCE_IDENTIFIER] = $v;
         }
         if (null !== ($v = $this->getSourceReference())) {
             $a[self::FIELD_SOURCE_REFERENCE] = $v;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_STATUS_EXT] = $v;
-            }
+            $a[self::FIELD_STATUS] = $v;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

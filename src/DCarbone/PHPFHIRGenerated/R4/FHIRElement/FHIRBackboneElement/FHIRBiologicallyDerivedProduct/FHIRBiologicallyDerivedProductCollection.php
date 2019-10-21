@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiolo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -98,7 +98,7 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * Time of product collection.
+     * Time of product collection. (choose any one of collected*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -108,7 +108,7 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Time of product collection.
+     * Time of product collection. (choose any one of collected*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -239,7 +239,7 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * Time of product collection.
+     * Time of product collection. (choose any one of collected*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -256,7 +256,7 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * Time of product collection.
+     * Time of product collection. (choose any one of collected*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $collectedDateTime
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductCollection
@@ -280,7 +280,7 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Time of product collection.
+     * Time of product collection. (choose any one of collected*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -294,7 +294,7 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Time of product collection.
+     * Time of product collection. (choose any one of collected*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $collectedPeriod
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductCollection
@@ -462,9 +462,7 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getCollectedDateTime())) {
             $a[self::FIELD_COLLECTED_DATE_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_COLLECTED_DATE_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_COLLECTED_DATE_TIME_EXT] = $v;
         }
         if (null !== ($v = $this->getCollectedPeriod())) {
             $a[self::FIELD_COLLECTED_PERIOD] = $v;

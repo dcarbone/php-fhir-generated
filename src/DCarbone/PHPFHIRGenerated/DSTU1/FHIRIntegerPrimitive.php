@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -104,9 +104,7 @@ class FHIRIntegerPrimitive implements PHPFHIRTypeInterface
                     $neg = -1;
                     $value = substr($value, 1);
                 }
-                if (ctype_digit($value)) {
-                    $value = $neg * (int)$value;
-                }
+                $value = $neg * intval($value, 10);
             }
         }
         if (!is_int($value)) {
@@ -126,6 +124,15 @@ class FHIRIntegerPrimitive implements PHPFHIRTypeInterface
             return true;
         }
         return self::INT_MIN <= $value && $value <= self::INT_MAX;
+    }
+
+
+    /**
+     * @return null|
+     */
+    public function getValue()
+    {
+        return $this->value;
     }
 
     /**
@@ -170,15 +177,6 @@ class FHIRIntegerPrimitive implements PHPFHIRTypeInterface
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<integer_primitive{$xmlns}></integer_primitive>";
-    }
-
-
-    /**
-     * @return null|
-     */
-    public function getValue()
-    {
-        return $this->value;
     }
 
     /**

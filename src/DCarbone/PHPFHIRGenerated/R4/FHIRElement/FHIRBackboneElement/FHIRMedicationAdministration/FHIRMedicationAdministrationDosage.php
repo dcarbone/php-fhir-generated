@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -137,7 +137,8 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * Identifies the speed with which the medication was or will be introduced into
      * the patient. Typically, the rate for an infusion e.g. 100 ml per 1 hour or 100
      * ml/hr. May also be expressed as a rate per unit of time, e.g. 500 ml per 2
-     * hours. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours.
+     * hours. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose
+     * any one of rate*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -151,7 +152,8 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * Identifies the speed with which the medication was or will be introduced into
      * the patient. Typically, the rate for an infusion e.g. 100 ml per 1 hour or 100
      * ml/hr. May also be expressed as a rate per unit of time, e.g. 500 ml per 2
-     * hours. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours.
+     * hours. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose
+     * any one of rate*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
      */
@@ -408,7 +410,8 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * Identifies the speed with which the medication was or will be introduced into
      * the patient. Typically, the rate for an infusion e.g. 100 ml per 1 hour or 100
      * ml/hr. May also be expressed as a rate per unit of time, e.g. 500 ml per 2
-     * hours. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours.
+     * hours. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose
+     * any one of rate*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -427,7 +430,8 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * Identifies the speed with which the medication was or will be introduced into
      * the patient. Typically, the rate for an infusion e.g. 100 ml per 1 hour or 100
      * ml/hr. May also be expressed as a rate per unit of time, e.g. 500 ml per 2
-     * hours. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours.
+     * hours. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose
+     * any one of rate*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $rateQuantity
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationAdministration\FHIRMedicationAdministrationDosage
@@ -447,7 +451,8 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * Identifies the speed with which the medication was or will be introduced into
      * the patient. Typically, the rate for an infusion e.g. 100 ml per 1 hour or 100
      * ml/hr. May also be expressed as a rate per unit of time, e.g. 500 ml per 2
-     * hours. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours.
+     * hours. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose
+     * any one of rate*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
      */
@@ -465,7 +470,8 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * Identifies the speed with which the medication was or will be introduced into
      * the patient. Typically, the rate for an infusion e.g. 100 ml per 1 hour or 100
      * ml/hr. May also be expressed as a rate per unit of time, e.g. 500 ml per 2
-     * hours. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours.
+     * hours. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose
+     * any one of rate*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio $rateRatio
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationAdministration\FHIRMedicationAdministrationDosage
@@ -668,6 +674,7 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getDose())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DOSE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -675,6 +682,7 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
         if (null !== ($v = $this->getMethod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_METHOD, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getRateQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_RATE_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -703,19 +711,13 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getDose())) {
-            $a[self::FIELD_DOSE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DOSE_EXT] = $v;
-            }
+            $a[self::FIELD_DOSE] = $v;
         }
         if (null !== ($v = $this->getMethod())) {
             $a[self::FIELD_METHOD] = $v;
         }
         if (null !== ($v = $this->getRateQuantity())) {
-            $a[self::FIELD_RATE_QUANTITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_RATE_QUANTITY_EXT] = $v;
-            }
+            $a[self::FIELD_RATE_QUANTITY] = $v;
         }
         if (null !== ($v = $this->getRateRatio())) {
             $a[self::FIELD_RATE_RATIO] = $v;
@@ -728,9 +730,7 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getText())) {
             $a[self::FIELD_TEXT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TEXT_EXT] = $v;
-            }
+            $a[self::FIELD_TEXT_EXT] = $v;
         }
         return $a;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInsur
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -67,8 +67,6 @@ use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
-use DCarbone\PHPFHIRGenerated\R4\PHPFHIRValueContainerInterface;
-use DCarbone\PHPFHIRGenerated\R4\PHPFHIRValueContainerTrait;
 
 /**
  * Details of a Health Insurance product/plan provided by an organization.
@@ -76,10 +74,8 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRValueContainerTrait;
  * Class FHIRInsurancePlanLimit
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan
  */
-class FHIRInsurancePlanLimit extends FHIRBackboneElement implements PHPFHIRValueContainerInterface
+class FHIRInsurancePlanLimit extends FHIRBackboneElement
 {
-    use PHPFHIRValueContainerTrait;
-
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_INSURANCE_PLAN_DOT_LIMIT;
 
@@ -229,7 +225,6 @@ class FHIRInsurancePlanLimit extends FHIRBackboneElement implements PHPFHIRValue
      */
     public function setCode(FHIRCodeableConcept $code = null)
     {
-        $this->_markNonValueFieldsDefined();
         $this->code = $code;
         return $this;
     }
@@ -334,6 +329,7 @@ class FHIRInsurancePlanLimit extends FHIRBackboneElement implements PHPFHIRValue
         if (null !== ($v = $this->getCode())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getValue())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -350,10 +346,7 @@ class FHIRInsurancePlanLimit extends FHIRBackboneElement implements PHPFHIRValue
             $a[self::FIELD_CODE] = $v;
         }
         if (null !== ($v = $this->getValue())) {
-            $a[self::FIELD_VALUE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE] = $v;
         }
         return $a;
     }

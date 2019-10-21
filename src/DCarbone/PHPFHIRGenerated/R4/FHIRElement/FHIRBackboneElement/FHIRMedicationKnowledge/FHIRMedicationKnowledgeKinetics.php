@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -461,6 +461,7 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if ([] !== ($vs = $this->getAreaUnderCurve())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -473,6 +474,7 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
         if (null !== ($v = $this->getHalfLifePeriod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_HALF_LIFE_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
+
         if ([] !== ($vs = $this->getLethalDose50())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -491,37 +493,13 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getAreaUnderCurve())) {
-            $a[self::FIELD_AREA_UNDER_CURVE] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_AREA_UNDER_CURVE][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_AREA_UNDER_CURVE_EXT])) {
-                        $a[self::FIELD_AREA_UNDER_CURVE_EXT] = [];
-                    }
-                    $a[self::FIELD_AREA_UNDER_CURVE_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_AREA_UNDER_CURVE] = $vs;
         }
         if (null !== ($v = $this->getHalfLifePeriod())) {
             $a[self::FIELD_HALF_LIFE_PERIOD] = $v;
         }
         if ([] !== ($vs = $this->getLethalDose50())) {
-            $a[self::FIELD_LETHAL_DOSE_50] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_LETHAL_DOSE_50][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_LETHAL_DOSE_50_EXT])) {
-                        $a[self::FIELD_LETHAL_DOSE_50_EXT] = [];
-                    }
-                    $a[self::FIELD_LETHAL_DOSE_50_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_LETHAL_DOSE_50] = $vs;
         }
         return $a;
     }

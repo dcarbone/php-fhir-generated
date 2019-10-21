@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -60,8 +60,6 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
-use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRValueContainerInterface;
-use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRValueContainerTrait;
 
 /**
  * All kinds of technology mediated contact details for a person or organization,
@@ -72,10 +70,8 @@ use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRValueContainerTrait;
  * Class FHIRContact
  * @package \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement
  */
-class FHIRContact extends FHIRElement implements PHPFHIRValueContainerInterface
+class FHIRContact extends FHIRElement
 {
-    use PHPFHIRValueContainerTrait;
-
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONTACT;
 
@@ -266,7 +262,6 @@ class FHIRContact extends FHIRElement implements PHPFHIRValueContainerInterface
      */
     public function setPeriod(FHIRPeriod $period = null)
     {
-        $this->_markNonValueFieldsDefined();
         $this->period = $period;
         return $this;
     }
@@ -297,7 +292,6 @@ class FHIRContact extends FHIRElement implements PHPFHIRValueContainerInterface
      */
     public function setSystem(FHIRContactSystem $system = null)
     {
-        $this->_markNonValueFieldsDefined();
         $this->system = $system;
         return $this;
     }
@@ -326,7 +320,6 @@ class FHIRContact extends FHIRElement implements PHPFHIRValueContainerInterface
      */
     public function setUse(FHIRContactUse $use = null)
     {
-        $this->_markNonValueFieldsDefined();
         $this->use = $use;
         return $this;
     }
@@ -442,9 +435,11 @@ class FHIRContact extends FHIRElement implements PHPFHIRValueContainerInterface
         if (null !== ($v = $this->getPeriod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getSystem())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SYSTEM, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getUse())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_USE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -464,22 +459,14 @@ class FHIRContact extends FHIRElement implements PHPFHIRValueContainerInterface
             $a[self::FIELD_PERIOD] = $v;
         }
         if (null !== ($v = $this->getSystem())) {
-            $a[self::FIELD_SYSTEM] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SYSTEM_EXT] = $v;
-            }
+            $a[self::FIELD_SYSTEM] = $v;
         }
         if (null !== ($v = $this->getUse())) {
-            $a[self::FIELD_USE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_USE_EXT] = $v;
-            }
+            $a[self::FIELD_USE] = $v;
         }
         if (null !== ($v = $this->getValue())) {
             $a[self::FIELD_VALUE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_EXT] = $v;
         }
         return $a;
     }

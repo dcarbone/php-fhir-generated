@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -65,8 +65,6 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
-use DCarbone\PHPFHIRGenerated\R4\PHPFHIRValueContainerInterface;
-use DCarbone\PHPFHIRGenerated\R4\PHPFHIRValueContainerTrait;
 
 /**
  * An identifier - identifies some entity uniquely and unambiguously. Typically
@@ -77,10 +75,8 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRValueContainerTrait;
  * Class FHIRIdentifier
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRElement
  */
-class FHIRIdentifier extends FHIRElement implements PHPFHIRValueContainerInterface
+class FHIRIdentifier extends FHIRElement
 {
-    use PHPFHIRValueContainerTrait;
-
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_IDENTIFIER;
 
@@ -311,7 +307,6 @@ class FHIRIdentifier extends FHIRElement implements PHPFHIRValueContainerInterfa
      */
     public function setAssigner(FHIRReference $assigner = null)
     {
-        $this->_markNonValueFieldsDefined();
         $this->assigner = $assigner;
         return $this;
     }
@@ -342,7 +337,6 @@ class FHIRIdentifier extends FHIRElement implements PHPFHIRValueContainerInterfa
      */
     public function setPeriod(FHIRPeriod $period = null)
     {
-        $this->_markNonValueFieldsDefined();
         $this->period = $period;
         return $this;
     }
@@ -417,7 +411,6 @@ class FHIRIdentifier extends FHIRElement implements PHPFHIRValueContainerInterfa
      */
     public function setType(FHIRCodeableConcept $type = null)
     {
-        $this->_markNonValueFieldsDefined();
         $this->type = $type;
         return $this;
     }
@@ -446,7 +439,6 @@ class FHIRIdentifier extends FHIRElement implements PHPFHIRValueContainerInterfa
      */
     public function setUse(FHIRIdentifierUse $use = null)
     {
-        $this->_markNonValueFieldsDefined();
         $this->use = $use;
         return $this;
     }
@@ -584,6 +576,7 @@ class FHIRIdentifier extends FHIRElement implements PHPFHIRValueContainerInterfa
         if (null !== ($v = $this->getType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getUse())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_USE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -607,24 +600,17 @@ class FHIRIdentifier extends FHIRElement implements PHPFHIRValueContainerInterfa
         }
         if (null !== ($v = $this->getSystem())) {
             $a[self::FIELD_SYSTEM] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SYSTEM_EXT] = $v;
-            }
+            $a[self::FIELD_SYSTEM_EXT] = $v;
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;
         }
         if (null !== ($v = $this->getUse())) {
-            $a[self::FIELD_USE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_USE_EXT] = $v;
-            }
+            $a[self::FIELD_USE] = $v;
         }
         if (null !== ($v = $this->getValue())) {
             $a[self::FIELD_VALUE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_EXT] = $v;
         }
         return $a;
     }

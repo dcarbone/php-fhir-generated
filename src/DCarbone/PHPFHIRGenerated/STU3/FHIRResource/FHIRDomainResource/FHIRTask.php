@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -2152,9 +2152,11 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
         if (null !== ($v = $this->getFor())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_FOR, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getGroupIdentifier())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_GROUP_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }
+
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -2172,6 +2174,7 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
                 $v->xmlSerialize($sxe->addChild(self::FIELD_INPUT, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getIntent())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_INTENT, null, $v->_getFHIRXMLNamespace()));
         }
@@ -2218,6 +2221,7 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
                 $v->xmlSerialize($sxe->addChild(self::FIELD_PERFORMER_TYPE, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getPriority())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PRIORITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -2242,6 +2246,7 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
         if (null !== ($v = $this->getRestriction())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_RESTRICTION, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -2260,9 +2265,7 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAuthoredOn())) {
             $a[self::FIELD_AUTHORED_ON] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_AUTHORED_ON_EXT] = $v;
-            }
+            $a[self::FIELD_AUTHORED_ON_EXT] = $v;
         }
         if ([] !== ($vs = $this->getBasedOn())) {
             $a[self::FIELD_BASED_ON] = $vs;
@@ -2281,15 +2284,11 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
         }
         if (null !== ($v = $this->getDefinitionUri())) {
             $a[self::FIELD_DEFINITION_URI] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DEFINITION_URI_EXT] = $v;
-            }
+            $a[self::FIELD_DEFINITION_URI_EXT] = $v;
         }
         if (null !== ($v = $this->getDescription())) {
             $a[self::FIELD_DESCRIPTION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DESCRIPTION_EXT] = $v;
-            }
+            $a[self::FIELD_DESCRIPTION_EXT] = $v;
         }
         if (null !== ($v = $this->getExecutionPeriod())) {
             $a[self::FIELD_EXECUTION_PERIOD] = $v;
@@ -2301,40 +2300,20 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
             $a[self::FIELD_FOR] = $v;
         }
         if (null !== ($v = $this->getGroupIdentifier())) {
-            $a[self::FIELD_GROUP_IDENTIFIER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_GROUP_IDENTIFIER_EXT] = $v;
-            }
+            $a[self::FIELD_GROUP_IDENTIFIER] = $v;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_IDENTIFIER][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_IDENTIFIER_EXT])) {
-                        $a[self::FIELD_IDENTIFIER_EXT] = [];
-                    }
-                    $a[self::FIELD_IDENTIFIER_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_IDENTIFIER] = $vs;
         }
         if ([] !== ($vs = $this->getInput())) {
             $a[self::FIELD_INPUT] = $vs;
         }
         if (null !== ($v = $this->getIntent())) {
-            $a[self::FIELD_INTENT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_INTENT_EXT] = $v;
-            }
+            $a[self::FIELD_INTENT] = $v;
         }
         if (null !== ($v = $this->getLastModified())) {
             $a[self::FIELD_LAST_MODIFIED] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_LAST_MODIFIED_EXT] = $v;
-            }
+            $a[self::FIELD_LAST_MODIFIED_EXT] = $v;
         }
         if ([] !== ($vs = $this->getNote())) {
             $a[self::FIELD_NOTE] = $vs;
@@ -2352,10 +2331,7 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
             $a[self::FIELD_PERFORMER_TYPE] = $vs;
         }
         if (null !== ($v = $this->getPriority())) {
-            $a[self::FIELD_PRIORITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PRIORITY_EXT] = $v;
-            }
+            $a[self::FIELD_PRIORITY] = $v;
         }
         if (null !== ($v = $this->getReason())) {
             $a[self::FIELD_REASON] = $v;
@@ -2370,10 +2346,7 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
             $a[self::FIELD_RESTRICTION] = $v;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_STATUS_EXT] = $v;
-            }
+            $a[self::FIELD_STATUS] = $v;
         }
         if (null !== ($v = $this->getStatusReason())) {
             $a[self::FIELD_STATUS_REASON] = $v;

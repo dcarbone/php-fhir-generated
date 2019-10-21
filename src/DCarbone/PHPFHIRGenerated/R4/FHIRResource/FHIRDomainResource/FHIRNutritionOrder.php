@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1651,6 +1651,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
                 $v->xmlSerialize($sxe->addChild(self::FIELD_FOOD_PREFERENCE_MODIFIER, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1683,6 +1684,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
                 $v->xmlSerialize($sxe->addChild(self::FIELD_INSTANTIATES_URI, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getIntent())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_INTENT, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1707,6 +1709,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
         if (null !== ($v = $this->getPatient())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PATIENT, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1733,9 +1736,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
         }
         if (null !== ($v = $this->getDateTime())) {
             $a[self::FIELD_DATE_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DATE_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_DATE_TIME_EXT] = $v;
         }
         if (null !== ($v = $this->getEncounter())) {
             $a[self::FIELD_ENCOUNTER] = $v;
@@ -1750,19 +1751,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
             $a[self::FIELD_FOOD_PREFERENCE_MODIFIER] = $vs;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_IDENTIFIER][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_IDENTIFIER_EXT])) {
-                        $a[self::FIELD_IDENTIFIER_EXT] = [];
-                    }
-                    $a[self::FIELD_IDENTIFIER_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_IDENTIFIER] = $vs;
         }
         if ([] !== ($vs = $this->getInstantiates())) {
             $a[self::FIELD_INSTANTIATES] = [];
@@ -1771,12 +1760,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
                     continue;
                 }
                 $a[self::FIELD_INSTANTIATES][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_INSTANTIATES_EXT])) {
-                        $a[self::FIELD_INSTANTIATES_EXT] = [];
-                    }
-                    $a[self::FIELD_INSTANTIATES_EXT][] = $v;
-                }
+                $a[self::FIELD_INSTANTIATES_EXT][] = $v;
             }
         }
         if ([] !== ($vs = $this->getInstantiatesCanonical())) {
@@ -1786,12 +1770,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
                     continue;
                 }
                 $a[self::FIELD_INSTANTIATES_CANONICAL][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_INSTANTIATES_CANONICAL_EXT])) {
-                        $a[self::FIELD_INSTANTIATES_CANONICAL_EXT] = [];
-                    }
-                    $a[self::FIELD_INSTANTIATES_CANONICAL_EXT][] = $v;
-                }
+                $a[self::FIELD_INSTANTIATES_CANONICAL_EXT][] = $v;
             }
         }
         if ([] !== ($vs = $this->getInstantiatesUri())) {
@@ -1801,19 +1780,11 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
                     continue;
                 }
                 $a[self::FIELD_INSTANTIATES_URI][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_INSTANTIATES_URI_EXT])) {
-                        $a[self::FIELD_INSTANTIATES_URI_EXT] = [];
-                    }
-                    $a[self::FIELD_INSTANTIATES_URI_EXT][] = $v;
-                }
+                $a[self::FIELD_INSTANTIATES_URI_EXT][] = $v;
             }
         }
         if (null !== ($v = $this->getIntent())) {
-            $a[self::FIELD_INTENT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_INTENT_EXT] = $v;
-            }
+            $a[self::FIELD_INTENT] = $v;
         }
         if ([] !== ($vs = $this->getNote())) {
             $a[self::FIELD_NOTE] = $vs;
@@ -1828,10 +1799,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
             $a[self::FIELD_PATIENT] = $v;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_STATUS_EXT] = $v;
-            }
+            $a[self::FIELD_STATUS] = $v;
         }
         if ([] !== ($vs = $this->getSupplement())) {
             $a[self::FIELD_SUPPLEMENT] = $vs;

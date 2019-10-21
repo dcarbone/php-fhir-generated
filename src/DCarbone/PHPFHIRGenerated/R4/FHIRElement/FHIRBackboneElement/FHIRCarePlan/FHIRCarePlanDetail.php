@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCareP
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -247,7 +247,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Identifies the food, drug or other product to be consumed or supplied in the
-     * activity.
+     * activity. (choose any one of product*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -258,7 +258,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Identifies the food, drug or other product to be consumed or supplied in the
-     * activity.
+     * activity. (choose any one of product*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -306,6 +306,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
+     * (choose any one of scheduled*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -316,6 +317,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
+     * (choose any one of scheduled*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -330,6 +332,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
+     * (choose any one of scheduled*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
@@ -1139,7 +1142,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Identifies the food, drug or other product to be consumed or supplied in the
-     * activity.
+     * activity. (choose any one of product*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -1155,7 +1158,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Identifies the food, drug or other product to be consumed or supplied in the
-     * activity.
+     * activity. (choose any one of product*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $productCodeableConcept
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanDetail
@@ -1172,7 +1175,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Identifies the food, drug or other product to be consumed or supplied in the
-     * activity.
+     * activity. (choose any one of product*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -1187,7 +1190,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Identifies the food, drug or other product to be consumed or supplied in the
-     * activity.
+     * activity. (choose any one of product*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $productReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanDetail
@@ -1364,6 +1367,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
+     * (choose any one of scheduled*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -1378,6 +1382,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
+     * (choose any one of scheduled*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $scheduledPeriod
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanDetail
@@ -1394,6 +1399,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
+     * (choose any one of scheduled*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -1408,6 +1414,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
+     * (choose any one of scheduled*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $scheduledString
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanDetail
@@ -1436,6 +1443,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
+     * (choose any one of scheduled*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
@@ -1454,6 +1462,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
+     * (choose any one of scheduled*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming $scheduledTiming
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanDetail
@@ -1673,6 +1682,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
         if (null !== ($v = $this->getCode())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getDailyAmount())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DAILY_AMOUNT, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1707,6 +1717,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_INSTANTIATES_URI, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getKind())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_KIND, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1731,6 +1742,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
         if (null !== ($v = $this->getProductReference())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PRODUCT_REFERENCE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1763,6 +1775,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
         if (null !== ($v = $this->getScheduledTiming())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SCHEDULED_TIMING, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1783,22 +1796,15 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
             $a[self::FIELD_CODE] = $v;
         }
         if (null !== ($v = $this->getDailyAmount())) {
-            $a[self::FIELD_DAILY_AMOUNT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DAILY_AMOUNT_EXT] = $v;
-            }
+            $a[self::FIELD_DAILY_AMOUNT] = $v;
         }
         if (null !== ($v = $this->getDescription())) {
             $a[self::FIELD_DESCRIPTION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DESCRIPTION_EXT] = $v;
-            }
+            $a[self::FIELD_DESCRIPTION_EXT] = $v;
         }
         if (null !== ($v = $this->getDoNotPerform())) {
             $a[self::FIELD_DO_NOT_PERFORM] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DO_NOT_PERFORM_EXT] = $v;
-            }
+            $a[self::FIELD_DO_NOT_PERFORM_EXT] = $v;
         }
         if ([] !== ($vs = $this->getGoal())) {
             $a[self::FIELD_GOAL] = $vs;
@@ -1810,12 +1816,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_INSTANTIATES_CANONICAL][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_INSTANTIATES_CANONICAL_EXT])) {
-                        $a[self::FIELD_INSTANTIATES_CANONICAL_EXT] = [];
-                    }
-                    $a[self::FIELD_INSTANTIATES_CANONICAL_EXT][] = $v;
-                }
+                $a[self::FIELD_INSTANTIATES_CANONICAL_EXT][] = $v;
             }
         }
         if ([] !== ($vs = $this->getInstantiatesUri())) {
@@ -1825,19 +1826,11 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_INSTANTIATES_URI][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_INSTANTIATES_URI_EXT])) {
-                        $a[self::FIELD_INSTANTIATES_URI_EXT] = [];
-                    }
-                    $a[self::FIELD_INSTANTIATES_URI_EXT][] = $v;
-                }
+                $a[self::FIELD_INSTANTIATES_URI_EXT][] = $v;
             }
         }
         if (null !== ($v = $this->getKind())) {
-            $a[self::FIELD_KIND] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_KIND_EXT] = $v;
-            }
+            $a[self::FIELD_KIND] = $v;
         }
         if (null !== ($v = $this->getLocation())) {
             $a[self::FIELD_LOCATION] = $v;
@@ -1852,10 +1845,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
             $a[self::FIELD_PRODUCT_REFERENCE] = $v;
         }
         if (null !== ($v = $this->getQuantity())) {
-            $a[self::FIELD_QUANTITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_QUANTITY_EXT] = $v;
-            }
+            $a[self::FIELD_QUANTITY] = $v;
         }
         if ([] !== ($vs = $this->getReasonCode())) {
             $a[self::FIELD_REASON_CODE] = $vs;
@@ -1868,18 +1858,13 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getScheduledString())) {
             $a[self::FIELD_SCHEDULED_STRING] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SCHEDULED_STRING_EXT] = $v;
-            }
+            $a[self::FIELD_SCHEDULED_STRING_EXT] = $v;
         }
         if (null !== ($v = $this->getScheduledTiming())) {
             $a[self::FIELD_SCHEDULED_TIMING] = $v;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_STATUS_EXT] = $v;
-            }
+            $a[self::FIELD_STATUS] = $v;
         }
         if (null !== ($v = $this->getStatusReason())) {
             $a[self::FIELD_STATUS_REASON] = $v;

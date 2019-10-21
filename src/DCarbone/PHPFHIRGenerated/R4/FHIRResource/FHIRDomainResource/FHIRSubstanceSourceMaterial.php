@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1424,12 +1424,14 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
         if (null !== ($v = $this->getOrganism())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ORGANISM, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getOrganismId())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ORGANISM_ID, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getOrganismName())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ORGANISM_NAME, null, $v->_getFHIRXMLNamespace()));
         }
+
         if ([] !== ($vs = $this->getParentSubstanceId())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1492,43 +1494,21 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
                     continue;
                 }
                 $a[self::FIELD_GEOGRAPHICAL_LOCATION][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_GEOGRAPHICAL_LOCATION_EXT])) {
-                        $a[self::FIELD_GEOGRAPHICAL_LOCATION_EXT] = [];
-                    }
-                    $a[self::FIELD_GEOGRAPHICAL_LOCATION_EXT][] = $v;
-                }
+                $a[self::FIELD_GEOGRAPHICAL_LOCATION_EXT][] = $v;
             }
         }
         if (null !== ($v = $this->getOrganism())) {
             $a[self::FIELD_ORGANISM] = $v;
         }
         if (null !== ($v = $this->getOrganismId())) {
-            $a[self::FIELD_ORGANISM_ID] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ORGANISM_ID_EXT] = $v;
-            }
+            $a[self::FIELD_ORGANISM_ID] = $v;
         }
         if (null !== ($v = $this->getOrganismName())) {
             $a[self::FIELD_ORGANISM_NAME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ORGANISM_NAME_EXT] = $v;
-            }
+            $a[self::FIELD_ORGANISM_NAME_EXT] = $v;
         }
         if ([] !== ($vs = $this->getParentSubstanceId())) {
-            $a[self::FIELD_PARENT_SUBSTANCE_ID] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_PARENT_SUBSTANCE_ID][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_PARENT_SUBSTANCE_ID_EXT])) {
-                        $a[self::FIELD_PARENT_SUBSTANCE_ID_EXT] = [];
-                    }
-                    $a[self::FIELD_PARENT_SUBSTANCE_ID_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_PARENT_SUBSTANCE_ID] = $vs;
         }
         if ([] !== ($vs = $this->getParentSubstanceName())) {
             $a[self::FIELD_PARENT_SUBSTANCE_NAME] = [];
@@ -1537,12 +1517,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
                     continue;
                 }
                 $a[self::FIELD_PARENT_SUBSTANCE_NAME][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_PARENT_SUBSTANCE_NAME_EXT])) {
-                        $a[self::FIELD_PARENT_SUBSTANCE_NAME_EXT] = [];
-                    }
-                    $a[self::FIELD_PARENT_SUBSTANCE_NAME_EXT][] = $v;
-                }
+                $a[self::FIELD_PARENT_SUBSTANCE_NAME_EXT][] = $v;
             }
         }
         if ([] !== ($vs = $this->getPartDescription())) {

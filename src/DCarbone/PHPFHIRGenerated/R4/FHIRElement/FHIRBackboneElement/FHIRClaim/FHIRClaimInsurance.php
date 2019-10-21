@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -718,6 +718,7 @@ class FHIRClaimInsurance extends FHIRBackboneElement
         if (null !== ($v = $this->getFocal())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_FOCAL, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getIdentifier())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }
@@ -743,9 +744,7 @@ class FHIRClaimInsurance extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getBusinessArrangement())) {
             $a[self::FIELD_BUSINESS_ARRANGEMENT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_BUSINESS_ARRANGEMENT_EXT] = $v;
-            }
+            $a[self::FIELD_BUSINESS_ARRANGEMENT_EXT] = $v;
         }
         if (null !== ($v = $this->getClaimResponse())) {
             $a[self::FIELD_CLAIM_RESPONSE] = $v;
@@ -755,15 +754,10 @@ class FHIRClaimInsurance extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getFocal())) {
             $a[self::FIELD_FOCAL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_FOCAL_EXT] = $v;
-            }
+            $a[self::FIELD_FOCAL_EXT] = $v;
         }
         if (null !== ($v = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_IDENTIFIER_EXT] = $v;
-            }
+            $a[self::FIELD_IDENTIFIER] = $v;
         }
         if ([] !== ($vs = $this->getPreAuthRef())) {
             $a[self::FIELD_PRE_AUTH_REF] = [];
@@ -772,19 +766,12 @@ class FHIRClaimInsurance extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_PRE_AUTH_REF][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_PRE_AUTH_REF_EXT])) {
-                        $a[self::FIELD_PRE_AUTH_REF_EXT] = [];
-                    }
-                    $a[self::FIELD_PRE_AUTH_REF_EXT][] = $v;
-                }
+                $a[self::FIELD_PRE_AUTH_REF_EXT][] = $v;
             }
         }
         if (null !== ($v = $this->getSequence())) {
             $a[self::FIELD_SEQUENCE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SEQUENCE_EXT] = $v;
-            }
+            $a[self::FIELD_SEQUENCE_EXT] = $v;
         }
         return $a;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -559,6 +559,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * The intended subjects for the measure. If this element is not provided, a
      * Patient subject is assumed, but the subject of the measure can be anything.
+     * (choose any one of subject*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -570,6 +571,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * The intended subjects for the measure. If this element is not provided, a
      * Patient subject is assumed, but the subject of the measure can be anything.
+     * (choose any one of subject*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -2827,6 +2829,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * The intended subjects for the measure. If this element is not provided, a
      * Patient subject is assumed, but the subject of the measure can be anything.
+     * (choose any one of subject*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -2843,6 +2846,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * The intended subjects for the measure. If this element is not provided, a
      * Patient subject is assumed, but the subject of the measure can be anything.
+     * (choose any one of subject*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $subjectCodeableConcept
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMeasure
@@ -2860,6 +2864,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * The intended subjects for the measure. If this element is not provided, a
      * Patient subject is assumed, but the subject of the measure can be anything.
+     * (choose any one of subject*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -2875,6 +2880,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * The intended subjects for the measure. If this element is not provided, a
      * Patient subject is assumed, but the subject of the measure can be anything.
+     * (choose any one of subject*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $subjectReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMeasure
@@ -3723,6 +3729,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         if (null !== ($v = $this->getGuidance())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_GUIDANCE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -3795,6 +3802,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         if (null !== ($v = $this->getScoring())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SCORING, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -3868,18 +3876,14 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getApprovalDate())) {
             $a[self::FIELD_APPROVAL_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_APPROVAL_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_APPROVAL_DATE_EXT] = $v;
         }
         if ([] !== ($vs = $this->getAuthor())) {
             $a[self::FIELD_AUTHOR] = $vs;
         }
         if (null !== ($v = $this->getClinicalRecommendationStatement())) {
             $a[self::FIELD_CLINICAL_RECOMMENDATION_STATEMENT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_CLINICAL_RECOMMENDATION_STATEMENT_EXT] = $v;
-            }
+            $a[self::FIELD_CLINICAL_RECOMMENDATION_STATEMENT_EXT] = $v;
         }
         if (null !== ($v = $this->getCompositeScoring())) {
             $a[self::FIELD_COMPOSITE_SCORING] = $v;
@@ -3889,15 +3893,11 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         }
         if (null !== ($v = $this->getCopyright())) {
             $a[self::FIELD_COPYRIGHT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_COPYRIGHT_EXT] = $v;
-            }
+            $a[self::FIELD_COPYRIGHT_EXT] = $v;
         }
         if (null !== ($v = $this->getDate())) {
             $a[self::FIELD_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_DATE_EXT] = $v;
         }
         if ([] !== ($vs = $this->getDefinition())) {
             $a[self::FIELD_DEFINITION] = [];
@@ -3906,25 +3906,16 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
                     continue;
                 }
                 $a[self::FIELD_DEFINITION][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_DEFINITION_EXT])) {
-                        $a[self::FIELD_DEFINITION_EXT] = [];
-                    }
-                    $a[self::FIELD_DEFINITION_EXT][] = $v;
-                }
+                $a[self::FIELD_DEFINITION_EXT][] = $v;
             }
         }
         if (null !== ($v = $this->getDescription())) {
             $a[self::FIELD_DESCRIPTION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DESCRIPTION_EXT] = $v;
-            }
+            $a[self::FIELD_DESCRIPTION_EXT] = $v;
         }
         if (null !== ($v = $this->getDisclaimer())) {
             $a[self::FIELD_DISCLAIMER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DISCLAIMER_EXT] = $v;
-            }
+            $a[self::FIELD_DISCLAIMER_EXT] = $v;
         }
         if ([] !== ($vs = $this->getEditor())) {
             $a[self::FIELD_EDITOR] = $vs;
@@ -3937,33 +3928,17 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         }
         if (null !== ($v = $this->getExperimental())) {
             $a[self::FIELD_EXPERIMENTAL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_EXPERIMENTAL_EXT] = $v;
-            }
+            $a[self::FIELD_EXPERIMENTAL_EXT] = $v;
         }
         if ([] !== ($vs = $this->getGroup())) {
             $a[self::FIELD_GROUP] = $vs;
         }
         if (null !== ($v = $this->getGuidance())) {
             $a[self::FIELD_GUIDANCE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_GUIDANCE_EXT] = $v;
-            }
+            $a[self::FIELD_GUIDANCE_EXT] = $v;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_IDENTIFIER][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_IDENTIFIER_EXT])) {
-                        $a[self::FIELD_IDENTIFIER_EXT] = [];
-                    }
-                    $a[self::FIELD_IDENTIFIER_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_IDENTIFIER] = $vs;
         }
         if (null !== ($v = $this->getImprovementNotation())) {
             $a[self::FIELD_IMPROVEMENT_NOTATION] = $v;
@@ -3973,9 +3948,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         }
         if (null !== ($v = $this->getLastReviewDate())) {
             $a[self::FIELD_LAST_REVIEW_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_LAST_REVIEW_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_LAST_REVIEW_DATE_EXT] = $v;
         }
         if ([] !== ($vs = $this->getLibrary())) {
             $a[self::FIELD_LIBRARY] = [];
@@ -3984,43 +3957,28 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
                     continue;
                 }
                 $a[self::FIELD_LIBRARY][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_LIBRARY_EXT])) {
-                        $a[self::FIELD_LIBRARY_EXT] = [];
-                    }
-                    $a[self::FIELD_LIBRARY_EXT][] = $v;
-                }
+                $a[self::FIELD_LIBRARY_EXT][] = $v;
             }
         }
         if (null !== ($v = $this->getName())) {
             $a[self::FIELD_NAME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_NAME_EXT] = $v;
-            }
+            $a[self::FIELD_NAME_EXT] = $v;
         }
         if (null !== ($v = $this->getPublisher())) {
             $a[self::FIELD_PUBLISHER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PUBLISHER_EXT] = $v;
-            }
+            $a[self::FIELD_PUBLISHER_EXT] = $v;
         }
         if (null !== ($v = $this->getPurpose())) {
             $a[self::FIELD_PURPOSE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PURPOSE_EXT] = $v;
-            }
+            $a[self::FIELD_PURPOSE_EXT] = $v;
         }
         if (null !== ($v = $this->getRateAggregation())) {
             $a[self::FIELD_RATE_AGGREGATION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_RATE_AGGREGATION_EXT] = $v;
-            }
+            $a[self::FIELD_RATE_AGGREGATION_EXT] = $v;
         }
         if (null !== ($v = $this->getRationale())) {
             $a[self::FIELD_RATIONALE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_RATIONALE_EXT] = $v;
-            }
+            $a[self::FIELD_RATIONALE_EXT] = $v;
         }
         if ([] !== ($vs = $this->getRelatedArtifact())) {
             $a[self::FIELD_RELATED_ARTIFACT] = $vs;
@@ -4030,18 +3988,13 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         }
         if (null !== ($v = $this->getRiskAdjustment())) {
             $a[self::FIELD_RISK_ADJUSTMENT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_RISK_ADJUSTMENT_EXT] = $v;
-            }
+            $a[self::FIELD_RISK_ADJUSTMENT_EXT] = $v;
         }
         if (null !== ($v = $this->getScoring())) {
             $a[self::FIELD_SCORING] = $v;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_STATUS_EXT] = $v;
-            }
+            $a[self::FIELD_STATUS] = $v;
         }
         if (null !== ($v = $this->getSubjectCodeableConcept())) {
             $a[self::FIELD_SUBJECT_CODEABLE_CONCEPT] = $v;
@@ -4051,18 +4004,14 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         }
         if (null !== ($v = $this->getSubtitle())) {
             $a[self::FIELD_SUBTITLE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SUBTITLE_EXT] = $v;
-            }
+            $a[self::FIELD_SUBTITLE_EXT] = $v;
         }
         if ([] !== ($vs = $this->getSupplementalData())) {
             $a[self::FIELD_SUPPLEMENTAL_DATA] = $vs;
         }
         if (null !== ($v = $this->getTitle())) {
             $a[self::FIELD_TITLE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TITLE_EXT] = $v;
-            }
+            $a[self::FIELD_TITLE_EXT] = $v;
         }
         if ([] !== ($vs = $this->getTopic())) {
             $a[self::FIELD_TOPIC] = $vs;
@@ -4072,24 +4021,18 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         }
         if (null !== ($v = $this->getUrl())) {
             $a[self::FIELD_URL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_URL_EXT] = $v;
-            }
+            $a[self::FIELD_URL_EXT] = $v;
         }
         if (null !== ($v = $this->getUsage())) {
             $a[self::FIELD_USAGE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_USAGE_EXT] = $v;
-            }
+            $a[self::FIELD_USAGE_EXT] = $v;
         }
         if ([] !== ($vs = $this->getUseContext())) {
             $a[self::FIELD_USE_CONTEXT] = $vs;
         }
         if (null !== ($v = $this->getVersion())) {
             $a[self::FIELD_VERSION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VERSION_EXT] = $v;
-            }
+            $a[self::FIELD_VERSION_EXT] = $v;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

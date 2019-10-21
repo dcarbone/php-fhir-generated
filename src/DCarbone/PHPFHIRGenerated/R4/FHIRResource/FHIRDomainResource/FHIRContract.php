@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -330,7 +330,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * Legally binding Contract: This is the signed and legally recognized
      * representation of the Contract, which is considered the "source of truth" and
      * which would be the basis for legal action related to enforcement of this
-     * Contract.
+     * Contract. (choose any one of legallyBinding*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
      */
@@ -343,7 +343,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * Legally binding Contract: This is the signed and legally recognized
      * representation of the Contract, which is considered the "source of truth" and
      * which would be the basis for legal action related to enforcement of this
-     * Contract.
+     * Contract. (choose any one of legallyBinding*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -501,7 +501,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Narrows the range of legal concerns to focus on the achievement of specific
-     * contractual objectives.
+     * contractual objectives. (choose any one of topic*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -512,7 +512,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Narrows the range of legal concerns to focus on the achievement of specific
-     * contractual objectives.
+     * contractual objectives. (choose any one of topic*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -1743,7 +1743,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * Legally binding Contract: This is the signed and legally recognized
      * representation of the Contract, which is considered the "source of truth" and
      * which would be the basis for legal action related to enforcement of this
-     * Contract.
+     * Contract. (choose any one of legallyBinding*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
      */
@@ -1760,7 +1760,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * Legally binding Contract: This is the signed and legally recognized
      * representation of the Contract, which is considered the "source of truth" and
      * which would be the basis for legal action related to enforcement of this
-     * Contract.
+     * Contract. (choose any one of legallyBinding*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment $legallyBindingAttachment
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
@@ -1779,7 +1779,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * Legally binding Contract: This is the signed and legally recognized
      * representation of the Contract, which is considered the "source of truth" and
      * which would be the basis for legal action related to enforcement of this
-     * Contract.
+     * Contract. (choose any one of legallyBinding*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -1796,7 +1796,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * Legally binding Contract: This is the signed and legally recognized
      * representation of the Contract, which is considered the "source of truth" and
      * which would be the basis for legal action related to enforcement of this
-     * Contract.
+     * Contract. (choose any one of legallyBinding*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $legallyBindingReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
@@ -2476,7 +2476,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Narrows the range of legal concerns to focus on the achievement of specific
-     * contractual objectives.
+     * contractual objectives. (choose any one of topic*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -2492,7 +2492,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Narrows the range of legal concerns to focus on the achievement of specific
-     * contractual objectives.
+     * contractual objectives. (choose any one of topic*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $topicCodeableConcept
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
@@ -2509,7 +2509,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Narrows the range of legal concerns to focus on the achievement of specific
-     * contractual objectives.
+     * contractual objectives. (choose any one of topic*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -2524,7 +2524,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Narrows the range of legal concerns to focus on the achievement of specific
-     * contractual objectives.
+     * contractual objectives. (choose any one of topic*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $topicReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
@@ -2919,6 +2919,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
                 $v->xmlSerialize($sxe->addChild(self::FIELD_FRIENDLY, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -3001,6 +3002,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
                 $v->xmlSerialize($sxe->addChild(self::FIELD_SITE, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -3080,12 +3082,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
                     continue;
                 }
                 $a[self::FIELD_ALIAS][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_ALIAS_EXT])) {
-                        $a[self::FIELD_ALIAS_EXT] = [];
-                    }
-                    $a[self::FIELD_ALIAS_EXT][] = $v;
-                }
+                $a[self::FIELD_ALIAS_EXT][] = $v;
             }
         }
         if (null !== ($v = $this->getApplies())) {
@@ -3113,34 +3110,18 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
             $a[self::FIELD_FRIENDLY] = $vs;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_IDENTIFIER][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_IDENTIFIER_EXT])) {
-                        $a[self::FIELD_IDENTIFIER_EXT] = [];
-                    }
-                    $a[self::FIELD_IDENTIFIER_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_IDENTIFIER] = $vs;
         }
         if (null !== ($v = $this->getInstantiatesCanonical())) {
             $a[self::FIELD_INSTANTIATES_CANONICAL] = $v;
         }
         if (null !== ($v = $this->getInstantiatesUri())) {
             $a[self::FIELD_INSTANTIATES_URI] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_INSTANTIATES_URI_EXT] = $v;
-            }
+            $a[self::FIELD_INSTANTIATES_URI_EXT] = $v;
         }
         if (null !== ($v = $this->getIssued())) {
             $a[self::FIELD_ISSUED] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ISSUED_EXT] = $v;
-            }
+            $a[self::FIELD_ISSUED_EXT] = $v;
         }
         if ([] !== ($vs = $this->getLegal())) {
             $a[self::FIELD_LEGAL] = $vs;
@@ -3156,9 +3137,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         }
         if (null !== ($v = $this->getName())) {
             $a[self::FIELD_NAME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_NAME_EXT] = $v;
-            }
+            $a[self::FIELD_NAME_EXT] = $v;
         }
         if ([] !== ($vs = $this->getRelevantHistory())) {
             $a[self::FIELD_RELEVANT_HISTORY] = $vs;
@@ -3176,10 +3155,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
             $a[self::FIELD_SITE] = $vs;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_STATUS_EXT] = $v;
-            }
+            $a[self::FIELD_STATUS] = $v;
         }
         if ([] !== ($vs = $this->getSubType())) {
             $a[self::FIELD_SUB_TYPE] = $vs;
@@ -3189,9 +3165,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         }
         if (null !== ($v = $this->getSubtitle())) {
             $a[self::FIELD_SUBTITLE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SUBTITLE_EXT] = $v;
-            }
+            $a[self::FIELD_SUBTITLE_EXT] = $v;
         }
         if ([] !== ($vs = $this->getSupportingInfo())) {
             $a[self::FIELD_SUPPORTING_INFO] = $vs;
@@ -3201,9 +3175,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         }
         if (null !== ($v = $this->getTitle())) {
             $a[self::FIELD_TITLE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TITLE_EXT] = $v;
-            }
+            $a[self::FIELD_TITLE_EXT] = $v;
         }
         if (null !== ($v = $this->getTopicCodeableConcept())) {
             $a[self::FIELD_TOPIC_CODEABLE_CONCEPT] = $v;
@@ -3216,15 +3188,11 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         }
         if (null !== ($v = $this->getUrl())) {
             $a[self::FIELD_URL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_URL_EXT] = $v;
-            }
+            $a[self::FIELD_URL_EXT] = $v;
         }
         if (null !== ($v = $this->getVersion())) {
             $a[self::FIELD_VERSION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VERSION_EXT] = $v;
-            }
+            $a[self::FIELD_VERSION_EXT] = $v;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

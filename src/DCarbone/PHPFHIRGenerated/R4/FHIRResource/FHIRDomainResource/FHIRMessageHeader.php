@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -162,7 +162,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
      * Code that identifies the event this message represents and connects it with its
      * definition. Events defined as part of the FHIR specification have the system
      * value "http://terminology.hl7.org/CodeSystem/message-events". Alternatively uri
-     * to the EventDefinition.
+     * to the EventDefinition. (choose any one of event*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding
      */
@@ -175,7 +175,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
      * Code that identifies the event this message represents and connects it with its
      * definition. Events defined as part of the FHIR specification have the system
      * value "http://terminology.hl7.org/CodeSystem/message-events". Alternatively uri
-     * to the EventDefinition.
+     * to the EventDefinition. (choose any one of event*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
@@ -605,7 +605,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
      * Code that identifies the event this message represents and connects it with its
      * definition. Events defined as part of the FHIR specification have the system
      * value "http://terminology.hl7.org/CodeSystem/message-events". Alternatively uri
-     * to the EventDefinition.
+     * to the EventDefinition. (choose any one of event*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding
      */
@@ -622,7 +622,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
      * Code that identifies the event this message represents and connects it with its
      * definition. Events defined as part of the FHIR specification have the system
      * value "http://terminology.hl7.org/CodeSystem/message-events". Alternatively uri
-     * to the EventDefinition.
+     * to the EventDefinition. (choose any one of event*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding $eventCoding
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMessageHeader
@@ -641,7 +641,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
      * Code that identifies the event this message represents and connects it with its
      * definition. Events defined as part of the FHIR specification have the system
      * value "http://terminology.hl7.org/CodeSystem/message-events". Alternatively uri
-     * to the EventDefinition.
+     * to the EventDefinition. (choose any one of event*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
@@ -658,7 +658,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
      * Code that identifies the event this message represents and connects it with its
      * definition. Events defined as part of the FHIR specification have the system
      * value "http://terminology.hl7.org/CodeSystem/message-events". Alternatively uri
-     * to the EventDefinition.
+     * to the EventDefinition. (choose any one of event*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri $eventUri
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMessageHeader
@@ -1070,9 +1070,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
         }
         if (null !== ($v = $this->getDefinition())) {
             $a[self::FIELD_DEFINITION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DEFINITION_EXT] = $v;
-            }
+            $a[self::FIELD_DEFINITION_EXT] = $v;
         }
         if ([] !== ($vs = $this->getDestination())) {
             $a[self::FIELD_DESTINATION] = $vs;
@@ -1085,9 +1083,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
         }
         if (null !== ($v = $this->getEventUri())) {
             $a[self::FIELD_EVENT_URI] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_EVENT_URI_EXT] = $v;
-            }
+            $a[self::FIELD_EVENT_URI_EXT] = $v;
         }
         if ([] !== ($vs = $this->getFocus())) {
             $a[self::FIELD_FOCUS] = $vs;

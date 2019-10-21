@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRQu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -882,36 +882,26 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getLinkId())) {
             $a[self::FIELD_LINK_ID] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_LINK_ID_EXT] = $v;
-            }
+            $a[self::FIELD_LINK_ID_EXT] = $v;
         }
         if ([] !== ($vs = $this->getQuestion())) {
             $a[self::FIELD_QUESTION] = $vs;
         }
         if (null !== ($v = $this->getRepeats())) {
             $a[self::FIELD_REPEATS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_REPEATS_EXT] = $v;
-            }
+            $a[self::FIELD_REPEATS_EXT] = $v;
         }
         if (null !== ($v = $this->getRequired())) {
             $a[self::FIELD_REQUIRED] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_REQUIRED_EXT] = $v;
-            }
+            $a[self::FIELD_REQUIRED_EXT] = $v;
         }
         if (null !== ($v = $this->getText())) {
             $a[self::FIELD_TEXT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TEXT_EXT] = $v;
-            }
+            $a[self::FIELD_TEXT_EXT] = $v;
         }
         if (null !== ($v = $this->getTitle())) {
             $a[self::FIELD_TITLE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TITLE_EXT] = $v;
-            }
+            $a[self::FIELD_TITLE_EXT] = $v;
         }
         return $a;
     }

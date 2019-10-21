@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIROb
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -442,9 +442,11 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
         if (null !== ($v = $this->getAge())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AGE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getHigh())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_HIGH, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getLow())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_LOW, null, $v->_getFHIRXMLNamespace()));
         }
@@ -465,16 +467,10 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
             $a[self::FIELD_AGE] = $v;
         }
         if (null !== ($v = $this->getHigh())) {
-            $a[self::FIELD_HIGH] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_HIGH_EXT] = $v;
-            }
+            $a[self::FIELD_HIGH] = $v;
         }
         if (null !== ($v = $this->getLow())) {
-            $a[self::FIELD_LOW] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_LOW_EXT] = $v;
-            }
+            $a[self::FIELD_LOW] = $v;
         }
         if (null !== ($v = $this->getMeaning())) {
             $a[self::FIELD_MEANING] = $v;

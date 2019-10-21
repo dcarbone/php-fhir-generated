@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDevic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -647,6 +647,7 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
         if (null !== ($v = $this->getDeviceIdentifier())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DEVICE_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getEntryType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ENTRY_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -667,39 +668,26 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getCarrierAIDC())) {
             $a[self::FIELD_CARRIER_AIDC] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_CARRIER_AIDC_EXT] = $v;
-            }
+            $a[self::FIELD_CARRIER_AIDC_EXT] = $v;
         }
         if (null !== ($v = $this->getCarrierHRF())) {
             $a[self::FIELD_CARRIER_HRF] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_CARRIER_HRF_EXT] = $v;
-            }
+            $a[self::FIELD_CARRIER_HRF_EXT] = $v;
         }
         if (null !== ($v = $this->getDeviceIdentifier())) {
             $a[self::FIELD_DEVICE_IDENTIFIER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DEVICE_IDENTIFIER_EXT] = $v;
-            }
+            $a[self::FIELD_DEVICE_IDENTIFIER_EXT] = $v;
         }
         if (null !== ($v = $this->getEntryType())) {
-            $a[self::FIELD_ENTRY_TYPE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ENTRY_TYPE_EXT] = $v;
-            }
+            $a[self::FIELD_ENTRY_TYPE] = $v;
         }
         if (null !== ($v = $this->getIssuer())) {
             $a[self::FIELD_ISSUER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ISSUER_EXT] = $v;
-            }
+            $a[self::FIELD_ISSUER_EXT] = $v;
         }
         if (null !== ($v = $this->getJurisdiction())) {
             $a[self::FIELD_JURISDICTION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_JURISDICTION_EXT] = $v;
-            }
+            $a[self::FIELD_JURISDICTION_EXT] = $v;
         }
         return $a;
     }

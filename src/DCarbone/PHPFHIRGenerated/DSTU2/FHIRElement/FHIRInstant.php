@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -66,8 +66,6 @@ use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRInstantPrimitive;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
-use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRValueContainerInterface;
-use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRValueContainerTrait;
 
 /**
  * An instant in time - known at least to the second
@@ -79,10 +77,8 @@ use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRValueContainerTrait;
  * Class FHIRInstant
  * @package \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement
  */
-class FHIRInstant extends FHIRElement implements PHPFHIRValueContainerInterface
+class FHIRInstant extends FHIRElement
 {
-    use PHPFHIRValueContainerTrait;
-
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_INSTANT;
 
@@ -254,7 +250,7 @@ class FHIRInstant extends FHIRElement implements PHPFHIRValueContainerInterface
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getValue())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE, null, $v->_getFHIRXMLNamespace()));
+            $sxe->addAttribute(self::FIELD_VALUE, (string)$v);
         }
         return $sxe;
     }

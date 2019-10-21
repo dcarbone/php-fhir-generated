@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRBun
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -639,6 +639,7 @@ class FHIRBundleRequest extends FHIRBackboneElement
         if (null !== ($v = $this->getIfNoneMatch())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_IF_NONE_MATCH, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getMethod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_METHOD, null, $v->_getFHIRXMLNamespace()));
         }
@@ -656,39 +657,26 @@ class FHIRBundleRequest extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getIfMatch())) {
             $a[self::FIELD_IF_MATCH] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_IF_MATCH_EXT] = $v;
-            }
+            $a[self::FIELD_IF_MATCH_EXT] = $v;
         }
         if (null !== ($v = $this->getIfModifiedSince())) {
             $a[self::FIELD_IF_MODIFIED_SINCE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_IF_MODIFIED_SINCE_EXT] = $v;
-            }
+            $a[self::FIELD_IF_MODIFIED_SINCE_EXT] = $v;
         }
         if (null !== ($v = $this->getIfNoneExist())) {
             $a[self::FIELD_IF_NONE_EXIST] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_IF_NONE_EXIST_EXT] = $v;
-            }
+            $a[self::FIELD_IF_NONE_EXIST_EXT] = $v;
         }
         if (null !== ($v = $this->getIfNoneMatch())) {
             $a[self::FIELD_IF_NONE_MATCH] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_IF_NONE_MATCH_EXT] = $v;
-            }
+            $a[self::FIELD_IF_NONE_MATCH_EXT] = $v;
         }
         if (null !== ($v = $this->getMethod())) {
-            $a[self::FIELD_METHOD] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_METHOD_EXT] = $v;
-            }
+            $a[self::FIELD_METHOD] = $v;
         }
         if (null !== ($v = $this->getUrl())) {
             $a[self::FIELD_URL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_URL_EXT] = $v;
-            }
+            $a[self::FIELD_URL_EXT] = $v;
         }
         return $a;
     }

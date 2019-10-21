@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1313,9 +1313,11 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getAccept())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ACCEPT, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getContentType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CONTENT_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1337,6 +1339,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
         if (null !== ($v = $this->getParams())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PARAMS, null, $v->_getFHIRXMLNamespace()));
         }
+
         if ([] !== ($vs = $this->getRequestHeader())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1348,6 +1351,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
         if (null !== ($v = $this->getRequestId())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_REQUEST_ID, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getResource())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_RESOURCE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1377,106 +1381,63 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAccept())) {
-            $a[self::FIELD_ACCEPT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ACCEPT_EXT] = $v;
-            }
+            $a[self::FIELD_ACCEPT] = $v;
         }
         if (null !== ($v = $this->getContentType())) {
-            $a[self::FIELD_CONTENT_TYPE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_CONTENT_TYPE_EXT] = $v;
-            }
+            $a[self::FIELD_CONTENT_TYPE] = $v;
         }
         if (null !== ($v = $this->getDescription())) {
             $a[self::FIELD_DESCRIPTION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DESCRIPTION_EXT] = $v;
-            }
+            $a[self::FIELD_DESCRIPTION_EXT] = $v;
         }
         if (null !== ($v = $this->getDestination())) {
             $a[self::FIELD_DESTINATION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DESTINATION_EXT] = $v;
-            }
+            $a[self::FIELD_DESTINATION_EXT] = $v;
         }
         if (null !== ($v = $this->getEncodeRequestUrl())) {
             $a[self::FIELD_ENCODE_REQUEST_URL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ENCODE_REQUEST_URL_EXT] = $v;
-            }
+            $a[self::FIELD_ENCODE_REQUEST_URL_EXT] = $v;
         }
         if (null !== ($v = $this->getLabel())) {
             $a[self::FIELD_LABEL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_LABEL_EXT] = $v;
-            }
+            $a[self::FIELD_LABEL_EXT] = $v;
         }
         if (null !== ($v = $this->getOrigin())) {
             $a[self::FIELD_ORIGIN] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ORIGIN_EXT] = $v;
-            }
+            $a[self::FIELD_ORIGIN_EXT] = $v;
         }
         if (null !== ($v = $this->getParams())) {
             $a[self::FIELD_PARAMS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PARAMS_EXT] = $v;
-            }
+            $a[self::FIELD_PARAMS_EXT] = $v;
         }
         if ([] !== ($vs = $this->getRequestHeader())) {
-            $a[self::FIELD_REQUEST_HEADER] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_REQUEST_HEADER][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_REQUEST_HEADER_EXT])) {
-                        $a[self::FIELD_REQUEST_HEADER_EXT] = [];
-                    }
-                    $a[self::FIELD_REQUEST_HEADER_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_REQUEST_HEADER] = $vs;
         }
         if (null !== ($v = $this->getRequestId())) {
             $a[self::FIELD_REQUEST_ID] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_REQUEST_ID_EXT] = $v;
-            }
+            $a[self::FIELD_REQUEST_ID_EXT] = $v;
         }
         if (null !== ($v = $this->getResource())) {
-            $a[self::FIELD_RESOURCE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_RESOURCE_EXT] = $v;
-            }
+            $a[self::FIELD_RESOURCE] = $v;
         }
         if (null !== ($v = $this->getResponseId())) {
             $a[self::FIELD_RESPONSE_ID] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_RESPONSE_ID_EXT] = $v;
-            }
+            $a[self::FIELD_RESPONSE_ID_EXT] = $v;
         }
         if (null !== ($v = $this->getSourceId())) {
             $a[self::FIELD_SOURCE_ID] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SOURCE_ID_EXT] = $v;
-            }
+            $a[self::FIELD_SOURCE_ID_EXT] = $v;
         }
         if (null !== ($v = $this->getTargetId())) {
             $a[self::FIELD_TARGET_ID] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TARGET_ID_EXT] = $v;
-            }
+            $a[self::FIELD_TARGET_ID_EXT] = $v;
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;
         }
         if (null !== ($v = $this->getUrl())) {
             $a[self::FIELD_URL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_URL_EXT] = $v;
-            }
+            $a[self::FIELD_URL_EXT] = $v;
         }
         return $a;
     }

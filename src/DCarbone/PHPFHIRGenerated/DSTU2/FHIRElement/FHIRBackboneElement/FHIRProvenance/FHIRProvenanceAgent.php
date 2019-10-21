@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRPr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -509,6 +509,7 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
         if (null !== ($v = $this->getRole())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ROLE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getUserId())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_USER_ID, null, $v->_getFHIRXMLNamespace()));
         }
@@ -531,10 +532,7 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
             $a[self::FIELD_ROLE] = $v;
         }
         if (null !== ($v = $this->getUserId())) {
-            $a[self::FIELD_USER_ID] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_USER_ID_EXT] = $v;
-            }
+            $a[self::FIELD_USER_ID] = $v;
         }
         return $a;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1418,6 +1418,7 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         if (null !== ($v = $this->getBeneficiary())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_BENEFICIARY, null, $v->_getFHIRXMLNamespace()));
         }
+
         if ([] !== ($vs = $this->getClass())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1447,6 +1448,7 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         if (null !== ($v = $this->getDependent())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DEPENDENT, null, $v->_getFHIRXMLNamespace()));
         }
+
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1482,6 +1484,7 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         if (null !== ($v = $this->getRelationship())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_RELATIONSHIP, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1512,19 +1515,7 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
             $a[self::FIELD_BENEFICIARY] = $v;
         }
         if ([] !== ($vs = $this->getClass())) {
-            $a[self::FIELD_CLASS] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_CLASS][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_CLASS_EXT])) {
-                        $a[self::FIELD_CLASS_EXT] = [];
-                    }
-                    $a[self::FIELD_CLASS_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_CLASS] = $vs;
         }
         if ([] !== ($vs = $this->getContract())) {
             $a[self::FIELD_CONTRACT] = $vs;
@@ -1534,36 +1525,18 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         }
         if (null !== ($v = $this->getDependent())) {
             $a[self::FIELD_DEPENDENT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DEPENDENT_EXT] = $v;
-            }
+            $a[self::FIELD_DEPENDENT_EXT] = $v;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_IDENTIFIER][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_IDENTIFIER_EXT])) {
-                        $a[self::FIELD_IDENTIFIER_EXT] = [];
-                    }
-                    $a[self::FIELD_IDENTIFIER_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_IDENTIFIER] = $vs;
         }
         if (null !== ($v = $this->getNetwork())) {
             $a[self::FIELD_NETWORK] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_NETWORK_EXT] = $v;
-            }
+            $a[self::FIELD_NETWORK_EXT] = $v;
         }
         if (null !== ($v = $this->getOrder())) {
             $a[self::FIELD_ORDER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ORDER_EXT] = $v;
-            }
+            $a[self::FIELD_ORDER_EXT] = $v;
         }
         if ([] !== ($vs = $this->getPayor())) {
             $a[self::FIELD_PAYOR] = $vs;
@@ -1578,25 +1551,18 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
             $a[self::FIELD_RELATIONSHIP] = $v;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_STATUS_EXT] = $v;
-            }
+            $a[self::FIELD_STATUS] = $v;
         }
         if (null !== ($v = $this->getSubrogation())) {
             $a[self::FIELD_SUBROGATION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SUBROGATION_EXT] = $v;
-            }
+            $a[self::FIELD_SUBROGATION_EXT] = $v;
         }
         if (null !== ($v = $this->getSubscriber())) {
             $a[self::FIELD_SUBSCRIBER] = $v;
         }
         if (null !== ($v = $this->getSubscriberId())) {
             $a[self::FIELD_SUBSCRIBER_ID] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SUBSCRIBER_ID_EXT] = $v;
-            }
+            $a[self::FIELD_SUBSCRIBER_ID_EXT] = $v;
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;

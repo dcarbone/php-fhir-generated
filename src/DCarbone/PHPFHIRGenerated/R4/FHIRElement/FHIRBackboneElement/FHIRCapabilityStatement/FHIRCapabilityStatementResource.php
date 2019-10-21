@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapab
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1620,9 +1620,11 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
         if (null !== ($v = $this->getConditionalCreate())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CONDITIONAL_CREATE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getConditionalDelete())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CONDITIONAL_DELETE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getConditionalRead())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CONDITIONAL_READ, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1656,6 +1658,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
         if (null !== ($v = $this->getReadHistory())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_READ_HISTORY, null, $v->_getFHIRXMLNamespace()));
         }
+
         if ([] !== ($vs = $this->getReferencePolicy())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1703,6 +1706,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
         if (null !== ($v = $this->getUpdateCreate())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_UPDATE_CREATE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getVersioning())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_VERSIONING, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1717,33 +1721,21 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getConditionalCreate())) {
             $a[self::FIELD_CONDITIONAL_CREATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_CONDITIONAL_CREATE_EXT] = $v;
-            }
+            $a[self::FIELD_CONDITIONAL_CREATE_EXT] = $v;
         }
         if (null !== ($v = $this->getConditionalDelete())) {
-            $a[self::FIELD_CONDITIONAL_DELETE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_CONDITIONAL_DELETE_EXT] = $v;
-            }
+            $a[self::FIELD_CONDITIONAL_DELETE] = $v;
         }
         if (null !== ($v = $this->getConditionalRead())) {
-            $a[self::FIELD_CONDITIONAL_READ] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_CONDITIONAL_READ_EXT] = $v;
-            }
+            $a[self::FIELD_CONDITIONAL_READ] = $v;
         }
         if (null !== ($v = $this->getConditionalUpdate())) {
             $a[self::FIELD_CONDITIONAL_UPDATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_CONDITIONAL_UPDATE_EXT] = $v;
-            }
+            $a[self::FIELD_CONDITIONAL_UPDATE_EXT] = $v;
         }
         if (null !== ($v = $this->getDocumentation())) {
             $a[self::FIELD_DOCUMENTATION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DOCUMENTATION_EXT] = $v;
-            }
+            $a[self::FIELD_DOCUMENTATION_EXT] = $v;
         }
         if ([] !== ($vs = $this->getInteraction())) {
             $a[self::FIELD_INTERACTION] = $vs;
@@ -1753,30 +1745,14 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getProfile())) {
             $a[self::FIELD_PROFILE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PROFILE_EXT] = $v;
-            }
+            $a[self::FIELD_PROFILE_EXT] = $v;
         }
         if (null !== ($v = $this->getReadHistory())) {
             $a[self::FIELD_READ_HISTORY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_READ_HISTORY_EXT] = $v;
-            }
+            $a[self::FIELD_READ_HISTORY_EXT] = $v;
         }
         if ([] !== ($vs = $this->getReferencePolicy())) {
-            $a[self::FIELD_REFERENCE_POLICY] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_REFERENCE_POLICY][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_REFERENCE_POLICY_EXT])) {
-                        $a[self::FIELD_REFERENCE_POLICY_EXT] = [];
-                    }
-                    $a[self::FIELD_REFERENCE_POLICY_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_REFERENCE_POLICY] = $vs;
         }
         if ([] !== ($vs = $this->getSearchInclude())) {
             $a[self::FIELD_SEARCH_INCLUDE] = [];
@@ -1785,12 +1761,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_SEARCH_INCLUDE][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_SEARCH_INCLUDE_EXT])) {
-                        $a[self::FIELD_SEARCH_INCLUDE_EXT] = [];
-                    }
-                    $a[self::FIELD_SEARCH_INCLUDE_EXT][] = $v;
-                }
+                $a[self::FIELD_SEARCH_INCLUDE_EXT][] = $v;
             }
         }
         if ([] !== ($vs = $this->getSearchParam())) {
@@ -1803,12 +1774,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_SEARCH_REV_INCLUDE][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_SEARCH_REV_INCLUDE_EXT])) {
-                        $a[self::FIELD_SEARCH_REV_INCLUDE_EXT] = [];
-                    }
-                    $a[self::FIELD_SEARCH_REV_INCLUDE_EXT][] = $v;
-                }
+                $a[self::FIELD_SEARCH_REV_INCLUDE_EXT][] = $v;
             }
         }
         if ([] !== ($vs = $this->getSupportedProfile())) {
@@ -1818,31 +1784,19 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_SUPPORTED_PROFILE][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_SUPPORTED_PROFILE_EXT])) {
-                        $a[self::FIELD_SUPPORTED_PROFILE_EXT] = [];
-                    }
-                    $a[self::FIELD_SUPPORTED_PROFILE_EXT][] = $v;
-                }
+                $a[self::FIELD_SUPPORTED_PROFILE_EXT][] = $v;
             }
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TYPE_EXT] = $v;
-            }
+            $a[self::FIELD_TYPE_EXT] = $v;
         }
         if (null !== ($v = $this->getUpdateCreate())) {
             $a[self::FIELD_UPDATE_CREATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_UPDATE_CREATE_EXT] = $v;
-            }
+            $a[self::FIELD_UPDATE_CREATE_EXT] = $v;
         }
         if (null !== ($v = $this->getVersioning())) {
-            $a[self::FIELD_VERSIONING] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VERSIONING_EXT] = $v;
-            }
+            $a[self::FIELD_VERSIONING] = $v;
         }
         return $a;
     }

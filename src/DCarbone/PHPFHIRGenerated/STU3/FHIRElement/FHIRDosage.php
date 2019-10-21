@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1333,6 +1333,7 @@ class FHIRDosage extends FHIRElement
         if (null !== ($v = $this->getAsNeededCodeableConcept())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AS_NEEDED_CODEABLE_CONCEPT, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getDoseQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DOSE_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1340,9 +1341,11 @@ class FHIRDosage extends FHIRElement
         if (null !== ($v = $this->getDoseRange())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DOSE_RANGE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getMaxDosePerAdministration())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_DOSE_PER_ADMINISTRATION, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getMaxDosePerLifetime())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_DOSE_PER_LIFETIME, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1357,6 +1360,7 @@ class FHIRDosage extends FHIRElement
         if (null !== ($v = $this->getPatientInstruction())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PATIENT_INSTRUCTION, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getRateQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_RATE_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1400,33 +1404,22 @@ class FHIRDosage extends FHIRElement
         }
         if (null !== ($v = $this->getAsNeededBoolean())) {
             $a[self::FIELD_AS_NEEDED_BOOLEAN] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_AS_NEEDED_BOOLEAN_EXT] = $v;
-            }
+            $a[self::FIELD_AS_NEEDED_BOOLEAN_EXT] = $v;
         }
         if (null !== ($v = $this->getAsNeededCodeableConcept())) {
             $a[self::FIELD_AS_NEEDED_CODEABLE_CONCEPT] = $v;
         }
         if (null !== ($v = $this->getDoseQuantity())) {
-            $a[self::FIELD_DOSE_QUANTITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DOSE_QUANTITY_EXT] = $v;
-            }
+            $a[self::FIELD_DOSE_QUANTITY] = $v;
         }
         if (null !== ($v = $this->getDoseRange())) {
             $a[self::FIELD_DOSE_RANGE] = $v;
         }
         if (null !== ($v = $this->getMaxDosePerAdministration())) {
-            $a[self::FIELD_MAX_DOSE_PER_ADMINISTRATION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MAX_DOSE_PER_ADMINISTRATION_EXT] = $v;
-            }
+            $a[self::FIELD_MAX_DOSE_PER_ADMINISTRATION] = $v;
         }
         if (null !== ($v = $this->getMaxDosePerLifetime())) {
-            $a[self::FIELD_MAX_DOSE_PER_LIFETIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MAX_DOSE_PER_LIFETIME_EXT] = $v;
-            }
+            $a[self::FIELD_MAX_DOSE_PER_LIFETIME] = $v;
         }
         if (null !== ($v = $this->getMaxDosePerPeriod())) {
             $a[self::FIELD_MAX_DOSE_PER_PERIOD] = $v;
@@ -1436,15 +1429,10 @@ class FHIRDosage extends FHIRElement
         }
         if (null !== ($v = $this->getPatientInstruction())) {
             $a[self::FIELD_PATIENT_INSTRUCTION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PATIENT_INSTRUCTION_EXT] = $v;
-            }
+            $a[self::FIELD_PATIENT_INSTRUCTION_EXT] = $v;
         }
         if (null !== ($v = $this->getRateQuantity())) {
-            $a[self::FIELD_RATE_QUANTITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_RATE_QUANTITY_EXT] = $v;
-            }
+            $a[self::FIELD_RATE_QUANTITY] = $v;
         }
         if (null !== ($v = $this->getRateRange())) {
             $a[self::FIELD_RATE_RANGE] = $v;
@@ -1457,18 +1445,14 @@ class FHIRDosage extends FHIRElement
         }
         if (null !== ($v = $this->getSequence())) {
             $a[self::FIELD_SEQUENCE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SEQUENCE_EXT] = $v;
-            }
+            $a[self::FIELD_SEQUENCE_EXT] = $v;
         }
         if (null !== ($v = $this->getSite())) {
             $a[self::FIELD_SITE] = $v;
         }
         if (null !== ($v = $this->getText())) {
             $a[self::FIELD_TEXT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TEXT_EXT] = $v;
-            }
+            $a[self::FIELD_TEXT_EXT] = $v;
         }
         if (null !== ($v = $this->getTiming())) {
             $a[self::FIELD_TIMING] = $v;

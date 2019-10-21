@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -661,9 +661,11 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
         if (null !== ($v = $this->getCode())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getFirstDose())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_FIRST_DOSE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getMaxDosePerDay())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_DOSE_PER_DAY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -671,6 +673,7 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
         if (null !== ($v = $this->getMaxDosePerTreatmentPeriod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_DOSE_PER_TREATMENT_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getMaxSingleDose())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_SINGLE_DOSE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -700,25 +703,16 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
             $a[self::FIELD_CODE] = $v;
         }
         if (null !== ($v = $this->getFirstDose())) {
-            $a[self::FIELD_FIRST_DOSE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_FIRST_DOSE_EXT] = $v;
-            }
+            $a[self::FIELD_FIRST_DOSE] = $v;
         }
         if (null !== ($v = $this->getMaxDosePerDay())) {
-            $a[self::FIELD_MAX_DOSE_PER_DAY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MAX_DOSE_PER_DAY_EXT] = $v;
-            }
+            $a[self::FIELD_MAX_DOSE_PER_DAY] = $v;
         }
         if (null !== ($v = $this->getMaxDosePerTreatmentPeriod())) {
             $a[self::FIELD_MAX_DOSE_PER_TREATMENT_PERIOD] = $v;
         }
         if (null !== ($v = $this->getMaxSingleDose())) {
-            $a[self::FIELD_MAX_SINGLE_DOSE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MAX_SINGLE_DOSE_EXT] = $v;
-            }
+            $a[self::FIELD_MAX_SINGLE_DOSE] = $v;
         }
         if (null !== ($v = $this->getMaxTreatmentPeriod())) {
             $a[self::FIELD_MAX_TREATMENT_PERIOD] = $v;

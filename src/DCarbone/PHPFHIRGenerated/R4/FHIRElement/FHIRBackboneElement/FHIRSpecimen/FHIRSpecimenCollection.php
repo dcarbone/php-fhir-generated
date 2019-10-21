@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpeci
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -120,7 +120,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * Time when specimen was collected from subject - the physiologically relevant
-     * time.
+     * time. (choose any one of collected*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -131,7 +131,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Time when specimen was collected from subject - the physiologically relevant
-     * time.
+     * time. (choose any one of collected*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -163,7 +163,8 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Abstinence or reduction from some or all food, drink, or both, for a period of
-     * time prior to sample collection.
+     * time prior to sample collection. (choose any one of fastingStatus*, but only
+     * one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -174,7 +175,8 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Abstinence or reduction from some or all food, drink, or both, for a period of
-     * time prior to sample collection.
+     * time prior to sample collection. (choose any one of fastingStatus*, but only
+     * one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
@@ -385,7 +387,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * Time when specimen was collected from subject - the physiologically relevant
-     * time.
+     * time. (choose any one of collected*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -403,7 +405,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * Time when specimen was collected from subject - the physiologically relevant
-     * time.
+     * time. (choose any one of collected*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $collectedDateTime
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenCollection
@@ -428,7 +430,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Time when specimen was collected from subject - the physiologically relevant
-     * time.
+     * time. (choose any one of collected*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -443,7 +445,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Time when specimen was collected from subject - the physiologically relevant
-     * time.
+     * time. (choose any one of collected*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $collectedPeriod
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenCollection
@@ -521,7 +523,8 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Abstinence or reduction from some or all food, drink, or both, for a period of
-     * time prior to sample collection.
+     * time prior to sample collection. (choose any one of fastingStatus*, but only
+     * one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -537,7 +540,8 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Abstinence or reduction from some or all food, drink, or both, for a period of
-     * time prior to sample collection.
+     * time prior to sample collection. (choose any one of fastingStatus*, but only
+     * one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $fastingStatusCodeableConcept
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenCollection
@@ -554,7 +558,8 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Abstinence or reduction from some or all food, drink, or both, for a period of
-     * time prior to sample collection.
+     * time prior to sample collection. (choose any one of fastingStatus*, but only
+     * one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
@@ -569,7 +574,8 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Abstinence or reduction from some or all food, drink, or both, for a period of
-     * time prior to sample collection.
+     * time prior to sample collection. (choose any one of fastingStatus*, but only
+     * one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration $fastingStatusDuration
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenCollection
@@ -763,6 +769,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
         if (null !== ($v = $this->getMethod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_METHOD, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -780,9 +787,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getCollectedDateTime())) {
             $a[self::FIELD_COLLECTED_DATE_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_COLLECTED_DATE_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_COLLECTED_DATE_TIME_EXT] = $v;
         }
         if (null !== ($v = $this->getCollectedPeriod())) {
             $a[self::FIELD_COLLECTED_PERIOD] = $v;
@@ -803,10 +808,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
             $a[self::FIELD_METHOD] = $v;
         }
         if (null !== ($v = $this->getQuantity())) {
-            $a[self::FIELD_QUANTITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_QUANTITY_EXT] = $v;
-            }
+            $a[self::FIELD_QUANTITY] = $v;
         }
         return $a;
     }

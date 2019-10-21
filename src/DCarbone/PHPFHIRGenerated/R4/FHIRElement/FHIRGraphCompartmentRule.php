@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -66,8 +66,6 @@ use DCarbone\PHPFHIRGenerated\R4\FHIRElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRGraphCompartmentRuleList;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
-use DCarbone\PHPFHIRGenerated\R4\PHPFHIRValueContainerInterface;
-use DCarbone\PHPFHIRGenerated\R4\PHPFHIRValueContainerTrait;
 
 /**
  * How a compartment must be linked.
@@ -76,10 +74,8 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRValueContainerTrait;
  * Class FHIRGraphCompartmentRule
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRElement
  */
-class FHIRGraphCompartmentRule extends FHIRElement implements PHPFHIRValueContainerInterface
+class FHIRGraphCompartmentRule extends FHIRElement
 {
-    use PHPFHIRValueContainerTrait;
-
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_GRAPH_COMPARTMENT_RULE;
 
@@ -250,7 +246,7 @@ class FHIRGraphCompartmentRule extends FHIRElement implements PHPFHIRValueContai
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getValue())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE, null, $v->_getFHIRXMLNamespace()));
+            $sxe->addAttribute(self::FIELD_VALUE, (string)$v);
         }
         return $sxe;
     }

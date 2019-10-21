@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTestS
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -425,15 +425,11 @@ class FHIRTestScriptFixture extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAutocreate())) {
             $a[self::FIELD_AUTOCREATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_AUTOCREATE_EXT] = $v;
-            }
+            $a[self::FIELD_AUTOCREATE_EXT] = $v;
         }
         if (null !== ($v = $this->getAutodelete())) {
             $a[self::FIELD_AUTODELETE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_AUTODELETE_EXT] = $v;
-            }
+            $a[self::FIELD_AUTODELETE_EXT] = $v;
         }
         if (null !== ($v = $this->getResource())) {
             $a[self::FIELD_RESOURCE] = $v;

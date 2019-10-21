@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -2185,6 +2185,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
         if (null !== ($v = $this->getExtraDetails())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_EXTRA_DETAILS, null, $v->_getFHIRXMLNamespace()));
         }
+
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -2257,6 +2258,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
                 $v->xmlSerialize($sxe->addChild(self::FIELD_SPECIALTY, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if ([] !== ($vs = $this->getTelecom())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -2285,21 +2287,15 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getActive())) {
             $a[self::FIELD_ACTIVE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ACTIVE_EXT] = $v;
-            }
+            $a[self::FIELD_ACTIVE_EXT] = $v;
         }
         if (null !== ($v = $this->getAppointmentRequired())) {
             $a[self::FIELD_APPOINTMENT_REQUIRED] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_APPOINTMENT_REQUIRED_EXT] = $v;
-            }
+            $a[self::FIELD_APPOINTMENT_REQUIRED_EXT] = $v;
         }
         if (null !== ($v = $this->getAvailabilityExceptions())) {
             $a[self::FIELD_AVAILABILITY_EXCEPTIONS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_AVAILABILITY_EXCEPTIONS_EXT] = $v;
-            }
+            $a[self::FIELD_AVAILABILITY_EXCEPTIONS_EXT] = $v;
         }
         if ([] !== ($vs = $this->getAvailableTime())) {
             $a[self::FIELD_AVAILABLE_TIME] = $vs;
@@ -2312,9 +2308,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
         }
         if (null !== ($v = $this->getComment())) {
             $a[self::FIELD_COMMENT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_COMMENT_EXT] = $v;
-            }
+            $a[self::FIELD_COMMENT_EXT] = $v;
         }
         if ([] !== ($vs = $this->getCoverageArea())) {
             $a[self::FIELD_COVERAGE_AREA] = $vs;
@@ -2324,42 +2318,24 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
         }
         if (null !== ($v = $this->getEligibilityNote())) {
             $a[self::FIELD_ELIGIBILITY_NOTE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ELIGIBILITY_NOTE_EXT] = $v;
-            }
+            $a[self::FIELD_ELIGIBILITY_NOTE_EXT] = $v;
         }
         if ([] !== ($vs = $this->getEndpoint())) {
             $a[self::FIELD_ENDPOINT] = $vs;
         }
         if (null !== ($v = $this->getExtraDetails())) {
             $a[self::FIELD_EXTRA_DETAILS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_EXTRA_DETAILS_EXT] = $v;
-            }
+            $a[self::FIELD_EXTRA_DETAILS_EXT] = $v;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_IDENTIFIER][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_IDENTIFIER_EXT])) {
-                        $a[self::FIELD_IDENTIFIER_EXT] = [];
-                    }
-                    $a[self::FIELD_IDENTIFIER_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_IDENTIFIER] = $vs;
         }
         if ([] !== ($vs = $this->getLocation())) {
             $a[self::FIELD_LOCATION] = $vs;
         }
         if (null !== ($v = $this->getName())) {
             $a[self::FIELD_NAME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_NAME_EXT] = $v;
-            }
+            $a[self::FIELD_NAME_EXT] = $v;
         }
         if ([] !== ($vs = $this->getNotAvailable())) {
             $a[self::FIELD_NOT_AVAILABLE] = $vs;
@@ -2374,12 +2350,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
                     continue;
                 }
                 $a[self::FIELD_PROGRAM_NAME][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_PROGRAM_NAME_EXT])) {
-                        $a[self::FIELD_PROGRAM_NAME_EXT] = [];
-                    }
-                    $a[self::FIELD_PROGRAM_NAME_EXT][] = $v;
-                }
+                $a[self::FIELD_PROGRAM_NAME_EXT][] = $v;
             }
         }
         if (null !== ($v = $this->getProvidedBy())) {
@@ -2395,19 +2366,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
             $a[self::FIELD_SPECIALTY] = $vs;
         }
         if ([] !== ($vs = $this->getTelecom())) {
-            $a[self::FIELD_TELECOM] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_TELECOM][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_TELECOM_EXT])) {
-                        $a[self::FIELD_TELECOM_EXT] = [];
-                    }
-                    $a[self::FIELD_TELECOM_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_TELECOM] = $vs;
         }
         if ([] !== ($vs = $this->getType())) {
             $a[self::FIELD_TYPE] = $vs;

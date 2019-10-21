@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -551,7 +551,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddress
      */
@@ -562,7 +563,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
@@ -574,7 +576,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation
      */
@@ -585,7 +588,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
      */
@@ -596,7 +600,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBase64Binary
      */
@@ -606,7 +611,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
@@ -618,7 +624,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
@@ -630,7 +637,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode
      */
@@ -642,7 +650,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -653,7 +662,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding
      */
@@ -664,7 +674,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail
      */
@@ -676,7 +687,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactPoint
      */
@@ -688,7 +700,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContributor
      */
@@ -701,7 +714,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRCount
      */
@@ -713,7 +727,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement
      */
@@ -725,7 +740,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
@@ -739,7 +755,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -751,7 +768,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
@@ -762,7 +780,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDistance
      */
@@ -773,7 +792,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDosage
      */
@@ -784,7 +804,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
@@ -797,7 +818,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression
      */
@@ -808,7 +830,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRHumanName
      */
@@ -822,7 +845,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId
      */
@@ -834,7 +858,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
@@ -848,7 +873,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant
      */
@@ -859,7 +885,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
@@ -874,7 +901,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
@@ -885,7 +913,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney
      */
@@ -897,7 +926,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIROid
      */
@@ -910,7 +940,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRParameterDefinition
      */
@@ -921,7 +952,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -932,7 +964,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
      */
@@ -945,7 +978,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -956,7 +990,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -968,7 +1003,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
      */
@@ -979,7 +1015,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -991,7 +1028,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRelatedArtifact
      */
@@ -1003,7 +1041,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSampledData
      */
@@ -1018,7 +1057,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSignature
      */
@@ -1029,7 +1069,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -1039,7 +1080,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTime
      */
@@ -1054,7 +1096,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
@@ -1066,7 +1109,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTriggerDefinition
      */
@@ -1077,7 +1121,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt
      */
@@ -1088,7 +1133,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
@@ -1099,7 +1145,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUrl
      */
@@ -1113,7 +1160,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext
      */
@@ -1125,7 +1173,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUuid
      */
@@ -1172,7 +1221,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddress
      */
@@ -1185,7 +1235,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
@@ -1199,7 +1250,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation
      */
@@ -1212,7 +1264,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
      */
@@ -1225,7 +1278,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBase64Binary
      */
@@ -1237,7 +1291,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
@@ -1251,7 +1306,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
@@ -1265,7 +1321,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode
      */
@@ -1279,7 +1336,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -1292,7 +1350,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding
      */
@@ -1305,7 +1364,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail
      */
@@ -1319,7 +1379,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactPoint
      */
@@ -1333,7 +1394,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContributor
      */
@@ -1348,7 +1410,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRCount
      */
@@ -1362,7 +1425,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement
      */
@@ -1376,7 +1440,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
@@ -1392,7 +1457,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -1406,7 +1472,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
@@ -1419,7 +1486,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDistance
      */
@@ -1432,7 +1500,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDosage
      */
@@ -1445,7 +1514,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
@@ -1460,7 +1530,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression
      */
@@ -1473,7 +1544,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRHumanName
      */
@@ -1489,7 +1561,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId
      */
@@ -1503,7 +1576,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
@@ -1519,7 +1593,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant
      */
@@ -1532,7 +1607,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
@@ -1549,7 +1625,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
@@ -1562,7 +1639,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney
      */
@@ -1576,7 +1654,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIROid
      */
@@ -1591,7 +1670,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRParameterDefinition
      */
@@ -1604,7 +1684,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -1617,7 +1698,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
      */
@@ -1632,7 +1714,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -1645,7 +1728,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -1659,7 +1743,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
      */
@@ -1672,7 +1757,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -1686,7 +1772,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRelatedArtifact
      */
@@ -1700,7 +1787,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSampledData
      */
@@ -1717,7 +1805,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSignature
      */
@@ -1730,7 +1819,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -1742,7 +1832,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTime
      */
@@ -1759,7 +1850,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
@@ -1773,7 +1865,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTriggerDefinition
      */
@@ -1786,7 +1879,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt
      */
@@ -1799,7 +1893,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
@@ -1812,7 +1907,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUrl
      */
@@ -1828,7 +1924,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext
      */
@@ -1842,7 +1939,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUuid
      */
@@ -1935,7 +2033,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of maxValue*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
@@ -1950,7 +2048,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of maxValue*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -1963,7 +2061,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of maxValue*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
@@ -1978,7 +2076,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of maxValue*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant
      */
@@ -1990,7 +2088,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of maxValue*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
@@ -2002,7 +2100,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of maxValue*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
      */
@@ -2016,7 +2114,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of maxValue*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -2027,7 +2125,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of maxValue*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTime
      */
@@ -2039,7 +2137,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of maxValue*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt
      */
@@ -2077,7 +2175,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of minValue*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
@@ -2092,7 +2190,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of minValue*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -2105,7 +2203,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of minValue*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
@@ -2120,7 +2218,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of minValue*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant
      */
@@ -2132,7 +2230,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of minValue*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
@@ -2144,7 +2242,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of minValue*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
      */
@@ -2158,7 +2256,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of minValue*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -2169,7 +2267,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of minValue*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTime
      */
@@ -2181,7 +2279,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of minValue*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt
      */
@@ -2241,7 +2339,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddress
      */
@@ -2262,7 +2361,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
@@ -2284,7 +2384,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation
      */
@@ -2305,7 +2406,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
      */
@@ -2326,7 +2428,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBase64Binary
      */
@@ -2346,7 +2449,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
@@ -2368,7 +2472,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
@@ -2390,7 +2495,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode
      */
@@ -2412,7 +2518,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -2433,7 +2540,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding
      */
@@ -2454,7 +2562,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail
      */
@@ -2476,7 +2585,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactPoint
      */
@@ -2498,7 +2608,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContributor
      */
@@ -2521,7 +2632,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRCount
      */
@@ -2543,7 +2655,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement
      */
@@ -2565,7 +2678,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
@@ -2589,7 +2703,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -2611,7 +2726,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
@@ -2632,7 +2748,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDistance
      */
@@ -2653,7 +2770,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDosage
      */
@@ -2674,7 +2792,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
@@ -2697,7 +2816,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression
      */
@@ -2718,7 +2838,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRHumanName
      */
@@ -2742,7 +2863,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId
      */
@@ -2764,7 +2886,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
@@ -2788,7 +2911,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant
      */
@@ -2809,7 +2933,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
@@ -2834,7 +2959,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
@@ -2855,7 +2981,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney
      */
@@ -2877,7 +3004,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIROid
      */
@@ -2900,7 +3028,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRParameterDefinition
      */
@@ -2921,7 +3050,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -2942,7 +3072,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
      */
@@ -2965,7 +3096,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -2986,7 +3118,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -3008,7 +3141,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
      */
@@ -3029,7 +3163,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -3051,7 +3186,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRelatedArtifact
      */
@@ -3073,7 +3209,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSampledData
      */
@@ -3098,7 +3235,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSignature
      */
@@ -3119,7 +3257,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -3139,7 +3278,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTime
      */
@@ -3164,7 +3304,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
@@ -3186,7 +3327,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTriggerDefinition
      */
@@ -3207,7 +3349,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt
      */
@@ -3228,7 +3371,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
@@ -3249,7 +3393,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUrl
      */
@@ -3273,7 +3418,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext
      */
@@ -3295,7 +3441,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUuid
      */
@@ -5854,7 +6001,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddress
      */
@@ -5873,7 +6021,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddress $defaultValueAddress
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -5890,7 +6039,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
@@ -5905,7 +6055,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge $defaultValueAge
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -5923,7 +6074,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation
      */
@@ -5939,7 +6091,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation $defaultValueAnnotation
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -5956,7 +6109,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
      */
@@ -5971,7 +6125,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment $defaultValueAttachment
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -5988,7 +6143,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBase64Binary
      */
@@ -6003,7 +6159,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBase64Binary $defaultValueBase64Binary
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -6027,7 +6184,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
@@ -6041,7 +6199,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $defaultValueBoolean
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -6067,7 +6226,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
@@ -6083,7 +6243,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical $defaultValueCanonical
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -6109,7 +6270,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode
      */
@@ -6125,7 +6287,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode $defaultValueCode
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -6151,7 +6314,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -6167,7 +6331,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $defaultValueCodeableConcept
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -6184,7 +6349,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding
      */
@@ -6199,7 +6365,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding $defaultValueCoding
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -6216,7 +6383,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail
      */
@@ -6231,7 +6399,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail $defaultValueContactDetail
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -6249,7 +6418,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactPoint
      */
@@ -6265,7 +6435,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactPoint $defaultValueContactPoint
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -6283,7 +6454,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContributor
      */
@@ -6299,7 +6471,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContributor $defaultValueContributor
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -6318,7 +6491,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRCount
      */
@@ -6335,7 +6509,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRCount $defaultValueCount
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -6353,7 +6528,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement
      */
@@ -6369,7 +6545,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement $defaultValueDataRequirement
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -6387,7 +6564,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
@@ -6403,7 +6581,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate $defaultValueDate
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -6431,7 +6610,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -6449,7 +6629,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $defaultValueDateTime
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -6475,7 +6656,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
@@ -6491,7 +6673,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal $defaultValueDecimal
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -6516,7 +6699,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDistance
      */
@@ -6531,7 +6715,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDistance $defaultValueDistance
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -6548,7 +6733,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDosage
      */
@@ -6563,7 +6749,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDosage $defaultValueDosage
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -6580,7 +6767,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
@@ -6595,7 +6783,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration $defaultValueDuration
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -6614,7 +6803,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression
      */
@@ -6631,7 +6821,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression $defaultValueExpression
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -6648,7 +6839,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRHumanName
      */
@@ -6663,7 +6855,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRHumanName $defaultValueHumanName
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -6683,7 +6876,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId
      */
@@ -6701,7 +6895,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId $defaultValueId
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -6727,7 +6922,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
@@ -6743,7 +6939,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $defaultValueIdentifier
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -6763,7 +6960,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant
      */
@@ -6781,7 +6979,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant $defaultValueInstant
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -6806,7 +7005,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
@@ -6821,7 +7021,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $defaultValueInteger
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -6850,7 +7051,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
@@ -6869,7 +7071,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown $defaultValueMarkdown
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -6894,7 +7097,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney
      */
@@ -6909,7 +7113,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney $defaultValueMoney
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -6927,7 +7132,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIROid
      */
@@ -6943,7 +7149,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIROid $defaultValueOid
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -6970,7 +7177,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRParameterDefinition
      */
@@ -6987,7 +7195,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRParameterDefinition $defaultValueParameterDefinition
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -7004,7 +7213,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -7019,7 +7229,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $defaultValuePeriod
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -7036,7 +7247,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
      */
@@ -7051,7 +7263,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt $defaultValuePositiveInt
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -7078,7 +7291,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -7095,7 +7309,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $defaultValueQuantity
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -7112,7 +7327,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -7127,7 +7343,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange $defaultValueRange
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -7145,7 +7362,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
      */
@@ -7161,7 +7379,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio $defaultValueRatio
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -7178,7 +7397,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -7193,7 +7413,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $defaultValueReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -7211,7 +7432,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRelatedArtifact
      */
@@ -7227,7 +7449,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRelatedArtifact $defaultValueRelatedArtifact
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -7245,7 +7468,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSampledData
      */
@@ -7261,7 +7485,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSampledData $defaultValueSampledData
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -7282,7 +7507,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSignature
      */
@@ -7301,7 +7527,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSignature $defaultValueSignature
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -7318,7 +7545,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -7333,7 +7561,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $defaultValueString
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -7357,7 +7586,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTime
      */
@@ -7371,7 +7601,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTime $defaultValueTime
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -7400,7 +7631,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
@@ -7419,7 +7651,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming $defaultValueTiming
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -7437,7 +7670,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTriggerDefinition
      */
@@ -7453,7 +7687,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTriggerDefinition $defaultValueTriggerDefinition
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -7470,7 +7705,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt
      */
@@ -7485,7 +7721,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt $defaultValueUnsignedInt
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -7510,7 +7747,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
@@ -7525,7 +7763,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri $defaultValueUri
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -7550,7 +7789,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUrl
      */
@@ -7565,7 +7805,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUrl $defaultValueUrl
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -7593,7 +7834,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext
      */
@@ -7611,7 +7853,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext $defaultValueUsageContext
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -7629,7 +7872,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUuid
      */
@@ -7645,7 +7889,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false').
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUuid $defaultValueUuid
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -7791,7 +8036,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddress
      */
@@ -7812,7 +8058,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddress $fixedAddress
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -7831,7 +8078,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
@@ -7848,7 +8096,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge $fixedAge
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -7868,7 +8117,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation
      */
@@ -7886,7 +8136,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation $fixedAnnotation
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -7905,7 +8156,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
      */
@@ -7922,7 +8174,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment $fixedAttachment
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -7941,7 +8194,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBase64Binary
      */
@@ -7958,7 +8212,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBase64Binary $fixedBase64Binary
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -7984,7 +8239,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
@@ -8000,7 +8256,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $fixedBoolean
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -8028,7 +8285,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
@@ -8046,7 +8304,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical $fixedCanonical
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -8074,7 +8333,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode
      */
@@ -8092,7 +8352,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode $fixedCode
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -8120,7 +8381,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -8138,7 +8400,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $fixedCodeableConcept
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -8157,7 +8420,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding
      */
@@ -8174,7 +8438,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding $fixedCoding
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -8193,7 +8458,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail
      */
@@ -8210,7 +8476,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail $fixedContactDetail
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -8230,7 +8497,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactPoint
      */
@@ -8248,7 +8516,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactPoint $fixedContactPoint
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -8268,7 +8537,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContributor
      */
@@ -8286,7 +8556,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContributor $fixedContributor
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -8307,7 +8578,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRCount
      */
@@ -8326,7 +8598,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRCount $fixedCount
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -8346,7 +8619,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement
      */
@@ -8364,7 +8638,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement $fixedDataRequirement
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -8384,7 +8659,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
@@ -8402,7 +8678,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate $fixedDate
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -8432,7 +8709,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -8452,7 +8730,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $fixedDateTime
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -8480,7 +8759,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
@@ -8498,7 +8778,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal $fixedDecimal
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -8525,7 +8806,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDistance
      */
@@ -8542,7 +8824,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDistance $fixedDistance
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -8561,7 +8844,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDosage
      */
@@ -8578,7 +8862,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDosage $fixedDosage
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -8597,7 +8882,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
@@ -8614,7 +8900,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration $fixedDuration
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -8635,7 +8922,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression
      */
@@ -8654,7 +8942,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression $fixedExpression
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -8673,7 +8962,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRHumanName
      */
@@ -8690,7 +8980,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRHumanName $fixedHumanName
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -8712,7 +9003,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId
      */
@@ -8732,7 +9024,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId $fixedId
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -8760,7 +9053,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
@@ -8778,7 +9072,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $fixedIdentifier
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -8800,7 +9095,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant
      */
@@ -8820,7 +9116,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant $fixedInstant
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -8847,7 +9144,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
@@ -8864,7 +9162,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $fixedInteger
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -8895,7 +9194,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
@@ -8916,7 +9216,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown $fixedMarkdown
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -8943,7 +9244,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney
      */
@@ -8960,7 +9262,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney $fixedMoney
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -8980,7 +9283,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIROid
      */
@@ -8998,7 +9302,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIROid $fixedOid
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -9027,7 +9332,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRParameterDefinition
      */
@@ -9046,7 +9352,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRParameterDefinition $fixedParameterDefinition
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -9065,7 +9372,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -9082,7 +9390,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $fixedPeriod
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -9101,7 +9410,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
      */
@@ -9118,7 +9428,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt $fixedPositiveInt
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -9147,7 +9458,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -9166,7 +9478,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $fixedQuantity
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -9185,7 +9498,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -9202,7 +9516,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange $fixedRange
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -9222,7 +9537,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
      */
@@ -9240,7 +9556,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio $fixedRatio
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -9259,7 +9576,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -9276,7 +9594,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $fixedReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -9296,7 +9615,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRelatedArtifact
      */
@@ -9314,7 +9634,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRelatedArtifact $fixedRelatedArtifact
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -9334,7 +9655,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSampledData
      */
@@ -9352,7 +9674,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSampledData $fixedSampledData
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -9375,7 +9698,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSignature
      */
@@ -9396,7 +9720,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSignature $fixedSignature
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -9415,7 +9740,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -9432,7 +9758,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $fixedString
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -9458,7 +9785,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTime
      */
@@ -9474,7 +9802,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTime $fixedTime
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -9505,7 +9834,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
@@ -9526,7 +9856,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming $fixedTiming
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -9546,7 +9877,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTriggerDefinition
      */
@@ -9564,7 +9896,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTriggerDefinition $fixedTriggerDefinition
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -9583,7 +9916,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt
      */
@@ -9600,7 +9934,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt $fixedUnsignedInt
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -9627,7 +9962,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
@@ -9644,7 +9980,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri $fixedUri
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -9671,7 +10008,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUrl
      */
@@ -9688,7 +10026,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUrl $fixedUrl
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -9718,7 +10057,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext
      */
@@ -9738,7 +10078,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext $fixedUsageContext
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -9758,7 +10099,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUuid
      */
@@ -9776,7 +10118,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
      * all values must be an exact match (case and accent sensitive). Missing
-     * elements/attributes must also be missing.
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUuid $fixedUuid
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -10108,7 +10451,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of maxValue*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
@@ -10125,7 +10468,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of maxValue*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate $maxValueDate
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -10154,7 +10497,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of maxValue*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -10173,7 +10516,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of maxValue*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $maxValueDateTime
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -10200,7 +10543,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of maxValue*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
@@ -10217,7 +10560,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of maxValue*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal $maxValueDecimal
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -10246,7 +10589,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of maxValue*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant
      */
@@ -10265,7 +10608,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of maxValue*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant $maxValueInstant
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -10291,7 +10634,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of maxValue*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
@@ -10307,7 +10650,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of maxValue*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $maxValueInteger
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -10333,7 +10676,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of maxValue*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
      */
@@ -10349,7 +10692,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of maxValue*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt $maxValuePositiveInt
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -10377,7 +10720,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of maxValue*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -10395,7 +10738,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of maxValue*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $maxValueQuantity
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -10412,7 +10755,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of maxValue*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTime
      */
@@ -10427,7 +10770,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of maxValue*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTime $maxValueTime
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -10453,7 +10796,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of maxValue*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt
      */
@@ -10469,7 +10812,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of maxValue*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt $maxValueUnsignedInt
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -10582,7 +10925,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of minValue*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
@@ -10599,7 +10942,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of minValue*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate $minValueDate
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -10628,7 +10971,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of minValue*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -10647,7 +10990,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of minValue*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $minValueDateTime
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -10674,7 +11017,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of minValue*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
@@ -10691,7 +11034,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of minValue*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal $minValueDecimal
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -10720,7 +11063,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of minValue*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant
      */
@@ -10739,7 +11082,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of minValue*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant $minValueInstant
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -10765,7 +11108,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of minValue*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
@@ -10781,7 +11124,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of minValue*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $minValueInteger
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -10807,7 +11150,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of minValue*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
      */
@@ -10823,7 +11166,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of minValue*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt $minValuePositiveInt
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -10851,7 +11194,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of minValue*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -10869,7 +11212,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of minValue*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $minValueQuantity
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -10886,7 +11229,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of minValue*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTime
      */
@@ -10901,7 +11244,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of minValue*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTime $minValueTime
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -10927,7 +11270,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of minValue*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt
      */
@@ -10943,7 +11286,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity.
+     * Quantity. (choose any one of minValue*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt $minValueUnsignedInt
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -11106,7 +11449,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddress
      */
@@ -11135,7 +11479,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddress $patternAddress
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -11162,7 +11507,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
@@ -11187,7 +11533,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge $patternAge
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -11215,7 +11562,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation
      */
@@ -11241,7 +11589,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation $patternAnnotation
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -11268,7 +11617,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
      */
@@ -11293,7 +11643,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment $patternAttachment
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -11320,7 +11671,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBase64Binary
      */
@@ -11345,7 +11697,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBase64Binary $patternBase64Binary
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -11379,7 +11732,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
@@ -11403,7 +11757,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $patternBoolean
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -11439,7 +11794,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
@@ -11465,7 +11821,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical $patternCanonical
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -11501,7 +11858,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode
      */
@@ -11527,7 +11885,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode $patternCode
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -11563,7 +11922,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -11589,7 +11949,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $patternCodeableConcept
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -11616,7 +11977,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding
      */
@@ -11641,7 +12003,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding $patternCoding
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -11668,7 +12031,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail
      */
@@ -11693,7 +12057,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail $patternContactDetail
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -11721,7 +12086,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactPoint
      */
@@ -11747,7 +12113,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactPoint $patternContactPoint
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -11775,7 +12142,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContributor
      */
@@ -11801,7 +12169,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContributor $patternContributor
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -11830,7 +12199,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRCount
      */
@@ -11857,7 +12227,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRCount $patternCount
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -11885,7 +12256,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement
      */
@@ -11911,7 +12283,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement $patternDataRequirement
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -11939,7 +12312,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
@@ -11965,7 +12339,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate $patternDate
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -12003,7 +12378,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -12031,7 +12407,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $patternDateTime
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -12067,7 +12444,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
@@ -12093,7 +12471,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal $patternDecimal
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -12128,7 +12507,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDistance
      */
@@ -12153,7 +12533,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDistance $patternDistance
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -12180,7 +12561,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDosage
      */
@@ -12205,7 +12587,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDosage $patternDosage
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -12232,7 +12615,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
@@ -12257,7 +12641,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration $patternDuration
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -12286,7 +12671,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression
      */
@@ -12313,7 +12699,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression $patternExpression
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -12340,7 +12727,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRHumanName
      */
@@ -12365,7 +12753,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRHumanName $patternHumanName
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -12395,7 +12784,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId
      */
@@ -12423,7 +12813,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId $patternId
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -12459,7 +12850,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
@@ -12485,7 +12877,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $patternIdentifier
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -12515,7 +12908,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant
      */
@@ -12543,7 +12937,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant $patternInstant
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -12578,7 +12973,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
@@ -12603,7 +12999,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $patternInteger
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -12642,7 +13039,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
@@ -12671,7 +13069,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown $patternMarkdown
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -12706,7 +13105,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney
      */
@@ -12731,7 +13131,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney $patternMoney
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -12759,7 +13160,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIROid
      */
@@ -12785,7 +13187,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIROid $patternOid
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -12822,7 +13225,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRParameterDefinition
      */
@@ -12849,7 +13253,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRParameterDefinition $patternParameterDefinition
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -12876,7 +13281,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -12901,7 +13307,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $patternPeriod
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -12928,7 +13335,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
      */
@@ -12953,7 +13361,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt $patternPositiveInt
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -12990,7 +13399,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -13017,7 +13427,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $patternQuantity
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -13044,7 +13455,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -13069,7 +13481,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange $patternRange
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -13097,7 +13510,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
      */
@@ -13123,7 +13537,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio $patternRatio
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -13150,7 +13565,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -13175,7 +13591,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $patternReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -13203,7 +13620,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRelatedArtifact
      */
@@ -13229,7 +13647,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRelatedArtifact $patternRelatedArtifact
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -13257,7 +13676,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSampledData
      */
@@ -13283,7 +13703,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSampledData $patternSampledData
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -13314,7 +13735,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSignature
      */
@@ -13343,7 +13765,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSignature $patternSignature
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -13370,7 +13793,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -13395,7 +13819,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $patternString
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -13429,7 +13854,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTime
      */
@@ -13453,7 +13879,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTime $patternTime
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -13492,7 +13919,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
@@ -13521,7 +13949,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming $patternTiming
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -13549,7 +13978,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTriggerDefinition
      */
@@ -13575,7 +14005,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTriggerDefinition $patternTriggerDefinition
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -13602,7 +14033,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt
      */
@@ -13627,7 +14059,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt $patternUnsignedInt
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -13662,7 +14095,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
@@ -13687,7 +14121,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri $patternUri
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -13722,7 +14157,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUrl
      */
@@ -13747,7 +14183,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUrl $patternUrl
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -13785,7 +14222,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext
      */
@@ -13813,7 +14251,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext $patternUsageContext
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -13841,7 +14280,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUuid
      */
@@ -13867,7 +14307,8 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * the pattern must be present in the complex object, and its value must
      * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
      * value 2. If a complex object: it must match (recursively) the pattern value 3.
-     * If an array: it must match (recursively) the pattern value.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUuid $patternUuid
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -15237,6 +15678,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
         if (null !== ($v = $this->getDefaultValueContactDetail())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_CONTACT_DETAIL, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getDefaultValueContactPoint())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_CONTACT_POINT, null, $v->_getFHIRXMLNamespace()));
         }
@@ -15284,6 +15726,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
         if (null !== ($v = $this->getDefaultValueId())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_ID, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getDefaultValueIdentifier())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }
@@ -15296,6 +15739,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
         if (null !== ($v = $this->getDefaultValueMarkdown())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_MARKDOWN, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getDefaultValueMoney())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_MONEY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -15313,6 +15757,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
         if (null !== ($v = $this->getDefaultValuePositiveInt())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_POSITIVE_INT, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getDefaultValueQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -15422,6 +15867,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
         if (null !== ($v = $this->getFixedContactDetail())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_CONTACT_DETAIL, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getFixedContactPoint())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_CONTACT_POINT, null, $v->_getFHIRXMLNamespace()));
         }
@@ -15469,6 +15915,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
         if (null !== ($v = $this->getFixedId())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_ID, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getFixedIdentifier())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }
@@ -15481,6 +15928,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
         if (null !== ($v = $this->getFixedMarkdown())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_MARKDOWN, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getFixedMoney())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_MONEY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -15498,6 +15946,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
         if (null !== ($v = $this->getFixedPositiveInt())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_POSITIVE_INT, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getFixedQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -15600,6 +16049,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
         if (null !== ($v = $this->getMaxValuePositiveInt())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_POSITIVE_INT, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getMaxValueQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -15633,6 +16083,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
         if (null !== ($v = $this->getMinValuePositiveInt())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_POSITIVE_INT, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getMinValueQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -15691,6 +16142,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
         if (null !== ($v = $this->getPatternContactDetail())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_CONTACT_DETAIL, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getPatternContactPoint())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_CONTACT_POINT, null, $v->_getFHIRXMLNamespace()));
         }
@@ -15738,6 +16190,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
         if (null !== ($v = $this->getPatternId())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_ID, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getPatternIdentifier())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }
@@ -15750,6 +16203,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
         if (null !== ($v = $this->getPatternMarkdown())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_MARKDOWN, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getPatternMoney())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_MONEY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -15767,6 +16221,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
         if (null !== ($v = $this->getPatternPositiveInt())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_POSITIVE_INT, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getPatternQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -15824,6 +16279,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
         if (null !== ($v = $this->getPatternUuid())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_UUID, null, $v->_getFHIRXMLNamespace()));
         }
+
         if ([] !== ($vs = $this->getRepresentation())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -15873,12 +16329,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_ALIAS][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_ALIAS_EXT])) {
-                        $a[self::FIELD_ALIAS_EXT] = [];
-                    }
-                    $a[self::FIELD_ALIAS_EXT][] = $v;
-                }
+                $a[self::FIELD_ALIAS_EXT][] = $v;
             }
         }
         if (null !== ($v = $this->getBase())) {
@@ -15892,9 +16343,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getComment())) {
             $a[self::FIELD_COMMENT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_COMMENT_EXT] = $v;
-            }
+            $a[self::FIELD_COMMENT_EXT] = $v;
         }
         if ([] !== ($vs = $this->getCondition())) {
             $a[self::FIELD_CONDITION] = [];
@@ -15903,12 +16352,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_CONDITION][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_CONDITION_EXT])) {
-                        $a[self::FIELD_CONDITION_EXT] = [];
-                    }
-                    $a[self::FIELD_CONDITION_EXT][] = $v;
-                }
+                $a[self::FIELD_CONDITION_EXT][] = $v;
             }
         }
         if ([] !== ($vs = $this->getConstraint())) {
@@ -15916,9 +16360,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getContentReference())) {
             $a[self::FIELD_CONTENT_REFERENCE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_CONTENT_REFERENCE_EXT] = $v;
-            }
+            $a[self::FIELD_CONTENT_REFERENCE_EXT] = $v;
         }
         if (null !== ($v = $this->getDefaultValueAddress())) {
             $a[self::FIELD_DEFAULT_VALUE_ADDRESS] = $v;
@@ -15934,27 +16376,19 @@ class FHIRElementDefinition extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getDefaultValueBase64Binary())) {
             $a[self::FIELD_DEFAULT_VALUE_BASE_64BINARY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DEFAULT_VALUE_BASE_64BINARY_EXT] = $v;
-            }
+            $a[self::FIELD_DEFAULT_VALUE_BASE_64BINARY_EXT] = $v;
         }
         if (null !== ($v = $this->getDefaultValueBoolean())) {
             $a[self::FIELD_DEFAULT_VALUE_BOOLEAN] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DEFAULT_VALUE_BOOLEAN_EXT] = $v;
-            }
+            $a[self::FIELD_DEFAULT_VALUE_BOOLEAN_EXT] = $v;
         }
         if (null !== ($v = $this->getDefaultValueCanonical())) {
             $a[self::FIELD_DEFAULT_VALUE_CANONICAL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DEFAULT_VALUE_CANONICAL_EXT] = $v;
-            }
+            $a[self::FIELD_DEFAULT_VALUE_CANONICAL_EXT] = $v;
         }
         if (null !== ($v = $this->getDefaultValueCode())) {
             $a[self::FIELD_DEFAULT_VALUE_CODE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DEFAULT_VALUE_CODE_EXT] = $v;
-            }
+            $a[self::FIELD_DEFAULT_VALUE_CODE_EXT] = $v;
         }
         if (null !== ($v = $this->getDefaultValueCodeableConcept())) {
             $a[self::FIELD_DEFAULT_VALUE_CODEABLE_CONCEPT] = $v;
@@ -15966,10 +16400,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
             $a[self::FIELD_DEFAULT_VALUE_CONTACT_DETAIL] = $v;
         }
         if (null !== ($v = $this->getDefaultValueContactPoint())) {
-            $a[self::FIELD_DEFAULT_VALUE_CONTACT_POINT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DEFAULT_VALUE_CONTACT_POINT_EXT] = $v;
-            }
+            $a[self::FIELD_DEFAULT_VALUE_CONTACT_POINT] = $v;
         }
         if (null !== ($v = $this->getDefaultValueContributor())) {
             $a[self::FIELD_DEFAULT_VALUE_CONTRIBUTOR] = $v;
@@ -15982,21 +16413,15 @@ class FHIRElementDefinition extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getDefaultValueDate())) {
             $a[self::FIELD_DEFAULT_VALUE_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DEFAULT_VALUE_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_DEFAULT_VALUE_DATE_EXT] = $v;
         }
         if (null !== ($v = $this->getDefaultValueDateTime())) {
             $a[self::FIELD_DEFAULT_VALUE_DATE_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DEFAULT_VALUE_DATE_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_DEFAULT_VALUE_DATE_TIME_EXT] = $v;
         }
         if (null !== ($v = $this->getDefaultValueDecimal())) {
             $a[self::FIELD_DEFAULT_VALUE_DECIMAL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DEFAULT_VALUE_DECIMAL_EXT] = $v;
-            }
+            $a[self::FIELD_DEFAULT_VALUE_DECIMAL_EXT] = $v;
         }
         if (null !== ($v = $this->getDefaultValueDistance())) {
             $a[self::FIELD_DEFAULT_VALUE_DISTANCE] = $v;
@@ -16015,45 +16440,29 @@ class FHIRElementDefinition extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getDefaultValueId())) {
             $a[self::FIELD_DEFAULT_VALUE_ID] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DEFAULT_VALUE_ID_EXT] = $v;
-            }
+            $a[self::FIELD_DEFAULT_VALUE_ID_EXT] = $v;
         }
         if (null !== ($v = $this->getDefaultValueIdentifier())) {
-            $a[self::FIELD_DEFAULT_VALUE_IDENTIFIER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DEFAULT_VALUE_IDENTIFIER_EXT] = $v;
-            }
+            $a[self::FIELD_DEFAULT_VALUE_IDENTIFIER] = $v;
         }
         if (null !== ($v = $this->getDefaultValueInstant())) {
             $a[self::FIELD_DEFAULT_VALUE_INSTANT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DEFAULT_VALUE_INSTANT_EXT] = $v;
-            }
+            $a[self::FIELD_DEFAULT_VALUE_INSTANT_EXT] = $v;
         }
         if (null !== ($v = $this->getDefaultValueInteger())) {
             $a[self::FIELD_DEFAULT_VALUE_INTEGER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DEFAULT_VALUE_INTEGER_EXT] = $v;
-            }
+            $a[self::FIELD_DEFAULT_VALUE_INTEGER_EXT] = $v;
         }
         if (null !== ($v = $this->getDefaultValueMarkdown())) {
             $a[self::FIELD_DEFAULT_VALUE_MARKDOWN] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DEFAULT_VALUE_MARKDOWN_EXT] = $v;
-            }
+            $a[self::FIELD_DEFAULT_VALUE_MARKDOWN_EXT] = $v;
         }
         if (null !== ($v = $this->getDefaultValueMoney())) {
-            $a[self::FIELD_DEFAULT_VALUE_MONEY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DEFAULT_VALUE_MONEY_EXT] = $v;
-            }
+            $a[self::FIELD_DEFAULT_VALUE_MONEY] = $v;
         }
         if (null !== ($v = $this->getDefaultValueOid())) {
             $a[self::FIELD_DEFAULT_VALUE_OID] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DEFAULT_VALUE_OID_EXT] = $v;
-            }
+            $a[self::FIELD_DEFAULT_VALUE_OID_EXT] = $v;
         }
         if (null !== ($v = $this->getDefaultValueParameterDefinition())) {
             $a[self::FIELD_DEFAULT_VALUE_PARAMETER_DEFINITION] = $v;
@@ -16063,15 +16472,10 @@ class FHIRElementDefinition extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getDefaultValuePositiveInt())) {
             $a[self::FIELD_DEFAULT_VALUE_POSITIVE_INT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DEFAULT_VALUE_POSITIVE_INT_EXT] = $v;
-            }
+            $a[self::FIELD_DEFAULT_VALUE_POSITIVE_INT_EXT] = $v;
         }
         if (null !== ($v = $this->getDefaultValueQuantity())) {
-            $a[self::FIELD_DEFAULT_VALUE_QUANTITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DEFAULT_VALUE_QUANTITY_EXT] = $v;
-            }
+            $a[self::FIELD_DEFAULT_VALUE_QUANTITY] = $v;
         }
         if (null !== ($v = $this->getDefaultValueRange())) {
             $a[self::FIELD_DEFAULT_VALUE_RANGE] = $v;
@@ -16093,15 +16497,11 @@ class FHIRElementDefinition extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getDefaultValueString())) {
             $a[self::FIELD_DEFAULT_VALUE_STRING] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DEFAULT_VALUE_STRING_EXT] = $v;
-            }
+            $a[self::FIELD_DEFAULT_VALUE_STRING_EXT] = $v;
         }
         if (null !== ($v = $this->getDefaultValueTime())) {
             $a[self::FIELD_DEFAULT_VALUE_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DEFAULT_VALUE_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_DEFAULT_VALUE_TIME_EXT] = $v;
         }
         if (null !== ($v = $this->getDefaultValueTiming())) {
             $a[self::FIELD_DEFAULT_VALUE_TIMING] = $v;
@@ -16111,36 +16511,26 @@ class FHIRElementDefinition extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getDefaultValueUnsignedInt())) {
             $a[self::FIELD_DEFAULT_VALUE_UNSIGNED_INT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DEFAULT_VALUE_UNSIGNED_INT_EXT] = $v;
-            }
+            $a[self::FIELD_DEFAULT_VALUE_UNSIGNED_INT_EXT] = $v;
         }
         if (null !== ($v = $this->getDefaultValueUri())) {
             $a[self::FIELD_DEFAULT_VALUE_URI] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DEFAULT_VALUE_URI_EXT] = $v;
-            }
+            $a[self::FIELD_DEFAULT_VALUE_URI_EXT] = $v;
         }
         if (null !== ($v = $this->getDefaultValueUrl())) {
             $a[self::FIELD_DEFAULT_VALUE_URL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DEFAULT_VALUE_URL_EXT] = $v;
-            }
+            $a[self::FIELD_DEFAULT_VALUE_URL_EXT] = $v;
         }
         if (null !== ($v = $this->getDefaultValueUsageContext())) {
             $a[self::FIELD_DEFAULT_VALUE_USAGE_CONTEXT] = $v;
         }
         if (null !== ($v = $this->getDefaultValueUuid())) {
             $a[self::FIELD_DEFAULT_VALUE_UUID] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DEFAULT_VALUE_UUID_EXT] = $v;
-            }
+            $a[self::FIELD_DEFAULT_VALUE_UUID_EXT] = $v;
         }
         if (null !== ($v = $this->getDefinition())) {
             $a[self::FIELD_DEFINITION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DEFINITION_EXT] = $v;
-            }
+            $a[self::FIELD_DEFINITION_EXT] = $v;
         }
         if ([] !== ($vs = $this->getExample())) {
             $a[self::FIELD_EXAMPLE] = $vs;
@@ -16159,27 +16549,19 @@ class FHIRElementDefinition extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getFixedBase64Binary())) {
             $a[self::FIELD_FIXED_BASE_64BINARY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_FIXED_BASE_64BINARY_EXT] = $v;
-            }
+            $a[self::FIELD_FIXED_BASE_64BINARY_EXT] = $v;
         }
         if (null !== ($v = $this->getFixedBoolean())) {
             $a[self::FIELD_FIXED_BOOLEAN] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_FIXED_BOOLEAN_EXT] = $v;
-            }
+            $a[self::FIELD_FIXED_BOOLEAN_EXT] = $v;
         }
         if (null !== ($v = $this->getFixedCanonical())) {
             $a[self::FIELD_FIXED_CANONICAL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_FIXED_CANONICAL_EXT] = $v;
-            }
+            $a[self::FIELD_FIXED_CANONICAL_EXT] = $v;
         }
         if (null !== ($v = $this->getFixedCode())) {
             $a[self::FIELD_FIXED_CODE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_FIXED_CODE_EXT] = $v;
-            }
+            $a[self::FIELD_FIXED_CODE_EXT] = $v;
         }
         if (null !== ($v = $this->getFixedCodeableConcept())) {
             $a[self::FIELD_FIXED_CODEABLE_CONCEPT] = $v;
@@ -16191,10 +16573,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
             $a[self::FIELD_FIXED_CONTACT_DETAIL] = $v;
         }
         if (null !== ($v = $this->getFixedContactPoint())) {
-            $a[self::FIELD_FIXED_CONTACT_POINT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_FIXED_CONTACT_POINT_EXT] = $v;
-            }
+            $a[self::FIELD_FIXED_CONTACT_POINT] = $v;
         }
         if (null !== ($v = $this->getFixedContributor())) {
             $a[self::FIELD_FIXED_CONTRIBUTOR] = $v;
@@ -16207,21 +16586,15 @@ class FHIRElementDefinition extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getFixedDate())) {
             $a[self::FIELD_FIXED_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_FIXED_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_FIXED_DATE_EXT] = $v;
         }
         if (null !== ($v = $this->getFixedDateTime())) {
             $a[self::FIELD_FIXED_DATE_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_FIXED_DATE_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_FIXED_DATE_TIME_EXT] = $v;
         }
         if (null !== ($v = $this->getFixedDecimal())) {
             $a[self::FIELD_FIXED_DECIMAL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_FIXED_DECIMAL_EXT] = $v;
-            }
+            $a[self::FIELD_FIXED_DECIMAL_EXT] = $v;
         }
         if (null !== ($v = $this->getFixedDistance())) {
             $a[self::FIELD_FIXED_DISTANCE] = $v;
@@ -16240,45 +16613,29 @@ class FHIRElementDefinition extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getFixedId())) {
             $a[self::FIELD_FIXED_ID] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_FIXED_ID_EXT] = $v;
-            }
+            $a[self::FIELD_FIXED_ID_EXT] = $v;
         }
         if (null !== ($v = $this->getFixedIdentifier())) {
-            $a[self::FIELD_FIXED_IDENTIFIER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_FIXED_IDENTIFIER_EXT] = $v;
-            }
+            $a[self::FIELD_FIXED_IDENTIFIER] = $v;
         }
         if (null !== ($v = $this->getFixedInstant())) {
             $a[self::FIELD_FIXED_INSTANT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_FIXED_INSTANT_EXT] = $v;
-            }
+            $a[self::FIELD_FIXED_INSTANT_EXT] = $v;
         }
         if (null !== ($v = $this->getFixedInteger())) {
             $a[self::FIELD_FIXED_INTEGER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_FIXED_INTEGER_EXT] = $v;
-            }
+            $a[self::FIELD_FIXED_INTEGER_EXT] = $v;
         }
         if (null !== ($v = $this->getFixedMarkdown())) {
             $a[self::FIELD_FIXED_MARKDOWN] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_FIXED_MARKDOWN_EXT] = $v;
-            }
+            $a[self::FIELD_FIXED_MARKDOWN_EXT] = $v;
         }
         if (null !== ($v = $this->getFixedMoney())) {
-            $a[self::FIELD_FIXED_MONEY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_FIXED_MONEY_EXT] = $v;
-            }
+            $a[self::FIELD_FIXED_MONEY] = $v;
         }
         if (null !== ($v = $this->getFixedOid())) {
             $a[self::FIELD_FIXED_OID] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_FIXED_OID_EXT] = $v;
-            }
+            $a[self::FIELD_FIXED_OID_EXT] = $v;
         }
         if (null !== ($v = $this->getFixedParameterDefinition())) {
             $a[self::FIELD_FIXED_PARAMETER_DEFINITION] = $v;
@@ -16288,15 +16645,10 @@ class FHIRElementDefinition extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getFixedPositiveInt())) {
             $a[self::FIELD_FIXED_POSITIVE_INT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_FIXED_POSITIVE_INT_EXT] = $v;
-            }
+            $a[self::FIELD_FIXED_POSITIVE_INT_EXT] = $v;
         }
         if (null !== ($v = $this->getFixedQuantity())) {
-            $a[self::FIELD_FIXED_QUANTITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_FIXED_QUANTITY_EXT] = $v;
-            }
+            $a[self::FIELD_FIXED_QUANTITY] = $v;
         }
         if (null !== ($v = $this->getFixedRange())) {
             $a[self::FIELD_FIXED_RANGE] = $v;
@@ -16318,15 +16670,11 @@ class FHIRElementDefinition extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getFixedString())) {
             $a[self::FIELD_FIXED_STRING] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_FIXED_STRING_EXT] = $v;
-            }
+            $a[self::FIELD_FIXED_STRING_EXT] = $v;
         }
         if (null !== ($v = $this->getFixedTime())) {
             $a[self::FIELD_FIXED_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_FIXED_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_FIXED_TIME_EXT] = $v;
         }
         if (null !== ($v = $this->getFixedTiming())) {
             $a[self::FIELD_FIXED_TIMING] = $v;
@@ -16336,207 +16684,139 @@ class FHIRElementDefinition extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getFixedUnsignedInt())) {
             $a[self::FIELD_FIXED_UNSIGNED_INT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_FIXED_UNSIGNED_INT_EXT] = $v;
-            }
+            $a[self::FIELD_FIXED_UNSIGNED_INT_EXT] = $v;
         }
         if (null !== ($v = $this->getFixedUri())) {
             $a[self::FIELD_FIXED_URI] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_FIXED_URI_EXT] = $v;
-            }
+            $a[self::FIELD_FIXED_URI_EXT] = $v;
         }
         if (null !== ($v = $this->getFixedUrl())) {
             $a[self::FIELD_FIXED_URL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_FIXED_URL_EXT] = $v;
-            }
+            $a[self::FIELD_FIXED_URL_EXT] = $v;
         }
         if (null !== ($v = $this->getFixedUsageContext())) {
             $a[self::FIELD_FIXED_USAGE_CONTEXT] = $v;
         }
         if (null !== ($v = $this->getFixedUuid())) {
             $a[self::FIELD_FIXED_UUID] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_FIXED_UUID_EXT] = $v;
-            }
+            $a[self::FIELD_FIXED_UUID_EXT] = $v;
         }
         if (null !== ($v = $this->getIsModifier())) {
             $a[self::FIELD_IS_MODIFIER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_IS_MODIFIER_EXT] = $v;
-            }
+            $a[self::FIELD_IS_MODIFIER_EXT] = $v;
         }
         if (null !== ($v = $this->getIsModifierReason())) {
             $a[self::FIELD_IS_MODIFIER_REASON] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_IS_MODIFIER_REASON_EXT] = $v;
-            }
+            $a[self::FIELD_IS_MODIFIER_REASON_EXT] = $v;
         }
         if (null !== ($v = $this->getIsSummary())) {
             $a[self::FIELD_IS_SUMMARY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_IS_SUMMARY_EXT] = $v;
-            }
+            $a[self::FIELD_IS_SUMMARY_EXT] = $v;
         }
         if (null !== ($v = $this->getLabel())) {
             $a[self::FIELD_LABEL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_LABEL_EXT] = $v;
-            }
+            $a[self::FIELD_LABEL_EXT] = $v;
         }
         if ([] !== ($vs = $this->getMapping())) {
             $a[self::FIELD_MAPPING] = $vs;
         }
         if (null !== ($v = $this->getMax())) {
             $a[self::FIELD_MAX] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MAX_EXT] = $v;
-            }
+            $a[self::FIELD_MAX_EXT] = $v;
         }
         if (null !== ($v = $this->getMaxLength())) {
             $a[self::FIELD_MAX_LENGTH] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MAX_LENGTH_EXT] = $v;
-            }
+            $a[self::FIELD_MAX_LENGTH_EXT] = $v;
         }
         if (null !== ($v = $this->getMaxValueDate())) {
             $a[self::FIELD_MAX_VALUE_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MAX_VALUE_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_MAX_VALUE_DATE_EXT] = $v;
         }
         if (null !== ($v = $this->getMaxValueDateTime())) {
             $a[self::FIELD_MAX_VALUE_DATE_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MAX_VALUE_DATE_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_MAX_VALUE_DATE_TIME_EXT] = $v;
         }
         if (null !== ($v = $this->getMaxValueDecimal())) {
             $a[self::FIELD_MAX_VALUE_DECIMAL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MAX_VALUE_DECIMAL_EXT] = $v;
-            }
+            $a[self::FIELD_MAX_VALUE_DECIMAL_EXT] = $v;
         }
         if (null !== ($v = $this->getMaxValueInstant())) {
             $a[self::FIELD_MAX_VALUE_INSTANT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MAX_VALUE_INSTANT_EXT] = $v;
-            }
+            $a[self::FIELD_MAX_VALUE_INSTANT_EXT] = $v;
         }
         if (null !== ($v = $this->getMaxValueInteger())) {
             $a[self::FIELD_MAX_VALUE_INTEGER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MAX_VALUE_INTEGER_EXT] = $v;
-            }
+            $a[self::FIELD_MAX_VALUE_INTEGER_EXT] = $v;
         }
         if (null !== ($v = $this->getMaxValuePositiveInt())) {
             $a[self::FIELD_MAX_VALUE_POSITIVE_INT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MAX_VALUE_POSITIVE_INT_EXT] = $v;
-            }
+            $a[self::FIELD_MAX_VALUE_POSITIVE_INT_EXT] = $v;
         }
         if (null !== ($v = $this->getMaxValueQuantity())) {
-            $a[self::FIELD_MAX_VALUE_QUANTITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MAX_VALUE_QUANTITY_EXT] = $v;
-            }
+            $a[self::FIELD_MAX_VALUE_QUANTITY] = $v;
         }
         if (null !== ($v = $this->getMaxValueTime())) {
             $a[self::FIELD_MAX_VALUE_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MAX_VALUE_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_MAX_VALUE_TIME_EXT] = $v;
         }
         if (null !== ($v = $this->getMaxValueUnsignedInt())) {
             $a[self::FIELD_MAX_VALUE_UNSIGNED_INT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MAX_VALUE_UNSIGNED_INT_EXT] = $v;
-            }
+            $a[self::FIELD_MAX_VALUE_UNSIGNED_INT_EXT] = $v;
         }
         if (null !== ($v = $this->getMeaningWhenMissing())) {
             $a[self::FIELD_MEANING_WHEN_MISSING] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MEANING_WHEN_MISSING_EXT] = $v;
-            }
+            $a[self::FIELD_MEANING_WHEN_MISSING_EXT] = $v;
         }
         if (null !== ($v = $this->getMin())) {
             $a[self::FIELD_MIN] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MIN_EXT] = $v;
-            }
+            $a[self::FIELD_MIN_EXT] = $v;
         }
         if (null !== ($v = $this->getMinValueDate())) {
             $a[self::FIELD_MIN_VALUE_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MIN_VALUE_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_MIN_VALUE_DATE_EXT] = $v;
         }
         if (null !== ($v = $this->getMinValueDateTime())) {
             $a[self::FIELD_MIN_VALUE_DATE_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MIN_VALUE_DATE_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_MIN_VALUE_DATE_TIME_EXT] = $v;
         }
         if (null !== ($v = $this->getMinValueDecimal())) {
             $a[self::FIELD_MIN_VALUE_DECIMAL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MIN_VALUE_DECIMAL_EXT] = $v;
-            }
+            $a[self::FIELD_MIN_VALUE_DECIMAL_EXT] = $v;
         }
         if (null !== ($v = $this->getMinValueInstant())) {
             $a[self::FIELD_MIN_VALUE_INSTANT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MIN_VALUE_INSTANT_EXT] = $v;
-            }
+            $a[self::FIELD_MIN_VALUE_INSTANT_EXT] = $v;
         }
         if (null !== ($v = $this->getMinValueInteger())) {
             $a[self::FIELD_MIN_VALUE_INTEGER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MIN_VALUE_INTEGER_EXT] = $v;
-            }
+            $a[self::FIELD_MIN_VALUE_INTEGER_EXT] = $v;
         }
         if (null !== ($v = $this->getMinValuePositiveInt())) {
             $a[self::FIELD_MIN_VALUE_POSITIVE_INT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MIN_VALUE_POSITIVE_INT_EXT] = $v;
-            }
+            $a[self::FIELD_MIN_VALUE_POSITIVE_INT_EXT] = $v;
         }
         if (null !== ($v = $this->getMinValueQuantity())) {
-            $a[self::FIELD_MIN_VALUE_QUANTITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MIN_VALUE_QUANTITY_EXT] = $v;
-            }
+            $a[self::FIELD_MIN_VALUE_QUANTITY] = $v;
         }
         if (null !== ($v = $this->getMinValueTime())) {
             $a[self::FIELD_MIN_VALUE_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MIN_VALUE_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_MIN_VALUE_TIME_EXT] = $v;
         }
         if (null !== ($v = $this->getMinValueUnsignedInt())) {
             $a[self::FIELD_MIN_VALUE_UNSIGNED_INT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MIN_VALUE_UNSIGNED_INT_EXT] = $v;
-            }
+            $a[self::FIELD_MIN_VALUE_UNSIGNED_INT_EXT] = $v;
         }
         if (null !== ($v = $this->getMustSupport())) {
             $a[self::FIELD_MUST_SUPPORT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MUST_SUPPORT_EXT] = $v;
-            }
+            $a[self::FIELD_MUST_SUPPORT_EXT] = $v;
         }
         if (null !== ($v = $this->getOrderMeaning())) {
             $a[self::FIELD_ORDER_MEANING] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ORDER_MEANING_EXT] = $v;
-            }
+            $a[self::FIELD_ORDER_MEANING_EXT] = $v;
         }
         if (null !== ($v = $this->getPath())) {
             $a[self::FIELD_PATH] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PATH_EXT] = $v;
-            }
+            $a[self::FIELD_PATH_EXT] = $v;
         }
         if (null !== ($v = $this->getPatternAddress())) {
             $a[self::FIELD_PATTERN_ADDRESS] = $v;
@@ -16552,27 +16832,19 @@ class FHIRElementDefinition extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getPatternBase64Binary())) {
             $a[self::FIELD_PATTERN_BASE_64BINARY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PATTERN_BASE_64BINARY_EXT] = $v;
-            }
+            $a[self::FIELD_PATTERN_BASE_64BINARY_EXT] = $v;
         }
         if (null !== ($v = $this->getPatternBoolean())) {
             $a[self::FIELD_PATTERN_BOOLEAN] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PATTERN_BOOLEAN_EXT] = $v;
-            }
+            $a[self::FIELD_PATTERN_BOOLEAN_EXT] = $v;
         }
         if (null !== ($v = $this->getPatternCanonical())) {
             $a[self::FIELD_PATTERN_CANONICAL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PATTERN_CANONICAL_EXT] = $v;
-            }
+            $a[self::FIELD_PATTERN_CANONICAL_EXT] = $v;
         }
         if (null !== ($v = $this->getPatternCode())) {
             $a[self::FIELD_PATTERN_CODE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PATTERN_CODE_EXT] = $v;
-            }
+            $a[self::FIELD_PATTERN_CODE_EXT] = $v;
         }
         if (null !== ($v = $this->getPatternCodeableConcept())) {
             $a[self::FIELD_PATTERN_CODEABLE_CONCEPT] = $v;
@@ -16584,10 +16856,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
             $a[self::FIELD_PATTERN_CONTACT_DETAIL] = $v;
         }
         if (null !== ($v = $this->getPatternContactPoint())) {
-            $a[self::FIELD_PATTERN_CONTACT_POINT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PATTERN_CONTACT_POINT_EXT] = $v;
-            }
+            $a[self::FIELD_PATTERN_CONTACT_POINT] = $v;
         }
         if (null !== ($v = $this->getPatternContributor())) {
             $a[self::FIELD_PATTERN_CONTRIBUTOR] = $v;
@@ -16600,21 +16869,15 @@ class FHIRElementDefinition extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getPatternDate())) {
             $a[self::FIELD_PATTERN_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PATTERN_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_PATTERN_DATE_EXT] = $v;
         }
         if (null !== ($v = $this->getPatternDateTime())) {
             $a[self::FIELD_PATTERN_DATE_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PATTERN_DATE_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_PATTERN_DATE_TIME_EXT] = $v;
         }
         if (null !== ($v = $this->getPatternDecimal())) {
             $a[self::FIELD_PATTERN_DECIMAL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PATTERN_DECIMAL_EXT] = $v;
-            }
+            $a[self::FIELD_PATTERN_DECIMAL_EXT] = $v;
         }
         if (null !== ($v = $this->getPatternDistance())) {
             $a[self::FIELD_PATTERN_DISTANCE] = $v;
@@ -16633,45 +16896,29 @@ class FHIRElementDefinition extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getPatternId())) {
             $a[self::FIELD_PATTERN_ID] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PATTERN_ID_EXT] = $v;
-            }
+            $a[self::FIELD_PATTERN_ID_EXT] = $v;
         }
         if (null !== ($v = $this->getPatternIdentifier())) {
-            $a[self::FIELD_PATTERN_IDENTIFIER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PATTERN_IDENTIFIER_EXT] = $v;
-            }
+            $a[self::FIELD_PATTERN_IDENTIFIER] = $v;
         }
         if (null !== ($v = $this->getPatternInstant())) {
             $a[self::FIELD_PATTERN_INSTANT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PATTERN_INSTANT_EXT] = $v;
-            }
+            $a[self::FIELD_PATTERN_INSTANT_EXT] = $v;
         }
         if (null !== ($v = $this->getPatternInteger())) {
             $a[self::FIELD_PATTERN_INTEGER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PATTERN_INTEGER_EXT] = $v;
-            }
+            $a[self::FIELD_PATTERN_INTEGER_EXT] = $v;
         }
         if (null !== ($v = $this->getPatternMarkdown())) {
             $a[self::FIELD_PATTERN_MARKDOWN] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PATTERN_MARKDOWN_EXT] = $v;
-            }
+            $a[self::FIELD_PATTERN_MARKDOWN_EXT] = $v;
         }
         if (null !== ($v = $this->getPatternMoney())) {
-            $a[self::FIELD_PATTERN_MONEY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PATTERN_MONEY_EXT] = $v;
-            }
+            $a[self::FIELD_PATTERN_MONEY] = $v;
         }
         if (null !== ($v = $this->getPatternOid())) {
             $a[self::FIELD_PATTERN_OID] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PATTERN_OID_EXT] = $v;
-            }
+            $a[self::FIELD_PATTERN_OID_EXT] = $v;
         }
         if (null !== ($v = $this->getPatternParameterDefinition())) {
             $a[self::FIELD_PATTERN_PARAMETER_DEFINITION] = $v;
@@ -16681,15 +16928,10 @@ class FHIRElementDefinition extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getPatternPositiveInt())) {
             $a[self::FIELD_PATTERN_POSITIVE_INT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PATTERN_POSITIVE_INT_EXT] = $v;
-            }
+            $a[self::FIELD_PATTERN_POSITIVE_INT_EXT] = $v;
         }
         if (null !== ($v = $this->getPatternQuantity())) {
-            $a[self::FIELD_PATTERN_QUANTITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PATTERN_QUANTITY_EXT] = $v;
-            }
+            $a[self::FIELD_PATTERN_QUANTITY] = $v;
         }
         if (null !== ($v = $this->getPatternRange())) {
             $a[self::FIELD_PATTERN_RANGE] = $v;
@@ -16711,15 +16953,11 @@ class FHIRElementDefinition extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getPatternString())) {
             $a[self::FIELD_PATTERN_STRING] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PATTERN_STRING_EXT] = $v;
-            }
+            $a[self::FIELD_PATTERN_STRING_EXT] = $v;
         }
         if (null !== ($v = $this->getPatternTime())) {
             $a[self::FIELD_PATTERN_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PATTERN_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_PATTERN_TIME_EXT] = $v;
         }
         if (null !== ($v = $this->getPatternTiming())) {
             $a[self::FIELD_PATTERN_TIMING] = $v;
@@ -16729,69 +16967,41 @@ class FHIRElementDefinition extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getPatternUnsignedInt())) {
             $a[self::FIELD_PATTERN_UNSIGNED_INT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PATTERN_UNSIGNED_INT_EXT] = $v;
-            }
+            $a[self::FIELD_PATTERN_UNSIGNED_INT_EXT] = $v;
         }
         if (null !== ($v = $this->getPatternUri())) {
             $a[self::FIELD_PATTERN_URI] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PATTERN_URI_EXT] = $v;
-            }
+            $a[self::FIELD_PATTERN_URI_EXT] = $v;
         }
         if (null !== ($v = $this->getPatternUrl())) {
             $a[self::FIELD_PATTERN_URL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PATTERN_URL_EXT] = $v;
-            }
+            $a[self::FIELD_PATTERN_URL_EXT] = $v;
         }
         if (null !== ($v = $this->getPatternUsageContext())) {
             $a[self::FIELD_PATTERN_USAGE_CONTEXT] = $v;
         }
         if (null !== ($v = $this->getPatternUuid())) {
             $a[self::FIELD_PATTERN_UUID] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PATTERN_UUID_EXT] = $v;
-            }
+            $a[self::FIELD_PATTERN_UUID_EXT] = $v;
         }
         if ([] !== ($vs = $this->getRepresentation())) {
-            $a[self::FIELD_REPRESENTATION] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_REPRESENTATION][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_REPRESENTATION_EXT])) {
-                        $a[self::FIELD_REPRESENTATION_EXT] = [];
-                    }
-                    $a[self::FIELD_REPRESENTATION_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_REPRESENTATION] = $vs;
         }
         if (null !== ($v = $this->getRequirements())) {
             $a[self::FIELD_REQUIREMENTS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_REQUIREMENTS_EXT] = $v;
-            }
+            $a[self::FIELD_REQUIREMENTS_EXT] = $v;
         }
         if (null !== ($v = $this->getShort())) {
             $a[self::FIELD_SHORT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SHORT_EXT] = $v;
-            }
+            $a[self::FIELD_SHORT_EXT] = $v;
         }
         if (null !== ($v = $this->getSliceIsConstraining())) {
             $a[self::FIELD_SLICE_IS_CONSTRAINING] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SLICE_IS_CONSTRAINING_EXT] = $v;
-            }
+            $a[self::FIELD_SLICE_IS_CONSTRAINING_EXT] = $v;
         }
         if (null !== ($v = $this->getSliceName())) {
             $a[self::FIELD_SLICE_NAME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SLICE_NAME_EXT] = $v;
-            }
+            $a[self::FIELD_SLICE_NAME_EXT] = $v;
         }
         if (null !== ($v = $this->getSlicing())) {
             $a[self::FIELD_SLICING] = $v;

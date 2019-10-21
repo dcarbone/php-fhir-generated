@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -440,7 +440,8 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
      *
      * The intended subjects for the ResearchElementDefinition. If this element is not
      * provided, a Patient subject is assumed, but the subject of the
-     * ResearchElementDefinition can be anything.
+     * ResearchElementDefinition can be anything. (choose any one of subject*, but only
+     * one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -452,7 +453,8 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
      *
      * The intended subjects for the ResearchElementDefinition. If this element is not
      * provided, a Patient subject is assumed, but the subject of the
-     * ResearchElementDefinition can be anything.
+     * ResearchElementDefinition can be anything. (choose any one of subject*, but only
+     * one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -2283,7 +2285,8 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
      *
      * The intended subjects for the ResearchElementDefinition. If this element is not
      * provided, a Patient subject is assumed, but the subject of the
-     * ResearchElementDefinition can be anything.
+     * ResearchElementDefinition can be anything. (choose any one of subject*, but only
+     * one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -2300,7 +2303,8 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
      *
      * The intended subjects for the ResearchElementDefinition. If this element is not
      * provided, a Patient subject is assumed, but the subject of the
-     * ResearchElementDefinition can be anything.
+     * ResearchElementDefinition can be anything. (choose any one of subject*, but only
+     * one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $subjectCodeableConcept
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRResearchElementDefinition
@@ -2318,7 +2322,8 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
      *
      * The intended subjects for the ResearchElementDefinition. If this element is not
      * provided, a Patient subject is assumed, but the subject of the
-     * ResearchElementDefinition can be anything.
+     * ResearchElementDefinition can be anything. (choose any one of subject*, but only
+     * one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -2334,7 +2339,8 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
      *
      * The intended subjects for the ResearchElementDefinition. If this element is not
      * provided, a Patient subject is assumed, but the subject of the
-     * ResearchElementDefinition can be anything.
+     * ResearchElementDefinition can be anything. (choose any one of subject*, but only
+     * one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $subjectReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRResearchElementDefinition
@@ -3076,6 +3082,7 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
         if (null !== ($v = $this->getExperimental())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_EXPERIMENTAL, null, $v->_getFHIRXMLNamespace()));
         }
+
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -3134,6 +3141,7 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
         if (null !== ($v = $this->getShortTitle())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SHORT_TITLE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -3160,6 +3168,7 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
                 $v->xmlSerialize($sxe->addChild(self::FIELD_TOPIC, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -3178,6 +3187,7 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
                 $v->xmlSerialize($sxe->addChild(self::FIELD_USE_CONTEXT, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getVariableType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_VARIABLE_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -3195,9 +3205,7 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getApprovalDate())) {
             $a[self::FIELD_APPROVAL_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_APPROVAL_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_APPROVAL_DATE_EXT] = $v;
         }
         if ([] !== ($vs = $this->getAuthor())) {
             $a[self::FIELD_AUTHOR] = $vs;
@@ -3212,12 +3220,7 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
                     continue;
                 }
                 $a[self::FIELD_COMMENT][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_COMMENT_EXT])) {
-                        $a[self::FIELD_COMMENT_EXT] = [];
-                    }
-                    $a[self::FIELD_COMMENT_EXT][] = $v;
-                }
+                $a[self::FIELD_COMMENT_EXT][] = $v;
             }
         }
         if ([] !== ($vs = $this->getContact())) {
@@ -3225,21 +3228,15 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
         }
         if (null !== ($v = $this->getCopyright())) {
             $a[self::FIELD_COPYRIGHT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_COPYRIGHT_EXT] = $v;
-            }
+            $a[self::FIELD_COPYRIGHT_EXT] = $v;
         }
         if (null !== ($v = $this->getDate())) {
             $a[self::FIELD_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_DATE_EXT] = $v;
         }
         if (null !== ($v = $this->getDescription())) {
             $a[self::FIELD_DESCRIPTION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DESCRIPTION_EXT] = $v;
-            }
+            $a[self::FIELD_DESCRIPTION_EXT] = $v;
         }
         if ([] !== ($vs = $this->getEditor())) {
             $a[self::FIELD_EDITOR] = $vs;
@@ -3252,33 +3249,17 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
         }
         if (null !== ($v = $this->getExperimental())) {
             $a[self::FIELD_EXPERIMENTAL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_EXPERIMENTAL_EXT] = $v;
-            }
+            $a[self::FIELD_EXPERIMENTAL_EXT] = $v;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_IDENTIFIER][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_IDENTIFIER_EXT])) {
-                        $a[self::FIELD_IDENTIFIER_EXT] = [];
-                    }
-                    $a[self::FIELD_IDENTIFIER_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_IDENTIFIER] = $vs;
         }
         if ([] !== ($vs = $this->getJurisdiction())) {
             $a[self::FIELD_JURISDICTION] = $vs;
         }
         if (null !== ($v = $this->getLastReviewDate())) {
             $a[self::FIELD_LAST_REVIEW_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_LAST_REVIEW_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_LAST_REVIEW_DATE_EXT] = $v;
         }
         if ([] !== ($vs = $this->getLibrary())) {
             $a[self::FIELD_LIBRARY] = [];
@@ -3287,31 +3268,20 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
                     continue;
                 }
                 $a[self::FIELD_LIBRARY][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_LIBRARY_EXT])) {
-                        $a[self::FIELD_LIBRARY_EXT] = [];
-                    }
-                    $a[self::FIELD_LIBRARY_EXT][] = $v;
-                }
+                $a[self::FIELD_LIBRARY_EXT][] = $v;
             }
         }
         if (null !== ($v = $this->getName())) {
             $a[self::FIELD_NAME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_NAME_EXT] = $v;
-            }
+            $a[self::FIELD_NAME_EXT] = $v;
         }
         if (null !== ($v = $this->getPublisher())) {
             $a[self::FIELD_PUBLISHER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PUBLISHER_EXT] = $v;
-            }
+            $a[self::FIELD_PUBLISHER_EXT] = $v;
         }
         if (null !== ($v = $this->getPurpose())) {
             $a[self::FIELD_PURPOSE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PURPOSE_EXT] = $v;
-            }
+            $a[self::FIELD_PURPOSE_EXT] = $v;
         }
         if ([] !== ($vs = $this->getRelatedArtifact())) {
             $a[self::FIELD_RELATED_ARTIFACT] = $vs;
@@ -3321,15 +3291,10 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
         }
         if (null !== ($v = $this->getShortTitle())) {
             $a[self::FIELD_SHORT_TITLE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SHORT_TITLE_EXT] = $v;
-            }
+            $a[self::FIELD_SHORT_TITLE_EXT] = $v;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_STATUS_EXT] = $v;
-            }
+            $a[self::FIELD_STATUS] = $v;
         }
         if (null !== ($v = $this->getSubjectCodeableConcept())) {
             $a[self::FIELD_SUBJECT_CODEABLE_CONCEPT] = $v;
@@ -3339,51 +3304,35 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
         }
         if (null !== ($v = $this->getSubtitle())) {
             $a[self::FIELD_SUBTITLE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SUBTITLE_EXT] = $v;
-            }
+            $a[self::FIELD_SUBTITLE_EXT] = $v;
         }
         if (null !== ($v = $this->getTitle())) {
             $a[self::FIELD_TITLE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TITLE_EXT] = $v;
-            }
+            $a[self::FIELD_TITLE_EXT] = $v;
         }
         if ([] !== ($vs = $this->getTopic())) {
             $a[self::FIELD_TOPIC] = $vs;
         }
         if (null !== ($v = $this->getType())) {
-            $a[self::FIELD_TYPE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TYPE_EXT] = $v;
-            }
+            $a[self::FIELD_TYPE] = $v;
         }
         if (null !== ($v = $this->getUrl())) {
             $a[self::FIELD_URL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_URL_EXT] = $v;
-            }
+            $a[self::FIELD_URL_EXT] = $v;
         }
         if (null !== ($v = $this->getUsage())) {
             $a[self::FIELD_USAGE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_USAGE_EXT] = $v;
-            }
+            $a[self::FIELD_USAGE_EXT] = $v;
         }
         if ([] !== ($vs = $this->getUseContext())) {
             $a[self::FIELD_USE_CONTEXT] = $vs;
         }
         if (null !== ($v = $this->getVariableType())) {
-            $a[self::FIELD_VARIABLE_TYPE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VARIABLE_TYPE_EXT] = $v;
-            }
+            $a[self::FIELD_VARIABLE_TYPE] = $v;
         }
         if (null !== ($v = $this->getVersion())) {
             $a[self::FIELD_VERSION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VERSION_EXT] = $v;
-            }
+            $a[self::FIELD_VERSION_EXT] = $v;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

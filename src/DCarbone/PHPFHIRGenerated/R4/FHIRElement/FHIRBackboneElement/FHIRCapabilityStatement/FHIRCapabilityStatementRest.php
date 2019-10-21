@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapab
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -924,6 +924,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_INTERACTION, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getMode())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MODE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -974,28 +975,18 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_COMPARTMENT][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_COMPARTMENT_EXT])) {
-                        $a[self::FIELD_COMPARTMENT_EXT] = [];
-                    }
-                    $a[self::FIELD_COMPARTMENT_EXT][] = $v;
-                }
+                $a[self::FIELD_COMPARTMENT_EXT][] = $v;
             }
         }
         if (null !== ($v = $this->getDocumentation())) {
             $a[self::FIELD_DOCUMENTATION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DOCUMENTATION_EXT] = $v;
-            }
+            $a[self::FIELD_DOCUMENTATION_EXT] = $v;
         }
         if ([] !== ($vs = $this->getInteraction())) {
             $a[self::FIELD_INTERACTION] = $vs;
         }
         if (null !== ($v = $this->getMode())) {
-            $a[self::FIELD_MODE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MODE_EXT] = $v;
-            }
+            $a[self::FIELD_MODE] = $v;
         }
         if ([] !== ($vs = $this->getOperation())) {
             $a[self::FIELD_OPERATION] = $vs;

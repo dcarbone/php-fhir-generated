@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRIm
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -67,8 +67,6 @@ use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
-use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRValueContainerInterface;
-use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRValueContainerTrait;
 
 /**
  * A patient's point-in-time immunization and recommendation (i.e. forecasting a
@@ -78,10 +76,8 @@ use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRValueContainerTrait;
  * Class FHIRImmunizationRecommendationDateCriterion
  * @package \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRImmunizationRecommendation
  */
-class FHIRImmunizationRecommendationDateCriterion extends FHIRBackboneElement implements PHPFHIRValueContainerInterface
+class FHIRImmunizationRecommendationDateCriterion extends FHIRBackboneElement
 {
-    use PHPFHIRValueContainerTrait;
-
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_IMMUNIZATION_RECOMMENDATION_DOT_DATE_CRITERION;
 
@@ -234,7 +230,6 @@ class FHIRImmunizationRecommendationDateCriterion extends FHIRBackboneElement im
      */
     public function setCode(FHIRCodeableConcept $code = null)
     {
-        $this->_markNonValueFieldsDefined();
         $this->code = $code;
         return $this;
     }
@@ -367,9 +362,7 @@ class FHIRImmunizationRecommendationDateCriterion extends FHIRBackboneElement im
         }
         if (null !== ($v = $this->getValue())) {
             $a[self::FIELD_VALUE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_EXT] = $v;
         }
         return $a;
     }

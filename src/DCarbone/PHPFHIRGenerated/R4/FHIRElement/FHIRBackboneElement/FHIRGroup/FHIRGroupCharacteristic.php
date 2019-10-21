@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRGroup
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -138,7 +138,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The value of the trait that holds (or does not hold - see 'exclude') for members
-     * of the group.
+     * of the group. (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
@@ -150,7 +150,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value of the trait that holds (or does not hold - see 'exclude') for members
-     * of the group.
+     * of the group. (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -163,7 +163,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value of the trait that holds (or does not hold - see 'exclude') for members
-     * of the group.
+     * of the group. (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -174,7 +174,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value of the trait that holds (or does not hold - see 'exclude') for members
-     * of the group.
+     * of the group. (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -185,7 +185,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value of the trait that holds (or does not hold - see 'exclude') for members
-     * of the group.
+     * of the group. (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -432,7 +432,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The value of the trait that holds (or does not hold - see 'exclude') for members
-     * of the group.
+     * of the group. (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
@@ -446,7 +446,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The value of the trait that holds (or does not hold - see 'exclude') for members
-     * of the group.
+     * of the group. (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $valueBoolean
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRGroup\FHIRGroupCharacteristic
@@ -472,7 +472,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value of the trait that holds (or does not hold - see 'exclude') for members
-     * of the group.
+     * of the group. (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -488,7 +488,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value of the trait that holds (or does not hold - see 'exclude') for members
-     * of the group.
+     * of the group. (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $valueCodeableConcept
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRGroup\FHIRGroupCharacteristic
@@ -507,7 +507,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value of the trait that holds (or does not hold - see 'exclude') for members
-     * of the group.
+     * of the group. (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -524,7 +524,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value of the trait that holds (or does not hold - see 'exclude') for members
-     * of the group.
+     * of the group. (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $valueQuantity
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRGroup\FHIRGroupCharacteristic
@@ -541,7 +541,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value of the trait that holds (or does not hold - see 'exclude') for members
-     * of the group.
+     * of the group. (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -556,7 +556,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value of the trait that holds (or does not hold - see 'exclude') for members
-     * of the group.
+     * of the group. (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange $valueRange
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRGroup\FHIRGroupCharacteristic
@@ -573,7 +573,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value of the trait that holds (or does not hold - see 'exclude') for members
-     * of the group.
+     * of the group. (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -588,7 +588,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The value of the trait that holds (or does not hold - see 'exclude') for members
-     * of the group.
+     * of the group. (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $valueReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRGroup\FHIRGroupCharacteristic
@@ -701,6 +701,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
         if (null !== ($v = $this->getValueCodeableConcept())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_CODEABLE_CONCEPT, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getValueQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -726,27 +727,20 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getExclude())) {
             $a[self::FIELD_EXCLUDE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_EXCLUDE_EXT] = $v;
-            }
+            $a[self::FIELD_EXCLUDE_EXT] = $v;
         }
         if (null !== ($v = $this->getPeriod())) {
             $a[self::FIELD_PERIOD] = $v;
         }
         if (null !== ($v = $this->getValueBoolean())) {
             $a[self::FIELD_VALUE_BOOLEAN] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_BOOLEAN_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_BOOLEAN_EXT] = $v;
         }
         if (null !== ($v = $this->getValueCodeableConcept())) {
             $a[self::FIELD_VALUE_CODEABLE_CONCEPT] = $v;
         }
         if (null !== ($v = $this->getValueQuantity())) {
-            $a[self::FIELD_VALUE_QUANTITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_QUANTITY_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_QUANTITY] = $v;
         }
         if (null !== ($v = $this->getValueRange())) {
             $a[self::FIELD_VALUE_RANGE] = $v;

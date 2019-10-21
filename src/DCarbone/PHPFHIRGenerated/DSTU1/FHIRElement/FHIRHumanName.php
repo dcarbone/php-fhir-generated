@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -825,6 +825,7 @@ class FHIRHumanName extends FHIRElement
         if (null !== ($v = $this->getText())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TEXT, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getUse())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_USE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -844,12 +845,7 @@ class FHIRHumanName extends FHIRElement
                     continue;
                 }
                 $a[self::FIELD_FAMILY][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_FAMILY_EXT])) {
-                        $a[self::FIELD_FAMILY_EXT] = [];
-                    }
-                    $a[self::FIELD_FAMILY_EXT][] = $v;
-                }
+                $a[self::FIELD_FAMILY_EXT][] = $v;
             }
         }
         if ([] !== ($vs = $this->getGiven())) {
@@ -859,12 +855,7 @@ class FHIRHumanName extends FHIRElement
                     continue;
                 }
                 $a[self::FIELD_GIVEN][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_GIVEN_EXT])) {
-                        $a[self::FIELD_GIVEN_EXT] = [];
-                    }
-                    $a[self::FIELD_GIVEN_EXT][] = $v;
-                }
+                $a[self::FIELD_GIVEN_EXT][] = $v;
             }
         }
         if (null !== ($v = $this->getPeriod())) {
@@ -877,12 +868,7 @@ class FHIRHumanName extends FHIRElement
                     continue;
                 }
                 $a[self::FIELD_PREFIX][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_PREFIX_EXT])) {
-                        $a[self::FIELD_PREFIX_EXT] = [];
-                    }
-                    $a[self::FIELD_PREFIX_EXT][] = $v;
-                }
+                $a[self::FIELD_PREFIX_EXT][] = $v;
             }
         }
         if ([] !== ($vs = $this->getSuffix())) {
@@ -892,25 +878,15 @@ class FHIRHumanName extends FHIRElement
                     continue;
                 }
                 $a[self::FIELD_SUFFIX][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_SUFFIX_EXT])) {
-                        $a[self::FIELD_SUFFIX_EXT] = [];
-                    }
-                    $a[self::FIELD_SUFFIX_EXT][] = $v;
-                }
+                $a[self::FIELD_SUFFIX_EXT][] = $v;
             }
         }
         if (null !== ($v = $this->getText())) {
             $a[self::FIELD_TEXT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TEXT_EXT] = $v;
-            }
+            $a[self::FIELD_TEXT_EXT] = $v;
         }
         if (null !== ($v = $this->getUse())) {
-            $a[self::FIELD_USE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_USE_EXT] = $v;
-            }
+            $a[self::FIELD_USE] = $v;
         }
         return $a;
     }

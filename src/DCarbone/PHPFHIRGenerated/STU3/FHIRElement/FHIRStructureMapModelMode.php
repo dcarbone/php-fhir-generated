@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -66,8 +66,6 @@ use DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRStructureMapModelModeList;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
-use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRValueContainerInterface;
-use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRValueContainerTrait;
 
 /**
  * How the referenced structure is used in this mapping
@@ -76,10 +74,8 @@ use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRValueContainerTrait;
  * Class FHIRStructureMapModelMode
  * @package \DCarbone\PHPFHIRGenerated\STU3\FHIRElement
  */
-class FHIRStructureMapModelMode extends FHIRElement implements PHPFHIRValueContainerInterface
+class FHIRStructureMapModelMode extends FHIRElement
 {
-    use PHPFHIRValueContainerTrait;
-
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_MODEL_MODE;
 
@@ -250,7 +246,7 @@ class FHIRStructureMapModelMode extends FHIRElement implements PHPFHIRValueConta
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getValue())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE, null, $v->_getFHIRXMLNamespace()));
+            $sxe->addAttribute(self::FIELD_VALUE, (string)$v);
         }
         return $sxe;
     }

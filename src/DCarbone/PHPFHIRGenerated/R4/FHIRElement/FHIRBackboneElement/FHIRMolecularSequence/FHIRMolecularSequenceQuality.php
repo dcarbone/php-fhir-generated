@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolec
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1264,6 +1264,7 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
         if (null !== ($v = $this->getRoc())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ROC, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getScore())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SCORE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1280,6 +1281,7 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
         if (null !== ($v = $this->getTruthTP())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TRUTH_TP, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1294,84 +1296,58 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getEnd())) {
             $a[self::FIELD_END] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_END_EXT] = $v;
-            }
+            $a[self::FIELD_END_EXT] = $v;
         }
         if (null !== ($v = $this->getFScore())) {
             $a[self::FIELD_F_SCORE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_F_SCORE_EXT] = $v;
-            }
+            $a[self::FIELD_F_SCORE_EXT] = $v;
         }
         if (null !== ($v = $this->getGtFP())) {
             $a[self::FIELD_GT_FP] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_GT_FP_EXT] = $v;
-            }
+            $a[self::FIELD_GT_FP_EXT] = $v;
         }
         if (null !== ($v = $this->getMethod())) {
             $a[self::FIELD_METHOD] = $v;
         }
         if (null !== ($v = $this->getPrecision())) {
             $a[self::FIELD_PRECISION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PRECISION_EXT] = $v;
-            }
+            $a[self::FIELD_PRECISION_EXT] = $v;
         }
         if (null !== ($v = $this->getQueryFP())) {
             $a[self::FIELD_QUERY_FP] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_QUERY_FP_EXT] = $v;
-            }
+            $a[self::FIELD_QUERY_FP_EXT] = $v;
         }
         if (null !== ($v = $this->getQueryTP())) {
             $a[self::FIELD_QUERY_TP] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_QUERY_TP_EXT] = $v;
-            }
+            $a[self::FIELD_QUERY_TP_EXT] = $v;
         }
         if (null !== ($v = $this->getRecall())) {
             $a[self::FIELD_RECALL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_RECALL_EXT] = $v;
-            }
+            $a[self::FIELD_RECALL_EXT] = $v;
         }
         if (null !== ($v = $this->getRoc())) {
             $a[self::FIELD_ROC] = $v;
         }
         if (null !== ($v = $this->getScore())) {
-            $a[self::FIELD_SCORE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SCORE_EXT] = $v;
-            }
+            $a[self::FIELD_SCORE] = $v;
         }
         if (null !== ($v = $this->getStandardSequence())) {
             $a[self::FIELD_STANDARD_SEQUENCE] = $v;
         }
         if (null !== ($v = $this->getStart())) {
             $a[self::FIELD_START] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_START_EXT] = $v;
-            }
+            $a[self::FIELD_START_EXT] = $v;
         }
         if (null !== ($v = $this->getTruthFN())) {
             $a[self::FIELD_TRUTH_FN] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TRUTH_FN_EXT] = $v;
-            }
+            $a[self::FIELD_TRUTH_FN_EXT] = $v;
         }
         if (null !== ($v = $this->getTruthTP())) {
             $a[self::FIELD_TRUTH_TP] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TRUTH_TP_EXT] = $v;
-            }
+            $a[self::FIELD_TRUTH_TP_EXT] = $v;
         }
         if (null !== ($v = $this->getType())) {
-            $a[self::FIELD_TYPE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TYPE_EXT] = $v;
-            }
+            $a[self::FIELD_TYPE] = $v;
         }
         return $a;
     }

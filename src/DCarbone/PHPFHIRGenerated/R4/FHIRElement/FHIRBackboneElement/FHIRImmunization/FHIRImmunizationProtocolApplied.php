@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImmun
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -114,7 +114,7 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * Nominal position in a series.
+     * Nominal position in a series. (choose any one of doseNumber*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
      */
@@ -124,7 +124,7 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * Nominal position in a series.
+     * Nominal position in a series. (choose any one of doseNumber*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -145,7 +145,8 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * The recommended number of doses to achieve immunity.
+     * The recommended number of doses to achieve immunity. (choose any one of
+     * seriesDoses*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
      */
@@ -155,7 +156,8 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The recommended number of doses to achieve immunity.
+     * The recommended number of doses to achieve immunity. (choose any one of
+     * seriesDoses*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -354,7 +356,7 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * Nominal position in a series.
+     * Nominal position in a series. (choose any one of doseNumber*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
      */
@@ -368,7 +370,7 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * Nominal position in a series.
+     * Nominal position in a series. (choose any one of doseNumber*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt $doseNumberPositiveInt
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationProtocolApplied
@@ -392,7 +394,7 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * Nominal position in a series.
+     * Nominal position in a series. (choose any one of doseNumber*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -406,7 +408,7 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * Nominal position in a series.
+     * Nominal position in a series. (choose any one of doseNumber*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $doseNumberString
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationProtocolApplied
@@ -470,7 +472,8 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * The recommended number of doses to achieve immunity.
+     * The recommended number of doses to achieve immunity. (choose any one of
+     * seriesDoses*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
      */
@@ -484,7 +487,8 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id referenced from
      * the Narrative, or extensions
      *
-     * The recommended number of doses to achieve immunity.
+     * The recommended number of doses to achieve immunity. (choose any one of
+     * seriesDoses*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt $seriesDosesPositiveInt
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationProtocolApplied
@@ -508,7 +512,8 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The recommended number of doses to achieve immunity.
+     * The recommended number of doses to achieve immunity. (choose any one of
+     * seriesDoses*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -522,7 +527,8 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * The recommended number of doses to achieve immunity.
+     * The recommended number of doses to achieve immunity. (choose any one of
+     * seriesDoses*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $seriesDosesString
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationProtocolApplied
@@ -734,33 +740,23 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getDoseNumberPositiveInt())) {
             $a[self::FIELD_DOSE_NUMBER_POSITIVE_INT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DOSE_NUMBER_POSITIVE_INT_EXT] = $v;
-            }
+            $a[self::FIELD_DOSE_NUMBER_POSITIVE_INT_EXT] = $v;
         }
         if (null !== ($v = $this->getDoseNumberString())) {
             $a[self::FIELD_DOSE_NUMBER_STRING] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DOSE_NUMBER_STRING_EXT] = $v;
-            }
+            $a[self::FIELD_DOSE_NUMBER_STRING_EXT] = $v;
         }
         if (null !== ($v = $this->getSeries())) {
             $a[self::FIELD_SERIES] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SERIES_EXT] = $v;
-            }
+            $a[self::FIELD_SERIES_EXT] = $v;
         }
         if (null !== ($v = $this->getSeriesDosesPositiveInt())) {
             $a[self::FIELD_SERIES_DOSES_POSITIVE_INT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SERIES_DOSES_POSITIVE_INT_EXT] = $v;
-            }
+            $a[self::FIELD_SERIES_DOSES_POSITIVE_INT_EXT] = $v;
         }
         if (null !== ($v = $this->getSeriesDosesString())) {
             $a[self::FIELD_SERIES_DOSES_STRING] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SERIES_DOSES_STRING_EXT] = $v;
-            }
+            $a[self::FIELD_SERIES_DOSES_STRING_EXT] = $v;
         }
         if ([] !== ($vs = $this->getTargetDisease())) {
             $a[self::FIELD_TARGET_DISEASE] = $vs;

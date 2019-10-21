@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCompo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -113,7 +113,8 @@ class FHIRCompositionRelatesTo extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The target composition/document of this relationship.
+     * The target composition/document of this relationship. (choose any one of
+     * target*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
@@ -123,7 +124,8 @@ class FHIRCompositionRelatesTo extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The target composition/document of this relationship.
+     * The target composition/document of this relationship. (choose any one of
+     * target*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -259,7 +261,8 @@ class FHIRCompositionRelatesTo extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The target composition/document of this relationship.
+     * The target composition/document of this relationship. (choose any one of
+     * target*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
@@ -274,7 +277,8 @@ class FHIRCompositionRelatesTo extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The target composition/document of this relationship.
+     * The target composition/document of this relationship. (choose any one of
+     * target*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $targetIdentifier
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionRelatesTo
@@ -290,7 +294,8 @@ class FHIRCompositionRelatesTo extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The target composition/document of this relationship.
+     * The target composition/document of this relationship. (choose any one of
+     * target*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -304,7 +309,8 @@ class FHIRCompositionRelatesTo extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * The target composition/document of this relationship.
+     * The target composition/document of this relationship. (choose any one of
+     * target*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $targetReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionRelatesTo
@@ -378,9 +384,11 @@ class FHIRCompositionRelatesTo extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getCode())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getTargetIdentifier())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TARGET_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }
@@ -398,16 +406,10 @@ class FHIRCompositionRelatesTo extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getCode())) {
-            $a[self::FIELD_CODE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_CODE_EXT] = $v;
-            }
+            $a[self::FIELD_CODE] = $v;
         }
         if (null !== ($v = $this->getTargetIdentifier())) {
-            $a[self::FIELD_TARGET_IDENTIFIER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TARGET_IDENTIFIER_EXT] = $v;
-            }
+            $a[self::FIELD_TARGET_IDENTIFIER] = $v;
         }
         if (null !== ($v = $this->getTargetReference())) {
             $a[self::FIELD_TARGET_REFERENCE] = $v;

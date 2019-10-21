@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREvide
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -125,7 +125,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * Define members of the evidence element using Codes (such as condition,
      * medication, or observation), Expressions ( using an expression language such as
      * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
-     * last year).
+     * last year). (choose any one of definition*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
@@ -139,7 +139,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * Define members of the evidence element using Codes (such as condition,
      * medication, or observation), Expressions ( using an expression language such as
      * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
-     * last year).
+     * last year). (choose any one of definition*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -153,7 +153,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * Define members of the evidence element using Codes (such as condition,
      * medication, or observation), Expressions ( using an expression language such as
      * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
-     * last year).
+     * last year). (choose any one of definition*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement
      */
@@ -168,7 +168,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * Define members of the evidence element using Codes (such as condition,
      * medication, or observation), Expressions ( using an expression language such as
      * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
-     * last year).
+     * last year). (choose any one of definition*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression
      */
@@ -181,7 +181,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * Define members of the evidence element using Codes (such as condition,
      * medication, or observation), Expressions ( using an expression language such as
      * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
-     * last year).
+     * last year). (choose any one of definition*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -195,7 +195,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * Define members of the evidence element using Codes (such as condition,
      * medication, or observation), Expressions ( using an expression language such as
      * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
-     * last year).
+     * last year). (choose any one of definition*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTriggerDefinition
      */
@@ -237,7 +237,8 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * Indicates what effective period the study covers.
+     * Indicates what effective period the study covers. (choose any one of
+     * participantEffective*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -247,7 +248,8 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Indicates what effective period the study covers.
+     * Indicates what effective period the study covers. (choose any one of
+     * participantEffective*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
@@ -257,7 +259,8 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Indicates what effective period the study covers.
+     * Indicates what effective period the study covers. (choose any one of
+     * participantEffective*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -271,7 +274,8 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Indicates what effective period the study covers.
+     * Indicates what effective period the study covers. (choose any one of
+     * participantEffective*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
@@ -511,7 +515,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * Define members of the evidence element using Codes (such as condition,
      * medication, or observation), Expressions ( using an expression language such as
      * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
-     * last year).
+     * last year). (choose any one of definition*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
@@ -529,7 +533,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * Define members of the evidence element using Codes (such as condition,
      * medication, or observation), Expressions ( using an expression language such as
      * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
-     * last year).
+     * last year). (choose any one of definition*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical $definitionCanonical
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableCharacteristic
@@ -557,7 +561,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * Define members of the evidence element using Codes (such as condition,
      * medication, or observation), Expressions ( using an expression language such as
      * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
-     * last year).
+     * last year). (choose any one of definition*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -575,7 +579,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * Define members of the evidence element using Codes (such as condition,
      * medication, or observation), Expressions ( using an expression language such as
      * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
-     * last year).
+     * last year). (choose any one of definition*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $definitionCodeableConcept
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableCharacteristic
@@ -595,7 +599,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * Define members of the evidence element using Codes (such as condition,
      * medication, or observation), Expressions ( using an expression language such as
      * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
-     * last year).
+     * last year). (choose any one of definition*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement
      */
@@ -613,7 +617,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * Define members of the evidence element using Codes (such as condition,
      * medication, or observation), Expressions ( using an expression language such as
      * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
-     * last year).
+     * last year). (choose any one of definition*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement $definitionDataRequirement
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableCharacteristic
@@ -634,7 +638,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * Define members of the evidence element using Codes (such as condition,
      * medication, or observation), Expressions ( using an expression language such as
      * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
-     * last year).
+     * last year). (choose any one of definition*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression
      */
@@ -653,7 +657,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * Define members of the evidence element using Codes (such as condition,
      * medication, or observation), Expressions ( using an expression language such as
      * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
-     * last year).
+     * last year). (choose any one of definition*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression $definitionExpression
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableCharacteristic
@@ -672,7 +676,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * Define members of the evidence element using Codes (such as condition,
      * medication, or observation), Expressions ( using an expression language such as
      * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
-     * last year).
+     * last year). (choose any one of definition*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -689,7 +693,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * Define members of the evidence element using Codes (such as condition,
      * medication, or observation), Expressions ( using an expression language such as
      * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
-     * last year).
+     * last year). (choose any one of definition*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $definitionReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableCharacteristic
@@ -709,7 +713,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * Define members of the evidence element using Codes (such as condition,
      * medication, or observation), Expressions ( using an expression language such as
      * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
-     * last year).
+     * last year). (choose any one of definition*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTriggerDefinition
      */
@@ -727,7 +731,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * Define members of the evidence element using Codes (such as condition,
      * medication, or observation), Expressions ( using an expression language such as
      * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
-     * last year).
+     * last year). (choose any one of definition*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTriggerDefinition $definitionTriggerDefinition
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableCharacteristic
@@ -850,7 +854,8 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * Indicates what effective period the study covers.
+     * Indicates what effective period the study covers. (choose any one of
+     * participantEffective*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -867,7 +872,8 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a @value, an @id, or extensions
      *
-     * Indicates what effective period the study covers.
+     * Indicates what effective period the study covers. (choose any one of
+     * participantEffective*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $participantEffectiveDateTime
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableCharacteristic
@@ -891,7 +897,8 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Indicates what effective period the study covers.
+     * Indicates what effective period the study covers. (choose any one of
+     * participantEffective*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
@@ -905,7 +912,8 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Indicates what effective period the study covers.
+     * Indicates what effective period the study covers. (choose any one of
+     * participantEffective*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration $participantEffectiveDuration
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableCharacteristic
@@ -921,7 +929,8 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Indicates what effective period the study covers.
+     * Indicates what effective period the study covers. (choose any one of
+     * participantEffective*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -935,7 +944,8 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Indicates what effective period the study covers.
+     * Indicates what effective period the study covers. (choose any one of
+     * participantEffective*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $participantEffectivePeriod
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableCharacteristic
@@ -955,7 +965,8 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Indicates what effective period the study covers.
+     * Indicates what effective period the study covers. (choose any one of
+     * participantEffective*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
@@ -973,7 +984,8 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Indicates what effective period the study covers.
+     * Indicates what effective period the study covers. (choose any one of
+     * participantEffective*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming $participantEffectiveTiming
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableCharacteristic
@@ -1224,6 +1236,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
         if (null !== ($v = $this->getExclude())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_EXCLUDE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getGroupMeasure())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_GROUP_MEASURE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1266,9 +1279,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getDefinitionCanonical())) {
             $a[self::FIELD_DEFINITION_CANONICAL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DEFINITION_CANONICAL_EXT] = $v;
-            }
+            $a[self::FIELD_DEFINITION_CANONICAL_EXT] = $v;
         }
         if (null !== ($v = $this->getDefinitionCodeableConcept())) {
             $a[self::FIELD_DEFINITION_CODEABLE_CONCEPT] = $v;
@@ -1287,27 +1298,18 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getDescription())) {
             $a[self::FIELD_DESCRIPTION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DESCRIPTION_EXT] = $v;
-            }
+            $a[self::FIELD_DESCRIPTION_EXT] = $v;
         }
         if (null !== ($v = $this->getExclude())) {
             $a[self::FIELD_EXCLUDE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_EXCLUDE_EXT] = $v;
-            }
+            $a[self::FIELD_EXCLUDE_EXT] = $v;
         }
         if (null !== ($v = $this->getGroupMeasure())) {
-            $a[self::FIELD_GROUP_MEASURE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_GROUP_MEASURE_EXT] = $v;
-            }
+            $a[self::FIELD_GROUP_MEASURE] = $v;
         }
         if (null !== ($v = $this->getParticipantEffectiveDateTime())) {
             $a[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME_EXT] = $v;
         }
         if (null !== ($v = $this->getParticipantEffectiveDuration())) {
             $a[self::FIELD_PARTICIPANT_EFFECTIVE_DURATION] = $v;

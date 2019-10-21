@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRStr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -784,12 +784,14 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
         if (null !== ($v = $this->getContext())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CONTEXT, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getContextType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CONTEXT_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getElement())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ELEMENT, null, $v->_getFHIRXMLNamespace()));
         }
+
         if ([] !== ($vs = $this->getListMode())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -810,6 +812,7 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_PARAMETER, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getTransform())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TRANSFORM, null, $v->_getFHIRXMLNamespace()));
         }
@@ -827,57 +830,31 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getContext())) {
             $a[self::FIELD_CONTEXT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_CONTEXT_EXT] = $v;
-            }
+            $a[self::FIELD_CONTEXT_EXT] = $v;
         }
         if (null !== ($v = $this->getContextType())) {
-            $a[self::FIELD_CONTEXT_TYPE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_CONTEXT_TYPE_EXT] = $v;
-            }
+            $a[self::FIELD_CONTEXT_TYPE] = $v;
         }
         if (null !== ($v = $this->getElement())) {
             $a[self::FIELD_ELEMENT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ELEMENT_EXT] = $v;
-            }
+            $a[self::FIELD_ELEMENT_EXT] = $v;
         }
         if ([] !== ($vs = $this->getListMode())) {
-            $a[self::FIELD_LIST_MODE] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_LIST_MODE][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_LIST_MODE_EXT])) {
-                        $a[self::FIELD_LIST_MODE_EXT] = [];
-                    }
-                    $a[self::FIELD_LIST_MODE_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_LIST_MODE] = $vs;
         }
         if (null !== ($v = $this->getListRuleId())) {
             $a[self::FIELD_LIST_RULE_ID] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_LIST_RULE_ID_EXT] = $v;
-            }
+            $a[self::FIELD_LIST_RULE_ID_EXT] = $v;
         }
         if ([] !== ($vs = $this->getParameter())) {
             $a[self::FIELD_PARAMETER] = $vs;
         }
         if (null !== ($v = $this->getTransform())) {
-            $a[self::FIELD_TRANSFORM] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TRANSFORM_EXT] = $v;
-            }
+            $a[self::FIELD_TRANSFORM] = $v;
         }
         if (null !== ($v = $this->getVariable())) {
             $a[self::FIELD_VARIABLE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VARIABLE_EXT] = $v;
-            }
+            $a[self::FIELD_VARIABLE_EXT] = $v;
         }
         return $a;
     }

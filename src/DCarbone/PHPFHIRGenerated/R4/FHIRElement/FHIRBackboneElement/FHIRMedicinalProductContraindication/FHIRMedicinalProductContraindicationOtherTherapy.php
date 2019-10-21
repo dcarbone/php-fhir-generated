@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -94,7 +94,8 @@ class FHIRMedicinalProductContraindicationOtherTherapy extends FHIRBackboneEleme
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Reference to a specific medication (active substance, medicinal product or class
-     * of products) as part of an indication or contraindication.
+     * of products) as part of an indication or contraindication. (choose any one of
+     * medication*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -105,7 +106,8 @@ class FHIRMedicinalProductContraindicationOtherTherapy extends FHIRBackboneEleme
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Reference to a specific medication (active substance, medicinal product or class
-     * of products) as part of an indication or contraindication.
+     * of products) as part of an indication or contraindication. (choose any one of
+     * medication*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -214,7 +216,8 @@ class FHIRMedicinalProductContraindicationOtherTherapy extends FHIRBackboneEleme
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Reference to a specific medication (active substance, medicinal product or class
-     * of products) as part of an indication or contraindication.
+     * of products) as part of an indication or contraindication. (choose any one of
+     * medication*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -230,7 +233,8 @@ class FHIRMedicinalProductContraindicationOtherTherapy extends FHIRBackboneEleme
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Reference to a specific medication (active substance, medicinal product or class
-     * of products) as part of an indication or contraindication.
+     * of products) as part of an indication or contraindication. (choose any one of
+     * medication*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $medicationCodeableConcept
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductContraindication\FHIRMedicinalProductContraindicationOtherTherapy
@@ -247,7 +251,8 @@ class FHIRMedicinalProductContraindicationOtherTherapy extends FHIRBackboneEleme
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Reference to a specific medication (active substance, medicinal product or class
-     * of products) as part of an indication or contraindication.
+     * of products) as part of an indication or contraindication. (choose any one of
+     * medication*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -262,7 +267,8 @@ class FHIRMedicinalProductContraindicationOtherTherapy extends FHIRBackboneEleme
      * elements, an @id referenced from the Narrative, or extensions
      *
      * Reference to a specific medication (active substance, medicinal product or class
-     * of products) as part of an indication or contraindication.
+     * of products) as part of an indication or contraindication. (choose any one of
+     * medication*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $medicationReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductContraindication\FHIRMedicinalProductContraindicationOtherTherapy

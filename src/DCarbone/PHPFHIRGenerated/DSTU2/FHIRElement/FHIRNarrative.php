@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -309,8 +309,9 @@ class FHIRNarrative extends FHIRElement
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getDiv())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DIV, null, $v->_getFHIRXMLNamespace()));
+            $sxe->addAttribute(self::FIELD_DIV, (string)$v);
         }
+
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -327,10 +328,7 @@ class FHIRNarrative extends FHIRElement
             $a[self::FIELD_DIV] = $v;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_STATUS_EXT] = $v;
-            }
+            $a[self::FIELD_STATUS] = $v;
         }
         return $a;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREleme
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -709,6 +709,7 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneElement
         if (null !== ($v = $this->getRequirements())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_REQUIREMENTS, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getSeverity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SEVERITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -729,45 +730,30 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getExpression())) {
             $a[self::FIELD_EXPRESSION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_EXPRESSION_EXT] = $v;
-            }
+            $a[self::FIELD_EXPRESSION_EXT] = $v;
         }
         if (null !== ($v = $this->getHuman())) {
             $a[self::FIELD_HUMAN] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_HUMAN_EXT] = $v;
-            }
+            $a[self::FIELD_HUMAN_EXT] = $v;
         }
         if (null !== ($v = $this->getKey())) {
             $a[self::FIELD_KEY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_KEY_EXT] = $v;
-            }
+            $a[self::FIELD_KEY_EXT] = $v;
         }
         if (null !== ($v = $this->getRequirements())) {
             $a[self::FIELD_REQUIREMENTS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_REQUIREMENTS_EXT] = $v;
-            }
+            $a[self::FIELD_REQUIREMENTS_EXT] = $v;
         }
         if (null !== ($v = $this->getSeverity())) {
-            $a[self::FIELD_SEVERITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SEVERITY_EXT] = $v;
-            }
+            $a[self::FIELD_SEVERITY] = $v;
         }
         if (null !== ($v = $this->getSource())) {
             $a[self::FIELD_SOURCE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SOURCE_EXT] = $v;
-            }
+            $a[self::FIELD_SOURCE_EXT] = $v;
         }
         if (null !== ($v = $this->getXpath())) {
             $a[self::FIELD_XPATH] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_XPATH_EXT] = $v;
-            }
+            $a[self::FIELD_XPATH_EXT] = $v;
         }
         return $a;
     }

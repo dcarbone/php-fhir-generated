@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCommu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -96,7 +96,7 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A communicated content (or for multi-part communications, one portion of the
-     * communication).
+     * communication). (choose any one of content*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
      */
@@ -107,7 +107,7 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A communicated content (or for multi-part communications, one portion of the
-     * communication).
+     * communication). (choose any one of content*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -118,7 +118,7 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * A communicated content (or for multi-part communications, one portion of the
-     * communication).
+     * communication). (choose any one of content*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -219,7 +219,7 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A communicated content (or for multi-part communications, one portion of the
-     * communication).
+     * communication). (choose any one of content*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
      */
@@ -234,7 +234,7 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A communicated content (or for multi-part communications, one portion of the
-     * communication).
+     * communication). (choose any one of content*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment $contentAttachment
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCommunication\FHIRCommunicationPayload
@@ -251,7 +251,7 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A communicated content (or for multi-part communications, one portion of the
-     * communication).
+     * communication). (choose any one of content*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -266,7 +266,7 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * A communicated content (or for multi-part communications, one portion of the
-     * communication).
+     * communication). (choose any one of content*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $contentReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCommunication\FHIRCommunicationPayload
@@ -283,7 +283,7 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * A communicated content (or for multi-part communications, one portion of the
-     * communication).
+     * communication). (choose any one of content*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -298,7 +298,7 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * A communicated content (or for multi-part communications, one portion of the
-     * communication).
+     * communication). (choose any one of content*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $contentString
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCommunication\FHIRCommunicationPayload
@@ -411,9 +411,7 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getContentString())) {
             $a[self::FIELD_CONTENT_STRING] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_CONTENT_STRING_EXT] = $v;
-            }
+            $a[self::FIELD_CONTENT_STRING_EXT] = $v;
         }
         return $a;
     }

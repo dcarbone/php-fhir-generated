@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -68,8 +68,6 @@ use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRMoney;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
-use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRValueContainerInterface;
-use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRValueContainerTrait;
 
 /**
  * This resource provides: the claim details; adjudication details from the
@@ -79,10 +77,8 @@ use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRValueContainerTrait;
  * Class FHIRExplanationOfBenefitAdjudication
  * @package \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit
  */
-class FHIRExplanationOfBenefitAdjudication extends FHIRBackboneElement implements PHPFHIRValueContainerInterface
+class FHIRExplanationOfBenefitAdjudication extends FHIRBackboneElement
 {
-    use PHPFHIRValueContainerTrait;
-
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_EXPLANATION_OF_BENEFIT_DOT_ADJUDICATION;
 
@@ -266,7 +262,6 @@ class FHIRExplanationOfBenefitAdjudication extends FHIRBackboneElement implement
      */
     public function setAmount(FHIRMoney $amount = null)
     {
-        $this->_markNonValueFieldsDefined();
         $this->amount = $amount;
         return $this;
     }
@@ -299,7 +294,6 @@ class FHIRExplanationOfBenefitAdjudication extends FHIRBackboneElement implement
      */
     public function setCategory(FHIRCodeableConcept $category = null)
     {
-        $this->_markNonValueFieldsDefined();
         $this->category = $category;
         return $this;
     }
@@ -332,7 +326,6 @@ class FHIRExplanationOfBenefitAdjudication extends FHIRBackboneElement implement
      */
     public function setReason(FHIRCodeableConcept $reason = null)
     {
-        $this->_markNonValueFieldsDefined();
         $this->reason = $reason;
         return $this;
     }
@@ -483,9 +476,7 @@ class FHIRExplanationOfBenefitAdjudication extends FHIRBackboneElement implement
         }
         if (null !== ($v = $this->getValue())) {
             $a[self::FIELD_VALUE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_EXT] = $v;
         }
         return $a;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1583,9 +1583,7 @@ class FHIRContractAsset extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getCondition())) {
             $a[self::FIELD_CONDITION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_CONDITION_EXT] = $v;
-            }
+            $a[self::FIELD_CONDITION_EXT] = $v;
         }
         if ([] !== ($vs = $this->getContext())) {
             $a[self::FIELD_CONTEXT] = $vs;
@@ -1597,12 +1595,7 @@ class FHIRContractAsset extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_LINK_ID][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_LINK_ID_EXT])) {
-                        $a[self::FIELD_LINK_ID_EXT] = [];
-                    }
-                    $a[self::FIELD_LINK_ID_EXT][] = $v;
-                }
+                $a[self::FIELD_LINK_ID_EXT][] = $v;
             }
         }
         if ([] !== ($vs = $this->getPeriod())) {
@@ -1624,12 +1617,7 @@ class FHIRContractAsset extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_SECURITY_LABEL_NUMBER][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_SECURITY_LABEL_NUMBER_EXT])) {
-                        $a[self::FIELD_SECURITY_LABEL_NUMBER_EXT] = [];
-                    }
-                    $a[self::FIELD_SECURITY_LABEL_NUMBER_EXT][] = $v;
-                }
+                $a[self::FIELD_SECURITY_LABEL_NUMBER_EXT][] = $v;
             }
         }
         if ([] !== ($vs = $this->getSubtype())) {
@@ -1637,9 +1625,7 @@ class FHIRContractAsset extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getText())) {
             $a[self::FIELD_TEXT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TEXT_EXT] = $v;
-            }
+            $a[self::FIELD_TEXT_EXT] = $v;
         }
         if ([] !== ($vs = $this->getType())) {
             $a[self::FIELD_TYPE] = $vs;

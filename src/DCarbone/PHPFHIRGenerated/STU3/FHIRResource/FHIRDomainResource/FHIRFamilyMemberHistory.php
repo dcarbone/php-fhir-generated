@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -2098,9 +2098,11 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
         if (null !== ($v = $this->getEstimatedAge())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ESTIMATED_AGE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getGender())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_GENDER, null, $v->_getFHIRXMLNamespace()));
         }
+
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -2154,6 +2156,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
         if (null !== ($v = $this->getRelationship())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_RELATIONSHIP, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -2174,99 +2177,64 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
         }
         if (null !== ($v = $this->getAgeString())) {
             $a[self::FIELD_AGE_STRING] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_AGE_STRING_EXT] = $v;
-            }
+            $a[self::FIELD_AGE_STRING_EXT] = $v;
         }
         if (null !== ($v = $this->getBornDate())) {
             $a[self::FIELD_BORN_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_BORN_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_BORN_DATE_EXT] = $v;
         }
         if (null !== ($v = $this->getBornPeriod())) {
             $a[self::FIELD_BORN_PERIOD] = $v;
         }
         if (null !== ($v = $this->getBornString())) {
             $a[self::FIELD_BORN_STRING] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_BORN_STRING_EXT] = $v;
-            }
+            $a[self::FIELD_BORN_STRING_EXT] = $v;
         }
         if ([] !== ($vs = $this->getCondition())) {
             $a[self::FIELD_CONDITION] = $vs;
         }
         if (null !== ($v = $this->getDate())) {
             $a[self::FIELD_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_DATE_EXT] = $v;
         }
         if (null !== ($v = $this->getDeceasedAge())) {
             $a[self::FIELD_DECEASED_AGE] = $v;
         }
         if (null !== ($v = $this->getDeceasedBoolean())) {
             $a[self::FIELD_DECEASED_BOOLEAN] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DECEASED_BOOLEAN_EXT] = $v;
-            }
+            $a[self::FIELD_DECEASED_BOOLEAN_EXT] = $v;
         }
         if (null !== ($v = $this->getDeceasedDate())) {
             $a[self::FIELD_DECEASED_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DECEASED_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_DECEASED_DATE_EXT] = $v;
         }
         if (null !== ($v = $this->getDeceasedRange())) {
             $a[self::FIELD_DECEASED_RANGE] = $v;
         }
         if (null !== ($v = $this->getDeceasedString())) {
             $a[self::FIELD_DECEASED_STRING] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DECEASED_STRING_EXT] = $v;
-            }
+            $a[self::FIELD_DECEASED_STRING_EXT] = $v;
         }
         if ([] !== ($vs = $this->getDefinition())) {
             $a[self::FIELD_DEFINITION] = $vs;
         }
         if (null !== ($v = $this->getEstimatedAge())) {
             $a[self::FIELD_ESTIMATED_AGE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ESTIMATED_AGE_EXT] = $v;
-            }
+            $a[self::FIELD_ESTIMATED_AGE_EXT] = $v;
         }
         if (null !== ($v = $this->getGender())) {
-            $a[self::FIELD_GENDER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_GENDER_EXT] = $v;
-            }
+            $a[self::FIELD_GENDER] = $v;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_IDENTIFIER][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_IDENTIFIER_EXT])) {
-                        $a[self::FIELD_IDENTIFIER_EXT] = [];
-                    }
-                    $a[self::FIELD_IDENTIFIER_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_IDENTIFIER] = $vs;
         }
         if (null !== ($v = $this->getName())) {
             $a[self::FIELD_NAME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_NAME_EXT] = $v;
-            }
+            $a[self::FIELD_NAME_EXT] = $v;
         }
         if (null !== ($v = $this->getNotDone())) {
             $a[self::FIELD_NOT_DONE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_NOT_DONE_EXT] = $v;
-            }
+            $a[self::FIELD_NOT_DONE_EXT] = $v;
         }
         if (null !== ($v = $this->getNotDoneReason())) {
             $a[self::FIELD_NOT_DONE_REASON] = $v;
@@ -2287,10 +2255,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
             $a[self::FIELD_RELATIONSHIP] = $v;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_STATUS_EXT] = $v;
-            }
+            $a[self::FIELD_STATUS] = $v;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

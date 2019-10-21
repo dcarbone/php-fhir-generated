@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -553,9 +553,7 @@ class FHIRClaimResponseInsurance extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getBusinessArrangement())) {
             $a[self::FIELD_BUSINESS_ARRANGEMENT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_BUSINESS_ARRANGEMENT_EXT] = $v;
-            }
+            $a[self::FIELD_BUSINESS_ARRANGEMENT_EXT] = $v;
         }
         if (null !== ($v = $this->getClaimResponse())) {
             $a[self::FIELD_CLAIM_RESPONSE] = $v;
@@ -565,15 +563,11 @@ class FHIRClaimResponseInsurance extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getFocal())) {
             $a[self::FIELD_FOCAL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_FOCAL_EXT] = $v;
-            }
+            $a[self::FIELD_FOCAL_EXT] = $v;
         }
         if (null !== ($v = $this->getSequence())) {
             $a[self::FIELD_SEQUENCE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SEQUENCE_EXT] = $v;
-            }
+            $a[self::FIELD_SEQUENCE_EXT] = $v;
         }
         return $a;
     }

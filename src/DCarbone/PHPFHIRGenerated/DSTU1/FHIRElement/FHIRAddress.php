@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -760,6 +760,7 @@ class FHIRAddress extends FHIRElement
         if (null !== ($v = $this->getText())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TEXT, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getUse())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_USE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -777,15 +778,11 @@ class FHIRAddress extends FHIRElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getCity())) {
             $a[self::FIELD_CITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_CITY_EXT] = $v;
-            }
+            $a[self::FIELD_CITY_EXT] = $v;
         }
         if (null !== ($v = $this->getCountry())) {
             $a[self::FIELD_COUNTRY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_COUNTRY_EXT] = $v;
-            }
+            $a[self::FIELD_COUNTRY_EXT] = $v;
         }
         if ([] !== ($vs = $this->getLine())) {
             $a[self::FIELD_LINE] = [];
@@ -794,12 +791,7 @@ class FHIRAddress extends FHIRElement
                     continue;
                 }
                 $a[self::FIELD_LINE][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_LINE_EXT])) {
-                        $a[self::FIELD_LINE_EXT] = [];
-                    }
-                    $a[self::FIELD_LINE_EXT][] = $v;
-                }
+                $a[self::FIELD_LINE_EXT][] = $v;
             }
         }
         if (null !== ($v = $this->getPeriod())) {
@@ -807,27 +799,18 @@ class FHIRAddress extends FHIRElement
         }
         if (null !== ($v = $this->getState())) {
             $a[self::FIELD_STATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_STATE_EXT] = $v;
-            }
+            $a[self::FIELD_STATE_EXT] = $v;
         }
         if (null !== ($v = $this->getText())) {
             $a[self::FIELD_TEXT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TEXT_EXT] = $v;
-            }
+            $a[self::FIELD_TEXT_EXT] = $v;
         }
         if (null !== ($v = $this->getUse())) {
-            $a[self::FIELD_USE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_USE_EXT] = $v;
-            }
+            $a[self::FIELD_USE] = $v;
         }
         if (null !== ($v = $this->getZip())) {
             $a[self::FIELD_ZIP] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ZIP_EXT] = $v;
-            }
+            $a[self::FIELD_ZIP_EXT] = $v;
         }
         return $a;
     }

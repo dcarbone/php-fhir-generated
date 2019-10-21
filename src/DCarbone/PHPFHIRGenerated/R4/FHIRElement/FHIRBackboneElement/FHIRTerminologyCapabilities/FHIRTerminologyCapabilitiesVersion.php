@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTermi
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -757,24 +757,18 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getCode())) {
             $a[self::FIELD_CODE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_CODE_EXT] = $v;
-            }
+            $a[self::FIELD_CODE_EXT] = $v;
         }
         if (null !== ($v = $this->getCompositional())) {
             $a[self::FIELD_COMPOSITIONAL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_COMPOSITIONAL_EXT] = $v;
-            }
+            $a[self::FIELD_COMPOSITIONAL_EXT] = $v;
         }
         if ([] !== ($vs = $this->getFilter())) {
             $a[self::FIELD_FILTER] = $vs;
         }
         if (null !== ($v = $this->getIsDefault())) {
             $a[self::FIELD_IS_DEFAULT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_IS_DEFAULT_EXT] = $v;
-            }
+            $a[self::FIELD_IS_DEFAULT_EXT] = $v;
         }
         if ([] !== ($vs = $this->getLanguage())) {
             $a[self::FIELD_LANGUAGE] = [];
@@ -783,12 +777,7 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_LANGUAGE][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_LANGUAGE_EXT])) {
-                        $a[self::FIELD_LANGUAGE_EXT] = [];
-                    }
-                    $a[self::FIELD_LANGUAGE_EXT][] = $v;
-                }
+                $a[self::FIELD_LANGUAGE_EXT][] = $v;
             }
         }
         if ([] !== ($vs = $this->getProperty())) {
@@ -798,12 +787,7 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_PROPERTY][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_PROPERTY_EXT])) {
-                        $a[self::FIELD_PROPERTY_EXT] = [];
-                    }
-                    $a[self::FIELD_PROPERTY_EXT][] = $v;
-                }
+                $a[self::FIELD_PROPERTY_EXT][] = $v;
             }
         }
         return $a;

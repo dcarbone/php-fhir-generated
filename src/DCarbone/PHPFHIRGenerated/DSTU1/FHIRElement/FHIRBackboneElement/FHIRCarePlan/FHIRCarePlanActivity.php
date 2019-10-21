@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -691,6 +691,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
         if (null !== ($v = $this->getSimple())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SIMPLE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -714,24 +715,17 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getNotes())) {
             $a[self::FIELD_NOTES] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_NOTES_EXT] = $v;
-            }
+            $a[self::FIELD_NOTES_EXT] = $v;
         }
         if (null !== ($v = $this->getProhibited())) {
             $a[self::FIELD_PROHIBITED] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PROHIBITED_EXT] = $v;
-            }
+            $a[self::FIELD_PROHIBITED_EXT] = $v;
         }
         if (null !== ($v = $this->getSimple())) {
             $a[self::FIELD_SIMPLE] = $v;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_STATUS_EXT] = $v;
-            }
+            $a[self::FIELD_STATUS] = $v;
         }
         return $a;
     }

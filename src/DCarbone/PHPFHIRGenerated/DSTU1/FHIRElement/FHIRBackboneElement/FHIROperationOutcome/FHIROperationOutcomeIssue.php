@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIROp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -489,6 +489,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_LOCATION, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getSeverity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SEVERITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -507,9 +508,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getDetails())) {
             $a[self::FIELD_DETAILS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DETAILS_EXT] = $v;
-            }
+            $a[self::FIELD_DETAILS_EXT] = $v;
         }
         if ([] !== ($vs = $this->getLocation())) {
             $a[self::FIELD_LOCATION] = [];
@@ -518,19 +517,11 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_LOCATION][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_LOCATION_EXT])) {
-                        $a[self::FIELD_LOCATION_EXT] = [];
-                    }
-                    $a[self::FIELD_LOCATION_EXT][] = $v;
-                }
+                $a[self::FIELD_LOCATION_EXT][] = $v;
             }
         }
         if (null !== ($v = $this->getSeverity())) {
-            $a[self::FIELD_SEVERITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SEVERITY_EXT] = $v;
-            }
+            $a[self::FIELD_SEVERITY] = $v;
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAccou
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -395,9 +395,7 @@ class FHIRAccountGuarantor extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getOnHold())) {
             $a[self::FIELD_ON_HOLD] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ON_HOLD_EXT] = $v;
-            }
+            $a[self::FIELD_ON_HOLD_EXT] = $v;
         }
         if (null !== ($v = $this->getParty())) {
             $a[self::FIELD_PARTY] = $v;

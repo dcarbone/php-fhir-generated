@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRReq
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1711,6 +1711,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_ACTION, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getCardinalityBehavior())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CARDINALITY_BEHAVIOR, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1744,6 +1745,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_DOCUMENTATION, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getGroupingBehavior())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_GROUPING_BEHAVIOR, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1759,6 +1761,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_PARTICIPANT, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getPrecheckBehavior())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PRECHECK_BEHAVIOR, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1771,6 +1774,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_RELATED_ACTION, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getRequiredBehavior())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_REQUIRED_BEHAVIOR, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1778,6 +1782,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
         if (null !== ($v = $this->getResource())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_RESOURCE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getSelectionBehavior())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SELECTION_BEHAVIOR, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1823,10 +1828,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
             $a[self::FIELD_ACTION] = $vs;
         }
         if (null !== ($v = $this->getCardinalityBehavior())) {
-            $a[self::FIELD_CARDINALITY_BEHAVIOR] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_CARDINALITY_BEHAVIOR_EXT] = $v;
-            }
+            $a[self::FIELD_CARDINALITY_BEHAVIOR] = $v;
         }
         if ([] !== ($vs = $this->getCode())) {
             $a[self::FIELD_CODE] = $vs;
@@ -1836,63 +1838,43 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getDescription())) {
             $a[self::FIELD_DESCRIPTION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DESCRIPTION_EXT] = $v;
-            }
+            $a[self::FIELD_DESCRIPTION_EXT] = $v;
         }
         if ([] !== ($vs = $this->getDocumentation())) {
             $a[self::FIELD_DOCUMENTATION] = $vs;
         }
         if (null !== ($v = $this->getGroupingBehavior())) {
-            $a[self::FIELD_GROUPING_BEHAVIOR] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_GROUPING_BEHAVIOR_EXT] = $v;
-            }
+            $a[self::FIELD_GROUPING_BEHAVIOR] = $v;
         }
         if (null !== ($v = $this->getLabel())) {
             $a[self::FIELD_LABEL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_LABEL_EXT] = $v;
-            }
+            $a[self::FIELD_LABEL_EXT] = $v;
         }
         if ([] !== ($vs = $this->getParticipant())) {
             $a[self::FIELD_PARTICIPANT] = $vs;
         }
         if (null !== ($v = $this->getPrecheckBehavior())) {
-            $a[self::FIELD_PRECHECK_BEHAVIOR] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PRECHECK_BEHAVIOR_EXT] = $v;
-            }
+            $a[self::FIELD_PRECHECK_BEHAVIOR] = $v;
         }
         if ([] !== ($vs = $this->getRelatedAction())) {
             $a[self::FIELD_RELATED_ACTION] = $vs;
         }
         if (null !== ($v = $this->getRequiredBehavior())) {
-            $a[self::FIELD_REQUIRED_BEHAVIOR] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_REQUIRED_BEHAVIOR_EXT] = $v;
-            }
+            $a[self::FIELD_REQUIRED_BEHAVIOR] = $v;
         }
         if (null !== ($v = $this->getResource())) {
             $a[self::FIELD_RESOURCE] = $v;
         }
         if (null !== ($v = $this->getSelectionBehavior())) {
-            $a[self::FIELD_SELECTION_BEHAVIOR] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SELECTION_BEHAVIOR_EXT] = $v;
-            }
+            $a[self::FIELD_SELECTION_BEHAVIOR] = $v;
         }
         if (null !== ($v = $this->getTextEquivalent())) {
             $a[self::FIELD_TEXT_EQUIVALENT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TEXT_EQUIVALENT_EXT] = $v;
-            }
+            $a[self::FIELD_TEXT_EQUIVALENT_EXT] = $v;
         }
         if (null !== ($v = $this->getTimingDateTime())) {
             $a[self::FIELD_TIMING_DATE_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TIMING_DATE_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_TIMING_DATE_TIME_EXT] = $v;
         }
         if (null !== ($v = $this->getTimingDuration())) {
             $a[self::FIELD_TIMING_DURATION] = $v;
@@ -1908,9 +1890,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getTitle())) {
             $a[self::FIELD_TITLE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_TITLE_EXT] = $v;
-            }
+            $a[self::FIELD_TITLE_EXT] = $v;
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;

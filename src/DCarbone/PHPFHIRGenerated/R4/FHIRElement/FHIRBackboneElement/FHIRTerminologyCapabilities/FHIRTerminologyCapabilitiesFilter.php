@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTermi
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -405,9 +405,7 @@ class FHIRTerminologyCapabilitiesFilter extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getCode())) {
             $a[self::FIELD_CODE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_CODE_EXT] = $v;
-            }
+            $a[self::FIELD_CODE_EXT] = $v;
         }
         if ([] !== ($vs = $this->getOp())) {
             $a[self::FIELD_OP] = [];
@@ -416,12 +414,7 @@ class FHIRTerminologyCapabilitiesFilter extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_OP][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_OP_EXT])) {
-                        $a[self::FIELD_OP_EXT] = [];
-                    }
-                    $a[self::FIELD_OP_EXT][] = $v;
-                }
+                $a[self::FIELD_OP_EXT][] = $v;
             }
         }
         return $a;

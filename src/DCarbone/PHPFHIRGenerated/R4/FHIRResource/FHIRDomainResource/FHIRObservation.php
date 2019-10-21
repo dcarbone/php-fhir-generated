@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -256,7 +256,8 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * biological subjects - e.g. human patients - this is usually called the
      * "physiologically relevant time". This is usually either the time of the
      * procedure or of specimen collection, but very often the source of the date/time
-     * is not known, only the date/time itself.
+     * is not known, only the date/time itself. (choose any one of effective*, but only
+     * one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -273,7 +274,8 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * biological subjects - e.g. human patients - this is usually called the
      * "physiologically relevant time". This is usually either the time of the
      * procedure or of specimen collection, but very often the source of the date/time
-     * is not known, only the date/time itself.
+     * is not known, only the date/time itself. (choose any one of effective*, but only
+     * one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant
      */
@@ -287,7 +289,8 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * biological subjects - e.g. human patients - this is usually called the
      * "physiologically relevant time". This is usually either the time of the
      * procedure or of specimen collection, but very often the source of the date/time
-     * is not known, only the date/time itself.
+     * is not known, only the date/time itself. (choose any one of effective*, but only
+     * one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -305,7 +308,8 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * biological subjects - e.g. human patients - this is usually called the
      * "physiologically relevant time". This is usually either the time of the
      * procedure or of specimen collection, but very often the source of the date/time
-     * is not known, only the date/time itself.
+     * is not known, only the date/time itself. (choose any one of effective*, but only
+     * one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
@@ -480,7 +484,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
@@ -492,7 +496,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -506,7 +510,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -517,7 +521,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
@@ -528,7 +532,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -541,7 +545,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -552,7 +556,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -564,7 +568,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
      */
@@ -576,7 +580,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSampledData
      */
@@ -587,7 +591,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -597,7 +601,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTime
      */
@@ -1476,7 +1480,8 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * biological subjects - e.g. human patients - this is usually called the
      * "physiologically relevant time". This is usually either the time of the
      * procedure or of specimen collection, but very often the source of the date/time
-     * is not known, only the date/time itself.
+     * is not known, only the date/time itself. (choose any one of effective*, but only
+     * one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -1497,7 +1502,8 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * biological subjects - e.g. human patients - this is usually called the
      * "physiologically relevant time". This is usually either the time of the
      * procedure or of specimen collection, but very often the source of the date/time
-     * is not known, only the date/time itself.
+     * is not known, only the date/time itself. (choose any one of effective*, but only
+     * one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $effectiveDateTime
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRObservation
@@ -1528,7 +1534,8 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * biological subjects - e.g. human patients - this is usually called the
      * "physiologically relevant time". This is usually either the time of the
      * procedure or of specimen collection, but very often the source of the date/time
-     * is not known, only the date/time itself.
+     * is not known, only the date/time itself. (choose any one of effective*, but only
+     * one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant
      */
@@ -1549,7 +1556,8 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * biological subjects - e.g. human patients - this is usually called the
      * "physiologically relevant time". This is usually either the time of the
      * procedure or of specimen collection, but very often the source of the date/time
-     * is not known, only the date/time itself.
+     * is not known, only the date/time itself. (choose any one of effective*, but only
+     * one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant $effectiveInstant
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRObservation
@@ -1577,7 +1585,8 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * biological subjects - e.g. human patients - this is usually called the
      * "physiologically relevant time". This is usually either the time of the
      * procedure or of specimen collection, but very often the source of the date/time
-     * is not known, only the date/time itself.
+     * is not known, only the date/time itself. (choose any one of effective*, but only
+     * one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -1595,7 +1604,8 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * biological subjects - e.g. human patients - this is usually called the
      * "physiologically relevant time". This is usually either the time of the
      * procedure or of specimen collection, but very often the source of the date/time
-     * is not known, only the date/time itself.
+     * is not known, only the date/time itself. (choose any one of effective*, but only
+     * one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $effectivePeriod
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRObservation
@@ -1619,7 +1629,8 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * biological subjects - e.g. human patients - this is usually called the
      * "physiologically relevant time". This is usually either the time of the
      * procedure or of specimen collection, but very often the source of the date/time
-     * is not known, only the date/time itself.
+     * is not known, only the date/time itself. (choose any one of effective*, but only
+     * one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
@@ -1641,7 +1652,8 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * biological subjects - e.g. human patients - this is usually called the
      * "physiologically relevant time". This is usually either the time of the
      * procedure or of specimen collection, but very often the source of the date/time
-     * is not known, only the date/time itself.
+     * is not known, only the date/time itself. (choose any one of effective*, but only
+     * one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming $effectiveTiming
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRObservation
@@ -2359,7 +2371,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
@@ -2373,7 +2385,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $valueBoolean
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRObservation
@@ -2399,7 +2411,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -2415,7 +2427,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $valueCodeableConcept
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRObservation
@@ -2435,7 +2447,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -2453,7 +2465,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $valueDateTime
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRObservation
@@ -2478,7 +2490,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
@@ -2493,7 +2505,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $valueInteger
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRObservation
@@ -2518,7 +2530,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -2533,7 +2545,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $valuePeriod
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRObservation
@@ -2552,7 +2564,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -2569,7 +2581,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $valueQuantity
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRObservation
@@ -2586,7 +2598,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -2601,7 +2613,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange $valueRange
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRObservation
@@ -2619,7 +2631,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
      */
@@ -2635,7 +2647,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio $valueRatio
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRObservation
@@ -2653,7 +2665,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSampledData
      */
@@ -2669,7 +2681,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSampledData $valueSampledData
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRObservation
@@ -2686,7 +2698,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -2701,7 +2713,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $valueString
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRObservation
@@ -2725,7 +2737,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTime
      */
@@ -2739,7 +2751,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTime $valueTime
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRObservation
@@ -3059,6 +3071,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
                 $v->xmlSerialize($sxe->addChild(self::FIELD_HAS_MEMBER, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -3123,6 +3136,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
         if (null !== ($v = $this->getSpecimen())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SPECIMEN, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -3147,6 +3161,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
         if (null !== ($v = $this->getValuePeriod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getValueQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -3203,15 +3218,11 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
         }
         if (null !== ($v = $this->getEffectiveDateTime())) {
             $a[self::FIELD_EFFECTIVE_DATE_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_EFFECTIVE_DATE_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_EFFECTIVE_DATE_TIME_EXT] = $v;
         }
         if (null !== ($v = $this->getEffectiveInstant())) {
             $a[self::FIELD_EFFECTIVE_INSTANT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_EFFECTIVE_INSTANT_EXT] = $v;
-            }
+            $a[self::FIELD_EFFECTIVE_INSTANT_EXT] = $v;
         }
         if (null !== ($v = $this->getEffectivePeriod())) {
             $a[self::FIELD_EFFECTIVE_PERIOD] = $v;
@@ -3229,28 +3240,14 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
             $a[self::FIELD_HAS_MEMBER] = $vs;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_IDENTIFIER][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_IDENTIFIER_EXT])) {
-                        $a[self::FIELD_IDENTIFIER_EXT] = [];
-                    }
-                    $a[self::FIELD_IDENTIFIER_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_IDENTIFIER] = $vs;
         }
         if ([] !== ($vs = $this->getInterpretation())) {
             $a[self::FIELD_INTERPRETATION] = $vs;
         }
         if (null !== ($v = $this->getIssued())) {
             $a[self::FIELD_ISSUED] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ISSUED_EXT] = $v;
-            }
+            $a[self::FIELD_ISSUED_EXT] = $v;
         }
         if (null !== ($v = $this->getMethod())) {
             $a[self::FIELD_METHOD] = $v;
@@ -3271,43 +3268,31 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
             $a[self::FIELD_SPECIMEN] = $v;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_STATUS_EXT] = $v;
-            }
+            $a[self::FIELD_STATUS] = $v;
         }
         if (null !== ($v = $this->getSubject())) {
             $a[self::FIELD_SUBJECT] = $v;
         }
         if (null !== ($v = $this->getValueBoolean())) {
             $a[self::FIELD_VALUE_BOOLEAN] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_BOOLEAN_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_BOOLEAN_EXT] = $v;
         }
         if (null !== ($v = $this->getValueCodeableConcept())) {
             $a[self::FIELD_VALUE_CODEABLE_CONCEPT] = $v;
         }
         if (null !== ($v = $this->getValueDateTime())) {
             $a[self::FIELD_VALUE_DATE_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_DATE_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_DATE_TIME_EXT] = $v;
         }
         if (null !== ($v = $this->getValueInteger())) {
             $a[self::FIELD_VALUE_INTEGER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_INTEGER_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_INTEGER_EXT] = $v;
         }
         if (null !== ($v = $this->getValuePeriod())) {
             $a[self::FIELD_VALUE_PERIOD] = $v;
         }
         if (null !== ($v = $this->getValueQuantity())) {
-            $a[self::FIELD_VALUE_QUANTITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_QUANTITY_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_QUANTITY] = $v;
         }
         if (null !== ($v = $this->getValueRange())) {
             $a[self::FIELD_VALUE_RANGE] = $v;
@@ -3320,15 +3305,11 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
         }
         if (null !== ($v = $this->getValueString())) {
             $a[self::FIELD_VALUE_STRING] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_STRING_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_STRING_EXT] = $v;
         }
         if (null !== ($v = $this->getValueTime())) {
             $a[self::FIELD_VALUE_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_TIME_EXT] = $v;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

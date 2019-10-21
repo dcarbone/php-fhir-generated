@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObser
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -164,7 +164,7 @@ class FHIRObservationComponent extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
@@ -176,7 +176,7 @@ class FHIRObservationComponent extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -190,7 +190,7 @@ class FHIRObservationComponent extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -201,7 +201,7 @@ class FHIRObservationComponent extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
@@ -212,7 +212,7 @@ class FHIRObservationComponent extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -225,7 +225,7 @@ class FHIRObservationComponent extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -236,7 +236,7 @@ class FHIRObservationComponent extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -248,7 +248,7 @@ class FHIRObservationComponent extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
      */
@@ -260,7 +260,7 @@ class FHIRObservationComponent extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSampledData
      */
@@ -271,7 +271,7 @@ class FHIRObservationComponent extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -281,7 +281,7 @@ class FHIRObservationComponent extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTime
      */
@@ -690,7 +690,7 @@ class FHIRObservationComponent extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
@@ -704,7 +704,7 @@ class FHIRObservationComponent extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $valueBoolean
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationComponent
@@ -730,7 +730,7 @@ class FHIRObservationComponent extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -746,7 +746,7 @@ class FHIRObservationComponent extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $valueCodeableConcept
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationComponent
@@ -766,7 +766,7 @@ class FHIRObservationComponent extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
@@ -784,7 +784,7 @@ class FHIRObservationComponent extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $valueDateTime
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationComponent
@@ -809,7 +809,7 @@ class FHIRObservationComponent extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
@@ -824,7 +824,7 @@ class FHIRObservationComponent extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $valueInteger
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationComponent
@@ -849,7 +849,7 @@ class FHIRObservationComponent extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
@@ -864,7 +864,7 @@ class FHIRObservationComponent extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $valuePeriod
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationComponent
@@ -883,7 +883,7 @@ class FHIRObservationComponent extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -900,7 +900,7 @@ class FHIRObservationComponent extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $valueQuantity
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationComponent
@@ -917,7 +917,7 @@ class FHIRObservationComponent extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -932,7 +932,7 @@ class FHIRObservationComponent extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange $valueRange
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationComponent
@@ -950,7 +950,7 @@ class FHIRObservationComponent extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
      */
@@ -966,7 +966,7 @@ class FHIRObservationComponent extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio $valueRatio
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationComponent
@@ -984,7 +984,7 @@ class FHIRObservationComponent extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSampledData
      */
@@ -1000,7 +1000,7 @@ class FHIRObservationComponent extends FHIRBackboneElement
      * elements, an @id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSampledData $valueSampledData
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationComponent
@@ -1017,7 +1017,7 @@ class FHIRObservationComponent extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -1032,7 +1032,7 @@ class FHIRObservationComponent extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $valueString
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationComponent
@@ -1056,7 +1056,7 @@ class FHIRObservationComponent extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTime
      */
@@ -1070,7 +1070,7 @@ class FHIRObservationComponent extends FHIRBackboneElement
      * If the element is present, it must have either a @value, an @id, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value.
+     * information has a simple value. (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTime $valueTime
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationComponent
@@ -1250,6 +1250,7 @@ class FHIRObservationComponent extends FHIRBackboneElement
         if (null !== ($v = $this->getValuePeriod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getValueQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1294,33 +1295,24 @@ class FHIRObservationComponent extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getValueBoolean())) {
             $a[self::FIELD_VALUE_BOOLEAN] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_BOOLEAN_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_BOOLEAN_EXT] = $v;
         }
         if (null !== ($v = $this->getValueCodeableConcept())) {
             $a[self::FIELD_VALUE_CODEABLE_CONCEPT] = $v;
         }
         if (null !== ($v = $this->getValueDateTime())) {
             $a[self::FIELD_VALUE_DATE_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_DATE_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_DATE_TIME_EXT] = $v;
         }
         if (null !== ($v = $this->getValueInteger())) {
             $a[self::FIELD_VALUE_INTEGER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_INTEGER_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_INTEGER_EXT] = $v;
         }
         if (null !== ($v = $this->getValuePeriod())) {
             $a[self::FIELD_VALUE_PERIOD] = $v;
         }
         if (null !== ($v = $this->getValueQuantity())) {
-            $a[self::FIELD_VALUE_QUANTITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_QUANTITY_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_QUANTITY] = $v;
         }
         if (null !== ($v = $this->getValueRange())) {
             $a[self::FIELD_VALUE_RANGE] = $v;
@@ -1333,15 +1325,11 @@ class FHIRObservationComponent extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getValueString())) {
             $a[self::FIELD_VALUE_STRING] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_STRING_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_STRING_EXT] = $v;
         }
         if (null !== ($v = $this->getValueTime())) {
             $a[self::FIELD_VALUE_TIME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_TIME_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_TIME_EXT] = $v;
         }
         return $a;
     }

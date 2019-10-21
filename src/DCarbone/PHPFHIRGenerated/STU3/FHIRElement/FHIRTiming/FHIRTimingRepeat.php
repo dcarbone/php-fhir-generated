@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1472,6 +1472,7 @@ class FHIRTimingRepeat extends FHIRElement
         if (null !== ($v = $this->getDurationMax())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DURATION_MAX, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getDurationUnit())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DURATION_UNIT, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1490,6 +1491,7 @@ class FHIRTimingRepeat extends FHIRElement
         if (null !== ($v = $this->getPeriodMax())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PERIOD_MAX, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getPeriodUnit())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PERIOD_UNIT, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1501,6 +1503,7 @@ class FHIRTimingRepeat extends FHIRElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_TIME_OF_DAY, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if ([] !== ($vs = $this->getWhen())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1529,15 +1532,11 @@ class FHIRTimingRepeat extends FHIRElement
         }
         if (null !== ($v = $this->getCount())) {
             $a[self::FIELD_COUNT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_COUNT_EXT] = $v;
-            }
+            $a[self::FIELD_COUNT_EXT] = $v;
         }
         if (null !== ($v = $this->getCountMax())) {
             $a[self::FIELD_COUNT_MAX] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_COUNT_MAX_EXT] = $v;
-            }
+            $a[self::FIELD_COUNT_MAX_EXT] = $v;
         }
         if ([] !== ($vs = $this->getDayOfWeek())) {
             $a[self::FIELD_DAY_OF_WEEK] = [];
@@ -1546,67 +1545,42 @@ class FHIRTimingRepeat extends FHIRElement
                     continue;
                 }
                 $a[self::FIELD_DAY_OF_WEEK][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_DAY_OF_WEEK_EXT])) {
-                        $a[self::FIELD_DAY_OF_WEEK_EXT] = [];
-                    }
-                    $a[self::FIELD_DAY_OF_WEEK_EXT][] = $v;
-                }
+                $a[self::FIELD_DAY_OF_WEEK_EXT][] = $v;
             }
         }
         if (null !== ($v = $this->getDuration())) {
             $a[self::FIELD_DURATION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DURATION_EXT] = $v;
-            }
+            $a[self::FIELD_DURATION_EXT] = $v;
         }
         if (null !== ($v = $this->getDurationMax())) {
             $a[self::FIELD_DURATION_MAX] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DURATION_MAX_EXT] = $v;
-            }
+            $a[self::FIELD_DURATION_MAX_EXT] = $v;
         }
         if (null !== ($v = $this->getDurationUnit())) {
-            $a[self::FIELD_DURATION_UNIT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DURATION_UNIT_EXT] = $v;
-            }
+            $a[self::FIELD_DURATION_UNIT] = $v;
         }
         if (null !== ($v = $this->getFrequency())) {
             $a[self::FIELD_FREQUENCY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_FREQUENCY_EXT] = $v;
-            }
+            $a[self::FIELD_FREQUENCY_EXT] = $v;
         }
         if (null !== ($v = $this->getFrequencyMax())) {
             $a[self::FIELD_FREQUENCY_MAX] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_FREQUENCY_MAX_EXT] = $v;
-            }
+            $a[self::FIELD_FREQUENCY_MAX_EXT] = $v;
         }
         if (null !== ($v = $this->getOffset())) {
             $a[self::FIELD_OFFSET] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_OFFSET_EXT] = $v;
-            }
+            $a[self::FIELD_OFFSET_EXT] = $v;
         }
         if (null !== ($v = $this->getPeriod())) {
             $a[self::FIELD_PERIOD] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PERIOD_EXT] = $v;
-            }
+            $a[self::FIELD_PERIOD_EXT] = $v;
         }
         if (null !== ($v = $this->getPeriodMax())) {
             $a[self::FIELD_PERIOD_MAX] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PERIOD_MAX_EXT] = $v;
-            }
+            $a[self::FIELD_PERIOD_MAX_EXT] = $v;
         }
         if (null !== ($v = $this->getPeriodUnit())) {
-            $a[self::FIELD_PERIOD_UNIT] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PERIOD_UNIT_EXT] = $v;
-            }
+            $a[self::FIELD_PERIOD_UNIT] = $v;
         }
         if ([] !== ($vs = $this->getTimeOfDay())) {
             $a[self::FIELD_TIME_OF_DAY] = [];
@@ -1615,28 +1589,11 @@ class FHIRTimingRepeat extends FHIRElement
                     continue;
                 }
                 $a[self::FIELD_TIME_OF_DAY][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_TIME_OF_DAY_EXT])) {
-                        $a[self::FIELD_TIME_OF_DAY_EXT] = [];
-                    }
-                    $a[self::FIELD_TIME_OF_DAY_EXT][] = $v;
-                }
+                $a[self::FIELD_TIME_OF_DAY_EXT][] = $v;
             }
         }
         if ([] !== ($vs = $this->getWhen())) {
-            $a[self::FIELD_WHEN] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_WHEN][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_WHEN_EXT])) {
-                        $a[self::FIELD_WHEN_EXT] = [];
-                    }
-                    $a[self::FIELD_WHEN_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_WHEN] = $vs;
         }
         return $a;
     }

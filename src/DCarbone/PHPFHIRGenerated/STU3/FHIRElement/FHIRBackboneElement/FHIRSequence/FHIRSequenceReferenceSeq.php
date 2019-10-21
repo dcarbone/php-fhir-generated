@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRSeq
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -785,9 +785,7 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getGenomeBuild())) {
             $a[self::FIELD_GENOME_BUILD] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_GENOME_BUILD_EXT] = $v;
-            }
+            $a[self::FIELD_GENOME_BUILD_EXT] = $v;
         }
         if (null !== ($v = $this->getReferenceSeqId())) {
             $a[self::FIELD_REFERENCE_SEQ_ID] = $v;
@@ -797,27 +795,19 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getReferenceSeqString())) {
             $a[self::FIELD_REFERENCE_SEQ_STRING] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_REFERENCE_SEQ_STRING_EXT] = $v;
-            }
+            $a[self::FIELD_REFERENCE_SEQ_STRING_EXT] = $v;
         }
         if (null !== ($v = $this->getStrand())) {
             $a[self::FIELD_STRAND] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_STRAND_EXT] = $v;
-            }
+            $a[self::FIELD_STRAND_EXT] = $v;
         }
         if (null !== ($v = $this->getWindowEnd())) {
             $a[self::FIELD_WINDOW_END] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_WINDOW_END_EXT] = $v;
-            }
+            $a[self::FIELD_WINDOW_END_EXT] = $v;
         }
         if (null !== ($v = $this->getWindowStart())) {
             $a[self::FIELD_WINDOW_START] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_WINDOW_START_EXT] = $v;
-            }
+            $a[self::FIELD_WINDOW_START_EXT] = $v;
         }
         return $a;
     }

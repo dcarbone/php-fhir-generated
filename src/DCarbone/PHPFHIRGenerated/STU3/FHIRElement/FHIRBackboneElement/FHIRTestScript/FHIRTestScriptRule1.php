@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -369,6 +369,7 @@ class FHIRTestScriptRule1 extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if ([] !== ($vs = $this->getParam())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -390,25 +391,11 @@ class FHIRTestScriptRule1 extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getParam())) {
-            $a[self::FIELD_PARAM] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_PARAM][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_PARAM_EXT])) {
-                        $a[self::FIELD_PARAM_EXT] = [];
-                    }
-                    $a[self::FIELD_PARAM_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_PARAM] = $vs;
         }
         if (null !== ($v = $this->getRuleId())) {
             $a[self::FIELD_RULE_ID] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_RULE_ID_EXT] = $v;
-            }
+            $a[self::FIELD_RULE_ID_EXT] = $v;
         }
         return $a;
     }

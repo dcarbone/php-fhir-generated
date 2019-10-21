@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -61,8 +61,6 @@ use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRSecurityEventObjectTypeList;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
-use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRValueContainerInterface;
-use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRValueContainerTrait;
 
 /**
  * Code for the participant object type being audited
@@ -71,10 +69,8 @@ use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRValueContainerTrait;
  * Class FHIRSecurityEventObjectType
  * @package \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement
  */
-class FHIRSecurityEventObjectType extends FHIRElement implements PHPFHIRValueContainerInterface
+class FHIRSecurityEventObjectType extends FHIRElement
 {
-    use PHPFHIRValueContainerTrait;
-
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SECURITY_EVENT_OBJECT_TYPE;
 
@@ -245,7 +241,7 @@ class FHIRSecurityEventObjectType extends FHIRElement implements PHPFHIRValueCon
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getValue())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE, null, $v->_getFHIRXMLNamespace()));
+            $sxe->addAttribute(self::FIELD_VALUE, (string)$v);
         }
         return $sxe;
     }

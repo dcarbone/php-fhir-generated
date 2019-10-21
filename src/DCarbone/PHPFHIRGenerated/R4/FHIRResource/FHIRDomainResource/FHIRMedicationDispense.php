@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -250,6 +250,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements PHPFHIRContai
      * Identifies the medication being administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
      * carrying a code that identifies the medication from a known list of medications.
+     * (choose any one of medication*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -262,6 +263,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements PHPFHIRContai
      * Identifies the medication being administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
      * carrying a code that identifies the medication from a known list of medications.
+     * (choose any one of medication*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -340,7 +342,8 @@ class FHIRMedicationDispense extends FHIRDomainResource implements PHPFHIRContai
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Indicates the reason why a dispense was not performed.
+     * Indicates the reason why a dispense was not performed. (choose any one of
+     * statusReason*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -350,7 +353,8 @@ class FHIRMedicationDispense extends FHIRDomainResource implements PHPFHIRContai
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Indicates the reason why a dispense was not performed.
+     * Indicates the reason why a dispense was not performed. (choose any one of
+     * statusReason*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -1269,6 +1273,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements PHPFHIRContai
      * Identifies the medication being administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
      * carrying a code that identifies the medication from a known list of medications.
+     * (choose any one of medication*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -1286,6 +1291,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements PHPFHIRContai
      * Identifies the medication being administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
      * carrying a code that identifies the medication from a known list of medications.
+     * (choose any one of medication*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $medicationCodeableConcept
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationDispense
@@ -1304,6 +1310,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements PHPFHIRContai
      * Identifies the medication being administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
      * carrying a code that identifies the medication from a known list of medications.
+     * (choose any one of medication*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -1320,6 +1327,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements PHPFHIRContai
      * Identifies the medication being administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
      * carrying a code that identifies the medication from a known list of medications.
+     * (choose any one of medication*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $medicationReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationDispense
@@ -1649,7 +1657,8 @@ class FHIRMedicationDispense extends FHIRDomainResource implements PHPFHIRContai
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Indicates the reason why a dispense was not performed.
+     * Indicates the reason why a dispense was not performed. (choose any one of
+     * statusReason*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -1664,7 +1673,8 @@ class FHIRMedicationDispense extends FHIRDomainResource implements PHPFHIRContai
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Indicates the reason why a dispense was not performed.
+     * Indicates the reason why a dispense was not performed. (choose any one of
+     * statusReason*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $statusReasonCodeableConcept
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationDispense
@@ -1680,7 +1690,8 @@ class FHIRMedicationDispense extends FHIRDomainResource implements PHPFHIRContai
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Indicates the reason why a dispense was not performed.
+     * Indicates the reason why a dispense was not performed. (choose any one of
+     * statusReason*, but only one)
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -1694,7 +1705,8 @@ class FHIRMedicationDispense extends FHIRDomainResource implements PHPFHIRContai
      * If the element is present, it must have a value for at least one of the defined
      * elements, an @id referenced from the Narrative, or extensions
      *
-     * Indicates the reason why a dispense was not performed.
+     * Indicates the reason why a dispense was not performed. (choose any one of
+     * statusReason*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $statusReasonReference
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationDispense
@@ -2135,6 +2147,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements PHPFHIRContai
         if (null !== ($v = $this->getContext())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CONTEXT, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getDaysSupply())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DAYS_SUPPLY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -2169,6 +2182,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements PHPFHIRContai
                 $v->xmlSerialize($sxe->addChild(self::FIELD_EVENT_HISTORY, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -2216,6 +2230,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements PHPFHIRContai
                 $v->xmlSerialize($sxe->addChild(self::FIELD_PERFORMER, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -2285,10 +2300,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements PHPFHIRContai
             $a[self::FIELD_CONTEXT] = $v;
         }
         if (null !== ($v = $this->getDaysSupply())) {
-            $a[self::FIELD_DAYS_SUPPLY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DAYS_SUPPLY_EXT] = $v;
-            }
+            $a[self::FIELD_DAYS_SUPPLY] = $v;
         }
         if (null !== ($v = $this->getDestination())) {
             $a[self::FIELD_DESTINATION] = $v;
@@ -2303,19 +2315,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements PHPFHIRContai
             $a[self::FIELD_EVENT_HISTORY] = $vs;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_IDENTIFIER][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_IDENTIFIER_EXT])) {
-                        $a[self::FIELD_IDENTIFIER_EXT] = [];
-                    }
-                    $a[self::FIELD_IDENTIFIER_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_IDENTIFIER] = $vs;
         }
         if (null !== ($v = $this->getLocation())) {
             $a[self::FIELD_LOCATION] = $v;
@@ -2336,19 +2336,14 @@ class FHIRMedicationDispense extends FHIRDomainResource implements PHPFHIRContai
             $a[self::FIELD_PERFORMER] = $vs;
         }
         if (null !== ($v = $this->getQuantity())) {
-            $a[self::FIELD_QUANTITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_QUANTITY_EXT] = $v;
-            }
+            $a[self::FIELD_QUANTITY] = $v;
         }
         if ([] !== ($vs = $this->getReceiver())) {
             $a[self::FIELD_RECEIVER] = $vs;
         }
         if (null !== ($v = $this->getStatus())) {
             $a[self::FIELD_STATUS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_STATUS_EXT] = $v;
-            }
+            $a[self::FIELD_STATUS_EXT] = $v;
         }
         if (null !== ($v = $this->getStatusReasonCodeableConcept())) {
             $a[self::FIELD_STATUS_REASON_CODEABLE_CONCEPT] = $v;
@@ -2370,15 +2365,11 @@ class FHIRMedicationDispense extends FHIRDomainResource implements PHPFHIRContai
         }
         if (null !== ($v = $this->getWhenHandedOver())) {
             $a[self::FIELD_WHEN_HANDED_OVER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_WHEN_HANDED_OVER_EXT] = $v;
-            }
+            $a[self::FIELD_WHEN_HANDED_OVER_EXT] = $v;
         }
         if (null !== ($v = $this->getWhenPrepared())) {
             $a[self::FIELD_WHEN_PREPARED] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_WHEN_PREPARED_EXT] = $v;
-            }
+            $a[self::FIELD_WHEN_PREPARED_EXT] = $v;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

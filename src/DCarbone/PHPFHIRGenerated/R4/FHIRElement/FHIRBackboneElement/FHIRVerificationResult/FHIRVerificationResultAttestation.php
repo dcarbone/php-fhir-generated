@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVerif
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -749,27 +749,21 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getDate())) {
             $a[self::FIELD_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_DATE_EXT] = $v;
         }
         if (null !== ($v = $this->getOnBehalfOf())) {
             $a[self::FIELD_ON_BEHALF_OF] = $v;
         }
         if (null !== ($v = $this->getProxyIdentityCertificate())) {
             $a[self::FIELD_PROXY_IDENTITY_CERTIFICATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PROXY_IDENTITY_CERTIFICATE_EXT] = $v;
-            }
+            $a[self::FIELD_PROXY_IDENTITY_CERTIFICATE_EXT] = $v;
         }
         if (null !== ($v = $this->getProxySignature())) {
             $a[self::FIELD_PROXY_SIGNATURE] = $v;
         }
         if (null !== ($v = $this->getSourceIdentityCertificate())) {
             $a[self::FIELD_SOURCE_IDENTITY_CERTIFICATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SOURCE_IDENTITY_CERTIFICATE_EXT] = $v;
-            }
+            $a[self::FIELD_SOURCE_IDENTITY_CERTIFICATE_EXT] = $v;
         }
         if (null !== ($v = $this->getSourceSignature())) {
             $a[self::FIELD_SOURCE_SIGNATURE] = $v;

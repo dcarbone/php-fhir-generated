@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,7 +88,7 @@ class FHIRUnsignedIntPrimitive implements PHPFHIRTypeInterface
         $this->setValue($value);
     }
     /**
-     * @param null|integer|string
+     * @param null|integer|float|string
      * @return \DCarbone\PHPFHIRGenerated\R4\FHIRUnsignedIntPrimitive
      */
     public function setValue($value)
@@ -97,11 +97,14 @@ class FHIRUnsignedIntPrimitive implements PHPFHIRTypeInterface
             $this->value = null;
             return $this;
         }
+        if (is_float($value) || is_string($value)) {
+            $value = intval($value, 10);
+        }
         if (is_int($value)) {
             if (0 > $value) {
                 throw new \OutOfBoundsException(sprintf('Value must be >= 0, %d seen.', $value));
             }
-            $value = (string)$value;
+            $value = strval($value);
         }
         if (!is_string($value) || !ctype_digit($value)) {
             throw new \InvalidArgumentException(sprintf('Value must be null, positive integer, or string representation of positive integer, "%s" seen.', gettype($value)));
@@ -123,6 +126,15 @@ class FHIRUnsignedIntPrimitive implements PHPFHIRTypeInterface
             return true;
         }
         return is_string($value) && ctype_digit($value);
+    }
+
+
+    /**
+     * @return null|
+     */
+    public function getValue()
+    {
+        return $this->value;
     }
 
     /**
@@ -167,15 +179,6 @@ class FHIRUnsignedIntPrimitive implements PHPFHIRTypeInterface
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<unsignedInt_primitive{$xmlns}></unsignedInt_primitive>";
-    }
-
-
-    /**
-     * @return null|
-     */
-    public function getValue()
-    {
-        return $this->value;
     }
 
     /**
@@ -246,7 +249,7 @@ class FHIRUnsignedIntPrimitive implements PHPFHIRTypeInterface
      */
     public function jsonSerialize()
     {
-        return $this->getValue();
+        return intval($this->getValue(), 10);
     }
 
     /**

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImmun
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -519,27 +519,19 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getDocumentType())) {
             $a[self::FIELD_DOCUMENT_TYPE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DOCUMENT_TYPE_EXT] = $v;
-            }
+            $a[self::FIELD_DOCUMENT_TYPE_EXT] = $v;
         }
         if (null !== ($v = $this->getPresentationDate())) {
             $a[self::FIELD_PRESENTATION_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PRESENTATION_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_PRESENTATION_DATE_EXT] = $v;
         }
         if (null !== ($v = $this->getPublicationDate())) {
             $a[self::FIELD_PUBLICATION_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_PUBLICATION_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_PUBLICATION_DATE_EXT] = $v;
         }
         if (null !== ($v = $this->getReference())) {
             $a[self::FIELD_REFERENCE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_REFERENCE_EXT] = $v;
-            }
+            $a[self::FIELD_REFERENCE_EXT] = $v;
         }
         return $a;
     }

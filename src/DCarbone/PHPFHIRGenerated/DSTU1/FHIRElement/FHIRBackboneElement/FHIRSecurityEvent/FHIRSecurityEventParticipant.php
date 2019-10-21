@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -772,18 +772,14 @@ class FHIRSecurityEventParticipant extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAltId())) {
             $a[self::FIELD_ALT_ID] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ALT_ID_EXT] = $v;
-            }
+            $a[self::FIELD_ALT_ID_EXT] = $v;
         }
         if (null !== ($v = $this->getMedia())) {
             $a[self::FIELD_MEDIA] = $v;
         }
         if (null !== ($v = $this->getName())) {
             $a[self::FIELD_NAME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_NAME_EXT] = $v;
-            }
+            $a[self::FIELD_NAME_EXT] = $v;
         }
         if (null !== ($v = $this->getNetwork())) {
             $a[self::FIELD_NETWORK] = $v;
@@ -793,18 +789,14 @@ class FHIRSecurityEventParticipant extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getRequestor())) {
             $a[self::FIELD_REQUESTOR] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_REQUESTOR_EXT] = $v;
-            }
+            $a[self::FIELD_REQUESTOR_EXT] = $v;
         }
         if ([] !== ($vs = $this->getRole())) {
             $a[self::FIELD_ROLE] = $vs;
         }
         if (null !== ($v = $this->getUserId())) {
             $a[self::FIELD_USER_ID] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_USER_ID_EXT] = $v;
-            }
+            $a[self::FIELD_USER_ID_EXT] = $v;
         }
         return $a;
     }

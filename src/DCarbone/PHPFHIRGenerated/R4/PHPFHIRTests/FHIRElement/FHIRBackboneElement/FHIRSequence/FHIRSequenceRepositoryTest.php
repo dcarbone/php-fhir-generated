@@ -1,12 +1,11 @@
 <?php
 
-namespace DCarbone\PHPFHIRGenerated\R4;
-
+namespace DCarbone\PHPFHIRGenerated\R4\PHPFHIRTests\FHIRElement\FHIRBackboneElement\FHIRSequence;
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -62,27 +61,18 @@ namespace DCarbone\PHPFHIRGenerated\R4;
  * 
  */
 
+use PHPUnit\Framework\TestCase;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRepository;
+
 /**
- * Trait PHPFHIRValueContainerTrait
- * @package \DCarbone\PHPFHIRGenerated\R4
+ * Class FHIRSequenceRepositoryTest
+ * @package \DCarbone\PHPFHIRGenerated\R4\PHPFHIRTests\FHIRElement\FHIRBackboneElement\FHIRSequence
  */
-trait PHPFHIRValueContainerTrait{
-    /** @var bool */
-    private $_nonValueFieldsDefined = false;
-
-    /**
-     * @return void
-     */
-    public function _markNonValueFieldsDefined()
+class FHIRSequenceRepositoryTest extends TestCase
+{
+    public function testCanConstructTypeNoArgs()
     {
-        $this->_nonValueFieldsDefined = true;
-    }
-
-    /**
-     * @return bool
-     */
-    public function _hasNonValueFieldsDefined()
-    {
-        return $this->_nonValueFieldsDefined;
+        $type = new FHIRSequenceRepository();
+        $this->assertInstanceOf('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRepository', $type);
     }
 }

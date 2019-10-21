@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -60,8 +60,6 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
-use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRValueContainerInterface;
-use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRValueContainerTrait;
 
 /**
  * A measured amount (or an amount that can potentially be measured). Note that
@@ -73,10 +71,8 @@ use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRValueContainerTrait;
  * Class FHIRQuantity
  * @package \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement
  */
-class FHIRQuantity extends FHIRElement implements PHPFHIRValueContainerInterface
+class FHIRQuantity extends FHIRElement
 {
-    use PHPFHIRValueContainerTrait;
-
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_QUANTITY;
 
@@ -340,7 +336,6 @@ class FHIRQuantity extends FHIRElement implements PHPFHIRValueContainerInterface
      */
     public function setComparator(FHIRQuantityCompararator $comparator = null)
     {
-        $this->_markNonValueFieldsDefined();
         $this->comparator = $comparator;
         return $this;
     }
@@ -539,6 +534,7 @@ class FHIRQuantity extends FHIRElement implements PHPFHIRValueContainerInterface
         if (null !== ($v = $this->getCode())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getComparator())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_COMPARATOR, null, $v->_getFHIRXMLNamespace()));
         }
@@ -562,33 +558,22 @@ class FHIRQuantity extends FHIRElement implements PHPFHIRValueContainerInterface
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getCode())) {
             $a[self::FIELD_CODE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_CODE_EXT] = $v;
-            }
+            $a[self::FIELD_CODE_EXT] = $v;
         }
         if (null !== ($v = $this->getComparator())) {
-            $a[self::FIELD_COMPARATOR] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_COMPARATOR_EXT] = $v;
-            }
+            $a[self::FIELD_COMPARATOR] = $v;
         }
         if (null !== ($v = $this->getSystem())) {
             $a[self::FIELD_SYSTEM] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_SYSTEM_EXT] = $v;
-            }
+            $a[self::FIELD_SYSTEM_EXT] = $v;
         }
         if (null !== ($v = $this->getUnits())) {
             $a[self::FIELD_UNITS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_UNITS_EXT] = $v;
-            }
+            $a[self::FIELD_UNITS_EXT] = $v;
         }
         if (null !== ($v = $this->getValue())) {
             $a[self::FIELD_VALUE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_VALUE_EXT] = $v;
-            }
+            $a[self::FIELD_VALUE_EXT] = $v;
         }
         return $a;
     }

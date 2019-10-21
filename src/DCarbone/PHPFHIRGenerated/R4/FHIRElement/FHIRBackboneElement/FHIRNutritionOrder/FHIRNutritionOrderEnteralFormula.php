@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRNutri
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -849,9 +849,11 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
         if (null !== ($v = $this->getBaseFormulaType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_BASE_FORMULA_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getCaloricDensity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CALORIC_DENSITY, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getMaxVolumeToDeliver())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VOLUME_TO_DELIVER, null, $v->_getFHIRXMLNamespace()));
         }
@@ -870,9 +872,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAdditiveProductName())) {
             $a[self::FIELD_ADDITIVE_PRODUCT_NAME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ADDITIVE_PRODUCT_NAME_EXT] = $v;
-            }
+            $a[self::FIELD_ADDITIVE_PRODUCT_NAME_EXT] = $v;
         }
         if (null !== ($v = $this->getAdditiveType())) {
             $a[self::FIELD_ADDITIVE_TYPE] = $v;
@@ -882,30 +882,20 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getAdministrationInstruction())) {
             $a[self::FIELD_ADMINISTRATION_INSTRUCTION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ADMINISTRATION_INSTRUCTION_EXT] = $v;
-            }
+            $a[self::FIELD_ADMINISTRATION_INSTRUCTION_EXT] = $v;
         }
         if (null !== ($v = $this->getBaseFormulaProductName())) {
             $a[self::FIELD_BASE_FORMULA_PRODUCT_NAME] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_BASE_FORMULA_PRODUCT_NAME_EXT] = $v;
-            }
+            $a[self::FIELD_BASE_FORMULA_PRODUCT_NAME_EXT] = $v;
         }
         if (null !== ($v = $this->getBaseFormulaType())) {
             $a[self::FIELD_BASE_FORMULA_TYPE] = $v;
         }
         if (null !== ($v = $this->getCaloricDensity())) {
-            $a[self::FIELD_CALORIC_DENSITY] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_CALORIC_DENSITY_EXT] = $v;
-            }
+            $a[self::FIELD_CALORIC_DENSITY] = $v;
         }
         if (null !== ($v = $this->getMaxVolumeToDeliver())) {
-            $a[self::FIELD_MAX_VOLUME_TO_DELIVER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_MAX_VOLUME_TO_DELIVER_EXT] = $v;
-            }
+            $a[self::FIELD_MAX_VOLUME_TO_DELIVER] = $v;
         }
         if (null !== ($v = $this->getRouteofAdministration())) {
             $a[self::FIELD_ROUTEOF_ADMINISTRATION] = $v;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExpla
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -472,9 +472,7 @@ class FHIRExplanationOfBenefitInsurance extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getFocal())) {
             $a[self::FIELD_FOCAL] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_FOCAL_EXT] = $v;
-            }
+            $a[self::FIELD_FOCAL_EXT] = $v;
         }
         if ([] !== ($vs = $this->getPreAuthRef())) {
             $a[self::FIELD_PRE_AUTH_REF] = [];
@@ -483,12 +481,7 @@ class FHIRExplanationOfBenefitInsurance extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_PRE_AUTH_REF][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_PRE_AUTH_REF_EXT])) {
-                        $a[self::FIELD_PRE_AUTH_REF_EXT] = [];
-                    }
-                    $a[self::FIELD_PRE_AUTH_REF_EXT][] = $v;
-                }
+                $a[self::FIELD_PRE_AUTH_REF_EXT][] = $v;
             }
         }
         return $a;

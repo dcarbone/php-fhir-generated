@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImple
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -656,6 +656,7 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
         if (null !== ($v = $this->getPage())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PAGE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if ([] !== ($vs = $this->getParameter())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -698,19 +699,7 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
             $a[self::FIELD_PAGE] = $v;
         }
         if ([] !== ($vs = $this->getParameter())) {
-            $a[self::FIELD_PARAMETER] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_PARAMETER][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_PARAMETER_EXT])) {
-                        $a[self::FIELD_PARAMETER_EXT] = [];
-                    }
-                    $a[self::FIELD_PARAMETER_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_PARAMETER] = $vs;
         }
         if ([] !== ($vs = $this->getResource())) {
             $a[self::FIELD_RESOURCE] = $vs;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRImm
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -846,6 +846,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
         if (null !== ($v = $this->getDate())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DATE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if ([] !== ($vs = $this->getDateCriterion())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -902,30 +903,14 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getDate())) {
             $a[self::FIELD_DATE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DATE_EXT] = $v;
-            }
+            $a[self::FIELD_DATE_EXT] = $v;
         }
         if ([] !== ($vs = $this->getDateCriterion())) {
-            $a[self::FIELD_DATE_CRITERION] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_DATE_CRITERION][] = $v->getValue();
-                if ($v->_hasNonValueFieldsDefined()) {
-                    if (!isset($a[self::FIELD_DATE_CRITERION_EXT])) {
-                        $a[self::FIELD_DATE_CRITERION_EXT] = [];
-                    }
-                    $a[self::FIELD_DATE_CRITERION_EXT][] = $v;
-                }
-            }
+            $a[self::FIELD_DATE_CRITERION] = $vs;
         }
         if (null !== ($v = $this->getDoseNumber())) {
             $a[self::FIELD_DOSE_NUMBER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_DOSE_NUMBER_EXT] = $v;
-            }
+            $a[self::FIELD_DOSE_NUMBER_EXT] = $v;
         }
         if (null !== ($v = $this->getForecastStatus())) {
             $a[self::FIELD_FORECAST_STATUS] = $v;

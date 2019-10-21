@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClini
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -409,9 +409,7 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getBasis())) {
             $a[self::FIELD_BASIS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_BASIS_EXT] = $v;
-            }
+            $a[self::FIELD_BASIS_EXT] = $v;
         }
         if (null !== ($v = $this->getItemCodeableConcept())) {
             $a[self::FIELD_ITEM_CODEABLE_CONCEPT] = $v;

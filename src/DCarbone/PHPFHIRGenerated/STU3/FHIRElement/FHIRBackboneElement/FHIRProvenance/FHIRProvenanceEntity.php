@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPro
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:04+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -582,9 +582,11 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_AGENT, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getRole())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ROLE, null, $v->_getFHIRXMLNamespace()));
         }
+
         if (null !== ($v = $this->getWhatIdentifier())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_WHAT_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }
@@ -608,25 +610,17 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
             $a[self::FIELD_AGENT] = $vs;
         }
         if (null !== ($v = $this->getRole())) {
-            $a[self::FIELD_ROLE] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ROLE_EXT] = $v;
-            }
+            $a[self::FIELD_ROLE] = $v;
         }
         if (null !== ($v = $this->getWhatIdentifier())) {
-            $a[self::FIELD_WHAT_IDENTIFIER] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_WHAT_IDENTIFIER_EXT] = $v;
-            }
+            $a[self::FIELD_WHAT_IDENTIFIER] = $v;
         }
         if (null !== ($v = $this->getWhatReference())) {
             $a[self::FIELD_WHAT_REFERENCE] = $v;
         }
         if (null !== ($v = $this->getWhatUri())) {
             $a[self::FIELD_WHAT_URI] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_WHAT_URI_EXT] = $v;
-            }
+            $a[self::FIELD_WHAT_URI_EXT] = $v;
         }
         return $a;
     }

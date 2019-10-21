@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 04:05+0000
+ * Class creation date: October 21st, 2019 23:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -132,6 +132,8 @@ class FHIRBundleResponse extends FHIRBackboneElement
      */
     private $location = null;
     /**
+     * (choose any one of the elements, but only one)
+     *
      * An OperationOutcome containing hints and warnings produced as part of processing
      * this entry in a batch or transaction.
      *
@@ -415,6 +417,8 @@ class FHIRBundleResponse extends FHIRBackboneElement
     }
 
     /**
+     * (choose any one of the elements, but only one)
+     *
      * An OperationOutcome containing hints and warnings produced as part of processing
      * this entry in a batch or transaction.
      *
@@ -426,6 +430,8 @@ class FHIRBundleResponse extends FHIRBackboneElement
     }
 
     /**
+     * (choose any one of the elements, but only one)
+     *
      * An OperationOutcome containing hints and warnings produced as part of processing
      * this entry in a batch or transaction.
      *
@@ -594,30 +600,22 @@ class FHIRBundleResponse extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getEtag())) {
             $a[self::FIELD_ETAG] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_ETAG_EXT] = $v;
-            }
+            $a[self::FIELD_ETAG_EXT] = $v;
         }
         if (null !== ($v = $this->getLastModified())) {
             $a[self::FIELD_LAST_MODIFIED] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_LAST_MODIFIED_EXT] = $v;
-            }
+            $a[self::FIELD_LAST_MODIFIED_EXT] = $v;
         }
         if (null !== ($v = $this->getLocation())) {
             $a[self::FIELD_LOCATION] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_LOCATION_EXT] = $v;
-            }
+            $a[self::FIELD_LOCATION_EXT] = $v;
         }
         if (null !== ($v = $this->getOutcome())) {
             $a[self::FIELD_OUTCOME] = $v;
         }
         if (null !== ($v = $this->getStatus())) {
             $a[self::FIELD_STATUS] = $v->getValue();
-            if ($v->_hasNonValueFieldsDefined()) {
-                $a[self::FIELD_STATUS_EXT] = $v;
-            }
+            $a[self::FIELD_STATUS_EXT] = $v;
         }
         return $a;
     }
