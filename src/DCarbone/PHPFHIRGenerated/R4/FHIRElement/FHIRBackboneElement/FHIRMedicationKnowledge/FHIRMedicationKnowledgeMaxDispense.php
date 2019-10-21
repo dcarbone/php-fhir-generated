@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:05+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,6 +84,7 @@ class FHIRMedicationKnowledgeMaxDispense extends FHIRBackboneElement
 
     const FIELD_PERIOD = 'period';
     const FIELD_QUANTITY = 'quantity';
+    const FIELD_QUANTITY_EXT = '_quantity';
 
     /**
      * A length of time.
@@ -132,8 +133,13 @@ class FHIRMedicationKnowledgeMaxDispense extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_QUANTITY])) {
+            $ext = (isset($data[self::FIELD_QUANTITY_EXT]) && is_array($data[self::FIELD_QUANTITY_EXT]))
+                ? $data[self::FIELD_QUANTITY_EXT]
+                : null;
             if ($data[self::FIELD_QUANTITY] instanceof FHIRQuantity) {
                 $this->setQuantity($data[self::FIELD_QUANTITY]);
+            } elseif ($ext && is_scalar($data[self::FIELD_QUANTITY])) {
+                $this->setQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_QUANTITY]] + $ext));
             } else {
                 $this->setQuantity(new FHIRQuantity($data[self::FIELD_QUANTITY]));
             }
@@ -143,7 +149,7 @@ class FHIRMedicationKnowledgeMaxDispense extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -151,17 +157,33 @@ class FHIRMedicationKnowledgeMaxDispense extends FHIRBackboneElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMaxDispense
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -256,13 +278,14 @@ class FHIRMedicationKnowledgeMaxDispense extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIRMedicationKnowledgeMaxDispense::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIRMedicationKnowledgeMaxDispense);
+            $type = new FHIRMedicationKnowledgeMaxDispense;
         } elseif (!is_object($type) || !($type instanceof FHIRMedicationKnowledgeMaxDispense)) {
             throw new \RuntimeException(sprintf(
                 'FHIRMedicationKnowledgeMaxDispense::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMaxDispense or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRBackboneElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -289,16 +312,15 @@ class FHIRMedicationKnowledgeMaxDispense extends FHIRBackboneElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getPeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PERIOD, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -313,9 +335,12 @@ class FHIRMedicationKnowledgeMaxDispense extends FHIRBackboneElement
             $a[self::FIELD_PERIOD] = $v;
         }
         if (null !== ($v = $this->getQuantity())) {
-            $a[self::FIELD_QUANTITY] = $v;
+            $a[self::FIELD_QUANTITY] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_QUANTITY_EXT] = $v;
+            }
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

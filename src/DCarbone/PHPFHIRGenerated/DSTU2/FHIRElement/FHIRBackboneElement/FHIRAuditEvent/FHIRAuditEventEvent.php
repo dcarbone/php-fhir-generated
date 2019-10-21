@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRAu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,9 +88,11 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
     private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ACTION = 'action';
+    const FIELD_ACTION_EXT = '_action';
     const FIELD_DATE_TIME = 'dateTime';
     const FIELD_DATE_TIME_EXT = '_dateTime';
     const FIELD_OUTCOME = 'outcome';
+    const FIELD_OUTCOME_EXT = '_outcome';
     const FIELD_OUTCOME_DESC = 'outcomeDesc';
     const FIELD_OUTCOME_DESC_EXT = '_outcomeDesc';
     const FIELD_PURPOSE_OF_EVENT = 'purposeOfEvent';
@@ -189,8 +191,13 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
         }
         parent::__construct($data);
         if (isset($data[self::FIELD_ACTION])) {
+            $ext = (isset($data[self::FIELD_ACTION_EXT]) && is_array($data[self::FIELD_ACTION_EXT]))
+                ? $data[self::FIELD_ACTION_EXT]
+                : null;
             if ($data[self::FIELD_ACTION] instanceof FHIRAuditEventAction) {
                 $this->setAction($data[self::FIELD_ACTION]);
+            } elseif ($ext && is_scalar($data[self::FIELD_ACTION])) {
+                $this->setAction(new FHIRAuditEventAction([FHIRAuditEventAction::FIELD_VALUE => $data[self::FIELD_ACTION]] + $ext));
             } else {
                 $this->setAction(new FHIRAuditEventAction($data[self::FIELD_ACTION]));
             }
@@ -208,8 +215,13 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_OUTCOME])) {
+            $ext = (isset($data[self::FIELD_OUTCOME_EXT]) && is_array($data[self::FIELD_OUTCOME_EXT]))
+                ? $data[self::FIELD_OUTCOME_EXT]
+                : null;
             if ($data[self::FIELD_OUTCOME] instanceof FHIRAuditEventOutcome) {
                 $this->setOutcome($data[self::FIELD_OUTCOME]);
+            } elseif ($ext && is_scalar($data[self::FIELD_OUTCOME])) {
+                $this->setOutcome(new FHIRAuditEventOutcome([FHIRAuditEventOutcome::FIELD_VALUE => $data[self::FIELD_OUTCOME]] + $ext));
             } else {
                 $this->setOutcome(new FHIRAuditEventOutcome($data[self::FIELD_OUTCOME]));
             }
@@ -268,7 +280,7 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -276,17 +288,33 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventEvent
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -603,13 +631,14 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIRAuditEventEvent::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIRAuditEventEvent);
+            $type = new FHIRAuditEventEvent;
         } elseif (!is_object($type) || !($type instanceof FHIRAuditEventEvent)) {
             throw new \RuntimeException(sprintf(
                 'FHIRAuditEventEvent::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventEvent or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRBackboneElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -661,22 +690,20 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAction())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ACTION, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ACTION, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDateTime())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DATE_TIME, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DATE_TIME, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getOutcome())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_OUTCOME, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_OUTCOME, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getOutcomeDesc())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_OUTCOME_DESC, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_OUTCOME_DESC, null, $v->_getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getPurposeOfEvent())) {
@@ -684,7 +711,7 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PURPOSE_OF_EVENT, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_PURPOSE_OF_EVENT, null, $v->_getFHIRXMLNamespace()));
             }
         }
 
@@ -693,12 +720,12 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SUBTYPE, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_SUBTYPE, null, $v->_getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -710,18 +737,28 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAction())) {
-            $a[self::FIELD_ACTION] = $v;
+            $a[self::FIELD_ACTION] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_ACTION_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getDateTime())) {
-            $a[self::FIELD_DATE_TIME] = (string)$v;
-            $a[self::FIELD_DATE_TIME_EXT] = $v;
+            $a[self::FIELD_DATE_TIME] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DATE_TIME_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getOutcome())) {
-            $a[self::FIELD_OUTCOME] = $v;
+            $a[self::FIELD_OUTCOME] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_OUTCOME_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getOutcomeDesc())) {
-            $a[self::FIELD_OUTCOME_DESC] = (string)$v;
-            $a[self::FIELD_OUTCOME_DESC_EXT] = $v;
+            $a[self::FIELD_OUTCOME_DESC] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_OUTCOME_DESC_EXT] = $v;
+            }
         }
         if ([] !== ($vs = $this->getPurposeOfEvent())) {
             $a[self::FIELD_PURPOSE_OF_EVENT] = $vs;
@@ -732,7 +769,7 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

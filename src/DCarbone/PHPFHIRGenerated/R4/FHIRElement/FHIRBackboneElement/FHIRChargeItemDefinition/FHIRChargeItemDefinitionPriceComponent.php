@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCharg
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:05+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,10 +88,12 @@ class FHIRChargeItemDefinitionPriceComponent extends FHIRBackboneElement
     private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_AMOUNT = 'amount';
+    const FIELD_AMOUNT_EXT = '_amount';
     const FIELD_CODE = 'code';
     const FIELD_FACTOR = 'factor';
     const FIELD_FACTOR_EXT = '_factor';
     const FIELD_TYPE = 'type';
+    const FIELD_TYPE_EXT = '_type';
 
     /**
      * An amount of economic utility in some recognized currency.
@@ -154,8 +156,13 @@ class FHIRChargeItemDefinitionPriceComponent extends FHIRBackboneElement
         }
         parent::__construct($data);
         if (isset($data[self::FIELD_AMOUNT])) {
+            $ext = (isset($data[self::FIELD_AMOUNT_EXT]) && is_array($data[self::FIELD_AMOUNT_EXT]))
+                ? $data[self::FIELD_AMOUNT_EXT]
+                : null;
             if ($data[self::FIELD_AMOUNT] instanceof FHIRMoney) {
                 $this->setAmount($data[self::FIELD_AMOUNT]);
+            } elseif ($ext && is_scalar($data[self::FIELD_AMOUNT])) {
+                $this->setAmount(new FHIRMoney([FHIRMoney::FIELD_VALUE => $data[self::FIELD_AMOUNT]] + $ext));
             } else {
                 $this->setAmount(new FHIRMoney($data[self::FIELD_AMOUNT]));
             }
@@ -180,8 +187,13 @@ class FHIRChargeItemDefinitionPriceComponent extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_TYPE])) {
+            $ext = (isset($data[self::FIELD_TYPE_EXT]) && is_array($data[self::FIELD_TYPE_EXT]))
+                ? $data[self::FIELD_TYPE_EXT]
+                : null;
             if ($data[self::FIELD_TYPE] instanceof FHIRInvoicePriceComponentType) {
                 $this->setType($data[self::FIELD_TYPE]);
+            } elseif ($ext && is_scalar($data[self::FIELD_TYPE])) {
+                $this->setType(new FHIRInvoicePriceComponentType([FHIRInvoicePriceComponentType::FIELD_VALUE => $data[self::FIELD_TYPE]] + $ext));
             } else {
                 $this->setType(new FHIRInvoicePriceComponentType($data[self::FIELD_TYPE]));
             }
@@ -191,7 +203,7 @@ class FHIRChargeItemDefinitionPriceComponent extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -199,17 +211,33 @@ class FHIRChargeItemDefinitionPriceComponent extends FHIRBackboneElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRChargeItemDefinition\FHIRChargeItemDefinitionPriceComponent
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -374,13 +402,14 @@ class FHIRChargeItemDefinitionPriceComponent extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIRChargeItemDefinitionPriceComponent::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIRChargeItemDefinitionPriceComponent);
+            $type = new FHIRChargeItemDefinitionPriceComponent;
         } elseif (!is_object($type) || !($type instanceof FHIRChargeItemDefinitionPriceComponent)) {
             throw new \RuntimeException(sprintf(
                 'FHIRChargeItemDefinitionPriceComponent::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRChargeItemDefinition\FHIRChargeItemDefinitionPriceComponent or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRBackboneElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -416,23 +445,21 @@ class FHIRChargeItemDefinitionPriceComponent extends FHIRBackboneElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAmount())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_AMOUNT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_AMOUNT, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getCode())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getFactor())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FACTOR, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FACTOR, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -444,19 +471,27 @@ class FHIRChargeItemDefinitionPriceComponent extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAmount())) {
-            $a[self::FIELD_AMOUNT] = $v;
+            $a[self::FIELD_AMOUNT] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_AMOUNT_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getCode())) {
             $a[self::FIELD_CODE] = $v;
         }
         if (null !== ($v = $this->getFactor())) {
-            $a[self::FIELD_FACTOR] = (string)$v;
-            $a[self::FIELD_FACTOR_EXT] = $v;
+            $a[self::FIELD_FACTOR] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_FACTOR_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getType())) {
-            $a[self::FIELD_TYPE] = $v;
+            $a[self::FIELD_TYPE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_TYPE_EXT] = $v;
+            }
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

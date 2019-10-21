@@ -5,7 +5,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTests\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,8 +63,8 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTests\FHIRResource\FHIRDomainRe
 
 use PHPUnit\Framework\TestCase;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIREnrollmentRequest;
+use PHPUnit\Framework\AssertionFailedError;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRBundle;
-
 
 /**
  * Class FHIREnrollmentRequestTest
@@ -103,20 +103,41 @@ class FHIREnrollmentRequestTest extends TestCase
         return $res;
     }
 
-    // TODO: precompile list of resource id's and use them specifically?
+    /**
+     * @param string $json
+     * @param bool $asArray
+     * @return mixed
+     */
+    protected function decodeJSON($json, $asArray)
+    {
+        $this->assertJson($json);
+        $decoded = json_decode($json, $asArray);
+        if (JSON_ERROR_NONE !== json_last_error()) {
+            $this->fail(sprintf(
+                'Error decoded JSON: %s; Raw: %s',
+                function_exists('json_last_error_msg') ? json_last_error_msg() : ('Code: '.json_last_error()),
+                $json
+            ));
+        }
+        return $decoded;
+    }
+
     public function testXML()
     {
         $xml = $this->fetchResource('xml');
         try {
-            $type = FHIREnrollmentRequest::xmlUnserialize($xml);
-        } catch (\Exception $e) {
-            $this->fail(sprintf(
-                'Error building type "Bundle" from XML: %s; Returned XML: %s',
-                $e->getMessage(),
-                $xml
-            ));
+            $bundle = FHIRBundle::xmlUnserialize($xml);
+        } catch(\Exception $e) {
+            throw new AssertionFailedError(
+                sprintf(
+                    'Error building type "Bundle" from XML: %s; Returned XML: %s',
+                    $e->getMessage(),
+                    $xml
+                ),
+                $e->getCode(),
+                $e
+            );
         }
-        $bundle = FHIRBundle::xmlUnserialize($xml);
         $this->assertInstanceOf('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRBundle', $bundle);
         if (0 === count($bundle->getEntry())) {
             $this->markTestSkipped(sprintf(
@@ -131,13 +152,61 @@ class FHIREnrollmentRequestTest extends TestCase
         try {
             $type = FHIREnrollmentRequest::xmlUnserialize($xml2);
         } catch (\Exception $e) {
-            $this->fail(sprintf(
-                'Error building type "EnrollmentRequest" from XML: %s; Returned XML: %s',
-                $e->getMessage(),
-                $xml2
-            ));
+            throw new AssertionFailedError(
+                sprintf(
+                    'Error building type "EnrollmentRequest" from XML: %s; XML: %s',
+                    $e->getMessage(),
+                    $xml2
+                ),
+                $e->getCode(),
+                $e
+            );
         }
         $this->assertInstanceOf('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIREnrollmentRequest', $type);
         $this->assertEquals($entry->xmlSerialize()->saveXML(), $type->xmlSerialize()->saveXML());
+    }
+
+    public function testJSON()
+    {
+        $json = $this->fetchResource('json');
+        $decoded = $this->decodeJSON($json, true);
+        try {
+            $bundle = new FHIRBundle($decoded);
+        } catch(\Exception $e) {
+            throw new AssertionFailedError(
+                sprintf(
+                    'Error building type "Bundle" from JSON: %s; Returned JSON: %s',
+                    $e->getMessage(),
+                    $json
+                ),
+                $e->getCode(),
+                $e
+            );
+        }
+        if (0 === count($bundle->getEntry())) {
+            $this->markTestSkipped(sprintf(
+                'Provided test endpoint "http://hapi.fhir.org/baseDstu2" does not have any EnrollmentRequest" entries to test against (returned json: %s)',
+                $json
+            ));
+            return;
+        }
+        $this->assertCount(1, $bundle->getEntry());
+        $entry = $bundle->getEntry()[0]->getResource();
+        $json2 = json_encode($entry, JSON_PRETTY_PRINT);
+        $decoded2 = $this->decodeJSON($json2, true);
+        try {
+            $type = new FHIREnrollmentRequest($decoded2);
+        } catch (\Exception $e) {
+            throw new AssertionFailedError(
+                sprintf(
+                    'Error building type "EnrollmentRequest" from JSON: %s; JSON: %s',
+                    $e->getMessage(),
+                    $json2
+                ),
+                $e->getCode(),
+                $e
+            );
+        }
+        $this->assertEquals(json_encode($entry, JSON_PRETTY_PRINT), json_encode($type, JSON_PRETTY_PRINT));
     }
 }

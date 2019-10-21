@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExpla
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:05+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -252,7 +252,7 @@ class FHIRExplanationOfBenefitProcedure extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -260,17 +260,33 @@ class FHIRExplanationOfBenefitProcedure extends FHIRBackboneElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitProcedure
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -564,13 +580,14 @@ class FHIRExplanationOfBenefitProcedure extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIRExplanationOfBenefitProcedure::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIRExplanationOfBenefitProcedure);
+            $type = new FHIRExplanationOfBenefitProcedure;
         } elseif (!is_object($type) || !($type instanceof FHIRExplanationOfBenefitProcedure)) {
             throw new \RuntimeException(sprintf(
                 'FHIRExplanationOfBenefitProcedure::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitProcedure or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRBackboneElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -619,22 +636,22 @@ class FHIRExplanationOfBenefitProcedure extends FHIRBackboneElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getDate())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DATE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DATE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getProcedureCodeableConcept())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PROCEDURE_CODEABLE_CONCEPT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PROCEDURE_CODEABLE_CONCEPT, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getProcedureReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PROCEDURE_REFERENCE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PROCEDURE_REFERENCE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getSequence())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SEQUENCE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SEQUENCE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getType())) {
@@ -642,7 +659,7 @@ class FHIRExplanationOfBenefitProcedure extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
             }
         }
 
@@ -651,7 +668,7 @@ class FHIRExplanationOfBenefitProcedure extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_UDI, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_UDI, null, $v->_getFHIRXMLNamespace()));
             }
         }
         return $sxe;
@@ -664,8 +681,10 @@ class FHIRExplanationOfBenefitProcedure extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getDate())) {
-            $a[self::FIELD_DATE] = (string)$v;
-            $a[self::FIELD_DATE_EXT] = $v;
+            $a[self::FIELD_DATE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DATE_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getProcedureCodeableConcept())) {
             $a[self::FIELD_PROCEDURE_CODEABLE_CONCEPT] = $v;
@@ -674,8 +693,10 @@ class FHIRExplanationOfBenefitProcedure extends FHIRBackboneElement
             $a[self::FIELD_PROCEDURE_REFERENCE] = $v;
         }
         if (null !== ($v = $this->getSequence())) {
-            $a[self::FIELD_SEQUENCE] = (string)$v;
-            $a[self::FIELD_SEQUENCE_EXT] = $v;
+            $a[self::FIELD_SEQUENCE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_SEQUENCE_EXT] = $v;
+            }
         }
         if ([] !== ($vs = $this->getType())) {
             $a[self::FIELD_TYPE] = $vs;
@@ -683,7 +704,7 @@ class FHIRExplanationOfBenefitProcedure extends FHIRBackboneElement
         if ([] !== ($vs = $this->getUdi())) {
             $a[self::FIELD_UDI] = $vs;
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:05+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,7 +82,9 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement
     private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_IMMEDIATE_PACKAGING = 'immediatePackaging';
+    const FIELD_IMMEDIATE_PACKAGING_EXT = '_immediatePackaging';
     const FIELD_OUTER_PACKAGING = 'outerPackaging';
+    const FIELD_OUTER_PACKAGING_EXT = '_outerPackaging';
 
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
@@ -124,15 +126,25 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement
         }
         parent::__construct($data);
         if (isset($data[self::FIELD_IMMEDIATE_PACKAGING])) {
+            $ext = (isset($data[self::FIELD_IMMEDIATE_PACKAGING_EXT]) && is_array($data[self::FIELD_IMMEDIATE_PACKAGING_EXT]))
+                ? $data[self::FIELD_IMMEDIATE_PACKAGING_EXT]
+                : null;
             if ($data[self::FIELD_IMMEDIATE_PACKAGING] instanceof FHIRIdentifier) {
                 $this->setImmediatePackaging($data[self::FIELD_IMMEDIATE_PACKAGING]);
+            } elseif ($ext && is_scalar($data[self::FIELD_IMMEDIATE_PACKAGING])) {
+                $this->setImmediatePackaging(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_IMMEDIATE_PACKAGING]] + $ext));
             } else {
                 $this->setImmediatePackaging(new FHIRIdentifier($data[self::FIELD_IMMEDIATE_PACKAGING]));
             }
         }
         if (isset($data[self::FIELD_OUTER_PACKAGING])) {
+            $ext = (isset($data[self::FIELD_OUTER_PACKAGING_EXT]) && is_array($data[self::FIELD_OUTER_PACKAGING_EXT]))
+                ? $data[self::FIELD_OUTER_PACKAGING_EXT]
+                : null;
             if ($data[self::FIELD_OUTER_PACKAGING] instanceof FHIRIdentifier) {
                 $this->setOuterPackaging($data[self::FIELD_OUTER_PACKAGING]);
+            } elseif ($ext && is_scalar($data[self::FIELD_OUTER_PACKAGING])) {
+                $this->setOuterPackaging(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_OUTER_PACKAGING]] + $ext));
             } else {
                 $this->setOuterPackaging(new FHIRIdentifier($data[self::FIELD_OUTER_PACKAGING]));
             }
@@ -142,7 +154,7 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -150,17 +162,33 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPackaged\FHIRMedicinalProductPackagedBatchIdentifier
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -255,13 +283,14 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIRMedicinalProductPackagedBatchIdentifier::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIRMedicinalProductPackagedBatchIdentifier);
+            $type = new FHIRMedicinalProductPackagedBatchIdentifier;
         } elseif (!is_object($type) || !($type instanceof FHIRMedicinalProductPackagedBatchIdentifier)) {
             throw new \RuntimeException(sprintf(
                 'FHIRMedicinalProductPackagedBatchIdentifier::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPackaged\FHIRMedicinalProductPackagedBatchIdentifier or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRBackboneElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -288,16 +317,14 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getImmediatePackaging())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_IMMEDIATE_PACKAGING, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_IMMEDIATE_PACKAGING, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getOuterPackaging())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_OUTER_PACKAGING, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_OUTER_PACKAGING, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -309,12 +336,18 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getImmediatePackaging())) {
-            $a[self::FIELD_IMMEDIATE_PACKAGING] = $v;
+            $a[self::FIELD_IMMEDIATE_PACKAGING] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_IMMEDIATE_PACKAGING_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getOuterPackaging())) {
-            $a[self::FIELD_OUTER_PACKAGING] = $v;
+            $a[self::FIELD_OUTER_PACKAGING] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_OUTER_PACKAGING_EXT] = $v;
+            }
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

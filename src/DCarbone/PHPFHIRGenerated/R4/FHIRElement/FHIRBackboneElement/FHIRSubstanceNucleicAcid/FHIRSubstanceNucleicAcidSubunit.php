@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:05+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -302,7 +302,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -310,17 +310,33 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSubunit
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -697,13 +713,14 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIRSubstanceNucleicAcidSubunit::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIRSubstanceNucleicAcidSubunit);
+            $type = new FHIRSubstanceNucleicAcidSubunit;
         } elseif (!is_object($type) || !($type instanceof FHIRSubstanceNucleicAcidSubunit)) {
             throw new \RuntimeException(sprintf(
                 'FHIRSubstanceNucleicAcidSubunit::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSubunit or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRBackboneElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -761,15 +778,15 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getFivePrime())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FIVE_PRIME, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FIVE_PRIME, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getLength())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_LENGTH, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_LENGTH, null, $v->_getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getLinkage())) {
@@ -777,18 +794,18 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_LINKAGE, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_LINKAGE, null, $v->_getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getSequence())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SEQUENCE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SEQUENCE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getSequenceAttachment())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SEQUENCE_ATTACHMENT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SEQUENCE_ATTACHMENT, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getSubunit())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBUNIT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBUNIT, null, $v->_getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getSugar())) {
@@ -796,12 +813,12 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SUGAR, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_SUGAR, null, $v->_getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getThreePrime())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_THREE_PRIME, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_THREE_PRIME, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -816,22 +833,28 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
             $a[self::FIELD_FIVE_PRIME] = $v;
         }
         if (null !== ($v = $this->getLength())) {
-            $a[self::FIELD_LENGTH] = (string)$v;
-            $a[self::FIELD_LENGTH_EXT] = $v;
+            $a[self::FIELD_LENGTH] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_LENGTH_EXT] = $v;
+            }
         }
         if ([] !== ($vs = $this->getLinkage())) {
             $a[self::FIELD_LINKAGE] = $vs;
         }
         if (null !== ($v = $this->getSequence())) {
-            $a[self::FIELD_SEQUENCE] = (string)$v;
-            $a[self::FIELD_SEQUENCE_EXT] = $v;
+            $a[self::FIELD_SEQUENCE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_SEQUENCE_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getSequenceAttachment())) {
             $a[self::FIELD_SEQUENCE_ATTACHMENT] = $v;
         }
         if (null !== ($v = $this->getSubunit())) {
-            $a[self::FIELD_SUBUNIT] = (string)$v;
-            $a[self::FIELD_SUBUNIT_EXT] = $v;
+            $a[self::FIELD_SUBUNIT] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_SUBUNIT_EXT] = $v;
+            }
         }
         if ([] !== ($vs = $this->getSugar())) {
             $a[self::FIELD_SUGAR] = $vs;
@@ -839,7 +862,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
         if (null !== ($v = $this->getThreePrime())) {
             $a[self::FIELD_THREE_PRIME] = $v;
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

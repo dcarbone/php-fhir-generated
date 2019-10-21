@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -112,6 +112,7 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     const FIELD_FUNDS_RESERVE = 'fundsReserve';
     const FIELD_HOSPITALIZATION = 'hospitalization';
     const FIELD_IDENTIFIER = 'identifier';
+    const FIELD_IDENTIFIER_EXT = '_identifier';
     const FIELD_INFORMATION = 'information';
     const FIELD_INSURANCE = 'insurance';
     const FIELD_INSURER = 'insurer';
@@ -127,10 +128,12 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     const FIELD_REFERRAL = 'referral';
     const FIELD_RELATED = 'related';
     const FIELD_STATUS = 'status';
+    const FIELD_STATUS_EXT = '_status';
     const FIELD_SUB_TYPE = 'subType';
     const FIELD_TOTAL = 'total';
     const FIELD_TYPE = 'type';
     const FIELD_USE = 'use';
+    const FIELD_USE_EXT = '_use';
 
     /**
      * A provider issued list of services and products provided, or to be provided, to
@@ -558,16 +561,23 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
             }
         }
         if (isset($data[self::FIELD_IDENTIFIER])) {
+            $ext = (isset($data[self::FIELD_IDENTIFIER_EXT]) && is_array($data[self::FIELD_IDENTIFIER_EXT]))
+                ? $data[self::FIELD_IDENTIFIER_EXT]
+                : null;
             if (is_array($data[self::FIELD_IDENTIFIER])) {
-                foreach($data[self::FIELD_IDENTIFIER] as $v) {
+                foreach($data[self::FIELD_IDENTIFIER] as $i => $v) {
                     if ($v instanceof FHIRIdentifier) {
                         $this->addIdentifier($v);
+                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
+                        $this->addIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $v] + $ext[$i]));
                     } else {
                         $this->addIdentifier(new FHIRIdentifier($v));
                     }
                 }
-            } else if ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
+            } elseif ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->addIdentifier($data[self::FIELD_IDENTIFIER]);
+            } elseif ($ext && is_scalar($data[self::FIELD_IDENTIFIER])) {
+                $this->addIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
             } else {
                 $this->addIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
             }
@@ -711,8 +721,13 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
             }
         }
         if (isset($data[self::FIELD_STATUS])) {
+            $ext = (isset($data[self::FIELD_STATUS_EXT]) && is_array($data[self::FIELD_STATUS_EXT]))
+                ? $data[self::FIELD_STATUS_EXT]
+                : null;
             if ($data[self::FIELD_STATUS] instanceof FHIRFinancialResourceStatusCodes) {
                 $this->setStatus($data[self::FIELD_STATUS]);
+            } elseif ($ext && is_scalar($data[self::FIELD_STATUS])) {
+                $this->setStatus(new FHIRFinancialResourceStatusCodes([FHIRFinancialResourceStatusCodes::FIELD_VALUE => $data[self::FIELD_STATUS]] + $ext));
             } else {
                 $this->setStatus(new FHIRFinancialResourceStatusCodes($data[self::FIELD_STATUS]));
             }
@@ -747,8 +762,13 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
             }
         }
         if (isset($data[self::FIELD_USE])) {
+            $ext = (isset($data[self::FIELD_USE_EXT]) && is_array($data[self::FIELD_USE_EXT]))
+                ? $data[self::FIELD_USE_EXT]
+                : null;
             if ($data[self::FIELD_USE] instanceof FHIRUse) {
                 $this->setUse($data[self::FIELD_USE]);
+            } elseif ($ext && is_scalar($data[self::FIELD_USE])) {
+                $this->setUse(new FHIRUse([FHIRUse::FIELD_VALUE => $data[self::FIELD_USE]] + $ext));
             } else {
                 $this->setUse(new FHIRUse($data[self::FIELD_USE]));
             }
@@ -758,7 +778,7 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -766,21 +786,45 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRClaim
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<Claim{$xmlns}></Claim>";
+    }
+
+    /**
+     * @return string
+     */
+    public function _getResourceType()
+    {
+        return static::FHIR_TYPE_NAME;
     }
 
 
@@ -1983,13 +2027,14 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
             throw new \InvalidArgumentException(sprintf('FHIRClaim::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRDomainResource::xmlUnserialize($sxe, new FHIRClaim);
+            $type = new FHIRClaim;
         } elseif (!is_object($type) || !($type instanceof FHIRClaim)) {
             throw new \RuntimeException(sprintf(
                 'FHIRClaim::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRClaim or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRDomainResource::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -2121,16 +2166,16 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getAccident())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ACCIDENT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ACCIDENT, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getBillablePeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_BILLABLE_PERIOD, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_BILLABLE_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getCareTeam())) {
@@ -2138,11 +2183,11 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CARE_TEAM, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_CARE_TEAM, null, $v->_getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getCreated())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CREATED, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CREATED, null, $v->_getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getDiagnosis())) {
@@ -2150,36 +2195,35 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DIAGNOSIS, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_DIAGNOSIS, null, $v->_getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getEmploymentImpacted())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EMPLOYMENT_IMPACTED, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EMPLOYMENT_IMPACTED, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getEnterer())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ENTERER, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ENTERER, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getFacility())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FACILITY, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FACILITY, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getFundsReserve())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FUNDS_RESERVE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FUNDS_RESERVE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getHospitalization())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_HOSPITALIZATION, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_HOSPITALIZATION, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
             }
         }
 
@@ -2188,7 +2232,7 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_INFORMATION, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_INFORMATION, null, $v->_getFHIRXMLNamespace()));
             }
         }
 
@@ -2197,12 +2241,12 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_INSURANCE, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_INSURANCE, null, $v->_getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getInsurer())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_INSURER, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_INSURER, null, $v->_getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getItem())) {
@@ -2210,32 +2254,32 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ITEM, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_ITEM, null, $v->_getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getOrganization())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ORGANIZATION, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ORGANIZATION, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getOriginalPrescription())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ORIGINAL_PRESCRIPTION, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ORIGINAL_PRESCRIPTION, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getPatient())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATIENT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PATIENT, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getPayee())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PAYEE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PAYEE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getPrescription())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PRESCRIPTION, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PRESCRIPTION, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getPriority())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PRIORITY, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PRIORITY, null, $v->_getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getProcedure())) {
@@ -2243,16 +2287,16 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PROCEDURE, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_PROCEDURE, null, $v->_getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getProvider())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PROVIDER, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PROVIDER, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getReferral())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REFERRAL, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_REFERRAL, null, $v->_getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getRelated())) {
@@ -2260,12 +2304,11 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_RELATED, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_RELATED, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getStatus())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getSubType())) {
@@ -2273,20 +2316,19 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SUB_TYPE, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_SUB_TYPE, null, $v->_getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getTotal())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TOTAL, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TOTAL, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getUse())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_USE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_USE, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -2307,8 +2349,10 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
             $a[self::FIELD_CARE_TEAM] = $vs;
         }
         if (null !== ($v = $this->getCreated())) {
-            $a[self::FIELD_CREATED] = (string)$v;
-            $a[self::FIELD_CREATED_EXT] = $v;
+            $a[self::FIELD_CREATED] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_CREATED_EXT] = $v;
+            }
         }
         if ([] !== ($vs = $this->getDiagnosis())) {
             $a[self::FIELD_DIAGNOSIS] = $vs;
@@ -2329,7 +2373,19 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
             $a[self::FIELD_HOSPITALIZATION] = $v;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $vs;
+            $a[self::FIELD_IDENTIFIER] = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_IDENTIFIER][] = $v->getValue();
+                if ($v->_hasNonValueFieldsDefined()) {
+                    if (!isset($a[self::FIELD_IDENTIFIER_EXT])) {
+                        $a[self::FIELD_IDENTIFIER_EXT] = [];
+                    }
+                    $a[self::FIELD_IDENTIFIER_EXT][] = $v;
+                }
+            }
         }
         if ([] !== ($vs = $this->getInformation())) {
             $a[self::FIELD_INFORMATION] = $vs;
@@ -2374,7 +2430,10 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
             $a[self::FIELD_RELATED] = $vs;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v;
+            $a[self::FIELD_STATUS] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_STATUS_EXT] = $v;
+            }
         }
         if ([] !== ($vs = $this->getSubType())) {
             $a[self::FIELD_SUB_TYPE] = $vs;
@@ -2386,9 +2445,12 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
             $a[self::FIELD_TYPE] = $v;
         }
         if (null !== ($v = $this->getUse())) {
-            $a[self::FIELD_USE] = $v;
+            $a[self::FIELD_USE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_USE_EXT] = $v;
+            }
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }
 
     /**

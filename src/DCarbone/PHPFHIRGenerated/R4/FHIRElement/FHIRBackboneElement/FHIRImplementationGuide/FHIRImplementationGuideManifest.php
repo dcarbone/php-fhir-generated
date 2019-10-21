@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImple
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:05+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -260,7 +260,7 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -268,17 +268,33 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideManifest
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -610,13 +626,14 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIRImplementationGuideManifest::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIRImplementationGuideManifest);
+            $type = new FHIRImplementationGuideManifest;
         } elseif (!is_object($type) || !($type instanceof FHIRImplementationGuideManifest)) {
             throw new \RuntimeException(sprintf(
                 'FHIRImplementationGuideManifest::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideManifest or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRBackboneElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -669,7 +686,7 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if ([] !== ($vs = $this->getImage())) {
@@ -677,7 +694,7 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_IMAGE, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_IMAGE, null, $v->_getFHIRXMLNamespace()));
             }
         }
         if ([] !== ($vs = $this->getOther())) {
@@ -685,7 +702,7 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_OTHER, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_OTHER, null, $v->_getFHIRXMLNamespace()));
             }
         }
 
@@ -694,11 +711,11 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PAGE, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_PAGE, null, $v->_getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getRendering())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RENDERING, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_RENDERING, null, $v->_getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getResource())) {
@@ -706,7 +723,7 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_RESOURCE, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_RESOURCE, null, $v->_getFHIRXMLNamespace()));
             }
         }
         return $sxe;
@@ -720,31 +737,47 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getImage())) {
             $a[self::FIELD_IMAGE] = [];
-            $a[self::FIELD_IMAGE_EXT] = [];
             foreach ($vs as $v) {
-                $a[self::FIELD_IMAGE][] = (string)$v;
-                $a[self::FIELD_IMAGE_EXT][] = $v;
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_IMAGE][] = $v->getValue();
+                if ($v->_hasNonValueFieldsDefined()) {
+                    if (!isset($a[self::FIELD_IMAGE_EXT])) {
+                        $a[self::FIELD_IMAGE_EXT] = [];
+                    }
+                    $a[self::FIELD_IMAGE_EXT][] = $v;
+                }
             }
         }
         if ([] !== ($vs = $this->getOther())) {
             $a[self::FIELD_OTHER] = [];
-            $a[self::FIELD_OTHER_EXT] = [];
             foreach ($vs as $v) {
-                $a[self::FIELD_OTHER][] = (string)$v;
-                $a[self::FIELD_OTHER_EXT][] = $v;
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_OTHER][] = $v->getValue();
+                if ($v->_hasNonValueFieldsDefined()) {
+                    if (!isset($a[self::FIELD_OTHER_EXT])) {
+                        $a[self::FIELD_OTHER_EXT] = [];
+                    }
+                    $a[self::FIELD_OTHER_EXT][] = $v;
+                }
             }
         }
         if ([] !== ($vs = $this->getPage())) {
             $a[self::FIELD_PAGE] = $vs;
         }
         if (null !== ($v = $this->getRendering())) {
-            $a[self::FIELD_RENDERING] = (string)$v;
-            $a[self::FIELD_RENDERING_EXT] = $v;
+            $a[self::FIELD_RENDERING] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_RENDERING_EXT] = $v;
+            }
         }
         if ([] !== ($vs = $this->getResource())) {
             $a[self::FIELD_RESOURCE] = $vs;
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

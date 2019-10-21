@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -66,6 +66,8 @@ use DCarbone\PHPFHIRGenerated\DSTU2\FHIRCarePlanStatusList;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRValueContainerInterface;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRValueContainerTrait;
 
 /**
  * Indicates whether the plan is currently being acted upon, represents future
@@ -75,8 +77,10 @@ use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
  * Class FHIRCarePlanStatus
  * @package \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement
  */
-class FHIRCarePlanStatus extends FHIRElement
+class FHIRCarePlanStatus extends FHIRElement implements PHPFHIRValueContainerInterface
 {
+    use PHPFHIRValueContainerTrait;
+
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CARE_PLAN_STATUS;
 
@@ -99,6 +103,10 @@ class FHIRCarePlanStatus extends FHIRElement
         if (null === $data || [] === $data) {
             return;
         }
+        if (is_scalar($data)) {
+            $this->setValue(new FHIRCarePlanStatusList($data));
+            return;
+        }
         if (!is_array($data)) {
             throw new \InvalidArgumentException(sprintf(
                 'FHIRCarePlanStatus::_construct - $data expected to be null or array, %s seen',
@@ -114,7 +122,7 @@ class FHIRCarePlanStatus extends FHIRElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -122,17 +130,33 @@ class FHIRCarePlanStatus extends FHIRElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCarePlanStatus
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -189,13 +213,14 @@ class FHIRCarePlanStatus extends FHIRElement
             throw new \InvalidArgumentException(sprintf('FHIRCarePlanStatus::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRElement::xmlUnserialize($sxe, new FHIRCarePlanStatus);
+            $type = new FHIRCarePlanStatus;
         } elseif (!is_object($type) || !($type instanceof FHIRCarePlanStatus)) {
             throw new \RuntimeException(sprintf(
                 'FHIRCarePlanStatus::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCarePlanStatus or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -222,11 +247,11 @@ class FHIRCarePlanStatus extends FHIRElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getValue())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -240,7 +265,7 @@ class FHIRCarePlanStatus extends FHIRElement
         if (null !== ($v = $this->getValue())) {
             $a[self::FIELD_VALUE] = $v;
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

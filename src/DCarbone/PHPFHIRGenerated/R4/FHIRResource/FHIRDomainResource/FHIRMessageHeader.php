@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:05+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -380,7 +380,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -388,21 +388,45 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMessageHeader
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<MessageHeader{$xmlns}></MessageHeader>";
+    }
+
+    /**
+     * @return string
+     */
+    public function _getResourceType()
+    {
+        return static::FHIR_TYPE_NAME;
     }
 
 
@@ -899,13 +923,14 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
             throw new \InvalidArgumentException(sprintf('FHIRMessageHeader::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRDomainResource::xmlUnserialize($sxe, new FHIRMessageHeader);
+            $type = new FHIRMessageHeader;
         } elseif (!is_object($type) || !($type instanceof FHIRMessageHeader)) {
             throw new \RuntimeException(sprintf(
                 'FHIRMessageHeader::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMessageHeader or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRDomainResource::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -972,15 +997,15 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getAuthor())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_AUTHOR, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_AUTHOR, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDefinition())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINITION, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINITION, null, $v->_getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getDestination())) {
@@ -988,19 +1013,19 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DESTINATION, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_DESTINATION, null, $v->_getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getEnterer())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ENTERER, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ENTERER, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getEventCoding())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EVENT_CODING, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EVENT_CODING, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getEventUri())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EVENT_URI, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EVENT_URI, null, $v->_getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getFocus())) {
@@ -1008,28 +1033,28 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_FOCUS, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_FOCUS, null, $v->_getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getReason())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REASON, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_REASON, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getResponse())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RESPONSE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_RESPONSE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getResponsible())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RESPONSIBLE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_RESPONSIBLE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getSender())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SENDER, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SENDER, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getSource())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -1044,8 +1069,10 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
             $a[self::FIELD_AUTHOR] = $v;
         }
         if (null !== ($v = $this->getDefinition())) {
-            $a[self::FIELD_DEFINITION] = (string)$v;
-            $a[self::FIELD_DEFINITION_EXT] = $v;
+            $a[self::FIELD_DEFINITION] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DEFINITION_EXT] = $v;
+            }
         }
         if ([] !== ($vs = $this->getDestination())) {
             $a[self::FIELD_DESTINATION] = $vs;
@@ -1057,8 +1084,10 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
             $a[self::FIELD_EVENT_CODING] = $v;
         }
         if (null !== ($v = $this->getEventUri())) {
-            $a[self::FIELD_EVENT_URI] = (string)$v;
-            $a[self::FIELD_EVENT_URI_EXT] = $v;
+            $a[self::FIELD_EVENT_URI] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_EVENT_URI_EXT] = $v;
+            }
         }
         if ([] !== ($vs = $this->getFocus())) {
             $a[self::FIELD_FOCUS] = $vs;
@@ -1078,7 +1107,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
         if (null !== ($v = $this->getSource())) {
             $a[self::FIELD_SOURCE] = $v;
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }
 
     /**

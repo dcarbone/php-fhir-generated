@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:05+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -68,5 +68,9 @@ namespace DCarbone\PHPFHIRGenerated\R4;
  * @package \DCarbone\PHPFHIRGenerated\R4
  */
 interface PHPFHIRContainedTypeInterface extends PHPFHIRTypeInterface {
-    // This interface is merely used as an identifier
+    /**
+     * The return from this method is used only when json serializing this type
+     * @return string
+     */
+    public function _getResourceType();
 }

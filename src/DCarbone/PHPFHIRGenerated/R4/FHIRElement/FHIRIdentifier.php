@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:05+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -65,6 +65,8 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRValueContainerInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRValueContainerTrait;
 
 /**
  * An identifier - identifies some entity uniquely and unambiguously. Typically
@@ -75,8 +77,10 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
  * Class FHIRIdentifier
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRElement
  */
-class FHIRIdentifier extends FHIRElement
+class FHIRIdentifier extends FHIRElement implements PHPFHIRValueContainerInterface
 {
+    use PHPFHIRValueContainerTrait;
+
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_IDENTIFIER;
 
@@ -89,6 +93,7 @@ class FHIRIdentifier extends FHIRElement
     const FIELD_SYSTEM_EXT = '_system';
     const FIELD_TYPE = 'type';
     const FIELD_USE = 'use';
+    const FIELD_USE_EXT = '_use';
     const FIELD_VALUE = 'value';
     const FIELD_VALUE_EXT = '_value';
 
@@ -165,6 +170,10 @@ class FHIRIdentifier extends FHIRElement
         if (null === $data || [] === $data) {
             return;
         }
+        if (is_scalar($data)) {
+            $this->setValue(new FHIRString($data));
+            return;
+        }
         if (!is_array($data)) {
             throw new \InvalidArgumentException(sprintf(
                 'FHIRIdentifier::_construct - $data expected to be null or array, %s seen',
@@ -206,8 +215,13 @@ class FHIRIdentifier extends FHIRElement
             }
         }
         if (isset($data[self::FIELD_USE])) {
+            $ext = (isset($data[self::FIELD_USE_EXT]) && is_array($data[self::FIELD_USE_EXT]))
+                ? $data[self::FIELD_USE_EXT]
+                : null;
             if ($data[self::FIELD_USE] instanceof FHIRIdentifierUse) {
                 $this->setUse($data[self::FIELD_USE]);
+            } elseif ($ext && is_scalar($data[self::FIELD_USE])) {
+                $this->setUse(new FHIRIdentifierUse([FHIRIdentifierUse::FIELD_VALUE => $data[self::FIELD_USE]] + $ext));
             } else {
                 $this->setUse(new FHIRIdentifierUse($data[self::FIELD_USE]));
             }
@@ -229,7 +243,7 @@ class FHIRIdentifier extends FHIRElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -237,17 +251,33 @@ class FHIRIdentifier extends FHIRElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -281,6 +311,7 @@ class FHIRIdentifier extends FHIRElement
      */
     public function setAssigner(FHIRReference $assigner = null)
     {
+        $this->_markNonValueFieldsDefined();
         $this->assigner = $assigner;
         return $this;
     }
@@ -311,6 +342,7 @@ class FHIRIdentifier extends FHIRElement
      */
     public function setPeriod(FHIRPeriod $period = null)
     {
+        $this->_markNonValueFieldsDefined();
         $this->period = $period;
         return $this;
     }
@@ -385,6 +417,7 @@ class FHIRIdentifier extends FHIRElement
      */
     public function setType(FHIRCodeableConcept $type = null)
     {
+        $this->_markNonValueFieldsDefined();
         $this->type = $type;
         return $this;
     }
@@ -413,6 +446,7 @@ class FHIRIdentifier extends FHIRElement
      */
     public function setUse(FHIRIdentifierUse $use = null)
     {
+        $this->_markNonValueFieldsDefined();
         $this->use = $use;
         return $this;
     }
@@ -480,13 +514,14 @@ class FHIRIdentifier extends FHIRElement
             throw new \InvalidArgumentException(sprintf('FHIRIdentifier::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRElement::xmlUnserialize($sxe, new FHIRIdentifier);
+            $type = new FHIRIdentifier;
         } elseif (!is_object($type) || !($type instanceof FHIRIdentifier)) {
             throw new \RuntimeException(sprintf(
                 'FHIRIdentifier::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -531,30 +566,29 @@ class FHIRIdentifier extends FHIRElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getAssigner())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ASSIGNER, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ASSIGNER, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getPeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PERIOD, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getSystem())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SYSTEM, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SYSTEM, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getUse())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_USE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_USE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getValue())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -572,20 +606,27 @@ class FHIRIdentifier extends FHIRElement
             $a[self::FIELD_PERIOD] = $v;
         }
         if (null !== ($v = $this->getSystem())) {
-            $a[self::FIELD_SYSTEM] = (string)$v;
-            $a[self::FIELD_SYSTEM_EXT] = $v;
+            $a[self::FIELD_SYSTEM] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_SYSTEM_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;
         }
         if (null !== ($v = $this->getUse())) {
-            $a[self::FIELD_USE] = $v;
+            $a[self::FIELD_USE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_USE_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getValue())) {
-            $a[self::FIELD_VALUE] = (string)$v;
-            $a[self::FIELD_VALUE_EXT] = $v;
+            $a[self::FIELD_VALUE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_VALUE_EXT] = $v;
+            }
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

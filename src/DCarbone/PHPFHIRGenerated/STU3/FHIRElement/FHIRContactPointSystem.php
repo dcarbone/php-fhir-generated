@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -66,6 +66,8 @@ use DCarbone\PHPFHIRGenerated\STU3\FHIRContactPointSystemList;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRValueContainerInterface;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRValueContainerTrait;
 
 /**
  * Telecommunications form for contact point
@@ -74,8 +76,10 @@ use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
  * Class FHIRContactPointSystem
  * @package \DCarbone\PHPFHIRGenerated\STU3\FHIRElement
  */
-class FHIRContactPointSystem extends FHIRElement
+class FHIRContactPointSystem extends FHIRElement implements PHPFHIRValueContainerInterface
 {
+    use PHPFHIRValueContainerTrait;
+
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONTACT_POINT_SYSTEM;
 
@@ -98,6 +102,10 @@ class FHIRContactPointSystem extends FHIRElement
         if (null === $data || [] === $data) {
             return;
         }
+        if (is_scalar($data)) {
+            $this->setValue(new FHIRContactPointSystemList($data));
+            return;
+        }
         if (!is_array($data)) {
             throw new \InvalidArgumentException(sprintf(
                 'FHIRContactPointSystem::_construct - $data expected to be null or array, %s seen',
@@ -113,7 +121,7 @@ class FHIRContactPointSystem extends FHIRElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -121,17 +129,33 @@ class FHIRContactPointSystem extends FHIRElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactPointSystem
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -188,13 +212,14 @@ class FHIRContactPointSystem extends FHIRElement
             throw new \InvalidArgumentException(sprintf('FHIRContactPointSystem::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRElement::xmlUnserialize($sxe, new FHIRContactPointSystem);
+            $type = new FHIRContactPointSystem;
         } elseif (!is_object($type) || !($type instanceof FHIRContactPointSystem)) {
             throw new \RuntimeException(sprintf(
                 'FHIRContactPointSystem::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactPointSystem or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -221,11 +246,11 @@ class FHIRContactPointSystem extends FHIRElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getValue())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -239,7 +264,7 @@ class FHIRContactPointSystem extends FHIRElement
         if (null !== ($v = $this->getValue())) {
             $a[self::FIELD_VALUE] = $v;
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

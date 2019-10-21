@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTestS
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:05+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -177,7 +177,7 @@ class FHIRTestScriptFixture extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -185,17 +185,33 @@ class FHIRTestScriptFixture extends FHIRBackboneElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptFixture
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -342,13 +358,14 @@ class FHIRTestScriptFixture extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIRTestScriptFixture::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIRTestScriptFixture);
+            $type = new FHIRTestScriptFixture;
         } elseif (!is_object($type) || !($type instanceof FHIRTestScriptFixture)) {
             throw new \RuntimeException(sprintf(
                 'FHIRTestScriptFixture::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptFixture or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRBackboneElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -384,18 +401,18 @@ class FHIRTestScriptFixture extends FHIRBackboneElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getAutocreate())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_AUTOCREATE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_AUTOCREATE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getAutodelete())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_AUTODELETE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_AUTODELETE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getResource())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RESOURCE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_RESOURCE, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -407,17 +424,21 @@ class FHIRTestScriptFixture extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAutocreate())) {
-            $a[self::FIELD_AUTOCREATE] = (string)$v;
-            $a[self::FIELD_AUTOCREATE_EXT] = $v;
+            $a[self::FIELD_AUTOCREATE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_AUTOCREATE_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getAutodelete())) {
-            $a[self::FIELD_AUTODELETE] = (string)$v;
-            $a[self::FIELD_AUTODELETE_EXT] = $v;
+            $a[self::FIELD_AUTODELETE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_AUTODELETE_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getResource())) {
             $a[self::FIELD_RESOURCE] = $v;
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

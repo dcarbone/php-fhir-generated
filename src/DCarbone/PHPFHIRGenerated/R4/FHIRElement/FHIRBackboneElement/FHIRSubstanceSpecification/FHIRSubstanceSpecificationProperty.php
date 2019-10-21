@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:05+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,6 +86,7 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
     private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_AMOUNT_QUANTITY = 'amountQuantity';
+    const FIELD_AMOUNT_QUANTITY_EXT = '_amountQuantity';
     const FIELD_AMOUNT_STRING = 'amountString';
     const FIELD_AMOUNT_STRING_EXT = '_amountString';
     const FIELD_CATEGORY = 'category';
@@ -191,8 +192,13 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
         }
         parent::__construct($data);
         if (isset($data[self::FIELD_AMOUNT_QUANTITY])) {
+            $ext = (isset($data[self::FIELD_AMOUNT_QUANTITY_EXT]) && is_array($data[self::FIELD_AMOUNT_QUANTITY_EXT]))
+                ? $data[self::FIELD_AMOUNT_QUANTITY_EXT]
+                : null;
             if ($data[self::FIELD_AMOUNT_QUANTITY] instanceof FHIRQuantity) {
                 $this->setAmountQuantity($data[self::FIELD_AMOUNT_QUANTITY]);
+            } elseif ($ext && is_scalar($data[self::FIELD_AMOUNT_QUANTITY])) {
+                $this->setAmountQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_AMOUNT_QUANTITY]] + $ext));
             } else {
                 $this->setAmountQuantity(new FHIRQuantity($data[self::FIELD_AMOUNT_QUANTITY]));
             }
@@ -254,7 +260,7 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -262,17 +268,33 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationProperty
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -545,13 +567,14 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIRSubstanceSpecificationProperty::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIRSubstanceSpecificationProperty);
+            $type = new FHIRSubstanceSpecificationProperty;
         } elseif (!is_object($type) || !($type instanceof FHIRSubstanceSpecificationProperty)) {
             throw new \RuntimeException(sprintf(
                 'FHIRSubstanceSpecificationProperty::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationProperty or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRBackboneElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -599,34 +622,33 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAmountQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_AMOUNT_QUANTITY, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_AMOUNT_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getAmountString())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_AMOUNT_STRING, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_AMOUNT_STRING, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getCategory())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CATEGORY, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CATEGORY, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getCode())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDefiningSubstanceCodeableConcept())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINING_SUBSTANCE_CODEABLE_CONCEPT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINING_SUBSTANCE_CODEABLE_CONCEPT, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDefiningSubstanceReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINING_SUBSTANCE_REFERENCE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINING_SUBSTANCE_REFERENCE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getParameters())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PARAMETERS, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PARAMETERS, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -638,11 +660,16 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAmountQuantity())) {
-            $a[self::FIELD_AMOUNT_QUANTITY] = $v;
+            $a[self::FIELD_AMOUNT_QUANTITY] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_AMOUNT_QUANTITY_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getAmountString())) {
-            $a[self::FIELD_AMOUNT_STRING] = (string)$v;
-            $a[self::FIELD_AMOUNT_STRING_EXT] = $v;
+            $a[self::FIELD_AMOUNT_STRING] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_AMOUNT_STRING_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getCategory())) {
             $a[self::FIELD_CATEGORY] = $v;
@@ -657,10 +684,12 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
             $a[self::FIELD_DEFINING_SUBSTANCE_REFERENCE] = $v;
         }
         if (null !== ($v = $this->getParameters())) {
-            $a[self::FIELD_PARAMETERS] = (string)$v;
-            $a[self::FIELD_PARAMETERS_EXT] = $v;
+            $a[self::FIELD_PARAMETERS] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_PARAMETERS_EXT] = $v;
+            }
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

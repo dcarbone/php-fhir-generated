@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,6 +82,7 @@ class FHIRDeviceObservationReport extends FHIRResource implements PHPFHIRContain
     private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_IDENTIFIER = 'identifier';
+    const FIELD_IDENTIFIER_EXT = '_identifier';
     const FIELD_INSTANT = 'instant';
     const FIELD_INSTANT_EXT = '_instant';
     const FIELD_SOURCE = 'source';
@@ -154,8 +155,13 @@ class FHIRDeviceObservationReport extends FHIRResource implements PHPFHIRContain
         }
         parent::__construct($data);
         if (isset($data[self::FIELD_IDENTIFIER])) {
+            $ext = (isset($data[self::FIELD_IDENTIFIER_EXT]) && is_array($data[self::FIELD_IDENTIFIER_EXT]))
+                ? $data[self::FIELD_IDENTIFIER_EXT]
+                : null;
             if ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->setIdentifier($data[self::FIELD_IDENTIFIER]);
+            } elseif ($ext && is_scalar($data[self::FIELD_IDENTIFIER])) {
+                $this->setIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
             } else {
                 $this->setIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
             }
@@ -206,7 +212,7 @@ class FHIRDeviceObservationReport extends FHIRResource implements PHPFHIRContain
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -214,21 +220,45 @@ class FHIRDeviceObservationReport extends FHIRResource implements PHPFHIRContain
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDeviceObservationReport
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<DeviceObservationReport{$xmlns}></DeviceObservationReport>";
+    }
+
+    /**
+     * @return string
+     */
+    public function _getResourceType()
+    {
+        return static::FHIR_TYPE_NAME;
     }
 
 
@@ -433,13 +463,14 @@ class FHIRDeviceObservationReport extends FHIRResource implements PHPFHIRContain
             throw new \InvalidArgumentException(sprintf('FHIRDeviceObservationReport::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRResource::xmlUnserialize($sxe, new FHIRDeviceObservationReport);
+            $type = new FHIRDeviceObservationReport;
         } elseif (!is_object($type) || !($type instanceof FHIRDeviceObservationReport)) {
             throw new \RuntimeException(sprintf(
                 'FHIRDeviceObservationReport::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDeviceObservationReport or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRResource::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -480,23 +511,22 @@ class FHIRDeviceObservationReport extends FHIRResource implements PHPFHIRContain
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getIdentifier())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getInstant())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_INSTANT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_INSTANT, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getSource())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getSubject())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBJECT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBJECT, null, $v->_getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getVirtualDevice())) {
@@ -504,7 +534,7 @@ class FHIRDeviceObservationReport extends FHIRResource implements PHPFHIRContain
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_VIRTUAL_DEVICE, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_VIRTUAL_DEVICE, null, $v->_getFHIRXMLNamespace()));
             }
         }
         return $sxe;
@@ -517,11 +547,16 @@ class FHIRDeviceObservationReport extends FHIRResource implements PHPFHIRContain
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $v;
+            $a[self::FIELD_IDENTIFIER] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_IDENTIFIER_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getInstant())) {
-            $a[self::FIELD_INSTANT] = (string)$v;
-            $a[self::FIELD_INSTANT_EXT] = $v;
+            $a[self::FIELD_INSTANT] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_INSTANT_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getSource())) {
             $a[self::FIELD_SOURCE] = $v;
@@ -532,7 +567,7 @@ class FHIRDeviceObservationReport extends FHIRResource implements PHPFHIRContain
         if ([] !== ($vs = $this->getVirtualDevice())) {
             $a[self::FIELD_VIRTUAL_DEVICE] = $vs;
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }
 
     /**

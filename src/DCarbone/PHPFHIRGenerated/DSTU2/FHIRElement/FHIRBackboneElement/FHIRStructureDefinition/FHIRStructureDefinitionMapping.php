@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRSt
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -210,7 +210,7 @@ class FHIRStructureDefinitionMapping extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -218,17 +218,33 @@ class FHIRStructureDefinitionMapping extends FHIRBackboneElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionMapping
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -423,13 +439,14 @@ class FHIRStructureDefinitionMapping extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIRStructureDefinitionMapping::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIRStructureDefinitionMapping);
+            $type = new FHIRStructureDefinitionMapping;
         } elseif (!is_object($type) || !($type instanceof FHIRStructureDefinitionMapping)) {
             throw new \RuntimeException(sprintf(
                 'FHIRStructureDefinitionMapping::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionMapping or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRBackboneElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -474,20 +491,20 @@ class FHIRStructureDefinitionMapping extends FHIRBackboneElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getComments())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_COMMENTS, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_COMMENTS, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getIdentity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTITY, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTITY, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getName())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_NAME, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_NAME, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getUri())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_URI, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_URI, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -499,22 +516,30 @@ class FHIRStructureDefinitionMapping extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getComments())) {
-            $a[self::FIELD_COMMENTS] = (string)$v;
-            $a[self::FIELD_COMMENTS_EXT] = $v;
+            $a[self::FIELD_COMMENTS] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_COMMENTS_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getIdentity())) {
-            $a[self::FIELD_IDENTITY] = (string)$v;
-            $a[self::FIELD_IDENTITY_EXT] = $v;
+            $a[self::FIELD_IDENTITY] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_IDENTITY_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getName())) {
-            $a[self::FIELD_NAME] = (string)$v;
-            $a[self::FIELD_NAME_EXT] = $v;
+            $a[self::FIELD_NAME] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_NAME_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getUri())) {
-            $a[self::FIELD_URI] = (string)$v;
-            $a[self::FIELD_URI_EXT] = $v;
+            $a[self::FIELD_URI] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_URI_EXT] = $v;
+            }
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

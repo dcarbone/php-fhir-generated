@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -94,6 +94,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements PHPFHIRContai
     const FIELD_BODY_SITE_REFERENCE = 'bodySiteReference';
     const FIELD_DEVICE = 'device';
     const FIELD_IDENTIFIER = 'identifier';
+    const FIELD_IDENTIFIER_EXT = '_identifier';
     const FIELD_INDICATION = 'indication';
     const FIELD_NOTES = 'notes';
     const FIELD_NOTES_EXT = '_notes';
@@ -280,16 +281,23 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements PHPFHIRContai
             }
         }
         if (isset($data[self::FIELD_IDENTIFIER])) {
+            $ext = (isset($data[self::FIELD_IDENTIFIER_EXT]) && is_array($data[self::FIELD_IDENTIFIER_EXT]))
+                ? $data[self::FIELD_IDENTIFIER_EXT]
+                : null;
             if (is_array($data[self::FIELD_IDENTIFIER])) {
-                foreach($data[self::FIELD_IDENTIFIER] as $v) {
+                foreach($data[self::FIELD_IDENTIFIER] as $i => $v) {
                     if ($v instanceof FHIRIdentifier) {
                         $this->addIdentifier($v);
+                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
+                        $this->addIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $v] + $ext[$i]));
                     } else {
                         $this->addIdentifier(new FHIRIdentifier($v));
                     }
                 }
-            } else if ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
+            } elseif ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->addIdentifier($data[self::FIELD_IDENTIFIER]);
+            } elseif ($ext && is_scalar($data[self::FIELD_IDENTIFIER])) {
+                $this->addIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
             } else {
                 $this->addIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
             }
@@ -388,7 +396,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements PHPFHIRContai
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -396,21 +404,45 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements PHPFHIRContai
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRDeviceUseStatement
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<DeviceUseStatement{$xmlns}></DeviceUseStatement>";
+    }
+
+    /**
+     * @return string
+     */
+    public function _getResourceType()
+    {
+        return static::FHIR_TYPE_NAME;
     }
 
 
@@ -932,13 +964,14 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements PHPFHIRContai
             throw new \InvalidArgumentException(sprintf('FHIRDeviceUseStatement::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRDomainResource::xmlUnserialize($sxe, new FHIRDeviceUseStatement);
+            $type = new FHIRDeviceUseStatement;
         } elseif (!is_object($type) || !($type instanceof FHIRDeviceUseStatement)) {
             throw new \RuntimeException(sprintf(
                 'FHIRDeviceUseStatement::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRDeviceUseStatement or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRDomainResource::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -1010,28 +1043,27 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements PHPFHIRContai
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getBodySiteCodeableConcept())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_BODY_SITE_CODEABLE_CONCEPT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_BODY_SITE_CODEABLE_CONCEPT, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getBodySiteReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_BODY_SITE_REFERENCE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_BODY_SITE_REFERENCE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDevice())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEVICE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEVICE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
             }
         }
 
@@ -1040,7 +1072,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements PHPFHIRContai
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_INDICATION, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_INDICATION, null, $v->_getFHIRXMLNamespace()));
             }
         }
         if ([] !== ($vs = $this->getNotes())) {
@@ -1048,30 +1080,30 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements PHPFHIRContai
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_NOTES, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_NOTES, null, $v->_getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getRecordedOn())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RECORDED_ON, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_RECORDED_ON, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getSubject())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBJECT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBJECT, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getTimingDateTime())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TIMING_DATE_TIME, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TIMING_DATE_TIME, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getTimingPeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TIMING_PERIOD, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TIMING_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getTimingTiming())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TIMING_TIMING, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TIMING_TIMING, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getWhenUsed())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_WHEN_USED, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_WHEN_USED, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -1092,29 +1124,52 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements PHPFHIRContai
             $a[self::FIELD_DEVICE] = $v;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $vs;
+            $a[self::FIELD_IDENTIFIER] = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_IDENTIFIER][] = $v->getValue();
+                if ($v->_hasNonValueFieldsDefined()) {
+                    if (!isset($a[self::FIELD_IDENTIFIER_EXT])) {
+                        $a[self::FIELD_IDENTIFIER_EXT] = [];
+                    }
+                    $a[self::FIELD_IDENTIFIER_EXT][] = $v;
+                }
+            }
         }
         if ([] !== ($vs = $this->getIndication())) {
             $a[self::FIELD_INDICATION] = $vs;
         }
         if ([] !== ($vs = $this->getNotes())) {
             $a[self::FIELD_NOTES] = [];
-            $a[self::FIELD_NOTES_EXT] = [];
             foreach ($vs as $v) {
-                $a[self::FIELD_NOTES][] = (string)$v;
-                $a[self::FIELD_NOTES_EXT][] = $v;
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_NOTES][] = $v->getValue();
+                if ($v->_hasNonValueFieldsDefined()) {
+                    if (!isset($a[self::FIELD_NOTES_EXT])) {
+                        $a[self::FIELD_NOTES_EXT] = [];
+                    }
+                    $a[self::FIELD_NOTES_EXT][] = $v;
+                }
             }
         }
         if (null !== ($v = $this->getRecordedOn())) {
-            $a[self::FIELD_RECORDED_ON] = (string)$v;
-            $a[self::FIELD_RECORDED_ON_EXT] = $v;
+            $a[self::FIELD_RECORDED_ON] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_RECORDED_ON_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getSubject())) {
             $a[self::FIELD_SUBJECT] = $v;
         }
         if (null !== ($v = $this->getTimingDateTime())) {
-            $a[self::FIELD_TIMING_DATE_TIME] = (string)$v;
-            $a[self::FIELD_TIMING_DATE_TIME_EXT] = $v;
+            $a[self::FIELD_TIMING_DATE_TIME] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_TIMING_DATE_TIME_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getTimingPeriod())) {
             $a[self::FIELD_TIMING_PERIOD] = $v;
@@ -1125,7 +1180,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements PHPFHIRContai
         if (null !== ($v = $this->getWhenUsed())) {
             $a[self::FIELD_WHEN_USED] = $v;
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }
 
     /**

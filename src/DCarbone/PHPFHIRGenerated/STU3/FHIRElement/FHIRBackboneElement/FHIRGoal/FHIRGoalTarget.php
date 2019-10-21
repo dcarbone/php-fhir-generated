@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRGoa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -89,6 +89,7 @@ class FHIRGoalTarget extends FHIRBackboneElement
 
     const FIELD_DETAIL_CODEABLE_CONCEPT = 'detailCodeableConcept';
     const FIELD_DETAIL_QUANTITY = 'detailQuantity';
+    const FIELD_DETAIL_QUANTITY_EXT = '_detailQuantity';
     const FIELD_DETAIL_RANGE = 'detailRange';
     const FIELD_DUE_DATE = 'dueDate';
     const FIELD_DUE_DATE_EXT = '_dueDate';
@@ -203,8 +204,13 @@ class FHIRGoalTarget extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_DETAIL_QUANTITY])) {
+            $ext = (isset($data[self::FIELD_DETAIL_QUANTITY_EXT]) && is_array($data[self::FIELD_DETAIL_QUANTITY_EXT]))
+                ? $data[self::FIELD_DETAIL_QUANTITY_EXT]
+                : null;
             if ($data[self::FIELD_DETAIL_QUANTITY] instanceof FHIRQuantity) {
                 $this->setDetailQuantity($data[self::FIELD_DETAIL_QUANTITY]);
+            } elseif ($ext && is_scalar($data[self::FIELD_DETAIL_QUANTITY])) {
+                $this->setDetailQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_DETAIL_QUANTITY]] + $ext));
             } else {
                 $this->setDetailQuantity(new FHIRQuantity($data[self::FIELD_DETAIL_QUANTITY]));
             }
@@ -247,7 +253,7 @@ class FHIRGoalTarget extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -255,17 +261,33 @@ class FHIRGoalTarget extends FHIRBackboneElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRGoal\FHIRGoalTarget
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -530,13 +552,14 @@ class FHIRGoalTarget extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIRGoalTarget::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIRGoalTarget);
+            $type = new FHIRGoalTarget;
         } elseif (!is_object($type) || !($type instanceof FHIRGoalTarget)) {
             throw new \RuntimeException(sprintf(
                 'FHIRGoalTarget::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRGoal\FHIRGoalTarget or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRBackboneElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -578,31 +601,30 @@ class FHIRGoalTarget extends FHIRBackboneElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getDetailCodeableConcept())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DETAIL_CODEABLE_CONCEPT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DETAIL_CODEABLE_CONCEPT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getDetailQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DETAIL_QUANTITY, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DETAIL_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDetailRange())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DETAIL_RANGE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DETAIL_RANGE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDueDate())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DUE_DATE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DUE_DATE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDueDuration())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DUE_DURATION, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DUE_DURATION, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getMeasure())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MEASURE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MEASURE, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -617,14 +639,19 @@ class FHIRGoalTarget extends FHIRBackboneElement
             $a[self::FIELD_DETAIL_CODEABLE_CONCEPT] = $v;
         }
         if (null !== ($v = $this->getDetailQuantity())) {
-            $a[self::FIELD_DETAIL_QUANTITY] = $v;
+            $a[self::FIELD_DETAIL_QUANTITY] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DETAIL_QUANTITY_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getDetailRange())) {
             $a[self::FIELD_DETAIL_RANGE] = $v;
         }
         if (null !== ($v = $this->getDueDate())) {
-            $a[self::FIELD_DUE_DATE] = (string)$v;
-            $a[self::FIELD_DUE_DATE_EXT] = $v;
+            $a[self::FIELD_DUE_DATE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DUE_DATE_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getDueDuration())) {
             $a[self::FIELD_DUE_DURATION] = $v;
@@ -632,7 +659,7 @@ class FHIRGoalTarget extends FHIRBackboneElement
         if (null !== ($v = $this->getMeasure())) {
             $a[self::FIELD_MEASURE] = $v;
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

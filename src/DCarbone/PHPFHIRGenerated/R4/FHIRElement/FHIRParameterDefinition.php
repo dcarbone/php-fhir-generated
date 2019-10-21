@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:05+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -284,7 +284,7 @@ class FHIRParameterDefinition extends FHIRElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -292,17 +292,33 @@ class FHIRParameterDefinition extends FHIRElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRParameterDefinition
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -617,13 +633,14 @@ class FHIRParameterDefinition extends FHIRElement
             throw new \InvalidArgumentException(sprintf('FHIRParameterDefinition::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRElement::xmlUnserialize($sxe, new FHIRParameterDefinition);
+            $type = new FHIRParameterDefinition;
         } elseif (!is_object($type) || !($type instanceof FHIRParameterDefinition)) {
             throw new \RuntimeException(sprintf(
                 'FHIRParameterDefinition::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRParameterDefinition or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -686,29 +703,29 @@ class FHIRParameterDefinition extends FHIRElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getDocumentation())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DOCUMENTATION, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DOCUMENTATION, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMax())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMin())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getName())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_NAME, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_NAME, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getProfile())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PROFILE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PROFILE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getUse())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_USE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_USE, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -720,34 +737,48 @@ class FHIRParameterDefinition extends FHIRElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getDocumentation())) {
-            $a[self::FIELD_DOCUMENTATION] = (string)$v;
-            $a[self::FIELD_DOCUMENTATION_EXT] = $v;
+            $a[self::FIELD_DOCUMENTATION] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DOCUMENTATION_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMax())) {
-            $a[self::FIELD_MAX] = (string)$v;
-            $a[self::FIELD_MAX_EXT] = $v;
+            $a[self::FIELD_MAX] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MAX_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMin())) {
-            $a[self::FIELD_MIN] = (string)$v;
-            $a[self::FIELD_MIN_EXT] = $v;
+            $a[self::FIELD_MIN] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MIN_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getName())) {
-            $a[self::FIELD_NAME] = (string)$v;
-            $a[self::FIELD_NAME_EXT] = $v;
+            $a[self::FIELD_NAME] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_NAME_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getProfile())) {
-            $a[self::FIELD_PROFILE] = (string)$v;
-            $a[self::FIELD_PROFILE_EXT] = $v;
+            $a[self::FIELD_PROFILE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_PROFILE_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getType())) {
-            $a[self::FIELD_TYPE] = (string)$v;
-            $a[self::FIELD_TYPE_EXT] = $v;
+            $a[self::FIELD_TYPE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_TYPE_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getUse())) {
-            $a[self::FIELD_USE] = (string)$v;
-            $a[self::FIELD_USE_EXT] = $v;
+            $a[self::FIELD_USE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_USE_EXT] = $v;
+            }
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:05+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -95,11 +95,13 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
 
     const FIELD_BENEFICIARY = 'beneficiary';
     const FIELD_CLASS = 'class';
+    const FIELD_CLASS_EXT = '_class';
     const FIELD_CONTRACT = 'contract';
     const FIELD_COST_TO_BENEFICIARY = 'costToBeneficiary';
     const FIELD_DEPENDENT = 'dependent';
     const FIELD_DEPENDENT_EXT = '_dependent';
     const FIELD_IDENTIFIER = 'identifier';
+    const FIELD_IDENTIFIER_EXT = '_identifier';
     const FIELD_NETWORK = 'network';
     const FIELD_NETWORK_EXT = '_network';
     const FIELD_ORDER = 'order';
@@ -109,6 +111,7 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     const FIELD_POLICY_HOLDER = 'policyHolder';
     const FIELD_RELATIONSHIP = 'relationship';
     const FIELD_STATUS = 'status';
+    const FIELD_STATUS_EXT = '_status';
     const FIELD_SUBROGATION = 'subrogation';
     const FIELD_SUBROGATION_EXT = '_subrogation';
     const FIELD_SUBSCRIBER = 'subscriber';
@@ -324,16 +327,23 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
             }
         }
         if (isset($data[self::FIELD_CLASS])) {
+            $ext = (isset($data[self::FIELD_CLASS_EXT]) && is_array($data[self::FIELD_CLASS_EXT]))
+                ? $data[self::FIELD_CLASS_EXT]
+                : null;
             if (is_array($data[self::FIELD_CLASS])) {
-                foreach($data[self::FIELD_CLASS] as $v) {
+                foreach($data[self::FIELD_CLASS] as $i => $v) {
                     if ($v instanceof FHIRCoverageClass) {
                         $this->addClass($v);
+                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
+                        $this->addClass(new FHIRCoverageClass([FHIRCoverageClass::FIELD_VALUE => $v] + $ext[$i]));
                     } else {
                         $this->addClass(new FHIRCoverageClass($v));
                     }
                 }
-            } else if ($data[self::FIELD_CLASS] instanceof FHIRCoverageClass) {
+            } elseif ($data[self::FIELD_CLASS] instanceof FHIRCoverageClass) {
                 $this->addClass($data[self::FIELD_CLASS]);
+            } elseif ($ext && is_scalar($data[self::FIELD_CLASS])) {
+                $this->addClass(new FHIRCoverageClass([FHIRCoverageClass::FIELD_VALUE => $data[self::FIELD_CLASS]] + $ext));
             } else {
                 $this->addClass(new FHIRCoverageClass($data[self::FIELD_CLASS]));
             }
@@ -381,16 +391,23 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
             }
         }
         if (isset($data[self::FIELD_IDENTIFIER])) {
+            $ext = (isset($data[self::FIELD_IDENTIFIER_EXT]) && is_array($data[self::FIELD_IDENTIFIER_EXT]))
+                ? $data[self::FIELD_IDENTIFIER_EXT]
+                : null;
             if (is_array($data[self::FIELD_IDENTIFIER])) {
-                foreach($data[self::FIELD_IDENTIFIER] as $v) {
+                foreach($data[self::FIELD_IDENTIFIER] as $i => $v) {
                     if ($v instanceof FHIRIdentifier) {
                         $this->addIdentifier($v);
+                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
+                        $this->addIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $v] + $ext[$i]));
                     } else {
                         $this->addIdentifier(new FHIRIdentifier($v));
                     }
                 }
-            } else if ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
+            } elseif ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->addIdentifier($data[self::FIELD_IDENTIFIER]);
+            } elseif ($ext && is_scalar($data[self::FIELD_IDENTIFIER])) {
+                $this->addIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
             } else {
                 $this->addIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
             }
@@ -456,8 +473,13 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
             }
         }
         if (isset($data[self::FIELD_STATUS])) {
+            $ext = (isset($data[self::FIELD_STATUS_EXT]) && is_array($data[self::FIELD_STATUS_EXT]))
+                ? $data[self::FIELD_STATUS_EXT]
+                : null;
             if ($data[self::FIELD_STATUS] instanceof FHIRFinancialResourceStatusCodes) {
                 $this->setStatus($data[self::FIELD_STATUS]);
+            } elseif ($ext && is_scalar($data[self::FIELD_STATUS])) {
+                $this->setStatus(new FHIRFinancialResourceStatusCodes([FHIRFinancialResourceStatusCodes::FIELD_VALUE => $data[self::FIELD_STATUS]] + $ext));
             } else {
                 $this->setStatus(new FHIRFinancialResourceStatusCodes($data[self::FIELD_STATUS]));
             }
@@ -505,7 +527,7 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -513,21 +535,45 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCoverage
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<Coverage{$xmlns}></Coverage>";
+    }
+
+    /**
+     * @return string
+     */
+    public function _getResourceType()
+    {
+        return static::FHIR_TYPE_NAME;
     }
 
 
@@ -1261,13 +1307,14 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
             throw new \InvalidArgumentException(sprintf('FHIRCoverage::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRDomainResource::xmlUnserialize($sxe, new FHIRCoverage);
+            $type = new FHIRCoverage;
         } elseif (!is_object($type) || !($type instanceof FHIRCoverage)) {
             throw new \RuntimeException(sprintf(
                 'FHIRCoverage::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCoverage or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRDomainResource::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -1364,20 +1411,19 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getBeneficiary())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_BENEFICIARY, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_BENEFICIARY, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getClass())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CLASS, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_CLASS, null, $v->_getFHIRXMLNamespace()));
             }
         }
 
@@ -1386,7 +1432,7 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CONTRACT, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_CONTRACT, null, $v->_getFHIRXMLNamespace()));
             }
         }
 
@@ -1395,26 +1441,25 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_COST_TO_BENEFICIARY, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_COST_TO_BENEFICIARY, null, $v->_getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getDependent())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEPENDENT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEPENDENT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getNetwork())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_NETWORK, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_NETWORK, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getOrder())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ORDER, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ORDER, null, $v->_getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getPayor())) {
@@ -1422,38 +1467,37 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PAYOR, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_PAYOR, null, $v->_getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getPeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PERIOD, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getPolicyHolder())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_POLICY_HOLDER, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_POLICY_HOLDER, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getRelationship())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RELATIONSHIP, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_RELATIONSHIP, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getStatus())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getSubrogation())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBROGATION, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBROGATION, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getSubscriber())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBSCRIBER, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBSCRIBER, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getSubscriberId())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBSCRIBER_ID, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBSCRIBER_ID, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -1468,7 +1512,19 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
             $a[self::FIELD_BENEFICIARY] = $v;
         }
         if ([] !== ($vs = $this->getClass())) {
-            $a[self::FIELD_CLASS] = $vs;
+            $a[self::FIELD_CLASS] = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_CLASS][] = $v->getValue();
+                if ($v->_hasNonValueFieldsDefined()) {
+                    if (!isset($a[self::FIELD_CLASS_EXT])) {
+                        $a[self::FIELD_CLASS_EXT] = [];
+                    }
+                    $a[self::FIELD_CLASS_EXT][] = $v;
+                }
+            }
         }
         if ([] !== ($vs = $this->getContract())) {
             $a[self::FIELD_CONTRACT] = $vs;
@@ -1477,19 +1533,37 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
             $a[self::FIELD_COST_TO_BENEFICIARY] = $vs;
         }
         if (null !== ($v = $this->getDependent())) {
-            $a[self::FIELD_DEPENDENT] = (string)$v;
-            $a[self::FIELD_DEPENDENT_EXT] = $v;
+            $a[self::FIELD_DEPENDENT] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DEPENDENT_EXT] = $v;
+            }
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $vs;
+            $a[self::FIELD_IDENTIFIER] = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_IDENTIFIER][] = $v->getValue();
+                if ($v->_hasNonValueFieldsDefined()) {
+                    if (!isset($a[self::FIELD_IDENTIFIER_EXT])) {
+                        $a[self::FIELD_IDENTIFIER_EXT] = [];
+                    }
+                    $a[self::FIELD_IDENTIFIER_EXT][] = $v;
+                }
+            }
         }
         if (null !== ($v = $this->getNetwork())) {
-            $a[self::FIELD_NETWORK] = (string)$v;
-            $a[self::FIELD_NETWORK_EXT] = $v;
+            $a[self::FIELD_NETWORK] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_NETWORK_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getOrder())) {
-            $a[self::FIELD_ORDER] = (string)$v;
-            $a[self::FIELD_ORDER_EXT] = $v;
+            $a[self::FIELD_ORDER] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_ORDER_EXT] = $v;
+            }
         }
         if ([] !== ($vs = $this->getPayor())) {
             $a[self::FIELD_PAYOR] = $vs;
@@ -1504,23 +1578,30 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
             $a[self::FIELD_RELATIONSHIP] = $v;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v;
+            $a[self::FIELD_STATUS] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_STATUS_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getSubrogation())) {
-            $a[self::FIELD_SUBROGATION] = (string)$v;
-            $a[self::FIELD_SUBROGATION_EXT] = $v;
+            $a[self::FIELD_SUBROGATION] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_SUBROGATION_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getSubscriber())) {
             $a[self::FIELD_SUBSCRIBER] = $v;
         }
         if (null !== ($v = $this->getSubscriberId())) {
-            $a[self::FIELD_SUBSCRIBER_ID] = (string)$v;
-            $a[self::FIELD_SUBSCRIBER_ID_EXT] = $v;
+            $a[self::FIELD_SUBSCRIBER_ID] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_SUBSCRIBER_ID_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }
 
     /**

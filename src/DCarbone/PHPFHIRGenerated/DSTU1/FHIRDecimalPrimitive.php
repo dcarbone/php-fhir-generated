@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -90,10 +90,8 @@ class FHIRDecimalPrimitive implements PHPFHIRTypeInterface
     {
         if (null === $value) {
             $this->value = null;
-        } elseif ('double' === ($type = gettype($value))) {
-            $this->value = $value;
-        } elseif ('string' === $type && is_numeric($value)) {
-            $this->value = (float)$value;
+        } elseif (is_scalar($value)) {
+            $this->value = floatval($value);
         } else {
             throw new \InvalidArgumentException(sprintf('decimal-primitive value must be null, float, or numeric string, %s seen.', gettype($value)));
         }
@@ -103,7 +101,7 @@ class FHIRDecimalPrimitive implements PHPFHIRTypeInterface
     /**
      * @return bool
      */
-    public function isValid()
+    public function _isValid()
     {
         return true;
     }
@@ -111,7 +109,7 @@ class FHIRDecimalPrimitive implements PHPFHIRTypeInterface
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -119,17 +117,33 @@ class FHIRDecimalPrimitive implements PHPFHIRTypeInterface
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRDecimalPrimitive
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -168,7 +182,7 @@ class FHIRDecimalPrimitive implements PHPFHIRTypeInterface
             throw new \InvalidArgumentException(sprintf('FHIRDecimalPrimitive::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = new static();
+            $type = new FHIRDecimalPrimitive;
         } elseif (!is_object($type) || !($type instanceof FHIRDecimalPrimitive)) {
             throw new \RuntimeException(sprintf(
                 'FHIRDecimalPrimitive::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU1\FHIRDecimalPrimitive or null, %s seen.',
@@ -202,7 +216,7 @@ class FHIRDecimalPrimitive implements PHPFHIRTypeInterface
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         $sxe->addAttribute(self::FIELD_VALUE, (string)$this);
         return $sxe;

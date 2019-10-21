@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRAud
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -90,7 +90,9 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
     const FIELD_DESCRIPTION = 'description';
     const FIELD_DESCRIPTION_EXT = '_description';
     const FIELD_DETAIL = 'detail';
+    const FIELD_DETAIL_EXT = '_detail';
     const FIELD_IDENTIFIER = 'identifier';
+    const FIELD_IDENTIFIER_EXT = '_identifier';
     const FIELD_LIFECYCLE = 'lifecycle';
     const FIELD_NAME = 'name';
     const FIELD_NAME_EXT = '_name';
@@ -233,23 +235,35 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_DETAIL])) {
+            $ext = (isset($data[self::FIELD_DETAIL_EXT]) && is_array($data[self::FIELD_DETAIL_EXT]))
+                ? $data[self::FIELD_DETAIL_EXT]
+                : null;
             if (is_array($data[self::FIELD_DETAIL])) {
-                foreach($data[self::FIELD_DETAIL] as $v) {
+                foreach($data[self::FIELD_DETAIL] as $i => $v) {
                     if ($v instanceof FHIRAuditEventDetail) {
                         $this->addDetail($v);
+                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
+                        $this->addDetail(new FHIRAuditEventDetail([FHIRAuditEventDetail::FIELD_VALUE => $v] + $ext[$i]));
                     } else {
                         $this->addDetail(new FHIRAuditEventDetail($v));
                     }
                 }
-            } else if ($data[self::FIELD_DETAIL] instanceof FHIRAuditEventDetail) {
+            } elseif ($data[self::FIELD_DETAIL] instanceof FHIRAuditEventDetail) {
                 $this->addDetail($data[self::FIELD_DETAIL]);
+            } elseif ($ext && is_scalar($data[self::FIELD_DETAIL])) {
+                $this->addDetail(new FHIRAuditEventDetail([FHIRAuditEventDetail::FIELD_VALUE => $data[self::FIELD_DETAIL]] + $ext));
             } else {
                 $this->addDetail(new FHIRAuditEventDetail($data[self::FIELD_DETAIL]));
             }
         }
         if (isset($data[self::FIELD_IDENTIFIER])) {
+            $ext = (isset($data[self::FIELD_IDENTIFIER_EXT]) && is_array($data[self::FIELD_IDENTIFIER_EXT]))
+                ? $data[self::FIELD_IDENTIFIER_EXT]
+                : null;
             if ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->setIdentifier($data[self::FIELD_IDENTIFIER]);
+            } elseif ($ext && is_scalar($data[self::FIELD_IDENTIFIER])) {
+                $this->setIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
             } else {
                 $this->setIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
             }
@@ -326,7 +340,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -334,17 +348,33 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventEntity
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -755,13 +785,14 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIRAuditEventEntity::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIRAuditEventEntity);
+            $type = new FHIRAuditEventEntity;
         } elseif (!is_object($type) || !($type instanceof FHIRAuditEventEntity)) {
             throw new \RuntimeException(sprintf(
                 'FHIRAuditEventEntity::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventEntity or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRBackboneElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -825,42 +856,40 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getDescription())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DESCRIPTION, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DESCRIPTION, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getDetail())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DETAIL, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_DETAIL, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getIdentifier())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getLifecycle())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_LIFECYCLE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_LIFECYCLE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getName())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_NAME, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_NAME, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getQuery())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_QUERY, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_QUERY, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REFERENCE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_REFERENCE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getRole())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ROLE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ROLE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getSecurityLabel())) {
@@ -868,12 +897,12 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SECURITY_LABEL, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_SECURITY_LABEL, null, $v->_getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -885,25 +914,46 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getDescription())) {
-            $a[self::FIELD_DESCRIPTION] = (string)$v;
-            $a[self::FIELD_DESCRIPTION_EXT] = $v;
+            $a[self::FIELD_DESCRIPTION] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DESCRIPTION_EXT] = $v;
+            }
         }
         if ([] !== ($vs = $this->getDetail())) {
-            $a[self::FIELD_DETAIL] = $vs;
+            $a[self::FIELD_DETAIL] = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_DETAIL][] = $v->getValue();
+                if ($v->_hasNonValueFieldsDefined()) {
+                    if (!isset($a[self::FIELD_DETAIL_EXT])) {
+                        $a[self::FIELD_DETAIL_EXT] = [];
+                    }
+                    $a[self::FIELD_DETAIL_EXT][] = $v;
+                }
+            }
         }
         if (null !== ($v = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $v;
+            $a[self::FIELD_IDENTIFIER] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_IDENTIFIER_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getLifecycle())) {
             $a[self::FIELD_LIFECYCLE] = $v;
         }
         if (null !== ($v = $this->getName())) {
-            $a[self::FIELD_NAME] = (string)$v;
-            $a[self::FIELD_NAME_EXT] = $v;
+            $a[self::FIELD_NAME] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_NAME_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getQuery())) {
-            $a[self::FIELD_QUERY] = (string)$v;
-            $a[self::FIELD_QUERY_EXT] = $v;
+            $a[self::FIELD_QUERY] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_QUERY_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getReference())) {
             $a[self::FIELD_REFERENCE] = $v;
@@ -917,7 +967,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

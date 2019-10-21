@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIROb
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -206,7 +206,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -214,17 +214,33 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationReferenceRange
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -417,13 +433,14 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIRObservationReferenceRange::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIRObservationReferenceRange);
+            $type = new FHIRObservationReferenceRange;
         } elseif (!is_object($type) || !($type instanceof FHIRObservationReferenceRange)) {
             throw new \RuntimeException(sprintf(
                 'FHIRObservationReferenceRange::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationReferenceRange or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRBackboneElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -462,27 +479,27 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getAge())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_AGE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_AGE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getHigh())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_HIGH, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_HIGH, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getLow())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_LOW, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_LOW, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getMeaning())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MEANING, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MEANING, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getText())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TEXT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TEXT, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -506,10 +523,12 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
             $a[self::FIELD_MEANING] = $v;
         }
         if (null !== ($v = $this->getText())) {
-            $a[self::FIELD_TEXT] = (string)$v;
-            $a[self::FIELD_TEXT_EXT] = $v;
+            $a[self::FIELD_TEXT] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_TEXT_EXT] = $v;
+            }
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

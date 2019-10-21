@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -90,6 +90,7 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
     const FIELD_MAX_DOSE_PER_PERIOD = 'maxDosePerPeriod';
     const FIELD_METHOD = 'method';
     const FIELD_QUANTITY = 'quantity';
+    const FIELD_QUANTITY_EXT = '_quantity';
     const FIELD_RATE = 'rate';
     const FIELD_ROUTE = 'route';
     const FIELD_SITE = 'site';
@@ -278,8 +279,13 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_QUANTITY])) {
+            $ext = (isset($data[self::FIELD_QUANTITY_EXT]) && is_array($data[self::FIELD_QUANTITY_EXT]))
+                ? $data[self::FIELD_QUANTITY_EXT]
+                : null;
             if ($data[self::FIELD_QUANTITY] instanceof FHIRQuantity) {
                 $this->setQuantity($data[self::FIELD_QUANTITY]);
+            } elseif ($ext && is_scalar($data[self::FIELD_QUANTITY])) {
+                $this->setQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_QUANTITY]] + $ext));
             } else {
                 $this->setQuantity(new FHIRQuantity($data[self::FIELD_QUANTITY]));
             }
@@ -329,7 +335,7 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -337,17 +343,33 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedicationAdministration\FHIRMedicationAdministrationDosage
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -754,13 +776,14 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIRMedicationAdministrationDosage::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIRMedicationAdministrationDosage);
+            $type = new FHIRMedicationAdministrationDosage;
         } elseif (!is_object($type) || !($type instanceof FHIRMedicationAdministrationDosage)) {
             throw new \RuntimeException(sprintf(
                 'FHIRMedicationAdministrationDosage::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedicationAdministration\FHIRMedicationAdministrationDosage or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRBackboneElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -817,46 +840,45 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getAsNeededBoolean())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_AS_NEEDED_BOOLEAN, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_AS_NEEDED_BOOLEAN, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getAsNeededCodeableConcept())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_AS_NEEDED_CODEABLE_CONCEPT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_AS_NEEDED_CODEABLE_CONCEPT, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getMaxDosePerPeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_DOSE_PER_PERIOD, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_DOSE_PER_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getMethod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_METHOD, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_METHOD, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getRate())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RATE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_RATE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getRoute())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ROUTE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ROUTE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getSite())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SITE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SITE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getTimingDateTime())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TIMING_DATE_TIME, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TIMING_DATE_TIME, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getTimingPeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TIMING_PERIOD, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TIMING_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -868,8 +890,10 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAsNeededBoolean())) {
-            $a[self::FIELD_AS_NEEDED_BOOLEAN] = (string)$v;
-            $a[self::FIELD_AS_NEEDED_BOOLEAN_EXT] = $v;
+            $a[self::FIELD_AS_NEEDED_BOOLEAN] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_AS_NEEDED_BOOLEAN_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getAsNeededCodeableConcept())) {
             $a[self::FIELD_AS_NEEDED_CODEABLE_CONCEPT] = $v;
@@ -881,7 +905,10 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
             $a[self::FIELD_METHOD] = $v;
         }
         if (null !== ($v = $this->getQuantity())) {
-            $a[self::FIELD_QUANTITY] = $v;
+            $a[self::FIELD_QUANTITY] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_QUANTITY_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getRate())) {
             $a[self::FIELD_RATE] = $v;
@@ -893,13 +920,15 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
             $a[self::FIELD_SITE] = $v;
         }
         if (null !== ($v = $this->getTimingDateTime())) {
-            $a[self::FIELD_TIMING_DATE_TIME] = (string)$v;
-            $a[self::FIELD_TIMING_DATE_TIME_EXT] = $v;
+            $a[self::FIELD_TIMING_DATE_TIME] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_TIMING_DATE_TIME_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getTimingPeriod())) {
             $a[self::FIELD_TIMING_PERIOD] = $v;
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

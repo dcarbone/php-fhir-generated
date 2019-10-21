@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPro
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -94,7 +94,9 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
 
     const FIELD_AGENT = 'agent';
     const FIELD_ROLE = 'role';
+    const FIELD_ROLE_EXT = '_role';
     const FIELD_WHAT_IDENTIFIER = 'whatIdentifier';
+    const FIELD_WHAT_IDENTIFIER_EXT = '_whatIdentifier';
     const FIELD_WHAT_REFERENCE = 'whatReference';
     const FIELD_WHAT_URI = 'whatUri';
     const FIELD_WHAT_URI_EXT = '_whatUri';
@@ -193,15 +195,25 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_ROLE])) {
+            $ext = (isset($data[self::FIELD_ROLE_EXT]) && is_array($data[self::FIELD_ROLE_EXT]))
+                ? $data[self::FIELD_ROLE_EXT]
+                : null;
             if ($data[self::FIELD_ROLE] instanceof FHIRProvenanceEntityRole) {
                 $this->setRole($data[self::FIELD_ROLE]);
+            } elseif ($ext && is_scalar($data[self::FIELD_ROLE])) {
+                $this->setRole(new FHIRProvenanceEntityRole([FHIRProvenanceEntityRole::FIELD_VALUE => $data[self::FIELD_ROLE]] + $ext));
             } else {
                 $this->setRole(new FHIRProvenanceEntityRole($data[self::FIELD_ROLE]));
             }
         }
         if (isset($data[self::FIELD_WHAT_IDENTIFIER])) {
+            $ext = (isset($data[self::FIELD_WHAT_IDENTIFIER_EXT]) && is_array($data[self::FIELD_WHAT_IDENTIFIER_EXT]))
+                ? $data[self::FIELD_WHAT_IDENTIFIER_EXT]
+                : null;
             if ($data[self::FIELD_WHAT_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->setWhatIdentifier($data[self::FIELD_WHAT_IDENTIFIER]);
+            } elseif ($ext && is_scalar($data[self::FIELD_WHAT_IDENTIFIER])) {
+                $this->setWhatIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_WHAT_IDENTIFIER]] + $ext));
             } else {
                 $this->setWhatIdentifier(new FHIRIdentifier($data[self::FIELD_WHAT_IDENTIFIER]));
             }
@@ -230,7 +242,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -238,17 +250,33 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceEntity
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -494,13 +522,14 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIRProvenanceEntity::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIRProvenanceEntity);
+            $type = new FHIRProvenanceEntity;
         } elseif (!is_object($type) || !($type instanceof FHIRProvenanceEntity)) {
             throw new \RuntimeException(sprintf(
                 'FHIRProvenanceEntity::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceEntity or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRBackboneElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -541,7 +570,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
@@ -550,23 +579,21 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_AGENT, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_AGENT, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getRole())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ROLE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ROLE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getWhatIdentifier())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_WHAT_IDENTIFIER, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_WHAT_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getWhatReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_WHAT_REFERENCE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_WHAT_REFERENCE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getWhatUri())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_WHAT_URI, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_WHAT_URI, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -581,19 +608,27 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
             $a[self::FIELD_AGENT] = $vs;
         }
         if (null !== ($v = $this->getRole())) {
-            $a[self::FIELD_ROLE] = $v;
+            $a[self::FIELD_ROLE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_ROLE_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getWhatIdentifier())) {
-            $a[self::FIELD_WHAT_IDENTIFIER] = $v;
+            $a[self::FIELD_WHAT_IDENTIFIER] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_WHAT_IDENTIFIER_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getWhatReference())) {
             $a[self::FIELD_WHAT_REFERENCE] = $v;
         }
         if (null !== ($v = $this->getWhatUri())) {
-            $a[self::FIELD_WHAT_URI] = (string)$v;
-            $a[self::FIELD_WHAT_URI_EXT] = $v;
+            $a[self::FIELD_WHAT_URI] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_WHAT_URI_EXT] = $v;
+            }
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

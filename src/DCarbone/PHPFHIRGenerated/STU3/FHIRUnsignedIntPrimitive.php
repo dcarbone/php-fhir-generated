@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -116,7 +116,7 @@ class FHIRUnsignedIntPrimitive implements PHPFHIRTypeInterface
     /**
      * @return bool
      */
-    public function isValid()
+    public function _isValid()
     {
         $value = $this->getValue();
         if (null === $value) {
@@ -128,7 +128,7 @@ class FHIRUnsignedIntPrimitive implements PHPFHIRTypeInterface
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -136,17 +136,33 @@ class FHIRUnsignedIntPrimitive implements PHPFHIRTypeInterface
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRUnsignedIntPrimitive
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -185,7 +201,7 @@ class FHIRUnsignedIntPrimitive implements PHPFHIRTypeInterface
             throw new \InvalidArgumentException(sprintf('FHIRUnsignedIntPrimitive::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = new static();
+            $type = new FHIRUnsignedIntPrimitive;
         } elseif (!is_object($type) || !($type instanceof FHIRUnsignedIntPrimitive)) {
             throw new \RuntimeException(sprintf(
                 'FHIRUnsignedIntPrimitive::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\STU3\FHIRUnsignedIntPrimitive or null, %s seen.',
@@ -219,7 +235,7 @@ class FHIRUnsignedIntPrimitive implements PHPFHIRTypeInterface
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         $sxe->addAttribute(self::FIELD_VALUE, (string)$this);
         return $sxe;

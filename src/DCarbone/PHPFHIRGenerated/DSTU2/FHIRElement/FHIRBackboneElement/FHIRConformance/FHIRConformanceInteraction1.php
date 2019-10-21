@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,6 +85,7 @@ class FHIRConformanceInteraction1 extends FHIRBackboneElement
     private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CODE = 'code';
+    const FIELD_CODE_EXT = '_code';
     const FIELD_DOCUMENTATION = 'documentation';
     const FIELD_DOCUMENTATION_EXT = '_documentation';
 
@@ -127,8 +128,13 @@ class FHIRConformanceInteraction1 extends FHIRBackboneElement
         }
         parent::__construct($data);
         if (isset($data[self::FIELD_CODE])) {
+            $ext = (isset($data[self::FIELD_CODE_EXT]) && is_array($data[self::FIELD_CODE_EXT]))
+                ? $data[self::FIELD_CODE_EXT]
+                : null;
             if ($data[self::FIELD_CODE] instanceof FHIRSystemRestfulInteraction) {
                 $this->setCode($data[self::FIELD_CODE]);
+            } elseif ($ext && is_scalar($data[self::FIELD_CODE])) {
+                $this->setCode(new FHIRSystemRestfulInteraction([FHIRSystemRestfulInteraction::FIELD_VALUE => $data[self::FIELD_CODE]] + $ext));
             } else {
                 $this->setCode(new FHIRSystemRestfulInteraction($data[self::FIELD_CODE]));
             }
@@ -150,7 +156,7 @@ class FHIRConformanceInteraction1 extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -158,17 +164,33 @@ class FHIRConformanceInteraction1 extends FHIRBackboneElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceInteraction1
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -269,13 +291,14 @@ class FHIRConformanceInteraction1 extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIRConformanceInteraction1::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIRConformanceInteraction1);
+            $type = new FHIRConformanceInteraction1;
         } elseif (!is_object($type) || !($type instanceof FHIRConformanceInteraction1)) {
             throw new \RuntimeException(sprintf(
                 'FHIRConformanceInteraction1::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceInteraction1 or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRBackboneElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -305,15 +328,14 @@ class FHIRConformanceInteraction1 extends FHIRBackboneElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getCode())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDocumentation())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DOCUMENTATION, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DOCUMENTATION, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -325,13 +347,18 @@ class FHIRConformanceInteraction1 extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getCode())) {
-            $a[self::FIELD_CODE] = $v;
+            $a[self::FIELD_CODE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_CODE_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getDocumentation())) {
-            $a[self::FIELD_DOCUMENTATION] = (string)$v;
-            $a[self::FIELD_DOCUMENTATION_EXT] = $v;
+            $a[self::FIELD_DOCUMENTATION] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DOCUMENTATION_EXT] = $v;
+            }
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

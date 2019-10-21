@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -257,7 +257,7 @@ class FHIRSignature extends FHIRElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -265,17 +265,33 @@ class FHIRSignature extends FHIRElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRSignature
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -564,13 +580,14 @@ class FHIRSignature extends FHIRElement
             throw new \InvalidArgumentException(sprintf('FHIRSignature::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRElement::xmlUnserialize($sxe, new FHIRSignature);
+            $type = new FHIRSignature;
         } elseif (!is_object($type) || !($type instanceof FHIRSignature)) {
             throw new \RuntimeException(sprintf(
                 'FHIRSignature::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRSignature or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -623,14 +640,14 @@ class FHIRSignature extends FHIRElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getBlob())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_BLOB, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_BLOB, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getContentType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CONTENT_TYPE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CONTENT_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getType())) {
@@ -638,18 +655,18 @@ class FHIRSignature extends FHIRElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getWhen())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_WHEN, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_WHEN, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getWhoReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_WHO_REFERENCE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_WHO_REFERENCE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getWhoUri())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_WHO_URI, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_WHO_URI, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -661,28 +678,36 @@ class FHIRSignature extends FHIRElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getBlob())) {
-            $a[self::FIELD_BLOB] = (string)$v;
-            $a[self::FIELD_BLOB_EXT] = $v;
+            $a[self::FIELD_BLOB] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_BLOB_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getContentType())) {
-            $a[self::FIELD_CONTENT_TYPE] = (string)$v;
-            $a[self::FIELD_CONTENT_TYPE_EXT] = $v;
+            $a[self::FIELD_CONTENT_TYPE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_CONTENT_TYPE_EXT] = $v;
+            }
         }
         if ([] !== ($vs = $this->getType())) {
             $a[self::FIELD_TYPE] = $vs;
         }
         if (null !== ($v = $this->getWhen())) {
-            $a[self::FIELD_WHEN] = (string)$v;
-            $a[self::FIELD_WHEN_EXT] = $v;
+            $a[self::FIELD_WHEN] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_WHEN_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getWhoReference())) {
             $a[self::FIELD_WHO_REFERENCE] = $v;
         }
         if (null !== ($v = $this->getWhoUri())) {
-            $a[self::FIELD_WHO_URI] = (string)$v;
-            $a[self::FIELD_WHO_URI_EXT] = $v;
+            $a[self::FIELD_WHO_URI] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_WHO_URI_EXT] = $v;
+            }
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:05+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -66,6 +66,8 @@ use DCarbone\PHPFHIRGenerated\R4\FHIRElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRSPDXLicenseList;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRValueContainerInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRValueContainerTrait;
 
 /**
  * The license that applies to an Implementation Guide (using an SPDX license
@@ -76,8 +78,10 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
  * Class FHIRSPDXLicense
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRElement
  */
-class FHIRSPDXLicense extends FHIRElement
+class FHIRSPDXLicense extends FHIRElement implements PHPFHIRValueContainerInterface
 {
+    use PHPFHIRValueContainerTrait;
+
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SPDXLICENSE;
 
@@ -100,6 +104,10 @@ class FHIRSPDXLicense extends FHIRElement
         if (null === $data || [] === $data) {
             return;
         }
+        if (is_scalar($data)) {
+            $this->setValue(new FHIRSPDXLicenseList($data));
+            return;
+        }
         if (!is_array($data)) {
             throw new \InvalidArgumentException(sprintf(
                 'FHIRSPDXLicense::_construct - $data expected to be null or array, %s seen',
@@ -115,7 +123,7 @@ class FHIRSPDXLicense extends FHIRElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -123,17 +131,33 @@ class FHIRSPDXLicense extends FHIRElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSPDXLicense
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -190,13 +214,14 @@ class FHIRSPDXLicense extends FHIRElement
             throw new \InvalidArgumentException(sprintf('FHIRSPDXLicense::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRElement::xmlUnserialize($sxe, new FHIRSPDXLicense);
+            $type = new FHIRSPDXLicense;
         } elseif (!is_object($type) || !($type instanceof FHIRSPDXLicense)) {
             throw new \RuntimeException(sprintf(
                 'FHIRSPDXLicense::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSPDXLicense or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -223,11 +248,11 @@ class FHIRSPDXLicense extends FHIRElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getValue())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -241,7 +266,7 @@ class FHIRSPDXLicense extends FHIRElement
         if (null !== ($v = $this->getValue())) {
             $a[self::FIELD_VALUE] = $v;
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

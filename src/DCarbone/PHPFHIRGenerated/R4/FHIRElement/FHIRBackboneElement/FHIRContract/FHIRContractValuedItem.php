@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:05+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -97,9 +97,11 @@ class FHIRContractValuedItem extends FHIRBackboneElement
     const FIELD_FACTOR = 'factor';
     const FIELD_FACTOR_EXT = '_factor';
     const FIELD_IDENTIFIER = 'identifier';
+    const FIELD_IDENTIFIER_EXT = '_identifier';
     const FIELD_LINK_ID = 'linkId';
     const FIELD_LINK_ID_EXT = '_linkId';
     const FIELD_NET = 'net';
+    const FIELD_NET_EXT = '_net';
     const FIELD_PAYMENT = 'payment';
     const FIELD_PAYMENT_EXT = '_payment';
     const FIELD_PAYMENT_DATE = 'paymentDate';
@@ -107,11 +109,13 @@ class FHIRContractValuedItem extends FHIRBackboneElement
     const FIELD_POINTS = 'points';
     const FIELD_POINTS_EXT = '_points';
     const FIELD_QUANTITY = 'quantity';
+    const FIELD_QUANTITY_EXT = '_quantity';
     const FIELD_RECIPIENT = 'recipient';
     const FIELD_RESPONSIBLE = 'responsible';
     const FIELD_SECURITY_LABEL_NUMBER = 'securityLabelNumber';
     const FIELD_SECURITY_LABEL_NUMBER_EXT = '_securityLabelNumber';
     const FIELD_UNIT_PRICE = 'unitPrice';
+    const FIELD_UNIT_PRICE_EXT = '_unitPrice';
 
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
@@ -343,8 +347,13 @@ class FHIRContractValuedItem extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_IDENTIFIER])) {
+            $ext = (isset($data[self::FIELD_IDENTIFIER_EXT]) && is_array($data[self::FIELD_IDENTIFIER_EXT]))
+                ? $data[self::FIELD_IDENTIFIER_EXT]
+                : null;
             if ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->setIdentifier($data[self::FIELD_IDENTIFIER]);
+            } elseif ($ext && is_scalar($data[self::FIELD_IDENTIFIER])) {
+                $this->setIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
             } else {
                 $this->setIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
             }
@@ -372,8 +381,13 @@ class FHIRContractValuedItem extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_NET])) {
+            $ext = (isset($data[self::FIELD_NET_EXT]) && is_array($data[self::FIELD_NET_EXT]))
+                ? $data[self::FIELD_NET_EXT]
+                : null;
             if ($data[self::FIELD_NET] instanceof FHIRMoney) {
                 $this->setNet($data[self::FIELD_NET]);
+            } elseif ($ext && is_scalar($data[self::FIELD_NET])) {
+                $this->setNet(new FHIRMoney([FHIRMoney::FIELD_VALUE => $data[self::FIELD_NET]] + $ext));
             } else {
                 $this->setNet(new FHIRMoney($data[self::FIELD_NET]));
             }
@@ -415,8 +429,13 @@ class FHIRContractValuedItem extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_QUANTITY])) {
+            $ext = (isset($data[self::FIELD_QUANTITY_EXT]) && is_array($data[self::FIELD_QUANTITY_EXT]))
+                ? $data[self::FIELD_QUANTITY_EXT]
+                : null;
             if ($data[self::FIELD_QUANTITY] instanceof FHIRQuantity) {
                 $this->setQuantity($data[self::FIELD_QUANTITY]);
+            } elseif ($ext && is_scalar($data[self::FIELD_QUANTITY])) {
+                $this->setQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_QUANTITY]] + $ext));
             } else {
                 $this->setQuantity(new FHIRQuantity($data[self::FIELD_QUANTITY]));
             }
@@ -458,8 +477,13 @@ class FHIRContractValuedItem extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_UNIT_PRICE])) {
+            $ext = (isset($data[self::FIELD_UNIT_PRICE_EXT]) && is_array($data[self::FIELD_UNIT_PRICE_EXT]))
+                ? $data[self::FIELD_UNIT_PRICE_EXT]
+                : null;
             if ($data[self::FIELD_UNIT_PRICE] instanceof FHIRMoney) {
                 $this->setUnitPrice($data[self::FIELD_UNIT_PRICE]);
+            } elseif ($ext && is_scalar($data[self::FIELD_UNIT_PRICE])) {
+                $this->setUnitPrice(new FHIRMoney([FHIRMoney::FIELD_VALUE => $data[self::FIELD_UNIT_PRICE]] + $ext));
             } else {
                 $this->setUnitPrice(new FHIRMoney($data[self::FIELD_UNIT_PRICE]));
             }
@@ -469,7 +493,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -477,17 +501,33 @@ class FHIRContractValuedItem extends FHIRBackboneElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractValuedItem
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -1126,13 +1166,14 @@ class FHIRContractValuedItem extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIRContractValuedItem::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIRContractValuedItem);
+            $type = new FHIRContractValuedItem;
         } elseif (!is_object($type) || !($type instanceof FHIRContractValuedItem)) {
             throw new \RuntimeException(sprintf(
                 'FHIRContractValuedItem::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractValuedItem or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRBackboneElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -1223,71 +1264,67 @@ class FHIRContractValuedItem extends FHIRBackboneElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getEffectiveTime())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EFFECTIVE_TIME, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EFFECTIVE_TIME, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getEntityCodeableConcept())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ENTITY_CODEABLE_CONCEPT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ENTITY_CODEABLE_CONCEPT, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getEntityReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ENTITY_REFERENCE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ENTITY_REFERENCE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getFactor())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FACTOR, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FACTOR, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getIdentifier())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }
         if ([] !== ($vs = $this->getLinkId())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_LINK_ID, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_LINK_ID, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getNet())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_NET, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_NET, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getPayment())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PAYMENT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PAYMENT, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getPaymentDate())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PAYMENT_DATE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PAYMENT_DATE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getPoints())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_POINTS, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_POINTS, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getRecipient())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RECIPIENT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_RECIPIENT, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getResponsible())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RESPONSIBLE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_RESPONSIBLE, null, $v->_getFHIRXMLNamespace()));
         }
         if ([] !== ($vs = $this->getSecurityLabelNumber())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SECURITY_LABEL_NUMBER, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_SECURITY_LABEL_NUMBER, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getUnitPrice())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_UNIT_PRICE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_UNIT_PRICE, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -1299,8 +1336,10 @@ class FHIRContractValuedItem extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getEffectiveTime())) {
-            $a[self::FIELD_EFFECTIVE_TIME] = (string)$v;
-            $a[self::FIELD_EFFECTIVE_TIME_EXT] = $v;
+            $a[self::FIELD_EFFECTIVE_TIME] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_EFFECTIVE_TIME_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getEntityCodeableConcept())) {
             $a[self::FIELD_ENTITY_CODEABLE_CONCEPT] = $v;
@@ -1309,37 +1348,61 @@ class FHIRContractValuedItem extends FHIRBackboneElement
             $a[self::FIELD_ENTITY_REFERENCE] = $v;
         }
         if (null !== ($v = $this->getFactor())) {
-            $a[self::FIELD_FACTOR] = (string)$v;
-            $a[self::FIELD_FACTOR_EXT] = $v;
+            $a[self::FIELD_FACTOR] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_FACTOR_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $v;
+            $a[self::FIELD_IDENTIFIER] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_IDENTIFIER_EXT] = $v;
+            }
         }
         if ([] !== ($vs = $this->getLinkId())) {
             $a[self::FIELD_LINK_ID] = [];
-            $a[self::FIELD_LINK_ID_EXT] = [];
             foreach ($vs as $v) {
-                $a[self::FIELD_LINK_ID][] = (string)$v;
-                $a[self::FIELD_LINK_ID_EXT][] = $v;
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_LINK_ID][] = $v->getValue();
+                if ($v->_hasNonValueFieldsDefined()) {
+                    if (!isset($a[self::FIELD_LINK_ID_EXT])) {
+                        $a[self::FIELD_LINK_ID_EXT] = [];
+                    }
+                    $a[self::FIELD_LINK_ID_EXT][] = $v;
+                }
             }
         }
         if (null !== ($v = $this->getNet())) {
-            $a[self::FIELD_NET] = $v;
+            $a[self::FIELD_NET] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_NET_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getPayment())) {
-            $a[self::FIELD_PAYMENT] = (string)$v;
-            $a[self::FIELD_PAYMENT_EXT] = $v;
+            $a[self::FIELD_PAYMENT] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_PAYMENT_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getPaymentDate())) {
-            $a[self::FIELD_PAYMENT_DATE] = (string)$v;
-            $a[self::FIELD_PAYMENT_DATE_EXT] = $v;
+            $a[self::FIELD_PAYMENT_DATE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_PAYMENT_DATE_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getPoints())) {
-            $a[self::FIELD_POINTS] = (string)$v;
-            $a[self::FIELD_POINTS_EXT] = $v;
+            $a[self::FIELD_POINTS] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_POINTS_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getQuantity())) {
-            $a[self::FIELD_QUANTITY] = $v;
+            $a[self::FIELD_QUANTITY] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_QUANTITY_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getRecipient())) {
             $a[self::FIELD_RECIPIENT] = $v;
@@ -1349,16 +1412,26 @@ class FHIRContractValuedItem extends FHIRBackboneElement
         }
         if ([] !== ($vs = $this->getSecurityLabelNumber())) {
             $a[self::FIELD_SECURITY_LABEL_NUMBER] = [];
-            $a[self::FIELD_SECURITY_LABEL_NUMBER_EXT] = [];
             foreach ($vs as $v) {
-                $a[self::FIELD_SECURITY_LABEL_NUMBER][] = (string)$v;
-                $a[self::FIELD_SECURITY_LABEL_NUMBER_EXT][] = $v;
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_SECURITY_LABEL_NUMBER][] = $v->getValue();
+                if ($v->_hasNonValueFieldsDefined()) {
+                    if (!isset($a[self::FIELD_SECURITY_LABEL_NUMBER_EXT])) {
+                        $a[self::FIELD_SECURITY_LABEL_NUMBER_EXT] = [];
+                    }
+                    $a[self::FIELD_SECURITY_LABEL_NUMBER_EXT][] = $v;
+                }
             }
         }
         if (null !== ($v = $this->getUnitPrice())) {
-            $a[self::FIELD_UNIT_PRICE] = $v;
+            $a[self::FIELD_UNIT_PRICE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_UNIT_PRICE_EXT] = $v;
+            }
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

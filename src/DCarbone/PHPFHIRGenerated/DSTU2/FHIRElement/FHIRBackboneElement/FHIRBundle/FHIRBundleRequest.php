@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRBu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -93,6 +93,7 @@ class FHIRBundleRequest extends FHIRBackboneElement
     const FIELD_IF_NONE_MATCH = 'ifNoneMatch';
     const FIELD_IF_NONE_MATCH_EXT = '_ifNoneMatch';
     const FIELD_METHOD = 'method';
+    const FIELD_METHOD_EXT = '_method';
     const FIELD_URL = 'url';
     const FIELD_URL_EXT = '_url';
 
@@ -231,8 +232,13 @@ class FHIRBundleRequest extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_METHOD])) {
+            $ext = (isset($data[self::FIELD_METHOD_EXT]) && is_array($data[self::FIELD_METHOD_EXT]))
+                ? $data[self::FIELD_METHOD_EXT]
+                : null;
             if ($data[self::FIELD_METHOD] instanceof FHIRHTTPVerb) {
                 $this->setMethod($data[self::FIELD_METHOD]);
+            } elseif ($ext && is_scalar($data[self::FIELD_METHOD])) {
+                $this->setMethod(new FHIRHTTPVerb([FHIRHTTPVerb::FIELD_VALUE => $data[self::FIELD_METHOD]] + $ext));
             } else {
                 $this->setMethod(new FHIRHTTPVerb($data[self::FIELD_METHOD]));
             }
@@ -254,7 +260,7 @@ class FHIRBundleRequest extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -262,17 +268,33 @@ class FHIRBundleRequest extends FHIRBackboneElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleRequest
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -541,13 +563,14 @@ class FHIRBundleRequest extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIRBundleRequest::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIRBundleRequest);
+            $type = new FHIRBundleRequest;
         } elseif (!is_object($type) || !($type instanceof FHIRBundleRequest)) {
             throw new \RuntimeException(sprintf(
                 'FHIRBundleRequest::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleRequest or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRBackboneElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -601,27 +624,26 @@ class FHIRBundleRequest extends FHIRBackboneElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getIfMatch())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_IF_MATCH, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_IF_MATCH, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getIfModifiedSince())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_IF_MODIFIED_SINCE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_IF_MODIFIED_SINCE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getIfNoneExist())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_IF_NONE_EXIST, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_IF_NONE_EXIST, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getIfNoneMatch())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_IF_NONE_MATCH, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_IF_NONE_MATCH, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getMethod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_METHOD, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_METHOD, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getUrl())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_URL, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_URL, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -633,29 +655,42 @@ class FHIRBundleRequest extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getIfMatch())) {
-            $a[self::FIELD_IF_MATCH] = (string)$v;
-            $a[self::FIELD_IF_MATCH_EXT] = $v;
+            $a[self::FIELD_IF_MATCH] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_IF_MATCH_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getIfModifiedSince())) {
-            $a[self::FIELD_IF_MODIFIED_SINCE] = (string)$v;
-            $a[self::FIELD_IF_MODIFIED_SINCE_EXT] = $v;
+            $a[self::FIELD_IF_MODIFIED_SINCE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_IF_MODIFIED_SINCE_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getIfNoneExist())) {
-            $a[self::FIELD_IF_NONE_EXIST] = (string)$v;
-            $a[self::FIELD_IF_NONE_EXIST_EXT] = $v;
+            $a[self::FIELD_IF_NONE_EXIST] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_IF_NONE_EXIST_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getIfNoneMatch())) {
-            $a[self::FIELD_IF_NONE_MATCH] = (string)$v;
-            $a[self::FIELD_IF_NONE_MATCH_EXT] = $v;
+            $a[self::FIELD_IF_NONE_MATCH] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_IF_NONE_MATCH_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMethod())) {
-            $a[self::FIELD_METHOD] = $v;
+            $a[self::FIELD_METHOD] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_METHOD_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getUrl())) {
-            $a[self::FIELD_URL] = (string)$v;
-            $a[self::FIELD_URL_EXT] = $v;
+            $a[self::FIELD_URL] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_URL_EXT] = $v;
+            }
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

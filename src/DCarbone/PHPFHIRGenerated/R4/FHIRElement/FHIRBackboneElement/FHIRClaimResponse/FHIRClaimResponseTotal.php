@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:05+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,6 +84,7 @@ class FHIRClaimResponseTotal extends FHIRBackboneElement
     private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_AMOUNT = 'amount';
+    const FIELD_AMOUNT_EXT = '_amount';
     const FIELD_CATEGORY = 'category';
 
     /**
@@ -129,8 +130,13 @@ class FHIRClaimResponseTotal extends FHIRBackboneElement
         }
         parent::__construct($data);
         if (isset($data[self::FIELD_AMOUNT])) {
+            $ext = (isset($data[self::FIELD_AMOUNT_EXT]) && is_array($data[self::FIELD_AMOUNT_EXT]))
+                ? $data[self::FIELD_AMOUNT_EXT]
+                : null;
             if ($data[self::FIELD_AMOUNT] instanceof FHIRMoney) {
                 $this->setAmount($data[self::FIELD_AMOUNT]);
+            } elseif ($ext && is_scalar($data[self::FIELD_AMOUNT])) {
+                $this->setAmount(new FHIRMoney([FHIRMoney::FIELD_VALUE => $data[self::FIELD_AMOUNT]] + $ext));
             } else {
                 $this->setAmount(new FHIRMoney($data[self::FIELD_AMOUNT]));
             }
@@ -147,7 +153,7 @@ class FHIRClaimResponseTotal extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -155,17 +161,33 @@ class FHIRClaimResponseTotal extends FHIRBackboneElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseTotal
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -266,13 +288,14 @@ class FHIRClaimResponseTotal extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIRClaimResponseTotal::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIRClaimResponseTotal);
+            $type = new FHIRClaimResponseTotal;
         } elseif (!is_object($type) || !($type instanceof FHIRClaimResponseTotal)) {
             throw new \RuntimeException(sprintf(
                 'FHIRClaimResponseTotal::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseTotal or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRBackboneElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -299,16 +322,15 @@ class FHIRClaimResponseTotal extends FHIRBackboneElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAmount())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_AMOUNT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_AMOUNT, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getCategory())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CATEGORY, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CATEGORY, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -320,12 +342,15 @@ class FHIRClaimResponseTotal extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAmount())) {
-            $a[self::FIELD_AMOUNT] = $v;
+            $a[self::FIELD_AMOUNT] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_AMOUNT_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getCategory())) {
             $a[self::FIELD_CATEGORY] = $v;
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

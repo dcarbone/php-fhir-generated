@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -61,8 +61,10 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1;
  * Class FHIRBinary
  * @package \DCarbone\PHPFHIRGenerated\DSTU1
  */
-class FHIRBinary implements PHPFHIRContainedTypeInterface
+class FHIRBinary implements PHPFHIRCommentContainerInterface, PHPFHIRContainedTypeInterface
 {
+    use PHPFHIRCommentContainerTrait;
+
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_BINARY;
 
@@ -107,7 +109,7 @@ class FHIRBinary implements PHPFHIRContainedTypeInterface
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -115,21 +117,45 @@ class FHIRBinary implements PHPFHIRContainedTypeInterface
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRBinary
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<Binary{$xmlns}></Binary>";
+    }
+
+    /**
+     * @return string
+     */
+    public function _getResourceType()
+    {
+        return static::FHIR_TYPE_NAME;
     }
 
 
@@ -208,7 +234,7 @@ class FHIRBinary implements PHPFHIRContainedTypeInterface
             throw new \InvalidArgumentException(sprintf('FHIRBinary::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = new static();
+            $type = new FHIRBinary;
         } elseif (!is_object($type) || !($type instanceof FHIRBinary)) {
             throw new \RuntimeException(sprintf(
                 'FHIRBinary::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU1\FHIRBinary or null, %s seen.',
@@ -247,13 +273,13 @@ class FHIRBinary implements PHPFHIRContainedTypeInterface
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         if (null !== ($v = $this->getContentType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CONTENT_TYPE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CONTENT_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getId())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ID, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ID, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -270,7 +296,7 @@ class FHIRBinary implements PHPFHIRContainedTypeInterface
         if (null !== ($v = $this->getId())) {
             $a[self::FIELD_ID] = $v;
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }
 
     /**

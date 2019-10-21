@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRIm
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,6 +86,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
     private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_AVAILABILITY = 'availability';
+    const FIELD_AVAILABILITY_EXT = '_availability';
     const FIELD_BODY_SITE = 'bodySite';
     const FIELD_DATE_TIME = 'dateTime';
     const FIELD_DATE_TIME_EXT = '_dateTime';
@@ -93,6 +94,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
     const FIELD_DESCRIPTION_EXT = '_description';
     const FIELD_INSTANCE = 'instance';
     const FIELD_MODALITY = 'modality';
+    const FIELD_MODALITY_EXT = '_modality';
     const FIELD_NUMBER = 'number';
     const FIELD_NUMBER_EXT = '_number';
     const FIELD_NUMBER_OF_INSTANCES = 'numberOfInstances';
@@ -217,8 +219,13 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
         }
         parent::__construct($data);
         if (isset($data[self::FIELD_AVAILABILITY])) {
+            $ext = (isset($data[self::FIELD_AVAILABILITY_EXT]) && is_array($data[self::FIELD_AVAILABILITY_EXT]))
+                ? $data[self::FIELD_AVAILABILITY_EXT]
+                : null;
             if ($data[self::FIELD_AVAILABILITY] instanceof FHIRInstanceAvailability) {
                 $this->setAvailability($data[self::FIELD_AVAILABILITY]);
+            } elseif ($ext && is_scalar($data[self::FIELD_AVAILABILITY])) {
+                $this->setAvailability(new FHIRInstanceAvailability([FHIRInstanceAvailability::FIELD_VALUE => $data[self::FIELD_AVAILABILITY]] + $ext));
             } else {
                 $this->setAvailability(new FHIRInstanceAvailability($data[self::FIELD_AVAILABILITY]));
             }
@@ -270,8 +277,13 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_MODALITY])) {
+            $ext = (isset($data[self::FIELD_MODALITY_EXT]) && is_array($data[self::FIELD_MODALITY_EXT]))
+                ? $data[self::FIELD_MODALITY_EXT]
+                : null;
             if ($data[self::FIELD_MODALITY] instanceof FHIRModality) {
                 $this->setModality($data[self::FIELD_MODALITY]);
+            } elseif ($ext && is_scalar($data[self::FIELD_MODALITY])) {
+                $this->setModality(new FHIRModality([FHIRModality::FIELD_VALUE => $data[self::FIELD_MODALITY]] + $ext));
             } else {
                 $this->setModality(new FHIRModality($data[self::FIELD_MODALITY]));
             }
@@ -329,7 +341,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -337,17 +349,33 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -746,13 +774,14 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIRImagingStudySeries::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIRImagingStudySeries);
+            $type = new FHIRImagingStudySeries;
         } elseif (!is_object($type) || !($type instanceof FHIRImagingStudySeries)) {
             throw new \RuntimeException(sprintf(
                 'FHIRImagingStudySeries::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRBackboneElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -823,22 +852,21 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAvailability())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_AVAILABILITY, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_AVAILABILITY, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getBodySite())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_BODY_SITE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_BODY_SITE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDateTime())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DATE_TIME, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DATE_TIME, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDescription())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DESCRIPTION, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DESCRIPTION, null, $v->_getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getInstance())) {
@@ -846,24 +874,23 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_INSTANCE, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_INSTANCE, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getModality())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MODALITY, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MODALITY, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getNumber())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_NUMBER, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_NUMBER, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getNumberOfInstances())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_NUMBER_OF_INSTANCES, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_NUMBER_OF_INSTANCES, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getUid())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_UID, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_UID, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getUrl())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_URL, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_URL, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -875,42 +902,60 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAvailability())) {
-            $a[self::FIELD_AVAILABILITY] = $v;
+            $a[self::FIELD_AVAILABILITY] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_AVAILABILITY_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getBodySite())) {
             $a[self::FIELD_BODY_SITE] = $v;
         }
         if (null !== ($v = $this->getDateTime())) {
-            $a[self::FIELD_DATE_TIME] = (string)$v;
-            $a[self::FIELD_DATE_TIME_EXT] = $v;
+            $a[self::FIELD_DATE_TIME] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DATE_TIME_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getDescription())) {
-            $a[self::FIELD_DESCRIPTION] = (string)$v;
-            $a[self::FIELD_DESCRIPTION_EXT] = $v;
+            $a[self::FIELD_DESCRIPTION] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DESCRIPTION_EXT] = $v;
+            }
         }
         if ([] !== ($vs = $this->getInstance())) {
             $a[self::FIELD_INSTANCE] = $vs;
         }
         if (null !== ($v = $this->getModality())) {
-            $a[self::FIELD_MODALITY] = $v;
+            $a[self::FIELD_MODALITY] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MODALITY_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getNumber())) {
-            $a[self::FIELD_NUMBER] = (string)$v;
-            $a[self::FIELD_NUMBER_EXT] = $v;
+            $a[self::FIELD_NUMBER] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_NUMBER_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getNumberOfInstances())) {
-            $a[self::FIELD_NUMBER_OF_INSTANCES] = (string)$v;
-            $a[self::FIELD_NUMBER_OF_INSTANCES_EXT] = $v;
+            $a[self::FIELD_NUMBER_OF_INSTANCES] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_NUMBER_OF_INSTANCES_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getUid())) {
-            $a[self::FIELD_UID] = (string)$v;
-            $a[self::FIELD_UID_EXT] = $v;
+            $a[self::FIELD_UID] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_UID_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getUrl())) {
-            $a[self::FIELD_URL] = (string)$v;
-            $a[self::FIELD_URL_EXT] = $v;
+            $a[self::FIELD_URL] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_URL_EXT] = $v;
+            }
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

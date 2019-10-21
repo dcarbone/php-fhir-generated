@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRPr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,6 +85,7 @@ class FHIRProfileSlicing extends FHIRBackboneElement
     const FIELD_ORDERED = 'ordered';
     const FIELD_ORDERED_EXT = '_ordered';
     const FIELD_RULES = 'rules';
+    const FIELD_RULES_EXT = '_rules';
 
     /**
      * A whole number in the range to 2^64-1, optionally represented in hex, a uuid, an
@@ -163,8 +164,13 @@ class FHIRProfileSlicing extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_RULES])) {
+            $ext = (isset($data[self::FIELD_RULES_EXT]) && is_array($data[self::FIELD_RULES_EXT]))
+                ? $data[self::FIELD_RULES_EXT]
+                : null;
             if ($data[self::FIELD_RULES] instanceof FHIRSlicingRules) {
                 $this->setRules($data[self::FIELD_RULES]);
+            } elseif ($ext && is_scalar($data[self::FIELD_RULES])) {
+                $this->setRules(new FHIRSlicingRules([FHIRSlicingRules::FIELD_VALUE => $data[self::FIELD_RULES]] + $ext));
             } else {
                 $this->setRules(new FHIRSlicingRules($data[self::FIELD_RULES]));
             }
@@ -174,7 +180,7 @@ class FHIRProfileSlicing extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -182,17 +188,33 @@ class FHIRProfileSlicing extends FHIRBackboneElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileSlicing
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -339,13 +361,14 @@ class FHIRProfileSlicing extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIRProfileSlicing::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIRProfileSlicing);
+            $type = new FHIRProfileSlicing;
         } elseif (!is_object($type) || !($type instanceof FHIRProfileSlicing)) {
             throw new \RuntimeException(sprintf(
                 'FHIRProfileSlicing::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileSlicing or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRBackboneElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -381,18 +404,17 @@ class FHIRProfileSlicing extends FHIRBackboneElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getDiscriminator())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DISCRIMINATOR, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DISCRIMINATOR, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getOrdered())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ORDERED, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ORDERED, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getRules())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RULES, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_RULES, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -404,17 +426,24 @@ class FHIRProfileSlicing extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getDiscriminator())) {
-            $a[self::FIELD_DISCRIMINATOR] = (string)$v;
-            $a[self::FIELD_DISCRIMINATOR_EXT] = $v;
+            $a[self::FIELD_DISCRIMINATOR] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DISCRIMINATOR_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getOrdered())) {
-            $a[self::FIELD_ORDERED] = (string)$v;
-            $a[self::FIELD_ORDERED_EXT] = $v;
+            $a[self::FIELD_ORDERED] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_ORDERED_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getRules())) {
-            $a[self::FIELD_RULES] = $v;
+            $a[self::FIELD_RULES] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_RULES_EXT] = $v;
+            }
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,14 +85,17 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
     private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CATEGORY = 'category';
+    const FIELD_CATEGORY_EXT = '_category';
     const FIELD_CODE = 'code';
     const FIELD_DAILY_AMOUNT = 'dailyAmount';
+    const FIELD_DAILY_AMOUNT_EXT = '_dailyAmount';
     const FIELD_DETAILS = 'details';
     const FIELD_DETAILS_EXT = '_details';
     const FIELD_LOCATION = 'location';
     const FIELD_PERFORMER = 'performer';
     const FIELD_PRODUCT = 'product';
     const FIELD_QUANTITY = 'quantity';
+    const FIELD_QUANTITY_EXT = '_quantity';
     const FIELD_TIMING_PERIOD = 'timingPeriod';
     const FIELD_TIMING_SCHEDULE = 'timingSchedule';
     const FIELD_TIMING_STRING = 'timingString';
@@ -235,8 +238,13 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
         }
         parent::__construct($data);
         if (isset($data[self::FIELD_CATEGORY])) {
+            $ext = (isset($data[self::FIELD_CATEGORY_EXT]) && is_array($data[self::FIELD_CATEGORY_EXT]))
+                ? $data[self::FIELD_CATEGORY_EXT]
+                : null;
             if ($data[self::FIELD_CATEGORY] instanceof FHIRCarePlanActivityCategory) {
                 $this->setCategory($data[self::FIELD_CATEGORY]);
+            } elseif ($ext && is_scalar($data[self::FIELD_CATEGORY])) {
+                $this->setCategory(new FHIRCarePlanActivityCategory([FHIRCarePlanActivityCategory::FIELD_VALUE => $data[self::FIELD_CATEGORY]] + $ext));
             } else {
                 $this->setCategory(new FHIRCarePlanActivityCategory($data[self::FIELD_CATEGORY]));
             }
@@ -249,8 +257,13 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_DAILY_AMOUNT])) {
+            $ext = (isset($data[self::FIELD_DAILY_AMOUNT_EXT]) && is_array($data[self::FIELD_DAILY_AMOUNT_EXT]))
+                ? $data[self::FIELD_DAILY_AMOUNT_EXT]
+                : null;
             if ($data[self::FIELD_DAILY_AMOUNT] instanceof FHIRQuantity) {
                 $this->setDailyAmount($data[self::FIELD_DAILY_AMOUNT]);
+            } elseif ($ext && is_scalar($data[self::FIELD_DAILY_AMOUNT])) {
+                $this->setDailyAmount(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_DAILY_AMOUNT]] + $ext));
             } else {
                 $this->setDailyAmount(new FHIRQuantity($data[self::FIELD_DAILY_AMOUNT]));
             }
@@ -297,8 +310,13 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_QUANTITY])) {
+            $ext = (isset($data[self::FIELD_QUANTITY_EXT]) && is_array($data[self::FIELD_QUANTITY_EXT]))
+                ? $data[self::FIELD_QUANTITY_EXT]
+                : null;
             if ($data[self::FIELD_QUANTITY] instanceof FHIRQuantity) {
                 $this->setQuantity($data[self::FIELD_QUANTITY]);
+            } elseif ($ext && is_scalar($data[self::FIELD_QUANTITY])) {
+                $this->setQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_QUANTITY]] + $ext));
             } else {
                 $this->setQuantity(new FHIRQuantity($data[self::FIELD_QUANTITY]));
             }
@@ -334,7 +352,7 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -342,17 +360,33 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanSimple
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -773,13 +807,14 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIRCarePlanSimple::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIRCarePlanSimple);
+            $type = new FHIRCarePlanSimple;
         } elseif (!is_object($type) || !($type instanceof FHIRCarePlanSimple)) {
             throw new \RuntimeException(sprintf(
                 'FHIRCarePlanSimple::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanSimple or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRBackboneElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -841,27 +876,25 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getCategory())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CATEGORY, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CATEGORY, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getCode())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getDailyAmount())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DAILY_AMOUNT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DAILY_AMOUNT, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDetails())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DETAILS, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DETAILS, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getLocation())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_LOCATION, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_LOCATION, null, $v->_getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getPerformer())) {
@@ -869,27 +902,26 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PERFORMER, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_PERFORMER, null, $v->_getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getProduct())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PRODUCT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PRODUCT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getTimingPeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TIMING_PERIOD, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TIMING_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getTimingSchedule())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TIMING_SCHEDULE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TIMING_SCHEDULE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getTimingString())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TIMING_STRING, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TIMING_STRING, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -901,17 +933,25 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getCategory())) {
-            $a[self::FIELD_CATEGORY] = $v;
+            $a[self::FIELD_CATEGORY] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_CATEGORY_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getCode())) {
             $a[self::FIELD_CODE] = $v;
         }
         if (null !== ($v = $this->getDailyAmount())) {
-            $a[self::FIELD_DAILY_AMOUNT] = $v;
+            $a[self::FIELD_DAILY_AMOUNT] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DAILY_AMOUNT_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getDetails())) {
-            $a[self::FIELD_DETAILS] = (string)$v;
-            $a[self::FIELD_DETAILS_EXT] = $v;
+            $a[self::FIELD_DETAILS] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DETAILS_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getLocation())) {
             $a[self::FIELD_LOCATION] = $v;
@@ -923,7 +963,10 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
             $a[self::FIELD_PRODUCT] = $v;
         }
         if (null !== ($v = $this->getQuantity())) {
-            $a[self::FIELD_QUANTITY] = $v;
+            $a[self::FIELD_QUANTITY] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_QUANTITY_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getTimingPeriod())) {
             $a[self::FIELD_TIMING_PERIOD] = $v;
@@ -932,10 +975,12 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
             $a[self::FIELD_TIMING_SCHEDULE] = $v;
         }
         if (null !== ($v = $this->getTimingString())) {
-            $a[self::FIELD_TIMING_STRING] = (string)$v;
-            $a[self::FIELD_TIMING_STRING_EXT] = $v;
+            $a[self::FIELD_TIMING_STRING] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_TIMING_STRING_EXT] = $v;
+            }
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

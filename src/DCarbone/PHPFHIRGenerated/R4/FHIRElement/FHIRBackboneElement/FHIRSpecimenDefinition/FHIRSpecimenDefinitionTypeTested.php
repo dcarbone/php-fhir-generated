@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpeci
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:05+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -90,6 +90,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
     const FIELD_IS_DERIVED = 'isDerived';
     const FIELD_IS_DERIVED_EXT = '_isDerived';
     const FIELD_PREFERENCE = 'preference';
+    const FIELD_PREFERENCE_EXT = '_preference';
     const FIELD_REJECTION_CRITERION = 'rejectionCriterion';
     const FIELD_REQUIREMENT = 'requirement';
     const FIELD_REQUIREMENT_EXT = '_requirement';
@@ -227,8 +228,13 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_PREFERENCE])) {
+            $ext = (isset($data[self::FIELD_PREFERENCE_EXT]) && is_array($data[self::FIELD_PREFERENCE_EXT]))
+                ? $data[self::FIELD_PREFERENCE_EXT]
+                : null;
             if ($data[self::FIELD_PREFERENCE] instanceof FHIRSpecimenContainedPreference) {
                 $this->setPreference($data[self::FIELD_PREFERENCE]);
+            } elseif ($ext && is_scalar($data[self::FIELD_PREFERENCE])) {
+                $this->setPreference(new FHIRSpecimenContainedPreference([FHIRSpecimenContainedPreference::FIELD_VALUE => $data[self::FIELD_PREFERENCE]] + $ext));
             } else {
                 $this->setPreference(new FHIRSpecimenContainedPreference($data[self::FIELD_PREFERENCE]));
             }
@@ -279,7 +285,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -287,17 +293,33 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionTypeTested
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -634,13 +656,14 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIRSpecimenDefinitionTypeTested::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIRSpecimenDefinitionTypeTested);
+            $type = new FHIRSpecimenDefinitionTypeTested;
         } elseif (!is_object($type) || !($type instanceof FHIRSpecimenDefinitionTypeTested)) {
             throw new \RuntimeException(sprintf(
                 'FHIRSpecimenDefinitionTypeTested::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionTypeTested or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRBackboneElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -695,12 +718,12 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getContainer())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CONTAINER, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CONTAINER, null, $v->_getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getHandling())) {
@@ -708,15 +731,14 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_HANDLING, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_HANDLING, null, $v->_getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getIsDerived())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_IS_DERIVED, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_IS_DERIVED, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getPreference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PREFERENCE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PREFERENCE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getRejectionCriterion())) {
@@ -724,19 +746,19 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_REJECTION_CRITERION, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_REJECTION_CRITERION, null, $v->_getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getRequirement())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REQUIREMENT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_REQUIREMENT, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getRetentionTime())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RETENTION_TIME, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_RETENTION_TIME, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -754,18 +776,25 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
             $a[self::FIELD_HANDLING] = $vs;
         }
         if (null !== ($v = $this->getIsDerived())) {
-            $a[self::FIELD_IS_DERIVED] = (string)$v;
-            $a[self::FIELD_IS_DERIVED_EXT] = $v;
+            $a[self::FIELD_IS_DERIVED] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_IS_DERIVED_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getPreference())) {
-            $a[self::FIELD_PREFERENCE] = $v;
+            $a[self::FIELD_PREFERENCE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_PREFERENCE_EXT] = $v;
+            }
         }
         if ([] !== ($vs = $this->getRejectionCriterion())) {
             $a[self::FIELD_REJECTION_CRITERION] = $vs;
         }
         if (null !== ($v = $this->getRequirement())) {
-            $a[self::FIELD_REQUIREMENT] = (string)$v;
-            $a[self::FIELD_REQUIREMENT_EXT] = $v;
+            $a[self::FIELD_REQUIREMENT] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_REQUIREMENT_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getRetentionTime())) {
             $a[self::FIELD_RETENTION_TIME] = $v;
@@ -773,7 +802,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

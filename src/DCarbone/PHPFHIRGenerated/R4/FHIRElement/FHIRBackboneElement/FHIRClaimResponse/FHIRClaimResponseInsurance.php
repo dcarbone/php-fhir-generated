@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:05+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -221,7 +221,7 @@ class FHIRClaimResponseInsurance extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -229,17 +229,33 @@ class FHIRClaimResponseInsurance extends FHIRBackboneElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseInsurance
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -454,13 +470,14 @@ class FHIRClaimResponseInsurance extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIRClaimResponseInsurance::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIRClaimResponseInsurance);
+            $type = new FHIRClaimResponseInsurance;
         } elseif (!is_object($type) || !($type instanceof FHIRClaimResponseInsurance)) {
             throw new \RuntimeException(sprintf(
                 'FHIRClaimResponseInsurance::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseInsurance or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRBackboneElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -505,25 +522,25 @@ class FHIRClaimResponseInsurance extends FHIRBackboneElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getBusinessArrangement())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_BUSINESS_ARRANGEMENT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_BUSINESS_ARRANGEMENT, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getClaimResponse())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CLAIM_RESPONSE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CLAIM_RESPONSE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getCoverage())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_COVERAGE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_COVERAGE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getFocal())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FOCAL, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FOCAL, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getSequence())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SEQUENCE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SEQUENCE, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -535,8 +552,10 @@ class FHIRClaimResponseInsurance extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getBusinessArrangement())) {
-            $a[self::FIELD_BUSINESS_ARRANGEMENT] = (string)$v;
-            $a[self::FIELD_BUSINESS_ARRANGEMENT_EXT] = $v;
+            $a[self::FIELD_BUSINESS_ARRANGEMENT] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_BUSINESS_ARRANGEMENT_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getClaimResponse())) {
             $a[self::FIELD_CLAIM_RESPONSE] = $v;
@@ -545,14 +564,18 @@ class FHIRClaimResponseInsurance extends FHIRBackboneElement
             $a[self::FIELD_COVERAGE] = $v;
         }
         if (null !== ($v = $this->getFocal())) {
-            $a[self::FIELD_FOCAL] = (string)$v;
-            $a[self::FIELD_FOCAL_EXT] = $v;
+            $a[self::FIELD_FOCAL] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_FOCAL_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getSequence())) {
-            $a[self::FIELD_SEQUENCE] = (string)$v;
-            $a[self::FIELD_SEQUENCE_EXT] = $v;
+            $a[self::FIELD_SEQUENCE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_SEQUENCE_EXT] = $v;
+            }
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

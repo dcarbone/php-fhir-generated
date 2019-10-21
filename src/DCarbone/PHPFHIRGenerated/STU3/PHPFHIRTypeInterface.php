@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -76,23 +76,30 @@ interface PHPFHIRTypeInterface extends \JsonSerializable {
      * Returns the FHIR name represented by this Type
      * @return string
      */
-    public function getFHIRTypeName();
+    public function _getFHIRTypeName();
 
     /**
      * Returns the xml namespace to use for this type when serializing to XML, if applicable.
      * @return string
      */
-    public function getFHIRXMLNamespace();
+    public function _getFHIRXMLNamespace();
+
+    /**
+     * Set the XML Namespace to be output when serializing this type to XML
+     * @param string $xmlNamespace
+     * @return static
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace);
 
     /**
      * Returns the base xml element definition for this type
      * @return string
      */
-    public function getFHIRXMLElementDefinition();
+    public function _getFHIRXMLElementDefinition();
 
     /**
      * @param \SimpleXMLElement|string|null $sxe
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface $type
+     * @param null|static $type
      * @param null|int $libxmlOpts
      * @return null|static
      */

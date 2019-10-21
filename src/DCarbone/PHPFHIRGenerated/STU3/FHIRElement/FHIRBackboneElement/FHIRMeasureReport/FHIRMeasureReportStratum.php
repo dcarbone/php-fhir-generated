@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMea
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -67,6 +67,8 @@ use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRValueContainerInterface;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRValueContainerTrait;
 
 /**
  * The MeasureReport resource contains the results of evaluating a measure.
@@ -74,8 +76,10 @@ use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
  * Class FHIRMeasureReportStratum
  * @package \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMeasureReport
  */
-class FHIRMeasureReportStratum extends FHIRBackboneElement
+class FHIRMeasureReportStratum extends FHIRBackboneElement implements PHPFHIRValueContainerInterface
 {
+    use PHPFHIRValueContainerTrait;
+
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEASURE_REPORT_DOT_STRATUM;
 
@@ -131,6 +135,10 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
         if (null === $data || [] === $data) {
             return;
         }
+        if (is_scalar($data)) {
+            $this->setValue(new FHIRString($data));
+            return;
+        }
         if (!is_array($data)) {
             throw new \InvalidArgumentException(sprintf(
                 'FHIRMeasureReportStratum::_construct - $data expected to be null or array, %s seen',
@@ -182,7 +190,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -190,17 +198,33 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratum
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -368,13 +392,14 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIRMeasureReportStratum::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIRMeasureReportStratum);
+            $type = new FHIRMeasureReportStratum;
         } elseif (!is_object($type) || !($type instanceof FHIRMeasureReportStratum)) {
             throw new \RuntimeException(sprintf(
                 'FHIRMeasureReportStratum::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratum or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRBackboneElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -412,11 +437,11 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getMeasureScore())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MEASURE_SCORE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MEASURE_SCORE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getPopulation())) {
@@ -424,11 +449,11 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_POPULATION, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_POPULATION, null, $v->_getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getValue())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -440,17 +465,21 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getMeasureScore())) {
-            $a[self::FIELD_MEASURE_SCORE] = (string)$v;
-            $a[self::FIELD_MEASURE_SCORE_EXT] = $v;
+            $a[self::FIELD_MEASURE_SCORE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MEASURE_SCORE_EXT] = $v;
+            }
         }
         if ([] !== ($vs = $this->getPopulation())) {
             $a[self::FIELD_POPULATION] = $vs;
         }
         if (null !== ($v = $this->getValue())) {
-            $a[self::FIELD_VALUE] = (string)$v;
-            $a[self::FIELD_VALUE_EXT] = $v;
+            $a[self::FIELD_VALUE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_VALUE_EXT] = $v;
+            }
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObser
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:05+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -198,7 +198,7 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -206,17 +206,33 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQuantitativeDetails
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -397,13 +413,14 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIRObservationDefinitionQuantitativeDetails::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIRObservationDefinitionQuantitativeDetails);
+            $type = new FHIRObservationDefinitionQuantitativeDetails;
         } elseif (!is_object($type) || !($type instanceof FHIRObservationDefinitionQuantitativeDetails)) {
             throw new \RuntimeException(sprintf(
                 'FHIRObservationDefinitionQuantitativeDetails::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQuantitativeDetails or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRBackboneElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -442,22 +459,22 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getConversionFactor())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CONVERSION_FACTOR, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CONVERSION_FACTOR, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getCustomaryUnit())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CUSTOMARY_UNIT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CUSTOMARY_UNIT, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDecimalPrecision())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DECIMAL_PRECISION, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DECIMAL_PRECISION, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getUnit())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_UNIT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_UNIT, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -469,20 +486,24 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getConversionFactor())) {
-            $a[self::FIELD_CONVERSION_FACTOR] = (string)$v;
-            $a[self::FIELD_CONVERSION_FACTOR_EXT] = $v;
+            $a[self::FIELD_CONVERSION_FACTOR] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_CONVERSION_FACTOR_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getCustomaryUnit())) {
             $a[self::FIELD_CUSTOMARY_UNIT] = $v;
         }
         if (null !== ($v = $this->getDecimalPrecision())) {
-            $a[self::FIELD_DECIMAL_PRECISION] = (string)$v;
-            $a[self::FIELD_DECIMAL_PRECISION_EXT] = $v;
+            $a[self::FIELD_DECIMAL_PRECISION] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DECIMAL_PRECISION_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getUnit())) {
             $a[self::FIELD_UNIT] = $v;
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

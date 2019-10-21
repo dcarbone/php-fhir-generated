@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuest
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:05+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -105,12 +105,14 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
     const FIELD_ANSWER_INTEGER = 'answerInteger';
     const FIELD_ANSWER_INTEGER_EXT = '_answerInteger';
     const FIELD_ANSWER_QUANTITY = 'answerQuantity';
+    const FIELD_ANSWER_QUANTITY_EXT = '_answerQuantity';
     const FIELD_ANSWER_REFERENCE = 'answerReference';
     const FIELD_ANSWER_STRING = 'answerString';
     const FIELD_ANSWER_STRING_EXT = '_answerString';
     const FIELD_ANSWER_TIME = 'answerTime';
     const FIELD_ANSWER_TIME_EXT = '_answerTime';
     const FIELD_OPERATOR = 'operator';
+    const FIELD_OPERATOR_EXT = '_operator';
     const FIELD_QUESTION = 'question';
     const FIELD_QUESTION_EXT = '_question';
 
@@ -334,8 +336,13 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_ANSWER_QUANTITY])) {
+            $ext = (isset($data[self::FIELD_ANSWER_QUANTITY_EXT]) && is_array($data[self::FIELD_ANSWER_QUANTITY_EXT]))
+                ? $data[self::FIELD_ANSWER_QUANTITY_EXT]
+                : null;
             if ($data[self::FIELD_ANSWER_QUANTITY] instanceof FHIRQuantity) {
                 $this->setAnswerQuantity($data[self::FIELD_ANSWER_QUANTITY]);
+            } elseif ($ext && is_scalar($data[self::FIELD_ANSWER_QUANTITY])) {
+                $this->setAnswerQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_ANSWER_QUANTITY]] + $ext));
             } else {
                 $this->setAnswerQuantity(new FHIRQuantity($data[self::FIELD_ANSWER_QUANTITY]));
             }
@@ -372,8 +379,13 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_OPERATOR])) {
+            $ext = (isset($data[self::FIELD_OPERATOR_EXT]) && is_array($data[self::FIELD_OPERATOR_EXT]))
+                ? $data[self::FIELD_OPERATOR_EXT]
+                : null;
             if ($data[self::FIELD_OPERATOR] instanceof FHIRQuestionnaireItemOperator) {
                 $this->setOperator($data[self::FIELD_OPERATOR]);
+            } elseif ($ext && is_scalar($data[self::FIELD_OPERATOR])) {
+                $this->setOperator(new FHIRQuestionnaireItemOperator([FHIRQuestionnaireItemOperator::FIELD_VALUE => $data[self::FIELD_OPERATOR]] + $ext));
             } else {
                 $this->setOperator(new FHIRQuestionnaireItemOperator($data[self::FIELD_OPERATOR]));
             }
@@ -395,7 +407,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -403,17 +415,33 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -898,13 +926,14 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIRQuestionnaireEnableWhen::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIRQuestionnaireEnableWhen);
+            $type = new FHIRQuestionnaireEnableWhen;
         } elseif (!is_object($type) || !($type instanceof FHIRQuestionnaireEnableWhen)) {
             throw new \RuntimeException(sprintf(
                 'FHIRQuestionnaireEnableWhen::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRBackboneElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -985,48 +1014,46 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getAnswerBoolean())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_BOOLEAN, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_BOOLEAN, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getAnswerCoding())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_CODING, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_CODING, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getAnswerDate())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_DATE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_DATE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getAnswerDateTime())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_DATE_TIME, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_DATE_TIME, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getAnswerDecimal())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_DECIMAL, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_DECIMAL, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getAnswerInteger())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_INTEGER, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_INTEGER, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getAnswerQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_QUANTITY, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getAnswerReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_REFERENCE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_REFERENCE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getAnswerString())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_STRING, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_STRING, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getAnswerTime())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_TIME, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_TIME, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getOperator())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_OPERATOR, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_OPERATOR, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getQuestion())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_QUESTION, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_QUESTION, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -1038,50 +1065,72 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAnswerBoolean())) {
-            $a[self::FIELD_ANSWER_BOOLEAN] = (string)$v;
-            $a[self::FIELD_ANSWER_BOOLEAN_EXT] = $v;
+            $a[self::FIELD_ANSWER_BOOLEAN] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_ANSWER_BOOLEAN_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getAnswerCoding())) {
             $a[self::FIELD_ANSWER_CODING] = $v;
         }
         if (null !== ($v = $this->getAnswerDate())) {
-            $a[self::FIELD_ANSWER_DATE] = (string)$v;
-            $a[self::FIELD_ANSWER_DATE_EXT] = $v;
+            $a[self::FIELD_ANSWER_DATE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_ANSWER_DATE_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getAnswerDateTime())) {
-            $a[self::FIELD_ANSWER_DATE_TIME] = (string)$v;
-            $a[self::FIELD_ANSWER_DATE_TIME_EXT] = $v;
+            $a[self::FIELD_ANSWER_DATE_TIME] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_ANSWER_DATE_TIME_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getAnswerDecimal())) {
-            $a[self::FIELD_ANSWER_DECIMAL] = (string)$v;
-            $a[self::FIELD_ANSWER_DECIMAL_EXT] = $v;
+            $a[self::FIELD_ANSWER_DECIMAL] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_ANSWER_DECIMAL_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getAnswerInteger())) {
-            $a[self::FIELD_ANSWER_INTEGER] = (string)$v;
-            $a[self::FIELD_ANSWER_INTEGER_EXT] = $v;
+            $a[self::FIELD_ANSWER_INTEGER] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_ANSWER_INTEGER_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getAnswerQuantity())) {
-            $a[self::FIELD_ANSWER_QUANTITY] = $v;
+            $a[self::FIELD_ANSWER_QUANTITY] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_ANSWER_QUANTITY_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getAnswerReference())) {
             $a[self::FIELD_ANSWER_REFERENCE] = $v;
         }
         if (null !== ($v = $this->getAnswerString())) {
-            $a[self::FIELD_ANSWER_STRING] = (string)$v;
-            $a[self::FIELD_ANSWER_STRING_EXT] = $v;
+            $a[self::FIELD_ANSWER_STRING] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_ANSWER_STRING_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getAnswerTime())) {
-            $a[self::FIELD_ANSWER_TIME] = (string)$v;
-            $a[self::FIELD_ANSWER_TIME_EXT] = $v;
+            $a[self::FIELD_ANSWER_TIME] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_ANSWER_TIME_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getOperator())) {
-            $a[self::FIELD_OPERATOR] = $v;
+            $a[self::FIELD_OPERATOR] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_OPERATOR_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getQuestion())) {
-            $a[self::FIELD_QUESTION] = (string)$v;
-            $a[self::FIELD_QUESTION_EXT] = $v;
+            $a[self::FIELD_QUESTION] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_QUESTION_EXT] = $v;
+            }
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

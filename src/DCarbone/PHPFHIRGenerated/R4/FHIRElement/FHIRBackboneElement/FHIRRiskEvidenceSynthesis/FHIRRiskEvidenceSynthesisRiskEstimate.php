@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:05+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -69,6 +69,8 @@ use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRValueContainerInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRValueContainerTrait;
 
 /**
  * The RiskEvidenceSynthesis resource describes the likelihood of an outcome in a
@@ -78,8 +80,10 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
  * Class FHIRRiskEvidenceSynthesisRiskEstimate
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskEvidenceSynthesis
  */
-class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
+class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement implements PHPFHIRValueContainerInterface
 {
+    use PHPFHIRValueContainerTrait;
+
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_RISK_EVIDENCE_SYNTHESIS_DOT_RISK_ESTIMATE;
 
@@ -181,6 +185,10 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
         if (null === $data || [] === $data) {
             return;
         }
+        if (is_scalar($data)) {
+            $this->setValue(new FHIRDecimal($data));
+            return;
+        }
         if (!is_array($data)) {
             throw new \InvalidArgumentException(sprintf(
                 'FHIRRiskEvidenceSynthesisRiskEstimate::_construct - $data expected to be null or array, %s seen',
@@ -270,7 +278,7 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -278,17 +286,33 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisRiskEstimate
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -494,6 +518,7 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
      */
     public function setType(FHIRCodeableConcept $type = null)
     {
+        $this->_markNonValueFieldsDefined();
         $this->type = $type;
         return $this;
     }
@@ -526,6 +551,7 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
      */
     public function setUnitOfMeasure(FHIRCodeableConcept $unitOfMeasure = null)
     {
+        $this->_markNonValueFieldsDefined();
         $this->unitOfMeasure = $unitOfMeasure;
         return $this;
     }
@@ -593,13 +619,14 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIRRiskEvidenceSynthesisRiskEstimate::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIRRiskEvidenceSynthesisRiskEstimate);
+            $type = new FHIRRiskEvidenceSynthesisRiskEstimate;
         } elseif (!is_object($type) || !($type instanceof FHIRRiskEvidenceSynthesisRiskEstimate)) {
             throw new \RuntimeException(sprintf(
                 'FHIRRiskEvidenceSynthesisRiskEstimate::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisRiskEstimate or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRBackboneElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -655,17 +682,17 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getDenominatorCount())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DENOMINATOR_COUNT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DENOMINATOR_COUNT, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDescription())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DESCRIPTION, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DESCRIPTION, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getNumeratorCount())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_NUMERATOR_COUNT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_NUMERATOR_COUNT, null, $v->_getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getPrecisionEstimate())) {
@@ -673,19 +700,19 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PRECISION_ESTIMATE, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_PRECISION_ESTIMATE, null, $v->_getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getUnitOfMeasure())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_UNIT_OF_MEASURE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_UNIT_OF_MEASURE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getValue())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -697,16 +724,22 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getDenominatorCount())) {
-            $a[self::FIELD_DENOMINATOR_COUNT] = (string)$v;
-            $a[self::FIELD_DENOMINATOR_COUNT_EXT] = $v;
+            $a[self::FIELD_DENOMINATOR_COUNT] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DENOMINATOR_COUNT_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getDescription())) {
-            $a[self::FIELD_DESCRIPTION] = (string)$v;
-            $a[self::FIELD_DESCRIPTION_EXT] = $v;
+            $a[self::FIELD_DESCRIPTION] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DESCRIPTION_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getNumeratorCount())) {
-            $a[self::FIELD_NUMERATOR_COUNT] = (string)$v;
-            $a[self::FIELD_NUMERATOR_COUNT_EXT] = $v;
+            $a[self::FIELD_NUMERATOR_COUNT] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_NUMERATOR_COUNT_EXT] = $v;
+            }
         }
         if ([] !== ($vs = $this->getPrecisionEstimate())) {
             $a[self::FIELD_PRECISION_ESTIMATE] = $vs;
@@ -718,10 +751,12 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
             $a[self::FIELD_UNIT_OF_MEASURE] = $v;
         }
         if (null !== ($v = $this->getValue())) {
-            $a[self::FIELD_VALUE] = (string)$v;
-            $a[self::FIELD_VALUE_EXT] = $v;
+            $a[self::FIELD_VALUE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_VALUE_EXT] = $v;
+            }
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

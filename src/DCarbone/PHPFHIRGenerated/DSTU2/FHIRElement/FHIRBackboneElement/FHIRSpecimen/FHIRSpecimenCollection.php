@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRSp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -264,7 +264,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -272,17 +272,33 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenCollection
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -580,13 +596,14 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIRSpecimenCollection::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIRSpecimenCollection);
+            $type = new FHIRSpecimenCollection;
         } elseif (!is_object($type) || !($type instanceof FHIRSpecimenCollection)) {
             throw new \RuntimeException(sprintf(
                 'FHIRSpecimenCollection::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenCollection or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRBackboneElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -636,39 +653,39 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getBodySite())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_BODY_SITE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_BODY_SITE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getCollectedDateTime())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_COLLECTED_DATE_TIME, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_COLLECTED_DATE_TIME, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getCollectedPeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_COLLECTED_PERIOD, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_COLLECTED_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getCollector())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_COLLECTOR, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_COLLECTOR, null, $v->_getFHIRXMLNamespace()));
         }
         if ([] !== ($vs = $this->getComment())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_COMMENT, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_COMMENT, null, $v->_getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getMethod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_METHOD, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_METHOD, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -683,8 +700,10 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
             $a[self::FIELD_BODY_SITE] = $v;
         }
         if (null !== ($v = $this->getCollectedDateTime())) {
-            $a[self::FIELD_COLLECTED_DATE_TIME] = (string)$v;
-            $a[self::FIELD_COLLECTED_DATE_TIME_EXT] = $v;
+            $a[self::FIELD_COLLECTED_DATE_TIME] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_COLLECTED_DATE_TIME_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getCollectedPeriod())) {
             $a[self::FIELD_COLLECTED_PERIOD] = $v;
@@ -694,10 +713,17 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
         }
         if ([] !== ($vs = $this->getComment())) {
             $a[self::FIELD_COMMENT] = [];
-            $a[self::FIELD_COMMENT_EXT] = [];
             foreach ($vs as $v) {
-                $a[self::FIELD_COMMENT][] = (string)$v;
-                $a[self::FIELD_COMMENT_EXT][] = $v;
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_COMMENT][] = $v->getValue();
+                if ($v->_hasNonValueFieldsDefined()) {
+                    if (!isset($a[self::FIELD_COMMENT_EXT])) {
+                        $a[self::FIELD_COMMENT_EXT] = [];
+                    }
+                    $a[self::FIELD_COMMENT_EXT][] = $v;
+                }
             }
         }
         if (null !== ($v = $this->getMethod())) {
@@ -706,7 +732,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
         if (null !== ($v = $this->getQuantity())) {
             $a[self::FIELD_QUANTITY] = $v;
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

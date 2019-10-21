@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRNa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,6 +87,7 @@ class FHIRNamingSystemContact extends FHIRBackboneElement
     const FIELD_NAME = 'name';
     const FIELD_NAME_EXT = '_name';
     const FIELD_TELECOM = 'telecom';
+    const FIELD_TELECOM_EXT = '_telecom';
 
     /**
      * A sequence of Unicode characters
@@ -139,16 +140,23 @@ class FHIRNamingSystemContact extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_TELECOM])) {
+            $ext = (isset($data[self::FIELD_TELECOM_EXT]) && is_array($data[self::FIELD_TELECOM_EXT]))
+                ? $data[self::FIELD_TELECOM_EXT]
+                : null;
             if (is_array($data[self::FIELD_TELECOM])) {
-                foreach($data[self::FIELD_TELECOM] as $v) {
+                foreach($data[self::FIELD_TELECOM] as $i => $v) {
                     if ($v instanceof FHIRContactPoint) {
                         $this->addTelecom($v);
+                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
+                        $this->addTelecom(new FHIRContactPoint([FHIRContactPoint::FIELD_VALUE => $v] + $ext[$i]));
                     } else {
                         $this->addTelecom(new FHIRContactPoint($v));
                     }
                 }
-            } else if ($data[self::FIELD_TELECOM] instanceof FHIRContactPoint) {
+            } elseif ($data[self::FIELD_TELECOM] instanceof FHIRContactPoint) {
                 $this->addTelecom($data[self::FIELD_TELECOM]);
+            } elseif ($ext && is_scalar($data[self::FIELD_TELECOM])) {
+                $this->addTelecom(new FHIRContactPoint([FHIRContactPoint::FIELD_VALUE => $data[self::FIELD_TELECOM]] + $ext));
             } else {
                 $this->addTelecom(new FHIRContactPoint($data[self::FIELD_TELECOM]));
             }
@@ -158,7 +166,7 @@ class FHIRNamingSystemContact extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -166,17 +174,33 @@ class FHIRNamingSystemContact extends FHIRBackboneElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRNamingSystem\FHIRNamingSystemContact
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -304,13 +328,14 @@ class FHIRNamingSystemContact extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIRNamingSystemContact::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIRNamingSystemContact);
+            $type = new FHIRNamingSystemContact;
         } elseif (!is_object($type) || !($type instanceof FHIRNamingSystemContact)) {
             throw new \RuntimeException(sprintf(
                 'FHIRNamingSystemContact::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRNamingSystem\FHIRNamingSystemContact or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRBackboneElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -342,19 +367,18 @@ class FHIRNamingSystemContact extends FHIRBackboneElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getName())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_NAME, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_NAME, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getTelecom())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_TELECOM, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_TELECOM, null, $v->_getFHIRXMLNamespace()));
             }
         }
         return $sxe;
@@ -367,13 +391,27 @@ class FHIRNamingSystemContact extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getName())) {
-            $a[self::FIELD_NAME] = (string)$v;
-            $a[self::FIELD_NAME_EXT] = $v;
+            $a[self::FIELD_NAME] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_NAME_EXT] = $v;
+            }
         }
         if ([] !== ($vs = $this->getTelecom())) {
-            $a[self::FIELD_TELECOM] = $vs;
+            $a[self::FIELD_TELECOM] = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_TELECOM][] = $v->getValue();
+                if ($v->_hasNonValueFieldsDefined()) {
+                    if (!isset($a[self::FIELD_TELECOM_EXT])) {
+                        $a[self::FIELD_TELECOM_EXT] = [];
+                    }
+                    $a[self::FIELD_TELECOM_EXT][] = $v;
+                }
+            }
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

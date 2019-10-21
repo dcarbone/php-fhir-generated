@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:05+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -103,7 +103,9 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
     const FIELD_DO_NOT_PERFORM_EXT = '_doNotPerform';
     const FIELD_ENCOUNTER = 'encounter';
     const FIELD_GROUP_IDENTIFIER = 'groupIdentifier';
+    const FIELD_GROUP_IDENTIFIER_EXT = '_groupIdentifier';
     const FIELD_IDENTIFIER = 'identifier';
+    const FIELD_IDENTIFIER_EXT = '_identifier';
     const FIELD_MEDIUM = 'medium';
     const FIELD_NOTE = 'note';
     const FIELD_OCCURRENCE_DATE_TIME = 'occurrenceDateTime';
@@ -111,6 +113,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
     const FIELD_OCCURRENCE_PERIOD = 'occurrencePeriod';
     const FIELD_PAYLOAD = 'payload';
     const FIELD_PRIORITY = 'priority';
+    const FIELD_PRIORITY_EXT = '_priority';
     const FIELD_REASON_CODE = 'reasonCode';
     const FIELD_REASON_REFERENCE = 'reasonReference';
     const FIELD_RECIPIENT = 'recipient';
@@ -118,6 +121,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
     const FIELD_REQUESTER = 'requester';
     const FIELD_SENDER = 'sender';
     const FIELD_STATUS = 'status';
+    const FIELD_STATUS_EXT = '_status';
     const FIELD_STATUS_REASON = 'statusReason';
     const FIELD_SUBJECT = 'subject';
 
@@ -470,23 +474,35 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
             }
         }
         if (isset($data[self::FIELD_GROUP_IDENTIFIER])) {
+            $ext = (isset($data[self::FIELD_GROUP_IDENTIFIER_EXT]) && is_array($data[self::FIELD_GROUP_IDENTIFIER_EXT]))
+                ? $data[self::FIELD_GROUP_IDENTIFIER_EXT]
+                : null;
             if ($data[self::FIELD_GROUP_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->setGroupIdentifier($data[self::FIELD_GROUP_IDENTIFIER]);
+            } elseif ($ext && is_scalar($data[self::FIELD_GROUP_IDENTIFIER])) {
+                $this->setGroupIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_GROUP_IDENTIFIER]] + $ext));
             } else {
                 $this->setGroupIdentifier(new FHIRIdentifier($data[self::FIELD_GROUP_IDENTIFIER]));
             }
         }
         if (isset($data[self::FIELD_IDENTIFIER])) {
+            $ext = (isset($data[self::FIELD_IDENTIFIER_EXT]) && is_array($data[self::FIELD_IDENTIFIER_EXT]))
+                ? $data[self::FIELD_IDENTIFIER_EXT]
+                : null;
             if (is_array($data[self::FIELD_IDENTIFIER])) {
-                foreach($data[self::FIELD_IDENTIFIER] as $v) {
+                foreach($data[self::FIELD_IDENTIFIER] as $i => $v) {
                     if ($v instanceof FHIRIdentifier) {
                         $this->addIdentifier($v);
+                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
+                        $this->addIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $v] + $ext[$i]));
                     } else {
                         $this->addIdentifier(new FHIRIdentifier($v));
                     }
                 }
-            } else if ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
+            } elseif ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->addIdentifier($data[self::FIELD_IDENTIFIER]);
+            } elseif ($ext && is_scalar($data[self::FIELD_IDENTIFIER])) {
+                $this->addIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
             } else {
                 $this->addIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
             }
@@ -556,8 +572,13 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
             }
         }
         if (isset($data[self::FIELD_PRIORITY])) {
+            $ext = (isset($data[self::FIELD_PRIORITY_EXT]) && is_array($data[self::FIELD_PRIORITY_EXT]))
+                ? $data[self::FIELD_PRIORITY_EXT]
+                : null;
             if ($data[self::FIELD_PRIORITY] instanceof FHIRRequestPriority) {
                 $this->setPriority($data[self::FIELD_PRIORITY]);
+            } elseif ($ext && is_scalar($data[self::FIELD_PRIORITY])) {
+                $this->setPriority(new FHIRRequestPriority([FHIRRequestPriority::FIELD_VALUE => $data[self::FIELD_PRIORITY]] + $ext));
             } else {
                 $this->setPriority(new FHIRRequestPriority($data[self::FIELD_PRIORITY]));
             }
@@ -637,8 +658,13 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
             }
         }
         if (isset($data[self::FIELD_STATUS])) {
+            $ext = (isset($data[self::FIELD_STATUS_EXT]) && is_array($data[self::FIELD_STATUS_EXT]))
+                ? $data[self::FIELD_STATUS_EXT]
+                : null;
             if ($data[self::FIELD_STATUS] instanceof FHIRRequestStatus) {
                 $this->setStatus($data[self::FIELD_STATUS]);
+            } elseif ($ext && is_scalar($data[self::FIELD_STATUS])) {
+                $this->setStatus(new FHIRRequestStatus([FHIRRequestStatus::FIELD_VALUE => $data[self::FIELD_STATUS]] + $ext));
             } else {
                 $this->setStatus(new FHIRRequestStatus($data[self::FIELD_STATUS]));
             }
@@ -662,7 +688,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -670,21 +696,45 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<CommunicationRequest{$xmlns}></CommunicationRequest>";
+    }
+
+    /**
+     * @return string
+     */
+    public function _getResourceType()
+    {
+        return static::FHIR_TYPE_NAME;
     }
 
 
@@ -1772,13 +1822,14 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
             throw new \InvalidArgumentException(sprintf('FHIRCommunicationRequest::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRDomainResource::xmlUnserialize($sxe, new FHIRCommunicationRequest);
+            $type = new FHIRCommunicationRequest;
         } elseif (!is_object($type) || !($type instanceof FHIRCommunicationRequest)) {
             throw new \RuntimeException(sprintf(
                 'FHIRCommunicationRequest::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRDomainResource::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -1899,7 +1950,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
@@ -1908,11 +1959,11 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ABOUT, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_ABOUT, null, $v->_getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getAuthoredOn())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_AUTHORED_ON, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_AUTHORED_ON, null, $v->_getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getBasedOn())) {
@@ -1920,7 +1971,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_BASED_ON, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_BASED_ON, null, $v->_getFHIRXMLNamespace()));
             }
         }
 
@@ -1929,27 +1980,25 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CATEGORY, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_CATEGORY, null, $v->_getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getDoNotPerform())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DO_NOT_PERFORM, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DO_NOT_PERFORM, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getEncounter())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ENCOUNTER, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ENCOUNTER, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getGroupIdentifier())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_GROUP_IDENTIFIER, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_GROUP_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
             }
         }
 
@@ -1958,7 +2007,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_MEDIUM, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_MEDIUM, null, $v->_getFHIRXMLNamespace()));
             }
         }
 
@@ -1967,15 +2016,15 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_NOTE, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_NOTE, null, $v->_getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getOccurrenceDateTime())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_OCCURRENCE_DATE_TIME, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_OCCURRENCE_DATE_TIME, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getOccurrencePeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_OCCURRENCE_PERIOD, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_OCCURRENCE_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getPayload())) {
@@ -1983,12 +2032,11 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PAYLOAD, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_PAYLOAD, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getPriority())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PRIORITY, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PRIORITY, null, $v->_getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getReasonCode())) {
@@ -1996,7 +2044,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_REASON_CODE, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_REASON_CODE, null, $v->_getFHIRXMLNamespace()));
             }
         }
 
@@ -2005,7 +2053,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_REASON_REFERENCE, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_REASON_REFERENCE, null, $v->_getFHIRXMLNamespace()));
             }
         }
 
@@ -2014,7 +2062,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_RECIPIENT, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_RECIPIENT, null, $v->_getFHIRXMLNamespace()));
             }
         }
 
@@ -2023,28 +2071,27 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_REPLACES, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_REPLACES, null, $v->_getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getRequester())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REQUESTER, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_REQUESTER, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getSender())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SENDER, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SENDER, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getStatus())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getStatusReason())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS_REASON, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS_REASON, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getSubject())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBJECT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBJECT, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -2059,8 +2106,10 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
             $a[self::FIELD_ABOUT] = $vs;
         }
         if (null !== ($v = $this->getAuthoredOn())) {
-            $a[self::FIELD_AUTHORED_ON] = (string)$v;
-            $a[self::FIELD_AUTHORED_ON_EXT] = $v;
+            $a[self::FIELD_AUTHORED_ON] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_AUTHORED_ON_EXT] = $v;
+            }
         }
         if ([] !== ($vs = $this->getBasedOn())) {
             $a[self::FIELD_BASED_ON] = $vs;
@@ -2069,17 +2118,34 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
             $a[self::FIELD_CATEGORY] = $vs;
         }
         if (null !== ($v = $this->getDoNotPerform())) {
-            $a[self::FIELD_DO_NOT_PERFORM] = (string)$v;
-            $a[self::FIELD_DO_NOT_PERFORM_EXT] = $v;
+            $a[self::FIELD_DO_NOT_PERFORM] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DO_NOT_PERFORM_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getEncounter())) {
             $a[self::FIELD_ENCOUNTER] = $v;
         }
         if (null !== ($v = $this->getGroupIdentifier())) {
-            $a[self::FIELD_GROUP_IDENTIFIER] = $v;
+            $a[self::FIELD_GROUP_IDENTIFIER] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_GROUP_IDENTIFIER_EXT] = $v;
+            }
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $vs;
+            $a[self::FIELD_IDENTIFIER] = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_IDENTIFIER][] = $v->getValue();
+                if ($v->_hasNonValueFieldsDefined()) {
+                    if (!isset($a[self::FIELD_IDENTIFIER_EXT])) {
+                        $a[self::FIELD_IDENTIFIER_EXT] = [];
+                    }
+                    $a[self::FIELD_IDENTIFIER_EXT][] = $v;
+                }
+            }
         }
         if ([] !== ($vs = $this->getMedium())) {
             $a[self::FIELD_MEDIUM] = $vs;
@@ -2088,8 +2154,10 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
             $a[self::FIELD_NOTE] = $vs;
         }
         if (null !== ($v = $this->getOccurrenceDateTime())) {
-            $a[self::FIELD_OCCURRENCE_DATE_TIME] = (string)$v;
-            $a[self::FIELD_OCCURRENCE_DATE_TIME_EXT] = $v;
+            $a[self::FIELD_OCCURRENCE_DATE_TIME] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_OCCURRENCE_DATE_TIME_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getOccurrencePeriod())) {
             $a[self::FIELD_OCCURRENCE_PERIOD] = $v;
@@ -2098,7 +2166,10 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
             $a[self::FIELD_PAYLOAD] = $vs;
         }
         if (null !== ($v = $this->getPriority())) {
-            $a[self::FIELD_PRIORITY] = $v;
+            $a[self::FIELD_PRIORITY] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_PRIORITY_EXT] = $v;
+            }
         }
         if ([] !== ($vs = $this->getReasonCode())) {
             $a[self::FIELD_REASON_CODE] = $vs;
@@ -2119,7 +2190,10 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
             $a[self::FIELD_SENDER] = $v;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v;
+            $a[self::FIELD_STATUS] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_STATUS_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getStatusReason())) {
             $a[self::FIELD_STATUS_REASON] = $v;
@@ -2127,7 +2201,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
         if (null !== ($v = $this->getSubject())) {
             $a[self::FIELD_SUBJECT] = $v;
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }
 
     /**

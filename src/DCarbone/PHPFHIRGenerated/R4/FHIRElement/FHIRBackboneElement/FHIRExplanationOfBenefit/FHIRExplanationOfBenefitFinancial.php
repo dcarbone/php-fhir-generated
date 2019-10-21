@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExpla
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:05+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,12 +87,14 @@ class FHIRExplanationOfBenefitFinancial extends FHIRBackboneElement
     private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ALLOWED_MONEY = 'allowedMoney';
+    const FIELD_ALLOWED_MONEY_EXT = '_allowedMoney';
     const FIELD_ALLOWED_STRING = 'allowedString';
     const FIELD_ALLOWED_STRING_EXT = '_allowedString';
     const FIELD_ALLOWED_UNSIGNED_INT = 'allowedUnsignedInt';
     const FIELD_ALLOWED_UNSIGNED_INT_EXT = '_allowedUnsignedInt';
     const FIELD_TYPE = 'type';
     const FIELD_USED_MONEY = 'usedMoney';
+    const FIELD_USED_MONEY_EXT = '_usedMoney';
     const FIELD_USED_UNSIGNED_INT = 'usedUnsignedInt';
     const FIELD_USED_UNSIGNED_INT_EXT = '_usedUnsignedInt';
 
@@ -175,8 +177,13 @@ class FHIRExplanationOfBenefitFinancial extends FHIRBackboneElement
         }
         parent::__construct($data);
         if (isset($data[self::FIELD_ALLOWED_MONEY])) {
+            $ext = (isset($data[self::FIELD_ALLOWED_MONEY_EXT]) && is_array($data[self::FIELD_ALLOWED_MONEY_EXT]))
+                ? $data[self::FIELD_ALLOWED_MONEY_EXT]
+                : null;
             if ($data[self::FIELD_ALLOWED_MONEY] instanceof FHIRMoney) {
                 $this->setAllowedMoney($data[self::FIELD_ALLOWED_MONEY]);
+            } elseif ($ext && is_scalar($data[self::FIELD_ALLOWED_MONEY])) {
+                $this->setAllowedMoney(new FHIRMoney([FHIRMoney::FIELD_VALUE => $data[self::FIELD_ALLOWED_MONEY]] + $ext));
             } else {
                 $this->setAllowedMoney(new FHIRMoney($data[self::FIELD_ALLOWED_MONEY]));
             }
@@ -213,8 +220,13 @@ class FHIRExplanationOfBenefitFinancial extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_USED_MONEY])) {
+            $ext = (isset($data[self::FIELD_USED_MONEY_EXT]) && is_array($data[self::FIELD_USED_MONEY_EXT]))
+                ? $data[self::FIELD_USED_MONEY_EXT]
+                : null;
             if ($data[self::FIELD_USED_MONEY] instanceof FHIRMoney) {
                 $this->setUsedMoney($data[self::FIELD_USED_MONEY]);
+            } elseif ($ext && is_scalar($data[self::FIELD_USED_MONEY])) {
+                $this->setUsedMoney(new FHIRMoney([FHIRMoney::FIELD_VALUE => $data[self::FIELD_USED_MONEY]] + $ext));
             } else {
                 $this->setUsedMoney(new FHIRMoney($data[self::FIELD_USED_MONEY]));
             }
@@ -236,7 +248,7 @@ class FHIRExplanationOfBenefitFinancial extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -244,17 +256,33 @@ class FHIRExplanationOfBenefitFinancial extends FHIRBackboneElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitFinancial
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -491,13 +519,14 @@ class FHIRExplanationOfBenefitFinancial extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIRExplanationOfBenefitFinancial::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIRExplanationOfBenefitFinancial);
+            $type = new FHIRExplanationOfBenefitFinancial;
         } elseif (!is_object($type) || !($type instanceof FHIRExplanationOfBenefitFinancial)) {
             throw new \RuntimeException(sprintf(
                 'FHIRExplanationOfBenefitFinancial::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitFinancial or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRBackboneElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -545,29 +574,27 @@ class FHIRExplanationOfBenefitFinancial extends FHIRBackboneElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAllowedMoney())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ALLOWED_MONEY, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ALLOWED_MONEY, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getAllowedString())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ALLOWED_STRING, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ALLOWED_STRING, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getAllowedUnsignedInt())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ALLOWED_UNSIGNED_INT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ALLOWED_UNSIGNED_INT, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getUsedMoney())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_USED_MONEY, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_USED_MONEY, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getUsedUnsignedInt())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_USED_UNSIGNED_INT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_USED_UNSIGNED_INT, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -579,27 +606,39 @@ class FHIRExplanationOfBenefitFinancial extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAllowedMoney())) {
-            $a[self::FIELD_ALLOWED_MONEY] = $v;
+            $a[self::FIELD_ALLOWED_MONEY] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_ALLOWED_MONEY_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getAllowedString())) {
-            $a[self::FIELD_ALLOWED_STRING] = (string)$v;
-            $a[self::FIELD_ALLOWED_STRING_EXT] = $v;
+            $a[self::FIELD_ALLOWED_STRING] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_ALLOWED_STRING_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getAllowedUnsignedInt())) {
-            $a[self::FIELD_ALLOWED_UNSIGNED_INT] = (string)$v;
-            $a[self::FIELD_ALLOWED_UNSIGNED_INT_EXT] = $v;
+            $a[self::FIELD_ALLOWED_UNSIGNED_INT] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_ALLOWED_UNSIGNED_INT_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;
         }
         if (null !== ($v = $this->getUsedMoney())) {
-            $a[self::FIELD_USED_MONEY] = $v;
+            $a[self::FIELD_USED_MONEY] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_USED_MONEY_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getUsedUnsignedInt())) {
-            $a[self::FIELD_USED_UNSIGNED_INT] = (string)$v;
-            $a[self::FIELD_USED_UNSIGNED_INT_EXT] = $v;
+            $a[self::FIELD_USED_UNSIGNED_INT] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_USED_UNSIGNED_INT_EXT] = $v;
+            }
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

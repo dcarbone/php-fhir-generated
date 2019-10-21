@@ -5,7 +5,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\PHPFHIRTests\FHIRElement\FHIRBackboneElem
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:05+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,7 +63,6 @@ namespace DCarbone\PHPFHIRGenerated\R4\PHPFHIRTests\FHIRElement\FHIRBackboneElem
 
 use PHPUnit\Framework\TestCase;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioVersion;
-
 
 /**
  * Class FHIRExampleScenarioVersionTest

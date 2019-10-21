@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -73,10 +73,13 @@ abstract class PHPFHIRConstants
     const SOURCE_GENERATION_DATE = 'Sat, Oct 24, 2015 07:41+1100';
 
     // PHPFHIR
-    const CODE_GENERATION_DATE = 'October 7th, 2019 22:31+0000';
+    const CODE_GENERATION_DATE = 'October 21st, 2019 04:04+0000';
 
     // Common
     const JSON_FIELD_RESOURCE_TYPE = 'resourceType';
+    const JSON_FIELD_FHIR_COMMENTS = 'fhir_comments';
+    const STRING_TRUE = 'true';
+    const STRING_FALSE = 'false';
 
     // Type names
     const TYPE_NAME_ACCOUNT = 'Account';

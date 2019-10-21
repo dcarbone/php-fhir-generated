@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:05+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,6 +83,7 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement
     private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ADJUDICATION = 'adjudication';
+    const FIELD_ADJUDICATION_EXT = '_adjudication';
     const FIELD_NOTE_NUMBER = 'noteNumber';
     const FIELD_NOTE_NUMBER_EXT = '_noteNumber';
     const FIELD_SUB_DETAIL_SEQUENCE = 'subDetailSequence';
@@ -136,16 +137,23 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement
         }
         parent::__construct($data);
         if (isset($data[self::FIELD_ADJUDICATION])) {
+            $ext = (isset($data[self::FIELD_ADJUDICATION_EXT]) && is_array($data[self::FIELD_ADJUDICATION_EXT]))
+                ? $data[self::FIELD_ADJUDICATION_EXT]
+                : null;
             if (is_array($data[self::FIELD_ADJUDICATION])) {
-                foreach($data[self::FIELD_ADJUDICATION] as $v) {
+                foreach($data[self::FIELD_ADJUDICATION] as $i => $v) {
                     if ($v instanceof FHIRClaimResponseAdjudication) {
                         $this->addAdjudication($v);
+                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
+                        $this->addAdjudication(new FHIRClaimResponseAdjudication([FHIRClaimResponseAdjudication::FIELD_VALUE => $v] + $ext[$i]));
                     } else {
                         $this->addAdjudication(new FHIRClaimResponseAdjudication($v));
                     }
                 }
-            } else if ($data[self::FIELD_ADJUDICATION] instanceof FHIRClaimResponseAdjudication) {
+            } elseif ($data[self::FIELD_ADJUDICATION] instanceof FHIRClaimResponseAdjudication) {
                 $this->addAdjudication($data[self::FIELD_ADJUDICATION]);
+            } elseif ($ext && is_scalar($data[self::FIELD_ADJUDICATION])) {
+                $this->addAdjudication(new FHIRClaimResponseAdjudication([FHIRClaimResponseAdjudication::FIELD_VALUE => $data[self::FIELD_ADJUDICATION]] + $ext));
             } else {
                 $this->addAdjudication(new FHIRClaimResponseAdjudication($data[self::FIELD_ADJUDICATION]));
             }
@@ -189,7 +197,7 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -197,17 +205,33 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseSubDetail
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -396,13 +420,14 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIRClaimResponseSubDetail::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIRClaimResponseSubDetail);
+            $type = new FHIRClaimResponseSubDetail;
         } elseif (!is_object($type) || !($type instanceof FHIRClaimResponseSubDetail)) {
             throw new \RuntimeException(sprintf(
                 'FHIRClaimResponseSubDetail::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseSubDetail or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRBackboneElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -442,16 +467,15 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getAdjudication())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ADJUDICATION, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_ADJUDICATION, null, $v->_getFHIRXMLNamespace()));
             }
         }
         if ([] !== ($vs = $this->getNoteNumber())) {
@@ -459,11 +483,11 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_NOTE_NUMBER, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_NOTE_NUMBER, null, $v->_getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getSubDetailSequence())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SUB_DETAIL_SEQUENCE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SUB_DETAIL_SEQUENCE, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -475,21 +499,42 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getAdjudication())) {
-            $a[self::FIELD_ADJUDICATION] = $vs;
+            $a[self::FIELD_ADJUDICATION] = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_ADJUDICATION][] = $v->getValue();
+                if ($v->_hasNonValueFieldsDefined()) {
+                    if (!isset($a[self::FIELD_ADJUDICATION_EXT])) {
+                        $a[self::FIELD_ADJUDICATION_EXT] = [];
+                    }
+                    $a[self::FIELD_ADJUDICATION_EXT][] = $v;
+                }
+            }
         }
         if ([] !== ($vs = $this->getNoteNumber())) {
             $a[self::FIELD_NOTE_NUMBER] = [];
-            $a[self::FIELD_NOTE_NUMBER_EXT] = [];
             foreach ($vs as $v) {
-                $a[self::FIELD_NOTE_NUMBER][] = (string)$v;
-                $a[self::FIELD_NOTE_NUMBER_EXT][] = $v;
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_NOTE_NUMBER][] = $v->getValue();
+                if ($v->_hasNonValueFieldsDefined()) {
+                    if (!isset($a[self::FIELD_NOTE_NUMBER_EXT])) {
+                        $a[self::FIELD_NOTE_NUMBER_EXT] = [];
+                    }
+                    $a[self::FIELD_NOTE_NUMBER_EXT][] = $v;
+                }
             }
         }
         if (null !== ($v = $this->getSubDetailSequence())) {
-            $a[self::FIELD_SUB_DETAIL_SEQUENCE] = (string)$v;
-            $a[self::FIELD_SUB_DETAIL_SEQUENCE_EXT] = $v;
+            $a[self::FIELD_SUB_DETAIL_SEQUENCE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_SUB_DETAIL_SEQUENCE_EXT] = $v;
+            }
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

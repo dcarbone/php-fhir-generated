@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:05+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -191,7 +191,7 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -199,17 +199,33 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeIngredient
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -380,13 +396,14 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIRMedicationKnowledgeIngredient::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIRMedicationKnowledgeIngredient);
+            $type = new FHIRMedicationKnowledgeIngredient;
         } elseif (!is_object($type) || !($type instanceof FHIRMedicationKnowledgeIngredient)) {
             throw new \RuntimeException(sprintf(
                 'FHIRMedicationKnowledgeIngredient::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeIngredient or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRBackboneElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -422,23 +439,23 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getIsActive())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_IS_ACTIVE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_IS_ACTIVE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getItemCodeableConcept())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ITEM_CODEABLE_CONCEPT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ITEM_CODEABLE_CONCEPT, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getItemReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ITEM_REFERENCE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ITEM_REFERENCE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getStrength())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_STRENGTH, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_STRENGTH, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -450,8 +467,10 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getIsActive())) {
-            $a[self::FIELD_IS_ACTIVE] = (string)$v;
-            $a[self::FIELD_IS_ACTIVE_EXT] = $v;
+            $a[self::FIELD_IS_ACTIVE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_IS_ACTIVE_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getItemCodeableConcept())) {
             $a[self::FIELD_ITEM_CODEABLE_CONCEPT] = $v;
@@ -462,7 +481,7 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
         if (null !== ($v = $this->getStrength())) {
             $a[self::FIELD_STRENGTH] = $v;
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

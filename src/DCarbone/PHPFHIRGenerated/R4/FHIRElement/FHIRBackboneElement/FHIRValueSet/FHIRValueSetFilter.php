@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValue
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:05+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -68,6 +68,8 @@ use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRFilterOperator;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRValueContainerInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRValueContainerTrait;
 
 /**
  * A ValueSet resource instance specifies a set of codes drawn from one or more
@@ -78,8 +80,10 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
  * Class FHIRValueSetFilter
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet
  */
-class FHIRValueSetFilter extends FHIRBackboneElement
+class FHIRValueSetFilter extends FHIRBackboneElement implements PHPFHIRValueContainerInterface
 {
+    use PHPFHIRValueContainerTrait;
+
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_VALUE_SET_DOT_FILTER;
 
@@ -87,6 +91,7 @@ class FHIRValueSetFilter extends FHIRBackboneElement
     private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_OP = 'op';
+    const FIELD_OP_EXT = '_op';
     const FIELD_PROPERTY = 'property';
     const FIELD_PROPERTY_EXT = '_property';
     const FIELD_VALUE = 'value';
@@ -137,6 +142,10 @@ class FHIRValueSetFilter extends FHIRBackboneElement
         if (null === $data || [] === $data) {
             return;
         }
+        if (is_scalar($data)) {
+            $this->setValue(new FHIRString($data));
+            return;
+        }
         if (!is_array($data)) {
             throw new \InvalidArgumentException(sprintf(
                 'FHIRValueSetFilter::_construct - $data expected to be null or array, %s seen',
@@ -145,8 +154,13 @@ class FHIRValueSetFilter extends FHIRBackboneElement
         }
         parent::__construct($data);
         if (isset($data[self::FIELD_OP])) {
+            $ext = (isset($data[self::FIELD_OP_EXT]) && is_array($data[self::FIELD_OP_EXT]))
+                ? $data[self::FIELD_OP_EXT]
+                : null;
             if ($data[self::FIELD_OP] instanceof FHIRFilterOperator) {
                 $this->setOp($data[self::FIELD_OP]);
+            } elseif ($ext && is_scalar($data[self::FIELD_OP])) {
+                $this->setOp(new FHIRFilterOperator([FHIRFilterOperator::FIELD_VALUE => $data[self::FIELD_OP]] + $ext));
             } else {
                 $this->setOp(new FHIRFilterOperator($data[self::FIELD_OP]));
             }
@@ -180,7 +194,7 @@ class FHIRValueSetFilter extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -188,17 +202,33 @@ class FHIRValueSetFilter extends FHIRBackboneElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetFilter
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -230,6 +260,7 @@ class FHIRValueSetFilter extends FHIRBackboneElement
      */
     public function setOp(FHIRFilterOperator $op = null)
     {
+        $this->_markNonValueFieldsDefined();
         $this->op = $op;
         return $this;
     }
@@ -345,13 +376,14 @@ class FHIRValueSetFilter extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIRValueSetFilter::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIRValueSetFilter);
+            $type = new FHIRValueSetFilter;
         } elseif (!is_object($type) || !($type instanceof FHIRValueSetFilter)) {
             throw new \RuntimeException(sprintf(
                 'FHIRValueSetFilter::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetFilter or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRBackboneElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -387,18 +419,17 @@ class FHIRValueSetFilter extends FHIRBackboneElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getOp())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_OP, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_OP, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getProperty())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PROPERTY, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PROPERTY, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getValue())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -410,17 +441,24 @@ class FHIRValueSetFilter extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getOp())) {
-            $a[self::FIELD_OP] = $v;
+            $a[self::FIELD_OP] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_OP_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getProperty())) {
-            $a[self::FIELD_PROPERTY] = (string)$v;
-            $a[self::FIELD_PROPERTY_EXT] = $v;
+            $a[self::FIELD_PROPERTY] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_PROPERTY_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getValue())) {
-            $a[self::FIELD_VALUE] = (string)$v;
-            $a[self::FIELD_VALUE_EXT] = $v;
+            $a[self::FIELD_VALUE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_VALUE_EXT] = $v;
+            }
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

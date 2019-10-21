@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVisio
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:05+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -103,7 +103,9 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
     const FIELD_DIAMETER = 'diameter';
     const FIELD_DIAMETER_EXT = '_diameter';
     const FIELD_DURATION = 'duration';
+    const FIELD_DURATION_EXT = '_duration';
     const FIELD_EYE = 'eye';
+    const FIELD_EYE_EXT = '_eye';
     const FIELD_NOTE = 'note';
     const FIELD_POWER = 'power';
     const FIELD_POWER_EXT = '_power';
@@ -363,15 +365,25 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_DURATION])) {
+            $ext = (isset($data[self::FIELD_DURATION_EXT]) && is_array($data[self::FIELD_DURATION_EXT]))
+                ? $data[self::FIELD_DURATION_EXT]
+                : null;
             if ($data[self::FIELD_DURATION] instanceof FHIRQuantity) {
                 $this->setDuration($data[self::FIELD_DURATION]);
+            } elseif ($ext && is_scalar($data[self::FIELD_DURATION])) {
+                $this->setDuration(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_DURATION]] + $ext));
             } else {
                 $this->setDuration(new FHIRQuantity($data[self::FIELD_DURATION]));
             }
         }
         if (isset($data[self::FIELD_EYE])) {
+            $ext = (isset($data[self::FIELD_EYE_EXT]) && is_array($data[self::FIELD_EYE_EXT]))
+                ? $data[self::FIELD_EYE_EXT]
+                : null;
             if ($data[self::FIELD_EYE] instanceof FHIRVisionEyes) {
                 $this->setEye($data[self::FIELD_EYE]);
+            } elseif ($ext && is_scalar($data[self::FIELD_EYE])) {
+                $this->setEye(new FHIRVisionEyes([FHIRVisionEyes::FIELD_VALUE => $data[self::FIELD_EYE]] + $ext));
             } else {
                 $this->setEye(new FHIRVisionEyes($data[self::FIELD_EYE]));
             }
@@ -442,7 +454,7 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -450,17 +462,33 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionLensSpecification
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -1053,13 +1081,14 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIRVisionPrescriptionLensSpecification::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIRVisionPrescriptionLensSpecification);
+            $type = new FHIRVisionPrescriptionLensSpecification;
         } elseif (!is_object($type) || !($type instanceof FHIRVisionPrescriptionLensSpecification)) {
             throw new \RuntimeException(sprintf(
                 'FHIRVisionPrescriptionLensSpecification::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionLensSpecification or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRBackboneElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -1153,37 +1182,35 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getAdd())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ADD, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ADD, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getAxis())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_AXIS, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_AXIS, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getBackCurve())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_BACK_CURVE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_BACK_CURVE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getBrand())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_BRAND, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_BRAND, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getColor())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_COLOR, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_COLOR, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getCylinder())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CYLINDER, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CYLINDER, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDiameter())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DIAMETER, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DIAMETER, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getDuration())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DURATION, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DURATION, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getEye())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EYE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EYE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getNote())) {
@@ -1191,11 +1218,11 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_NOTE, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_NOTE, null, $v->_getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getPower())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_POWER, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_POWER, null, $v->_getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getPrism())) {
@@ -1203,15 +1230,15 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PRISM, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_PRISM, null, $v->_getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getProduct())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PRODUCT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PRODUCT, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getSphere())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SPHERE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SPHERE, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -1223,45 +1250,67 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAdd())) {
-            $a[self::FIELD_ADD] = (string)$v;
-            $a[self::FIELD_ADD_EXT] = $v;
+            $a[self::FIELD_ADD] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_ADD_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getAxis())) {
-            $a[self::FIELD_AXIS] = (string)$v;
-            $a[self::FIELD_AXIS_EXT] = $v;
+            $a[self::FIELD_AXIS] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_AXIS_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getBackCurve())) {
-            $a[self::FIELD_BACK_CURVE] = (string)$v;
-            $a[self::FIELD_BACK_CURVE_EXT] = $v;
+            $a[self::FIELD_BACK_CURVE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_BACK_CURVE_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getBrand())) {
-            $a[self::FIELD_BRAND] = (string)$v;
-            $a[self::FIELD_BRAND_EXT] = $v;
+            $a[self::FIELD_BRAND] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_BRAND_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getColor())) {
-            $a[self::FIELD_COLOR] = (string)$v;
-            $a[self::FIELD_COLOR_EXT] = $v;
+            $a[self::FIELD_COLOR] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_COLOR_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getCylinder())) {
-            $a[self::FIELD_CYLINDER] = (string)$v;
-            $a[self::FIELD_CYLINDER_EXT] = $v;
+            $a[self::FIELD_CYLINDER] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_CYLINDER_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getDiameter())) {
-            $a[self::FIELD_DIAMETER] = (string)$v;
-            $a[self::FIELD_DIAMETER_EXT] = $v;
+            $a[self::FIELD_DIAMETER] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DIAMETER_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getDuration())) {
-            $a[self::FIELD_DURATION] = $v;
+            $a[self::FIELD_DURATION] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DURATION_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getEye())) {
-            $a[self::FIELD_EYE] = $v;
+            $a[self::FIELD_EYE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_EYE_EXT] = $v;
+            }
         }
         if ([] !== ($vs = $this->getNote())) {
             $a[self::FIELD_NOTE] = $vs;
         }
         if (null !== ($v = $this->getPower())) {
-            $a[self::FIELD_POWER] = (string)$v;
-            $a[self::FIELD_POWER_EXT] = $v;
+            $a[self::FIELD_POWER] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_POWER_EXT] = $v;
+            }
         }
         if ([] !== ($vs = $this->getPrism())) {
             $a[self::FIELD_PRISM] = $vs;
@@ -1270,10 +1319,12 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
             $a[self::FIELD_PRODUCT] = $v;
         }
         if (null !== ($v = $this->getSphere())) {
-            $a[self::FIELD_SPHERE] = (string)$v;
-            $a[self::FIELD_SPHERE_EXT] = $v;
+            $a[self::FIELD_SPHERE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_SPHERE_EXT] = $v;
+            }
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

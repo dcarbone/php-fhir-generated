@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -102,7 +102,7 @@ class FHIRUnknownContentCodeList implements PHPFHIRTypeInterface
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -110,17 +110,33 @@ class FHIRUnknownContentCodeList implements PHPFHIRTypeInterface
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRUnknownContentCodeList
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -157,7 +173,7 @@ class FHIRUnknownContentCodeList implements PHPFHIRTypeInterface
      * Returns the list of allowed values for this type
      * @return string[]
      */
-    public function getValueList()
+    public function _getAllowedValueList()
     {
         return self::$valueList;
     }
@@ -165,7 +181,7 @@ class FHIRUnknownContentCodeList implements PHPFHIRTypeInterface
     /**
      * @return bool
      */
-    public function isValid()
+    public function _isValid()
     {
         $v = $this->getValue();
         return null === $v || in_array((string)$v, self::$valueList, true);
@@ -194,7 +210,7 @@ class FHIRUnknownContentCodeList implements PHPFHIRTypeInterface
             throw new \InvalidArgumentException(sprintf('FHIRUnknownContentCodeList::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = new static();
+            $type = new FHIRUnknownContentCodeList;
         } elseif (!is_object($type) || !($type instanceof FHIRUnknownContentCodeList)) {
             throw new \RuntimeException(sprintf(
                 'FHIRUnknownContentCodeList::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRUnknownContentCodeList or null, %s seen.',
@@ -228,7 +244,7 @@ class FHIRUnknownContentCodeList implements PHPFHIRTypeInterface
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         $sxe->addAttribute(self::FIELD_VALUE, (string)$this);
         return $sxe;

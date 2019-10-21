@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -110,6 +110,7 @@ class FHIRElementDefinition extends FHIRElement
     const FIELD_DEFAULT_VALUE_CODEABLE_CONCEPT = 'defaultValueCodeableConcept';
     const FIELD_DEFAULT_VALUE_CODING = 'defaultValueCoding';
     const FIELD_DEFAULT_VALUE_CONTACT_POINT = 'defaultValueContactPoint';
+    const FIELD_DEFAULT_VALUE_CONTACT_POINT_EXT = '_defaultValueContactPoint';
     const FIELD_DEFAULT_VALUE_DATE = 'defaultValueDate';
     const FIELD_DEFAULT_VALUE_DATE_EXT = '_defaultValueDate';
     const FIELD_DEFAULT_VALUE_DATE_TIME = 'defaultValueDateTime';
@@ -120,6 +121,7 @@ class FHIRElementDefinition extends FHIRElement
     const FIELD_DEFAULT_VALUE_ID = 'defaultValueId';
     const FIELD_DEFAULT_VALUE_ID_EXT = '_defaultValueId';
     const FIELD_DEFAULT_VALUE_IDENTIFIER = 'defaultValueIdentifier';
+    const FIELD_DEFAULT_VALUE_IDENTIFIER_EXT = '_defaultValueIdentifier';
     const FIELD_DEFAULT_VALUE_INSTANT = 'defaultValueInstant';
     const FIELD_DEFAULT_VALUE_INSTANT_EXT = '_defaultValueInstant';
     const FIELD_DEFAULT_VALUE_INTEGER = 'defaultValueInteger';
@@ -133,6 +135,7 @@ class FHIRElementDefinition extends FHIRElement
     const FIELD_DEFAULT_VALUE_POSITIVE_INT = 'defaultValuePositiveInt';
     const FIELD_DEFAULT_VALUE_POSITIVE_INT_EXT = '_defaultValuePositiveInt';
     const FIELD_DEFAULT_VALUE_QUANTITY = 'defaultValueQuantity';
+    const FIELD_DEFAULT_VALUE_QUANTITY_EXT = '_defaultValueQuantity';
     const FIELD_DEFAULT_VALUE_RANGE = 'defaultValueRange';
     const FIELD_DEFAULT_VALUE_RATIO = 'defaultValueRatio';
     const FIELD_DEFAULT_VALUE_REFERENCE = 'defaultValueReference';
@@ -163,6 +166,7 @@ class FHIRElementDefinition extends FHIRElement
     const FIELD_EXAMPLE_CODEABLE_CONCEPT = 'exampleCodeableConcept';
     const FIELD_EXAMPLE_CODING = 'exampleCoding';
     const FIELD_EXAMPLE_CONTACT_POINT = 'exampleContactPoint';
+    const FIELD_EXAMPLE_CONTACT_POINT_EXT = '_exampleContactPoint';
     const FIELD_EXAMPLE_DATE = 'exampleDate';
     const FIELD_EXAMPLE_DATE_EXT = '_exampleDate';
     const FIELD_EXAMPLE_DATE_TIME = 'exampleDateTime';
@@ -173,6 +177,7 @@ class FHIRElementDefinition extends FHIRElement
     const FIELD_EXAMPLE_ID = 'exampleId';
     const FIELD_EXAMPLE_ID_EXT = '_exampleId';
     const FIELD_EXAMPLE_IDENTIFIER = 'exampleIdentifier';
+    const FIELD_EXAMPLE_IDENTIFIER_EXT = '_exampleIdentifier';
     const FIELD_EXAMPLE_INSTANT = 'exampleInstant';
     const FIELD_EXAMPLE_INSTANT_EXT = '_exampleInstant';
     const FIELD_EXAMPLE_INTEGER = 'exampleInteger';
@@ -186,6 +191,7 @@ class FHIRElementDefinition extends FHIRElement
     const FIELD_EXAMPLE_POSITIVE_INT = 'examplePositiveInt';
     const FIELD_EXAMPLE_POSITIVE_INT_EXT = '_examplePositiveInt';
     const FIELD_EXAMPLE_QUANTITY = 'exampleQuantity';
+    const FIELD_EXAMPLE_QUANTITY_EXT = '_exampleQuantity';
     const FIELD_EXAMPLE_RANGE = 'exampleRange';
     const FIELD_EXAMPLE_RATIO = 'exampleRatio';
     const FIELD_EXAMPLE_REFERENCE = 'exampleReference';
@@ -214,6 +220,7 @@ class FHIRElementDefinition extends FHIRElement
     const FIELD_FIXED_CODEABLE_CONCEPT = 'fixedCodeableConcept';
     const FIELD_FIXED_CODING = 'fixedCoding';
     const FIELD_FIXED_CONTACT_POINT = 'fixedContactPoint';
+    const FIELD_FIXED_CONTACT_POINT_EXT = '_fixedContactPoint';
     const FIELD_FIXED_DATE = 'fixedDate';
     const FIELD_FIXED_DATE_EXT = '_fixedDate';
     const FIELD_FIXED_DATE_TIME = 'fixedDateTime';
@@ -224,6 +231,7 @@ class FHIRElementDefinition extends FHIRElement
     const FIELD_FIXED_ID = 'fixedId';
     const FIELD_FIXED_ID_EXT = '_fixedId';
     const FIELD_FIXED_IDENTIFIER = 'fixedIdentifier';
+    const FIELD_FIXED_IDENTIFIER_EXT = '_fixedIdentifier';
     const FIELD_FIXED_INSTANT = 'fixedInstant';
     const FIELD_FIXED_INSTANT_EXT = '_fixedInstant';
     const FIELD_FIXED_INTEGER = 'fixedInteger';
@@ -237,6 +245,7 @@ class FHIRElementDefinition extends FHIRElement
     const FIELD_FIXED_POSITIVE_INT = 'fixedPositiveInt';
     const FIELD_FIXED_POSITIVE_INT_EXT = '_fixedPositiveInt';
     const FIELD_FIXED_QUANTITY = 'fixedQuantity';
+    const FIELD_FIXED_QUANTITY_EXT = '_fixedQuantity';
     const FIELD_FIXED_RANGE = 'fixedRange';
     const FIELD_FIXED_RATIO = 'fixedRatio';
     const FIELD_FIXED_REFERENCE = 'fixedReference';
@@ -276,6 +285,7 @@ class FHIRElementDefinition extends FHIRElement
     const FIELD_MAX_VALUE_CODEABLE_CONCEPT = 'maxValueCodeableConcept';
     const FIELD_MAX_VALUE_CODING = 'maxValueCoding';
     const FIELD_MAX_VALUE_CONTACT_POINT = 'maxValueContactPoint';
+    const FIELD_MAX_VALUE_CONTACT_POINT_EXT = '_maxValueContactPoint';
     const FIELD_MAX_VALUE_DATE = 'maxValueDate';
     const FIELD_MAX_VALUE_DATE_EXT = '_maxValueDate';
     const FIELD_MAX_VALUE_DATE_TIME = 'maxValueDateTime';
@@ -286,6 +296,7 @@ class FHIRElementDefinition extends FHIRElement
     const FIELD_MAX_VALUE_ID = 'maxValueId';
     const FIELD_MAX_VALUE_ID_EXT = '_maxValueId';
     const FIELD_MAX_VALUE_IDENTIFIER = 'maxValueIdentifier';
+    const FIELD_MAX_VALUE_IDENTIFIER_EXT = '_maxValueIdentifier';
     const FIELD_MAX_VALUE_INSTANT = 'maxValueInstant';
     const FIELD_MAX_VALUE_INSTANT_EXT = '_maxValueInstant';
     const FIELD_MAX_VALUE_INTEGER = 'maxValueInteger';
@@ -299,6 +310,7 @@ class FHIRElementDefinition extends FHIRElement
     const FIELD_MAX_VALUE_POSITIVE_INT = 'maxValuePositiveInt';
     const FIELD_MAX_VALUE_POSITIVE_INT_EXT = '_maxValuePositiveInt';
     const FIELD_MAX_VALUE_QUANTITY = 'maxValueQuantity';
+    const FIELD_MAX_VALUE_QUANTITY_EXT = '_maxValueQuantity';
     const FIELD_MAX_VALUE_RANGE = 'maxValueRange';
     const FIELD_MAX_VALUE_RATIO = 'maxValueRatio';
     const FIELD_MAX_VALUE_REFERENCE = 'maxValueReference';
@@ -331,6 +343,7 @@ class FHIRElementDefinition extends FHIRElement
     const FIELD_MIN_VALUE_CODEABLE_CONCEPT = 'minValueCodeableConcept';
     const FIELD_MIN_VALUE_CODING = 'minValueCoding';
     const FIELD_MIN_VALUE_CONTACT_POINT = 'minValueContactPoint';
+    const FIELD_MIN_VALUE_CONTACT_POINT_EXT = '_minValueContactPoint';
     const FIELD_MIN_VALUE_DATE = 'minValueDate';
     const FIELD_MIN_VALUE_DATE_EXT = '_minValueDate';
     const FIELD_MIN_VALUE_DATE_TIME = 'minValueDateTime';
@@ -341,6 +354,7 @@ class FHIRElementDefinition extends FHIRElement
     const FIELD_MIN_VALUE_ID = 'minValueId';
     const FIELD_MIN_VALUE_ID_EXT = '_minValueId';
     const FIELD_MIN_VALUE_IDENTIFIER = 'minValueIdentifier';
+    const FIELD_MIN_VALUE_IDENTIFIER_EXT = '_minValueIdentifier';
     const FIELD_MIN_VALUE_INSTANT = 'minValueInstant';
     const FIELD_MIN_VALUE_INSTANT_EXT = '_minValueInstant';
     const FIELD_MIN_VALUE_INTEGER = 'minValueInteger';
@@ -354,6 +368,7 @@ class FHIRElementDefinition extends FHIRElement
     const FIELD_MIN_VALUE_POSITIVE_INT = 'minValuePositiveInt';
     const FIELD_MIN_VALUE_POSITIVE_INT_EXT = '_minValuePositiveInt';
     const FIELD_MIN_VALUE_QUANTITY = 'minValueQuantity';
+    const FIELD_MIN_VALUE_QUANTITY_EXT = '_minValueQuantity';
     const FIELD_MIN_VALUE_RANGE = 'minValueRange';
     const FIELD_MIN_VALUE_RATIO = 'minValueRatio';
     const FIELD_MIN_VALUE_REFERENCE = 'minValueReference';
@@ -390,6 +405,7 @@ class FHIRElementDefinition extends FHIRElement
     const FIELD_PATTERN_CODEABLE_CONCEPT = 'patternCodeableConcept';
     const FIELD_PATTERN_CODING = 'patternCoding';
     const FIELD_PATTERN_CONTACT_POINT = 'patternContactPoint';
+    const FIELD_PATTERN_CONTACT_POINT_EXT = '_patternContactPoint';
     const FIELD_PATTERN_DATE = 'patternDate';
     const FIELD_PATTERN_DATE_EXT = '_patternDate';
     const FIELD_PATTERN_DATE_TIME = 'patternDateTime';
@@ -400,6 +416,7 @@ class FHIRElementDefinition extends FHIRElement
     const FIELD_PATTERN_ID = 'patternId';
     const FIELD_PATTERN_ID_EXT = '_patternId';
     const FIELD_PATTERN_IDENTIFIER = 'patternIdentifier';
+    const FIELD_PATTERN_IDENTIFIER_EXT = '_patternIdentifier';
     const FIELD_PATTERN_INSTANT = 'patternInstant';
     const FIELD_PATTERN_INSTANT_EXT = '_patternInstant';
     const FIELD_PATTERN_INTEGER = 'patternInteger';
@@ -413,6 +430,7 @@ class FHIRElementDefinition extends FHIRElement
     const FIELD_PATTERN_POSITIVE_INT = 'patternPositiveInt';
     const FIELD_PATTERN_POSITIVE_INT_EXT = '_patternPositiveInt';
     const FIELD_PATTERN_QUANTITY = 'patternQuantity';
+    const FIELD_PATTERN_QUANTITY_EXT = '_patternQuantity';
     const FIELD_PATTERN_RANGE = 'patternRange';
     const FIELD_PATTERN_RATIO = 'patternRatio';
     const FIELD_PATTERN_REFERENCE = 'patternReference';
@@ -430,6 +448,7 @@ class FHIRElementDefinition extends FHIRElement
     const FIELD_PATTERN_UUID = 'patternUuid';
     const FIELD_PATTERN_UUID_EXT = '_patternUuid';
     const FIELD_REPRESENTATION = 'representation';
+    const FIELD_REPRESENTATION_EXT = '_representation';
     const FIELD_REQUIREMENTS = 'requirements';
     const FIELD_REQUIREMENTS_EXT = '_requirements';
     const FIELD_SHORT = 'short';
@@ -3619,8 +3638,13 @@ class FHIRElementDefinition extends FHIRElement
             }
         }
         if (isset($data[self::FIELD_DEFAULT_VALUE_CONTACT_POINT])) {
+            $ext = (isset($data[self::FIELD_DEFAULT_VALUE_CONTACT_POINT_EXT]) && is_array($data[self::FIELD_DEFAULT_VALUE_CONTACT_POINT_EXT]))
+                ? $data[self::FIELD_DEFAULT_VALUE_CONTACT_POINT_EXT]
+                : null;
             if ($data[self::FIELD_DEFAULT_VALUE_CONTACT_POINT] instanceof FHIRContactPoint) {
                 $this->setDefaultValueContactPoint($data[self::FIELD_DEFAULT_VALUE_CONTACT_POINT]);
+            } elseif ($ext && is_scalar($data[self::FIELD_DEFAULT_VALUE_CONTACT_POINT])) {
+                $this->setDefaultValueContactPoint(new FHIRContactPoint([FHIRContactPoint::FIELD_VALUE => $data[self::FIELD_DEFAULT_VALUE_CONTACT_POINT]] + $ext));
             } else {
                 $this->setDefaultValueContactPoint(new FHIRContactPoint($data[self::FIELD_DEFAULT_VALUE_CONTACT_POINT]));
             }
@@ -3681,8 +3705,13 @@ class FHIRElementDefinition extends FHIRElement
             }
         }
         if (isset($data[self::FIELD_DEFAULT_VALUE_IDENTIFIER])) {
+            $ext = (isset($data[self::FIELD_DEFAULT_VALUE_IDENTIFIER_EXT]) && is_array($data[self::FIELD_DEFAULT_VALUE_IDENTIFIER_EXT]))
+                ? $data[self::FIELD_DEFAULT_VALUE_IDENTIFIER_EXT]
+                : null;
             if ($data[self::FIELD_DEFAULT_VALUE_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->setDefaultValueIdentifier($data[self::FIELD_DEFAULT_VALUE_IDENTIFIER]);
+            } elseif ($ext && is_scalar($data[self::FIELD_DEFAULT_VALUE_IDENTIFIER])) {
+                $this->setDefaultValueIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_DEFAULT_VALUE_IDENTIFIER]] + $ext));
             } else {
                 $this->setDefaultValueIdentifier(new FHIRIdentifier($data[self::FIELD_DEFAULT_VALUE_IDENTIFIER]));
             }
@@ -3762,8 +3791,13 @@ class FHIRElementDefinition extends FHIRElement
             }
         }
         if (isset($data[self::FIELD_DEFAULT_VALUE_QUANTITY])) {
+            $ext = (isset($data[self::FIELD_DEFAULT_VALUE_QUANTITY_EXT]) && is_array($data[self::FIELD_DEFAULT_VALUE_QUANTITY_EXT]))
+                ? $data[self::FIELD_DEFAULT_VALUE_QUANTITY_EXT]
+                : null;
             if ($data[self::FIELD_DEFAULT_VALUE_QUANTITY] instanceof FHIRQuantity) {
                 $this->setDefaultValueQuantity($data[self::FIELD_DEFAULT_VALUE_QUANTITY]);
+            } elseif ($ext && is_scalar($data[self::FIELD_DEFAULT_VALUE_QUANTITY])) {
+                $this->setDefaultValueQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_DEFAULT_VALUE_QUANTITY]] + $ext));
             } else {
                 $this->setDefaultValueQuantity(new FHIRQuantity($data[self::FIELD_DEFAULT_VALUE_QUANTITY]));
             }
@@ -3954,8 +3988,13 @@ class FHIRElementDefinition extends FHIRElement
             }
         }
         if (isset($data[self::FIELD_EXAMPLE_CONTACT_POINT])) {
+            $ext = (isset($data[self::FIELD_EXAMPLE_CONTACT_POINT_EXT]) && is_array($data[self::FIELD_EXAMPLE_CONTACT_POINT_EXT]))
+                ? $data[self::FIELD_EXAMPLE_CONTACT_POINT_EXT]
+                : null;
             if ($data[self::FIELD_EXAMPLE_CONTACT_POINT] instanceof FHIRContactPoint) {
                 $this->setExampleContactPoint($data[self::FIELD_EXAMPLE_CONTACT_POINT]);
+            } elseif ($ext && is_scalar($data[self::FIELD_EXAMPLE_CONTACT_POINT])) {
+                $this->setExampleContactPoint(new FHIRContactPoint([FHIRContactPoint::FIELD_VALUE => $data[self::FIELD_EXAMPLE_CONTACT_POINT]] + $ext));
             } else {
                 $this->setExampleContactPoint(new FHIRContactPoint($data[self::FIELD_EXAMPLE_CONTACT_POINT]));
             }
@@ -4016,8 +4055,13 @@ class FHIRElementDefinition extends FHIRElement
             }
         }
         if (isset($data[self::FIELD_EXAMPLE_IDENTIFIER])) {
+            $ext = (isset($data[self::FIELD_EXAMPLE_IDENTIFIER_EXT]) && is_array($data[self::FIELD_EXAMPLE_IDENTIFIER_EXT]))
+                ? $data[self::FIELD_EXAMPLE_IDENTIFIER_EXT]
+                : null;
             if ($data[self::FIELD_EXAMPLE_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->setExampleIdentifier($data[self::FIELD_EXAMPLE_IDENTIFIER]);
+            } elseif ($ext && is_scalar($data[self::FIELD_EXAMPLE_IDENTIFIER])) {
+                $this->setExampleIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_EXAMPLE_IDENTIFIER]] + $ext));
             } else {
                 $this->setExampleIdentifier(new FHIRIdentifier($data[self::FIELD_EXAMPLE_IDENTIFIER]));
             }
@@ -4097,8 +4141,13 @@ class FHIRElementDefinition extends FHIRElement
             }
         }
         if (isset($data[self::FIELD_EXAMPLE_QUANTITY])) {
+            $ext = (isset($data[self::FIELD_EXAMPLE_QUANTITY_EXT]) && is_array($data[self::FIELD_EXAMPLE_QUANTITY_EXT]))
+                ? $data[self::FIELD_EXAMPLE_QUANTITY_EXT]
+                : null;
             if ($data[self::FIELD_EXAMPLE_QUANTITY] instanceof FHIRQuantity) {
                 $this->setExampleQuantity($data[self::FIELD_EXAMPLE_QUANTITY]);
+            } elseif ($ext && is_scalar($data[self::FIELD_EXAMPLE_QUANTITY])) {
+                $this->setExampleQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_EXAMPLE_QUANTITY]] + $ext));
             } else {
                 $this->setExampleQuantity(new FHIRQuantity($data[self::FIELD_EXAMPLE_QUANTITY]));
             }
@@ -4277,8 +4326,13 @@ class FHIRElementDefinition extends FHIRElement
             }
         }
         if (isset($data[self::FIELD_FIXED_CONTACT_POINT])) {
+            $ext = (isset($data[self::FIELD_FIXED_CONTACT_POINT_EXT]) && is_array($data[self::FIELD_FIXED_CONTACT_POINT_EXT]))
+                ? $data[self::FIELD_FIXED_CONTACT_POINT_EXT]
+                : null;
             if ($data[self::FIELD_FIXED_CONTACT_POINT] instanceof FHIRContactPoint) {
                 $this->setFixedContactPoint($data[self::FIELD_FIXED_CONTACT_POINT]);
+            } elseif ($ext && is_scalar($data[self::FIELD_FIXED_CONTACT_POINT])) {
+                $this->setFixedContactPoint(new FHIRContactPoint([FHIRContactPoint::FIELD_VALUE => $data[self::FIELD_FIXED_CONTACT_POINT]] + $ext));
             } else {
                 $this->setFixedContactPoint(new FHIRContactPoint($data[self::FIELD_FIXED_CONTACT_POINT]));
             }
@@ -4339,8 +4393,13 @@ class FHIRElementDefinition extends FHIRElement
             }
         }
         if (isset($data[self::FIELD_FIXED_IDENTIFIER])) {
+            $ext = (isset($data[self::FIELD_FIXED_IDENTIFIER_EXT]) && is_array($data[self::FIELD_FIXED_IDENTIFIER_EXT]))
+                ? $data[self::FIELD_FIXED_IDENTIFIER_EXT]
+                : null;
             if ($data[self::FIELD_FIXED_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->setFixedIdentifier($data[self::FIELD_FIXED_IDENTIFIER]);
+            } elseif ($ext && is_scalar($data[self::FIELD_FIXED_IDENTIFIER])) {
+                $this->setFixedIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_FIXED_IDENTIFIER]] + $ext));
             } else {
                 $this->setFixedIdentifier(new FHIRIdentifier($data[self::FIELD_FIXED_IDENTIFIER]));
             }
@@ -4420,8 +4479,13 @@ class FHIRElementDefinition extends FHIRElement
             }
         }
         if (isset($data[self::FIELD_FIXED_QUANTITY])) {
+            $ext = (isset($data[self::FIELD_FIXED_QUANTITY_EXT]) && is_array($data[self::FIELD_FIXED_QUANTITY_EXT]))
+                ? $data[self::FIELD_FIXED_QUANTITY_EXT]
+                : null;
             if ($data[self::FIELD_FIXED_QUANTITY] instanceof FHIRQuantity) {
                 $this->setFixedQuantity($data[self::FIELD_FIXED_QUANTITY]);
+            } elseif ($ext && is_scalar($data[self::FIELD_FIXED_QUANTITY])) {
+                $this->setFixedQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_FIXED_QUANTITY]] + $ext));
             } else {
                 $this->setFixedQuantity(new FHIRQuantity($data[self::FIELD_FIXED_QUANTITY]));
             }
@@ -4675,8 +4739,13 @@ class FHIRElementDefinition extends FHIRElement
             }
         }
         if (isset($data[self::FIELD_MAX_VALUE_CONTACT_POINT])) {
+            $ext = (isset($data[self::FIELD_MAX_VALUE_CONTACT_POINT_EXT]) && is_array($data[self::FIELD_MAX_VALUE_CONTACT_POINT_EXT]))
+                ? $data[self::FIELD_MAX_VALUE_CONTACT_POINT_EXT]
+                : null;
             if ($data[self::FIELD_MAX_VALUE_CONTACT_POINT] instanceof FHIRContactPoint) {
                 $this->setMaxValueContactPoint($data[self::FIELD_MAX_VALUE_CONTACT_POINT]);
+            } elseif ($ext && is_scalar($data[self::FIELD_MAX_VALUE_CONTACT_POINT])) {
+                $this->setMaxValueContactPoint(new FHIRContactPoint([FHIRContactPoint::FIELD_VALUE => $data[self::FIELD_MAX_VALUE_CONTACT_POINT]] + $ext));
             } else {
                 $this->setMaxValueContactPoint(new FHIRContactPoint($data[self::FIELD_MAX_VALUE_CONTACT_POINT]));
             }
@@ -4737,8 +4806,13 @@ class FHIRElementDefinition extends FHIRElement
             }
         }
         if (isset($data[self::FIELD_MAX_VALUE_IDENTIFIER])) {
+            $ext = (isset($data[self::FIELD_MAX_VALUE_IDENTIFIER_EXT]) && is_array($data[self::FIELD_MAX_VALUE_IDENTIFIER_EXT]))
+                ? $data[self::FIELD_MAX_VALUE_IDENTIFIER_EXT]
+                : null;
             if ($data[self::FIELD_MAX_VALUE_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->setMaxValueIdentifier($data[self::FIELD_MAX_VALUE_IDENTIFIER]);
+            } elseif ($ext && is_scalar($data[self::FIELD_MAX_VALUE_IDENTIFIER])) {
+                $this->setMaxValueIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_MAX_VALUE_IDENTIFIER]] + $ext));
             } else {
                 $this->setMaxValueIdentifier(new FHIRIdentifier($data[self::FIELD_MAX_VALUE_IDENTIFIER]));
             }
@@ -4818,8 +4892,13 @@ class FHIRElementDefinition extends FHIRElement
             }
         }
         if (isset($data[self::FIELD_MAX_VALUE_QUANTITY])) {
+            $ext = (isset($data[self::FIELD_MAX_VALUE_QUANTITY_EXT]) && is_array($data[self::FIELD_MAX_VALUE_QUANTITY_EXT]))
+                ? $data[self::FIELD_MAX_VALUE_QUANTITY_EXT]
+                : null;
             if ($data[self::FIELD_MAX_VALUE_QUANTITY] instanceof FHIRQuantity) {
                 $this->setMaxValueQuantity($data[self::FIELD_MAX_VALUE_QUANTITY]);
+            } elseif ($ext && is_scalar($data[self::FIELD_MAX_VALUE_QUANTITY])) {
+                $this->setMaxValueQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_MAX_VALUE_QUANTITY]] + $ext));
             } else {
                 $this->setMaxValueQuantity(new FHIRQuantity($data[self::FIELD_MAX_VALUE_QUANTITY]));
             }
@@ -5022,8 +5101,13 @@ class FHIRElementDefinition extends FHIRElement
             }
         }
         if (isset($data[self::FIELD_MIN_VALUE_CONTACT_POINT])) {
+            $ext = (isset($data[self::FIELD_MIN_VALUE_CONTACT_POINT_EXT]) && is_array($data[self::FIELD_MIN_VALUE_CONTACT_POINT_EXT]))
+                ? $data[self::FIELD_MIN_VALUE_CONTACT_POINT_EXT]
+                : null;
             if ($data[self::FIELD_MIN_VALUE_CONTACT_POINT] instanceof FHIRContactPoint) {
                 $this->setMinValueContactPoint($data[self::FIELD_MIN_VALUE_CONTACT_POINT]);
+            } elseif ($ext && is_scalar($data[self::FIELD_MIN_VALUE_CONTACT_POINT])) {
+                $this->setMinValueContactPoint(new FHIRContactPoint([FHIRContactPoint::FIELD_VALUE => $data[self::FIELD_MIN_VALUE_CONTACT_POINT]] + $ext));
             } else {
                 $this->setMinValueContactPoint(new FHIRContactPoint($data[self::FIELD_MIN_VALUE_CONTACT_POINT]));
             }
@@ -5084,8 +5168,13 @@ class FHIRElementDefinition extends FHIRElement
             }
         }
         if (isset($data[self::FIELD_MIN_VALUE_IDENTIFIER])) {
+            $ext = (isset($data[self::FIELD_MIN_VALUE_IDENTIFIER_EXT]) && is_array($data[self::FIELD_MIN_VALUE_IDENTIFIER_EXT]))
+                ? $data[self::FIELD_MIN_VALUE_IDENTIFIER_EXT]
+                : null;
             if ($data[self::FIELD_MIN_VALUE_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->setMinValueIdentifier($data[self::FIELD_MIN_VALUE_IDENTIFIER]);
+            } elseif ($ext && is_scalar($data[self::FIELD_MIN_VALUE_IDENTIFIER])) {
+                $this->setMinValueIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_MIN_VALUE_IDENTIFIER]] + $ext));
             } else {
                 $this->setMinValueIdentifier(new FHIRIdentifier($data[self::FIELD_MIN_VALUE_IDENTIFIER]));
             }
@@ -5165,8 +5254,13 @@ class FHIRElementDefinition extends FHIRElement
             }
         }
         if (isset($data[self::FIELD_MIN_VALUE_QUANTITY])) {
+            $ext = (isset($data[self::FIELD_MIN_VALUE_QUANTITY_EXT]) && is_array($data[self::FIELD_MIN_VALUE_QUANTITY_EXT]))
+                ? $data[self::FIELD_MIN_VALUE_QUANTITY_EXT]
+                : null;
             if ($data[self::FIELD_MIN_VALUE_QUANTITY] instanceof FHIRQuantity) {
                 $this->setMinValueQuantity($data[self::FIELD_MIN_VALUE_QUANTITY]);
+            } elseif ($ext && is_scalar($data[self::FIELD_MIN_VALUE_QUANTITY])) {
+                $this->setMinValueQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_MIN_VALUE_QUANTITY]] + $ext));
             } else {
                 $this->setMinValueQuantity(new FHIRQuantity($data[self::FIELD_MIN_VALUE_QUANTITY]));
             }
@@ -5393,8 +5487,13 @@ class FHIRElementDefinition extends FHIRElement
             }
         }
         if (isset($data[self::FIELD_PATTERN_CONTACT_POINT])) {
+            $ext = (isset($data[self::FIELD_PATTERN_CONTACT_POINT_EXT]) && is_array($data[self::FIELD_PATTERN_CONTACT_POINT_EXT]))
+                ? $data[self::FIELD_PATTERN_CONTACT_POINT_EXT]
+                : null;
             if ($data[self::FIELD_PATTERN_CONTACT_POINT] instanceof FHIRContactPoint) {
                 $this->setPatternContactPoint($data[self::FIELD_PATTERN_CONTACT_POINT]);
+            } elseif ($ext && is_scalar($data[self::FIELD_PATTERN_CONTACT_POINT])) {
+                $this->setPatternContactPoint(new FHIRContactPoint([FHIRContactPoint::FIELD_VALUE => $data[self::FIELD_PATTERN_CONTACT_POINT]] + $ext));
             } else {
                 $this->setPatternContactPoint(new FHIRContactPoint($data[self::FIELD_PATTERN_CONTACT_POINT]));
             }
@@ -5455,8 +5554,13 @@ class FHIRElementDefinition extends FHIRElement
             }
         }
         if (isset($data[self::FIELD_PATTERN_IDENTIFIER])) {
+            $ext = (isset($data[self::FIELD_PATTERN_IDENTIFIER_EXT]) && is_array($data[self::FIELD_PATTERN_IDENTIFIER_EXT]))
+                ? $data[self::FIELD_PATTERN_IDENTIFIER_EXT]
+                : null;
             if ($data[self::FIELD_PATTERN_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->setPatternIdentifier($data[self::FIELD_PATTERN_IDENTIFIER]);
+            } elseif ($ext && is_scalar($data[self::FIELD_PATTERN_IDENTIFIER])) {
+                $this->setPatternIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_PATTERN_IDENTIFIER]] + $ext));
             } else {
                 $this->setPatternIdentifier(new FHIRIdentifier($data[self::FIELD_PATTERN_IDENTIFIER]));
             }
@@ -5536,8 +5640,13 @@ class FHIRElementDefinition extends FHIRElement
             }
         }
         if (isset($data[self::FIELD_PATTERN_QUANTITY])) {
+            $ext = (isset($data[self::FIELD_PATTERN_QUANTITY_EXT]) && is_array($data[self::FIELD_PATTERN_QUANTITY_EXT]))
+                ? $data[self::FIELD_PATTERN_QUANTITY_EXT]
+                : null;
             if ($data[self::FIELD_PATTERN_QUANTITY] instanceof FHIRQuantity) {
                 $this->setPatternQuantity($data[self::FIELD_PATTERN_QUANTITY]);
+            } elseif ($ext && is_scalar($data[self::FIELD_PATTERN_QUANTITY])) {
+                $this->setPatternQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_PATTERN_QUANTITY]] + $ext));
             } else {
                 $this->setPatternQuantity(new FHIRQuantity($data[self::FIELD_PATTERN_QUANTITY]));
             }
@@ -5645,16 +5754,23 @@ class FHIRElementDefinition extends FHIRElement
             }
         }
         if (isset($data[self::FIELD_REPRESENTATION])) {
+            $ext = (isset($data[self::FIELD_REPRESENTATION_EXT]) && is_array($data[self::FIELD_REPRESENTATION_EXT]))
+                ? $data[self::FIELD_REPRESENTATION_EXT]
+                : null;
             if (is_array($data[self::FIELD_REPRESENTATION])) {
-                foreach($data[self::FIELD_REPRESENTATION] as $v) {
+                foreach($data[self::FIELD_REPRESENTATION] as $i => $v) {
                     if ($v instanceof FHIRPropertyRepresentation) {
                         $this->addRepresentation($v);
+                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
+                        $this->addRepresentation(new FHIRPropertyRepresentation([FHIRPropertyRepresentation::FIELD_VALUE => $v] + $ext[$i]));
                     } else {
                         $this->addRepresentation(new FHIRPropertyRepresentation($v));
                     }
                 }
-            } else if ($data[self::FIELD_REPRESENTATION] instanceof FHIRPropertyRepresentation) {
+            } elseif ($data[self::FIELD_REPRESENTATION] instanceof FHIRPropertyRepresentation) {
                 $this->addRepresentation($data[self::FIELD_REPRESENTATION]);
+            } elseif ($ext && is_scalar($data[self::FIELD_REPRESENTATION])) {
+                $this->addRepresentation(new FHIRPropertyRepresentation([FHIRPropertyRepresentation::FIELD_VALUE => $data[self::FIELD_REPRESENTATION]] + $ext));
             } else {
                 $this->addRepresentation(new FHIRPropertyRepresentation($data[self::FIELD_REPRESENTATION]));
             }
@@ -5710,7 +5826,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -5718,17 +5834,33 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRElementDefinition
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -15176,13 +15308,14 @@ class FHIRElementDefinition extends FHIRElement
             throw new \InvalidArgumentException(sprintf('FHIRElementDefinition::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRElement::xmlUnserialize($sxe, new FHIRElementDefinition);
+            $type = new FHIRElementDefinition;
         } elseif (!is_object($type) || !($type instanceof FHIRElementDefinition)) {
             throw new \RuntimeException(sprintf(
                 'FHIRElementDefinition::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRElementDefinition or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -16261,7 +16394,7 @@ class FHIRElementDefinition extends FHIRElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if ([] !== ($vs = $this->getAlias())) {
@@ -16269,16 +16402,16 @@ class FHIRElementDefinition extends FHIRElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ALIAS, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_ALIAS, null, $v->_getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getBase())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_BASE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_BASE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getBinding())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_BINDING, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_BINDING, null, $v->_getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getCode())) {
@@ -16286,18 +16419,18 @@ class FHIRElementDefinition extends FHIRElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getComments())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_COMMENTS, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_COMMENTS, null, $v->_getFHIRXMLNamespace()));
         }
         if ([] !== ($vs = $this->getCondition())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CONDITION, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_CONDITION, null, $v->_getFHIRXMLNamespace()));
             }
         }
 
@@ -16306,377 +16439,368 @@ class FHIRElementDefinition extends FHIRElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CONSTRAINT, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_CONSTRAINT, null, $v->_getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getDefaultValueAddress())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_ADDRESS, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_ADDRESS, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDefaultValueAnnotation())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_ANNOTATION, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_ANNOTATION, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDefaultValueAttachment())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_ATTACHMENT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_ATTACHMENT, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDefaultValueBase64Binary())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_BASE_64BINARY, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_BASE_64BINARY, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDefaultValueBoolean())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_BOOLEAN, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_BOOLEAN, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDefaultValueCode())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_CODE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_CODE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDefaultValueCodeableConcept())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_CODEABLE_CONCEPT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_CODEABLE_CONCEPT, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDefaultValueCoding())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_CODING, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_CODING, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getDefaultValueContactPoint())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_CONTACT_POINT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_CONTACT_POINT, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDefaultValueDate())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_DATE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_DATE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDefaultValueDateTime())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_DATE_TIME, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_DATE_TIME, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDefaultValueDecimal())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_DECIMAL, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_DECIMAL, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDefaultValueHumanName())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_HUMAN_NAME, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_HUMAN_NAME, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDefaultValueId())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_ID, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_ID, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getDefaultValueIdentifier())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_IDENTIFIER, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDefaultValueInstant())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_INSTANT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_INSTANT, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDefaultValueInteger())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_INTEGER, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_INTEGER, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDefaultValueMarkdown())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_MARKDOWN, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_MARKDOWN, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDefaultValueMeta())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_META, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_META, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDefaultValueOid())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_OID, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_OID, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDefaultValuePeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_PERIOD, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDefaultValuePositiveInt())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_POSITIVE_INT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_POSITIVE_INT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getDefaultValueQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_QUANTITY, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDefaultValueRange())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_RANGE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_RANGE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDefaultValueRatio())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_RATIO, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_RATIO, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDefaultValueReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_REFERENCE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_REFERENCE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDefaultValueSampledData())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_SAMPLED_DATA, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_SAMPLED_DATA, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDefaultValueSignature())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_SIGNATURE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_SIGNATURE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDefaultValueString())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_STRING, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_STRING, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDefaultValueTime())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_TIME, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_TIME, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDefaultValueTiming())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_TIMING, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_TIMING, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDefaultValueUnsignedInt())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_UNSIGNED_INT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_UNSIGNED_INT, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDefaultValueUri())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_URI, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_URI, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDefaultValueUuid())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_UUID, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_UUID, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDefinition())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINITION, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINITION, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getExampleAddress())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_ADDRESS, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_ADDRESS, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getExampleAnnotation())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_ANNOTATION, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_ANNOTATION, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getExampleAttachment())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_ATTACHMENT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_ATTACHMENT, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getExampleBase64Binary())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_BASE_64BINARY, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_BASE_64BINARY, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getExampleBoolean())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_BOOLEAN, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_BOOLEAN, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getExampleCode())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_CODE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_CODE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getExampleCodeableConcept())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_CODEABLE_CONCEPT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_CODEABLE_CONCEPT, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getExampleCoding())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_CODING, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_CODING, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getExampleContactPoint())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_CONTACT_POINT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_CONTACT_POINT, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getExampleDate())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_DATE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_DATE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getExampleDateTime())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_DATE_TIME, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_DATE_TIME, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getExampleDecimal())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_DECIMAL, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_DECIMAL, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getExampleHumanName())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_HUMAN_NAME, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_HUMAN_NAME, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getExampleId())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_ID, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_ID, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getExampleIdentifier())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_IDENTIFIER, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getExampleInstant())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_INSTANT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_INSTANT, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getExampleInteger())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_INTEGER, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_INTEGER, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getExampleMarkdown())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_MARKDOWN, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_MARKDOWN, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getExampleMeta())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_META, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_META, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getExampleOid())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_OID, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_OID, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getExamplePeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_PERIOD, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getExamplePositiveInt())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_POSITIVE_INT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_POSITIVE_INT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getExampleQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_QUANTITY, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getExampleRange())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_RANGE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_RANGE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getExampleRatio())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_RATIO, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_RATIO, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getExampleReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_REFERENCE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_REFERENCE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getExampleSampledData())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_SAMPLED_DATA, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_SAMPLED_DATA, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getExampleSignature())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_SIGNATURE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_SIGNATURE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getExampleString())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_STRING, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_STRING, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getExampleTime())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_TIME, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_TIME, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getExampleTiming())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_TIMING, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_TIMING, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getExampleUnsignedInt())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_UNSIGNED_INT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_UNSIGNED_INT, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getExampleUri())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_URI, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_URI, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getExampleUuid())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_UUID, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_UUID, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getFixedAddress())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_ADDRESS, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_ADDRESS, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getFixedAnnotation())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_ANNOTATION, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_ANNOTATION, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getFixedAttachment())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_ATTACHMENT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_ATTACHMENT, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getFixedBase64Binary())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_BASE_64BINARY, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_BASE_64BINARY, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getFixedBoolean())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_BOOLEAN, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_BOOLEAN, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getFixedCode())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_CODE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_CODE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getFixedCodeableConcept())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_CODEABLE_CONCEPT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_CODEABLE_CONCEPT, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getFixedCoding())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_CODING, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_CODING, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getFixedContactPoint())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_CONTACT_POINT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_CONTACT_POINT, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getFixedDate())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_DATE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_DATE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getFixedDateTime())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_DATE_TIME, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_DATE_TIME, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getFixedDecimal())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_DECIMAL, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_DECIMAL, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getFixedHumanName())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_HUMAN_NAME, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_HUMAN_NAME, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getFixedId())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_ID, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_ID, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getFixedIdentifier())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_IDENTIFIER, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getFixedInstant())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_INSTANT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_INSTANT, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getFixedInteger())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_INTEGER, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_INTEGER, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getFixedMarkdown())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_MARKDOWN, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_MARKDOWN, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getFixedMeta())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_META, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_META, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getFixedOid())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_OID, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_OID, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getFixedPeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_PERIOD, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getFixedPositiveInt())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_POSITIVE_INT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_POSITIVE_INT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getFixedQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_QUANTITY, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getFixedRange())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_RANGE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_RANGE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getFixedRatio())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_RATIO, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_RATIO, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getFixedReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_REFERENCE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_REFERENCE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getFixedSampledData())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_SAMPLED_DATA, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_SAMPLED_DATA, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getFixedSignature())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_SIGNATURE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_SIGNATURE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getFixedString())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_STRING, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_STRING, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getFixedTime())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_TIME, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_TIME, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getFixedTiming())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_TIMING, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_TIMING, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getFixedUnsignedInt())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_UNSIGNED_INT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_UNSIGNED_INT, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getFixedUri())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_URI, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_URI, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getFixedUuid())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_UUID, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_UUID, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getIsModifier())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_IS_MODIFIER, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_IS_MODIFIER, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getIsSummary())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_IS_SUMMARY, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_IS_SUMMARY, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getLabel())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_LABEL, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_LABEL, null, $v->_getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getMapping())) {
@@ -16684,408 +16808,398 @@ class FHIRElementDefinition extends FHIRElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_MAPPING, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_MAPPING, null, $v->_getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getMax())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMaxLength())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_LENGTH, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_LENGTH, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getMaxValueAddress())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_ADDRESS, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_ADDRESS, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getMaxValueAnnotation())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_ANNOTATION, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_ANNOTATION, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getMaxValueAttachment())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_ATTACHMENT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_ATTACHMENT, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMaxValueBase64Binary())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_BASE_64BINARY, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_BASE_64BINARY, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMaxValueBoolean())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_BOOLEAN, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_BOOLEAN, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMaxValueCode())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_CODE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_CODE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getMaxValueCodeableConcept())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_CODEABLE_CONCEPT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_CODEABLE_CONCEPT, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getMaxValueCoding())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_CODING, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_CODING, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getMaxValueContactPoint())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_CONTACT_POINT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_CONTACT_POINT, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMaxValueDate())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_DATE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_DATE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMaxValueDateTime())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_DATE_TIME, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_DATE_TIME, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMaxValueDecimal())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_DECIMAL, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_DECIMAL, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getMaxValueHumanName())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_HUMAN_NAME, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_HUMAN_NAME, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMaxValueId())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_ID, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_ID, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getMaxValueIdentifier())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_IDENTIFIER, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMaxValueInstant())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_INSTANT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_INSTANT, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMaxValueInteger())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_INTEGER, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_INTEGER, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMaxValueMarkdown())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_MARKDOWN, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_MARKDOWN, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getMaxValueMeta())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_META, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_META, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMaxValueOid())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_OID, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_OID, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getMaxValuePeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_PERIOD, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMaxValuePositiveInt())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_POSITIVE_INT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_POSITIVE_INT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getMaxValueQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_QUANTITY, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getMaxValueRange())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_RANGE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_RANGE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getMaxValueRatio())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_RATIO, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_RATIO, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getMaxValueReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_REFERENCE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_REFERENCE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getMaxValueSampledData())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_SAMPLED_DATA, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_SAMPLED_DATA, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getMaxValueSignature())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_SIGNATURE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_SIGNATURE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMaxValueString())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_STRING, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_STRING, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMaxValueTime())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_TIME, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_TIME, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getMaxValueTiming())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_TIMING, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_TIMING, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMaxValueUnsignedInt())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_UNSIGNED_INT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_UNSIGNED_INT, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMaxValueUri())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_URI, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_URI, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMaxValueUuid())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_UUID, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VALUE_UUID, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMeaningWhenMissing())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MEANING_WHEN_MISSING, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MEANING_WHEN_MISSING, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMin())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getMinValueAddress())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_ADDRESS, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_ADDRESS, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getMinValueAnnotation())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_ANNOTATION, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_ANNOTATION, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getMinValueAttachment())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_ATTACHMENT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_ATTACHMENT, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMinValueBase64Binary())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_BASE_64BINARY, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_BASE_64BINARY, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMinValueBoolean())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_BOOLEAN, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_BOOLEAN, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMinValueCode())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_CODE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_CODE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getMinValueCodeableConcept())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_CODEABLE_CONCEPT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_CODEABLE_CONCEPT, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getMinValueCoding())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_CODING, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_CODING, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getMinValueContactPoint())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_CONTACT_POINT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_CONTACT_POINT, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMinValueDate())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_DATE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_DATE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMinValueDateTime())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_DATE_TIME, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_DATE_TIME, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMinValueDecimal())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_DECIMAL, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_DECIMAL, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getMinValueHumanName())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_HUMAN_NAME, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_HUMAN_NAME, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMinValueId())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_ID, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_ID, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getMinValueIdentifier())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_IDENTIFIER, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMinValueInstant())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_INSTANT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_INSTANT, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMinValueInteger())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_INTEGER, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_INTEGER, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMinValueMarkdown())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_MARKDOWN, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_MARKDOWN, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getMinValueMeta())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_META, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_META, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMinValueOid())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_OID, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_OID, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getMinValuePeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_PERIOD, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMinValuePositiveInt())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_POSITIVE_INT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_POSITIVE_INT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getMinValueQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_QUANTITY, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getMinValueRange())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_RANGE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_RANGE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getMinValueRatio())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_RATIO, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_RATIO, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getMinValueReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_REFERENCE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_REFERENCE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getMinValueSampledData())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_SAMPLED_DATA, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_SAMPLED_DATA, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getMinValueSignature())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_SIGNATURE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_SIGNATURE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMinValueString())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_STRING, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_STRING, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMinValueTime())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_TIME, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_TIME, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getMinValueTiming())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_TIMING, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_TIMING, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMinValueUnsignedInt())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_UNSIGNED_INT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_UNSIGNED_INT, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMinValueUri())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_URI, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_URI, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMinValueUuid())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_UUID, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN_VALUE_UUID, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMustSupport())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MUST_SUPPORT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MUST_SUPPORT, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getName())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_NAME, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_NAME, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getNameReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_NAME_REFERENCE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_NAME_REFERENCE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getPath())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATH, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PATH, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getPatternAddress())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_ADDRESS, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_ADDRESS, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getPatternAnnotation())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_ANNOTATION, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_ANNOTATION, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getPatternAttachment())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_ATTACHMENT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_ATTACHMENT, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getPatternBase64Binary())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_BASE_64BINARY, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_BASE_64BINARY, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getPatternBoolean())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_BOOLEAN, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_BOOLEAN, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getPatternCode())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_CODE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_CODE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getPatternCodeableConcept())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_CODEABLE_CONCEPT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_CODEABLE_CONCEPT, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getPatternCoding())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_CODING, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_CODING, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getPatternContactPoint())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_CONTACT_POINT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_CONTACT_POINT, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getPatternDate())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_DATE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_DATE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getPatternDateTime())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_DATE_TIME, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_DATE_TIME, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getPatternDecimal())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_DECIMAL, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_DECIMAL, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getPatternHumanName())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_HUMAN_NAME, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_HUMAN_NAME, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getPatternId())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_ID, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_ID, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getPatternIdentifier())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_IDENTIFIER, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getPatternInstant())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_INSTANT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_INSTANT, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getPatternInteger())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_INTEGER, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_INTEGER, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getPatternMarkdown())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_MARKDOWN, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_MARKDOWN, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getPatternMeta())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_META, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_META, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getPatternOid())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_OID, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_OID, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getPatternPeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_PERIOD, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getPatternPositiveInt())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_POSITIVE_INT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_POSITIVE_INT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getPatternQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_QUANTITY, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getPatternRange())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_RANGE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_RANGE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getPatternRatio())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_RATIO, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_RATIO, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getPatternReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_REFERENCE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_REFERENCE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getPatternSampledData())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_SAMPLED_DATA, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_SAMPLED_DATA, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getPatternSignature())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_SIGNATURE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_SIGNATURE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getPatternString())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_STRING, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_STRING, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getPatternTime())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_TIME, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_TIME, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getPatternTiming())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_TIMING, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_TIMING, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getPatternUnsignedInt())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_UNSIGNED_INT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_UNSIGNED_INT, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getPatternUri())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_URI, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_URI, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getPatternUuid())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_UUID, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_UUID, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getRepresentation())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_REPRESENTATION, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_REPRESENTATION, null, $v->_getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getRequirements())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REQUIREMENTS, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_REQUIREMENTS, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getShort())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SHORT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SHORT, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getSlicing())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SLICING, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SLICING, null, $v->_getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getType())) {
@@ -17093,7 +17207,7 @@ class FHIRElementDefinition extends FHIRElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
             }
         }
         return $sxe;
@@ -17107,10 +17221,17 @@ class FHIRElementDefinition extends FHIRElement
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getAlias())) {
             $a[self::FIELD_ALIAS] = [];
-            $a[self::FIELD_ALIAS_EXT] = [];
             foreach ($vs as $v) {
-                $a[self::FIELD_ALIAS][] = (string)$v;
-                $a[self::FIELD_ALIAS_EXT][] = $v;
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_ALIAS][] = $v->getValue();
+                if ($v->_hasNonValueFieldsDefined()) {
+                    if (!isset($a[self::FIELD_ALIAS_EXT])) {
+                        $a[self::FIELD_ALIAS_EXT] = [];
+                    }
+                    $a[self::FIELD_ALIAS_EXT][] = $v;
+                }
             }
         }
         if (null !== ($v = $this->getBase())) {
@@ -17123,15 +17244,24 @@ class FHIRElementDefinition extends FHIRElement
             $a[self::FIELD_CODE] = $vs;
         }
         if (null !== ($v = $this->getComments())) {
-            $a[self::FIELD_COMMENTS] = (string)$v;
-            $a[self::FIELD_COMMENTS_EXT] = $v;
+            $a[self::FIELD_COMMENTS] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_COMMENTS_EXT] = $v;
+            }
         }
         if ([] !== ($vs = $this->getCondition())) {
             $a[self::FIELD_CONDITION] = [];
-            $a[self::FIELD_CONDITION_EXT] = [];
             foreach ($vs as $v) {
-                $a[self::FIELD_CONDITION][] = (string)$v;
-                $a[self::FIELD_CONDITION_EXT][] = $v;
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_CONDITION][] = $v->getValue();
+                if ($v->_hasNonValueFieldsDefined()) {
+                    if (!isset($a[self::FIELD_CONDITION_EXT])) {
+                        $a[self::FIELD_CONDITION_EXT] = [];
+                    }
+                    $a[self::FIELD_CONDITION_EXT][] = $v;
+                }
             }
         }
         if ([] !== ($vs = $this->getConstraint())) {
@@ -17147,16 +17277,22 @@ class FHIRElementDefinition extends FHIRElement
             $a[self::FIELD_DEFAULT_VALUE_ATTACHMENT] = $v;
         }
         if (null !== ($v = $this->getDefaultValueBase64Binary())) {
-            $a[self::FIELD_DEFAULT_VALUE_BASE_64BINARY] = (string)$v;
-            $a[self::FIELD_DEFAULT_VALUE_BASE_64BINARY_EXT] = $v;
+            $a[self::FIELD_DEFAULT_VALUE_BASE_64BINARY] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DEFAULT_VALUE_BASE_64BINARY_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getDefaultValueBoolean())) {
-            $a[self::FIELD_DEFAULT_VALUE_BOOLEAN] = (string)$v;
-            $a[self::FIELD_DEFAULT_VALUE_BOOLEAN_EXT] = $v;
+            $a[self::FIELD_DEFAULT_VALUE_BOOLEAN] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DEFAULT_VALUE_BOOLEAN_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getDefaultValueCode())) {
-            $a[self::FIELD_DEFAULT_VALUE_CODE] = (string)$v;
-            $a[self::FIELD_DEFAULT_VALUE_CODE_EXT] = $v;
+            $a[self::FIELD_DEFAULT_VALUE_CODE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DEFAULT_VALUE_CODE_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getDefaultValueCodeableConcept())) {
             $a[self::FIELD_DEFAULT_VALUE_CODEABLE_CONCEPT] = $v;
@@ -17165,58 +17301,85 @@ class FHIRElementDefinition extends FHIRElement
             $a[self::FIELD_DEFAULT_VALUE_CODING] = $v;
         }
         if (null !== ($v = $this->getDefaultValueContactPoint())) {
-            $a[self::FIELD_DEFAULT_VALUE_CONTACT_POINT] = $v;
+            $a[self::FIELD_DEFAULT_VALUE_CONTACT_POINT] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DEFAULT_VALUE_CONTACT_POINT_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getDefaultValueDate())) {
-            $a[self::FIELD_DEFAULT_VALUE_DATE] = (string)$v;
-            $a[self::FIELD_DEFAULT_VALUE_DATE_EXT] = $v;
+            $a[self::FIELD_DEFAULT_VALUE_DATE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DEFAULT_VALUE_DATE_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getDefaultValueDateTime())) {
-            $a[self::FIELD_DEFAULT_VALUE_DATE_TIME] = (string)$v;
-            $a[self::FIELD_DEFAULT_VALUE_DATE_TIME_EXT] = $v;
+            $a[self::FIELD_DEFAULT_VALUE_DATE_TIME] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DEFAULT_VALUE_DATE_TIME_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getDefaultValueDecimal())) {
-            $a[self::FIELD_DEFAULT_VALUE_DECIMAL] = (string)$v;
-            $a[self::FIELD_DEFAULT_VALUE_DECIMAL_EXT] = $v;
+            $a[self::FIELD_DEFAULT_VALUE_DECIMAL] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DEFAULT_VALUE_DECIMAL_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getDefaultValueHumanName())) {
             $a[self::FIELD_DEFAULT_VALUE_HUMAN_NAME] = $v;
         }
         if (null !== ($v = $this->getDefaultValueId())) {
-            $a[self::FIELD_DEFAULT_VALUE_ID] = (string)$v;
-            $a[self::FIELD_DEFAULT_VALUE_ID_EXT] = $v;
+            $a[self::FIELD_DEFAULT_VALUE_ID] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DEFAULT_VALUE_ID_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getDefaultValueIdentifier())) {
-            $a[self::FIELD_DEFAULT_VALUE_IDENTIFIER] = $v;
+            $a[self::FIELD_DEFAULT_VALUE_IDENTIFIER] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DEFAULT_VALUE_IDENTIFIER_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getDefaultValueInstant())) {
-            $a[self::FIELD_DEFAULT_VALUE_INSTANT] = (string)$v;
-            $a[self::FIELD_DEFAULT_VALUE_INSTANT_EXT] = $v;
+            $a[self::FIELD_DEFAULT_VALUE_INSTANT] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DEFAULT_VALUE_INSTANT_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getDefaultValueInteger())) {
-            $a[self::FIELD_DEFAULT_VALUE_INTEGER] = (string)$v;
-            $a[self::FIELD_DEFAULT_VALUE_INTEGER_EXT] = $v;
+            $a[self::FIELD_DEFAULT_VALUE_INTEGER] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DEFAULT_VALUE_INTEGER_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getDefaultValueMarkdown())) {
-            $a[self::FIELD_DEFAULT_VALUE_MARKDOWN] = (string)$v;
-            $a[self::FIELD_DEFAULT_VALUE_MARKDOWN_EXT] = $v;
+            $a[self::FIELD_DEFAULT_VALUE_MARKDOWN] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DEFAULT_VALUE_MARKDOWN_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getDefaultValueMeta())) {
             $a[self::FIELD_DEFAULT_VALUE_META] = $v;
         }
         if (null !== ($v = $this->getDefaultValueOid())) {
-            $a[self::FIELD_DEFAULT_VALUE_OID] = (string)$v;
-            $a[self::FIELD_DEFAULT_VALUE_OID_EXT] = $v;
+            $a[self::FIELD_DEFAULT_VALUE_OID] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DEFAULT_VALUE_OID_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getDefaultValuePeriod())) {
             $a[self::FIELD_DEFAULT_VALUE_PERIOD] = $v;
         }
         if (null !== ($v = $this->getDefaultValuePositiveInt())) {
-            $a[self::FIELD_DEFAULT_VALUE_POSITIVE_INT] = (string)$v;
-            $a[self::FIELD_DEFAULT_VALUE_POSITIVE_INT_EXT] = $v;
+            $a[self::FIELD_DEFAULT_VALUE_POSITIVE_INT] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DEFAULT_VALUE_POSITIVE_INT_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getDefaultValueQuantity())) {
-            $a[self::FIELD_DEFAULT_VALUE_QUANTITY] = $v;
+            $a[self::FIELD_DEFAULT_VALUE_QUANTITY] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DEFAULT_VALUE_QUANTITY_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getDefaultValueRange())) {
             $a[self::FIELD_DEFAULT_VALUE_RANGE] = $v;
@@ -17234,31 +17397,43 @@ class FHIRElementDefinition extends FHIRElement
             $a[self::FIELD_DEFAULT_VALUE_SIGNATURE] = $v;
         }
         if (null !== ($v = $this->getDefaultValueString())) {
-            $a[self::FIELD_DEFAULT_VALUE_STRING] = (string)$v;
-            $a[self::FIELD_DEFAULT_VALUE_STRING_EXT] = $v;
+            $a[self::FIELD_DEFAULT_VALUE_STRING] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DEFAULT_VALUE_STRING_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getDefaultValueTime())) {
-            $a[self::FIELD_DEFAULT_VALUE_TIME] = (string)$v;
-            $a[self::FIELD_DEFAULT_VALUE_TIME_EXT] = $v;
+            $a[self::FIELD_DEFAULT_VALUE_TIME] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DEFAULT_VALUE_TIME_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getDefaultValueTiming())) {
             $a[self::FIELD_DEFAULT_VALUE_TIMING] = $v;
         }
         if (null !== ($v = $this->getDefaultValueUnsignedInt())) {
-            $a[self::FIELD_DEFAULT_VALUE_UNSIGNED_INT] = (string)$v;
-            $a[self::FIELD_DEFAULT_VALUE_UNSIGNED_INT_EXT] = $v;
+            $a[self::FIELD_DEFAULT_VALUE_UNSIGNED_INT] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DEFAULT_VALUE_UNSIGNED_INT_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getDefaultValueUri())) {
-            $a[self::FIELD_DEFAULT_VALUE_URI] = (string)$v;
-            $a[self::FIELD_DEFAULT_VALUE_URI_EXT] = $v;
+            $a[self::FIELD_DEFAULT_VALUE_URI] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DEFAULT_VALUE_URI_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getDefaultValueUuid())) {
-            $a[self::FIELD_DEFAULT_VALUE_UUID] = (string)$v;
-            $a[self::FIELD_DEFAULT_VALUE_UUID_EXT] = $v;
+            $a[self::FIELD_DEFAULT_VALUE_UUID] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DEFAULT_VALUE_UUID_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getDefinition())) {
-            $a[self::FIELD_DEFINITION] = (string)$v;
-            $a[self::FIELD_DEFINITION_EXT] = $v;
+            $a[self::FIELD_DEFINITION] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DEFINITION_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getExampleAddress())) {
             $a[self::FIELD_EXAMPLE_ADDRESS] = $v;
@@ -17270,16 +17445,22 @@ class FHIRElementDefinition extends FHIRElement
             $a[self::FIELD_EXAMPLE_ATTACHMENT] = $v;
         }
         if (null !== ($v = $this->getExampleBase64Binary())) {
-            $a[self::FIELD_EXAMPLE_BASE_64BINARY] = (string)$v;
-            $a[self::FIELD_EXAMPLE_BASE_64BINARY_EXT] = $v;
+            $a[self::FIELD_EXAMPLE_BASE_64BINARY] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_EXAMPLE_BASE_64BINARY_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getExampleBoolean())) {
-            $a[self::FIELD_EXAMPLE_BOOLEAN] = (string)$v;
-            $a[self::FIELD_EXAMPLE_BOOLEAN_EXT] = $v;
+            $a[self::FIELD_EXAMPLE_BOOLEAN] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_EXAMPLE_BOOLEAN_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getExampleCode())) {
-            $a[self::FIELD_EXAMPLE_CODE] = (string)$v;
-            $a[self::FIELD_EXAMPLE_CODE_EXT] = $v;
+            $a[self::FIELD_EXAMPLE_CODE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_EXAMPLE_CODE_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getExampleCodeableConcept())) {
             $a[self::FIELD_EXAMPLE_CODEABLE_CONCEPT] = $v;
@@ -17288,58 +17469,85 @@ class FHIRElementDefinition extends FHIRElement
             $a[self::FIELD_EXAMPLE_CODING] = $v;
         }
         if (null !== ($v = $this->getExampleContactPoint())) {
-            $a[self::FIELD_EXAMPLE_CONTACT_POINT] = $v;
+            $a[self::FIELD_EXAMPLE_CONTACT_POINT] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_EXAMPLE_CONTACT_POINT_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getExampleDate())) {
-            $a[self::FIELD_EXAMPLE_DATE] = (string)$v;
-            $a[self::FIELD_EXAMPLE_DATE_EXT] = $v;
+            $a[self::FIELD_EXAMPLE_DATE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_EXAMPLE_DATE_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getExampleDateTime())) {
-            $a[self::FIELD_EXAMPLE_DATE_TIME] = (string)$v;
-            $a[self::FIELD_EXAMPLE_DATE_TIME_EXT] = $v;
+            $a[self::FIELD_EXAMPLE_DATE_TIME] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_EXAMPLE_DATE_TIME_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getExampleDecimal())) {
-            $a[self::FIELD_EXAMPLE_DECIMAL] = (string)$v;
-            $a[self::FIELD_EXAMPLE_DECIMAL_EXT] = $v;
+            $a[self::FIELD_EXAMPLE_DECIMAL] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_EXAMPLE_DECIMAL_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getExampleHumanName())) {
             $a[self::FIELD_EXAMPLE_HUMAN_NAME] = $v;
         }
         if (null !== ($v = $this->getExampleId())) {
-            $a[self::FIELD_EXAMPLE_ID] = (string)$v;
-            $a[self::FIELD_EXAMPLE_ID_EXT] = $v;
+            $a[self::FIELD_EXAMPLE_ID] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_EXAMPLE_ID_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getExampleIdentifier())) {
-            $a[self::FIELD_EXAMPLE_IDENTIFIER] = $v;
+            $a[self::FIELD_EXAMPLE_IDENTIFIER] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_EXAMPLE_IDENTIFIER_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getExampleInstant())) {
-            $a[self::FIELD_EXAMPLE_INSTANT] = (string)$v;
-            $a[self::FIELD_EXAMPLE_INSTANT_EXT] = $v;
+            $a[self::FIELD_EXAMPLE_INSTANT] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_EXAMPLE_INSTANT_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getExampleInteger())) {
-            $a[self::FIELD_EXAMPLE_INTEGER] = (string)$v;
-            $a[self::FIELD_EXAMPLE_INTEGER_EXT] = $v;
+            $a[self::FIELD_EXAMPLE_INTEGER] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_EXAMPLE_INTEGER_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getExampleMarkdown())) {
-            $a[self::FIELD_EXAMPLE_MARKDOWN] = (string)$v;
-            $a[self::FIELD_EXAMPLE_MARKDOWN_EXT] = $v;
+            $a[self::FIELD_EXAMPLE_MARKDOWN] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_EXAMPLE_MARKDOWN_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getExampleMeta())) {
             $a[self::FIELD_EXAMPLE_META] = $v;
         }
         if (null !== ($v = $this->getExampleOid())) {
-            $a[self::FIELD_EXAMPLE_OID] = (string)$v;
-            $a[self::FIELD_EXAMPLE_OID_EXT] = $v;
+            $a[self::FIELD_EXAMPLE_OID] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_EXAMPLE_OID_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getExamplePeriod())) {
             $a[self::FIELD_EXAMPLE_PERIOD] = $v;
         }
         if (null !== ($v = $this->getExamplePositiveInt())) {
-            $a[self::FIELD_EXAMPLE_POSITIVE_INT] = (string)$v;
-            $a[self::FIELD_EXAMPLE_POSITIVE_INT_EXT] = $v;
+            $a[self::FIELD_EXAMPLE_POSITIVE_INT] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_EXAMPLE_POSITIVE_INT_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getExampleQuantity())) {
-            $a[self::FIELD_EXAMPLE_QUANTITY] = $v;
+            $a[self::FIELD_EXAMPLE_QUANTITY] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_EXAMPLE_QUANTITY_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getExampleRange())) {
             $a[self::FIELD_EXAMPLE_RANGE] = $v;
@@ -17357,27 +17565,37 @@ class FHIRElementDefinition extends FHIRElement
             $a[self::FIELD_EXAMPLE_SIGNATURE] = $v;
         }
         if (null !== ($v = $this->getExampleString())) {
-            $a[self::FIELD_EXAMPLE_STRING] = (string)$v;
-            $a[self::FIELD_EXAMPLE_STRING_EXT] = $v;
+            $a[self::FIELD_EXAMPLE_STRING] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_EXAMPLE_STRING_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getExampleTime())) {
-            $a[self::FIELD_EXAMPLE_TIME] = (string)$v;
-            $a[self::FIELD_EXAMPLE_TIME_EXT] = $v;
+            $a[self::FIELD_EXAMPLE_TIME] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_EXAMPLE_TIME_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getExampleTiming())) {
             $a[self::FIELD_EXAMPLE_TIMING] = $v;
         }
         if (null !== ($v = $this->getExampleUnsignedInt())) {
-            $a[self::FIELD_EXAMPLE_UNSIGNED_INT] = (string)$v;
-            $a[self::FIELD_EXAMPLE_UNSIGNED_INT_EXT] = $v;
+            $a[self::FIELD_EXAMPLE_UNSIGNED_INT] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_EXAMPLE_UNSIGNED_INT_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getExampleUri())) {
-            $a[self::FIELD_EXAMPLE_URI] = (string)$v;
-            $a[self::FIELD_EXAMPLE_URI_EXT] = $v;
+            $a[self::FIELD_EXAMPLE_URI] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_EXAMPLE_URI_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getExampleUuid())) {
-            $a[self::FIELD_EXAMPLE_UUID] = (string)$v;
-            $a[self::FIELD_EXAMPLE_UUID_EXT] = $v;
+            $a[self::FIELD_EXAMPLE_UUID] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_EXAMPLE_UUID_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getFixedAddress())) {
             $a[self::FIELD_FIXED_ADDRESS] = $v;
@@ -17389,16 +17607,22 @@ class FHIRElementDefinition extends FHIRElement
             $a[self::FIELD_FIXED_ATTACHMENT] = $v;
         }
         if (null !== ($v = $this->getFixedBase64Binary())) {
-            $a[self::FIELD_FIXED_BASE_64BINARY] = (string)$v;
-            $a[self::FIELD_FIXED_BASE_64BINARY_EXT] = $v;
+            $a[self::FIELD_FIXED_BASE_64BINARY] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_FIXED_BASE_64BINARY_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getFixedBoolean())) {
-            $a[self::FIELD_FIXED_BOOLEAN] = (string)$v;
-            $a[self::FIELD_FIXED_BOOLEAN_EXT] = $v;
+            $a[self::FIELD_FIXED_BOOLEAN] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_FIXED_BOOLEAN_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getFixedCode())) {
-            $a[self::FIELD_FIXED_CODE] = (string)$v;
-            $a[self::FIELD_FIXED_CODE_EXT] = $v;
+            $a[self::FIELD_FIXED_CODE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_FIXED_CODE_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getFixedCodeableConcept())) {
             $a[self::FIELD_FIXED_CODEABLE_CONCEPT] = $v;
@@ -17407,58 +17631,85 @@ class FHIRElementDefinition extends FHIRElement
             $a[self::FIELD_FIXED_CODING] = $v;
         }
         if (null !== ($v = $this->getFixedContactPoint())) {
-            $a[self::FIELD_FIXED_CONTACT_POINT] = $v;
+            $a[self::FIELD_FIXED_CONTACT_POINT] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_FIXED_CONTACT_POINT_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getFixedDate())) {
-            $a[self::FIELD_FIXED_DATE] = (string)$v;
-            $a[self::FIELD_FIXED_DATE_EXT] = $v;
+            $a[self::FIELD_FIXED_DATE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_FIXED_DATE_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getFixedDateTime())) {
-            $a[self::FIELD_FIXED_DATE_TIME] = (string)$v;
-            $a[self::FIELD_FIXED_DATE_TIME_EXT] = $v;
+            $a[self::FIELD_FIXED_DATE_TIME] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_FIXED_DATE_TIME_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getFixedDecimal())) {
-            $a[self::FIELD_FIXED_DECIMAL] = (string)$v;
-            $a[self::FIELD_FIXED_DECIMAL_EXT] = $v;
+            $a[self::FIELD_FIXED_DECIMAL] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_FIXED_DECIMAL_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getFixedHumanName())) {
             $a[self::FIELD_FIXED_HUMAN_NAME] = $v;
         }
         if (null !== ($v = $this->getFixedId())) {
-            $a[self::FIELD_FIXED_ID] = (string)$v;
-            $a[self::FIELD_FIXED_ID_EXT] = $v;
+            $a[self::FIELD_FIXED_ID] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_FIXED_ID_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getFixedIdentifier())) {
-            $a[self::FIELD_FIXED_IDENTIFIER] = $v;
+            $a[self::FIELD_FIXED_IDENTIFIER] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_FIXED_IDENTIFIER_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getFixedInstant())) {
-            $a[self::FIELD_FIXED_INSTANT] = (string)$v;
-            $a[self::FIELD_FIXED_INSTANT_EXT] = $v;
+            $a[self::FIELD_FIXED_INSTANT] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_FIXED_INSTANT_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getFixedInteger())) {
-            $a[self::FIELD_FIXED_INTEGER] = (string)$v;
-            $a[self::FIELD_FIXED_INTEGER_EXT] = $v;
+            $a[self::FIELD_FIXED_INTEGER] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_FIXED_INTEGER_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getFixedMarkdown())) {
-            $a[self::FIELD_FIXED_MARKDOWN] = (string)$v;
-            $a[self::FIELD_FIXED_MARKDOWN_EXT] = $v;
+            $a[self::FIELD_FIXED_MARKDOWN] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_FIXED_MARKDOWN_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getFixedMeta())) {
             $a[self::FIELD_FIXED_META] = $v;
         }
         if (null !== ($v = $this->getFixedOid())) {
-            $a[self::FIELD_FIXED_OID] = (string)$v;
-            $a[self::FIELD_FIXED_OID_EXT] = $v;
+            $a[self::FIELD_FIXED_OID] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_FIXED_OID_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getFixedPeriod())) {
             $a[self::FIELD_FIXED_PERIOD] = $v;
         }
         if (null !== ($v = $this->getFixedPositiveInt())) {
-            $a[self::FIELD_FIXED_POSITIVE_INT] = (string)$v;
-            $a[self::FIELD_FIXED_POSITIVE_INT_EXT] = $v;
+            $a[self::FIELD_FIXED_POSITIVE_INT] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_FIXED_POSITIVE_INT_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getFixedQuantity())) {
-            $a[self::FIELD_FIXED_QUANTITY] = $v;
+            $a[self::FIELD_FIXED_QUANTITY] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_FIXED_QUANTITY_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getFixedRange())) {
             $a[self::FIELD_FIXED_RANGE] = $v;
@@ -17476,50 +17727,70 @@ class FHIRElementDefinition extends FHIRElement
             $a[self::FIELD_FIXED_SIGNATURE] = $v;
         }
         if (null !== ($v = $this->getFixedString())) {
-            $a[self::FIELD_FIXED_STRING] = (string)$v;
-            $a[self::FIELD_FIXED_STRING_EXT] = $v;
+            $a[self::FIELD_FIXED_STRING] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_FIXED_STRING_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getFixedTime())) {
-            $a[self::FIELD_FIXED_TIME] = (string)$v;
-            $a[self::FIELD_FIXED_TIME_EXT] = $v;
+            $a[self::FIELD_FIXED_TIME] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_FIXED_TIME_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getFixedTiming())) {
             $a[self::FIELD_FIXED_TIMING] = $v;
         }
         if (null !== ($v = $this->getFixedUnsignedInt())) {
-            $a[self::FIELD_FIXED_UNSIGNED_INT] = (string)$v;
-            $a[self::FIELD_FIXED_UNSIGNED_INT_EXT] = $v;
+            $a[self::FIELD_FIXED_UNSIGNED_INT] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_FIXED_UNSIGNED_INT_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getFixedUri())) {
-            $a[self::FIELD_FIXED_URI] = (string)$v;
-            $a[self::FIELD_FIXED_URI_EXT] = $v;
+            $a[self::FIELD_FIXED_URI] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_FIXED_URI_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getFixedUuid())) {
-            $a[self::FIELD_FIXED_UUID] = (string)$v;
-            $a[self::FIELD_FIXED_UUID_EXT] = $v;
+            $a[self::FIELD_FIXED_UUID] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_FIXED_UUID_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getIsModifier())) {
-            $a[self::FIELD_IS_MODIFIER] = (string)$v;
-            $a[self::FIELD_IS_MODIFIER_EXT] = $v;
+            $a[self::FIELD_IS_MODIFIER] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_IS_MODIFIER_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getIsSummary())) {
-            $a[self::FIELD_IS_SUMMARY] = (string)$v;
-            $a[self::FIELD_IS_SUMMARY_EXT] = $v;
+            $a[self::FIELD_IS_SUMMARY] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_IS_SUMMARY_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getLabel())) {
-            $a[self::FIELD_LABEL] = (string)$v;
-            $a[self::FIELD_LABEL_EXT] = $v;
+            $a[self::FIELD_LABEL] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_LABEL_EXT] = $v;
+            }
         }
         if ([] !== ($vs = $this->getMapping())) {
             $a[self::FIELD_MAPPING] = $vs;
         }
         if (null !== ($v = $this->getMax())) {
-            $a[self::FIELD_MAX] = (string)$v;
-            $a[self::FIELD_MAX_EXT] = $v;
+            $a[self::FIELD_MAX] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MAX_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMaxLength())) {
-            $a[self::FIELD_MAX_LENGTH] = (string)$v;
-            $a[self::FIELD_MAX_LENGTH_EXT] = $v;
+            $a[self::FIELD_MAX_LENGTH] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MAX_LENGTH_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMaxValueAddress())) {
             $a[self::FIELD_MAX_VALUE_ADDRESS] = $v;
@@ -17531,16 +17802,22 @@ class FHIRElementDefinition extends FHIRElement
             $a[self::FIELD_MAX_VALUE_ATTACHMENT] = $v;
         }
         if (null !== ($v = $this->getMaxValueBase64Binary())) {
-            $a[self::FIELD_MAX_VALUE_BASE_64BINARY] = (string)$v;
-            $a[self::FIELD_MAX_VALUE_BASE_64BINARY_EXT] = $v;
+            $a[self::FIELD_MAX_VALUE_BASE_64BINARY] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MAX_VALUE_BASE_64BINARY_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMaxValueBoolean())) {
-            $a[self::FIELD_MAX_VALUE_BOOLEAN] = (string)$v;
-            $a[self::FIELD_MAX_VALUE_BOOLEAN_EXT] = $v;
+            $a[self::FIELD_MAX_VALUE_BOOLEAN] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MAX_VALUE_BOOLEAN_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMaxValueCode())) {
-            $a[self::FIELD_MAX_VALUE_CODE] = (string)$v;
-            $a[self::FIELD_MAX_VALUE_CODE_EXT] = $v;
+            $a[self::FIELD_MAX_VALUE_CODE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MAX_VALUE_CODE_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMaxValueCodeableConcept())) {
             $a[self::FIELD_MAX_VALUE_CODEABLE_CONCEPT] = $v;
@@ -17549,58 +17826,85 @@ class FHIRElementDefinition extends FHIRElement
             $a[self::FIELD_MAX_VALUE_CODING] = $v;
         }
         if (null !== ($v = $this->getMaxValueContactPoint())) {
-            $a[self::FIELD_MAX_VALUE_CONTACT_POINT] = $v;
+            $a[self::FIELD_MAX_VALUE_CONTACT_POINT] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MAX_VALUE_CONTACT_POINT_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMaxValueDate())) {
-            $a[self::FIELD_MAX_VALUE_DATE] = (string)$v;
-            $a[self::FIELD_MAX_VALUE_DATE_EXT] = $v;
+            $a[self::FIELD_MAX_VALUE_DATE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MAX_VALUE_DATE_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMaxValueDateTime())) {
-            $a[self::FIELD_MAX_VALUE_DATE_TIME] = (string)$v;
-            $a[self::FIELD_MAX_VALUE_DATE_TIME_EXT] = $v;
+            $a[self::FIELD_MAX_VALUE_DATE_TIME] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MAX_VALUE_DATE_TIME_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMaxValueDecimal())) {
-            $a[self::FIELD_MAX_VALUE_DECIMAL] = (string)$v;
-            $a[self::FIELD_MAX_VALUE_DECIMAL_EXT] = $v;
+            $a[self::FIELD_MAX_VALUE_DECIMAL] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MAX_VALUE_DECIMAL_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMaxValueHumanName())) {
             $a[self::FIELD_MAX_VALUE_HUMAN_NAME] = $v;
         }
         if (null !== ($v = $this->getMaxValueId())) {
-            $a[self::FIELD_MAX_VALUE_ID] = (string)$v;
-            $a[self::FIELD_MAX_VALUE_ID_EXT] = $v;
+            $a[self::FIELD_MAX_VALUE_ID] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MAX_VALUE_ID_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMaxValueIdentifier())) {
-            $a[self::FIELD_MAX_VALUE_IDENTIFIER] = $v;
+            $a[self::FIELD_MAX_VALUE_IDENTIFIER] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MAX_VALUE_IDENTIFIER_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMaxValueInstant())) {
-            $a[self::FIELD_MAX_VALUE_INSTANT] = (string)$v;
-            $a[self::FIELD_MAX_VALUE_INSTANT_EXT] = $v;
+            $a[self::FIELD_MAX_VALUE_INSTANT] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MAX_VALUE_INSTANT_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMaxValueInteger())) {
-            $a[self::FIELD_MAX_VALUE_INTEGER] = (string)$v;
-            $a[self::FIELD_MAX_VALUE_INTEGER_EXT] = $v;
+            $a[self::FIELD_MAX_VALUE_INTEGER] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MAX_VALUE_INTEGER_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMaxValueMarkdown())) {
-            $a[self::FIELD_MAX_VALUE_MARKDOWN] = (string)$v;
-            $a[self::FIELD_MAX_VALUE_MARKDOWN_EXT] = $v;
+            $a[self::FIELD_MAX_VALUE_MARKDOWN] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MAX_VALUE_MARKDOWN_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMaxValueMeta())) {
             $a[self::FIELD_MAX_VALUE_META] = $v;
         }
         if (null !== ($v = $this->getMaxValueOid())) {
-            $a[self::FIELD_MAX_VALUE_OID] = (string)$v;
-            $a[self::FIELD_MAX_VALUE_OID_EXT] = $v;
+            $a[self::FIELD_MAX_VALUE_OID] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MAX_VALUE_OID_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMaxValuePeriod())) {
             $a[self::FIELD_MAX_VALUE_PERIOD] = $v;
         }
         if (null !== ($v = $this->getMaxValuePositiveInt())) {
-            $a[self::FIELD_MAX_VALUE_POSITIVE_INT] = (string)$v;
-            $a[self::FIELD_MAX_VALUE_POSITIVE_INT_EXT] = $v;
+            $a[self::FIELD_MAX_VALUE_POSITIVE_INT] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MAX_VALUE_POSITIVE_INT_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMaxValueQuantity())) {
-            $a[self::FIELD_MAX_VALUE_QUANTITY] = $v;
+            $a[self::FIELD_MAX_VALUE_QUANTITY] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MAX_VALUE_QUANTITY_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMaxValueRange())) {
             $a[self::FIELD_MAX_VALUE_RANGE] = $v;
@@ -17618,35 +17922,49 @@ class FHIRElementDefinition extends FHIRElement
             $a[self::FIELD_MAX_VALUE_SIGNATURE] = $v;
         }
         if (null !== ($v = $this->getMaxValueString())) {
-            $a[self::FIELD_MAX_VALUE_STRING] = (string)$v;
-            $a[self::FIELD_MAX_VALUE_STRING_EXT] = $v;
+            $a[self::FIELD_MAX_VALUE_STRING] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MAX_VALUE_STRING_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMaxValueTime())) {
-            $a[self::FIELD_MAX_VALUE_TIME] = (string)$v;
-            $a[self::FIELD_MAX_VALUE_TIME_EXT] = $v;
+            $a[self::FIELD_MAX_VALUE_TIME] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MAX_VALUE_TIME_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMaxValueTiming())) {
             $a[self::FIELD_MAX_VALUE_TIMING] = $v;
         }
         if (null !== ($v = $this->getMaxValueUnsignedInt())) {
-            $a[self::FIELD_MAX_VALUE_UNSIGNED_INT] = (string)$v;
-            $a[self::FIELD_MAX_VALUE_UNSIGNED_INT_EXT] = $v;
+            $a[self::FIELD_MAX_VALUE_UNSIGNED_INT] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MAX_VALUE_UNSIGNED_INT_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMaxValueUri())) {
-            $a[self::FIELD_MAX_VALUE_URI] = (string)$v;
-            $a[self::FIELD_MAX_VALUE_URI_EXT] = $v;
+            $a[self::FIELD_MAX_VALUE_URI] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MAX_VALUE_URI_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMaxValueUuid())) {
-            $a[self::FIELD_MAX_VALUE_UUID] = (string)$v;
-            $a[self::FIELD_MAX_VALUE_UUID_EXT] = $v;
+            $a[self::FIELD_MAX_VALUE_UUID] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MAX_VALUE_UUID_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMeaningWhenMissing())) {
-            $a[self::FIELD_MEANING_WHEN_MISSING] = (string)$v;
-            $a[self::FIELD_MEANING_WHEN_MISSING_EXT] = $v;
+            $a[self::FIELD_MEANING_WHEN_MISSING] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MEANING_WHEN_MISSING_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMin())) {
-            $a[self::FIELD_MIN] = (string)$v;
-            $a[self::FIELD_MIN_EXT] = $v;
+            $a[self::FIELD_MIN] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MIN_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMinValueAddress())) {
             $a[self::FIELD_MIN_VALUE_ADDRESS] = $v;
@@ -17658,16 +17976,22 @@ class FHIRElementDefinition extends FHIRElement
             $a[self::FIELD_MIN_VALUE_ATTACHMENT] = $v;
         }
         if (null !== ($v = $this->getMinValueBase64Binary())) {
-            $a[self::FIELD_MIN_VALUE_BASE_64BINARY] = (string)$v;
-            $a[self::FIELD_MIN_VALUE_BASE_64BINARY_EXT] = $v;
+            $a[self::FIELD_MIN_VALUE_BASE_64BINARY] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MIN_VALUE_BASE_64BINARY_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMinValueBoolean())) {
-            $a[self::FIELD_MIN_VALUE_BOOLEAN] = (string)$v;
-            $a[self::FIELD_MIN_VALUE_BOOLEAN_EXT] = $v;
+            $a[self::FIELD_MIN_VALUE_BOOLEAN] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MIN_VALUE_BOOLEAN_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMinValueCode())) {
-            $a[self::FIELD_MIN_VALUE_CODE] = (string)$v;
-            $a[self::FIELD_MIN_VALUE_CODE_EXT] = $v;
+            $a[self::FIELD_MIN_VALUE_CODE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MIN_VALUE_CODE_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMinValueCodeableConcept())) {
             $a[self::FIELD_MIN_VALUE_CODEABLE_CONCEPT] = $v;
@@ -17676,58 +18000,85 @@ class FHIRElementDefinition extends FHIRElement
             $a[self::FIELD_MIN_VALUE_CODING] = $v;
         }
         if (null !== ($v = $this->getMinValueContactPoint())) {
-            $a[self::FIELD_MIN_VALUE_CONTACT_POINT] = $v;
+            $a[self::FIELD_MIN_VALUE_CONTACT_POINT] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MIN_VALUE_CONTACT_POINT_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMinValueDate())) {
-            $a[self::FIELD_MIN_VALUE_DATE] = (string)$v;
-            $a[self::FIELD_MIN_VALUE_DATE_EXT] = $v;
+            $a[self::FIELD_MIN_VALUE_DATE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MIN_VALUE_DATE_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMinValueDateTime())) {
-            $a[self::FIELD_MIN_VALUE_DATE_TIME] = (string)$v;
-            $a[self::FIELD_MIN_VALUE_DATE_TIME_EXT] = $v;
+            $a[self::FIELD_MIN_VALUE_DATE_TIME] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MIN_VALUE_DATE_TIME_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMinValueDecimal())) {
-            $a[self::FIELD_MIN_VALUE_DECIMAL] = (string)$v;
-            $a[self::FIELD_MIN_VALUE_DECIMAL_EXT] = $v;
+            $a[self::FIELD_MIN_VALUE_DECIMAL] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MIN_VALUE_DECIMAL_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMinValueHumanName())) {
             $a[self::FIELD_MIN_VALUE_HUMAN_NAME] = $v;
         }
         if (null !== ($v = $this->getMinValueId())) {
-            $a[self::FIELD_MIN_VALUE_ID] = (string)$v;
-            $a[self::FIELD_MIN_VALUE_ID_EXT] = $v;
+            $a[self::FIELD_MIN_VALUE_ID] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MIN_VALUE_ID_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMinValueIdentifier())) {
-            $a[self::FIELD_MIN_VALUE_IDENTIFIER] = $v;
+            $a[self::FIELD_MIN_VALUE_IDENTIFIER] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MIN_VALUE_IDENTIFIER_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMinValueInstant())) {
-            $a[self::FIELD_MIN_VALUE_INSTANT] = (string)$v;
-            $a[self::FIELD_MIN_VALUE_INSTANT_EXT] = $v;
+            $a[self::FIELD_MIN_VALUE_INSTANT] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MIN_VALUE_INSTANT_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMinValueInteger())) {
-            $a[self::FIELD_MIN_VALUE_INTEGER] = (string)$v;
-            $a[self::FIELD_MIN_VALUE_INTEGER_EXT] = $v;
+            $a[self::FIELD_MIN_VALUE_INTEGER] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MIN_VALUE_INTEGER_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMinValueMarkdown())) {
-            $a[self::FIELD_MIN_VALUE_MARKDOWN] = (string)$v;
-            $a[self::FIELD_MIN_VALUE_MARKDOWN_EXT] = $v;
+            $a[self::FIELD_MIN_VALUE_MARKDOWN] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MIN_VALUE_MARKDOWN_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMinValueMeta())) {
             $a[self::FIELD_MIN_VALUE_META] = $v;
         }
         if (null !== ($v = $this->getMinValueOid())) {
-            $a[self::FIELD_MIN_VALUE_OID] = (string)$v;
-            $a[self::FIELD_MIN_VALUE_OID_EXT] = $v;
+            $a[self::FIELD_MIN_VALUE_OID] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MIN_VALUE_OID_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMinValuePeriod())) {
             $a[self::FIELD_MIN_VALUE_PERIOD] = $v;
         }
         if (null !== ($v = $this->getMinValuePositiveInt())) {
-            $a[self::FIELD_MIN_VALUE_POSITIVE_INT] = (string)$v;
-            $a[self::FIELD_MIN_VALUE_POSITIVE_INT_EXT] = $v;
+            $a[self::FIELD_MIN_VALUE_POSITIVE_INT] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MIN_VALUE_POSITIVE_INT_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMinValueQuantity())) {
-            $a[self::FIELD_MIN_VALUE_QUANTITY] = $v;
+            $a[self::FIELD_MIN_VALUE_QUANTITY] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MIN_VALUE_QUANTITY_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMinValueRange())) {
             $a[self::FIELD_MIN_VALUE_RANGE] = $v;
@@ -17745,43 +18096,61 @@ class FHIRElementDefinition extends FHIRElement
             $a[self::FIELD_MIN_VALUE_SIGNATURE] = $v;
         }
         if (null !== ($v = $this->getMinValueString())) {
-            $a[self::FIELD_MIN_VALUE_STRING] = (string)$v;
-            $a[self::FIELD_MIN_VALUE_STRING_EXT] = $v;
+            $a[self::FIELD_MIN_VALUE_STRING] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MIN_VALUE_STRING_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMinValueTime())) {
-            $a[self::FIELD_MIN_VALUE_TIME] = (string)$v;
-            $a[self::FIELD_MIN_VALUE_TIME_EXT] = $v;
+            $a[self::FIELD_MIN_VALUE_TIME] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MIN_VALUE_TIME_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMinValueTiming())) {
             $a[self::FIELD_MIN_VALUE_TIMING] = $v;
         }
         if (null !== ($v = $this->getMinValueUnsignedInt())) {
-            $a[self::FIELD_MIN_VALUE_UNSIGNED_INT] = (string)$v;
-            $a[self::FIELD_MIN_VALUE_UNSIGNED_INT_EXT] = $v;
+            $a[self::FIELD_MIN_VALUE_UNSIGNED_INT] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MIN_VALUE_UNSIGNED_INT_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMinValueUri())) {
-            $a[self::FIELD_MIN_VALUE_URI] = (string)$v;
-            $a[self::FIELD_MIN_VALUE_URI_EXT] = $v;
+            $a[self::FIELD_MIN_VALUE_URI] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MIN_VALUE_URI_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMinValueUuid())) {
-            $a[self::FIELD_MIN_VALUE_UUID] = (string)$v;
-            $a[self::FIELD_MIN_VALUE_UUID_EXT] = $v;
+            $a[self::FIELD_MIN_VALUE_UUID] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MIN_VALUE_UUID_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMustSupport())) {
-            $a[self::FIELD_MUST_SUPPORT] = (string)$v;
-            $a[self::FIELD_MUST_SUPPORT_EXT] = $v;
+            $a[self::FIELD_MUST_SUPPORT] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MUST_SUPPORT_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getName())) {
-            $a[self::FIELD_NAME] = (string)$v;
-            $a[self::FIELD_NAME_EXT] = $v;
+            $a[self::FIELD_NAME] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_NAME_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getNameReference())) {
-            $a[self::FIELD_NAME_REFERENCE] = (string)$v;
-            $a[self::FIELD_NAME_REFERENCE_EXT] = $v;
+            $a[self::FIELD_NAME_REFERENCE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_NAME_REFERENCE_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getPath())) {
-            $a[self::FIELD_PATH] = (string)$v;
-            $a[self::FIELD_PATH_EXT] = $v;
+            $a[self::FIELD_PATH] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_PATH_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getPatternAddress())) {
             $a[self::FIELD_PATTERN_ADDRESS] = $v;
@@ -17793,16 +18162,22 @@ class FHIRElementDefinition extends FHIRElement
             $a[self::FIELD_PATTERN_ATTACHMENT] = $v;
         }
         if (null !== ($v = $this->getPatternBase64Binary())) {
-            $a[self::FIELD_PATTERN_BASE_64BINARY] = (string)$v;
-            $a[self::FIELD_PATTERN_BASE_64BINARY_EXT] = $v;
+            $a[self::FIELD_PATTERN_BASE_64BINARY] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_PATTERN_BASE_64BINARY_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getPatternBoolean())) {
-            $a[self::FIELD_PATTERN_BOOLEAN] = (string)$v;
-            $a[self::FIELD_PATTERN_BOOLEAN_EXT] = $v;
+            $a[self::FIELD_PATTERN_BOOLEAN] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_PATTERN_BOOLEAN_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getPatternCode())) {
-            $a[self::FIELD_PATTERN_CODE] = (string)$v;
-            $a[self::FIELD_PATTERN_CODE_EXT] = $v;
+            $a[self::FIELD_PATTERN_CODE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_PATTERN_CODE_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getPatternCodeableConcept())) {
             $a[self::FIELD_PATTERN_CODEABLE_CONCEPT] = $v;
@@ -17811,58 +18186,85 @@ class FHIRElementDefinition extends FHIRElement
             $a[self::FIELD_PATTERN_CODING] = $v;
         }
         if (null !== ($v = $this->getPatternContactPoint())) {
-            $a[self::FIELD_PATTERN_CONTACT_POINT] = $v;
+            $a[self::FIELD_PATTERN_CONTACT_POINT] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_PATTERN_CONTACT_POINT_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getPatternDate())) {
-            $a[self::FIELD_PATTERN_DATE] = (string)$v;
-            $a[self::FIELD_PATTERN_DATE_EXT] = $v;
+            $a[self::FIELD_PATTERN_DATE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_PATTERN_DATE_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getPatternDateTime())) {
-            $a[self::FIELD_PATTERN_DATE_TIME] = (string)$v;
-            $a[self::FIELD_PATTERN_DATE_TIME_EXT] = $v;
+            $a[self::FIELD_PATTERN_DATE_TIME] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_PATTERN_DATE_TIME_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getPatternDecimal())) {
-            $a[self::FIELD_PATTERN_DECIMAL] = (string)$v;
-            $a[self::FIELD_PATTERN_DECIMAL_EXT] = $v;
+            $a[self::FIELD_PATTERN_DECIMAL] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_PATTERN_DECIMAL_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getPatternHumanName())) {
             $a[self::FIELD_PATTERN_HUMAN_NAME] = $v;
         }
         if (null !== ($v = $this->getPatternId())) {
-            $a[self::FIELD_PATTERN_ID] = (string)$v;
-            $a[self::FIELD_PATTERN_ID_EXT] = $v;
+            $a[self::FIELD_PATTERN_ID] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_PATTERN_ID_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getPatternIdentifier())) {
-            $a[self::FIELD_PATTERN_IDENTIFIER] = $v;
+            $a[self::FIELD_PATTERN_IDENTIFIER] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_PATTERN_IDENTIFIER_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getPatternInstant())) {
-            $a[self::FIELD_PATTERN_INSTANT] = (string)$v;
-            $a[self::FIELD_PATTERN_INSTANT_EXT] = $v;
+            $a[self::FIELD_PATTERN_INSTANT] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_PATTERN_INSTANT_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getPatternInteger())) {
-            $a[self::FIELD_PATTERN_INTEGER] = (string)$v;
-            $a[self::FIELD_PATTERN_INTEGER_EXT] = $v;
+            $a[self::FIELD_PATTERN_INTEGER] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_PATTERN_INTEGER_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getPatternMarkdown())) {
-            $a[self::FIELD_PATTERN_MARKDOWN] = (string)$v;
-            $a[self::FIELD_PATTERN_MARKDOWN_EXT] = $v;
+            $a[self::FIELD_PATTERN_MARKDOWN] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_PATTERN_MARKDOWN_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getPatternMeta())) {
             $a[self::FIELD_PATTERN_META] = $v;
         }
         if (null !== ($v = $this->getPatternOid())) {
-            $a[self::FIELD_PATTERN_OID] = (string)$v;
-            $a[self::FIELD_PATTERN_OID_EXT] = $v;
+            $a[self::FIELD_PATTERN_OID] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_PATTERN_OID_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getPatternPeriod())) {
             $a[self::FIELD_PATTERN_PERIOD] = $v;
         }
         if (null !== ($v = $this->getPatternPositiveInt())) {
-            $a[self::FIELD_PATTERN_POSITIVE_INT] = (string)$v;
-            $a[self::FIELD_PATTERN_POSITIVE_INT_EXT] = $v;
+            $a[self::FIELD_PATTERN_POSITIVE_INT] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_PATTERN_POSITIVE_INT_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getPatternQuantity())) {
-            $a[self::FIELD_PATTERN_QUANTITY] = $v;
+            $a[self::FIELD_PATTERN_QUANTITY] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_PATTERN_QUANTITY_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getPatternRange())) {
             $a[self::FIELD_PATTERN_RANGE] = $v;
@@ -17880,38 +18282,64 @@ class FHIRElementDefinition extends FHIRElement
             $a[self::FIELD_PATTERN_SIGNATURE] = $v;
         }
         if (null !== ($v = $this->getPatternString())) {
-            $a[self::FIELD_PATTERN_STRING] = (string)$v;
-            $a[self::FIELD_PATTERN_STRING_EXT] = $v;
+            $a[self::FIELD_PATTERN_STRING] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_PATTERN_STRING_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getPatternTime())) {
-            $a[self::FIELD_PATTERN_TIME] = (string)$v;
-            $a[self::FIELD_PATTERN_TIME_EXT] = $v;
+            $a[self::FIELD_PATTERN_TIME] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_PATTERN_TIME_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getPatternTiming())) {
             $a[self::FIELD_PATTERN_TIMING] = $v;
         }
         if (null !== ($v = $this->getPatternUnsignedInt())) {
-            $a[self::FIELD_PATTERN_UNSIGNED_INT] = (string)$v;
-            $a[self::FIELD_PATTERN_UNSIGNED_INT_EXT] = $v;
+            $a[self::FIELD_PATTERN_UNSIGNED_INT] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_PATTERN_UNSIGNED_INT_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getPatternUri())) {
-            $a[self::FIELD_PATTERN_URI] = (string)$v;
-            $a[self::FIELD_PATTERN_URI_EXT] = $v;
+            $a[self::FIELD_PATTERN_URI] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_PATTERN_URI_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getPatternUuid())) {
-            $a[self::FIELD_PATTERN_UUID] = (string)$v;
-            $a[self::FIELD_PATTERN_UUID_EXT] = $v;
+            $a[self::FIELD_PATTERN_UUID] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_PATTERN_UUID_EXT] = $v;
+            }
         }
         if ([] !== ($vs = $this->getRepresentation())) {
-            $a[self::FIELD_REPRESENTATION] = $vs;
+            $a[self::FIELD_REPRESENTATION] = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_REPRESENTATION][] = $v->getValue();
+                if ($v->_hasNonValueFieldsDefined()) {
+                    if (!isset($a[self::FIELD_REPRESENTATION_EXT])) {
+                        $a[self::FIELD_REPRESENTATION_EXT] = [];
+                    }
+                    $a[self::FIELD_REPRESENTATION_EXT][] = $v;
+                }
+            }
         }
         if (null !== ($v = $this->getRequirements())) {
-            $a[self::FIELD_REQUIREMENTS] = (string)$v;
-            $a[self::FIELD_REQUIREMENTS_EXT] = $v;
+            $a[self::FIELD_REQUIREMENTS] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_REQUIREMENTS_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getShort())) {
-            $a[self::FIELD_SHORT] = (string)$v;
-            $a[self::FIELD_SHORT_EXT] = $v;
+            $a[self::FIELD_SHORT] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_SHORT_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getSlicing())) {
             $a[self::FIELD_SLICING] = $v;
@@ -17919,7 +18347,7 @@ class FHIRElementDefinition extends FHIRElement
         if ([] !== ($vs = $this->getType())) {
             $a[self::FIELD_TYPE] = $vs;
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

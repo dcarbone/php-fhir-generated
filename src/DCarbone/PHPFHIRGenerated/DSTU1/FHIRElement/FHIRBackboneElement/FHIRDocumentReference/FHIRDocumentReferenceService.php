@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRDo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,6 +80,7 @@ class FHIRDocumentReferenceService extends FHIRBackboneElement
     const FIELD_ADDRESS = 'address';
     const FIELD_ADDRESS_EXT = '_address';
     const FIELD_PARAMETER = 'parameter';
+    const FIELD_PARAMETER_EXT = '_parameter';
     const FIELD_TYPE = 'type';
 
     /**
@@ -140,16 +141,23 @@ class FHIRDocumentReferenceService extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_PARAMETER])) {
+            $ext = (isset($data[self::FIELD_PARAMETER_EXT]) && is_array($data[self::FIELD_PARAMETER_EXT]))
+                ? $data[self::FIELD_PARAMETER_EXT]
+                : null;
             if (is_array($data[self::FIELD_PARAMETER])) {
-                foreach($data[self::FIELD_PARAMETER] as $v) {
+                foreach($data[self::FIELD_PARAMETER] as $i => $v) {
                     if ($v instanceof FHIRDocumentReferenceParameter) {
                         $this->addParameter($v);
+                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
+                        $this->addParameter(new FHIRDocumentReferenceParameter([FHIRDocumentReferenceParameter::FIELD_VALUE => $v] + $ext[$i]));
                     } else {
                         $this->addParameter(new FHIRDocumentReferenceParameter($v));
                     }
                 }
-            } else if ($data[self::FIELD_PARAMETER] instanceof FHIRDocumentReferenceParameter) {
+            } elseif ($data[self::FIELD_PARAMETER] instanceof FHIRDocumentReferenceParameter) {
                 $this->addParameter($data[self::FIELD_PARAMETER]);
+            } elseif ($ext && is_scalar($data[self::FIELD_PARAMETER])) {
+                $this->addParameter(new FHIRDocumentReferenceParameter([FHIRDocumentReferenceParameter::FIELD_VALUE => $data[self::FIELD_PARAMETER]] + $ext));
             } else {
                 $this->addParameter(new FHIRDocumentReferenceParameter($data[self::FIELD_PARAMETER]));
             }
@@ -166,7 +174,7 @@ class FHIRDocumentReferenceService extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -174,17 +182,33 @@ class FHIRDocumentReferenceService extends FHIRBackboneElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceService
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -333,13 +357,14 @@ class FHIRDocumentReferenceService extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIRDocumentReferenceService::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIRDocumentReferenceService);
+            $type = new FHIRDocumentReferenceService;
         } elseif (!is_object($type) || !($type instanceof FHIRDocumentReferenceService)) {
             throw new \RuntimeException(sprintf(
                 'FHIRDocumentReferenceService::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceService or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRBackboneElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -374,24 +399,23 @@ class FHIRDocumentReferenceService extends FHIRBackboneElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getAddress())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ADDRESS, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ADDRESS, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getParameter())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PARAMETER, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_PARAMETER, null, $v->_getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -403,16 +427,30 @@ class FHIRDocumentReferenceService extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAddress())) {
-            $a[self::FIELD_ADDRESS] = (string)$v;
-            $a[self::FIELD_ADDRESS_EXT] = $v;
+            $a[self::FIELD_ADDRESS] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_ADDRESS_EXT] = $v;
+            }
         }
         if ([] !== ($vs = $this->getParameter())) {
-            $a[self::FIELD_PARAMETER] = $vs;
+            $a[self::FIELD_PARAMETER] = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_PARAMETER][] = $v->getValue();
+                if ($v->_hasNonValueFieldsDefined()) {
+                    if (!isset($a[self::FIELD_PARAMETER_EXT])) {
+                        $a[self::FIELD_PARAMETER_EXT] = [];
+                    }
+                    $a[self::FIELD_PARAMETER_EXT][] = $v;
+                }
+            }
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

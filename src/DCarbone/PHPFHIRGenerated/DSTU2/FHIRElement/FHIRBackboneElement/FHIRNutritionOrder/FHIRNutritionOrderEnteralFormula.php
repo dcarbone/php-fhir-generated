@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRNu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -303,7 +303,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -311,17 +311,33 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderEnteralFormula
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -690,13 +706,14 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIRNutritionOrderEnteralFormula::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIRNutritionOrderEnteralFormula);
+            $type = new FHIRNutritionOrderEnteralFormula;
         } elseif (!is_object($type) || !($type instanceof FHIRNutritionOrderEnteralFormula)) {
             throw new \RuntimeException(sprintf(
                 'FHIRNutritionOrderEnteralFormula::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderEnteralFormula or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRBackboneElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -755,15 +772,15 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getAdditiveProductName())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ADDITIVE_PRODUCT_NAME, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ADDITIVE_PRODUCT_NAME, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getAdditiveType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ADDITIVE_TYPE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ADDITIVE_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getAdministration())) {
@@ -771,30 +788,30 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ADMINISTRATION, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_ADMINISTRATION, null, $v->_getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getAdministrationInstruction())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ADMINISTRATION_INSTRUCTION, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ADMINISTRATION_INSTRUCTION, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getBaseFormulaProductName())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_BASE_FORMULA_PRODUCT_NAME, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_BASE_FORMULA_PRODUCT_NAME, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getBaseFormulaType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_BASE_FORMULA_TYPE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_BASE_FORMULA_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getCaloricDensity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CALORIC_DENSITY, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CALORIC_DENSITY, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getMaxVolumeToDeliver())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VOLUME_TO_DELIVER, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VOLUME_TO_DELIVER, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getRouteofAdministration())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ROUTEOF_ADMINISTRATION, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ROUTEOF_ADMINISTRATION, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -806,8 +823,10 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAdditiveProductName())) {
-            $a[self::FIELD_ADDITIVE_PRODUCT_NAME] = (string)$v;
-            $a[self::FIELD_ADDITIVE_PRODUCT_NAME_EXT] = $v;
+            $a[self::FIELD_ADDITIVE_PRODUCT_NAME] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_ADDITIVE_PRODUCT_NAME_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getAdditiveType())) {
             $a[self::FIELD_ADDITIVE_TYPE] = $v;
@@ -816,12 +835,16 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
             $a[self::FIELD_ADMINISTRATION] = $vs;
         }
         if (null !== ($v = $this->getAdministrationInstruction())) {
-            $a[self::FIELD_ADMINISTRATION_INSTRUCTION] = (string)$v;
-            $a[self::FIELD_ADMINISTRATION_INSTRUCTION_EXT] = $v;
+            $a[self::FIELD_ADMINISTRATION_INSTRUCTION] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_ADMINISTRATION_INSTRUCTION_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getBaseFormulaProductName())) {
-            $a[self::FIELD_BASE_FORMULA_PRODUCT_NAME] = (string)$v;
-            $a[self::FIELD_BASE_FORMULA_PRODUCT_NAME_EXT] = $v;
+            $a[self::FIELD_BASE_FORMULA_PRODUCT_NAME] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_BASE_FORMULA_PRODUCT_NAME_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getBaseFormulaType())) {
             $a[self::FIELD_BASE_FORMULA_TYPE] = $v;
@@ -835,7 +858,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
         if (null !== ($v = $this->getRouteofAdministration())) {
             $a[self::FIELD_ROUTEOF_ADMINISTRATION] = $v;
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

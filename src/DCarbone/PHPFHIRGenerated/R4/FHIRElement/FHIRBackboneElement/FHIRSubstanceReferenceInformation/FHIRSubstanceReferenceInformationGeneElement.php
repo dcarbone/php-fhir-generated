@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:05+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,6 +84,7 @@ class FHIRSubstanceReferenceInformationGeneElement extends FHIRBackboneElement
     private $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ELEMENT = 'element';
+    const FIELD_ELEMENT_EXT = '_element';
     const FIELD_SOURCE = 'source';
     const FIELD_TYPE = 'type';
 
@@ -137,8 +138,13 @@ class FHIRSubstanceReferenceInformationGeneElement extends FHIRBackboneElement
         }
         parent::__construct($data);
         if (isset($data[self::FIELD_ELEMENT])) {
+            $ext = (isset($data[self::FIELD_ELEMENT_EXT]) && is_array($data[self::FIELD_ELEMENT_EXT]))
+                ? $data[self::FIELD_ELEMENT_EXT]
+                : null;
             if ($data[self::FIELD_ELEMENT] instanceof FHIRIdentifier) {
                 $this->setElement($data[self::FIELD_ELEMENT]);
+            } elseif ($ext && is_scalar($data[self::FIELD_ELEMENT])) {
+                $this->setElement(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_ELEMENT]] + $ext));
             } else {
                 $this->setElement(new FHIRIdentifier($data[self::FIELD_ELEMENT]));
             }
@@ -170,7 +176,7 @@ class FHIRSubstanceReferenceInformationGeneElement extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -178,17 +184,33 @@ class FHIRSubstanceReferenceInformationGeneElement extends FHIRBackboneElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationGeneElement
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -339,13 +361,14 @@ class FHIRSubstanceReferenceInformationGeneElement extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIRSubstanceReferenceInformationGeneElement::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIRSubstanceReferenceInformationGeneElement);
+            $type = new FHIRSubstanceReferenceInformationGeneElement;
         } elseif (!is_object($type) || !($type instanceof FHIRSubstanceReferenceInformationGeneElement)) {
             throw new \RuntimeException(sprintf(
                 'FHIRSubstanceReferenceInformationGeneElement::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationGeneElement or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRBackboneElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -377,12 +400,11 @@ class FHIRSubstanceReferenceInformationGeneElement extends FHIRBackboneElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getElement())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ELEMENT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ELEMENT, null, $v->_getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getSource())) {
@@ -390,12 +412,12 @@ class FHIRSubstanceReferenceInformationGeneElement extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE, null, $v->_getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -407,7 +429,10 @@ class FHIRSubstanceReferenceInformationGeneElement extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getElement())) {
-            $a[self::FIELD_ELEMENT] = $v;
+            $a[self::FIELD_ELEMENT] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_ELEMENT_EXT] = $v;
+            }
         }
         if ([] !== ($vs = $this->getSource())) {
             $a[self::FIELD_SOURCE] = $vs;
@@ -415,7 +440,7 @@ class FHIRSubstanceReferenceInformationGeneElement extends FHIRBackboneElement
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

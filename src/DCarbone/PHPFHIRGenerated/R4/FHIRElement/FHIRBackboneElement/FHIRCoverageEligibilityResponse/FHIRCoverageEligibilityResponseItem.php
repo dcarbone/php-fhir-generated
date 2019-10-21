@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCover
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:05+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -427,7 +427,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -435,17 +435,33 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseItem
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -1041,13 +1057,14 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIRCoverageEligibilityResponseItem::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIRCoverageEligibilityResponseItem);
+            $type = new FHIRCoverageEligibilityResponseItem;
         } elseif (!is_object($type) || !($type instanceof FHIRCoverageEligibilityResponseItem)) {
             throw new \RuntimeException(sprintf(
                 'FHIRCoverageEligibilityResponseItem::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseItem or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRBackboneElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -1131,11 +1148,11 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getAuthorizationRequired())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_AUTHORIZATION_REQUIRED, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_AUTHORIZATION_REQUIRED, null, $v->_getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getAuthorizationSupporting())) {
@@ -1143,11 +1160,11 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_AUTHORIZATION_SUPPORTING, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_AUTHORIZATION_SUPPORTING, null, $v->_getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getAuthorizationUrl())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_AUTHORIZATION_URL, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_AUTHORIZATION_URL, null, $v->_getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getBenefit())) {
@@ -1155,18 +1172,18 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_BENEFIT, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_BENEFIT, null, $v->_getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getCategory())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CATEGORY, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CATEGORY, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDescription())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DESCRIPTION, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DESCRIPTION, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getExcluded())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXCLUDED, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EXCLUDED, null, $v->_getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getModifier())) {
@@ -1174,31 +1191,31 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_MODIFIER, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_MODIFIER, null, $v->_getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getName())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_NAME, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_NAME, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getNetwork())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_NETWORK, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_NETWORK, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getProductOrService())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PRODUCT_OR_SERVICE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PRODUCT_OR_SERVICE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getProvider())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PROVIDER, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PROVIDER, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getTerm())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TERM, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TERM, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getUnit())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_UNIT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_UNIT, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -1210,15 +1227,19 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAuthorizationRequired())) {
-            $a[self::FIELD_AUTHORIZATION_REQUIRED] = (string)$v;
-            $a[self::FIELD_AUTHORIZATION_REQUIRED_EXT] = $v;
+            $a[self::FIELD_AUTHORIZATION_REQUIRED] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_AUTHORIZATION_REQUIRED_EXT] = $v;
+            }
         }
         if ([] !== ($vs = $this->getAuthorizationSupporting())) {
             $a[self::FIELD_AUTHORIZATION_SUPPORTING] = $vs;
         }
         if (null !== ($v = $this->getAuthorizationUrl())) {
-            $a[self::FIELD_AUTHORIZATION_URL] = (string)$v;
-            $a[self::FIELD_AUTHORIZATION_URL_EXT] = $v;
+            $a[self::FIELD_AUTHORIZATION_URL] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_AUTHORIZATION_URL_EXT] = $v;
+            }
         }
         if ([] !== ($vs = $this->getBenefit())) {
             $a[self::FIELD_BENEFIT] = $vs;
@@ -1227,19 +1248,25 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
             $a[self::FIELD_CATEGORY] = $v;
         }
         if (null !== ($v = $this->getDescription())) {
-            $a[self::FIELD_DESCRIPTION] = (string)$v;
-            $a[self::FIELD_DESCRIPTION_EXT] = $v;
+            $a[self::FIELD_DESCRIPTION] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DESCRIPTION_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getExcluded())) {
-            $a[self::FIELD_EXCLUDED] = (string)$v;
-            $a[self::FIELD_EXCLUDED_EXT] = $v;
+            $a[self::FIELD_EXCLUDED] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_EXCLUDED_EXT] = $v;
+            }
         }
         if ([] !== ($vs = $this->getModifier())) {
             $a[self::FIELD_MODIFIER] = $vs;
         }
         if (null !== ($v = $this->getName())) {
-            $a[self::FIELD_NAME] = (string)$v;
-            $a[self::FIELD_NAME_EXT] = $v;
+            $a[self::FIELD_NAME] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_NAME_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getNetwork())) {
             $a[self::FIELD_NETWORK] = $v;
@@ -1256,7 +1283,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
         if (null !== ($v = $this->getUnit())) {
             $a[self::FIELD_UNIT] = $v;
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

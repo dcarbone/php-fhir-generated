@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREvide
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:05+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -107,6 +107,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
     const FIELD_EXCLUDE = 'exclude';
     const FIELD_EXCLUDE_EXT = '_exclude';
     const FIELD_GROUP_MEASURE = 'groupMeasure';
+    const FIELD_GROUP_MEASURE_EXT = '_groupMeasure';
     const FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME = 'participantEffectiveDateTime';
     const FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME_EXT = '_participantEffectiveDateTime';
     const FIELD_PARTICIPANT_EFFECTIVE_DURATION = 'participantEffectiveDuration';
@@ -388,8 +389,13 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_GROUP_MEASURE])) {
+            $ext = (isset($data[self::FIELD_GROUP_MEASURE_EXT]) && is_array($data[self::FIELD_GROUP_MEASURE_EXT]))
+                ? $data[self::FIELD_GROUP_MEASURE_EXT]
+                : null;
             if ($data[self::FIELD_GROUP_MEASURE] instanceof FHIRGroupMeasure) {
                 $this->setGroupMeasure($data[self::FIELD_GROUP_MEASURE]);
+            } elseif ($ext && is_scalar($data[self::FIELD_GROUP_MEASURE])) {
+                $this->setGroupMeasure(new FHIRGroupMeasure([FHIRGroupMeasure::FIELD_VALUE => $data[self::FIELD_GROUP_MEASURE]] + $ext));
             } else {
                 $this->setGroupMeasure(new FHIRGroupMeasure($data[self::FIELD_GROUP_MEASURE]));
             }
@@ -454,7 +460,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -462,17 +468,33 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableCharacteristic
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -1083,13 +1105,14 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIREvidenceVariableCharacteristic::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIREvidenceVariableCharacteristic);
+            $type = new FHIREvidenceVariableCharacteristic;
         } elseif (!is_object($type) || !($type instanceof FHIREvidenceVariableCharacteristic)) {
             throw new \RuntimeException(sprintf(
                 'FHIREvidenceVariableCharacteristic::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableCharacteristic or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRBackboneElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -1169,60 +1192,59 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getDefinitionCanonical())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINITION_CANONICAL, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINITION_CANONICAL, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDefinitionCodeableConcept())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINITION_CODEABLE_CONCEPT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINITION_CODEABLE_CONCEPT, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDefinitionDataRequirement())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINITION_DATA_REQUIREMENT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINITION_DATA_REQUIREMENT, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDefinitionExpression())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINITION_EXPRESSION, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINITION_EXPRESSION, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDefinitionReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINITION_REFERENCE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINITION_REFERENCE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDefinitionTriggerDefinition())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINITION_TRIGGER_DEFINITION, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINITION_TRIGGER_DEFINITION, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDescription())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DESCRIPTION, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DESCRIPTION, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getExclude())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXCLUDE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EXCLUDE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getGroupMeasure())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_GROUP_MEASURE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_GROUP_MEASURE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getParticipantEffectiveDateTime())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getParticipantEffectiveDuration())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PARTICIPANT_EFFECTIVE_DURATION, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PARTICIPANT_EFFECTIVE_DURATION, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getParticipantEffectivePeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PARTICIPANT_EFFECTIVE_PERIOD, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PARTICIPANT_EFFECTIVE_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getParticipantEffectiveTiming())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PARTICIPANT_EFFECTIVE_TIMING, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PARTICIPANT_EFFECTIVE_TIMING, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getTimeFromStart())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TIME_FROM_START, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TIME_FROM_START, null, $v->_getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getUsageContext())) {
@@ -1230,7 +1252,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_USAGE_CONTEXT, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_USAGE_CONTEXT, null, $v->_getFHIRXMLNamespace()));
             }
         }
         return $sxe;
@@ -1243,8 +1265,10 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getDefinitionCanonical())) {
-            $a[self::FIELD_DEFINITION_CANONICAL] = (string)$v;
-            $a[self::FIELD_DEFINITION_CANONICAL_EXT] = $v;
+            $a[self::FIELD_DEFINITION_CANONICAL] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DEFINITION_CANONICAL_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getDefinitionCodeableConcept())) {
             $a[self::FIELD_DEFINITION_CODEABLE_CONCEPT] = $v;
@@ -1262,19 +1286,28 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
             $a[self::FIELD_DEFINITION_TRIGGER_DEFINITION] = $v;
         }
         if (null !== ($v = $this->getDescription())) {
-            $a[self::FIELD_DESCRIPTION] = (string)$v;
-            $a[self::FIELD_DESCRIPTION_EXT] = $v;
+            $a[self::FIELD_DESCRIPTION] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DESCRIPTION_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getExclude())) {
-            $a[self::FIELD_EXCLUDE] = (string)$v;
-            $a[self::FIELD_EXCLUDE_EXT] = $v;
+            $a[self::FIELD_EXCLUDE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_EXCLUDE_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getGroupMeasure())) {
-            $a[self::FIELD_GROUP_MEASURE] = $v;
+            $a[self::FIELD_GROUP_MEASURE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_GROUP_MEASURE_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getParticipantEffectiveDateTime())) {
-            $a[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME] = (string)$v;
-            $a[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME_EXT] = $v;
+            $a[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getParticipantEffectiveDuration())) {
             $a[self::FIELD_PARTICIPANT_EFFECTIVE_DURATION] = $v;
@@ -1291,7 +1324,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
         if ([] !== ($vs = $this->getUsageContext())) {
             $a[self::FIELD_USAGE_CONTEXT] = $vs;
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

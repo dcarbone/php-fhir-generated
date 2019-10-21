@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -74,6 +74,8 @@ use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTestScriptRequestMethodCode;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRValueContainerInterface;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRValueContainerTrait;
 
 /**
  * A structured set of tests against a FHIR server implementation to determine
@@ -82,8 +84,10 @@ use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
  * Class FHIRTestScriptAssert
  * @package \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript
  */
-class FHIRTestScriptAssert extends FHIRBackboneElement
+class FHIRTestScriptAssert extends FHIRBackboneElement implements PHPFHIRValueContainerInterface
 {
+    use PHPFHIRValueContainerTrait;
+
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_TEST_SCRIPT_DOT_ASSERT;
 
@@ -97,9 +101,11 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
     const FIELD_COMPARE_TO_SOURCE_PATH = 'compareToSourcePath';
     const FIELD_COMPARE_TO_SOURCE_PATH_EXT = '_compareToSourcePath';
     const FIELD_CONTENT_TYPE = 'contentType';
+    const FIELD_CONTENT_TYPE_EXT = '_contentType';
     const FIELD_DESCRIPTION = 'description';
     const FIELD_DESCRIPTION_EXT = '_description';
     const FIELD_DIRECTION = 'direction';
+    const FIELD_DIRECTION_EXT = '_direction';
     const FIELD_EXPRESSION = 'expression';
     const FIELD_EXPRESSION_EXT = '_expression';
     const FIELD_HEADER_FIELD = 'headerField';
@@ -111,13 +117,17 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
     const FIELD_NAVIGATION_LINKS = 'navigationLinks';
     const FIELD_NAVIGATION_LINKS_EXT = '_navigationLinks';
     const FIELD_OPERATOR = 'operator';
+    const FIELD_OPERATOR_EXT = '_operator';
     const FIELD_PATH = 'path';
     const FIELD_PATH_EXT = '_path';
     const FIELD_REQUEST_METHOD = 'requestMethod';
+    const FIELD_REQUEST_METHOD_EXT = '_requestMethod';
     const FIELD_REQUEST_URL = 'requestURL';
     const FIELD_REQUEST_URL_EXT = '_requestURL';
     const FIELD_RESOURCE = 'resource';
+    const FIELD_RESOURCE_EXT = '_resource';
     const FIELD_RESPONSE = 'response';
+    const FIELD_RESPONSE_EXT = '_response';
     const FIELD_RESPONSE_CODE = 'responseCode';
     const FIELD_RESPONSE_CODE_EXT = '_responseCode';
     const FIELD_RULE = 'rule';
@@ -391,6 +401,10 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
         if (null === $data || [] === $data) {
             return;
         }
+        if (is_scalar($data)) {
+            $this->setValue(new FHIRString($data));
+            return;
+        }
         if (!is_array($data)) {
             throw new \InvalidArgumentException(sprintf(
                 'FHIRTestScriptAssert::_construct - $data expected to be null or array, %s seen',
@@ -435,8 +449,13 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_CONTENT_TYPE])) {
+            $ext = (isset($data[self::FIELD_CONTENT_TYPE_EXT]) && is_array($data[self::FIELD_CONTENT_TYPE_EXT]))
+                ? $data[self::FIELD_CONTENT_TYPE_EXT]
+                : null;
             if ($data[self::FIELD_CONTENT_TYPE] instanceof FHIRContentType) {
                 $this->setContentType($data[self::FIELD_CONTENT_TYPE]);
+            } elseif ($ext && is_scalar($data[self::FIELD_CONTENT_TYPE])) {
+                $this->setContentType(new FHIRContentType([FHIRContentType::FIELD_VALUE => $data[self::FIELD_CONTENT_TYPE]] + $ext));
             } else {
                 $this->setContentType(new FHIRContentType($data[self::FIELD_CONTENT_TYPE]));
             }
@@ -454,8 +473,13 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_DIRECTION])) {
+            $ext = (isset($data[self::FIELD_DIRECTION_EXT]) && is_array($data[self::FIELD_DIRECTION_EXT]))
+                ? $data[self::FIELD_DIRECTION_EXT]
+                : null;
             if ($data[self::FIELD_DIRECTION] instanceof FHIRAssertionDirectionType) {
                 $this->setDirection($data[self::FIELD_DIRECTION]);
+            } elseif ($ext && is_scalar($data[self::FIELD_DIRECTION])) {
+                $this->setDirection(new FHIRAssertionDirectionType([FHIRAssertionDirectionType::FIELD_VALUE => $data[self::FIELD_DIRECTION]] + $ext));
             } else {
                 $this->setDirection(new FHIRAssertionDirectionType($data[self::FIELD_DIRECTION]));
             }
@@ -521,8 +545,13 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_OPERATOR])) {
+            $ext = (isset($data[self::FIELD_OPERATOR_EXT]) && is_array($data[self::FIELD_OPERATOR_EXT]))
+                ? $data[self::FIELD_OPERATOR_EXT]
+                : null;
             if ($data[self::FIELD_OPERATOR] instanceof FHIRAssertionOperatorType) {
                 $this->setOperator($data[self::FIELD_OPERATOR]);
+            } elseif ($ext && is_scalar($data[self::FIELD_OPERATOR])) {
+                $this->setOperator(new FHIRAssertionOperatorType([FHIRAssertionOperatorType::FIELD_VALUE => $data[self::FIELD_OPERATOR]] + $ext));
             } else {
                 $this->setOperator(new FHIRAssertionOperatorType($data[self::FIELD_OPERATOR]));
             }
@@ -540,8 +569,13 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_REQUEST_METHOD])) {
+            $ext = (isset($data[self::FIELD_REQUEST_METHOD_EXT]) && is_array($data[self::FIELD_REQUEST_METHOD_EXT]))
+                ? $data[self::FIELD_REQUEST_METHOD_EXT]
+                : null;
             if ($data[self::FIELD_REQUEST_METHOD] instanceof FHIRTestScriptRequestMethodCode) {
                 $this->setRequestMethod($data[self::FIELD_REQUEST_METHOD]);
+            } elseif ($ext && is_scalar($data[self::FIELD_REQUEST_METHOD])) {
+                $this->setRequestMethod(new FHIRTestScriptRequestMethodCode([FHIRTestScriptRequestMethodCode::FIELD_VALUE => $data[self::FIELD_REQUEST_METHOD]] + $ext));
             } else {
                 $this->setRequestMethod(new FHIRTestScriptRequestMethodCode($data[self::FIELD_REQUEST_METHOD]));
             }
@@ -559,15 +593,25 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_RESOURCE])) {
+            $ext = (isset($data[self::FIELD_RESOURCE_EXT]) && is_array($data[self::FIELD_RESOURCE_EXT]))
+                ? $data[self::FIELD_RESOURCE_EXT]
+                : null;
             if ($data[self::FIELD_RESOURCE] instanceof FHIRFHIRDefinedType) {
                 $this->setResource($data[self::FIELD_RESOURCE]);
+            } elseif ($ext && is_scalar($data[self::FIELD_RESOURCE])) {
+                $this->setResource(new FHIRFHIRDefinedType([FHIRFHIRDefinedType::FIELD_VALUE => $data[self::FIELD_RESOURCE]] + $ext));
             } else {
                 $this->setResource(new FHIRFHIRDefinedType($data[self::FIELD_RESOURCE]));
             }
         }
         if (isset($data[self::FIELD_RESPONSE])) {
+            $ext = (isset($data[self::FIELD_RESPONSE_EXT]) && is_array($data[self::FIELD_RESPONSE_EXT]))
+                ? $data[self::FIELD_RESPONSE_EXT]
+                : null;
             if ($data[self::FIELD_RESPONSE] instanceof FHIRAssertionResponseTypes) {
                 $this->setResponse($data[self::FIELD_RESPONSE]);
+            } elseif ($ext && is_scalar($data[self::FIELD_RESPONSE])) {
+                $this->setResponse(new FHIRAssertionResponseTypes([FHIRAssertionResponseTypes::FIELD_VALUE => $data[self::FIELD_RESPONSE]] + $ext));
             } else {
                 $this->setResponse(new FHIRAssertionResponseTypes($data[self::FIELD_RESPONSE]));
             }
@@ -651,7 +695,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -659,17 +703,33 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -827,6 +887,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      */
     public function setContentType(FHIRContentType $contentType = null)
     {
+        $this->_markNonValueFieldsDefined();
         $this->contentType = $contentType;
         return $this;
     }
@@ -895,6 +956,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      */
     public function setDirection(FHIRAssertionDirectionType $direction = null)
     {
+        $this->_markNonValueFieldsDefined();
         $this->direction = $direction;
         return $this;
     }
@@ -1119,6 +1181,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      */
     public function setOperator(FHIRAssertionOperatorType $operator = null)
     {
+        $this->_markNonValueFieldsDefined();
         $this->operator = $operator;
         return $this;
     }
@@ -1189,6 +1252,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      */
     public function setRequestMethod(FHIRTestScriptRequestMethodCode $requestMethod = null)
     {
+        $this->_markNonValueFieldsDefined();
         $this->requestMethod = $requestMethod;
         return $this;
     }
@@ -1253,6 +1317,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      */
     public function setResource(FHIRFHIRDefinedType $resource = null)
     {
+        $this->_markNonValueFieldsDefined();
         $this->resource = $resource;
         return $this;
     }
@@ -1283,6 +1348,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      */
     public function setResponse(FHIRAssertionResponseTypes $response = null)
     {
+        $this->_markNonValueFieldsDefined();
         $this->response = $response;
         return $this;
     }
@@ -1349,6 +1415,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      */
     public function setRule(FHIRTestScriptRule2 $rule = null)
     {
+        $this->_markNonValueFieldsDefined();
         $this->rule = $rule;
         return $this;
     }
@@ -1377,6 +1444,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      */
     public function setRuleset(FHIRTestScriptRuleset1 $ruleset = null)
     {
+        $this->_markNonValueFieldsDefined();
         $this->ruleset = $ruleset;
         return $this;
     }
@@ -1568,13 +1636,14 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIRTestScriptAssert::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIRTestScriptAssert);
+            $type = new FHIRTestScriptAssert;
         } elseif (!is_object($type) || !($type instanceof FHIRTestScriptAssert)) {
             throw new \RuntimeException(sprintf(
                 'FHIRTestScriptAssert::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRBackboneElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -1715,88 +1784,82 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getCompareToSourceExpression())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_COMPARE_TO_SOURCE_EXPRESSION, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_COMPARE_TO_SOURCE_EXPRESSION, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getCompareToSourceId())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_COMPARE_TO_SOURCE_ID, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_COMPARE_TO_SOURCE_ID, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getCompareToSourcePath())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_COMPARE_TO_SOURCE_PATH, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_COMPARE_TO_SOURCE_PATH, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getContentType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CONTENT_TYPE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CONTENT_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDescription())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DESCRIPTION, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DESCRIPTION, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getDirection())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DIRECTION, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DIRECTION, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getExpression())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXPRESSION, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_EXPRESSION, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getHeaderField())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_HEADER_FIELD, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_HEADER_FIELD, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getLabel())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_LABEL, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_LABEL, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getMinimumId())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MINIMUM_ID, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_MINIMUM_ID, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getNavigationLinks())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_NAVIGATION_LINKS, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_NAVIGATION_LINKS, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getOperator())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_OPERATOR, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_OPERATOR, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getPath())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATH, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PATH, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getRequestMethod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REQUEST_METHOD, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_REQUEST_METHOD, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getRequestURL())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REQUEST_URL, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_REQUEST_URL, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getResource())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RESOURCE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_RESOURCE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getResponse())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RESPONSE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_RESPONSE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getResponseCode())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RESPONSE_CODE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_RESPONSE_CODE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getRule())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RULE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_RULE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getRuleset())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RULESET, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_RULESET, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getSourceId())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE_ID, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE_ID, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getValidateProfileId())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALIDATE_PROFILE_ID, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALIDATE_PROFILE_ID, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getValue())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getWarningOnly())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_WARNING_ONLY, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_WARNING_ONLY, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -1808,70 +1871,112 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getCompareToSourceExpression())) {
-            $a[self::FIELD_COMPARE_TO_SOURCE_EXPRESSION] = (string)$v;
-            $a[self::FIELD_COMPARE_TO_SOURCE_EXPRESSION_EXT] = $v;
+            $a[self::FIELD_COMPARE_TO_SOURCE_EXPRESSION] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_COMPARE_TO_SOURCE_EXPRESSION_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getCompareToSourceId())) {
-            $a[self::FIELD_COMPARE_TO_SOURCE_ID] = (string)$v;
-            $a[self::FIELD_COMPARE_TO_SOURCE_ID_EXT] = $v;
+            $a[self::FIELD_COMPARE_TO_SOURCE_ID] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_COMPARE_TO_SOURCE_ID_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getCompareToSourcePath())) {
-            $a[self::FIELD_COMPARE_TO_SOURCE_PATH] = (string)$v;
-            $a[self::FIELD_COMPARE_TO_SOURCE_PATH_EXT] = $v;
+            $a[self::FIELD_COMPARE_TO_SOURCE_PATH] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_COMPARE_TO_SOURCE_PATH_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getContentType())) {
-            $a[self::FIELD_CONTENT_TYPE] = $v;
+            $a[self::FIELD_CONTENT_TYPE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_CONTENT_TYPE_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getDescription())) {
-            $a[self::FIELD_DESCRIPTION] = (string)$v;
-            $a[self::FIELD_DESCRIPTION_EXT] = $v;
+            $a[self::FIELD_DESCRIPTION] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DESCRIPTION_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getDirection())) {
-            $a[self::FIELD_DIRECTION] = $v;
+            $a[self::FIELD_DIRECTION] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DIRECTION_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getExpression())) {
-            $a[self::FIELD_EXPRESSION] = (string)$v;
-            $a[self::FIELD_EXPRESSION_EXT] = $v;
+            $a[self::FIELD_EXPRESSION] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_EXPRESSION_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getHeaderField())) {
-            $a[self::FIELD_HEADER_FIELD] = (string)$v;
-            $a[self::FIELD_HEADER_FIELD_EXT] = $v;
+            $a[self::FIELD_HEADER_FIELD] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_HEADER_FIELD_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getLabel())) {
-            $a[self::FIELD_LABEL] = (string)$v;
-            $a[self::FIELD_LABEL_EXT] = $v;
+            $a[self::FIELD_LABEL] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_LABEL_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getMinimumId())) {
-            $a[self::FIELD_MINIMUM_ID] = (string)$v;
-            $a[self::FIELD_MINIMUM_ID_EXT] = $v;
+            $a[self::FIELD_MINIMUM_ID] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_MINIMUM_ID_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getNavigationLinks())) {
-            $a[self::FIELD_NAVIGATION_LINKS] = (string)$v;
-            $a[self::FIELD_NAVIGATION_LINKS_EXT] = $v;
+            $a[self::FIELD_NAVIGATION_LINKS] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_NAVIGATION_LINKS_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getOperator())) {
-            $a[self::FIELD_OPERATOR] = $v;
+            $a[self::FIELD_OPERATOR] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_OPERATOR_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getPath())) {
-            $a[self::FIELD_PATH] = (string)$v;
-            $a[self::FIELD_PATH_EXT] = $v;
+            $a[self::FIELD_PATH] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_PATH_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getRequestMethod())) {
-            $a[self::FIELD_REQUEST_METHOD] = $v;
+            $a[self::FIELD_REQUEST_METHOD] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_REQUEST_METHOD_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getRequestURL())) {
-            $a[self::FIELD_REQUEST_URL] = (string)$v;
-            $a[self::FIELD_REQUEST_URL_EXT] = $v;
+            $a[self::FIELD_REQUEST_URL] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_REQUEST_URL_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getResource())) {
-            $a[self::FIELD_RESOURCE] = $v;
+            $a[self::FIELD_RESOURCE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_RESOURCE_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getResponse())) {
-            $a[self::FIELD_RESPONSE] = $v;
+            $a[self::FIELD_RESPONSE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_RESPONSE_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getResponseCode())) {
-            $a[self::FIELD_RESPONSE_CODE] = (string)$v;
-            $a[self::FIELD_RESPONSE_CODE_EXT] = $v;
+            $a[self::FIELD_RESPONSE_CODE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_RESPONSE_CODE_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getRule())) {
             $a[self::FIELD_RULE] = $v;
@@ -1880,22 +1985,30 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
             $a[self::FIELD_RULESET] = $v;
         }
         if (null !== ($v = $this->getSourceId())) {
-            $a[self::FIELD_SOURCE_ID] = (string)$v;
-            $a[self::FIELD_SOURCE_ID_EXT] = $v;
+            $a[self::FIELD_SOURCE_ID] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_SOURCE_ID_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getValidateProfileId())) {
-            $a[self::FIELD_VALIDATE_PROFILE_ID] = (string)$v;
-            $a[self::FIELD_VALIDATE_PROFILE_ID_EXT] = $v;
+            $a[self::FIELD_VALIDATE_PROFILE_ID] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_VALIDATE_PROFILE_ID_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getValue())) {
-            $a[self::FIELD_VALUE] = (string)$v;
-            $a[self::FIELD_VALUE_EXT] = $v;
+            $a[self::FIELD_VALUE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_VALUE_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getWarningOnly())) {
-            $a[self::FIELD_WARNING_ONLY] = (string)$v;
-            $a[self::FIELD_WARNING_ONLY_EXT] = $v;
+            $a[self::FIELD_WARNING_ONLY] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_WARNING_ONLY_EXT] = $v;
+            }
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

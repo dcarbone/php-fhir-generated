@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRSeq
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -297,7 +297,7 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -305,17 +305,33 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceReferenceSeq
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -658,13 +674,14 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIRSequenceReferenceSeq::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIRSequenceReferenceSeq);
+            $type = new FHIRSequenceReferenceSeq;
         } elseif (!is_object($type) || !($type instanceof FHIRSequenceReferenceSeq)) {
             throw new \RuntimeException(sprintf(
                 'FHIRSequenceReferenceSeq::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceReferenceSeq or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRBackboneElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -724,35 +741,35 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getChromosome())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CHROMOSOME, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CHROMOSOME, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getGenomeBuild())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_GENOME_BUILD, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_GENOME_BUILD, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getReferenceSeqId())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REFERENCE_SEQ_ID, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_REFERENCE_SEQ_ID, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getReferenceSeqPointer())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REFERENCE_SEQ_POINTER, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_REFERENCE_SEQ_POINTER, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getReferenceSeqString())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REFERENCE_SEQ_STRING, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_REFERENCE_SEQ_STRING, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getStrand())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_STRAND, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_STRAND, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getWindowEnd())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_WINDOW_END, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_WINDOW_END, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getWindowStart())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_WINDOW_START, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_WINDOW_START, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -767,8 +784,10 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement
             $a[self::FIELD_CHROMOSOME] = $v;
         }
         if (null !== ($v = $this->getGenomeBuild())) {
-            $a[self::FIELD_GENOME_BUILD] = (string)$v;
-            $a[self::FIELD_GENOME_BUILD_EXT] = $v;
+            $a[self::FIELD_GENOME_BUILD] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_GENOME_BUILD_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getReferenceSeqId())) {
             $a[self::FIELD_REFERENCE_SEQ_ID] = $v;
@@ -777,22 +796,30 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement
             $a[self::FIELD_REFERENCE_SEQ_POINTER] = $v;
         }
         if (null !== ($v = $this->getReferenceSeqString())) {
-            $a[self::FIELD_REFERENCE_SEQ_STRING] = (string)$v;
-            $a[self::FIELD_REFERENCE_SEQ_STRING_EXT] = $v;
+            $a[self::FIELD_REFERENCE_SEQ_STRING] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_REFERENCE_SEQ_STRING_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getStrand())) {
-            $a[self::FIELD_STRAND] = (string)$v;
-            $a[self::FIELD_STRAND_EXT] = $v;
+            $a[self::FIELD_STRAND] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_STRAND_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getWindowEnd())) {
-            $a[self::FIELD_WINDOW_END] = (string)$v;
-            $a[self::FIELD_WINDOW_END_EXT] = $v;
+            $a[self::FIELD_WINDOW_END] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_WINDOW_END_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getWindowStart())) {
-            $a[self::FIELD_WINDOW_START] = (string)$v;
-            $a[self::FIELD_WINDOW_START_EXT] = $v;
+            $a[self::FIELD_WINDOW_START] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_WINDOW_START_EXT] = $v;
+            }
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

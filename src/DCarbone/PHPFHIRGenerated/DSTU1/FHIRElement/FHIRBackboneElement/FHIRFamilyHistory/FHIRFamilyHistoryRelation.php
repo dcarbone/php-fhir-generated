@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRFa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:04+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -392,7 +392,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -400,17 +400,33 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRFamilyHistory\FHIRFamilyHistoryRelation
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -925,13 +941,14 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
             throw new \InvalidArgumentException(sprintf('FHIRFamilyHistoryRelation::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRBackboneElement::xmlUnserialize($sxe, new FHIRFamilyHistoryRelation);
+            $type = new FHIRFamilyHistoryRelation;
         } elseif (!is_object($type) || !($type instanceof FHIRFamilyHistoryRelation)) {
             throw new \RuntimeException(sprintf(
                 'FHIRFamilyHistoryRelation::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRFamilyHistory\FHIRFamilyHistoryRelation or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRBackboneElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -1011,18 +1028,18 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getBornDate())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_BORN_DATE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_BORN_DATE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getBornPeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_BORN_PERIOD, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_BORN_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getBornString())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_BORN_STRING, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_BORN_STRING, null, $v->_getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getCondition())) {
@@ -1030,35 +1047,35 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CONDITION, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_CONDITION, null, $v->_getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getDeceasedAge())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DECEASED_AGE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DECEASED_AGE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDeceasedBoolean())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DECEASED_BOOLEAN, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DECEASED_BOOLEAN, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDeceasedDate())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DECEASED_DATE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DECEASED_DATE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getDeceasedRange())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DECEASED_RANGE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DECEASED_RANGE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDeceasedString())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DECEASED_STRING, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DECEASED_STRING, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getName())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_NAME, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_NAME, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getNote())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_NOTE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_NOTE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getRelationship())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RELATIONSHIP, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_RELATIONSHIP, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -1070,15 +1087,19 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getBornDate())) {
-            $a[self::FIELD_BORN_DATE] = (string)$v;
-            $a[self::FIELD_BORN_DATE_EXT] = $v;
+            $a[self::FIELD_BORN_DATE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_BORN_DATE_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getBornPeriod())) {
             $a[self::FIELD_BORN_PERIOD] = $v;
         }
         if (null !== ($v = $this->getBornString())) {
-            $a[self::FIELD_BORN_STRING] = (string)$v;
-            $a[self::FIELD_BORN_STRING_EXT] = $v;
+            $a[self::FIELD_BORN_STRING] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_BORN_STRING_EXT] = $v;
+            }
         }
         if ([] !== ($vs = $this->getCondition())) {
             $a[self::FIELD_CONDITION] = $vs;
@@ -1087,32 +1108,42 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
             $a[self::FIELD_DECEASED_AGE] = $v;
         }
         if (null !== ($v = $this->getDeceasedBoolean())) {
-            $a[self::FIELD_DECEASED_BOOLEAN] = (string)$v;
-            $a[self::FIELD_DECEASED_BOOLEAN_EXT] = $v;
+            $a[self::FIELD_DECEASED_BOOLEAN] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DECEASED_BOOLEAN_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getDeceasedDate())) {
-            $a[self::FIELD_DECEASED_DATE] = (string)$v;
-            $a[self::FIELD_DECEASED_DATE_EXT] = $v;
+            $a[self::FIELD_DECEASED_DATE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DECEASED_DATE_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getDeceasedRange())) {
             $a[self::FIELD_DECEASED_RANGE] = $v;
         }
         if (null !== ($v = $this->getDeceasedString())) {
-            $a[self::FIELD_DECEASED_STRING] = (string)$v;
-            $a[self::FIELD_DECEASED_STRING_EXT] = $v;
+            $a[self::FIELD_DECEASED_STRING] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_DECEASED_STRING_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getName())) {
-            $a[self::FIELD_NAME] = (string)$v;
-            $a[self::FIELD_NAME_EXT] = $v;
+            $a[self::FIELD_NAME] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_NAME_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getNote())) {
-            $a[self::FIELD_NOTE] = (string)$v;
-            $a[self::FIELD_NOTE_EXT] = $v;
+            $a[self::FIELD_NOTE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_NOTE_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getRelationship())) {
             $a[self::FIELD_RELATIONSHIP] = $v;
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return $a;
     }
 
     /**

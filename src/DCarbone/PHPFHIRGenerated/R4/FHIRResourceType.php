@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:05+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -69,8 +69,10 @@ namespace DCarbone\PHPFHIRGenerated\R4;
  * Class FHIRResourceType
  * @package \DCarbone\PHPFHIRGenerated\R4
  */
-class FHIRResourceType implements PHPFHIRTypeInterface
+class FHIRResourceType implements PHPFHIRValueContainerInterface, PHPFHIRTypeInterface
 {
+    use PHPFHIRValueContainerTrait;
+
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_RESOURCE_TYPE;
 
@@ -101,7 +103,7 @@ class FHIRResourceType implements PHPFHIRTypeInterface
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -109,17 +111,33 @@ class FHIRResourceType implements PHPFHIRTypeInterface
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResourceType
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
@@ -156,7 +174,7 @@ class FHIRResourceType implements PHPFHIRTypeInterface
      * Returns the list of allowed values for this type
      * @return string[]
      */
-    public function getValueList()
+    public function _getAllowedValueList()
     {
         return self::$valueList;
     }
@@ -164,7 +182,7 @@ class FHIRResourceType implements PHPFHIRTypeInterface
     /**
      * @return bool
      */
-    public function isValid()
+    public function _isValid()
     {
         $v = $this->getValue();
         return null === $v || in_array((string)$v, self::$valueList, true);
@@ -193,7 +211,7 @@ class FHIRResourceType implements PHPFHIRTypeInterface
             throw new \InvalidArgumentException(sprintf('FHIRResourceType::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = new static();
+            $type = new FHIRResourceType;
         } elseif (!is_object($type) || !($type instanceof FHIRResourceType)) {
             throw new \RuntimeException(sprintf(
                 'FHIRResourceType::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRResourceType or null, %s seen.',
@@ -227,7 +245,7 @@ class FHIRResourceType implements PHPFHIRTypeInterface
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         $sxe->addAttribute(self::FIELD_VALUE, (string)$this);
         return $sxe;

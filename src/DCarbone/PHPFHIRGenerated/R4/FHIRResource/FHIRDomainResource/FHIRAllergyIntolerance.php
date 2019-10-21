@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:05+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -98,11 +98,14 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
 
     const FIELD_ASSERTER = 'asserter';
     const FIELD_CATEGORY = 'category';
+    const FIELD_CATEGORY_EXT = '_category';
     const FIELD_CLINICAL_STATUS = 'clinicalStatus';
     const FIELD_CODE = 'code';
     const FIELD_CRITICALITY = 'criticality';
+    const FIELD_CRITICALITY_EXT = '_criticality';
     const FIELD_ENCOUNTER = 'encounter';
     const FIELD_IDENTIFIER = 'identifier';
+    const FIELD_IDENTIFIER_EXT = '_identifier';
     const FIELD_LAST_OCCURRENCE = 'lastOccurrence';
     const FIELD_LAST_OCCURRENCE_EXT = '_lastOccurrence';
     const FIELD_NOTE = 'note';
@@ -119,6 +122,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
     const FIELD_RECORDED_DATE_EXT = '_recordedDate';
     const FIELD_RECORDER = 'recorder';
     const FIELD_TYPE = 'type';
+    const FIELD_TYPE_EXT = '_type';
     const FIELD_VERIFICATION_STATUS = 'verificationStatus';
 
     /**
@@ -384,16 +388,23 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
             }
         }
         if (isset($data[self::FIELD_CATEGORY])) {
+            $ext = (isset($data[self::FIELD_CATEGORY_EXT]) && is_array($data[self::FIELD_CATEGORY_EXT]))
+                ? $data[self::FIELD_CATEGORY_EXT]
+                : null;
             if (is_array($data[self::FIELD_CATEGORY])) {
-                foreach($data[self::FIELD_CATEGORY] as $v) {
+                foreach($data[self::FIELD_CATEGORY] as $i => $v) {
                     if ($v instanceof FHIRAllergyIntoleranceCategory) {
                         $this->addCategory($v);
+                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
+                        $this->addCategory(new FHIRAllergyIntoleranceCategory([FHIRAllergyIntoleranceCategory::FIELD_VALUE => $v] + $ext[$i]));
                     } else {
                         $this->addCategory(new FHIRAllergyIntoleranceCategory($v));
                     }
                 }
-            } else if ($data[self::FIELD_CATEGORY] instanceof FHIRAllergyIntoleranceCategory) {
+            } elseif ($data[self::FIELD_CATEGORY] instanceof FHIRAllergyIntoleranceCategory) {
                 $this->addCategory($data[self::FIELD_CATEGORY]);
+            } elseif ($ext && is_scalar($data[self::FIELD_CATEGORY])) {
+                $this->addCategory(new FHIRAllergyIntoleranceCategory([FHIRAllergyIntoleranceCategory::FIELD_VALUE => $data[self::FIELD_CATEGORY]] + $ext));
             } else {
                 $this->addCategory(new FHIRAllergyIntoleranceCategory($data[self::FIELD_CATEGORY]));
             }
@@ -413,8 +424,13 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
             }
         }
         if (isset($data[self::FIELD_CRITICALITY])) {
+            $ext = (isset($data[self::FIELD_CRITICALITY_EXT]) && is_array($data[self::FIELD_CRITICALITY_EXT]))
+                ? $data[self::FIELD_CRITICALITY_EXT]
+                : null;
             if ($data[self::FIELD_CRITICALITY] instanceof FHIRAllergyIntoleranceCriticality) {
                 $this->setCriticality($data[self::FIELD_CRITICALITY]);
+            } elseif ($ext && is_scalar($data[self::FIELD_CRITICALITY])) {
+                $this->setCriticality(new FHIRAllergyIntoleranceCriticality([FHIRAllergyIntoleranceCriticality::FIELD_VALUE => $data[self::FIELD_CRITICALITY]] + $ext));
             } else {
                 $this->setCriticality(new FHIRAllergyIntoleranceCriticality($data[self::FIELD_CRITICALITY]));
             }
@@ -427,16 +443,23 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
             }
         }
         if (isset($data[self::FIELD_IDENTIFIER])) {
+            $ext = (isset($data[self::FIELD_IDENTIFIER_EXT]) && is_array($data[self::FIELD_IDENTIFIER_EXT]))
+                ? $data[self::FIELD_IDENTIFIER_EXT]
+                : null;
             if (is_array($data[self::FIELD_IDENTIFIER])) {
-                foreach($data[self::FIELD_IDENTIFIER] as $v) {
+                foreach($data[self::FIELD_IDENTIFIER] as $i => $v) {
                     if ($v instanceof FHIRIdentifier) {
                         $this->addIdentifier($v);
+                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
+                        $this->addIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $v] + $ext[$i]));
                     } else {
                         $this->addIdentifier(new FHIRIdentifier($v));
                     }
                 }
-            } else if ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
+            } elseif ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->addIdentifier($data[self::FIELD_IDENTIFIER]);
+            } elseif ($ext && is_scalar($data[self::FIELD_IDENTIFIER])) {
+                $this->addIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
             } else {
                 $this->addIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
             }
@@ -555,8 +578,13 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
             }
         }
         if (isset($data[self::FIELD_TYPE])) {
+            $ext = (isset($data[self::FIELD_TYPE_EXT]) && is_array($data[self::FIELD_TYPE_EXT]))
+                ? $data[self::FIELD_TYPE_EXT]
+                : null;
             if ($data[self::FIELD_TYPE] instanceof FHIRAllergyIntoleranceType) {
                 $this->setType($data[self::FIELD_TYPE]);
+            } elseif ($ext && is_scalar($data[self::FIELD_TYPE])) {
+                $this->setType(new FHIRAllergyIntoleranceType([FHIRAllergyIntoleranceType::FIELD_VALUE => $data[self::FIELD_TYPE]] + $ext));
             } else {
                 $this->setType(new FHIRAllergyIntoleranceType($data[self::FIELD_TYPE]));
             }
@@ -573,7 +601,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
     /**
      * @return string
      */
-    public function getFHIRTypeName()
+    public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -581,21 +609,45 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
     /**
      * @return string|null
      */
-    public function getFHIRXMLNamespace()
+    public function _getFHIRXMLNamespace()
     {
         return '' === $this->_xmlns ? null : $this->_xmlns;
     }
 
     /**
+     * @param null|string $xmlNamespace
+     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance
+     */
+    public function _setFHIRXMLNamespace($xmlNamespace)
+    {
+        if (null === $xmlNamespace || is_string($xmlNamespace)) {
+            $this->_xmlns = (string)$xmlNamespace;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf(
+            '$xmlNamespace must be a null or string value, %s seen.',
+            gettype($xmlNamespace)
+        ));
+    }
+
+    /**
      * @return string
      */
-    public function getFHIRXMLElementDefinition()
+    public function _getFHIRXMLElementDefinition()
     {
-        $xmlns = $this->getFHIRXMLNamespace();
+        $xmlns = $this->_getFHIRXMLNamespace();
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<AllergyIntolerance{$xmlns}></AllergyIntolerance>";
+    }
+
+    /**
+     * @return string
+     */
+    public function _getResourceType()
+    {
+        return static::FHIR_TYPE_NAME;
     }
 
 
@@ -1438,13 +1490,14 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
             throw new \InvalidArgumentException(sprintf('FHIRAllergyIntolerance::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = FHIRDomainResource::xmlUnserialize($sxe, new FHIRAllergyIntolerance);
+            $type = new FHIRAllergyIntolerance;
         } elseif (!is_object($type) || !($type instanceof FHIRAllergyIntolerance)) {
             throw new \RuntimeException(sprintf(
                 'FHIRAllergyIntolerance::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRDomainResource::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -1545,49 +1598,46 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
     public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
     {
         if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->getFHIRXMLElementDefinition(), $libxmlOpts, false);
+            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
 
         if (null !== ($v = $this->getAsserter())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ASSERTER, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ASSERTER, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getCategory())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CATEGORY, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_CATEGORY, null, $v->_getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getClinicalStatus())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CLINICAL_STATUS, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CLINICAL_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getCode())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getCriticality())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CRITICALITY, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CRITICALITY, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getEncounter())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ENCOUNTER, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ENCOUNTER, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getLastOccurrence())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_LAST_OCCURRENCE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_LAST_OCCURRENCE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getNote())) {
@@ -1595,30 +1645,30 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_NOTE, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_NOTE, null, $v->_getFHIRXMLNamespace()));
             }
         }
 
         if (null !== ($v = $this->getOnsetAge())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ONSET_AGE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ONSET_AGE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getOnsetDateTime())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ONSET_DATE_TIME, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ONSET_DATE_TIME, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getOnsetPeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ONSET_PERIOD, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ONSET_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getOnsetRange())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ONSET_RANGE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ONSET_RANGE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getOnsetString())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ONSET_STRING, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_ONSET_STRING, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getPatient())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATIENT, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PATIENT, null, $v->_getFHIRXMLNamespace()));
         }
 
         if ([] !== ($vs = $this->getReaction())) {
@@ -1626,23 +1676,22 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_REACTION, null, $v->getFHIRXMLNamespace()));
+                $v->xmlSerialize($sxe->addChild(self::FIELD_REACTION, null, $v->_getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getRecordedDate())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RECORDED_DATE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_RECORDED_DATE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getRecorder())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RECORDER, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_RECORDER, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getVerificationStatus())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VERIFICATION_STATUS, null, $v->getFHIRXMLNamespace()));
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VERIFICATION_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -1657,7 +1706,19 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
             $a[self::FIELD_ASSERTER] = $v;
         }
         if ([] !== ($vs = $this->getCategory())) {
-            $a[self::FIELD_CATEGORY] = $vs;
+            $a[self::FIELD_CATEGORY] = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_CATEGORY][] = $v->getValue();
+                if ($v->_hasNonValueFieldsDefined()) {
+                    if (!isset($a[self::FIELD_CATEGORY_EXT])) {
+                        $a[self::FIELD_CATEGORY_EXT] = [];
+                    }
+                    $a[self::FIELD_CATEGORY_EXT][] = $v;
+                }
+            }
         }
         if (null !== ($v = $this->getClinicalStatus())) {
             $a[self::FIELD_CLINICAL_STATUS] = $v;
@@ -1666,17 +1727,34 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
             $a[self::FIELD_CODE] = $v;
         }
         if (null !== ($v = $this->getCriticality())) {
-            $a[self::FIELD_CRITICALITY] = $v;
+            $a[self::FIELD_CRITICALITY] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_CRITICALITY_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getEncounter())) {
             $a[self::FIELD_ENCOUNTER] = $v;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $vs;
+            $a[self::FIELD_IDENTIFIER] = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_IDENTIFIER][] = $v->getValue();
+                if ($v->_hasNonValueFieldsDefined()) {
+                    if (!isset($a[self::FIELD_IDENTIFIER_EXT])) {
+                        $a[self::FIELD_IDENTIFIER_EXT] = [];
+                    }
+                    $a[self::FIELD_IDENTIFIER_EXT][] = $v;
+                }
+            }
         }
         if (null !== ($v = $this->getLastOccurrence())) {
-            $a[self::FIELD_LAST_OCCURRENCE] = (string)$v;
-            $a[self::FIELD_LAST_OCCURRENCE_EXT] = $v;
+            $a[self::FIELD_LAST_OCCURRENCE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_LAST_OCCURRENCE_EXT] = $v;
+            }
         }
         if ([] !== ($vs = $this->getNote())) {
             $a[self::FIELD_NOTE] = $vs;
@@ -1685,8 +1763,10 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
             $a[self::FIELD_ONSET_AGE] = $v;
         }
         if (null !== ($v = $this->getOnsetDateTime())) {
-            $a[self::FIELD_ONSET_DATE_TIME] = (string)$v;
-            $a[self::FIELD_ONSET_DATE_TIME_EXT] = $v;
+            $a[self::FIELD_ONSET_DATE_TIME] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_ONSET_DATE_TIME_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getOnsetPeriod())) {
             $a[self::FIELD_ONSET_PERIOD] = $v;
@@ -1695,8 +1775,10 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
             $a[self::FIELD_ONSET_RANGE] = $v;
         }
         if (null !== ($v = $this->getOnsetString())) {
-            $a[self::FIELD_ONSET_STRING] = (string)$v;
-            $a[self::FIELD_ONSET_STRING_EXT] = $v;
+            $a[self::FIELD_ONSET_STRING] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_ONSET_STRING_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getPatient())) {
             $a[self::FIELD_PATIENT] = $v;
@@ -1705,19 +1787,24 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
             $a[self::FIELD_REACTION] = $vs;
         }
         if (null !== ($v = $this->getRecordedDate())) {
-            $a[self::FIELD_RECORDED_DATE] = (string)$v;
-            $a[self::FIELD_RECORDED_DATE_EXT] = $v;
+            $a[self::FIELD_RECORDED_DATE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_RECORDED_DATE_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getRecorder())) {
             $a[self::FIELD_RECORDER] = $v;
         }
         if (null !== ($v = $this->getType())) {
-            $a[self::FIELD_TYPE] = $v;
+            $a[self::FIELD_TYPE] = $v->getValue();
+            if ($v->_hasNonValueFieldsDefined()) {
+                $a[self::FIELD_TYPE_EXT] = $v;
+            }
         }
         if (null !== ($v = $this->getVerificationStatus())) {
             $a[self::FIELD_VERIFICATION_STATUS] = $v;
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => self::FHIR_TYPE_NAME] + $a;
+        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }
 
     /**

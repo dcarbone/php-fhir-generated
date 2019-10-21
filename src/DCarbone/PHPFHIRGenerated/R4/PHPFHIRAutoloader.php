@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 7th, 2019 22:31+0000
+ * Class creation date: October 21st, 2019 04:05+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -63,10 +63,20 @@ namespace DCarbone\PHPFHIRGenerated\R4;
  */
 
 // if this class is used, assume not using Composer...
-require __DIR__ . '/PHPFHIRTypeInterface.php';
-require __DIR__ . '/PHPFHIRContainedTypeInterface.php';
-require __DIR__ . '/PHPFHIRConstants.php';
-require __DIR__ . '/PHPFHIRTypeMap.php';
+
+// interfaces
+require __DIR__ . DIRECTORY_SEPARATOR . 'PHPFHIRTypeInterface.php';
+require __DIR__ . DIRECTORY_SEPARATOR . 'PHPFHIRContainedTypeInterface.php';
+require __DIR__ . DIRECTORY_SEPARATOR . 'PHPFHIRCommentContainerInterface.php';
+require __DIR__ . DIRECTORY_SEPARATOR . 'PHPFHIRValueContainerInterface.php';
+
+// traits
+require __DIR__ . DIRECTORY_SEPARATOR . 'PHPFHIRCommentContainerTrait.php';
+require __DIR__ . DIRECTORY_SEPARATOR . 'PHPFHIRValueContainerTrait.php';
+
+// common classes
+require __DIR__ . DIRECTORY_SEPARATOR . 'PHPFHIRConstants.php';
+require __DIR__ . DIRECTORY_SEPARATOR . 'PHPFHIRTypeMap.php';
 
 /**
  * Class PHPFHIRAutoloader
@@ -1213,6 +1223,7 @@ abstract class PHPFHIRAutoloader
         }
         return self::$_registered = spl_autoload_register(array(__CLASS__, 'loadClass'), true);
     }
+
     /**
      * @return bool
      */
@@ -1226,6 +1237,7 @@ abstract class PHPFHIRAutoloader
         }
         return false;
     }
+
     /**
      * Please see associated documentation for more information on what this method looks for.
      *
