@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 21st, 2019 23:43+0000
+ * Class creation date: October 22nd, 2019 01:52+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -65,16 +65,34 @@ namespace DCarbone\PHPFHIRGenerated\R4;
 // if this class is used, assume not using Composer...
 
 // interfaces
-require __DIR__ . DIRECTORY_SEPARATOR . 'PHPFHIRTypeInterface.php';
-require __DIR__ . DIRECTORY_SEPARATOR . 'PHPFHIRContainedTypeInterface.php';
-require __DIR__ . DIRECTORY_SEPARATOR . 'PHPFHIRCommentContainerInterface.php';
+if (!class_exists('\DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface', false)) {
+    require __DIR__ . DIRECTORY_SEPARATOR . 'PHPFHIRTypeInterface.php';
+}
+if (!class_exists('\DCarbone\PHPFHIRGenerated\R4\PHPFHIRContainedTypeInterface', false)) {
+    require __DIR__ . DIRECTORY_SEPARATOR . 'PHPFHIRContainedTypeInterface.php';
+}
+if (!class_exists('\DCarbone\PHPFHIRGenerated\R4\PHPFHIRCommentContainerInterface', false)) {
+    require __DIR__ . DIRECTORY_SEPARATOR . 'PHPFHIRCommentContainerInterface.php';
+}
 
 // traits
-require __DIR__ . DIRECTORY_SEPARATOR . 'PHPFHIRCommentContainerTrait.php';
+if (!class_exists('\DCarbone\PHPFHIRGenerated\R4\PHPFHIRCommentContainerTrait', false)) {
+    require __DIR__ . DIRECTORY_SEPARATOR . 'PHPFHIRCommentContainerTrait.php';
+}
 
 // common classes
-require __DIR__ . DIRECTORY_SEPARATOR . 'PHPFHIRConstants.php';
-require __DIR__ . DIRECTORY_SEPARATOR . 'PHPFHIRTypeMap.php';
+if (!class_exists('\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants', false)) {
+    require __DIR__ . DIRECTORY_SEPARATOR . 'PHPFHIRConstants.php';
+}
+if (!class_exists('\DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeMap', false)) {
+    require __DIR__ . DIRECTORY_SEPARATOR . 'PHPFHIRTypeMap.php';
+}
+if (!class_exists('\DCarbone\PHPFHIRGenerated\R4\PHPFHIRResponseParserConfig', false)) {
+    require __DIR__ . DIRECTORY_SEPARATOR . 'PHPFHIRResponseParserConfig.php';
+}
+if (!class_exists('\DCarbone\PHPFHIRGenerated\R4\PHPFHIRResponseParser', false)) {
+    require __DIR__ . DIRECTORY_SEPARATOR . 'PHPFHIRResponseParser.php';
+}
 
 /**
  * Class PHPFHIRAutoloader
